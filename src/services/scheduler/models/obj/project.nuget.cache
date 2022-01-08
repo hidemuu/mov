@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ks42rtxXym5EbEwTg6e8eqkbSXzWwikOQZAmNlYQQfjJm9coOL6ad8kiscZjJFo+F6jEVKptE1m1SChi6qfaKA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\models\\Scheduler.Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nando\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

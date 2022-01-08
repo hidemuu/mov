@@ -1,0 +1,14 @@
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Account.Repository\bin\Debug\netstandard2.0\Account.Repository.deps.json
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Account.Repository\bin\Debug\netstandard2.0\Account.Repository.dll
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Account.Repository\bin\Debug\netstandard2.0\Account.Repository.pdb
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Account.Repository\bin\Debug\netstandard2.0\Accessors.dll
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Account.Repository\bin\Debug\netstandard2.0\Account.Models.dll
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Account.Repository\bin\Debug\netstandard2.0\Account.Models.pdb
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Account.Repository\bin\Debug\netstandard2.0\Accessors.pdb
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Account.Repository\obj\Debug\netstandard2.0\Account.Repository.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Account.Repository\obj\Debug\netstandard2.0\Account.Repository.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Account.Repository\obj\Debug\netstandard2.0\Account.Repository.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Account.Repository\obj\Debug\netstandard2.0\Account.Repository.csproj.CoreCompileInputs.cache
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Account.Repository\obj\Debug\netstandard2.0\Account.Repository.csproj.CopyComplete
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Account.Repository\obj\Debug\netstandard2.0\Account.Repository.dll
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Account.Repository\obj\Debug\netstandard2.0\Account.Repository.pdb

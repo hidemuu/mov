@@ -1,0 +1,12 @@
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.ScheduleRepository\bin\Debug\netstandard2.0\Stocker.ScheduleRepository.deps.json
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.ScheduleRepository\bin\Debug\netstandard2.0\Stocker.ScheduleRepository.dll
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.ScheduleRepository\bin\Debug\netstandard2.0\Stocker.ScheduleRepository.pdb
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.ScheduleRepository\bin\Debug\netstandard2.0\Stocker.ScheduleModels.dll
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.ScheduleRepository\bin\Debug\netstandard2.0\Stocker.ScheduleModels.pdb
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.ScheduleRepository\obj\Debug\netstandard2.0\Stocker.ScheduleRepository.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.ScheduleRepository\obj\Debug\netstandard2.0\Stocker.ScheduleRepository.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.ScheduleRepository\obj\Debug\netstandard2.0\Stocker.ScheduleRepository.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.ScheduleRepository\obj\Debug\netstandard2.0\Stocker.ScheduleRepository.csproj.CoreCompileInputs.cache
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.ScheduleRepository\obj\Debug\netstandard2.0\Stocker.ScheduleRepository.csproj.CopyComplete
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.ScheduleRepository\obj\Debug\netstandard2.0\Stocker.ScheduleRepository.dll
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.ScheduleRepository\obj\Debug\netstandard2.0\Stocker.ScheduleRepository.pdb

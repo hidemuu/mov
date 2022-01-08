@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "/MgargglJowKL79l1V3cHkgMOssiLDLSihQsnfzdC63zF6on5/RCcdiJbRIzQMxggdp/aoKfDac96rkDzq4jyA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\repository\\Scheduler.Repository.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nando\\.nuget\\packages\\google.apis\\1.55.0\\google.apis.1.55.0.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\google.apis.auth\\1.55.0\\google.apis.auth.1.55.0.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\google.apis.calendar.v3\\1.55.0.2500\\google.apis.calendar.v3.1.55.0.2500.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\google.apis.core\\1.55.0\\google.apis.core.1.55.0.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,9 @@
+C:\Users\nando\Documents\GitHub\Stocker\src\infrastructures\Stocker.Accessors\bin\Debug\netstandard2.0\Stocker.Accessors.deps.json
+C:\Users\nando\Documents\GitHub\Stocker\src\infrastructures\Stocker.Accessors\bin\Debug\netstandard2.0\Stocker.Accessors.dll
+C:\Users\nando\Documents\GitHub\Stocker\src\infrastructures\Stocker.Accessors\bin\Debug\netstandard2.0\Stocker.Accessors.pdb
+C:\Users\nando\Documents\GitHub\Stocker\src\infrastructures\Stocker.Accessors\obj\Debug\netstandard2.0\Stocker.Accessors.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\Stocker\src\infrastructures\Stocker.Accessors\obj\Debug\netstandard2.0\Stocker.Accessors.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\Stocker\src\infrastructures\Stocker.Accessors\obj\Debug\netstandard2.0\Stocker.Accessors.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\Stocker\src\infrastructures\Stocker.Accessors\obj\Debug\netstandard2.0\Stocker.Accessors.csproj.CoreCompileInputs.cache
+C:\Users\nando\Documents\GitHub\Stocker\src\infrastructures\Stocker.Accessors\obj\Debug\netstandard2.0\Stocker.Accessors.dll
+C:\Users\nando\Documents\GitHub\Stocker\src\infrastructures\Stocker.Accessors\obj\Debug\netstandard2.0\Stocker.Accessors.pdb

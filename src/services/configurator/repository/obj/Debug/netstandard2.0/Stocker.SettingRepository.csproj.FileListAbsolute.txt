@@ -1,0 +1,14 @@
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.SettingRepository\bin\Debug\netstandard2.0\Stocker.SettingRepository.deps.json
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.SettingRepository\bin\Debug\netstandard2.0\Stocker.SettingRepository.dll
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.SettingRepository\bin\Debug\netstandard2.0\Stocker.SettingRepository.pdb
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.SettingRepository\bin\Debug\netstandard2.0\Stocker.SettingModels.dll
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.SettingRepository\bin\Debug\netstandard2.0\Stocker.SettingModels.pdb
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.SettingRepository\obj\Debug\netstandard2.0\Stocker.SettingRepository.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.SettingRepository\obj\Debug\netstandard2.0\Stocker.SettingRepository.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.SettingRepository\obj\Debug\netstandard2.0\Stocker.SettingRepository.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.SettingRepository\obj\Debug\netstandard2.0\Stocker.SettingRepository.csproj.CoreCompileInputs.cache
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.SettingRepository\obj\Debug\netstandard2.0\Stocker.SettingRepository.csproj.CopyComplete
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.SettingRepository\obj\Debug\netstandard2.0\Stocker.SettingRepository.dll
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.SettingRepository\obj\Debug\netstandard2.0\Stocker.SettingRepository.pdb
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.SettingRepository\bin\Debug\netstandard2.0\Stocker.Accessors.dll
+C:\Users\nando\Documents\GitHub\Stocker\src\applications\Stocker.SettingRepository\bin\Debug\netstandard2.0\Stocker.Accessors.pdb

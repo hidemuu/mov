@@ -65,6 +65,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mov", "app\mov\Mov.csproj",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "designs", "designs", "{3F6E97E0-8804-4125-B685-BE1AE6E469F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loggers", "src\drivers\loggers\Loggers.csproj", "{CCD6D19B-1136-4B7E-AAD8-0BFFCE9A58E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -155,6 +157,10 @@ Global
 		{3E8328E2-8D91-4F05-AE24-8FB076969901}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E8328E2-8D91-4F05-AE24-8FB076969901}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E8328E2-8D91-4F05-AE24-8FB076969901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCD6D19B-1136-4B7E-AAD8-0BFFCE9A58E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCD6D19B-1136-4B7E-AAD8-0BFFCE9A58E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCD6D19B-1136-4B7E-AAD8-0BFFCE9A58E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCD6D19B-1136-4B7E-AAD8-0BFFCE9A58E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -189,6 +195,7 @@ Global
 		{B4C24F0A-3910-4BB0-8B24-5EEA28C1B85A} = {3F6E97E0-8804-4125-B685-BE1AE6E469F6}
 		{3E8328E2-8D91-4F05-AE24-8FB076969901} = {44D8CB57-D8CB-4568-A249-AFE8C987AB6F}
 		{3F6E97E0-8804-4125-B685-BE1AE6E469F6} = {378C4934-8725-4F0C-9C6E-3EC35A6BA68F}
+		{CCD6D19B-1136-4B7E-AAD8-0BFFCE9A58E9} = {12313AF5-0452-4C20-8955-3E8ECDE42301}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD9C3231-BF2C-413C-B738-70985D9981AE}

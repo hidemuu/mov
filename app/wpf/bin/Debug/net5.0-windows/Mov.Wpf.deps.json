@@ -8,6 +8,23 @@
     ".NETCoreApp,Version=v5.0": {
       "Mov.Wpf/1.0.0": {
         "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "Mov.Authorizer.Models": "1.0.0",
+          "Mov.Authorizer.Repository": "1.0.0",
+          "Mov.Authorizer.Service": "1.0.0",
+          "Mov.Configurator.Models": "1.0.0",
+          "Mov.Configurator.Repository": "1.0.0",
+          "Mov.Configurator.Service": "1.0.0",
+          "Mov.Designer.Models": "1.0.0",
+          "Mov.Designer.Repository": "1.0.0",
+          "Mov.Designer.Service": "1.0.0",
+          "Mov.Scheduler.Models": "1.0.0",
+          "Mov.Scheduler.Repository": "1.0.0",
+          "Mov.Scheduler.Service": "1.0.0",
+          "Mov.Translator.Models": "1.0.0",
+          "Mov.Translator.Repository": "1.0.0",
+          "Mov.Translator.Service": "1.0.0",
+          "Mov.Utilities": "1.0.0",
           "Mov.WpfControls": "1.0.0",
           "Mov.WpfDesigns": "1.0.0"
         },
@@ -27,11 +44,69 @@
           }
         }
       },
+      "CsvHelper/27.2.1": {
+        "runtime": {
+          "lib/net5.0/CsvHelper.dll": {
+            "assemblyVersion": "27.0.0.0",
+            "fileVersion": "27.2.1.0"
+          }
+        }
+      },
       "gong-wpf-dragdrop/3.0.0": {
         "runtime": {
           "lib/net5.0-windows7.0/GongSolutions.WPF.DragDrop.dll": {
             "assemblyVersion": "3.0.0.0",
             "fileVersion": "3.0.0.40"
+          }
+        }
+      },
+      "Google.Apis/1.55.0": {
+        "dependencies": {
+          "Google.Apis.Core": "1.55.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.dll": {
+            "assemblyVersion": "1.55.0.0",
+            "fileVersion": "1.55.0.0"
+          }
+        }
+      },
+      "Google.Apis.Auth/1.55.0": {
+        "dependencies": {
+          "Google.Apis": "1.55.0",
+          "Google.Apis.Core": "1.55.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {
+            "assemblyVersion": "1.55.0.0",
+            "fileVersion": "1.55.0.0"
+          },
+          "lib/netstandard2.0/Google.Apis.Auth.dll": {
+            "assemblyVersion": "1.55.0.0",
+            "fileVersion": "1.55.0.0"
+          }
+        }
+      },
+      "Google.Apis.Calendar.v3/1.55.0.2500": {
+        "dependencies": {
+          "Google.Apis": "1.55.0",
+          "Google.Apis.Auth": "1.55.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Calendar.v3.dll": {
+            "assemblyVersion": "1.55.0.2500",
+            "fileVersion": "1.55.0.2500"
+          }
+        }
+      },
+      "Google.Apis.Core/1.55.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Core.dll": {
+            "assemblyVersion": "1.55.0.0",
+            "fileVersion": "1.55.0.0"
           }
         }
       },
@@ -106,6 +181,14 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
+          }
+        }
+      },
       "Prism.Core/8.1.97": {
         "runtime": {
           "lib/net5.0/Prism.dll": {
@@ -171,13 +254,130 @@
         }
       },
       "System.Text.Json/4.7.2": {},
+      "Mov.Accessors/1.0.0": {
+        "dependencies": {
+          "CsvHelper": "27.2.1",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "Mov.Accessors.dll": {}
+        }
+      },
+      "Mov.Authorizer.Models/1.0.0": {
+        "dependencies": {
+          "Mov.Accessors": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Authorizer.Models.dll": {}
+        }
+      },
+      "Mov.Authorizer.Repository/1.0.0": {
+        "dependencies": {
+          "Mov.Authorizer.Models": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Authorizer.Repository.dll": {}
+        }
+      },
+      "Mov.Authorizer.Service/1.0.0": {
+        "runtime": {
+          "Mov.Authorizer.Service.dll": {}
+        }
+      },
+      "Mov.Configurator.Models/1.0.0": {
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "runtime": {
+          "Mov.Configurator.Models.dll": {}
+        }
+      },
+      "Mov.Configurator.Repository/1.0.0": {
+        "dependencies": {
+          "CsvHelper": "27.2.1",
+          "Mov.Configurator.Models": "1.0.0",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "Mov.Configurator.Repository.dll": {}
+        }
+      },
+      "Mov.Configurator.Service/1.0.0": {
+        "runtime": {
+          "Mov.Configurator.Service.dll": {}
+        }
+      },
+      "Mov.Designer.Models/1.0.0": {
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "runtime": {
+          "Mov.Designer.Models.dll": {}
+        }
+      },
+      "Mov.Designer.Repository/1.0.0": {
+        "dependencies": {
+          "Mov.Designer.Models": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Designer.Repository.dll": {}
+        }
+      },
+      "Mov.Designer.Service/1.0.0": {
+        "runtime": {
+          "Mov.Designer.Service.dll": {}
+        }
+      },
+      "Mov.Scheduler.Models/1.0.0": {
+        "runtime": {
+          "Mov.Scheduler.Models.dll": {}
+        }
+      },
+      "Mov.Scheduler.Repository/1.0.0": {
+        "dependencies": {
+          "Google.Apis.Calendar.v3": "1.55.0.2500",
+          "Mov.Scheduler.Models": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Scheduler.Repository.dll": {}
+        }
+      },
+      "Mov.Scheduler.Service/1.0.0": {
+        "runtime": {
+          "Mov.Scheduler.Service.dll": {}
+        }
+      },
+      "Mov.Translator.Models/1.0.0": {
+        "dependencies": {
+          "Mov.Accessors": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Translator.Models.dll": {}
+        }
+      },
+      "Mov.Translator.Repository/1.0.0": {
+        "dependencies": {
+          "Mov.Translator.Models": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Translator.Repository.dll": {}
+        }
+      },
+      "Mov.Translator.Service/1.0.0": {
+        "runtime": {
+          "Mov.Translator.Service.dll": {}
+        }
+      },
+      "Mov.Utilities/1.0.0": {
+        "runtime": {
+          "Mov.Utilities.dll": {}
+        }
+      },
       "Mov.WpfControls/1.0.0": {
         "dependencies": {
           "LiveCharts.Wpf.NetCore3": "0.9.7",
-          "MahApps.Metro": "2.4.9",
-          "MaterialDesignColors": "2.0.3",
-          "MaterialDesignThemes": "4.2.1",
-          "MaterialDesignThemes.MahApps": "0.1.9",
           "Prism.Wpf": "8.1.97",
           "ReactiveProperty.WPF": "8.0.1",
           "gong-wpf-dragdrop": "3.0.0"
@@ -187,6 +387,12 @@
         }
       },
       "Mov.WpfDesigns/1.0.0": {
+        "dependencies": {
+          "MahApps.Metro": "2.4.9",
+          "MaterialDesignColors": "2.0.3",
+          "MaterialDesignThemes": "4.2.1",
+          "MaterialDesignThemes.MahApps": "0.1.9"
+        },
         "runtime": {
           "Mov.WpfDesigns.dll": {}
         }
@@ -206,12 +412,47 @@
       "path": "controlzex/4.4.0",
       "hashPath": "controlzex.4.4.0.nupkg.sha512"
     },
+    "CsvHelper/27.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uS5ix5hL9gL5taiAG//CScyJa8Fn1ZOh3FDhDvf4laboESFs84mCNropfp7PIt8xCkyQofljFpqu1B5UnSXjyA==",
+      "path": "csvhelper/27.2.1",
+      "hashPath": "csvhelper.27.2.1.nupkg.sha512"
+    },
     "gong-wpf-dragdrop/3.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-0qXxJ0gEJtDlC7fl19684wMuIfK+aA3Hj3Z1lGUEH/ZhmCnFpy0YNFy7IIyFM3SMr7hWdL3eRnG1oRm/j/Dgog==",
       "path": "gong-wpf-dragdrop/3.0.0",
       "hashPath": "gong-wpf-dragdrop.3.0.0.nupkg.sha512"
+    },
+    "Google.Apis/1.55.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-siw3M6VOFbkrTlOTo7F89BrdDFQw/XVks8qo4xDMXwGpwKpCt0KWENYs7N2RWFznJghlrmPuZ6Sx13vvYqrynA==",
+      "path": "google.apis/1.55.0",
+      "hashPath": "google.apis.1.55.0.nupkg.sha512"
+    },
+    "Google.Apis.Auth/1.55.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YPHAgzqsU3j/CiPjb2GSvZo2kHhVkFsdfrqA8X5CUWxlwfivcvSn3N5Hi995r4vpGRNmyXNiWZOXbFKps03bmg==",
+      "path": "google.apis.auth/1.55.0",
+      "hashPath": "google.apis.auth.1.55.0.nupkg.sha512"
+    },
+    "Google.Apis.Calendar.v3/1.55.0.2500": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Tf8Pg83svvoVQtzjrUpNgXmotAWcdBj2mGXSlnCtSTKmJRCb2Aq+oWAj5bxFBfsf0e2hZIRBe3QTeJ6JmiOtyA==",
+      "path": "google.apis.calendar.v3/1.55.0.2500",
+      "hashPath": "google.apis.calendar.v3.1.55.0.2500.nupkg.sha512"
+    },
+    "Google.Apis.Core/1.55.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QX6pmjRxZYgyGFqsa7tyxdjoEb6ssJ9lv6ub8AxhPd/BCMEglmqzW4GpsuKQZaRg9Qq9gp9HRzjCiLZ3RgmNgw==",
+      "path": "google.apis.core/1.55.0",
+      "hashPath": "google.apis.core.1.55.0.nupkg.sha512"
     },
     "LiveCharts.Wpf.NetCore3/0.9.7": {
       "type": "package",
@@ -254,6 +495,13 @@
       "sha512": "sha512-LZpuf82ACZWldmfMuv3CTUMDh3o0xo0uHUaybR5HgqVLDBJJ9RZLykplQ/bTJd0/VDt3EhD4iDgUgbdIUAM+Kg==",
       "path": "microsoft.xaml.behaviors.wpf/1.1.31",
       "hashPath": "microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     },
     "Prism.Core/8.1.97": {
       "type": "package",
@@ -317,6 +565,91 @@
       "sha512": "sha512-TcMd95wcrubm9nHvJEQs70rC0H/8omiSGGpU4FQ/ZA1URIqD4pjmFJh2Mfv1yH1eHgJDWTi2hMDXwTET+zOOyg==",
       "path": "system.text.json/4.7.2",
       "hashPath": "system.text.json.4.7.2.nupkg.sha512"
+    },
+    "Mov.Accessors/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Authorizer.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Authorizer.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Authorizer.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Configurator.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Configurator.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Configurator.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Designer.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Designer.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Designer.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Scheduler.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Scheduler.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Scheduler.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Translator.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Translator.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Translator.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Utilities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Mov.WpfControls/1.0.0": {
       "type": "project",

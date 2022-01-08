@@ -51,22 +51,6 @@
               "target": "Package",
               "version": "[0.9.7, )"
             },
-            "MahApps.Metro": {
-              "target": "Package",
-              "version": "[2.4.9, )"
-            },
-            "MaterialDesignColors": {
-              "target": "Package",
-              "version": "[2.0.3, )"
-            },
-            "MaterialDesignThemes": {
-              "target": "Package",
-              "version": "[4.2.1, )"
-            },
-            "MaterialDesignThemes.MahApps": {
-              "target": "Package",
-              "version": "[0.1.9, )"
-            },
             "Prism.Wpf": {
               "target": "Package",
               "version": "[8.1.97, )"

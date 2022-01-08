@@ -18,6 +18,15 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "CsvHelper/27.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/CsvHelper.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/CsvHelper.dll": {}
+        }
+      },
       "gong-wpf-dragdrop/3.0.0": {
         "type": "package",
         "compile": {
@@ -29,6 +38,58 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
+      },
+      "Google.Apis/1.55.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Apis.Core": "1.55.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.dll": {}
+        }
+      },
+      "Google.Apis.Auth/1.55.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Apis": "1.55.0",
+          "Google.Apis.Core": "1.55.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {},
+          "lib/netstandard2.0/Google.Apis.Auth.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {},
+          "lib/netstandard2.0/Google.Apis.Auth.dll": {}
+        }
+      },
+      "Google.Apis.Calendar.v3/1.55.0.2500": {
+        "type": "package",
+        "dependencies": {
+          "Google.Apis": "1.55.0",
+          "Google.Apis.Auth": "1.55.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.Calendar.v3.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Calendar.v3.dll": {}
+        }
+      },
+      "Google.Apis.Core/1.55.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Core.dll": {}
+        }
       },
       "LiveCharts.Wpf.NetCore3/0.9.7": {
         "type": "package",
@@ -116,6 +177,15 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
       },
       "Prism.Core/8.1.97": {
         "type": "package",
@@ -221,15 +291,217 @@
           "lib/netcoreapp3.0/System.Text.Json.dll": {}
         }
       },
+      "Mov.Accessors/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "CsvHelper": "27.2.1",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Accessors.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Accessors.dll": {}
+        }
+      },
+      "Mov.Authorizer.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Authorizer.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Authorizer.Models.dll": {}
+        }
+      },
+      "Mov.Authorizer.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Authorizer.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Authorizer.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Authorizer.Repository.dll": {}
+        }
+      },
+      "Mov.Authorizer.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Authorizer.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Authorizer.Service.dll": {}
+        }
+      },
+      "Mov.Configurator.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Configurator.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Configurator.Models.dll": {}
+        }
+      },
+      "Mov.Configurator.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "CsvHelper": "27.2.1",
+          "Mov.Configurator.Models": "1.0.0",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Configurator.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Configurator.Repository.dll": {}
+        }
+      },
+      "Mov.Configurator.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Configurator.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Configurator.Service.dll": {}
+        }
+      },
+      "Mov.Designer.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Designer.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Designer.Models.dll": {}
+        }
+      },
+      "Mov.Designer.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Designer.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Designer.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Designer.Repository.dll": {}
+        }
+      },
+      "Mov.Designer.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Designer.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Designer.Service.dll": {}
+        }
+      },
+      "Mov.Scheduler.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Scheduler.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Scheduler.Models.dll": {}
+        }
+      },
+      "Mov.Scheduler.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Google.Apis.Calendar.v3": "1.55.0.2500",
+          "Mov.Scheduler.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Scheduler.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Scheduler.Repository.dll": {}
+        }
+      },
+      "Mov.Scheduler.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Scheduler.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Scheduler.Service.dll": {}
+        }
+      },
+      "Mov.Translator.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Translator.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Translator.Models.dll": {}
+        }
+      },
+      "Mov.Translator.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Translator.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Translator.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Translator.Repository.dll": {}
+        }
+      },
+      "Mov.Translator.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Translator.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Translator.Service.dll": {}
+        }
+      },
+      "Mov.Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Utilities.dll": {}
+        }
+      },
       "Mov.WpfControls/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "LiveCharts.Wpf.NetCore3": "0.9.7",
-          "MahApps.Metro": "2.4.9",
-          "MaterialDesignColors": "2.0.3",
-          "MaterialDesignThemes": "4.2.1",
-          "MaterialDesignThemes.MahApps": "0.1.9",
           "Prism.Wpf": "8.1.97",
           "ReactiveProperty.WPF": "8.0.1",
           "gong-wpf-dragdrop": "3.0.0"
@@ -247,6 +519,12 @@
       "Mov.WpfDesigns/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "MahApps.Metro": "2.4.9",
+          "MaterialDesignColors": "2.0.3",
+          "MaterialDesignThemes": "4.2.1",
+          "MaterialDesignThemes.MahApps": "0.1.9"
+        },
         "compile": {
           "bin/placeholder/Mov.WpfDesigns.dll": {}
         },
@@ -284,6 +562,30 @@
         "logo-mini.png"
       ]
     },
+    "CsvHelper/27.2.1": {
+      "sha512": "uS5ix5hL9gL5taiAG//CScyJa8Fn1ZOh3FDhDvf4laboESFs84mCNropfp7PIt8xCkyQofljFpqu1B5UnSXjyA==",
+      "type": "package",
+      "path": "csvhelper/27.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "csvhelper.27.2.1.nupkg.sha512",
+        "csvhelper.nuspec",
+        "lib/net45/CsvHelper.dll",
+        "lib/net45/CsvHelper.xml",
+        "lib/net47/CsvHelper.dll",
+        "lib/net47/CsvHelper.xml",
+        "lib/net5.0/CsvHelper.dll",
+        "lib/net5.0/CsvHelper.xml",
+        "lib/net6.0/CsvHelper.dll",
+        "lib/net6.0/CsvHelper.xml",
+        "lib/netstandard2.0/CsvHelper.dll",
+        "lib/netstandard2.0/CsvHelper.xml",
+        "lib/netstandard2.1/CsvHelper.dll",
+        "lib/netstandard2.1/CsvHelper.xml"
+      ]
+    },
     "gong-wpf-dragdrop/3.0.0": {
       "sha512": "0qXxJ0gEJtDlC7fl19684wMuIfK+aA3Hj3Z1lGUEH/ZhmCnFpy0YNFy7IIyFM3SMr7hWdL3eRnG1oRm/j/Dgog==",
       "type": "package",
@@ -313,6 +615,108 @@
         "lib/netcoreapp3.1/GongSolutions.WPF.DragDrop.dll",
         "lib/netcoreapp3.1/GongSolutions.WPF.DragDrop.pdb",
         "lib/netcoreapp3.1/GongSolutions.WPF.DragDrop.xml"
+      ]
+    },
+    "Google.Apis/1.55.0": {
+      "sha512": "siw3M6VOFbkrTlOTo7F89BrdDFQw/XVks8qo4xDMXwGpwKpCt0KWENYs7N2RWFznJghlrmPuZ6Sx13vvYqrynA==",
+      "type": "package",
+      "path": "google.apis/1.55.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.1.55.0.nupkg.sha512",
+        "google.apis.nuspec",
+        "lib/net45/Google.Apis.PlatformServices.dll",
+        "lib/net45/Google.Apis.dll",
+        "lib/net45/Google.Apis.pdb",
+        "lib/net45/Google.Apis.xml",
+        "lib/netstandard1.3/Google.Apis.dll",
+        "lib/netstandard1.3/Google.Apis.pdb",
+        "lib/netstandard1.3/Google.Apis.xml",
+        "lib/netstandard2.0/Google.Apis.dll",
+        "lib/netstandard2.0/Google.Apis.pdb",
+        "lib/netstandard2.0/Google.Apis.xml"
+      ]
+    },
+    "Google.Apis.Auth/1.55.0": {
+      "sha512": "YPHAgzqsU3j/CiPjb2GSvZo2kHhVkFsdfrqA8X5CUWxlwfivcvSn3N5Hi995r4vpGRNmyXNiWZOXbFKps03bmg==",
+      "type": "package",
+      "path": "google.apis.auth/1.55.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.auth.1.55.0.nupkg.sha512",
+        "google.apis.auth.nuspec",
+        "lib/net45/Google.Apis.Auth.PlatformServices.dll",
+        "lib/net45/Google.Apis.Auth.dll",
+        "lib/net45/Google.Apis.Auth.pdb",
+        "lib/net45/Google.Apis.Auth.xml",
+        "lib/net461/Google.Apis.Auth.PlatformServices.dll",
+        "lib/net461/Google.Apis.Auth.dll",
+        "lib/net461/Google.Apis.Auth.pdb",
+        "lib/net461/Google.Apis.Auth.xml",
+        "lib/netstandard1.3/Google.Apis.Auth.PlatformServices.dll",
+        "lib/netstandard1.3/Google.Apis.Auth.dll",
+        "lib/netstandard1.3/Google.Apis.Auth.pdb",
+        "lib/netstandard1.3/Google.Apis.Auth.xml",
+        "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll",
+        "lib/netstandard2.0/Google.Apis.Auth.dll",
+        "lib/netstandard2.0/Google.Apis.Auth.pdb",
+        "lib/netstandard2.0/Google.Apis.Auth.xml"
+      ]
+    },
+    "Google.Apis.Calendar.v3/1.55.0.2500": {
+      "sha512": "Tf8Pg83svvoVQtzjrUpNgXmotAWcdBj2mGXSlnCtSTKmJRCb2Aq+oWAj5bxFBfsf0e2hZIRBe3QTeJ6JmiOtyA==",
+      "type": "package",
+      "path": "google.apis.calendar.v3/1.55.0.2500",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.calendar.v3.1.55.0.2500.nupkg.sha512",
+        "google.apis.calendar.v3.nuspec",
+        "lib/net40/Google.Apis.Calendar.v3.dll",
+        "lib/net40/Google.Apis.Calendar.v3.pdb",
+        "lib/net40/Google.Apis.Calendar.v3.xml",
+        "lib/net45/Google.Apis.Calendar.v3.dll",
+        "lib/net45/Google.Apis.Calendar.v3.pdb",
+        "lib/net45/Google.Apis.Calendar.v3.xml",
+        "lib/netstandard1.0/Google.Apis.Calendar.v3.dll",
+        "lib/netstandard1.0/Google.Apis.Calendar.v3.pdb",
+        "lib/netstandard1.0/Google.Apis.Calendar.v3.xml",
+        "lib/netstandard1.3/Google.Apis.Calendar.v3.dll",
+        "lib/netstandard1.3/Google.Apis.Calendar.v3.pdb",
+        "lib/netstandard1.3/Google.Apis.Calendar.v3.xml",
+        "lib/netstandard2.0/Google.Apis.Calendar.v3.dll",
+        "lib/netstandard2.0/Google.Apis.Calendar.v3.pdb",
+        "lib/netstandard2.0/Google.Apis.Calendar.v3.xml"
+      ]
+    },
+    "Google.Apis.Core/1.55.0": {
+      "sha512": "QX6pmjRxZYgyGFqsa7tyxdjoEb6ssJ9lv6ub8AxhPd/BCMEglmqzW4GpsuKQZaRg9Qq9gp9HRzjCiLZ3RgmNgw==",
+      "type": "package",
+      "path": "google.apis.core/1.55.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.core.1.55.0.nupkg.sha512",
+        "google.apis.core.nuspec",
+        "lib/net45/Google.Apis.Core.dll",
+        "lib/net45/Google.Apis.Core.pdb",
+        "lib/net45/Google.Apis.Core.xml",
+        "lib/netstandard1.3/Google.Apis.Core.dll",
+        "lib/netstandard1.3/Google.Apis.Core.pdb",
+        "lib/netstandard1.3/Google.Apis.Core.xml",
+        "lib/netstandard2.0/Google.Apis.Core.dll",
+        "lib/netstandard2.0/Google.Apis.Core.pdb",
+        "lib/netstandard2.0/Google.Apis.Core.xml"
       ]
     },
     "LiveCharts.Wpf.NetCore3/0.9.7": {
@@ -460,6 +864,33 @@
         "microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
         "microsoft.xaml.behaviors.wpf.nuspec",
         "tools/Install.ps1"
+      ]
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
       ]
     },
     "Prism.Core/8.1.97": {
@@ -733,6 +1164,91 @@
         "version.txt"
       ]
     },
+    "Mov.Accessors/1.0.0": {
+      "type": "project",
+      "path": "../../src/drivers/accessors/Accessors.csproj",
+      "msbuildProject": "../../src/drivers/accessors/Accessors.csproj"
+    },
+    "Mov.Authorizer.Models/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/authorizer/models/Authorizer.Models.csproj",
+      "msbuildProject": "../../src/services/authorizer/models/Authorizer.Models.csproj"
+    },
+    "Mov.Authorizer.Repository/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/authorizer/repository/Authorizer.Repository.csproj",
+      "msbuildProject": "../../src/services/authorizer/repository/Authorizer.Repository.csproj"
+    },
+    "Mov.Authorizer.Service/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/authorizer/service/Authorizer.Service.csproj",
+      "msbuildProject": "../../src/services/authorizer/service/Authorizer.Service.csproj"
+    },
+    "Mov.Configurator.Models/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/configurator/models/Configurator.Models.csproj",
+      "msbuildProject": "../../src/services/configurator/models/Configurator.Models.csproj"
+    },
+    "Mov.Configurator.Repository/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/configurator/repository/Configurator.Repository.csproj",
+      "msbuildProject": "../../src/services/configurator/repository/Configurator.Repository.csproj"
+    },
+    "Mov.Configurator.Service/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/configurator/service/Configurator.Service.csproj",
+      "msbuildProject": "../../src/services/configurator/service/Configurator.Service.csproj"
+    },
+    "Mov.Designer.Models/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/designer/models/Designer.Models.csproj",
+      "msbuildProject": "../../src/services/designer/models/Designer.Models.csproj"
+    },
+    "Mov.Designer.Repository/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/designer/repository/Designer.Repository.csproj",
+      "msbuildProject": "../../src/services/designer/repository/Designer.Repository.csproj"
+    },
+    "Mov.Designer.Service/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/designer/service/Designer.Service.csproj",
+      "msbuildProject": "../../src/services/designer/service/Designer.Service.csproj"
+    },
+    "Mov.Scheduler.Models/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/scheduler/models/Scheduler.Models.csproj",
+      "msbuildProject": "../../src/services/scheduler/models/Scheduler.Models.csproj"
+    },
+    "Mov.Scheduler.Repository/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/scheduler/repository/Scheduler.Repository.csproj",
+      "msbuildProject": "../../src/services/scheduler/repository/Scheduler.Repository.csproj"
+    },
+    "Mov.Scheduler.Service/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/scheduler/service/Scheduler.Service.csproj",
+      "msbuildProject": "../../src/services/scheduler/service/Scheduler.Service.csproj"
+    },
+    "Mov.Translator.Models/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/translator/models/Translator.Models.csproj",
+      "msbuildProject": "../../src/services/translator/models/Translator.Models.csproj"
+    },
+    "Mov.Translator.Repository/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/translator/repository/Translator.Repository.csproj",
+      "msbuildProject": "../../src/services/translator/repository/Translator.Repository.csproj"
+    },
+    "Mov.Translator.Service/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/translator/service/Translator.Service.csproj",
+      "msbuildProject": "../../src/services/translator/service/Translator.Service.csproj"
+    },
+    "Mov.Utilities/1.0.0": {
+      "type": "project",
+      "path": "../../src/drivers/utilities/Utilities.csproj",
+      "msbuildProject": "../../src/drivers/utilities/Utilities.csproj"
+    },
     "Mov.WpfControls/1.0.0": {
       "type": "project",
       "path": "../../src/designs/wpfcontrols/WpfControls.csproj",
@@ -746,6 +1262,23 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
+      "Mov.Accessors >= 1.0.0",
+      "Mov.Authorizer.Models >= 1.0.0",
+      "Mov.Authorizer.Repository >= 1.0.0",
+      "Mov.Authorizer.Service >= 1.0.0",
+      "Mov.Configurator.Models >= 1.0.0",
+      "Mov.Configurator.Repository >= 1.0.0",
+      "Mov.Configurator.Service >= 1.0.0",
+      "Mov.Designer.Models >= 1.0.0",
+      "Mov.Designer.Repository >= 1.0.0",
+      "Mov.Designer.Service >= 1.0.0",
+      "Mov.Scheduler.Models >= 1.0.0",
+      "Mov.Scheduler.Repository >= 1.0.0",
+      "Mov.Scheduler.Service >= 1.0.0",
+      "Mov.Translator.Models >= 1.0.0",
+      "Mov.Translator.Repository >= 1.0.0",
+      "Mov.Translator.Service >= 1.0.0",
+      "Mov.Utilities >= 1.0.0",
       "Mov.WpfControls >= 1.0.0",
       "Mov.WpfDesigns >= 1.0.0"
     ]
@@ -792,6 +1325,57 @@
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\designs\\wpfdesigns\\WpfDesigns.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\designs\\wpfdesigns\\WpfDesigns.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\accessors\\Accessors.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\accessors\\Accessors.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\utilities\\Utilities.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\utilities\\Utilities.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\models\\Authorizer.Models.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\models\\Authorizer.Models.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\repository\\Authorizer.Repository.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\repository\\Authorizer.Repository.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\service\\Authorizer.Service.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\service\\Authorizer.Service.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\models\\Configurator.Models.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\models\\Configurator.Models.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\repository\\Configurator.Repository.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\repository\\Configurator.Repository.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\service\\Configurator.Service.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\service\\Configurator.Service.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\models\\Designer.Models.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\models\\Designer.Models.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\repository\\Designer.Repository.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\repository\\Designer.Repository.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\service\\Designer.Service.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\service\\Designer.Service.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\models\\Scheduler.Models.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\models\\Scheduler.Models.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\repository\\Scheduler.Repository.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\repository\\Scheduler.Repository.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\service\\Scheduler.Service.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\service\\Scheduler.Service.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\models\\Translator.Models.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\models\\Translator.Models.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\repository\\Translator.Repository.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\repository\\Translator.Repository.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\service\\Translator.Service.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\service\\Translator.Service.csproj"
             }
           }
         }

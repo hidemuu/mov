@@ -46,6 +46,24 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "MahApps.Metro": {
+              "target": "Package",
+              "version": "[2.4.9, )"
+            },
+            "MaterialDesignColors": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[4.2.1, )"
+            },
+            "MaterialDesignThemes.MahApps": {
+              "target": "Package",
+              "version": "[0.1.9, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

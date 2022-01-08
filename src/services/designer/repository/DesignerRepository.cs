@@ -1,11 +1,11 @@
-﻿using Accessors;
-using Designer.Models;
+﻿using Mov.Accessors;
+using Mov.Designer.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Designer.Repository.Xml
+namespace Mov.Designer.Repository.Xml
 {
     public class DesignerRepository : IDesignerRepository
     {

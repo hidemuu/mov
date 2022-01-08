@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Mov.Accessors;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Accessors
+namespace Mov.Accessors
 {
     public abstract class FileAccessor<T>
     {

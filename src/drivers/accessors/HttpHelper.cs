@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Accessors
+namespace Mov.Accessors
 {
     public class HttpHelper
     {

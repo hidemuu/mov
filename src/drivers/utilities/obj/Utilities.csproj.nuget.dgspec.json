@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\utilities\\Utilities.csproj",
-        "projectName": "Utilities",
+        "projectName": "Mov.Utilities",
         "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\utilities\\Utilities.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\utilities\\obj\\",

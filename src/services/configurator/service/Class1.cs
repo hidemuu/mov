@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Configurator.Service
+namespace Mov.Configurator.Service
 {
     public class Class1
     {

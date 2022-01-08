@@ -480,7 +480,7 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "Accessors/1.0.0": {
+      "Mov.Accessors/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -488,10 +488,10 @@
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
-          "bin/placeholder/Accessors.dll": {}
+          "bin/placeholder/Mov.Accessors.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Accessors.dll": {}
+          "bin/placeholder/Mov.Accessors.dll": {}
         }
       }
     }
@@ -2507,7 +2507,7 @@
         "version.txt"
       ]
     },
-    "Accessors/1.0.0": {
+    "Mov.Accessors/1.0.0": {
       "type": "project",
       "path": "../../../drivers/accessors/Accessors.csproj",
       "msbuildProject": "../../../drivers/accessors/Accessors.csproj"
@@ -2515,7 +2515,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Accessors >= 1.0.0",
+      "Mov.Accessors >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -2529,7 +2529,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\models\\Authorizer.Models.csproj",
-      "projectName": "Authorizer.Models",
+      "projectName": "Mov.Authorizer.Models",
       "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\models\\Authorizer.Models.csproj",
       "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\models\\obj\\",

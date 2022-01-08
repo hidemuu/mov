@@ -87,14 +87,14 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Scheduler.Models/1.0.0": {
+      "Mov.Scheduler.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "compile": {
-          "bin/placeholder/Scheduler.Models.dll": {}
+          "bin/placeholder/Mov.Scheduler.Models.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Scheduler.Models.dll": {}
+          "bin/placeholder/Mov.Scheduler.Models.dll": {}
         }
       }
     }
@@ -372,7 +372,7 @@
         "packageIcon.png"
       ]
     },
-    "Scheduler.Models/1.0.0": {
+    "Mov.Scheduler.Models/1.0.0": {
       "type": "project",
       "path": "../models/Scheduler.Models.csproj",
       "msbuildProject": "../models/Scheduler.Models.csproj"
@@ -381,8 +381,8 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "Google.Apis.Calendar.v3 >= 1.55.0.2500",
-      "NETStandard.Library >= 2.0.3",
-      "Scheduler.Models >= 1.0.0"
+      "Mov.Scheduler.Models >= 1.0.0",
+      "NETStandard.Library >= 2.0.3"
     ]
   },
   "packageFolders": {
@@ -395,7 +395,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\repository\\Scheduler.Repository.csproj",
-      "projectName": "Scheduler.Repository",
+      "projectName": "Mov.Scheduler.Repository",
       "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\repository\\Scheduler.Repository.csproj",
       "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\repository\\obj\\",

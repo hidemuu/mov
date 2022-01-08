@@ -1,10 +1,10 @@
-﻿using Accessors;
-using Designer.Models;
+﻿using Mov.Accessors;
+using Mov.Designer.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Designer.Repository
+namespace Mov.Designer.Repository
 {
     public class LayoutRepository : FileAccessor<LayoutTree>, ILayoutRepository
     {

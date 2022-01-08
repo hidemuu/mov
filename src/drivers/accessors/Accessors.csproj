@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Accessors</AssemblyName>
+    <RootNamespace>Mov.Accessors</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

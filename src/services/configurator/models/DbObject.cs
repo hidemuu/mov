@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Configurator.Models
+namespace Mov.Configurator.Models
 {
     public class DbObject
     {

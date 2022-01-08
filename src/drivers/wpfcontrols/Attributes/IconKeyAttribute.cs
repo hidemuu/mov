@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WpfControls.Attributes
+namespace Mov.WpfControls.Attributes
 {
     [System.AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
     public sealed class IconKeyAttribute : Attribute

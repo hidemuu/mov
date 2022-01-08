@@ -6,12 +6,12 @@ C:\Users\nando\Documents\GitHub\mov\src\services\configurator\Configurator.Servi
 C:\Users\nando\Documents\GitHub\mov\src\services\configurator\Configurator.Service\obj\Debug\netstandard2.0\Configurator.Service.csproj.CoreCompileInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\services\configurator\Configurator.Service\obj\Debug\netstandard2.0\Configurator.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\services\configurator\Configurator.Service\obj\Debug\netstandard2.0\Configurator.Service.pdb
-C:\Users\nando\Documents\GitHub\mov\src\services\configurator\service\bin\Debug\netstandard2.0\Configurator.Service.deps.json
-C:\Users\nando\Documents\GitHub\mov\src\services\configurator\service\bin\Debug\netstandard2.0\Configurator.Service.dll
-C:\Users\nando\Documents\GitHub\mov\src\services\configurator\service\bin\Debug\netstandard2.0\Configurator.Service.pdb
 C:\Users\nando\Documents\GitHub\mov\src\services\configurator\service\obj\Debug\netstandard2.0\Configurator.Service.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\services\configurator\service\obj\Debug\netstandard2.0\Configurator.Service.AssemblyInfoInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\services\configurator\service\obj\Debug\netstandard2.0\Configurator.Service.AssemblyInfo.cs
 C:\Users\nando\Documents\GitHub\mov\src\services\configurator\service\obj\Debug\netstandard2.0\Configurator.Service.csproj.CoreCompileInputs.cache
-C:\Users\nando\Documents\GitHub\mov\src\services\configurator\service\obj\Debug\netstandard2.0\Configurator.Service.dll
-C:\Users\nando\Documents\GitHub\mov\src\services\configurator\service\obj\Debug\netstandard2.0\Configurator.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\src\services\configurator\service\bin\Debug\netstandard2.0\Mov.Configurator.Service.deps.json
+C:\Users\nando\Documents\GitHub\mov\src\services\configurator\service\bin\Debug\netstandard2.0\Mov.Configurator.Service.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\configurator\service\bin\Debug\netstandard2.0\Mov.Configurator.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\src\services\configurator\service\obj\Debug\netstandard2.0\Mov.Configurator.Service.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\configurator\service\obj\Debug\netstandard2.0\Mov.Configurator.Service.pdb

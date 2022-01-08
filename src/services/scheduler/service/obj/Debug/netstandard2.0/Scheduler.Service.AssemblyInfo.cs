@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Scheduler.Service")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Mov.Scheduler.Service")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("Scheduler.Service")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Scheduler.Service")]
+[assembly: System.Reflection.AssemblyProductAttribute("Mov.Scheduler.Service")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Mov.Scheduler.Service")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // MSBuild WriteCodeFragment クラスによって生成されました。

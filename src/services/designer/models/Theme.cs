@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Designer.Models
+namespace Mov.Designer.Models
 {
     public class Theme : DbObject
     {

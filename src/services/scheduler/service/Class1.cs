@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Scheduler.Service
+namespace Mov.Scheduler.Service
 {
     public class Class1
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Authorizer.Service
+namespace Mov.Authorizer.Service
 {
     public class Class1
     {

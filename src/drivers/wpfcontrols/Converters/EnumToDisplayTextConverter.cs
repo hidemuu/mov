@@ -1,11 +1,11 @@
-﻿using WpfControls.Attributes;
+﻿using Mov.WpfControls.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using System.Windows.Data;
 
-namespace WpfControls.Converters
+namespace Mov.WpfControls.Converters
 {
     [ValueConversion(typeof(Enum), typeof(bool))]
     public class EnumToDisplayTextConverter : IValueConverter

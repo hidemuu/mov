@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\service\\Designer.Service.csproj",
-        "projectName": "Designer.Service",
+        "projectName": "Mov.Designer.Service",
         "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\service\\Designer.Service.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\service\\obj\\",

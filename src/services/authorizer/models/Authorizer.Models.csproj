@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Authorizer.Models</AssemblyName>
+    <RootNamespace>Mov.Authorizer.Models</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

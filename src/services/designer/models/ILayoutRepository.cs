@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Designer.Models
+namespace Mov.Designer.Models
 {
     public interface ILayoutRepository
     {

@@ -1,4 +1,4 @@
-﻿using Accessors;
+﻿using Mov.Accessors;
 using Newtonsoft.Json;
 using System;
 using System.Collections;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Authorizer.Models
+namespace Mov.Authorizer.Models
 {
     [XmlRoot("root")]
     public class UserTable : ITable<User>

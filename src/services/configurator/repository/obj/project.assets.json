@@ -489,7 +489,7 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "Accessors/1.0.0": {
+      "Mov.Accessors/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -497,24 +497,24 @@
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
-          "bin/placeholder/Accessors.dll": {}
+          "bin/placeholder/Mov.Accessors.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Accessors.dll": {}
+          "bin/placeholder/Mov.Accessors.dll": {}
         }
       },
-      "Configurator.Models/1.0.0": {
+      "Mov.Configurator.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Accessors": "1.0.0",
+          "Mov.Accessors": "1.0.0",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
-          "bin/placeholder/Configurator.Models.dll": {}
+          "bin/placeholder/Mov.Configurator.Models.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Configurator.Models.dll": {}
+          "bin/placeholder/Mov.Configurator.Models.dll": {}
         }
       }
     }
@@ -2620,12 +2620,12 @@
         "version.txt"
       ]
     },
-    "Accessors/1.0.0": {
+    "Mov.Accessors/1.0.0": {
       "type": "project",
       "path": "../../../drivers/accessors/Accessors.csproj",
       "msbuildProject": "../../../drivers/accessors/Accessors.csproj"
     },
-    "Configurator.Models/1.0.0": {
+    "Mov.Configurator.Models/1.0.0": {
       "type": "project",
       "path": "../models/Configurator.Models.csproj",
       "msbuildProject": "../models/Configurator.Models.csproj"
@@ -2633,8 +2633,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Configurator.Models >= 1.0.0",
       "CsvHelper >= 27.2.1",
+      "Mov.Configurator.Models >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 13.0.1"
     ]
@@ -2649,7 +2649,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\repository\\Configurator.Repository.csproj",
-      "projectName": "Configurator.Repository",
+      "projectName": "Mov.Configurator.Repository",
       "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\repository\\Configurator.Repository.csproj",
       "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\repository\\obj\\",

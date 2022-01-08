@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Accessors
+namespace Mov.Accessors
 {
     public class XmlFileHelper : IFileHelper
     {

@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Scheduler.Repository</AssemblyName>
+    <RootNamespace>Mov.Scheduler.Repository</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

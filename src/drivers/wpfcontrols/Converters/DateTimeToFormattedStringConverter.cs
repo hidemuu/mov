@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Text;
 using System.Windows.Data;
 
-namespace WpfControls.Converters
+namespace Mov.WpfControls.Converters
 {
     [ValueConversion(typeof(DateTime?), typeof(string))]
 

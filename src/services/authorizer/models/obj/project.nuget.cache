@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fRWCdWEHXifXYoY5C0Y4uQ22oduTWS7HeOztSG+lAJI3wedom9fSGMHC56FiqirR5SYWBNHwvrZcfpJdeXQcLA==",
+  "dgSpecHash": "wuWK3SQWmgOKYFuH6o+GCDNLNPQ4bDShfNRJj493CPtO2PP3YMTP8/7X96WitR4kFG2vjH6PwJT/Q9Saja4LvA==",
   "success": true,
   "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\models\\Authorizer.Models.csproj",
   "expectedPackageFiles": [

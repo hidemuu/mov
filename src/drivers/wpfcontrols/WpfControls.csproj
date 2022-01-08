@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.WpfControls</AssemblyName>
+    <RootNamespace>Mov.WpfControls</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

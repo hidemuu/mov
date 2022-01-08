@@ -480,7 +480,7 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "Accessors/1.0.0": {
+      "Mov.Accessors/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -488,23 +488,23 @@
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
-          "bin/placeholder/Accessors.dll": {}
+          "bin/placeholder/Mov.Accessors.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Accessors.dll": {}
+          "bin/placeholder/Mov.Accessors.dll": {}
         }
       },
-      "Authorizer.Models/1.0.0": {
+      "Mov.Authorizer.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Accessors": "1.0.0"
+          "Mov.Accessors": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Authorizer.Models.dll": {}
+          "bin/placeholder/Mov.Authorizer.Models.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Authorizer.Models.dll": {}
+          "bin/placeholder/Mov.Authorizer.Models.dll": {}
         }
       }
     }
@@ -2520,12 +2520,12 @@
         "version.txt"
       ]
     },
-    "Accessors/1.0.0": {
+    "Mov.Accessors/1.0.0": {
       "type": "project",
       "path": "../../../drivers/accessors/Accessors.csproj",
       "msbuildProject": "../../../drivers/accessors/Accessors.csproj"
     },
-    "Authorizer.Models/1.0.0": {
+    "Mov.Authorizer.Models/1.0.0": {
       "type": "project",
       "path": "../models/Authorizer.Models.csproj",
       "msbuildProject": "../models/Authorizer.Models.csproj"
@@ -2533,7 +2533,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Authorizer.Models >= 1.0.0",
+      "Mov.Authorizer.Models >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -2547,7 +2547,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\repository\\Authorizer.Repository.csproj",
-      "projectName": "Authorizer.Repository",
+      "projectName": "Mov.Authorizer.Repository",
       "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\repository\\Authorizer.Repository.csproj",
       "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\repository\\obj\\",

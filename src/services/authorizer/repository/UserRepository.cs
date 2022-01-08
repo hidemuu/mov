@@ -1,10 +1,10 @@
-﻿using Accessors;
-using Authorizer.Models;
+﻿using Mov.Accessors;
+using Mov.Authorizer.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Authorizer.Repository
+namespace Mov.Authorizer.Repository
 {
     public class UserRepository : FileAccessor<User>, IUserRepository
     {

@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Configurator.Models</AssemblyName>
+    <RootNamespace>Mov.Configurator.Models</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,9 +1,9 @@
-﻿using Accessors;
+﻿using Mov.Accessors;
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Designer.Models
+namespace Mov.Designer.Models
 {
     [XmlRoot("tree")]
     public class LayoutTree : Layout

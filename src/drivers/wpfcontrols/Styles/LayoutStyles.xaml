@@ -5,7 +5,7 @@
     xmlns:materialDesignColors="clr-namespace:MaterialDesignColors;assembly=MaterialDesignColors">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/WpfControls;component/Styles/BaseStyles.xaml" />
+        <ResourceDictionary Source="/Mov.WpfControls;component/Styles/BaseStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <!--  Expandar  -->

@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\models\\Scheduler.Models.csproj",
-        "projectName": "Scheduler.Models",
+        "projectName": "Mov.Scheduler.Models",
         "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\models\\Scheduler.Models.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\models\\obj\\",
@@ -72,7 +72,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\repository\\Scheduler.Repository.csproj",
-        "projectName": "Scheduler.Repository",
+        "projectName": "Mov.Scheduler.Repository",
         "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\repository\\Scheduler.Repository.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\repository\\obj\\",

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Utilities
+namespace Mov.Utilities
 {
     public static class TraceHelper
     {

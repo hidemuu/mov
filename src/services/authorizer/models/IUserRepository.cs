@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Authorizer.Models
+namespace Mov.Authorizer.Models
 {
     public interface IUserRepository
     {

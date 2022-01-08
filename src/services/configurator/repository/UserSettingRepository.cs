@@ -1,10 +1,10 @@
-﻿using Accessors;
-using Configurator.Models;
+﻿using Mov.Accessors;
+using Mov.Configurator.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Configurator.Repository
+namespace Mov.Configurator.Repository
 {
     public class UserSettingRepository : FileAccessor<UserSetting>, IUserSettingRepository
     {

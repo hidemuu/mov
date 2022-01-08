@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\wpfcontrols\\WpfControls.csproj",
-        "projectName": "WpfControls",
+        "projectName": "Mov.WpfControls",
         "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\wpfcontrols\\WpfControls.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\wpfcontrols\\obj\\",

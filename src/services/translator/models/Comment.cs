@@ -1,11 +1,11 @@
-﻿using Accessors;
+﻿using Mov.Accessors;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Translator.Models
+namespace Mov.Translator.Models
 {
     [XmlRoot("table")]
     public class CommentTable : ITable<Comment>

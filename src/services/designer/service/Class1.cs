@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Designer.Service
+namespace Mov.Designer.Service
 {
     public class Class1
     {

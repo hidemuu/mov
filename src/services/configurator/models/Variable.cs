@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace Configurator.Models
+namespace Mov.Configurator.Models
 {
     public class Variable : DbObject
     {

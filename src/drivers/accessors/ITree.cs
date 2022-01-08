@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Accessors
+namespace Mov.Accessors
 {
     [XmlRoot("tree")]
     public interface ITree<T>

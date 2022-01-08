@@ -188,7 +188,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\service\\Scheduler.Service.csproj",
-      "projectName": "Scheduler.Service",
+      "projectName": "Mov.Scheduler.Service",
       "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\service\\Scheduler.Service.csproj",
       "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\service\\obj\\",

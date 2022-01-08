@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Translator.Models</AssemblyName>
+    <RootNamespace>Mov.Translator.Models</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

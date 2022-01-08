@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Accessors
+namespace Mov.Accessors
 {
     public enum FileType
     {

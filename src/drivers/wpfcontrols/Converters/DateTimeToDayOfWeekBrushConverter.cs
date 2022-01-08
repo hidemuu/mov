@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace WpfControls.Converters
+namespace Mov.WpfControls.Converters
 {
     /// <summary>
     /// <see cref="T:DateTime"/>の値から曜日の<see cref="T:Brush"/>リソースへのコンバータークラスです。

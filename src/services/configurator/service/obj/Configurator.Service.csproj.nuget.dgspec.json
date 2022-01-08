@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\service\\Configurator.Service.csproj",
-        "projectName": "Configurator.Service",
+        "projectName": "Mov.Configurator.Service",
         "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\service\\Configurator.Service.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\service\\obj\\",

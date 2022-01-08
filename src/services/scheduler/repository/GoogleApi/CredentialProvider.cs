@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Scheduler.Repository.GoogleApi
+namespace Mov.Scheduler.Repository.GoogleApi
 {
     // ここからAPIを有効化し、credentialsファイルを取得する
     // https://console.developers.google.com/apis

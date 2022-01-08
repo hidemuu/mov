@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Authorizer.Models")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Mov.Authorizer.Models")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("Authorizer.Models")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Authorizer.Models")]
+[assembly: System.Reflection.AssemblyProductAttribute("Mov.Authorizer.Models")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Mov.Authorizer.Models")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // MSBuild WriteCodeFragment クラスによって生成されました。

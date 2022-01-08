@@ -47,7 +47,7 @@
         <!--<ResourceDictionary Source="/CovidReader.ViewDesigns.Wpf;component/Styles/MaterialTextBlockStyle.xaml" />
                 <ResourceDictionary Source="/CovidReader.ViewDesigns.Wpf;component/Styles/MacLikeScrollBarStyle.xaml" />
                 <ResourceDictionary Source="/CovidReader.ViewDesigns.Wpf;component/Styles/ChipBorderStyle.xaml" />-->
-        
+
     </ResourceDictionary.MergedDictionaries>
 
     <!--  MahApps Brushes  -->

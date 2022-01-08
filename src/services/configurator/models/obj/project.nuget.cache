@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hmOBHuO91Ci9omDJqzGlvyW9OXDUhsQ6X+xQl/qSZ76VhkYIsIr+FLimjxuZyqd+69Y4QykEhw7HiFy97caaGg==",
+  "dgSpecHash": "kldcXp1rWq10xX2Ne5z0daswgB+mzOMXEK1QGXWPREuwK/j2QbXwgv8N3HcQvOliSrdlGI2c/qoOfrJPwWBEIw==",
   "success": true,
   "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\models\\Configurator.Models.csproj",
   "expectedPackageFiles": [

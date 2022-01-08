@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Configurator.Service</AssemblyName>
+    <RootNamespace>Mov.Configurator.Service</RootNamespace>
   </PropertyGroup>
 
 </Project>

@@ -1,11 +1,12 @@
-﻿using Accessors;
-using Authorizer.Models;
+﻿using Mov.Authorizer.Repository;
+using Mov.Authorizer.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Mov.Accessors;
 
-namespace Authorizer.Repository
+namespace Mov.Authorizer.Repository
 {
     public class AuthorizerRepository : IAuthorizerRepository
     {

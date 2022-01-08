@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Utilities
+namespace Mov.Utilities
 {
     /// <summary>
     /// 絶対パス取得ロジック

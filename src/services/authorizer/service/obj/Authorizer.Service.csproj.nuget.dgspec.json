@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\service\\Authorizer.Service.csproj",
-        "projectName": "Authorizer.Service",
+        "projectName": "Mov.Authorizer.Service",
         "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\service\\Authorizer.Service.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\service\\obj\\",

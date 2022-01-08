@@ -57,7 +57,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scheduler.Service", "src\se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Translator.Service", "src\services\translator\service\Translator.Service.csproj", "{E231058F-D3FE-4055-AC3D-6C04B5DD00A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mov.Wpf", "app\wpf\Mov.Wpf.csproj", "{F5F1E59C-747B-4CAE-BA8C-9EC761A8F8E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpf", "app\wpf\Wpf.csproj", "{F5F1E59C-747B-4CAE-BA8C-9EC761A8F8E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

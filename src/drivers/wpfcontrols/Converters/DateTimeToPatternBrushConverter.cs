@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace WpfControls.Converters
+namespace Mov.WpfControls.Converters
 {
     [ValueConversion(typeof(DateTime), typeof(Brush))]
     public class DateTimeToPatternBrushConverter : IValueConverter

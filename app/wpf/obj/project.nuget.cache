@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RuBIk7cujlAY5AflAteiT4Ym1gv5p677qBYstz3cp4CfuZlBN4iMTD1qCxpJY6D5bZb99tkxvir5tSDQxIiEZQ==",
+  "dgSpecHash": "8rGyWrwMYA2Pfy2Nx/tEcGRVaaLhcDsjOsvoXFr7cZqGRqS0cknH6uzw8S3xYM0VlJhrczYZEqy4uPYgp+d64w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\app\\wpf\\Mov.Wpf.csproj",
+  "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\app\\wpf\\Wpf.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

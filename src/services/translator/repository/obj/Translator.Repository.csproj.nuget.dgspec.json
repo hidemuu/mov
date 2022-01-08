@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\accessors\\Accessors.csproj",
-        "projectName": "Accessors",
+        "projectName": "Mov.Accessors",
         "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\accessors\\Accessors.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\accessors\\obj\\",
@@ -80,7 +80,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\models\\Translator.Models.csproj",
-        "projectName": "Translator.Models",
+        "projectName": "Mov.Translator.Models",
         "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\models\\Translator.Models.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\models\\obj\\",
@@ -148,7 +148,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\repository\\Translator.Repository.csproj",
-        "projectName": "Translator.Repository",
+        "projectName": "Mov.Translator.Repository",
         "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\repository\\Translator.Repository.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\repository\\obj\\",

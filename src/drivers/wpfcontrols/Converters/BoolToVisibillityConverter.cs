@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
-namespace WpfControls.Converters
+namespace Mov.WpfControls.Converters
 {
     public class BoolToVisibillityConverter : IValueConverter
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Configurator.Models
+namespace Mov.Configurator.Models
 {
     public class AppSetting : DbObject
     {

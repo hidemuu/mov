@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Authorizer.Models
+namespace Mov.Authorizer.Models
 {
     public class DbObject
     {

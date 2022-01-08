@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Translator.Models
+namespace Mov.Translator.Models
 {
     public class DbObject
     {

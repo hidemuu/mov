@@ -1,11 +1,11 @@
-﻿using Accessors;
-using Translator.Models;
+﻿using Mov.Accessors;
+using Mov.Translator.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Translator.Repository
+namespace Mov.Translator.Repository
 {
     public class TranslatorRepository : ITranslatorRepository
     {

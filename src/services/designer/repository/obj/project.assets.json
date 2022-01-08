@@ -489,7 +489,7 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "Accessors/1.0.0": {
+      "Mov.Accessors/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -497,24 +497,24 @@
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
-          "bin/placeholder/Accessors.dll": {}
+          "bin/placeholder/Mov.Accessors.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Accessors.dll": {}
+          "bin/placeholder/Mov.Accessors.dll": {}
         }
       },
-      "Designer.Models/1.0.0": {
+      "Mov.Designer.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Accessors": "1.0.0",
+          "Mov.Accessors": "1.0.0",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
-          "bin/placeholder/Designer.Models.dll": {}
+          "bin/placeholder/Mov.Designer.Models.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Designer.Models.dll": {}
+          "bin/placeholder/Mov.Designer.Models.dll": {}
         }
       }
     }
@@ -2620,12 +2620,12 @@
         "version.txt"
       ]
     },
-    "Accessors/1.0.0": {
+    "Mov.Accessors/1.0.0": {
       "type": "project",
       "path": "../../../drivers/accessors/Accessors.csproj",
       "msbuildProject": "../../../drivers/accessors/Accessors.csproj"
     },
-    "Designer.Models/1.0.0": {
+    "Mov.Designer.Models/1.0.0": {
       "type": "project",
       "path": "../models/Designer.Models.csproj",
       "msbuildProject": "../models/Designer.Models.csproj"
@@ -2633,7 +2633,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Designer.Models >= 1.0.0",
+      "Mov.Designer.Models >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -2647,7 +2647,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\repository\\Designer.Repository.csproj",
-      "projectName": "Designer.Repository",
+      "projectName": "Mov.Designer.Repository",
       "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\repository\\Designer.Repository.csproj",
       "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\repository\\obj\\",

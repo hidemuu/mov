@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Translator.Service
+namespace Mov.Translator.Service
 {
     public class Class1
     {

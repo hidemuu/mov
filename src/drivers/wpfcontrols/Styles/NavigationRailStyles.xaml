@@ -4,7 +4,7 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/WpfControls;component/Styles/BaseStyles.xaml" />
+        <ResourceDictionary Source="/Mov.WpfControls;component/Styles/BaseStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style

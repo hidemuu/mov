@@ -53,7 +53,7 @@ namespace Mov.Wpf.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mov.Wpf;V1.0.0.0;component/views/translateview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mov.Wpf;component/views/translateview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\TranslateView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

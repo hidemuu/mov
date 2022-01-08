@@ -8,4 +8,9 @@
     <RootNamespace>Mov.Wpf</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\designs\wpfcontrols\WpfControls.csproj" />
+    <ProjectReference Include="..\..\src\designs\wpfdesigns\WpfDesigns.csproj" />
+  </ItemGroup>
+
 </Project>

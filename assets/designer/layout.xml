@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tree>
+    <id>0</id>
+    <name>Root</name>
+    <children>
+        <tree>
+            <id>1</id>
+            <name>Test1</name>
+            <children>
+                <tree>
+                    <id>2</id>
+                    <name>Test12</name>
+                </tree>
+            </children>
+        </tree>
+        <tree>
+            <id>10</id>
+            <name>Test2</name>
+        </tree>
+    </children>
+</tree>

@@ -7,14 +7,323 @@
   "targets": {
     ".NETCoreApp,Version=v5.0": {
       "Mov.Wpf/1.0.0": {
+        "dependencies": {
+          "Mov.WpfControls": "1.0.0",
+          "Mov.WpfDesigns": "1.0.0"
+        },
         "runtime": {
           "Mov.Wpf.dll": {}
+        }
+      },
+      "ControlzEx/4.4.0": {
+        "dependencies": {
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.31",
+          "System.Text.Json": "4.7.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/ControlzEx.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.4.0.50"
+          }
+        }
+      },
+      "gong-wpf-dragdrop/3.0.0": {
+        "runtime": {
+          "lib/net5.0-windows7.0/GongSolutions.WPF.DragDrop.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.40"
+          }
+        }
+      },
+      "LiveCharts.Wpf.NetCore3/0.9.7": {
+        "dependencies": {
+          "System.Data.DataSetExtensions": "4.5.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/LiveCharts.Wpf.dll": {
+            "assemblyVersion": "0.9.7.0",
+            "fileVersion": "0.9.7.0"
+          },
+          "lib/netcoreapp3.1/LiveCharts.dll": {
+            "assemblyVersion": "0.9.7.0",
+            "fileVersion": "0.9.7.0"
+          }
+        }
+      },
+      "MahApps.Metro/2.4.9": {
+        "dependencies": {
+          "ControlzEx": "4.4.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/MahApps.Metro.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.4.9.2"
+          }
+        },
+        "resources": {
+          "lib/netcoreapp3.1/de/MahApps.Metro.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "MaterialDesignColors/2.0.3": {
+        "runtime": {
+          "lib/netcoreapp3.1/MaterialDesignColors.dll": {
+            "assemblyVersion": "2.0.3.2",
+            "fileVersion": "2.0.3.2"
+          }
+        }
+      },
+      "MaterialDesignThemes/4.2.1": {
+        "dependencies": {
+          "MaterialDesignColors": "2.0.3"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.dll": {
+            "assemblyVersion": "4.2.1.2",
+            "fileVersion": "4.2.1.2"
+          }
+        }
+      },
+      "MaterialDesignThemes.MahApps/0.1.9": {
+        "dependencies": {
+          "MahApps.Metro": "2.4.9",
+          "MaterialDesignColors": "2.0.3",
+          "MaterialDesignThemes": "4.2.1"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/MaterialDesignThemes.MahApps.dll": {
+            "assemblyVersion": "0.1.9.2",
+            "fileVersion": "0.1.9.2"
+          }
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.31": {
+        "runtime": {
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.31.10800"
+          }
+        }
+      },
+      "Prism.Core/8.1.97": {
+        "runtime": {
+          "lib/net5.0/Prism.dll": {
+            "assemblyVersion": "8.1.97.5141",
+            "fileVersion": "8.1.97.5141"
+          }
+        }
+      },
+      "Prism.Wpf/8.1.97": {
+        "dependencies": {
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.31",
+          "Prism.Core": "8.1.97"
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Prism.Wpf.dll": {
+            "assemblyVersion": "8.1.97.5141",
+            "fileVersion": "8.1.97.5141"
+          }
+        }
+      },
+      "ReactiveProperty/8.0.1": {
+        "dependencies": {
+          "ReactiveProperty.Core": "8.0.1",
+          "System.ComponentModel.Annotations": "5.0.0",
+          "System.Reactive": "5.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/ReactiveProperty.dll": {
+            "assemblyVersion": "8.0.1.0",
+            "fileVersion": "8.0.1.0"
+          }
+        }
+      },
+      "ReactiveProperty.Core/8.0.1": {
+        "runtime": {
+          "lib/netcoreapp3.1/ReactiveProperty.Core.dll": {
+            "assemblyVersion": "8.0.1.0",
+            "fileVersion": "8.0.1.0"
+          }
+        }
+      },
+      "ReactiveProperty.WPF/8.0.1": {
+        "dependencies": {
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.31",
+          "ReactiveProperty": "8.0.1",
+          "System.Reactive": "5.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/ReactiveProperty.WPF.dll": {
+            "assemblyVersion": "8.0.1.0",
+            "fileVersion": "8.0.1.0"
+          }
+        }
+      },
+      "System.ComponentModel.Annotations/5.0.0": {},
+      "System.Data.DataSetExtensions/4.5.0": {},
+      "System.Reactive/5.0.0": {
+        "runtime": {
+          "lib/net5.0/System.Reactive.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.1"
+          }
+        }
+      },
+      "System.Text.Json/4.7.2": {},
+      "Mov.WpfControls/1.0.0": {
+        "dependencies": {
+          "LiveCharts.Wpf.NetCore3": "0.9.7",
+          "MahApps.Metro": "2.4.9",
+          "MaterialDesignColors": "2.0.3",
+          "MaterialDesignThemes": "4.2.1",
+          "MaterialDesignThemes.MahApps": "0.1.9",
+          "Prism.Wpf": "8.1.97",
+          "ReactiveProperty.WPF": "8.0.1",
+          "gong-wpf-dragdrop": "3.0.0"
+        },
+        "runtime": {
+          "Mov.WpfControls.dll": {}
+        }
+      },
+      "Mov.WpfDesigns/1.0.0": {
+        "runtime": {
+          "Mov.WpfDesigns.dll": {}
         }
       }
     }
   },
   "libraries": {
     "Mov.Wpf/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ControlzEx/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pZ5z4hYWwE4R13UMCVs6vII//nL7hz+Nwn4oJlnsZJRGqJNy6Z9KnJiTZfly6lKFu0pMc1aWBZpx+VqFTQKP1Q==",
+      "path": "controlzex/4.4.0",
+      "hashPath": "controlzex.4.4.0.nupkg.sha512"
+    },
+    "gong-wpf-dragdrop/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0qXxJ0gEJtDlC7fl19684wMuIfK+aA3Hj3Z1lGUEH/ZhmCnFpy0YNFy7IIyFM3SMr7hWdL3eRnG1oRm/j/Dgog==",
+      "path": "gong-wpf-dragdrop/3.0.0",
+      "hashPath": "gong-wpf-dragdrop.3.0.0.nupkg.sha512"
+    },
+    "LiveCharts.Wpf.NetCore3/0.9.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-d0HkmjLi+HifeXyD+E14aOMPDRmwkkiqPYW4GDbUS8Z1m6eQPGCShcDcbWwP4tBoWzGEkkSsy+XSHvaoW50b0Q==",
+      "path": "livecharts.wpf.netcore3/0.9.7",
+      "hashPath": "livecharts.wpf.netcore3.0.9.7.nupkg.sha512"
+    },
+    "MahApps.Metro/2.4.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eMTkg6TBnCwHzszw7CP+pxsBeB4ZMsJFiTJJoifUVBysRyEenzzR+TKQJuMvvKK6KzvLxwHmJsFhi9o5p4vxhQ==",
+      "path": "mahapps.metro/2.4.9",
+      "hashPath": "mahapps.metro.2.4.9.nupkg.sha512"
+    },
+    "MaterialDesignColors/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Hn5GsMbmYet4WTVRNN01VGkPglWtytJt3oTTzjHjPSDtoF6ZVmfjj6R1EeNER2rlBtSNGuqB4GZmD6cnHL0f1A==",
+      "path": "materialdesigncolors/2.0.3",
+      "hashPath": "materialdesigncolors.2.0.3.nupkg.sha512"
+    },
+    "MaterialDesignThemes/4.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LsvOoXrEtOJib+kvBx3TIUN+zYexQcYiKGYoAXWMvfFTwiaELRWk89wny9sI4lPDqoJtIXVtoxo1oRDsLwy7NQ==",
+      "path": "materialdesignthemes/4.2.1",
+      "hashPath": "materialdesignthemes.4.2.1.nupkg.sha512"
+    },
+    "MaterialDesignThemes.MahApps/0.1.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-434F7yyMRPKCI/CmujDQTY7DSSK12YMV0cz7NXiZzmGi+BGIBsPrJxCMHdHM3ydYQovhIMMrQa4yxLzp4fZcvA==",
+      "path": "materialdesignthemes.mahapps/0.1.9",
+      "hashPath": "materialdesignthemes.mahapps.0.1.9.nupkg.sha512"
+    },
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.31": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LZpuf82ACZWldmfMuv3CTUMDh3o0xo0uHUaybR5HgqVLDBJJ9RZLykplQ/bTJd0/VDt3EhD4iDgUgbdIUAM+Kg==",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.31",
+      "hashPath": "microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512"
+    },
+    "Prism.Core/8.1.97": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EP5zrvWddw3eSq25Y7hHnDYdmLZEC2Z/gMrvmHzUuLbitmA1UaS7wQUlSwNr9Km8lzJNCvytFnaGBEFukHgoHg==",
+      "path": "prism.core/8.1.97",
+      "hashPath": "prism.core.8.1.97.nupkg.sha512"
+    },
+    "Prism.Wpf/8.1.97": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZEa6S1mK35h8/blyb0uR0ed3wkpHtPdhB4eniXINJnTiJMWlGl/As6SVlFFdOPD+qsEdWNYV3xgyQD/ue5cvBA==",
+      "path": "prism.wpf/8.1.97",
+      "hashPath": "prism.wpf.8.1.97.nupkg.sha512"
+    },
+    "ReactiveProperty/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mXFQWjq8HhgGuZv+524le0gQGg3u5J78gGa0boWILwUKRuEo9JjkiV0ZlL9wFW4ojuMrTgb+JCYFK1QtQ6pdJg==",
+      "path": "reactiveproperty/8.0.1",
+      "hashPath": "reactiveproperty.8.0.1.nupkg.sha512"
+    },
+    "ReactiveProperty.Core/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3AbjsVI+XiK8NCLF5AL5ZDcNhA/LwKbTmiA2IKSsWDTScu3/F8HcwH50lUvDSMqqyk/jiLF9A0pZ1vCGqybhSw==",
+      "path": "reactiveproperty.core/8.0.1",
+      "hashPath": "reactiveproperty.core.8.0.1.nupkg.sha512"
+    },
+    "ReactiveProperty.WPF/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MbHaIBMJJomJRwIgOp1LjwnXNpc7LKtbVSmtZd9xs7ghE9moraWdAucHgFZNw9LpYMAVRVHwRe+C6iJuDo+n2Q==",
+      "path": "reactiveproperty.wpf/8.0.1",
+      "hashPath": "reactiveproperty.wpf.8.0.1.nupkg.sha512"
+    },
+    "System.ComponentModel.Annotations/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dMkqfy2el8A8/I76n2Hi1oBFEbG1SfxD2l5nhwXV3XjlnOmwxJlQbYpJH4W51odnU9sARCSAgv7S3CyAFMkpYg==",
+      "path": "system.componentmodel.annotations/5.0.0",
+      "hashPath": "system.componentmodel.annotations.5.0.0.nupkg.sha512"
+    },
+    "System.Data.DataSetExtensions/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-221clPs1445HkTBZPL+K9sDBdJRB8UN8rgjO3ztB0CQ26z//fmJXtlsr6whGatscsKGBrhJl5bwJuKSA8mwFOw==",
+      "path": "system.data.datasetextensions/4.5.0",
+      "hashPath": "system.data.datasetextensions.4.5.0.nupkg.sha512"
+    },
+    "System.Reactive/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-erBZjkQHWL9jpasCE/0qKAryzVBJFxGHVBAvgRN1bzM0q2s1S4oYREEEL0Vb+1kA/6BKb5FjUZMp5VXmy+gzkQ==",
+      "path": "system.reactive/5.0.0",
+      "hashPath": "system.reactive.5.0.0.nupkg.sha512"
+    },
+    "System.Text.Json/4.7.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TcMd95wcrubm9nHvJEQs70rC0H/8omiSGGpU4FQ/ZA1URIqD4pjmFJh2Mfv1yH1eHgJDWTi2hMDXwTET+zOOyg==",
+      "path": "system.text.json/4.7.2",
+      "hashPath": "system.text.json.4.7.2.nupkg.sha512"
+    },
+    "Mov.WpfControls/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.WpfDesigns/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -6,6 +6,7 @@ namespace Mov.Accessors
 {
     public enum FileType
     {
+        InMemory,
         Json,
         Xml,
         Csv,

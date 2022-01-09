@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Prism.Unity" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\src\designs\wpfcontrols\WpfControls.csproj" />
     <ProjectReference Include="..\..\src\designs\wpfdesigns\WpfDesigns.csproj" />
     <ProjectReference Include="..\..\src\drivers\accessors\Accessors.csproj" />
@@ -28,6 +32,12 @@
     <ProjectReference Include="..\..\src\services\translator\models\Translator.Models.csproj" />
     <ProjectReference Include="..\..\src\services\translator\repository\Translator.Repository.csproj" />
     <ProjectReference Include="..\..\src\services\translator\service\Translator.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\Dialogs\" />
+    <Folder Include="ViewModels\Dialogs\Commons\" />
+    <Folder Include="Views\Dialogs\Commons\" />
   </ItemGroup>
 
 </Project>

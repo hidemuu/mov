@@ -1,7 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
-        <!--<ResourceDictionary Source="/CovidReader.ViewDesigns.Wpf;component/Styles/ButtonStyle.xaml"/>-->
-
+        
         <!--  MahApps  -->
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
@@ -37,16 +36,9 @@
         <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/MaterialDesignColor.BlueGrey.Named.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/MaterialDesignColor.Grey.Named.xaml" />
 
-
-
         <!--  Material Design: MahApps Compatibility  -->
         <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Fonts.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Flyout.xaml" />
-
-        <!--  overrides textblockstyle  -->
-        <!--<ResourceDictionary Source="/CovidReader.ViewDesigns.Wpf;component/Styles/MaterialTextBlockStyle.xaml" />
-                <ResourceDictionary Source="/CovidReader.ViewDesigns.Wpf;component/Styles/MacLikeScrollBarStyle.xaml" />
-                <ResourceDictionary Source="/CovidReader.ViewDesigns.Wpf;component/Styles/ChipBorderStyle.xaml" />-->
 
     </ResourceDictionary.MergedDictionaries>
 

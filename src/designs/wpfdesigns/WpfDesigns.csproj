@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Styles\Molecules\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="MahApps.Metro" Version="2.4.9" />
     <PackageReference Include="MaterialDesignColors" Version="2.0.3" />
     <PackageReference Include="MaterialDesignThemes" Version="4.2.1" />
@@ -45,91 +41,91 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Styles\Atoms\Button.xaml">
+    <Page Update="Styles\Components\Button.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\Calendar.xaml">
+    <Page Update="Styles\Components\Calendar.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\CheckBox.xaml">
+    <Page Update="Styles\Components\CheckBox.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\ComboBox.xaml">
+    <Page Update="Styles\Components\ComboBox.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\ContextMenu.xaml">
+    <Page Update="Styles\Components\ContextMenu.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\DataGrid.xaml">
+    <Page Update="Styles\Components\DataGrid.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\GridSplitter.xaml">
+    <Page Update="Styles\Components\GridSplitter.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\Hyperlink.xaml">
+    <Page Update="Styles\Components\Hyperlink.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\Label.xaml">
+    <Page Update="Styles\Components\Label.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\ListBox.xaml">
+    <Page Update="Styles\Components\ListBox.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\ListView.xaml">
+    <Page Update="Styles\Components\ListView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\MenuItem.xaml">
+    <Page Update="Styles\Components\MenuItem.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\ModernUI.Dark.xaml">
+    <Page Update="Styles\Components\Themes\ModernUI.Dark.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\ModernUI.Light.xaml">
+    <Page Update="Styles\Components\Themes\ModernUI.Light.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\PasswordBox.xaml">
+    <Page Update="Styles\Components\PasswordBox.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\RadioButton.xaml">
+    <Page Update="Styles\Components\RadioButton.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\ScrollBar.xaml">
+    <Page Update="Styles\Components\ScrollBar.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\Slider.xaml">
+    <Page Update="Styles\Components\Slider.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\TextBlock.xaml">
+    <Page Update="Styles\Components\TextBlock.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\TextBox.xaml">
+    <Page Update="Styles\Components\TextBox.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\ToolTip.xaml">
+    <Page Update="Styles\Components\ToolTip.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Atoms\TreeView.xaml">
+    <Page Update="Styles\Components\TreeView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
@@ -137,31 +133,23 @@
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\ButtonStyles.xaml">
+    <Page Update="Styles\Components\ChipBorder.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\ChipBorderStyles.xaml">
+    <Page Update="Styles\Components\MacLikeScrollBar.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\LayoutStyles.xaml">
+    <Page Update="Styles\Components\MaterialTextBlock.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\MacLikeScrollBarStyles.xaml">
+    <Page Update="Styles\Components\NavigationRail.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\MaterialTextBlockStyles.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Styles\NavigationRailStyles.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Styles\Organisms\ModernUI.xaml">
+    <Page Update="Styles\ComponentStyles.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>

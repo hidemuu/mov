@@ -7,39 +7,45 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\AuthorizeView.xaml.cs">
+    <Compile Update="Views\Dialogs\DialogWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\ConfigurateView.xaml.cs">
+    <Compile Update="Views\Pages\AuthorizeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\DesignView.xaml.cs">
+    <Compile Update="Views\Pages\ConfigurateView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\ScheduleView.xaml.cs">
+    <Compile Update="Views\Pages\DesignView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\TranslateView.xaml.cs">
+    <Compile Update="Views\Pages\ScheduleView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\TranslateView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="MainWindow.xaml">
+    <Page Update="Views\Dialogs\DialogWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\AuthorizeView.xaml">
+    <Page Update="Views\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\ConfigurateView.xaml">
+    <Page Update="Views\Pages\AuthorizeView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\DesignView.xaml">
+    <Page Update="Views\Pages\ConfigurateView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\ScheduleView.xaml">
+    <Page Update="Views\Pages\DesignView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\TranslateView.xaml">
+    <Page Update="Views\Pages\ScheduleView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\TranslateView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

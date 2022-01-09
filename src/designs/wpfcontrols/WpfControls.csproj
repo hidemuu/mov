@@ -16,12 +16,10 @@
 
   <ItemGroup>
     <Folder Include="Behaviors\" />
-    <Folder Include="ViewModels\Atoms\" />
-    <Folder Include="ViewModels\Molecules\" />
-    <Folder Include="ViewModels\Organisms\" />
     <Folder Include="Views\Atoms\" />
-    <Folder Include="Views\Molecules\" />
     <Folder Include="Views\Organisms\" />
+    <Folder Include="ViewModels\Atoms\" />
+    <Folder Include="ViewModels\Organisms\" />
   </ItemGroup>
 
 </Project>

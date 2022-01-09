@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\nando\Documents\GitHub\mov\app\wpf\App.xaml
-6-875503443
+7879557120
 
-20393674917
-234-211789476
-MainWindow.xaml;Views\AuthorizeView.xaml;Views\ConfigurateView.xaml;Views\DesignView.xaml;Views\ScheduleView.xaml;Views\TranslateView.xaml;
+23-1512439628
+2371407501854
+Views\Dialogs\DialogWindow.xaml;Views\MainWindow.xaml;Views\Pages\AuthorizeView.xaml;Views\Pages\ConfigurateView.xaml;Views\Pages\DesignView.xaml;Views\Pages\ScheduleView.xaml;Views\Pages\TranslateView.xaml;
 
 True
 

@@ -11,8 +11,8 @@ false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 
 30110768157
-
-1-881178264
+51307054577
+1-1496264228
 1991237349410
 Styles\Atoms\Button.xaml;Styles\Atoms\Calendar.xaml;Styles\Atoms\CheckBox.xaml;Styles\Atoms\ComboBox.xaml;Styles\Atoms\ContextMenu.xaml;Styles\Atoms\DataGrid.xaml;Styles\Atoms\GridSplitter.xaml;Styles\Atoms\Hyperlink.xaml;Styles\Atoms\Label.xaml;Styles\Atoms\ListBox.xaml;Styles\Atoms\ListView.xaml;Styles\Atoms\MenuItem.xaml;Styles\Atoms\ModernUI.Dark.xaml;Styles\Atoms\ModernUI.Light.xaml;Styles\Atoms\PasswordBox.xaml;Styles\Atoms\RadioButton.xaml;Styles\Atoms\ScrollBar.xaml;Styles\Atoms\Slider.xaml;Styles\Atoms\TextBlock.xaml;Styles\Atoms\TextBox.xaml;Styles\Atoms\ToolTip.xaml;Styles\Atoms\TreeView.xaml;Styles\BaseStyles.xaml;Styles\ButtonStyles.xaml;Styles\ChipBorderStyles.xaml;Styles\LayoutStyles.xaml;Styles\MacLikeScrollBarStyles.xaml;Styles\MaterialTextBlockStyles.xaml;Styles\NavigationRailStyles.xaml;Styles\Organisms\ModernUI.xaml;
 

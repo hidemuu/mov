@@ -92,3 +92,8 @@ C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Schedul
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Translator.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Translator.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Translator.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Assets\Photos\alter.png
+C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Assets\Photos\home.png
+C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Assets\Photos\push.png
+C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Assets\Photos\success.png
+C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Assets\Fonts\iconfont.ttf

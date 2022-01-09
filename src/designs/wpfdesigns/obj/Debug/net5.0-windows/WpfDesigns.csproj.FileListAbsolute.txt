@@ -54,3 +54,8 @@ C:\Users\nando\Documents\GitHub\mov\src\designs\wpfdesigns\obj\Debug\net5.0-wind
 C:\Users\nando\Documents\GitHub\mov\src\designs\wpfdesigns\obj\Debug\net5.0-windows\Styles\Organisms\ModernUI.baml
 C:\Users\nando\Documents\GitHub\mov\src\designs\wpfdesigns\obj\Debug\net5.0-windows\Mov.WpfDesigns_MarkupCompile.cache
 C:\Users\nando\Documents\GitHub\mov\src\designs\wpfdesigns\obj\Debug\net5.0-windows\Mov.WpfDesigns.g.resources
+C:\Users\nando\Documents\GitHub\mov\src\designs\wpfdesigns\bin\Debug\net5.0-windows\Assets\Photos\alter.png
+C:\Users\nando\Documents\GitHub\mov\src\designs\wpfdesigns\bin\Debug\net5.0-windows\Assets\Photos\home.png
+C:\Users\nando\Documents\GitHub\mov\src\designs\wpfdesigns\bin\Debug\net5.0-windows\Assets\Photos\push.png
+C:\Users\nando\Documents\GitHub\mov\src\designs\wpfdesigns\bin\Debug\net5.0-windows\Assets\Photos\success.png
+C:\Users\nando\Documents\GitHub\mov\src\designs\wpfdesigns\bin\Debug\net5.0-windows\Assets\Fonts\iconfont.ttf

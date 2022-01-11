@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace Mov.Accessors
@@ -21,6 +22,7 @@ namespace Mov.Accessors
             this.path = path;
             if (string.IsNullOrEmpty(Path.GetExtension(path))) this.path += EXTENSION;
             this.encoding = Encoding.GetEncoding(encoding);
+
         }
 
         /// <summary>
@@ -34,7 +36,6 @@ namespace Mov.Accessors
                 var serializer = new XmlSerializer(typeof(T));
                 return (T)serializer.Deserialize(stream);
             }
-
         }
 
         /// <summary>
@@ -49,5 +50,6 @@ namespace Mov.Accessors
                 serializer.Serialize(stream, obj);
             }
         }
+
     }
 }

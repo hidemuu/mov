@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.Authorizer.Views</AssemblyName>
+    <RootNamespace>Mov.Authorizer.Views</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\designs\wpfviews\WpfViews.csproj" />
+    <ProjectReference Include="..\viewmodels\Authorizer.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

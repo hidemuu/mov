@@ -13,31 +13,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\designs\wpfcontrols\WpfControls.csproj" />
-    <ProjectReference Include="..\..\src\designs\wpfdesigns\WpfDesigns.csproj" />
-    <ProjectReference Include="..\..\src\drivers\accessors\Accessors.csproj" />
-    <ProjectReference Include="..\..\src\drivers\utilities\Utilities.csproj" />
-    <ProjectReference Include="..\..\src\services\authorizer\models\Authorizer.Models.csproj" />
-    <ProjectReference Include="..\..\src\services\authorizer\repository\Authorizer.Repository.csproj" />
-    <ProjectReference Include="..\..\src\services\authorizer\service\Authorizer.Service.csproj" />
-    <ProjectReference Include="..\..\src\services\configurator\models\Configurator.Models.csproj" />
-    <ProjectReference Include="..\..\src\services\configurator\repository\Configurator.Repository.csproj" />
-    <ProjectReference Include="..\..\src\services\configurator\service\Configurator.Service.csproj" />
-    <ProjectReference Include="..\..\src\services\designer\models\Designer.Models.csproj" />
-    <ProjectReference Include="..\..\src\services\designer\repository\Designer.Repository.csproj" />
-    <ProjectReference Include="..\..\src\services\designer\service\Designer.Service.csproj" />
-    <ProjectReference Include="..\..\src\services\scheduler\models\Scheduler.Models.csproj" />
-    <ProjectReference Include="..\..\src\services\scheduler\repository\Scheduler.Repository.csproj" />
-    <ProjectReference Include="..\..\src\services\scheduler\service\Scheduler.Service.csproj" />
-    <ProjectReference Include="..\..\src\services\translator\models\Translator.Models.csproj" />
-    <ProjectReference Include="..\..\src\services\translator\repository\Translator.Repository.csproj" />
-    <ProjectReference Include="..\..\src\services\translator\service\Translator.Service.csproj" />
+    <Folder Include="Models\Dialogs\" />
+    <Folder Include="ViewModels\Dialogs\Commons\" />
+    <Folder Include="ViewModels\Pages\" />
+    <Folder Include="Views\Dialogs\Commons\" />
+    <Folder Include="Views\Pages\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Dialogs\" />
-    <Folder Include="ViewModels\Dialogs\Commons\" />
-    <Folder Include="Views\Dialogs\Commons\" />
+    <ProjectReference Include="..\..\lib\wpflib\WpfLib.csproj" />
   </ItemGroup>
 
 </Project>

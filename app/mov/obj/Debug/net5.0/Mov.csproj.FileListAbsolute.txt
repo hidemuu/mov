@@ -56,3 +56,7 @@ C:\Users\nando\Documents\GitHub\mov\app\Mov\obj\Debug\net5.0\Mov.dll
 C:\Users\nando\Documents\GitHub\mov\app\Mov\obj\Debug\net5.0\ref\Mov.dll
 C:\Users\nando\Documents\GitHub\mov\app\Mov\obj\Debug\net5.0\Mov.pdb
 C:\Users\nando\Documents\GitHub\mov\app\Mov\obj\Debug\net5.0\Mov.genruntimeconfig.cache
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.BaseLib.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Loggers.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.BaseLib.pdb
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Loggers.pdb

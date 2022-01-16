@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Configurator.Models
 {
-    public class Variable : DbObject
+    public class Variable : ConfiguratorObject
     {
         
         /// <summary>

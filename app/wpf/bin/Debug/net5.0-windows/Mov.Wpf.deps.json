@@ -8,25 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "Mov.Wpf/1.0.0": {
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
-          "Mov.Authorizer.Models": "1.0.0",
-          "Mov.Authorizer.Repository": "1.0.0",
-          "Mov.Authorizer.Service": "1.0.0",
-          "Mov.Configurator.Models": "1.0.0",
-          "Mov.Configurator.Repository": "1.0.0",
-          "Mov.Configurator.Service": "1.0.0",
-          "Mov.Designer.Models": "1.0.0",
-          "Mov.Designer.Repository": "1.0.0",
-          "Mov.Designer.Service": "1.0.0",
-          "Mov.Scheduler.Models": "1.0.0",
-          "Mov.Scheduler.Repository": "1.0.0",
-          "Mov.Scheduler.Service": "1.0.0",
-          "Mov.Translator.Models": "1.0.0",
-          "Mov.Translator.Repository": "1.0.0",
-          "Mov.Translator.Service": "1.0.0",
-          "Mov.Utilities": "1.0.0",
-          "Mov.WpfControls": "1.0.0",
-          "Mov.WpfDesigns": "1.0.0",
+          "Mov.WpfLib": "1.0.0",
           "Prism.Unity": "8.1.97"
         },
         "runtime": {
@@ -322,6 +304,48 @@
           "Mov.Authorizer.Service.dll": {}
         }
       },
+      "Mov.Authorizer.ViewModels/1.0.0": {
+        "dependencies": {
+          "Mov.WpfViewModels": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Authorizer.ViewModels.dll": {}
+        }
+      },
+      "Mov.Authorizer.Views/1.0.0": {
+        "dependencies": {
+          "Mov.Authorizer.ViewModels": "1.0.0",
+          "Mov.WpfViews": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Authorizer.Views.dll": {}
+        }
+      },
+      "Mov.BaseLib/1.0.0": {
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "Mov.Authorizer.Models": "1.0.0",
+          "Mov.Authorizer.Repository": "1.0.0",
+          "Mov.Authorizer.Service": "1.0.0",
+          "Mov.Configurator.Models": "1.0.0",
+          "Mov.Configurator.Repository": "1.0.0",
+          "Mov.Configurator.Service": "1.0.0",
+          "Mov.Designer.Models": "1.0.0",
+          "Mov.Designer.Repository": "1.0.0",
+          "Mov.Designer.Service": "1.0.0",
+          "Mov.Loggers": "1.0.0",
+          "Mov.Scheduler.Models": "1.0.0",
+          "Mov.Scheduler.Repository": "1.0.0",
+          "Mov.Scheduler.Service": "1.0.0",
+          "Mov.Translator.Models": "1.0.0",
+          "Mov.Translator.Repository": "1.0.0",
+          "Mov.Translator.Service": "1.0.0",
+          "Mov.Utilities": "1.0.0"
+        },
+        "runtime": {
+          "Mov.BaseLib.dll": {}
+        }
+      },
       "Mov.Configurator.Models/1.0.0": {
         "dependencies": {
           "Mov.Accessors": "1.0.0",
@@ -346,6 +370,24 @@
           "Mov.Configurator.Service.dll": {}
         }
       },
+      "Mov.Configurator.ViewModels/1.0.0": {
+        "dependencies": {
+          "Mov.Configurator.Models": "1.0.0",
+          "Mov.WpfViewModels": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Configurator.ViewModels.dll": {}
+        }
+      },
+      "Mov.Configurator.Views/1.0.0": {
+        "dependencies": {
+          "Mov.Configurator.ViewModels": "1.0.0",
+          "Mov.WpfViews": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Configurator.Views.dll": {}
+        }
+      },
       "Mov.Designer.Models/1.0.0": {
         "dependencies": {
           "Mov.Accessors": "1.0.0",
@@ -368,6 +410,21 @@
           "Mov.Designer.Service.dll": {}
         }
       },
+      "Mov.Designer.ViewModels/1.0.0": {
+        "runtime": {
+          "Mov.Designer.ViewModels.dll": {}
+        }
+      },
+      "Mov.Designer.Views/1.0.0": {
+        "runtime": {
+          "Mov.Designer.Views.dll": {}
+        }
+      },
+      "Mov.Loggers/1.0.0": {
+        "runtime": {
+          "Mov.Loggers.dll": {}
+        }
+      },
       "Mov.Scheduler.Models/1.0.0": {
         "runtime": {
           "Mov.Scheduler.Models.dll": {}
@@ -385,6 +442,16 @@
       "Mov.Scheduler.Service/1.0.0": {
         "runtime": {
           "Mov.Scheduler.Service.dll": {}
+        }
+      },
+      "Mov.Scheduler.ViewModels/1.0.0": {
+        "runtime": {
+          "Mov.Scheduler.ViewModels.dll": {}
+        }
+      },
+      "Mov.Scheduler.Views/1.0.0": {
+        "runtime": {
+          "Mov.Scheduler.Views.dll": {}
         }
       },
       "Mov.Translator.Models/1.0.0": {
@@ -408,6 +475,16 @@
           "Mov.Translator.Service.dll": {}
         }
       },
+      "Mov.Translator.ViewModels/1.0.0": {
+        "runtime": {
+          "Mov.Translator.ViewModels.dll": {}
+        }
+      },
+      "Mov.Translator.Views/1.0.0": {
+        "runtime": {
+          "Mov.Translator.Views.dll": {}
+        }
+      },
       "Mov.Utilities/1.0.0": {
         "runtime": {
           "Mov.Utilities.dll": {}
@@ -416,8 +493,6 @@
       "Mov.WpfControls/1.0.0": {
         "dependencies": {
           "LiveCharts.Wpf.NetCore3": "0.9.7",
-          "Prism.Wpf": "8.1.97",
-          "ReactiveProperty.WPF": "8.0.1",
           "gong-wpf-dragdrop": "3.0.0"
         },
         "runtime": {
@@ -433,6 +508,45 @@
         },
         "runtime": {
           "Mov.WpfDesigns.dll": {}
+        }
+      },
+      "Mov.WpfLib/1.0.0": {
+        "dependencies": {
+          "Mov.Authorizer.ViewModels": "1.0.0",
+          "Mov.Authorizer.Views": "1.0.0",
+          "Mov.BaseLib": "1.0.0",
+          "Mov.Configurator.ViewModels": "1.0.0",
+          "Mov.Configurator.Views": "1.0.0",
+          "Mov.Designer.ViewModels": "1.0.0",
+          "Mov.Designer.Views": "1.0.0",
+          "Mov.Scheduler.ViewModels": "1.0.0",
+          "Mov.Scheduler.Views": "1.0.0",
+          "Mov.Translator.ViewModels": "1.0.0",
+          "Mov.Translator.Views": "1.0.0",
+          "Mov.WpfControls": "1.0.0",
+          "Mov.WpfDesigns": "1.0.0",
+          "Mov.WpfViewModels": "1.0.0"
+        },
+        "runtime": {
+          "Mov.WpfLib.dll": {}
+        }
+      },
+      "Mov.WpfViewModels/1.0.0": {
+        "dependencies": {
+          "Prism.Unity": "8.1.97",
+          "ReactiveProperty.WPF": "8.0.1"
+        },
+        "runtime": {
+          "Mov.WpfViewModels.dll": {}
+        }
+      },
+      "Mov.WpfViews/1.0.0": {
+        "dependencies": {
+          "Mov.WpfViewModels": "1.0.0",
+          "Prism.Wpf": "8.1.97"
+        },
+        "runtime": {
+          "Mov.WpfViews.dll": {}
         }
       }
     }
@@ -659,6 +773,21 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Mov.Authorizer.ViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Authorizer.Views/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.BaseLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Mov.Configurator.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -670,6 +799,16 @@
       "sha512": ""
     },
     "Mov.Configurator.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Configurator.ViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Configurator.Views/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -689,6 +828,21 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Mov.Designer.ViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Designer.Views/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Loggers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Mov.Scheduler.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -700,6 +854,16 @@
       "sha512": ""
     },
     "Mov.Scheduler.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Scheduler.ViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Scheduler.Views/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -719,6 +883,16 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Mov.Translator.ViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Translator.Views/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Mov.Utilities/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -730,6 +904,21 @@
       "sha512": ""
     },
     "Mov.WpfDesigns/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.WpfLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.WpfViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.WpfViews/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

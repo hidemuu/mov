@@ -6,3 +6,4 @@ C:\Users\nando\Documents\GitHub\mov\src\drivers\loggers\obj\Debug\netstandard2.0
 C:\Users\nando\Documents\GitHub\mov\src\drivers\loggers\obj\Debug\netstandard2.0\Loggers.csproj.CoreCompileInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\drivers\loggers\obj\Debug\netstandard2.0\Mov.Loggers.dll
 C:\Users\nando\Documents\GitHub\mov\src\drivers\loggers\obj\Debug\netstandard2.0\Mov.Loggers.pdb
+C:\Users\nando\Documents\GitHub\mov\src\drivers\loggers\obj\Debug\netstandard2.0\Loggers.csproj.AssemblyReference.cache

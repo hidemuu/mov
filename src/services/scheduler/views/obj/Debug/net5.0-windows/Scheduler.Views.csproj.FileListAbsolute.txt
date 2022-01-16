@@ -1,0 +1,17 @@
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\views\bin\Debug\net5.0-windows\Mov.Scheduler.Views.deps.json
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\views\bin\Debug\net5.0-windows\Mov.Scheduler.Views.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\views\bin\Debug\net5.0-windows\ref\Mov.Scheduler.Views.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\views\bin\Debug\net5.0-windows\Mov.Scheduler.Views.pdb
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\views\obj\Debug\net5.0-windows\Scheduler.Views.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\views\obj\Debug\net5.0-windows\Scheduler.Views.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\views\obj\Debug\net5.0-windows\Scheduler.Views.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\views\obj\Debug\net5.0-windows\Scheduler.Views.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\views\obj\Debug\net5.0-windows\Scheduler.Views.csproj.CoreCompileInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\views\obj\Debug\net5.0-windows\Mov.Scheduler.Views.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\views\obj\Debug\net5.0-windows\ref\Mov.Scheduler.Views.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\views\obj\Debug\net5.0-windows\Mov.Scheduler.Views.pdb
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\views\obj\Debug\net5.0-windows\SchedulerView.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\views\obj\Debug\net5.0-windows\Mov.Scheduler.Views_MarkupCompile.cache
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\views\obj\Debug\net5.0-windows\Mov.Scheduler.Views_MarkupCompile.lref
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\views\obj\Debug\net5.0-windows\SchedulerView.baml
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\views\obj\Debug\net5.0-windows\Mov.Scheduler.Views.g.resources

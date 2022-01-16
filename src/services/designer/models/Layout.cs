@@ -13,7 +13,7 @@ namespace Mov.Designer.Models
         public List<LayoutTree> Children { get; set; }
     }
     [XmlRoot("layout")]
-    public class Layout : DbObject
+    public class Layout : DesignerObject
     {
         [XmlElement("name")]
         public string Name { get; set; }

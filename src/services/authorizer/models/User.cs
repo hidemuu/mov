@@ -16,7 +16,7 @@ namespace Mov.Authorizer.Models
         public List<User> Items { get; set; }
     }
     [XmlRoot("user")]
-    public class User : DbObject
+    public class User : AuthorizerObject
     {
         [JsonProperty("loginid")]
         [XmlElement("loginid")]

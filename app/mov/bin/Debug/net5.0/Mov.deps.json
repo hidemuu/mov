@@ -8,23 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "Mov/1.0.0": {
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
-          "Mov.Authorizer.Models": "1.0.0",
-          "Mov.Authorizer.Repository": "1.0.0",
-          "Mov.Authorizer.Service": "1.0.0",
-          "Mov.Configurator.Models": "1.0.0",
-          "Mov.Configurator.Repository": "1.0.0",
-          "Mov.Configurator.Service": "1.0.0",
-          "Mov.Designer.Models": "1.0.0",
-          "Mov.Designer.Repository": "1.0.0",
-          "Mov.Designer.Service": "1.0.0",
-          "Mov.Scheduler.Models": "1.0.0",
-          "Mov.Scheduler.Repository": "1.0.0",
-          "Mov.Scheduler.Service": "1.0.0",
-          "Mov.Translator.Models": "1.0.0",
-          "Mov.Translator.Repository": "1.0.0",
-          "Mov.Translator.Service": "1.0.0",
-          "Mov.Utilities": "1.0.0"
+          "Mov.BaseLib": "1.0.0"
         },
         "runtime": {
           "Mov.dll": {}
@@ -127,6 +111,31 @@
           "Mov.Authorizer.Service.dll": {}
         }
       },
+      "Mov.BaseLib/1.0.0": {
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "Mov.Authorizer.Models": "1.0.0",
+          "Mov.Authorizer.Repository": "1.0.0",
+          "Mov.Authorizer.Service": "1.0.0",
+          "Mov.Configurator.Models": "1.0.0",
+          "Mov.Configurator.Repository": "1.0.0",
+          "Mov.Configurator.Service": "1.0.0",
+          "Mov.Designer.Models": "1.0.0",
+          "Mov.Designer.Repository": "1.0.0",
+          "Mov.Designer.Service": "1.0.0",
+          "Mov.Loggers": "1.0.0",
+          "Mov.Scheduler.Models": "1.0.0",
+          "Mov.Scheduler.Repository": "1.0.0",
+          "Mov.Scheduler.Service": "1.0.0",
+          "Mov.Translator.Models": "1.0.0",
+          "Mov.Translator.Repository": "1.0.0",
+          "Mov.Translator.Service": "1.0.0",
+          "Mov.Utilities": "1.0.0"
+        },
+        "runtime": {
+          "Mov.BaseLib.dll": {}
+        }
+      },
       "Mov.Configurator.Models/1.0.0": {
         "dependencies": {
           "Mov.Accessors": "1.0.0",
@@ -171,6 +180,11 @@
       "Mov.Designer.Service/1.0.0": {
         "runtime": {
           "Mov.Designer.Service.dll": {}
+        }
+      },
+      "Mov.Loggers/1.0.0": {
+        "runtime": {
+          "Mov.Loggers.dll": {}
         }
       },
       "Mov.Scheduler.Models/1.0.0": {
@@ -295,6 +309,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Mov.BaseLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Mov.Configurator.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -321,6 +340,11 @@
       "sha512": ""
     },
     "Mov.Designer.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Loggers/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

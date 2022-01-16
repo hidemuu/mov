@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.BaseLib</AssemblyName>
+    <RootNamespace>Mov.BaseLib</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\drivers\accessors\Accessors.csproj" />
+    <ProjectReference Include="..\..\src\drivers\loggers\Loggers.csproj" />
+    <ProjectReference Include="..\..\src\drivers\utilities\Utilities.csproj" />
+    <ProjectReference Include="..\..\src\services\authorizer\models\Authorizer.Models.csproj" />
+    <ProjectReference Include="..\..\src\services\authorizer\repository\Authorizer.Repository.csproj" />
+    <ProjectReference Include="..\..\src\services\authorizer\service\Authorizer.Service.csproj" />
+    <ProjectReference Include="..\..\src\services\configurator\models\Configurator.Models.csproj" />
+    <ProjectReference Include="..\..\src\services\configurator\repository\Configurator.Repository.csproj" />
+    <ProjectReference Include="..\..\src\services\configurator\service\Configurator.Service.csproj" />
+    <ProjectReference Include="..\..\src\services\designer\models\Designer.Models.csproj" />
+    <ProjectReference Include="..\..\src\services\designer\repository\Designer.Repository.csproj" />
+    <ProjectReference Include="..\..\src\services\designer\service\Designer.Service.csproj" />
+    <ProjectReference Include="..\..\src\services\scheduler\models\Scheduler.Models.csproj" />
+    <ProjectReference Include="..\..\src\services\scheduler\repository\Scheduler.Repository.csproj" />
+    <ProjectReference Include="..\..\src\services\scheduler\service\Scheduler.Service.csproj" />
+    <ProjectReference Include="..\..\src\services\translator\models\Translator.Models.csproj" />
+    <ProjectReference Include="..\..\src\services\translator\repository\Translator.Repository.csproj" />
+    <ProjectReference Include="..\..\src\services\translator\service\Translator.Service.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Scheduler.Models
 {
-    public class ScheduledEvent : DbObject
+    public class ScheduledEvent : SchedulerObject
     {
         public string Source { get; set; }
 

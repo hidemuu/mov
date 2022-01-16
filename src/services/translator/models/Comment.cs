@@ -16,7 +16,7 @@ namespace Mov.Translator.Models
     }
 
     [XmlRoot("comment")]
-    public class Comment : DbObject
+    public class Comment : TranslatorObject
     {
         /// <summary>
         /// カテゴリー

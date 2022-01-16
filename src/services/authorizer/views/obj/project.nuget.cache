@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "6utMewfUlSQtDMXlKdfbsZN8+bV10Xp4EDIC6XbxkbmldF430Ur97WDqM+tbtGR0UVT3v6mu9glCqxQ7v8YNBg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\views\\Authorizer.Views.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nando\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.31\\microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\prism.unity\\8.1.97\\prism.unity.8.1.97.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\prism.wpf\\8.1.97\\prism.wpf.8.1.97.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\reactiveproperty\\8.0.1\\reactiveproperty.8.0.1.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\reactiveproperty.core\\8.0.1\\reactiveproperty.core.8.0.1.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\reactiveproperty.wpf\\8.0.1\\reactiveproperty.wpf.8.0.1.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\system.reactive\\5.0.0\\system.reactive.5.0.0.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\unity.abstractions\\5.11.7\\unity.abstractions.5.11.7.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\unity.container\\5.11.11\\unity.container.5.11.11.nupkg.sha512"
+  ],
+  "logs": []
+}

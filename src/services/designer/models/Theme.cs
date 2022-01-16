@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public class Theme : DbObject
+    public class Theme : DesignerObject
     {
     }
 }

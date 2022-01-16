@@ -10,16 +10,13 @@
   <ItemGroup>
     <PackageReference Include="gong-wpf-dragdrop" Version="3.0.0" />
     <PackageReference Include="LiveCharts.Wpf.NetCore3" Version="0.9.7" />
-    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
-    <PackageReference Include="ReactiveProperty.WPF" Version="8.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Behaviors\" />
-    <Folder Include="Views\Atoms\" />
-    <Folder Include="Views\Organisms\" />
-    <Folder Include="ViewModels\Atoms\" />
-    <Folder Include="ViewModels\Organisms\" />
+    <Folder Include="Components\Atoms\" />
+    <Folder Include="Components\Organisms\" />
+    <Folder Include="Components\Molecules\" />
   </ItemGroup>
 
 </Project>

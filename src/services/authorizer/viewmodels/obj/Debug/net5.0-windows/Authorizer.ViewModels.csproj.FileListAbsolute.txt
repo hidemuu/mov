@@ -1,0 +1,15 @@
+C:\Users\nando\Documents\GitHub\mov\src\services\authorizer\viewmodels\bin\Debug\net5.0-windows\Mov.Authorizer.ViewModels.deps.json
+C:\Users\nando\Documents\GitHub\mov\src\services\authorizer\viewmodels\bin\Debug\net5.0-windows\Mov.Authorizer.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\authorizer\viewmodels\bin\Debug\net5.0-windows\ref\Mov.Authorizer.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\authorizer\viewmodels\bin\Debug\net5.0-windows\Mov.Authorizer.ViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\src\services\authorizer\viewmodels\obj\Debug\net5.0-windows\Authorizer.ViewModels.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\services\authorizer\viewmodels\obj\Debug\net5.0-windows\Authorizer.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nando\Documents\GitHub\mov\src\services\authorizer\viewmodels\obj\Debug\net5.0-windows\Authorizer.ViewModels.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\services\authorizer\viewmodels\obj\Debug\net5.0-windows\Authorizer.ViewModels.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\mov\src\services\authorizer\viewmodels\obj\Debug\net5.0-windows\Authorizer.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\services\authorizer\viewmodels\obj\Debug\net5.0-windows\Mov.Authorizer.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\authorizer\viewmodels\obj\Debug\net5.0-windows\ref\Mov.Authorizer.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\authorizer\viewmodels\obj\Debug\net5.0-windows\Mov.Authorizer.ViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\src\services\authorizer\viewmodels\bin\Debug\net5.0-windows\Mov.WpfViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\authorizer\viewmodels\bin\Debug\net5.0-windows\Mov.WpfViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\src\services\authorizer\viewmodels\obj\Debug\net5.0-windows\Authorizer.ViewModels.csproj.CopyComplete

@@ -7,45 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\Dialogs\DialogWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\Pages\AuthorizeView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\Pages\ConfigurateView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\Pages\DesignView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\Pages\ScheduleView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\Pages\TranslateView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Views\Dialogs\DialogWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Views\MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\Pages\AuthorizeView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\Pages\ConfigurateView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\Pages\DesignView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\Pages\ScheduleView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\Pages\TranslateView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

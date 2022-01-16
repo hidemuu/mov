@@ -1,13 +1,20 @@
 ﻿using Mov.Authorizer.Models;
 using Mov.Authorizer.Repository;
+using Mov.Authorizer.ViewModels;
+using Mov.Authorizer.Views;
 using Mov.Configurator.Models;
 using Mov.Configurator.Repository;
+using Mov.Configurator.ViewModels;
+using Mov.Configurator.Views;
 using Mov.Designer.Models;
 using Mov.Designer.Repository.Xml;
 using Mov.Translator.Models;
 using Mov.Translator.Repository;
 using Mov.Utilities;
 using Mov.Wpf.ViewModels;
+using Mov.WpfViewModels.Components.Dialogs;
+using Mov.WpfViews;
+using Mov.WpfViews.Components.Dialogs;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Mvvm;
@@ -55,7 +62,16 @@ namespace Mov.Wpf
             containerRegistry.RegisterInstance<IAuthorizerRepository>(new AuthorizerRepository(Path.Combine(assetPath, "authorizer"), Accessors.FileType.Json));
             containerRegistry.RegisterInstance<ITranslatorRepository>(new TranslatorRepository(Path.Combine(assetPath, "translator"), Accessors.FileType.Json));
 
-            
+            //Viewの登録
+            containerRegistry.RegisterForNavigation<AuthorizerView>();
+            containerRegistry.RegisterForNavigation<ConfiguratorView>();
+
+            //Dialogの登録
+            containerRegistry.RegisterDialog<AlertDialog, AlertDialogViewModel>();
+            containerRegistry.RegisterDialog<SuccessDialog, SuccessDialogViewModel>();
+            containerRegistry.RegisterDialog<WarningDialog, WarningDialogViewModel>();
+            containerRegistry.RegisterDialogWindow<DialogWindow>();
+
         }
 
         protected override void ConfigureRegionAdapterMappings(RegionAdapterMappings regionAdapterMappings)
@@ -71,7 +87,8 @@ namespace Mov.Wpf
             base.ConfigureViewModelLocator();
 
             ViewModelLocationProvider.Register<MainWindow, MainWindowViewModel>();
-            
+            ViewModelLocationProvider.Register<ConfiguratorView, ConfiguratorViewModel>();
+            ViewModelLocationProvider.Register<AuthorizerView, AuthorizerViewModel>();
         }
 
         protected override IModuleCatalog CreateModuleCatalog()

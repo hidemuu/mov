@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.WpfLib</AssemblyName>
+    <RootNamespace>Mov.WpfLib</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\designs\wpfcontrols\WpfControls.csproj" />
+    <ProjectReference Include="..\..\src\designs\wpfdesigns\WpfDesigns.csproj" />
+    <ProjectReference Include="..\..\src\designs\wpfviewmodels\WpfViewModels.csproj" />
+    <ProjectReference Include="..\..\src\services\authorizer\viewmodels\Authorizer.ViewModels.csproj" />
+    <ProjectReference Include="..\..\src\services\authorizer\views\Authorizer.Views.csproj" />
+    <ProjectReference Include="..\..\src\services\configurator\viewmodels\Configurator.ViewModels.csproj" />
+    <ProjectReference Include="..\..\src\services\configurator\views\Configurator.Views.csproj" />
+    <ProjectReference Include="..\..\src\services\designer\viewmodels\Designer.ViewModels.csproj" />
+    <ProjectReference Include="..\..\src\services\designer\views\Designer.Views.csproj" />
+    <ProjectReference Include="..\..\src\services\scheduler\viewmodels\Scheduler.ViewModels.csproj" />
+    <ProjectReference Include="..\..\src\services\scheduler\views\Scheduler.Views.csproj" />
+    <ProjectReference Include="..\..\src\services\translator\viewmodels\Translator.ViewModels.csproj" />
+    <ProjectReference Include="..\..\src\services\translator\views\Translator.Views.csproj" />
+    <ProjectReference Include="..\baselib\BaseLib.csproj" />
+  </ItemGroup>
+
+</Project>

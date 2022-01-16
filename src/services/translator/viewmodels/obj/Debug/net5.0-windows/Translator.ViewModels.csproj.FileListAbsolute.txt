@@ -1,0 +1,12 @@
+C:\Users\nando\Documents\GitHub\mov\src\services\translator\viewmodels\bin\Debug\net5.0-windows\Mov.Translator.ViewModels.deps.json
+C:\Users\nando\Documents\GitHub\mov\src\services\translator\viewmodels\bin\Debug\net5.0-windows\Mov.Translator.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\translator\viewmodels\bin\Debug\net5.0-windows\ref\Mov.Translator.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\translator\viewmodels\bin\Debug\net5.0-windows\Mov.Translator.ViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\src\services\translator\viewmodels\obj\Debug\net5.0-windows\Translator.ViewModels.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\services\translator\viewmodels\obj\Debug\net5.0-windows\Translator.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nando\Documents\GitHub\mov\src\services\translator\viewmodels\obj\Debug\net5.0-windows\Translator.ViewModels.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\services\translator\viewmodels\obj\Debug\net5.0-windows\Translator.ViewModels.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\mov\src\services\translator\viewmodels\obj\Debug\net5.0-windows\Translator.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\services\translator\viewmodels\obj\Debug\net5.0-windows\Mov.Translator.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\translator\viewmodels\obj\Debug\net5.0-windows\ref\Mov.Translator.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\translator\viewmodels\obj\Debug\net5.0-windows\Mov.Translator.ViewModels.pdb

@@ -1,0 +1,12 @@
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\viewmodels\bin\Debug\net5.0-windows\Mov.Scheduler.ViewModels.deps.json
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\viewmodels\bin\Debug\net5.0-windows\Mov.Scheduler.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\viewmodels\bin\Debug\net5.0-windows\ref\Mov.Scheduler.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\viewmodels\bin\Debug\net5.0-windows\Mov.Scheduler.ViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\viewmodels\obj\Debug\net5.0-windows\Scheduler.ViewModels.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\viewmodels\obj\Debug\net5.0-windows\Scheduler.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\viewmodels\obj\Debug\net5.0-windows\Scheduler.ViewModels.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\viewmodels\obj\Debug\net5.0-windows\Scheduler.ViewModels.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\viewmodels\obj\Debug\net5.0-windows\Scheduler.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\viewmodels\obj\Debug\net5.0-windows\Mov.Scheduler.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\viewmodels\obj\Debug\net5.0-windows\ref\Mov.Scheduler.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\viewmodels\obj\Debug\net5.0-windows\Mov.Scheduler.ViewModels.pdb

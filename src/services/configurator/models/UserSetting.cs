@@ -9,16 +9,8 @@ using System.Xml.Serialization;
 
 namespace Mov.Configurator.Models
 {
-    [XmlRoot("table")]
-    public class UserSettingTable : ITable<UserSetting>
-    {
-        [XmlArray("settings")]
-        [XmlArrayItem("setting")]
-        public List<UserSetting> Items { get; set; }
-    }
-
     [XmlRoot("setting")]
-    public class UserSetting : DbObject
+    public class UserSetting : ConfiguratorObject
     {
         /// <summary>
         /// 初期値
@@ -33,4 +25,14 @@ namespace Mov.Configurator.Models
         [XmlElement("accesslv")]
         public int AccessLv { get; set; } = 0;
     }
+
+    [XmlRoot("table")]
+    public class UserSettingTable : ITable<UserSetting>
+    {
+        [XmlArray("settings")]
+        [XmlArrayItem("setting")]
+        public List<UserSetting> Items { get; set; }
+    }
+
+    
 }

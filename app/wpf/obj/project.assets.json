@@ -400,6 +400,69 @@
           "bin/placeholder/Mov.Authorizer.Service.dll": {}
         }
       },
+      "Mov.Authorizer.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.WpfViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Authorizer.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Authorizer.ViewModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.Authorizer.Views/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Authorizer.ViewModels": "1.0.0",
+          "Mov.WpfViews": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Authorizer.Views.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Authorizer.Views.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.BaseLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "Mov.Authorizer.Models": "1.0.0",
+          "Mov.Authorizer.Repository": "1.0.0",
+          "Mov.Authorizer.Service": "1.0.0",
+          "Mov.Configurator.Models": "1.0.0",
+          "Mov.Configurator.Repository": "1.0.0",
+          "Mov.Configurator.Service": "1.0.0",
+          "Mov.Designer.Models": "1.0.0",
+          "Mov.Designer.Repository": "1.0.0",
+          "Mov.Designer.Service": "1.0.0",
+          "Mov.Loggers": "1.0.0",
+          "Mov.Scheduler.Models": "1.0.0",
+          "Mov.Scheduler.Repository": "1.0.0",
+          "Mov.Scheduler.Service": "1.0.0",
+          "Mov.Translator.Models": "1.0.0",
+          "Mov.Translator.Repository": "1.0.0",
+          "Mov.Translator.Service": "1.0.0",
+          "Mov.Utilities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.BaseLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.BaseLib.dll": {}
+        }
+      },
       "Mov.Configurator.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -439,6 +502,40 @@
           "bin/placeholder/Mov.Configurator.Service.dll": {}
         }
       },
+      "Mov.Configurator.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Configurator.Models": "1.0.0",
+          "Mov.WpfViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Configurator.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Configurator.ViewModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.Configurator.Views/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Configurator.ViewModels": "1.0.0",
+          "Mov.WpfViews": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Configurator.Views.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Configurator.Views.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Mov.Designer.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -476,6 +573,42 @@
           "bin/placeholder/Mov.Designer.Service.dll": {}
         }
       },
+      "Mov.Designer.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Mov.Designer.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Designer.ViewModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.Designer.Views/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Mov.Designer.Views.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Designer.Views.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.Loggers/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Loggers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Loggers.dll": {}
+        }
+      },
       "Mov.Scheduler.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -509,6 +642,32 @@
         "runtime": {
           "bin/placeholder/Mov.Scheduler.Service.dll": {}
         }
+      },
+      "Mov.Scheduler.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Mov.Scheduler.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Scheduler.ViewModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.Scheduler.Views/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Mov.Scheduler.Views.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Scheduler.Views.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       },
       "Mov.Translator.Models/1.0.0": {
         "type": "project",
@@ -546,6 +705,32 @@
           "bin/placeholder/Mov.Translator.Service.dll": {}
         }
       },
+      "Mov.Translator.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Mov.Translator.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Translator.ViewModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.Translator.Views/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Mov.Translator.Views.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Translator.Views.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Mov.Utilities/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -561,8 +746,6 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "LiveCharts.Wpf.NetCore3": "0.9.7",
-          "Prism.Wpf": "8.1.97",
-          "ReactiveProperty.WPF": "8.0.1",
           "gong-wpf-dragdrop": "3.0.0"
         },
         "compile": {
@@ -589,6 +772,69 @@
         },
         "runtime": {
           "bin/placeholder/Mov.WpfDesigns.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.WpfLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Authorizer.ViewModels": "1.0.0",
+          "Mov.Authorizer.Views": "1.0.0",
+          "Mov.BaseLib": "1.0.0",
+          "Mov.Configurator.ViewModels": "1.0.0",
+          "Mov.Configurator.Views": "1.0.0",
+          "Mov.Designer.ViewModels": "1.0.0",
+          "Mov.Designer.Views": "1.0.0",
+          "Mov.Scheduler.ViewModels": "1.0.0",
+          "Mov.Scheduler.Views": "1.0.0",
+          "Mov.Translator.ViewModels": "1.0.0",
+          "Mov.Translator.Views": "1.0.0",
+          "Mov.WpfControls": "1.0.0",
+          "Mov.WpfDesigns": "1.0.0",
+          "Mov.WpfViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfLib.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.WpfViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Prism.Unity": "8.1.97",
+          "ReactiveProperty.WPF": "8.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfViewModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.WpfViews/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.WpfViewModels": "1.0.0",
+          "Prism.Wpf": "8.1.97"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfViews.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfViews.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -1391,6 +1637,21 @@
       "path": "../../src/services/authorizer/service/Authorizer.Service.csproj",
       "msbuildProject": "../../src/services/authorizer/service/Authorizer.Service.csproj"
     },
+    "Mov.Authorizer.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/authorizer/viewmodels/Authorizer.ViewModels.csproj",
+      "msbuildProject": "../../src/services/authorizer/viewmodels/Authorizer.ViewModels.csproj"
+    },
+    "Mov.Authorizer.Views/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/authorizer/views/Authorizer.Views.csproj",
+      "msbuildProject": "../../src/services/authorizer/views/Authorizer.Views.csproj"
+    },
+    "Mov.BaseLib/1.0.0": {
+      "type": "project",
+      "path": "../../lib/baselib/BaseLib.csproj",
+      "msbuildProject": "../../lib/baselib/BaseLib.csproj"
+    },
     "Mov.Configurator.Models/1.0.0": {
       "type": "project",
       "path": "../../src/services/configurator/models/Configurator.Models.csproj",
@@ -1405,6 +1666,16 @@
       "type": "project",
       "path": "../../src/services/configurator/service/Configurator.Service.csproj",
       "msbuildProject": "../../src/services/configurator/service/Configurator.Service.csproj"
+    },
+    "Mov.Configurator.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/configurator/viewmodels/Configurator.ViewModels.csproj",
+      "msbuildProject": "../../src/services/configurator/viewmodels/Configurator.ViewModels.csproj"
+    },
+    "Mov.Configurator.Views/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/configurator/views/Configurator.Views.csproj",
+      "msbuildProject": "../../src/services/configurator/views/Configurator.Views.csproj"
     },
     "Mov.Designer.Models/1.0.0": {
       "type": "project",
@@ -1421,6 +1692,21 @@
       "path": "../../src/services/designer/service/Designer.Service.csproj",
       "msbuildProject": "../../src/services/designer/service/Designer.Service.csproj"
     },
+    "Mov.Designer.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/designer/viewmodels/Designer.ViewModels.csproj",
+      "msbuildProject": "../../src/services/designer/viewmodels/Designer.ViewModels.csproj"
+    },
+    "Mov.Designer.Views/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/designer/views/Designer.Views.csproj",
+      "msbuildProject": "../../src/services/designer/views/Designer.Views.csproj"
+    },
+    "Mov.Loggers/1.0.0": {
+      "type": "project",
+      "path": "../../src/drivers/loggers/Loggers.csproj",
+      "msbuildProject": "../../src/drivers/loggers/Loggers.csproj"
+    },
     "Mov.Scheduler.Models/1.0.0": {
       "type": "project",
       "path": "../../src/services/scheduler/models/Scheduler.Models.csproj",
@@ -1435,6 +1721,16 @@
       "type": "project",
       "path": "../../src/services/scheduler/service/Scheduler.Service.csproj",
       "msbuildProject": "../../src/services/scheduler/service/Scheduler.Service.csproj"
+    },
+    "Mov.Scheduler.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/scheduler/viewmodels/Scheduler.ViewModels.csproj",
+      "msbuildProject": "../../src/services/scheduler/viewmodels/Scheduler.ViewModels.csproj"
+    },
+    "Mov.Scheduler.Views/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/scheduler/views/Scheduler.Views.csproj",
+      "msbuildProject": "../../src/services/scheduler/views/Scheduler.Views.csproj"
     },
     "Mov.Translator.Models/1.0.0": {
       "type": "project",
@@ -1451,6 +1747,16 @@
       "path": "../../src/services/translator/service/Translator.Service.csproj",
       "msbuildProject": "../../src/services/translator/service/Translator.Service.csproj"
     },
+    "Mov.Translator.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/translator/viewmodels/Translator.ViewModels.csproj",
+      "msbuildProject": "../../src/services/translator/viewmodels/Translator.ViewModels.csproj"
+    },
+    "Mov.Translator.Views/1.0.0": {
+      "type": "project",
+      "path": "../../src/services/translator/views/Translator.Views.csproj",
+      "msbuildProject": "../../src/services/translator/views/Translator.Views.csproj"
+    },
     "Mov.Utilities/1.0.0": {
       "type": "project",
       "path": "../../src/drivers/utilities/Utilities.csproj",
@@ -1465,29 +1771,26 @@
       "type": "project",
       "path": "../../src/designs/wpfdesigns/WpfDesigns.csproj",
       "msbuildProject": "../../src/designs/wpfdesigns/WpfDesigns.csproj"
+    },
+    "Mov.WpfLib/1.0.0": {
+      "type": "project",
+      "path": "../../lib/wpflib/WpfLib.csproj",
+      "msbuildProject": "../../lib/wpflib/WpfLib.csproj"
+    },
+    "Mov.WpfViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../src/designs/wpfviewmodels/WpfViewModels.csproj",
+      "msbuildProject": "../../src/designs/wpfviewmodels/WpfViewModels.csproj"
+    },
+    "Mov.WpfViews/1.0.0": {
+      "type": "project",
+      "path": "../../src/designs/wpfviews/WpfViews.csproj",
+      "msbuildProject": "../../src/designs/wpfviews/WpfViews.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
-      "Mov.Accessors >= 1.0.0",
-      "Mov.Authorizer.Models >= 1.0.0",
-      "Mov.Authorizer.Repository >= 1.0.0",
-      "Mov.Authorizer.Service >= 1.0.0",
-      "Mov.Configurator.Models >= 1.0.0",
-      "Mov.Configurator.Repository >= 1.0.0",
-      "Mov.Configurator.Service >= 1.0.0",
-      "Mov.Designer.Models >= 1.0.0",
-      "Mov.Designer.Repository >= 1.0.0",
-      "Mov.Designer.Service >= 1.0.0",
-      "Mov.Scheduler.Models >= 1.0.0",
-      "Mov.Scheduler.Repository >= 1.0.0",
-      "Mov.Scheduler.Service >= 1.0.0",
-      "Mov.Translator.Models >= 1.0.0",
-      "Mov.Translator.Repository >= 1.0.0",
-      "Mov.Translator.Service >= 1.0.0",
-      "Mov.Utilities >= 1.0.0",
-      "Mov.WpfControls >= 1.0.0",
-      "Mov.WpfDesigns >= 1.0.0",
+      "Mov.WpfLib >= 1.0.0",
       "Prism.Unity >= 8.1.97"
     ]
   },
@@ -1528,62 +1831,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\designs\\wpfcontrols\\WpfControls.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\designs\\wpfcontrols\\WpfControls.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\designs\\wpfdesigns\\WpfDesigns.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\designs\\wpfdesigns\\WpfDesigns.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\accessors\\Accessors.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\accessors\\Accessors.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\utilities\\Utilities.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\utilities\\Utilities.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\models\\Authorizer.Models.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\models\\Authorizer.Models.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\repository\\Authorizer.Repository.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\repository\\Authorizer.Repository.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\service\\Authorizer.Service.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\service\\Authorizer.Service.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\models\\Configurator.Models.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\models\\Configurator.Models.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\repository\\Configurator.Repository.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\repository\\Configurator.Repository.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\service\\Configurator.Service.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\service\\Configurator.Service.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\models\\Designer.Models.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\models\\Designer.Models.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\repository\\Designer.Repository.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\repository\\Designer.Repository.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\service\\Designer.Service.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\service\\Designer.Service.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\models\\Scheduler.Models.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\models\\Scheduler.Models.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\repository\\Scheduler.Repository.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\repository\\Scheduler.Repository.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\service\\Scheduler.Service.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\service\\Scheduler.Service.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\models\\Translator.Models.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\models\\Translator.Models.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\repository\\Translator.Repository.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\repository\\Translator.Repository.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\service\\Translator.Service.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\service\\Translator.Service.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\lib\\wpflib\\WpfLib.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\lib\\wpflib\\WpfLib.csproj"
             }
           }
         }

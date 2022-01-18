@@ -8,6 +8,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:vm="clr-namespace:Mov.Wpf.ViewModels;assembly=Mov.Wpf"
+    d:DataContext="{d:DesignInstance vm:MainWindowViewModel}"
     xmlns:prism="http://prismlibrary.com/"
     prism:ViewModelLocator.AutoWireViewModel="True"
     Title="MainWindow"
@@ -99,7 +101,7 @@
                         <ContentControl
                             x:Name="menuBarRegion"
                             prism:RegionManager.RegionManager="{Binding RegionManager}"
-                            prism:RegionManager.RegionName="MENUBAR"
+                            prism:RegionManager.RegionName="{x:Static vm:MainWindowViewModel.REGION_NAME_MENUBAR}"
                             DockPanel.Dock="Top" />
                     </StackPanel>
                 </DockPanel>
@@ -150,30 +152,30 @@
                     <ContentControl
                         x:Name="toolBarRegion"
                         prism:RegionManager.RegionManager="{Binding RegionManager}"
-                        prism:RegionManager.RegionName="TOOLBAR"
+                        prism:RegionManager.RegionName="{x:Static vm:MainWindowViewModel.REGION_NAME_HEADER}"
                         DockPanel.Dock="Top" />
                     <ContentControl
                         x:Name="leftRegion"
                         MaxWidth="200"
                         prism:RegionManager.RegionManager="{Binding RegionManager}"
-                        prism:RegionManager.RegionName="LEFT"
+                        prism:RegionManager.RegionName="{x:Static vm:MainWindowViewModel.REGION_NAME_LEFT}"
                         DockPanel.Dock="Left" />
                     <ContentControl
                         x:Name="rightRegion"
                         MaxWidth="200"
                         prism:RegionManager.RegionManager="{Binding RegionManager}"
-                        prism:RegionManager.RegionName="RIGHT"
+                        prism:RegionManager.RegionName="{x:Static vm:MainWindowViewModel.REGION_NAME_RIGHT}"
                         DockPanel.Dock="Right" />
                     <ContentControl
                         x:Name="footerRegion"
                         prism:RegionManager.RegionManager="{Binding RegionManager}"
-                        prism:RegionManager.RegionName="FOOTER"
+                        prism:RegionManager.RegionName="{x:Static vm:MainWindowViewModel.REGION_NAME_FOOTER}"
                         DockPanel.Dock="Bottom" />
                     <ContentControl
                         x:Name="contentRegion"
                         MinWidth="400"
                         prism:RegionManager.RegionManager="{Binding RegionManager}"
-                        prism:RegionManager.RegionName="CENTER" />
+                        prism:RegionManager.RegionName="{x:Static vm:MainWindowViewModel.REGION_NAME_CENTER}" />
                 </DockPanel>
             </Grid>
         </Grid>

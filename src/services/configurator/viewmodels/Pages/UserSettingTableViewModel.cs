@@ -51,7 +51,7 @@ namespace Mov.Configurator.ViewModels
 
         public class TableModelAttribute : ITableViewModelColumnAttribute
         {
-            public TableColumnAttribute Id { get; } = new TableColumnAttribute("", true);
+            public TableColumnAttribute Id { get; } = new TableColumnAttribute("id", true);
             public TableColumnAttribute Category { get; } = new TableColumnAttribute("category", true);
             public TableColumnAttribute Code { get; } = new TableColumnAttribute("code", true);
             public TableColumnAttribute Name { get; } = new TableColumnAttribute("name", true);

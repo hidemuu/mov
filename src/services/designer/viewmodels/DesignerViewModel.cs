@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Designer.ViewModels
 {
-    class DesignerViewModel
+    public class DesignerViewModel
     {
     }
 }

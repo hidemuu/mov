@@ -7,5 +7,7 @@ namespace Mov.Configurator.Models
     public interface IConfiguratorRepository
     {
         IUserSettingRepository UserSettings { get; }
+        IAppSettingRepository AppSettings { get; }
+        IVariableRepository Variables { get; }
     }
 }

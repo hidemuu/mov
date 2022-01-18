@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Scheduler.ViewModels
 {
-    class SchedulerViewModel
+    public class SchedulerViewModel
     {
     }
 }

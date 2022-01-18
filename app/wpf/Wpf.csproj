@@ -13,14 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Dialogs\" />
-    <Folder Include="ViewModels\Dialogs\Commons\" />
-    <Folder Include="ViewModels\Pages\" />
-    <Folder Include="Views\Dialogs\Commons\" />
-    <Folder Include="Views\Pages\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\lib\wpflib\WpfLib.csproj" />
   </ItemGroup>
 

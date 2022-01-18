@@ -1,9 +1,14 @@
 [
   {
-    "Id": 1,
-    "Name": "LocalFeedRate",
-    "Value": 100,
-    "Description": "ローカル変数 : フィードレート",
-    "RW": ""
+    "id": 1,
+    "name": "LocalFeedRate",
+    "value": "100",
+    "description": "ローカル変数 : フィードレート"
+  },
+  {
+    "id": 2,
+    "name": "LocalFeedRate1",
+    "value": "101",
+    "description": "ローカル変数 : フィードレート"
   }
 ]

@@ -1,30 +1,57 @@
-﻿<UserControl x:Class="Mov.Configurator.Views.ConfiguratorView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Mov.Configurator.Views"
-             xmlns:vm="clr-namespace:Mov.Configurator.ViewModels;assembly=Mov.Configurator.ViewModels"
-             d:DataContext="{d:DesignInstance vm:ConfiguratorViewModel}"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+﻿<UserControl
+    x:Class="Mov.Configurator.Views.ConfiguratorView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Mov.Configurator.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:vm="clr-namespace:Mov.Configurator.ViewModels;assembly=Mov.Configurator.ViewModels" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    d:DataContext="{d:DesignInstance vm:ConfiguratorViewModel}"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <TextBlock
-            Grid.Row="0"
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock
             Margin="20,0,20,0"
             VerticalAlignment="Center"
             FontSize="25"
             FontWeight="Bold"
             Foreground="#3F487F"
             Text="Configurator" />
-        <StackPanel
+            <Button
+                Margin="2"
+                Width="70"
+                Command="{Binding ShowAppSettingCommand}"
+                Content="AppSetting" />
+            <Button
+                Margin="2"
+                Width="70"
+                Command="{Binding ShowUserSettingCommand}"
+                Content="UserSetting" />
+            <Button
+                Margin="2"
+                Width="70"
+                Command="{Binding ShowVariableCommand}"
+                Content="Variable" />
+        </StackPanel>
+        
+        <ContentControl
+            x:Name="contentRegion"
             Grid.Row="1"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Orientation="Horizontal" />
+            MinWidth="400"
+            prism:RegionManager.RegionManager="{Binding RegionManager}"
+            prism:RegionManager.RegionName="{x:Static vm:ConfiguratorViewModel.REGION_NAME_CENTER}" />
     </Grid>
 </UserControl>

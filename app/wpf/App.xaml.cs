@@ -1,4 +1,5 @@
-﻿using Mov.Authorizer.Models;
+﻿using Configurator.Views;
+using Mov.Authorizer.Models;
 using Mov.Authorizer.Repository;
 using Mov.Authorizer.ViewModels;
 using Mov.Authorizer.Views;
@@ -63,9 +64,12 @@ namespace Mov.Wpf
             containerRegistry.RegisterInstance<ITranslatorRepository>(new TranslatorRepository(Path.Combine(assetPath, "translator"), Accessors.FileType.Json));
 
             //Viewの登録
-            containerRegistry.RegisterForNavigation<AuthorizerView>();
             containerRegistry.RegisterForNavigation<ConfiguratorView>();
-
+            containerRegistry.RegisterForNavigation<UserSettingTableView>();
+            containerRegistry.RegisterForNavigation<AppSettingTableView>();
+            containerRegistry.RegisterForNavigation<VariableTableView>();
+            containerRegistry.RegisterForNavigation<AuthorizerView>();
+            
             //Dialogの登録
             containerRegistry.RegisterDialog<AlertDialog, AlertDialogViewModel>();
             containerRegistry.RegisterDialog<SuccessDialog, SuccessDialogViewModel>();
@@ -88,6 +92,9 @@ namespace Mov.Wpf
 
             ViewModelLocationProvider.Register<MainWindow, MainWindowViewModel>();
             ViewModelLocationProvider.Register<ConfiguratorView, ConfiguratorViewModel>();
+            ViewModelLocationProvider.Register<UserSettingTableView, UserSettingTableViewModel>();
+            ViewModelLocationProvider.Register<AppSettingTableView, AppSettingTableViewModel>();
+            ViewModelLocationProvider.Register<VariableTableView, VariableTableViewModel>();
             ViewModelLocationProvider.Register<AuthorizerView, AuthorizerViewModel>();
         }
 

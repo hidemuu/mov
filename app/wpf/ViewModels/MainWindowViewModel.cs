@@ -17,6 +17,13 @@ namespace Mov.Wpf.ViewModels
     {
         #region フィールド
 
+        public const string REGION_NAME_CENTER = "CENTER";
+        public const string REGION_NAME_LEFT = "LEFT";
+        public const string REGION_NAME_RIGHT = "RIGHT";
+        public const string REGION_NAME_MENUBAR = "MENUBAR";
+        public const string REGION_NAME_HEADER = "HEADER";
+        public const string REGION_NAME_FOOTER = "FOOTER";
+
         public ReactiveCollection<MainWindowModel> Models { get; } = new ReactiveCollection<MainWindowModel>();
         public ReactivePropertySlim<int> TabPage { get; set; } = new ReactivePropertySlim<int>(-1);
 
@@ -35,8 +42,8 @@ namespace Mov.Wpf.ViewModels
         /// <param name="dialogService"></param>
         public MainWindowViewModel(IRegionManager regionManager, IDialogService dialogService) : base(regionManager, dialogService)
         {
-            Models.Add(new MainWindowModel(0, "Config", "Cog", () => this.RegionManager.RequestNavigate("CENTER", "ConfiguratorView")));
-            Models.Add(new MainWindowModel(1, "Auth", "Home", () => this.RegionManager.RequestNavigate("CENTER", "AuthorizerView")));
+            Models.Add(new MainWindowModel(0, "Config", "Cog", () => this.RegionManager.RequestNavigate(REGION_NAME_CENTER, "ConfiguratorView")));
+            Models.Add(new MainWindowModel(1, "Auth", "Home", () => this.RegionManager.RequestNavigate(REGION_NAME_CENTER, "AuthorizerView")));
             
             TabChangeCommand.Subscribe(_ => OnChangeTab()).AddTo(Disposables);
 
@@ -53,12 +60,12 @@ namespace Mov.Wpf.ViewModels
 
         protected override void OnLoaded()
         {
-            //this.RegionManager.RequestNavigate("MENUBAR", "MenuView");
-            //this.RegionManager.RequestNavigate("TOOLBAR", "ToolView");
-            //this.RegionManager.RequestNavigate("RIGHT", "LayoutView");
-            //this.RegionManager.RequestNavigate("LEFT", "TreeTableView");
-            this.RegionManager.RequestNavigate("CENTER", "ConfiguratorView");
-            //this.RegionManager.RequestNavigate("FOOTER", "GuideView");
+            //this.RegionManager.RequestNavigate(REGION_NAME_MENUBAR, "MenuView");
+            //this.RegionManager.RequestNavigate(REGION_NAME_HEADER, "ToolView");
+            //this.RegionManager.RequestNavigate(REGION_NAME_RIGHT, "LayoutView");
+            //this.RegionManager.RequestNavigate(REGION_NAME_LEFT, "TreeTableView");
+            this.RegionManager.RequestNavigate(REGION_NAME_CENTER, "ConfiguratorView");
+            //this.RegionManager.RequestNavigate(REGION_NAME_FOOTER, "GuideView");
         }
 
         private void OnChangeTab()

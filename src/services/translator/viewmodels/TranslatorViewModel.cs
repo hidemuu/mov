@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Translator.ViewModels
 {
-    class TranslatorViewModel
+    public class TranslatorViewModel
     {
     }
 }

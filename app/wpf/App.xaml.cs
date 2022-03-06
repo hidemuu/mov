@@ -9,8 +9,14 @@ using Mov.Configurator.ViewModels;
 using Mov.Configurator.Views;
 using Mov.Designer.Models;
 using Mov.Designer.Repository.Xml;
+using Mov.Designer.ViewModels;
+using Mov.Designer.Views;
+using Mov.Scheduler.ViewModels;
+using Mov.Scheduler.Views;
 using Mov.Translator.Models;
 using Mov.Translator.Repository;
+using Mov.Translator.ViewModels;
+using Mov.Translator.Views;
 using Mov.Utilities;
 using Mov.Wpf.ViewModels;
 using Mov.WpfViewModels.Components.Dialogs;
@@ -96,6 +102,9 @@ namespace Mov.Wpf
             ViewModelLocationProvider.Register<AppSettingTableView, AppSettingTableViewModel>();
             ViewModelLocationProvider.Register<VariableTableView, VariableTableViewModel>();
             ViewModelLocationProvider.Register<AuthorizerView, AuthorizerViewModel>();
+            ViewModelLocationProvider.Register<DesignerView, DesignerViewModel>();
+            ViewModelLocationProvider.Register<SchedulerView, SchedulerViewModel>();
+            ViewModelLocationProvider.Register<TranslatorView, TranslatorViewModel>();
         }
 
         protected override IModuleCatalog CreateModuleCatalog()

@@ -1,4 +1,5 @@
-﻿using Mov.WpfViewModels;
+﻿using Mov.Wpf.Models;
+using Mov.WpfViewModels;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using Reactive.Bindings;
@@ -16,13 +17,6 @@ namespace Mov.Wpf.ViewModels
     public class MainWindowViewModel : RegionViewModelBase
     {
         #region フィールド
-
-        public const string REGION_NAME_CENTER = "CENTER";
-        public const string REGION_NAME_LEFT = "LEFT";
-        public const string REGION_NAME_RIGHT = "RIGHT";
-        public const string REGION_NAME_MENUBAR = "MENUBAR";
-        public const string REGION_NAME_HEADER = "HEADER";
-        public const string REGION_NAME_FOOTER = "FOOTER";
 
         public ReactiveCollection<MainWindowModel> Models { get; } = new ReactiveCollection<MainWindowModel>();
         public ReactivePropertySlim<int> TabPage { get; set; } = new ReactivePropertySlim<int>(-1);
@@ -42,9 +36,12 @@ namespace Mov.Wpf.ViewModels
         /// <param name="dialogService"></param>
         public MainWindowViewModel(IRegionManager regionManager, IDialogService dialogService) : base(regionManager, dialogService)
         {
-            Models.Add(new MainWindowModel(0, "Config", "Cog", () => this.RegionManager.RequestNavigate(REGION_NAME_CENTER, "ConfiguratorView")));
-            Models.Add(new MainWindowModel(1, "Auth", "Home", () => this.RegionManager.RequestNavigate(REGION_NAME_CENTER, "AuthorizerView")));
-            
+            Models.Add(new MainWindowModel(0, "Config", "Cog", () => this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "ConfiguratorView")));
+            Models.Add(new MainWindowModel(1, "Auth", "Account", () => this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "AuthorizerView")));
+            Models.Add(new MainWindowModel(2, "Designer", "Home", () => this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "DesignerView")));
+            Models.Add(new MainWindowModel(3, "Scheduler", "calendar", () => this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "SchedulerView")));
+            Models.Add(new MainWindowModel(4, "Translator", "translate", () => this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "TranslatorView")));
+
             TabChangeCommand.Subscribe(_ => OnChangeTab()).AddTo(Disposables);
 
             // 定期更新スレッド
@@ -64,7 +61,7 @@ namespace Mov.Wpf.ViewModels
             //this.RegionManager.RequestNavigate(REGION_NAME_HEADER, "ToolView");
             //this.RegionManager.RequestNavigate(REGION_NAME_RIGHT, "LayoutView");
             //this.RegionManager.RequestNavigate(REGION_NAME_LEFT, "TreeTableView");
-            this.RegionManager.RequestNavigate(REGION_NAME_CENTER, "ConfiguratorView");
+            this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "ConfiguratorView");
             //this.RegionManager.RequestNavigate(REGION_NAME_FOOTER, "GuideView");
         }
 
@@ -74,25 +71,6 @@ namespace Mov.Wpf.ViewModels
         }
 
         #endregion
-
-        public class MainWindowModel
-        {
-            public int Index { get; }
-            public Action TabCommand { get; }
-
-            public ReactivePropertySlim<string> Title { get; } = new ReactivePropertySlim<string>();
-            public ReactivePropertySlim<string> IconKey { get; } = new ReactivePropertySlim<string>();
-            public ReactivePropertySlim<bool> IsSelected { get; } = new ReactivePropertySlim<bool>();
-
-
-            public MainWindowModel(int index, string title, string iconkey, Action tabcommand)
-            {
-                Index = index;
-                TabCommand = tabcommand;
-                Title.Value = title;
-                IconKey.Value = iconkey;
-            }
-        }
 
     }
 }

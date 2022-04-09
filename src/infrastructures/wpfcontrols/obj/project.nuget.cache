@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "vCsn7mOmxkgPAYElluffGd/XD+NUTwczd9HjnakXcbZzb7c7qp9CxNBaZziDP0y2AmrpKT24EGVrlyOGriNPlg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nando\\.nuget\\packages\\gong-wpf-dragdrop\\3.0.0\\gong-wpf-dragdrop.3.0.0.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\livecharts.wpf.netcore3\\0.9.7\\livecharts.wpf.netcore3.0.9.7.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\system.data.datasetextensions\\4.5.0\\system.data.datasetextensions.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

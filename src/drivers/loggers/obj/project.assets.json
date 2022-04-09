@@ -187,11 +187,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\Loggers\\Loggers.csproj",
+      "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\loggers\\Loggers.csproj",
       "projectName": "Mov.Loggers",
-      "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\Loggers\\Loggers.csproj",
+      "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\loggers\\Loggers.csproj",
       "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\Loggers\\obj\\",
+      "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\drivers\\loggers\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

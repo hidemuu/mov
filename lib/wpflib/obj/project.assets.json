@@ -524,7 +524,6 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Mov.Configurator.ViewModels": "1.0.0",
-          "Mov.WpfDesigns": "1.0.0",
           "Mov.WpfViews": "1.0.0"
         },
         "compile": {
@@ -1591,33 +1590,33 @@
     },
     "Mov.Accessors/1.0.0": {
       "type": "project",
-      "path": "../../src/drivers/accessors/Accessors.csproj",
-      "msbuildProject": "../../src/drivers/accessors/Accessors.csproj"
+      "path": "../../src/infrastructures/accessors/Accessors.csproj",
+      "msbuildProject": "../../src/infrastructures/accessors/Accessors.csproj"
     },
     "Mov.Authorizer.Models/1.0.0": {
       "type": "project",
-      "path": "../../src/services/authorizer/models/Authorizer.Models.csproj",
-      "msbuildProject": "../../src/services/authorizer/models/Authorizer.Models.csproj"
+      "path": "../../src/domains/authorizer.models/Authorizer.Models.csproj",
+      "msbuildProject": "../../src/domains/authorizer.models/Authorizer.Models.csproj"
     },
     "Mov.Authorizer.Repository/1.0.0": {
       "type": "project",
-      "path": "../../src/services/authorizer/repository/Authorizer.Repository.csproj",
-      "msbuildProject": "../../src/services/authorizer/repository/Authorizer.Repository.csproj"
+      "path": "../../src/applications/authorizer.repository/Authorizer.Repository.csproj",
+      "msbuildProject": "../../src/applications/authorizer.repository/Authorizer.Repository.csproj"
     },
     "Mov.Authorizer.Service/1.0.0": {
       "type": "project",
-      "path": "../../src/services/authorizer/service/Authorizer.Service.csproj",
-      "msbuildProject": "../../src/services/authorizer/service/Authorizer.Service.csproj"
+      "path": "../../src/applications/authorizer.service/Authorizer.Service.csproj",
+      "msbuildProject": "../../src/applications/authorizer.service/Authorizer.Service.csproj"
     },
     "Mov.Authorizer.ViewModels/1.0.0": {
       "type": "project",
-      "path": "../../src/services/authorizer/viewmodels/Authorizer.ViewModels.csproj",
-      "msbuildProject": "../../src/services/authorizer/viewmodels/Authorizer.ViewModels.csproj"
+      "path": "../../src/presentations/wpf/authorizer.viewmodels/Authorizer.ViewModels.csproj",
+      "msbuildProject": "../../src/presentations/wpf/authorizer.viewmodels/Authorizer.ViewModels.csproj"
     },
     "Mov.Authorizer.Views/1.0.0": {
       "type": "project",
-      "path": "../../src/services/authorizer/views/Authorizer.Views.csproj",
-      "msbuildProject": "../../src/services/authorizer/views/Authorizer.Views.csproj"
+      "path": "../../src/presentations/wpf/authorizer.views/Authorizer.Views.csproj",
+      "msbuildProject": "../../src/presentations/wpf/authorizer.views/Authorizer.Views.csproj"
     },
     "Mov.BaseLib/1.0.0": {
       "type": "project",
@@ -1626,133 +1625,133 @@
     },
     "Mov.Configurator.Models/1.0.0": {
       "type": "project",
-      "path": "../../src/services/configurator/models/Configurator.Models.csproj",
-      "msbuildProject": "../../src/services/configurator/models/Configurator.Models.csproj"
+      "path": "../../src/domains/configurator.models/Configurator.Models.csproj",
+      "msbuildProject": "../../src/domains/configurator.models/Configurator.Models.csproj"
     },
     "Mov.Configurator.Repository/1.0.0": {
       "type": "project",
-      "path": "../../src/services/configurator/repository/Configurator.Repository.csproj",
-      "msbuildProject": "../../src/services/configurator/repository/Configurator.Repository.csproj"
+      "path": "../../src/applications/configurator.repository/Configurator.Repository.csproj",
+      "msbuildProject": "../../src/applications/configurator.repository/Configurator.Repository.csproj"
     },
     "Mov.Configurator.Service/1.0.0": {
       "type": "project",
-      "path": "../../src/services/configurator/service/Configurator.Service.csproj",
-      "msbuildProject": "../../src/services/configurator/service/Configurator.Service.csproj"
+      "path": "../../src/applications/configurator.service/Configurator.Service.csproj",
+      "msbuildProject": "../../src/applications/configurator.service/Configurator.Service.csproj"
     },
     "Mov.Configurator.ViewModels/1.0.0": {
       "type": "project",
-      "path": "../../src/services/configurator/viewmodels/Configurator.ViewModels.csproj",
-      "msbuildProject": "../../src/services/configurator/viewmodels/Configurator.ViewModels.csproj"
+      "path": "../../src/presentations/wpf/configurator.viewmodels/Configurator.ViewModels.csproj",
+      "msbuildProject": "../../src/presentations/wpf/configurator.viewmodels/Configurator.ViewModels.csproj"
     },
     "Mov.Configurator.Views/1.0.0": {
       "type": "project",
-      "path": "../../src/services/configurator/views/Configurator.Views.csproj",
-      "msbuildProject": "../../src/services/configurator/views/Configurator.Views.csproj"
+      "path": "../../src/presentations/wpf/configurator.views/Configurator.Views.csproj",
+      "msbuildProject": "../../src/presentations/wpf/configurator.views/Configurator.Views.csproj"
     },
     "Mov.Designer.Models/1.0.0": {
       "type": "project",
-      "path": "../../src/services/designer/models/Designer.Models.csproj",
-      "msbuildProject": "../../src/services/designer/models/Designer.Models.csproj"
+      "path": "../../src/domains/designer.models/Designer.Models.csproj",
+      "msbuildProject": "../../src/domains/designer.models/Designer.Models.csproj"
     },
     "Mov.Designer.Repository/1.0.0": {
       "type": "project",
-      "path": "../../src/services/designer/repository/Designer.Repository.csproj",
-      "msbuildProject": "../../src/services/designer/repository/Designer.Repository.csproj"
+      "path": "../../src/applications/designer.repository/Designer.Repository.csproj",
+      "msbuildProject": "../../src/applications/designer.repository/Designer.Repository.csproj"
     },
     "Mov.Designer.Service/1.0.0": {
       "type": "project",
-      "path": "../../src/services/designer/service/Designer.Service.csproj",
-      "msbuildProject": "../../src/services/designer/service/Designer.Service.csproj"
+      "path": "../../src/applications/designer.service/Designer.Service.csproj",
+      "msbuildProject": "../../src/applications/designer.service/Designer.Service.csproj"
     },
     "Mov.Designer.ViewModels/1.0.0": {
       "type": "project",
-      "path": "../../src/services/designer/viewmodels/Designer.ViewModels.csproj",
-      "msbuildProject": "../../src/services/designer/viewmodels/Designer.ViewModels.csproj"
+      "path": "../../src/presentations/wpf/designer.viewmodels/Designer.ViewModels.csproj",
+      "msbuildProject": "../../src/presentations/wpf/designer.viewmodels/Designer.ViewModels.csproj"
     },
     "Mov.Designer.Views/1.0.0": {
       "type": "project",
-      "path": "../../src/services/designer/views/Designer.Views.csproj",
-      "msbuildProject": "../../src/services/designer/views/Designer.Views.csproj"
+      "path": "../../src/presentations/wpf/designer.views/Designer.Views.csproj",
+      "msbuildProject": "../../src/presentations/wpf/designer.views/Designer.Views.csproj"
     },
     "Mov.Loggers/1.0.0": {
       "type": "project",
-      "path": "../../src/drivers/loggers/Loggers.csproj",
-      "msbuildProject": "../../src/drivers/loggers/Loggers.csproj"
+      "path": "../../src/infrastructures/loggers/Loggers.csproj",
+      "msbuildProject": "../../src/infrastructures/loggers/Loggers.csproj"
     },
     "Mov.Scheduler.Models/1.0.0": {
       "type": "project",
-      "path": "../../src/services/scheduler/models/Scheduler.Models.csproj",
-      "msbuildProject": "../../src/services/scheduler/models/Scheduler.Models.csproj"
+      "path": "../../src/domains/scheduler.models/Scheduler.Models.csproj",
+      "msbuildProject": "../../src/domains/scheduler.models/Scheduler.Models.csproj"
     },
     "Mov.Scheduler.Repository/1.0.0": {
       "type": "project",
-      "path": "../../src/services/scheduler/repository/Scheduler.Repository.csproj",
-      "msbuildProject": "../../src/services/scheduler/repository/Scheduler.Repository.csproj"
+      "path": "../../src/applications/scheduler.repository/Scheduler.Repository.csproj",
+      "msbuildProject": "../../src/applications/scheduler.repository/Scheduler.Repository.csproj"
     },
     "Mov.Scheduler.Service/1.0.0": {
       "type": "project",
-      "path": "../../src/services/scheduler/service/Scheduler.Service.csproj",
-      "msbuildProject": "../../src/services/scheduler/service/Scheduler.Service.csproj"
+      "path": "../../src/applications/scheduler.service/Scheduler.Service.csproj",
+      "msbuildProject": "../../src/applications/scheduler.service/Scheduler.Service.csproj"
     },
     "Mov.Scheduler.ViewModels/1.0.0": {
       "type": "project",
-      "path": "../../src/services/scheduler/viewmodels/Scheduler.ViewModels.csproj",
-      "msbuildProject": "../../src/services/scheduler/viewmodels/Scheduler.ViewModels.csproj"
+      "path": "../../src/presentations/wpf/scheduler.viewmodels/Scheduler.ViewModels.csproj",
+      "msbuildProject": "../../src/presentations/wpf/scheduler.viewmodels/Scheduler.ViewModels.csproj"
     },
     "Mov.Scheduler.Views/1.0.0": {
       "type": "project",
-      "path": "../../src/services/scheduler/views/Scheduler.Views.csproj",
-      "msbuildProject": "../../src/services/scheduler/views/Scheduler.Views.csproj"
+      "path": "../../src/presentations/wpf/scheduler.views/Scheduler.Views.csproj",
+      "msbuildProject": "../../src/presentations/wpf/scheduler.views/Scheduler.Views.csproj"
     },
     "Mov.Translator.Models/1.0.0": {
       "type": "project",
-      "path": "../../src/services/translator/models/Translator.Models.csproj",
-      "msbuildProject": "../../src/services/translator/models/Translator.Models.csproj"
+      "path": "../../src/domains/translator.models/Translator.Models.csproj",
+      "msbuildProject": "../../src/domains/translator.models/Translator.Models.csproj"
     },
     "Mov.Translator.Repository/1.0.0": {
       "type": "project",
-      "path": "../../src/services/translator/repository/Translator.Repository.csproj",
-      "msbuildProject": "../../src/services/translator/repository/Translator.Repository.csproj"
+      "path": "../../src/applications/translator.repository/Translator.Repository.csproj",
+      "msbuildProject": "../../src/applications/translator.repository/Translator.Repository.csproj"
     },
     "Mov.Translator.Service/1.0.0": {
       "type": "project",
-      "path": "../../src/services/translator/service/Translator.Service.csproj",
-      "msbuildProject": "../../src/services/translator/service/Translator.Service.csproj"
+      "path": "../../src/applications/translator.service/Translator.Service.csproj",
+      "msbuildProject": "../../src/applications/translator.service/Translator.Service.csproj"
     },
     "Mov.Translator.ViewModels/1.0.0": {
       "type": "project",
-      "path": "../../src/services/translator/viewmodels/Translator.ViewModels.csproj",
-      "msbuildProject": "../../src/services/translator/viewmodels/Translator.ViewModels.csproj"
+      "path": "../../src/presentations/wpf/translator.viewmodels/Translator.ViewModels.csproj",
+      "msbuildProject": "../../src/presentations/wpf/translator.viewmodels/Translator.ViewModels.csproj"
     },
     "Mov.Translator.Views/1.0.0": {
       "type": "project",
-      "path": "../../src/services/translator/views/Translator.Views.csproj",
-      "msbuildProject": "../../src/services/translator/views/Translator.Views.csproj"
+      "path": "../../src/presentations/wpf/translator.views/Translator.Views.csproj",
+      "msbuildProject": "../../src/presentations/wpf/translator.views/Translator.Views.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",
-      "path": "../../src/drivers/utilities/Utilities.csproj",
-      "msbuildProject": "../../src/drivers/utilities/Utilities.csproj"
+      "path": "../../src/infrastructures/utilities/Utilities.csproj",
+      "msbuildProject": "../../src/infrastructures/utilities/Utilities.csproj"
     },
     "Mov.WpfControls/1.0.0": {
       "type": "project",
-      "path": "../../src/designs/wpfcontrols/WpfControls.csproj",
-      "msbuildProject": "../../src/designs/wpfcontrols/WpfControls.csproj"
+      "path": "../../src/infrastructures/wpfcontrols/WpfControls.csproj",
+      "msbuildProject": "../../src/infrastructures/wpfcontrols/WpfControls.csproj"
     },
     "Mov.WpfDesigns/1.0.0": {
       "type": "project",
-      "path": "../../src/designs/wpfdesigns/WpfDesigns.csproj",
-      "msbuildProject": "../../src/designs/wpfdesigns/WpfDesigns.csproj"
+      "path": "../../src/infrastructures/wpfdesigns/WpfDesigns.csproj",
+      "msbuildProject": "../../src/infrastructures/wpfdesigns/WpfDesigns.csproj"
     },
     "Mov.WpfViewModels/1.0.0": {
       "type": "project",
-      "path": "../../src/designs/wpfviewmodels/WpfViewModels.csproj",
-      "msbuildProject": "../../src/designs/wpfviewmodels/WpfViewModels.csproj"
+      "path": "../../src/presentations/wpf/wpfviewmodels/WpfViewModels.csproj",
+      "msbuildProject": "../../src/presentations/wpf/wpfviewmodels/WpfViewModels.csproj"
     },
     "Mov.WpfViews/1.0.0": {
       "type": "project",
-      "path": "../../src/designs/wpfviews/WpfViews.csproj",
-      "msbuildProject": "../../src/designs/wpfviews/WpfViews.csproj"
+      "path": "../../src/presentations/wpf/wpfviews/WpfViews.csproj",
+      "msbuildProject": "../../src/presentations/wpf/wpfviews/WpfViews.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1770,7 +1769,8 @@
       "Mov.Translator.Views >= 1.0.0",
       "Mov.WpfControls >= 1.0.0",
       "Mov.WpfDesigns >= 1.0.0",
-      "Mov.WpfViewModels >= 1.0.0"
+      "Mov.WpfViewModels >= 1.0.0",
+      "Mov.WpfViews >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1813,44 +1813,47 @@
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\lib\\baselib\\BaseLib.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\lib\\baselib\\BaseLib.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\designs\\wpfcontrols\\WpfControls.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\designs\\wpfcontrols\\WpfControls.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\designs\\wpfdesigns\\WpfDesigns.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\designs\\wpfdesigns\\WpfDesigns.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfdesigns\\WpfDesigns.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfdesigns\\WpfDesigns.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\designs\\wpfviewmodels\\WpfViewModels.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\designs\\wpfviewmodels\\WpfViewModels.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\authorizer.viewmodels\\Authorizer.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\authorizer.viewmodels\\Authorizer.ViewModels.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\viewmodels\\Authorizer.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\viewmodels\\Authorizer.ViewModels.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\authorizer.views\\Authorizer.Views.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\authorizer.views\\Authorizer.Views.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\views\\Authorizer.Views.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\authorizer\\views\\Authorizer.Views.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\configurator.viewmodels\\Configurator.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\configurator.viewmodels\\Configurator.ViewModels.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\viewmodels\\Configurator.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\viewmodels\\Configurator.ViewModels.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\configurator.views\\Configurator.Views.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\configurator.views\\Configurator.Views.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\views\\Configurator.Views.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\configurator\\views\\Configurator.Views.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.viewmodels\\Designer.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.viewmodels\\Designer.ViewModels.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\viewmodels\\Designer.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\viewmodels\\Designer.ViewModels.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.views\\Designer.Views.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.views\\Designer.Views.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\views\\Designer.Views.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\designer\\views\\Designer.Views.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.viewmodels\\Scheduler.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.viewmodels\\Scheduler.ViewModels.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\viewmodels\\Scheduler.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\viewmodels\\Scheduler.ViewModels.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.views\\Scheduler.Views.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.views\\Scheduler.Views.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\views\\Scheduler.Views.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\scheduler\\views\\Scheduler.Views.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\translator.viewmodels\\Translator.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\translator.viewmodels\\Translator.ViewModels.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\viewmodels\\Translator.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\viewmodels\\Translator.ViewModels.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\translator.views\\Translator.Views.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\translator.views\\Translator.Views.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\views\\Translator.Views.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\services\\translator\\views\\Translator.Views.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\wpfviewmodels\\WpfViewModels.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\wpfviewmodels\\WpfViewModels.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\wpfviews\\WpfViews.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\wpfviews\\WpfViews.csproj"
             }
           }
         }

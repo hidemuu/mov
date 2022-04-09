@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.Configurator.Views</AssemblyName>
+    <RootNamespace>Mov.Configurator.Views</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\configurator.viewmodels\Configurator.ViewModels.csproj" />
+    <ProjectReference Include="..\wpfviews\WpfViews.csproj" />
+  </ItemGroup>
+
+</Project>

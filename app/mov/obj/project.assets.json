@@ -575,23 +575,23 @@
     },
     "Mov.Accessors/1.0.0": {
       "type": "project",
-      "path": "../../src/drivers/accessors/Accessors.csproj",
-      "msbuildProject": "../../src/drivers/accessors/Accessors.csproj"
+      "path": "../../src/infrastructures/accessors/Accessors.csproj",
+      "msbuildProject": "../../src/infrastructures/accessors/Accessors.csproj"
     },
     "Mov.Authorizer.Models/1.0.0": {
       "type": "project",
-      "path": "../../src/services/authorizer/models/Authorizer.Models.csproj",
-      "msbuildProject": "../../src/services/authorizer/models/Authorizer.Models.csproj"
+      "path": "../../src/domains/authorizer.models/Authorizer.Models.csproj",
+      "msbuildProject": "../../src/domains/authorizer.models/Authorizer.Models.csproj"
     },
     "Mov.Authorizer.Repository/1.0.0": {
       "type": "project",
-      "path": "../../src/services/authorizer/repository/Authorizer.Repository.csproj",
-      "msbuildProject": "../../src/services/authorizer/repository/Authorizer.Repository.csproj"
+      "path": "../../src/applications/authorizer.repository/Authorizer.Repository.csproj",
+      "msbuildProject": "../../src/applications/authorizer.repository/Authorizer.Repository.csproj"
     },
     "Mov.Authorizer.Service/1.0.0": {
       "type": "project",
-      "path": "../../src/services/authorizer/service/Authorizer.Service.csproj",
-      "msbuildProject": "../../src/services/authorizer/service/Authorizer.Service.csproj"
+      "path": "../../src/applications/authorizer.service/Authorizer.Service.csproj",
+      "msbuildProject": "../../src/applications/authorizer.service/Authorizer.Service.csproj"
     },
     "Mov.BaseLib/1.0.0": {
       "type": "project",
@@ -600,73 +600,73 @@
     },
     "Mov.Configurator.Models/1.0.0": {
       "type": "project",
-      "path": "../../src/services/configurator/models/Configurator.Models.csproj",
-      "msbuildProject": "../../src/services/configurator/models/Configurator.Models.csproj"
+      "path": "../../src/domains/configurator.models/Configurator.Models.csproj",
+      "msbuildProject": "../../src/domains/configurator.models/Configurator.Models.csproj"
     },
     "Mov.Configurator.Repository/1.0.0": {
       "type": "project",
-      "path": "../../src/services/configurator/repository/Configurator.Repository.csproj",
-      "msbuildProject": "../../src/services/configurator/repository/Configurator.Repository.csproj"
+      "path": "../../src/applications/configurator.repository/Configurator.Repository.csproj",
+      "msbuildProject": "../../src/applications/configurator.repository/Configurator.Repository.csproj"
     },
     "Mov.Configurator.Service/1.0.0": {
       "type": "project",
-      "path": "../../src/services/configurator/service/Configurator.Service.csproj",
-      "msbuildProject": "../../src/services/configurator/service/Configurator.Service.csproj"
+      "path": "../../src/applications/configurator.service/Configurator.Service.csproj",
+      "msbuildProject": "../../src/applications/configurator.service/Configurator.Service.csproj"
     },
     "Mov.Designer.Models/1.0.0": {
       "type": "project",
-      "path": "../../src/services/designer/models/Designer.Models.csproj",
-      "msbuildProject": "../../src/services/designer/models/Designer.Models.csproj"
+      "path": "../../src/domains/designer.models/Designer.Models.csproj",
+      "msbuildProject": "../../src/domains/designer.models/Designer.Models.csproj"
     },
     "Mov.Designer.Repository/1.0.0": {
       "type": "project",
-      "path": "../../src/services/designer/repository/Designer.Repository.csproj",
-      "msbuildProject": "../../src/services/designer/repository/Designer.Repository.csproj"
+      "path": "../../src/applications/designer.repository/Designer.Repository.csproj",
+      "msbuildProject": "../../src/applications/designer.repository/Designer.Repository.csproj"
     },
     "Mov.Designer.Service/1.0.0": {
       "type": "project",
-      "path": "../../src/services/designer/service/Designer.Service.csproj",
-      "msbuildProject": "../../src/services/designer/service/Designer.Service.csproj"
+      "path": "../../src/applications/designer.service/Designer.Service.csproj",
+      "msbuildProject": "../../src/applications/designer.service/Designer.Service.csproj"
     },
     "Mov.Loggers/1.0.0": {
       "type": "project",
-      "path": "../../src/drivers/loggers/Loggers.csproj",
-      "msbuildProject": "../../src/drivers/loggers/Loggers.csproj"
+      "path": "../../src/infrastructures/loggers/Loggers.csproj",
+      "msbuildProject": "../../src/infrastructures/loggers/Loggers.csproj"
     },
     "Mov.Scheduler.Models/1.0.0": {
       "type": "project",
-      "path": "../../src/services/scheduler/models/Scheduler.Models.csproj",
-      "msbuildProject": "../../src/services/scheduler/models/Scheduler.Models.csproj"
+      "path": "../../src/domains/scheduler.models/Scheduler.Models.csproj",
+      "msbuildProject": "../../src/domains/scheduler.models/Scheduler.Models.csproj"
     },
     "Mov.Scheduler.Repository/1.0.0": {
       "type": "project",
-      "path": "../../src/services/scheduler/repository/Scheduler.Repository.csproj",
-      "msbuildProject": "../../src/services/scheduler/repository/Scheduler.Repository.csproj"
+      "path": "../../src/applications/scheduler.repository/Scheduler.Repository.csproj",
+      "msbuildProject": "../../src/applications/scheduler.repository/Scheduler.Repository.csproj"
     },
     "Mov.Scheduler.Service/1.0.0": {
       "type": "project",
-      "path": "../../src/services/scheduler/service/Scheduler.Service.csproj",
-      "msbuildProject": "../../src/services/scheduler/service/Scheduler.Service.csproj"
+      "path": "../../src/applications/scheduler.service/Scheduler.Service.csproj",
+      "msbuildProject": "../../src/applications/scheduler.service/Scheduler.Service.csproj"
     },
     "Mov.Translator.Models/1.0.0": {
       "type": "project",
-      "path": "../../src/services/translator/models/Translator.Models.csproj",
-      "msbuildProject": "../../src/services/translator/models/Translator.Models.csproj"
+      "path": "../../src/domains/translator.models/Translator.Models.csproj",
+      "msbuildProject": "../../src/domains/translator.models/Translator.Models.csproj"
     },
     "Mov.Translator.Repository/1.0.0": {
       "type": "project",
-      "path": "../../src/services/translator/repository/Translator.Repository.csproj",
-      "msbuildProject": "../../src/services/translator/repository/Translator.Repository.csproj"
+      "path": "../../src/applications/translator.repository/Translator.Repository.csproj",
+      "msbuildProject": "../../src/applications/translator.repository/Translator.Repository.csproj"
     },
     "Mov.Translator.Service/1.0.0": {
       "type": "project",
-      "path": "../../src/services/translator/service/Translator.Service.csproj",
-      "msbuildProject": "../../src/services/translator/service/Translator.Service.csproj"
+      "path": "../../src/applications/translator.service/Translator.Service.csproj",
+      "msbuildProject": "../../src/applications/translator.service/Translator.Service.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",
-      "path": "../../src/drivers/utilities/Utilities.csproj",
-      "msbuildProject": "../../src/drivers/utilities/Utilities.csproj"
+      "path": "../../src/infrastructures/utilities/Utilities.csproj",
+      "msbuildProject": "../../src/infrastructures/utilities/Utilities.csproj"
     }
   },
   "projectFileDependencyGroups": {

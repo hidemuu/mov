@@ -382,7 +382,6 @@
       "Mov.Configurator.Views/1.0.0": {
         "dependencies": {
           "Mov.Configurator.ViewModels": "1.0.0",
-          "Mov.WpfDesigns": "1.0.0",
           "Mov.WpfViews": "1.0.0"
         },
         "runtime": {
@@ -526,7 +525,8 @@
           "Mov.Translator.Views": "1.0.0",
           "Mov.WpfControls": "1.0.0",
           "Mov.WpfDesigns": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0"
+          "Mov.WpfViewModels": "1.0.0",
+          "Mov.WpfViews": "1.0.0"
         },
         "runtime": {
           "Mov.WpfLib.dll": {}

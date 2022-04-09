@@ -1461,6 +1461,9 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\designs\\wpfdesigns\\WpfDesigns.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\designs\\wpfdesigns\\WpfDesigns.csproj"
+              },
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\designs\\wpfviews\\WpfViews.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\designs\\wpfviews\\WpfViews.csproj"
               },

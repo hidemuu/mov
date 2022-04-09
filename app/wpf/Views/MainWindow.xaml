@@ -41,7 +41,9 @@
             <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
         </i:EventTrigger>
     </i:Interaction.Triggers>
+
     <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
+        <!--  左側ポップアップ  -->
         <materialDesign:DrawerHost.LeftDrawerContent>
             <Grid Width="200">
                 <materialDesign:ColorZone
@@ -79,11 +81,13 @@
                 </materialDesign:ColorZone>
             </Grid>
         </materialDesign:DrawerHost.LeftDrawerContent>
+        <!--  フレーム  -->
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
+            <!--  メニューバー  -->
             <materialDesign:ColorZone
                 Grid.Row="0"
                 Padding="0"
@@ -98,7 +102,7 @@
                             Margin="16,0,0,0"
                             VerticalAlignment="Center"
                             FontSize="16"
-                            Text="Main" />
+                            Text="{Binding Title.Value}" />
                         <ContentControl
                             x:Name="menuBarRegion"
                             prism:RegionManager.RegionManager="{Binding RegionManager}"
@@ -107,11 +111,13 @@
                     </StackPanel>
                 </DockPanel>
             </materialDesign:ColorZone>
+            <!--  コンテンツ  -->
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="70" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
+                <!--  タブ  -->
                 <TabControl
                     Grid.Column="0"
                     Padding="16"
@@ -146,6 +152,7 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </TabControl>
+                <!--  リージョン  -->
                 <DockPanel
                     Grid.Column="1"
                     Margin="5"

@@ -382,6 +382,7 @@
       "Mov.Configurator.Views/1.0.0": {
         "dependencies": {
           "Mov.Configurator.ViewModels": "1.0.0",
+          "Mov.WpfDesigns": "1.0.0",
           "Mov.WpfViews": "1.0.0"
         },
         "runtime": {

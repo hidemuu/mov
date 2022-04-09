@@ -1,45 +1,46 @@
 ﻿using Prism.Regions;
 using Prism.Services.Dialogs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reactive.Disposables;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mov.WpfViewModels
 {
     /// <summary>
     /// リージョンビューモデル基盤クラス
     /// </summary>
-    public abstract class RegionViewModelBase : ContentViewModelBase, INavigationAware, IRegionMemberLifetime
+    public abstract class RegionViewModelBase : ViewModelBase, INavigationAware, IRegionMemberLifetime
     {
-        #region フィールド
+        #region プロパティ
+
+        /// <summary>
+        /// ダイアログサービス
+        /// </summary>
+        protected readonly IDialogService DialogService;
 
         /// <summary>
         /// リージョンマネージャー
         /// </summary>
         public IRegionManager RegionManager { get; }
+
         /// <summary>
         /// ナビゲーションジャーナル
         /// </summary>
         protected IRegionNavigationJournal Journal { get; private set; }
-        
+
         /// <summary>
         /// キープアライブ
         /// </summary>
         public virtual bool KeepAlive => true;
 
-        #endregion
+        #endregion プロパティ
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
         /// <param name="regionManager"></param>
         /// <param name="dialogService"></param>
-        public RegionViewModelBase(IRegionManager regionManager, IDialogService dialogService) : base(dialogService)
+        public RegionViewModelBase(IRegionManager regionManager, IDialogService dialogService) : base()
         {
             this.RegionManager = regionManager;
+            DialogService = dialogService;
         }
 
         #region ナビゲーションメソッド
@@ -54,14 +55,13 @@ namespace Mov.WpfViewModels
         /// <param name="navigationContext"></param>
         /// <returns></returns>
         public virtual bool IsNavigationTarget(NavigationContext navigationContext) => true;
-        
+
         /// <summary>
         /// この画面から他の画面に遷移する時の処理
         /// </summary>
         /// <param name="navigationContext"></param>
         public virtual void OnNavigatedFrom(NavigationContext navigationContext)
         {
-            
         }
 
         /// <summary>
@@ -71,10 +71,8 @@ namespace Mov.WpfViewModels
         public virtual void OnNavigatedTo(NavigationContext navigationContext)
         {
             Journal = navigationContext.NavigationService.Journal;
-
         }
 
-        #endregion
-
+        #endregion ナビゲーションメソッド
     }
 }

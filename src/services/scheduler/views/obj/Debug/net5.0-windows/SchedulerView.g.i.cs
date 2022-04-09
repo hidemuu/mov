@@ -53,7 +53,7 @@ namespace Mov.Scheduler.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mov.Scheduler.Views;component/schedulerview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mov.Scheduler.Views;V1.0.0.0;component/schedulerview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\SchedulerView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

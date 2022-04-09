@@ -32,3 +32,10 @@ C:\Users\nando\Documents\GitHub\mov\src\services\configurator\views\obj\Debug\ne
 C:\Users\nando\Documents\GitHub\mov\src\services\configurator\views\obj\Debug\net5.0-windows\Pages\AppSettingTableView.baml
 C:\Users\nando\Documents\GitHub\mov\src\services\configurator\views\obj\Debug\net5.0-windows\Pages\UserSettingTableView.baml
 C:\Users\nando\Documents\GitHub\mov\src\services\configurator\views\obj\Debug\net5.0-windows\Pages\VariableTableView.baml
+C:\Users\nando\Documents\GitHub\mov\src\services\configurator\views\bin\Debug\net5.0-windows\Assets\Fonts\iconfont.ttf
+C:\Users\nando\Documents\GitHub\mov\src\services\configurator\views\bin\Debug\net5.0-windows\Assets\Photos\alter.png
+C:\Users\nando\Documents\GitHub\mov\src\services\configurator\views\bin\Debug\net5.0-windows\Assets\Photos\home.png
+C:\Users\nando\Documents\GitHub\mov\src\services\configurator\views\bin\Debug\net5.0-windows\Assets\Photos\push.png
+C:\Users\nando\Documents\GitHub\mov\src\services\configurator\views\bin\Debug\net5.0-windows\Assets\Photos\success.png
+C:\Users\nando\Documents\GitHub\mov\src\services\configurator\views\bin\Debug\net5.0-windows\Mov.WpfDesigns.dll
+C:\Users\nando\Documents\GitHub\mov\src\services\configurator\views\bin\Debug\net5.0-windows\Mov.WpfDesigns.pdb

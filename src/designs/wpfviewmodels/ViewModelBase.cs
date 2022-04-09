@@ -1,4 +1,5 @@
 ﻿using Prism.Mvvm;
+using Prism.Services.Dialogs;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
 using System;
@@ -13,7 +14,7 @@ namespace Mov.WpfViewModels
     /// <summary>
     /// ビューモデル基盤クラス
     /// </summary>
-    public abstract class ViewModelBase : BindableBase
+    public abstract class ViewModelBase : BindableBase, IDisposable
     {
         #region フィールド
 
@@ -21,6 +22,12 @@ namespace Mov.WpfViewModels
         /// ディスポーズ
         /// </summary>
         protected CompositeDisposable Disposables = new CompositeDisposable();
+
+        private bool _disposed;
+
+        #endregion
+
+        #region プロパティ
 
         #endregion
 
@@ -42,6 +49,24 @@ namespace Mov.WpfViewModels
         }
 
         #region メソッド
+
+        public void Dispose()
+        {
+            // Dispose of unmanaged resources.
+            Dispose(true);
+            // Suppress finalization.
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed) return;
+            if (disposing)
+            {
+                Disposables.Dispose();
+            }
+            _disposed = true;
+        }
 
         /// <summary>
         /// ロード完了時処理

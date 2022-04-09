@@ -53,7 +53,7 @@ namespace Mov.Translator.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mov.Translator.Views;component/translatorview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mov.Translator.Views;V1.0.0.0;component/translatorview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\TranslatorView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

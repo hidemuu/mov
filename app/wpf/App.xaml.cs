@@ -75,7 +75,10 @@ namespace Mov.Wpf
             containerRegistry.RegisterForNavigation<AppSettingTableView>();
             containerRegistry.RegisterForNavigation<VariableTableView>();
             containerRegistry.RegisterForNavigation<AuthorizerView>();
-            
+            containerRegistry.RegisterForNavigation<DesignerView>();
+            containerRegistry.RegisterForNavigation<SchedulerView>();
+            containerRegistry.RegisterForNavigation<TranslatorView>();
+
             //Dialogの登録
             containerRegistry.RegisterDialog<AlertDialog, AlertDialogViewModel>();
             containerRegistry.RegisterDialog<SuccessDialog, SuccessDialogViewModel>();

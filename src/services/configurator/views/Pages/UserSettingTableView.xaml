@@ -6,11 +6,11 @@
     xmlns:local="clr-namespace:Mov.Configurator.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
-    prism:ViewModelLocator.AutoWireViewModel="True"
     xmlns:vm="clr-namespace:Mov.Configurator.ViewModels;assembly=Mov.Configurator.ViewModels"
     d:DataContext="{d:DesignInstance vm:UserSettingTableViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
+    prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
     <Grid>
         <ListView
@@ -22,23 +22,23 @@
                     <GridViewColumn
                         Width="100"
                         DisplayMemberBinding="{Binding Path=Id.Value}"
-                        Header="{Binding TableAttribute.Id.Header.Value}" />
+                        Header="{Binding TableAttribute.Id.Header}" />
                     <GridViewColumn
                         Width="100"
                         DisplayMemberBinding="{Binding Path=Category.Value}"
-                        Header="{Binding TableAttribute.Category.Header.Value}" />
+                        Header="{Binding TableAttribute.Category.Header}" />
                     <GridViewColumn
                         Width="100"
                         DisplayMemberBinding="{Binding Path=Name.Value}"
-                        Header="{Binding TableAttribute.Name.Header.Value}" />
+                        Header="{Binding TableAttribute.Name.Header}" />
                     <GridViewColumn
                         Width="100"
                         DisplayMemberBinding="{Binding Path=Code.Value}"
-                        Header="{Binding TableAttribute.Code.Header.Value}" />
+                        Header="{Binding TableAttribute.Code.Header}" />
                     <GridViewColumn
                         Width="100"
                         DisplayMemberBinding="{Binding Path=Description.Value}"
-                        Header="{Binding TableAttribute.Description.Header.Value}" />
+                        Header="{Binding TableAttribute.Description.Header}" />
                 </GridView>
             </ListView.View>
         </ListView>

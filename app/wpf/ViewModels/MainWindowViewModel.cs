@@ -5,29 +5,28 @@ using Prism.Services.Dialogs;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Concurrency;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Mov.Wpf.ViewModels
 {
     public class MainWindowViewModel : RegionViewModelBase
     {
-        #region フィールド
+        #region プロパティ
+
+        public ReactivePropertySlim<string> Title { get; private set; } = new ReactivePropertySlim<string>();
 
         public ReactiveCollection<MainWindowModel> Models { get; } = new ReactiveCollection<MainWindowModel>();
         public ReactivePropertySlim<int> TabPage { get; set; } = new ReactivePropertySlim<int>(-1);
 
-        #endregion
+        #endregion プロパティ
 
         #region コマンド
 
         public ReactiveCommand TabChangeCommand { get; } = new ReactiveCommand();
 
-        #endregion
+        #endregion コマンド
 
         /// <summary>
         /// コンストラクタ
@@ -53,21 +52,32 @@ namespace Mov.Wpf.ViewModels
             timer.Start();
         }
 
-        #region メソッド
+        #region イベント
 
         protected override void OnLoaded()
         {
+            ChangeContent(0);
             //this.RegionManager.RequestNavigate(REGION_NAME_MENUBAR, "MenuView");
             //this.RegionManager.RequestNavigate(REGION_NAME_HEADER, "ToolView");
             //this.RegionManager.RequestNavigate(REGION_NAME_RIGHT, "LayoutView");
             //this.RegionManager.RequestNavigate(REGION_NAME_LEFT, "TreeTableView");
-            this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "ConfiguratorView");
             //this.RegionManager.RequestNavigate(REGION_NAME_FOOTER, "GuideView");
         }
 
         private void OnChangeTab()
         {
-            Models.FirstOrDefault(x => x.Index == TabPage.Value).TabCommand();
+            ChangeContent(TabPage.Value);
+        }
+
+        #endregion イベント
+
+        #region メソッド
+
+        private void ChangeContent(int index)
+        {
+            var model = Models.FirstOrDefault(x => x.Index == index);
+            model.TabCommand();
+            Title.Value = "Mov" + " - " + model.Title; 
         }
 
         #endregion

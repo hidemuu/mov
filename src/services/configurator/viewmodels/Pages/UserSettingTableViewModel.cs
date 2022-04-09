@@ -2,62 +2,74 @@
 using Mov.WpfViewModels;
 using Mov.WpfViewModels.Components.Tables;
 using Reactive.Bindings;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mov.Configurator.ViewModels
 {
     public class UserSettingTableViewModel : ViewModelBase, ITableViewModel
     {
-        public ReactiveCollection<ITableViewModelContent> TableModels { get; } = new ReactiveCollection<ITableViewModelContent>();
-        public ITableViewModelColumnAttribute TableAttribute { get; } = new TableModelAttribute();
+        #region フィールド
 
         private readonly IConfiguratorRepository repository;
 
+        #endregion フィールド
+
+        #region プロパティ
+
+        public ReactiveCollection<ITableViewModelContent> TableModels { get; } = new ReactiveCollection<ITableViewModelContent>();
+        public ITableViewModelColumnAttribute TableAttribute { get; } = new TableModelAttribute();
+
+        #endregion プロパティ
+
+        /// <summary>コンストラクター</summary>
         public UserSettingTableViewModel(IConfiguratorRepository repository)
         {
             this.repository = repository;
-            foreach(var item in this.repository.UserSettings.Gets())
+            foreach (var item in this.repository.UserSettings.Gets())
             {
                 TableModels.Add(new TableModel(item));
             }
         }
 
+        #region クラス
+        
         public class TableModel : ITableViewModelContent
         {
-            public ReactivePropertySlim<int> Id { get; } = new ReactivePropertySlim<int>();
-            public ReactivePropertySlim<string> Category { get; } = new ReactivePropertySlim<string>();
-            public ReactivePropertySlim<string> Code { get; } = new ReactivePropertySlim<string>();
-            public ReactivePropertySlim<string> Name { get; } = new ReactivePropertySlim<string>();
-            public ReactivePropertySlim<string> Value { get; } = new ReactivePropertySlim<string>();
-            public ReactivePropertySlim<string> Description { get; } = new ReactivePropertySlim<string>();
-            public ReactivePropertySlim<string> Default { get; } = new ReactivePropertySlim<string>();
-            public ReactivePropertySlim<int> AccessLv { get; } = new ReactivePropertySlim<int>();
+            #region フィールド
+
+            private UserSetting userSetting;
+
+            #endregion フィールド
+
+            #region プロパティ
+
+            public ReactivePropertySlim<int> Id => new ReactivePropertySlim<int>(userSetting.Id);
+            public ReactivePropertySlim<string> Category => new ReactivePropertySlim<string>(userSetting.Category);
+            public ReactivePropertySlim<string> Code => new ReactivePropertySlim<string>(userSetting.Code);
+            public ReactivePropertySlim<string> Name => new ReactivePropertySlim<string>(userSetting.Name);
+            public ReactivePropertySlim<string> Value => new ReactivePropertySlim<string>(userSetting.Value);
+            public ReactivePropertySlim<string> Description => new ReactivePropertySlim<string>(userSetting.Description);
+            public ReactivePropertySlim<string> Default => new ReactivePropertySlim<string>(userSetting.Default);
+            public ReactivePropertySlim<int> AccessLv => new ReactivePropertySlim<int>(userSetting.AccessLv);
+
+            #endregion プロパティ
+
             public TableModel(UserSetting userSetting)
             {
-                Id.Value = userSetting.Id;
-                Category.Value = userSetting.Category;
-                Code.Value = userSetting.Code;
-                Name.Value = userSetting.Name;
-                Value.Value = userSetting.Value;
-                Description.Value = userSetting.Description;
-                Default.Value = userSetting.Default;
-                AccessLv.Value = userSetting.AccessLv;
+                this.userSetting = userSetting;
             }
         }
 
         public class TableModelAttribute : ITableViewModelColumnAttribute
         {
-            public TableColumnAttribute Id { get; } = new TableColumnAttribute("id", true);
-            public TableColumnAttribute Category { get; } = new TableColumnAttribute("category", true);
-            public TableColumnAttribute Code { get; } = new TableColumnAttribute("code", true);
-            public TableColumnAttribute Name { get; } = new TableColumnAttribute("name", true);
-            public TableColumnAttribute Description { get; } = new TableColumnAttribute("description", true);
-            public TableColumnAttribute Default { get; } = new TableColumnAttribute("default", true);
-            public TableColumnAttribute AccessLv { get; } = new TableColumnAttribute("accessLv", true);
+            public TableColumnAttribute Id { get; } = new TableColumnAttribute() { Header = "id" };
+            public TableColumnAttribute Category { get; } = new TableColumnAttribute() { Header = "category" };
+            public TableColumnAttribute Code { get; } = new TableColumnAttribute() { Header = "code" };
+            public TableColumnAttribute Name { get; } = new TableColumnAttribute() { Header = "name" };
+            public TableColumnAttribute Description { get; } = new TableColumnAttribute() { Header = "description" };
+            public TableColumnAttribute Default { get; } = new TableColumnAttribute() { Header = "default" };
+            public TableColumnAttribute AccessLv { get; } = new TableColumnAttribute() { Header = "accessLv" };
         }
+
+        #endregion クラス
     }
 }

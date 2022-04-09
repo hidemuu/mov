@@ -66,7 +66,7 @@ namespace Mov.WpfViews.Components.Dialogs {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mov.WpfViews;component/components/dialogs/successdialog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mov.WpfViews;V1.0.0.0;component/components/dialogs/successdialog.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Components\Dialogs\SuccessDialog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

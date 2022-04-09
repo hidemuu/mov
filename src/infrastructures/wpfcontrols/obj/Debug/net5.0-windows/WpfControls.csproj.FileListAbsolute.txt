@@ -140,3 +140,4 @@ C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\ne
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Mov.WpfControls.dll
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\ref\Mov.WpfControls.dll
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Mov.WpfControls.pdb
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\WpfControls.csproj.AssemblyReference.cache

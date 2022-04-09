@@ -16,5 +16,5 @@ TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 2061818298696
 AuthorizerView.xaml;Dialogs\Contents\CreateAccountView.xaml;Dialogs\Contents\LoginMainContentView.xaml;Dialogs\Contents\NoContentView.xaml;Dialogs\LoginDialog.xaml;Pages\UserTableView.xaml;
 
-False
+True
 

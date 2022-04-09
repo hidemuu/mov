@@ -2,6 +2,9 @@
 
 namespace Mov.Utilities
 {
+    /// <summary>
+    /// 検索処理のヘルパークラス
+    /// </summary>
     public static class TraceHelper
     {
         static int level = 0;

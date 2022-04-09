@@ -6,10 +6,9 @@ using System.Text;
 
 namespace Mov.Configurator.Repository
 {
-    public class AppSettingRepository : FileAccessor<AppSetting>, IAppSettingRepository
+    public class AppSettingRepository : FileRepositoryBase<AppSetting>, IAppSettingRepository
     {
-        public readonly static string FILE_NAME = "app_setting";
-        public AppSettingRepository(IFileHelper fileHelper) : base(fileHelper)
+        public AppSettingRepository(string path, string encoding = "utf-8") : base(path, encoding)
         {
         }
     }

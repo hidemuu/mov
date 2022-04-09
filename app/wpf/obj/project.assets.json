@@ -576,6 +576,9 @@
       "Mov.Designer.ViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.WpfViewModels": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Mov.Designer.ViewModels.dll": {}
         },
@@ -589,6 +592,9 @@
       "Mov.Designer.Views/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.WpfViews": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Mov.Designer.Views.dll": {}
         },
@@ -624,6 +630,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Google.Apis.Calendar.v3": "1.55.0.2500",
+          "Mov.Accessors": "1.0.0",
           "Mov.Scheduler.Models": "1.0.0"
         },
         "compile": {
@@ -828,6 +835,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "Mov.WpfControls": "1.0.0",
+          "Mov.WpfDesigns": "1.0.0",
           "Mov.WpfViewModels": "1.0.0",
           "Prism.Wpf": "8.1.97"
         },

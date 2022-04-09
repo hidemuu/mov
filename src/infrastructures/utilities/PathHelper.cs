@@ -7,7 +7,7 @@ namespace Mov.Utilities
     /// <summary>
     /// 絶対パス取得ロジック
     /// </summary>
-    public class PathHelper
+    public static class PathHelper
     {
         /// <summary>
         /// 指定文字列に一致するフォルダを実行ファイル直下から検索し、絶対パスとして返す

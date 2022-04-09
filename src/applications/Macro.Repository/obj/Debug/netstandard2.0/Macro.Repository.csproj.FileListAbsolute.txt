@@ -1,0 +1,8 @@
+C:\Users\nando\Documents\GitHub\mov\src\applications\Macro.Repository\bin\Debug\netstandard2.0\Mov.Macro.Repository.deps.json
+C:\Users\nando\Documents\GitHub\mov\src\applications\Macro.Repository\bin\Debug\netstandard2.0\Mov.Macro.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\Macro.Repository\bin\Debug\netstandard2.0\Mov.Macro.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\Macro.Repository\obj\Debug\netstandard2.0\Macro.Repository.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\Macro.Repository\obj\Debug\netstandard2.0\Macro.Repository.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\mov\src\applications\Macro.Repository\obj\Debug\netstandard2.0\Macro.Repository.csproj.CoreCompileInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\Macro.Repository\obj\Debug\netstandard2.0\Mov.Macro.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\Macro.Repository\obj\Debug\netstandard2.0\Mov.Macro.Repository.pdb

@@ -15,4 +15,8 @@
     <ProjectReference Include="..\..\domains\configurator.models\Configurator.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
 </Project>

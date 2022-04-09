@@ -73,3 +73,12 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Mov.Configurator.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\ref\Mov.Configurator.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Mov.Configurator.Views.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\bin\Debug\net5.0-windows\Assets\Fonts\iconfont.ttf
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\bin\Debug\net5.0-windows\Assets\Photos\alter.png
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\bin\Debug\net5.0-windows\Assets\Photos\home.png
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\bin\Debug\net5.0-windows\Assets\Photos\push.png
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\bin\Debug\net5.0-windows\Assets\Photos\success.png
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\bin\Debug\net5.0-windows\Mov.WpfControls.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\bin\Debug\net5.0-windows\Mov.WpfDesigns.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\bin\Debug\net5.0-windows\Mov.WpfControls.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\bin\Debug\net5.0-windows\Mov.WpfDesigns.pdb

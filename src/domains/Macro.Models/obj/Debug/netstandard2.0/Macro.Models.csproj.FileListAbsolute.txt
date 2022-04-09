@@ -1,0 +1,8 @@
+C:\Users\nando\Documents\GitHub\mov\src\domains\Macro.Models\bin\Debug\netstandard2.0\Mov.Macro.Models.deps.json
+C:\Users\nando\Documents\GitHub\mov\src\domains\Macro.Models\bin\Debug\netstandard2.0\Mov.Macro.Models.dll
+C:\Users\nando\Documents\GitHub\mov\src\domains\Macro.Models\bin\Debug\netstandard2.0\Mov.Macro.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\src\domains\Macro.Models\obj\Debug\netstandard2.0\Macro.Models.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\domains\Macro.Models\obj\Debug\netstandard2.0\Macro.Models.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\mov\src\domains\Macro.Models\obj\Debug\netstandard2.0\Macro.Models.csproj.CoreCompileInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\domains\Macro.Models\obj\Debug\netstandard2.0\Mov.Macro.Models.dll
+C:\Users\nando\Documents\GitHub\mov\src\domains\Macro.Models\obj\Debug\netstandard2.0\Mov.Macro.Models.pdb

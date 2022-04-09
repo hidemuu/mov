@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\" />
+    <ProjectReference Include="..\wpfviews\WpfViews.csproj" />
   </ItemGroup>
 
 </Project>

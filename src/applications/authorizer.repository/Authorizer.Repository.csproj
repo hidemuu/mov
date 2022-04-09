@@ -10,4 +10,8 @@
     <ProjectReference Include="..\..\domains\authorizer.models\Authorizer.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
 </Project>

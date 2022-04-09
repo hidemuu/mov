@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Macro.Models</AssemblyName>
+    <RootNamespace>Mov.Macro.Models</RootNamespace>
+  </PropertyGroup>
+
+</Project>

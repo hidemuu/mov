@@ -24,15 +24,7 @@ namespace Mov.Configurator.Models
         [JsonProperty("access_lv")]
         [XmlElement("accesslv")]
         public int AccessLv { get; set; } = 0;
-    }
 
-    [XmlRoot("table")]
-    public class UserSettingTable : ITable<UserSetting>
-    {
-        [XmlArray("settings")]
-        [XmlArrayItem("setting")]
-        public List<UserSetting> Items { get; set; }
+        public override string ToString() =>  GetString(new string[] { Id.ToString(), Code, Default, AccessLv.ToString() });
     }
-
-    
 }

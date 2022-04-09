@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Mov.Accessors;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,11 +9,8 @@ using System.Xml.Serialization;
 
 namespace Mov.Configurator.Models
 {
-    public class ConfiguratorObject
+    public class ConfiguratorObject : DatabaseObject
     {
-        [JsonProperty("id")]
-        [XmlElement("id")]
-        public int Id { get; set; }
         /// <summary>
         /// カテゴリー
         /// </summary>
@@ -20,12 +18,6 @@ namespace Mov.Configurator.Models
         [JsonProperty("category")]
         [XmlElement("category")]
         public string Category { get; set; } = "";
-        /// <summary>
-        /// キーコード
-        /// </summary>
-        [JsonProperty("code")]
-        [XmlElement("code")]
-        public string Code { get; set; } = "";
         /// <summary>
         /// 名称
         /// </summary>

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Mov.Accessors;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -6,11 +7,8 @@ using System.Xml.Serialization;
 
 namespace Mov.Translator.Models
 {
-    public class TranslatorObject
+    public class TranslatorObject : DatabaseObject
     {
-        [JsonProperty("id")]
-        [XmlElement("id")]
-        public int Id { get; set; }
         /// <summary>
         /// 日本語
         /// </summary>

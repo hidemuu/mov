@@ -6,10 +6,9 @@ using System.Text;
 
 namespace Mov.Configurator.Repository
 {
-    public class UserSettingRepository : FileAccessor<UserSetting>, IUserSettingRepository
+    public class UserSettingRepository : FileRepositoryBase<UserSetting>, IUserSettingRepository
     {
-        public readonly static string FILE_NAME = "user_setting";
-        public UserSettingRepository(IFileHelper fileHelper) : base(fileHelper)
+        public UserSettingRepository(string path, string encoding = "utf-8") : base(path, encoding)
         {
         }
     }

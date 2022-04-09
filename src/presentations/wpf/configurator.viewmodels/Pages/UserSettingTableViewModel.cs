@@ -9,7 +9,7 @@ namespace Mov.Configurator.ViewModels
     {
         #region フィールド
 
-        private readonly IConfiguratorRepository repository;
+        private readonly IConfiguratorRepositoryCollection repository;
 
         #endregion フィールド
 
@@ -21,7 +21,7 @@ namespace Mov.Configurator.ViewModels
         #endregion プロパティ
 
         /// <summary>コンストラクター</summary>
-        public UserSettingTableViewModel(IConfiguratorRepository repository)
+        public UserSettingTableViewModel(IConfiguratorRepositoryCollection repository)
         {
             this.repository = repository;
             foreach (var item in this.repository.UserSettings.Gets())

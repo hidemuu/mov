@@ -262,6 +262,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Google.Apis.Calendar.v3": "1.55.0.2500",
+          "Mov.Accessors": "1.0.0",
           "Mov.Scheduler.Models": "1.0.0"
         },
         "compile": {

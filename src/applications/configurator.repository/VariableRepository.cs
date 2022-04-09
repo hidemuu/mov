@@ -6,10 +6,9 @@ using System.Text;
 
 namespace Mov.Configurator.Repository
 {
-    public class VariableRepository : FileAccessor<Variable>, IVariableRepository
+    public class VariableRepository : FileRepositoryBase<Variable>, IVariableRepository
     {
-        public readonly static string FILE_NAME = "variable";
-        public VariableRepository(IFileHelper fileHelper) : base(fileHelper)
+        public VariableRepository(string path, string encoding = "utf-8") : base(path, encoding)
         {
         }
     }

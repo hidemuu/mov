@@ -6,11 +6,11 @@
     xmlns:local="clr-namespace:Configurator.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
-    prism:ViewModelLocator.AutoWireViewModel="True"
     xmlns:vm="clr-namespace:Mov.Configurator.ViewModels;assembly=Mov.Configurator.ViewModels"
     d:DataContext="{d:DesignInstance vm:AppSettingTableViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
+    prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
     <Grid>
         <ListView

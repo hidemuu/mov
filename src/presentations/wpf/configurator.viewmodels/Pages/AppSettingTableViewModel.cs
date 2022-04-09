@@ -15,9 +15,9 @@ namespace Mov.Configurator.ViewModels
         public ReactiveCollection<ITableViewModelContent> TableModels { get; } = new ReactiveCollection<ITableViewModelContent>();
         public ITableViewModelColumnAttribute TableAttribute { get; } = new TableModelAttribute();
 
-        private readonly IConfiguratorRepository repository;
+        private readonly IConfiguratorRepositoryCollection repository;
 
-        public AppSettingTableViewModel(IConfiguratorRepository repository)
+        public AppSettingTableViewModel(IConfiguratorRepositoryCollection repository)
         {
             this.repository = repository;
             foreach (var item in this.repository.AppSettings.Gets())

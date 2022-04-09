@@ -10,4 +10,8 @@
     <ProjectReference Include="..\..\domains\translator.models\Translator.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
 </Project>

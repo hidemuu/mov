@@ -61,7 +61,7 @@ namespace Mov.WpfViews.Components.Tables {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mov.WpfViews;V1.0.0.0;component/components/tables/tableview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mov.WpfViews;component/components/tables/tableview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Components\Tables\TableView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

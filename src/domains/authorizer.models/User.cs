@@ -8,13 +8,6 @@ using System.Xml.Serialization;
 
 namespace Mov.Authorizer.Models
 {
-    [XmlRoot("root")]
-    public class UserTable : ITable<User>
-    {
-        [XmlArray("users")]
-        [XmlArrayItem("user")]
-        public List<User> Items { get; set; }
-    }
     [XmlRoot("user")]
     public class User : AuthorizerObject
     {

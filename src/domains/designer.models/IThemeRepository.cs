@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    interface IThemeRepository
+    public interface IThemeRepository
     {
     }
 }

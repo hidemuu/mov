@@ -64,10 +64,10 @@ namespace Mov.Wpf
             //リポジトリの登録
             var rootPath = PathHelper.GetCurrentRootPath("mov");
             var assetPath = Path.Combine(rootPath, "assets");
-            containerRegistry.RegisterInstance<IConfiguratorRepository>(new ConfiguratorRepository(Path.Combine(assetPath, "configurator"), Accessors.FileType.Json));
-            containerRegistry.RegisterInstance<IDesignerRepository>(new DesignerRepository(Path.Combine(assetPath, "designer"), Accessors.FileType.Xml));
-            containerRegistry.RegisterInstance<IAuthorizerRepository>(new AuthorizerRepository(Path.Combine(assetPath, "authorizer"), Accessors.FileType.Json));
-            containerRegistry.RegisterInstance<ITranslatorRepository>(new TranslatorRepository(Path.Combine(assetPath, "translator"), Accessors.FileType.Json));
+            containerRegistry.RegisterInstance<IConfiguratorRepositoryCollection>(new ConfiguratorRepositoryCollection(Path.Combine(assetPath, "configurator"), "json"));
+            containerRegistry.RegisterInstance<IDesignerRepositoryCollection>(new DesignerRepositoryCollection(Path.Combine(assetPath, "designer"), "xml"));
+            containerRegistry.RegisterInstance<IAuthorizerRepositoryCollection>(new AuthorizerRepositoryCollection(Path.Combine(assetPath, "authorizer"), "json"));
+            containerRegistry.RegisterInstance<ITranslatorRepositoryCollection>(new TranslatorRepositoryCollection(Path.Combine(assetPath, "translator"), "json"));
 
             //Viewの登録
             containerRegistry.RegisterForNavigation<ConfiguratorView>();

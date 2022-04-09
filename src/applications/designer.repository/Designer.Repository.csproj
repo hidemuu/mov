@@ -10,4 +10,8 @@
     <ProjectReference Include="..\..\domains\designer.models\Designer.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,9 @@
+C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Repository\bin\Debug\netstandard2.0\Mov.Game.Repository.deps.json
+C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Repository\bin\Debug\netstandard2.0\Mov.Game.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Repository\bin\Debug\netstandard2.0\Mov.Game.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Repository\obj\Debug\netstandard2.0\Game.Repository.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Repository\obj\Debug\netstandard2.0\Game.Repository.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Repository\obj\Debug\netstandard2.0\Game.Repository.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Repository\obj\Debug\netstandard2.0\Game.Repository.csproj.CoreCompileInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Repository\obj\Debug\netstandard2.0\Mov.Game.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Repository\obj\Debug\netstandard2.0\Mov.Game.Repository.pdb

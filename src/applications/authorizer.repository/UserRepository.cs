@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Authorizer.Repository
 {
-    public class UserRepository : FileRepositoryBase<User>, IUserRepository
+    public class UserRepository : FileRepositoryBase<User, UserCollection>, IUserRepository
     {
         public UserRepository(string path, string encoding = "utf-8") : base(path, encoding)
         {

@@ -1,0 +1,47 @@
+﻿using Mov.Authorizer.Repository;
+using Mov.Configurator.Models;
+using Mov.Configurator.Repository;
+using Mov.Designer.Models;
+using Mov.Designer.Repository.Xml;
+using Mov.Utilities;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Mov
+{
+    internal class RepositoryHelper
+    {
+        internal DesignerRepositoryCollection Designer { get; }
+        internal ConfiguratorRepositoryCollection Configurator { get; }
+
+        internal AuthorizerRepositoryCollection Authorizer { get; }
+
+        internal RepositoryHelper()
+        {
+            var assembly = Assembly.GetEntryAssembly();
+            var rootPath = assembly.Location.TrimEnd(assembly.ManifestModule.Name.ToCharArray());
+            var resourcePath = Path.Combine(rootPath, "Resources");
+            this.Designer = new DesignerRepositoryCollection(resourcePath, "xml");
+            this.Configurator = new ConfiguratorRepositoryCollection(resourcePath, "json");
+            this.Authorizer = new AuthorizerRepositoryCollection(resourcePath, "json");
+        }
+
+        internal void WriteAll()
+        {
+            Console.WriteLine(Designer.PartsLayouts.ToString());
+            Console.WriteLine(Designer.ShellLayouts.ToString());
+            Console.WriteLine(Designer.LayoutTables.ToString());
+            Console.WriteLine(Configurator.UserSettings.ToString());
+            Console.WriteLine(Configurator.AppSettings.ToString());
+            Console.WriteLine(Configurator.Variables.ToString());
+            Console.WriteLine(Authorizer.Users.ToString());
+        }
+
+
+    }
+}

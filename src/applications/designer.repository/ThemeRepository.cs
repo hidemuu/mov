@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Designer.Repository
 {
-    public class ThemeRepository : FileRepositoryBase<Theme>, IThemeRepository
+    public class ThemeRepository : FileRepositoryBase<Theme, ThemeCollection>
     {
         public ThemeRepository(string path, string encoding = "utf-8") : base(path, encoding)
         {

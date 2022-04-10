@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 
 namespace Mov.Translator.Models
 {
-    public class TranslatorObject : DatabaseObject
+    public class TranslatorObject : DbObject
     {
         /// <summary>
         /// 日本語

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<themes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:xxsd="http://www.w3.org/2001/XMLSchema">
+  <theme>
+    <id>0</id>
+    <code>Test1</code>
+  </theme>
+  <theme>
+    <id>1</id>
+    <code>Test2</code>
+  </theme>
+</themes>

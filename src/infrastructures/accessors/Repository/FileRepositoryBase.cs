@@ -12,7 +12,7 @@ namespace Mov.Accessors
     /// ファイルリポジトリ基本クラス
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class FileRepositoryBase<T> where T : DatabaseObject
+    public abstract class FileRepositoryBase<T, C> where T : DbObject where C : DbObjectCollection<T>
     {
         #region 定数
 
@@ -56,11 +56,11 @@ namespace Mov.Accessors
 
         #region メソッド
 
-        public virtual IEnumerable<T> Gets() => fileSerializer.Read<IEnumerable<T>>();
+        public IEnumerable<T> Gets() => fileSerializer.Read<C>().Items;
         
         public async Task<IEnumerable<T>> GetsAsync() => await Task.Run(Gets);
         
-        public virtual T Get() => fileSerializer.Read<T>();
+        public T Get() => fileSerializer.Read<T>();
         
         public async Task<T> GetAsync() => await Task.Run(Get);
         
@@ -70,12 +70,41 @@ namespace Mov.Accessors
 
         public override string ToString()
         {
+            var items = Gets();
+            if (items == null) return string.Empty;
             var stringBuilder = new StringBuilder();
-            foreach(var item in Gets())
-            {
-                stringBuilder.AppendLine(item.ToString());
-            }
+            stringBuilder.Append(">> ").AppendLine(typeof(T).Name);
+            GetStringTables(items.ToList(), stringBuilder);
             return stringBuilder.ToString();
+        }
+
+        #endregion
+
+        #region 内部メソッド
+
+        private void GetStringTables(List<T> items, StringBuilder stringBuilder)
+        {
+            bool isWightedHeader = false;
+            foreach (var item in items)
+            {
+                if (!isWightedHeader) 
+                {
+                    var header = item.ToStringTableHeader();
+                    stringBuilder.AppendLine(header);
+                    for(int i = 0; i < header.Length; i++)
+                    {
+                        stringBuilder.Append("-");
+                    }
+                    stringBuilder.AppendLine();
+                    isWightedHeader = true;
+                }
+                if (item is DbObjectNode<T> node)
+                {
+                    stringBuilder.AppendLine(node.ToStringTables());
+                    continue;
+                }
+                stringBuilder.AppendLine(item.ToStringTable());
+            }
         }
 
         #endregion

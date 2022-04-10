@@ -7,8 +7,15 @@ using System.Xml.Serialization;
 
 namespace Mov.Designer.Models
 {
+    [XmlRoot("layouts")]
+    public class PartsLayoutCollection : DbObjectCollection<PartsLayout>
+    {
+        [XmlElement(Type = typeof(PartsLayout), ElementName = "layout")]
+        public override PartsLayout[] Items { get; set; }
+    }
+
     [XmlRoot("layout")]
-    public class PartsLayout : DatabaseObject
+    public class PartsLayout : DbObjectNode<PartsLayout>
     {
         #region プロパティ
 
@@ -17,7 +24,7 @@ namespace Mov.Designer.Models
 
         [XmlArray("children")]
         [XmlArrayItem("layout")]
-        public List<PartsLayout> Children { get; set; }
+        public override List<PartsLayout> Children { get; set; }
 
         #endregion
 
@@ -32,35 +39,13 @@ namespace Mov.Designer.Models
         #region メソッド
 
         public override string ToString() => GetString(new string[] { Id.ToString(), Code, NodeType });
-            
-        public string ToStrings()
-        {
-            var stringBuilder = new StringBuilder(ToString());
-            stringBuilder.AppendLine();
-            GetStrings(Children, stringBuilder, 0);
-            return stringBuilder.ToString();
-        }
+
+        public override string ToStringTable() => GetString(new string[] { Id.ToString(), Code, NodeType }, 10);
+
+        public override string ToStringTableHeader() => GetString(new string[] { "Id", "Code", "NodeType" }, 10);
 
         #endregion
 
-
-        #region 内部メソッド
-
-        private void GetStrings(List<PartsLayout> partsLayouts, StringBuilder stringBuilder, int hierarchy)
-        {
-            
-            foreach (var partsLayout in partsLayouts)
-            {
-                for (var i = 0; i <= hierarchy; i++)
-                {
-                    stringBuilder.Append("  ");
-                }
-                stringBuilder.AppendLine(partsLayout.ToString());
-                GetStrings(partsLayout.Children, stringBuilder, hierarchy + 1);
-            }
-        }
-
-        #endregion
 
     }
 }

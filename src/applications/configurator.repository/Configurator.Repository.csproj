@@ -7,16 +7,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\app_setting.json" />
+    <None Remove="Resources\user_setting.json" />
+    <None Remove="Resources\variable.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\app_setting.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\user_setting.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\variable.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CsvHelper" Version="27.2.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\domains\configurator.models\Configurator.Models.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Resources\" />
   </ItemGroup>
 
 </Project>

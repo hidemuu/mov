@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Configurator.Repository
 {
-    public class AppSettingRepository : FileRepositoryBase<AppSetting>, IAppSettingRepository
+    public class AppSettingRepository : FileRepositoryBase<AppSetting, AppSettingCollection>, IAppSettingRepository
     {
         public AppSettingRepository(string path, string encoding = "utf-8") : base(path, encoding)
         {

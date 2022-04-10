@@ -24,7 +24,7 @@ namespace Mov.Authorizer.Repository
 
         #region プロパティ
 
-        public IUserRepository Users { get; }
+        public FileRepositoryBase<User, UserCollection> Users { get; }
 
         #endregion
     }

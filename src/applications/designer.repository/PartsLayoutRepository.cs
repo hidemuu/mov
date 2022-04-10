@@ -6,14 +6,15 @@ using System.Text;
 
 namespace Mov.Designer.Repository
 {
-    public class PartsLayoutRepository : FileRepositoryBase<PartsLayout>, IPartsLayoutRepository
+    public class PartsLayoutRepository : FileRepositoryBase<PartsLayout, PartsLayoutCollection>
     {
         public PartsLayoutRepository(string path, string encoding = "utf-8") : base(path, encoding)
         {
         }
 
-        public override IEnumerable<PartsLayout> Gets() => base.Get().Children;
+        #region メソッド
 
-        public override string ToString() => base.Get().ToStrings();
+        
+        #endregion
     }
 }

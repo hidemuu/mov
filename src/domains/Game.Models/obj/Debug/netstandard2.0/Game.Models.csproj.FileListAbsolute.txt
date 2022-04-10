@@ -1,0 +1,9 @@
+C:\Users\nando\Documents\GitHub\mov\src\domains\Game.Models\bin\Debug\netstandard2.0\Mov.Game.Models.deps.json
+C:\Users\nando\Documents\GitHub\mov\src\domains\Game.Models\bin\Debug\netstandard2.0\Mov.Game.Models.dll
+C:\Users\nando\Documents\GitHub\mov\src\domains\Game.Models\bin\Debug\netstandard2.0\Mov.Game.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\src\domains\Game.Models\obj\Debug\netstandard2.0\Game.Models.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\domains\Game.Models\obj\Debug\netstandard2.0\Game.Models.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\domains\Game.Models\obj\Debug\netstandard2.0\Game.Models.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\mov\src\domains\Game.Models\obj\Debug\netstandard2.0\Game.Models.csproj.CoreCompileInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\domains\Game.Models\obj\Debug\netstandard2.0\Mov.Game.Models.dll
+C:\Users\nando\Documents\GitHub\mov\src\domains\Game.Models\obj\Debug\netstandard2.0\Mov.Game.Models.pdb

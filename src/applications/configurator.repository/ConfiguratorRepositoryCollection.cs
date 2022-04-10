@@ -29,15 +29,15 @@ namespace Mov.Configurator.Repository
         /// <summary>
         /// ユーザー設定のリポジトリ
         /// </summary>
-        public IUserSettingRepository UserSettings { get; }
+        public FileRepositoryBase<UserSetting, UserSettingCollection> UserSettings { get; }
         /// <summary>
         /// アプリケーション設定のリポジトリ
         /// </summary>
-        public IAppSettingRepository AppSettings { get; }
+        public FileRepositoryBase<AppSetting, AppSettingCollection> AppSettings { get; }
         /// <summary>
         /// 値設定のリポジトリ
         /// </summary>
-        public IVariableRepository Variables { get; }
+        public FileRepositoryBase<Variable, VariableCollection> Variables { get; }
 
         #endregion
 

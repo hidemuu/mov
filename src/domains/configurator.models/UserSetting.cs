@@ -9,9 +9,19 @@ using System.Xml.Serialization;
 
 namespace Mov.Configurator.Models
 {
-    [XmlRoot("setting")]
-    public class UserSetting : ConfiguratorObject
+    [XmlRoot("settings")]
+    public class UserSettingCollection : DbObjectCollection<UserSetting>
     {
+        [JsonProperty("settings")]
+        [XmlElement(Type = typeof(UserSetting), ElementName = "setting")]
+        public override UserSetting[] Items { get; set; }
+    }
+
+    [XmlRoot("setting")]
+    public class UserSetting : AppSetting
+    {
+        #region プロパティ
+
         /// <summary>
         /// 初期値
         /// </summary>
@@ -25,6 +35,16 @@ namespace Mov.Configurator.Models
         [XmlElement("accesslv")]
         public int AccessLv { get; set; } = 0;
 
-        public override string ToString() =>  GetString(new string[] { Id.ToString(), Code, Default, AccessLv.ToString() });
+        #endregion
+
+        #region メソッド
+        public override string ToString() => GetString(new string[] { Id.ToString(), Code, Category, Name, Value, Description });
+
+        public override string ToStringTable() => GetString(new string[] { Id.ToString(), Code, Category, Name, Value, Description }, 10);
+
+        public override string ToStringTableHeader() => GetString(new string[] { "Id", "Code", "Category", "Name", "Value", "Description" }, 10);
+
+
+        #endregion
     }
 }

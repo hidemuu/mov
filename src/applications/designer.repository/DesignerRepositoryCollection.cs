@@ -1,6 +1,7 @@
 ﻿using Mov.Accessors;
 using Mov.Accessors.Repository;
 using Mov.Designer.Models;
+using Mov.Designer.Models.interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -22,16 +23,19 @@ namespace Mov.Designer.Repository.Xml
         {
             ShellLayouts = new ShellLayoutRepository(GetRepositoryPath("shell_layout"), encoding);
             PartsLayouts = new PartsLayoutRepository(GetRepositoryPath("parts_layout"), encoding);
+            LayoutTables = new LayoutTableRepository(GetRepositoryPath("layout_table"), encoding);
             Themes = new ThemeRepository(GetRepositoryPath("theme"), encoding);
         }
 
         #region プロパティ
 
-        public IShellLayoutRepository ShellLayouts { get; }
+        public FileRepositoryBase<ShellLayout, ShellLayoutCollection> ShellLayouts { get; }
 
-        public IPartsLayoutRepository PartsLayouts { get; }
+        public FileRepositoryBase<PartsLayout, PartsLayoutCollection> PartsLayouts { get; }
 
-        public IThemeRepository Themes { get; }
+        public FileRepositoryBase<LayoutTable, LayoutTableCollection> LayoutTables { get; }
+
+        public FileRepositoryBase<Theme, ThemeCollection> Themes { get; }
 
         #endregion
 

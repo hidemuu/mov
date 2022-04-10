@@ -6,46 +6,31 @@ using System.Xml.Serialization;
 
 namespace Mov.Designer.Models
 {
+    [XmlRoot("layouts")]
+    public class ShellLayoutCollection : DbObjectCollection<ShellLayout>
+    {
+        [XmlElement(Type = typeof(ShellLayout), ElementName = "layout")]
+        public override ShellLayout[] Items { get; set; }
+    }
+
+
     [XmlRoot("layout")]
-    public class ShellLayout : DatabaseObject
+    public class ShellLayout : DbObject
     {
         #region プロパティ
 
-        [XmlArray("items")]
-        [XmlArrayItem("item")]
-        public List<ShellLayout> Items { get; set; }
-
+        
         #endregion
 
         #region メソッド
 
         public override string ToString() => GetString(new string[] { Id.ToString(), Code });
 
-        public string ToStrings()
-        {
-            var stringBuilder = new StringBuilder();
-            GetStrings(Items, stringBuilder, 0);
-            return stringBuilder.ToString();
-        }
+        public override string ToStringTable() => GetString(new string[] { Id.ToString(), Code }, 10);
+
+        public override string ToStringTableHeader() => GetString(new string[] { "Id", "Code" }, 10);
 
         #endregion
 
-        #region 内部メソッド
-
-        private void GetStrings(List<ShellLayout> shellLayouts, StringBuilder stringBuilder, int hierarchy)
-        {
-
-            foreach (var shellLayout in shellLayouts)
-            {
-                for (var i = 0; i < hierarchy; i++)
-                {
-                    stringBuilder.Append("  ");
-                }
-                stringBuilder.AppendLine(shellLayout.ToString());
-                GetStrings(shellLayout.Items, stringBuilder, hierarchy + 1);
-            }
-        }
-
-        #endregion
     }
 }

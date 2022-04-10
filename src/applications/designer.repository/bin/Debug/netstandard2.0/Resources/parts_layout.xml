@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layouts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:xxsd="http://www.w3.org/2001/XMLSchema">
+  <layout>
+    <id>0</id>
+    <code>Root</code>
+    <children>
+      <layout>
+        <id>1</id>
+        <code>Test1</code>
+        <children>
+          <layout>
+            <id>2</id>
+            <code>Test12</code>
+          </layout>
+        </children>
+      </layout>
+      <layout>
+        <id>10</id>
+        <code>Test2</code>
+      </layout>
+    </children>
+  </layout>
+</layouts>

@@ -8,8 +8,14 @@ using System.Xml.Serialization;
 
 namespace Mov.Authorizer.Models
 {
+    public class UserCollection : DbObjectCollection<User>
+    {
+        [JsonProperty("users")]
+        public override User[] Items { get; set; }
+    }
+
     [XmlRoot("user")]
-    public class User : AuthorizerObject
+    public class User : DbObject
     {
         [JsonProperty("loginid")]
         [XmlElement("loginid")]

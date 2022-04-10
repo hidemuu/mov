@@ -7,11 +7,29 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\domains\designer.models\Designer.Models.csproj" />
+    <None Remove="Resources\layout_table.xml" />
+    <None Remove="Resources\parts_layout.xml" />
+    <None Remove="Resources\shell_layout.xml" />
+    <None Remove="Resources\theme.xml" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <Content Include="Resources\parts_layout.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\layout_table.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\shell_layout.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\theme.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\domains\designer.models\Designer.Models.csproj" />
   </ItemGroup>
 
 </Project>

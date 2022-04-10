@@ -8,6 +8,7 @@ using Mov.Configurator.Repository;
 using Mov.Configurator.ViewModels;
 using Mov.Configurator.Views;
 using Mov.Designer.Models;
+using Mov.Designer.Models.interfaces;
 using Mov.Designer.Repository.Xml;
 using Mov.Designer.ViewModels;
 using Mov.Designer.Views;
@@ -33,6 +34,7 @@ using System.Configuration;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -62,12 +64,13 @@ namespace Mov.Wpf
             var container = containerRegistry.GetContainer();
 
             //リポジトリの登録
-            var rootPath = PathHelper.GetCurrentRootPath("mov");
-            var assetPath = Path.Combine(rootPath, "assets");
-            containerRegistry.RegisterInstance<IConfiguratorRepositoryCollection>(new ConfiguratorRepositoryCollection(Path.Combine(assetPath, "configurator"), "json"));
-            containerRegistry.RegisterInstance<IDesignerRepositoryCollection>(new DesignerRepositoryCollection(Path.Combine(assetPath, "designer"), "xml"));
-            containerRegistry.RegisterInstance<IAuthorizerRepositoryCollection>(new AuthorizerRepositoryCollection(Path.Combine(assetPath, "authorizer"), "json"));
-            containerRegistry.RegisterInstance<ITranslatorRepositoryCollection>(new TranslatorRepositoryCollection(Path.Combine(assetPath, "translator"), "json"));
+            var assembly = Assembly.GetEntryAssembly();
+            var rootPath = assembly.Location.TrimEnd(assembly.ManifestModule.Name.ToCharArray());
+            var resourcePath = Path.Combine(rootPath, "Resources");
+            containerRegistry.RegisterInstance<IConfiguratorRepositoryCollection>(new ConfiguratorRepositoryCollection(resourcePath, "json"));
+            containerRegistry.RegisterInstance<IDesignerRepositoryCollection>(new DesignerRepositoryCollection(resourcePath, "xml"));
+            containerRegistry.RegisterInstance<IAuthorizerRepositoryCollection>(new AuthorizerRepositoryCollection(resourcePath, "json"));
+            containerRegistry.RegisterInstance<ITranslatorRepositoryCollection>(new TranslatorRepositoryCollection(resourcePath, "json"));
 
             //Viewの登録
             containerRegistry.RegisterForNavigation<ConfiguratorView>();

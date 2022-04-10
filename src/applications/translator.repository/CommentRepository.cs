@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Translator.Repository
 {
-    public class CommentRepository : FileRepositoryBase<Comment>, ICommentRepository
+    public class CommentRepository : FileRepositoryBase<Comment, CommentCollection>, ICommentRepository
     {
         public CommentRepository(string path, string encoding = "utf-8") : base(path, encoding) { }
     }

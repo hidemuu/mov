@@ -6,4 +6,13 @@
     <RootNamespace>Mov.Game.Service</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\domains\game.models\Game.Models.csproj" />
+    <ProjectReference Include="..\game.repository\Game.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

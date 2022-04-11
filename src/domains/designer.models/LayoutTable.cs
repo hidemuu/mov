@@ -19,8 +19,28 @@ namespace Mov.Designer.Models
     {
         #region プロパティ
 
+        public string Name { get; set; }
 
+        public string Icon { get; set; }
+
+        public string LayoutType { get; set; }
+
+        public string LayoutStyle { get; set; }
+
+        public string ControlType { get; set; }
+
+        public string ControlStyle { get; set; }
+
+        public string Commmand { get; set; }
         
+        public string Macro { get; set; }
+
+        public bool IsVisible { get; set; }
+
+        public bool IsEnable { get; set; }
+
+        public string Parameter { get; set; }
+
         #endregion
 
         #region メソッド

@@ -660,6 +660,9 @@
       "Mov.Designer.Service/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Designer.Repository": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Mov.Designer.Service.dll": {}
         },

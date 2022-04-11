@@ -6,4 +6,13 @@
     <RootNamespace>Mov.Designer.Service</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Layouts\" />
+    <Folder Include="Commands\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\designer.repository\Designer.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

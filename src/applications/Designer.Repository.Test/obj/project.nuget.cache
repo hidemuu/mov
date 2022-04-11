@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4DpGsal6P8BWdKl0gduhyHv2kWsCtAzIL89/Cx1M9rOl9wns/Cfz53QkVKXX/szXqIntVUGjyBPweVaBW/rKhw==",
+  "dgSpecHash": "aIMFj4RMyJMRsXUWZR78cq1Uhl/s8Vn+utzt8otzNForLAEkg33c6+x23Q61XP6j4Fxb296ulStGgH4q4MMkvg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\Designer.Repository.Test\\Designer.Repository.Test.csproj",
+  "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.repository.test\\Designer.Repository.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nando\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",

@@ -6,4 +6,16 @@
     <RootNamespace>Mov.Game.Models</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Configurations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\infrastructures\accessors\Accessors.csproj" />
+  </ItemGroup>
+
 </Project>

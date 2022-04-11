@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\Macro.Repository\\Macro.Repository.csproj": {}
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\macro.repository\\Macro.Repository.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\Macro.Repository\\Macro.Repository.csproj": {
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\macro.repository\\Macro.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\Macro.Repository\\Macro.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\macro.repository\\Macro.Repository.csproj",
         "projectName": "Mov.Macro.Repository",
-        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\Macro.Repository\\Macro.Repository.csproj",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\macro.repository\\Macro.Repository.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\Macro.Repository\\obj\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\macro.repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

@@ -6,4 +6,13 @@
     <RootNamespace>Mov.Game.Repository</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\domains\game.models\Game.Models.csproj" />
+    <ProjectReference Include="..\..\infrastructures\accessors\Accessors.csproj" />
+  </ItemGroup>
+
 </Project>

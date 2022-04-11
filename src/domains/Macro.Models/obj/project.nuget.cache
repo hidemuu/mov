@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GzVuz6pne39/z0qaRXH9vFtEeeLv+HCh33QX/883safjTTHweex0kCxKbb9dKveUDP3BG3UkJMZbn6AlM8LlIA==",
+  "dgSpecHash": "/SjbTGirpV+ioIcbmEi0FKOxaFzgFkpFDWcTVwpxhV09oLb5aeHadqD1WTBkFRVgGnVjQU5cwPPQNXkWk8lPEQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\Macro.Models\\Macro.Models.csproj",
+  "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\macro.models\\Macro.Models.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nando\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

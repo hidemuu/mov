@@ -19,7 +19,12 @@ namespace Mov.Designer.Models
     {
         #region プロパティ
 
-        
+        public double Height { get; set; }
+
+        public double Width { get; set; }
+
+        public string StartupLocation { get; set; }
+
         #endregion
 
         #region メソッド

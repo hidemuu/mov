@@ -22,6 +22,12 @@ namespace Mov.Designer.Models
         [XmlElement("nodetype")]
         public string NodeType { get; set; }
 
+        public string NodeStyle { get; set; }
+
+        public string Orientation { get; set; }
+
+        public bool IsExpand { get; set; }
+
         [XmlArray("children")]
         [XmlArrayItem("layout")]
         public override List<PartsLayout> Children { get; set; }

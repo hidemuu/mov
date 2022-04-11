@@ -419,6 +419,9 @@
         }
       },
       "Mov.Designer.Service/1.0.0": {
+        "dependencies": {
+          "Mov.Designer.Repository": "1.0.0"
+        },
         "runtime": {
           "Mov.Designer.Service.dll": {}
         }

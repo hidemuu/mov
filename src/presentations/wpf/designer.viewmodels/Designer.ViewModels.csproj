@@ -11,4 +11,8 @@
     <ProjectReference Include="..\wpfviewmodels\WpfViewModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Selector\" />
+  </ItemGroup>
+
 </Project>

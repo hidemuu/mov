@@ -97,17 +97,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Asp", "app\Asp\Asp.csproj",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pages", "pages", "{358B5A71-E6E3-45BC-B4AC-D69904811509}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Macro.Models", "src\domains\Macro.Models\Macro.Models.csproj", "{A90063AA-3D0F-4D58-868B-79E677D82119}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Macro.Models", "src\domains\macro.models\Macro.Models.csproj", "{A90063AA-3D0F-4D58-868B-79E677D82119}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Macro.Repository", "src\applications\Macro.Repository\Macro.Repository.csproj", "{04F95A32-F9ED-4042-9E06-BCCBDDB8F2CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Macro.Repository", "src\applications\macro.repository\Macro.Repository.csproj", "{04F95A32-F9ED-4042-9E06-BCCBDDB8F2CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Designer.Repository.Test", "src\applications\Designer.Repository.Test\Designer.Repository.Test.csproj", "{13F22A58-0498-4CC3-85EC-F63E7AE2C897}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Repository.Test", "src\applications\designer.repository.test\Designer.Repository.Test.csproj", "{13F22A58-0498-4CC3-85EC-F63E7AE2C897}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Models", "src\domains\Game.Models\Game.Models.csproj", "{9DB59F57-98ED-4D5D-92E8-1BFACE2AE80C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Models", "src\domains\game.models\Game.Models.csproj", "{9DB59F57-98ED-4D5D-92E8-1BFACE2AE80C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Repository", "src\applications\Game.Repository\Game.Repository.csproj", "{9926ED80-094A-41DA-AE91-0BEC04F72E87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Repository", "src\applications\game.repository\Game.Repository.csproj", "{9926ED80-094A-41DA-AE91-0BEC04F72E87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Service", "src\applications\Game.Service\Game.Service.csproj", "{5A0599D7-DE6F-474C-9BF8-2844A82D0446}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Service", "src\applications\game.service\Game.Service.csproj", "{5A0599D7-DE6F-474C-9BF8-2844A82D0446}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.ViewModels", "src\presentations\wpf\game.viewmodels\Game.ViewModels.csproj", "{3536363D-06DC-4213-93AE-4D9D0DBF54AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Views", "src\presentations\wpf\game.views\Game.Views.csproj", "{8B49221A-AD98-4035-9EBD-B4CC9D700147}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -287,6 +291,14 @@ Global
 		{5A0599D7-DE6F-474C-9BF8-2844A82D0446}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A0599D7-DE6F-474C-9BF8-2844A82D0446}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A0599D7-DE6F-474C-9BF8-2844A82D0446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3536363D-06DC-4213-93AE-4D9D0DBF54AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3536363D-06DC-4213-93AE-4D9D0DBF54AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3536363D-06DC-4213-93AE-4D9D0DBF54AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3536363D-06DC-4213-93AE-4D9D0DBF54AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B49221A-AD98-4035-9EBD-B4CC9D700147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B49221A-AD98-4035-9EBD-B4CC9D700147}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B49221A-AD98-4035-9EBD-B4CC9D700147}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B49221A-AD98-4035-9EBD-B4CC9D700147}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -342,6 +354,8 @@ Global
 		{9DB59F57-98ED-4D5D-92E8-1BFACE2AE80C} = {438402C2-B5EF-4CB6-9BFB-EDA2D4132DE4}
 		{9926ED80-094A-41DA-AE91-0BEC04F72E87} = {F450BFE0-7F0F-496C-9BF6-8D349A2F3584}
 		{5A0599D7-DE6F-474C-9BF8-2844A82D0446} = {F450BFE0-7F0F-496C-9BF6-8D349A2F3584}
+		{3536363D-06DC-4213-93AE-4D9D0DBF54AF} = {358B5A71-E6E3-45BC-B4AC-D69904811509}
+		{8B49221A-AD98-4035-9EBD-B4CC9D700147} = {358B5A71-E6E3-45BC-B4AC-D69904811509}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD9C3231-BF2C-413C-B738-70985D9981AE}

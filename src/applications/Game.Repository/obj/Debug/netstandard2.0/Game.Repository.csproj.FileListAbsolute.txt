@@ -7,3 +7,8 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Repository\obj\Debug\n
 C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Repository\obj\Debug\netstandard2.0\Game.Repository.csproj.CoreCompileInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Repository\obj\Debug\netstandard2.0\Mov.Game.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Repository\obj\Debug\netstandard2.0\Mov.Game.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Accessors.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Game.Models.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Game.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Accessors.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\obj\Debug\netstandard2.0\Game.Repository.csproj.CopyComplete

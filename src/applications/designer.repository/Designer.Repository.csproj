@@ -7,17 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\layout_table.xml" />
-    <None Remove="Resources\parts_layout.xml" />
+    <None Remove="Resources\content_table.xml" />
+    <None Remove="Resources\layout_tree.xml" />
     <None Remove="Resources\shell_layout.xml" />
     <None Remove="Resources\theme.xml" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Resources\parts_layout.xml">
+    <Content Include="Resources\layout_tree.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\layout_table.xml">
+    <Content Include="Resources\content_table.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\shell_layout.xml">

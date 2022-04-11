@@ -7,25 +7,21 @@ using System.Xml.Serialization;
 namespace Mov.Designer.Models
 {
     [XmlRoot("tables")]
-    public class LayoutTableCollection : DbObjectCollection<LayoutTable>
+    public class ContentTableCollection : DbObjectCollection<ContentTable>
     {
-        [XmlElement(Type = typeof(LayoutTable), ElementName = "table")]
-        public override LayoutTable[] Items { get; set; }
+        [XmlElement(Type = typeof(ContentTable), ElementName = "table")]
+        public override ContentTable[] Items { get; set; }
 
     }
 
     [XmlRoot("table")]
-    public class LayoutTable : DbObject
+    public class ContentTable : DbObject
     {
         #region プロパティ
 
         public string Name { get; set; }
 
         public string Icon { get; set; }
-
-        public string LayoutType { get; set; }
-
-        public string LayoutStyle { get; set; }
 
         public string ControlType { get; set; }
 

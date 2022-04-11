@@ -64,8 +64,8 @@ C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\user.json
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\app_setting.json
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\user_setting.json
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\variable.json
-C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\parts_layout.xml
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\shell_layout.xml
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\theme.xml
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\comment.json
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\layout_table.xml
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\layout_tree.xml

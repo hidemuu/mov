@@ -3,11 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Service.Nodes.Groups
+namespace Mov.Designer.Service.Layouts
 {
-    public abstract class GroupNodeBase : NodeBase, IEnumerable<NodeBase>
+    public abstract class LayoutNodeBase : LayoutBase, IEnumerable<LayoutBase>
     {
-        public IEnumerator<NodeBase> GetEnumerator()
+        #region プロパティ
+
+        public bool IsExpand { get; set; }
+
+        #endregion
+
+        public IEnumerator<LayoutBase> GetEnumerator()
         {
             throw new NotImplementedException();
         }

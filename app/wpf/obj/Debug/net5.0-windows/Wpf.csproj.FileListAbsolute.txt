@@ -125,8 +125,8 @@ C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\u
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\app_setting.json
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\user_setting.json
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\variable.json
-C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\parts_layout.xml
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\shell_layout.xml
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\theme.xml
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\comment.json
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\layout_table.xml
+C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\layout_tree.xml

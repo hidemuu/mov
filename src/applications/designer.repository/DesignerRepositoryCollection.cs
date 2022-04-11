@@ -22,8 +22,8 @@ namespace Mov.Designer.Repository.Xml
         public DesignerRepositoryCollection(string resourceDir, string extension, string encoding = "utf-8") : base(resourceDir, extension)
         {
             ShellLayouts = new ShellLayoutRepository(GetRepositoryPath("shell_layout"), encoding);
-            PartsLayouts = new PartsLayoutRepository(GetRepositoryPath("parts_layout"), encoding);
-            LayoutTables = new LayoutTableRepository(GetRepositoryPath("layout_table"), encoding);
+            LayoutTrees = new LayoutTreeRepository(GetRepositoryPath("layout_tree"), encoding);
+            ContentTables = new ContentTableRepository(GetRepositoryPath("content_table"), encoding);
             Themes = new ThemeRepository(GetRepositoryPath("theme"), encoding);
         }
 
@@ -31,9 +31,9 @@ namespace Mov.Designer.Repository.Xml
 
         public FileRepositoryBase<ShellLayout, ShellLayoutCollection> ShellLayouts { get; }
 
-        public FileRepositoryBase<PartsLayout, PartsLayoutCollection> PartsLayouts { get; }
+        public FileRepositoryBase<LayoutTree, LayoutTreeCollection> LayoutTrees { get; }
 
-        public FileRepositoryBase<LayoutTable, LayoutTableCollection> LayoutTables { get; }
+        public FileRepositoryBase<ContentTable, ContentTableCollection> ContentTables { get; }
 
         public FileRepositoryBase<Theme, ThemeCollection> Themes { get; }
 

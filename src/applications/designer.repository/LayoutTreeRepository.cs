@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Mov.Designer.Repository
 {
-    public class PartsLayoutRepository : FileRepositoryBase<PartsLayout, PartsLayoutCollection>
+    public class LayoutTreeRepository : FileRepositoryBase<LayoutTree, LayoutTreeCollection>
     {
-        public PartsLayoutRepository(string path, string encoding = "utf-8") : base(path, encoding)
+        public LayoutTreeRepository(string path, string encoding = "utf-8") : base(path, encoding)
         {
         }
 

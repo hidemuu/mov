@@ -3,10 +3,64 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:local="clr-namespace:Mov.Designer.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:vm="clr-namespace:Mov.Designer.ViewModels;assembly=Mov.Designer.ViewModels"
+    d:DataContext="{d:DesignInstance vm:DesignerViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
+    prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
-    <Grid />
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />
+                <!--<ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/ComponentStyles.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <StackPanel
+            Grid.Row="0"
+            Height="40"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Stretch"
+            Orientation="Horizontal">
+            <Button
+                Width="120"
+                Margin="2"
+                Command="{Binding ShowPageCommand}"
+                CommandParameter="{x:Static vm:DesignerViewModel.PAGE_NAME_TREE}"
+                Content="{x:Static vm:DesignerViewModel.PAGE_NAME_TREE}" />
+            <Button
+                Width="120"
+                Margin="2"
+                Command="{Binding ShowPageCommand}"
+                CommandParameter="{x:Static vm:DesignerViewModel.PAGE_NAME_TABLE}"
+                Content="{x:Static vm:DesignerViewModel.PAGE_NAME_TABLE}" />
+            <Button
+                Width="120"
+                Margin="2"
+                Command="{Binding ShowPageCommand}"
+                CommandParameter="{x:Static vm:DesignerViewModel.PAGE_NAME_PARTS}"
+                Content="{x:Static vm:DesignerViewModel.PAGE_NAME_PARTS}" />
+        </StackPanel>
+        <ContentControl
+            x:Name="contentRegion"
+            Grid.Row="1"
+            MinWidth="400"
+            prism:RegionManager.RegionManager="{Binding RegionManager}"
+            prism:RegionManager.RegionName="{x:Static vm:DesignerViewModel.REGION_NAME_CENTER}" />
+    </Grid>
 </UserControl>

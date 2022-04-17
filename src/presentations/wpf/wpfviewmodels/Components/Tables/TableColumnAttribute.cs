@@ -9,9 +9,9 @@ namespace Mov.WpfViewModels.Components.Tables
 {
     public class TableColumnAttribute
     {
-        public string Header { get; set; }
+        public string Header { get; set; } = string.Empty;
 
-        public int Width { get; set; }
+        public int Width { get; set; } = 100;
 
         public ReactivePropertySlim<bool> IsVisible { get; } = new ReactivePropertySlim<bool>(true);
 

@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "Mov.Designer.Views/1.0.0": {
         "dependencies": {
+          "Mov.Designer.ViewModels": "1.0.0",
           "Mov.WpfViews": "1.0.0"
         },
         "runtime": {
@@ -23,6 +24,14 @@
           "lib/netcoreapp3.1/ControlzEx.dll": {
             "assemblyVersion": "4.0.0.0",
             "fileVersion": "4.4.0.50"
+          }
+        }
+      },
+      "CsvHelper/27.2.1": {
+        "runtime": {
+          "lib/net5.0/CsvHelper.dll": {
+            "assemblyVersion": "27.0.0.0",
+            "fileVersion": "27.2.1.0"
           }
         }
       },
@@ -102,6 +111,14 @@
           "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
             "assemblyVersion": "1.1.0.0",
             "fileVersion": "1.1.31.10800"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
           }
         }
       },
@@ -207,6 +224,41 @@
           }
         }
       },
+      "Mov.Accessors/1.0.0": {
+        "dependencies": {
+          "CsvHelper": "27.2.1",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "Mov.Accessors.dll": {}
+        }
+      },
+      "Mov.Designer.Models/1.0.0": {
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "runtime": {
+          "Mov.Designer.Models.dll": {}
+        }
+      },
+      "Mov.Designer.Repository/1.0.0": {
+        "dependencies": {
+          "Mov.Designer.Models": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Designer.Repository.dll": {}
+        }
+      },
+      "Mov.Designer.ViewModels/1.0.0": {
+        "dependencies": {
+          "Mov.Designer.Repository": "1.0.0",
+          "Mov.WpfViewModels": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Designer.ViewModels.dll": {}
+        }
+      },
       "Mov.WpfControls/1.0.0": {
         "dependencies": {
           "LiveCharts.Wpf.NetCore3": "0.9.7",
@@ -262,6 +314,13 @@
       "path": "controlzex/4.4.0",
       "hashPath": "controlzex.4.4.0.nupkg.sha512"
     },
+    "CsvHelper/27.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uS5ix5hL9gL5taiAG//CScyJa8Fn1ZOh3FDhDvf4laboESFs84mCNropfp7PIt8xCkyQofljFpqu1B5UnSXjyA==",
+      "path": "csvhelper/27.2.1",
+      "hashPath": "csvhelper.27.2.1.nupkg.sha512"
+    },
     "gong-wpf-dragdrop/3.0.0": {
       "type": "package",
       "serviceable": true,
@@ -310,6 +369,13 @@
       "sha512": "sha512-LZpuf82ACZWldmfMuv3CTUMDh3o0xo0uHUaybR5HgqVLDBJJ9RZLykplQ/bTJd0/VDt3EhD4iDgUgbdIUAM+Kg==",
       "path": "microsoft.xaml.behaviors.wpf/1.1.31",
       "hashPath": "microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     },
     "Prism.Core/8.1.97": {
       "type": "package",
@@ -408,6 +474,26 @@
       "sha512": "sha512-47u4MBG8hxV2ZBUK7LlXcZQW8yWSqUSCRG+2/TBA2CSkxkQlMfVUJ0RJODJsZgsiSgy4N0M8HIr7J88drYR/OQ==",
       "path": "unity.container/5.11.11",
       "hashPath": "unity.container.5.11.11.nupkg.sha512"
+    },
+    "Mov.Accessors/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Designer.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Designer.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Designer.ViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Mov.WpfControls/1.0.0": {
       "type": "project",

@@ -10,9 +10,9 @@ C:\Users\nando\Documents\GitHub\mov\src\drivers\loggers\obj\Debug\netstandard2.0
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\loggers\bin\Debug\netstandard2.0\Mov.Loggers.deps.json
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\loggers\bin\Debug\netstandard2.0\Mov.Loggers.dll
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\loggers\bin\Debug\netstandard2.0\Mov.Loggers.pdb
-C:\Users\nando\Documents\GitHub\mov\src\infrastructures\loggers\obj\Debug\netstandard2.0\Loggers.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\loggers\obj\Debug\netstandard2.0\Loggers.AssemblyInfoInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\loggers\obj\Debug\netstandard2.0\Loggers.AssemblyInfo.cs
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\loggers\obj\Debug\netstandard2.0\Loggers.csproj.CoreCompileInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\loggers\obj\Debug\netstandard2.0\Mov.Loggers.dll
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\loggers\obj\Debug\netstandard2.0\Mov.Loggers.pdb
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\loggers\obj\Debug\netstandard2.0\Loggers.csproj.AssemblyReference.cache

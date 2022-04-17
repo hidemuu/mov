@@ -53,7 +53,7 @@ namespace Mov.Designer.Views.Editor {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mov.Designer.Views;V1.0.0.0;component/editor/designershelleditview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mov.Designer.Views;component/editor/designershelleditview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Editor\DesignerShellEditView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

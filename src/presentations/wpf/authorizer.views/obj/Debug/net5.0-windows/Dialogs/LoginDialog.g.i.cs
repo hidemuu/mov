@@ -53,7 +53,7 @@ namespace Mov.Authorizer.Views.Dialogs {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mov.Authorizer.Views;V1.0.0.0;component/dialogs/logindialog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mov.Authorizer.Views;component/dialogs/logindialog.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Dialogs\LoginDialog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

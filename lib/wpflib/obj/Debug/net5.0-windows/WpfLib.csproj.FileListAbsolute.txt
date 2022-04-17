@@ -89,5 +89,5 @@ C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Resource
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Resources\shell_layout.xml
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Resources\theme.xml
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Resources\comment.json
-C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Resources\layout_table.xml
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Resources\layout_tree.xml
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Resources\content_table.xml

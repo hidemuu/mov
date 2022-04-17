@@ -428,6 +428,7 @@
       },
       "Mov.Designer.ViewModels/1.0.0": {
         "dependencies": {
+          "Mov.Designer.Repository": "1.0.0",
           "Mov.WpfViewModels": "1.0.0"
         },
         "runtime": {
@@ -436,6 +437,7 @@
       },
       "Mov.Designer.Views/1.0.0": {
         "dependencies": {
+          "Mov.Designer.ViewModels": "1.0.0",
           "Mov.WpfViews": "1.0.0"
         },
         "runtime": {

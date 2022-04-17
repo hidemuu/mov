@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "0+8p8x59Ou7ZAi/1flZFE/IUw7r+0643e7F606dKFAVon7YOhpRu7b5C1dnTRRP14nubsFxOdzNqVBTK3oEKFg==",
+  "dgSpecHash": "091ZyEIh6OY+Y6GYAh4H74xBfoue/YPROSbgcpGrgO7G/PrZSGzhRgf2DhkJp++STmOe5xkRJRQ2M5qEFOfsUA==",
   "success": true,
   "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.viewmodels\\Designer.ViewModels.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\nando\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.31\\microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\prism.unity\\8.1.97\\prism.unity.8.1.97.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\prism.wpf\\8.1.97\\prism.wpf.8.1.97.nupkg.sha512",

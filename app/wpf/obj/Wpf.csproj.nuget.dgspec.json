@@ -1998,6 +1998,9 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.repository\\Designer.Repository.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.repository\\Designer.Repository.csproj"
+              },
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\wpfviewmodels\\WpfViewModels.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\wpfviewmodels\\WpfViewModels.csproj"
               }
@@ -2066,6 +2069,9 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.viewmodels\\Designer.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.viewmodels\\Designer.ViewModels.csproj"
+              },
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\wpfviews\\WpfViews.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\wpfviews\\WpfViews.csproj"
               }

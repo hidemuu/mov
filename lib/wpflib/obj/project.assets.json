@@ -580,6 +580,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "Mov.Designer.Repository": "1.0.0",
           "Mov.WpfViewModels": "1.0.0"
         },
         "compile": {
@@ -596,6 +597,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "Mov.Designer.ViewModels": "1.0.0",
           "Mov.WpfViews": "1.0.0"
         },
         "compile": {

@@ -69,7 +69,6 @@ C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\bin\Debug\net
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\bin\Debug\net5.0-windows\Mov.WpfDesigns.dll
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\bin\Debug\net5.0-windows\ref\Mov.WpfDesigns.dll
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\bin\Debug\net5.0-windows\Mov.WpfDesigns.pdb
-C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\WpfDesigns.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Styles\BaseStyles.baml
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Styles\ComponentStyles.baml
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Styles\Components\Button.baml
@@ -110,3 +109,4 @@ C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Mov.WpfDesigns.dll
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\ref\Mov.WpfDesigns.dll
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Mov.WpfDesigns.pdb
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\WpfDesigns.csproj.AssemblyReference.cache

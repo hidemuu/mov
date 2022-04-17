@@ -67,5 +67,5 @@ C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\variable.
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\shell_layout.xml
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\theme.xml
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\comment.json
-C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\layout_table.xml
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\layout_tree.xml
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\content_table.xml

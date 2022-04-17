@@ -2,11 +2,79 @@
     x:Class="Mov.Designer.Views.DesignerTreeView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:components="clr-namespace:Mov.WpfControls.Components;assembly=Mov.WpfControls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:local="clr-namespace:Mov.Designer.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:vm="clr-namespace:Mov.Designer.ViewModels;assembly=Mov.Designer.ViewModels"
+    d:DataContext="{d:DesignInstance vm:DesignerTreeViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
+    prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
-    <Grid />
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />
+                <ResourceDictionary Source="/Mov.WpfControls;component/Components/TreeListView.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid
+        x:Name="LayoutRoot"
+        x:FieldModifier="public"
+        Opacity="1">
+        <components:TreeListView
+            x:Name="treeviewMain"
+            x:FieldModifier="public"
+            AllowsColumnReorder="True"
+            ItemsSource="{Binding Models}">
+            <components:TreeListView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Children}" />
+            </components:TreeListView.ItemTemplate>
+            <components:TreeListView.Columns>
+                <GridViewColumn Width="200" Header="Name">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <components:TreeListViewExpander />
+                                <TextBlock Text="{Binding Code.Value}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+                <GridViewColumn Width="100" Header="Children">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox HorizontalAlignment="Center" IsChecked="{Binding IsChecked}" />
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+            </components:TreeListView.Columns>
+        </components:TreeListView>
+    </Grid>
+    <!--<TreeView x:Name="RootTree" ItemsSource="{Binding Models}">
+        <TreeView.Resources>
+            <Style TargetType="TreeViewItem">
+                <Setter Property="IsExpanded" Value="{Binding IsExpand.Value, Mode=TwoWay}" />
+            </Style>
+        </TreeView.Resources>
+        <TreeView.ItemTemplate>
+            <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Content="{Binding Code.Value}" />
+                    <TextBlock Foreground="Black" Text="{Binding LayoutType.Value}" />
+                    <TextBlock Foreground="Black" Text="{Binding LayoutStyle.Value}" />
+                    <TextBlock Foreground="Black" Text="{Binding LayoutParameter.Value}" />
+                </StackPanel>
+            </HierarchicalDataTemplate>
+        </TreeView.ItemTemplate>
+    </TreeView>-->
 </UserControl>

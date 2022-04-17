@@ -14,7 +14,6 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviewmodels\bin\Debu
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviewmodels\bin\Debug\net5.0-windows\Mov.WpfViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviewmodels\bin\Debug\net5.0-windows\ref\Mov.WpfViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviewmodels\bin\Debug\net5.0-windows\Mov.WpfViewModels.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviewmodels\obj\Debug\net5.0-windows\WpfViewModels.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviewmodels\obj\Debug\net5.0-windows\WpfViewModels.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviewmodels\obj\Debug\net5.0-windows\WpfViewModels.AssemblyInfoInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviewmodels\obj\Debug\net5.0-windows\WpfViewModels.AssemblyInfo.cs
@@ -22,3 +21,4 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviewmodels\obj\Debu
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviewmodels\obj\Debug\net5.0-windows\Mov.WpfViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviewmodels\obj\Debug\net5.0-windows\ref\Mov.WpfViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviewmodels\obj\Debug\net5.0-windows\Mov.WpfViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviewmodels\obj\Debug\net5.0-windows\WpfViewModels.csproj.AssemblyReference.cache

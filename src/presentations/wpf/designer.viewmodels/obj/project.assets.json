@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net5.0-windows7.0": {
+      "CsvHelper/27.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/CsvHelper.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/CsvHelper.dll": {}
+        }
+      },
       "Microsoft.Xaml.Behaviors.Wpf/1.1.31": {
         "type": "package",
         "compile": {
@@ -13,6 +22,15 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
       },
       "Prism.Core/8.1.97": {
         "type": "package",
@@ -159,6 +177,47 @@
           "lib/netcoreapp3.0/Unity.Container.dll": {}
         }
       },
+      "Mov.Accessors/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "CsvHelper": "27.2.1",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Accessors.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Accessors.dll": {}
+        }
+      },
+      "Mov.Designer.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Designer.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Designer.Models.dll": {}
+        }
+      },
+      "Mov.Designer.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Designer.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Designer.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Designer.Repository.dll": {}
+        }
+      },
       "Mov.WpfViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -179,6 +238,30 @@
     }
   },
   "libraries": {
+    "CsvHelper/27.2.1": {
+      "sha512": "uS5ix5hL9gL5taiAG//CScyJa8Fn1ZOh3FDhDvf4laboESFs84mCNropfp7PIt8xCkyQofljFpqu1B5UnSXjyA==",
+      "type": "package",
+      "path": "csvhelper/27.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "csvhelper.27.2.1.nupkg.sha512",
+        "csvhelper.nuspec",
+        "lib/net45/CsvHelper.dll",
+        "lib/net45/CsvHelper.xml",
+        "lib/net47/CsvHelper.dll",
+        "lib/net47/CsvHelper.xml",
+        "lib/net5.0/CsvHelper.dll",
+        "lib/net5.0/CsvHelper.xml",
+        "lib/net6.0/CsvHelper.dll",
+        "lib/net6.0/CsvHelper.xml",
+        "lib/netstandard2.0/CsvHelper.dll",
+        "lib/netstandard2.0/CsvHelper.xml",
+        "lib/netstandard2.1/CsvHelper.dll",
+        "lib/netstandard2.1/CsvHelper.xml"
+      ]
+    },
     "Microsoft.Xaml.Behaviors.Wpf/1.1.31": {
       "sha512": "LZpuf82ACZWldmfMuv3CTUMDh3o0xo0uHUaybR5HgqVLDBJJ9RZLykplQ/bTJd0/VDt3EhD4iDgUgbdIUAM+Kg==",
       "type": "package",
@@ -202,6 +285,33 @@
         "microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
         "microsoft.xaml.behaviors.wpf.nuspec",
         "tools/Install.ps1"
+      ]
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
       ]
     },
     "Prism.Core/8.1.97": {
@@ -582,6 +692,21 @@
         "unity.container.nuspec"
       ]
     },
+    "Mov.Accessors/1.0.0": {
+      "type": "project",
+      "path": "../../../infrastructures/accessors/Accessors.csproj",
+      "msbuildProject": "../../../infrastructures/accessors/Accessors.csproj"
+    },
+    "Mov.Designer.Models/1.0.0": {
+      "type": "project",
+      "path": "../../../domains/designer.models/Designer.Models.csproj",
+      "msbuildProject": "../../../domains/designer.models/Designer.Models.csproj"
+    },
+    "Mov.Designer.Repository/1.0.0": {
+      "type": "project",
+      "path": "../../../applications/designer.repository/Designer.Repository.csproj",
+      "msbuildProject": "../../../applications/designer.repository/Designer.Repository.csproj"
+    },
     "Mov.WpfViewModels/1.0.0": {
       "type": "project",
       "path": "../wpfviewmodels/WpfViewModels.csproj",
@@ -590,6 +715,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
+      "Mov.Designer.Repository >= 1.0.0",
       "Mov.WpfViewModels >= 1.0.0"
     ]
   },
@@ -630,6 +756,9 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.repository\\Designer.Repository.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.repository\\Designer.Repository.csproj"
+            },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\wpfviewmodels\\WpfViewModels.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\wpfviewmodels\\WpfViewModels.csproj"
             }

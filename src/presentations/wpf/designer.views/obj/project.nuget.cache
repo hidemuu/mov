@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "qNpy7hyzCusc+jBTtjaxqBFy8wSaaVEqKN4aETSaesgAUH6J2ncuibdJ/QNquzvaO4W3LbDu0EY8Iqkz5JY9rg==",
+  "dgSpecHash": "VF1IMO2QTtmeYQb3NcC4caKO72EVWsU04fHsLu1VJstJvLk3LKNX4UobJrSM1enj8UhjkPxVNbugJiCMz9uAlw==",
   "success": true,
   "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.views\\Designer.Views.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nando\\.nuget\\packages\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\gong-wpf-dragdrop\\3.0.0\\gong-wpf-dragdrop.3.0.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\livecharts.wpf.netcore3\\0.9.7\\livecharts.wpf.netcore3.0.9.7.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\mahapps.metro\\2.4.9\\mahapps.metro.2.4.9.nupkg.sha512",
@@ -12,6 +13,7 @@
     "C:\\Users\\nando\\.nuget\\packages\\materialdesignthemes\\4.2.1\\materialdesignthemes.4.2.1.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\materialdesignthemes.mahapps\\0.1.9\\materialdesignthemes.mahapps.0.1.9.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.31\\microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\prism.unity\\8.1.97\\prism.unity.8.1.97.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\prism.wpf\\8.1.97\\prism.wpf.8.1.97.nupkg.sha512",

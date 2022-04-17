@@ -16,7 +16,6 @@ namespace Mov.Wpf.ViewModels
         #region プロパティ
 
         public ReactivePropertySlim<string> Title { get; private set; } = new ReactivePropertySlim<string>();
-
         public ReactiveCollection<MainWindowModel> Models { get; } = new ReactiveCollection<MainWindowModel>();
         public ReactivePropertySlim<int> TabPage { get; set; } = new ReactivePropertySlim<int>(-1);
 
@@ -77,7 +76,7 @@ namespace Mov.Wpf.ViewModels
         {
             var model = Models.FirstOrDefault(x => x.Index == index);
             model.TabCommand();
-            Title.Value = "Mov" + " - " + model.Title; 
+            Title.Value = "Mov" + " - " + model.Title;
         }
 
         #endregion

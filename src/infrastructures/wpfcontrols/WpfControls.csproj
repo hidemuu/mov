@@ -14,9 +14,13 @@
 
   <ItemGroup>
     <Folder Include="Behaviors\" />
-    <Folder Include="Components\Atoms\" />
-    <Folder Include="Components\Organisms\" />
-    <Folder Include="Components\Molecules\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Components\TreeListView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
 </Project>

@@ -2,6 +2,12 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Page Update="Styles\BaseFonts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\BaseThemes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Styles\Components\Button.xaml">
       <SubType>Designer</SubType>
     </Page>

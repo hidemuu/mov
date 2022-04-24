@@ -12,4 +12,8 @@
     <ProjectReference Include="..\wpfviews\WpfViews.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Templates\" />
+  </ItemGroup>
+
 </Project>

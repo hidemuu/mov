@@ -3,7 +3,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../BaseStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
+
     <Style x:Key="ExpanderStyle" TargetType="{x:Type Expander}">
         <Setter Property="HeaderTemplate">
             <Setter.Value>

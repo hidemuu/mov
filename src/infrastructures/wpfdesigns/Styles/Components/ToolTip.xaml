@@ -3,7 +3,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../BaseStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
+
     <Style TargetType="ToolTip">
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="BorderBrush" Value="{DynamicResource WindowBorderActive}" />

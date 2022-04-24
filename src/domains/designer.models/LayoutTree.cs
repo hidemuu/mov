@@ -30,9 +30,11 @@ namespace Mov.Designer.Models
 
         [XmlArray("children")]
         [XmlArrayItem("layout")]
-        public override List<LayoutTree> Children { get; set; }
+        public override List<LayoutTree> Children { get; set; } = new List<LayoutTree>();
 
-        #endregion
+        #endregion プロパティ
+
+        #region コンストラクター
 
         /// <summary>
         /// コンストラクター
@@ -42,6 +44,8 @@ namespace Mov.Designer.Models
 
         }
 
+        #endregion コンストラクター
+
         #region メソッド
 
         public override string ToString() => GetString(new string[] { Id.ToString(), Code, LayoutType });
@@ -50,7 +54,7 @@ namespace Mov.Designer.Models
 
         public override string ToStringTableHeader() => GetString(new string[] { "Id", "Code", "LayoutType" }, 10);
 
-        #endregion
+        #endregion メソッド
 
 
     }

@@ -3,7 +3,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../BaseStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
+
     <!--  refer https://blog.jsinh.in/how-to-create-apple-macos-like-scrollbar-in-wpf/#.XrZTJmj7SUk  -->
 
     <Style x:Key="MacLikeScrollBarTrackThumb" TargetType="{x:Type Thumb}">

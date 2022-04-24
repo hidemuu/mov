@@ -3,7 +3,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../BaseStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
+
     <Style TargetType="GridSplitter">
         <Setter Property="Background" Value="{DynamicResource SeparatorBackground}" />
         <Setter Property="VerticalAlignment" Value="Stretch" />

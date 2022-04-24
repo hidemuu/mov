@@ -3,7 +3,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../BaseStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
+
     <!--<Style TargetType="ListView">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="BorderThickness" Value="0" />

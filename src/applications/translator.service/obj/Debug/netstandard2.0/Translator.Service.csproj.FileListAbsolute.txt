@@ -23,3 +23,4 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\translator.service\obj\Debu
 C:\Users\nando\Documents\GitHub\mov\src\applications\translator.service\obj\Debug\netstandard2.0\Translator.Service.csproj.CoreCompileInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\applications\translator.service\obj\Debug\netstandard2.0\Mov.Translator.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\translator.service\obj\Debug\netstandard2.0\Mov.Translator.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\translator.service\obj\Debug\netstandard2.0\Translator.Service.csproj.AssemblyReference.cache

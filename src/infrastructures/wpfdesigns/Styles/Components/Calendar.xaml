@@ -3,7 +3,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../BaseStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
+
     <Style TargetType="Calendar">
         <Setter Property="Foreground" Value="{DynamicResource ItemText}" />
         <Setter Property="Background" Value="Transparent" />

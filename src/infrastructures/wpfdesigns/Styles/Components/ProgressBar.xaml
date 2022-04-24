@@ -3,7 +3,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../BaseStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
+
     <!--  ProgresBar  -->
     <Style x:Key="ProgressBarStyle" TargetType="ProgressBar">
         <Setter Property="Template">

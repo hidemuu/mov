@@ -17,7 +17,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />
+                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/ComponentStyles.xaml" />
                 <ResourceDictionary Source="/Mov.WpfControls;component/Components/TreeListView.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
@@ -81,12 +81,13 @@
             </components:TreeListView.Columns>
         </components:TreeListView>
         <Button
-            Width="48"
-            Height="48"
+            Width="32"
+            Height="32"
             Margin="0,0,8,8"
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
             Command="{Binding SaveCommand}"
+            Content="+"
             Cursor="Hand"
             Focusable="False"
             ToolTip="保存します"

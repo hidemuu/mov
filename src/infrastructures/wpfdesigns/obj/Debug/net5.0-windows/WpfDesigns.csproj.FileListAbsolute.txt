@@ -110,3 +110,5 @@ C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\WpfDesigns.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Styles\Themes\ModernUI.Dark.baml
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Styles\Themes\ModernUI.Light.baml
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Styles\BaseFonts.baml
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Styles\BaseThemes.baml

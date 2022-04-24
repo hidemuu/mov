@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 
-312094753492
+33-107024360
 51307054577
 1-1496264228
 1991237349410
-Styles\BaseStyles.xaml;Styles\ComponentStyles.xaml;Styles\Components\Button.xaml;Styles\Components\Calendar.xaml;Styles\Components\CheckBox.xaml;Styles\Components\ChipBorder.xaml;Styles\Components\ComboBox.xaml;Styles\Components\ContextMenu.xaml;Styles\Components\DataGrid.xaml;Styles\Components\Expander.xaml;Styles\Components\GridSplitter.xaml;Styles\Components\Hyperlink.xaml;Styles\Components\Label.xaml;Styles\Components\ListBox.xaml;Styles\Components\ListView.xaml;Styles\Components\MacLikeScrollBar.xaml;Styles\Components\MaterialTextBlock.xaml;Styles\Components\MenuItem.xaml;Styles\Components\NavigationRail.xaml;Styles\Components\PasswordBox.xaml;Styles\Components\ProgressBar.xaml;Styles\Components\ProgressRing.xaml;Styles\Components\RadioButton.xaml;Styles\Components\ScrollBar.xaml;Styles\Components\Slider.xaml;Styles\Components\TextBlock.xaml;Styles\Components\TextBox.xaml;Styles\Components\ToolTip.xaml;Styles\Components\TreeView.xaml;Styles\Themes\ModernUI.Dark.xaml;Styles\Themes\ModernUI.Light.xaml;
+Styles\BaseFonts.xaml;Styles\BaseStyles.xaml;Styles\BaseThemes.xaml;Styles\ComponentStyles.xaml;Styles\Components\Button.xaml;Styles\Components\Calendar.xaml;Styles\Components\CheckBox.xaml;Styles\Components\ChipBorder.xaml;Styles\Components\ComboBox.xaml;Styles\Components\ContextMenu.xaml;Styles\Components\DataGrid.xaml;Styles\Components\Expander.xaml;Styles\Components\GridSplitter.xaml;Styles\Components\Hyperlink.xaml;Styles\Components\Label.xaml;Styles\Components\ListBox.xaml;Styles\Components\ListView.xaml;Styles\Components\MacLikeScrollBar.xaml;Styles\Components\MaterialTextBlock.xaml;Styles\Components\MenuItem.xaml;Styles\Components\NavigationRail.xaml;Styles\Components\PasswordBox.xaml;Styles\Components\ProgressBar.xaml;Styles\Components\ProgressRing.xaml;Styles\Components\RadioButton.xaml;Styles\Components\ScrollBar.xaml;Styles\Components\Slider.xaml;Styles\Components\TextBlock.xaml;Styles\Components\TextBox.xaml;Styles\Components\ToolTip.xaml;Styles\Components\TreeView.xaml;Styles\Themes\ModernUI.Dark.xaml;Styles\Themes\ModernUI.Light.xaml;
 
 False
 

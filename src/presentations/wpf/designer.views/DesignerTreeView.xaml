@@ -27,10 +27,10 @@
             <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
         </i:EventTrigger>
     </i:Interaction.Triggers>
-    <Grid
-        x:Name="LayoutRoot"
-        x:FieldModifier="public"
-        Opacity="1">
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         <components:TreeListView
             x:Name="treeviewMain"
             x:FieldModifier="public"
@@ -40,41 +40,56 @@
                 <HierarchicalDataTemplate ItemsSource="{Binding Children}" />
             </components:TreeListView.ItemTemplate>
             <components:TreeListView.Columns>
-                <GridViewColumn Width="200" Header="Name">
+                <GridViewColumn Width="{Binding Attribute.Code.Width}" Header="{Binding Attribute.Code.Header}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <components:TreeListViewExpander />
-                                <TextBlock Text="{Binding Code.Value}" />
+                                <TextBox Text="{Binding Code.Value}" ToolTip="{Binding ToolTip.Value}" />
                             </StackPanel>
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
-                <GridViewColumn Width="100" Header="Children">
+                <GridViewColumn Width="{Binding Attribute.IsExpand.Width}" Header="{Binding Attribute.IsExpand.Header}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate>
-                            <CheckBox HorizontalAlignment="Center" IsChecked="{Binding IsChecked}" />
+                            <CheckBox Foreground="Black" IsChecked="{Binding IsExpand.Value}" />
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+                <GridViewColumn Width="{Binding Attribute.LayoutType.Width}" Header="{Binding Attribute.LayoutType.Header}">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Foreground="Black" Text="{Binding LayoutType.Value}" />
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+                <GridViewColumn Width="{Binding Attribute.LayoutStyle.Width}" Header="{Binding Attribute.LayoutStyle.Header}">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Foreground="Black" Text="{Binding LayoutStyle.Value}" />
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+                <GridViewColumn Width="{Binding Attribute.LayoutParameter.Width}" Header="{Binding Attribute.LayoutParameter.Header}">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Foreground="Black" Text="{Binding LayoutParameter.Value}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
             </components:TreeListView.Columns>
         </components:TreeListView>
+        <Button
+            Width="48"
+            Height="48"
+            Margin="0,0,8,8"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Command="{Binding SaveCommand}"
+            Cursor="Hand"
+            Focusable="False"
+            ToolTip="保存します"
+            ToolTipService.Placement="Right" />
     </Grid>
-    <!--<TreeView x:Name="RootTree" ItemsSource="{Binding Models}">
-        <TreeView.Resources>
-            <Style TargetType="TreeViewItem">
-                <Setter Property="IsExpanded" Value="{Binding IsExpand.Value, Mode=TwoWay}" />
-            </Style>
-        </TreeView.Resources>
-        <TreeView.ItemTemplate>
-            <HierarchicalDataTemplate ItemsSource="{Binding Children}">
-                <StackPanel Orientation="Horizontal">
-                    <CheckBox Content="{Binding Code.Value}" />
-                    <TextBlock Foreground="Black" Text="{Binding LayoutType.Value}" />
-                    <TextBlock Foreground="Black" Text="{Binding LayoutStyle.Value}" />
-                    <TextBlock Foreground="Black" Text="{Binding LayoutParameter.Value}" />
-                </StackPanel>
-            </HierarchicalDataTemplate>
-        </TreeView.ItemTemplate>
-    </TreeView>-->
 </UserControl>

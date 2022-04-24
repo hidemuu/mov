@@ -30,6 +30,8 @@ namespace Mov.Accessors
 
         protected readonly IFileSerializer fileSerializer;
 
+        private C collection = null;
+
         #endregion
 
         /// <summary>
@@ -56,17 +58,48 @@ namespace Mov.Accessors
 
         #region メソッド
 
-        public IEnumerable<T> Gets() => fileSerializer.Read<C>().Items;
+        #region GET
+
+        public IEnumerable<T> Gets() 
+        { 
+            if(collection == null) collection = fileSerializer.Read<C>();
+            return collection.Items;
+        }
         
         public async Task<IEnumerable<T>> GetsAsync() => await Task.Run(Gets);
-        
-        public T Get() => fileSerializer.Read<T>();
-        
-        public async Task<T> GetAsync() => await Task.Run(Get);
-        
+
         public T Get(int id) => Gets().FirstOrDefault(x => x.Id == id);
 
         public T Get(string code) => Gets().FirstOrDefault(x => x.Code == code);
+
+        #endregion GET
+
+        #region SET
+
+        public void Sets(IEnumerable<T> items)
+        {
+            collection.Items = items.ToArray();
+        }
+
+        public void Set(T item)
+        {
+            var src = collection.Items.FirstOrDefault(x => x.Id == item.Id);
+            src = item;
+        }
+
+        #endregion SET
+
+        #region POST
+
+        public void Posts() => fileSerializer.Write<C>(this.collection);
+
+        public void Post(T item) 
+        {
+            Set(item);
+            fileSerializer.Write<T>(item);
+        }
+
+        #endregion POST
 
         public override string ToString()
         {
@@ -78,7 +111,7 @@ namespace Mov.Accessors
             return stringBuilder.ToString();
         }
 
-        #endregion
+        #endregion メソッド
 
         #region 内部メソッド
 

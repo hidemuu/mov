@@ -12,4 +12,8 @@
     <PackageReference Include="ReactiveProperty.WPF" Version="8.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\infrastructures\wpfdesigns\WpfDesigns.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,5 @@
-﻿using Mov.WpfViewModels;
+﻿using Mov.Designer.Models.interfaces;
+using Mov.WpfViewModels;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using Reactive.Bindings;
@@ -8,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace Mov.Designer.ViewModels
 {
@@ -15,13 +17,13 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        public const string REGION_NAME_CENTER = "DESIGNER_CENTER";
+        public const string REGION_NAME_CONTENT = "DESIGNER_CENTER";
 
-        public const string PAGE_NAME_TREE = "DesignerTree";
+        public const string PAGE_NAME_TREE = "Tree";
 
-        public const string PAGE_NAME_TABLE = "DesignerTable";
+        public const string PAGE_NAME_TABLE = "Table";
 
-        public const string PAGE_NAME_PARTS = "DesignerParts";
+        public const string PAGE_NAME_PARTS = "Parts";
 
         private readonly IDictionary<string, string> pageDictionary = new Dictionary<string, string>() {
             { PAGE_NAME_TREE, "DesignerTreeView" },
@@ -31,31 +33,59 @@ namespace Mov.Designer.ViewModels
 
         private string pageName = PAGE_NAME_TREE;
 
+        private readonly IDesignerRepositoryCollection repository;
+
         #endregion フィールド
 
         #region コマンド
 
         public ReactiveCommand<string> ShowPageCommand { get; } = new ReactiveCommand<string>();
 
+        public ReactiveCommand<string> SaveCommand { get; } = new ReactiveCommand<string>();
+
         #endregion コマンド
 
-        public DesignerViewModel(IRegionManager regionManager, IDialogService dialogService) : base(regionManager, dialogService)
+        #region コンストラクター
+
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
+        /// <param name="regionManager"></param>
+        /// <param name="dialogService"></param>
+        public DesignerViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerRepositoryCollection repository) : base(regionManager, dialogService)
         {
-            ShowPageCommand.Subscribe(DisplayPage).AddTo(Disposables);
+            this.repository = repository;
+            ShowPageCommand.Subscribe(OnPageChangeCommand).AddTo(Disposables);
+            SaveCommand.Subscribe(OnSaveCommand).AddTo(Disposables);
         }
+
+        #endregion コンストラクター
 
         #region イベント
 
-        protected override void OnLoaded() => DisplayPage(this.pageName);
+        protected override void OnLoaded() => OnPageChangeCommand(this.pageName);
 
         #endregion イベント
 
-        #region メソッド
+        #region 内部メソッド
 
-        private void DisplayPage(string pageName)
+        private void OnPageChangeCommand(string pageName)
         {
             this.pageName = pageName;
-            this.RegionManager.RequestNavigate(REGION_NAME_CENTER, pageDictionary[this.pageName]);
+            this.RegionManager.RequestNavigate(REGION_NAME_CONTENT, pageDictionary[this.pageName]);
+        }
+
+        private void OnSaveCommand(string parameter)
+        {
+            switch (this.pageName)
+            {
+                case PAGE_NAME_TREE:
+                    this.repository.LayoutTrees.Posts();
+                    break;
+                case PAGE_NAME_TABLE:
+                    this.repository.ContentTables.Posts();
+                    break;
+            }
         }
 
         #endregion

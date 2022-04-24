@@ -210,6 +210,7 @@
       "Mov.WpfControls/1.0.0": {
         "dependencies": {
           "LiveCharts.Wpf.NetCore3": "0.9.7",
+          "Mov.WpfDesigns": "1.0.0",
           "gong-wpf-dragdrop": "3.0.0"
         },
         "runtime": {
@@ -239,7 +240,6 @@
       "Mov.WpfViews/1.0.0": {
         "dependencies": {
           "Mov.WpfControls": "1.0.0",
-          "Mov.WpfDesigns": "1.0.0",
           "Mov.WpfViewModels": "1.0.0",
           "Prism.Wpf": "8.1.97"
         },

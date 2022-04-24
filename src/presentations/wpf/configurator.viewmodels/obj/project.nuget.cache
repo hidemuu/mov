@@ -1,10 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "GLAYgrV1UqRz5HY/ATWFUsHL4w3QJfaFGWzAYYdM6ceCWq4G5HSgX9TOi/9baF+1uJlPIZ5qfUObXm22WpaCRg==",
+  "dgSpecHash": "joM6NBJfTtpIOSuFT/RGn4j8WXecBb2jiJsj4niZm3AVM6Ya2481a22Em5OA4hxx9+Ln4DiCscnz+CYEsytorA==",
   "success": true,
   "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\configurator.viewmodels\\Configurator.ViewModels.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\nando\\.nuget\\packages\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\mahapps.metro\\2.4.9\\mahapps.metro.2.4.9.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\materialdesigncolors\\2.0.3\\materialdesigncolors.2.0.3.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\materialdesignthemes\\4.2.1\\materialdesignthemes.4.2.1.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\materialdesignthemes.mahapps\\0.1.9\\materialdesignthemes.mahapps.0.1.9.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.31\\microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512",
@@ -16,6 +21,7 @@
     "C:\\Users\\nando\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\system.reactive\\5.0.0\\system.reactive.5.0.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\unity.abstractions\\5.11.7\\unity.abstractions.5.11.7.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\unity.container\\5.11.11\\unity.container.5.11.11.nupkg.sha512"

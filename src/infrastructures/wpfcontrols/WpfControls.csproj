@@ -17,6 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\wpfdesigns\WpfDesigns.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Update="Components\TreeListView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>

@@ -34,7 +34,11 @@
         "frameworks": {
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfdesigns\\WpfDesigns.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfdesigns\\WpfDesigns.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -190,7 +194,11 @@
         "frameworks": {
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfdesigns\\WpfDesigns.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfdesigns\\WpfDesigns.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -267,9 +275,6 @@
             "projectReferences": {
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj"
-              },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfdesigns\\WpfDesigns.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfdesigns\\WpfDesigns.csproj"
               },
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\wpfviewmodels\\WpfViewModels.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\wpfviewmodels\\WpfViewModels.csproj"

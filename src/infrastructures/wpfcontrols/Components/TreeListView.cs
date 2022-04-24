@@ -9,8 +9,6 @@ using System.Windows.Controls;
 namespace Mov.WpfControls.Components
 {
     /// <summary>
-    /// Represents a control that displays hierarchical data in a tree structure
-    /// that has items that can expand and collapse.
     /// https://sabeeshwpf.blogspot.com/2012/12/treelistview-in-wpf.html
     /// </summary>
     public class TreeListView : TreeView
@@ -52,11 +50,9 @@ namespace Mov.WpfControls.Components
         #endregion
 
         #region Static Dependency Properties
-        // Using a DependencyProperty as the backing store for AllowsColumnReorder.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty AllowsColumnReorderProperty =
             DependencyProperty.Register("AllowsColumnReorder", typeof(bool), typeof(TreeListView), new UIPropertyMetadata(null));
 
-        // Using a DependencyProperty as the backing store for Columns.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ColumnsProperty =
             DependencyProperty.Register("Columns", typeof(GridViewColumnCollection),
             typeof(TreeListView),

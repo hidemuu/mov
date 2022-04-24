@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\infrastructures\wpfcontrols\WpfControls.csproj" />
-    <ProjectReference Include="..\..\..\infrastructures\wpfdesigns\WpfDesigns.csproj" />
     <ProjectReference Include="..\wpfviewmodels\WpfViewModels.csproj" />
   </ItemGroup>
 

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 
-7-807744875
+71387793171
 
-9-2123474884
+9-1135232885
 2211462670237
-DesignerDialogView.xaml;DesignerPartsView.xaml;DesignerTableView.xaml;DesignerTreeView.xaml;DesignerView.xaml;Editor\DesignerPartsEditView.xaml;Editor\DesignerShellEditView.xaml;
+DesignerDialogView.xaml;DesignerPartsView.xaml;DesignerShellView.xaml;DesignerTableView.xaml;DesignerThemeView.xaml;DesignerTreeView.xaml;DesignerView.xaml;
 
 True
 

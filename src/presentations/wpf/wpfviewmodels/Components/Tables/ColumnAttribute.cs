@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mov.WpfViewModels.Components.Tables
 {
-    public class TableColumnAttribute
+    public class ColumnAttribute
     {
         public string Header { get; set; } = string.Empty;
 

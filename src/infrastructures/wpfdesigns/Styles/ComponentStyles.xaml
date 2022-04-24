@@ -5,6 +5,7 @@
 
 
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="BaseStyles.xaml" />
         <ResourceDictionary Source="Components/Button.xaml" />
         <ResourceDictionary Source="Components/Calendar.xaml" />
         <ResourceDictionary Source="Components/CheckBox.xaml" />

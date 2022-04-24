@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Mov.Designer.Views.Editor
+namespace Mov.Designer.Views
 {
     /// <summary>
-    /// DesignerShellEditView.xaml の相互作用ロジック
+    /// DesignerShellView.xaml の相互作用ロジック
     /// </summary>
-    public partial class DesignerShellEditView : UserControl
+    public partial class DesignerShellView : UserControl
     {
-        public DesignerShellEditView()
+        public DesignerShellView()
         {
             InitializeComponent();
         }

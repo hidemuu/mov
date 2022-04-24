@@ -96,8 +96,6 @@ C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Styles\Components\Slider.baml
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Styles\Components\TextBlock.baml
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Styles\Components\TextBox.baml
-C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Styles\Components\Themes\ModernUI.Dark.baml
-C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Styles\Components\Themes\ModernUI.Light.baml
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Styles\Components\ToolTip.baml
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Styles\Components\TreeView.baml
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Mov.WpfDesigns_MarkupCompile.cache
@@ -110,3 +108,5 @@ C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\ref\Mov.WpfDesigns.dll
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Mov.WpfDesigns.pdb
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\WpfDesigns.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Styles\Themes\ModernUI.Dark.baml
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Styles\Themes\ModernUI.Light.baml

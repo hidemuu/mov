@@ -40,8 +40,7 @@
                 Margin="1"
                 VerticalAlignment="Center"
                 IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem}}" />-->
-            <Expander  IsExpanded="{Binding IsExpanded, RelativeSource={RelativeSource Mode=FindAncestor,
-                AncestorType=TreeViewItem}}" VerticalAlignment="Center" />
+            <Expander VerticalAlignment="Center" IsExpanded="{Binding IsExpanded, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem}}" />
         </StackPanel>
         <ControlTemplate.Triggers>
             <DataTrigger Binding="{Binding HasItems, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem}}" Value="False">

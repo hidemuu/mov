@@ -89,11 +89,11 @@
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\Themes\ModernUI.Dark.xaml">
+    <Page Update="Styles\Themes\ModernUI.Dark.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\Themes\ModernUI.Light.xaml">
+    <Page Update="Styles\Themes\ModernUI.Light.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>

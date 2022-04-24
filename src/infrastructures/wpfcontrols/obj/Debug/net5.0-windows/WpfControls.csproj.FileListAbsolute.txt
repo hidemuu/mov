@@ -146,3 +146,11 @@ C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\ne
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Components\TreeListView.baml
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Mov.WpfControls.g.resources
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\WpfControls.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\bin\Debug\net5.0-windows\Assets\Fonts\iconfont.ttf
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\bin\Debug\net5.0-windows\Assets\Photos\alter.png
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\bin\Debug\net5.0-windows\Assets\Photos\home.png
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\bin\Debug\net5.0-windows\Assets\Photos\push.png
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\bin\Debug\net5.0-windows\Assets\Photos\success.png
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\bin\Debug\net5.0-windows\Mov.WpfDesigns.dll
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\bin\Debug\net5.0-windows\Mov.WpfDesigns.pdb
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\WpfControls.csproj.CopyComplete

@@ -8,19 +8,19 @@
     <Compile Update="DesignerPartsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="DesignerShellView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="DesignerTableView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DesignerThemeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="DesignerTreeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="DesignerView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Editor\DesignerPartsEditView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Editor\DesignerShellEditView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -31,19 +31,19 @@
     <Page Update="DesignerPartsView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="DesignerShellView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="DesignerTableView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DesignerThemeView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="DesignerTreeView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="DesignerView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Editor\DesignerPartsEditView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Editor\DesignerShellEditView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

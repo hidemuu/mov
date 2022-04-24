@@ -32,34 +32,69 @@
             ItemsSource="{Binding Models}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn
-                        Width="{Binding Attribute.Id.Width}"
-                        DisplayMemberBinding="{Binding Id.Value}"
-                        Header="{Binding Attribute.Id.Header}" />
-                    <GridViewColumn
-                        Width="{Binding Attribute.Code.Width}"
-                        DisplayMemberBinding="{Binding Code.Value}"
-                        Header="{Binding Attribute.Code.Header}" />
-                    <GridViewColumn
-                        Width="{Binding Attribute.Name.Width}"
-                        DisplayMemberBinding="{Binding Name.Value}"
-                        Header="{Binding Attribute.Name.Header}" />
-                    <GridViewColumn
-                        Width="{Binding Attribute.Command.Width}"
-                        DisplayMemberBinding="{Binding Command.Value}"
-                        Header="{Binding Attribute.Command.Header}" />
-                    <GridViewColumn
-                        Width="{Binding Attribute.ControlType.Width}"
-                        DisplayMemberBinding="{Binding ControlType.Value}"
-                        Header="{Binding Attribute.ControlType.Header}" />
-                    <GridViewColumn
-                        Width="{Binding Attribute.ControlStyle.Width}"
-                        DisplayMemberBinding="{Binding ControlStyle.Value}"
-                        Header="{Binding Attribute.ControlStyle.Header}" />
-                    <GridViewColumn
-                        Width="{Binding Attribute.Parameter.Width}"
-                        DisplayMemberBinding="{Binding Parameter.Value}"
-                        Header="{Binding Attribute.Parameter.Header}" />
+                    <GridViewColumn Width="{Binding Attribute.Id.Width}" Header="{Binding Attribute.Id.Header}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Id.Value}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="{Binding Attribute.Code.Width}" Header="{Binding Attribute.Code.Header}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Code.Value}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="{Binding Attribute.Name.Width}" Header="{Binding Attribute.Name.Header}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Name.Value}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="{Binding Attribute.Command.Width}" Header="{Binding Attribute.Command.Header}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Command.Value}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="{Binding Attribute.ControlType.Width}" Header="{Binding Attribute.ControlType.Header}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding ControlType.Value}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="{Binding Attribute.ControlStyle.Width}" Header="{Binding Attribute.ControlStyle.Header}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding ControlStyle.Value}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="{Binding Attribute.Parameter.Width}" Header="{Binding Attribute.Parameter.Header}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Parameter.Value}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

@@ -73,13 +73,13 @@ namespace Mov.Designer.ViewModels
 
         public class TableModelAttribute
         {
-            public TableColumnAttribute Id { get; } = new TableColumnAttribute() { Header = "id" };
-            public TableColumnAttribute Code { get; } = new TableColumnAttribute() { Header = "code" };
-            public TableColumnAttribute Name { get; } = new TableColumnAttribute() { Header = "name" };
-            public TableColumnAttribute Command { get; } = new TableColumnAttribute() { Header = "command" };
-            public TableColumnAttribute ControlType { get; } = new TableColumnAttribute() { Header = "controlType" };
-            public TableColumnAttribute ControlStyle { get; } = new TableColumnAttribute() { Header = "controlStyle" };
-            public TableColumnAttribute Parameter { get; } = new TableColumnAttribute() { Header = "parameter" };
+            public ColumnAttribute Id { get; } = new ColumnAttribute() { Header = "id" };
+            public ColumnAttribute Code { get; } = new ColumnAttribute() { Header = "code" };
+            public ColumnAttribute Name { get; } = new ColumnAttribute() { Header = "name" };
+            public ColumnAttribute Command { get; } = new ColumnAttribute() { Header = "command" };
+            public ColumnAttribute ControlType { get; } = new ColumnAttribute() { Header = "controlType" };
+            public ColumnAttribute ControlStyle { get; } = new ColumnAttribute() { Header = "controlStyle" };
+            public ColumnAttribute Parameter { get; } = new ColumnAttribute() { Header = "parameter" };
 
         }
 

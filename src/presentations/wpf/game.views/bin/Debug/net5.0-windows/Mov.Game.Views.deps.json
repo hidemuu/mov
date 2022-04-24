@@ -230,6 +230,7 @@
       },
       "Mov.WpfViewModels/1.0.0": {
         "dependencies": {
+          "Mov.WpfDesigns": "1.0.0",
           "Prism.Unity": "8.1.97",
           "ReactiveProperty.WPF": "8.0.1"
         },

@@ -81,7 +81,9 @@ namespace Mov.Wpf
             containerRegistry.RegisterForNavigation<DesignerView>();
             containerRegistry.RegisterForNavigation<DesignerTreeView>();
             containerRegistry.RegisterForNavigation<DesignerTableView>();
+            containerRegistry.RegisterForNavigation<DesignerShellView>();
             containerRegistry.RegisterForNavigation<DesignerPartsView>();
+            containerRegistry.RegisterForNavigation<DesignerThemeView>();
             containerRegistry.RegisterForNavigation<SchedulerView>();
             containerRegistry.RegisterForNavigation<TranslatorView>();
 
@@ -114,7 +116,9 @@ namespace Mov.Wpf
             ViewModelLocationProvider.Register<DesignerView, DesignerViewModel>();
             ViewModelLocationProvider.Register<DesignerTreeView, DesignerTreeViewModel>();
             ViewModelLocationProvider.Register<DesignerTableView, DesignerTableViewModel>();
+            ViewModelLocationProvider.Register<DesignerShellView, DesignerShellViewModel>();
             ViewModelLocationProvider.Register<DesignerPartsView, DesignerPartsViewModel>();
+            ViewModelLocationProvider.Register<DesignerThemeView, DesignerThemeViewModel>();
             ViewModelLocationProvider.Register<SchedulerView, SchedulerViewModel>();
             ViewModelLocationProvider.Register<TranslatorView, TranslatorViewModel>();
         }

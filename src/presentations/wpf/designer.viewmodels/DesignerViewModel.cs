@@ -23,19 +23,29 @@ namespace Mov.Designer.ViewModels
 
         public const string PAGE_NAME_TABLE = "Table";
 
+        public const string PAGE_NAME_SHELL = "Shell";
+
         public const string PAGE_NAME_PARTS = "Parts";
+
+        public const string PAGE_NAME_THEME = "Theme";
 
         private readonly IDictionary<string, string> pageDictionary = new Dictionary<string, string>() {
             { PAGE_NAME_TREE, "DesignerTreeView" },
             { PAGE_NAME_TABLE, "DesignerTableView" },
+            { PAGE_NAME_SHELL, "DesignerShellView" },
             { PAGE_NAME_PARTS, "DesignerPartsView" },
+            { PAGE_NAME_THEME, "DesignerThemeView" },
         };
-
-        private string pageName = PAGE_NAME_TREE;
 
         private readonly IDesignerRepositoryCollection repository;
 
         #endregion フィールド
+
+        #region プロパティ
+
+        public ReactivePropertySlim<string> PageName { get; set; } = new ReactivePropertySlim<string>(PAGE_NAME_TREE);
+
+        #endregion プロパティ
 
         #region コマンド
 
@@ -63,7 +73,7 @@ namespace Mov.Designer.ViewModels
 
         #region イベント
 
-        protected override void OnLoaded() => OnPageChangeCommand(this.pageName);
+        protected override void OnLoaded() => OnPageChangeCommand(this.PageName.Value);
 
         #endregion イベント
 
@@ -71,13 +81,13 @@ namespace Mov.Designer.ViewModels
 
         private void OnPageChangeCommand(string pageName)
         {
-            this.pageName = pageName;
-            this.RegionManager.RequestNavigate(REGION_NAME_CONTENT, pageDictionary[this.pageName]);
+            this.PageName.Value = pageName;
+            this.RegionManager.RequestNavigate(REGION_NAME_CONTENT, pageDictionary[this.PageName.Value]);
         }
 
         private void OnSaveCommand(string parameter)
         {
-            switch (this.pageName)
+            switch (this.PageName.Value)
             {
                 case PAGE_NAME_TREE:
                     this.repository.LayoutTrees.Posts();
@@ -88,7 +98,7 @@ namespace Mov.Designer.ViewModels
             }
         }
 
-        #endregion
+        #endregion 内部メソッド
 
     }
 }

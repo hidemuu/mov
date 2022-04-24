@@ -17,14 +17,16 @@ namespace Mov.Designer.ViewModels
 
         private readonly IDesignerRepositoryCollection repository;
 
-        #endregion
+        #endregion フィールド
 
         #region プロパティ
 
         public ReactiveCollection<TableModel> Models { get; } = new ReactiveCollection<TableModel>();
         public TableModelAttribute Attribute { get; } = new TableModelAttribute();
 
-        #endregion
+        #endregion プロパティ
+
+        #region コンストラクター
 
         /// <summary>
         /// コンストラクター
@@ -39,6 +41,8 @@ namespace Mov.Designer.ViewModels
             }
         }
 
+        #endregion コンストラクター
+
         #region イベント
 
         protected override void OnLoaded()
@@ -46,7 +50,7 @@ namespace Mov.Designer.ViewModels
 
         }
 
-        #endregion
+        #endregion イベント
 
         #region クラス
 
@@ -83,7 +87,7 @@ namespace Mov.Designer.ViewModels
 
         }
 
-        #endregion
+        #endregion クラス
 
     }
 }

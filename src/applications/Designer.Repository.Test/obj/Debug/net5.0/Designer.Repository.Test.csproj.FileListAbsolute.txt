@@ -89,7 +89,6 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\Designer.Repository.Test\bi
 C:\Users\nando\Documents\GitHub\mov\src\applications\Designer.Repository.Test\bin\Debug\net5.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\Designer.Repository.Test\bin\Debug\net5.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\Designer.Repository.Test\bin\Debug\net5.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\Designer.Repository.Test\obj\Debug\net5.0\Designer.Repository.Test.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\applications\Designer.Repository.Test\obj\Debug\net5.0\Designer.Repository.Test.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\nando\Documents\GitHub\mov\src\applications\Designer.Repository.Test\obj\Debug\net5.0\Designer.Repository.Test.AssemblyInfoInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\applications\Designer.Repository.Test\obj\Debug\net5.0\Designer.Repository.Test.AssemblyInfo.cs
@@ -99,3 +98,4 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\Designer.Repository.Test\ob
 C:\Users\nando\Documents\GitHub\mov\src\applications\Designer.Repository.Test\obj\Debug\net5.0\ref\Mov.Designer.Repository.Test.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\Designer.Repository.Test\obj\Debug\net5.0\Mov.Designer.Repository.Test.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\Designer.Repository.Test\obj\Debug\net5.0\Designer.Repository.Test.genruntimeconfig.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository.test\obj\Debug\net5.0\Designer.Repository.Test.csproj.AssemblyReference.cache

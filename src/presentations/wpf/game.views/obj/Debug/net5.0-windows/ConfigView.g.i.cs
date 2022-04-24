@@ -73,7 +73,7 @@ namespace Mov.Game.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mov.Game.Views;V1.0.0.0;component/configview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mov.Game.Views;component/configview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ConfigView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

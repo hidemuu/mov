@@ -4,6 +4,8 @@
         <ResourceDictionary Source="../BaseStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <!--  コントロール  -->
+
     <!--<Style
         x:Key="{x:Type ToggleButton}"
         BasedOn="{StaticResource BaseButtonStyle}"
@@ -21,10 +23,20 @@
         BasedOn="{StaticResource BaseButtonStyle}"
         TargetType="{x:Type Button}" />-->
 
+    <!--  ベーススタイル  -->
+
     <Style
-        x:Key="BaseButtonStyle"
-        BasedOn="{StaticResource MahApps.Styles.Button}"
-        TargetType="{x:Type ButtonBase}">
+        x:Key="ButtonStyleBase"
+        BasedOn="{StaticResource {x:Type Button}}"
+        TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="16,3,16,5" />
+    </Style>
+
+    <Style x:Key="BaseButtonStyle" TargetType="{x:Type ButtonBase}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Background" Value="{DynamicResource ButtonBackground}" />
         <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorder}" />
@@ -100,6 +112,8 @@
         </Setter>
     </Style>
 
+    <!--  スタイル  -->
+
     <Style
         x:Key="AlertButton"
         BasedOn="{StaticResource SystemButtonBase}"
@@ -115,72 +129,6 @@
                 <Setter Property="Opacity" Value=".4" />
             </Trigger>
         </Style.Triggers>
-    </Style>
-
-    <Style x:Key="YesButton" TargetType="Button">
-        <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="Margin" Value="5" />
-        <Setter Property="Background" Value="#5cb85c" />
-        <Setter Property="Foreground" Value="White" />
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Opacity" Value=".7" />
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Opacity" Value=".4" />
-            </Trigger>
-        </Style.Triggers>
-    </Style>
-
-    <Style x:Key="NoButton" TargetType="Button">
-        <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="Margin" Value="5" />
-        <Setter Property="Background" Value="#d9534f" />
-        <Setter Property="Foreground" Value="White" />
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Opacity" Value=".7" />
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Opacity" Value=".4" />
-            </Trigger>
-        </Style.Triggers>
-    </Style>
-
-    <Style x:Key="LoginButton" TargetType="Button">
-        <Setter Property="Background" Value="#4D46FF" />
-        <Setter Property="Foreground" Value="#DAD9FF" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border
-                        x:Name="border"
-                        Background="{TemplateBinding Background}"
-                        CornerRadius="15"
-                        SnapsToDevicePixels="true">
-                        <ContentPresenter
-                            x:Name="contentPresenter"
-                            Margin="{TemplateBinding Padding}"
-                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                            Focusable="False"
-                            RecognizesAccessKey="True"
-                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsDefaulted" Value="true">
-                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter TargetName="border" Property="Background" Value="#007ABB" />
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="true">
-                            <Setter TargetName="border" Property="Background" Value="#008ABA" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
     </Style>
 
     <Style
@@ -304,4 +252,71 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="YesButton" TargetType="Button">
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Background" Value="#5cb85c" />
+        <Setter Property="Foreground" Value="White" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value=".7" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Opacity" Value=".4" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="NoButton" TargetType="Button">
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Background" Value="#d9534f" />
+        <Setter Property="Foreground" Value="White" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value=".7" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Opacity" Value=".4" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="LoginButton" TargetType="Button">
+        <Setter Property="Background" Value="#4D46FF" />
+        <Setter Property="Foreground" Value="#DAD9FF" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        x:Name="border"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="15"
+                        SnapsToDevicePixels="true">
+                        <ContentPresenter
+                            x:Name="contentPresenter"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Focusable="False"
+                            RecognizesAccessKey="True"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="true">
+                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="border" Property="Background" Value="#007ABB" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="border" Property="Background" Value="#008ABA" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

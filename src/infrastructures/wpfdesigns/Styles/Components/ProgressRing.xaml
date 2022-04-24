@@ -3,6 +3,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:Mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro">
 
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../BaseStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
     <!--  プログレスリング  -->
     <Style x:Key="pgr-normal" TargetType="{x:Type Mah:ProgressRing}">
         <Setter Property="Foreground" Value="#33adff" />

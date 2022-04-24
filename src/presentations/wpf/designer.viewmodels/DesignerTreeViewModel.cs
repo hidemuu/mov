@@ -127,6 +127,6 @@ namespace Mov.Designer.ViewModels
             public ColumnAttribute IsExpand { get; } = new ColumnAttribute() { Header = "isExpand", Width = 120 };
         }
 
-        #endregion
+        #endregion クラス
     }
 }

@@ -4,9 +4,11 @@
   <theme>
     <id>0</id>
     <code>Test1</code>
+    <color>deeppurple</color>
   </theme>
   <theme>
     <id>1</id>
     <code>Test2</code>
+    <color>pink</color>
   </theme>
 </themes>

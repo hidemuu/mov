@@ -1,5 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../BaseStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
     <!--  refer https://blog.jsinh.in/how-to-create-apple-macos-like-scrollbar-in-wpf/#.XrZTJmj7SUk  -->
 
     <Style x:Key="MacLikeScrollBarTrackThumb" TargetType="{x:Type Thumb}">

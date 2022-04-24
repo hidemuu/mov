@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Designer.ViewModels.ViewModels
+namespace Mov.Designer.ViewModels
 {
     public class DesignerThemeViewModel : ViewModelBase
     {

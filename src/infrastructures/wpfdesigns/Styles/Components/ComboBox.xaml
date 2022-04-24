@@ -1,7 +1,19 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../BaseStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
     <Geometry x:Key="DownArrowGeometry">M 0 0 L 3.5 4 L 7 0 Z</Geometry>
 
-    <Style x:Key="{x:Type ComboBoxItem}" TargetType="{x:Type ComboBoxItem}">
+    <!--<Style
+        x:Key="{x:Type ComboBoxItem}"
+        BasedOn="{StaticResource ComboBoxItemStyleBase}"
+        TargetType="{x:Type ComboBoxItem}" />-->
+
+    <Style
+        x:Key="ComboBoxItemStyleBase"
+        BasedOn="{StaticResource {x:Type ComboBoxItem}}"
+        TargetType="{x:Type ComboBoxItem}">
         <Setter Property="HorizontalContentAlignment" Value="{Binding Path=HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
         <Setter Property="VerticalContentAlignment" Value="{Binding Path=VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
         <Setter Property="Padding" Value="7,2,8,2" />
@@ -171,7 +183,15 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <Style x:Key="{x:Type ComboBox}" TargetType="{x:Type ComboBox}">
+    <!--<Style
+        x:Key="{x:Type ComboBox}"
+        BasedOn="{StaticResource ComboBoxStyleBase}"
+        TargetType="{x:Type ComboBox}" />-->
+
+    <Style
+        x:Key="ComboBoxStyleBase"
+        BasedOn="{StaticResource {x:Type ComboBox}}"
+        TargetType="{x:Type ComboBox}">
         <Setter Property="Foreground" Value="{DynamicResource InputText}" />
         <Setter Property="Background" Value="{DynamicResource InputBackground}" />
         <Setter Property="BorderBrush" Value="{DynamicResource InputBorder}" />

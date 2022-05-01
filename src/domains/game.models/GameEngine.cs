@@ -71,14 +71,18 @@ namespace Mov.Game.Models
         public int[,] Map { get; private set; }
         #endregion
 
+        #region コンストラクター
+
         /// <summary>
-        /// コンストラクタ
+        /// コンストラクター
         /// </summary>
         public GameEngine()
         {
             Characters = new List<CharacterBase>();
             Aliens = new List<Alien>();
         }
+
+        #endregion コンストラクター
 
         #region メソッド
 

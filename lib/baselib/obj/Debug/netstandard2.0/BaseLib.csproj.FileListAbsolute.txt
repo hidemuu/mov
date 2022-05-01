@@ -53,3 +53,9 @@ C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Resourc
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Resources\comment.json
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Resources\layout_tree.xml
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Resources\content_table.xml
+C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Models.dll
+C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Service.dll
+C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Models.pdb

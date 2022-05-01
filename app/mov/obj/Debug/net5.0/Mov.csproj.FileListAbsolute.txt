@@ -69,3 +69,14 @@ C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\theme.xml
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\comment.json
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\layout_tree.xml
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Resources\content_table.xml
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\System.Drawing.Common.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Game.Models.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Game.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Game.Service.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Game.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Game.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Game.Service.pdb

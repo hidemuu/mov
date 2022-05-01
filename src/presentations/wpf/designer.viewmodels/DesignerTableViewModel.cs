@@ -68,7 +68,7 @@ namespace Mov.Designer.ViewModels
                 Id.Value = item.Id;
                 Code.Value = item.Code;
                 Name.Value = item.Name;
-                Command.Value = item.Commmand;
+                Command.Value = item.Command;
                 ControlType.Value = item.ControlType;
                 ControlStyle.Value = item.ControlStyle;
                 Parameter.Value = item.Parameter;
@@ -77,13 +77,13 @@ namespace Mov.Designer.ViewModels
 
         public class TableModelAttribute
         {
-            public ColumnAttribute Id { get; } = new ColumnAttribute() { Header = "id" };
-            public ColumnAttribute Code { get; } = new ColumnAttribute() { Header = "code" };
-            public ColumnAttribute Name { get; } = new ColumnAttribute() { Header = "name" };
-            public ColumnAttribute Command { get; } = new ColumnAttribute() { Header = "command" };
-            public ColumnAttribute ControlType { get; } = new ColumnAttribute() { Header = "controlType" };
-            public ColumnAttribute ControlStyle { get; } = new ColumnAttribute() { Header = "controlStyle" };
-            public ColumnAttribute Parameter { get; } = new ColumnAttribute() { Header = "parameter" };
+            public ColumnAttribute Id { get; } = new ColumnAttribute() { Header = "id", Width = 30 };
+            public ColumnAttribute Code { get; } = new ColumnAttribute() { Header = "code", Width = 100 };
+            public ColumnAttribute Name { get; } = new ColumnAttribute() { Header = "name", Width = 100 };
+            public ColumnAttribute Command { get; } = new ColumnAttribute() { Header = "command", Width = 150 };
+            public ColumnAttribute ControlType { get; } = new ColumnAttribute() { Header = "controlType", Width = 150 };
+            public ColumnAttribute ControlStyle { get; } = new ColumnAttribute() { Header = "controlStyle", Width = 150 };
+            public ColumnAttribute Parameter { get; } = new ColumnAttribute() { Header = "parameter", Width = 150 };
 
         }
 

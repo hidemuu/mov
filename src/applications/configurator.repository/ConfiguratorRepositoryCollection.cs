@@ -14,6 +14,8 @@ namespace Mov.Configurator.Repository
     /// </summary>
     public class ConfiguratorRepositoryCollection : FileRepositoryCollectionBase, IConfiguratorRepositoryCollection
     {
+        #region コンストラクター
+
         /// <summary>
         /// コンストラクター
         /// </summary>
@@ -23,6 +25,8 @@ namespace Mov.Configurator.Repository
             AppSettings = new AppSettingRepository(GetRepositoryPath("app_setting"), encode);
             Variables = new VariableRepository(GetRepositoryPath("variable"), encode);
         }
+
+        #endregion コンストラクター
 
         #region プロパティ
 
@@ -39,7 +43,7 @@ namespace Mov.Configurator.Repository
         /// </summary>
         public FileRepositoryBase<Variable, VariableCollection> Variables { get; }
 
-        #endregion
+        #endregion プロパティ
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Mov.Accessors;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,12 +8,14 @@ namespace Mov.Game.Models.Maps
 {
     public class LandmarkCollection : DbObjectCollection<Landmark>
     {
+        [JsonProperty("landmarks")]
         public override Landmark[] Items { get; set; }
     }
 
     public class Landmark : DbObject
     {
         #region 定数
+
         /// <summary>
         /// 道
         /// </summary>
@@ -29,16 +32,24 @@ namespace Mov.Game.Models.Maps
         /// NPC
         /// </summary>
         public const string ALIEN = "＠";
-        #endregion
+
+        #endregion 定数
 
         #region プロパティ
+
+        [JsonProperty("lv")]
+        public int Lv { get; set; }
+
         /// <summary>
         /// ランドマーク行文字列群
         /// </summary>
+        [JsonProperty("mark_rows")]
         public string[] MarkRows { get; set; }
-        #endregion
+        
+        #endregion プロパティ
 
         #region メソッド
+
         /// <summary>
         /// 行サイズ
         /// </summary>
@@ -47,6 +58,7 @@ namespace Mov.Game.Models.Maps
         /// 列サイズ
         /// </summary>
         public int GetCol() => MarkRows[0].Length;
-        #endregion
+
+        #endregion メソッド
     }
 }

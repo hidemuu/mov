@@ -39,6 +39,7 @@ namespace Mov.Wpf.ViewModels
             Models.Add(new MainWindowModel(2, "Designer", "Home", () => this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "DesignerView")));
             Models.Add(new MainWindowModel(3, "Scheduler", "calendar", () => this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "SchedulerView")));
             Models.Add(new MainWindowModel(4, "Translator", "translate", () => this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "TranslatorView")));
+            Models.Add(new MainWindowModel(5, "Game", "blur", () => this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "GameMainView")));
 
             TabChangeCommand.Subscribe(_ => OnChangeTab()).AddTo(Disposables);
 

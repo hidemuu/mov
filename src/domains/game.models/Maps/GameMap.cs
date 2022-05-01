@@ -9,11 +9,13 @@ namespace Mov.Game.Models.Maps
     {
         
         #region フィールド
+
         private static string mark = Landmark.ROAD + Landmark.WALL + Landmark.PALYER + Landmark.ALIEN;
 
-        #endregion
+        #endregion フィールド
 
         #region メソッド
+
         /// <summary>
         /// マップ構築
         /// </summary>
@@ -32,6 +34,6 @@ namespace Mov.Game.Models.Maps
             }
             return map;
         }
-        #endregion
+        #endregion メソッド
     }
 }

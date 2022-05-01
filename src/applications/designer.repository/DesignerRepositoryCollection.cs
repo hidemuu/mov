@@ -15,6 +15,8 @@ namespace Mov.Designer.Repository.Xml
     public class DesignerRepositoryCollection : FileRepositoryCollectionBase, IDesignerRepositoryCollection
     {
 
+        #region コンストラクター
+
         /// <summary>
         /// コンストラクター
         /// </summary>
@@ -26,6 +28,8 @@ namespace Mov.Designer.Repository.Xml
             ContentTables = new ContentTableRepository(GetRepositoryPath("content_table"), encoding);
             Themes = new ThemeRepository(GetRepositoryPath("theme"), encoding);
         }
+
+        #endregion コンストラクター
 
         #region プロパティ
 

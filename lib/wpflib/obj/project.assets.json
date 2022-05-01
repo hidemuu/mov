@@ -166,6 +166,24 @@
           "lib/netcoreapp3.1/MaterialDesignThemes.MahApps.dll": {}
         }
       },
+      "Microsoft.Win32.SystemEvents/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "Microsoft.Xaml.Behaviors.Wpf/1.1.31": {
         "type": "package",
         "compile": {
@@ -284,6 +302,31 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.Data.DataSetExtensions.dll": {}
+        }
+      },
+      "System.Drawing.Common/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "6.0.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/System.Drawing.Common.dll": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp3.1/System.Drawing.Common.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netcoreapp3.1/System.Drawing.Common.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
         }
       },
       "System.Reactive/5.0.0": {
@@ -447,6 +490,9 @@
           "Mov.Designer.Models": "1.0.0",
           "Mov.Designer.Repository": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
+          "Mov.Game.Models": "1.0.0",
+          "Mov.Game.Repository": "1.0.0",
+          "Mov.Game.Service": "1.0.0",
           "Mov.Loggers": "1.0.0",
           "Mov.Scheduler.Models": "1.0.0",
           "Mov.Scheduler.Repository": "1.0.0",
@@ -581,6 +627,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Mov.Designer.Repository": "1.0.0",
+          "Mov.Designer.Service": "1.0.0",
           "Mov.WpfViewModels": "1.0.0"
         },
         "compile": {
@@ -605,6 +652,82 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Designer.Views.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.Game.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Game.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Game.Models.dll": {}
+        }
+      },
+      "Mov.Game.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "Mov.Game.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Game.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Game.Repository.dll": {}
+        }
+      },
+      "Mov.Game.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Game.Models": "1.0.0",
+          "Mov.Game.Repository": "1.0.0",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Game.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Game.Service.dll": {}
+        }
+      },
+      "Mov.Game.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Game.Service": "1.0.0",
+          "Mov.WpfViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Game.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Game.ViewModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.Game.Views/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.WpfViews": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Game.Views.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Game.Views.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -1132,6 +1255,35 @@
         "materialdesignthemes.mahapps.nuspec"
       ]
     },
+    "Microsoft.Win32.SystemEvents/6.0.0": {
+      "sha512": "hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
+      "type": "package",
+      "path": "microsoft.win32.systemevents/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/Microsoft.Win32.SystemEvents.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/Microsoft.Win32.SystemEvents.dll",
+        "lib/net461/Microsoft.Win32.SystemEvents.xml",
+        "lib/net6.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/net6.0/Microsoft.Win32.SystemEvents.xml",
+        "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll",
+        "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.xml",
+        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
+        "microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+        "microsoft.win32.systemevents.nuspec",
+        "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.xml",
+        "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.xml",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "Microsoft.Xaml.Behaviors.Wpf/1.1.31": {
       "sha512": "LZpuf82ACZWldmfMuv3CTUMDh3o0xo0uHUaybR5HgqVLDBJJ9RZLykplQ/bTJd0/VDt3EhD4iDgUgbdIUAM+Kg==",
       "type": "package",
@@ -1430,6 +1582,45 @@
         "version.txt"
       ]
     },
+    "System.Drawing.Common/6.0.0": {
+      "sha512": "NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==",
+      "type": "package",
+      "path": "system.drawing.common/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Drawing.Common.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Drawing.Common.dll",
+        "lib/net461/System.Drawing.Common.xml",
+        "lib/net6.0/System.Drawing.Common.dll",
+        "lib/net6.0/System.Drawing.Common.xml",
+        "lib/netcoreapp3.1/System.Drawing.Common.dll",
+        "lib/netcoreapp3.1/System.Drawing.Common.xml",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "runtimes/unix/lib/net6.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/net6.0/System.Drawing.Common.xml",
+        "runtimes/unix/lib/netcoreapp3.1/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.1/System.Drawing.Common.xml",
+        "runtimes/win/lib/net6.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/net6.0/System.Drawing.Common.xml",
+        "runtimes/win/lib/netcoreapp3.1/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.1/System.Drawing.Common.xml",
+        "system.drawing.common.6.0.0.nupkg.sha512",
+        "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.Reactive/5.0.0": {
       "sha512": "erBZjkQHWL9jpasCE/0qKAryzVBJFxGHVBAvgRN1bzM0q2s1S4oYREEEL0Vb+1kA/6BKb5FjUZMp5VXmy+gzkQ==",
       "type": "package",
@@ -1688,6 +1879,31 @@
       "path": "../../src/presentations/wpf/designer.views/Designer.Views.csproj",
       "msbuildProject": "../../src/presentations/wpf/designer.views/Designer.Views.csproj"
     },
+    "Mov.Game.Models/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/game.models/Game.Models.csproj",
+      "msbuildProject": "../../src/domains/game.models/Game.Models.csproj"
+    },
+    "Mov.Game.Repository/1.0.0": {
+      "type": "project",
+      "path": "../../src/applications/game.repository/Game.Repository.csproj",
+      "msbuildProject": "../../src/applications/game.repository/Game.Repository.csproj"
+    },
+    "Mov.Game.Service/1.0.0": {
+      "type": "project",
+      "path": "../../src/applications/game.service/Game.Service.csproj",
+      "msbuildProject": "../../src/applications/game.service/Game.Service.csproj"
+    },
+    "Mov.Game.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../src/presentations/wpf/game.viewmodels/Game.ViewModels.csproj",
+      "msbuildProject": "../../src/presentations/wpf/game.viewmodels/Game.ViewModels.csproj"
+    },
+    "Mov.Game.Views/1.0.0": {
+      "type": "project",
+      "path": "../../src/presentations/wpf/game.views/Game.Views.csproj",
+      "msbuildProject": "../../src/presentations/wpf/game.views/Game.Views.csproj"
+    },
     "Mov.Loggers/1.0.0": {
       "type": "project",
       "path": "../../src/infrastructures/loggers/Loggers.csproj",
@@ -1778,6 +1994,8 @@
       "Mov.Configurator.Views >= 1.0.0",
       "Mov.Designer.ViewModels >= 1.0.0",
       "Mov.Designer.Views >= 1.0.0",
+      "Mov.Game.ViewModels >= 1.0.0",
+      "Mov.Game.Views >= 1.0.0",
       "Mov.Scheduler.ViewModels >= 1.0.0",
       "Mov.Scheduler.Views >= 1.0.0",
       "Mov.Translator.ViewModels >= 1.0.0",
@@ -1851,6 +2069,12 @@
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.views\\Designer.Views.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.views\\Designer.Views.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.viewmodels\\Game.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.viewmodels\\Game.ViewModels.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.views\\Game.Views.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.views\\Game.Views.csproj"
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.viewmodels\\Scheduler.ViewModels.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.viewmodels\\Scheduler.ViewModels.csproj"

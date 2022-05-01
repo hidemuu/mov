@@ -1,5 +1,6 @@
 ﻿using Mov.Game.Models;
 using Mov.Game.Models.Characters;
+using Mov.Game.Models.interfaces;
 using Mov.Game.Repository;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ namespace Mov.Game.Service
         /// <summary>
         /// ランドマークリポジトリ
         /// </summary>
-        private LandmarkRepository landMarkRepository;
+        private IGameRepositoryCollection repository;
         /// <summary>
         /// ビットマップ画面
         /// </summary>
@@ -77,11 +78,11 @@ namespace Mov.Game.Service
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="landMarkRepository"></param>
-        public GameServiceBase(LandmarkRepository landMarkRepository)
+        /// <param name="repository"></param>
+        public GameServiceBase(IGameRepositoryCollection repository)
         {
-            this.landMarkRepository = landMarkRepository;
-            var maps = landMarkRepository.Gets().ToArray();
+            this.repository = repository;
+            var maps = repository.Landmarks.Gets().ToArray();
             gameEngine = new GameEngine();
             FrameWidth = maps[0].GetCol() * gameEngine.UnitWidth;
             FrameHeight = maps[0].GetRow() * gameEngine.UnitHeight;
@@ -98,7 +99,7 @@ namespace Mov.Game.Service
         {
             screenBitmap = new Bitmap(FrameWidth, FrameHeight);
             ScreenGraphics = Graphics.FromImage(screenBitmap);
-            gameEngine.Initialize(landMarkRepository.Gets().ToArray()[0]);
+            gameEngine.Initialize(repository.Landmarks.Gets().ToArray()[0]);
             isActive = true;
             IsGameOver = false;
         }

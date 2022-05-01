@@ -45,7 +45,7 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Code.Value}" />
+                                    <TextBox MinWidth="50" Text="{Binding Code.Value, Mode=TwoWay}" />
                                 </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -53,9 +53,7 @@
                     <GridViewColumn Width="{Binding Attribute.Name.Width}" Header="{Binding Attribute.Name.Header}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Name.Value}" />
-                                </StackPanel>
+                                <TextBox MinWidth="50" Text="{Binding Name.Value, Mode=TwoWay}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -63,7 +61,7 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Command.Value}" />
+                                    <TextBox MinWidth="50" Text="{Binding Command.Value, Mode=TwoWay}" />
                                 </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -72,7 +70,7 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding ControlType.Value}" />
+                                    <TextBox MinWidth="50" Text="{Binding ControlType.Value, Mode=TwoWay}" />
                                 </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -81,7 +79,7 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding ControlStyle.Value}" />
+                                    <TextBox MinWidth="50" Text="{Binding ControlStyle.Value, Mode=TwoWay}" />
                                 </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -90,7 +88,7 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Parameter.Value}" />
+                                    <TextBox MinWidth="50" Text="{Binding Parameter.Value, Mode=TwoWay}" />
                                 </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>

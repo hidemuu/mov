@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\user.json" />
+    <None Remove="resources\user.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Resources\user.json">
+    <Content Include="resources\user.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

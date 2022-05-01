@@ -19,6 +19,9 @@
           "Mov.Designer.Models": "1.0.0",
           "Mov.Designer.Repository": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
+          "Mov.Game.Models": "1.0.0",
+          "Mov.Game.Repository": "1.0.0",
+          "Mov.Game.Service": "1.0.0",
           "Mov.Loggers": "1.0.0",
           "Mov.Scheduler.Models": "1.0.0",
           "Mov.Scheduler.Repository": "1.0.0",
@@ -186,6 +189,14 @@
           "Microsoft.NETCore.Platforms": "1.1.0",
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0"
+        }
+      },
+      "System.Drawing.Common/6.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
         }
       },
       "System.Dynamic.Runtime/4.3.0": {
@@ -547,6 +558,34 @@
           "Mov.Designer.Service.dll": {}
         }
       },
+      "Mov.Game.Models/1.0.0": {
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "runtime": {
+          "Mov.Game.Models.dll": {}
+        }
+      },
+      "Mov.Game.Repository/1.0.0": {
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "Mov.Game.Models": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Game.Repository.dll": {}
+        }
+      },
+      "Mov.Game.Service/1.0.0": {
+        "dependencies": {
+          "Mov.Game.Models": "1.0.0",
+          "Mov.Game.Repository": "1.0.0",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "runtime": {
+          "Mov.Game.Service.dll": {}
+        }
+      },
       "Mov.Loggers/1.0.0": {
         "runtime": {
           "Mov.Loggers.dll": {}
@@ -717,6 +756,13 @@
       "sha512": "sha512-ZUhUOdqmaG5Jk3Xdb8xi5kIyQYAA4PnTNlHx1mu9ZY3qv4ELIdKbnL/akbGaKi2RnNUWaZsAs31rvzFdewTj2g==",
       "path": "system.diagnostics.debug/4.3.0",
       "hashPath": "system.diagnostics.debug.4.3.0.nupkg.sha512"
+    },
+    "System.Drawing.Common/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==",
+      "path": "system.drawing.common/6.0.0",
+      "hashPath": "system.drawing.common.6.0.0.nupkg.sha512"
     },
     "System.Dynamic.Runtime/4.3.0": {
       "type": "package",
@@ -939,6 +985,21 @@
       "sha512": ""
     },
     "Mov.Designer.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Game.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Game.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Game.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,8 +1,5 @@
 ﻿
 
-FC:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\CanvasView.xaml;;
-FC:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\ConfigView.xaml;;
-FC:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\GameView.xaml;;
-FC:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\MainWindow.xaml;;
-FC:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\TitleView.xaml;;
+FC:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\Dialogs\GameOverDialog.xaml;;
+FC:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\Dialogs\StageClearDialog.xaml;;
 

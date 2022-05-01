@@ -12,6 +12,12 @@ using Mov.Designer.Models.interfaces;
 using Mov.Designer.Repository.Xml;
 using Mov.Designer.ViewModels;
 using Mov.Designer.Views;
+using Mov.Game.Models.interfaces;
+using Mov.Game.Repository;
+using Mov.Game.Service;
+using Mov.Game.ViewModels.Services;
+using Mov.Game.ViewModels.ViewModels;
+using Mov.Game.Views;
 using Mov.Scheduler.ViewModels;
 using Mov.Scheduler.Views;
 using Mov.Translator.Models;
@@ -35,6 +41,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -45,6 +52,44 @@ namespace Mov.Wpf
     /// </summary>
     public partial class App : PrismApplication
     {
+        #region フィールド
+
+        private Mutex mutex = new Mutex(false, "HalationGhostPrismMov");
+
+        #endregion フィールド
+
+        #region イベントハンドラ
+
+        /// <summary>ApplicationのStartupイベントハンドラ。</summary>
+        /// <param name="sender">イベントのソース。</param>
+        /// <param name="e">イベントデータを格納しているStartupEventArgs。</param>
+        private void OnStartup(object sender, StartupEventArgs e)
+        {
+            if (this.mutex.WaitOne(0, false))
+                return;
+
+            MessageBox.Show("二重起動できません。", "情報", MessageBoxButton.OK, MessageBoxImage.Information);
+            this.mutex.Close();
+            this.mutex = null;
+            this.Shutdown();
+        }
+
+        /// <summary>ApplicationのExitイベントハンドラ。</summary>
+        /// <param name="sender">イベントのソース。</param>
+        /// <param name="e">イベントデータを格納しているExitEventArgs。</param>
+        private void OnExit(object sender, ExitEventArgs e)
+        {
+            if (this.mutex != null)
+            {
+                this.mutex.ReleaseMutex();
+                this.mutex.Close();
+            }
+        }
+
+        #endregion イベントハンドラ
+
+        #region メソッド
+
         /// <summary>
         /// シェル生成
         /// </summary>
@@ -65,12 +110,17 @@ namespace Mov.Wpf
 
             //リポジトリの登録
             var assembly = Assembly.GetEntryAssembly();
-            var rootPath = assembly.Location.TrimEnd(assembly.ManifestModule.Name.ToCharArray());
-            var resourcePath = Path.Combine(rootPath, "Resources");
+            //var rootPath = assembly.Location.TrimEnd(assembly.ManifestModule.Name.ToCharArray());
+            var rootPath = PathHelper.GetCurrentRootPath("mov");
+            var resourcePath = Path.Combine(rootPath, "resources");
             containerRegistry.RegisterInstance<IConfiguratorRepositoryCollection>(new ConfiguratorRepositoryCollection(resourcePath, "json"));
             containerRegistry.RegisterInstance<IDesignerRepositoryCollection>(new DesignerRepositoryCollection(resourcePath, "xml"));
             containerRegistry.RegisterInstance<IAuthorizerRepositoryCollection>(new AuthorizerRepositoryCollection(resourcePath, "json"));
             containerRegistry.RegisterInstance<ITranslatorRepositoryCollection>(new TranslatorRepositoryCollection(resourcePath, "json"));
+            containerRegistry.RegisterInstance<IGameRepositoryCollection>(new GameRepositoryCollection(resourcePath, "json"));
+            
+            //サービスの登録
+            containerRegistry.RegisterInstance<IGameService>(Container.Resolve<GameService>());
 
             //Viewの登録
             containerRegistry.RegisterForNavigation<ConfiguratorView>();
@@ -86,6 +136,11 @@ namespace Mov.Wpf
             containerRegistry.RegisterForNavigation<DesignerThemeView>();
             containerRegistry.RegisterForNavigation<SchedulerView>();
             containerRegistry.RegisterForNavigation<TranslatorView>();
+            containerRegistry.RegisterForNavigation<GameMainView>();
+            containerRegistry.RegisterForNavigation<GameTitleView>();
+            containerRegistry.RegisterForNavigation<GameConfigView>();
+            containerRegistry.RegisterForNavigation<GameCanvasView>();
+            containerRegistry.RegisterForNavigation<GameView>();
 
             //Dialogの登録
             containerRegistry.RegisterDialog<AlertDialog, AlertDialogViewModel>();
@@ -121,11 +176,23 @@ namespace Mov.Wpf
             ViewModelLocationProvider.Register<DesignerThemeView, DesignerThemeViewModel>();
             ViewModelLocationProvider.Register<SchedulerView, SchedulerViewModel>();
             ViewModelLocationProvider.Register<TranslatorView, TranslatorViewModel>();
+            ViewModelLocationProvider.Register<GameMainView, GameMainViewModel>();
+            ViewModelLocationProvider.Register<GameView, GameViewModel>();
+            ViewModelLocationProvider.Register<GameTitleView, GameTitleViewModel>();
+            ViewModelLocationProvider.Register<GameConfigView, GameConfigViewModel>();
+            ViewModelLocationProvider.Register<GameCanvasView, GameCanvasViewModel>();
+        }
+
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            base.ConfigureModuleCatalog(moduleCatalog);
         }
 
         protected override IModuleCatalog CreateModuleCatalog()
         {
             return new ConfigurationModuleCatalog();
         }
+
+        #endregion メソッド
     }
 }

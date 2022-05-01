@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Dialogs\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\wpfviews\WpfViews.csproj" />
   </ItemGroup>
 

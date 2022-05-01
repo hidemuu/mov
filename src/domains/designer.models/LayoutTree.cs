@@ -20,7 +20,7 @@ namespace Mov.Designer.Models
         #region プロパティ
 
         [XmlElement("layouttype")]
-        public string LayoutType { get; set; }
+        public LayoutType LayoutType { get; set; }
 
         public string LayoutStyle { get; set; }
 
@@ -48,9 +48,9 @@ namespace Mov.Designer.Models
 
         #region メソッド
 
-        public override string ToString() => GetString(new string[] { Id.ToString(), Code, LayoutType });
+        public override string ToString() => GetString(new string[] { Id.ToString(), Code, LayoutType.ToString() });
 
-        public override string ToStringTable() => GetString(new string[] { Id.ToString(), Code, LayoutType }, 10);
+        public override string ToStringTable() => GetString(new string[] { Id.ToString(), Code, LayoutType.ToString() }, 10);
 
         public override string ToStringTableHeader() => GetString(new string[] { "Id", "Code", "LayoutType" }, 10);
 

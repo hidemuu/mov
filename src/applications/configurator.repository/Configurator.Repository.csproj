@@ -7,19 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\app_setting.json" />
-    <None Remove="Resources\user_setting.json" />
-    <None Remove="Resources\variable.json" />
+    <None Remove="resources\app_setting.json" />
+    <None Remove="resources\user_setting.json" />
+    <None Remove="resources\variable.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Resources\app_setting.json">
+    <Content Include="resources\app_setting.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\user_setting.json">
+    <Content Include="resources\user_setting.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\variable.json">
+    <Content Include="resources\variable.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

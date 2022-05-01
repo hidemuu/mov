@@ -16,7 +16,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/ComponentStyles.xaml" />
+                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -43,7 +43,7 @@
                     CommandParameter="{x:Static vm:DesignerViewModel.PAGE_NAME_TREE}"
                     Content="{x:Static vm:DesignerViewModel.PAGE_NAME_TREE}">
                     <Button.Style>
-                        <Style BasedOn="{StaticResource ButtonStyleBase}" TargetType="{x:Type Button}">
+                        <Style TargetType="{x:Type Button}">
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding PageName.Value}" Value="{x:Static vm:DesignerViewModel.PAGE_NAME_TREE}">
                                     <Setter Property="Background" Value="SkyBlue" />
@@ -59,7 +59,7 @@
                     CommandParameter="{x:Static vm:DesignerViewModel.PAGE_NAME_TABLE}"
                     Content="{x:Static vm:DesignerViewModel.PAGE_NAME_TABLE}">
                     <Button.Style>
-                        <Style BasedOn="{StaticResource ButtonStyleBase}" TargetType="{x:Type Button}">
+                        <Style TargetType="{x:Type Button}">
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding PageName.Value}" Value="{x:Static vm:DesignerViewModel.PAGE_NAME_TABLE}">
                                     <Setter Property="Background" Value="SkyBlue" />
@@ -75,7 +75,7 @@
                     CommandParameter="{x:Static vm:DesignerViewModel.PAGE_NAME_SHELL}"
                     Content="{x:Static vm:DesignerViewModel.PAGE_NAME_SHELL}">
                     <Button.Style>
-                        <Style BasedOn="{StaticResource ButtonStyleBase}" TargetType="{x:Type Button}">
+                        <Style TargetType="{x:Type Button}">
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding PageName.Value}" Value="{x:Static vm:DesignerViewModel.PAGE_NAME_SHELL}">
                                     <Setter Property="Background" Value="SkyBlue" />
@@ -91,7 +91,7 @@
                     CommandParameter="{x:Static vm:DesignerViewModel.PAGE_NAME_PARTS}"
                     Content="{x:Static vm:DesignerViewModel.PAGE_NAME_PARTS}">
                     <Button.Style>
-                        <Style BasedOn="{StaticResource ButtonStyleBase}" TargetType="{x:Type Button}">
+                        <Style TargetType="{x:Type Button}">
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding PageName.Value}" Value="{x:Static vm:DesignerViewModel.PAGE_NAME_PARTS}">
                                     <Setter Property="Background" Value="SkyBlue" />
@@ -107,7 +107,7 @@
                     CommandParameter="{x:Static vm:DesignerViewModel.PAGE_NAME_THEME}"
                     Content="{x:Static vm:DesignerViewModel.PAGE_NAME_THEME}">
                     <Button.Style>
-                        <Style BasedOn="{StaticResource ButtonStyleBase}" TargetType="{x:Type Button}">
+                        <Style TargetType="{x:Type Button}">
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding PageName.Value}" Value="{x:Static vm:DesignerViewModel.PAGE_NAME_THEME}">
                                     <Setter Property="Background" Value="SkyBlue" />
@@ -116,13 +116,6 @@
                         </Style>
                     </Button.Style>
                 </Button>
-            </StackPanel>
-            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                <Button
-                    Width="120"
-                    Margin="2"
-                    Command="{Binding SaveCommand}"
-                    Content="Save" />
             </StackPanel>
         </StackPanel>
         <ContentControl

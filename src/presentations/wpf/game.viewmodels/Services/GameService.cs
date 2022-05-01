@@ -1,4 +1,5 @@
 ﻿using Mov.Game.Models.Characters;
+using Mov.Game.Models.interfaces;
 using Mov.Game.Repository;
 using Mov.Game.Service;
 using System;
@@ -11,7 +12,7 @@ namespace Mov.Game.ViewModels.Services
     public class GameService : GameServiceBase
     {
 
-        public GameService(LandmarkRepository landMarkRepository) : base(landMarkRepository)
+        public GameService(IGameRepositoryCollection repository) : base(repository)
         {
         }
 

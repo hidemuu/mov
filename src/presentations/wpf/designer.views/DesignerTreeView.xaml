@@ -17,7 +17,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/ComponentStyles.xaml" />
+                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />
                 <ResourceDictionary Source="/Mov.WpfControls;component/Components/TreeListView.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
@@ -45,7 +45,7 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <components:TreeListViewExpander />
-                                <TextBox Text="{Binding Code.Value}" ToolTip="{Binding ToolTip.Value}" />
+                                <TextBox Text="{Binding Code.Value, Mode=TwoWay}" ToolTip="{Binding ToolTip.Value}" />
                             </StackPanel>
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
@@ -53,28 +53,28 @@
                 <GridViewColumn Width="{Binding Attribute.IsExpand.Width}" Header="{Binding Attribute.IsExpand.Header}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate>
-                            <CheckBox Foreground="Black" IsChecked="{Binding IsExpand.Value}" />
+                            <CheckBox Foreground="Black" IsChecked="{Binding IsExpand.Value, Mode=TwoWay}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.LayoutType.Width}" Header="{Binding Attribute.LayoutType.Header}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Foreground="Black" Text="{Binding LayoutType.Value}" />
+                            <TextBox Foreground="Black" Text="{Binding LayoutType.Value, Mode=TwoWay}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.LayoutStyle.Width}" Header="{Binding Attribute.LayoutStyle.Header}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Foreground="Black" Text="{Binding LayoutStyle.Value}" />
+                            <TextBox Foreground="Black" Text="{Binding LayoutStyle.Value, Mode=TwoWay}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.LayoutParameter.Width}" Header="{Binding Attribute.LayoutParameter.Header}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Foreground="Black" Text="{Binding LayoutParameter.Value}" />
+                            <TextBox Foreground="Black" Text="{Binding LayoutParameter.Value, Mode=TwoWay}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>

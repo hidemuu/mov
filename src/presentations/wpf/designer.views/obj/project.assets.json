@@ -339,11 +339,25 @@
           "bin/placeholder/Mov.Designer.Repository.dll": {}
         }
       },
+      "Mov.Designer.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Designer.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Designer.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Designer.Service.dll": {}
+        }
+      },
       "Mov.Designer.ViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Mov.Designer.Repository": "1.0.0",
+          "Mov.Designer.Service": "1.0.0",
           "Mov.WpfViewModels": "1.0.0"
         },
         "compile": {
@@ -1118,6 +1132,11 @@
       "type": "project",
       "path": "../../../applications/designer.repository/Designer.Repository.csproj",
       "msbuildProject": "../../../applications/designer.repository/Designer.Repository.csproj"
+    },
+    "Mov.Designer.Service/1.0.0": {
+      "type": "project",
+      "path": "../../../applications/designer.service/Designer.Service.csproj",
+      "msbuildProject": "../../../applications/designer.service/Designer.Service.csproj"
     },
     "Mov.Designer.ViewModels/1.0.0": {
       "type": "project",

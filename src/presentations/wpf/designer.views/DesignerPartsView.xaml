@@ -6,8 +6,44 @@
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:local="clr-namespace:Mov.Designer.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:selector="clr-namespace:Mov.Designer.Views.Selector"
+    xmlns:vm="clr-namespace:Mov.Designer.ViewModels;assembly=Mov.Designer.ViewModels"
+    d:DataContext="{d:DesignInstance vm:DesignerPartsViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
+    prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
-    <ItemsControl />
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />
+                <ResourceDictionary x:Name="LayoutTemplate" Source="Templates/LayoutTemplate.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <selector:LayoutSelector x:Key="layoutSelector" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <ItemsControl ItemTemplateSelector="{StaticResource layoutSelector}" ItemsSource="{Binding Models}">
+        <ItemsControl.Template>
+            <ControlTemplate TargetType="{x:Type ItemsControl}">
+                <Border
+                    Background="LightGray"
+                    BorderBrush="Red"
+                    BorderThickness="5">
+                    <ItemsPresenter Margin="5" />
+                </Border>
+            </ControlTemplate>
+        </ItemsControl.Template>
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <VirtualizingStackPanel />
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate />
+        </ItemsControl.ItemTemplate>
+        <ItemsControl.ItemContainerStyle>
+            <Style TargetType="ItemsControl" />
+        </ItemsControl.ItemContainerStyle>
+    </ItemsControl>
 </UserControl>

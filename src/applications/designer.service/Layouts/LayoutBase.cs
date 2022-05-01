@@ -16,7 +16,9 @@ namespace Mov.Designer.Service.Layouts
 
         public double Indent { get; set; }
 
-        #endregion
+        #endregion プロパティ
+
+        #region コンストラクター
 
         /// <summary>
         /// コンストラクター
@@ -26,6 +28,7 @@ namespace Mov.Designer.Service.Layouts
 
         }
 
+        #endregion コンストラクター
 
     }
 }

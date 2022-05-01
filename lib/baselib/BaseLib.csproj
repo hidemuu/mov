@@ -13,6 +13,8 @@
     <ProjectReference Include="..\..\src\applications\configurator.service\Configurator.Service.csproj" />
     <ProjectReference Include="..\..\src\applications\designer.repository\Designer.Repository.csproj" />
     <ProjectReference Include="..\..\src\applications\designer.service\Designer.Service.csproj" />
+    <ProjectReference Include="..\..\src\applications\game.repository\Game.Repository.csproj" />
+    <ProjectReference Include="..\..\src\applications\game.service\Game.Service.csproj" />
     <ProjectReference Include="..\..\src\applications\scheduler.repository\Scheduler.Repository.csproj" />
     <ProjectReference Include="..\..\src\applications\scheduler.service\Scheduler.Service.csproj" />
     <ProjectReference Include="..\..\src\applications\translator.repository\Translator.Repository.csproj" />
@@ -20,6 +22,7 @@
     <ProjectReference Include="..\..\src\domains\authorizer.models\Authorizer.Models.csproj" />
     <ProjectReference Include="..\..\src\domains\configurator.models\Configurator.Models.csproj" />
     <ProjectReference Include="..\..\src\domains\designer.models\Designer.Models.csproj" />
+    <ProjectReference Include="..\..\src\domains\game.models\Game.Models.csproj" />
     <ProjectReference Include="..\..\src\domains\scheduler.models\Scheduler.Models.csproj" />
     <ProjectReference Include="..\..\src\domains\translator.models\Translator.Models.csproj" />
     <ProjectReference Include="..\..\src\infrastructures\accessors\Accessors.csproj" />

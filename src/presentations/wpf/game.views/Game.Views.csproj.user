@@ -2,19 +2,25 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Page Update="CanvasView.xaml">
+    <Page Update="Dialogs\GameOverDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ConfigView.xaml">
+    <Page Update="Dialogs\StageClearDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GameCanvasView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GameConfigView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GameView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MainWindow.xaml">
+    <Page Update="GameMainView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="TitleView.xaml">
+    <Page Update="GameTitleView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

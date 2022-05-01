@@ -24,8 +24,9 @@ namespace Mov
         internal RepositoryHelper()
         {
             var assembly = Assembly.GetEntryAssembly();
-            var rootPath = assembly.Location.TrimEnd(assembly.ManifestModule.Name.ToCharArray());
-            var resourcePath = Path.Combine(rootPath, "Resources");
+            //var rootPath = assembly.Location.TrimEnd(assembly.ManifestModule.Name.ToCharArray());
+            var rootPath = PathHelper.GetCurrentRootPath("mov");
+            var resourcePath = Path.Combine(rootPath, "resources");
             this.Designer = new DesignerRepositoryCollection(resourcePath, "xml");
             this.Configurator = new ConfiguratorRepositoryCollection(resourcePath, "json");
             this.Authorizer = new AuthorizerRepositoryCollection(resourcePath, "json");

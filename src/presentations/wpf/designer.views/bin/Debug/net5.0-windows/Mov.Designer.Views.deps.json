@@ -250,9 +250,18 @@
           "Mov.Designer.Repository.dll": {}
         }
       },
+      "Mov.Designer.Service/1.0.0": {
+        "dependencies": {
+          "Mov.Designer.Repository": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Designer.Service.dll": {}
+        }
+      },
       "Mov.Designer.ViewModels/1.0.0": {
         "dependencies": {
           "Mov.Designer.Repository": "1.0.0",
+          "Mov.Designer.Service": "1.0.0",
           "Mov.WpfViewModels": "1.0.0"
         },
         "runtime": {
@@ -487,6 +496,11 @@
       "sha512": ""
     },
     "Mov.Designer.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Designer.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

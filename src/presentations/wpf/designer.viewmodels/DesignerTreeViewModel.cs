@@ -67,6 +67,7 @@ namespace Mov.Designer.ViewModels
             var items = new List<LayoutTree>();
             GetItems(items, Models);
             repository.LayoutTrees.Sets(items);
+            repository.LayoutTrees.Posts();
         }
 
         private void GetItems(ICollection<LayoutTree> items, IEnumerable<TreeModel> models)
@@ -78,10 +79,11 @@ namespace Mov.Designer.ViewModels
                     Id = model.Id.Value,
                     Code = model.Code.Value,
                     IsExpand = model.IsExpand.Value,
-                    LayoutType = model.LayoutType.Value,
                     LayoutStyle = model.LayoutStyle.Value,
                     LayoutParameter = model.LayoutParameter.Value,
                 };
+                if (!Enum.TryParse(model.LayoutType.Value, out LayoutType layoutType)) layoutType = LayoutType.Content;
+                item.LayoutType = layoutType;
                 items.Add(item);
                 GetItems(item.Children, model.Children);
             }
@@ -107,10 +109,10 @@ namespace Mov.Designer.ViewModels
                 Id.Value = item.Id;
                 Code.Value = item.Code;
                 IsExpand.Value = item.IsExpand;
-                LayoutType.Value = item.LayoutType;
+                LayoutType.Value = item.LayoutType.ToString();
                 LayoutStyle.Value = item.LayoutStyle;
                 LayoutParameter.Value = item.LayoutParameter;
-                foreach(var child in item.Children)
+                foreach (var child in item.Children)
                 {
                     Children.Add(new TreeModel(child));
                 }
@@ -124,7 +126,7 @@ namespace Mov.Designer.ViewModels
             public ColumnAttribute LayoutType { get; } = new ColumnAttribute() { Header = "layoutType" , Width = 150 };
             public ColumnAttribute LayoutStyle { get; } = new ColumnAttribute() { Header = "layoutStyle" , Width = 150 };
             public ColumnAttribute LayoutParameter { get; } = new ColumnAttribute() { Header = "layoutParameter", Width = 150 };
-            public ColumnAttribute IsExpand { get; } = new ColumnAttribute() { Header = "isExpand", Width = 120 };
+            public ColumnAttribute IsExpand { get; } = new ColumnAttribute() { Header = "isExpand", Width = 50 };
         }
 
         #endregion クラス

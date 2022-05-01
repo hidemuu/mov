@@ -27,7 +27,7 @@ namespace Mov.Designer.Models
 
         public string ControlStyle { get; set; }
 
-        public string Commmand { get; set; }
+        public string Command { get; set; }
         
         public string Macro { get; set; }
 

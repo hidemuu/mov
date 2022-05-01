@@ -73,7 +73,7 @@ namespace Mov.Game.ViewModels.ViewModels
                     {
                         if (result.Result == ButtonResult.Yes)
                         {
-                            regionManager.RequestNavigate("MainRegion", "TitleView");
+                            regionManager.RequestNavigate("MainRegion", "GameTitleView");
                             isLoaded = false;
                             gameService.End();
                         }

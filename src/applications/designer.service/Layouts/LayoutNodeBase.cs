@@ -5,22 +5,56 @@ using System.Text;
 
 namespace Mov.Designer.Service.Layouts
 {
-    public abstract class LayoutNodeBase : LayoutBase, IEnumerable<LayoutBase>
+    public abstract class LayoutNodeBase : LayoutBase, IEnumerable<LayoutNodeBase>
     {
+        #region フィールド
+
+        private List<LayoutNodeBase> children = new List<LayoutNodeBase>();
+
+        #endregion フィールド
+
         #region プロパティ
 
         public bool IsExpand { get; set; }
 
-        #endregion
+        public List<LayoutNodeBase> Children => children;
 
-        public IEnumerator<LayoutBase> GetEnumerator()
+        #endregion プロパティ
+
+        #region コンストラクター
+
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
+        public LayoutNodeBase()
         {
-            throw new NotImplementedException();
+
+        }
+
+        #endregion コンストラクター
+
+        #region メソッド
+
+        public IEnumerator<LayoutNodeBase> GetEnumerator()
+        {
+            return (IEnumerator<LayoutNodeBase>)children;
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return this.GetEnumerator();
         }
+
+        public void Add(LayoutNodeBase layout)
+        {
+            children.Add(layout);
+        }
+
+        public void AddRange(IEnumerable<LayoutNodeBase> layouts)
+        {
+            children.AddRange(layouts);
+        }
+
+        #endregion メソッド
     }
 }

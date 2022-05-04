@@ -2377,6 +2377,9 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.viewmodels\\Game.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.viewmodels\\Game.ViewModels.csproj"
+              },
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\wpfviews\\WpfViews.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\wpfviews\\WpfViews.csproj"
               }

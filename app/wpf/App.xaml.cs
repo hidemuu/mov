@@ -99,6 +99,12 @@ namespace Mov.Wpf
             return Container.Resolve<MainWindow>(); //初期表示ビュー
         }
 
+        protected override void InitializeShell(Window shell)
+        {
+            base.InitializeShell(shell);
+        }
+
+
         /// <summary>
         /// コンテナ登録
         /// </summary>
@@ -161,6 +167,19 @@ namespace Mov.Wpf
         protected override void ConfigureViewModelLocator()
         {
             base.ConfigureViewModelLocator();
+
+            //自動紐づけの命名規則を定義
+            ViewModelLocationProvider.SetDefaultViewTypeToViewModelTypeResolver(vt =>
+            {
+
+                var viewName = vt.FullName;
+                var viewKey = "View";
+                if (viewName.EndsWith(viewKey)) viewName = viewName.Substring(0, viewName.Length - viewKey.Length);
+                var assemblyName = vt.GetTypeInfo().Assembly.FullName;
+                var viewModelName = $"{viewName}ViewModel, {assemblyName}";
+
+                return Type.GetType(viewModelName);
+            });
 
             ViewModelLocationProvider.Register<MainWindow, MainWindowViewModel>();
             ViewModelLocationProvider.Register<ConfiguratorView, ConfiguratorViewModel>();

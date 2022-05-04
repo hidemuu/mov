@@ -27,7 +27,10 @@ namespace Mov.Game.ViewModels.ViewModels
 
         public ReactiveCommand LoadedCommand { get; } = new ReactiveCommand();
         public ReactiveCommand KeyUpCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand KeyGestureEnterCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand KeyGestureEscapeCommand { get; } = new ReactiveCommand();
         public ReactiveCommand KeyGestureUpCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand KeyGestureUpAndShiftCommand { get; } = new ReactiveCommand();
         public ReactiveCommand KeyGestureDownCommand { get; } = new ReactiveCommand();
         public ReactiveCommand KeyGestureLeftCommand { get; } = new ReactiveCommand();
         public ReactiveCommand KeyGestureRightCommand { get; } = new ReactiveCommand();
@@ -47,7 +50,10 @@ namespace Mov.Game.ViewModels.ViewModels
 
             LoadedCommand.Subscribe(() => { this.RegionManager.RequestNavigate("MainRegion", "GameTitleView"); });
             KeyUpCommand.Subscribe(() => KeyUp());
+            KeyGestureEnterCommand.Subscribe(() => KeyGestureEnter());
+            KeyGestureEscapeCommand.Subscribe(() => KeyGestureEscape());
             KeyGestureUpCommand.Subscribe(() => KeyGestureUp());
+            KeyGestureUpAndShiftCommand.Subscribe(() => KeyGestureUpAndShift());
             KeyGestureDownCommand.Subscribe(() => KeyGestureDown());
             KeyGestureLeftCommand.Subscribe(() => KeyGestureLeft());
             KeyGestureRightCommand.Subscribe(() => KeyGestureRight());
@@ -67,7 +73,22 @@ namespace Mov.Game.ViewModels.ViewModels
             gameService.SetKeyCode(GameEngine.KEY_CODE_NONE);
         }
 
+        private void KeyGestureEnter()
+        {
+            
+        }
+
+        private void KeyGestureEscape()
+        {
+
+        }
+
         private void KeyGestureUp()
+        {
+            gameService.SetKeyCode(GameEngine.KEY_CODE_UP);
+        }
+
+        private void KeyGestureUpAndShift()
         {
             gameService.SetKeyCode(GameEngine.KEY_CODE_UP);
         }

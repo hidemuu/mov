@@ -44,7 +44,6 @@ namespace Mov.WpfControls.Behaviors
             if(d is FrameworkElement frameworkElement)
             {
                 frameworkElement.Loaded += OnLoaded;
-                frameworkElement.PreviewKeyDown += new KeyEventHandler(OnPreviewKeyDown);
                 return;
             }
             if(d is UIElement uiElement)

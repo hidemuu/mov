@@ -16,7 +16,7 @@ using Mov.Game.Models.interfaces;
 using Mov.Game.Repository;
 using Mov.Game.Service;
 using Mov.Game.ViewModels.Services;
-using Mov.Game.ViewModels.ViewModels;
+using Mov.Game.ViewModels;
 using Mov.Game.Views;
 using Mov.Scheduler.ViewModels;
 using Mov.Scheduler.Views;
@@ -44,6 +44,8 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using Mov.Game.Views.Dialogs;
+using Mov.Game.ViewModels.Dialogs;
 
 namespace Mov.Wpf
 {
@@ -152,6 +154,8 @@ namespace Mov.Wpf
             containerRegistry.RegisterDialog<AlertDialog, AlertDialogViewModel>();
             containerRegistry.RegisterDialog<SuccessDialog, SuccessDialogViewModel>();
             containerRegistry.RegisterDialog<WarningDialog, WarningDialogViewModel>();
+            containerRegistry.RegisterDialog<GameOverDialog, GameOverDialogViewModel>();
+            containerRegistry.RegisterDialog<StageClearDialog, StageClearDialogViewModel>();
             containerRegistry.RegisterDialogWindow<DialogWindow>();
 
         }

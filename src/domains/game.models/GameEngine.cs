@@ -98,7 +98,7 @@ namespace Mov.Game.Models
             KeyCode = KEY_CODE_NONE;
             AddCharacters(Characters, Map);
             AddCharacters(Characters, breadcrumbs.breads);
-            SortCharacters(new int[] { CharacterBase.WALL, CharacterBase.BREAD, CharacterBase.ALIEN, CharacterBase.PLAYER });
+            SortCharacters(new int[] { GameMap.WALL, GameMap.BREAD, GameMap.ALIEN, GameMap.PLAYER, GameMap.TREASURE });
         }
 
         /// <summary>
@@ -136,12 +136,12 @@ namespace Mov.Game.Models
                 for (var c = 0; c < col; c++)
                 {
                     var type = map[r, c];
-                    if (type != CharacterBase.ROAD)
+                    if (type != GameMap.ROAD)
                     {
                         var character = MakeCharacter(type);
                         character.SetPosition(c * UnitWidth, r * UnitHeight);
                         characters.Add(character);
-                        if (type == CharacterBase.ALIEN)
+                        if (type == GameMap.ALIEN)
                         {
                             Aliens.Add((Alien)character);
                         }
@@ -179,13 +179,15 @@ namespace Mov.Game.Models
         {
             switch (type)
             {
-                case CharacterBase.WALL: return new Wall(this);
-                case CharacterBase.PLAYER:
+                case GameMap.WALL: return new Wall(this);
+                case GameMap.PLAYER:
                     if (isUseBreadcrumbs) return new BreadPlayer(this, breadcrumbs);
                     else return new Player(this);
-                case CharacterBase.ALIEN:
+                case GameMap.ALIEN:
                     if (isUseBreadcrumbs) return new BreadAlien(this, breadcrumbs);
                     else return new Alien(this);
+                case GameMap.TREASURE:
+                    return new Treasure(this);
                 default: return null;
             }
         }
@@ -201,10 +203,10 @@ namespace Mov.Game.Models
             var col1 = x / UnitWidth;
             var row2 = (y + UnitHeight - 1) / UnitHeight;
             var col2 = (x + UnitWidth - 1) / UnitWidth;
-            return Map[row1, col1] == CharacterBase.WALL ||
-                   Map[row1, col2] == CharacterBase.WALL ||
-                   Map[row2, col1] == CharacterBase.WALL ||
-                   Map[row2, col2] == CharacterBase.WALL;
+            return Map[row1, col1] == GameMap.WALL ||
+                   Map[row1, col2] == GameMap.WALL ||
+                   Map[row2, col1] == GameMap.WALL ||
+                   Map[row2, col2] == GameMap.WALL;
         }
 
         /// <summary>
@@ -220,8 +222,8 @@ namespace Mov.Game.Models
             {
                 switch (character.TypeCode)
                 {
-                    case CharacterBase.ALIEN:
-                    case CharacterBase.PLAYER:
+                    case GameMap.ALIEN:
+                    case GameMap.PLAYER:
                         if (character != targetCharacter)
                         {
                             if (Math.Abs(character.X - x) < UnitWidth && Math.Abs(character.Y - y) < UnitHeight)
@@ -232,7 +234,7 @@ namespace Mov.Game.Models
                         break;
                 }
             }
-            return CharacterBase.NONE;
+            return GameMap.NONE;
         }
 
         #endregion

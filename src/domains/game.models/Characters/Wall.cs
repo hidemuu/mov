@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Game.Models.Maps;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
@@ -11,15 +12,21 @@ namespace Mov.Game.Models.Characters
 
         protected override Brush BodyBrush { get; set; } = new SolidBrush(Color.DarkGray);
 
-        public override int TypeCode { get; protected set; } = WALL;
+        public override int TypeCode { get; protected set; } = GameMap.WALL;
         public override int Speed { get; protected set; } = 0;
         public override int Life { get; protected set; } = 1;
 
-        #endregion
+        #endregion プロパティ
+
+        #region コンストラクター
 
         public Wall(GameEngine gameEngine) : base(gameEngine)
         {
         }
+
+        #endregion コンストラクター
+
+        #region メソッド
 
         public override void Draw(Graphics graphics)
         {
@@ -34,5 +41,7 @@ namespace Mov.Game.Models.Characters
         {
             return false;
         }
+
+        #endregion メソッド
     }
 }

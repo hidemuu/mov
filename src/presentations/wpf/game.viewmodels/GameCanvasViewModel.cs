@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Game.ViewModels.ViewModels
+namespace Mov.Game.ViewModels
 {
     public class GameCanvasViewModel : BindableBase
     {

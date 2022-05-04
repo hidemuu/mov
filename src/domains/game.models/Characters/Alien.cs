@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Game.Models.Maps;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
@@ -20,7 +21,7 @@ namespace Mov.Game.Models.Characters
 
         #region プロパティ
 
-        public override int TypeCode { get; protected set; } = ALIEN;
+        public override int TypeCode { get; protected set; } = GameMap.ALIEN;
         public override int Speed { get; protected set; } = 1;
         public override int Life { get; protected set; } = 1;
         protected override Brush BodyBrush { get; set; } = new SolidBrush(Color.IndianRed);
@@ -62,13 +63,13 @@ namespace Mov.Game.Models.Characters
         {
             var x1 = X + dirOffset[nextDirection, 0];
             var y1 = Y + dirOffset[nextDirection, 1];
-            if (GameEngine.IsWall(x1, y1) || GameEngine.GetCollision(this, x1, y1) != CharacterBase.NONE)
+            if (GameEngine.IsWall(x1, y1) || GameEngine.GetCollision(this, x1, y1) != GameMap.NONE)
             {
                 nextDirection = (nextDirection + tryPlan[(int)(rnd.NextDouble() * 2.1)]) % 4;
                 x1 = X + dirOffset[nextDirection, 0];
                 y1 = Y + dirOffset[nextDirection, 1];
             }
-            if (!GameEngine.IsWall(x1, y1) && GameEngine.GetCollision(this, x1, y1) == CharacterBase.NONE)
+            if (!GameEngine.IsWall(x1, y1) && GameEngine.GetCollision(this, x1, y1) == GameMap.NONE)
             {
                 Direction = nextDirection;
                 SetPosition(x1, y1);

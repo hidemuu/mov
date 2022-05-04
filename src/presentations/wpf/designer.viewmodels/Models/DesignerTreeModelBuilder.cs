@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Designer.ViewModels
+namespace Mov.Designer.ViewModels.Models
 {
     internal class DesignerTreeModelBuilder
     {

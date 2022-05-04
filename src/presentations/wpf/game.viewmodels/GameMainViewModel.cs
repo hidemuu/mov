@@ -15,15 +15,28 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
-namespace Mov.Game.ViewModels.ViewModels
+namespace Mov.Game.ViewModels
 {
     public class GameMainViewModel : BindableBase, INavigationAware, IRegionMemberLifetime
     {
-        public MainWindowModel Models { get; } = new MainWindowModel();
-        public IRegionManager RegionManager { get; }
+        #region フィールド
+
         private IRegionNavigationJournal journal;
         private readonly IDialogService dialogService;
         private readonly IGameService gameService;
+        private CompositeDisposable disposables = new CompositeDisposable();
+
+        #endregion フィールド
+
+        #region プロパティ
+
+        public MainWindowModel Models { get; } = new MainWindowModel();
+        public IRegionManager RegionManager { get; }
+        public bool KeepAlive => true;
+
+        #endregion プロパティ
+
+        #region コマンド
 
         public ReactiveCommand LoadedCommand { get; } = new ReactiveCommand();
         public ReactiveCommand KeyUpCommand { get; } = new ReactiveCommand();
@@ -35,9 +48,9 @@ namespace Mov.Game.ViewModels.ViewModels
         public ReactiveCommand KeyGestureLeftCommand { get; } = new ReactiveCommand();
         public ReactiveCommand KeyGestureRightCommand { get; } = new ReactiveCommand();
 
-        private CompositeDisposable disposables = new CompositeDisposable();
+        #endregion コマンド
 
-        public bool KeepAlive => true;
+        #region コンストラクター
 
         /// <summary>
         /// コンストラクタ
@@ -48,15 +61,15 @@ namespace Mov.Game.ViewModels.ViewModels
             this.dialogService = dialogService;
             this.gameService = gameService;
 
-            LoadedCommand.Subscribe(() => { this.RegionManager.RequestNavigate("MainRegion", "GameTitleView"); });
-            KeyUpCommand.Subscribe(() => KeyUp());
-            KeyGestureEnterCommand.Subscribe(() => KeyGestureEnter());
-            KeyGestureEscapeCommand.Subscribe(() => KeyGestureEscape());
-            KeyGestureUpCommand.Subscribe(() => KeyGestureUp());
-            KeyGestureUpAndShiftCommand.Subscribe(() => KeyGestureUpAndShift());
-            KeyGestureDownCommand.Subscribe(() => KeyGestureDown());
-            KeyGestureLeftCommand.Subscribe(() => KeyGestureLeft());
-            KeyGestureRightCommand.Subscribe(() => KeyGestureRight());
+            LoadedCommand.Subscribe(() => OnLoaded());
+            KeyUpCommand.Subscribe(() => OnKeyUp());
+            KeyGestureEnterCommand.Subscribe(() => OnKeyGestureEnter());
+            KeyGestureEscapeCommand.Subscribe(() => OnKeyGestureEscape());
+            KeyGestureUpCommand.Subscribe(() => OnKeyGestureUp());
+            KeyGestureUpAndShiftCommand.Subscribe(() => OnKeyGestureUpAndShift());
+            KeyGestureDownCommand.Subscribe(() => OnKeyGestureDown());
+            KeyGestureLeftCommand.Subscribe(() => OnKeyGestureLeft());
+            KeyGestureRightCommand.Subscribe(() => OnKeyGestureRight());
 
             // 定期更新スレッド
             var timer = new ReactiveTimer(TimeSpan.FromMilliseconds(10), new SynchronizationContextScheduler(SynchronizationContext.Current));
@@ -68,42 +81,51 @@ namespace Mov.Game.ViewModels.ViewModels
             timer.Start();
         }
 
-        private void KeyUp()
+        #endregion コンストラクター
+
+        #region イベントハンドラ
+
+        private void OnLoaded()
+        {
+            this.RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_TITLE);
+        }
+
+        private void OnKeyUp()
         {
             gameService.SetKeyCode(GameEngine.KEY_CODE_NONE);
         }
 
-        private void KeyGestureEnter()
+        private void OnKeyGestureEnter()
         {
             
         }
 
-        private void KeyGestureEscape()
+        private void OnKeyGestureEscape()
         {
 
         }
 
-        private void KeyGestureUp()
-        {
-            gameService.SetKeyCode(GameEngine.KEY_CODE_UP);
-        }
-
-        private void KeyGestureUpAndShift()
+        private void OnKeyGestureUp()
         {
             gameService.SetKeyCode(GameEngine.KEY_CODE_UP);
         }
 
-        private void KeyGestureDown()
+        private void OnKeyGestureUpAndShift()
+        {
+            gameService.SetKeyCode(GameEngine.KEY_CODE_UP);
+        }
+
+        private void OnKeyGestureDown()
         {
             gameService.SetKeyCode(GameEngine.KEY_CODE_DOWN);
         }
 
-        private void KeyGestureLeft()
+        private void OnKeyGestureLeft()
         {
             gameService.SetKeyCode(GameEngine.KEY_CODE_LEFT);
         }
 
-        private void KeyGestureRight()
+        private void OnKeyGestureRight()
         {
             gameService.SetKeyCode(GameEngine.KEY_CODE_RIGHT);
         }
@@ -124,6 +146,7 @@ namespace Mov.Game.ViewModels.ViewModels
 
         }
 
+        #endregion イベントハンドラ
 
     }
 }

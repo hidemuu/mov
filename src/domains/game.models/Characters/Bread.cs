@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Game.Models.Maps;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Mov.Game.Models.Characters
 
         #region プロパティ
 
-        public override int TypeCode { get; protected set; } = BREAD;
+        public override int TypeCode { get; protected set; } = GameMap.BREAD;
         public override int Speed { get; protected set; } = 1;
         public override int Life { get; protected set; } = 1;
         protected override Brush BodyBrush { get; set; } = new SolidBrush(Color.CornflowerBlue);

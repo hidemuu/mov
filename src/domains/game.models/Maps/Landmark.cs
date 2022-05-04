@@ -27,11 +27,15 @@ namespace Mov.Game.Models.Maps
         /// <summary>
         /// プレイヤー
         /// </summary>
-        public const string PALYER = "○";
+        public const string PALYER = "◯";
         /// <summary>
         /// NPC
         /// </summary>
         public const string ALIEN = "＠";
+        /// <summary>
+        /// 宝
+        /// </summary>
+        public const string TREASURE = "☆";
 
         #endregion 定数
 
@@ -39,6 +43,9 @@ namespace Mov.Game.Models.Maps
 
         [JsonProperty("lv")]
         public int Lv { get; set; }
+
+        [JsonProperty("clear_score")]
+        public int ClearScore { get; set; }
 
         /// <summary>
         /// ランドマーク行文字列群

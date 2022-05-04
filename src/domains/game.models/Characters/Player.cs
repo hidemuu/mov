@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Game.Models.Maps;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
@@ -27,13 +28,15 @@ namespace Mov.Game.Models.Characters
 
         #region プロパティ
 
-        public override int TypeCode { get; protected set; } = PLAYER;
+        public override int TypeCode { get; protected set; } = GameMap.PLAYER;
         public override int Speed { get; protected set; } = 1;
         public override int Life { get; protected set; } = 1;
         protected override Brush BodyBrush { get; set; } = new SolidBrush(Color.CornflowerBlue);
 
 
         #endregion
+
+        #region コンストラクター
 
         /// <summary>
         /// コンストラクタ
@@ -43,6 +46,8 @@ namespace Mov.Game.Models.Characters
         {
         }
 
+        #endregion コンストラクター
+
         #region メソッド
 
         public override void Draw(Graphics graphics)
@@ -50,51 +55,44 @@ namespace Mov.Game.Models.Characters
             graphics.FillRectangle(BodyBrush, X + 2, Y + 2, GameEngine.UnitWidth - 4, GameEngine.UnitHeight - 4);
         }
 
+        /// <summary>
+        /// 移動処理
+        /// </summary>
+        /// <returns>true:移動成功</returns>
         public override bool Move()
         {
             //移動量
             var dx = 0;
             var dy = 0;
 
-            if(GameEngine.KeyCode == GameEngine.KEY_CODE_NONE)
+            //押されているキーに対する処理
+            switch (GameEngine.KeyCode)
             {
-                //  キーが離された後の状態
-                if (X % GameEngine.UnitWidth != 0 || Y % GameEngine.UnitHeight != 0)
-                {
-                    //1マスの中間位置は移動継続
-                    dx = lastDx;
-                    dy = lastDy;
-                }
-                else
-                {
-                    GameEngine.KeyCode = GameEngine.KEY_CODE_NONE;
-                    return false;
-                }
-            }
-            else
-            {
-                //押されているキーに対する処理
-                switch (GameEngine.KeyCode)
-                {
-                    case GameEngine.KEY_CODE_LEFT: dx = -1; break;
-                    case GameEngine.KEY_CODE_RIGHT: dx = 1; break;
-                    case GameEngine.KEY_CODE_UP: dy = -1; break;
-                    case GameEngine.KEY_CODE_DOWN: dy = 1; break;
-                    default: return false;
-                }
+                case GameEngine.KEY_CODE_LEFT: dx = -1; break;
+                case GameEngine.KEY_CODE_RIGHT: dx = 1; break;
+                case GameEngine.KEY_CODE_UP: dy = -1; break;
+                case GameEngine.KEY_CODE_DOWN: dy = 1; break;
+                default: return false;
             }
 
-            //壁でなく他のキャラに衝突しなければ進む
+            if (IsMiddlePosition)
+            {
+                //1マスの中間位置は移動継続
+                dx = lastDx;
+                dy = lastDy;
+            }
             var x = X + (dx * Speed);
             var y = Y + (dy * Speed);
-            if (!GameEngine.IsWall(x, y) && GameEngine.GetCollision(this, x, y) == CharacterBase.NONE)
+            //壁でなく他のキャラに衝突しなければ進む
+            if (!GameEngine.IsWall(x, y) && GameEngine.GetCollision(this, x, y) == GameMap.NONE)
             {
                 SetPosition(x, y);
                 lastDx = dx;
                 lastDy = dy;
                 return true;
             }
-            if (GameEngine.GetCollision(this, x, y) == CharacterBase.ALIEN) isCollision = true;
+            //敵に衝突した時
+            if (GameEngine.GetCollision(this, x, y) == GameMap.ALIEN) isCollision = true;
             return false;
         }
 
@@ -107,6 +105,11 @@ namespace Mov.Game.Models.Characters
             if (isCollision) return true;
             return false;
         }
+
+        /// <summary>
+        /// 中間位置判定
+        /// </summary>
+        private bool IsMiddlePosition => X % GameEngine.UnitWidth != 0 || Y % GameEngine.UnitHeight != 0;
 
         #endregion
 

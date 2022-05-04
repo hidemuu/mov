@@ -1,18 +1,18 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Services.Dialogs;
+using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Game.ViewModels.ViewModels.Dialogs
+namespace Mov.Game.ViewModels.Dialogs
 {
     public class GameOverDialogViewModel : BindableBase, IDialogAware
     {
-        
-        public event Action<IDialogResult> RequestClose;
+        #region プロパティ
 
         private string _title = "Notification";
         public string Title
@@ -28,20 +28,39 @@ namespace Mov.Game.ViewModels.ViewModels.Dialogs
             set { SetProperty(ref _message, value); }
         }
 
-        private DelegateCommand _loadedDialogCommand;
-        public DelegateCommand LoadedDialogCommand =>
-            _loadedDialogCommand ?? (_loadedDialogCommand = new DelegateCommand(ExecuteLoadedDialogCommand));
+        #endregion プロパティ
 
-        private DelegateCommand<string> _closeDialogCommand;
-        public DelegateCommand<string> CloseDialogCommand =>
-            _closeDialogCommand ?? (_closeDialogCommand = new DelegateCommand<string>(ExecuteCloseDialogCommand));
+        #region コマンド
 
-        void ExecuteLoadedDialogCommand()
+        public event Action<IDialogResult> RequestClose;
+
+        public ReactiveCommand LoadedDialogCommand { get; } = new ReactiveCommand();
+
+        public ReactiveCommand<string> CloseDialogCommand { get; } = new ReactiveCommand<string>();
+
+        #endregion コマンド
+
+        #region コンストラクター
+
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
+        public GameOverDialogViewModel()
+        {
+            LoadedDialogCommand.Subscribe(OnLoadedDialogCommand);
+            CloseDialogCommand.Subscribe(OnCloseDialogCommand);
+        }
+
+        #endregion コンストラクター
+
+        #region イベントハンドラ
+
+        void OnLoadedDialogCommand()
         {
 
         }
 
-        void ExecuteCloseDialogCommand(string parameter)
+        void OnCloseDialogCommand(string parameter)
         {
             ButtonResult result = ButtonResult.None;
 
@@ -71,5 +90,7 @@ namespace Mov.Game.ViewModels.ViewModels.Dialogs
         {
             Message = parameters.GetValue<string>("message");
         }
+
+        #endregion イベントハンドラ
     }
 }

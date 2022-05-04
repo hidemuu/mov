@@ -7,10 +7,19 @@
     xmlns:local="clr-namespace:Mov.Game.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
+    xmlns:vm="clr-namespace:Mov.Game.ViewModels;assembly=Mov.Game.ViewModels"
+    d:DataContext="{d:DesignInstance vm:GameTitleViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -26,6 +35,16 @@
             FontWeight="Bold"
             Foreground="#3F487F"
             Text="MovGame" />
+        <StackPanel
+            Grid.Row="1"
+            HorizontalAlignment="Left"
+            Orientation="Vertical">
+            <ComboBox
+                Name="selectMapLv"
+                Width="100"
+                Height="30"
+                ItemsSource="{Binding MapLevels}" />
+        </StackPanel>
         <StackPanel
             Grid.Row="2"
             HorizontalAlignment="Center"

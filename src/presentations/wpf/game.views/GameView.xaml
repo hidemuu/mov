@@ -7,6 +7,8 @@
     xmlns:local="clr-namespace:Mov.Game.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
+    xmlns:vm="clr-namespace:Mov.Game.ViewModels;assembly=Mov.Game.ViewModels"
+    d:DataContext="{d:DesignInstance vm:GameViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
     prism:ViewModelLocator.AutoWireViewModel="True"
@@ -21,33 +23,45 @@
             <TextBlock
                 Margin="0,0,10,0"
                 Foreground="Black"
-                Text="Stage" />
+                Text="Level" />
             <TextBlock
-                x:Name="TextBlockStage"
+                x:Name="TextBlockLevel"
+                Margin="10,0,10,0"
                 Foreground="Black"
-                Text="{Binding Path=Models.Stage.Value}" />
+                Text="{Binding Model.Level.Value}" />
             <TextBlock
                 Margin="0,0,10,0"
                 Foreground="Black"
                 Text="Score" />
             <TextBlock
                 x:Name="TextBlockScore"
+                Margin="10,0,10,0"
                 Foreground="Black"
-                Text="{Binding Path=Models.Score.Value}" />
+                Text="{Binding Model.CurrentScore.Value}" />
             <TextBlock
                 Margin="0,0,10,0"
                 Foreground="Black"
-                Text="  Life" />
+                Text="/" />
+            <TextBlock
+                x:Name="TextBlockClearScore"
+                Margin="10,0,10,0"
+                Foreground="Black"
+                Text="{Binding Model.ClearScore.Value}" />
+            <TextBlock
+                Margin="0,0,10,0"
+                Foreground="Black"
+                Text="Life" />
             <TextBlock
                 x:Name="TextBlockLife"
+                Margin="10,0,10,0"
                 Foreground="Black"
-                Text="{Binding Path=Models.Life.Value}" />
+                Text="{Binding Model.Life.Value}" />
         </StackPanel>
         <Image
             x:Name="image"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Source="{Binding Path=Models.ImageSource.Value}"
+            Source="{Binding Model.ImageSource.Value}"
             Stretch="None" />
     </DockPanel>
 </UserControl>

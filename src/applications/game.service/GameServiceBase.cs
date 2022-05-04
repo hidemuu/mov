@@ -1,6 +1,7 @@
 ﻿using Mov.Game.Models;
 using Mov.Game.Models.Characters;
 using Mov.Game.Models.interfaces;
+using Mov.Game.Models.Maps;
 using Mov.Game.Repository;
 using System;
 using System.Collections.Generic;
@@ -72,6 +73,14 @@ namespace Mov.Game.Service
         /// スコア
         /// </summary>
         public int Score { get; private set; } = 0;
+        /// <summary>
+        /// トータルスコア
+        /// </summary>
+        public int TotalScore { get; private set; } = 0;
+        /// <summary>
+        /// レベル
+        /// </summary>
+        public int Level { get; private set; } = 1;
 
         #endregion
 
@@ -82,10 +91,10 @@ namespace Mov.Game.Service
         public GameServiceBase(IGameRepositoryCollection repository)
         {
             this.repository = repository;
-            var maps = repository.Landmarks.Gets().ToArray();
+            var map = GetLandmark();
             gameEngine = new GameEngine();
-            FrameWidth = maps[0].GetCol() * gameEngine.UnitWidth;
-            FrameHeight = maps[0].GetRow() * gameEngine.UnitHeight;
+            FrameWidth = map.GetCol() * gameEngine.UnitWidth;
+            FrameHeight = map.GetRow() * gameEngine.UnitHeight;
             screenBitmap = new Bitmap(FrameWidth, FrameHeight);
             ScreenGraphics = Graphics.FromImage(screenBitmap);
         }
@@ -97,22 +106,30 @@ namespace Mov.Game.Service
         /// </summary>
         public virtual void Initialize()
         {
+            Score = 0;
             screenBitmap = new Bitmap(FrameWidth, FrameHeight);
             ScreenGraphics = Graphics.FromImage(screenBitmap);
-            gameEngine.Initialize(repository.Landmarks.Gets().ToArray()[0]);
+            gameEngine.Initialize(GetLandmark());
             isActive = true;
             IsGameOver = false;
+            IsStageClear = false;
         }
 
-
+        public void Next()
+        {
+            Level++;
+            TotalScore += Score;
+            Score = 0;
+            gameEngine.Initialize(GetLandmark());
+            isActive = true;
+            IsStageClear = false;
+        }
 
         /// <summary>
         /// 起動処理
         /// </summary>
         public void Run()
         {
-            Initialize();
-
             //マルチスレッド処理
             task = Task.Run(() =>
             {
@@ -120,29 +137,26 @@ namespace Mov.Game.Service
                 sw.Start();
                 while (isActive)
                 {
-                    //キャラクタの移動処理
+                    //キャラクタ毎の処理
                     foreach (var character in gameEngine.Characters)
                     {
                         switch (character.TypeCode)
                         {
-                            case CharacterBase.PLAYER:
+                            //プレイヤー
+                            case GameMap.PLAYER:
+                                //移動処理
                                 if(character.Move()) Score++;
-                                break;
-                            case CharacterBase.ALIEN:
-                                character.Move(); break;
-                        }
-                    }
-                    //ゲームオーバー判定
-                    foreach (var character in gameEngine.Characters)
-                    {
-                        switch (character.TypeCode)
-                        {
-                            case CharacterBase.PLAYER:
-                                if (character.IsDamage()) 
-                                {
-                                    character.AddLife(-1);
-                                }
+                                //ダメージ判定
+                                if (character.IsDamage()) character.AddLife(-1);
+                                //ゲームオーバー判定
                                 if (character.Life <= 0) IsGameOver = true;
+                                //ステージクリア判定
+                                if(Score >= GetLandmark().ClearScore) IsStageClear = true;
+                                break;
+                            //敵
+                            case GameMap.ALIEN:
+                                //移動処理
+                                character.Move(); 
                                 break;
                         }
                     }
@@ -151,7 +165,7 @@ namespace Mov.Game.Service
                     ClearScreen();
                     foreach (var character in gameEngine.Characters)
                     {
-                        if (character.TypeCode != CharacterBase.ROAD) DrawCharacter(character);
+                        if (character.TypeCode != GameMap.ROAD) DrawCharacter(character);
                     }
                     IsBuilding = false;
                     //再描画要求
@@ -185,6 +199,21 @@ namespace Mov.Game.Service
             gameEngine.KeyCode = keyCode;
         }
 
+        public void SetLevel(int lv)
+        {
+            Level = lv;
+        }
+
+        public IEnumerable<int> GetLevels()
+        {
+            return repository.Landmarks.Gets().Select(x => x.Lv);
+        }
+
+        public Landmark GetLandmark()
+        {
+            return repository.Landmarks.Gets().FirstOrDefault(x => x.Lv == Level);
+        }
+
         /// <summary>
         /// 描画処理
         /// </summary>
@@ -195,13 +224,17 @@ namespace Mov.Game.Service
             graphics.DrawImage(screenBitmap, 0, 0);
         }
 
+        /// <summary>
+        /// ライフ取得
+        /// </summary>
+        /// <returns></returns>
         public int GetLife()
         {
             foreach (var character in gameEngine.Characters)
             {
                 switch (character.TypeCode)
                 {
-                    case CharacterBase.PLAYER:
+                    case GameMap.PLAYER:
                         return character.Life;
                 }
             }

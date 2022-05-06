@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Mov.Designer.Models;
+using Mov.Designer.Service.Layouts.Nodes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -9,14 +11,23 @@ namespace Mov.Designer.Service.Layouts
     {
         #region フィールド
 
+        /// <summary>
+        /// 子階層
+        /// </summary>
         private List<LayoutNodeBase> children = new List<LayoutNodeBase>();
 
         #endregion フィールド
 
         #region プロパティ
 
-        public bool IsExpand { get; set; }
+        /// <summary>
+        /// 開閉状態
+        /// </summary>
+        public bool IsExpand { get; set; } = true;
 
+        /// <summary>
+        /// 子階層
+        /// </summary>
         public List<LayoutNodeBase> Children => children;
 
         #endregion プロパティ
@@ -29,6 +40,18 @@ namespace Mov.Designer.Service.Layouts
         public LayoutNodeBase()
         {
 
+        }
+
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
+        public LayoutNodeBase(LayoutTree tree)
+        {
+            Code = tree.Code;
+            Name = tree.Code;
+            IsExpand = tree.IsExpand;
+            LayoutType = tree.LayoutType;
+            LayoutStyle = tree.LayoutStyle;
         }
 
         #endregion コンストラクター
@@ -56,5 +79,9 @@ namespace Mov.Designer.Service.Layouts
         }
 
         #endregion メソッド
+
+        #region 内部メソッド
+
+        #endregion 内部メソッド
     }
 }

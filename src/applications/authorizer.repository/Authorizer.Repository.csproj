@@ -7,16 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="resources\user.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="resources\user.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\domains\authorizer.models\Authorizer.Models.csproj" />
   </ItemGroup>
 

@@ -43,7 +43,8 @@
                 Name="selectMapLv"
                 Width="100"
                 Height="30"
-                ItemsSource="{Binding MapLevels}" />
+                ItemsSource="{Binding Levels}"
+                SelectedItem="{Binding SelectedLevel.Value}"  />
         </StackPanel>
         <StackPanel
             Grid.Row="2"

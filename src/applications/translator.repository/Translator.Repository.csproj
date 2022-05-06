@@ -7,16 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="resources\comment.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="resources\comment.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\domains\translator.models\Translator.Models.csproj" />
   </ItemGroup>
 

@@ -6,6 +6,7 @@
     <UseWPF>true</UseWPF>
     <AssemblyName>Mov.Wpf</AssemblyName>
     <RootNamespace>Mov.Wpf</RootNamespace>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

@@ -20,10 +20,10 @@
                 <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />
                 <ResourceDictionary x:Name="LayoutTemplate" Source="Templates/LayoutTemplate.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <selector:LayoutSelector x:Key="layoutSelector" />
         </ResourceDictionary>
     </UserControl.Resources>
     <ItemsControl ItemTemplateSelector="{StaticResource layoutSelector}" ItemsSource="{Binding Models}">
+        <!--  ItemsControlの中身  -->
         <ItemsControl.Template>
             <ControlTemplate TargetType="{x:Type ItemsControl}">
                 <Border
@@ -34,16 +34,19 @@
                 </Border>
             </ControlTemplate>
         </ItemsControl.Template>
+        <!--  ItensControlの並べ方  -->
         <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
                 <VirtualizingStackPanel />
             </ItemsPanelTemplate>
         </ItemsControl.ItemsPanel>
-        <ItemsControl.ItemTemplate>
+        <!--  ItensControlの要素を表示する際のテンプレートを指定  -->
+        <!--<ItemsControl.ItemTemplate>
             <DataTemplate />
-        </ItemsControl.ItemTemplate>
+        </ItemsControl.ItemTemplate>-->
+        <!--  ItemsCOntrolの要素に適応するStyle  -->
         <ItemsControl.ItemContainerStyle>
-            <Style TargetType="ItemsControl" />
+            <Style TargetType="{x:Type ContentPresenter}" />
         </ItemsControl.ItemContainerStyle>
     </ItemsControl>
 </UserControl>

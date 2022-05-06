@@ -24,5 +24,6 @@ namespace Mov.Game.Views
         {
             InitializeComponent();
         }
+
     }
 }

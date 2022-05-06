@@ -7,24 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="resources\app_setting.json" />
-    <None Remove="resources\user_setting.json" />
-    <None Remove="resources\variable.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="resources\app_setting.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\user_setting.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\variable.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="CsvHelper" Version="27.2.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>

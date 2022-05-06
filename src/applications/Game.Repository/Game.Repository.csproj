@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="resources\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\domains\game.models\Game.Models.csproj" />
     <ProjectReference Include="..\..\infrastructures\accessors\Accessors.csproj" />
   </ItemGroup>

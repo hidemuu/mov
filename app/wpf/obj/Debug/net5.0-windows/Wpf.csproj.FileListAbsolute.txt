@@ -121,15 +121,6 @@ C:\Users\nando\Documents\GitHub\mov\app\wpf\obj\Debug\net5.0-windows\Mov.Wpf.dll
 C:\Users\nando\Documents\GitHub\mov\app\wpf\obj\Debug\net5.0-windows\ref\Mov.Wpf.dll
 C:\Users\nando\Documents\GitHub\mov\app\wpf\obj\Debug\net5.0-windows\Mov.Wpf.pdb
 C:\Users\nando\Documents\GitHub\mov\app\wpf\obj\Debug\net5.0-windows\Wpf.genruntimeconfig.cache
-C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\user.json
-C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\app_setting.json
-C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\user_setting.json
-C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\variable.json
-C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\shell_layout.xml
-C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\theme.xml
-C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\comment.json
-C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\layout_tree.xml
-C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Resources\content_table.xml
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Microsoft.Win32.SystemEvents.dll
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\System.Drawing.Common.dll
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll

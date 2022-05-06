@@ -1,4 +1,6 @@
-﻿using Mov.Designer.ViewModels;
+﻿using Mov.Designer.Service.Layouts;
+using Mov.Designer.Service.Layouts.Nodes;
+using Mov.Designer.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -40,7 +42,16 @@ namespace Mov.Designer.Views.Selector
             {
                 
             }
-            return null;
+            if(item is LayoutNodeBase node)
+            {
+                if (node is ContentLayoutNode content) return ContentTemplate;
+                if (node is ExpanderLayoutNode expander) return ExpanderTemplate;
+                if (node is ScrollbarLayoutNode scrollbar) return ScrollbarTemplate;
+                if (node is TabLayoutNode tab) return TabTemplate;
+                if (node is HeaderLayoutNode header) return HeaderTemplate;
+                return null;
+            }
+            return base.SelectTemplate(item, container);
         }
 
         #endregion メソッド

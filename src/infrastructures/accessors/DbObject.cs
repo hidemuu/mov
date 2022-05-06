@@ -18,10 +18,16 @@ namespace Mov.Accessors
 
         #region プロパティ
 
+        /// <summary>
+        /// ID
+        /// </summary>
         [JsonProperty("id")]
         [XmlElement("id")]
         public int Id { get; set; }
 
+        /// <summary>
+        /// コード
+        /// </summary>
         [JsonProperty("code")]
         [XmlElement("code")]
         public string Code { get; set; }

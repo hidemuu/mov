@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Designer.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,13 +9,35 @@ namespace Mov.Designer.Service.Layouts
     {
         #region プロパティ
 
-        public int Index { get; set; }
+        /// <summary>
+        /// コード
+        /// </summary>
+        public string Code { get; set; }
 
-        public string LayoutType { get; set; }
+        /// <summary>
+        /// 名称
+        /// </summary>
+        public string Name { get; set; }
 
+        /// <summary>
+        /// 並び順インデックス
+        /// </summary>
+        public int Index { get; set; } = 0;
+
+        /// <summary>
+        /// レイアウトタイプ
+        /// </summary>
+        public LayoutType LayoutType { get; set; } = LayoutType.Content;
+
+        /// <summary>
+        /// レイアウトスタイル
+        /// </summary>
         public string LayoutStyle { get; set; }
 
-        public double Indent { get; set; }
+        /// <summary>
+        /// インデント
+        /// </summary>
+        public double Indent { get; set; } = 0;
 
         #endregion プロパティ
 

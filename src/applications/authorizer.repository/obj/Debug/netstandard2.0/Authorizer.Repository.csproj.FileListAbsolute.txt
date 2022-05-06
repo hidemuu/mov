@@ -40,4 +40,3 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\authorizer.repository\obj\D
 C:\Users\nando\Documents\GitHub\mov\src\applications\authorizer.repository\obj\Debug\netstandard2.0\Authorizer.Repository.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\applications\authorizer.repository\obj\Debug\netstandard2.0\Mov.Authorizer.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\authorizer.repository\obj\Debug\netstandard2.0\Mov.Authorizer.Repository.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\authorizer.repository\bin\Debug\netstandard2.0\Resources\user.json

@@ -2,7 +2,23 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:selector="clr-namespace:Mov.Designer.Views.Selector">
-    <selector:LayoutSelector x:Key="layoutSelector" />
-    
-    
+
+    <selector:LayoutSelector x:Key="layoutSelector">
+        <selector:LayoutSelector.ContentTemplate>
+            <DataTemplate />
+        </selector:LayoutSelector.ContentTemplate>
+        <selector:LayoutSelector.ExpanderTemplate>
+            <DataTemplate />
+        </selector:LayoutSelector.ExpanderTemplate>
+        <selector:LayoutSelector.ScrollbarTemplate>
+            <DataTemplate />
+        </selector:LayoutSelector.ScrollbarTemplate>
+        <selector:LayoutSelector.TabTemplate>
+            <DataTemplate />
+        </selector:LayoutSelector.TabTemplate>
+        <selector:LayoutSelector.HeaderTemplate>
+            <DataTemplate />
+        </selector:LayoutSelector.HeaderTemplate>
+    </selector:LayoutSelector>
+
 </ResourceDictionary>

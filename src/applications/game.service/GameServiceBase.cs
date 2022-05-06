@@ -41,7 +41,7 @@ namespace Mov.Game.Service
         /// </summary>
         private Bitmap screenBitmap;
 
-        #endregion
+        #endregion フィールド
 
         #region プロパティ
 
@@ -82,10 +82,12 @@ namespace Mov.Game.Service
         /// </summary>
         public int Level { get; private set; } = 1;
 
-        #endregion
+        #endregion フィールド
+
+        #region コンストラクター
 
         /// <summary>
-        /// コンストラクタ
+        /// コンストラクター
         /// </summary>
         /// <param name="repository"></param>
         public GameServiceBase(IGameRepositoryCollection repository)
@@ -98,6 +100,8 @@ namespace Mov.Game.Service
             screenBitmap = new Bitmap(FrameWidth, FrameHeight);
             ScreenGraphics = Graphics.FromImage(screenBitmap);
         }
+
+        #endregion コンストラクター
 
         #region メソッド
 
@@ -241,9 +245,9 @@ namespace Mov.Game.Service
             return -1;
         }
 
-        #endregion
+        #endregion メソッド
 
-        #region 抽象メソッド - テンプレート
+        #region 抽象メソッド
 
         /// <summary>
         /// スクリーン初期化
@@ -263,7 +267,7 @@ namespace Mov.Game.Service
         /// </summary>
         protected abstract void DisposeScreen();
 
-        #endregion
+        #endregion 抽象メソッド
 
     }
 }

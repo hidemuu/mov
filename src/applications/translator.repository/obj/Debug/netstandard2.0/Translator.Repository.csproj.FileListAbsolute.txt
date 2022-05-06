@@ -26,4 +26,3 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\translator.repository\obj\D
 C:\Users\nando\Documents\GitHub\mov\src\applications\translator.repository\obj\Debug\netstandard2.0\Translator.Repository.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\applications\translator.repository\obj\Debug\netstandard2.0\Mov.Translator.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\translator.repository\obj\Debug\netstandard2.0\Mov.Translator.Repository.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\translator.repository\bin\Debug\netstandard2.0\Resources\comment.json

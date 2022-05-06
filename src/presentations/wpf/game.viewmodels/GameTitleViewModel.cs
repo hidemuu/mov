@@ -5,6 +5,7 @@ using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,7 +22,9 @@ namespace Mov.Game.ViewModels
         #region プロパティ
         public IRegionManager RegionManager { get; }
 
-        public ReactiveCollection<int> MapLevels { get; } = new ReactiveCollection<int>();
+        public ReactiveCollection<int> Levels { get; } = new ReactiveCollection<int>();
+
+        public ReactivePropertySlim<int> SelectedLevel { get; } = new ReactivePropertySlim<int>();
 
         #endregion プロパティ
 
@@ -40,7 +43,8 @@ namespace Mov.Game.ViewModels
             this.gameService = gameService;
             StartCommand.Subscribe(OnStartCommand);
             ConfigCommand.Subscribe(OnConfigCommand);
-            MapLevels.AddRangeOnScheduler(gameService.GetLevels());
+            Levels.AddRangeOnScheduler(gameService.GetLevels());
+            SelectedLevel.Where(x => x > 0).Subscribe(OnLevelSelectChanged);
         }
 
         #endregion コンストラクター
@@ -49,12 +53,18 @@ namespace Mov.Game.ViewModels
 
         private void OnStartCommand()
         {
+            if(SelectedLevel.Value > 0) this.gameService.SetLevel(SelectedLevel.Value);
             this.RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_GAME);
         }
 
         private void OnConfigCommand()
         {
             this.RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_CONFIG);
+        }
+
+        private void OnLevelSelectChanged(int lv)
+        {
+
         }
 
         #endregion イベントハンドラ

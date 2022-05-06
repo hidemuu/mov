@@ -7,28 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="resources\content_table.xml" />
-    <None Remove="resources\layout_tree.xml" />
-    <None Remove="resources\shell_layout.xml" />
-    <None Remove="resources\theme.xml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="resources\layout_tree.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\content_table.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\shell_layout.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="resources\theme.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\domains\designer.models\Designer.Models.csproj" />
   </ItemGroup>
 

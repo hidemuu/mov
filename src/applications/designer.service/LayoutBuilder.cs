@@ -48,32 +48,54 @@ namespace Mov.Designer.Service
 
         private LayoutNodeBase Import()
         {
-            var node = new ContentLayout();
-            foreach (var tree in repository.LayoutTrees.Gets())
+            var node = new RootLayoutNode();
+            CreateLayoutNode(node.Children, repository.LayoutTrees.Gets());
+            return node;
+        }
+
+        private void CreateLayoutNode(ICollection<LayoutNodeBase> nodes, IEnumerable<LayoutTree> trees)
+        {
+            LayoutNodeBase node;
+            foreach (var tree in trees)
             {
                 switch (tree.LayoutType)
                 {
-                    case LayoutType.Content:
-                        node.Add(new ContentLayout());
-                        break;
-                    case LayoutType.Expander:
-                        node.Add(new ExpanderLayout());
+                    case LayoutType.Root:
+                        node = new RootLayoutNode(tree);
                         break;
                     case LayoutType.Header:
-                        node.Add(new HeaderLayout());
+                        node = new HeaderLayoutNode(tree);
+                        break;
+                    case LayoutType.Content:
+                        ContentTable content = new ContentTable();
+                        foreach(var table in repository.ContentTables.Gets())
+                        {
+                            if (!tree.Code.Equals(table.Code, StringComparison.OrdinalIgnoreCase)) continue;
+                            content = table;
+                            break;
+                        }
+                        node = new ContentLayoutNode(tree, content);
+                        break;
+                    case LayoutType.Expander:
+                        node = new ExpanderLayoutNode(tree);
                         break;
                     case LayoutType.Scrollbar:
-                        node.Add(new ScrollbarLayout());
+                        node = new ScrollbarLayoutNode(tree);
                         break;
                     case LayoutType.Tab:
-                        node.Add(new TabLayout());
+                        node = new TabLayoutNode(tree);
                         break;
                     default:
-                        node.Add(new ContentLayout());
+                        node = new ContentLayoutNode();
                         break;
                 }
+                nodes.Add(node);
+                //子階層再帰処理
+                if (tree.Children.Count > 0)
+                {
+                    CreateLayoutNode(node.Children, tree.Children);
+                }
             }
-            return node;
         }
 
         #endregion 内部メソッド

@@ -5,16 +5,13 @@ using System.Text;
 
 namespace Mov.Designer.Service.Layouts.Nodes
 {
-    public class ContentLayout : LayoutNodeBase
+    public class ContentLayoutNode : LayoutNodeBase
     {
         #region プロパティ
-        public string Code { get; }
 
         public string ControlType { get; }
 
         public string ControlStyle { get; }
-
-        public string Command { get; }
 
         public string Macro { get; }
 
@@ -29,20 +26,19 @@ namespace Mov.Designer.Service.Layouts.Nodes
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ContentLayout()
+        public ContentLayoutNode()
         {
 
         }
 
-        public ContentLayout(ContentTable table)
+        public ContentLayoutNode(LayoutTree layout, ContentTable content) : base(layout)
         {
-            Code = table.Code;
-            ControlType = table.ControlType;
-            ControlStyle = table.ControlStyle;
-            Command = table.Command;
-            Macro = table.Macro;
-            IsVisible = table.IsVisible;
-            IsEnable = table.IsEnable;
+            Code = content.Code;
+            ControlType = content.ControlType;
+            ControlStyle = content.ControlStyle;
+            Macro = content.Macro;
+            IsVisible = content.IsVisible;
+            IsEnable = content.IsEnable;
         }
 
         #endregion コンストラクター

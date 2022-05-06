@@ -15,8 +15,4 @@
     <ProjectReference Include="..\..\infrastructures\accessors\Accessors.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="resources\" />
-  </ItemGroup>
-
 </Project>

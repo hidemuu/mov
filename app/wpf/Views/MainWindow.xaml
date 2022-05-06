@@ -11,7 +11,7 @@
     xmlns:prism="http://prismlibrary.com/"
     xmlns:vm="clr-namespace:Mov.Wpf.ViewModels;assembly=Mov.Wpf"
     xmlns:wvm="clr-namespace:Mov.WpfViewModels;assembly=Mov.WpfViewModels"
-    Title="MainWindow"
+    Title="Mov"
     Width="800"
     Height="600"
     d:DataContext="{d:DesignInstance vm:MainWindowViewModel}"

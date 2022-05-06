@@ -23,7 +23,7 @@ namespace Mov.Game.ViewModels
 
         private IRegionNavigationJournal journal;
         private readonly IDialogService dialogService;
-        private readonly IGameService gameService;
+        private readonly IMachineGameService gameService;
         private CompositeDisposable disposables = new CompositeDisposable();
 
         #endregion フィールド
@@ -55,7 +55,7 @@ namespace Mov.Game.ViewModels
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public GameMainViewModel(IRegionManager regionManager, IDialogService dialogService, IGameService gameService) 
+        public GameMainViewModel(IRegionManager regionManager, IDialogService dialogService, IMachineGameService gameService) 
         {
             this.RegionManager = regionManager;
             this.dialogService = dialogService;
@@ -92,7 +92,7 @@ namespace Mov.Game.ViewModels
 
         private void OnKeyUp()
         {
-            gameService.SetKeyCode(GameEngine.KEY_CODE_NONE);
+            gameService.SetKeyCode(FsmGameEngine.KEY_CODE_NONE);
         }
 
         private void OnKeyGestureEnter()
@@ -107,27 +107,27 @@ namespace Mov.Game.ViewModels
 
         private void OnKeyGestureUp()
         {
-            gameService.SetKeyCode(GameEngine.KEY_CODE_UP);
+            gameService.SetKeyCode(FsmGameEngine.KEY_CODE_UP);
         }
 
         private void OnKeyGestureUpAndShift()
         {
-            gameService.SetKeyCode(GameEngine.KEY_CODE_UP);
+            gameService.SetKeyCode(FsmGameEngine.KEY_CODE_UP);
         }
 
         private void OnKeyGestureDown()
         {
-            gameService.SetKeyCode(GameEngine.KEY_CODE_DOWN);
+            gameService.SetKeyCode(FsmGameEngine.KEY_CODE_DOWN);
         }
 
         private void OnKeyGestureLeft()
         {
-            gameService.SetKeyCode(GameEngine.KEY_CODE_LEFT);
+            gameService.SetKeyCode(FsmGameEngine.KEY_CODE_LEFT);
         }
 
         private void OnKeyGestureRight()
         {
-            gameService.SetKeyCode(GameEngine.KEY_CODE_RIGHT);
+            gameService.SetKeyCode(FsmGameEngine.KEY_CODE_RIGHT);
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)

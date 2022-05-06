@@ -341,6 +341,9 @@
         }
       },
       "Mov.Authorizer.Service/1.0.0": {
+        "dependencies": {
+          "Mov.Authorizer.Repository": "1.0.0"
+        },
         "runtime": {
           "Mov.Authorizer.Service.dll": {}
         }
@@ -410,6 +413,9 @@
         }
       },
       "Mov.Configurator.Service/1.0.0": {
+        "dependencies": {
+          "Mov.Configurator.Repository": "1.0.0"
+        },
         "runtime": {
           "Mov.Configurator.Service.dll": {}
         }

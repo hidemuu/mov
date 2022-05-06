@@ -26,7 +26,7 @@ namespace Mov.Designer.ViewModels.Models
         /// <summary>
         /// 名称
         /// </summary>
-        public ReactivePropertySlim<string> Name { get; } = new ReactivePropertySlim<string>();
+        public ReactivePropertySlim<string> Name { get; } = new ReactivePropertySlim<string>("TBD");
 
         /// <summary>
         /// 子階層

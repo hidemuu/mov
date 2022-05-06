@@ -1,0 +1,9 @@
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.repository\bin\Debug\netstandard2.0\Mov.Driver.Repository.deps.json
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.repository\bin\Debug\netstandard2.0\Mov.Driver.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.repository\bin\Debug\netstandard2.0\Mov.Driver.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.repository\obj\Debug\netstandard2.0\Driver.Repository.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.repository\obj\Debug\netstandard2.0\Driver.Repository.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.repository\obj\Debug\netstandard2.0\Driver.Repository.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.repository\obj\Debug\netstandard2.0\Driver.Repository.csproj.CoreCompileInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.repository\obj\Debug\netstandard2.0\Mov.Driver.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.repository\obj\Debug\netstandard2.0\Mov.Driver.Repository.pdb

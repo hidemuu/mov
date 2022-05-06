@@ -44,7 +44,7 @@ namespace Mov.Game.Models.Characters
         /// <summary>
         /// ゲームエンジン
         /// </summary>
-        protected GameEngine GameEngine { get; private set; }
+        protected FsmGameEngine GameEngine { get; private set; }
         /// <summary>
         /// 方向
         /// </summary>
@@ -68,7 +68,7 @@ namespace Mov.Game.Models.Characters
         /// コンストラクタ
         /// </summary>
         /// <param name="gameEngine"></param>
-        public CharacterBase(GameEngine gameEngine)
+        public CharacterBase(FsmGameEngine gameEngine)
         {
             this.GameEngine = gameEngine;
         }

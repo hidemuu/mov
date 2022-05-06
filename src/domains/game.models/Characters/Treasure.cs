@@ -19,7 +19,7 @@ namespace Mov.Game.Models.Characters
 
         #region コンストラクター
 
-        public Treasure(GameEngine gameEngine) : base(gameEngine)
+        public Treasure(FsmGameEngine gameEngine) : base(gameEngine)
         {
         }
 

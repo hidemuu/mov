@@ -6,4 +6,8 @@
     <RootNamespace>Mov.Authorizer.Service</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\authorizer.repository\Authorizer.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

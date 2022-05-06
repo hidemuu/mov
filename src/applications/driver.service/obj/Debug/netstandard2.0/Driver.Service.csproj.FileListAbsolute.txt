@@ -1,0 +1,9 @@
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Driver.Service.deps.json
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Driver.Service.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Driver.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Driver.Service.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Driver.Service.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Driver.Service.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Driver.Service.csproj.CoreCompileInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Mov.Driver.Service.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Mov.Driver.Service.pdb

@@ -15,7 +15,7 @@ namespace Mov.Game.ViewModels
     {
         #region フィールド
 
-        private IGameService gameService;
+        private IMachineGameService gameService;
 
         #endregion フィールド
 
@@ -37,7 +37,7 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public GameTitleViewModel(IRegionManager regionManager, IGameService gameService)
+        public GameTitleViewModel(IRegionManager regionManager, IMachineGameService gameService)
         {
             this.RegionManager = regionManager;
             this.gameService = gameService;

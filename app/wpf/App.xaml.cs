@@ -15,7 +15,6 @@ using Mov.Designer.Views;
 using Mov.Game.Models.interfaces;
 using Mov.Game.Repository;
 using Mov.Game.Service;
-using Mov.Game.ViewModels.Services;
 using Mov.Game.ViewModels;
 using Mov.Game.Views;
 using Mov.Scheduler.ViewModels;
@@ -46,6 +45,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Mov.Game.Views.Dialogs;
 using Mov.Game.ViewModels.Dialogs;
+using Mov.Game.Service.Machines;
 
 namespace Mov.Wpf
 {
@@ -128,7 +128,7 @@ namespace Mov.Wpf
             containerRegistry.RegisterInstance<IGameRepositoryCollection>(new GameRepositoryCollection(resourcePath, "json"));
             
             //サービスの登録
-            containerRegistry.RegisterInstance<IGameService>(Container.Resolve<GameService>());
+            containerRegistry.RegisterInstance<IMachineGameService>(Container.Resolve<PackmanGameService>());
 
             //Viewの登録
             containerRegistry.RegisterForNavigation<ConfiguratorView>();

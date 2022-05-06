@@ -346,7 +346,11 @@
         "frameworks": {
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\authorizer.repository\\Authorizer.Repository.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\authorizer.repository\\Authorizer.Repository.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -486,7 +490,11 @@
         "frameworks": {
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\configurator.repository\\Configurator.Repository.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\configurator.repository\\Configurator.Repository.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

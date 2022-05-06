@@ -15,7 +15,7 @@ namespace Mov.Game.Models.Characters
         #region フィールド
 
         private int len;
-        private GameEngine gameEngine;
+        private FsmGameEngine gameEngine;
         private int[,] map;
         private LinkedList<Position> positions = new LinkedList<Position>();
         private int[,] dirOffset = { { 1, 0 }, { 0, 1 }, { -1, 0 }, { 0, -1 } };
@@ -36,7 +36,7 @@ namespace Mov.Game.Models.Characters
         /// <param name="gameEngine"></param>
         /// <param name="mapRow"></param>
         /// <param name="mapCol"></param>
-        public Breadcrumbs(int len, GameEngine gameEngine, int mapRow, int mapCol)
+        public Breadcrumbs(int len, FsmGameEngine gameEngine, int mapRow, int mapCol)
         {
             this.len = len;
             this.gameEngine = gameEngine;

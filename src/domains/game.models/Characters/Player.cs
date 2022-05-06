@@ -42,7 +42,7 @@ namespace Mov.Game.Models.Characters
         /// コンストラクタ
         /// </summary>
         /// <param name="gameEngine"></param>
-        public Player(GameEngine gameEngine) : base(gameEngine)
+        public Player(FsmGameEngine gameEngine) : base(gameEngine)
         {
         }
 
@@ -68,10 +68,10 @@ namespace Mov.Game.Models.Characters
             //押されているキーに対する処理
             switch (GameEngine.KeyCode)
             {
-                case GameEngine.KEY_CODE_LEFT: dx = -1; break;
-                case GameEngine.KEY_CODE_RIGHT: dx = 1; break;
-                case GameEngine.KEY_CODE_UP: dy = -1; break;
-                case GameEngine.KEY_CODE_DOWN: dy = 1; break;
+                case FsmGameEngine.KEY_CODE_LEFT: dx = -1; break;
+                case FsmGameEngine.KEY_CODE_RIGHT: dx = 1; break;
+                case FsmGameEngine.KEY_CODE_UP: dy = -1; break;
+                case FsmGameEngine.KEY_CODE_DOWN: dy = 1; break;
                 default: return false;
             }
 

@@ -167,6 +167,9 @@
       "Mov.Authorizer.Service/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Authorizer.Repository": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Mov.Authorizer.Service.dll": {}
         },
@@ -239,6 +242,9 @@
       "Mov.Configurator.Service/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Configurator.Repository": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Mov.Configurator.Service.dll": {}
         },

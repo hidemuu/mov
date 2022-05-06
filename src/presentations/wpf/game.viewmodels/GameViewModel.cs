@@ -25,7 +25,7 @@ namespace Mov.Game.ViewModels
 
         private readonly IDialogService dialogService;
 
-        private readonly IGameService gameService;
+        private readonly IMachineGameService gameService;
         private Bitmap bitmap;
         private Graphics graphics;
         private CompositeDisposable disposables = new CompositeDisposable();
@@ -48,7 +48,7 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public GameViewModel(IRegionManager regionManager, IDialogService dialogService, IGameService gameService)
+        public GameViewModel(IRegionManager regionManager, IDialogService dialogService, IMachineGameService gameService)
         {
             this.RegionManager = regionManager;
             this.dialogService = dialogService;

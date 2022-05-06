@@ -25,3 +25,10 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\authorizer.service\obj\Debu
 C:\Users\nando\Documents\GitHub\mov\src\applications\authorizer.service\obj\Debug\netstandard2.0\Mov.Authorizer.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\authorizer.service\obj\Debug\netstandard2.0\Mov.Authorizer.Service.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\authorizer.service\obj\Debug\netstandard2.0\Authorizer.Service.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\authorizer.service\bin\Debug\netstandard2.0\Mov.Accessors.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\authorizer.service\bin\Debug\netstandard2.0\Mov.Authorizer.Models.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\authorizer.service\bin\Debug\netstandard2.0\Mov.Authorizer.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\authorizer.service\bin\Debug\netstandard2.0\Mov.Authorizer.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\authorizer.service\bin\Debug\netstandard2.0\Mov.Accessors.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\authorizer.service\bin\Debug\netstandard2.0\Mov.Authorizer.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\authorizer.service\obj\Debug\netstandard2.0\Authorizer.Service.csproj.CopyComplete

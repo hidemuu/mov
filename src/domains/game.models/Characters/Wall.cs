@@ -20,7 +20,7 @@ namespace Mov.Game.Models.Characters
 
         #region コンストラクター
 
-        public Wall(GameEngine gameEngine) : base(gameEngine)
+        public Wall(FsmGameEngine gameEngine) : base(gameEngine)
         {
         }
 

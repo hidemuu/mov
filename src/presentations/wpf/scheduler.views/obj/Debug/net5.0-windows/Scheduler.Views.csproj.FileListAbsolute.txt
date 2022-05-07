@@ -31,4 +31,3 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.views\obj\De
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.views\obj\Debug\net5.0-windows\Mov.Scheduler.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.views\obj\Debug\net5.0-windows\ref\Mov.Scheduler.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.views\obj\Debug\net5.0-windows\Mov.Scheduler.Views.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.views\obj\Debug\net5.0-windows\Scheduler.Views.csproj.AssemblyReference.cache

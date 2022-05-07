@@ -1,7 +1,6 @@
 C:\Users\nando\Documents\GitHub\mov\src\domains\driver.models\bin\Debug\netstandard2.0\Mov.Driver.Models.deps.json
 C:\Users\nando\Documents\GitHub\mov\src\domains\driver.models\bin\Debug\netstandard2.0\Mov.Driver.Models.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\driver.models\bin\Debug\netstandard2.0\Mov.Driver.Models.pdb
-C:\Users\nando\Documents\GitHub\mov\src\domains\driver.models\obj\Debug\netstandard2.0\Driver.Models.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\domains\driver.models\obj\Debug\netstandard2.0\Driver.Models.AssemblyInfoInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\domains\driver.models\obj\Debug\netstandard2.0\Driver.Models.AssemblyInfo.cs
 C:\Users\nando\Documents\GitHub\mov\src\domains\driver.models\obj\Debug\netstandard2.0\Driver.Models.csproj.CoreCompileInputs.cache

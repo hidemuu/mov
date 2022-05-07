@@ -53,7 +53,7 @@ namespace Mov.Authorizer.Views.Dialogs.Contents {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mov.Authorizer.Views;V1.0.0.0;component/dialogs/contents/createaccountview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mov.Authorizer.Views;component/dialogs/contents/createaccountview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Dialogs\Contents\CreateAccountView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

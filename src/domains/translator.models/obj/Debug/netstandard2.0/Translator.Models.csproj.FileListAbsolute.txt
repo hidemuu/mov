@@ -15,10 +15,10 @@ C:\Users\nando\Documents\GitHub\mov\src\domains\translator.models\bin\Debug\nets
 C:\Users\nando\Documents\GitHub\mov\src\domains\translator.models\bin\Debug\netstandard2.0\Mov.Translator.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\domains\translator.models\bin\Debug\netstandard2.0\Mov.Accessors.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\translator.models\bin\Debug\netstandard2.0\Mov.Accessors.pdb
+C:\Users\nando\Documents\GitHub\mov\src\domains\translator.models\obj\Debug\netstandard2.0\Translator.Models.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\domains\translator.models\obj\Debug\netstandard2.0\Translator.Models.AssemblyInfoInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\domains\translator.models\obj\Debug\netstandard2.0\Translator.Models.AssemblyInfo.cs
 C:\Users\nando\Documents\GitHub\mov\src\domains\translator.models\obj\Debug\netstandard2.0\Translator.Models.csproj.CoreCompileInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\domains\translator.models\obj\Debug\netstandard2.0\Translator.Models.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\domains\translator.models\obj\Debug\netstandard2.0\Mov.Translator.Models.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\translator.models\obj\Debug\netstandard2.0\Mov.Translator.Models.pdb
-C:\Users\nando\Documents\GitHub\mov\src\domains\translator.models\obj\Debug\netstandard2.0\Translator.Models.csproj.AssemblyReference.cache

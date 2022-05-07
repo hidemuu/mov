@@ -53,7 +53,7 @@ namespace Mov.Authorizer.Views.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mov.Authorizer.Views;V1.0.0.0;component/pages/usertableview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mov.Authorizer.Views;component/pages/usertableview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\UserTableView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

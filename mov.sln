@@ -91,8 +91,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "presentations", "presentati
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wpf", "wpf", "{C849D8F6-439F-467D-A7A8-8996F6ECF9E4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ts", "ts", "{6D0286D1-E112-4BE5-A96B-FE5FAF83192A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Asp", "app\Asp\Asp.csproj", "{247C1D7D-DFE0-4E98-B8D5-D4D02795F26C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pages", "pages", "{358B5A71-E6E3-45BC-B4AC-D69904811509}"
@@ -115,11 +113,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Views", "src\presentat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Service.Test", "src\applications\game.service.test\Game.Service.Test.csproj", "{353CD44C-5079-4747-B13D-8A9B9036F37F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Models", "src\domains\driver.models\Driver.Models.csproj", "{6053982A-A697-45D4-9501-D16183E0BB37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Models", "src\domains\driver.models\Driver.Models.csproj", "{6053982A-A697-45D4-9501-D16183E0BB37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Repository", "src\applications\driver.repository\Driver.Repository.csproj", "{1B745B07-EBEF-41A4-A8E2-1555D878D690}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Repository", "src\applications\driver.repository\Driver.Repository.csproj", "{1B745B07-EBEF-41A4-A8E2-1555D878D690}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Service", "src\applications\driver.service\Driver.Service.csproj", "{C47F2C6B-2A03-4280-91FE-6B3A201DDBC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Service", "src\applications\driver.service\Driver.Service.csproj", "{C47F2C6B-2A03-4280-91FE-6B3A201DDBC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -369,7 +367,6 @@ Global
 		{F450BFE0-7F0F-496C-9BF6-8D349A2F3584} = {378C4934-8725-4F0C-9C6E-3EC35A6BA68F}
 		{36380A23-6F9F-4225-A693-DBF4E98630F7} = {378C4934-8725-4F0C-9C6E-3EC35A6BA68F}
 		{C849D8F6-439F-467D-A7A8-8996F6ECF9E4} = {36380A23-6F9F-4225-A693-DBF4E98630F7}
-		{6D0286D1-E112-4BE5-A96B-FE5FAF83192A} = {36380A23-6F9F-4225-A693-DBF4E98630F7}
 		{247C1D7D-DFE0-4E98-B8D5-D4D02795F26C} = {44D8CB57-D8CB-4568-A249-AFE8C987AB6F}
 		{358B5A71-E6E3-45BC-B4AC-D69904811509} = {C849D8F6-439F-467D-A7A8-8996F6ECF9E4}
 		{A90063AA-3D0F-4D58-868B-79E677D82119} = {438402C2-B5EF-4CB6-9BFB-EDA2D4132DE4}

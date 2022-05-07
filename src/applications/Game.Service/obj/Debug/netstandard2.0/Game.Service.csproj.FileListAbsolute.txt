@@ -1,11 +1,6 @@
-C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Service\bin\Debug\netstandard2.0\Mov.Game.Service.deps.json
-C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Service\bin\Debug\netstandard2.0\Mov.Game.Service.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Service\bin\Debug\netstandard2.0\Mov.Game.Service.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Service\obj\Debug\netstandard2.0\Game.Service.AssemblyInfoInputs.cache
-C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Service\obj\Debug\netstandard2.0\Game.Service.AssemblyInfo.cs
-C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Service\obj\Debug\netstandard2.0\Game.Service.csproj.CoreCompileInputs.cache
-C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Service\obj\Debug\netstandard2.0\Mov.Game.Service.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\Game.Service\obj\Debug\netstandard2.0\Mov.Game.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Game.Service.deps.json
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Game.Service.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Game.Service.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Accessors.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Game.Models.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Game.Repository.dll
@@ -13,4 +8,9 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\nets
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Game.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Accessors.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\obj\Debug\netstandard2.0\Game.Service.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\obj\Debug\netstandard2.0\Game.Service.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\obj\Debug\netstandard2.0\Game.Service.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\obj\Debug\netstandard2.0\Game.Service.csproj.CoreCompileInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\obj\Debug\netstandard2.0\Game.Service.csproj.CopyComplete
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\obj\Debug\netstandard2.0\Mov.Game.Service.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\obj\Debug\netstandard2.0\Mov.Game.Service.pdb

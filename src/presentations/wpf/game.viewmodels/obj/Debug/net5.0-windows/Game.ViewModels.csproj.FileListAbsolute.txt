@@ -1,3 +1,8 @@
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Assets\Fonts\iconfont.ttf
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Assets\Photos\alter.png
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Assets\Photos\home.png
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Assets\Photos\push.png
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Assets\Photos\success.png
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Game.ViewModels.deps.json
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Game.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\ref\Mov.Game.ViewModels.dll
@@ -6,12 +11,14 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\De
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Game.Models.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Game.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Game.Service.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.WpfDesigns.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.WpfViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Game.Service.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.WpfViewModels.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Accessors.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Game.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Game.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.WpfDesigns.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\obj\Debug\net5.0-windows\Game.ViewModels.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\obj\Debug\net5.0-windows\Game.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\obj\Debug\net5.0-windows\Game.ViewModels.AssemblyInfoInputs.cache
@@ -21,10 +28,3 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\obj\De
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\obj\Debug\net5.0-windows\Mov.Game.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\obj\Debug\net5.0-windows\ref\Mov.Game.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\obj\Debug\net5.0-windows\Mov.Game.ViewModels.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Assets\Fonts\iconfont.ttf
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Assets\Photos\alter.png
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Assets\Photos\home.png
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Assets\Photos\push.png
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Assets\Photos\success.png
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.WpfDesigns.dll
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.WpfDesigns.pdb

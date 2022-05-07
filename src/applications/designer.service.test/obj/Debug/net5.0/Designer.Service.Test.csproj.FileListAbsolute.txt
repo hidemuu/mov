@@ -1,11 +1,11 @@
-C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service.test\bin\Debug\net5.0\testhost.exe
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service.test\bin\Debug\net5.0\testhost.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service.test\bin\Debug\net5.0\testhost.exe
+C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service.test\bin\Debug\net5.0\Microsoft.TestPlatform.PlatformAbstractions.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service.test\bin\Debug\net5.0\NUnit3.TestAdapter.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service.test\bin\Debug\net5.0\NUnit3.TestAdapter.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service.test\bin\Debug\net5.0\nunit.engine.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service.test\bin\Debug\net5.0\nunit.engine.api.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service.test\bin\Debug\net5.0\nunit.engine.core.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service.test\bin\Debug\net5.0\Microsoft.TestPlatform.PlatformAbstractions.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service.test\bin\Debug\net5.0\Mov.Designer.Service.Test.deps.json
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service.test\bin\Debug\net5.0\Mov.Designer.Service.Test.runtimeconfig.json
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service.test\bin\Debug\net5.0\Mov.Designer.Service.Test.runtimeconfig.dev.json

@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 
 namespace Mov.Accessors
 {
-    public class XmlFileSerializer : IFileSerializer
+    public class XmlFileSerializer : ISerializer
     {
         private const string EXTENSION = ".xml";
         private string path;

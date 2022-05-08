@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Accessors
 {
-    public abstract class FileSerializerBase : IFileSerializer
+    public abstract class FileSerializerBase : ISerializer
     {
         #region フィールド
 

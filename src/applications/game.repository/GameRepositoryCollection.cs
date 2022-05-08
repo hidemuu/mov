@@ -16,9 +16,10 @@ namespace Mov.Game.Repository
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public GameRepositoryCollection(string resourceDir, string extension, string encoding = "utf-8") : base(resourceDir, extension)
+        public GameRepositoryCollection(string resourceDir, string extension, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
         {
             Landmarks = new LandmarkRepository(GetRepositoryPath("landmark"), encoding);
+            DrawItems = new DrawItemRepository(GetRepositoryPath("draw_item"), encoding);
         }
 
         #endregion コンストラクター
@@ -26,6 +27,8 @@ namespace Mov.Game.Repository
         #region プロパティ
 
         public FileRepositoryBase<Landmark, LandmarkCollection> Landmarks { get; }
+
+        public FileRepositoryBase<DrawItem, DrawItemCollection> DrawItems { get; }
 
         #endregion プロパティ
     }

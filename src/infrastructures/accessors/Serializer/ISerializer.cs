@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Accessors
 {
-    public interface IFileSerializer
+    public interface ISerializer
     {
         T Read<T>();
         void Write<T>(T obj);

@@ -7,6 +7,14 @@ using System.Xml.Serialization;
 
 namespace Mov.Translator.Models
 {
+    [XmlRoot("translators")]
+    public class TranslatorObjectCollection : DbObjectCollection<TranslatorObject>
+    {
+        [XmlElement(Type = typeof(TranslatorObject), ElementName = "translator")]
+        public override TranslatorObject[] Items { get; set; }
+    }
+
+    [XmlRoot("translator")]
     public class TranslatorObject : DbObject
     {
         /// <summary>

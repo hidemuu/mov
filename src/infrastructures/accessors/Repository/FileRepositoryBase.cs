@@ -13,7 +13,7 @@ namespace Mov.Accessors
     /// ファイルリポジトリ基本クラス
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class FileRepositoryBase<T, C> where T : DbObject where C : DbObjectCollection<T>
+    public abstract class FileRepositoryBase<T, C> : IRepository<T> where T : DbObject where C : DbObjectCollection<T>
     {
         #region 定数
 
@@ -29,7 +29,7 @@ namespace Mov.Accessors
 
         #region フィールド
 
-        protected readonly IFileSerializer fileSerializer;
+        protected readonly ISerializer fileSerializer;
 
         private C collection = null;
 
@@ -38,7 +38,7 @@ namespace Mov.Accessors
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FileRepositoryBase(string path, string encoding = "utf-8")
+        public FileRepositoryBase(string path, string encoding = DbConstants.ENCODE_NAME_UTF8)
         {
             var extension = System.IO.Path.GetExtension(path);
             if (string.IsNullOrEmpty(extension)) Debug.Assert(false);
@@ -141,6 +141,6 @@ namespace Mov.Accessors
             }
         }
 
-        #endregion
+        #endregion 内部メソッド
     }
 }

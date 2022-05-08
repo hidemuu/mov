@@ -7,6 +7,6 @@ namespace Mov.Game.Repository
 {
     public class LandmarkRepository : FileRepositoryBase<Landmark, LandmarkCollection>
     {
-        public LandmarkRepository(string path, string encoding = "utf-8") : base(path, encoding) { }
+        public LandmarkRepository(string path, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(path, encoding) { }
     }
 }

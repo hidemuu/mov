@@ -24,3 +24,10 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\translator.service\obj\Debu
 C:\Users\nando\Documents\GitHub\mov\src\applications\translator.service\obj\Debug\netstandard2.0\Mov.Translator.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\translator.service\obj\Debug\netstandard2.0\Mov.Translator.Service.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\translator.service\obj\Debug\netstandard2.0\Translator.Service.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\translator.service\bin\Debug\netstandard2.0\Mov.Accessors.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\translator.service\bin\Debug\netstandard2.0\Mov.Translator.Models.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\translator.service\bin\Debug\netstandard2.0\Mov.Translator.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\translator.service\bin\Debug\netstandard2.0\Mov.Translator.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\translator.service\bin\Debug\netstandard2.0\Mov.Accessors.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\translator.service\bin\Debug\netstandard2.0\Mov.Translator.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\translator.service\obj\Debug\netstandard2.0\Translator.Service.csproj.CopyComplete

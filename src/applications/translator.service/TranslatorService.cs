@@ -2,7 +2,7 @@
 
 namespace Mov.Translator.Service
 {
-    public class Class1
+    public class TranslatorService
     {
     }
 }

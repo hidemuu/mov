@@ -5,9 +5,9 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Accessors.Serializer.Database
+namespace Mov.Accessors.Serializer
 {
-    public class HttpSerializer : IDatabaseSerializer
+    public class HttpSerializer
     {
         /// <summary>           
         /// The Base URL for the API.

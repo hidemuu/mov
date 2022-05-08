@@ -10,12 +10,12 @@ namespace Mov.Translator.Repository
 {
     public class TranslatorRepositoryCollection : FileRepositoryCollectionBase, ITranslatorRepositoryCollection
     {
-        public TranslatorRepositoryCollection(string resourceDir, string extension, string encoding = "utf-8") : base(resourceDir, extension)
+        public TranslatorRepositoryCollection(string resourceDir, string extension, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
         {
-            Comments = new CommentRepository(GetRepositoryPath("comment"), encoding);
+            Comments = new TranslatorObjectRepository(GetRepositoryPath("comment"), encoding);
         }
 
-        public ICommentRepository Comments { get; }
-
+        public FileRepositoryBase<TranslatorObject, TranslatorObjectCollection> Comments { get; }
+        
     }
 }

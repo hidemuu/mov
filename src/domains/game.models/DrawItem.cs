@@ -14,5 +14,7 @@ namespace Mov.Game.Models
 
     public class DrawItem : DbObject
     {
+        [JsonProperty("category")]
+        public string Category { get; set; }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Accessors
 {
-    public class InMemorySerializer : IFileSerializer
+    public class InMemorySerializer : ISerializer
     {
 
         /// <summary>

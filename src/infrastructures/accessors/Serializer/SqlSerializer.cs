@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Accessors.Serializer.Database
+namespace Mov.Accessors.Serializer
 {
-    public interface IDatabaseSerializer
+    public class SqlSerializer
     {
     }
 }

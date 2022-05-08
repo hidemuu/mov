@@ -8,14 +8,7 @@ namespace Mov.Accessors
 {
     public class DbObject
     {
-        #region 定数
-
-        public const string SPACE = " ";
-
-        public const char DELIMITER = ',';
-
-        #endregion
-
+        
         #region プロパティ
 
         /// <summary>

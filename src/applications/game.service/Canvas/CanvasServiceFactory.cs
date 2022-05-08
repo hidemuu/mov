@@ -6,5 +6,10 @@ namespace Mov.Game.Service.Canvas
 {
     public class CanvasServiceFactory
     {
+
+        public CanvasServiceBase Create(string code)
+        {
+            return Activator.CreateInstance<CanvasServiceBase>();
+        }
     }
 }

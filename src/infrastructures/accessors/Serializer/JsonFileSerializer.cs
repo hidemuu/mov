@@ -9,7 +9,7 @@ namespace Mov.Accessors
     /// <summary>
     /// Jsonファイルのシリアライザー
     /// </summary>
-    public class JsonFileSerializer : IFileSerializer
+    public class JsonFileSerializer : ISerializer
     {
         #region フィールド
 

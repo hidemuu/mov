@@ -82,3 +82,7 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Mov.Configurator.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\ref\Mov.Configurator.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Mov.Configurator.Views.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\ConfiguratorTableView.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\ConfiguratorTreeView.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\ConfiguratorTableView.baml
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\ConfiguratorTreeView.baml

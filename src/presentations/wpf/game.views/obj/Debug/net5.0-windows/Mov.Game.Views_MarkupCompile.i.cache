@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 
-7-675215127
+7-1692160170
 
-10-1356937155
+10-1467731735
 223-647303585
-Dialogs\GameOverDialog.xaml;Dialogs\StageClearDialog.xaml;GameCanvasView.xaml;GameConfigView.xaml;GameMainView.xaml;GameTitleView.xaml;GameView.xaml;
+Dialogs\GameOverDialog.xaml;Dialogs\StageClearDialog.xaml;GameCanvasView.xaml;GameConfigView.xaml;GameMainView.xaml;GameMapView.xaml;GameTitleView.xaml;
 
-False
+True
 

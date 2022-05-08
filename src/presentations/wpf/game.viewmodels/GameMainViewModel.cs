@@ -1,4 +1,5 @@
 using Mov.Game.Models;
+using Mov.Game.Models.Engines;
 using Mov.Game.Service;
 using Mov.Game.ViewModels.Models;
 using Prism.Mvvm;
@@ -30,7 +31,7 @@ namespace Mov.Game.ViewModels
 
         #region プロパティ
 
-        public MainWindowModel Models { get; } = new MainWindowModel();
+        public GameMainModel Models { get; } = new GameMainModel();
         public IRegionManager RegionManager { get; }
         public bool KeepAlive => true;
 

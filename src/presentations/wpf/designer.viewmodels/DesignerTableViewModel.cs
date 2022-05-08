@@ -43,14 +43,14 @@ namespace Mov.Designer.ViewModels
 
         #endregion コンストラクター
 
-        #region イベント
+        #region イベントハンドラ
 
         protected override void OnLoaded()
         {
 
         }
 
-        #endregion イベント
+        #endregion イベントハンドラ
 
         #region クラス
 

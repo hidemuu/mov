@@ -14,7 +14,7 @@
     <Page Update="GameConfigView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="GameView.xaml">
+    <Page Update="GameMapView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GameMainView.xaml">

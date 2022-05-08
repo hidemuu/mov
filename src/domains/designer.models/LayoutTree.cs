@@ -20,13 +20,13 @@ namespace Mov.Designer.Models
         #region プロパティ
 
         [XmlElement("layouttype")]
-        public LayoutType LayoutType { get; set; }
+        public LayoutType LayoutType { get; set; } = LayoutType.Content;
 
         public string LayoutStyle { get; set; }
 
         public string LayoutParameter { get; set; }
 
-        public bool IsExpand { get; set; }
+        public bool IsExpand { get; set; } = true;
 
         [XmlArray("children")]
         [XmlArrayItem("layout")]

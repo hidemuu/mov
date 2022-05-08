@@ -6,8 +6,4 @@
     <RootNamespace>Mov.Utilities</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Converter\" />
-  </ItemGroup>
-
 </Project>

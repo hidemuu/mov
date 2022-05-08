@@ -45,7 +45,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Mov.Game.Views.Dialogs;
 using Mov.Game.ViewModels.Dialogs;
-using Mov.Game.Service.Machines;
+using Mov.Game.Service.Machine;
 
 namespace Mov.Wpf
 {
@@ -148,7 +148,7 @@ namespace Mov.Wpf
             containerRegistry.RegisterForNavigation<GameTitleView>();
             containerRegistry.RegisterForNavigation<GameConfigView>();
             containerRegistry.RegisterForNavigation<GameCanvasView>();
-            containerRegistry.RegisterForNavigation<GameView>();
+            containerRegistry.RegisterForNavigation<GameMapView>();
 
             //Dialogの登録
             containerRegistry.RegisterDialog<AlertDialog, AlertDialogViewModel>();
@@ -200,7 +200,7 @@ namespace Mov.Wpf
             ViewModelLocationProvider.Register<SchedulerView, SchedulerViewModel>();
             ViewModelLocationProvider.Register<TranslatorView, TranslatorViewModel>();
             ViewModelLocationProvider.Register<GameMainView, GameMainViewModel>();
-            ViewModelLocationProvider.Register<GameView, GameViewModel>();
+            ViewModelLocationProvider.Register<GameMapView, GameMapViewModel>();
             ViewModelLocationProvider.Register<GameTitleView, GameTitleViewModel>();
             ViewModelLocationProvider.Register<GameConfigView, GameConfigViewModel>();
             ViewModelLocationProvider.Register<GameCanvasView, GameCanvasViewModel>();

@@ -12,7 +12,7 @@ using System.Windows.Controls;
 
 namespace Mov.Designer.Views.Selector
 {
-    internal class LayoutSelector : DataTemplateSelector
+    public class LayoutSelector : DataTemplateSelector
     {
         #region プロパティ
 

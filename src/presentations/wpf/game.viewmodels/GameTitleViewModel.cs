@@ -31,6 +31,7 @@ namespace Mov.Game.ViewModels
         #region コマンド
 
         public ReactiveCommand StartCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand CanvasCommand { get; } = new ReactiveCommand();
         public ReactiveCommand ConfigCommand { get; } = new ReactiveCommand();
 
         #endregion コマンド
@@ -42,6 +43,7 @@ namespace Mov.Game.ViewModels
             this.RegionManager = regionManager;
             this.gameService = gameService;
             StartCommand.Subscribe(OnStartCommand);
+            CanvasCommand.Subscribe(OnCanvasCommand);
             ConfigCommand.Subscribe(OnConfigCommand);
             Levels.AddRangeOnScheduler(gameService.GetLevels());
             SelectedLevel.Where(x => x > 0).Subscribe(OnLevelSelectChanged);
@@ -54,12 +56,17 @@ namespace Mov.Game.ViewModels
         private void OnStartCommand()
         {
             if(SelectedLevel.Value > 0) this.gameService.SetLevel(SelectedLevel.Value);
-            this.RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_GAME);
+            this.RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_MAP);
         }
 
         private void OnConfigCommand()
         {
             this.RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_CONFIG);
+        }
+
+        private void OnCanvasCommand()
+        {
+            this.RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_CANVAS);
         }
 
         private void OnLevelSelectChanged(int lv)

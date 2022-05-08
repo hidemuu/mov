@@ -1,5 +1,6 @@
 ﻿using Mov.Accessors;
 using Mov.Accessors.Repository;
+using Mov.Game.Models;
 using Mov.Game.Models.interfaces;
 using Mov.Game.Models.Maps;
 using System;

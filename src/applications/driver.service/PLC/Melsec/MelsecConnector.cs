@@ -569,7 +569,7 @@ namespace Mov.Driver.Service.PLC.Melsec
         {
             int iReturnCode;				//コントロールのメソッドの戻り値
             String szDeviceName = "";		//デバイス名文字列
-            int iNumberOfData = 0;			//データサイズ
+            //int iNumberOfData = 0;			//データサイズ
             short[] arrDeviceValue;		        //デバイス値格納用配列
             int iNumber;					//ループ用カウンタ
             int iSizeOfIntArray;		//Int型配列のサイズ

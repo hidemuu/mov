@@ -23,7 +23,7 @@ namespace Mov.Designer.ViewModels
 
         #region プロパティ
 
-        public ReactiveCollection<DesignerPartsModel> Models = new ReactiveCollection<DesignerPartsModel>();
+        public ReactiveCollection<DesignerPartsModel> Models { get; } = new ReactiveCollection<DesignerPartsModel>();
 
         #endregion プロパティ
 

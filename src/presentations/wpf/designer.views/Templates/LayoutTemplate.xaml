@@ -3,22 +3,32 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:selector="clr-namespace:Mov.Designer.Views.Selector">
 
-    <selector:LayoutSelector x:Key="layoutSelector">
-        <selector:LayoutSelector.ContentTemplate>
-            <DataTemplate />
-        </selector:LayoutSelector.ContentTemplate>
-        <selector:LayoutSelector.ExpanderTemplate>
-            <DataTemplate />
-        </selector:LayoutSelector.ExpanderTemplate>
-        <selector:LayoutSelector.ScrollbarTemplate>
-            <DataTemplate />
-        </selector:LayoutSelector.ScrollbarTemplate>
-        <selector:LayoutSelector.TabTemplate>
-            <DataTemplate />
-        </selector:LayoutSelector.TabTemplate>
-        <selector:LayoutSelector.HeaderTemplate>
-            <DataTemplate />
-        </selector:LayoutSelector.HeaderTemplate>
-    </selector:LayoutSelector>
+    <DataTemplate x:Key="ContentTemplate">
+        <StackPanel />
+    </DataTemplate>
+
+    <DataTemplate x:Key="ExpanderTemplate">
+        <StackPanel />
+    </DataTemplate>
+
+    <DataTemplate x:Key="ScrollbarTemplate">
+        <StackPanel />
+    </DataTemplate>
+
+    <DataTemplate x:Key="TabTemplate">
+        <StackPanel />
+    </DataTemplate>
+
+    <DataTemplate x:Key="HeaderTemplate">
+        <StackPanel />
+    </DataTemplate>
+
+    <selector:LayoutSelector
+        x:Key="layoutSelector"
+        ContentTemplate="{StaticResource ContentTemplate}"
+        ExpanderTemplate="{StaticResource ExpanderTemplate}"
+        HeaderTemplate="{StaticResource HeaderTemplate}"
+        ScrollbarTemplate="{StaticResource ScrollbarTemplate}"
+        TabTemplate="{StaticResource TabTemplate}" />
 
 </ResourceDictionary>

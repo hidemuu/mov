@@ -8,8 +8,8 @@ using System.Windows.Media.Imaging;
 
 namespace Mov.Game.ViewModels.Models
 {
-    public class GameCanvasModel : DrawModel
+    public class DrawModel
     {
-        
+        public ReactivePropertySlim<BitmapSource> ImageSource { get; set; } = new ReactivePropertySlim<BitmapSource>();
     }
 }

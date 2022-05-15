@@ -1,12 +1,12 @@
 {
   "users": [
     {
-      "id": 1,
+      "index": 1,
       "loginid": "admin",
       "password": "admin"
     },
     {
-      "id": 2,
+      "index": 2,
       "loginid": "test",
       "password": "test"
     }

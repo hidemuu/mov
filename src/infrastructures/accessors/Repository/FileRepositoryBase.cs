@@ -69,7 +69,7 @@ namespace Mov.Accessors
         
         public async Task<IEnumerable<T>> GetsAsync() => await Task.Run(Gets);
 
-        public T Get(int id) => Gets().FirstOrDefault(x => x.Id == id);
+        public T Get(int id) => Gets().FirstOrDefault(x => x.Index == id);
 
         public T Get(string code) => Gets().FirstOrDefault(x => x.Code == code);
 

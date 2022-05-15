@@ -8,7 +8,7 @@ namespace Mov.Accessors
 {
     public class DbObject
     {
-        
+
         #region プロパティ
 
         /// <summary>
@@ -16,7 +16,14 @@ namespace Mov.Accessors
         /// </summary>
         [JsonProperty("id")]
         [XmlElement("id")]
-        public int Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
+
+        /// <summary>
+        /// インデックス番号
+        /// </summary>
+        [JsonProperty("index")]
+        [XmlElement("index")]
+        public int Index { get; set; }
 
         /// <summary>
         /// コード

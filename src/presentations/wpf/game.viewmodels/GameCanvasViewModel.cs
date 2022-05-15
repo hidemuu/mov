@@ -21,88 +21,52 @@ using System.Windows.Media.Imaging;
 
 namespace Mov.Game.ViewModels
 {
-    public class GameCanvasViewModel : BindableBase
+    public class GameCanvasViewModel : DrawViewModelBase
     {
         #region フィールド
 
-        private readonly IDialogService dialogService;
-        private readonly IGameRepositoryCollection repository;
-
-        private readonly ICanvasService service;
-        private readonly CanvasServiceFactory serviceFactory;
+        private CanvasServiceFactory serviceFactory;
         
-        private Bitmap bitmap;
-        private Graphics graphics;
-        private CompositeDisposable disposables = new CompositeDisposable();
-
         #endregion フィールド
 
         #region プロパティ
 
-        public GameCanvasModel Model { get; } = new GameCanvasModel();
-        private IRegionManager RegionManager { get; }
-        public ReactiveTimer Timer { get; } = new ReactiveTimer(TimeSpan.FromMilliseconds(10), new SynchronizationContextScheduler(SynchronizationContext.Current));
+        public override DrawModel Model { get; } = new GameCanvasModel();
+        
+        protected override DrawServiceBase Service { get; set; }
 
         #endregion プロパティ
 
-        #region コマンド
-        public ReactiveCommand LoadedCommand { get; } = new ReactiveCommand();
-
-        #endregion コマンド
-
         #region コンストラクター
 
-        public GameCanvasViewModel(IRegionManager regionManager, IDialogService dialogService, IGameRepositoryCollection repository)
+        public GameCanvasViewModel(IRegionManager regionManager, IDialogService dialogService, IGameRepositoryCollection repository) : base(regionManager, dialogService, repository)
         {
-            this.RegionManager = regionManager;
-            this.dialogService = dialogService;
-            this.repository = repository;
 
-            this.serviceFactory = new CanvasServiceFactory(this.repository);
-            this.service = serviceFactory.Create("TreeCurve");
-
-            this.bitmap = new Bitmap(service.FrameWidth, service.FrameHeight);
-            this.graphics = Graphics.FromImage(bitmap);
-
-            LoadedCommand.Subscribe(() => OnLoadedCommand());
         }
 
         #endregion コンストラクター
 
-        #region イベントハンドラ
+        #region メソッド
 
-        private void OnLoadedCommand()
+        protected override void Initialize()
         {
-            // 定期更新スレッド
-            Timer.Subscribe(_ => OnTimer());
-            Timer.AddTo(disposables);
-            Timer.Start();
-
-            service.Initialize();
-            service.Run();
+            this.serviceFactory = new CanvasServiceFactory(this.repository);
+            this.Service = serviceFactory.Create("TreeCurve");
+            base.Initialize();
         }
 
-        private void OnTimer()
+        protected override void Update()
         {
-            this.service.Draw(graphics);
-            var hbitmap = bitmap.GetHbitmap();
-            //モデル生成
-            Model.ImageSource.Value = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hbitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-            DeleteObject(hbitmap);
+            base.Update();
         }
 
-        #endregion イベントハンドラ
+        protected override void Next()
+        {
+            base.Next();
+        }
 
-        #region 拡張メソッド
+        #endregion メソッド
 
-        /// <summary>
-        /// gdi32.dllのDeleteObjectメソッドの使用を宣言する
-        /// </summary>
-        /// <param name="hObject"></param>
-        /// <returns></returns>
-        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
-        public static extern bool DeleteObject(IntPtr hObject);
 
-        #endregion 拡張メソッド
     }
 }

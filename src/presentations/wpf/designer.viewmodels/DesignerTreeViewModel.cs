@@ -76,7 +76,7 @@ namespace Mov.Designer.ViewModels
             {
                 var item = new LayoutTree
                 {
-                    Id = model.Id.Value,
+                    Index = model.Id.Value,
                     Code = model.Code.Value,
                     IsExpand = model.IsExpand.Value,
                     LayoutStyle = model.LayoutStyle.Value,
@@ -106,7 +106,7 @@ namespace Mov.Designer.ViewModels
 
             public TreeModel(LayoutTree item)
             {
-                Id.Value = item.Id;
+                Id.Value = item.Index;
                 Code.Value = item.Code;
                 IsExpand.Value = item.IsExpand;
                 LayoutType.Value = item.LayoutType.ToString();

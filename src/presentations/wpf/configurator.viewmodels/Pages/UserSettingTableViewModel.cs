@@ -42,7 +42,7 @@ namespace Mov.Configurator.ViewModels
 
             #region プロパティ
 
-            public ReactivePropertySlim<int> Id => new ReactivePropertySlim<int>(userSetting.Id);
+            public ReactivePropertySlim<int> Id => new ReactivePropertySlim<int>(userSetting.Index);
             public ReactivePropertySlim<string> Category => new ReactivePropertySlim<string>(userSetting.Category);
             public ReactivePropertySlim<string> Code => new ReactivePropertySlim<string>(userSetting.Code);
             public ReactivePropertySlim<string> Name => new ReactivePropertySlim<string>(userSetting.Name);

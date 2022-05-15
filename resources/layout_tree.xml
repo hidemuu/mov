@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <layouts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <layout>
-    <id>0</id>
+    <index>0</index>
     <code>Root</code>
     <IsExpand>false</IsExpand>
     <children>
       <layout>
-        <id>1</id>
+        <index>1</index>
         <code>Test1</code>
         <IsExpand>false</IsExpand>
         <children>
           <layout>
-            <id>2</id>
+            <index>2</index>
             <code>Test12</code>
             <IsExpand>false</IsExpand>
             <children />
@@ -19,7 +19,7 @@
         </children>
       </layout>
       <layout>
-        <id>10</id>
+        <index>10</index>
         <code>Test2</code>
         <IsExpand>false</IsExpand>
         <children />

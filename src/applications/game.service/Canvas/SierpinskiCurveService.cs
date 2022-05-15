@@ -24,11 +24,6 @@ namespace Mov.Game.Service.Canvas
             base.Initialize();
         }
 
-        public override void Run()
-        {
-            base.Run();
-        }
-
         protected override void Ready()
         {
 

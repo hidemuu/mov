@@ -65,7 +65,7 @@ namespace Mov.Designer.ViewModels
             public ReactivePropertySlim<string> Parameter { get; } = new ReactivePropertySlim<string>();
             public TableModel(ContentTable item)
             {
-                Id.Value = item.Id;
+                Id.Value = item.Index;
                 Code.Value = item.Code;
                 Name.Value = item.Name;
                 Command.Value = item.Command;

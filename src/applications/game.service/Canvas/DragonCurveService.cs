@@ -25,11 +25,6 @@ namespace Mov.Game.Service.Canvas
             Engine.Move(150, 300); //開始位置へ移動
         }
 
-        public override void Run()
-        {
-            base.Run();
-        }
-
         protected override void Ready()
         {
             

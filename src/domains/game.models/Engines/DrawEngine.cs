@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Game.Models.Engines
 {
-    public class DrawGameEngine
+    public class DrawEngine
     {
         #region フィールド
 
@@ -22,7 +22,7 @@ namespace Mov.Game.Models.Engines
 
         #region コンストラクター
 
-        public DrawGameEngine()
+        public DrawEngine()
         {
         }
 
@@ -42,8 +42,8 @@ namespace Mov.Game.Models.Engines
 
         public void Forward(double len, double angle, Graphics graphics)
         {
-            var x = LastX + len + Math.Cos(angle);
-            var y = LastY + len + Math.Sin(angle);
+            var x = LastX + len * Math.Cos(angle);
+            var y = LastY + len * Math.Sin(angle);
             DrawLine(LastX, LastY, x, y, graphics);
             Move(x, y);
         }

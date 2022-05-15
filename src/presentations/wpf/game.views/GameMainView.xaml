@@ -31,24 +31,9 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <UserControl.InputBindings>
-        <KeyBinding Key="Enter" Command="{Binding KeyGestureEnterCommand}" />
-        <KeyBinding Key="Escape" Command="{Binding KeyGestureEscapeCommand}" />
-        <KeyBinding Key="Up" Command="{Binding KeyGestureUpCommand}" />
-        <KeyBinding
-            Key="Up"
-            Command="{Binding KeyGestureUpAndShiftCommand}"
-            Modifiers="Shift" />
-        <KeyBinding Key="Down" Command="{Binding KeyGestureDownCommand}" />
-        <KeyBinding Command="{Binding KeyGestureLeftCommand}" Gesture="Left" />
-        <KeyBinding Command="{Binding KeyGestureRightCommand}" Gesture="Right" />
-    </UserControl.InputBindings>
     <behaviors:Interaction.Triggers>
         <behaviors:EventTrigger EventName="Loaded">
             <behaviors:InvokeCommandAction Command="{Binding LoadedCommand}" />
-        </behaviors:EventTrigger>
-        <behaviors:EventTrigger EventName="KeyUp">
-            <behaviors:InvokeCommandAction Command="{Binding KeyUpCommand}" />
         </behaviors:EventTrigger>
     </behaviors:Interaction.Triggers>
     <DockPanel Margin="10">

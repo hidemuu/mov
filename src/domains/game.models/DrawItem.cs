@@ -16,5 +16,12 @@ namespace Mov.Game.Models
     {
         [JsonProperty("category")]
         public string Category { get; set; }
+        [JsonProperty("width")]
+        public int Width { get; set; } = 600;
+        [JsonProperty("height")]
+        public int Height { get; set; } = 600;
+        [JsonProperty("reflesh_rate")]
+        public double RefleshRate { get; set; } = 10;
+
     }
 }

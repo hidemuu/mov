@@ -40,15 +40,7 @@ namespace Mov.Game.ViewModels
         #region コマンド
 
         public ReactiveCommand LoadedCommand { get; } = new ReactiveCommand();
-        public ReactiveCommand KeyUpCommand { get; } = new ReactiveCommand();
-        public ReactiveCommand KeyGestureEnterCommand { get; } = new ReactiveCommand();
-        public ReactiveCommand KeyGestureEscapeCommand { get; } = new ReactiveCommand();
-        public ReactiveCommand KeyGestureUpCommand { get; } = new ReactiveCommand();
-        public ReactiveCommand KeyGestureUpAndShiftCommand { get; } = new ReactiveCommand();
-        public ReactiveCommand KeyGestureDownCommand { get; } = new ReactiveCommand();
-        public ReactiveCommand KeyGestureLeftCommand { get; } = new ReactiveCommand();
-        public ReactiveCommand KeyGestureRightCommand { get; } = new ReactiveCommand();
-
+        
         #endregion コマンド
 
         #region コンストラクター
@@ -63,14 +55,6 @@ namespace Mov.Game.ViewModels
             this.gameService = gameService;
 
             LoadedCommand.Subscribe(() => OnLoaded());
-            KeyUpCommand.Subscribe(() => OnKeyUp());
-            KeyGestureEnterCommand.Subscribe(() => OnKeyGestureEnter());
-            KeyGestureEscapeCommand.Subscribe(() => OnKeyGestureEscape());
-            KeyGestureUpCommand.Subscribe(() => OnKeyGestureUp());
-            KeyGestureUpAndShiftCommand.Subscribe(() => OnKeyGestureUpAndShift());
-            KeyGestureDownCommand.Subscribe(() => OnKeyGestureDown());
-            KeyGestureLeftCommand.Subscribe(() => OnKeyGestureLeft());
-            KeyGestureRightCommand.Subscribe(() => OnKeyGestureRight());
 
             // 定期更新スレッド
             var timer = new ReactiveTimer(TimeSpan.FromMilliseconds(10), new SynchronizationContextScheduler(SynchronizationContext.Current));
@@ -89,46 +73,6 @@ namespace Mov.Game.ViewModels
         private void OnLoaded()
         {
             this.RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_TITLE);
-        }
-
-        private void OnKeyUp()
-        {
-            gameService.SetKeyCode(FsmGameEngine.KEY_CODE_NONE);
-        }
-
-        private void OnKeyGestureEnter()
-        {
-            
-        }
-
-        private void OnKeyGestureEscape()
-        {
-
-        }
-
-        private void OnKeyGestureUp()
-        {
-            gameService.SetKeyCode(FsmGameEngine.KEY_CODE_UP);
-        }
-
-        private void OnKeyGestureUpAndShift()
-        {
-            gameService.SetKeyCode(FsmGameEngine.KEY_CODE_UP);
-        }
-
-        private void OnKeyGestureDown()
-        {
-            gameService.SetKeyCode(FsmGameEngine.KEY_CODE_DOWN);
-        }
-
-        private void OnKeyGestureLeft()
-        {
-            gameService.SetKeyCode(FsmGameEngine.KEY_CODE_LEFT);
-        }
-
-        private void OnKeyGestureRight()
-        {
-            gameService.SetKeyCode(FsmGameEngine.KEY_CODE_RIGHT);
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)

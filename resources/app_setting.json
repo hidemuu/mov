@@ -1,7 +1,7 @@
 {
   "settings": [
     {
-      "id": 1,
+      "index": 1,
       "category": "test",
       "code": "test",
       "name": "test",
@@ -11,7 +11,7 @@
       "access_lv": 0
     },
     {
-      "id": 2,
+      "index": 2,
       "category": "test2",
       "code": "test2",
       "name": "test2",

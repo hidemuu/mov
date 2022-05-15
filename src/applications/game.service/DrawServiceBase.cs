@@ -17,10 +17,6 @@ namespace Mov.Game.Service
         /// </summary>
         private Task task;
         /// <summary>
-        /// スレッド継続フラグ
-        /// </summary>
-        protected bool isActive = true;
-        /// <summary>
         /// ビットマップ画面
         /// </summary>
         private Bitmap screenBitmap;
@@ -36,11 +32,20 @@ namespace Mov.Game.Service
         /// <summary>
         /// 画面幅
         /// </summary>
-        public int FrameWidth { get; protected set; } = 600;
+        public virtual int FrameWidth { get; protected set; } = 600;
         /// <summary>
         /// 画面高さ
         /// </summary>
-        public int FrameHeight { get; protected set; } = 600;
+        public virtual int FrameHeight { get; protected set; } = 600;
+        /// <summary>
+        /// 更新周期
+        /// </summary>
+        public virtual double RefleshTime { get; protected set; } = 10;
+
+        /// <summary>
+        /// スレッド継続フラグ
+        /// </summary>
+        protected bool IsActive { get; set; } = true;
         /// <summary>
         /// ビットマップ画面作成中フラグ
         /// </summary>
@@ -76,25 +81,21 @@ namespace Mov.Game.Service
             graphics.DrawImage(screenBitmap, 0, 0);
         }
 
-        #endregion メソッド
-
-        #region 抽象メソッド
-
         public virtual void Initialize()
         {
             screenBitmap = new Bitmap(FrameWidth, FrameHeight);
             ScreenGraphics = Graphics.FromImage(screenBitmap);
-            isActive = true;
+            IsActive = true;
         }
 
-        public virtual void Run()
+        public void Run()
         {
             //マルチスレッド処理
             task = Task.Run(() =>
             {
                 var sw = Stopwatch.StartNew();
                 sw.Start();
-                while (isActive)
+                while (IsActive)
                 {
                     Ready();
                     //ビットマップ画面の作成処理
@@ -105,14 +106,12 @@ namespace Mov.Game.Service
                     //再描画要求
                     InvalidateScreen();
                     //速度調整
-                    while (sw.ElapsedMilliseconds < 10) ;
+                    while (sw.ElapsedMilliseconds < RefleshTime) ;
                     sw.Restart();
                 }
                 DisposeScreen();
             });
         }
-
-        protected abstract void Ready();
 
         /// <summary>
         /// 終了処理
@@ -120,10 +119,19 @@ namespace Mov.Game.Service
         public void End()
         {
             //スレッド終了指令
-            isActive = false;
+            IsActive = false;
             //スレッド終了待機
             task.Wait();
         }
+
+        #endregion メソッド
+
+        #region 抽象メソッド
+
+        /// <summary>
+        /// 描画準備
+        /// </summary>
+        protected abstract void Ready();
 
         /// <summary>
         /// スクリーン初期化
@@ -133,6 +141,9 @@ namespace Mov.Game.Service
             ScreenGraphics.Clear(Color.White);
         }
 
+        /// <summary>
+        /// スクリーン描画
+        /// </summary>
         protected abstract void DrawScreen();
 
         /// <summary>

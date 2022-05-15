@@ -2,20 +2,37 @@
     x:Class="Mov.Game.Views.GameMapView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:b="clr-namespace:Mov.WpfControls.Behaviors;assembly=Mov.WpfControls"
     xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Mov.Game.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
     xmlns:vm="clr-namespace:Mov.Game.ViewModels;assembly=Mov.Game.ViewModels"
+    b:InputBindingsBehavior.TakesInputBindingPrecedence="True"
     d:DataContext="{d:DesignInstance vm:GameMapViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
+    <UserControl.InputBindings>
+        <KeyBinding Key="Enter" Command="{Binding KeyGestureEnterCommand}" />
+        <KeyBinding Key="Escape" Command="{Binding KeyGestureEscapeCommand}" />
+        <KeyBinding Key="Up" Command="{Binding KeyGestureUpCommand}" />
+        <KeyBinding
+            Key="Up"
+            Command="{Binding KeyGestureUpAndShiftCommand}"
+            Modifiers="Shift" />
+        <KeyBinding Key="Down" Command="{Binding KeyGestureDownCommand}" />
+        <KeyBinding Command="{Binding KeyGestureLeftCommand}" Gesture="Left" />
+        <KeyBinding Command="{Binding KeyGestureRightCommand}" Gesture="Right" />
+    </UserControl.InputBindings>
     <behaviors:Interaction.Triggers>
         <behaviors:EventTrigger EventName="Loaded">
             <behaviors:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </behaviors:EventTrigger>
+        <behaviors:EventTrigger EventName="KeyUp">
+            <behaviors:InvokeCommandAction Command="{Binding KeyUpCommand}" />
         </behaviors:EventTrigger>
     </behaviors:Interaction.Triggers>
     <DockPanel x:Name="RootPanel" Margin="10">

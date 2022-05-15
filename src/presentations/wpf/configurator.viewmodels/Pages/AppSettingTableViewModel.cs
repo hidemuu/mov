@@ -38,7 +38,7 @@ namespace Mov.Configurator.ViewModels
             public ReactivePropertySlim<int> AccessLv { get; } = new ReactivePropertySlim<int>();
             public TableModel(AppSetting appSetting)
             {
-                Id.Value = appSetting.Id;
+                Id.Value = appSetting.Index;
                 Category.Value = appSetting.Category;
                 Code.Value = appSetting.Code;
                 Name.Value = appSetting.Name;

@@ -89,7 +89,7 @@ namespace Mov.Game.Service.Machine
             TotalScore += Score;
             Score = 0;
             gameEngine.Initialize(GetLandmark());
-            isActive = true;
+            IsActive = true;
             IsStageClear = false;
         }
 

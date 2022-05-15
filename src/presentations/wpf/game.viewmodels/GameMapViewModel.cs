@@ -1,4 +1,7 @@
-﻿using Mov.Game.Service;
+﻿using Mov.Game.Models.Engines;
+using Mov.Game.Models.interfaces;
+using Mov.Game.Service;
+using Mov.Game.Service.Machine;
 using Mov.Game.ViewModels.Models;
 using Prism.Mvvm;
 using Prism.Regions;
@@ -19,124 +22,174 @@ using System.Windows.Media.Imaging;
 
 namespace Mov.Game.ViewModels
 {
-    public class GameMapViewModel : BindableBase
+    public class GameMapViewModel : DrawViewModelBase
     {
         #region フィールド
-
-        private readonly IDialogService dialogService;
-        private readonly IMachineGameService gameService;
-        private Bitmap bitmap;
-        private Graphics graphics;
-        private CompositeDisposable disposables = new CompositeDisposable();
 
         #endregion フィールド
 
         #region プロパティ
-        public GameMapModel Model { get; } = new GameMapModel();
-        private IRegionManager RegionManager { get; }
-        public ReactiveTimer Timer { get; } = new ReactiveTimer(TimeSpan.FromMilliseconds(10), new SynchronizationContextScheduler(SynchronizationContext.Current));
+        public override GameMapModel Model { get; } = new GameMapModel();
+        
+        protected override DrawServiceBase Service { get; set; }
 
         #endregion プロパティ
 
         #region コマンド
 
-        public ReactiveCommand LoadedCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand KeyUpCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand KeyGestureEnterCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand KeyGestureEscapeCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand KeyGestureUpCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand KeyGestureUpAndShiftCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand KeyGestureDownCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand KeyGestureLeftCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand KeyGestureRightCommand { get; } = new ReactiveCommand();
 
         #endregion コマンド
 
         #region コンストラクター
 
-        public GameMapViewModel(IRegionManager regionManager, IDialogService dialogService, IMachineGameService gameService)
+        public GameMapViewModel(IRegionManager regionManager, IDialogService dialogService, IGameRepositoryCollection repository, IMachineGameService gameService) : base(regionManager, dialogService, repository)
         {
-            this.RegionManager = regionManager;
-            this.dialogService = dialogService;
-            this.gameService = gameService;
-
-            this.bitmap = new Bitmap(600, 600);
-            this.graphics = Graphics.FromImage(bitmap);
-
-            LoadedCommand.Subscribe(() => OnLoadedCommand());
-            
-            // 定期更新スレッド
-            Timer.Subscribe(_ => OnTimer());
-            Timer.AddTo(disposables);
-            Timer.Start();
+            KeyUpCommand.Subscribe(() => OnKeyUp());
+            KeyGestureEnterCommand.Subscribe(() => OnKeyGestureEnter());
+            KeyGestureEscapeCommand.Subscribe(() => OnKeyGestureEscape());
+            KeyGestureUpCommand.Subscribe(() => OnKeyGestureUp());
+            KeyGestureUpAndShiftCommand.Subscribe(() => OnKeyGestureUpAndShift());
+            KeyGestureDownCommand.Subscribe(() => OnKeyGestureDown());
+            KeyGestureLeftCommand.Subscribe(() => OnKeyGestureLeft());
+            KeyGestureRightCommand.Subscribe(() => OnKeyGestureRight());
         }
 
         #endregion コンストラクター
 
-        #region イベントハンドラ
+        #region メソッド
 
-        private void OnLoadedCommand()
+        protected override void Initialize()
         {
-            // 定期更新スレッド
-            Timer.Subscribe(_ => OnTimer());
-            Timer.AddTo(disposables);
-            Timer.Start();
-
-            gameService.Initialize();
-            gameService.Run();
+            Service = new PackmanGameService(repository);
+            base.Initialize();
         }
 
-        private void OnTimer()
+        protected override void Update()
         {
-            gameService.Draw(graphics);
-            var hbitmap = bitmap.GetHbitmap();
-            //モデル生成
-            Model.ImageSource.Value = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hbitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-            Model.Level.Value = gameService.Level;
-            Model.Life.Value = gameService.GetLife();
-            Model.CurrentScore.Value = gameService.Score;
-            Model.ClearScore.Value = gameService.GetLandmark().ClearScore;
-            DeleteObject(hbitmap);
-            //ゲームオーバー時
-            if (gameService.IsGameOver)
+            if(Service is PackmanGameService packmanGameService)
             {
-                dialogService.ShowDialog(GameViewConstants.DIALOG_NAME_GAME_OVER, new DialogParameters($"message={"ゲームオーバー!"}"), result =>
-                {
-                    if (result.Result == ButtonResult.Yes)
-                    {
-                        RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_TITLE);
-                        disposables.Clear();
-                        gameService.End();
-                    }
-                    else
-                    {
-                        RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_TITLE);
-                        disposables.Clear();
-                        gameService.End();
-                    }
-                });
+                Model.Level.Value = packmanGameService.Level;
+                Model.Life.Value = packmanGameService.GetLife();
+                Model.CurrentScore.Value = packmanGameService.Score;
+                Model.ClearScore.Value = packmanGameService.GetLandmark().ClearScore;
             }
-            //ステージクリアー時
-            if (gameService.IsStageClear)
+            base.Update();
+        }
+
+        protected override void Next()
+        {
+            if (Service is PackmanGameService packmanGameService)
             {
-                dialogService.ShowDialog(GameViewConstants.DIALOG_NAME_STAGE_CLEAR, new DialogParameters($"message={"ステージクリア!"}"), result =>
+                //ゲームオーバー時
+                if (packmanGameService.IsGameOver)
                 {
-                    if (result.Result == ButtonResult.Yes)
+                    dialogService.ShowDialog(GameViewConstants.DIALOG_NAME_GAME_OVER, new DialogParameters($"message={"ゲームオーバー!"}"), result =>
                     {
-                        gameService.Next();
-                    }
-                    else
+                        if (result.Result == ButtonResult.Yes)
+                        {
+                            RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_TITLE);
+                            disposables.Clear();
+                            packmanGameService.End();
+                        }
+                        else
+                        {
+                            RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_TITLE);
+                            disposables.Clear();
+                            packmanGameService.End();
+                        }
+                    });
+                }
+                //ステージクリアー時
+                if (packmanGameService.IsStageClear)
+                {
+                    dialogService.ShowDialog(GameViewConstants.DIALOG_NAME_STAGE_CLEAR, new DialogParameters($"message={"ステージクリア!"}"), result =>
                     {
-                        gameService.Next();
-                    }
-                });
+                        if (result.Result == ButtonResult.Yes)
+                        {
+                            packmanGameService.Next();
+                        }
+                        else
+                        {
+                            packmanGameService.Next();
+                        }
+                    });
+                }
+            }
+                
+            base.Next();
+        }
+
+        #endregion メソッド
+
+        #region イベントハンドラ
+
+        private void OnKeyUp()
+        {
+            if (Service is PackmanGameService packmanGameService)
+            {
+                packmanGameService.SetKeyCode(FsmGameEngine.KEY_CODE_NONE);
+            }
+        }
+
+        private void OnKeyGestureEnter()
+        {
+
+        }
+
+        private void OnKeyGestureEscape()
+        {
+
+        }
+
+        private void OnKeyGestureUp()
+        {
+            if (Service is PackmanGameService packmanGameService)
+            {
+                packmanGameService.SetKeyCode(FsmGameEngine.KEY_CODE_UP);
+            }
+        }
+
+        private void OnKeyGestureUpAndShift()
+        {
+            if (Service is PackmanGameService packmanGameService)
+            {
+                packmanGameService.SetKeyCode(FsmGameEngine.KEY_CODE_UP);
+            }
+        }
+
+        private void OnKeyGestureDown()
+        {
+            if (Service is PackmanGameService packmanGameService)
+            {
+                packmanGameService.SetKeyCode(FsmGameEngine.KEY_CODE_DOWN);
+            }
+        }
+
+        private void OnKeyGestureLeft()
+        {
+            if (Service is PackmanGameService packmanGameService)
+            {
+                packmanGameService.SetKeyCode(FsmGameEngine.KEY_CODE_LEFT);
+            }
+        }
+
+        private void OnKeyGestureRight()
+        {
+            if (Service is PackmanGameService packmanGameService)
+            {
+                packmanGameService.SetKeyCode(FsmGameEngine.KEY_CODE_RIGHT);
             }
         }
 
         #endregion イベントハンドラ
 
-        #region 拡張メソッド
-
-        /// <summary>
-        /// gdi32.dllのDeleteObjectメソッドの使用を宣言する
-        /// </summary>
-        /// <param name="hObject"></param>
-        /// <returns></returns>
-        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
-        public static extern bool DeleteObject(IntPtr hObject);
-
-        #endregion 拡張メソッド
     }
 }

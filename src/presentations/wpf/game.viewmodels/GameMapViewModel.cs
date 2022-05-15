@@ -52,14 +52,14 @@ namespace Mov.Game.ViewModels
 
         public GameMapViewModel(IRegionManager regionManager, IDialogService dialogService, IGameRepositoryCollection repository, IMachineGameService gameService) : base(regionManager, dialogService, repository)
         {
-            KeyUpCommand.Subscribe(() => OnKeyUp());
-            KeyGestureEnterCommand.Subscribe(() => OnKeyGestureEnter());
-            KeyGestureEscapeCommand.Subscribe(() => OnKeyGestureEscape());
-            KeyGestureUpCommand.Subscribe(() => OnKeyGestureUp());
-            KeyGestureUpAndShiftCommand.Subscribe(() => OnKeyGestureUpAndShift());
-            KeyGestureDownCommand.Subscribe(() => OnKeyGestureDown());
-            KeyGestureLeftCommand.Subscribe(() => OnKeyGestureLeft());
-            KeyGestureRightCommand.Subscribe(() => OnKeyGestureRight());
+            KeyUpCommand.Subscribe(() => OnKeyUp()).AddTo(Disposables);
+            KeyGestureEnterCommand.Subscribe(() => OnKeyGestureEnter()).AddTo(Disposables);
+            KeyGestureEscapeCommand.Subscribe(() => OnKeyGestureEscape()).AddTo(Disposables);
+            KeyGestureUpCommand.Subscribe(() => OnKeyGestureUp()).AddTo(Disposables);
+            KeyGestureUpAndShiftCommand.Subscribe(() => OnKeyGestureUpAndShift()).AddTo(Disposables);
+            KeyGestureDownCommand.Subscribe(() => OnKeyGestureDown()).AddTo(Disposables);
+            KeyGestureLeftCommand.Subscribe(() => OnKeyGestureLeft()).AddTo(Disposables);
+            KeyGestureRightCommand.Subscribe(() => OnKeyGestureRight()).AddTo(Disposables);
         }
 
         #endregion コンストラクター
@@ -96,13 +96,13 @@ namespace Mov.Game.ViewModels
                         if (result.Result == ButtonResult.Yes)
                         {
                             RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_TITLE);
-                            disposables.Clear();
+                            Disposables.Clear();
                             packmanGameService.End();
                         }
                         else
                         {
                             RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_TITLE);
-                            disposables.Clear();
+                            Disposables.Clear();
                             packmanGameService.End();
                         }
                     });

@@ -36,10 +36,29 @@
             <behaviors:InvokeCommandAction Command="{Binding LoadedCommand}" />
         </behaviors:EventTrigger>
     </behaviors:Interaction.Triggers>
-    <DockPanel Margin="10">
-        <ContentControl
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <DockPanel Margin="10">
+            <ContentControl
             x:Name="mainRegion"
             prism:RegionManager.RegionManager="{Binding RegionManager}"
-            prism:RegionManager.RegionName="MainRegion" />
-    </DockPanel>
+            prism:RegionManager.RegionName="MainRegion">
+            </ContentControl>
+        </DockPanel>
+        <Button
+                Width="32"
+                Height="32"
+                Margin="0,0,8,8"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Command="{Binding ReturnCommand}"
+                Content="+"
+                Cursor="Hand"
+                Focusable="False"
+                ToolTip="戻ります"
+                ToolTipService.Placement="Right" />
+    </Grid>
+    
 </UserControl>

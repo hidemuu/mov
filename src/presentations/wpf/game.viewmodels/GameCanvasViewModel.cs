@@ -1,4 +1,5 @@
-﻿using Mov.Game.Models.interfaces;
+﻿using Mov.Game.Models;
+using Mov.Game.Models.interfaces;
 using Mov.Game.Service;
 using Mov.Game.Service.Canvas;
 using Mov.Game.ViewModels.Models;
@@ -35,13 +36,25 @@ namespace Mov.Game.ViewModels
         
         protected override DrawServiceBase Service { get; set; }
 
+        public ReactiveCollection<string> Canvases { get; } = new ReactiveCollection<string>();
+
+        public ReactivePropertySlim<string> SelectedCanvas { get; } = new ReactivePropertySlim<string>();
+
+        public ReactivePropertySlim<double> RefleshRate { get; } = new ReactivePropertySlim<double>();
+
         #endregion プロパティ
+
+        #region コマンド
+
+        public ReactiveCommand DrawCommand { get; } = new ReactiveCommand();
+
+        #endregion コマンド
 
         #region コンストラクター
 
         public GameCanvasViewModel(IRegionManager regionManager, IDialogService dialogService, IGameRepositoryCollection repository) : base(regionManager, dialogService, repository)
         {
-
+            DrawCommand.Subscribe(OnDrawCommand).AddTo(Disposables);
         }
 
         #endregion コンストラクター
@@ -51,8 +64,20 @@ namespace Mov.Game.ViewModels
         protected override void Initialize()
         {
             this.serviceFactory = new CanvasServiceFactory(this.repository);
-            this.Service = serviceFactory.Create("TreeCurve");
+            var drawItems = repository.DrawItems.Gets();
+            var drawItem = drawItems.FirstOrDefault(x => x.Index == 0);
+            CreateService(drawItem);
+            Canvases.AddRangeOnScheduler(drawItems.Select(x => x.Category));
+            RefleshRate.Value = drawItem.RefleshRate;
             base.Initialize();
+        }
+
+        private void CreateService(DrawItem drawItem)
+        {
+            this.Service = serviceFactory.Create(drawItem.Category);
+            Service.FrameWidth = drawItem.Width;
+            Service.FrameHeight = drawItem.Height;
+            Service.RefleshTime = drawItem.RefleshRate;
         }
 
         protected override void Update()
@@ -66,6 +91,24 @@ namespace Mov.Game.ViewModels
         }
 
         #endregion メソッド
+
+        #region イベントハンドラ
+
+        private void OnDrawCommand()
+        {
+            Stop();
+            UpdateService(SelectedCanvas.Value);
+            Start();
+        }
+
+        private void UpdateService(string category)
+        {
+            this.Service = serviceFactory.Create(category);
+            Service.RefleshTime = RefleshRate.Value;
+        }
+
+
+        #endregion イベントハンドラ
 
 
     }

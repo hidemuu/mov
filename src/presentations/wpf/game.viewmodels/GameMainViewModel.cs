@@ -40,7 +40,9 @@ namespace Mov.Game.ViewModels
         #region コマンド
 
         public ReactiveCommand LoadedCommand { get; } = new ReactiveCommand();
-        
+
+        public ReactiveCommand ReturnCommand { get; } = new ReactiveCommand();
+
         #endregion コマンド
 
         #region コンストラクター
@@ -54,7 +56,8 @@ namespace Mov.Game.ViewModels
             this.dialogService = dialogService;
             this.gameService = gameService;
 
-            LoadedCommand.Subscribe(() => OnLoaded());
+            LoadedCommand.Subscribe(() => OnLoaded()).AddTo(disposables);
+            ReturnCommand.Subscribe(() => OnReturnCommand()).AddTo(disposables);
 
             // 定期更新スレッド
             var timer = new ReactiveTimer(TimeSpan.FromMilliseconds(10), new SynchronizationContextScheduler(SynchronizationContext.Current));
@@ -71,6 +74,11 @@ namespace Mov.Game.ViewModels
         #region イベントハンドラ
 
         private void OnLoaded()
+        {
+            this.RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_TITLE);
+        }
+
+        private void OnReturnCommand()
         {
             this.RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_TITLE);
         }

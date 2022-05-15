@@ -32,15 +32,15 @@ namespace Mov.Game.Service
         /// <summary>
         /// 画面幅
         /// </summary>
-        public virtual int FrameWidth { get; protected set; } = 600;
+        public virtual int FrameWidth { get; set; } = 600;
         /// <summary>
         /// 画面高さ
         /// </summary>
-        public virtual int FrameHeight { get; protected set; } = 600;
+        public virtual int FrameHeight { get; set; } = 600;
         /// <summary>
         /// 更新周期
         /// </summary>
-        public virtual double RefleshTime { get; protected set; } = 10;
+        public virtual double RefleshTime { get; set; } = 10;
 
         /// <summary>
         /// スレッド継続フラグ
@@ -122,6 +122,7 @@ namespace Mov.Game.Service
             IsActive = false;
             //スレッド終了待機
             task.Wait();
+            DisposeScreen();
         }
 
         #endregion メソッド

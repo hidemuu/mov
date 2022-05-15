@@ -32,7 +32,6 @@ namespace Mov.Game.Service.Canvas
         public override void Initialize()
         {
             base.Initialize();
-            Engine.Move(300, 600); //開始位置へ移動
         }
 
         protected override void Ready()
@@ -42,6 +41,7 @@ namespace Mov.Game.Service.Canvas
 
         protected override void DrawScreen()
         {
+            Engine.Move(300, 600); //開始位置へ移動
             Draw(7, 450, Math.PI * -0.5, 1, ScreenGraphics);
         }
 

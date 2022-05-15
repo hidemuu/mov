@@ -1,6 +1,7 @@
 {
   "draw_items": [
     {
+      "index": 1,
       "code": "TreeCurve",
       "category": "TreeCurve",
       "width": 600,
@@ -8,6 +9,7 @@
       "reflesh_rate": 10
     },
     {
+      "index": 2,
       "code": "DragonCurve",
       "category": "DragonCurve",
       "width": 600,
@@ -15,6 +17,7 @@
       "reflesh_rate": 10
     },
     {
+      "index": 0,
       "code": "KochCurve",
       "category": "KochCurve",
       "width": 600,
@@ -22,6 +25,7 @@
       "reflesh_rate": 10
     },
     {
+      "index": 4,
       "code": "SierpinskiCurve",
       "category": "SierpinskiCurve",
       "width": 600,

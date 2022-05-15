@@ -1,6 +1,7 @@
 ﻿using Mov.Game.Models.interfaces;
 using Mov.Game.Service;
 using Mov.Game.ViewModels.Models;
+using Mov.WpfViewModels;
 using Prism.Mvvm;
 using Prism.Regions;
 using Prism.Services.Dialogs;
@@ -20,7 +21,7 @@ using System.Windows.Media.Imaging;
 
 namespace Mov.Game.ViewModels
 {
-    public abstract class DrawViewModelBase : BindableBase
+    public abstract class DrawViewModelBase : ViewModelBase
     {
         #region フィールド
 
@@ -29,7 +30,6 @@ namespace Mov.Game.ViewModels
 
         private Bitmap bitmap;
         private Graphics graphics;
-        protected CompositeDisposable disposables = new CompositeDisposable();
 
         #endregion フィールド
 
@@ -42,21 +42,15 @@ namespace Mov.Game.ViewModels
 
         #endregion プロパティ
 
-        #region コマンド
-        public ReactiveCommand LoadedCommand { get; } = new ReactiveCommand();
-
-        #endregion コマンド
-
         #region コンストラクター
 
-        public DrawViewModelBase(IRegionManager regionManager, IDialogService dialogService, IGameRepositoryCollection repository)
+        public DrawViewModelBase(IRegionManager regionManager, IDialogService dialogService, IGameRepositoryCollection repository) : base()
         {
             this.RegionManager = regionManager;
             this.dialogService = dialogService;
             this.repository = repository;
 
             Initialize();
-            LoadedCommand.Subscribe(() => OnLoadedCommand());
         }
 
         #endregion コンストラクター
@@ -70,6 +64,8 @@ namespace Mov.Game.ViewModels
 
         }
 
+        
+
         protected virtual void Update()
         {
 
@@ -80,19 +76,30 @@ namespace Mov.Game.ViewModels
 
         }
 
-        #endregion メソッド
-
-        #region イベントハンドラ
-
-        private void OnLoadedCommand()
+        protected void Start()
         {
             // 定期更新スレッド
             Timer.Subscribe(_ => OnTimer());
-            Timer.AddTo(disposables);
+            Timer.AddTo(Disposables);
             Timer.Start();
 
             Service.Initialize();
             Service.Run();
+        }
+
+        protected void Stop()
+        {
+            Service.End();
+            Timer.Stop();
+        }
+
+        #endregion メソッド
+
+        #region イベントハンドラ
+
+        protected override void OnLoaded()
+        {
+            Start();
         }
 
         private void OnTimer()

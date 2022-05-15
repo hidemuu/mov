@@ -2,9 +2,11 @@
 using Prism.Mvvm;
 using Prism.Regions;
 using Reactive.Bindings;
+using Reactive.Bindings.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +18,7 @@ namespace Mov.Game.ViewModels
         #region フィールド
 
         private IMachineGameService gameService;
+        private CompositeDisposable disposables = new CompositeDisposable();
 
         #endregion フィールド
 
@@ -42,9 +45,9 @@ namespace Mov.Game.ViewModels
         {
             this.RegionManager = regionManager;
             this.gameService = gameService;
-            StartCommand.Subscribe(OnStartCommand);
-            CanvasCommand.Subscribe(OnCanvasCommand);
-            ConfigCommand.Subscribe(OnConfigCommand);
+            StartCommand.Subscribe(OnStartCommand).AddTo(disposables);
+            CanvasCommand.Subscribe(OnCanvasCommand).AddTo(disposables);
+            ConfigCommand.Subscribe(OnConfigCommand).AddTo(disposables); ;
             Levels.AddRangeOnScheduler(gameService.GetLevels());
             SelectedLevel.Where(x => x > 0).Subscribe(OnLevelSelectChanged);
         }

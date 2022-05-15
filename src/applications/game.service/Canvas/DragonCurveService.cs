@@ -21,10 +21,21 @@ namespace Mov.Game.Service.Canvas
 
         public override void Initialize()
         {
+            base.Initialize();
             Engine.Move(150, 300); //開始位置へ移動
         }
 
         public override void Run()
+        {
+            base.Run();
+        }
+
+        protected override void Ready()
+        {
+            
+        }
+
+        protected override void DrawScreen()
         {
             Draw(13, 300, 0, 1);
         }
@@ -41,7 +52,7 @@ namespace Mov.Game.Service.Canvas
             if (n == 1)
             {
                 //n=1なら線を一本書く（長さと角度で）
-                Engine.Forward(len, angle);
+                Engine.Forward(len, angle, ScreenGraphics);
             }
             else
             {

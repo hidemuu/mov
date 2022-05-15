@@ -305,6 +305,9 @@
         }
       },
       "Mov.Translator.Service/1.0.0": {
+        "dependencies": {
+          "Mov.Translator.Repository": "1.0.0"
+        },
         "runtime": {
           "Mov.Translator.Service.dll": {}
         }

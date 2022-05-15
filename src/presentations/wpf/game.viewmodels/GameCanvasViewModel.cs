@@ -1,4 +1,6 @@
-﻿using Mov.Game.Service;
+﻿using Mov.Game.Models.interfaces;
+using Mov.Game.Service;
+using Mov.Game.Service.Canvas;
 using Mov.Game.ViewModels.Models;
 using Prism.Mvvm;
 using Prism.Regions;
@@ -24,7 +26,11 @@ namespace Mov.Game.ViewModels
         #region フィールド
 
         private readonly IDialogService dialogService;
-        private readonly ICanvasService gameService;
+        private readonly IGameRepositoryCollection repository;
+
+        private readonly ICanvasService service;
+        private readonly CanvasServiceFactory serviceFactory;
+        
         private Bitmap bitmap;
         private Graphics graphics;
         private CompositeDisposable disposables = new CompositeDisposable();
@@ -46,13 +52,16 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public GameCanvasViewModel(IRegionManager regionManager, IDialogService dialogService, ICanvasService gameService)
+        public GameCanvasViewModel(IRegionManager regionManager, IDialogService dialogService, IGameRepositoryCollection repository)
         {
             this.RegionManager = regionManager;
             this.dialogService = dialogService;
-            this.gameService = gameService;
+            this.repository = repository;
 
-            this.bitmap = new Bitmap(600, 600);
+            this.serviceFactory = new CanvasServiceFactory(this.repository);
+            this.service = serviceFactory.Create("TreeCurve");
+
+            this.bitmap = new Bitmap(service.FrameWidth, service.FrameHeight);
             this.graphics = Graphics.FromImage(bitmap);
 
             LoadedCommand.Subscribe(() => OnLoadedCommand());
@@ -68,11 +77,14 @@ namespace Mov.Game.ViewModels
             Timer.Subscribe(_ => OnTimer());
             Timer.AddTo(disposables);
             Timer.Start();
+
+            service.Initialize();
+            service.Run();
         }
 
         private void OnTimer()
         {
-            //gameService.Draw(graphics);
+            this.service.Draw(graphics);
             var hbitmap = bitmap.GetHbitmap();
             //モデル生成
             Model.ImageSource.Value = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hbitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());

@@ -20,10 +20,21 @@ namespace Mov.Game.Service.Canvas
         #region メソッド
 
         public override void Initialize()
-        {    
+        {
+            base.Initialize();
         }
 
         public override void Run()
+        {
+            base.Run();
+        }
+
+        protected override void Ready()
+        {
+
+        }
+
+        protected override void DrawScreen()
         {
             Draw(6, 300, 300, 150);
         }
@@ -44,9 +55,9 @@ namespace Mov.Game.Service.Canvas
                 var x1 = x - 1;
                 var x2 = x + 1;
                 var y1 = y + 1 * Math.Sqrt(3);
-                Engine.DrawLine(x, y, x1, y1);
-                Engine.DrawLine(x1, y1, x2, y1);
-                Engine.DrawLine(x2, y1, x, y);
+                Engine.DrawLine(x, y, x1, y1, ScreenGraphics);
+                Engine.DrawLine(x1, y1, x2, y1, ScreenGraphics);
+                Engine.DrawLine(x2, y1, x, y, ScreenGraphics);
             }
             else
             {

@@ -175,7 +175,6 @@ namespace Mov.Wpf
             //自動紐づけの命名規則を定義
             ViewModelLocationProvider.SetDefaultViewTypeToViewModelTypeResolver(vt =>
             {
-
                 var viewName = vt.FullName;
                 var viewKey = "View";
                 if (viewName.EndsWith(viewKey)) viewName = viewName.Substring(0, viewName.Length - viewKey.Length);

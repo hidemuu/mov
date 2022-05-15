@@ -2,6 +2,7 @@
 using Mov.Game.Models.interfaces;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 
 namespace Mov.Game.Service.Canvas
@@ -21,6 +22,7 @@ namespace Mov.Game.Service.Canvas
 
         public TreeCurveService(IGameRepositoryCollection repository) : base(repository)
         {
+            
         }
 
         #endregion コンストラクター
@@ -29,12 +31,24 @@ namespace Mov.Game.Service.Canvas
 
         public override void Initialize()
         {
-            Engine.Move(300, 600); //開始位置へ移動
+            base.Initialize();
+            Engine.Move(100, 100); //開始位置へ移動
         }
 
         public override void Run()
         {
-            Draw(7, 450, Math.PI * -0.5, 1);
+            base.Run();
+        }
+
+        protected override void Ready()
+        {
+
+        }
+
+        protected override void DrawScreen()
+        {
+            Engine.Move(100, 100); //開始位置へ移動
+            Draw(7, 450, Math.PI * -0.5, 1, ScreenGraphics);
         }
 
         #endregion メソッド
@@ -44,14 +58,14 @@ namespace Mov.Game.Service.Canvas
         /// <summary>
         /// 描画処理
         /// </summary>
-        private void Draw(int n, double len, double angle, int sw)
+        private void Draw(int n, double len, double angle, int sw, Graphics graphics)
         {
             var x = Engine.LastX;
             var y = Engine.LastY;
             if (n == 1)
             {
                 //n=1なら線を一本書く（長さと角度で）
-                Engine.Forward(len, angle);
+                Engine.Forward(len, angle, graphics);
             }
             else
             {
@@ -60,14 +74,14 @@ namespace Mov.Game.Service.Canvas
                 var da = Math.PI * 0.15 * sw;       //角度の計算（swで+-回転）
                 angle += angle * (0.5 - rnd.NextDouble()) * 0.1;    //角度にゆらぎを与える
                 //再帰描画
-                Engine.Forward(dl * 0.33, angle);
-                Draw(n - 1, dl * 0.8, angle - da, 1);   //-a回転
+                Engine.Forward(dl * 0.33, angle, graphics);
+                Draw(n - 1, dl * 0.8, angle - da, 1, graphics);   //-a回転
 
-                Engine.Forward(dl * 0.33, angle);
-                Draw(n - 1, dl * 0.7, angle + da, -1);  //+a回転, sw反転
+                Engine.Forward(dl * 0.33, angle, graphics);
+                Draw(n - 1, dl * 0.7, angle + da, -1, graphics);  //+a回転, sw反転
 
-                Engine.Forward(dl * 0.33, angle);
-                Draw(n - 1, dl * 0.6, angle, 1);        //直進
+                Engine.Forward(dl * 0.33, angle, graphics);
+                Draw(n - 1, dl * 0.6, angle, 1, graphics);        //直進
             }
             Engine.LastX = x;
             Engine.LastY = y;

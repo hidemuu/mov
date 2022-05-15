@@ -19,7 +19,7 @@ namespace Mov.Game.Service
         /// <summary>
         /// スレッド継続フラグ
         /// </summary>
-        private bool isActive = true;
+        protected bool isActive = true;
         /// <summary>
         /// ビットマップ画面
         /// </summary>
@@ -36,11 +36,11 @@ namespace Mov.Game.Service
         /// <summary>
         /// 画面幅
         /// </summary>
-        public int FrameWidth { get; private set; } = 600;
+        public int FrameWidth { get; protected set; } = 600;
         /// <summary>
         /// 画面高さ
         /// </summary>
-        public int FrameHeight { get; private set; } = 600;
+        public int FrameHeight { get; protected set; } = 600;
         /// <summary>
         /// ビットマップ画面作成中フラグ
         /// </summary>

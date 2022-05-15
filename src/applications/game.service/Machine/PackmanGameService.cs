@@ -17,51 +17,19 @@ namespace Mov.Game.Service.Machine
     /// <summary>
     /// パックマンっぽいゲームサービス
     /// </summary>
-    public class PackmanGameService : IMachineGameService
+    public class PackmanGameService : DrawServiceBase, IMachineGameService
     {
         #region フィールド
 
         /// <summary>
-        /// ゲームスレッド
-        /// </summary>
-        private Task task;
-        /// <summary>
-        /// スレッド継続フラグ
-        /// </summary>
-        private bool isActive = true;
-        /// <summary>
         /// ゲームエンジン
         /// </summary>
         private FsmGameEngine gameEngine;
-        /// <summary>
-        /// ランドマークリポジトリ
-        /// </summary>
-        private IGameRepositoryCollection repository;
-        /// <summary>
-        /// ビットマップ画面
-        /// </summary>
-        private Bitmap screenBitmap;
-
+        
         #endregion フィールド
 
         #region プロパティ
 
-        /// <summary>
-        /// 画面幅
-        /// </summary>
-        protected int FrameWidth { get; private set; }
-        /// <summary>
-        /// 画面高さ
-        /// </summary>
-        protected int FrameHeight { get; private set; }
-        /// <summary>
-        /// ビットマップ画面作成中フラグ
-        /// </summary>
-        protected bool IsBuilding { get; private set; } = false;
-        /// <summary>
-        /// グラフィック
-        /// </summary>
-        protected Graphics ScreenGraphics { get; private set; }
         /// <summary>
         /// ゲームオーバー判定
         /// </summary>
@@ -91,15 +59,12 @@ namespace Mov.Game.Service.Machine
         /// コンストラクター
         /// </summary>
         /// <param name="repository"></param>
-        public PackmanGameService(IGameRepositoryCollection repository)
+        public PackmanGameService(IGameRepositoryCollection repository) : base(repository)
         {
-            this.repository = repository;
             var map = GetLandmark();
             gameEngine = new FsmGameEngine();
             FrameWidth = map.GetCol() * gameEngine.UnitWidth;
             FrameHeight = map.GetRow() * gameEngine.UnitHeight;
-            screenBitmap = new Bitmap(FrameWidth, FrameHeight);
-            ScreenGraphics = Graphics.FromImage(screenBitmap);
         }
 
         #endregion コンストラクター
@@ -109,13 +74,11 @@ namespace Mov.Game.Service.Machine
         /// <summary>
         /// 初期化処理
         /// </summary>
-        public virtual void Initialize()
+        public override void Initialize()
         {
+            base.Initialize();
             Score = 0;
-            screenBitmap = new Bitmap(FrameWidth, FrameHeight);
-            ScreenGraphics = Graphics.FromImage(screenBitmap);
             gameEngine.Initialize(GetLandmark());
-            isActive = true;
             IsGameOver = false;
             IsStageClear = false;
         }
@@ -128,71 +91,6 @@ namespace Mov.Game.Service.Machine
             gameEngine.Initialize(GetLandmark());
             isActive = true;
             IsStageClear = false;
-        }
-
-        /// <summary>
-        /// 起動処理
-        /// </summary>
-        public void Run()
-        {
-            //マルチスレッド処理
-            task = Task.Run(() =>
-            {
-                var sw = Stopwatch.StartNew();
-                sw.Start();
-                while (isActive)
-                {
-                    //キャラクタ毎の処理
-                    foreach (var character in gameEngine.Characters)
-                    {
-                        switch (character.TypeCode)
-                        {
-                            //プレイヤー
-                            case GameMap.PLAYER:
-                                //移動処理
-                                if(character.Move()) Score++;
-                                //ダメージ判定
-                                if (character.IsDamage()) character.AddLife(-1);
-                                //ゲームオーバー判定
-                                if (character.Life <= 0) IsGameOver = true;
-                                //ステージクリア判定
-                                if(Score >= GetLandmark().ClearScore) IsStageClear = true;
-                                break;
-                            //敵
-                            case GameMap.ALIEN:
-                                //移動処理
-                                character.Move(); 
-                                break;
-                        }
-                    }
-                    //ビットマップ画面の作成処理
-                    IsBuilding = true;
-                    ClearScreen();
-                    foreach (var character in gameEngine.Characters)
-                    {
-                        if (character.TypeCode != GameMap.ROAD) DrawCharacter(character);
-                    }
-                    IsBuilding = false;
-                    //再描画要求
-                    InvalidateScreen();
-                    //速度調整
-                    while (sw.ElapsedMilliseconds < 10) ;
-                    sw.Restart();
-                }
-                DisposeScreen();
-            });
-        }
-
-        /// <summary>
-        /// 終了処理
-        /// </summary>
-        public void End()
-        {
-            //スレッド終了指令
-            isActive = false;
-            //スレッド終了待機
-            task.Wait();
-            IsGameOver = false;
         }
 
         /// <summary>
@@ -211,22 +109,12 @@ namespace Mov.Game.Service.Machine
 
         public IEnumerable<int> GetLevels()
         {
-            return repository.Landmarks.Gets().Select(x => x.Lv);
+            return Repository.Landmarks.Gets().Select(x => x.Lv);
         }
 
         public Landmark GetLandmark()
         {
-            return repository.Landmarks.Gets().FirstOrDefault(x => x.Lv == Level);
-        }
-
-        /// <summary>
-        /// 描画処理
-        /// </summary>
-        /// <param name="graphics"></param>
-        public void Draw(Graphics graphics)
-        {
-            if (IsBuilding) return;
-            graphics.DrawImage(screenBitmap, 0, 0);
+            return Repository.Landmarks.Gets().FirstOrDefault(x => x.Lv == Level);
         }
 
         /// <summary>
@@ -250,13 +138,40 @@ namespace Mov.Game.Service.Machine
 
         #region 抽象メソッド
 
-        /// <summary>
-        /// スクリーン初期化
-        /// </summary>
-        protected virtual void ClearScreen()
+        protected override void Ready()
         {
-            ScreenGraphics.Clear(Color.White);
+            foreach (var character in gameEngine.Characters)
+            {
+                switch (character.TypeCode)
+                {
+                    //プレイヤー
+                    case GameMap.PLAYER:
+                        //移動処理
+                        if (character.Move()) Score++;
+                        //ダメージ判定
+                        if (character.IsDamage()) character.AddLife(-1);
+                        //ゲームオーバー判定
+                        if (character.Life <= 0) IsGameOver = true;
+                        //ステージクリア判定
+                        if (Score >= GetLandmark().ClearScore) IsStageClear = true;
+                        break;
+                    //敵
+                    case GameMap.ALIEN:
+                        //移動処理
+                        character.Move();
+                        break;
+                }
+            }
         }
+
+        protected override void DrawScreen()
+        {
+            foreach (var character in gameEngine.Characters)
+            {
+                if (character.TypeCode != GameMap.ROAD) DrawCharacter(character);
+            }
+        }
+
         /// <summary>
         /// キャラクター描画
         /// </summary>
@@ -265,21 +180,7 @@ namespace Mov.Game.Service.Machine
         {
             character.Draw(ScreenGraphics);
         }
-        /// <summary>
-        /// スクリーン更新
-        /// </summary>
-        protected virtual void InvalidateScreen()
-        {
-            //throw new NotImplementedException();
-        }
-        /// <summary>
-        /// スクリーン廃棄
-        /// </summary>
-        protected virtual void DisposeScreen()
-        {
-            ScreenGraphics.Dispose();
-        }
-
+        
         #endregion 抽象メソッド
 
     }

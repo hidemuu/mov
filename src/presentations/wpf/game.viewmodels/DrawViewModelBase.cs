@@ -21,11 +21,10 @@ using System.Windows.Media.Imaging;
 
 namespace Mov.Game.ViewModels
 {
-    public abstract class DrawViewModelBase : ViewModelBase
+    public abstract class DrawViewModelBase : RegionViewModelBase
     {
         #region フィールド
 
-        protected readonly IDialogService dialogService;
         protected readonly IGameRepositoryCollection repository;
 
         private Bitmap bitmap;
@@ -37,17 +36,14 @@ namespace Mov.Game.ViewModels
 
         public abstract DrawModel Model { get; }
         protected abstract DrawServiceBase Service { get; set; }
-        protected IRegionManager RegionManager { get; }
         public ReactiveTimer Timer { get; } = new ReactiveTimer(TimeSpan.FromMilliseconds(10), new SynchronizationContextScheduler(SynchronizationContext.Current));
 
         #endregion プロパティ
 
         #region コンストラクター
 
-        public DrawViewModelBase(IRegionManager regionManager, IDialogService dialogService, IGameRepositoryCollection repository) : base()
+        public DrawViewModelBase(IRegionManager regionManager, IDialogService dialogService, IGameRepositoryCollection repository) : base(regionManager, dialogService)
         {
-            this.RegionManager = regionManager;
-            this.dialogService = dialogService;
             this.repository = repository;
 
             Initialize();
@@ -64,8 +60,13 @@ namespace Mov.Game.ViewModels
 
         }
 
-        
+        protected override void Dispose(bool disposing)
+        {
+            Service.End();
+            base.Dispose(disposing);
+        }
 
+        /// <inheritdoc/>
         protected virtual void Update()
         {
 
@@ -89,7 +90,7 @@ namespace Mov.Game.ViewModels
 
         protected void Stop()
         {
-            Service.End();
+            Service.Wait();
             Timer.Stop();
         }
 

@@ -326,6 +326,7 @@
         "dependencies": {
           "Mov.Game.Models": "1.0.0",
           "Mov.Game.Repository": "1.0.0",
+          "Mov.Utilities": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {

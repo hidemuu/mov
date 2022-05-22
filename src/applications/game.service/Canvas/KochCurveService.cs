@@ -31,7 +31,7 @@ namespace Mov.Game.Service.Canvas
 
         protected override void DrawScreen()
         {
-            Engine.Move(50, 300); //開始位置へ移動
+            DrawEngine.Move(50, 300); //開始位置へ移動
             Draw(5, 500, 0);
         }
 
@@ -47,7 +47,7 @@ namespace Mov.Game.Service.Canvas
             if(n == 1)
             {
                 //n=1なら線を一本書く（長さと角度で）
-                Engine.Forward(len, angle, ScreenGraphics);
+                DrawEngine.Forward(len, angle, ScreenGraphics);
             }
             else
             {

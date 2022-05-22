@@ -16,11 +16,17 @@ namespace Mov
 {
     internal class RepositoryHelper
     {
+        #region プロパティ
+
         internal DesignerRepositoryCollection Designer { get; }
         internal ConfiguratorRepositoryCollection Configurator { get; }
-
         internal AuthorizerRepositoryCollection Authorizer { get; }
 
+        #endregion プロパティ
+
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
         internal RepositoryHelper()
         {
             var assembly = Assembly.GetEntryAssembly();
@@ -31,6 +37,8 @@ namespace Mov
             this.Configurator = new ConfiguratorRepositoryCollection(resourcePath, "json");
             this.Authorizer = new AuthorizerRepositoryCollection(resourcePath, "json");
         }
+
+        #region メソッド
 
         internal void WriteAll()
         {
@@ -43,6 +51,7 @@ namespace Mov
             Console.WriteLine(Authorizer.Users.ToString());
         }
 
+        #endregion メソッド
 
     }
 }

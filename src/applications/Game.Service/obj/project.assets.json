@@ -530,6 +530,16 @@
         "runtime": {
           "bin/placeholder/Mov.Game.Repository.dll": {}
         }
+      },
+      "Mov.Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Utilities.dll": {}
+        }
       }
     }
   },
@@ -2597,12 +2607,18 @@
       "type": "project",
       "path": "../game.repository/Game.Repository.csproj",
       "msbuildProject": "../game.repository/Game.Repository.csproj"
+    },
+    "Mov.Utilities/1.0.0": {
+      "type": "project",
+      "path": "../../infrastructures/utilities/Utilities.csproj",
+      "msbuildProject": "../../infrastructures/utilities/Utilities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "Mov.Game.Models >= 1.0.0",
       "Mov.Game.Repository >= 1.0.0",
+      "Mov.Utilities >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
       "System.Drawing.Common >= 6.0.0"
     ]
@@ -2649,6 +2665,9 @@
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\game.models\\Game.Models.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\game.models\\Game.Models.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj"
             }
           }
         }

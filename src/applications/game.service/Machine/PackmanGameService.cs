@@ -22,6 +22,11 @@ namespace Mov.Game.Service.Machine
         #region フィールド
 
         /// <summary>
+        /// リポジトリ
+        /// </summary>
+        protected IGameRepositoryCollection Repository { get; private set; }
+
+        /// <summary>
         /// ゲームエンジン
         /// </summary>
         private FsmGameEngine gameEngine;
@@ -59,8 +64,9 @@ namespace Mov.Game.Service.Machine
         /// コンストラクター
         /// </summary>
         /// <param name="repository"></param>
-        public PackmanGameService(IGameRepositoryCollection repository) : base(repository)
+        public PackmanGameService(IGameRepositoryCollection repository) : base()
         {
+            this.Repository = repository;
             var map = GetLandmark();
             gameEngine = new FsmGameEngine();
             FrameWidth = map.GetCol() * gameEngine.UnitWidth;

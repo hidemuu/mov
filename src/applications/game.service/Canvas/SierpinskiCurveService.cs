@@ -50,9 +50,9 @@ namespace Mov.Game.Service.Canvas
                 var x1 = x - 1;
                 var x2 = x + 1;
                 var y1 = y + 1 * Math.Sqrt(3);
-                Engine.DrawLine(x, y, x1, y1, ScreenGraphics);
-                Engine.DrawLine(x1, y1, x2, y1, ScreenGraphics);
-                Engine.DrawLine(x2, y1, x, y, ScreenGraphics);
+                DrawEngine.DrawLine(x, y, x1, y1, ScreenGraphics);
+                DrawEngine.DrawLine(x1, y1, x2, y1, ScreenGraphics);
+                DrawEngine.DrawLine(x2, y1, x, y, ScreenGraphics);
             }
             else
             {

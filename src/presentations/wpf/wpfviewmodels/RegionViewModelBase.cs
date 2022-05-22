@@ -13,7 +13,7 @@ namespace Mov.WpfViewModels
         /// <summary>
         /// ダイアログサービス
         /// </summary>
-        protected readonly IDialogService DialogService;
+        protected IDialogService DialogService { get; }
 
         /// <summary>
         /// リージョンマネージャー

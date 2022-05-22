@@ -12,21 +12,27 @@ namespace Mov.Game.Service.Canvas
 {
     public abstract class CanvasServiceBase : DrawServiceBase, ICanvasService
     {
-       
+
         #region プロパティ
 
         /// <summary>
-        /// ゲームエンジン
+        /// リポジトリ
         /// </summary>
-        protected DrawEngine Engine { get; private set; }
+        protected IGameRepositoryCollection Repository { get; private set; }
+
+        /// <summary>
+        /// 描画エンジン
+        /// </summary>
+        protected DrawEngine DrawEngine { get; private set; }
         
         #endregion プロパティ
 
         #region コンストラクター
 
-        public CanvasServiceBase(IGameRepositoryCollection repository) : base(repository)
+        public CanvasServiceBase(IGameRepositoryCollection repository) : base()
         {
-            this.Engine = new DrawEngine();
+            this.Repository = repository;
+            this.DrawEngine = new DrawEngine();
         }
 
         #endregion コンストラクター

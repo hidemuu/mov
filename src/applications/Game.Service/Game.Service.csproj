@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\domains\game.models\Game.Models.csproj" />
+    <ProjectReference Include="..\..\infrastructures\utilities\Utilities.csproj" />
     <ProjectReference Include="..\game.repository\Game.Repository.csproj" />
   </ItemGroup>
 

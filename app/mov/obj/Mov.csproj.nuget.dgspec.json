@@ -720,6 +720,9 @@
               },
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\game.models\\Game.Models.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\game.models\\Game.Models.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj"
               }
             }
           }

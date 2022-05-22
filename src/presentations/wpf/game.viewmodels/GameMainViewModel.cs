@@ -2,6 +2,7 @@ using Mov.Game.Models;
 using Mov.Game.Models.Engines;
 using Mov.Game.Service;
 using Mov.Game.ViewModels.Models;
+using Mov.WpfViewModels;
 using Prism.Mvvm;
 using Prism.Regions;
 using Prism.Services.Dialogs;
@@ -18,28 +19,21 @@ using System.Windows.Media.Imaging;
 
 namespace Mov.Game.ViewModels
 {
-    public class GameMainViewModel : BindableBase, INavigationAware, IRegionMemberLifetime
+    public class GameMainViewModel : RegionViewModelBase
     {
         #region フィールド
 
-        private IRegionNavigationJournal journal;
-        private readonly IDialogService dialogService;
         private readonly IMachineGameService gameService;
-        private CompositeDisposable disposables = new CompositeDisposable();
 
         #endregion フィールド
 
         #region プロパティ
 
         public GameMainModel Models { get; } = new GameMainModel();
-        public IRegionManager RegionManager { get; }
-        public bool KeepAlive => true;
 
         #endregion プロパティ
 
         #region コマンド
-
-        public ReactiveCommand LoadedCommand { get; } = new ReactiveCommand();
 
         public ReactiveCommand ReturnCommand { get; } = new ReactiveCommand();
 
@@ -50,14 +44,11 @@ namespace Mov.Game.ViewModels
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public GameMainViewModel(IRegionManager regionManager, IDialogService dialogService, IMachineGameService gameService) 
+        public GameMainViewModel(IRegionManager regionManager, IDialogService dialogService, IMachineGameService gameService) : base(regionManager, dialogService)
         {
-            this.RegionManager = regionManager;
-            this.dialogService = dialogService;
             this.gameService = gameService;
 
-            LoadedCommand.Subscribe(() => OnLoaded()).AddTo(disposables);
-            ReturnCommand.Subscribe(() => OnReturnCommand()).AddTo(disposables);
+            ReturnCommand.Subscribe(() => OnReturnCommand()).AddTo(Disposables);
 
             // 定期更新スレッド
             var timer = new ReactiveTimer(TimeSpan.FromMilliseconds(10), new SynchronizationContextScheduler(SynchronizationContext.Current));
@@ -65,7 +56,7 @@ namespace Mov.Game.ViewModels
             {
                 
             });
-            timer.AddTo(disposables);
+            timer.AddTo(Disposables);
             timer.Start();
         }
 
@@ -73,7 +64,7 @@ namespace Mov.Game.ViewModels
 
         #region イベントハンドラ
 
-        private void OnLoaded()
+        protected override void OnLoaded()
         {
             this.RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_TITLE);
         }
@@ -81,22 +72,6 @@ namespace Mov.Game.ViewModels
         private void OnReturnCommand()
         {
             this.RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_TITLE);
-        }
-
-        public bool IsNavigationTarget(NavigationContext navigationContext)
-        {
-            return true;
-        }
-
-        public void OnNavigatedFrom(NavigationContext navigationContext)
-        {
-            //MessageBox.Show("退出完了");
-        }
-
-        public void OnNavigatedTo(NavigationContext navigationContext)
-        {
-            journal = navigationContext.NavigationService.Journal;
-
         }
 
         #endregion イベントハンドラ

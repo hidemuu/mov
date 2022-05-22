@@ -26,10 +26,6 @@ namespace Mov.Game.Service
         #region プロパティ
 
         /// <summary>
-        /// リポジトリ
-        /// </summary>
-        protected IGameRepositoryCollection Repository { get; private set; }
-        /// <summary>
         /// 画面幅
         /// </summary>
         public virtual int FrameWidth { get; set; } = 600;
@@ -60,9 +56,11 @@ namespace Mov.Game.Service
 
         #region コンストラクター
 
-        public DrawServiceBase(IGameRepositoryCollection repository)
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
+        public DrawServiceBase()
         {
-            this.Repository = repository;
             screenBitmap = new Bitmap(FrameWidth, FrameHeight);
             ScreenGraphics = Graphics.FromImage(screenBitmap);
         }
@@ -81,6 +79,9 @@ namespace Mov.Game.Service
             graphics.DrawImage(screenBitmap, 0, 0);
         }
 
+        /// <summary>
+        /// 初期化処理
+        /// </summary>
         public virtual void Initialize()
         {
             screenBitmap = new Bitmap(FrameWidth, FrameHeight);
@@ -88,6 +89,9 @@ namespace Mov.Game.Service
             IsActive = true;
         }
 
+        /// <summary>
+        /// 起動処理
+        /// </summary>
         public void Run()
         {
             //マルチスレッド処理
@@ -114,6 +118,18 @@ namespace Mov.Game.Service
         }
 
         /// <summary>
+        /// 停止処理
+        /// </summary>
+        public void Wait()
+        {
+            //スレッド終了指令
+            IsActive = false;
+            //スレッド終了待機
+            task.Wait();
+            DisposeScreen();
+        }
+
+        /// <summary>
         /// 終了処理
         /// </summary>
         public void End()
@@ -121,7 +137,7 @@ namespace Mov.Game.Service
             //スレッド終了指令
             IsActive = false;
             //スレッド終了待機
-            task.Wait();
+            task.Dispose();
             DisposeScreen();
         }
 

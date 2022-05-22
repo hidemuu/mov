@@ -91,26 +91,26 @@ namespace Mov.Game.ViewModels
                 //ゲームオーバー時
                 if (packmanGameService.IsGameOver)
                 {
-                    dialogService.ShowDialog(GameViewConstants.DIALOG_NAME_GAME_OVER, new DialogParameters($"message={"ゲームオーバー!"}"), result =>
+                    DialogService.ShowDialog(GameViewConstants.DIALOG_NAME_GAME_OVER, new DialogParameters($"message={"ゲームオーバー!"}"), result =>
                     {
                         if (result.Result == ButtonResult.Yes)
                         {
                             RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_TITLE);
                             Disposables.Clear();
-                            packmanGameService.End();
+                            packmanGameService.Wait();
                         }
                         else
                         {
                             RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_TITLE);
                             Disposables.Clear();
-                            packmanGameService.End();
+                            packmanGameService.Wait();
                         }
                     });
                 }
                 //ステージクリアー時
                 if (packmanGameService.IsStageClear)
                 {
-                    dialogService.ShowDialog(GameViewConstants.DIALOG_NAME_STAGE_CLEAR, new DialogParameters($"message={"ステージクリア!"}"), result =>
+                    DialogService.ShowDialog(GameViewConstants.DIALOG_NAME_STAGE_CLEAR, new DialogParameters($"message={"ステージクリア!"}"), result =>
                     {
                         if (result.Result == ButtonResult.Yes)
                         {

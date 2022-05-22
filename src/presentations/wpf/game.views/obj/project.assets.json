@@ -389,6 +389,7 @@
         "dependencies": {
           "Mov.Game.Models": "1.0.0",
           "Mov.Game.Repository": "1.0.0",
+          "Mov.Utilities": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -414,6 +415,16 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
+      },
+      "Mov.Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Utilities.dll": {}
+        }
       },
       "Mov.WpfControls/1.0.0": {
         "type": "project",
@@ -1255,6 +1266,11 @@
       "type": "project",
       "path": "../game.viewmodels/Game.ViewModels.csproj",
       "msbuildProject": "../game.viewmodels/Game.ViewModels.csproj"
+    },
+    "Mov.Utilities/1.0.0": {
+      "type": "project",
+      "path": "../../../infrastructures/utilities/Utilities.csproj",
+      "msbuildProject": "../../../infrastructures/utilities/Utilities.csproj"
     },
     "Mov.WpfControls/1.0.0": {
       "type": "project",

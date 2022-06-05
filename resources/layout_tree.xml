@@ -3,17 +3,17 @@
   <layout>
     <index>0</index>
     <code>Root</code>
-    <IsExpand>false</IsExpand>
+    <expand>false</expand>
     <children>
       <layout>
         <index>1</index>
         <code>Test1</code>
-        <IsExpand>false</IsExpand>
+        <expand>false</expand>
         <children>
           <layout>
             <index>2</index>
             <code>Test12</code>
-            <IsExpand>false</IsExpand>
+            <expand>false</expand>
             <children />
           </layout>
         </children>
@@ -21,7 +21,7 @@
       <layout>
         <index>10</index>
         <code>Test2</code>
-        <IsExpand>false</IsExpand>
+        <expand>false</expand>
         <children />
       </layout>
     </children>

@@ -12,7 +12,7 @@ namespace Mov.Designer.Service
     {
         #region フィールド
 
-        private IDesignerRepositoryCollection repository;
+        private readonly IDesignerRepositoryCollection repository;
 
         #endregion フィールド
 
@@ -38,7 +38,7 @@ namespace Mov.Designer.Service
 
         public LayoutBuilder Build()
         {
-            Layout = Import();
+            Layout = Create();
             return this;
         }
 
@@ -46,7 +46,7 @@ namespace Mov.Designer.Service
 
         #region 内部メソッド
 
-        private LayoutNodeBase Import()
+        private LayoutNodeBase Create()
         {
             var node = new RootLayoutNode();
             CreateLayoutNode(node.Children, repository.LayoutTrees.Gets());
@@ -58,15 +58,15 @@ namespace Mov.Designer.Service
             LayoutNodeBase node;
             foreach (var tree in trees)
             {
-                switch (tree.LayoutType)
+                switch (tree.LayoutNodeType)
                 {
-                    case LayoutType.Root:
+                    case LayoutNodeType.Root:
                         node = new RootLayoutNode(tree);
                         break;
-                    case LayoutType.Header:
+                    case LayoutNodeType.Header:
                         node = new HeaderLayoutNode(tree);
                         break;
-                    case LayoutType.Content:
+                    case LayoutNodeType.Content:
                         ContentTable content = new ContentTable();
                         foreach(var table in repository.ContentTables.Gets())
                         {
@@ -76,13 +76,13 @@ namespace Mov.Designer.Service
                         }
                         node = new ContentLayoutNode(tree, content);
                         break;
-                    case LayoutType.Expander:
+                    case LayoutNodeType.Expander:
                         node = new ExpanderLayoutNode(tree);
                         break;
-                    case LayoutType.Scrollbar:
+                    case LayoutNodeType.Scrollbar:
                         node = new ScrollbarLayoutNode(tree);
                         break;
-                    case LayoutType.Tab:
+                    case LayoutNodeType.Tab:
                         node = new TabLayoutNode(tree);
                         break;
                     default:

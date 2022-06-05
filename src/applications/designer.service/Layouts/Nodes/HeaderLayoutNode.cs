@@ -7,6 +7,8 @@ namespace Mov.Designer.Service.Layouts.Nodes
 {
     public class HeaderLayoutNode : LayoutNodeBase
     {
+        public override LayoutNodeType LayoutNodeType => LayoutNodeType.Header;
+
         #region コンストラクター
 
         /// <summary>

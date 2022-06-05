@@ -1,4 +1,5 @@
 ﻿using Mov.Designer.Models;
+using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,15 +10,17 @@ namespace Mov.Designer.Service.Layouts.Nodes
     {
         #region プロパティ
 
-        public string ControlType { get; }
+        public override LayoutNodeType LayoutNodeType => LayoutNodeType.Content;
 
-        public string ControlStyle { get; }
+        public string ControlType { get; } = string.Empty;
 
-        public string Macro { get; }
+        public string ControlStyle { get; } = string.Empty;
 
-        public bool IsVisible { get; }
+        public string Macro { get; } = string.Empty;
 
-        public bool IsEnable { get; }
+        public ReactivePropertySlim<bool> IsVisible { get; } = new ReactivePropertySlim<bool>(true);
+
+        public ReactivePropertySlim<bool> IsEnable { get; } = new ReactivePropertySlim<bool>(true);
 
         #endregion プロパティ
 
@@ -37,11 +40,20 @@ namespace Mov.Designer.Service.Layouts.Nodes
             ControlType = content.ControlType;
             ControlStyle = content.ControlStyle;
             Macro = content.Macro;
-            IsVisible = content.IsVisible;
-            IsEnable = content.IsEnable;
+            IsVisible.Value = content.IsVisible;
+            IsEnable.Value = content.IsEnable;
         }
 
         #endregion コンストラクター
+
+        #region メソッド
+
+        public override string ToString()
+        {
+            return base.ToString() + " [ControlType] " + ControlType + " [ControlStyle] " + ControlStyle + " [Macro] " + Macro;
+        }
+
+        #endregion メソッド
 
     }
 }

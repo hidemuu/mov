@@ -60,7 +60,6 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Deb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerThemeView.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerTreeView.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerView.baml
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Templates\LayoutTemplate.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Mov.Designer.Views.g.resources
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Designer.Views.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Designer.Views.AssemblyInfoInputs.cache
@@ -70,3 +69,4 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Deb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Mov.Designer.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\ref\Mov.Designer.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Mov.Designer.Views.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Templates\LayoutNodeTemplate.baml

@@ -1,5 +1,6 @@
 ﻿using Mov.Designer.Models;
 using Mov.Designer.Service.Layouts.Nodes;
+using Reactive.Bindings;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,9 +22,14 @@ namespace Mov.Designer.Service.Layouts
         #region プロパティ
 
         /// <summary>
+        /// レイアウトタイプ
+        /// </summary>
+        public abstract LayoutNodeType LayoutNodeType { get; }
+
+        /// <summary>
         /// 開閉状態
         /// </summary>
-        public bool IsExpand { get; set; } = true;
+        public ReactivePropertySlim<bool> IsExpand { get; } = new ReactivePropertySlim<bool>(true);
 
         /// <summary>
         /// 子階層
@@ -48,9 +54,8 @@ namespace Mov.Designer.Service.Layouts
         public LayoutNodeBase(LayoutTree tree)
         {
             Code = tree.Code;
-            Name = tree.Code;
-            IsExpand = tree.IsExpand;
-            LayoutType = tree.LayoutType;
+            Name.Value = tree.Code;
+            IsExpand.Value = tree.IsExpand;
             LayoutStyle = tree.LayoutStyle;
         }
 
@@ -76,6 +81,11 @@ namespace Mov.Designer.Service.Layouts
         public void AddRange(IEnumerable<LayoutNodeBase> layouts)
         {
             children.AddRange(layouts);
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + " [NodeType] " + LayoutNodeType.ToString();
         }
 
         #endregion メソッド

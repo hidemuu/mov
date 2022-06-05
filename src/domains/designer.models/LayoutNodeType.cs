@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public enum LayoutType
+    public enum LayoutNodeType
     {
         /// <summary>
         /// 

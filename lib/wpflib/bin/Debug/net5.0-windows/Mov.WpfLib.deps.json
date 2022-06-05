@@ -472,7 +472,8 @@
       },
       "Mov.Designer.Service/1.0.0": {
         "dependencies": {
-          "Mov.Designer.Repository": "1.0.0"
+          "Mov.Designer.Repository": "1.0.0",
+          "ReactiveProperty.Core": "8.0.1"
         },
         "runtime": {
           "Mov.Designer.Service.dll": {}
@@ -519,6 +520,7 @@
         "dependencies": {
           "Mov.Game.Models": "1.0.0",
           "Mov.Game.Repository": "1.0.0",
+          "Mov.Utilities": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "runtime": {

@@ -7,6 +7,8 @@ namespace Mov.Designer.Service.Layouts.Nodes
 {
     public class ExpanderLayoutNode : LayoutNodeBase
     {
+        public override LayoutNodeType LayoutNodeType => LayoutNodeType.Expander;
+
         #region コンストラクター
 
         /// <summary>

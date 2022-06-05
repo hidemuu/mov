@@ -7,11 +7,14 @@ using System.Xml.Serialization;
 
 namespace Mov.Designer.Models
 {
+    [XmlRoot("themes")]
     public class ThemeCollection : DbObjectCollection<Theme>
     {
+        [XmlElement(Type = typeof(Theme), ElementName = "theme")]
         public override Theme[] Items { get; set; }
     }
 
+    [XmlRoot("theme")]
     public class Theme : DbObject
     {
         [JsonProperty("color")]

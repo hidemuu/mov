@@ -23,7 +23,7 @@ namespace Mov.Designer.ViewModels
 
         #region プロパティ
 
-        public ReactiveCollection<DesignerPartsModel> Models { get; } = new ReactiveCollection<DesignerPartsModel>();
+        public ReactiveCollection<LayoutNodeBase> Models { get; } = new ReactiveCollection<LayoutNodeBase>();
 
         #endregion プロパティ
 
@@ -35,7 +35,8 @@ namespace Mov.Designer.ViewModels
         public DesignerPartsViewModel(IDesignerRepositoryCollection repository)
         {
             layoutBuilder = new LayoutBuilder(repository);
-            Models.AddRangeOnScheduler(CreateModels());
+            var node = layoutBuilder.Build().Layout.Children;
+            Models.AddRangeOnScheduler(node);
         }
 
         #endregion コンストラクター
@@ -45,21 +46,6 @@ namespace Mov.Designer.ViewModels
         #endregion メソッド
 
         #region 内部メソッド
-
-        private IEnumerable<DesignerPartsModel> CreateModels()
-        {
-            var layouts = layoutBuilder.Build().Layout.Children;
-            var parts = new List<DesignerPartsModel>();
-            parts.Add(CreateModel());
-            return parts;
-        }
-
-        private DesignerPartsModel CreateModel()
-        {
-            var part = new DesignerPartsModel();
-            part.Add(new DesignerPartsModel());
-            return part;
-        }
 
         #endregion 内部メソッド
     }

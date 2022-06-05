@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MEPiGo18mb1z5olJfOccQRQInwTj5RUlwDjyEVMlSxZ/82IRgNlriAvb4M8swAzoh/gbEvPScjEZLbx/E6kqwA==",
+  "dgSpecHash": "ORr13RhOx407bbxTT2ySJcBgeyxNTbV5tuS/F4XXPhXpYra05QjxiXHwUVbhqQJjRiuu0DbxyLi5LaP1YA618Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\lib\\baselib\\BaseLib.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "C:\\Users\\nando\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\reactiveproperty.core\\8.0.1\\reactiveproperty.core.8.0.1.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",

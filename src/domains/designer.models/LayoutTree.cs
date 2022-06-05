@@ -19,13 +19,16 @@ namespace Mov.Designer.Models
     {
         #region プロパティ
 
-        [XmlElement("layouttype")]
-        public LayoutType LayoutType { get; set; } = LayoutType.Content;
+        [XmlElement("node_type")]
+        public LayoutNodeType LayoutNodeType { get; set; } = LayoutNodeType.Content;
 
+        [XmlElement("style")]
         public string LayoutStyle { get; set; }
 
+        [XmlElement("parameter")]
         public string LayoutParameter { get; set; }
 
+        [XmlElement("expand")]
         public bool IsExpand { get; set; } = true;
 
         [XmlArray("children")]
@@ -48,9 +51,9 @@ namespace Mov.Designer.Models
 
         #region メソッド
 
-        public override string ToString() => GetString(new string[] { Id.ToString(), Code, LayoutType.ToString() });
+        public override string ToString() => GetString(new string[] { Id.ToString(), Code, LayoutNodeType.ToString() });
 
-        public override string ToStringTable() => GetString(new string[] { Id.ToString(), Code, LayoutType.ToString() }, 10);
+        public override string ToStringTable() => GetString(new string[] { Id.ToString(), Code, LayoutNodeType.ToString() }, 10);
 
         public override string ToStringTableHeader() => GetString(new string[] { "Id", "Code", "LayoutType" }, 10);
 

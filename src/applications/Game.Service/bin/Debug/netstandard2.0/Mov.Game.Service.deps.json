@@ -11,6 +11,7 @@
         "dependencies": {
           "Mov.Game.Models": "1.0.0",
           "Mov.Game.Repository": "1.0.0",
+          "Mov.Utilities": "1.0.0",
           "NETStandard.Library": "2.0.3",
           "System.Drawing.Common": "6.0.0"
         },
@@ -429,6 +430,11 @@
         "runtime": {
           "Mov.Game.Repository.dll": {}
         }
+      },
+      "Mov.Utilities/1.0.0": {
+        "runtime": {
+          "Mov.Utilities.dll": {}
+        }
       }
     }
   },
@@ -708,6 +714,11 @@
       "sha512": ""
     },
     "Mov.Game.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Utilities/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

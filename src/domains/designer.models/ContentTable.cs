@@ -1,7 +1,4 @@
 ﻿using Mov.Accessors;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace Mov.Designer.Models
@@ -11,7 +8,6 @@ namespace Mov.Designer.Models
     {
         [XmlElement(Type = typeof(ContentTable), ElementName = "table")]
         public override ContentTable[] Items { get; set; }
-
     }
 
     [XmlRoot("table")]
@@ -19,25 +15,34 @@ namespace Mov.Designer.Models
     {
         #region プロパティ
 
-        public string Name { get; set; }
+        [XmlElement("name")]
+        public string Name { get; set; } = string.Empty;
 
-        public string Icon { get; set; }
+        [XmlElement("icon")]
+        public string Icon { get; set; } = string.Empty;
 
-        public string ControlType { get; set; }
+        [XmlElement("control_type")]
+        public string ControlType { get; set; } = string.Empty;
 
-        public string ControlStyle { get; set; }
+        [XmlElement("control_style")]
+        public string ControlStyle { get; set; } = string.Empty;
 
-        public string Command { get; set; }
-        
-        public string Macro { get; set; }
+        [XmlElement("command")]
+        public string Command { get; set; } = string.Empty;
 
-        public bool IsVisible { get; set; }
+        [XmlElement("macro")]
+        public string Macro { get; set; } = string.Empty;
 
-        public bool IsEnable { get; set; }
+        [XmlElement("visible")]
+        public bool IsVisible { get; set; } = true;
 
-        public string Parameter { get; set; }
+        [XmlElement("enable")]
+        public bool IsEnable { get; set; } = true;
 
-        #endregion
+        [XmlElement("parameter")]
+        public string Parameter { get; set; } = string.Empty;
+
+        #endregion プロパティ
 
         #region メソッド
 
@@ -47,7 +52,6 @@ namespace Mov.Designer.Models
 
         public override string ToStringTableHeader() => GetString(new string[] { "Id", "Code" }, 10);
 
-
-        #endregion
+        #endregion メソッド
     }
 }

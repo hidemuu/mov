@@ -1,4 +1,5 @@
 ﻿using Mov.Designer.Models;
+using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,17 +18,12 @@ namespace Mov.Designer.Service.Layouts
         /// <summary>
         /// 名称
         /// </summary>
-        public string Name { get; set; }
+        public ReactivePropertySlim<string> Name { get; } = new ReactivePropertySlim<string>();
 
         /// <summary>
         /// 並び順インデックス
         /// </summary>
-        public int Index { get; set; } = 0;
-
-        /// <summary>
-        /// レイアウトタイプ
-        /// </summary>
-        public LayoutType LayoutType { get; set; } = LayoutType.Content;
+        public ReactivePropertySlim<int> Index { get; } = new ReactivePropertySlim<int>();
 
         /// <summary>
         /// レイアウトスタイル
@@ -37,7 +33,7 @@ namespace Mov.Designer.Service.Layouts
         /// <summary>
         /// インデント
         /// </summary>
-        public double Indent { get; set; } = 0;
+        public ReactivePropertySlim<double> Indent { get; } = new ReactivePropertySlim<double>();
 
         #endregion プロパティ
 
@@ -52,6 +48,15 @@ namespace Mov.Designer.Service.Layouts
         }
 
         #endregion コンストラクター
+
+        #region メソッド
+
+        public override string ToString()
+        {
+            return "[Code] " + Code + " [Name] " + Name;
+        }
+
+        #endregion メソッド
 
     }
 }

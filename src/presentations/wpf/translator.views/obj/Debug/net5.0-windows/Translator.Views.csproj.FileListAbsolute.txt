@@ -31,4 +31,3 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.views\obj\D
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.views\obj\Debug\net5.0-windows\Mov.Translator.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.views\obj\Debug\net5.0-windows\ref\Mov.Translator.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.views\obj\Debug\net5.0-windows\Mov.Translator.Views.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.views\obj\Debug\net5.0-windows\Translator.Views.csproj.AssemblyReference.cache

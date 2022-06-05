@@ -296,6 +296,7 @@
         "dependencies": {
           "Mov.Game.Models": "1.0.0",
           "Mov.Game.Repository": "1.0.0",
+          "Mov.Utilities": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "runtime": {
@@ -309,6 +310,11 @@
         },
         "runtime": {
           "Mov.Game.ViewModels.dll": {}
+        }
+      },
+      "Mov.Utilities/1.0.0": {
+        "runtime": {
+          "Mov.Utilities.dll": {}
         }
       },
       "Mov.WpfControls/1.0.0": {
@@ -563,6 +569,11 @@
       "sha512": ""
     },
     "Mov.Game.ViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Utilities/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

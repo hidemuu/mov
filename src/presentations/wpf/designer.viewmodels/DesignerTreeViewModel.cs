@@ -82,8 +82,8 @@ namespace Mov.Designer.ViewModels
                     LayoutStyle = model.LayoutStyle.Value,
                     LayoutParameter = model.LayoutParameter.Value,
                 };
-                if (!Enum.TryParse(model.LayoutType.Value, out LayoutType layoutType)) layoutType = LayoutType.Content;
-                item.LayoutType = layoutType;
+                if (!Enum.TryParse(model.LayoutType.Value, out LayoutNodeType layoutType)) layoutType = LayoutNodeType.Content;
+                item.LayoutNodeType = layoutType;
                 items.Add(item);
                 GetItems(item.Children, model.Children);
             }
@@ -109,7 +109,7 @@ namespace Mov.Designer.ViewModels
                 Id.Value = item.Index;
                 Code.Value = item.Code;
                 IsExpand.Value = item.IsExpand;
-                LayoutType.Value = item.LayoutType.ToString();
+                LayoutType.Value = item.LayoutNodeType.ToString();
                 LayoutStyle.Value = item.LayoutStyle;
                 LayoutParameter.Value = item.LayoutParameter;
                 foreach (var child in item.Children)

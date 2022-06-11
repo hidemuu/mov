@@ -25,11 +25,12 @@ namespace Mov.Designer.ViewModels
         public ReactiveCollection<TreeModel> Models { get; } = new ReactiveCollection<TreeModel>();
         public TreeModelAttribute Attribute { get; } = new TreeModelAttribute();
 
-        #endregion プロパティ
+    
+    #endregion プロパティ
 
-        #region コマンド
+    #region コマンド
 
-        public ReactiveCommand<string> SaveCommand { get; } = new ReactiveCommand<string>();
+    public ReactiveCommand<string> SaveCommand { get; } = new ReactiveCommand<string>();
 
         #endregion コマンド
 
@@ -102,6 +103,16 @@ namespace Mov.Designer.ViewModels
             public ReactivePropertySlim<string> LayoutParameter { get; } = new ReactivePropertySlim<string>();
             public ReactivePropertySlim<bool> IsExpand { get; } = new ReactivePropertySlim<bool>(true);
             public ReactivePropertySlim<string> ToolTip { get; } = new ReactivePropertySlim<string>();
+
+            public List<LayoutNodeType> NodeTypes { get; set; } = new List<LayoutNodeType>
+            {
+                LayoutNodeType.Content,
+                LayoutNodeType.Expander,
+                LayoutNodeType.Scrollbar,
+                LayoutNodeType.Tab
+            };
+            public LayoutNodeType SelectedNodeType { get; set; }
+
             public List<TreeModel> Children { get; set; } = new List<TreeModel>();
 
             public TreeModel(LayoutTree item)
@@ -123,8 +134,8 @@ namespace Mov.Designer.ViewModels
         {
             public ColumnAttribute Id { get; } = new ColumnAttribute() { Header = "id" };
             public ColumnAttribute Code { get; } = new ColumnAttribute() { Header = "code" };
-            public ColumnAttribute LayoutType { get; } = new ColumnAttribute() { Header = "layoutType" , Width = 150 };
-            public ColumnAttribute LayoutStyle { get; } = new ColumnAttribute() { Header = "layoutStyle" , Width = 150 };
+            public ColumnAttribute LayoutType { get; } = new ColumnAttribute() { Header = "layoutType", Width = 150 };
+            public ColumnAttribute LayoutStyle { get; } = new ColumnAttribute() { Header = "layoutStyle", Width = 150 };
             public ColumnAttribute LayoutParameter { get; } = new ColumnAttribute() { Header = "layoutParameter", Width = 150 };
             public ColumnAttribute IsExpand { get; } = new ColumnAttribute() { Header = "isExpand", Width = 50 };
         }

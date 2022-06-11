@@ -60,7 +60,8 @@
                 <GridViewColumn Width="{Binding Attribute.LayoutType.Width}" Header="{Binding Attribute.LayoutType.Header}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Foreground="Black" Text="{Binding LayoutType.Value, Mode=TwoWay}" />
+                            <ComboBox ItemsSource="{Binding NodeTypes}" SelectedItem="{Binding SelectedNodeType}"></ComboBox>
+                            <!--<TextBox Foreground="Black" Text="{Binding LayoutType.Value, Mode=TwoWay}" />-->
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>

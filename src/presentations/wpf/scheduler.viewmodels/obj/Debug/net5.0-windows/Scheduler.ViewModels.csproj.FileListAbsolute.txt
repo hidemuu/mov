@@ -21,4 +21,3 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.viewmodels\o
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.viewmodels\obj\Debug\net5.0-windows\Mov.Scheduler.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.viewmodels\obj\Debug\net5.0-windows\ref\Mov.Scheduler.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.viewmodels\obj\Debug\net5.0-windows\Mov.Scheduler.ViewModels.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.viewmodels\obj\Debug\net5.0-windows\Scheduler.ViewModels.csproj.AssemblyReference.cache

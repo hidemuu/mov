@@ -24,6 +24,9 @@ namespace Mov.Designer.Views.Selector
 
         public DataTemplate ContentTemplate { get; set; }
 
+        public DataTemplate ViewTemplate { get; set; }
+
+
         #endregion プロパティ
 
         #region メソッド

@@ -16,13 +16,7 @@ namespace Mov.Designer.Views.Selector
 
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
-            //var fileSystemInfo = (FileSystemInfo)item;
-            //string templateKey = (fileSystemInfo.Attributes & FileAttributes.Directory) == FileAttributes.Directory
-            //                    ? DirectoryTemplate
-            //                    : FileTemplate;
-
-            //return ((FrameworkElement)container).FindResource(templateKey) as DataTemplate; 
-
+           
             if (item is ContentLayoutNode node)
             {
                 if (TryGetType(node.ControlType, out Type type))

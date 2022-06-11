@@ -56,6 +56,7 @@
                     <ControlTemplate.Resources>
                         <Style TargetType="TreeViewItem">
                             <Setter Property="Template" Value="{StaticResource TreeListViewItem}" />
+                            <Setter Property="IsExpanded" Value="True" />
                         </Style>
                         <Style TargetType="local:TreeListViewExpander">
                             <Setter Property="Template" Value="{StaticResource TreeListViewExpander}" />

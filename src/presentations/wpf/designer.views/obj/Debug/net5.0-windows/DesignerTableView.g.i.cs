@@ -74,7 +74,7 @@ namespace Mov.Designer.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mov.Designer.Views;component/designertableview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mov.Designer.Views;V1.0.0.0;component/designertableview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\DesignerTableView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

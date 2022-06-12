@@ -7,8 +7,11 @@ using Reactive.Bindings.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Disposables;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace Mov.Designer.ViewModels
 {
@@ -24,13 +27,14 @@ namespace Mov.Designer.ViewModels
 
         public ReactiveCollection<TreeModel> Models { get; } = new ReactiveCollection<TreeModel>();
         public TreeModelAttribute Attribute { get; } = new TreeModelAttribute();
+        public ReactivePropertySlim<bool> IsEdit { get; } = new ReactivePropertySlim<bool>(false);
 
-    
-    #endregion プロパティ
+        #endregion プロパティ
 
-    #region コマンド
+        #region コマンド
 
-    public ReactiveCommand<string> SaveCommand { get; } = new ReactiveCommand<string>();
+        public ReactiveCommand<string> EditCommand { get; } = new ReactiveCommand<string>();
+        public ReactiveCommand<string> SaveCommand { get; } = new ReactiveCommand<string>();
 
         #endregion コマンド
 
@@ -44,9 +48,10 @@ namespace Mov.Designer.ViewModels
         {
             this.repository = repository;
             SaveCommand.Subscribe(OnSaveCommand).AddTo(Disposables);
+            EditCommand.Subscribe(OnEditCommand).AddTo(Disposables);
             foreach (var tree in repository.LayoutTrees.Gets())
             {
-                Models.Add(new TreeModel(tree));
+                Models.Add(new TreeModel(tree, repository.ContentTables.Get(tree.Code), repository));
             }
         }
 
@@ -59,87 +64,187 @@ namespace Mov.Designer.ViewModels
 
         }
 
+        private void OnEditCommand(string parameter)
+        {
+            IsEdit.Value = !IsEdit.Value;
+            if (IsEdit.Value) Attribute.Edit.Width.Value = 45;
+            else Attribute.Edit.Width.Value = 0;
+            UpdateEditMode(Models);
+        }
+
+        private void OnSaveCommand(string parameter)
+        {
+            var trees = new List<LayoutTree>();
+            GetLayoutTrees(trees, Models);
+            repository.LayoutTrees.Sets(trees);
+            repository.LayoutTrees.Posts();
+            var tables = new List<ContentTable>();
+            GetContentTables(tables, Models);
+            repository.ContentTables.Sets(tables);
+            repository.ContentTables.Posts();
+            MessageBox.Show("保存しました");
+        }
+
         #endregion イベント
 
         #region メソッド
 
-        private void OnSaveCommand(string parameter)
-        {
-            var items = new List<LayoutTree>();
-            GetItems(items, Models);
-            repository.LayoutTrees.Sets(items);
-            repository.LayoutTrees.Posts();
-        }
-
-        private void GetItems(ICollection<LayoutTree> items, IEnumerable<TreeModel> models)
+        private void GetLayoutTrees(ICollection<LayoutTree> items, IEnumerable<TreeModel> models)
         {
             foreach (var model in models)
             {
                 var item = new LayoutTree
                 {
-                    Index = model.Id.Value,
+                    Id = model.Id.Value,
+                    Index = model.Index.Value,
                     Code = model.Code.Value,
                     IsExpand = model.IsExpand.Value,
+                    LayoutNodeType = model.LayoutType.Value,
                     LayoutStyle = model.LayoutStyle.Value,
                     LayoutParameter = model.LayoutParameter.Value,
                 };
-                if (!Enum.TryParse(model.LayoutType.Value, out LayoutNodeType layoutType)) layoutType = LayoutNodeType.Content;
-                item.LayoutNodeType = layoutType;
                 items.Add(item);
-                GetItems(item.Children, model.Children);
+                GetLayoutTrees(item.Children, model.Children);
+            }
+        }
+
+        private void GetContentTables(ICollection<ContentTable> items, IEnumerable<TreeModel> models)
+        {
+            foreach (var model in models)
+            {
+                var item = new ContentTable
+                {
+                    Id = model.Id.Value,
+                    Index = model.Index.Value,
+                    Code = model.Code.Value,
+                    Command = model.Command.Value,
+                    ControlType = model.ControlType.Value,
+                    ControlStyle = model.ControlStyle.Value,
+                };
+                items.Add(item);
+                GetContentTables(items, model.Children);
+            }
+        }
+
+        private void UpdateEditMode(IEnumerable<TreeModel> treeModels)
+        {
+            foreach(var model in treeModels)
+            {
+                model.IsEdit.Value = IsEdit.Value;
+                UpdateEditMode(model.Children);
             }
         }
 
         #endregion メソッド
 
-        #region クラス
+    }
+    #region クラス
 
-        public class TreeModel
-        {
-            public ReactivePropertySlim<int> Id { get; } = new ReactivePropertySlim<int>();
-            public ReactivePropertySlim<string> Code { get; } = new ReactivePropertySlim<string>();
-            public ReactivePropertySlim<string> LayoutType { get; } = new ReactivePropertySlim<string>();
-            public ReactivePropertySlim<string> LayoutStyle { get; } = new ReactivePropertySlim<string>();
-            public ReactivePropertySlim<string> LayoutParameter { get; } = new ReactivePropertySlim<string>();
-            public ReactivePropertySlim<bool> IsExpand { get; } = new ReactivePropertySlim<bool>(true);
-            public ReactivePropertySlim<string> ToolTip { get; } = new ReactivePropertySlim<string>();
+    public class TreeModel : TableModel
+    {
+        #region フィールド
 
-            public List<LayoutNodeType> NodeTypes { get; set; } = new List<LayoutNodeType>
+        private CompositeDisposable disposables = new CompositeDisposable();
+
+        private IDesignerRepositoryCollection repository;
+
+        #endregion フィールド
+
+        #region プロパティ
+
+        public ReactivePropertySlim<LayoutNodeType> LayoutType { get; } = new ReactivePropertySlim<LayoutNodeType>(LayoutNodeType.Content);
+        public ReactivePropertySlim<OrientationType> OrientationType { get; } = new ReactivePropertySlim<OrientationType>(Designer.Models.OrientationType.Horizontal);
+        public ReactivePropertySlim<string> LayoutStyle { get; } = new ReactivePropertySlim<string>();
+        public ReactivePropertySlim<string> LayoutParameter { get; } = new ReactivePropertySlim<string>();
+        public ReactivePropertySlim<bool> IsExpand { get; } = new ReactivePropertySlim<bool>(true);
+        public ReactivePropertySlim<string> ToolTip { get; } = new ReactivePropertySlim<string>();
+        public ReactivePropertySlim<bool> IsEdit { get; } = new ReactivePropertySlim<bool>(false);
+
+        public List<string> Codes { get; set; } = new List<string>();
+
+        public List<LayoutNodeType> NodeTypes { get; set; } = new List<LayoutNodeType>
             {
                 LayoutNodeType.Content,
                 LayoutNodeType.Expander,
                 LayoutNodeType.Scrollbar,
                 LayoutNodeType.Tab
             };
-            public LayoutNodeType SelectedNodeType { get; set; }
 
-            public List<TreeModel> Children { get; set; } = new List<TreeModel>();
-
-            public TreeModel(LayoutTree item)
+        public List<OrientationType> OrientationTypes { get; set; } = new List<OrientationType>
             {
-                Id.Value = item.Index;
-                Code.Value = item.Code;
-                IsExpand.Value = item.IsExpand;
-                LayoutType.Value = item.LayoutNodeType.ToString();
-                LayoutStyle.Value = item.LayoutStyle;
-                LayoutParameter.Value = item.LayoutParameter;
-                foreach (var child in item.Children)
-                {
-                    Children.Add(new TreeModel(child));
-                }
+                Designer.Models.OrientationType.Horizontal,
+                Designer.Models.OrientationType.Vertical,
+            };
+
+        public List<TreeModel> Children { get; set; } = new List<TreeModel>();
+
+        #endregion プロパティ
+
+        #region コマンド
+
+        public ReactiveCommand<string> AddCommand { get; } = new ReactiveCommand<string>();
+
+        public ReactiveCommand<string> RemoveCommand { get; } = new ReactiveCommand<string>();
+
+        #endregion コマンド
+
+        #region コンストラクター
+
+        public TreeModel(LayoutTree item, ContentTable table, IDesignerRepositoryCollection repository) : base(table)
+        {
+            this.repository = repository;
+            Codes = repository.ContentTables.Gets().Select(x => x.Code).Distinct().ToList();
+            //プロパティ
+            IsExpand.Value = item.IsExpand;
+            LayoutType.Value = item.LayoutNodeType;
+            OrientationType.Value = item.OrientationType;
+            LayoutStyle.Value = item.LayoutStyle;
+            LayoutParameter.Value = item.LayoutParameter;
+            //コマンド
+            Code.Subscribe(OnChangeCodeCommand).AddTo(disposables);
+            AddCommand.Subscribe(OnAddCommand).AddTo(disposables);
+            RemoveCommand.Subscribe(OnRemoveCommand).AddTo(disposables);
+            //子階層へ
+            foreach (var child in item.Children)
+            {
+                Children.Add(new TreeModel(child, repository.ContentTables.Get(child.Code), repository));
             }
         }
 
-        public class TreeModelAttribute
+        #endregion コンストラクター
+
+        #region イベント
+
+        private void OnChangeCodeCommand(string code)
         {
-            public ColumnAttribute Id { get; } = new ColumnAttribute() { Header = "id" };
-            public ColumnAttribute Code { get; } = new ColumnAttribute() { Header = "code" };
-            public ColumnAttribute LayoutType { get; } = new ColumnAttribute() { Header = "layoutType", Width = 150 };
-            public ColumnAttribute LayoutStyle { get; } = new ColumnAttribute() { Header = "layoutStyle", Width = 150 };
-            public ColumnAttribute LayoutParameter { get; } = new ColumnAttribute() { Header = "layoutParameter", Width = 150 };
-            public ColumnAttribute IsExpand { get; } = new ColumnAttribute() { Header = "isExpand", Width = 50 };
+            var item = this.repository.ContentTables.Get(code);
+            if (item == null) return;
+            Update(item);
         }
 
-        #endregion クラス
+        private void OnAddCommand(string parameter)
+        {
+
+        }
+
+        private void OnRemoveCommand(string parameter)
+        {
+
+        }
+
+        #endregion イベント
+
     }
+
+    public class TreeModelAttribute : TableModelAttribute
+    {
+        public ColumnAttribute Edit { get; } = new ColumnAttribute("edit", 0);
+        public ColumnAttribute LayoutType { get; } = new ColumnAttribute("layoutType", 100);
+        public ColumnAttribute OrientationType { get; } = new ColumnAttribute("orientation", 100);
+        public ColumnAttribute LayoutStyle { get; } = new ColumnAttribute("layoutStyle", 100);
+        public ColumnAttribute LayoutParameter { get; } = new ColumnAttribute("layoutParameter", 100);
+        public ColumnAttribute IsExpand { get; } = new ColumnAttribute("isExpand", 40);
+    }
+
+    #endregion クラス
 }

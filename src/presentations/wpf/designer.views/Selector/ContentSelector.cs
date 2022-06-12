@@ -22,12 +22,11 @@ namespace Mov.Designer.Views.Selector
                 if (TryGetType(node.ControlType, out Type type))
                 {
                     var factory = new FrameworkElementFactory(type);
+                    factory.SetValue(Label.ContentProperty, node.Name.Value);
                     return new DataTemplate() { VisualTree = factory, };
                 };
 
-                var defaultFactory = new FrameworkElementFactory(typeof(Label));
-                defaultFactory.SetValue(Label.ContentProperty, "【NotFound】" + node.ToString());
-                return new DataTemplate() { VisualTree = defaultFactory, };
+                return new DataTemplate() { VisualTree = GetDefault(node), };
             };
             return base.SelectTemplate(item, container);
         }
@@ -38,9 +37,23 @@ namespace Mov.Designer.Views.Selector
 
         private bool TryGetType(string typeName, out Type type)
         {
-            type = Type.GetType("System.Windows.Controls." + typeName);
+            if (string.IsNullOrEmpty(typeName)) 
+            {
+                type = null;
+                return false;
+            }
+            string dllName = "System.Windows.Controls";
+            string assemblyName = "PresentationFramework";
+            type = Type.GetType(dllName + "." + typeName + ", " + assemblyName);
             if (type != null) return true;
             return false;
+        }
+
+        private FrameworkElementFactory GetDefault(ContentLayoutNode node)
+        {
+            var defaultFactory = new FrameworkElementFactory(typeof(Label));
+            defaultFactory.SetValue(Label.ContentProperty, "【NotFound】" + node.ToString());
+            return defaultFactory;
         }
 
         #endregion メソッド

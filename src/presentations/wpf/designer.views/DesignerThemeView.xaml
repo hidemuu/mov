@@ -16,7 +16,8 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/ComponentStyles.xaml" />
+                <!--<ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/ComponentStyles.xaml" />-->
+                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/Components/MaterialTextBlock.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>

@@ -1,4 +1,5 @@
 ﻿using Mov.Accessors;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace Mov.Designer.Models
@@ -26,6 +27,12 @@ namespace Mov.Designer.Models
 
         [XmlElement("control_style")]
         public string ControlStyle { get; set; } = string.Empty;
+
+        [XmlElement("schema_type")]
+        public string SchemaType { get; set; } = string.Empty;
+
+        [XmlElement("default_values")]
+        public List<string> DefaultValues { get; set; } = new List<string>();
 
         [XmlElement("command")]
         public string Command { get; set; } = string.Empty;

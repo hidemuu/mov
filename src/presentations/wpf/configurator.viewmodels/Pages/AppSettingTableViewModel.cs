@@ -49,11 +49,11 @@ namespace Mov.Configurator.ViewModels
 
         public class TableModelAttribute : ITableViewModelColumnAttribute
         {
-            public ColumnAttribute Id { get; } = new ColumnAttribute() { Header = "id" };
-            public ColumnAttribute Category { get; } = new ColumnAttribute() { Header = "category" };
-            public ColumnAttribute Code { get; } = new ColumnAttribute() { Header = "code" };
-            public ColumnAttribute Name { get; } = new ColumnAttribute() { Header = "name" };
-            public ColumnAttribute Description { get; } = new ColumnAttribute() { Header = "description" };
+            public ColumnAttribute Id { get; } = new ColumnAttribute("id");
+            public ColumnAttribute Category { get; } = new ColumnAttribute("category");
+            public ColumnAttribute Code { get; } = new ColumnAttribute("code");
+            public ColumnAttribute Name { get; } = new ColumnAttribute("name");
+            public ColumnAttribute Description { get; } = new ColumnAttribute("description");
         }
     }
 }

@@ -1,13 +1,16 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converter="clr-namespace:Mov.Designer.Views.Converters"
     xmlns:nodes="clr-namespace:Mov.Designer.Service.Layouts.Nodes;assembly=Mov.Designer.Service"
     xmlns:selector="clr-namespace:Mov.Designer.Views.Selector">
 
     <selector:ContentSelector x:Key="contentSelector" />
+    <converter:OrientationConverter x:Key="orientationConverter" />
+
 
     <DataTemplate x:Key="ContentTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
-        <StackPanel>
+        <StackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}">
             <ContentControl Content="{Binding}" ContentTemplateSelector="{StaticResource contentSelector}" />
             <ItemsControl
                 Margin="16,0,0,0"
@@ -19,17 +22,25 @@
     <DataTemplate x:Key="ExpanderTemplate" DataType="{x:Type nodes:ExpanderLayoutNode}">
         <Expander IsExpanded="{Binding IsExpand.Value}">
             <Expander.Header>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{Binding Name.Value}" />
+                <StackPanel Margin="0" Orientation="Horizontal">
+                    <TextBlock
+                        Margin="0"
+                        Padding="0"
+                        Text="{Binding Name.Value}" />
                 </StackPanel>
             </Expander.Header>
-            <ItemsControl ItemTemplateSelector="{DynamicResource layoutNodeSelector}" ItemsSource="{Binding Children}" />
+            <StackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}">
+                <ItemsControl
+                    Margin="16,0,0,0"
+                    ItemTemplateSelector="{DynamicResource layoutNodeSelector}"
+                    ItemsSource="{Binding Children}" />
+            </StackPanel>
         </Expander>
     </DataTemplate>
 
     <DataTemplate x:Key="ScrollbarTemplate" DataType="{x:Type nodes:ScrollbarLayoutNode}">
         <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
-            <StackPanel>
+            <StackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}">
                 <ItemsControl ItemTemplateSelector="{DynamicResource layoutNodeSelector}" ItemsSource="{Binding Children}" />
             </StackPanel>
         </ScrollViewer>

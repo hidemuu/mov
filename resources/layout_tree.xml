@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <layouts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <layout>
-    <id>6bedd772-0904-4e64-b8f0-4c3842c2c244</id>
+    <id>338a9cfb-d67c-44a1-bf5c-4911869961d7</id>
     <index>0</index>
     <code>Root</code>
-    <node_type>Content</node_type>
-    <expand>false</expand>
+    <node_type>Expander</node_type>
+    <expand>true</expand>
     <children>
       <layout>
-        <id>f6a05de2-6435-4cb9-8a36-8a9ff9a34a1f</id>
+        <id>bb3ad72c-20c3-475c-8f15-254198563ea2</id>
         <index>1</index>
         <code>Test1</code>
         <node_type>Expander</node_type>
-        <expand>false</expand>
+        <expand>true</expand>
         <children>
           <layout>
-            <id>5b16ed1b-f70b-4b8f-b2b8-ac1482cf672f</id>
+            <id>0899237b-70cf-4b59-8374-34ef3b13255c</id>
             <index>2</index>
             <code>Test12</code>
             <node_type>Content</node_type>
@@ -25,7 +25,7 @@
         </children>
       </layout>
       <layout>
-        <id>11142eef-bbc2-4c4f-a0ec-7f07f401b215</id>
+        <id>1b0a48e4-8ee1-4c4d-bb11-9e295adaef69</id>
         <index>10</index>
         <code>Test2</code>
         <node_type>Content</node_type>

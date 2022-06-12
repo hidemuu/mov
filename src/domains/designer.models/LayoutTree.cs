@@ -22,6 +22,9 @@ namespace Mov.Designer.Models
         [XmlElement("node_type")]
         public LayoutNodeType LayoutNodeType { get; set; } = LayoutNodeType.Content;
 
+        [XmlElement("orientation")]
+        public OrientationType OrientationType { get; set; } = OrientationType.Horizontal;
+
         [XmlElement("style")]
         public string LayoutStyle { get; set; }
 

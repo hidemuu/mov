@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:components="clr-namespace:Mov.WpfControls.Components;assembly=Mov.WpfControls"
+    xmlns:converter="clr-namespace:Mov.WpfControls.Converters;assembly=Mov.WpfControls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:local="clr-namespace:Mov.Designer.Views"
@@ -17,9 +18,10 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />
+                <!--<ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />-->
                 <ResourceDictionary Source="/Mov.WpfControls;component/Components/TreeListView.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <converter:BoolToVisibillityConverter x:Key="boolToVisibilityConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
     <i:Interaction.Triggers>
@@ -40,42 +42,130 @@
                 <HierarchicalDataTemplate ItemsSource="{Binding Children}" />
             </components:TreeListView.ItemTemplate>
             <components:TreeListView.Columns>
-                <GridViewColumn Width="{Binding Attribute.Code.Width}" Header="{Binding Attribute.Code.Header}">
+                <GridViewColumn Width="{Binding Attribute.Edit.Width.Value}" Header="{Binding Attribute.Edit.Header.Value}">
                     <GridViewColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <components:TreeListViewExpander />
-                                <TextBox Text="{Binding Code.Value, Mode=TwoWay}" ToolTip="{Binding ToolTip.Value}" />
+                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                            <StackPanel Orientation="Horizontal" Visibility="{Binding IsEdit.Value, Converter={StaticResource boolToVisibilityConverter}}">
+                                <Button
+                                    Width="16"
+                                    Height="20"
+                                    Padding="0"
+                                    Command="{Binding AddCommand}"
+                                    CommandParameter="{Binding Code.Value}"
+                                    Content="+"
+                                    FontSize="16"
+                                    Foreground="White" />
+                                <Button
+                                    Width="16"
+                                    Height="20"
+                                    Padding="0"
+                                    Command="{Binding RemoveCommand}"
+                                    CommandParameter="{Binding Code.Value}"
+                                    Content="-"
+                                    FontSize="16"
+                                    Foreground="White" />
                             </StackPanel>
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
-                <GridViewColumn Width="{Binding Attribute.IsExpand.Width}" Header="{Binding Attribute.IsExpand.Header}">
+                <GridViewColumn Width="{Binding Attribute.Code.Width.Value}" Header="{Binding Attribute.Code.Header.Value}">
                     <GridViewColumn.CellTemplate>
-                        <DataTemplate>
+                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                            <StackPanel Orientation="Horizontal">
+                                <components:TreeListViewExpander />
+                                <ComboBox ItemsSource="{Binding Codes}" SelectedItem="{Binding Code.Value}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+                <GridViewColumn Width="{Binding Attribute.IsExpand.Width.Value}" Header="{Binding Attribute.IsExpand.Header.Value}">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate DataType="{x:Type vm:TreeModel}">
                             <CheckBox Foreground="Black" IsChecked="{Binding IsExpand.Value, Mode=TwoWay}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
-                <GridViewColumn Width="{Binding Attribute.LayoutType.Width}" Header="{Binding Attribute.LayoutType.Header}">
+                <GridViewColumn Width="{Binding Attribute.LayoutType.Width.Value}" Header="{Binding Attribute.LayoutType.Header.Value}">
                     <GridViewColumn.CellTemplate>
-                        <DataTemplate>
-                            <ComboBox ItemsSource="{Binding NodeTypes}" SelectedItem="{Binding SelectedNodeType}"></ComboBox>
-                            <!--<TextBox Foreground="Black" Text="{Binding LayoutType.Value, Mode=TwoWay}" />-->
+                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                            <ComboBox ItemsSource="{Binding NodeTypes}" SelectedItem="{Binding LayoutType.Value}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
-                <GridViewColumn Width="{Binding Attribute.LayoutStyle.Width}" Header="{Binding Attribute.LayoutStyle.Header}">
+                <GridViewColumn Width="{Binding Attribute.OrientationType.Width.Value}" Header="{Binding Attribute.OrientationType.Header.Value}">
                     <GridViewColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBox Foreground="Black" Text="{Binding LayoutStyle.Value, Mode=TwoWay}" />
+                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                            <ComboBox ItemsSource="{Binding OrientationTypes}" SelectedItem="{Binding OrientationType.Value}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
-                <GridViewColumn Width="{Binding Attribute.LayoutParameter.Width}" Header="{Binding Attribute.LayoutParameter.Header}">
+                <GridViewColumn Width="{Binding Attribute.LayoutStyle.Width.Value}" Header="{Binding Attribute.LayoutStyle.Header.Value}">
                     <GridViewColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBox Foreground="Black" Text="{Binding LayoutParameter.Value, Mode=TwoWay}" />
+                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                            <TextBox
+                                Foreground="Black"
+                                IsEnabled="{Binding IsEdit.Value}"
+                                Text="{Binding LayoutStyle.Value, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+                <GridViewColumn Width="{Binding Attribute.LayoutParameter.Width.Value}" Header="{Binding Attribute.LayoutParameter.Header.Value}">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                            <TextBox
+                                Foreground="Black"
+                                IsEnabled="{Binding IsEdit.Value}"
+                                Text="{Binding LayoutParameter.Value, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+                <GridViewColumn Width="{Binding Attribute.Name.Width.Value}" Header="{Binding Attribute.Name.Header.Value}">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                            <TextBox
+                                Foreground="Black"
+                                IsEnabled="{Binding IsEdit.Value}"
+                                Text="{Binding Name.Value, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+                <GridViewColumn Width="{Binding Attribute.Command.Width.Value}" Header="{Binding Attribute.Command.Header.Value}">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                            <TextBox
+                                Foreground="Black"
+                                IsEnabled="{Binding IsEdit.Value}"
+                                Text="{Binding Command.Value, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+                <GridViewColumn Width="{Binding Attribute.ControlType.Width.Value}" Header="{Binding Attribute.ControlType.Header.Value}">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                            <TextBox
+                                Foreground="Black"
+                                IsEnabled="{Binding IsEdit.Value}"
+                                Text="{Binding ControlType.Value, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+                <GridViewColumn Width="{Binding Attribute.ControlStyle.Width.Value}" Header="{Binding Attribute.ControlStyle.Header.Value}">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                            <TextBox
+                                Foreground="Black"
+                                IsEnabled="{Binding IsEdit.Value}"
+                                Text="{Binding ControlStyle.Value, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+                <GridViewColumn Width="{Binding Attribute.Parameter.Width.Value}" Header="{Binding Attribute.Parameter.Header.Value}">
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                            <TextBox
+                                Foreground="Black"
+                                IsEnabled="{Binding IsEdit.Value}"
+                                Text="{Binding Parameter.Value, Mode=TwoWay}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
@@ -84,13 +174,33 @@
         <Button
             Width="32"
             Height="32"
-            Margin="0,0,8,8"
+            Margin="0,0,40,8"
+            Padding="0"
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Command="{Binding EditCommand}"
+            Content="E"
+            Cursor="Hand"
+            Focusable="False"
+            FontSize="20"
+            ToolTip="編集します"
+            ToolTipService.Placement="Right" />
+        <Button
+            Width="32"
+            Height="32"
+            Margin="0,0,8,8"
+            Padding="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
             Command="{Binding SaveCommand}"
             Content="+"
             Cursor="Hand"
             Focusable="False"
+            FontSize="20"
             ToolTip="保存します"
             ToolTipService.Placement="Right" />
     </Grid>

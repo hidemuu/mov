@@ -27,6 +27,11 @@ namespace Mov.Designer.Service.Layouts
         public abstract LayoutNodeType LayoutNodeType { get; }
 
         /// <summary>
+        /// 配置方向
+        /// </summary>
+        public OrientationType OrientationType { get; } = OrientationType.Horizontal;
+
+        /// <summary>
         /// 開閉状態
         /// </summary>
         public ReactivePropertySlim<bool> IsExpand { get; } = new ReactivePropertySlim<bool>(true);

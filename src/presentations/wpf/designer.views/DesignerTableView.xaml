@@ -32,64 +32,73 @@
             ItemsSource="{Binding Models}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="{Binding Attribute.Id.Width}" Header="{Binding Attribute.Id.Header}">
+                    <GridViewColumn
+                        x:Name="indexColumn"
+                        Width="{Binding Attribute.Index.Width.Value}"
+                        Header="{Binding Attribute.Index.Header.Value}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Id.Value}" />
-                                </StackPanel>
+                                <TextBlock HorizontalAlignment="Stretch" Text="{Binding Index.Value}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="{Binding Attribute.Code.Width}" Header="{Binding Attribute.Code.Header}">
+                    <GridViewColumn
+                        x:Name="codeColumn"
+                        Width="{Binding Attribute.Code.Width.Value}"
+                        Header="{Binding Attribute.Code.Header.Value}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBox MinWidth="50" Text="{Binding Code.Value, Mode=TwoWay}" />
-                                </StackPanel>
+                                <TextBox Width="{Binding Width, ElementName=codeColumn}" Text="{Binding Code.Value, Mode=TwoWay}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="{Binding Attribute.Name.Width}" Header="{Binding Attribute.Name.Header}">
+                    <GridViewColumn
+                        x:Name="nameColumn"
+                        Width="{Binding Attribute.Name.Width.Value}"
+                        Header="{Binding Attribute.Name.Header.Value}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBox MinWidth="50" Text="{Binding Name.Value, Mode=TwoWay}" />
+                                <TextBox Width="{Binding Width, ElementName=nameColumn}" Text="{Binding Name.Value, Mode=TwoWay}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="{Binding Attribute.Command.Width}" Header="{Binding Attribute.Command.Header}">
+                    <GridViewColumn
+                        x:Name="commandColumn"
+                        Width="{Binding Attribute.Command.Width.Value}"
+                        Header="{Binding Attribute.Command.Header.Value}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBox MinWidth="50" Text="{Binding Command.Value, Mode=TwoWay}" />
-                                </StackPanel>
+                                <TextBox Width="{Binding Width, ElementName=commandColumn}" Text="{Binding Command.Value, Mode=TwoWay}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="{Binding Attribute.ControlType.Width}" Header="{Binding Attribute.ControlType.Header}">
+                    <GridViewColumn
+                        x:Name="controlTypeColumn"
+                        Width="{Binding Attribute.ControlType.Width.Value}"
+                        Header="{Binding Attribute.ControlType.Header.Value}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBox MinWidth="50" Text="{Binding ControlType.Value, Mode=TwoWay}" />
-                                </StackPanel>
+                                <TextBox Width="{Binding Width, ElementName=controlTypeColumn}" Text="{Binding ControlType.Value, Mode=TwoWay}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="{Binding Attribute.ControlStyle.Width}" Header="{Binding Attribute.ControlStyle.Header}">
+                    <GridViewColumn
+                        x:Name="controlStyleColumn"
+                        Width="{Binding Attribute.ControlStyle.Width.Value}"
+                        Header="{Binding Attribute.ControlStyle.Header.Value}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBox MinWidth="50" Text="{Binding ControlStyle.Value, Mode=TwoWay}" />
-                                </StackPanel>
+                                <TextBox Width="{Binding Width, ElementName=controlStyleColumn}" Text="{Binding ControlStyle.Value, Mode=TwoWay}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="{Binding Attribute.Parameter.Width}" Header="{Binding Attribute.Parameter.Header}">
+                    <GridViewColumn
+                        x:Name="parameterColumn"
+                        Width="{Binding Attribute.Parameter.Width.Value}"
+                        Header="{Binding Attribute.Parameter.Header.Value}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBox MinWidth="50" Text="{Binding Parameter.Value, Mode=TwoWay}" />
-                                </StackPanel>
+                                <TextBox Width="{Binding Width, ElementName=parameterColumn}" Text="{Binding Parameter.Value, Mode=TwoWay}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

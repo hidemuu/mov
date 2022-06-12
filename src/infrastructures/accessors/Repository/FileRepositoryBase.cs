@@ -69,7 +69,9 @@ namespace Mov.Accessors
         
         public async Task<IEnumerable<T>> GetsAsync() => await Task.Run(Gets);
 
-        public T Get(int id) => Gets().FirstOrDefault(x => x.Index == id);
+        public T Get(Guid id) => Gets().FirstOrDefault(x => x.Id == id);
+
+        public T Get(int index) => Gets().FirstOrDefault(x => x.Index == index);
 
         public T Get(string code) => Gets().FirstOrDefault(x => x.Code == code);
 
@@ -79,7 +81,14 @@ namespace Mov.Accessors
 
         public void Sets(IEnumerable<T> items)
         {
-            collection.Items = items.ToArray();
+            List<T> srcs = collection.Items.ToList();
+            foreach (var item in items)
+            {
+                var src = srcs.FirstOrDefault(x => x.Code == item.Code);
+                if (src != null) srcs.Remove(src);
+                srcs.Add(item);
+            }
+            collection.Items = srcs.ToArray();
         }
 
         public void Set(T item)

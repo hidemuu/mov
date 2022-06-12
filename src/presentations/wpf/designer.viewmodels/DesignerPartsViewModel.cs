@@ -16,7 +16,7 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        private LayoutBuilder layoutBuilder;
+        private LayoutBuilder builder;
 
         #endregion フィールド
 
@@ -33,16 +33,20 @@ namespace Mov.Designer.ViewModels
         /// </summary>
         public DesignerPartsViewModel(IDesignerRepositoryCollection repository)
         {
-            layoutBuilder = new LayoutBuilder(repository);
-            var node = layoutBuilder.Build().Layout.Children;
-            Models.AddRangeOnScheduler(node);
+            builder = new LayoutBuilder(repository);
         }
 
         #endregion コンストラクター
 
-        #region メソッド
+        #region イベント
 
-        #endregion メソッド
+        protected override void OnLoaded()
+        {
+            Models.Clear();
+            Models.AddRangeOnScheduler(builder.Build().Layout.Children);
+        }
+
+        #endregion イベント
 
         #region 内部メソッド
 

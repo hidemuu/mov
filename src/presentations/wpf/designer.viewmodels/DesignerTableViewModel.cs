@@ -52,42 +52,63 @@ namespace Mov.Designer.ViewModels
 
         #endregion イベントハンドラ
 
-        #region クラス
+    }
+    #region クラス
 
-        public class TableModel
+    public class TableModel
+    {
+        #region プロパティ
+
+        public ReactivePropertySlim<Guid> Id { get; } = new ReactivePropertySlim<Guid>();
+        public ReactivePropertySlim<int> Index { get; } = new ReactivePropertySlim<int>();
+        public ReactivePropertySlim<string> Code { get; } = new ReactivePropertySlim<string>();
+        public ReactivePropertySlim<string> Name { get; } = new ReactivePropertySlim<string>();
+        public ReactivePropertySlim<string> Command { get; } = new ReactivePropertySlim<string>();
+        public ReactivePropertySlim<string> ControlType { get; } = new ReactivePropertySlim<string>();
+        public ReactivePropertySlim<string> ControlStyle { get; } = new ReactivePropertySlim<string>();
+        public ReactivePropertySlim<string> Parameter { get; } = new ReactivePropertySlim<string>();
+
+        #endregion プロパティ
+
+        #region コンストラクター
+
+        public TableModel(ContentTable item)
         {
-            public ReactivePropertySlim<int> Id { get; } = new ReactivePropertySlim<int>();
-            public ReactivePropertySlim<string> Code { get; } = new ReactivePropertySlim<string>();
-            public ReactivePropertySlim<string> Name { get; } = new ReactivePropertySlim<string>();
-            public ReactivePropertySlim<string> Command { get; } = new ReactivePropertySlim<string>();
-            public ReactivePropertySlim<string> ControlType { get; } = new ReactivePropertySlim<string>();
-            public ReactivePropertySlim<string> ControlStyle { get; } = new ReactivePropertySlim<string>();
-            public ReactivePropertySlim<string> Parameter { get; } = new ReactivePropertySlim<string>();
-            public TableModel(ContentTable item)
-            {
-                Id.Value = item.Index;
-                Code.Value = item.Code;
-                Name.Value = item.Name;
-                Command.Value = item.Command;
-                ControlType.Value = item.ControlType;
-                ControlStyle.Value = item.ControlStyle;
-                Parameter.Value = item.Parameter;
-            }
+            Update(item);
         }
 
-        public class TableModelAttribute
-        {
-            public ColumnAttribute Id { get; } = new ColumnAttribute() { Header = "id", Width = 30 };
-            public ColumnAttribute Code { get; } = new ColumnAttribute() { Header = "code", Width = 100 };
-            public ColumnAttribute Name { get; } = new ColumnAttribute() { Header = "name", Width = 100 };
-            public ColumnAttribute Command { get; } = new ColumnAttribute() { Header = "command", Width = 150 };
-            public ColumnAttribute ControlType { get; } = new ColumnAttribute() { Header = "controlType", Width = 150 };
-            public ColumnAttribute ControlStyle { get; } = new ColumnAttribute() { Header = "controlStyle", Width = 150 };
-            public ColumnAttribute Parameter { get; } = new ColumnAttribute() { Header = "parameter", Width = 150 };
+        #endregion コンストラクター
 
+        #region 継承メソッド
+
+        protected void Update(ContentTable item)
+        {
+            if (item == null) return;
+            Id.Value = item.Id;
+            Index.Value = item.Index;
+            Code.Value = item.Code;
+            Name.Value = item.Name;
+            Command.Value = item.Command;
+            ControlType.Value = item.ControlType;
+            ControlStyle.Value = item.ControlStyle;
+            Parameter.Value = item.Parameter;
         }
 
-        #endregion クラス
+        #endregion 継承メソッド
 
     }
+
+    public class TableModelAttribute
+    {
+        public ColumnAttribute Index { get; } = new ColumnAttribute("index", 30);
+        public ColumnAttribute Code { get; } = new ColumnAttribute("code", 100);
+        public ColumnAttribute Name { get; } = new ColumnAttribute("name", 100);
+        public ColumnAttribute Command { get; } = new ColumnAttribute("command", 100);
+        public ColumnAttribute ControlType { get; } = new ColumnAttribute("controlType", 100);
+        public ColumnAttribute ControlStyle { get; } = new ColumnAttribute("controlStyle", 100);
+        public ColumnAttribute Parameter { get; } = new ColumnAttribute("parameter", 100);
+
+    }
+
+    #endregion クラス
 }

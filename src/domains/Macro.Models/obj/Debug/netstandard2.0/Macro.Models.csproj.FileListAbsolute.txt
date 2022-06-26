@@ -6,3 +6,4 @@ C:\Users\nando\Documents\GitHub\mov\src\domains\macro.models\obj\Debug\netstanda
 C:\Users\nando\Documents\GitHub\mov\src\domains\macro.models\obj\Debug\netstandard2.0\Macro.Models.csproj.CoreCompileInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\domains\macro.models\obj\Debug\netstandard2.0\Mov.Macro.Models.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\macro.models\obj\Debug\netstandard2.0\Mov.Macro.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\src\domains\macro.models\obj\Debug\netstandard2.0\Macro.Models.csproj.AssemblyReference.cache

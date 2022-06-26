@@ -47,7 +47,6 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviews\obj\Debug\net
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviews\obj\Debug\net5.0-windows\Components\Dialogs\AlertDialog.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviews\obj\Debug\net5.0-windows\Components\Dialogs\SuccessDialog.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviews\obj\Debug\net5.0-windows\Components\Dialogs\WarningDialog.g.cs
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviews\obj\Debug\net5.0-windows\Components\Tables\TableView.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviews\obj\Debug\net5.0-windows\Components\Tabs\MenuTab.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviews\obj\Debug\net5.0-windows\DialogWindow.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviews\obj\Debug\net5.0-windows\Mov.WpfViews_MarkupCompile.cache
@@ -55,7 +54,6 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviews\obj\Debug\net
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviews\obj\Debug\net5.0-windows\Components\Dialogs\AlertDialog.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviews\obj\Debug\net5.0-windows\Components\Dialogs\SuccessDialog.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviews\obj\Debug\net5.0-windows\Components\Dialogs\WarningDialog.baml
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviews\obj\Debug\net5.0-windows\Components\Tables\TableView.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviews\obj\Debug\net5.0-windows\Components\Tabs\MenuTab.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviews\obj\Debug\net5.0-windows\DialogWindow.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\wpfviews\obj\Debug\net5.0-windows\Mov.WpfViews.g.resources

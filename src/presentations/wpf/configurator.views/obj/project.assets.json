@@ -331,6 +331,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Mov.Configurator.Models": "1.0.0",
+          "Mov.Designer.Service": "1.0.0",
           "Mov.WpfViewModels": "1.0.0"
         },
         "compile": {
@@ -342,6 +343,47 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
+      },
+      "Mov.Designer.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Designer.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Designer.Models.dll": {}
+        }
+      },
+      "Mov.Designer.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Designer.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Designer.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Designer.Repository.dll": {}
+        }
+      },
+      "Mov.Designer.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Designer.Repository": "1.0.0",
+          "ReactiveProperty.Core": "8.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Designer.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Designer.Service.dll": {}
+        }
       },
       "Mov.WpfControls/1.0.0": {
         "type": "project",
@@ -1105,6 +1147,21 @@
       "type": "project",
       "path": "../configurator.viewmodels/Configurator.ViewModels.csproj",
       "msbuildProject": "../configurator.viewmodels/Configurator.ViewModels.csproj"
+    },
+    "Mov.Designer.Models/1.0.0": {
+      "type": "project",
+      "path": "../../../domains/designer.models/Designer.Models.csproj",
+      "msbuildProject": "../../../domains/designer.models/Designer.Models.csproj"
+    },
+    "Mov.Designer.Repository/1.0.0": {
+      "type": "project",
+      "path": "../../../applications/designer.repository/Designer.Repository.csproj",
+      "msbuildProject": "../../../applications/designer.repository/Designer.Repository.csproj"
+    },
+    "Mov.Designer.Service/1.0.0": {
+      "type": "project",
+      "path": "../../../applications/designer.service/Designer.Service.csproj",
+      "msbuildProject": "../../../applications/designer.service/Designer.Service.csproj"
     },
     "Mov.WpfControls/1.0.0": {
       "type": "project",

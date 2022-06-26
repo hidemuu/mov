@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.WpfViewModels.Components.Tables
+namespace Mov.Designer.Service.Layouts
 {
     public class ColumnAttribute
     {

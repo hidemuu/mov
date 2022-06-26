@@ -26,6 +26,9 @@ namespace Mov.Designer.Views.Selector
 
         public DataTemplate ViewTemplate { get; set; }
 
+        public DataTemplate TreeTemplate { get; set; }
+
+        public DataTemplate TableTemplate { get; set; }
 
         #endregion プロパティ
 
@@ -39,6 +42,8 @@ namespace Mov.Designer.Views.Selector
                 if (node is ExpanderLayoutNode expander) return ExpanderTemplate;
                 if (node is ScrollbarLayoutNode scrollbar) return ScrollbarTemplate;
                 if (node is TabLayoutNode tab) return TabTemplate;
+                if (node is TableLayoutNode table) return TableTemplate;
+                if (node is TreeLayoutNode tree) return TreeTemplate;
                 return null;
             }
             return base.SelectTemplate(item, container);

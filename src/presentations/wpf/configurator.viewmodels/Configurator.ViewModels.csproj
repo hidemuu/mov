@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\applications\designer.service\Designer.Service.csproj" />
     <ProjectReference Include="..\..\..\domains\configurator.models\Configurator.Models.csproj" />
     <ProjectReference Include="..\wpfviewmodels\WpfViewModels.csproj" />
   </ItemGroup>

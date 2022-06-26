@@ -8,7 +8,6 @@
     <selector:ContentSelector x:Key="contentSelector" />
     <converter:OrientationConverter x:Key="orientationConverter" />
 
-
     <DataTemplate x:Key="ContentTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
         <StackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}">
             <ContentControl Content="{Binding}" ContentTemplateSelector="{StaticResource contentSelector}" />
@@ -62,12 +61,40 @@
         </Grid>
     </DataTemplate>
 
+    <DataTemplate x:Key="TreeTemplate" DataType="{x:Type nodes:TreeLayoutNode}">
+        <Grid>
+            <TreeView ItemsSource="{Binding Children}" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="TableTemplate" DataType="{x:Type nodes:TableLayoutNode}">
+        <Grid>
+            <ListView x:Name="listView" ItemsSource="{Binding Children}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn
+                            x:Name="indexColumn"
+                            Width="100"
+                            Header="Index">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock HorizontalAlignment="Stretch" Text="{Binding Index.Value}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+    </DataTemplate>
+
     <selector:LayoutNodeSelector
         x:Key="layoutNodeSelector"
         ContentTemplate="{StaticResource ContentTemplate}"
         ExpanderTemplate="{StaticResource ExpanderTemplate}"
         ScrollbarTemplate="{StaticResource ScrollbarTemplate}"
         TabTemplate="{StaticResource TabTemplate}"
+        TableTemplate="{StaticResource TableTemplate}"
+        TreeTemplate="{StaticResource TreeTemplate}"
         ViewTemplate="{StaticResource ViewTemplate}" />
-
 </ResourceDictionary>

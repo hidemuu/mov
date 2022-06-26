@@ -11,9 +11,6 @@
     <Compile Update="Components\Dialogs\WarningDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Components\Tables\TableView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="DialogWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -26,9 +23,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\Dialogs\WarningDialog.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Components\Tables\TableView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="DialogWindow.xaml">

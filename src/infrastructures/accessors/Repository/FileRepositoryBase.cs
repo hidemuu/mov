@@ -29,8 +29,14 @@ namespace Mov.Accessors
 
         #region フィールド
 
+        /// <summary>
+        /// シリアライザー
+        /// </summary>
         protected readonly ISerializer fileSerializer;
 
+        /// <summary>
+        /// 内部保持変数
+        /// </summary>
         private C collection = null;
 
         #endregion
@@ -59,11 +65,27 @@ namespace Mov.Accessors
 
         #region メソッド
 
+        /// <summary>
+        /// インポート
+        /// </summary>
+        public void Import() => collection = fileSerializer.Read<C>();       
+
+        /// <summary>
+        /// エクスポート
+        /// </summary>
+        public void Export() => fileSerializer.Write<C>(this.collection);
+
+        /// <summary>
+        /// 単一データエクスポート
+        /// </summary>
+        /// <param name="item"></param>
+        public void Export(T item) => fileSerializer.Write<T>(item);
+
         #region GET
 
         public IEnumerable<T> Gets() 
         { 
-            if(collection == null) collection = fileSerializer.Read<C>();
+            if(collection == null) Import();
             return collection.Items;
         }
         
@@ -77,9 +99,9 @@ namespace Mov.Accessors
 
         #endregion GET
 
-        #region SET
+        #region POST
 
-        public void Sets(IEnumerable<T> items)
+        public void Posts(IEnumerable<T> items)
         {
             List<T> srcs = collection.Items.ToList();
             foreach (var item in items)
@@ -91,26 +113,75 @@ namespace Mov.Accessors
             collection.Items = srcs.ToArray();
         }
 
-        public void Set(T item)
+        public void Post(T item) 
         {
             var src = collection.Items.FirstOrDefault(x => x.Id == item.Id);
             src = item;
         }
 
-        #endregion SET
-
-        #region POST
-
-        public void Posts() => fileSerializer.Write<C>(this.collection);
-
-        public void Post(T item) 
-        {
-            Set(item);
-            fileSerializer.Write<T>(item);
-        }
-
         #endregion POST
 
+        #region PUT
+
+        /// <summary>
+        /// データ追加
+        /// </summary>
+        /// <param name="item"></param>
+        public void Put(T item)
+        {
+            collection.Items.ToList().Add(item);
+        }
+
+        /// <summary>
+        /// データ追加（位置指定）
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="item"></param>
+        public void Put(Guid id, T item)
+        {
+            var src = collection.Items.FirstOrDefault(x => x.Id == id);
+            if(src is DbObjectNode<T> node)
+            {
+                node.Children.Add(item);
+                return;
+            }
+            Put(item);
+        }
+
+        #endregion PUT
+
+        #region DELETE
+
+        /// <summary>
+        /// データ削除
+        /// </summary>
+        /// <param name="item"></param>
+        public void Delete(T item)
+        {
+            collection.Items.ToList().Remove(item);
+        }
+
+        #endregion DELETE
+
+        #region MOVE
+
+        /// <summary>
+        /// データ移動
+        /// </summary>
+        /// <param name="id">移動元ID</param>
+        /// <param name="movedId">移動先ID</param>
+        public void Move(Guid id, Guid movedId)
+        {
+            var src = collection.Items.FirstOrDefault(x => x.Id == id);
+            if (src == null) return;
+            var moved = collection.Items.FirstOrDefault(x => x.Id == movedId);
+            if (moved == null) return;
+
+        }
+
+        #endregion MOVE
+
+        /// <inheritdoc />
         public override string ToString()
         {
             var items = Gets();
@@ -125,6 +196,11 @@ namespace Mov.Accessors
 
         #region 内部メソッド
 
+        /// <summary>
+        /// 文字列取得
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="stringBuilder"></param>
         private void GetStringTables(List<T> items, StringBuilder stringBuilder)
         {
             bool isWightedHeader = false;

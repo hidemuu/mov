@@ -1,7 +1,7 @@
 ﻿using Mov.Designer.Models;
 using Mov.Designer.Models.interfaces;
+using Mov.Designer.Service.Layouts;
 using Mov.WpfViewModels;
-using Mov.WpfViewModels.Components.Tables;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
 using System;
@@ -49,10 +49,7 @@ namespace Mov.Designer.ViewModels
             this.repository = repository;
             SaveCommand.Subscribe(OnSaveCommand).AddTo(Disposables);
             EditCommand.Subscribe(OnEditCommand).AddTo(Disposables);
-            foreach (var tree in repository.LayoutTrees.Gets())
-            {
-                Models.Add(new TreeModel(tree, repository.ContentTables.Get(tree.Code), repository));
-            }
+            CreateModels();
         }
 
         #endregion コンストラクター
@@ -76,18 +73,26 @@ namespace Mov.Designer.ViewModels
         {
             var trees = new List<LayoutTree>();
             GetLayoutTrees(trees, Models);
-            repository.LayoutTrees.Sets(trees);
-            repository.LayoutTrees.Posts();
+            repository.LayoutTrees.Posts(trees);
+            repository.LayoutTrees.Export();
             var tables = new List<ContentTable>();
             GetContentTables(tables, Models);
-            repository.ContentTables.Sets(tables);
-            repository.ContentTables.Posts();
+            repository.ContentTables.Posts(tables);
+            repository.ContentTables.Export();
             MessageBox.Show("保存しました");
         }
 
         #endregion イベント
 
         #region メソッド
+
+        private void CreateModels()
+        {
+            foreach (var tree in repository.LayoutTrees.Gets())
+            {
+                Models.Add(new TreeModel(tree, repository.ContentTables.Get(tree.Code), repository));
+            }
+        }
 
         private void GetLayoutTrees(ICollection<LayoutTree> items, IEnumerable<TreeModel> models)
         {
@@ -229,7 +234,9 @@ namespace Mov.Designer.ViewModels
 
         private void OnRemoveCommand(string parameter)
         {
-
+            var item = this.repository.LayoutTrees.Get(parameter);
+            if (item != null) return;
+            this.repository.LayoutTrees.Delete(item);
         }
 
         #endregion イベント

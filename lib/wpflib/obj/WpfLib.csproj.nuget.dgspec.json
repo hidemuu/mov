@@ -2038,6 +2038,9 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.service\\Designer.Service.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.service\\Designer.Service.csproj"
+              },
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\configurator.models\\Configurator.Models.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\configurator.models\\Configurator.Models.csproj"
               },

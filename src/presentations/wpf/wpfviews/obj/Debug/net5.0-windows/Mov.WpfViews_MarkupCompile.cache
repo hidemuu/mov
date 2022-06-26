@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 
-6722332823
+51044197811
 
-7773192405
+6-1061929668
 214239784259
-Components\Dialogs\AlertDialog.xaml;Components\Dialogs\SuccessDialog.xaml;Components\Dialogs\WarningDialog.xaml;Components\Tables\TableView.xaml;Components\Tabs\MenuTab.xaml;DialogWindow.xaml;
+Components\Dialogs\AlertDialog.xaml;Components\Dialogs\SuccessDialog.xaml;Components\Dialogs\WarningDialog.xaml;Components\Tabs\MenuTab.xaml;DialogWindow.xaml;
 
 False
 

@@ -5,16 +5,18 @@ using System.Text;
 
 namespace Mov.Designer.Service.Layouts.Nodes
 {
-    public class HeaderLayoutNode : LayoutNodeBase
+    public class TableLayoutNode : LayoutNodeBase
     {
-        public override LayoutNodeType LayoutNodeType => LayoutNodeType.Header;
+        public override LayoutNodeType LayoutNodeType => LayoutNodeType.Table;
+
+
 
         #region コンストラクター
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public HeaderLayoutNode()
+        public TableLayoutNode()
         {
 
         }
@@ -22,7 +24,7 @@ namespace Mov.Designer.Service.Layouts.Nodes
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public HeaderLayoutNode(LayoutTree layout) : base(layout)
+        public TableLayoutNode(LayoutTree layout) : base(layout)
         {
 
         }

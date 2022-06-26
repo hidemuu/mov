@@ -25,10 +25,14 @@ namespace Mov.Designer.Models
         /// <summary>
         /// 
         /// </summary>
-        Header,
+        Tab,
         /// <summary>
         /// 
         /// </summary>
-        Tab,
+        Table,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tree,
     }
 }

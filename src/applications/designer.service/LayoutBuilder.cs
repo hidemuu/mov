@@ -63,9 +63,6 @@ namespace Mov.Designer.Service
                     case LayoutNodeType.Root:
                         node = new RootLayoutNode(tree);
                         break;
-                    case LayoutNodeType.Header:
-                        node = new HeaderLayoutNode(tree);
-                        break;
                     case LayoutNodeType.Content:
                         ContentTable content = new ContentTable();
                         foreach(var table in repository.ContentTables.Gets())

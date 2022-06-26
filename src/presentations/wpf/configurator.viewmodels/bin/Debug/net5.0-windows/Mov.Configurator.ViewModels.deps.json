@@ -9,6 +9,7 @@
       "Mov.Configurator.ViewModels/1.0.0": {
         "dependencies": {
           "Mov.Configurator.Models": "1.0.0",
+          "Mov.Designer.Service": "1.0.0",
           "Mov.WpfViewModels": "1.0.0"
         },
         "runtime": {
@@ -218,6 +219,32 @@
           "Mov.Configurator.Models.dll": {}
         }
       },
+      "Mov.Designer.Models/1.0.0": {
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "runtime": {
+          "Mov.Designer.Models.dll": {}
+        }
+      },
+      "Mov.Designer.Repository/1.0.0": {
+        "dependencies": {
+          "Mov.Designer.Models": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Designer.Repository.dll": {}
+        }
+      },
+      "Mov.Designer.Service/1.0.0": {
+        "dependencies": {
+          "Mov.Designer.Repository": "1.0.0",
+          "ReactiveProperty.Core": "8.0.1"
+        },
+        "runtime": {
+          "Mov.Designer.Service.dll": {}
+        }
+      },
       "Mov.WpfDesigns/1.0.0": {
         "dependencies": {
           "MahApps.Metro": "2.4.9",
@@ -400,6 +427,21 @@
       "sha512": ""
     },
     "Mov.Configurator.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Designer.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Designer.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Designer.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

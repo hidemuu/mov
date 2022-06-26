@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
 
@@ -12,7 +12,15 @@ namespace Mov.Accessors
         [XmlIgnore]
         public abstract List<T> Children { get; set; }
 
-        #endregion
+        #endregion プロパティ
+
+        #region コンストラクター
+
+        public DbObjectNode()
+        {
+        }
+
+        #endregion コンストラクター
 
         #region メソッド
 
@@ -24,13 +32,12 @@ namespace Mov.Accessors
             return stringBuilder.ToString();
         }
 
-        #endregion
+        #endregion メソッド
 
         #region 内部メソッド
 
         private void GetStringTables(List<T> items, StringBuilder stringBuilder, int hierarchy)
         {
-
             foreach (var item in items)
             {
                 for (var i = 0; i <= hierarchy; i++)
@@ -45,6 +52,6 @@ namespace Mov.Accessors
             }
         }
 
-        #endregion
+        #endregion 内部メソッド
     }
 }

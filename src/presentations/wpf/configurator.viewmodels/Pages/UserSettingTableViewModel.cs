@@ -1,11 +1,11 @@
 ﻿using Mov.Configurator.Models;
+using Mov.Designer.Service.Layouts;
 using Mov.WpfViewModels;
-using Mov.WpfViewModels.Components.Tables;
 using Reactive.Bindings;
 
 namespace Mov.Configurator.ViewModels
 {
-    public class UserSettingTableViewModel : ViewModelBase, ITableViewModel
+    public class UserSettingTableViewModel : ViewModelBase
     {
         #region フィールド
 
@@ -15,8 +15,8 @@ namespace Mov.Configurator.ViewModels
 
         #region プロパティ
 
-        public ReactiveCollection<ITableViewModelContent> TableModels { get; } = new ReactiveCollection<ITableViewModelContent>();
-        public ITableViewModelColumnAttribute TableAttribute { get; } = new TableModelAttribute();
+        public ReactiveCollection<TableModel> TableModels { get; } = new ReactiveCollection<TableModel>();
+        public TableModelAttribute TableAttribute { get; } = new TableModelAttribute();
 
         #endregion プロパティ
 
@@ -32,7 +32,7 @@ namespace Mov.Configurator.ViewModels
 
         #region クラス
         
-        public class TableModel : ITableViewModelContent
+        public class TableModel
         {
             #region フィールド
 
@@ -59,7 +59,7 @@ namespace Mov.Configurator.ViewModels
             }
         }
 
-        public class TableModelAttribute : ITableViewModelColumnAttribute
+        public class TableModelAttribute
         {
             public ColumnAttribute Id { get; } = new ColumnAttribute("id");
             public ColumnAttribute Category { get; } = new ColumnAttribute("category");

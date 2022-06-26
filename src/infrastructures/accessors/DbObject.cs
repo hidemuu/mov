@@ -34,12 +34,37 @@ namespace Mov.Accessors
 
         #endregion
 
+        #region コンストラクター
+
+        public DbObject()
+        {
+
+        }
+
+        public DbObject(DbObject src)
+        {
+            Id = src.Id;
+            Index = src.Index;
+            Code = src.Code;
+        }
+
+        #endregion コンストラクター
+
         #region メソッド
 
+        /// <inheritdoc />
         public override string ToString() => GetString(new string[] { Id.ToString(), Code });
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public virtual string ToStringTableHeader() => GetString(new string[] { "Id", "Code", }, 10);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public virtual string ToStringTable() => GetString(new string[] { Id.ToString(), Code, }, 10);
 
         #endregion

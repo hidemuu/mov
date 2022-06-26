@@ -1,6 +1,6 @@
 ﻿using Mov.Configurator.Models;
+using Mov.Designer.Service.Layouts;
 using Mov.WpfViewModels;
-using Mov.WpfViewModels.Components.Tables;
 using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace Mov.Configurator.ViewModels
 {
-    public class VariableTableViewModel : ViewModelBase, ITableViewModel
+    public class VariableTableViewModel : ViewModelBase
     {
-        public ReactiveCollection<ITableViewModelContent> TableModels { get; } = new ReactiveCollection<ITableViewModelContent>();
-        public ITableViewModelColumnAttribute TableAttribute { get; } = new TableModelAttribute();
+        public ReactiveCollection<TableModel> TableModels { get; } = new ReactiveCollection<TableModel>();
+        public TableModelAttribute TableAttribute { get; } = new TableModelAttribute();
 
         private readonly IConfiguratorRepositoryCollection repository;
 
@@ -26,7 +26,7 @@ namespace Mov.Configurator.ViewModels
             }
         }
 
-        public class TableModel : ITableViewModelContent
+        public class TableModel
         {
             public ReactivePropertySlim<int> Id { get; } = new ReactivePropertySlim<int>();
             public ReactivePropertySlim<string> Category { get; } = new ReactivePropertySlim<string>();
@@ -46,7 +46,7 @@ namespace Mov.Configurator.ViewModels
             }
         }
 
-        public class TableModelAttribute : ITableViewModelColumnAttribute
+        public class TableModelAttribute
         {
             public ColumnAttribute Id { get; } = new ColumnAttribute("id");
             public ColumnAttribute Category { get; } = new ColumnAttribute("category");

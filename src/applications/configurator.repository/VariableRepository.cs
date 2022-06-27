@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Configurator.Repository
 {
-    public class VariableRepository : FileRepositoryBase<Variable, VariableCollection>, IVariableRepository
+    public class VariableRepository : DbObjectRepositoryBase<Variable, VariableCollection>, IVariableRepository
     {
         public VariableRepository(string path, string encoding = "utf-8") : base(path, encoding)
         {

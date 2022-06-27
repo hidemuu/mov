@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Mov.Game.Repository
 {
-    public class GameRepositoryCollection : FileRepositoryCollectionBase, IGameRepositoryCollection
+    public class GameRepositoryCollection : DbObjectRepositoryCollectionBase, IGameRepositoryCollection
     {
         #region コンストラクター
 
@@ -26,9 +26,9 @@ namespace Mov.Game.Repository
 
         #region プロパティ
 
-        public FileRepositoryBase<Landmark, LandmarkCollection> Landmarks { get; }
+        public DbObjectRepositoryBase<Landmark, LandmarkCollection> Landmarks { get; }
 
-        public FileRepositoryBase<DrawItem, DrawItemCollection> DrawItems { get; }
+        public DbObjectRepositoryBase<DrawItem, DrawItemCollection> DrawItems { get; }
 
         #endregion プロパティ
     }

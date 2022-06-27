@@ -7,6 +7,6 @@ namespace Mov.Translator.Models
 {
     public interface ITranslatorRepositoryCollection
     {
-        FileRepositoryBase<TranslatorObject, TranslatorObjectCollection> Comments { get; }
+        DbObjectRepositoryBase<TranslatorObject, TranslatorObjectCollection> Comments { get; }
     }
 }

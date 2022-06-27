@@ -21,18 +21,25 @@ namespace Mov.Designer.ViewModels
 
         private readonly IDesignerRepositoryCollection repository;
 
+        private ICollection<ReactiveCommand<Guid>> addCommands = new List<ReactiveCommand<Guid>>();
+
+        private ICollection<ReactiveCommand<Guid>> removeCommands = new List<ReactiveCommand<Guid>>();
+
+        private CompositeDisposable modelDisposables = new CompositeDisposable();
+
         #endregion フィールド
 
         #region プロパティ
 
-        public ReactiveCollection<TreeModel> Models { get; } = new ReactiveCollection<TreeModel>();
-        public TreeModelAttribute Attribute { get; } = new TreeModelAttribute();
+        public ReactiveCollection<DesignerTreeModel> Models { get; } = new ReactiveCollection<DesignerTreeModel>();
+        public DesignerTreeModelAttribute Attribute { get; } = new DesignerTreeModelAttribute();
         public ReactivePropertySlim<bool> IsEdit { get; } = new ReactivePropertySlim<bool>(false);
 
         #endregion プロパティ
 
         #region コマンド
 
+        public ReactiveCommand UnLoadedCommand { get; } = new ReactiveCommand();
         public ReactiveCommand<string> EditCommand { get; } = new ReactiveCommand<string>();
         public ReactiveCommand<string> SaveCommand { get; } = new ReactiveCommand<string>();
 
@@ -49,6 +56,8 @@ namespace Mov.Designer.ViewModels
             this.repository = repository;
             SaveCommand.Subscribe(OnSaveCommand).AddTo(Disposables);
             EditCommand.Subscribe(OnEditCommand).AddTo(Disposables);
+            UnLoadedCommand.Subscribe(() => OnUnLoaded()).AddTo(Disposables);
+            modelDisposables.AddTo(Disposables);
             CreateModels();
         }
 
@@ -57,6 +66,11 @@ namespace Mov.Designer.ViewModels
         #region イベント
 
         protected override void OnLoaded()
+        {
+
+        }
+
+        protected void OnUnLoaded()
         {
 
         }
@@ -82,19 +96,46 @@ namespace Mov.Designer.ViewModels
             MessageBox.Show("保存しました");
         }
 
+        private void OnAddCommand(Guid id)
+        {
+            var tree = this.repository.LayoutTrees.Get(id);
+            if (tree == null) return;
+            this.repository.LayoutTrees.Put(new LayoutTree(), tree.Id);
+            CreateModels();
+            UpdateEditMode(Models);
+        }
+
+        private void OnRemoveCommand(Guid id)
+        {
+            var tree = this.repository.LayoutTrees.Get(id);
+            if (tree == null) return;
+            this.repository.LayoutTrees.Delete(tree);
+            CreateModels();
+            UpdateEditMode(Models);
+        }
+
         #endregion イベント
 
         #region メソッド
-
         private void CreateModels()
         {
+            Models.Clear();
+            modelDisposables.Clear();
             foreach (var tree in repository.LayoutTrees.Gets())
             {
-                Models.Add(new TreeModel(tree, repository.ContentTables.Get(tree.Code), repository));
+                Models.Add(new DesignerTreeModel(tree, repository.ContentTables.Get(tree.Code), repository, addCommands, removeCommands));
+            }
+            foreach (var addCommand in addCommands)
+            {
+                addCommand.Subscribe(OnAddCommand).AddTo(modelDisposables);
+            }
+            foreach (var removeCommand in removeCommands)
+            {
+                removeCommand.Subscribe(OnRemoveCommand).AddTo(modelDisposables);
             }
         }
 
-        private void GetLayoutTrees(ICollection<LayoutTree> items, IEnumerable<TreeModel> models)
+        private void GetLayoutTrees(ICollection<LayoutTree> items, IEnumerable<DesignerTreeModel> models)
         {
             foreach (var model in models)
             {
@@ -113,7 +154,7 @@ namespace Mov.Designer.ViewModels
             }
         }
 
-        private void GetContentTables(ICollection<ContentTable> items, IEnumerable<TreeModel> models)
+        private void GetContentTables(ICollection<ContentTable> items, IEnumerable<DesignerTreeModel> models)
         {
             foreach (var model in models)
             {
@@ -131,7 +172,7 @@ namespace Mov.Designer.ViewModels
             }
         }
 
-        private void UpdateEditMode(IEnumerable<TreeModel> treeModels)
+        private void UpdateEditMode(IEnumerable<DesignerTreeModel> treeModels)
         {
             foreach(var model in treeModels)
             {
@@ -145,7 +186,7 @@ namespace Mov.Designer.ViewModels
     }
     #region クラス
 
-    public class TreeModel : TableModel
+    public class DesignerTreeModel : DesignerTableModel
     {
         #region フィールド
 
@@ -162,8 +203,6 @@ namespace Mov.Designer.ViewModels
         public ReactivePropertySlim<string> LayoutStyle { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<string> LayoutParameter { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<bool> IsExpand { get; } = new ReactivePropertySlim<bool>(true);
-        public ReactivePropertySlim<string> ToolTip { get; } = new ReactivePropertySlim<string>();
-        public ReactivePropertySlim<bool> IsEdit { get; } = new ReactivePropertySlim<bool>(false);
 
         public List<string> Codes { get; set; } = new List<string>();
 
@@ -181,39 +220,31 @@ namespace Mov.Designer.ViewModels
                 Designer.Models.OrientationType.Vertical,
             };
 
-        public List<TreeModel> Children { get; set; } = new List<TreeModel>();
+        public List<DesignerTreeModel> Children { get; set; } = new List<DesignerTreeModel>();
 
         #endregion プロパティ
 
-        #region コマンド
-
-        public ReactiveCommand<string> AddCommand { get; } = new ReactiveCommand<string>();
-
-        public ReactiveCommand<string> RemoveCommand { get; } = new ReactiveCommand<string>();
-
-        #endregion コマンド
-
         #region コンストラクター
 
-        public TreeModel(LayoutTree item, ContentTable table, IDesignerRepositoryCollection repository) : base(table)
+        public DesignerTreeModel(LayoutTree tree, ContentTable table, IDesignerRepositoryCollection repository, ICollection<ReactiveCommand<Guid>> addCommands, ICollection<ReactiveCommand<Guid>> removeCommands) : base(table, addCommands, removeCommands)
         {
             this.repository = repository;
             Codes = repository.ContentTables.Gets().Select(x => x.Code).Distinct().ToList();
             //プロパティ
-            IsExpand.Value = item.IsExpand;
-            LayoutType.Value = item.LayoutNodeType;
-            OrientationType.Value = item.OrientationType;
-            LayoutStyle.Value = item.LayoutStyle;
-            LayoutParameter.Value = item.LayoutParameter;
-            //コマンド
-            Code.Subscribe(OnChangeCodeCommand).AddTo(disposables);
-            AddCommand.Subscribe(OnAddCommand).AddTo(disposables);
-            RemoveCommand.Subscribe(OnRemoveCommand).AddTo(disposables);
+            Id.Value = tree.Id;
+            Index.Value = tree.Index;
+            Code.Value = tree.Code;
+            IsExpand.Value = tree.IsExpand;
+            LayoutType.Value = tree.LayoutNodeType;
+            OrientationType.Value = tree.OrientationType;
+            LayoutStyle.Value = tree.LayoutStyle;
+            LayoutParameter.Value = tree.LayoutParameter;
             //子階層へ
-            foreach (var child in item.Children)
+            foreach (var child in tree.Children)
             {
-                Children.Add(new TreeModel(child, repository.ContentTables.Get(child.Code), repository));
+                Children.Add(new DesignerTreeModel(child, repository.ContentTables.Get(child.Code), repository, addCommands, removeCommands));
             }
+            Code.Subscribe(OnChangeCodeCommand).AddTo(disposables);
         }
 
         #endregion コンストラクター
@@ -227,25 +258,21 @@ namespace Mov.Designer.ViewModels
             Update(item);
         }
 
-        private void OnAddCommand(string parameter)
+        protected override void Update(ContentTable item)
         {
-
-        }
-
-        private void OnRemoveCommand(string parameter)
-        {
-            var item = this.repository.LayoutTrees.Get(parameter);
-            if (item != null) return;
-            this.repository.LayoutTrees.Delete(item);
+            if (item == null) return;
+            var table = new ContentTable(item);
+            table.Id = Id.Value;
+            table.Index = Index.Value;
+            base.Update(table);
         }
 
         #endregion イベント
 
     }
 
-    public class TreeModelAttribute : TableModelAttribute
+    public class DesignerTreeModelAttribute : DesignerTableModelAttribute
     {
-        public ColumnAttribute Edit { get; } = new ColumnAttribute("edit", 0);
         public ColumnAttribute LayoutType { get; } = new ColumnAttribute("layoutType", 100);
         public ColumnAttribute OrientationType { get; } = new ColumnAttribute("orientation", 100);
         public ColumnAttribute LayoutStyle { get; } = new ColumnAttribute("layoutStyle", 100);

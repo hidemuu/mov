@@ -2,6 +2,7 @@
     x:Class="Mov.Designer.Views.DesignerTableView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converter="clr-namespace:Mov.WpfControls.Converters;assembly=Mov.WpfControls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:local="clr-namespace:Mov.Designer.Views"
@@ -18,6 +19,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <converter:BoolToVisibillityConverter x:Key="boolToVisibilityConverter" />
         </ResourceDictionary>
     </UserControl.Resources>
     <i:Interaction.Triggers>
@@ -29,15 +31,42 @@
         <ListView
             x:Name="listView"
             Grid.Row="0"
-            ItemsSource="{Binding Models}">
+            ItemsSource="{Binding Models}"
+            SelectedItem="{Binding SelectedModel.Value}">
             <ListView.View>
                 <GridView>
+                    <GridViewColumn Width="{Binding Attribute.Edit.Width.Value}" Header="{Binding Attribute.Edit.Header.Value}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
+                                <StackPanel Orientation="Horizontal" Visibility="{Binding IsEdit.Value, Converter={StaticResource boolToVisibilityConverter}}">
+                                    <Button
+                                        Width="16"
+                                        Height="20"
+                                        Padding="0"
+                                        Command="{Binding AddCommand}"
+                                        CommandParameter="{Binding Id.Value}"
+                                        Content="+"
+                                        FontSize="16"
+                                        Foreground="White" />
+                                    <Button
+                                        Width="16"
+                                        Height="20"
+                                        Padding="0"
+                                        Command="{Binding RemoveCommand}"
+                                        CommandParameter="{Binding Id.Value}"
+                                        Content="-"
+                                        FontSize="16"
+                                        Foreground="White" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                     <GridViewColumn
                         x:Name="indexColumn"
                         Width="{Binding Attribute.Index.Width.Value}"
                         Header="{Binding Attribute.Index.Header.Value}">
                         <GridViewColumn.CellTemplate>
-                            <DataTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
                                 <TextBlock HorizontalAlignment="Stretch" Text="{Binding Index.Value}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -47,7 +76,7 @@
                         Width="{Binding Attribute.Code.Width.Value}"
                         Header="{Binding Attribute.Code.Header.Value}">
                         <GridViewColumn.CellTemplate>
-                            <DataTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
                                 <TextBox Width="{Binding Width, ElementName=codeColumn}" Text="{Binding Code.Value, Mode=TwoWay}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -57,7 +86,7 @@
                         Width="{Binding Attribute.Name.Width.Value}"
                         Header="{Binding Attribute.Name.Header.Value}">
                         <GridViewColumn.CellTemplate>
-                            <DataTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
                                 <TextBox Width="{Binding Width, ElementName=nameColumn}" Text="{Binding Name.Value, Mode=TwoWay}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -67,7 +96,7 @@
                         Width="{Binding Attribute.Command.Width.Value}"
                         Header="{Binding Attribute.Command.Header.Value}">
                         <GridViewColumn.CellTemplate>
-                            <DataTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
                                 <TextBox Width="{Binding Width, ElementName=commandColumn}" Text="{Binding Command.Value, Mode=TwoWay}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -77,7 +106,7 @@
                         Width="{Binding Attribute.ControlType.Width.Value}"
                         Header="{Binding Attribute.ControlType.Header.Value}">
                         <GridViewColumn.CellTemplate>
-                            <DataTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
                                 <TextBox Width="{Binding Width, ElementName=controlTypeColumn}" Text="{Binding ControlType.Value, Mode=TwoWay}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -87,7 +116,7 @@
                         Width="{Binding Attribute.ControlStyle.Width.Value}"
                         Header="{Binding Attribute.ControlStyle.Header.Value}">
                         <GridViewColumn.CellTemplate>
-                            <DataTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
                                 <TextBox Width="{Binding Width, ElementName=controlStyleColumn}" Text="{Binding ControlStyle.Value, Mode=TwoWay}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -97,7 +126,7 @@
                         Width="{Binding Attribute.Parameter.Width.Value}"
                         Header="{Binding Attribute.Parameter.Header.Value}">
                         <GridViewColumn.CellTemplate>
-                            <DataTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
                                 <TextBox Width="{Binding Width, ElementName=parameterColumn}" Text="{Binding Parameter.Value, Mode=TwoWay}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -105,5 +134,69 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button
+            Width="32"
+            Height="32"
+            Margin="0,0,104,8"
+            Padding="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Command="{Binding UpCommand}"
+            Content="↑"
+            Cursor="Hand"
+            Focusable="False"
+            FontSize="20"
+            ToolTip="上に移動"
+            ToolTipService.Placement="Right" />
+        <Button
+            Width="32"
+            Height="32"
+            Margin="0,0,72,8"
+            Padding="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Command="{Binding DownCommand}"
+            Content="↓"
+            Cursor="Hand"
+            Focusable="False"
+            FontSize="20"
+            ToolTip="下に移動"
+            ToolTipService.Placement="Right" />
+        <Button
+            Width="32"
+            Height="32"
+            Margin="0,0,40,8"
+            Padding="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Command="{Binding EditCommand}"
+            Content="E"
+            Cursor="Hand"
+            Focusable="False"
+            FontSize="20"
+            ToolTip="編集します"
+            ToolTipService.Placement="Right" />
+        <Button
+            Width="32"
+            Height="32"
+            Margin="0,0,8,8"
+            Padding="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Command="{Binding SaveCommand}"
+            Content="S"
+            Cursor="Hand"
+            Focusable="False"
+            FontSize="20"
+            ToolTip="保存します"
+            ToolTipService.Placement="Right" />
     </Grid>
 </UserControl>

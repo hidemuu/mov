@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Designer.Repository
 {
-    public class ContentTableRepository : FileRepositoryBase<ContentTable, ContentTableCollection>
+    public class ContentTableRepository : DbObjectRepositoryBase<ContentTable, ContentTableCollection>
     {
         public ContentTableRepository(string path, string encoding = "utf-8") : base(path, encoding)
         {

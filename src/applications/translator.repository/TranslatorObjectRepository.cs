@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Translator.Repository
 {
-    public class TranslatorObjectRepository : FileRepositoryBase<TranslatorObject, TranslatorObjectCollection>
+    public class TranslatorObjectRepository : DbObjectRepositoryBase<TranslatorObject, TranslatorObjectCollection>
     {
         public TranslatorObjectRepository(string path, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(path, encoding) { }
     }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Designer.Repository
 {
-    public class LayoutTreeRepository : FileRepositoryBase<LayoutTree, LayoutTreeCollection>
+    public class LayoutTreeRepository : DbObjectRepositoryBase<LayoutTree, LayoutTreeCollection>
     {
         public LayoutTreeRepository(string path, string encoding = "utf-8") : base(path, encoding)
         {

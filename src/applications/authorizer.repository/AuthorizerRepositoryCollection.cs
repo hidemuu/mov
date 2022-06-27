@@ -12,7 +12,7 @@ namespace Mov.Authorizer.Repository
     /// <summary>
     /// オーソライズのリポジトリ
     /// </summary>
-    public class AuthorizerRepositoryCollection : FileRepositoryCollectionBase, IAuthorizerRepositoryCollection
+    public class AuthorizerRepositoryCollection : DbObjectRepositoryCollectionBase, IAuthorizerRepositoryCollection
     {
         /// <summary>
         /// コンストラクター
@@ -24,7 +24,7 @@ namespace Mov.Authorizer.Repository
 
         #region プロパティ
 
-        public FileRepositoryBase<User, UserCollection> Users { get; }
+        public DbObjectRepositoryBase<User, UserCollection> Users { get; }
 
         #endregion
     }

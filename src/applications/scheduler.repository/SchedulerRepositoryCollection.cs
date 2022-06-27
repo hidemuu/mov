@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Scheduler.Repository
 {
-    public class SchedulerRepositoryCollection : FileRepositoryCollectionBase, ISchedulerRepositoryCollection
+    public class SchedulerRepositoryCollection : DbObjectRepositoryCollectionBase, ISchedulerRepositoryCollection
     {
         public SchedulerRepositoryCollection(string resourceDir, string extension, string encoding = "utf-8") : base(resourceDir, extension)
         {

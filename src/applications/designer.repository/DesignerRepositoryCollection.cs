@@ -12,7 +12,7 @@ namespace Mov.Designer.Repository.Xml
     /// <summary>
     /// デザイナーのリポジトリ
     /// </summary>
-    public class DesignerRepositoryCollection : FileRepositoryCollectionBase, IDesignerRepositoryCollection
+    public class DesignerRepositoryCollection : DbObjectRepositoryCollectionBase, IDesignerRepositoryCollection
     {
 
         #region コンストラクター
@@ -33,13 +33,13 @@ namespace Mov.Designer.Repository.Xml
 
         #region プロパティ
 
-        public FileRepositoryBase<ShellLayout, ShellLayoutCollection> ShellLayouts { get; }
+        public DbObjectRepositoryBase<ShellLayout, ShellLayoutCollection> ShellLayouts { get; }
 
-        public FileRepositoryBase<LayoutTree, LayoutTreeCollection> LayoutTrees { get; }
+        public DbObjectRepositoryBase<LayoutTree, LayoutTreeCollection> LayoutTrees { get; }
 
-        public FileRepositoryBase<ContentTable, ContentTableCollection> ContentTables { get; }
+        public DbObjectRepositoryBase<ContentTable, ContentTableCollection> ContentTables { get; }
 
-        public FileRepositoryBase<Theme, ThemeCollection> Themes { get; }
+        public DbObjectRepositoryBase<Theme, ThemeCollection> Themes { get; }
 
         #endregion
 

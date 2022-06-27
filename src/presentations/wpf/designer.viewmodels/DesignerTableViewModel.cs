@@ -3,11 +3,14 @@ using Mov.Designer.Models.interfaces;
 using Mov.Designer.Service.Layouts;
 using Mov.WpfViewModels;
 using Reactive.Bindings;
+using Reactive.Bindings.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Disposables;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Mov.Designer.ViewModels
 {
@@ -17,14 +20,35 @@ namespace Mov.Designer.ViewModels
 
         private readonly IDesignerRepositoryCollection repository;
 
+        private ICollection<ReactiveCommand<Guid>> addCommands = new List<ReactiveCommand<Guid>>();
+
+        private ICollection<ReactiveCommand<Guid>> removeCommands = new List<ReactiveCommand<Guid>>();
+
+        private CompositeDisposable modelDisposables = new CompositeDisposable();
+
         #endregion フィールド
 
         #region プロパティ
 
-        public ReactiveCollection<TableModel> Models { get; } = new ReactiveCollection<TableModel>();
-        public TableModelAttribute Attribute { get; } = new TableModelAttribute();
+        public ReactiveCollection<DesignerTableModel> Models { get; } = new ReactiveCollection<DesignerTableModel>();
+        public DesignerTableModelAttribute Attribute { get; } = new DesignerTableModelAttribute();
+        public ReactivePropertySlim<bool> IsEdit { get; } = new ReactivePropertySlim<bool>(false);
+        public ReactivePropertySlim<DesignerTableModel> SelectedModel { get; } = new ReactivePropertySlim<DesignerTableModel>();
 
         #endregion プロパティ
+
+        #region コマンド
+
+        public ReactiveCommand EditCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand SaveCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand AddCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand DeleteCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand UpCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand DownCommand { get; } = new ReactiveCommand();
+
+
+        #endregion コマンド
+
 
         #region コンストラクター
 
@@ -35,10 +59,11 @@ namespace Mov.Designer.ViewModels
         public DesignerTableViewModel(IDesignerRepositoryCollection repository)
         {
             this.repository = repository;
-            foreach(var table in repository.ContentTables.Gets())
-            {
-                Models.Add(new TableModel(table));
-            }
+            SaveCommand.Subscribe(OnSaveCommand).AddTo(Disposables);
+            EditCommand.Subscribe(OnEditCommand).AddTo(Disposables);
+            UpCommand.Subscribe(OnUpCommand).AddTo(Disposables);
+            DownCommand.Subscribe(OnDownCommand).AddTo(Disposables);
+            CreateModels();
         }
 
         #endregion コンストラクター
@@ -50,13 +75,118 @@ namespace Mov.Designer.ViewModels
 
         }
 
+        private void OnEditCommand()
+        {
+            IsEdit.Value = !IsEdit.Value;
+            if (IsEdit.Value) Attribute.Edit.Width.Value = 45;
+            else Attribute.Edit.Width.Value = 0;
+            UpdateEditMode(Models);
+        }
+
+        private void OnSaveCommand()
+        {
+            var tables = new List<ContentTable>();
+            GetContentTables(tables, Models);
+            repository.ContentTables.Posts(tables);
+            repository.ContentTables.Export();
+            MessageBox.Show("保存しました");
+        }
+
+        private void OnUpCommand()
+        {
+            var selectedModel = SelectedModel.Value;
+            if (selectedModel == null) return;
+            repository.ContentTables.MovePrev(selectedModel.Id.Value);
+            CreateModels();
+            UpdateEditMode(Models);
+        }
+
+        private void OnDownCommand()
+        {
+            var selectedModel = SelectedModel.Value;
+            if (selectedModel == null) return;
+            repository.ContentTables.MoveNext(selectedModel.Id.Value);
+            CreateModels();
+            UpdateEditMode(Models);
+        }
+
+        private void OnAddCommand(Guid id)
+        {
+            var table = this.repository.ContentTables.Get(id);
+            if (table == null) return;
+            this.repository.ContentTables.Put(new ContentTable(), table.Id);
+            CreateModels();
+            UpdateEditMode(Models);
+        }
+
+        private void OnRemoveCommand(Guid id)
+        {
+            var table = this.repository.ContentTables.Get(id);
+            if (table == null) return;
+            this.repository.ContentTables.Delete(table);
+            CreateModels();
+            UpdateEditMode(Models);
+        }
+
         #endregion イベントハンドラ
+
+        #region メソッド
+        private void CreateModels()
+        {
+            Models.Clear();
+            modelDisposables.Clear();
+            foreach (var table in repository.ContentTables.Gets())
+            {
+                Models.Add(new DesignerTableModel(table, addCommands, removeCommands));
+            }
+            foreach (var addCommand in addCommands)
+            {
+                addCommand.Subscribe(OnAddCommand).AddTo(modelDisposables);
+            }
+            foreach (var removeCommand in removeCommands)
+            {
+                removeCommand.Subscribe(OnRemoveCommand).AddTo(modelDisposables);
+            }
+        }
+
+        private void GetContentTables(ICollection<ContentTable> items, IEnumerable<DesignerTableModel> models)
+        {
+            foreach (var model in models)
+            {
+                var item = new ContentTable
+                {
+                    Id = model.Id.Value,
+                    Index = model.Index.Value,
+                    Code = model.Code.Value,
+                    Command = model.Command.Value,
+                    ControlType = model.ControlType.Value,
+                    ControlStyle = model.ControlStyle.Value,
+                };
+                items.Add(item);
+            }
+        }
+
+        private void UpdateEditMode(IEnumerable<DesignerTableModel> models)
+        {
+            foreach (var model in models)
+            {
+                model.IsEdit.Value = IsEdit.Value;
+            }
+        }
+
+        #endregion メソッド
 
     }
     #region クラス
 
-    public class TableModel
+    public class DesignerTableModel
     {
+        #region フィールド
+
+        private CompositeDisposable disposables = new CompositeDisposable();
+
+        #endregion フィールド
+
         #region プロパティ
 
         public ReactivePropertySlim<Guid> Id { get; } = new ReactivePropertySlim<Guid>();
@@ -68,20 +198,34 @@ namespace Mov.Designer.ViewModels
         public ReactivePropertySlim<string> ControlStyle { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<string> Parameter { get; } = new ReactivePropertySlim<string>();
 
+        public ReactivePropertySlim<string> ToolTip { get; } = new ReactivePropertySlim<string>();
+        public ReactivePropertySlim<bool> IsEdit { get; } = new ReactivePropertySlim<bool>(false);
+
         #endregion プロパティ
+
+        #region コマンド
+
+        public ReactiveCommand<Guid> AddCommand { get; } = new ReactiveCommand<Guid>();
+
+        public ReactiveCommand<Guid> RemoveCommand { get; } = new ReactiveCommand<Guid>();
+
+        #endregion コマンド
 
         #region コンストラクター
 
-        public TableModel(ContentTable item)
+        public DesignerTableModel(ContentTable item, ICollection<ReactiveCommand<Guid>> addCommands, ICollection<ReactiveCommand<Guid>> removeCommands)
         {
             Update(item);
+            //コマンド
+            addCommands.Add(AddCommand);
+            removeCommands.Add(RemoveCommand);
         }
 
         #endregion コンストラクター
 
         #region 継承メソッド
 
-        protected void Update(ContentTable item)
+        protected virtual void Update(ContentTable item)
         {
             if (item == null) return;
             Id.Value = item.Id;
@@ -98,7 +242,7 @@ namespace Mov.Designer.ViewModels
 
     }
 
-    public class TableModelAttribute
+    public class DesignerTableModelAttribute
     {
         public ColumnAttribute Index { get; } = new ColumnAttribute("index", 30);
         public ColumnAttribute Code { get; } = new ColumnAttribute("code", 100);
@@ -107,7 +251,7 @@ namespace Mov.Designer.ViewModels
         public ColumnAttribute ControlType { get; } = new ColumnAttribute("controlType", 100);
         public ColumnAttribute ControlStyle { get; } = new ColumnAttribute("controlStyle", 100);
         public ColumnAttribute Parameter { get; } = new ColumnAttribute("parameter", 100);
-
+        public ColumnAttribute Edit { get; } = new ColumnAttribute("edit", 0);
     }
 
     #endregion クラス

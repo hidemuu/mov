@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 
-6-1956998327
+5-1658734525
 
-7-273513361
+6538575053
 223-513391717
-ConfiguratorTableView.xaml;ConfiguratorTreeView.xaml;ConfiguratorView.xaml;Pages\AppSettingTableView.xaml;Pages\UserSettingTableView.xaml;Pages\VariableTableView.xaml;
+ConfiguratorTableView.xaml;ConfiguratorTreeView.xaml;ConfiguratorView.xaml;Pages\UserSettingTableView.xaml;Pages\VariableTableView.xaml;
 
 False
 

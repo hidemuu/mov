@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 namespace Mov.Accessors
 {
     /// <summary>
-    /// ファイルリポジトリ基本クラス
+    /// データベースリポジトリ基本クラス
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class FileRepositoryBase<T, C> : IRepository<T> where T : DbObject where C : DbObjectCollection<T>
+    public abstract class DbObjectRepositoryBase<T, C> : IDbObjectRepository<T> where T : DbObject where C : DbObjectCollection<T>
     {
         #region 定数
 
@@ -44,7 +44,7 @@ namespace Mov.Accessors
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FileRepositoryBase(string path, string encoding = DbConstants.ENCODE_NAME_UTF8)
+        public DbObjectRepositoryBase(string path, string encoding = DbConstants.ENCODE_NAME_UTF8)
         {
             var extension = System.IO.Path.GetExtension(path);
             if (string.IsNullOrEmpty(extension)) Debug.Assert(false);
@@ -83,39 +83,72 @@ namespace Mov.Accessors
 
         #region GET
 
+        /// <summary>
+        /// 全データ取得
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<T> Gets() 
         { 
             if(collection == null) Import();
             return collection.Items;
         }
         
+        /// <summary>
+        /// 全データ取得（非同期）
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<T>> GetsAsync() => await Task.Run(Gets);
 
-        public T Get(Guid id) => Gets().FirstOrDefault(x => x.Id == id);
+        /// <summary>
+        /// データ取得
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public T Get(Guid id) => Get(Gets(), id);
 
-        public T Get(int index) => Gets().FirstOrDefault(x => x.Index == index);
+        /// <summary>
+        /// データ取得
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public T Get(int index) => Get(Gets(), index);
 
-        public T Get(string code) => Gets().FirstOrDefault(x => x.Code == code);
+        /// <summary>
+        /// データ取得
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
+        public T Get(string code) => Get(Gets(), code);
 
         #endregion GET
 
         #region POST
 
+        /// <summary>
+        /// 全データ追加・更新
+        /// </summary>
+        /// <param name="items"></param>
         public void Posts(IEnumerable<T> items)
         {
-            List<T> srcs = collection.Items.ToList();
+            List<T> srcs = Gets().ToList();
             foreach (var item in items)
             {
-                var src = srcs.FirstOrDefault(x => x.Code == item.Code);
+                var src = srcs.FirstOrDefault(x => x.Id == item.Id);
+                //一致するものがある場合は、一旦消す
                 if (src != null) srcs.Remove(src);
+                //追加
                 srcs.Add(item);
             }
             collection.Items = srcs.ToArray();
         }
 
+        /// <summary>
+        /// データ追加・更新
+        /// </summary>
+        /// <param name="item"></param>
         public void Post(T item) 
         {
-            var src = collection.Items.FirstOrDefault(x => x.Id == item.Id);
+            var src = Gets().FirstOrDefault(x => x.Id == item.Id);
             src = item;
         }
 
@@ -129,21 +162,27 @@ namespace Mov.Accessors
         /// <param name="item"></param>
         public void Put(T item)
         {
-            collection.Items.ToList().Add(item);
+            var items = Gets().ToList();
+            items.Add(item);
+            collection.Items = items.ToArray();
         }
 
         /// <summary>
         /// データ追加（位置指定）
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="item"></param>
-        public void Put(Guid id, T item)
+        /// <param name="id"></param>
+        public void Put(T item, Guid id)
         {
-            var src = collection.Items.FirstOrDefault(x => x.Id == id);
-            if(src is DbObjectNode<T> node)
+            if (item is DbObjectNode<T>) 
             {
-                node.Children.Add(item);
-                return;
+                var src = Get(Gets(), id);
+                if (src == null) return;
+                if (src is DbObjectNode<T> node)
+                {
+                    node.Children.Add(item);
+                    return;
+                }
             }
             Put(item);
         }
@@ -158,7 +197,9 @@ namespace Mov.Accessors
         /// <param name="item"></param>
         public void Delete(T item)
         {
-            collection.Items.ToList().Remove(item);
+            var srcs = Gets().ToList();
+            Remove(srcs, item);
+            collection.Items = srcs.ToArray();
         }
 
         #endregion DELETE
@@ -172,11 +213,63 @@ namespace Mov.Accessors
         /// <param name="movedId">移動先ID</param>
         public void Move(Guid id, Guid movedId)
         {
-            var src = collection.Items.FirstOrDefault(x => x.Id == id);
+            var src = Gets().FirstOrDefault(x => x.Id == id);
             if (src == null) return;
-            var moved = collection.Items.FirstOrDefault(x => x.Id == movedId);
+            var moved = Gets().FirstOrDefault(x => x.Id == movedId);
             if (moved == null) return;
+            if (src is DbObjectNode<T> srcNode)
+            {
+                if (!(moved is DbObjectNode<T> movedNode)) return;
+                var srcNodeClone = new DbObjectNode<T>(srcNode);
+                srcNode = new DbObjectNode<T>(movedNode);
+                movedNode = new DbObjectNode<T>(srcNodeClone);
+            }
+            else if (src is DbObject srcObject)
+            {
+                if (!(moved is DbObject movedObject)) return;
+                var srcObjectClone = new DbObject(srcObject);
+                srcObject = new DbObject(movedObject);
+                movedObject = new DbObject(srcObjectClone);
+            }
+        }
 
+        public void MovePrev(Guid id)
+        {
+            var arrayIndex = GetArrayIndex(id);
+            var movedIndex = arrayIndex - 1;
+            if (movedIndex < 0) return;
+            var items = Gets().ToArray();
+            var src =  items[arrayIndex];
+            var moved = items[movedIndex];
+            var querys = Gets().ToArray();
+            querys[arrayIndex] = moved;
+            querys[movedIndex] = src;
+            collection.Items = querys;
+        }
+
+        public void MoveNext(Guid id)
+        {
+            var arrayIndex = GetArrayIndex(id);
+            var movedIndex = arrayIndex + 1;
+            if (movedIndex > collection.Items.Length) return;
+            var items = Gets().ToArray();
+            var src = items[arrayIndex];
+            var moved = items[movedIndex];
+            var querys = Gets().ToArray();
+            querys[arrayIndex] = moved;
+            querys[movedIndex] = src;
+            collection.Items = querys;
+        }
+
+        private int GetArrayIndex(Guid id)
+        {
+            var items = Gets().ToArray();
+            for (int i = 0; i < items.Length; i++)
+            {
+                if (!items[i].Id.Equals(id)) continue;
+                return i;
+            }
+            return -1;
         }
 
         #endregion MOVE
@@ -195,6 +288,34 @@ namespace Mov.Accessors
         #endregion メソッド
 
         #region 内部メソッド
+
+        private T Get(IEnumerable<T> items, object key)
+        {
+            T item = null;
+            if (key is Guid id) item = items.FirstOrDefault(x => x.Id == id);
+            if (key is int index) item = items.FirstOrDefault(x => x.Index == index);
+            if (key is string code) item = items.FirstOrDefault(x => x.Code == code);
+            if (item != null) return item;
+            if (!(items is IEnumerable<DbObjectNode<T>> nodes)) return item;
+            foreach(var node in nodes)
+            {
+                item = Get(node.Children, key);
+                if (item != null) return item;
+            }
+            return item;
+        }
+
+        private void Remove(ICollection<T> items, T item)
+        {
+            var isSuccess = items.Remove(item);
+            if (items is IEnumerable<DbObjectNode<T>> nodes)
+            {
+                foreach (var node in nodes)
+                {
+                    Remove(node.Children, item);
+                }
+            }
+        }
 
         /// <summary>
         /// 文字列取得

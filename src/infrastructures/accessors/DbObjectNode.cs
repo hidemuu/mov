@@ -5,22 +5,41 @@ using System.Xml.Serialization;
 
 namespace Mov.Accessors
 {
-    public abstract class DbObjectNode<T> : DbObject where T : DbObject
+    public class DbObjectNode<T> : DbObject where T : DbObject
     {
         #region プロパティ
 
         [XmlIgnore]
-        public abstract List<T> Children { get; set; }
+        public virtual List<T> Children { get; set; } = new List<T>();
 
         #endregion プロパティ
 
         #region コンストラクター
 
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
         public DbObjectNode()
         {
+
         }
 
-        #endregion コンストラクター
+        /// <summary>
+        /// コンストラクター（ディープコピー）
+        /// </summary>
+        /// <param name="src">コピー元データ</param>
+        public DbObjectNode(DbObjectNode<T> src) : base(src)
+        {
+            foreach(var child in Children)
+            {
+                var srcChild = src.Children.FirstOrDefault(x => x.Id == child.Id);
+                if (!(child is DbObjectNode<T> childNode)) continue;
+                if (!(srcChild is DbObjectNode<T> srcChildNode)) continue;
+                childNode = new DbObjectNode<T>(srcChildNode);
+            }
+        }
+
+        #endregion コンストラクター 
 
         #region メソッド
 

@@ -7,6 +7,6 @@ namespace Mov.Authorizer.Models
 {
     public interface IAuthorizerRepositoryCollection
     {
-        FileRepositoryBase<User, UserCollection> Users { get; }
+        DbObjectRepositoryBase<User, UserCollection> Users { get; }
     }
 }

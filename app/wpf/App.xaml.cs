@@ -1,5 +1,4 @@
-﻿using Configurator.Views;
-using Mov.Authorizer.Models;
+﻿using Mov.Authorizer.Models;
 using Mov.Authorizer.Repository;
 using Mov.Authorizer.ViewModels;
 using Mov.Authorizer.Views;
@@ -133,7 +132,6 @@ namespace Mov.Wpf
             //Viewの登録
             containerRegistry.RegisterForNavigation<ConfiguratorView>();
             containerRegistry.RegisterForNavigation<UserSettingTableView>();
-            containerRegistry.RegisterForNavigation<AppSettingTableView>();
             containerRegistry.RegisterForNavigation<VariableTableView>();
             containerRegistry.RegisterForNavigation<AuthorizerView>();
             containerRegistry.RegisterForNavigation<DesignerView>();
@@ -187,7 +185,6 @@ namespace Mov.Wpf
             ViewModelLocationProvider.Register<MainWindow, MainWindowViewModel>();
             ViewModelLocationProvider.Register<ConfiguratorView, ConfiguratorViewModel>();
             ViewModelLocationProvider.Register<UserSettingTableView, UserSettingTableViewModel>();
-            ViewModelLocationProvider.Register<AppSettingTableView, AppSettingTableViewModel>();
             ViewModelLocationProvider.Register<VariableTableView, VariableTableViewModel>();
             ViewModelLocationProvider.Register<AuthorizerView, AuthorizerViewModel>();
             ViewModelLocationProvider.Register<DesignerView, DesignerViewModel>();

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Accessors.Repository
 {
-    public interface IRepository<T> where T : DbObject
+    public interface IDbObjectRepository<T> where T : DbObject
     {
         IEnumerable<T> Gets();
 

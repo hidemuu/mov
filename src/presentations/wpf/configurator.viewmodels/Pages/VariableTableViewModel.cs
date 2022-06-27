@@ -38,7 +38,6 @@ namespace Mov.Configurator.ViewModels
             public TableModel(Variable variable)
             {
                 Id.Value = variable.Index;
-                Category.Value = variable.Category;
                 Code.Value = variable.Code;
                 Name.Value = variable.Name;
                 Value.Value = variable.Value;

@@ -40,18 +40,6 @@ namespace Mov.Designer.Models
 
         #endregion プロパティ
 
-        #region コンストラクター
-
-        /// <summary>
-        /// コンストラクター
-        /// </summary>
-        public LayoutTree()
-        {
-
-        }
-
-        #endregion コンストラクター
-
         #region メソッド
 
         public override string ToString() => GetString(new string[] { Id.ToString(), Code, LayoutNodeType.ToString() });

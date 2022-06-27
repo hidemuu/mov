@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Accessors.Repository
 {
-    public abstract class FileRepositoryCollectionBase
+    public abstract class DbObjectRepositoryCollectionBase
     {
         #region フィールド
 
@@ -20,7 +20,7 @@ namespace Mov.Accessors.Repository
         /// </summary>
         /// <param name="resourceDir"></param>
         /// <param name="extension"></param>
-        public FileRepositoryCollectionBase(string resourceDir, string extension)
+        public DbObjectRepositoryCollectionBase(string resourceDir, string extension)
         {
             this.resourceDir = resourceDir;
             this.extension = extension;

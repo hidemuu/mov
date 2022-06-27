@@ -28,6 +28,9 @@
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
         </i:EventTrigger>
+        <i:EventTrigger EventName="Unloaded">
+            <i:InvokeCommandAction Command="{Binding UnLoadedCommand}" />
+        </i:EventTrigger>
     </i:Interaction.Triggers>
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
@@ -44,14 +47,14 @@
             <components:TreeListView.Columns>
                 <GridViewColumn Width="{Binding Attribute.Edit.Width.Value}" Header="{Binding Attribute.Edit.Header.Value}">
                     <GridViewColumn.CellTemplate>
-                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                        <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
                             <StackPanel Orientation="Horizontal" Visibility="{Binding IsEdit.Value, Converter={StaticResource boolToVisibilityConverter}}">
                                 <Button
                                     Width="16"
                                     Height="20"
                                     Padding="0"
                                     Command="{Binding AddCommand}"
-                                    CommandParameter="{Binding Code.Value}"
+                                    CommandParameter="{Binding Id.Value}"
                                     Content="+"
                                     FontSize="16"
                                     Foreground="White" />
@@ -60,7 +63,7 @@
                                     Height="20"
                                     Padding="0"
                                     Command="{Binding RemoveCommand}"
-                                    CommandParameter="{Binding Code.Value}"
+                                    CommandParameter="{Binding Id.Value}"
                                     Content="-"
                                     FontSize="16"
                                     Foreground="White" />
@@ -70,7 +73,7 @@
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.Code.Width.Value}" Header="{Binding Attribute.Code.Header.Value}">
                     <GridViewColumn.CellTemplate>
-                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                        <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
                             <StackPanel Orientation="Horizontal">
                                 <components:TreeListViewExpander />
                                 <ComboBox ItemsSource="{Binding Codes}" SelectedItem="{Binding Code.Value}" />
@@ -80,28 +83,28 @@
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.IsExpand.Width.Value}" Header="{Binding Attribute.IsExpand.Header.Value}">
                     <GridViewColumn.CellTemplate>
-                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                        <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
                             <CheckBox Foreground="Black" IsChecked="{Binding IsExpand.Value, Mode=TwoWay}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.LayoutType.Width.Value}" Header="{Binding Attribute.LayoutType.Header.Value}">
                     <GridViewColumn.CellTemplate>
-                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                        <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
                             <ComboBox ItemsSource="{Binding NodeTypes}" SelectedItem="{Binding LayoutType.Value}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.OrientationType.Width.Value}" Header="{Binding Attribute.OrientationType.Header.Value}">
                     <GridViewColumn.CellTemplate>
-                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                        <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
                             <ComboBox ItemsSource="{Binding OrientationTypes}" SelectedItem="{Binding OrientationType.Value}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.LayoutStyle.Width.Value}" Header="{Binding Attribute.LayoutStyle.Header.Value}">
                     <GridViewColumn.CellTemplate>
-                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                        <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
                             <TextBox
                                 Foreground="Black"
                                 IsEnabled="{Binding IsEdit.Value}"
@@ -111,7 +114,7 @@
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.LayoutParameter.Width.Value}" Header="{Binding Attribute.LayoutParameter.Header.Value}">
                     <GridViewColumn.CellTemplate>
-                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                        <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
                             <TextBox
                                 Foreground="Black"
                                 IsEnabled="{Binding IsEdit.Value}"
@@ -121,7 +124,7 @@
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.Name.Width.Value}" Header="{Binding Attribute.Name.Header.Value}">
                     <GridViewColumn.CellTemplate>
-                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                        <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
                             <TextBox
                                 Foreground="Black"
                                 IsEnabled="{Binding IsEdit.Value}"
@@ -131,7 +134,7 @@
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.Command.Width.Value}" Header="{Binding Attribute.Command.Header.Value}">
                     <GridViewColumn.CellTemplate>
-                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                        <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
                             <TextBox
                                 Foreground="Black"
                                 IsEnabled="{Binding IsEdit.Value}"
@@ -141,7 +144,7 @@
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.ControlType.Width.Value}" Header="{Binding Attribute.ControlType.Header.Value}">
                     <GridViewColumn.CellTemplate>
-                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                        <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
                             <TextBox
                                 Foreground="Black"
                                 IsEnabled="{Binding IsEdit.Value}"
@@ -151,7 +154,7 @@
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.ControlStyle.Width.Value}" Header="{Binding Attribute.ControlStyle.Header.Value}">
                     <GridViewColumn.CellTemplate>
-                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                        <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
                             <TextBox
                                 Foreground="Black"
                                 IsEnabled="{Binding IsEdit.Value}"
@@ -161,7 +164,7 @@
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.Parameter.Width.Value}" Header="{Binding Attribute.Parameter.Header.Value}">
                     <GridViewColumn.CellTemplate>
-                        <DataTemplate DataType="{x:Type vm:TreeModel}">
+                        <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
                             <TextBox
                                 Foreground="Black"
                                 IsEnabled="{Binding IsEdit.Value}"
@@ -197,7 +200,7 @@
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
             Command="{Binding SaveCommand}"
-            Content="+"
+            Content="S"
             Cursor="Hand"
             Focusable="False"
             FontSize="20"

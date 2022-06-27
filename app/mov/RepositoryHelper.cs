@@ -46,7 +46,6 @@ namespace Mov
             Console.WriteLine(Designer.ShellLayouts.ToString());
             Console.WriteLine(Designer.ContentTables.ToString());
             Console.WriteLine(Configurator.UserSettings.ToString());
-            Console.WriteLine(Configurator.AppSettings.ToString());
             Console.WriteLine(Configurator.Variables.ToString());
             Console.WriteLine(Authorizer.Users.ToString());
         }

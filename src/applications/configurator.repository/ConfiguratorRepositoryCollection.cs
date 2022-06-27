@@ -12,7 +12,7 @@ namespace Mov.Configurator.Repository
     /// <summary>
     /// コンフィグレーションデータのリポジトリ
     /// </summary>
-    public class ConfiguratorRepositoryCollection : FileRepositoryCollectionBase, IConfiguratorRepositoryCollection
+    public class ConfiguratorRepositoryCollection : DbObjectRepositoryCollectionBase, IConfiguratorRepositoryCollection
     {
         #region コンストラクター
 
@@ -22,7 +22,6 @@ namespace Mov.Configurator.Repository
         public ConfiguratorRepositoryCollection(string resourceDir, string extension, string encode = "utf-8") : base(resourceDir, extension)
         {
             UserSettings = new UserSettingRepository(GetRepositoryPath("user_setting"), encode);
-            AppSettings = new AppSettingRepository(GetRepositoryPath("app_setting"), encode);
             Variables = new VariableRepository(GetRepositoryPath("variable"), encode);
         }
 
@@ -33,15 +32,11 @@ namespace Mov.Configurator.Repository
         /// <summary>
         /// ユーザー設定のリポジトリ
         /// </summary>
-        public FileRepositoryBase<UserSetting, UserSettingCollection> UserSettings { get; }
-        /// <summary>
-        /// アプリケーション設定のリポジトリ
-        /// </summary>
-        public FileRepositoryBase<AppSetting, AppSettingCollection> AppSettings { get; }
+        public DbObjectRepositoryBase<UserSetting, UserSettingCollection> UserSettings { get; }
         /// <summary>
         /// 値設定のリポジトリ
         /// </summary>
-        public FileRepositoryBase<Variable, VariableCollection> Variables { get; }
+        public DbObjectRepositoryBase<Variable, VariableCollection> Variables { get; }
 
         #endregion プロパティ
 

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Designer.Repository
 {
-    public class ShellLayoutRepository : FileRepositoryBase<ShellLayout, ShellLayoutCollection>
+    public class ShellLayoutRepository : DbObjectRepositoryBase<ShellLayout, ShellLayoutCollection>
     {
         public ShellLayoutRepository(string path, string encoding = "utf-8") : base(path, encoding)
         {

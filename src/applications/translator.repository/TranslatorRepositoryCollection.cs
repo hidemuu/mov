@@ -8,14 +8,14 @@ using System.Text;
 
 namespace Mov.Translator.Repository
 {
-    public class TranslatorRepositoryCollection : FileRepositoryCollectionBase, ITranslatorRepositoryCollection
+    public class TranslatorRepositoryCollection : DbObjectRepositoryCollectionBase, ITranslatorRepositoryCollection
     {
         public TranslatorRepositoryCollection(string resourceDir, string extension, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
         {
             Comments = new TranslatorObjectRepository(GetRepositoryPath("comment"), encoding);
         }
 
-        public FileRepositoryBase<TranslatorObject, TranslatorObjectCollection> Comments { get; }
+        public DbObjectRepositoryBase<TranslatorObject, TranslatorObjectCollection> Comments { get; }
         
     }
 }

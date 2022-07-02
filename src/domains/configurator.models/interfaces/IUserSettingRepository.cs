@@ -6,6 +6,6 @@ namespace Mov.Configurator.Models
 {
     public interface IUserSettingRepository
     {
-        IEnumerable<UserSetting> Gets();
+        IEnumerable<Config> Gets();
     }
 }

@@ -51,6 +51,10 @@
               "target": "Package",
               "version": "[27.2.1, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.17, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

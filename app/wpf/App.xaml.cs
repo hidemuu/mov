@@ -1,6 +1,4 @@
-﻿using Mov.Authorizer.Models;
-using Mov.Authorizer.Repository;
-using Mov.Authorizer.ViewModels;
+﻿using Mov.Authorizer.ViewModels;
 using Mov.Authorizer.Views;
 using Mov.Configurator.Models;
 using Mov.Configurator.Repository;
@@ -18,8 +16,6 @@ using Mov.Game.ViewModels;
 using Mov.Game.Views;
 using Mov.Scheduler.ViewModels;
 using Mov.Scheduler.Views;
-using Mov.Translator.Models;
-using Mov.Translator.Repository;
 using Mov.Translator.ViewModels;
 using Mov.Translator.Views;
 using Mov.Utilities;
@@ -122,8 +118,6 @@ namespace Mov.Wpf
             var resourcePath = Path.Combine(rootPath, "resources");
             containerRegistry.RegisterInstance<IConfiguratorRepositoryCollection>(new ConfiguratorRepositoryCollection(resourcePath, "json"));
             containerRegistry.RegisterInstance<IDesignerRepositoryCollection>(new DesignerRepositoryCollection(resourcePath, "xml"));
-            containerRegistry.RegisterInstance<IAuthorizerRepositoryCollection>(new AuthorizerRepositoryCollection(resourcePath, "json"));
-            containerRegistry.RegisterInstance<ITranslatorRepositoryCollection>(new TranslatorRepositoryCollection(resourcePath, "json"));
             containerRegistry.RegisterInstance<IGameRepositoryCollection>(new GameRepositoryCollection(resourcePath, "json"));
             
             //サービスの登録

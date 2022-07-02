@@ -7,7 +7,7 @@ namespace Mov.Configurator.Models
 {
     public interface IConfiguratorRepositoryCollection
     {
-        DbObjectRepositoryBase<UserSetting, UserSettingCollection> UserSettings { get; }
+        DbObjectRepositoryBase<Config, ConfigCollection> Configs { get; }
         DbObjectRepositoryBase<Variable, VariableCollection> Variables { get; }
     }
 }

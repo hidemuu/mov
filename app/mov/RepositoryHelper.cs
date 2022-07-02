@@ -1,5 +1,4 @@
-﻿using Mov.Authorizer.Repository;
-using Mov.Configurator.Models;
+﻿using Mov.Configurator.Models;
 using Mov.Configurator.Repository;
 using Mov.Designer.Models;
 using Mov.Designer.Repository.Xml;
@@ -20,7 +19,6 @@ namespace Mov
 
         internal DesignerRepositoryCollection Designer { get; }
         internal ConfiguratorRepositoryCollection Configurator { get; }
-        internal AuthorizerRepositoryCollection Authorizer { get; }
 
         #endregion プロパティ
 
@@ -35,7 +33,6 @@ namespace Mov
             var resourcePath = Path.Combine(rootPath, "resources");
             this.Designer = new DesignerRepositoryCollection(resourcePath, "xml");
             this.Configurator = new ConfiguratorRepositoryCollection(resourcePath, "json");
-            this.Authorizer = new AuthorizerRepositoryCollection(resourcePath, "json");
         }
 
         #region メソッド
@@ -45,9 +42,8 @@ namespace Mov
             Console.WriteLine(Designer.LayoutTrees.ToString());
             Console.WriteLine(Designer.ShellLayouts.ToString());
             Console.WriteLine(Designer.ContentTables.ToString());
-            Console.WriteLine(Configurator.UserSettings.ToString());
+            Console.WriteLine(Configurator.Configs.ToString());
             Console.WriteLine(Configurator.Variables.ToString());
-            Console.WriteLine(Authorizer.Users.ToString());
         }
 
         #endregion メソッド

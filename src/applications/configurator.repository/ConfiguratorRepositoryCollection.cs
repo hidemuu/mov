@@ -19,9 +19,9 @@ namespace Mov.Configurator.Repository
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ConfiguratorRepositoryCollection(string resourceDir, string extension, string encode = "utf-8") : base(resourceDir, extension)
+        public ConfiguratorRepositoryCollection(string resourceDir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
         {
-            UserSettings = new UserSettingRepository(GetRepositoryPath("user_setting"), encode);
+            Configs = new ConfigRepository(GetRepositoryPath("user_setting"), encode);
             Variables = new VariableRepository(GetRepositoryPath("variable"), encode);
         }
 
@@ -32,7 +32,7 @@ namespace Mov.Configurator.Repository
         /// <summary>
         /// ユーザー設定のリポジトリ
         /// </summary>
-        public DbObjectRepositoryBase<UserSetting, UserSettingCollection> UserSettings { get; }
+        public DbObjectRepositoryBase<Config, ConfigCollection> Configs { get; }
         /// <summary>
         /// 値設定のリポジトリ
         /// </summary>

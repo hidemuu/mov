@@ -24,7 +24,7 @@ namespace Mov.Configurator.ViewModels
         public UserSettingTableViewModel(IConfiguratorRepositoryCollection repository)
         {
             this.repository = repository;
-            foreach (var item in this.repository.UserSettings.Gets())
+            foreach (var item in this.repository.Configs.Gets())
             {
                 TableModels.Add(new TableModel(item));
             }
@@ -36,7 +36,7 @@ namespace Mov.Configurator.ViewModels
         {
             #region フィールド
 
-            private UserSetting userSetting;
+            private Config userSetting;
 
             #endregion フィールド
 
@@ -53,7 +53,7 @@ namespace Mov.Configurator.ViewModels
 
             #endregion プロパティ
 
-            public TableModel(UserSetting userSetting)
+            public TableModel(Config userSetting)
             {
                 this.userSetting = userSetting;
             }

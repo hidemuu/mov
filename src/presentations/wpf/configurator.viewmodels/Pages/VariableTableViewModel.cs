@@ -1,6 +1,6 @@
 ﻿using Mov.Configurator.Models;
 using Mov.Designer.Service.Layouts;
-using Mov.WpfViewModels;
+using Mov.WpfControls.ViewModels;
 using Reactive.Bindings;
 using System;
 using System.Collections.Generic;

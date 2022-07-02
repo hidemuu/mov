@@ -21,7 +21,7 @@ namespace Mov.Configurator.Repository
         /// </summary>
         public ConfiguratorRepositoryCollection(string resourceDir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
         {
-            Configs = new ConfigRepository(GetRepositoryPath("user_setting"), encode);
+            Configs = new ConfigRepository(GetRepositoryPath("config"), encode);
             Variables = new VariableRepository(GetRepositoryPath("variable"), encode);
         }
 

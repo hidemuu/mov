@@ -1,5 +1,5 @@
 ﻿using Mov.Game.Service;
-using Mov.WpfViewModels;
+using Mov.WpfControls.ViewModels;
 using Prism.Mvvm;
 using Prism.Regions;
 using Reactive.Bindings;

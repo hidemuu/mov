@@ -16,13 +16,8 @@ using Mov.Game.ViewModels;
 using Mov.Game.Views;
 using Mov.Scheduler.ViewModels;
 using Mov.Scheduler.Views;
-using Mov.Translator.ViewModels;
-using Mov.Translator.Views;
 using Mov.Utilities;
 using Mov.Wpf.ViewModels;
-using Mov.WpfViewModels.Components.Dialogs;
-using Mov.WpfViews;
-using Mov.WpfViews.Components.Dialogs;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Mvvm;
@@ -41,6 +36,9 @@ using System.Windows;
 using Mov.Game.Views.Dialogs;
 using Mov.Game.ViewModels.Dialogs;
 using Mov.Game.Service.Machine;
+using Mov.WpfControls.Views.Dialogs;
+using Mov.WpfControls.ViewModels.Dialogs;
+using Mov.WpfControls.Views;
 
 namespace Mov.Wpf
 {
@@ -135,7 +133,6 @@ namespace Mov.Wpf
             containerRegistry.RegisterForNavigation<DesignerPartsView>();
             containerRegistry.RegisterForNavigation<DesignerThemeView>();
             containerRegistry.RegisterForNavigation<SchedulerView>();
-            containerRegistry.RegisterForNavigation<TranslatorView>();
             containerRegistry.RegisterForNavigation<GameMainView>();
             containerRegistry.RegisterForNavigation<GameTitleView>();
             containerRegistry.RegisterForNavigation<GameConfigView>();
@@ -188,7 +185,6 @@ namespace Mov.Wpf
             ViewModelLocationProvider.Register<DesignerPartsView, DesignerPartsViewModel>();
             ViewModelLocationProvider.Register<DesignerThemeView, DesignerThemeViewModel>();
             ViewModelLocationProvider.Register<SchedulerView, SchedulerViewModel>();
-            ViewModelLocationProvider.Register<TranslatorView, TranslatorViewModel>();
             ViewModelLocationProvider.Register<GameMainView, GameMainViewModel>();
             ViewModelLocationProvider.Register<GameMapView, GameMapViewModel>();
             ViewModelLocationProvider.Register<GameTitleView, GameTitleViewModel>();

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0-windows</TargetFramework>
@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\wpfviewmodels\WpfViewModels.csproj" />
+    <ProjectReference Include="..\..\..\infrastructures\wpfcontrols\WpfControls.csproj" />
   </ItemGroup>
 
 </Project>

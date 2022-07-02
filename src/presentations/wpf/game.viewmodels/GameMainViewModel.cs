@@ -2,7 +2,7 @@ using Mov.Game.Models;
 using Mov.Game.Models.Engines;
 using Mov.Game.Service;
 using Mov.Game.ViewModels.Models;
-using Mov.WpfViewModels;
+using Mov.WpfControls.ViewModels;
 using Prism.Mvvm;
 using Prism.Regions;
 using Prism.Services.Dialogs;

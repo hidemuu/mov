@@ -1,4 +1,4 @@
-﻿using Mov.WpfViewModels;
+﻿using Mov.WpfControls.ViewModels;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using System;

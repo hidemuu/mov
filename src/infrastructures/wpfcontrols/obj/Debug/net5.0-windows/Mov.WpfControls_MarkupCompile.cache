@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 
-2-1608673090
+7909689784
 
-181315136980
-2031943895521
-Components\TreeListView.xaml;CustomControls.xaml;
+33-574408154
+212284459988
+Components\TreeListView.xaml;CustomControls.xaml;Views\Dialogs\AlertDialog.xaml;Views\Dialogs\SuccessDialog.xaml;Views\Dialogs\WarningDialog.xaml;Views\DialogWindow.xaml;Views\Tabs\MenuTab.xaml;
 
 False
 

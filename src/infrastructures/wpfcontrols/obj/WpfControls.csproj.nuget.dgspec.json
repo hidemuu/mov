@@ -55,6 +55,14 @@
               "target": "Package",
               "version": "[0.9.7, )"
             },
+            "Prism.Unity": {
+              "target": "Package",
+              "version": "[8.1.97, )"
+            },
+            "ReactiveProperty.WPF": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
             "gong-wpf-dragdrop": {
               "target": "Package",
               "version": "[3.0.0, )"

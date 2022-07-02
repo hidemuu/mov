@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\designer.viewmodels\Designer.ViewModels.csproj" />
-    <ProjectReference Include="..\wpfviews\WpfViews.csproj" />
   </ItemGroup>
 
   <ItemGroup>

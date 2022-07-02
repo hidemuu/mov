@@ -11,4 +11,8 @@
     <Folder Include="Pages\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\infrastructures\wpfcontrols\WpfControls.csproj" />
+  </ItemGroup>
+
 </Project>

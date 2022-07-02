@@ -20,10 +20,6 @@
     <ProjectReference Include="..\..\src\presentations\wpf\game.views\Game.Views.csproj" />
     <ProjectReference Include="..\..\src\presentations\wpf\scheduler.viewmodels\Scheduler.ViewModels.csproj" />
     <ProjectReference Include="..\..\src\presentations\wpf\scheduler.views\Scheduler.Views.csproj" />
-    <ProjectReference Include="..\..\src\presentations\wpf\translator.viewmodels\Translator.ViewModels.csproj" />
-    <ProjectReference Include="..\..\src\presentations\wpf\translator.views\Translator.Views.csproj" />
-    <ProjectReference Include="..\..\src\presentations\wpf\wpfviewmodels\WpfViewModels.csproj" />
-    <ProjectReference Include="..\..\src\presentations\wpf\wpfviews\WpfViews.csproj" />
     <ProjectReference Include="..\baselib\BaseLib.csproj" />
   </ItemGroup>
 

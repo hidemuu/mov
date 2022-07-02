@@ -13,8 +13,8 @@ TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 6656167134
 
 8342977463
-216-1664723964
+214243436400
 AuthorizerView.xaml;Dialogs\Contents\CreateAccountView.xaml;Dialogs\Contents\LoginMainContentView.xaml;Dialogs\Contents\NoContentView.xaml;Dialogs\LoginDialog.xaml;Pages\UserTableView.xaml;
 
-False
+True
 

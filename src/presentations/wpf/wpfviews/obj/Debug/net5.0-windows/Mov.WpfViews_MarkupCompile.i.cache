@@ -13,8 +13,8 @@ TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 51044197811
 
 81284836394
-214239784259
+213-279535129
 Components\Dialogs\AlertDialog.xaml;Components\Dialogs\SuccessDialog.xaml;Components\Dialogs\WarningDialog.xaml;Components\Tabs\MenuTab.xaml;DialogWindow.xaml;
 
-False
+True
 

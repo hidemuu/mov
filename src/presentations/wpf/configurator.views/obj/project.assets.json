@@ -538,7 +538,7 @@
         "dependencies": {
           "Mov.Configurator.Models": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0"
+          "Mov.WpfControls": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Configurator.ViewModels.dll": {}
@@ -597,6 +597,8 @@
         "dependencies": {
           "LiveCharts.Wpf.NetCore3": "0.9.7",
           "Mov.WpfDesigns": "1.0.0",
+          "Prism.Unity": "8.1.97",
+          "ReactiveProperty.WPF": "8.0.1",
           "gong-wpf-dragdrop": "3.0.0"
         },
         "compile": {
@@ -623,42 +625,6 @@
         },
         "runtime": {
           "bin/placeholder/Mov.WpfDesigns.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.WpfViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Mov.WpfDesigns": "1.0.0",
-          "Prism.Unity": "8.1.97",
-          "ReactiveProperty.WPF": "8.0.1"
-        },
-        "compile": {
-          "bin/placeholder/Mov.WpfViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.WpfViewModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.WpfViews/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Mov.WpfControls": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0",
-          "Prism.Wpf": "8.1.97"
-        },
-        "compile": {
-          "bin/placeholder/Mov.WpfViews.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.WpfViews.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -1701,22 +1667,11 @@
       "type": "project",
       "path": "../../../infrastructures/wpfdesigns/WpfDesigns.csproj",
       "msbuildProject": "../../../infrastructures/wpfdesigns/WpfDesigns.csproj"
-    },
-    "Mov.WpfViewModels/1.0.0": {
-      "type": "project",
-      "path": "../wpfviewmodels/WpfViewModels.csproj",
-      "msbuildProject": "../wpfviewmodels/WpfViewModels.csproj"
-    },
-    "Mov.WpfViews/1.0.0": {
-      "type": "project",
-      "path": "../wpfviews/WpfViews.csproj",
-      "msbuildProject": "../wpfviews/WpfViews.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
-      "Mov.Configurator.ViewModels >= 1.0.0",
-      "Mov.WpfViews >= 1.0.0"
+      "Mov.Configurator.ViewModels >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1758,9 +1713,6 @@
           "projectReferences": {
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\configurator.viewmodels\\Configurator.ViewModels.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\configurator.viewmodels\\Configurator.ViewModels.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\wpfviews\\WpfViews.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\wpfviews\\WpfViews.csproj"
             }
           }
         }

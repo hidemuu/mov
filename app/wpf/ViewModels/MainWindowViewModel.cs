@@ -1,5 +1,5 @@
 ﻿using Mov.Wpf.Models;
-using Mov.WpfViewModels;
+using Mov.WpfControls.ViewModels;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using Reactive.Bindings;

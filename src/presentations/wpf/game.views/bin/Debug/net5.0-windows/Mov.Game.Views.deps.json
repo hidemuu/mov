@@ -8,8 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "Mov.Game.Views/1.0.0": {
         "dependencies": {
-          "Mov.Game.ViewModels": "1.0.0",
-          "Mov.WpfViews": "1.0.0"
+          "Mov.Game.ViewModels": "1.0.0"
         },
         "runtime": {
           "Mov.Game.Views.dll": {}
@@ -473,7 +472,7 @@
       "Mov.Game.ViewModels/1.0.0": {
         "dependencies": {
           "Mov.Game.Service": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0"
+          "Mov.WpfControls": "1.0.0"
         },
         "runtime": {
           "Mov.Game.ViewModels.dll": {}
@@ -488,6 +487,8 @@
         "dependencies": {
           "LiveCharts.Wpf.NetCore3": "0.9.7",
           "Mov.WpfDesigns": "1.0.0",
+          "Prism.Unity": "8.1.97",
+          "ReactiveProperty.WPF": "8.0.1",
           "gong-wpf-dragdrop": "3.0.0"
         },
         "runtime": {
@@ -505,24 +506,12 @@
           "Mov.WpfDesigns.dll": {}
         }
       },
-      "Mov.WpfViewModels/1.0.0": {
-        "dependencies": {
-          "Mov.WpfDesigns": "1.0.0",
-          "Prism.Unity": "8.1.97",
-          "ReactiveProperty.WPF": "8.0.1"
-        },
+      "Mov.WpfViewModels/1.0.0.0": {
         "runtime": {
-          "Mov.WpfViewModels.dll": {}
-        }
-      },
-      "Mov.WpfViews/1.0.0": {
-        "dependencies": {
-          "Mov.WpfControls": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0",
-          "Prism.Wpf": "8.1.97"
-        },
-        "runtime": {
-          "Mov.WpfViews.dll": {}
+          "Mov.WpfViewModels.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
@@ -881,13 +870,8 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Mov.WpfViewModels/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Mov.WpfViews/1.0.0": {
-      "type": "project",
+    "Mov.WpfViewModels/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

@@ -8,8 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "Mov.Designer.Views/1.0.0": {
         "dependencies": {
-          "Mov.Designer.ViewModels": "1.0.0",
-          "Mov.WpfViews": "1.0.0"
+          "Mov.Designer.ViewModels": "1.0.0"
         },
         "runtime": {
           "Mov.Designer.Views.dll": {}
@@ -430,7 +429,7 @@
         "dependencies": {
           "Mov.Designer.Repository": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0"
+          "Mov.WpfControls": "1.0.0"
         },
         "runtime": {
           "Mov.Designer.ViewModels.dll": {}
@@ -440,6 +439,8 @@
         "dependencies": {
           "LiveCharts.Wpf.NetCore3": "0.9.7",
           "Mov.WpfDesigns": "1.0.0",
+          "Prism.Unity": "8.1.97",
+          "ReactiveProperty.WPF": "8.0.1",
           "gong-wpf-dragdrop": "3.0.0"
         },
         "runtime": {
@@ -455,26 +456,6 @@
         },
         "runtime": {
           "Mov.WpfDesigns.dll": {}
-        }
-      },
-      "Mov.WpfViewModels/1.0.0": {
-        "dependencies": {
-          "Mov.WpfDesigns": "1.0.0",
-          "Prism.Unity": "8.1.97",
-          "ReactiveProperty.WPF": "8.0.1"
-        },
-        "runtime": {
-          "Mov.WpfViewModels.dll": {}
-        }
-      },
-      "Mov.WpfViews/1.0.0": {
-        "dependencies": {
-          "Mov.WpfControls": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0",
-          "Prism.Wpf": "8.1.97"
-        },
-        "runtime": {
-          "Mov.WpfViews.dll": {}
         }
       }
     }
@@ -810,16 +791,6 @@
       "sha512": ""
     },
     "Mov.WpfDesigns/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Mov.WpfViewModels/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Mov.WpfViews/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

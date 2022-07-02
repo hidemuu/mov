@@ -24,10 +24,8 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.viewmodels\bi
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.viewmodels\bin\Debug\net5.0-windows\Mov.Designer.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.viewmodels\bin\Debug\net5.0-windows\Mov.Designer.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.viewmodels\bin\Debug\net5.0-windows\Mov.WpfDesigns.dll
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.viewmodels\bin\Debug\net5.0-windows\Mov.WpfViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.viewmodels\bin\Debug\net5.0-windows\Mov.Designer.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.viewmodels\bin\Debug\net5.0-windows\Mov.Designer.Service.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.viewmodels\bin\Debug\net5.0-windows\Mov.WpfViewModels.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.viewmodels\bin\Debug\net5.0-windows\Mov.Accessors.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.viewmodels\bin\Debug\net5.0-windows\Mov.Designer.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.viewmodels\bin\Debug\net5.0-windows\Mov.WpfDesigns.pdb
@@ -40,3 +38,5 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.viewmodels\ob
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.viewmodels\obj\Debug\net5.0-windows\Mov.Designer.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.viewmodels\obj\Debug\net5.0-windows\ref\Mov.Designer.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.viewmodels\obj\Debug\net5.0-windows\Mov.Designer.ViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.viewmodels\bin\Debug\net5.0-windows\Mov.WpfControls.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.viewmodels\bin\Debug\net5.0-windows\Mov.WpfControls.pdb

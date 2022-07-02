@@ -19,12 +19,8 @@
           "Mov.Game.Views": "1.0.0",
           "Mov.Scheduler.ViewModels": "1.0.0",
           "Mov.Scheduler.Views": "1.0.0",
-          "Mov.Translator.ViewModels": "1.0.0",
-          "Mov.Translator.Views": "1.0.0",
           "Mov.WpfControls": "1.0.0",
-          "Mov.WpfDesigns": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0",
-          "Mov.WpfViews": "1.0.0"
+          "Mov.WpfDesigns": "1.0.0"
         },
         "runtime": {
           "Mov.WpfLib.dll": {}
@@ -508,7 +504,7 @@
       },
       "Mov.Authorizer.ViewModels/1.0.0": {
         "dependencies": {
-          "Mov.WpfViewModels": "1.0.0"
+          "Mov.WpfControls": "1.0.0"
         },
         "runtime": {
           "Mov.Authorizer.ViewModels.dll": {}
@@ -516,8 +512,7 @@
       },
       "Mov.Authorizer.Views/1.0.0": {
         "dependencies": {
-          "Mov.Authorizer.ViewModels": "1.0.0",
-          "Mov.WpfViews": "1.0.0"
+          "Mov.Authorizer.ViewModels": "1.0.0"
         },
         "runtime": {
           "Mov.Authorizer.Views.dll": {}
@@ -576,7 +571,7 @@
         "dependencies": {
           "Mov.Configurator.Models": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0"
+          "Mov.WpfControls": "1.0.0"
         },
         "runtime": {
           "Mov.Configurator.ViewModels.dll": {}
@@ -584,8 +579,7 @@
       },
       "Mov.Configurator.Views/1.0.0": {
         "dependencies": {
-          "Mov.Configurator.ViewModels": "1.0.0",
-          "Mov.WpfViews": "1.0.0"
+          "Mov.Configurator.ViewModels": "1.0.0"
         },
         "runtime": {
           "Mov.Configurator.Views.dll": {}
@@ -621,7 +615,7 @@
         "dependencies": {
           "Mov.Designer.Repository": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0"
+          "Mov.WpfControls": "1.0.0"
         },
         "runtime": {
           "Mov.Designer.ViewModels.dll": {}
@@ -629,8 +623,7 @@
       },
       "Mov.Designer.Views/1.0.0": {
         "dependencies": {
-          "Mov.Designer.ViewModels": "1.0.0",
-          "Mov.WpfViews": "1.0.0"
+          "Mov.Designer.ViewModels": "1.0.0"
         },
         "runtime": {
           "Mov.Designer.Views.dll": {}
@@ -668,7 +661,7 @@
       "Mov.Game.ViewModels/1.0.0": {
         "dependencies": {
           "Mov.Game.Service": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0"
+          "Mov.WpfControls": "1.0.0"
         },
         "runtime": {
           "Mov.Game.ViewModels.dll": {}
@@ -676,8 +669,7 @@
       },
       "Mov.Game.Views/1.0.0": {
         "dependencies": {
-          "Mov.Game.ViewModels": "1.0.0",
-          "Mov.WpfViews": "1.0.0"
+          "Mov.Game.ViewModels": "1.0.0"
         },
         "runtime": {
           "Mov.Game.Views.dll": {}
@@ -709,6 +701,9 @@
         }
       },
       "Mov.Scheduler.ViewModels/1.0.0": {
+        "dependencies": {
+          "Mov.WpfControls": "1.0.0"
+        },
         "runtime": {
           "Mov.Scheduler.ViewModels.dll": {}
         }
@@ -716,16 +711,6 @@
       "Mov.Scheduler.Views/1.0.0": {
         "runtime": {
           "Mov.Scheduler.Views.dll": {}
-        }
-      },
-      "Mov.Translator.ViewModels/1.0.0": {
-        "runtime": {
-          "Mov.Translator.ViewModels.dll": {}
-        }
-      },
-      "Mov.Translator.Views/1.0.0": {
-        "runtime": {
-          "Mov.Translator.Views.dll": {}
         }
       },
       "Mov.Utilities/1.0.0": {
@@ -737,6 +722,8 @@
         "dependencies": {
           "LiveCharts.Wpf.NetCore3": "0.9.7",
           "Mov.WpfDesigns": "1.0.0",
+          "Prism.Unity": "8.1.97",
+          "ReactiveProperty.WPF": "8.0.1",
           "gong-wpf-dragdrop": "3.0.0"
         },
         "runtime": {
@@ -752,26 +739,6 @@
         },
         "runtime": {
           "Mov.WpfDesigns.dll": {}
-        }
-      },
-      "Mov.WpfViewModels/1.0.0": {
-        "dependencies": {
-          "Mov.WpfDesigns": "1.0.0",
-          "Prism.Unity": "8.1.97",
-          "ReactiveProperty.WPF": "8.0.1"
-        },
-        "runtime": {
-          "Mov.WpfViewModels.dll": {}
-        }
-      },
-      "Mov.WpfViews/1.0.0": {
-        "dependencies": {
-          "Mov.WpfControls": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0",
-          "Prism.Wpf": "8.1.97"
-        },
-        "runtime": {
-          "Mov.WpfViews.dll": {}
         }
       }
     }
@@ -1243,16 +1210,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Mov.Translator.ViewModels/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Mov.Translator.Views/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Mov.Utilities/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -1264,16 +1221,6 @@
       "sha512": ""
     },
     "Mov.WpfDesigns/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Mov.WpfViewModels/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Mov.WpfViews/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

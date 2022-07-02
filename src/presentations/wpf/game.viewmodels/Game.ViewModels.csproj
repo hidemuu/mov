@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\applications\game.service\Game.Service.csproj" />
-    <ProjectReference Include="..\wpfviewmodels\WpfViewModels.csproj" />
+    <ProjectReference Include="..\..\..\infrastructures\wpfcontrols\WpfControls.csproj" />
   </ItemGroup>
 
 </Project>

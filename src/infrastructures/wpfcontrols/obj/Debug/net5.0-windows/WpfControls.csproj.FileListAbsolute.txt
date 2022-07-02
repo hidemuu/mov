@@ -155,3 +155,13 @@ C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\ne
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Mov.WpfControls.dll
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\ref\Mov.WpfControls.dll
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Mov.WpfControls.pdb
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Views\Dialogs\AlertDialog.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Views\Dialogs\SuccessDialog.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Views\Dialogs\WarningDialog.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Views\DialogWindow.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Views\Tabs\MenuTab.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Views\Dialogs\AlertDialog.baml
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Views\Dialogs\SuccessDialog.baml
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Views\Dialogs\WarningDialog.baml
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Views\DialogWindow.baml
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Views\Tabs\MenuTab.baml

@@ -18,17 +18,17 @@ namespace Mov.Game.Repository
         /// </summary>
         public GameRepositoryCollection(string resourceDir, string extension, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
         {
-            Landmarks = new LandmarkRepository(GetRepositoryPath("landmark"), encoding);
-            DrawItems = new DrawItemRepository(GetRepositoryPath("draw_item"), encoding);
+            Landmarks = new DbObjectRepository<Landmark, LandmarkCollection>(GetRepositoryPath("landmark"), encoding);
+            DrawItems = new DbObjectRepository<DrawItem, DrawItemCollection>(GetRepositoryPath("draw_item"), encoding);
         }
 
         #endregion コンストラクター
 
         #region プロパティ
 
-        public DbObjectRepositoryBase<Landmark, LandmarkCollection> Landmarks { get; }
+        public DbObjectRepository<Landmark, LandmarkCollection> Landmarks { get; }
 
-        public DbObjectRepositoryBase<DrawItem, DrawItemCollection> DrawItems { get; }
+        public DbObjectRepository<DrawItem, DrawItemCollection> DrawItems { get; }
 
         #endregion プロパティ
     }

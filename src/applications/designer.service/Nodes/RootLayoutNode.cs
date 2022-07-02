@@ -22,7 +22,7 @@ namespace Mov.Designer.Service.Layouts.Nodes
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public RootLayoutNode(LayoutTree layout) : base(layout)
+        public RootLayoutNode(LayoutNode layout) : base(layout)
         {
 
         }

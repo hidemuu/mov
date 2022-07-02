@@ -56,7 +56,7 @@ namespace Mov.Designer.Service.Layouts
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public LayoutNodeBase(LayoutTree tree)
+        public LayoutNodeBase(LayoutNode tree)
         {
             Code = tree.Code;
             Name.Value = tree.Code;

@@ -1,6 +1,7 @@
 ﻿using Mov.Designer.Models;
 using Mov.Designer.Models.interfaces;
 using Mov.Designer.Service.Layouts;
+using Mov.WpfControls;
 using Mov.WpfControls.ViewModels;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
@@ -85,31 +86,31 @@ namespace Mov.Designer.ViewModels
 
         private void OnSaveCommand(string parameter)
         {
-            var trees = new List<LayoutTree>();
+            var trees = new List<LayoutNode>();
             GetLayoutTrees(trees, Models);
-            repository.LayoutTrees.Posts(trees);
-            repository.LayoutTrees.Export();
-            var tables = new List<ContentTable>();
+            repository.LayoutNodes.Posts(trees);
+            repository.LayoutNodes.Export();
+            var tables = new List<Content>();
             GetContentTables(tables, Models);
-            repository.ContentTables.Posts(tables);
-            repository.ContentTables.Export();
+            repository.Contents.Posts(tables);
+            repository.Contents.Export();
             MessageBox.Show("保存しました");
         }
 
         private void OnAddCommand(Guid id)
         {
-            var tree = this.repository.LayoutTrees.Get(id);
+            var tree = this.repository.LayoutNodes.Get(id);
             if (tree == null) return;
-            this.repository.LayoutTrees.Put(new LayoutTree(), tree.Id);
+            this.repository.LayoutNodes.Put(new LayoutNode(), tree.Id);
             CreateModels();
             UpdateEditMode(Models);
         }
 
         private void OnRemoveCommand(Guid id)
         {
-            var tree = this.repository.LayoutTrees.Get(id);
+            var tree = this.repository.LayoutNodes.Get(id);
             if (tree == null) return;
-            this.repository.LayoutTrees.Delete(tree);
+            this.repository.LayoutNodes.Delete(tree);
             CreateModels();
             UpdateEditMode(Models);
         }
@@ -121,9 +122,9 @@ namespace Mov.Designer.ViewModels
         {
             Models.Clear();
             modelDisposables.Clear();
-            foreach (var tree in repository.LayoutTrees.Gets())
+            foreach (var tree in repository.LayoutNodes.Gets())
             {
-                Models.Add(new DesignerTreeModel(tree, repository.ContentTables.Get(tree.Code), repository, addCommands, removeCommands));
+                Models.Add(new DesignerTreeModel(tree, repository.Contents.Get(tree.Code), repository, addCommands, removeCommands));
             }
             foreach (var addCommand in addCommands)
             {
@@ -135,11 +136,11 @@ namespace Mov.Designer.ViewModels
             }
         }
 
-        private void GetLayoutTrees(ICollection<LayoutTree> items, IEnumerable<DesignerTreeModel> models)
+        private void GetLayoutTrees(ICollection<LayoutNode> items, IEnumerable<DesignerTreeModel> models)
         {
             foreach (var model in models)
             {
-                var item = new LayoutTree
+                var item = new LayoutNode
                 {
                     Id = model.Id.Value,
                     Index = model.Index.Value,
@@ -154,16 +155,15 @@ namespace Mov.Designer.ViewModels
             }
         }
 
-        private void GetContentTables(ICollection<ContentTable> items, IEnumerable<DesignerTreeModel> models)
+        private void GetContentTables(ICollection<Content> items, IEnumerable<DesignerTreeModel> models)
         {
             foreach (var model in models)
             {
-                var item = new ContentTable
+                var item = new Content
                 {
                     Id = model.Id.Value,
                     Index = model.Index.Value,
                     Code = model.Code.Value,
-                    Command = model.Command.Value,
                     ControlType = model.ControlType.Value,
                     ControlStyle = model.ControlStyle.Value,
                 };
@@ -226,10 +226,10 @@ namespace Mov.Designer.ViewModels
 
         #region コンストラクター
 
-        public DesignerTreeModel(LayoutTree tree, ContentTable table, IDesignerRepositoryCollection repository, ICollection<ReactiveCommand<Guid>> addCommands, ICollection<ReactiveCommand<Guid>> removeCommands) : base(table, addCommands, removeCommands)
+        public DesignerTreeModel(LayoutNode tree, Content table, IDesignerRepositoryCollection repository, ICollection<ReactiveCommand<Guid>> addCommands, ICollection<ReactiveCommand<Guid>> removeCommands) : base(table, addCommands, removeCommands)
         {
             this.repository = repository;
-            Codes = repository.ContentTables.Gets().Select(x => x.Code).Distinct().ToList();
+            Codes = repository.Contents.Gets().Select(x => x.Code).Distinct().ToList();
             //プロパティ
             Id.Value = tree.Id;
             Index.Value = tree.Index;
@@ -242,7 +242,7 @@ namespace Mov.Designer.ViewModels
             //子階層へ
             foreach (var child in tree.Children)
             {
-                Children.Add(new DesignerTreeModel(child, repository.ContentTables.Get(child.Code), repository, addCommands, removeCommands));
+                Children.Add(new DesignerTreeModel(child, repository.Contents.Get(child.Code), repository, addCommands, removeCommands));
             }
             Code.Subscribe(OnChangeCodeCommand).AddTo(disposables);
         }
@@ -253,15 +253,15 @@ namespace Mov.Designer.ViewModels
 
         private void OnChangeCodeCommand(string code)
         {
-            var item = this.repository.ContentTables.Get(code);
+            var item = this.repository.Contents.Get(code);
             if (item == null) return;
             Update(item);
         }
 
-        protected override void Update(ContentTable item)
+        protected override void Update(Content item)
         {
             if (item == null) return;
-            var table = new ContentTable(item);
+            var table = new Content(item);
             table.Id = Id.Value;
             table.Index = Index.Value;
             base.Update(table);

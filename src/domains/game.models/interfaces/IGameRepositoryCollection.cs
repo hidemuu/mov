@@ -8,7 +8,7 @@ namespace Mov.Game.Models.interfaces
 {
     public interface IGameRepositoryCollection
     {
-        DbObjectRepositoryBase<Landmark, LandmarkCollection> Landmarks { get; }
-        DbObjectRepositoryBase<DrawItem, DrawItemCollection> DrawItems { get; }
+        DbObjectRepository<Landmark, LandmarkCollection> Landmarks { get; }
+        DbObjectRepository<DrawItem, DrawItemCollection> DrawItems { get; }
     }
 }

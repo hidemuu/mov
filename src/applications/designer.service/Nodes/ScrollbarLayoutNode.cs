@@ -5,16 +5,16 @@ using System.Text;
 
 namespace Mov.Designer.Service.Layouts.Nodes
 {
-    public class TreeLayoutNode : LayoutNodeBase
+    public class ScrollbarLayoutNode : LayoutNodeBase
     {
-        public override LayoutNodeType LayoutNodeType => LayoutNodeType.Tree;
+        public override LayoutNodeType LayoutNodeType => LayoutNodeType.Scrollbar;
 
         #region コンストラクター
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public TreeLayoutNode()
+        public ScrollbarLayoutNode()
         {
 
         }
@@ -22,7 +22,7 @@ namespace Mov.Designer.Service.Layouts.Nodes
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public TreeLayoutNode(LayoutTree layout) : base(layout)
+        public ScrollbarLayoutNode(LayoutNode layout) : base(layout)
         {
 
         }

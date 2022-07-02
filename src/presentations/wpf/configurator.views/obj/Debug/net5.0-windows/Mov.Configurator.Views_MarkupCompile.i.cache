@@ -16,5 +16,5 @@ TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 236-1987892272
 ConfiguratorTableView.xaml;ConfiguratorTreeView.xaml;ConfiguratorView.xaml;Dialogs\Contents\CreateAccountView.xaml;Dialogs\Contents\LoginMainContentView.xaml;Dialogs\Contents\NoContentView.xaml;Dialogs\LoginDialog.xaml;Pages\UserSettingTableView.xaml;Pages\VariableTableView.xaml;
 
-False
+True
 

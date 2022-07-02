@@ -7,15 +7,15 @@ using System.Xml.Serialization;
 namespace Mov.Designer.Models
 {
     [XmlRoot("layouts")]
-    public class ShellLayoutCollection : DbObjectCollection<ShellLayout>
+    public class ShellCollection : DbObjectCollection<Shell>
     {
-        [XmlElement(Type = typeof(ShellLayout), ElementName = "layout")]
-        public override ShellLayout[] Items { get; set; }
+        [XmlElement(Type = typeof(Shell), ElementName = "layout")]
+        public override Shell[] Items { get; set; }
     }
 
 
     [XmlRoot("layout")]
-    public class ShellLayout : DbObject
+    public class Shell : DbObject
     {
         #region プロパティ
 

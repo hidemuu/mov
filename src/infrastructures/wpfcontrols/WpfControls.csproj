@@ -39,7 +39,7 @@
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Tabs\MenuTab.xaml">
+    <Page Update="Views\Controls\MenuTab.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
@@ -58,7 +58,7 @@
     <Compile Update="Views\DialogWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Tabs\MenuTab.xaml.cs">
+    <Compile Update="Views\Controls\MenuTab.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

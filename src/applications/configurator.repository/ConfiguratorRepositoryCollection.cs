@@ -32,11 +32,11 @@ namespace Mov.Configurator.Repository
         /// <summary>
         /// ユーザー設定のリポジトリ
         /// </summary>
-        public DbObjectRepositoryBase<Config, ConfigCollection> Configs { get; }
+        public DbObjectRepository<Config, ConfigCollection> Configs { get; }
         /// <summary>
         /// 値設定のリポジトリ
         /// </summary>
-        public DbObjectRepositoryBase<Variable, VariableCollection> Variables { get; }
+        public DbObjectRepository<Variable, VariableCollection> Variables { get; }
 
         #endregion プロパティ
 

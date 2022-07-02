@@ -49,11 +49,11 @@ namespace Mov.Designer.Service
         private LayoutNodeBase Create()
         {
             var node = new RootLayoutNode();
-            CreateLayoutNode(node.Children, repository.LayoutTrees.Gets());
+            CreateLayoutNode(node.Children, repository.LayoutNodes.Gets());
             return node;
         }
 
-        private void CreateLayoutNode(ICollection<LayoutNodeBase> nodes, IEnumerable<LayoutTree> trees)
+        private void CreateLayoutNode(ICollection<LayoutNodeBase> nodes, IEnumerable<LayoutNode> trees)
         {
             LayoutNodeBase node;
             foreach (var tree in trees)
@@ -64,8 +64,8 @@ namespace Mov.Designer.Service
                         node = new RootLayoutNode(tree);
                         break;
                     case LayoutNodeType.Content:
-                        ContentTable content = new ContentTable();
-                        foreach(var table in repository.ContentTables.Gets())
+                        Content content = new Content();
+                        foreach(var table in repository.Contents.Gets())
                         {
                             if (!tree.Code.Equals(table.Code, StringComparison.OrdinalIgnoreCase)) continue;
                             content = table;

@@ -8,14 +8,14 @@ using System.Xml.Serialization;
 namespace Mov.Designer.Models
 {
     [XmlRoot("layouts")]
-    public class LayoutTreeCollection : DbObjectCollection<LayoutTree>
+    public class LayoutNodeCollection : DbObjectCollection<LayoutNode>
     {
-        [XmlElement(Type = typeof(LayoutTree), ElementName = "layout")]
-        public override LayoutTree[] Items { get; set; }
+        [XmlElement(Type = typeof(LayoutNode), ElementName = "layout")]
+        public override LayoutNode[] Items { get; set; }
     }
 
     [XmlRoot("layout")]
-    public class LayoutTree : DbObjectNode<LayoutTree>
+    public class LayoutNode : DbObjectNode<LayoutNode>
     {
         #region プロパティ
 
@@ -36,7 +36,7 @@ namespace Mov.Designer.Models
 
         [XmlArray("children")]
         [XmlArrayItem("layout")]
-        public override List<LayoutTree> Children { get; set; } = new List<LayoutTree>();
+        public override List<LayoutNode> Children { get; set; } = new List<LayoutNode>();
 
         #endregion プロパティ
 

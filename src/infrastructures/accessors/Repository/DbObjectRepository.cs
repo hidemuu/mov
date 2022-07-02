@@ -13,7 +13,7 @@ namespace Mov.Accessors
     /// データベースリポジトリ基本クラス
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class DbObjectRepositoryBase<T, C> : IDbObjectRepository<T> where T : DbObject where C : DbObjectCollection<T>
+    public class DbObjectRepository<T, C> where T : DbObject where C : DbObjectCollection<T>
     {
         #region 定数
 
@@ -44,7 +44,7 @@ namespace Mov.Accessors
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public DbObjectRepositoryBase(string path, string encoding = DbConstants.ENCODE_NAME_UTF8)
+        public DbObjectRepository(string path, string encoding = DbConstants.ENCODE_NAME_UTF8)
         {
             var extension = System.IO.Path.GetExtension(path);
             if (string.IsNullOrEmpty(extension)) Debug.Assert(false);

@@ -5,16 +5,16 @@ using System.Text;
 
 namespace Mov.Designer.Service.Layouts.Nodes
 {
-    public class TabLayoutNode : LayoutNodeBase
+    public class TreeLayoutNode : LayoutNodeBase
     {
-        public override LayoutNodeType LayoutNodeType => LayoutNodeType.Tab;
+        public override LayoutNodeType LayoutNodeType => LayoutNodeType.Tree;
 
         #region コンストラクター
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public TabLayoutNode()
+        public TreeLayoutNode()
         {
 
         }
@@ -22,7 +22,7 @@ namespace Mov.Designer.Service.Layouts.Nodes
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public TabLayoutNode(LayoutTree layout) : base(layout)
+        public TreeLayoutNode(LayoutNode layout) : base(layout)
         {
 
         }

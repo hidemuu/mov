@@ -34,7 +34,7 @@ namespace Mov.Designer.Service.Layouts.Nodes
 
         }
 
-        public ContentLayoutNode(LayoutTree layout, ContentTable content) : base(layout)
+        public ContentLayoutNode(LayoutNode layout, Content content) : base(layout)
         {
             Code = content.Code;
             ControlType = content.ControlType;

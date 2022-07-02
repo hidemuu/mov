@@ -1,6 +1,7 @@
 ﻿using Mov.Designer.Models;
 using Mov.Designer.Models.interfaces;
 using Mov.Designer.Service.Layouts;
+using Mov.WpfControls;
 using Mov.WpfControls.ViewModels;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
@@ -85,10 +86,10 @@ namespace Mov.Designer.ViewModels
 
         private void OnSaveCommand()
         {
-            var tables = new List<ContentTable>();
+            var tables = new List<Content>();
             GetContentTables(tables, Models);
-            repository.ContentTables.Posts(tables);
-            repository.ContentTables.Export();
+            repository.Contents.Posts(tables);
+            repository.Contents.Export();
             MessageBox.Show("保存しました");
         }
 
@@ -96,7 +97,7 @@ namespace Mov.Designer.ViewModels
         {
             var selectedModel = SelectedModel.Value;
             if (selectedModel == null) return;
-            repository.ContentTables.MovePrev(selectedModel.Id.Value);
+            repository.Contents.MovePrev(selectedModel.Id.Value);
             CreateModels();
             UpdateEditMode(Models);
         }
@@ -105,25 +106,25 @@ namespace Mov.Designer.ViewModels
         {
             var selectedModel = SelectedModel.Value;
             if (selectedModel == null) return;
-            repository.ContentTables.MoveNext(selectedModel.Id.Value);
+            repository.Contents.MoveNext(selectedModel.Id.Value);
             CreateModels();
             UpdateEditMode(Models);
         }
 
         private void OnAddCommand(Guid id)
         {
-            var table = this.repository.ContentTables.Get(id);
+            var table = this.repository.Contents.Get(id);
             if (table == null) return;
-            this.repository.ContentTables.Put(new ContentTable(), table.Id);
+            this.repository.Contents.Put(new Content(), table.Id);
             CreateModels();
             UpdateEditMode(Models);
         }
 
         private void OnRemoveCommand(Guid id)
         {
-            var table = this.repository.ContentTables.Get(id);
+            var table = this.repository.Contents.Get(id);
             if (table == null) return;
-            this.repository.ContentTables.Delete(table);
+            this.repository.Contents.Delete(table);
             CreateModels();
             UpdateEditMode(Models);
         }
@@ -135,7 +136,7 @@ namespace Mov.Designer.ViewModels
         {
             Models.Clear();
             modelDisposables.Clear();
-            foreach (var table in repository.ContentTables.Gets())
+            foreach (var table in repository.Contents.Gets())
             {
                 Models.Add(new DesignerTableModel(table, addCommands, removeCommands));
             }
@@ -149,16 +150,15 @@ namespace Mov.Designer.ViewModels
             }
         }
 
-        private void GetContentTables(ICollection<ContentTable> items, IEnumerable<DesignerTableModel> models)
+        private void GetContentTables(ICollection<Content> items, IEnumerable<DesignerTableModel> models)
         {
             foreach (var model in models)
             {
-                var item = new ContentTable
+                var item = new Content
                 {
                     Id = model.Id.Value,
                     Index = model.Index.Value,
                     Code = model.Code.Value,
-                    Command = model.Command.Value,
                     ControlType = model.ControlType.Value,
                     ControlStyle = model.ControlStyle.Value,
                 };
@@ -213,7 +213,7 @@ namespace Mov.Designer.ViewModels
 
         #region コンストラクター
 
-        public DesignerTableModel(ContentTable item, ICollection<ReactiveCommand<Guid>> addCommands, ICollection<ReactiveCommand<Guid>> removeCommands)
+        public DesignerTableModel(Content item, ICollection<ReactiveCommand<Guid>> addCommands, ICollection<ReactiveCommand<Guid>> removeCommands)
         {
             Update(item);
             //コマンド
@@ -225,14 +225,13 @@ namespace Mov.Designer.ViewModels
 
         #region 継承メソッド
 
-        protected virtual void Update(ContentTable item)
+        protected virtual void Update(Content item)
         {
             if (item == null) return;
             Id.Value = item.Id;
             Index.Value = item.Index;
             Code.Value = item.Code;
             Name.Value = item.Name;
-            Command.Value = item.Command;
             ControlType.Value = item.ControlType;
             ControlStyle.Value = item.ControlStyle;
             Parameter.Value = item.Parameter;

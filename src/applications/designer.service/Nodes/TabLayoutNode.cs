@@ -5,16 +5,16 @@ using System.Text;
 
 namespace Mov.Designer.Service.Layouts.Nodes
 {
-    public class ScrollbarLayoutNode : LayoutNodeBase
+    public class TabLayoutNode : LayoutNodeBase
     {
-        public override LayoutNodeType LayoutNodeType => LayoutNodeType.Scrollbar;
+        public override LayoutNodeType LayoutNodeType => LayoutNodeType.Tab;
 
         #region コンストラクター
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ScrollbarLayoutNode()
+        public TabLayoutNode()
         {
 
         }
@@ -22,7 +22,7 @@ namespace Mov.Designer.Service.Layouts.Nodes
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ScrollbarLayoutNode(LayoutTree layout) : base(layout)
+        public TabLayoutNode(LayoutNode layout) : base(layout)
         {
 
         }

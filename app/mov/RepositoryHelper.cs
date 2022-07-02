@@ -39,9 +39,9 @@ namespace Mov
 
         internal void WriteAll()
         {
-            Console.WriteLine(Designer.LayoutTrees.ToString());
-            Console.WriteLine(Designer.ShellLayouts.ToString());
-            Console.WriteLine(Designer.ContentTables.ToString());
+            Console.WriteLine(Designer.LayoutNodes.ToString());
+            Console.WriteLine(Designer.Shells.ToString());
+            Console.WriteLine(Designer.Contents.ToString());
             Console.WriteLine(Configurator.Configs.ToString());
             Console.WriteLine(Configurator.Variables.ToString());
         }

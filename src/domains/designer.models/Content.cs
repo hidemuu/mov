@@ -5,14 +5,14 @@ using System.Xml.Serialization;
 namespace Mov.Designer.Models
 {
     [XmlRoot("tables")]
-    public class ContentTableCollection : DbObjectCollection<ContentTable>
+    public class ContentCollection : DbObjectCollection<Content>
     {
-        [XmlElement(Type = typeof(ContentTable), ElementName = "table")]
-        public override ContentTable[] Items { get; set; }
+        [XmlElement(Type = typeof(Content), ElementName = "table")]
+        public override Content[] Items { get; set; }
     }
 
     [XmlRoot("table")]
-    public class ContentTable : DbObject
+    public class Content : DbObject
     {
         #region プロパティ
 
@@ -43,20 +43,14 @@ namespace Mov.Designer.Models
         /// <summary>
         /// 
         /// </summary>
-        [XmlElement("schema_type")]
-        public string SchemaType { get; set; } = string.Empty;
+        [XmlElement("control_schema")]
+        public ControlSchemaType ControlSchema { get; set; } = ControlSchemaType.None;
 
         /// <summary>
         /// 
         /// </summary>
         [XmlElement("default_values")]
         public List<string> DefaultValues { get; set; } = new List<string>();
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [XmlElement("command")]
-        public string Command { get; set; } = string.Empty;
 
         /// <summary>
         /// 
@@ -89,7 +83,7 @@ namespace Mov.Designer.Models
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ContentTable()
+        public Content()
         {
 
         }
@@ -98,15 +92,14 @@ namespace Mov.Designer.Models
         /// コンストラクター（ディープコピー）
         /// </summary>
         /// <param name="src"></param>
-        public ContentTable(ContentTable src) : base(src)
+        public Content(Content src) : base(src)
         {
             Name = src.Name;
             Icon = src.Icon;
             ControlType = src.ControlType;
             ControlStyle = src.ControlStyle;
-            SchemaType = src.SchemaType;
+            ControlSchema = src.ControlSchema;
             DefaultValues = src.DefaultValues;
-            Command = src.Command;
             Macro = src.Macro;
             IsVisible = src.IsVisible;
             IsEnable = src.IsEnable;

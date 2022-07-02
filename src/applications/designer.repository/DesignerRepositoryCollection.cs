@@ -23,23 +23,23 @@ namespace Mov.Designer.Repository.Xml
         /// <param name="encoding"></param>
         public DesignerRepositoryCollection(string resourceDir, string extension, string encoding = "utf-8") : base(resourceDir, extension)
         {
-            ShellLayouts = new ShellLayoutRepository(GetRepositoryPath("shell_layout"), encoding);
-            LayoutTrees = new LayoutTreeRepository(GetRepositoryPath("layout_tree"), encoding);
-            ContentTables = new ContentTableRepository(GetRepositoryPath("content_table"), encoding);
-            Themes = new ThemeRepository(GetRepositoryPath("theme"), encoding);
+            Shells = new DbObjectRepository<Shell, ShellCollection>(GetRepositoryPath("shell_layout"), encoding);
+            LayoutNodes = new DbObjectRepository<LayoutNode, LayoutNodeCollection>(GetRepositoryPath("layout_tree"), encoding);
+            Contents = new DbObjectRepository<Content, ContentCollection>(GetRepositoryPath("content_table"), encoding);
+            Themes = new DbObjectRepository<Theme, ThemeCollection>(GetRepositoryPath("theme"), encoding);
         }
 
         #endregion コンストラクター
 
         #region プロパティ
 
-        public DbObjectRepositoryBase<ShellLayout, ShellLayoutCollection> ShellLayouts { get; }
+        public DbObjectRepository<Shell, ShellCollection> Shells { get; }
 
-        public DbObjectRepositoryBase<LayoutTree, LayoutTreeCollection> LayoutTrees { get; }
+        public DbObjectRepository<LayoutNode, LayoutNodeCollection> LayoutNodes { get; }
 
-        public DbObjectRepositoryBase<ContentTable, ContentTableCollection> ContentTables { get; }
+        public DbObjectRepository<Content, ContentCollection> Contents { get; }
 
-        public DbObjectRepositoryBase<Theme, ThemeCollection> Themes { get; }
+        public DbObjectRepository<Theme, ThemeCollection> Themes { get; }
 
         #endregion
 

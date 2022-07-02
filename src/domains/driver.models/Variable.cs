@@ -7,9 +7,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Configurator.Models
+namespace Mov.Driver.Models
 {
-
     /// <summary>
     /// 変数のコレクション
     /// </summary>

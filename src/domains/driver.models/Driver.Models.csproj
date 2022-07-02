@@ -6,4 +6,8 @@
     <RootNamespace>Mov.Driver.Models</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\infrastructures\accessors\Accessors.csproj" />
+  </ItemGroup>
+
 </Project>

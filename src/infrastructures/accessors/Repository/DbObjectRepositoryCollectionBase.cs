@@ -9,7 +9,7 @@ namespace Mov.Accessors.Repository
     {
         #region フィールド
 
-        protected readonly string resourceDir;
+        protected readonly string dir;
 
         protected readonly string extension;
 
@@ -18,17 +18,17 @@ namespace Mov.Accessors.Repository
         /// <summary>
         /// コンストラクター
         /// </summary>
-        /// <param name="resourceDir"></param>
+        /// <param name="dir"></param>
         /// <param name="extension"></param>
-        public DbObjectRepositoryCollectionBase(string resourceDir, string extension)
+        public DbObjectRepositoryCollectionBase(string dir, string extension)
         {
-            this.resourceDir = resourceDir;
+            this.dir = dir;
             this.extension = extension;
         }
 
         #region メソッド
 
-        protected string GetRepositoryPath(string filePath) => Path.Combine(this.resourceDir, filePath + "." + this.extension);
+        protected string GetRepositoryPath(string filePath) => Path.Combine(this.dir, filePath + "." + this.extension);
 
         #endregion
 

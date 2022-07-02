@@ -3,7 +3,6 @@ using Mov.Configurator.Repository;
 using Mov.Configurator.ViewModels;
 using Mov.Configurator.Views;
 using Mov.Designer.Models;
-using Mov.Designer.Models.interfaces;
 using Mov.Designer.Repository.Xml;
 using Mov.Designer.ViewModels;
 using Mov.Designer.Views;
@@ -122,7 +121,6 @@ namespace Mov.Wpf
             //Viewの登録
             containerRegistry.RegisterForNavigation<ConfiguratorView>();
             containerRegistry.RegisterForNavigation<UserSettingTableView>();
-            containerRegistry.RegisterForNavigation<VariableTableView>();
             containerRegistry.RegisterForNavigation<DesignerView>();
             containerRegistry.RegisterForNavigation<DesignerTreeView>();
             containerRegistry.RegisterForNavigation<DesignerTableView>();
@@ -173,7 +171,6 @@ namespace Mov.Wpf
             ViewModelLocationProvider.Register<MainWindow, MainWindowViewModel>();
             ViewModelLocationProvider.Register<ConfiguratorView, ConfiguratorViewModel>();
             ViewModelLocationProvider.Register<UserSettingTableView, UserSettingTableViewModel>();
-            ViewModelLocationProvider.Register<VariableTableView, VariableTableViewModel>();
             ViewModelLocationProvider.Register<DesignerView, DesignerViewModel>();
             ViewModelLocationProvider.Register<DesignerTreeView, DesignerTreeViewModel>();
             ViewModelLocationProvider.Register<DesignerTableView, DesignerTableViewModel>();

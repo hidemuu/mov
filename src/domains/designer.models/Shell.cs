@@ -6,15 +6,15 @@ using System.Xml.Serialization;
 
 namespace Mov.Designer.Models
 {
-    [XmlRoot("layouts")]
+    [XmlRoot("shells")]
     public class ShellCollection : DbObjectCollection<Shell>
     {
-        [XmlElement(Type = typeof(Shell), ElementName = "layout")]
+        [XmlElement(Type = typeof(Shell), ElementName = "shell")]
         public override Shell[] Items { get; set; }
     }
 
 
-    [XmlRoot("layout")]
+    [XmlRoot("shell")]
     public class Shell : DbObject
     {
         #region プロパティ

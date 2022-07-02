@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Models.interfaces
+namespace Mov.Designer.Models
 {
     public interface IDesignerRepositoryCollection
     {

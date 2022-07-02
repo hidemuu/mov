@@ -1,7 +1,6 @@
 ﻿using Mov.Accessors;
 using Mov.Accessors.Repository;
 using Mov.Designer.Models;
-using Mov.Designer.Models.interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,11 +20,11 @@ namespace Mov.Designer.Repository.Xml
         /// コンストラクター
         /// </summary>
         /// <param name="encoding"></param>
-        public DesignerRepositoryCollection(string resourceDir, string extension, string encoding = "utf-8") : base(resourceDir, extension)
+        public DesignerRepositoryCollection(string resourceDir, string extension, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
         {
-            Shells = new DbObjectRepository<Shell, ShellCollection>(GetRepositoryPath("shell_layout"), encoding);
-            LayoutNodes = new DbObjectRepository<LayoutNode, LayoutNodeCollection>(GetRepositoryPath("layout_tree"), encoding);
-            Contents = new DbObjectRepository<Content, ContentCollection>(GetRepositoryPath("content_table"), encoding);
+            Shells = new DbObjectRepository<Shell, ShellCollection>(GetRepositoryPath("shell"), encoding);
+            LayoutNodes = new DbObjectRepository<LayoutNode, LayoutNodeCollection>(GetRepositoryPath("layout_node"), encoding);
+            Contents = new DbObjectRepository<Content, ContentCollection>(GetRepositoryPath("content"), encoding);
             Themes = new DbObjectRepository<Theme, ThemeCollection>(GetRepositoryPath("theme"), encoding);
         }
 

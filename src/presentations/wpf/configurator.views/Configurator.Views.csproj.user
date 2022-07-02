@@ -14,9 +14,6 @@
     <Compile Update="Pages\UserSettingTableView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\VariableTableView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="ConfiguratorTableView.xaml">
@@ -41,9 +38,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\UserSettingTableView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\VariableTableView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

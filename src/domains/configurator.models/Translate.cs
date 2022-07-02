@@ -7,15 +7,21 @@ using System.Xml.Serialization;
 
 namespace Mov.Configurator.Models
 {
-    [XmlRoot("comments")]
-    public class CommentCollection : DbObjectCollection<Comment>
+    /// <summary>
+    /// 翻訳リスト
+    /// </summary>
+    [XmlRoot("translates")]
+    public class TranslateCollection : DbObjectCollection<Translate>
     {
-        [XmlElement(Type = typeof(Comment), ElementName = "language")]
-        public override Comment[] Items { get; set; }
+        [XmlElement(Type = typeof(Translate), ElementName = "translate")]
+        public override Translate[] Items { get; set; }
     }
 
-    [XmlRoot("comment")]
-    public class Comment : DbObject
+    /// <summary>
+    /// 翻訳アイテム
+    /// </summary>
+    [XmlRoot("translate")]
+    public class Translate : DbObject
     {
         /// <summary>
         /// 日本語

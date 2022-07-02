@@ -6,4 +6,9 @@
     <RootNamespace>Mov.Driver.Service</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="RosberryPi\" />
+    <Folder Include="OpenCV\" />
+  </ItemGroup>
+
 </Project>

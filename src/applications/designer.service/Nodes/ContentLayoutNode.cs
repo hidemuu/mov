@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Service.Layouts.Nodes
+namespace Mov.Designer.Service.Nodes
 {
     public class ContentLayoutNode : LayoutNodeBase
     {

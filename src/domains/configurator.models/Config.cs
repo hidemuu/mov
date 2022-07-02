@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 namespace Mov.Configurator.Models
 {
     /// <summary>
-    /// ユーザー設定のコレクション
+    /// 設定のコレクション
     /// </summary>
     [XmlRoot("configs")]
     public class ConfigCollection : DbObjectCollection<Config>
@@ -18,7 +18,7 @@ namespace Mov.Configurator.Models
     }
 
     /// <summary>
-    /// ユーザー設定
+    /// 設定
     /// </summary>
     [XmlRoot("config")]
     public class Config : DbObject

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shells xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:xxsd="http://www.w3.org/2001/XMLSchema">
+    <shell>
+      <index>0</index>
+      <code>Test1</code>
+    </shell>
+</layouts>

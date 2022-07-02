@@ -61,12 +61,10 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\bin
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Configurator.Views.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\ConfiguratorView.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Pages\UserSettingTableView.g.cs
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Pages\VariableTableView.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Mov.Configurator.Views_MarkupCompile.cache
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Mov.Configurator.Views_MarkupCompile.lref
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\ConfiguratorView.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Pages\UserSettingTableView.baml
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Pages\VariableTableView.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Mov.Configurator.Views.g.resources
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Configurator.Views.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Configurator.Views.AssemblyInfoInputs.cache

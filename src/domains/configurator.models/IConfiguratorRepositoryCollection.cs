@@ -8,6 +8,9 @@ namespace Mov.Configurator.Models
     public interface IConfiguratorRepositoryCollection
     {
         DbObjectRepository<Config, ConfigCollection> Configs { get; }
-        DbObjectRepository<Variable, VariableCollection> Variables { get; }
+
+        DbObjectRepository<Account, AccountCollection> Accounts { get; }
+
+        DbObjectRepository<Translate, TranslateCollection> Translates { get; }
     }
 }

@@ -8,12 +8,18 @@ using System.Xml.Serialization;
 
 namespace Mov.Configurator.Models
 {
+    /// <summary>
+    /// アカウントリスト
+    /// </summary>
     public class AccountCollection : DbObjectCollection<Account>
     {
         [JsonProperty("accounts")]
         public override Account[] Items { get; set; }
     }
 
+    /// <summary>
+    /// アカウント
+    /// </summary>
     [XmlRoot("account")]
     public class Account : DbObject
     {

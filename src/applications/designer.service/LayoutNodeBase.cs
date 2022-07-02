@@ -1,12 +1,12 @@
 ﻿using Mov.Designer.Models;
-using Mov.Designer.Service.Layouts.Nodes;
+using Mov.Designer.Service.Nodes;
 using Reactive.Bindings;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Service.Layouts
+namespace Mov.Designer.Service
 {
     public abstract class LayoutNodeBase : LayoutBase, IEnumerable<LayoutNodeBase>
     {

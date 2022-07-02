@@ -21,8 +21,9 @@ namespace Mov.Configurator.Repository
         /// </summary>
         public ConfiguratorRepositoryCollection(string resourceDir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
         {
-            Configs = new ConfigRepository(GetRepositoryPath("config"), encode);
-            Variables = new VariableRepository(GetRepositoryPath("variable"), encode);
+            Configs = new DbObjectRepository<Config, ConfigCollection>(GetRepositoryPath("config"), encode);
+            Accounts = new DbObjectRepository<Account, AccountCollection>(GetRepositoryPath("account"), encode);
+            Translates = new DbObjectRepository<Translate, TranslateCollection>(GetRepositoryPath("translate"), encode);
         }
 
         #endregion コンストラクター
@@ -30,13 +31,13 @@ namespace Mov.Configurator.Repository
         #region プロパティ
 
         /// <summary>
-        /// ユーザー設定のリポジトリ
+        /// 設定のリポジトリ
         /// </summary>
         public DbObjectRepository<Config, ConfigCollection> Configs { get; }
-        /// <summary>
-        /// 値設定のリポジトリ
-        /// </summary>
-        public DbObjectRepository<Variable, VariableCollection> Variables { get; }
+
+        public DbObjectRepository<Account, AccountCollection> Accounts { get; }
+
+        public DbObjectRepository<Translate, TranslateCollection> Translates { get; }
 
         #endregion プロパティ
 

@@ -1,5 +1,5 @@
 ﻿using MaterialDesignColors;
-using Mov.Designer.Models.interfaces;
+using Mov.Designer.Models;
 using Mov.WpfControls.ViewModels;
 using Mov.WpfDesigns.Services;
 using Reactive.Bindings;

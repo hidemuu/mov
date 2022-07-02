@@ -86,3 +86,11 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\bin
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\bin\Debug\net5.0-windows\Mov.Designer.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\bin\Debug\net5.0-windows\Mov.Designer.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\bin\Debug\net5.0-windows\Mov.Designer.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Dialogs\Contents\CreateAccountView.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Dialogs\Contents\LoginMainContentView.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Dialogs\Contents\NoContentView.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Dialogs\LoginDialog.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Dialogs\Contents\CreateAccountView.baml
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Dialogs\Contents\LoginMainContentView.baml
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Dialogs\Contents\NoContentView.baml
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\obj\Debug\net5.0-windows\Dialogs\LoginDialog.baml

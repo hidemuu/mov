@@ -7,8 +7,4 @@
     <RootNamespace>Mov.Authorizer.Views</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\authorizer.viewmodels\Authorizer.ViewModels.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -10,8 +10,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\infrastructures\wpfcontrols\WpfControls.csproj" />
     <ProjectReference Include="..\..\src\infrastructures\wpfdesigns\WpfDesigns.csproj" />
-    <ProjectReference Include="..\..\src\presentations\wpf\authorizer.viewmodels\Authorizer.ViewModels.csproj" />
-    <ProjectReference Include="..\..\src\presentations\wpf\authorizer.views\Authorizer.Views.csproj" />
     <ProjectReference Include="..\..\src\presentations\wpf\configurator.viewmodels\Configurator.ViewModels.csproj" />
     <ProjectReference Include="..\..\src\presentations\wpf\configurator.views\Configurator.Views.csproj" />
     <ProjectReference Include="..\..\src\presentations\wpf\designer.viewmodels\Designer.ViewModels.csproj" />

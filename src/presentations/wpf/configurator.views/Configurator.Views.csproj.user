@@ -28,6 +28,18 @@
     <Page Update="ConfiguratorView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Dialogs\Contents\CreateAccountView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dialogs\Contents\LoginMainContentView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dialogs\Contents\NoContentView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dialogs\LoginDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\UserSettingTableView.xaml">
       <SubType>Designer</SubType>
     </Page>

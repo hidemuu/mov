@@ -491,22 +491,6 @@
           "Mov.Accessors.dll": {}
         }
       },
-      "Mov.Authorizer.ViewModels/1.0.0": {
-        "dependencies": {
-          "Mov.WpfControls": "1.0.0"
-        },
-        "runtime": {
-          "Mov.Authorizer.ViewModels.dll": {}
-        }
-      },
-      "Mov.Authorizer.Views/1.0.0": {
-        "dependencies": {
-          "Mov.Authorizer.ViewModels": "1.0.0"
-        },
-        "runtime": {
-          "Mov.Authorizer.Views.dll": {}
-        }
-      },
       "Mov.BaseLib/1.0.0": {
         "dependencies": {
           "Mov.Accessors": "1.0.0",
@@ -732,8 +716,6 @@
       },
       "Mov.WpfLib/1.0.0": {
         "dependencies": {
-          "Mov.Authorizer.ViewModels": "1.0.0",
-          "Mov.Authorizer.Views": "1.0.0",
           "Mov.BaseLib": "1.0.0",
           "Mov.Configurator.ViewModels": "1.0.0",
           "Mov.Configurator.Views": "1.0.0",
@@ -1095,16 +1077,6 @@
       "hashPath": "unity.container.5.11.11.nupkg.sha512"
     },
     "Mov.Accessors/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Mov.Authorizer.ViewModels/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Mov.Authorizer.Views/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

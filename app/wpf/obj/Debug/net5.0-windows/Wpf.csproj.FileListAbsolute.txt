@@ -42,8 +42,6 @@ C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\runtimes\wi
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Accessors.dll
-C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Authorizer.ViewModels.dll
-C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Authorizer.Views.dll
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.BaseLib.dll
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Configurator.Models.dll
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Configurator.Repository.dll
@@ -72,8 +70,6 @@ C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.WpfDesi
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.WpfLib.dll
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.WpfLib.pdb
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Accessors.pdb
-C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Authorizer.ViewModels.pdb
-C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Authorizer.Views.pdb
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.BaseLib.pdb
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Configurator.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Configurator.Repository.pdb

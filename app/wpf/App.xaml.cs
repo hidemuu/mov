@@ -1,6 +1,4 @@
-﻿using Mov.Authorizer.ViewModels;
-using Mov.Authorizer.Views;
-using Mov.Configurator.Models;
+﻿using Mov.Configurator.Models;
 using Mov.Configurator.Repository;
 using Mov.Configurator.ViewModels;
 using Mov.Configurator.Views;
@@ -125,7 +123,6 @@ namespace Mov.Wpf
             containerRegistry.RegisterForNavigation<ConfiguratorView>();
             containerRegistry.RegisterForNavigation<UserSettingTableView>();
             containerRegistry.RegisterForNavigation<VariableTableView>();
-            containerRegistry.RegisterForNavigation<AuthorizerView>();
             containerRegistry.RegisterForNavigation<DesignerView>();
             containerRegistry.RegisterForNavigation<DesignerTreeView>();
             containerRegistry.RegisterForNavigation<DesignerTableView>();
@@ -177,7 +174,6 @@ namespace Mov.Wpf
             ViewModelLocationProvider.Register<ConfiguratorView, ConfiguratorViewModel>();
             ViewModelLocationProvider.Register<UserSettingTableView, UserSettingTableViewModel>();
             ViewModelLocationProvider.Register<VariableTableView, VariableTableViewModel>();
-            ViewModelLocationProvider.Register<AuthorizerView, AuthorizerViewModel>();
             ViewModelLocationProvider.Register<DesignerView, DesignerViewModel>();
             ViewModelLocationProvider.Register<DesignerTreeView, DesignerTreeViewModel>();
             ViewModelLocationProvider.Register<DesignerTableView, DesignerTableViewModel>();

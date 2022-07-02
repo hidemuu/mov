@@ -613,38 +613,6 @@
           "bin/placeholder/Mov.Accessors.dll": {}
         }
       },
-      "Mov.Authorizer.ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Mov.WpfControls": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Authorizer.ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Authorizer.ViewModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.Authorizer.Views/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Mov.Authorizer.ViewModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Authorizer.Views.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Authorizer.Views.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
       "Mov.BaseLib/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1027,8 +995,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Mov.Authorizer.ViewModels": "1.0.0",
-          "Mov.Authorizer.Views": "1.0.0",
           "Mov.BaseLib": "1.0.0",
           "Mov.Configurator.ViewModels": "1.0.0",
           "Mov.Configurator.Views": "1.0.0",
@@ -2223,16 +2189,6 @@
       "type": "project",
       "path": "../../src/infrastructures/accessors/Accessors.csproj",
       "msbuildProject": "../../src/infrastructures/accessors/Accessors.csproj"
-    },
-    "Mov.Authorizer.ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/authorizer.viewmodels/Authorizer.ViewModels.csproj",
-      "msbuildProject": "../../src/presentations/wpf/authorizer.viewmodels/Authorizer.ViewModels.csproj"
-    },
-    "Mov.Authorizer.Views/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/authorizer.views/Authorizer.Views.csproj",
-      "msbuildProject": "../../src/presentations/wpf/authorizer.views/Authorizer.Views.csproj"
     },
     "Mov.BaseLib/1.0.0": {
       "type": "project",

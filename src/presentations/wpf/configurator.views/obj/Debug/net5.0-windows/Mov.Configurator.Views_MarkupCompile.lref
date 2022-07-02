@@ -3,6 +3,10 @@
 FC:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\ConfiguratorTableView.xaml;;
 FC:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\ConfiguratorTreeView.xaml;;
 FC:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\ConfiguratorView.xaml;;
+FC:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\Dialogs\Contents\CreateAccountView.xaml;;
+FC:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\Dialogs\Contents\LoginMainContentView.xaml;;
+FC:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\Dialogs\Contents\NoContentView.xaml;;
+FC:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\Dialogs\LoginDialog.xaml;;
 FC:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\Pages\UserSettingTableView.xaml;;
 FC:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.views\Pages\VariableTableView.xaml;;
 

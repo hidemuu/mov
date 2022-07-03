@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace Mov.WpfControls.Components
 {
     /// <summary>
-    /// https://sabeeshwpf.blogspot.com/2012/12/treelistview-in-wpf.html
+    /// ツリー型のリストビューコントロール
     /// </summary>
+    /// <remarks>https://sabeeshwpf.blogspot.com/2012/12/treelistview-in-wpf.html</remarks>
     public class TreeListView : TreeView
     {
         static TreeListView()
@@ -27,7 +23,8 @@ namespace Mov.WpfControls.Components
             Columns = new GridViewColumnCollection();
         }
 
-        #region Properties
+        #region プロパティ
+
         /// <summary>
         /// Gets or sets the collection of System.Windows.Controls.GridViewColumn
         /// objects that is defined for this TreeListView.
@@ -47,9 +44,11 @@ namespace Mov.WpfControls.Components
             get { return (bool)GetValue(AllowsColumnReorderProperty); }
             set { SetValue(AllowsColumnReorderProperty, value); }
         }
-        #endregion
+
+        #endregion プロパティ
 
         #region Static Dependency Properties
+
         public static readonly DependencyProperty AllowsColumnReorderProperty =
             DependencyProperty.Register("AllowsColumnReorder", typeof(bool), typeof(TreeListView), new UIPropertyMetadata(null));
 
@@ -57,6 +56,7 @@ namespace Mov.WpfControls.Components
             DependencyProperty.Register("Columns", typeof(GridViewColumnCollection),
             typeof(TreeListView),
             new UIPropertyMetadata(null));
-        #endregion
+
+        #endregion Static Dependency Properties
     }
 }

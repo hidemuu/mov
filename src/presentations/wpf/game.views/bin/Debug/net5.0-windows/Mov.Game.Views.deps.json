@@ -505,14 +505,6 @@
         "runtime": {
           "Mov.WpfDesigns.dll": {}
         }
-      },
-      "Mov.WpfViewModels/1.0.0.0": {
-        "runtime": {
-          "Mov.WpfViewModels.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
       }
     }
   },
@@ -867,11 +859,6 @@
     },
     "Mov.WpfDesigns/1.0.0": {
       "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Mov.WpfViewModels/1.0.0.0": {
-      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

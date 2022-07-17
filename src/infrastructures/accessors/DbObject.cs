@@ -63,16 +63,16 @@ namespace Mov.Accessors
         public override string ToString() => GetString(new string[] { Id.ToString(), Code });
 
         /// <summary>
-        ///
+        ///ヘッダー文字列取得
         /// </summary>
         /// <returns></returns>
-        public virtual string ToStringTableHeader() => GetString(new string[] { "Id", "Code", }, 10);
+        public virtual string ToHeaderString() => GetString(new string[] { "Id", "Code", }, 10);
 
         /// <summary>
-        ///
+        ///コンテンツ文字列取得
         /// </summary>
         /// <returns></returns>
-        public virtual string ToStringTable() => GetString(new string[] { Id.ToString(), Code, }, 10);
+        public virtual string ToContentString() => GetString(new string[] { Id.ToString(), Code, }, 10);
 
         #endregion メソッド
 

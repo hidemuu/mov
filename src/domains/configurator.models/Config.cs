@@ -12,6 +12,7 @@ namespace Mov.Configurator.Models
     [XmlRoot("configs")]
     public class ConfigCollection : DbObjectCollection<Config>
     {
+        /// <inheritdoc />
         [JsonProperty("configs")]
         [XmlElement(Type = typeof(Config), ElementName = "config")]
         public override Config[] Items { get; set; }
@@ -73,11 +74,14 @@ namespace Mov.Configurator.Models
 
         #region メソッド
 
+        /// <inheritdoc />
         public override string ToString() => GetString(new string[] { Id.ToString(), Code, Category, Name, Value, Description });
 
-        public override string ToStringTable() => GetString(new string[] { Id.ToString(), Code, Category, Name, Value, Description }, 10);
+        /// <inheritdoc />
+        public override string ToContentString() => GetString(new string[] { Id.ToString(), Code, Category, Name, Value, Description }, 10);
 
-        public override string ToStringTableHeader() => GetString(new string[] { "Id", "Code", "Category", "Name", "Value", "Description" }, 10);
+        /// <inheritdoc />
+        public override string ToHeaderString() => GetString(new string[] { "Id", "Code", "Category", "Name", "Value", "Description" }, 10);
 
         #endregion メソッド
     }

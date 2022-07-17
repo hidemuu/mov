@@ -159,7 +159,6 @@ namespace Mov.Designer.ViewModels
                     Index = model.Index.Value,
                     Code = model.Code.Value,
                     ControlType = model.ControlType.Value,
-                    ControlStyle = model.ControlStyle.Value,
                 };
                 items.Add(item);
             }
@@ -232,8 +231,6 @@ namespace Mov.Designer.ViewModels
             Code.Value = item.Code;
             Name.Value = item.Name;
             ControlType.Value = item.ControlType;
-            ControlStyle.Value = item.ControlStyle;
-            Parameter.Value = item.Parameter;
         }
 
         #endregion 継承メソッド

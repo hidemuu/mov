@@ -2,12 +2,20 @@
 
 namespace Mov.Accessors
 {
+    /// <summary>
+    /// リポジトリコレクションのベースクラス
+    /// </summary>
     public abstract class DbObjectRepositoryCollectionBase
     {
         #region フィールド
 
+        /// <summary>
+        /// ベースパス
+        /// </summary>
         protected readonly string dir;
-
+        /// <summary>
+        /// 拡張子
+        /// </summary>
         protected readonly string extension;
 
         #endregion フィールド
@@ -25,6 +33,11 @@ namespace Mov.Accessors
 
         #region メソッド
 
+        /// <summary>
+        /// 相対パスを取得
+        /// </summary>
+        /// <param name="fileName">ファイル名</param>
+        /// <returns></returns>
         protected string GetRelativePath(string fileName) => fileName + "." + this.extension;
 
         #endregion メソッド

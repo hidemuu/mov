@@ -52,7 +52,7 @@ namespace Mov.Accessors
 
         public string ToStringTables()
         {
-            var stringBuilder = new StringBuilder(ToStringTable());
+            var stringBuilder = new StringBuilder(ToContentString());
             stringBuilder.AppendLine();
             GetStringTables(Children, stringBuilder, 0);
             return stringBuilder.ToString();
@@ -70,7 +70,7 @@ namespace Mov.Accessors
                 {
                     stringBuilder.Append("  ");
                 }
-                stringBuilder.AppendLine(item.ToStringTable());
+                stringBuilder.AppendLine(item.ToContentString());
                 if (item is DbObjectNode<T> node)
                 {
                     GetStringTables(node.Children, stringBuilder, hierarchy + 1);

@@ -13,6 +13,7 @@ namespace Mov.Configurator.Models
     /// </summary>
     public class AccountCollection : DbObjectCollection<Account>
     {
+        /// <inheritdoc />
         [JsonProperty("accounts")]
         public override Account[] Items { get; set; }
     }
@@ -23,9 +24,15 @@ namespace Mov.Configurator.Models
     [XmlRoot("account")]
     public class Account : DbObject
     {
+        /// <summary>
+        /// ログインID
+        /// </summary>
         [JsonProperty("loginid")]
         [XmlElement("loginid")]
         public string LoginId { get; set; }
+        /// <summary>
+        /// パスワード
+        /// </summary>
         [JsonProperty("password")]
         [XmlElement("password")]
         public string Password { get; set; }

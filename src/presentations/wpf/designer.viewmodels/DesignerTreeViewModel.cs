@@ -146,8 +146,8 @@ namespace Mov.Designer.ViewModels
                     Code = model.Code.Value,
                     IsExpand = model.IsExpand.Value,
                     LayoutNodeType = model.LayoutType.Value,
-                    LayoutStyle = model.LayoutStyle.Value,
-                    LayoutParameter = model.LayoutParameter.Value,
+                    Style = model.LayoutStyle.Value,
+                    Parameter = model.LayoutParameter.Value,
                 };
                 items.Add(item);
                 GetLayoutTrees(item.Children, model.Children);
@@ -164,7 +164,6 @@ namespace Mov.Designer.ViewModels
                     Index = model.Index.Value,
                     Code = model.Code.Value,
                     ControlType = model.ControlType.Value,
-                    ControlStyle = model.ControlStyle.Value,
                 };
                 items.Add(item);
                 GetContentTables(items, model.Children);
@@ -236,8 +235,8 @@ namespace Mov.Designer.ViewModels
             IsExpand.Value = tree.IsExpand;
             LayoutType.Value = tree.LayoutNodeType;
             OrientationType.Value = tree.OrientationType;
-            LayoutStyle.Value = tree.LayoutStyle;
-            LayoutParameter.Value = tree.LayoutParameter;
+            LayoutStyle.Value = tree.Style;
+            LayoutParameter.Value = tree.Parameter;
             //子階層へ
             foreach (var child in tree.Children)
             {

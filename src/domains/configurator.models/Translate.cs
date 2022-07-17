@@ -13,6 +13,7 @@ namespace Mov.Configurator.Models
     [XmlRoot("translates")]
     public class TranslateCollection : DbObjectCollection<Translate>
     {
+        /// <inheritdoc />
         [XmlElement(Type = typeof(Translate), ElementName = "translate")]
         public override Translate[] Items { get; set; }
     }

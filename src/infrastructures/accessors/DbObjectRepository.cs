@@ -270,7 +270,7 @@ namespace Mov.Accessors
             if (items == null) return string.Empty;
             var stringBuilder = new StringBuilder();
             stringBuilder.Append(">> ").AppendLine(typeof(T).Name);
-            GetStringTables(items.ToList(), stringBuilder);
+            GetStrings(items.ToList(), stringBuilder);
             return stringBuilder.ToString();
         }
 
@@ -311,14 +311,14 @@ namespace Mov.Accessors
         /// </summary>
         /// <param name="items"></param>
         /// <param name="stringBuilder"></param>
-        private void GetStringTables(List<T> items, StringBuilder stringBuilder)
+        private void GetStrings(List<T> items, StringBuilder stringBuilder)
         {
             bool isWightedHeader = false;
             foreach (var item in items)
             {
                 if (!isWightedHeader)
                 {
-                    var header = item.ToStringTableHeader();
+                    var header = item.ToHeaderString();
                     stringBuilder.AppendLine(header);
                     for (int i = 0; i < header.Length; i++)
                     {
@@ -332,7 +332,7 @@ namespace Mov.Accessors
                     stringBuilder.AppendLine(node.ToStringTables());
                     continue;
                 }
-                stringBuilder.AppendLine(item.ToStringTable());
+                stringBuilder.AppendLine(item.ToContentString());
             }
         }
 

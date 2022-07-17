@@ -11,9 +11,9 @@ namespace Mov.Driver.Models
 
         DbObjectRepository<Macro, MacroCollection> Macros { get; }
 
-        DbObjectRepository<Schema, SchemaCollection> Schemas { get; }
-
         DbObjectRepository<Variable, VariableCollection> Variables { get; }
+
+        DbObjectRepository<Schema, SchemaCollection> Schemas { get; }
 
         DbObjectRepository<Connect, ConnectCollection> Connects { get; }
     }

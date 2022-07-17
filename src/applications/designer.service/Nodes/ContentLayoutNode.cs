@@ -38,7 +38,6 @@ namespace Mov.Designer.Service.Nodes
         {
             Code = content.Code;
             ControlType = content.ControlType;
-            ControlStyle = content.ControlStyle;
             Macro = content.Macro;
             IsVisible.Value = content.IsVisible;
             IsEnable.Value = content.IsEnable;

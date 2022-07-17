@@ -61,7 +61,7 @@ namespace Mov.Designer.Service
             Code = tree.Code;
             Name.Value = tree.Code;
             IsExpand.Value = tree.IsExpand;
-            LayoutStyle = tree.LayoutStyle;
+            LayoutStyle = tree.Style;
         }
 
         #endregion コンストラクター

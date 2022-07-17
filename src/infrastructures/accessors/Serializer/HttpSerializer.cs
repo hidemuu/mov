@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Accessors.Serializer
 {
-    public class HttpSerializer
+    public class HttpSerializer : ISerializer
     {
         #region フィールド
 
@@ -14,6 +14,7 @@ namespace Mov.Accessors.Serializer
         /// The Base URL for the API.
         /// /// </summary>
         private readonly string baseUrl;
+        private readonly string url;
 
         #endregion フィールド
 
@@ -23,14 +24,37 @@ namespace Mov.Accessors.Serializer
         /// コンストラクター
         /// </summary>
         /// <param name="baseUrl"></param>
-        public HttpSerializer(string baseUrl)
+        public HttpSerializer(string baseUrl, string url)
         {
             this.baseUrl = baseUrl;
+            this.url = url;
         }
 
         #endregion コンストラクター
 
         #region メソッド
+
+        public T Read<T>()
+        {
+            using (var client = BaseClient())
+            {
+                var responseTask = client.GetAsync(this.url);
+                Task.WhenAll(responseTask);
+                var jsonTask = responseTask.Result.Content.ReadAsStringAsync();
+                Task.WhenAll(jsonTask);
+                T obj = JsonConvert.DeserializeObject<T>(jsonTask.Result);
+                return obj;
+            }
+        }
+
+        public void Write<T>(T body)
+        {
+            using (var client = BaseClient())
+            {
+                var responseTask = client.PostAsync(this.url, new JsonStringContent(body));
+                Task.WhenAll(responseTask);
+            }
+        }
 
         /// <summary>
         /// Makes an HTTP GET request to the given controller and returns the deserialized response content.

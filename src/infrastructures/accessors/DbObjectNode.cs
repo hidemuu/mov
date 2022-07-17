@@ -5,10 +5,17 @@ using System.Xml.Serialization;
 
 namespace Mov.Accessors
 {
+    /// <summary>
+    /// データベースオブジェクトのノード
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class DbObjectNode<T> : DbObject where T : DbObject
     {
         #region プロパティ
 
+        /// <summary>
+        /// 子階層
+        /// </summary>
         [XmlIgnore]
         public virtual List<T> Children { get; set; } = new List<T>();
 

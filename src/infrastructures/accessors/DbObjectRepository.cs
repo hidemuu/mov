@@ -1,6 +1,4 @@
-﻿using Mov.Accessors;
-using Mov.Accessors.Repository;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -15,48 +13,39 @@ namespace Mov.Accessors
     /// <typeparam name="T"></typeparam>
     public class DbObjectRepository<T, C> where T : DbObject where C : DbObjectCollection<T>
     {
-        #region 定数
-
-        private const string PATH_EXTENSION_JSON = ".json";
-
-        private const string PATH_EXTENSION_XML = ".xml";
-
-        private const string PATH_EXTENSION_CSV = ".csv";
-
-        private const string PATH_EXTENSION_SQL = ".db";
-
-        #endregion
-
+       
         #region フィールド
 
         /// <summary>
         /// シリアライザー
         /// </summary>
-        protected readonly ISerializer fileSerializer;
+        protected readonly ISerializer serializer;
 
         /// <summary>
         /// 内部保持変数
         /// </summary>
         private C collection = null;
 
-        #endregion
+        #endregion フィールド
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public DbObjectRepository(string path, string encoding = DbConstants.ENCODE_NAME_UTF8)
+        public DbObjectRepository(string basePath, string relativePath, string encoding)
         {
-            var extension = System.IO.Path.GetExtension(path);
+            var extension = System.IO.Path.GetExtension(relativePath);
             if (string.IsNullOrEmpty(extension)) Debug.Assert(false);
 
             switch (extension)
             {
-                case PATH_EXTENSION_JSON:
-                    this.fileSerializer = new JsonFileSerializer(path, encoding);
+                case DbConstants.PATH_EXTENSION_JSON:
+                    this.serializer = new JsonFileSerializer(basePath, relativePath, encoding);
                     break;
-                case PATH_EXTENSION_XML:
-                    this.fileSerializer = new XmlFileSerializer(path, encoding);
+
+                case DbConstants.PATH_EXTENSION_XML:
+                    this.serializer = new XmlFileSerializer(basePath, relativePath, encoding);
                     break;
+
                 default:
                     Debug.Assert(false);
                     break;
@@ -68,18 +57,18 @@ namespace Mov.Accessors
         /// <summary>
         /// インポート
         /// </summary>
-        public void Import() => collection = fileSerializer.Read<C>();       
+        public void Import() => collection = serializer.Read<C>();
 
         /// <summary>
         /// エクスポート
         /// </summary>
-        public void Export() => fileSerializer.Write<C>(this.collection);
+        public void Export() => serializer.Write<C>(this.collection);
 
         /// <summary>
         /// 単一データエクスポート
         /// </summary>
         /// <param name="item"></param>
-        public void Export(T item) => fileSerializer.Write<T>(item);
+        public void Export(T item) => serializer.Write<T>(item);
 
         #region GET
 
@@ -87,12 +76,12 @@ namespace Mov.Accessors
         /// 全データ取得
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<T> Gets() 
-        { 
-            if(collection == null) Import();
+        public IEnumerable<T> Gets()
+        {
+            if (collection == null) Import();
             return collection.Items;
         }
-        
+
         /// <summary>
         /// 全データ取得（非同期）
         /// </summary>
@@ -146,7 +135,7 @@ namespace Mov.Accessors
         /// データ追加・更新
         /// </summary>
         /// <param name="item"></param>
-        public void Post(T item) 
+        public void Post(T item)
         {
             var src = Gets().FirstOrDefault(x => x.Id == item.Id);
             src = item;
@@ -174,7 +163,7 @@ namespace Mov.Accessors
         /// <param name="id"></param>
         public void Put(T item, Guid id)
         {
-            if (item is DbObjectNode<T>) 
+            if (item is DbObjectNode<T>)
             {
                 var src = Get(Gets(), id);
                 if (src == null) return;
@@ -239,7 +228,7 @@ namespace Mov.Accessors
             var movedIndex = arrayIndex - 1;
             if (movedIndex < 0) return;
             var items = Gets().ToArray();
-            var src =  items[arrayIndex];
+            var src = items[arrayIndex];
             var moved = items[movedIndex];
             var querys = Gets().ToArray();
             querys[arrayIndex] = moved;
@@ -297,7 +286,7 @@ namespace Mov.Accessors
             if (key is string code) item = items.FirstOrDefault(x => x.Code == code);
             if (item != null) return item;
             if (!(items is IEnumerable<DbObjectNode<T>> nodes)) return item;
-            foreach(var node in nodes)
+            foreach (var node in nodes)
             {
                 item = Get(node.Children, key);
                 if (item != null) return item;
@@ -327,11 +316,11 @@ namespace Mov.Accessors
             bool isWightedHeader = false;
             foreach (var item in items)
             {
-                if (!isWightedHeader) 
+                if (!isWightedHeader)
                 {
                     var header = item.ToStringTableHeader();
                     stringBuilder.AppendLine(header);
-                    for(int i = 0; i < header.Length; i++)
+                    for (int i = 0; i < header.Length; i++)
                     {
                         stringBuilder.Append("-");
                     }

@@ -1,6 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -13,21 +11,20 @@ namespace Mov.Accessors
     {
         #region フィールド
 
-        private const string EXTENSION = ".json";
+        private readonly string basePath;
         private string path;
         private Encoding encoding;
 
-        #endregion
+        #endregion フィールド
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        /// <param name="fileName">ファイル名</param>
-        /// <param name="encode">エンコード</param>
-        public JsonFileSerializer(string path, string encoding)
+        public JsonFileSerializer(string basePath, string relativePath, string encoding)
         {
-            this.path = path;
-            if (string.IsNullOrEmpty(Path.GetExtension(path))) this.path += EXTENSION;
+            this.basePath = basePath;
+            this.path = Path.Combine(basePath, relativePath);
+            if (string.IsNullOrEmpty(Path.GetExtension(path))) this.path += DbConstants.PATH_EXTENSION_JSON;
             this.encoding = Encoding.GetEncoding(encoding);
         }
 
@@ -36,7 +33,6 @@ namespace Mov.Accessors
         /// <summary>
         /// データをファイルから読み出して指定クラスにデシリアライズ
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         public T Read<T>()
         {
@@ -58,7 +54,7 @@ namespace Mov.Accessors
             WriteStream(json, false);
         }
 
-        #endregion
+        #endregion メソッド
 
         #region 内部メソッド
 
@@ -75,7 +71,7 @@ namespace Mov.Accessors
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="json"></param>
         /// <param name="isappend">追記モード（falseなら上書き保存）</param>
@@ -90,6 +86,6 @@ namespace Mov.Accessors
             }
         }
 
-        #endregion
+        #endregion 内部メソッド
     }
 }

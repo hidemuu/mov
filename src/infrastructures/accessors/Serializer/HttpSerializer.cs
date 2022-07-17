@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,26 +8,40 @@ namespace Mov.Accessors.Serializer
 {
     public class HttpSerializer
     {
-        /// <summary>           
+        #region フィールド
+
+        /// <summary>
         /// The Base URL for the API.
         /// /// </summary>
-        private readonly string _baseUrl;
+        private readonly string baseUrl;
 
+        #endregion フィールド
+
+        #region コンストラクター
+
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
+        /// <param name="baseUrl"></param>
         public HttpSerializer(string baseUrl)
         {
-            _baseUrl = baseUrl;
+            this.baseUrl = baseUrl;
         }
+
+        #endregion コンストラクター
+
+        #region メソッド
 
         /// <summary>
         /// Makes an HTTP GET request to the given controller and returns the deserialized response content.
         /// </summary>
-        public async Task<TResult> GetAsync<TResult>(string controller)
+        public async Task<T> GetAsync<T>(string url)
         {
             using (var client = BaseClient())
             {
-                var response = await client.GetAsync(controller);
+                var response = await client.GetAsync(url);
                 string json = await response.Content.ReadAsStringAsync();
-                TResult obj = JsonConvert.DeserializeObject<TResult>(json);
+                T obj = JsonConvert.DeserializeObject<T>(json);
                 return obj;
             }
         }
@@ -37,13 +50,13 @@ namespace Mov.Accessors.Serializer
         /// Makes an HTTP POST request to the given controller with the given object as the body.
         /// Returns the deserialized response content.
         /// </summary>
-        public async Task<TResult> PostAsync<TRequest, TResult>(string controller, TRequest body)
+        public async Task<T> PostAsync<TRequest, T>(string url, TRequest body)
         {
             using (var client = BaseClient())
             {
-                var response = await client.PostAsync(controller, new JsonStringContent(body));
+                var response = await client.PostAsync(url, new JsonStringContent(body));
                 string json = await response.Content.ReadAsStringAsync();
-                TResult obj = JsonConvert.DeserializeObject<TResult>(json);
+                T obj = JsonConvert.DeserializeObject<T>(json);
                 return obj;
             }
         }
@@ -52,21 +65,25 @@ namespace Mov.Accessors.Serializer
         /// Makes an HTTP DELETE request to the given controller and includes all the given
         /// object's properties as URL parameters. Returns the deserialized response content.
         /// </summary>
-        public async Task DeleteAsync(string controller, Guid objectId)
+        public async Task DeleteAsync(string url, Guid objectId)
         {
             using (var client = BaseClient())
             {
-                await client.DeleteAsync($"{controller}/{objectId}");
+                await client.DeleteAsync($"{url}/{objectId}");
             }
         }
+
+        #endregion メソッド
+
+        #region 内部メソッド
 
         /// <summary>
         /// Constructs the base HTTP client, including correct authorization and API version headers.
         /// </summary>
-        private HttpClient BaseClient() => new HttpClient { BaseAddress = new Uri(_baseUrl) };
+        private HttpClient BaseClient() => new HttpClient { BaseAddress = new Uri(baseUrl) };
 
         /// <summary>
-        /// Helper class for formatting <see cref="StringContent"/> as UTF8 application/json. 
+        /// Helper class for formatting <see cref="StringContent"/> as UTF8 application/json.
         /// </summary>
         private class JsonStringContent : StringContent
         {
@@ -77,5 +94,7 @@ namespace Mov.Accessors.Serializer
                 : base(JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json")
             { }
         }
+
+        #endregion 内部メソッド
     }
 }

@@ -1,5 +1,4 @@
 ﻿using Mov.Accessors;
-using Mov.Accessors.Repository;
 using Mov.Game.Models;
 using Mov.Game.Models.interfaces;
 using Mov.Game.Models.Maps;
@@ -18,8 +17,8 @@ namespace Mov.Game.Repository
         /// </summary>
         public GameRepositoryCollection(string resourceDir, string extension, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
         {
-            Landmarks = new DbObjectRepository<Landmark, LandmarkCollection>(GetRepositoryPath("landmark"), encoding);
-            DrawItems = new DbObjectRepository<DrawItem, DrawItemCollection>(GetRepositoryPath("draw_item"), encoding);
+            Landmarks = new DbObjectRepository<Landmark, LandmarkCollection>(this.dir, GetRelativePath("landmark"), encoding);
+            DrawItems = new DbObjectRepository<DrawItem, DrawItemCollection>(this.dir, GetRelativePath("draw_item"), encoding);
         }
 
         #endregion コンストラクター

@@ -1,5 +1,4 @@
 ﻿using Mov.Accessors;
-using Mov.Accessors.Repository;
 using Mov.Configurator.Models;
 using System;
 using System.Collections.Generic;
@@ -21,9 +20,9 @@ namespace Mov.Configurator.Repository
         /// </summary>
         public ConfiguratorRepositoryCollection(string resourceDir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
         {
-            Configs = new DbObjectRepository<Config, ConfigCollection>(GetRepositoryPath("config"), encode);
-            Accounts = new DbObjectRepository<Account, AccountCollection>(GetRepositoryPath("account"), encode);
-            Translates = new DbObjectRepository<Translate, TranslateCollection>(GetRepositoryPath("translate"), encode);
+            Configs = new DbObjectRepository<Config, ConfigCollection>(this.dir, GetRelativePath("config"), encode);
+            Accounts = new DbObjectRepository<Account, AccountCollection>(this.dir, GetRelativePath("account"), encode);
+            Translates = new DbObjectRepository<Translate, TranslateCollection>(this.dir, GetRelativePath("translate"), encode);
         }
 
         #endregion コンストラクター

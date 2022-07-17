@@ -8,7 +8,7 @@ namespace Mov.Accessors.Connector
 {
     public class SocketConnector
     {
-        public void Connector(string IP, int port)
+        public void Connect(string IP, int port)
         {
             // ソケットをTCPプロトコルで生成
             // AddressFamily.InterNetwork: IPv4で接続(IPv6の場合はInterNetworkV6)

@@ -1,12 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace Mov.Accessors
 {
+    /// <summary>
+    /// ファイル監視クラス
+    /// </summary>
     public class FileWatcher
     {
+
+        #region コンストラクター
+
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
+        /// <param name="path"></param>
         public FileWatcher(string path)
         {
             var extension = System.IO.Path.GetExtension(path);
@@ -33,9 +41,11 @@ namespace Mov.Accessors
             }
         }
 
+        #endregion コンストラクター
+
         #region 内部メソッド
 
-        private static void OnChanged(object sender, FileSystemEventArgs e)
+        private void OnChanged(object sender, FileSystemEventArgs e)
         {
             if (e.ChangeType != WatcherChangeTypes.Changed)
             {
@@ -44,26 +54,26 @@ namespace Mov.Accessors
             Console.WriteLine($"Changed: {e.FullPath}");
         }
 
-        private static void OnCreated(object sender, FileSystemEventArgs e)
+        private void OnCreated(object sender, FileSystemEventArgs e)
         {
             string value = $"Created: {e.FullPath}";
             Console.WriteLine(value);
         }
 
-        private static void OnDeleted(object sender, FileSystemEventArgs e) =>
+        private void OnDeleted(object sender, FileSystemEventArgs e) =>
             Console.WriteLine($"Deleted: {e.FullPath}");
 
-        private static void OnRenamed(object sender, RenamedEventArgs e)
+        private void OnRenamed(object sender, RenamedEventArgs e)
         {
             Console.WriteLine($"Renamed:");
             Console.WriteLine($"    Old: {e.OldFullPath}");
             Console.WriteLine($"    New: {e.FullPath}");
         }
 
-        private static void OnError(object sender, ErrorEventArgs e) =>
+        private void OnError(object sender, ErrorEventArgs e) =>
             PrintException(e.GetException());
 
-        private static void PrintException(Exception ex)
+        private void PrintException(Exception ex)
         {
             if (ex != null)
             {
@@ -76,6 +86,5 @@ namespace Mov.Accessors
         }
 
         #endregion 内部メソッド
-
     }
 }

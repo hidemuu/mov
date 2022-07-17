@@ -1,6 +1,5 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -8,30 +7,42 @@ using System.Text;
 
 namespace Mov.Accessors
 {
-    public class CsvFileSerializer
+    /// <summary>
+    /// CSVシリアライザー
+    /// </summary>
+    public class CsvFileSerializer : ISerializer
     {
-        private const string EXTENSION = ".csv";
+        #region フィールド
+
+        private readonly string basePath;
         private string path;
         private Encoding encoding;
+
+        #endregion フィールド
+
+        #region コンストラクター
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="fileName">ファイル名</param>
-        /// <param name="encoding">エンコード</param>
-        public CsvFileSerializer(string path, string encoding)
+        public CsvFileSerializer(string basePath, string relativePath, string encoding)
         {
-            this.path = path;
-            if (string.IsNullOrEmpty(Path.GetExtension(path))) this.path += EXTENSION;
+            this.basePath = basePath;
+            this.path = Path.Combine(basePath, relativePath);
+            if (string.IsNullOrEmpty(Path.GetExtension(path))) this.path += DbConstants.PATH_EXTENSION_CSV;
             this.encoding = Encoding.GetEncoding(encoding);
         }
+
+        #endregion コンストラクター
+
+        #region メソッド
 
         /// <summary>
         /// データをシリアライズしてファイルに書き込み
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="list"></param>
-        public void Write<T>(IEnumerable<T> list)
+        public void Write<T>(T list)
         {
             var isExist = File.Exists(path);
 
@@ -45,10 +56,10 @@ namespace Mov.Accessors
                     //csv.Context.RegisterClassMap<M>();
                     // 区切り文字をタブとかに変えることも可能
                     //config.Delimiter = "\t";
-                    csv.WriteRecords(list);
+                    //csv.WriteRecords(list);
+                    csv.WriteRecord(list);
                 }
             }
-
         }
 
         /// <summary>
@@ -56,7 +67,7 @@ namespace Mov.Accessors
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public IEnumerable<T> Read<T>()
+        public T Read<T>()
         {
             var configuration = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
@@ -68,7 +79,7 @@ namespace Mov.Accessors
             {
                 using (var csv = new CsvReader(sr, configuration))
                 {
-                    var records = new List<T>();
+                    //var records = new List<T>();
 
                     //csv.Context.RegisterClassMap<M>();
                     //records = csv.GetRecords<T>();
@@ -78,16 +89,17 @@ namespace Mov.Accessors
                     //ヘッダを読み込みます
                     csv.ReadHeader();
                     //行毎に読み込みと処理を行います
-                    while (csv.Read())
-                    {
-                        var record = csv.GetRecord<T>();
-                        records.Add(record);
-                    }
+                    //while (csv.Read())
+                    //{
+                    //    var record = csv.GetRecord<T>();
+                    //    records.Add(record);
+                    //}
 
-                    return records;
+                    return csv.GetRecord<T>();
                 }
             }
-
         }
+
+        #endregion メソッド
     }
 }

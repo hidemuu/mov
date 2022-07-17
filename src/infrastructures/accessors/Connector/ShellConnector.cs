@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Mov.Accessors.Connector
 {
+    /// <summary>
+    /// シェル接続ロジッククラス
+    /// </summary>
     public static class ShellConnector
-    {
-        //----- メソッド -----
+    {     
         /// <summary>
         /// プロセス起動
         /// </summary>

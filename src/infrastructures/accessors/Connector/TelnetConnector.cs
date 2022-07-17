@@ -5,9 +5,14 @@ using System.Threading;
 
 namespace Mov.Accessors.Connector
 {
+    /// <summary>
+    /// Telnet接続ロジッククラス
+    /// </summary>
     public static class TelnetConnector
     {
-        //-----フィールド------------------------------------------------
+
+        #region フィールド
+
         static TelnetSocket sock;
         static byte[] newLine = { 0x0D, 0x0A }; //改行コード
 
@@ -66,7 +71,10 @@ namespace Mov.Accessors.Connector
         //読出モードキー
         private enum EncKeys { IAC, ASCII, ENC }
 
-        //----- メソッド --------------------------------------------------
+        #endregion フィールド
+
+        #region メソッド
+
         /// <summary>
         /// Telnet接続
         /// </summary>
@@ -130,7 +138,10 @@ namespace Mov.Accessors.Connector
             return guide;
         }
 
-        //----- 内部メソッド --------------------------------------------------
+        #endregion メソッド
+
+        #region 内部メソッド
+
         /// <summary>
         /// ネゴシエーション処理（Windowsサーバ用）
         /// </summary>
@@ -433,5 +444,7 @@ namespace Mov.Accessors.Connector
         {
             System.Console.WriteLine("Connect");
         }
+
+        #endregion 内部メソッド
     }
 }

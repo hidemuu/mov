@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System.IO;
 
-namespace Mov.Accessors.Repository
+namespace Mov.Accessors
 {
     public abstract class DbObjectRepositoryCollectionBase
     {
@@ -13,7 +10,7 @@ namespace Mov.Accessors.Repository
 
         protected readonly string extension;
 
-        #endregion
+        #endregion フィールド
 
         /// <summary>
         /// コンストラクター
@@ -28,9 +25,8 @@ namespace Mov.Accessors.Repository
 
         #region メソッド
 
-        protected string GetRepositoryPath(string filePath) => Path.Combine(this.dir, filePath + "." + this.extension);
+        protected string GetRelativePath(string fileName) => fileName + "." + this.extension;
 
-        #endregion
-
+        #endregion メソッド
     }
 }

@@ -1,29 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Text;
-using System.Xml;
 using System.Xml.Serialization;
 
 namespace Mov.Accessors
 {
+    /// <summary>
+    /// XMLシリアライザー
+    /// </summary>
     public class XmlFileSerializer : ISerializer
     {
-        private const string EXTENSION = ".xml";
+        #region フィールド
+
+        private readonly string basePath;
         private string path;
         private Encoding encoding;
-        
+
+        #endregion フィールド
+
+        #region コンストラクター
+
         /// <summary>
         /// コンストラクタ
         /// </summary>
         /// <param name="path">ファイルパス</param>
-        public XmlFileSerializer(string path, string encoding)
+        public XmlFileSerializer(string basePath, string relativePath, string encoding)
         {
-            this.path = path;
-            if (string.IsNullOrEmpty(Path.GetExtension(path))) this.path += EXTENSION;
+            this.basePath = basePath;
+            this.path = Path.Combine(basePath, relativePath);
+            if (string.IsNullOrEmpty(Path.GetExtension(path))) this.path += DbConstants.PATH_EXTENSION_XML;
             this.encoding = Encoding.GetEncoding(encoding);
-
         }
+
+        #endregion コンストラクター
+
+        #region メソッド
 
         /// <summary>
         /// データをファイルから読み出して指定クラスにデシリアライズ
@@ -51,5 +61,6 @@ namespace Mov.Accessors
             }
         }
 
+        #endregion メソッド
     }
 }

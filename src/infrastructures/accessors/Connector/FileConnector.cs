@@ -5,7 +5,10 @@ using System.Text;
 
 namespace Mov.Accessors.Connector
 {
-    public class FileConnector
+    /// <summary>
+    /// ファイル接続ロジッククラス
+    /// </summary>
+    public static class FileConnector
     {
         /// <summary>
         /// バックアップ処理
@@ -37,7 +40,7 @@ namespace Mov.Accessors.Connector
             }
             catch (Exception ex)
             {
-                Console.WriteLine(DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss.fff") + "/" + ex.Message + "/" + ex.Source + "/" + "バックアップ失敗");
+                Console.WriteLine(DateTime.Now.ToString(DbConstants.DATE_FORMAT) + "/" + ex.Message + "/" + ex.Source + "/" + "バックアップ失敗");
                 return false;
             }
 

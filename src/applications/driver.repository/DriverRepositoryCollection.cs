@@ -1,5 +1,4 @@
 ﻿using Mov.Accessors;
-using Mov.Accessors.Repository;
 using Mov.Driver.Models;
 using System;
 using System.Collections.Generic;
@@ -17,11 +16,11 @@ namespace Mov.Driver.Repository
         /// <param name="encoding"></param>
         public DriverRepositoryCollection(string resourceDir, string extension, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
         {
-            Variables = new DbObjectRepository<Variable, VariableCollection>(GetRepositoryPath("variable"), encoding);
-            Errors = new DbObjectRepository<Error, ErrorCollection > (GetRepositoryPath("error"), encoding);
-            Macros = new DbObjectRepository<Macro, MacroCollection>(GetRepositoryPath("macro"), encoding);
-            Schemas = new DbObjectRepository<Schema, SchemaCollection>(GetRepositoryPath("schema"), encoding);
-            Connects = new DbObjectRepository<Connect, ConnectCollection>(GetRepositoryPath("connect"), encoding);
+            Variables = new DbObjectRepository<Variable, VariableCollection>(this.dir, GetRelativePath("variable"), encoding);
+            Errors = new DbObjectRepository<Error, ErrorCollection > (this.dir, GetRelativePath("error"), encoding);
+            Macros = new DbObjectRepository<Macro, MacroCollection>(this.dir, GetRelativePath("macro"), encoding);
+            Schemas = new DbObjectRepository<Schema, SchemaCollection>(this.dir, GetRelativePath("schema"), encoding);
+            Connects = new DbObjectRepository<Connect, ConnectCollection>(this.dir, GetRelativePath("connect"), encoding);
         }
 
         #endregion コンストラクター

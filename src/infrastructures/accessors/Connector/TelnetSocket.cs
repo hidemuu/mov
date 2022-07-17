@@ -1,14 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
 
 namespace Mov.Accessors.Connector
 {
+    /// <summary>
+    /// Telnetソケットクラス
+    /// </summary>
     public partial class TelnetSocket : Component
     {
+        #region コンストラクター
+
         public TelnetSocket()
         {
             //InitializeComponent();
@@ -21,36 +24,58 @@ namespace Mov.Accessors.Connector
             //InitializeComponent();
         }
 
+        #endregion コンストラクター
 
-        //----- フィールド -------------------------
+        #region フィールド
+
         //ソケット
-        Socket clientSocket = null;
+        private Socket clientSocket = null;
+
         private static String response = String.Empty;
         private int MAX_BUFFER_SIZE = 2048;
-        public enum SocketAction { SA_READ, SA_WRITE, SA_CLOSE, SA_NONE }
+
+        public enum SocketAction
+        { SA_READ, SA_WRITE, SA_CLOSE, SA_NONE }
+
         // イベント処理用のデリゲート
         public delegate void ConnectEventHandler(Socket client);
+
         public delegate void DisconnectEventHandler();
+
         public delegate void ReceiveEventHandler(byte[] ReceiveData);
+
         public delegate void SendEventHandler(byte[] SendData);
+
         //イベントハンドラ
         public event ConnectEventHandler Connect = null;
+
         public event DisconnectEventHandler Disconnect = null;
+
         public event ReceiveEventHandler Receive = null;
+
         public event SendEventHandler Send = null;
 
-        //----- プロパティ -------------------------
+        #endregion フィールド
+
+        #region プロパティ
+
         public int Port { get; set; }
         public string Host { get; set; }
         public int Timeout { get; set; }
 
-        //----- イベントハンドラ --------------------------
+        #endregion プロパティ
+
+        #region イベントハンドラ
+
         private void DisposedEvent(object sender, EventArgs e)
         {
             Close(clientSocket);
         }
 
-        //----- メソッド ----------------------------------
+        #endregion イベントハンドラ
+
+        #region メソッド
+
         /// <summary>
         /// オープン処理
         /// </summary>
@@ -106,6 +131,7 @@ namespace Mov.Accessors.Connector
             }
             return true;
         }
+
         /// <summary>
         /// クローズ処理
         /// </summary>
@@ -119,6 +145,7 @@ namespace Mov.Accessors.Connector
                 Close(clientSocket);
             }
         }
+
         /// <summary>
         /// バイトデータ読出
         /// </summary>
@@ -140,6 +167,7 @@ namespace Mov.Accessors.Connector
             }
             return bytesReceive;
         }
+
         /// <summary>
         /// バイトデータ書込
         /// </summary>
@@ -153,6 +181,7 @@ namespace Mov.Accessors.Connector
             }
             return bytesRec;
         }
+
         /// <summary>
         /// バイトデータ書込（オーバーライド）
         /// </summary>
@@ -166,5 +195,6 @@ namespace Mov.Accessors.Connector
             return bytesRec;
         }
 
+        #endregion メソッド
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Reactive.Bindings;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,18 +22,36 @@ namespace Mov.WpfControls.Components
     public partial class GridListControl : UserControl
     {
         public static readonly DependencyProperty ColumnsProperty =
-            DependencyProperty.Register(nameof(Columns), typeof(GridViewColumnCollection),
+            DependencyProperty.Register(nameof(Columns), typeof(ReactiveCollection<ColumnItem[]>),
             typeof(TreeListView),
             new UIPropertyMetadata(null));
 
-        /// <summary>
-        /// Gets or sets the collection of System.Windows.Controls.GridViewColumn
-        /// objects that is defined for this TreeListView.
-        /// </summary>
-        public GridViewColumnCollection Columns
+        public ReactiveCollection<ColumnItem[]> Columns
         {
-            get { return (GridViewColumnCollection)GetValue(ColumnsProperty); }
+            get { return (ReactiveCollection<ColumnItem[]>)GetValue(ColumnsProperty); }
             set { SetValue(ColumnsProperty, value); }
+        }
+
+        public static readonly DependencyProperty SelectedColumnProperty =
+            DependencyProperty.Register(nameof(SelectedColumn), typeof(ColumnItem[]),
+            typeof(TreeListView),
+            new UIPropertyMetadata(null));
+
+        public ColumnItem[] SelectedColumn
+        {
+            get { return (ColumnItem[])GetValue(SelectedColumnProperty); }
+            set { SetValue(SelectedColumnProperty, value); }
+        }
+
+        public static readonly DependencyProperty AttributesProperty =
+            DependencyProperty.Register(nameof(Attributes), typeof(ReactiveCollection<ColumnAttribute[]>),
+            typeof(TreeListView),
+            new UIPropertyMetadata(null));
+
+        public ReactiveCollection<ColumnAttribute[]> Attributes
+        {
+            get { return (ReactiveCollection<ColumnAttribute[]>)GetValue(AttributesProperty); }
+            set { SetValue(AttributesProperty, value); }
         }
 
         public GridListControl()

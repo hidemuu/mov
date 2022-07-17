@@ -1,2 +1,5 @@
-assets/*
 bin/
+*.exe
+*.dll
+*.pdb
+assets/*

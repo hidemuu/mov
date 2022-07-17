@@ -57,17 +57,24 @@ namespace Mov.Driver.Models
     public class Expression
     {
         /// <summary>
-        /// スキーマ
+        /// 左辺
         /// </summary>
-        [JsonProperty("schema")]
-        [XmlElement("schema")]
-        public string Schema = string.Empty;
+        [JsonProperty("left_side")]
+        [XmlElement("left_side")]
+        public string LeftSide = string.Empty;
 
         /// <summary>
-        /// 適用値
+        /// 等号・不等号
         /// </summary>
-        [JsonProperty("value")]
-        [XmlElement("value")]
-        public string Value = string.Empty;
+        [JsonProperty("sign")]
+        [XmlElement("sign")]
+        public string Sign = string.Empty;
+
+        /// <summary>
+        /// 右辺
+        /// </summary>
+        [JsonProperty("right_side")]
+        [XmlElement("right_side")]
+        public string RightSide = string.Empty;
     }
 }

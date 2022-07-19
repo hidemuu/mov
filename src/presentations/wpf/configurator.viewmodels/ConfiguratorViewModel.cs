@@ -44,8 +44,6 @@ namespace Mov.Configurator.ViewModels
         #region コマンド
 
         public ReactiveCommand<string> ShowPageCommand { get; } = new ReactiveCommand<string>();
-        public ReactiveCommand ShowUserSettingCommand { get; } = new ReactiveCommand();
-        public ReactiveCommand ShowVariableCommand { get; } = new ReactiveCommand();
 
         #endregion コマンド
 
@@ -77,15 +75,15 @@ namespace Mov.Configurator.ViewModels
 
             Attributes = new ColumnAttribute[]
             {
-                new ColumnAttribute("id"),
-                new ColumnAttribute("index"),
-                new ColumnAttribute("code"),
-                new ColumnAttribute("category"),
-                new ColumnAttribute("name"),
-                new ColumnAttribute("value"),
-                new ColumnAttribute("default"),
-                new ColumnAttribute("accessLv"),
-                new ColumnAttribute("description"),
+                new ColumnAttribute("ID"),
+                new ColumnAttribute("項目"),
+                new ColumnAttribute("コード"),
+                new ColumnAttribute("カテゴリ"),
+                new ColumnAttribute("名称"),
+                new ColumnAttribute("設定値"),
+                new ColumnAttribute("初期値"),
+                new ColumnAttribute("Lv"),
+                new ColumnAttribute("備考"),
             };
         }
 

@@ -78,12 +78,6 @@
                 Command="{Binding ShowVariableCommand}"
                 Content="Export" />
         </StackPanel>
-        <!--<ContentControl
-            x:Name="contentRegion"
-            Grid.Row="1"
-            MinWidth="400"
-            prism:RegionManager.RegionManager="{Binding RegionManager}"
-            prism:RegionManager.RegionName="{x:Static vm:ConfiguratorViewModel.REGION_NAME_CENTER}" />-->
         <wpfcontrols:GridListControl
             Grid.Row="1"
             Attributes="{Binding Attributes}"

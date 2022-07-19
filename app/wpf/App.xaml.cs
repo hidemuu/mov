@@ -120,7 +120,7 @@ namespace Mov.Wpf
 
             //Viewの登録
             containerRegistry.RegisterForNavigation<ConfiguratorView>();
-            containerRegistry.RegisterForNavigation<UserSettingTableView>();
+            containerRegistry.RegisterForNavigation<ConfigTableView>();
             containerRegistry.RegisterForNavigation<DesignerView>();
             containerRegistry.RegisterForNavigation<DesignerTreeView>();
             containerRegistry.RegisterForNavigation<DesignerTableView>();
@@ -170,7 +170,7 @@ namespace Mov.Wpf
 
             ViewModelLocationProvider.Register<MainWindow, MainWindowViewModel>();
             ViewModelLocationProvider.Register<ConfiguratorView, ConfiguratorViewModel>();
-            ViewModelLocationProvider.Register<UserSettingTableView, UserSettingTableViewModel>();
+            ViewModelLocationProvider.Register<ConfigTableView, ConfigTableViewModel>();
             ViewModelLocationProvider.Register<DesignerView, DesignerViewModel>();
             ViewModelLocationProvider.Register<DesignerTreeView, DesignerTreeViewModel>();
             ViewModelLocationProvider.Register<DesignerTableView, DesignerTableViewModel>();

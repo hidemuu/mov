@@ -2,42 +2,18 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="ConfiguratorTableView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="ConfiguratorTreeView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="ConfiguratorView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\UserSettingTableView.xaml.cs">
+    <Compile Update="ConfigTableView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="ConfiguratorTableView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="ConfiguratorTreeView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="ConfiguratorView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Dialogs\Contents\CreateAccountView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Dialogs\Contents\LoginMainContentView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Dialogs\Contents\NoContentView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Dialogs\LoginDialog.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\UserSettingTableView.xaml">
+    <Page Update="ConfigTableView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

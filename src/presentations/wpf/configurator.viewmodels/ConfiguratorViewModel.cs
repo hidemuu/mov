@@ -1,4 +1,6 @@
-﻿using Mov.WpfControls.ViewModels;
+﻿using Mov.Configurator.Models;
+using Mov.WpfControls;
+using Mov.WpfControls.ViewModels;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using Reactive.Bindings;
@@ -12,16 +14,18 @@ namespace Mov.Configurator.ViewModels
     {
         #region フィールド
 
+        private readonly IConfiguratorRepositoryCollection repository;
+
         public const string REGION_NAME_CENTER = "CONFIG_CENTER";
 
-        public const string PAGE_NAME_USER_SETTING = "UserSetting";
+        public const string PAGE_NAME_CONFIG = "Config";
 
         public const string PAGE_NAME_APP_SETTING = "AppSetting";
 
         public const string PAGE_NAME_VARIABLE = "Variable";
 
         private readonly IDictionary<string, string> pageDictionary = new Dictionary<string, string>() {
-            { PAGE_NAME_USER_SETTING, "UserSettingTableView" },
+            { PAGE_NAME_CONFIG, "ConfigTableView" },
             { PAGE_NAME_APP_SETTING, "AppSettingTableView" },
             { PAGE_NAME_VARIABLE, "VariableTableView" },
         };
@@ -29,6 +33,13 @@ namespace Mov.Configurator.ViewModels
         private string pageName = PAGE_NAME_APP_SETTING;
 
         #endregion フィールド
+
+        #region プロパティ
+
+        public ReactiveCollection<ColumnItem[]> Items { get; } = new ReactiveCollection<ColumnItem[]>();
+        public ColumnAttribute[] Attributes { get; }
+
+        #endregion プロパティ
 
         #region コマンド
 
@@ -38,9 +49,44 @@ namespace Mov.Configurator.ViewModels
 
         #endregion コマンド
 
-        public ConfiguratorViewModel(IRegionManager regionManager, IDialogService dialogService) : base(regionManager, dialogService)
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
+        /// <param name="regionManager"></param>
+        /// <param name="dialogService"></param>
+        public ConfiguratorViewModel(IRegionManager regionManager, IDialogService dialogService, IConfiguratorRepositoryCollection repository) : base(regionManager, dialogService)
         {
             ShowPageCommand.Subscribe(DisplayPage);
+
+            this.repository = repository;
+            foreach (var item in this.repository.Configs.Gets())
+            {
+                Items.Add(new ColumnItem[]
+                {
+                    new ColumnItem(item.Id),
+                    new ColumnItem(item.Index),
+                    new ColumnItem(item.Code),
+                    new ColumnItem(item.Category),
+                    new ColumnItem(item.Name),
+                    new ColumnItem(item.Value),
+                    new ColumnItem(item.Default),
+                    new ColumnItem(item.AccessLv),
+                    new ColumnItem(item.Description),
+                });
+            }
+
+            Attributes = new ColumnAttribute[]
+            {
+                new ColumnAttribute("id"),
+                new ColumnAttribute("index"),
+                new ColumnAttribute("code"),
+                new ColumnAttribute("category"),
+                new ColumnAttribute("name"),
+                new ColumnAttribute("value"),
+                new ColumnAttribute("default"),
+                new ColumnAttribute("accessLv"),
+                new ColumnAttribute("description"),
+            };
         }
 
         #region イベント
@@ -57,7 +103,6 @@ namespace Mov.Configurator.ViewModels
             this.RegionManager.RequestNavigate(REGION_NAME_CENTER, pageDictionary[this.pageName]);
         }
 
-        #endregion
-
+        #endregion メソッド
     }
 }

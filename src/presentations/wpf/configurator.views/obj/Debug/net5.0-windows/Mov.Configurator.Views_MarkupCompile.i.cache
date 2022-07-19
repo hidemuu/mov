@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 
-81526905773
+21456541976
 
-11-171242804
+5-790166840
 236-1987892272
-ConfiguratorTableView.xaml;ConfiguratorTreeView.xaml;ConfiguratorView.xaml;Dialogs\Contents\CreateAccountView.xaml;Dialogs\Contents\LoginMainContentView.xaml;Dialogs\Contents\NoContentView.xaml;Dialogs\LoginDialog.xaml;Pages\UserSettingTableView.xaml;
+ConfigTableView.xaml;ConfiguratorView.xaml;
 
-True
+False
 

@@ -69,7 +69,7 @@ namespace Mov.Configurator.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mov.Configurator.Views;component/pages/usersettingtableview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mov.Configurator.Views;V1.0.0.0;component/pages/usersettingtableview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\UserSettingTableView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -8,6 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
     xmlns:vm="clr-namespace:Mov.Configurator.ViewModels;assembly=Mov.Configurator.ViewModels"
+    xmlns:wpfcontrols="clr-namespace:Mov.WpfControls.Components;assembly=Mov.WpfControls"
     d:DataContext="{d:DesignInstance vm:ConfiguratorViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
@@ -43,19 +44,19 @@
                 Foreground="#3F487F"
                 Text="Configurator" />
             <Button
-                Width="120"
+                Width="80"
                 Margin="2"
                 Command="{Binding ShowPageCommand}"
-                CommandParameter="{x:Static vm:ConfiguratorViewModel.PAGE_NAME_USER_SETTING}"
-                Content="{x:Static vm:ConfiguratorViewModel.PAGE_NAME_USER_SETTING}" />
+                CommandParameter="{x:Static vm:ConfiguratorViewModel.PAGE_NAME_CONFIG}"
+                Content="{x:Static vm:ConfiguratorViewModel.PAGE_NAME_CONFIG}" />
             <Button
-                Width="120"
+                Width="80"
                 Margin="2"
                 Command="{Binding ShowPageCommand}"
                 CommandParameter="{x:Static vm:ConfiguratorViewModel.PAGE_NAME_APP_SETTING}"
                 Content="{x:Static vm:ConfiguratorViewModel.PAGE_NAME_APP_SETTING}" />
             <Button
-                Width="120"
+                Width="80"
                 Margin="2"
                 Command="{Binding ShowPageCommand}"
                 CommandParameter="{x:Static vm:ConfiguratorViewModel.PAGE_NAME_VARIABLE}"
@@ -77,11 +78,15 @@
                 Command="{Binding ShowVariableCommand}"
                 Content="Export" />
         </StackPanel>
-        <ContentControl
+        <!--<ContentControl
             x:Name="contentRegion"
             Grid.Row="1"
             MinWidth="400"
             prism:RegionManager.RegionManager="{Binding RegionManager}"
-            prism:RegionManager.RegionName="{x:Static vm:ConfiguratorViewModel.REGION_NAME_CENTER}" />
+            prism:RegionManager.RegionName="{x:Static vm:ConfiguratorViewModel.REGION_NAME_CENTER}" />-->
+        <wpfcontrols:GridListControl
+            Grid.Row="1"
+            Attributes="{Binding Attributes}"
+            Items="{Binding Items}" />
     </Grid>
 </UserControl>

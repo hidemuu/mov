@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Mov.Configurator.Views
 {
     /// <summary>
-    /// ConfiguratorTableView.xaml の相互作用ロジック
+    /// UserSettingTableView.xaml の相互作用ロジック
     /// </summary>
-    public partial class ConfiguratorTableView : UserControl
+    public partial class ConfigTableView : UserControl
     {
-        public ConfiguratorTableView()
+        public ConfigTableView()
         {
             InitializeComponent();
         }

@@ -21,42 +21,53 @@ namespace Mov.WpfControls.Components
     /// </summary>
     public partial class GridListControl : UserControl
     {
-        public static readonly DependencyProperty ColumnsProperty =
-            DependencyProperty.Register(nameof(Columns), typeof(ReactiveCollection<ColumnItem[]>),
-            typeof(TreeListView),
+        #region プロパティ
+
+        public static readonly DependencyProperty ItemsProperty =
+            DependencyProperty.Register(nameof(Items), typeof(ReactiveCollection<ColumnItem[]>),
+            typeof(GridListControl),
             new UIPropertyMetadata(null));
 
-        public ReactiveCollection<ColumnItem[]> Columns
+        public ReactiveCollection<ColumnItem[]> Items
         {
-            get { return (ReactiveCollection<ColumnItem[]>)GetValue(ColumnsProperty); }
-            set { SetValue(ColumnsProperty, value); }
+            get { return (ReactiveCollection<ColumnItem[]>)GetValue(ItemsProperty); }
+            set { SetValue(ItemsProperty, value); }
         }
 
-        public static readonly DependencyProperty SelectedColumnProperty =
-            DependencyProperty.Register(nameof(SelectedColumn), typeof(ColumnItem[]),
-            typeof(TreeListView),
+        public static readonly DependencyProperty SelectedItemProperty =
+            DependencyProperty.Register(nameof(SelectedItem), typeof(ColumnItem[]),
+            typeof(GridListControl),
             new UIPropertyMetadata(null));
 
-        public ColumnItem[] SelectedColumn
+        public ColumnItem[] SelectedItem
         {
-            get { return (ColumnItem[])GetValue(SelectedColumnProperty); }
-            set { SetValue(SelectedColumnProperty, value); }
+            get { return (ColumnItem[])GetValue(SelectedItemProperty); }
+            set { SetValue(SelectedItemProperty, value); }
         }
 
         public static readonly DependencyProperty AttributesProperty =
-            DependencyProperty.Register(nameof(Attributes), typeof(ReactiveCollection<ColumnAttribute[]>),
-            typeof(TreeListView),
+            DependencyProperty.Register(nameof(Attributes), typeof(ColumnAttribute[]),
+            typeof(GridListControl),
             new UIPropertyMetadata(null));
 
-        public ReactiveCollection<ColumnAttribute[]> Attributes
+        public ColumnAttribute[] Attributes
         {
-            get { return (ReactiveCollection<ColumnAttribute[]>)GetValue(AttributesProperty); }
+            get { return (ColumnAttribute[])GetValue(AttributesProperty); }
             set { SetValue(AttributesProperty, value); }
         }
 
+        #endregion プロパティ
+
+        #region コンストラクター
+
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
         public GridListControl()
         {
             InitializeComponent();
         }
+
+        #endregion コンストラクター
     }
 }

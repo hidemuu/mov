@@ -4,6 +4,7 @@ using Mov.WpfControls.ViewModels;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using Reactive.Bindings;
+using Reactive.Bindings.Extensions;
 using System;
 using System.Collections.Generic;
 
@@ -16,36 +17,28 @@ namespace Mov.Configurator.ViewModels
 
         private readonly IConfiguratorRepositoryCollection repository;
 
-        public const string REGION_NAME_CENTER = "CONFIG_CENTER";
+        public const string DATA_NAME_CONFIG = "Config";
 
-        public const string PAGE_NAME_CONFIG = "Config";
+        public const string DATA_NAME_ACCOUNTS = "Account";
 
-        public const string PAGE_NAME_APP_SETTING = "AppSetting";
-
-        public const string PAGE_NAME_VARIABLE = "Variable";
-
-        private readonly IDictionary<string, string> pageDictionary = new Dictionary<string, string>() {
-            { PAGE_NAME_CONFIG, "ConfigTableView" },
-            { PAGE_NAME_APP_SETTING, "AppSettingTableView" },
-            { PAGE_NAME_VARIABLE, "VariableTableView" },
-        };
-
-        private string pageName = PAGE_NAME_APP_SETTING;
+        public const string DATA_NAME_TRANSLATES = "Translate";
 
         #endregion フィールド
 
         #region プロパティ
 
         public ReactiveCollection<ColumnItem[]> Items { get; } = new ReactiveCollection<ColumnItem[]>();
-        public ColumnAttribute[] Attributes { get; }
+        public ColumnAttribute[] Attributes { get; private set; }
+
+        public ReactiveCollection<string> ComboItems { get; } = new ReactiveCollection<string>()
+        {
+            DATA_NAME_CONFIG, DATA_NAME_ACCOUNTS, DATA_NAME_TRANSLATES,
+        };
+
+        public ReactivePropertySlim<string> SelectedComboItem { get; } = new ReactivePropertySlim<string>(DATA_NAME_CONFIG);
 
         #endregion プロパティ
 
-        #region コマンド
-
-        public ReactiveCommand<string> ShowPageCommand { get; } = new ReactiveCommand<string>();
-
-        #endregion コマンド
 
         /// <summary>
         /// コンストラクター
@@ -54,9 +47,41 @@ namespace Mov.Configurator.ViewModels
         /// <param name="dialogService"></param>
         public ConfiguratorViewModel(IRegionManager regionManager, IDialogService dialogService, IConfiguratorRepositoryCollection repository) : base(regionManager, dialogService)
         {
-            ShowPageCommand.Subscribe(DisplayPage);
-
             this.repository = repository;
+            //サブスクライブ
+            SelectedComboItem.Subscribe(OnSelectedComboItemChanged).AddTo(Disposables);
+        }
+
+        #region イベント
+
+        protected override void OnLoaded()
+        {
+
+        }
+
+        private void OnSelectedComboItemChanged(string selectedItem)
+        {
+            switch (selectedItem) 
+            {
+                case DATA_NAME_CONFIG:
+                    SetConfigs();
+                    break;
+                case DATA_NAME_ACCOUNTS:
+                    SetAccounts();
+                    break;
+                case DATA_NAME_TRANSLATES:
+                    SetTranslates();
+                    break;
+            }
+        }
+
+        #endregion イベント
+
+        #region メソッド
+
+        private void SetConfigs()
+        {
+            Items.Clear();
             foreach (var item in this.repository.Configs.Gets())
             {
                 Items.Add(new ColumnItem[]
@@ -87,18 +112,56 @@ namespace Mov.Configurator.ViewModels
             };
         }
 
-        #region イベント
-
-        protected override void OnLoaded() => DisplayPage(this.pageName);
-
-        #endregion イベント
-
-        #region メソッド
-
-        private void DisplayPage(string pageName)
+        private void SetAccounts()
         {
-            this.pageName = pageName;
-            this.RegionManager.RequestNavigate(REGION_NAME_CENTER, pageDictionary[this.pageName]);
+            Items.Clear();
+            foreach (var item in this.repository.Accounts.Gets())
+            {
+                Items.Add(new ColumnItem[]
+                {
+                    new ColumnItem(item.Id),
+                    new ColumnItem(item.Index),
+                    new ColumnItem(item.Code),
+                    new ColumnItem(item.LoginId),
+                    new ColumnItem(item.Password),
+                });
+            }
+
+            Attributes = new ColumnAttribute[]
+            {
+                new ColumnAttribute("ID"),
+                new ColumnAttribute("項目"),
+                new ColumnAttribute("コード"),
+                new ColumnAttribute("ログイン"),
+                new ColumnAttribute("パスワード"),
+            };
+        }
+
+        private void SetTranslates()
+        {
+            Items.Clear();
+            foreach (var item in this.repository.Translates.Gets())
+            {
+                Items.Add(new ColumnItem[]
+                {
+                    new ColumnItem(item.Id),
+                    new ColumnItem(item.Index),
+                    new ColumnItem(item.Code),
+                    new ColumnItem(item.JP),
+                    new ColumnItem(item.EN),
+                    new ColumnItem(item.CN),
+                });
+            }
+
+            Attributes = new ColumnAttribute[]
+            {
+                new ColumnAttribute("ID"),
+                new ColumnAttribute("項目"),
+                new ColumnAttribute("コード"),
+                new ColumnAttribute("日本語"),
+                new ColumnAttribute("英語"),
+                new ColumnAttribute("中国語"),
+            };
         }
 
         #endregion メソッド

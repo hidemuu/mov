@@ -43,24 +43,12 @@
                 FontWeight="Bold"
                 Foreground="#3F487F"
                 Text="Configurator" />
-            <Button
-                Width="80"
-                Margin="2"
-                Command="{Binding ShowPageCommand}"
-                CommandParameter="{x:Static vm:ConfiguratorViewModel.PAGE_NAME_CONFIG}"
-                Content="{x:Static vm:ConfiguratorViewModel.PAGE_NAME_CONFIG}" />
-            <Button
-                Width="80"
-                Margin="2"
-                Command="{Binding ShowPageCommand}"
-                CommandParameter="{x:Static vm:ConfiguratorViewModel.PAGE_NAME_APP_SETTING}"
-                Content="{x:Static vm:ConfiguratorViewModel.PAGE_NAME_APP_SETTING}" />
-            <Button
-                Width="80"
-                Margin="2"
-                Command="{Binding ShowPageCommand}"
-                CommandParameter="{x:Static vm:ConfiguratorViewModel.PAGE_NAME_VARIABLE}"
-                Content="{x:Static vm:ConfiguratorViewModel.PAGE_NAME_VARIABLE}" />
+            <ComboBox
+                Name="selectCanvas"
+                Width="100"
+                Height="30"
+                ItemsSource="{Binding ComboItems}"
+                SelectedItem="{Binding SelectedComboItem.Value}" />
         </StackPanel>
         <StackPanel
             Grid.Row="0"

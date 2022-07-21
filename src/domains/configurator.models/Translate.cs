@@ -14,6 +14,7 @@ namespace Mov.Configurator.Models
     public class TranslateCollection : DbObjectCollection<Translate>
     {
         /// <inheritdoc />
+        [JsonProperty("translates")]
         [XmlElement(Type = typeof(Translate), ElementName = "translate")]
         public override Translate[] Items { get; set; }
     }

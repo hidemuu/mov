@@ -26,11 +26,11 @@ namespace Mov.WpfControls
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ColumnItem(object value, string path = "", string type = "")
+        public ColumnItem(string path, object value)
         {
             Path.Value = path;
             Value.Value = value.ToString();
-            Type.Value = type;
+            Type.Value = value.GetType().Name;
         }
 
     }

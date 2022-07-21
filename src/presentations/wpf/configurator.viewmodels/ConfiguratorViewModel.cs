@@ -28,7 +28,7 @@ namespace Mov.Configurator.ViewModels
         #region プロパティ
 
         public ReactiveCollection<ColumnItem[]> Items { get; } = new ReactiveCollection<ColumnItem[]>();
-        public ColumnAttribute[] Attributes { get; private set; }
+        public ReactivePropertySlim<ColumnAttribute[]> Attributes { get; private set; } = new ReactivePropertySlim<ColumnAttribute[]>();
 
         public ReactiveCollection<string> ComboItems { get; } = new ReactiveCollection<string>()
         {
@@ -39,6 +39,13 @@ namespace Mov.Configurator.ViewModels
 
         #endregion プロパティ
 
+        #region コマンド
+
+        public ReactiveCommand ImportCommand { get; } = new ReactiveCommand();
+
+        public ReactiveCommand ExportCommand { get; } = new ReactiveCommand();
+
+        #endregion コマンド
 
         /// <summary>
         /// コンストラクター
@@ -50,6 +57,8 @@ namespace Mov.Configurator.ViewModels
             this.repository = repository;
             //サブスクライブ
             SelectedComboItem.Subscribe(OnSelectedComboItemChanged).AddTo(Disposables);
+            ImportCommand.Subscribe(Import).AddTo(Disposables);
+            ExportCommand.Subscribe(Export).AddTo(Disposables);
         }
 
         #region イベント
@@ -64,41 +73,51 @@ namespace Mov.Configurator.ViewModels
             switch (selectedItem) 
             {
                 case DATA_NAME_CONFIG:
-                    SetConfigs();
+                    GetConfigs();
                     break;
                 case DATA_NAME_ACCOUNTS:
-                    SetAccounts();
+                    GetAccounts();
                     break;
                 case DATA_NAME_TRANSLATES:
-                    SetTranslates();
+                    GetTranslates();
                     break;
             }
+        }
+
+        private void Import()
+        {
+
+        }
+
+        private void Export()
+        {
+
         }
 
         #endregion イベント
 
         #region メソッド
 
-        private void SetConfigs()
+        private void GetConfigs()
         {
             Items.Clear();
             foreach (var item in this.repository.Configs.Gets())
             {
                 Items.Add(new ColumnItem[]
                 {
-                    new ColumnItem(item.Id),
-                    new ColumnItem(item.Index),
-                    new ColumnItem(item.Code),
-                    new ColumnItem(item.Category),
-                    new ColumnItem(item.Name),
-                    new ColumnItem(item.Value),
-                    new ColumnItem(item.Default),
-                    new ColumnItem(item.AccessLv),
-                    new ColumnItem(item.Description),
+                    new ColumnItem("id", item.Id),
+                    new ColumnItem("index", item.Index),
+                    new ColumnItem("code", item.Code),
+                    new ColumnItem("category", item.Category),
+                    new ColumnItem("name", item.Name),
+                    new ColumnItem("value", item.Value),
+                    new ColumnItem("default", item.Default),
+                    new ColumnItem("access_lv", item.AccessLv),
+                    new ColumnItem("description", item.Description),
                 });
             }
 
-            Attributes = new ColumnAttribute[]
+            Attributes.Value = new ColumnAttribute[]
             {
                 new ColumnAttribute("ID"),
                 new ColumnAttribute("項目"),
@@ -112,22 +131,42 @@ namespace Mov.Configurator.ViewModels
             };
         }
 
-        private void SetAccounts()
+        private void SetConfigs()
+        {
+            var configs = new List<Config>();
+            foreach(var item in Items)
+            {
+                configs.Add(new Config
+                {
+                    Id = Guid.Parse(item[0].Value.Value),
+                    Index = int.Parse(item[1].Value.Value),
+                    Code = item[2].Value.Value,
+                    Category = item[3].Value.Value,
+                    Name = item[4].Value.Value,
+                    Value = item[5].Value.Value,
+                    Default = item[6].Value.Value,
+                    AccessLv = int.Parse(item[7].Value.Value),
+                    Description = item[8].Value.Value,
+                });
+            }
+        }
+
+        private void GetAccounts()
         {
             Items.Clear();
             foreach (var item in this.repository.Accounts.Gets())
             {
                 Items.Add(new ColumnItem[]
                 {
-                    new ColumnItem(item.Id),
-                    new ColumnItem(item.Index),
-                    new ColumnItem(item.Code),
-                    new ColumnItem(item.LoginId),
-                    new ColumnItem(item.Password),
+                    new ColumnItem("id", item.Id),
+                    new ColumnItem("index", item.Index),
+                    new ColumnItem("code", item.Code),
+                    new ColumnItem("login_id", item.LoginId),
+                    new ColumnItem("password", item.Password),
                 });
             }
 
-            Attributes = new ColumnAttribute[]
+            Attributes.Value = new ColumnAttribute[]
             {
                 new ColumnAttribute("ID"),
                 new ColumnAttribute("項目"),
@@ -137,23 +176,23 @@ namespace Mov.Configurator.ViewModels
             };
         }
 
-        private void SetTranslates()
+        private void GetTranslates()
         {
             Items.Clear();
             foreach (var item in this.repository.Translates.Gets())
             {
                 Items.Add(new ColumnItem[]
                 {
-                    new ColumnItem(item.Id),
-                    new ColumnItem(item.Index),
-                    new ColumnItem(item.Code),
-                    new ColumnItem(item.JP),
-                    new ColumnItem(item.EN),
-                    new ColumnItem(item.CN),
+                    new ColumnItem("id", item.Id),
+                    new ColumnItem("index", item.Index),
+                    new ColumnItem("code", item.Code),
+                    new ColumnItem("jp", item.JP),
+                    new ColumnItem("en", item.EN),
+                    new ColumnItem("cn", item.CN),
                 });
             }
 
-            Attributes = new ColumnAttribute[]
+            Attributes.Value = new ColumnAttribute[]
             {
                 new ColumnAttribute("ID"),
                 new ColumnAttribute("項目"),

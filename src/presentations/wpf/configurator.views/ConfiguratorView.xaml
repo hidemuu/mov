@@ -58,17 +58,17 @@
             <Button
                 Width="80"
                 Margin="2"
-                Command="{Binding ShowVariableCommand}"
+                Command="{Binding ImportCommand}"
                 Content="Import" />
             <Button
                 Width="80"
                 Margin="2"
-                Command="{Binding ShowVariableCommand}"
+                Command="{Binding ExportCommand}"
                 Content="Export" />
         </StackPanel>
         <wpfcontrols:GridListControl
             Grid.Row="1"
-            Attributes="{Binding Attributes}"
+            Attributes="{Binding Attributes.Value}"
             Items="{Binding Items}" />
     </Grid>
 </UserControl>

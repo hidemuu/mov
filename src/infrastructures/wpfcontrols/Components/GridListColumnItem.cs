@@ -10,7 +10,7 @@ namespace Mov.WpfControls.Components
 {
     public class GridListColumnItem : GridViewColumn
     {
-        
+
         #region プロパティ
 
         public static readonly DependencyProperty ItemProperty =
@@ -44,7 +44,7 @@ namespace Mov.WpfControls.Components
         /// </summary>
         public GridListColumnItem()
         {
-            
+
         }
 
         #endregion コンストラクター

@@ -2,17 +2,11 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="Components\GridListColumnControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Components\GridListControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Components\GridListColumnControl.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Components\GridListControl.xaml">
       <SubType>Designer</SubType>
     </Page>

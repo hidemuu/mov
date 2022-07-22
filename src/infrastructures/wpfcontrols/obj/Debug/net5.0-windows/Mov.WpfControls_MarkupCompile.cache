@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 
-9-248006797
+8-1310297390
 
-38-499244337
+37-480246292
 212284459988
-Components\GridListColumnControl.xaml;Components\GridListControl.xaml;Components\TreeListView.xaml;CustomControls.xaml;Views\Controls\MenuTab.xaml;Views\Dialogs\AlertDialog.xaml;Views\Dialogs\SuccessDialog.xaml;Views\Dialogs\WarningDialog.xaml;Views\DialogWindow.xaml;
+Components\GridListControl.xaml;Components\TreeListView.xaml;CustomControls.xaml;Views\Controls\MenuTab.xaml;Views\Dialogs\AlertDialog.xaml;Views\Dialogs\SuccessDialog.xaml;Views\Dialogs\WarningDialog.xaml;Views\DialogWindow.xaml;
 
 False
 

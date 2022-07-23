@@ -8,14 +8,14 @@ using System.Windows.Controls;
 
 namespace Mov.WpfControls.Components
 {
-    public class GridListColumnItem : GridViewColumn
+    public class GridListColumn : GridViewColumn
     {
 
         #region プロパティ
 
         public static readonly DependencyProperty ItemProperty =
             DependencyProperty.Register(nameof(Item), typeof(ColumnItem),
-            typeof(GridListColumnItem),
+            typeof(GridListColumn),
             new UIPropertyMetadata(null, new PropertyChangedCallback(OnItemChanged)));
 
         public ColumnItem Item
@@ -26,7 +26,7 @@ namespace Mov.WpfControls.Components
 
         public static readonly DependencyProperty AttributeProperty =
             DependencyProperty.Register(nameof(Attribute), typeof(ColumnAttribute),
-            typeof(GridListColumnItem),
+            typeof(GridListColumn),
             new UIPropertyMetadata(null, new PropertyChangedCallback(OnAttributeChanged)));
 
         public ColumnAttribute Attribute
@@ -42,7 +42,7 @@ namespace Mov.WpfControls.Components
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public GridListColumnItem()
+        public GridListColumn()
         {
 
         }
@@ -58,7 +58,7 @@ namespace Mov.WpfControls.Components
         /// <param name="e"></param>
         private static void OnItemChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
         {
-            var ctrl = obj as GridListColumnItem;
+            var ctrl = obj as GridListColumn;
             if (ctrl != null && ctrl.Item != null)
             {
                 var textBlock = new FrameworkElementFactory(typeof(TextBlock));
@@ -76,7 +76,7 @@ namespace Mov.WpfControls.Components
         /// <param name="e"></param>
         private static void OnAttributeChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
         {
-            var ctrl = obj as GridListColumnItem;
+            var ctrl = obj as GridListColumn;
             if (ctrl != null && ctrl.Attribute != null)
             {
                 ctrl.Width = ctrl.Attribute.Width.Value;

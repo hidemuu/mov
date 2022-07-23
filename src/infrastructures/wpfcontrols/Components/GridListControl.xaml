@@ -25,69 +25,69 @@
             SelectedItem="{Binding SelectedModel.Value}">
             <ListView.View>
                 <GridView>
-                    <local:GridListColumnItem Attribute="{Binding Attributes[0], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <local:GridListColumnItem.CellTemplate>
+                    <local:GridListColumn Attribute="{Binding Attributes[0], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <local:GridListColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBox HorizontalAlignment="Stretch" Text="{Binding [0].Value.Value}" />
                             </DataTemplate>
-                        </local:GridListColumnItem.CellTemplate>
-                    </local:GridListColumnItem>
-                    <local:GridListColumnItem Attribute="{Binding Attributes[1], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <local:GridListColumnItem.CellTemplate>
+                        </local:GridListColumn.CellTemplate>
+                    </local:GridListColumn>
+                    <local:GridListColumn Attribute="{Binding Attributes[1], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <local:GridListColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBox HorizontalAlignment="Stretch" Text="{Binding [1].Value.Value}" />
                             </DataTemplate>
-                        </local:GridListColumnItem.CellTemplate>
-                    </local:GridListColumnItem>
-                    <local:GridListColumnItem Attribute="{Binding Attributes[2], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <local:GridListColumnItem.CellTemplate>
+                        </local:GridListColumn.CellTemplate>
+                    </local:GridListColumn>
+                    <local:GridListColumn Attribute="{Binding Attributes[2], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <local:GridListColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBox HorizontalAlignment="Stretch" Text="{Binding [2].Value.Value}" />
                             </DataTemplate>
-                        </local:GridListColumnItem.CellTemplate>
-                    </local:GridListColumnItem>
-                    <local:GridListColumnItem Attribute="{Binding Attributes[3], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <local:GridListColumnItem.CellTemplate>
+                        </local:GridListColumn.CellTemplate>
+                    </local:GridListColumn>
+                    <local:GridListColumn Attribute="{Binding Attributes[3], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <local:GridListColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBox HorizontalAlignment="Stretch" Text="{Binding [3].Value.Value}" />
                             </DataTemplate>
-                        </local:GridListColumnItem.CellTemplate>
-                    </local:GridListColumnItem>
-                    <local:GridListColumnItem Attribute="{Binding Attributes[4], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <local:GridListColumnItem.CellTemplate>
+                        </local:GridListColumn.CellTemplate>
+                    </local:GridListColumn>
+                    <local:GridListColumn Attribute="{Binding Attributes[4], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <local:GridListColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBox HorizontalAlignment="Stretch" Text="{Binding [4].Value.Value}" />
                             </DataTemplate>
-                        </local:GridListColumnItem.CellTemplate>
-                    </local:GridListColumnItem>
-                    <local:GridListColumnItem Attribute="{Binding Attributes[5], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <local:GridListColumnItem.CellTemplate>
+                        </local:GridListColumn.CellTemplate>
+                    </local:GridListColumn>
+                    <local:GridListColumn Attribute="{Binding Attributes[5], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <local:GridListColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBox HorizontalAlignment="Stretch" Text="{Binding [5].Value.Value}" />
                             </DataTemplate>
-                        </local:GridListColumnItem.CellTemplate>
-                    </local:GridListColumnItem>
-                    <local:GridListColumnItem Attribute="{Binding Attributes[6], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <local:GridListColumnItem.CellTemplate>
+                        </local:GridListColumn.CellTemplate>
+                    </local:GridListColumn>
+                    <local:GridListColumn Attribute="{Binding Attributes[6], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <local:GridListColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBox HorizontalAlignment="Stretch" Text="{Binding [6].Value.Value}" />
                             </DataTemplate>
-                        </local:GridListColumnItem.CellTemplate>
-                    </local:GridListColumnItem>
-                    <local:GridListColumnItem Attribute="{Binding Attributes[7], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <local:GridListColumnItem.CellTemplate>
+                        </local:GridListColumn.CellTemplate>
+                    </local:GridListColumn>
+                    <local:GridListColumn Attribute="{Binding Attributes[7], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <local:GridListColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBox HorizontalAlignment="Stretch" Text="{Binding [7].Value.Value}" />
                             </DataTemplate>
-                        </local:GridListColumnItem.CellTemplate>
-                    </local:GridListColumnItem>
-                    <local:GridListColumnItem Attribute="{Binding Attributes[8], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <local:GridListColumnItem.CellTemplate>
+                        </local:GridListColumn.CellTemplate>
+                    </local:GridListColumn>
+                    <local:GridListColumn Attribute="{Binding Attributes[8], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <local:GridListColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBox HorizontalAlignment="Stretch" Text="{Binding [8].Value.Value}" />
                             </DataTemplate>
-                        </local:GridListColumnItem.CellTemplate>
-                    </local:GridListColumnItem>
+                        </local:GridListColumn.CellTemplate>
+                    </local:GridListColumn>
                 </GridView>
             </ListView.View>
         </ListView>

@@ -50,7 +50,9 @@ namespace Mov.WpfControls.Components
         #region Static Dependency Properties
 
         public static readonly DependencyProperty AllowsColumnReorderProperty =
-            DependencyProperty.Register("AllowsColumnReorder", typeof(bool), typeof(TreeListView), new UIPropertyMetadata(null));
+            DependencyProperty.Register("AllowsColumnReorder", typeof(bool), 
+                typeof(TreeListView), 
+                new UIPropertyMetadata(null));
 
         public static readonly DependencyProperty ColumnsProperty =
             DependencyProperty.Register("Columns", typeof(GridViewColumnCollection),

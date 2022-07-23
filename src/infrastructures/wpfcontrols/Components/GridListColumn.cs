@@ -13,17 +13,6 @@ namespace Mov.WpfControls.Components
 
         #region プロパティ
 
-        public static readonly DependencyProperty ItemProperty =
-            DependencyProperty.Register(nameof(Item), typeof(ColumnItem),
-            typeof(GridListColumn),
-            new UIPropertyMetadata(null, new PropertyChangedCallback(OnItemChanged)));
-
-        public ColumnItem Item
-        {
-            get { return (ColumnItem)GetValue(ItemProperty); }
-            set { SetValue(ItemProperty, value); }
-        }
-
         public static readonly DependencyProperty AttributeProperty =
             DependencyProperty.Register(nameof(Attribute), typeof(ColumnAttribute),
             typeof(GridListColumn),
@@ -50,24 +39,6 @@ namespace Mov.WpfControls.Components
         #endregion コンストラクター
 
         #region イベント
-
-        /// <summary>
-        /// アイテム変更時のイベント
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <param name="e"></param>
-        private static void OnItemChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
-        {
-            var ctrl = obj as GridListColumn;
-            if (ctrl != null && ctrl.Item != null)
-            {
-                var textBlock = new FrameworkElementFactory(typeof(TextBlock));
-                textBlock.SetValue(TextBlock.TextProperty, ctrl.Item.Value.Value);
-                var template = new DataTemplate();
-                template.VisualTree = textBlock;
-                ctrl.CellTemplate = template;
-            }
-        }
 
         /// <summary>
         /// アトリビュート変更時のイベント

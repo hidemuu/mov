@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 
 8-1310297390
 
-39-981476242
+40-1683824491
 212284459988
 Components\GridListControl.xaml;Components\TreeListView.xaml;CustomControls.xaml;Views\Controls\MenuTab.xaml;Views\Dialogs\AlertDialog.xaml;Views\Dialogs\SuccessDialog.xaml;Views\Dialogs\WarningDialog.xaml;Views\DialogWindow.xaml;
 
-False
+True
 

@@ -13,15 +13,21 @@ namespace Mov.Configurator.ViewModels
     /// <summary>コンフィグ設定のビューモデル</summary>
     public class ConfiguratorViewModel : RegionViewModelBase
     {
+        #region 定数
+
+        private const string DATA_NAME_CONFIG = "Config";
+
+        private const string DATA_NAME_ACCOUNTS = "Account";
+
+        private const string DATA_NAME_TRANSLATES = "Translate";
+
+        #endregion 定数
+
         #region フィールド
 
         private readonly IConfiguratorRepositoryCollection repository;
 
-        public const string DATA_NAME_CONFIG = "Config";
-
-        public const string DATA_NAME_ACCOUNTS = "Account";
-
-        public const string DATA_NAME_TRANSLATES = "Translate";
+        private string currentComboItem;
 
         #endregion フィールド
 
@@ -70,6 +76,19 @@ namespace Mov.Configurator.ViewModels
 
         private void OnSelectedComboItemChanged(string selectedItem)
         {
+            switch (currentComboItem) 
+            {
+                case DATA_NAME_CONFIG:
+                    SetConfigs();
+                    break;
+                case DATA_NAME_ACCOUNTS:
+                    SetAccounts();
+                    break;
+                case DATA_NAME_TRANSLATES:
+                    SetTranslates();
+                    break;
+            }
+
             switch (selectedItem) 
             {
                 case DATA_NAME_CONFIG:
@@ -82,16 +101,40 @@ namespace Mov.Configurator.ViewModels
                     GetTranslates();
                     break;
             }
+
+            currentComboItem = selectedItem;
         }
 
         private void Import()
         {
-
+            switch (SelectedComboItem.Value)
+            {
+                case DATA_NAME_CONFIG:
+                    this.repository.Configs.Import();
+                    break;
+                case DATA_NAME_ACCOUNTS:
+                    this.repository.Accounts.Import();
+                    break;
+                case DATA_NAME_TRANSLATES:
+                    this.repository.Translates.Import();
+                    break;
+            }
         }
 
         private void Export()
         {
-
+            switch (SelectedComboItem.Value)
+            {
+                case DATA_NAME_CONFIG:
+                    this.repository.Configs.Export();
+                    break;
+                case DATA_NAME_ACCOUNTS:
+                    this.repository.Accounts.Export();
+                    break;
+                case DATA_NAME_TRANSLATES:
+                    this.repository.Translates.Export();
+                    break;
+            }
         }
 
         #endregion イベント
@@ -101,7 +144,7 @@ namespace Mov.Configurator.ViewModels
         private void GetConfigs()
         {
             Items.Clear();
-            foreach (var item in this.repository.Configs.Gets())
+            foreach (var item in this.repository.Configs?.Gets())
             {
                 Items.Add(new ColumnItem[]
                 {
@@ -138,23 +181,24 @@ namespace Mov.Configurator.ViewModels
             {
                 configs.Add(new Config
                 {
-                    Id = Guid.Parse(item[0].Value.Value),
-                    Index = int.Parse(item[1].Value.Value),
-                    Code = item[2].Value.Value,
-                    Category = item[3].Value.Value,
-                    Name = item[4].Value.Value,
-                    Value = item[5].Value.Value,
-                    Default = item[6].Value.Value,
-                    AccessLv = int.Parse(item[7].Value.Value),
-                    Description = item[8].Value.Value,
+                    Id = (Guid)item[0].Value.Value,
+                    Index = (int)item[1].Value.Value,
+                    Code = (string)item[2].Value.Value,
+                    Category = (string)item[3].Value.Value,
+                    Name = (string)item[4].Value.Value,
+                    Value = (string)item[5].Value.Value,
+                    Default = (string)item[6].Value.Value,
+                    AccessLv = (int)item[7].Value.Value,
+                    Description = (string)item[8].Value.Value,
                 });
             }
+            this.repository.Configs.Posts(configs);
         }
 
         private void GetAccounts()
         {
             Items.Clear();
-            foreach (var item in this.repository.Accounts.Gets())
+            foreach (var item in this.repository.Accounts?.Gets())
             {
                 Items.Add(new ColumnItem[]
                 {
@@ -176,10 +220,27 @@ namespace Mov.Configurator.ViewModels
             };
         }
 
+        private void SetAccounts()
+        {
+            var accounts = new List<Account>();
+            foreach (var item in Items)
+            {
+                accounts.Add(new Account
+                {
+                    Id = (Guid)item[0].Value.Value,
+                    Index = (int)item[1].Value.Value,
+                    Code = (string)item[2].Value.Value,
+                    LoginId = (string)item[3].Value.Value,
+                    Password = (string)item[4].Value.Value,
+                });
+            }
+            this.repository.Accounts.Posts(accounts);
+        }
+
         private void GetTranslates()
         {
             Items.Clear();
-            foreach (var item in this.repository.Translates.Gets())
+            foreach (var item in this.repository.Translates?.Gets())
             {
                 Items.Add(new ColumnItem[]
                 {
@@ -201,6 +262,24 @@ namespace Mov.Configurator.ViewModels
                 new ColumnAttribute("英語"),
                 new ColumnAttribute("中国語"),
             };
+        }
+
+        private void SetTranslates()
+        {
+            var translates = new List<Translate>();
+            foreach (var item in Items)
+            {
+                translates.Add(new Translate
+                {
+                    Id = (Guid)item[0].Value.Value,
+                    Index = (int)item[1].Value.Value,
+                    Code = (string)item[2].Value.Value,
+                    JP = (string)item[3].Value.Value,
+                    EN = (string)item[4].Value.Value,
+                    CN = (string)item[5].Value.Value,
+                });
+            }
+            this.repository.Translates.Posts(translates);
         }
 
         #endregion メソッド

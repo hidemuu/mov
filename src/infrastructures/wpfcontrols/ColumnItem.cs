@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Controls;
 
 namespace Mov.WpfControls
 {
@@ -10,6 +11,8 @@ namespace Mov.WpfControls
     /// </summary>
     public class ColumnItem
     {
+        #region プロパティ
+
         /// <summary>
         /// パス
         /// </summary>
@@ -17,11 +20,15 @@ namespace Mov.WpfControls
         /// <summary>
         /// 設定値
         /// </summary>
-        public ReactivePropertySlim<string> Value { get; set; } = new ReactivePropertySlim<string>(string.Empty);
+        public ReactivePropertySlim<object> Value { get; set; } = new ReactivePropertySlim<object>();
         /// <summary>
         /// データ型
         /// </summary>
-        public ReactivePropertySlim<string> Type { get; set; } = new ReactivePropertySlim<string>(string.Empty);
+        public Type Type { get; set; }
+
+        #endregion プロパティ
+
+        #region コンストラクター
 
         /// <summary>
         /// コンストラクター
@@ -29,9 +36,39 @@ namespace Mov.WpfControls
         public ColumnItem(string path, object value)
         {
             Path.Value = path;
-            Value.Value = value.ToString();
-            Type.Value = value.GetType().Name;
+            Value.Value = value;
+            Type = value.GetType();
         }
+
+        #endregion コンストラクター
+
+        #region メソッド
+
+        public object GetValue()
+        {
+            if (Type == typeof(Guid))
+            {
+                return Guid.Parse(Value.Value.ToString());
+            }
+            return Convert.ChangeType(Value.Value, Type);
+        }
+
+        public void SetValue(object value)
+        {
+            if(Type == typeof(Guid))
+            {
+                Value.Value = Guid.Parse(value.ToString());
+                return;
+            }
+            Value.Value = Convert.ChangeType(value, Type);
+        }
+
+        public override string ToString()
+        {
+            return Value.Value.ToString();
+        }
+
+        #endregion メソッド
 
     }
 }

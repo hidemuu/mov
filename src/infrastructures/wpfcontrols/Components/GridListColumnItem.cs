@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Reactive.Bindings;
+using Reactive.Bindings.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Disposables;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -10,6 +13,7 @@ namespace Mov.WpfControls.Components
 {
     public class GridListColumnItem : TextBox
     {
+
         #region プロパティ
 
         public static readonly DependencyProperty ItemProperty =
@@ -25,11 +29,16 @@ namespace Mov.WpfControls.Components
 
         #endregion プロパティ
 
+        #region コマンド
+
+        #endregion コマンド
+
         #region コンストラクター
 
         public GridListColumnItem()
         {
             HorizontalAlignment = HorizontalAlignment.Stretch;
+            TextChanged += OnTextChanged;
         }
 
         #endregion コンストラクター
@@ -46,7 +55,15 @@ namespace Mov.WpfControls.Components
             var ctrl = obj as GridListColumnItem;
             if (ctrl != null && ctrl.Item != null)
             {
-                ctrl.Text = ctrl.Item.Value.Value;
+                ctrl.Text = ctrl.Item.ToString();
+            }
+        }
+
+        private void OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(sender is GridListColumnItem item && item != null)
+            {
+                Item.SetValue(item.Text);
             }
         }
 

@@ -59,6 +59,11 @@ namespace Mov.WpfControls.Components
             }
         }
 
+        /// <summary>
+        /// テキスト変更時のイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTextChanged(object sender, TextChangedEventArgs e)
         {
             if(sender is GridListColumnItem item && item != null)

@@ -22,7 +22,7 @@
             x:Name="listView"
             Grid.Row="0"
             ItemsSource="{Binding Items, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}"
-            SelectedItem="{Binding SelectedItem.Value, Mode=TwoWay}">
+            SelectedItem="{Binding SelectedItem, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}, Mode=TwoWay}">
             <ListView.View>
                 <GridView>
                     <local:GridListColumn Attribute="{Binding Attributes[0], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">

@@ -694,6 +694,7 @@
         "dependencies": {
           "CsvHelper": "27.2.1",
           "Microsoft.EntityFrameworkCore": "3.1.17",
+          "Mov.Utilities": "1.0.0",
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
@@ -715,6 +716,16 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Designer.Models.dll": {}
+        }
+      },
+      "Mov.Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Utilities.dll": {}
         }
       }
     }
@@ -3098,6 +3109,11 @@
       "type": "project",
       "path": "../../domains/designer.models/Designer.Models.csproj",
       "msbuildProject": "../../domains/designer.models/Designer.Models.csproj"
+    },
+    "Mov.Utilities/1.0.0": {
+      "type": "project",
+      "path": "../../infrastructures/utilities/Utilities.csproj",
+      "msbuildProject": "../../infrastructures/utilities/Utilities.csproj"
     }
   },
   "projectFileDependencyGroups": {

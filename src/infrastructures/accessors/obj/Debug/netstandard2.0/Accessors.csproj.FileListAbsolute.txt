@@ -34,3 +34,6 @@ C:\Users\nando\Documents\GitHub\mov\src\infrastructures\accessors\obj\Debug\nets
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\accessors\obj\Debug\netstandard2.0\Mov.Accessors.dll
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\accessors\obj\Debug\netstandard2.0\Mov.Accessors.pdb
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\accessors\obj\Debug\netstandard2.0\Accessors.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\accessors\bin\Debug\netstandard2.0\Mov.Utilities.dll
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\accessors\bin\Debug\netstandard2.0\Mov.Utilities.pdb
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\accessors\obj\Debug\netstandard2.0\Accessors.csproj.CopyComplete

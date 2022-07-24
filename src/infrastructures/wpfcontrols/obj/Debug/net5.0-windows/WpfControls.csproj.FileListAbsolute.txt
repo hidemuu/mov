@@ -167,3 +167,5 @@ C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\ne
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Views\Controls\MenuTab.baml
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Components\GridListControl.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\obj\Debug\net5.0-windows\Components\GridListControl.baml
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\bin\Debug\net5.0-windows\Mov.Utilities.dll
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfcontrols\bin\Debug\net5.0-windows\Mov.Utilities.pdb

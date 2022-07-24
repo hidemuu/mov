@@ -694,6 +694,7 @@
         "dependencies": {
           "CsvHelper": "27.2.1",
           "Microsoft.EntityFrameworkCore": "3.1.17",
+          "Mov.Utilities": "1.0.0",
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
@@ -701,6 +702,16 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Accessors.dll": {}
+        }
+      },
+      "Mov.Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Utilities.dll": {}
         }
       }
     }
@@ -3079,11 +3090,17 @@
       "type": "project",
       "path": "../../infrastructures/accessors/Accessors.csproj",
       "msbuildProject": "../../infrastructures/accessors/Accessors.csproj"
+    },
+    "Mov.Utilities/1.0.0": {
+      "type": "project",
+      "path": "../../infrastructures/utilities/Utilities.csproj",
+      "msbuildProject": "../../infrastructures/utilities/Utilities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "Mov.Accessors >= 1.0.0",
+      "Mov.Utilities >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
       "System.ComponentModel.Annotations >= 5.0.0"
     ]
@@ -3127,6 +3144,9 @@
           "projectReferences": {
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\accessors\\Accessors.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\accessors\\Accessors.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj"
             }
           }
         }

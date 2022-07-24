@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\utilities\Utilities.csproj" />
     <ProjectReference Include="..\wpfdesigns\WpfDesigns.csproj" />
   </ItemGroup>
 

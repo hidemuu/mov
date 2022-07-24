@@ -581,6 +581,7 @@
         "dependencies": {
           "CsvHelper": "27.2.1",
           "Microsoft.EntityFrameworkCore": "3.1.17",
+          "Mov.Utilities": "1.0.0",
           "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
@@ -590,6 +591,7 @@
       "Mov.Configurator.Models/1.0.0": {
         "dependencies": {
           "Mov.Accessors": "1.0.0",
+          "Mov.Utilities": "1.0.0",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "runtime": {
@@ -604,6 +606,11 @@
         },
         "runtime": {
           "Mov.Configurator.Repository.dll": {}
+        }
+      },
+      "Mov.Utilities/1.0.0": {
+        "runtime": {
+          "Mov.Utilities.dll": {}
         }
       }
     }
@@ -996,6 +1003,11 @@
       "sha512": ""
     },
     "Mov.Configurator.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Utilities/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

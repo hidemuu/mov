@@ -687,6 +687,16 @@
         "runtime": {
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
+      },
+      "Mov.Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Utilities.dll": {}
+        }
       }
     }
   },
@@ -3058,12 +3068,18 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Mov.Utilities/1.0.0": {
+      "type": "project",
+      "path": "../utilities/Utilities.csproj",
+      "msbuildProject": "../utilities/Utilities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "CsvHelper >= 27.2.1",
       "Microsoft.EntityFrameworkCore >= 3.1.17",
+      "Mov.Utilities >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 13.0.1"
     ]
@@ -3104,7 +3120,11 @@
       "frameworks": {
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -1,4 +1,5 @@
 ﻿using Mov.Accessors;
+using Mov.Utilities.Attributes;
 using Newtonsoft.Json;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -29,9 +30,11 @@ namespace Mov.Configurator.Models
         /// <summary>
         /// カテゴリー
         /// </summary>
-        [DisplayName("カテゴリ")]
         [JsonProperty("category")]
         [XmlElement("category")]
+        [LanguageKey("category")]
+        [DisplayName("category")]
+        [DisplayIndex(10)]
         public string Category { get; set; } = "";
 
         /// <summary>
@@ -39,6 +42,9 @@ namespace Mov.Configurator.Models
         /// </summary>
         [JsonProperty("name")]
         [XmlElement("name")]
+        [LanguageKey("name")]
+        [DisplayName("name")]
+        [DisplayIndex(11)]
         public string Name { get; set; } = "";
 
         /// <summary>
@@ -46,6 +52,9 @@ namespace Mov.Configurator.Models
         /// </summary>
         [JsonProperty("value")]
         [XmlElement("value")]
+        [LanguageKey("value")]
+        [DisplayName("value")]
+        [DisplayIndex(12)]
         public string Value { get; set; } = "";
 
         /// <summary>
@@ -54,6 +63,9 @@ namespace Mov.Configurator.Models
         [StringLength(100)]
         [JsonProperty("description")]
         [XmlElement("description")]
+        [LanguageKey("description")]
+        [DisplayName("description")]
+        [DisplayIndex(13)]
         public string Description { get; set; } = "";
 
         /// <summary>
@@ -61,6 +73,9 @@ namespace Mov.Configurator.Models
         /// </summary>
         [JsonProperty("default")]
         [XmlElement("default")]
+        [LanguageKey("default")]
+        [DisplayName("default")]
+        [DisplayIndex(14)]
         public string Default { get; set; } = string.Empty;
 
         /// <summary>
@@ -68,6 +83,9 @@ namespace Mov.Configurator.Models
         /// </summary>
         [JsonProperty("access_lv")]
         [XmlElement("accesslv")]
+        [LanguageKey("accesslv")]
+        [DisplayName("access_lv")]
+        [DisplayIndex(15)]
         public int AccessLv { get; set; } = 0;
 
         #endregion プロパティ

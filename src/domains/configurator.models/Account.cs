@@ -1,8 +1,10 @@
 ﻿using Mov.Accessors;
+using Mov.Utilities.Attributes;
 using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Xml.Serialization;
 
@@ -29,12 +31,18 @@ namespace Mov.Configurator.Models
         /// </summary>
         [JsonProperty("loginid")]
         [XmlElement("loginid")]
+        [LanguageKey("loginid")]
+        [DisplayName("loginid")]
+        [DisplayIndex(10)]
         public string LoginId { get; set; }
         /// <summary>
         /// パスワード
         /// </summary>
         [JsonProperty("password")]
         [XmlElement("password")]
+        [LanguageKey("password")]
+        [DisplayName("password")]
+        [DisplayIndex(11)]
         public string Password { get; set; }
     }
 }

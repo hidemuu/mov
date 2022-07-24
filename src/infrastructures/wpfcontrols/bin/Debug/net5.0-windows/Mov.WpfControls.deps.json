@@ -9,6 +9,7 @@
       "Mov.WpfControls/1.0.0": {
         "dependencies": {
           "LiveCharts.Wpf.NetCore3": "0.9.7",
+          "Mov.Utilities": "1.0.0",
           "Mov.WpfDesigns": "1.0.0",
           "Prism.Unity": "8.1.97",
           "ReactiveProperty.WPF": "8.0.1",
@@ -211,6 +212,11 @@
           }
         }
       },
+      "Mov.Utilities/1.0.0": {
+        "runtime": {
+          "Mov.Utilities.dll": {}
+        }
+      },
       "Mov.WpfDesigns/1.0.0": {
         "dependencies": {
           "MahApps.Metro": "2.4.9",
@@ -383,6 +389,11 @@
       "sha512": "sha512-47u4MBG8hxV2ZBUK7LlXcZQW8yWSqUSCRG+2/TBA2CSkxkQlMfVUJ0RJODJsZgsiSgy4N0M8HIr7J88drYR/OQ==",
       "path": "unity.container/5.11.11",
       "hashPath": "unity.container.5.11.11.nupkg.sha512"
+    },
+    "Mov.Utilities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Mov.WpfDesigns/1.0.0": {
       "type": "project",

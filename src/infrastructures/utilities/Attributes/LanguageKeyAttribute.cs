@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.WpfControls.Attributes
+namespace Mov.Utilities.Attributes
 {
-    [System.AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
-    public sealed class IconKeyAttribute : Attribute
+    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    public sealed class LanguageKeyAttribute : Attribute
     {
-        public IconKeyAttribute(string key)
+        public LanguageKeyAttribute(string key)
         {
             Key = key;
         }

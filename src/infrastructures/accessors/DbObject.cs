@@ -1,5 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using Mov.Utilities.Attributes;
+using Newtonsoft.Json;
 using System;
+using System.ComponentModel;
 using System.Text;
 using System.Xml.Serialization;
 
@@ -17,6 +19,9 @@ namespace Mov.Accessors
         /// </summary>
         [JsonProperty("id")]
         [XmlElement("id")]
+        [LanguageKey("id")]
+        [DisplayName("id")]
+        [DisplayIndex(0)]
         public Guid Id { get; set; } = Guid.NewGuid();
 
         /// <summary>
@@ -24,6 +29,9 @@ namespace Mov.Accessors
         /// </summary>
         [JsonProperty("index")]
         [XmlElement("index")]
+        [LanguageKey("index")]
+        [DisplayName("index")]
+        [DisplayIndex(1)]
         public int Index { get; set; } = 0;
 
         /// <summary>
@@ -31,6 +39,9 @@ namespace Mov.Accessors
         /// </summary>
         [JsonProperty("code")]
         [XmlElement("code")]
+        [LanguageKey("code")]
+        [DisplayName("code")]
+        [DisplayIndex(2)]
         public string Code { get; set; } = string.Empty;
 
         #endregion プロパティ

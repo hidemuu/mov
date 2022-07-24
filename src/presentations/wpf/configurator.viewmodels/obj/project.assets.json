@@ -509,6 +509,7 @@
         "dependencies": {
           "CsvHelper": "27.2.1",
           "Microsoft.EntityFrameworkCore": "3.1.17",
+          "Mov.Utilities": "1.0.0",
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
@@ -523,6 +524,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Mov.Accessors": "1.0.0",
+          "Mov.Utilities": "1.0.0",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
@@ -573,11 +575,22 @@
           "bin/placeholder/Mov.Designer.Service.dll": {}
         }
       },
+      "Mov.Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Utilities.dll": {}
+        }
+      },
       "Mov.WpfControls/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "LiveCharts.Wpf.NetCore3": "0.9.7",
+          "Mov.Utilities": "1.0.0",
           "Mov.WpfDesigns": "1.0.0",
           "Prism.Unity": "8.1.97",
           "ReactiveProperty.WPF": "8.0.1",
@@ -1635,6 +1648,11 @@
       "path": "../../../applications/designer.service/Designer.Service.csproj",
       "msbuildProject": "../../../applications/designer.service/Designer.Service.csproj"
     },
+    "Mov.Utilities/1.0.0": {
+      "type": "project",
+      "path": "../../../infrastructures/utilities/Utilities.csproj",
+      "msbuildProject": "../../../infrastructures/utilities/Utilities.csproj"
+    },
     "Mov.WpfControls/1.0.0": {
       "type": "project",
       "path": "../../../infrastructures/wpfcontrols/WpfControls.csproj",
@@ -1650,6 +1668,7 @@
     "net5.0-windows7.0": [
       "Mov.Configurator.Models >= 1.0.0",
       "Mov.Designer.Service >= 1.0.0",
+      "Mov.Utilities >= 1.0.0",
       "Mov.WpfControls >= 1.0.0"
     ]
   },
@@ -1695,6 +1714,9 @@
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\configurator.models\\Configurator.Models.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\configurator.models\\Configurator.Models.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj"
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj"

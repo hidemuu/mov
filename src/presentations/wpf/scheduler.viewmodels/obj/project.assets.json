@@ -280,11 +280,22 @@
           "lib/netcoreapp3.0/Unity.Container.dll": {}
         }
       },
+      "Mov.Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Utilities.dll": {}
+        }
+      },
       "Mov.WpfControls/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "LiveCharts.Wpf.NetCore3": "0.9.7",
+          "Mov.Utilities": "1.0.0",
           "Mov.WpfDesigns": "1.0.0",
           "Prism.Unity": "8.1.97",
           "ReactiveProperty.WPF": "8.0.1",
@@ -942,6 +953,11 @@
         "unity.container.5.11.11.nupkg.sha512",
         "unity.container.nuspec"
       ]
+    },
+    "Mov.Utilities/1.0.0": {
+      "type": "project",
+      "path": "../../../infrastructures/utilities/Utilities.csproj",
+      "msbuildProject": "../../../infrastructures/utilities/Utilities.csproj"
     },
     "Mov.WpfControls/1.0.0": {
       "type": "project",

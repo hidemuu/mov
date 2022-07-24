@@ -1,4 +1,5 @@
 ﻿using Mov.Configurator.Models;
+using Mov.Utilities.Attributes;
 using Mov.WpfControls;
 using Mov.WpfControls.ViewModels;
 using Prism.Regions;
@@ -7,6 +8,8 @@ using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Reflection;
 
 namespace Mov.Configurator.ViewModels
 {
@@ -144,19 +147,20 @@ namespace Mov.Configurator.ViewModels
         private void GetConfigs()
         {
             Items.Clear();
-            foreach (var item in this.repository.Configs?.Gets())
+            var displayNames = GetDisplayNames<Config>();
+            foreach (Config item in this.repository.Configs?.Gets())
             {
                 Items.Add(new ColumnItem[]
                 {
-                    new ColumnItem("id", item.Id),
-                    new ColumnItem("index", item.Index),
-                    new ColumnItem("code", item.Code),
-                    new ColumnItem("category", item.Category),
-                    new ColumnItem("name", item.Name),
-                    new ColumnItem("value", item.Value),
-                    new ColumnItem("default", item.Default),
-                    new ColumnItem("access_lv", item.AccessLv),
-                    new ColumnItem("description", item.Description),
+                    new ColumnItem(nameof(item.Id), item.Id),
+                    new ColumnItem(nameof(item.Index), item.Index),
+                    new ColumnItem(nameof(item.Code), item.Code),
+                    new ColumnItem(nameof(item.Category), item.Category),
+                    new ColumnItem(nameof(item.Name), item.Name),
+                    new ColumnItem(nameof(item.Value), item.Value),
+                    new ColumnItem(nameof(item.Default), item.Default),
+                    new ColumnItem(nameof(item.AccessLv), item.AccessLv),
+                    new ColumnItem(nameof(item.Description), item.Description),
                 });
             }
 
@@ -172,6 +176,15 @@ namespace Mov.Configurator.ViewModels
                 new ColumnAttribute("Lv"),
                 new ColumnAttribute("備考"),
             };
+        }
+
+        private IEnumerable<string> GetDisplayNames<T>()
+        {
+            var properties = typeof(Config).GetProperties();
+            foreach(var property in properties)
+            {
+                yield return AttributeHelper.GetAttribute<DisplayNameAttribute>(property).DisplayName;
+            }
         }
 
         private void SetConfigs()

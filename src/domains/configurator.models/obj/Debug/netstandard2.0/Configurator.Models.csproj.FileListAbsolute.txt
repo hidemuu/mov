@@ -43,3 +43,5 @@ C:\Users\nando\Documents\GitHub\mov\src\domains\configurator.models\obj\Debug\ne
 C:\Users\nando\Documents\GitHub\mov\src\domains\configurator.models\obj\Debug\netstandard2.0\Configurator.Models.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\domains\configurator.models\obj\Debug\netstandard2.0\Mov.Configurator.Models.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\configurator.models\obj\Debug\netstandard2.0\Mov.Configurator.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\src\domains\configurator.models\bin\Debug\netstandard2.0\Mov.Utilities.dll
+C:\Users\nando\Documents\GitHub\mov\src\domains\configurator.models\bin\Debug\netstandard2.0\Mov.Utilities.pdb

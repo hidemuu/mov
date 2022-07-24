@@ -39,7 +39,7 @@ namespace Mov.WpfControls.Components
         }
 
         public static readonly DependencyProperty ColumnAttributesProperty =
-            DependencyProperty.Register(nameof(Attributes), typeof(ColumnAttribute[]),
+            DependencyProperty.Register(nameof(ColumnAttributes), typeof(ColumnAttribute[]),
             typeof(GridListView),
             new UIPropertyMetadata(null));
 

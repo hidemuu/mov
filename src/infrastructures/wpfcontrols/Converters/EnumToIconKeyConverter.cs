@@ -1,4 +1,4 @@
-﻿using Mov.WpfControls.Attributes;
+﻿using Mov.Utilities.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Globalization;

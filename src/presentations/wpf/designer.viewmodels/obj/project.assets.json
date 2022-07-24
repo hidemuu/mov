@@ -509,6 +509,7 @@
         "dependencies": {
           "CsvHelper": "27.2.1",
           "Microsoft.EntityFrameworkCore": "3.1.17",
+          "Mov.Utilities": "1.0.0",
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
@@ -559,11 +560,22 @@
           "bin/placeholder/Mov.Designer.Service.dll": {}
         }
       },
+      "Mov.Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Utilities.dll": {}
+        }
+      },
       "Mov.WpfControls/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "LiveCharts.Wpf.NetCore3": "0.9.7",
+          "Mov.Utilities": "1.0.0",
           "Mov.WpfDesigns": "1.0.0",
           "Prism.Unity": "8.1.97",
           "ReactiveProperty.WPF": "8.0.1",
@@ -1615,6 +1627,11 @@
       "type": "project",
       "path": "../../../applications/designer.service/Designer.Service.csproj",
       "msbuildProject": "../../../applications/designer.service/Designer.Service.csproj"
+    },
+    "Mov.Utilities/1.0.0": {
+      "type": "project",
+      "path": "../../../infrastructures/utilities/Utilities.csproj",
+      "msbuildProject": "../../../infrastructures/utilities/Utilities.csproj"
     },
     "Mov.WpfControls/1.0.0": {
       "type": "project",

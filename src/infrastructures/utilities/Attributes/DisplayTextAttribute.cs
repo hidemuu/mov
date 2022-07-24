@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.WpfControls.Attributes
+namespace Mov.Utilities.Attributes
 {
     [System.AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
     public sealed class DisplayTextAttribute : Attribute

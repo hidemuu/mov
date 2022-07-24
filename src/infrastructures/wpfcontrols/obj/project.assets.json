@@ -280,6 +280,16 @@
           "lib/netcoreapp3.0/Unity.Container.dll": {}
         }
       },
+      "Mov.Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Utilities.dll": {}
+        }
+      },
       "Mov.WpfDesigns/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -923,6 +933,11 @@
         "unity.container.nuspec"
       ]
     },
+    "Mov.Utilities/1.0.0": {
+      "type": "project",
+      "path": "../utilities/Utilities.csproj",
+      "msbuildProject": "../utilities/Utilities.csproj"
+    },
     "Mov.WpfDesigns/1.0.0": {
       "type": "project",
       "path": "../wpfdesigns/WpfDesigns.csproj",
@@ -932,6 +947,7 @@
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
       "LiveCharts.Wpf.NetCore3 >= 0.9.7",
+      "Mov.Utilities >= 1.0.0",
       "Mov.WpfDesigns >= 1.0.0",
       "Prism.Unity >= 8.1.97",
       "ReactiveProperty.WPF >= 8.0.1",
@@ -975,6 +991,9 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj"
+            },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfdesigns\\WpfDesigns.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfdesigns\\WpfDesigns.csproj"
             }

@@ -12,6 +12,8 @@ namespace Mov.WpfControls
     /// </summary>
     public class ColumnAttribute
     {
+        #region プロパティ
+
         /// <summary>
         /// ヘッダー
         /// </summary>
@@ -24,7 +26,11 @@ namespace Mov.WpfControls
         /// 表示・非表示
         /// </summary>
         public ReactivePropertySlim<bool> IsVisible { get; } = new ReactivePropertySlim<bool>(true);
-        
+
+        #endregion プロパティ
+
+        #region コンストラクター
+
         /// <summary>
         /// コンストラクター
         /// </summary>
@@ -36,5 +42,6 @@ namespace Mov.WpfControls
             Width.Value = width;
         }
 
+        #endregion コンストラクター
     }
 }

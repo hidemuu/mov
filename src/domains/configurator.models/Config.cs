@@ -58,6 +58,16 @@ namespace Mov.Configurator.Models
         public string Value { get; set; } = "";
 
         /// <summary>
+        /// 初期値
+        /// </summary>
+        [JsonProperty("default")]
+        [XmlElement("default")]
+        [LanguageKey("default")]
+        [DisplayName("default")]
+        [DisplayIndex(13)]
+        public string Default { get; set; } = string.Empty;
+
+        /// <summary>
         /// 内容説明
         /// </summary>
         [StringLength(100)]
@@ -65,18 +75,8 @@ namespace Mov.Configurator.Models
         [XmlElement("description")]
         [LanguageKey("description")]
         [DisplayName("description")]
-        [DisplayIndex(13)]
-        public string Description { get; set; } = "";
-
-        /// <summary>
-        /// 初期値
-        /// </summary>
-        [JsonProperty("default")]
-        [XmlElement("default")]
-        [LanguageKey("default")]
-        [DisplayName("default")]
         [DisplayIndex(14)]
-        public string Default { get; set; } = string.Empty;
+        public string Description { get; set; } = "";
 
         /// <summary>
         /// アクセスレベル

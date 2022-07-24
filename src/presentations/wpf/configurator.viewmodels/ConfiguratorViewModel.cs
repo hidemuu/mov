@@ -9,6 +9,7 @@ using Reactive.Bindings.Extensions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Reflection;
 
 namespace Mov.Configurator.ViewModels
@@ -147,43 +148,38 @@ namespace Mov.Configurator.ViewModels
         private void GetConfigs()
         {
             Items.Clear();
-            var displayNames = GetDisplayNames<Config>();
+            var properties = GetProperties<Config>().OrderBy(x => x.index);
             foreach (Config item in this.repository.Configs?.Gets())
             {
-                Items.Add(new ColumnItem[]
-                {
-                    new ColumnItem(nameof(item.Id), item.Id),
-                    new ColumnItem(nameof(item.Index), item.Index),
-                    new ColumnItem(nameof(item.Code), item.Code),
-                    new ColumnItem(nameof(item.Category), item.Category),
-                    new ColumnItem(nameof(item.Name), item.Name),
-                    new ColumnItem(nameof(item.Value), item.Value),
-                    new ColumnItem(nameof(item.Default), item.Default),
-                    new ColumnItem(nameof(item.AccessLv), item.AccessLv),
-                    new ColumnItem(nameof(item.Description), item.Description),
-                });
+                Items.Add(GetColumnItems<Config>(properties.Select(x => x.propertyInfo), item).ToArray());
             }
-
-            Attributes.Value = new ColumnAttribute[]
-            {
-                new ColumnAttribute("ID"),
-                new ColumnAttribute("項目"),
-                new ColumnAttribute("コード"),
-                new ColumnAttribute("カテゴリ"),
-                new ColumnAttribute("名称"),
-                new ColumnAttribute("設定値"),
-                new ColumnAttribute("初期値"),
-                new ColumnAttribute("Lv"),
-                new ColumnAttribute("備考"),
-            };
+            Attributes.Value = GetColumnAttributes<Config>(properties.Select(x => x.name)).ToArray();
         }
 
-        private IEnumerable<string> GetDisplayNames<T>()
+        private IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties<T>()
         {
-            var properties = typeof(Config).GetProperties();
+            var properties = typeof(T).GetProperties();
             foreach(var property in properties)
             {
-                yield return AttributeHelper.GetAttribute<DisplayNameAttribute>(property).DisplayName;
+                var index = AttributeHelper.GetAttribute<DisplayIndexAttribute>(property).Index;
+                var name = AttributeHelper.GetAttribute<DisplayNameAttribute>(property).DisplayName;
+                yield return (property, index, name);
+            }
+        }
+
+        private IEnumerable<ColumnItem> GetColumnItems<T>(IEnumerable<PropertyInfo> propertyInfos, T item)
+        {
+            foreach(var propertyInfo in propertyInfos)
+            {
+                yield return new ColumnItem(propertyInfo.Name, propertyInfo.GetValue(item));
+            }
+        }
+
+        private IEnumerable<ColumnAttribute> GetColumnAttributes<T>(IEnumerable<string> names)
+        {
+            foreach(var name in names)
+            {
+                yield return new ColumnAttribute(name);
             }
         }
 

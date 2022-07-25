@@ -156,6 +156,28 @@ namespace Mov.Configurator.ViewModels
             Attributes.Value = GetColumnAttributes<Config>(properties.Select(x => x.name)).ToArray();
         }
 
+        private void GetAccounts()
+        {
+            Items.Clear();
+            var properties = GetProperties<Account>().OrderBy(x => x.index);
+            foreach (Account item in this.repository.Accounts?.Gets())
+            {
+                Items.Add(GetColumnItems<Account>(properties.Select(x => x.propertyInfo), item).ToArray());
+            }
+            Attributes.Value = GetColumnAttributes<Account>(properties.Select(x => x.name)).ToArray();
+        }
+
+        private void GetTranslates()
+        {
+            Items.Clear();
+            var properties = GetProperties<Translate>().OrderBy(x => x.index);
+            foreach (Translate item in this.repository.Translates?.Gets())
+            {
+                Items.Add(GetColumnItems<Translate>(properties.Select(x => x.propertyInfo), item).ToArray());
+            }
+            Attributes.Value = GetColumnAttributes<Translate>(properties.Select(x => x.name)).ToArray();
+        }
+
         private IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties<T>()
         {
             var properties = typeof(T).GetProperties();
@@ -185,110 +207,39 @@ namespace Mov.Configurator.ViewModels
 
         private void SetConfigs()
         {
-            var configs = new List<Config>();
-            foreach(var item in Items)
-            {
-                configs.Add(new Config
-                {
-                    Id = (Guid)item[0].Value.Value,
-                    Index = (int)item[1].Value.Value,
-                    Code = (string)item[2].Value.Value,
-                    Category = (string)item[3].Value.Value,
-                    Name = (string)item[4].Value.Value,
-                    Value = (string)item[5].Value.Value,
-                    Default = (string)item[6].Value.Value,
-                    AccessLv = (int)item[7].Value.Value,
-                    Description = (string)item[8].Value.Value,
-                });
-            }
+            var properties = GetProperties<Config>().OrderBy(x => x.index);
+            var configs = GetDbObjects<Config>(properties.Select(x => x.propertyInfo)).ToList();
             this.repository.Configs.Posts(configs);
-        }
-
-        private void GetAccounts()
-        {
-            Items.Clear();
-            foreach (var item in this.repository.Accounts?.Gets())
-            {
-                Items.Add(new ColumnItem[]
-                {
-                    new ColumnItem("id", item.Id),
-                    new ColumnItem("index", item.Index),
-                    new ColumnItem("code", item.Code),
-                    new ColumnItem("login_id", item.LoginId),
-                    new ColumnItem("password", item.Password),
-                });
-            }
-
-            Attributes.Value = new ColumnAttribute[]
-            {
-                new ColumnAttribute("ID"),
-                new ColumnAttribute("項目"),
-                new ColumnAttribute("コード"),
-                new ColumnAttribute("ログイン"),
-                new ColumnAttribute("パスワード"),
-            };
         }
 
         private void SetAccounts()
         {
-            var accounts = new List<Account>();
-            foreach (var item in Items)
-            {
-                accounts.Add(new Account
-                {
-                    Id = (Guid)item[0].Value.Value,
-                    Index = (int)item[1].Value.Value,
-                    Code = (string)item[2].Value.Value,
-                    LoginId = (string)item[3].Value.Value,
-                    Password = (string)item[4].Value.Value,
-                });
-            }
+            var properties = GetProperties<Account>().OrderBy(x => x.index);
+            var accounts = GetDbObjects<Account>(properties.Select(x => x.propertyInfo)).ToList();
             this.repository.Accounts.Posts(accounts);
-        }
-
-        private void GetTranslates()
-        {
-            Items.Clear();
-            foreach (var item in this.repository.Translates?.Gets())
-            {
-                Items.Add(new ColumnItem[]
-                {
-                    new ColumnItem("id", item.Id),
-                    new ColumnItem("index", item.Index),
-                    new ColumnItem("code", item.Code),
-                    new ColumnItem("jp", item.JP),
-                    new ColumnItem("en", item.EN),
-                    new ColumnItem("cn", item.CN),
-                });
-            }
-
-            Attributes.Value = new ColumnAttribute[]
-            {
-                new ColumnAttribute("ID"),
-                new ColumnAttribute("項目"),
-                new ColumnAttribute("コード"),
-                new ColumnAttribute("日本語"),
-                new ColumnAttribute("英語"),
-                new ColumnAttribute("中国語"),
-            };
         }
 
         private void SetTranslates()
         {
-            var translates = new List<Translate>();
-            foreach (var item in Items)
-            {
-                translates.Add(new Translate
-                {
-                    Id = (Guid)item[0].Value.Value,
-                    Index = (int)item[1].Value.Value,
-                    Code = (string)item[2].Value.Value,
-                    JP = (string)item[3].Value.Value,
-                    EN = (string)item[4].Value.Value,
-                    CN = (string)item[5].Value.Value,
-                });
-            }
+            var properties = GetProperties<Translate>().OrderBy(x => x.index);
+            var translates = GetDbObjects<Translate>(properties.Select(x => x.propertyInfo)).ToList();
             this.repository.Translates.Posts(translates);
+        }
+
+        private IEnumerable<T> GetDbObjects<T>(IEnumerable<PropertyInfo> propertyInfos)
+        {
+            foreach(var item in Items)
+            {
+                var dbObject = (T)Activator.CreateInstance(typeof(T));
+                int i = 0;
+                foreach(var propertyInfo in propertyInfos)
+                {
+                    var value = item[i].GetValue();
+                    propertyInfo.SetValue(dbObject, value);
+                    i++;
+                }
+                yield return dbObject;
+            }
         }
 
         #endregion メソッド

@@ -1,14 +1,1 @@
-{
-  "accounts": [
-    {
-      "index": 1,
-      "loginid": "admin",
-      "password": "admin"
-    },
-    {
-      "index": 2,
-      "loginid": "test",
-      "password": "test"
-    }
-  ]
-}
+﻿{"accounts":[{"loginid":"admin","password":"admin","id":"3a161d95-5169-48dc-9d63-778853f1f616","index":1,"code":""},{"loginid":"test","password":"test","id":"9f21dc13-a2ab-4e97-a1fc-b6577de7597b","index":2,"code":""}]}

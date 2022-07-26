@@ -4,6 +4,8 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
 
@@ -35,7 +37,7 @@ namespace Mov.Configurator.Models
         [LanguageKey("jp")]
         [DisplayName("jp")]
         [DisplayIndex(10)]
-        public string JP { get; set; } = "";
+        public string JP { get; set; } = string.Empty;
         /// <summary>
         /// 英語
         /// </summary>
@@ -44,7 +46,7 @@ namespace Mov.Configurator.Models
         [LanguageKey("en")]
         [DisplayName("en")]
         [DisplayIndex(11)]
-        public string EN { get; set; } = "";
+        public string EN { get; set; } = string.Empty;
         /// <summary>
         /// 中国語
         /// </summary>
@@ -53,6 +55,8 @@ namespace Mov.Configurator.Models
         [LanguageKey("cn")]
         [DisplayName("cn")]
         [DisplayIndex(12)]
-        public string CN { get; set; } = "";
+        public string CN { get; set; } = string.Empty;
+
+        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<Translate>().OrderBy(x => x.index);
     }
 }

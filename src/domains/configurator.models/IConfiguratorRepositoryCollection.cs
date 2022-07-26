@@ -12,5 +12,6 @@ namespace Mov.Configurator.Models
         DbObjectRepository<Account, AccountCollection> Accounts { get; }
 
         DbObjectRepository<Translate, TranslateCollection> Translates { get; }
+
     }
 }

@@ -73,11 +73,18 @@ namespace Mov.Configurator.ViewModels
 
         #region イベント
 
+        /// <summary>
+        /// ロード時のイベント
+        /// </summary>
         protected override void OnLoaded()
         {
 
         }
 
+        /// <summary>
+        /// コンボボックスの選択を変更した時のイベント
+        /// </summary>
+        /// <param name="selectedItem"></param>
         private void OnSelectedComboItemChanged(string selectedItem)
         {
             switch (currentComboItem) 
@@ -111,34 +118,16 @@ namespace Mov.Configurator.ViewModels
 
         private void Import()
         {
-            switch (SelectedComboItem.Value)
-            {
-                case DATA_NAME_CONFIG:
-                    this.repository.Configs.Import();
-                    break;
-                case DATA_NAME_ACCOUNTS:
-                    this.repository.Accounts.Import();
-                    break;
-                case DATA_NAME_TRANSLATES:
-                    this.repository.Translates.Import();
-                    break;
-            }
+            this.repository.Configs.Import();
+            this.repository.Accounts.Import();
+            this.repository.Translates.Import();
         }
 
         private void Export()
         {
-            switch (SelectedComboItem.Value)
-            {
-                case DATA_NAME_CONFIG:
-                    this.repository.Configs.Export();
-                    break;
-                case DATA_NAME_ACCOUNTS:
-                    this.repository.Accounts.Export();
-                    break;
-                case DATA_NAME_TRANSLATES:
-                    this.repository.Translates.Export();
-                    break;
-            }
+            this.repository.Configs.Export();
+            this.repository.Accounts.Export();
+            this.repository.Translates.Export();
         }
 
         #endregion イベント
@@ -148,7 +137,7 @@ namespace Mov.Configurator.ViewModels
         private void GetConfigs()
         {
             Items.Clear();
-            var properties = GetProperties<Config>().OrderBy(x => x.index);
+            var properties = Config.GetProperties();
             foreach (Config item in this.repository.Configs?.Gets())
             {
                 Items.Add(GetColumnItems<Config>(properties.Select(x => x.propertyInfo), item).ToArray());
@@ -159,7 +148,7 @@ namespace Mov.Configurator.ViewModels
         private void GetAccounts()
         {
             Items.Clear();
-            var properties = GetProperties<Account>().OrderBy(x => x.index);
+            var properties = Account.GetProperties();
             foreach (Account item in this.repository.Accounts?.Gets())
             {
                 Items.Add(GetColumnItems<Account>(properties.Select(x => x.propertyInfo), item).ToArray());
@@ -170,7 +159,7 @@ namespace Mov.Configurator.ViewModels
         private void GetTranslates()
         {
             Items.Clear();
-            var properties = GetProperties<Translate>().OrderBy(x => x.index);
+            var properties = Translate.GetProperties();
             foreach (Translate item in this.repository.Translates?.Gets())
             {
                 Items.Add(GetColumnItems<Translate>(properties.Select(x => x.propertyInfo), item).ToArray());
@@ -178,16 +167,7 @@ namespace Mov.Configurator.ViewModels
             Attributes.Value = GetColumnAttributes<Translate>(properties.Select(x => x.name)).ToArray();
         }
 
-        private IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties<T>()
-        {
-            var properties = typeof(T).GetProperties();
-            foreach(var property in properties)
-            {
-                var index = AttributeHelper.GetAttribute<DisplayIndexAttribute>(property).Index;
-                var name = AttributeHelper.GetAttribute<DisplayNameAttribute>(property).DisplayName;
-                yield return (property, index, name);
-            }
-        }
+        
 
         private IEnumerable<ColumnItem> GetColumnItems<T>(IEnumerable<PropertyInfo> propertyInfos, T item)
         {
@@ -207,22 +187,19 @@ namespace Mov.Configurator.ViewModels
 
         private void SetConfigs()
         {
-            var properties = GetProperties<Config>().OrderBy(x => x.index);
-            var configs = GetDbObjects<Config>(properties.Select(x => x.propertyInfo)).ToList();
+            var configs = GetDbObjects<Config>(Config.GetProperties().Select(x => x.propertyInfo)).ToList();
             this.repository.Configs.Posts(configs);
         }
 
         private void SetAccounts()
         {
-            var properties = GetProperties<Account>().OrderBy(x => x.index);
-            var accounts = GetDbObjects<Account>(properties.Select(x => x.propertyInfo)).ToList();
+            var accounts = GetDbObjects<Account>(Account.GetProperties().Select(x => x.propertyInfo)).ToList();
             this.repository.Accounts.Posts(accounts);
         }
 
         private void SetTranslates()
         {
-            var properties = GetProperties<Translate>().OrderBy(x => x.index);
-            var translates = GetDbObjects<Translate>(properties.Select(x => x.propertyInfo)).ToList();
+            var translates = GetDbObjects<Translate>(Translate.GetProperties().Select(x => x.propertyInfo)).ToList();
             this.repository.Translates.Posts(translates);
         }
 

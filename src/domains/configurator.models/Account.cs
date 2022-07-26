@@ -5,6 +5,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
 
@@ -44,5 +46,7 @@ namespace Mov.Configurator.Models
         [DisplayName("password")]
         [DisplayIndex(11)]
         public string Password { get; set; }
+
+        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<Account>().OrderBy(x => x.index);
     }
 }

@@ -1,8 +1,11 @@
 ﻿using Mov.Accessors;
 using Mov.Utilities.Attributes;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Reflection;
 using System.Xml.Serialization;
 
 namespace Mov.Configurator.Models
@@ -35,7 +38,7 @@ namespace Mov.Configurator.Models
         [LanguageKey("category")]
         [DisplayName("category")]
         [DisplayIndex(10)]
-        public string Category { get; set; } = "";
+        public string Category { get; set; } = string.Empty;
 
         /// <summary>
         /// 名称
@@ -45,7 +48,7 @@ namespace Mov.Configurator.Models
         [LanguageKey("name")]
         [DisplayName("name")]
         [DisplayIndex(11)]
-        public string Name { get; set; } = "";
+        public string Name { get; set; } = string.Empty;
 
         /// <summary>
         /// 設定値
@@ -55,7 +58,7 @@ namespace Mov.Configurator.Models
         [LanguageKey("value")]
         [DisplayName("value")]
         [DisplayIndex(12)]
-        public string Value { get; set; } = "";
+        public string Value { get; set; } = string.Empty;
 
         /// <summary>
         /// 初期値
@@ -76,7 +79,7 @@ namespace Mov.Configurator.Models
         [LanguageKey("description")]
         [DisplayName("description")]
         [DisplayIndex(14)]
-        public string Description { get; set; } = "";
+        public string Description { get; set; } = string.Empty;
 
         /// <summary>
         /// アクセスレベル
@@ -100,6 +103,8 @@ namespace Mov.Configurator.Models
 
         /// <inheritdoc />
         public override string ToHeaderString() => GetString(new string[] { "Id", "Code", "Category", "Name", "Value", "Description" }, 10);
+
+        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<Config>().OrderBy(x => x.index);
 
         #endregion メソッド
     }

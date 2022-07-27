@@ -87,32 +87,11 @@ namespace Mov.Configurator.ViewModels
         /// <param name="selectedItem"></param>
         private void OnSelectedComboItemChanged(string selectedItem)
         {
-            switch (currentComboItem) 
-            {
-                case DATA_NAME_CONFIG:
-                    SetConfigs();
-                    break;
-                case DATA_NAME_ACCOUNTS:
-                    SetAccounts();
-                    break;
-                case DATA_NAME_TRANSLATES:
-                    SetTranslates();
-                    break;
-            }
-
-            switch (selectedItem) 
-            {
-                case DATA_NAME_CONFIG:
-                    GetConfigs();
-                    break;
-                case DATA_NAME_ACCOUNTS:
-                    GetAccounts();
-                    break;
-                case DATA_NAME_TRANSLATES:
-                    GetTranslates();
-                    break;
-            }
-
+            //切替前のデータを登録
+            PostItems();
+            //選択データをバインド
+            BindItems(selectedItem);
+            //選択データを更新
             currentComboItem = selectedItem;
         }
 
@@ -125,6 +104,7 @@ namespace Mov.Configurator.ViewModels
 
         private void Export()
         {
+            PostItems();
             this.repository.Configs.Export();
             this.repository.Accounts.Export();
             this.repository.Translates.Export();
@@ -134,7 +114,23 @@ namespace Mov.Configurator.ViewModels
 
         #region メソッド
 
-        private void GetConfigs()
+        private void BindItems(string selectedItem)
+        {
+            switch (selectedItem)
+            {
+                case DATA_NAME_CONFIG:
+                    BindConfigs();
+                    break;
+                case DATA_NAME_ACCOUNTS:
+                    BindAccounts();
+                    break;
+                case DATA_NAME_TRANSLATES:
+                    BindTranslates();
+                    break;
+            }
+        }
+
+        private void BindConfigs()
         {
             Items.Clear();
             var properties = Config.GetProperties();
@@ -145,7 +141,7 @@ namespace Mov.Configurator.ViewModels
             Attributes.Value = GetColumnAttributes<Config>(properties.Select(x => x.name)).ToArray();
         }
 
-        private void GetAccounts()
+        private void BindAccounts()
         {
             Items.Clear();
             var properties = Account.GetProperties();
@@ -156,7 +152,7 @@ namespace Mov.Configurator.ViewModels
             Attributes.Value = GetColumnAttributes<Account>(properties.Select(x => x.name)).ToArray();
         }
 
-        private void GetTranslates()
+        private void BindTranslates()
         {
             Items.Clear();
             var properties = Translate.GetProperties();
@@ -185,19 +181,35 @@ namespace Mov.Configurator.ViewModels
             }
         }
 
-        private void SetConfigs()
+        private void PostItems()
+        {
+            switch (currentComboItem)
+            {
+                case DATA_NAME_CONFIG:
+                    PostConfigs();
+                    break;
+                case DATA_NAME_ACCOUNTS:
+                    PostAccounts();
+                    break;
+                case DATA_NAME_TRANSLATES:
+                    PostTranslates();
+                    break;
+            }
+        }
+
+        private void PostConfigs()
         {
             var configs = GetDbObjects<Config>(Config.GetProperties().Select(x => x.propertyInfo)).ToList();
             this.repository.Configs.Posts(configs);
         }
 
-        private void SetAccounts()
+        private void PostAccounts()
         {
             var accounts = GetDbObjects<Account>(Account.GetProperties().Select(x => x.propertyInfo)).ToList();
             this.repository.Accounts.Posts(accounts);
         }
 
-        private void SetTranslates()
+        private void PostTranslates()
         {
             var translates = GetDbObjects<Translate>(Translate.GetProperties().Select(x => x.propertyInfo)).ToList();
             this.repository.Translates.Posts(translates);

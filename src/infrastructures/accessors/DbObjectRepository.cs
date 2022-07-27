@@ -79,6 +79,7 @@ namespace Mov.Accessors
         public IEnumerable<T> Gets()
         {
             if (collection == null) Import();
+            if (collection == null) return new List<T>();
             return collection.Items;
         }
 
@@ -128,6 +129,7 @@ namespace Mov.Accessors
                 //追加
                 srcs.Add(item);
             }
+            if (!srcs.Any()) return;
             collection.Items = srcs.ToArray();
         }
 

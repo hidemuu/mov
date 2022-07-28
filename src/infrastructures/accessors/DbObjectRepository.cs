@@ -155,6 +155,7 @@ namespace Mov.Accessors
         {
             var items = Gets().ToList();
             items.Add(item);
+            if (collection == null) collection = (C)Activator.CreateInstance(typeof(C));
             collection.Items = items.ToArray();
         }
 
@@ -190,6 +191,13 @@ namespace Mov.Accessors
         {
             var srcs = Gets().ToList();
             Remove(srcs, item);
+            collection.Items = srcs.ToArray();
+        }
+
+        public void Delete(Guid id)
+        {
+            var srcs = Gets().ToList();
+            Remove(srcs, Get(id));
             collection.Items = srcs.ToArray();
         }
 

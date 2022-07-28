@@ -47,6 +47,8 @@ namespace Mov.Configurator.ViewModels
 
         public ReactivePropertySlim<string> SelectedComboItem { get; } = new ReactivePropertySlim<string>(DATA_NAME_CONFIG);
 
+        public ReactivePropertySlim<ColumnItem[]> SelectedItem { get; } = new ReactivePropertySlim<ColumnItem[]>();
+
         #endregion プロパティ
 
         #region コマンド
@@ -54,6 +56,10 @@ namespace Mov.Configurator.ViewModels
         public ReactiveCommand ImportCommand { get; } = new ReactiveCommand();
 
         public ReactiveCommand ExportCommand { get; } = new ReactiveCommand();
+
+        public ReactiveCommand<object> AddCommand { get; } = new ReactiveCommand<object>();
+
+        public ReactiveCommand<object> DeleteCommand { get; } = new ReactiveCommand<object>();
 
         #endregion コマンド
 
@@ -69,6 +75,8 @@ namespace Mov.Configurator.ViewModels
             SelectedComboItem.Subscribe(OnSelectedComboItemChanged).AddTo(Disposables);
             ImportCommand.Subscribe(Import).AddTo(Disposables);
             ExportCommand.Subscribe(Export).AddTo(Disposables);
+            AddCommand.Subscribe(Add).AddTo(Disposables);
+            DeleteCommand.Subscribe(Delete).AddTo(Disposables);
         }
 
         #region イベント
@@ -108,6 +116,45 @@ namespace Mov.Configurator.ViewModels
             this.database.Configs.Export();
             this.database.Accounts.Export();
             this.database.Translates.Export();
+        }
+
+        private void Add(object parameter)
+        {
+            switch (this.currentComboItem)
+            {
+                case DATA_NAME_CONFIG:
+                    this.database.Configs.Put(new Config());
+                    BindConfigs();
+                    break;
+                case DATA_NAME_ACCOUNTS:
+                    this.database.Accounts.Put(new Account());
+                    BindAccounts();
+                    break;
+                case DATA_NAME_TRANSLATES:
+                    this.database.Translates.Put(new Translate());
+                    BindTranslates();
+                    break;
+            }
+        }
+
+        private void Delete(object parameter)
+        {
+            var selectedItem = SelectedItem.Value;
+            switch (this.currentComboItem)
+            {
+                case DATA_NAME_CONFIG:
+                    this.database.Configs.Delete((Guid)selectedItem[0].GetValue());
+                    BindConfigs();
+                    break;
+                case DATA_NAME_ACCOUNTS:
+                    this.database.Accounts.Delete((Guid)selectedItem[0].GetValue());
+                    BindAccounts();
+                    break;
+                case DATA_NAME_TRANSLATES:
+                    this.database.Translates.Delete((Guid)selectedItem[0].GetValue());
+                    BindTranslates();
+                    break;
+            }
         }
 
         #endregion イベント

@@ -22,7 +22,7 @@
             x:Name="listView"
             Grid.Row="0"
             ItemsSource="{Binding Items, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}"
-            SelectedItem="{Binding SelectedItem, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}, Mode=TwoWay}">
+            SelectedItem="{Binding SelectedItem.Value, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}, Mode=TwoWay}">
             <ListView.View>
                 <GridView>
                     <local:GridListColumn Attribute="{Binding Attributes[0], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
@@ -91,5 +91,37 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button
+            Width="32"
+            Height="32"
+            Margin="0,0,40,8"
+            Padding="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Command="{Binding DeleteCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}"
+            Content="-"
+            Cursor="Hand"
+            Focusable="False"
+            FontSize="20"
+            ToolTip="削除します"
+            ToolTipService.Placement="Right" />
+        <Button
+            Width="32"
+            Height="32"
+            Margin="0,0,8,8"
+            Padding="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Command="{Binding AddCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}"
+            Content="+"
+            Cursor="Hand"
+            Focusable="False"
+            FontSize="20"
+            ToolTip="追加します"
+            ToolTipService.Placement="Right" />
     </Grid>
 </UserControl>

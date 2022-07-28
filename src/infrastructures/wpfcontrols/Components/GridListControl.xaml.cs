@@ -35,13 +35,13 @@ namespace Mov.WpfControls.Components
         }
 
         public static readonly DependencyProperty SelectedItemProperty =
-            DependencyProperty.Register(nameof(SelectedItem), typeof(ColumnItem[]),
+            DependencyProperty.Register(nameof(SelectedItem), typeof(ReactivePropertySlim<ColumnItem[]>),
             typeof(GridListControl),
             new UIPropertyMetadata(null));
 
-        public ColumnItem[] SelectedItem
+        public ReactivePropertySlim<ColumnItem[]> SelectedItem
         {
-            get { return (ColumnItem[])GetValue(SelectedItemProperty); }
+            get { return (ReactivePropertySlim<ColumnItem[]>)GetValue(SelectedItemProperty); }
             set { SetValue(SelectedItemProperty, value); }
         }
 
@@ -54,6 +54,28 @@ namespace Mov.WpfControls.Components
         {
             get { return (ColumnAttribute[])GetValue(AttributesProperty); }
             set { SetValue(AttributesProperty, value); }
+        }
+
+        public static readonly DependencyProperty AddCommandProperty =
+            DependencyProperty.Register(nameof(AddCommand), typeof(ReactiveCommand<object>),
+            typeof(GridListControl),
+            new UIPropertyMetadata(null));
+
+        public ReactiveCommand<object> AddCommand
+        {
+            get { return (ReactiveCommand<object>)GetValue(AddCommandProperty); }
+            set { SetValue(AddCommandProperty, value); }
+        }
+
+        public static readonly DependencyProperty DeleteCommandProperty =
+            DependencyProperty.Register(nameof(DeleteCommand), typeof(ReactiveCommand<object>),
+            typeof(GridListControl),
+            new UIPropertyMetadata(null));
+
+        public ReactiveCommand<object> DeleteCommand
+        {
+            get { return (ReactiveCommand<object>)GetValue(DeleteCommandProperty); }
+            set { SetValue(DeleteCommandProperty, value); }
         }
 
         #endregion プロパティ

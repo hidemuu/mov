@@ -47,11 +47,14 @@ namespace Mov.WpfControls.Components
         /// <param name="e"></param>
         private static void OnAttributeChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
         {
-            var ctrl = obj as GridListColumn;
-            if (ctrl != null && ctrl.Attribute != null)
+            var control = obj as GridListColumn;
+            if (control != null)
             {
-                ctrl.Width = ctrl.Attribute.Width.Value;
-                ctrl.Header = ctrl.Attribute.Header.Value;
+                if(control.Attribute != null)
+                {
+                    control.Width = control.Attribute.Width.Value;
+                    control.Header = control.Attribute.Header.Value;
+                }
             }
         }
 

@@ -18,7 +18,7 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        private readonly IDesignerRepositoryCollection repository;
+        private readonly IDesignerDatabase repository;
 
         private ICollection<ReactiveCommand<Guid>> addCommands = new List<ReactiveCommand<Guid>>();
 
@@ -56,7 +56,7 @@ namespace Mov.Designer.ViewModels
         /// コンストラクター
         /// </summary>
         /// <param name="repository"></param>
-        public DesignerTableViewModel(IDesignerRepositoryCollection repository)
+        public DesignerTableViewModel(IDesignerDatabase repository)
         {
             this.repository = repository;
             SaveCommand.Subscribe(OnSaveCommand).AddTo(Disposables);

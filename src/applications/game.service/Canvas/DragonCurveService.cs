@@ -12,7 +12,7 @@ namespace Mov.Game.Service.Canvas
         
         #region コンストラクター
 
-        public DragonCurveService(IGameRepositoryCollection repository) : base(repository)
+        public DragonCurveService(IGameDatabase repository) : base(repository)
         {
         }
 

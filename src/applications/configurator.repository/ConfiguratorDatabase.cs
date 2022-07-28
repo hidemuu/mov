@@ -11,14 +11,14 @@ namespace Mov.Configurator.Repository
     /// <summary>
     /// コンフィグレーションデータのリポジトリ
     /// </summary>
-    public class ConfiguratorRepositoryCollection : DbObjectRepositoryCollectionBase, IConfiguratorRepositoryCollection
+    public class ConfiguratorDatabase : DbObjectDatabaseBase, IConfiguratorDatabase
     {
         #region コンストラクター
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ConfiguratorRepositoryCollection(string resourceDir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
+        public ConfiguratorDatabase(string resourceDir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
         {
             Configs = new DbObjectRepository<Config, ConfigCollection>(this.dir, GetRelativePath("config"), encode);
             Accounts = new DbObjectRepository<Account, AccountCollection>(this.dir, GetRelativePath("account"), encode);

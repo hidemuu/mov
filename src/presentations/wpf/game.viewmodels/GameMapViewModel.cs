@@ -50,7 +50,7 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public GameMapViewModel(IRegionManager regionManager, IDialogService dialogService, IGameRepositoryCollection repository, IMachineGameService gameService) : base(regionManager, dialogService, repository)
+        public GameMapViewModel(IRegionManager regionManager, IDialogService dialogService, IGameDatabase repository, IMachineGameService gameService) : base(regionManager, dialogService, repository)
         {
             KeyUpCommand.Subscribe(() => OnKeyUp()).AddTo(Disposables);
             KeyGestureEnterCommand.Subscribe(() => OnKeyGestureEnter()).AddTo(Disposables);

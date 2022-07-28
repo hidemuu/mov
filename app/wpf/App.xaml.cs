@@ -111,9 +111,9 @@ namespace Mov.Wpf
             //var rootPath = assembly.Location.TrimEnd(assembly.ManifestModule.Name.ToCharArray());
             var rootPath = PathHelper.GetCurrentRootPath("mov");
             var resourcePath = Path.Combine(rootPath, "resources");
-            containerRegistry.RegisterInstance<IConfiguratorRepositoryCollection>(new ConfiguratorRepositoryCollection(resourcePath, "json"));
-            containerRegistry.RegisterInstance<IDesignerRepositoryCollection>(new DesignerRepositoryCollection(resourcePath, "xml"));
-            containerRegistry.RegisterInstance<IGameRepositoryCollection>(new GameRepositoryCollection(resourcePath, "json"));
+            containerRegistry.RegisterInstance<IConfiguratorDatabase>(new ConfiguratorDatabase(resourcePath, "json"));
+            containerRegistry.RegisterInstance<IDesignerDatabase>(new DesignerDatabase(resourcePath, "xml"));
+            containerRegistry.RegisterInstance<IGameDatabase>(new GameDatabase(resourcePath, "json"));
             
             //サービスの登録
             containerRegistry.RegisterInstance<IMachineGameService>(Container.Resolve<PackmanGameService>());

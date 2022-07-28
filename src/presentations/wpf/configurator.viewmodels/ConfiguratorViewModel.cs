@@ -29,7 +29,7 @@ namespace Mov.Configurator.ViewModels
 
         #region フィールド
 
-        private readonly IConfiguratorRepositoryCollection repository;
+        private readonly IConfiguratorDatabase database;
 
         private string currentComboItem;
 
@@ -62,9 +62,9 @@ namespace Mov.Configurator.ViewModels
         /// </summary>
         /// <param name="regionManager"></param>
         /// <param name="dialogService"></param>
-        public ConfiguratorViewModel(IRegionManager regionManager, IDialogService dialogService, IConfiguratorRepositoryCollection repository) : base(regionManager, dialogService)
+        public ConfiguratorViewModel(IRegionManager regionManager, IDialogService dialogService, IConfiguratorDatabase database) : base(regionManager, dialogService)
         {
-            this.repository = repository;
+            this.database = database;
             //サブスクライブ
             SelectedComboItem.Subscribe(OnSelectedComboItemChanged).AddTo(Disposables);
             ImportCommand.Subscribe(Import).AddTo(Disposables);
@@ -97,17 +97,17 @@ namespace Mov.Configurator.ViewModels
 
         private void Import()
         {
-            this.repository.Configs.Import();
-            this.repository.Accounts.Import();
-            this.repository.Translates.Import();
+            this.database.Configs.Import();
+            this.database.Accounts.Import();
+            this.database.Translates.Import();
         }
 
         private void Export()
         {
             PostItems();
-            this.repository.Configs.Export();
-            this.repository.Accounts.Export();
-            this.repository.Translates.Export();
+            this.database.Configs.Export();
+            this.database.Accounts.Export();
+            this.database.Translates.Export();
         }
 
         #endregion イベント
@@ -134,7 +134,7 @@ namespace Mov.Configurator.ViewModels
         {
             Items.Clear();
             var properties = Config.GetProperties();
-            foreach (Config item in this.repository.Configs?.Gets())
+            foreach (Config item in this.database.Configs?.Gets())
             {
                 Items.Add(GetColumnItems<Config>(properties.Select(x => x.propertyInfo), item).ToArray());
             }
@@ -145,7 +145,7 @@ namespace Mov.Configurator.ViewModels
         {
             Items.Clear();
             var properties = Account.GetProperties();
-            foreach (Account item in this.repository.Accounts?.Gets())
+            foreach (Account item in this.database.Accounts?.Gets())
             {
                 Items.Add(GetColumnItems<Account>(properties.Select(x => x.propertyInfo), item).ToArray());
             }
@@ -156,7 +156,7 @@ namespace Mov.Configurator.ViewModels
         {
             Items.Clear();
             var properties = Translate.GetProperties();
-            foreach (Translate item in this.repository.Translates?.Gets())
+            foreach (Translate item in this.database.Translates?.Gets())
             {
                 Items.Add(GetColumnItems<Translate>(properties.Select(x => x.propertyInfo), item).ToArray());
             }
@@ -200,19 +200,19 @@ namespace Mov.Configurator.ViewModels
         private void PostConfigs()
         {
             var configs = GetDbObjects<Config>(Config.GetProperties().Select(x => x.propertyInfo)).ToList();
-            this.repository.Configs.Posts(configs);
+            this.database.Configs.Posts(configs);
         }
 
         private void PostAccounts()
         {
             var accounts = GetDbObjects<Account>(Account.GetProperties().Select(x => x.propertyInfo)).ToList();
-            this.repository.Accounts.Posts(accounts);
+            this.database.Accounts.Posts(accounts);
         }
 
         private void PostTranslates()
         {
             var translates = GetDbObjects<Translate>(Translate.GetProperties().Select(x => x.propertyInfo)).ToList();
-            this.repository.Translates.Posts(translates);
+            this.database.Translates.Posts(translates);
         }
 
         private IEnumerable<T> GetDbObjects<T>(IEnumerable<PropertyInfo> propertyInfos)

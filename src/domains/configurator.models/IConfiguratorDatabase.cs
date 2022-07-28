@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Configurator.Models
 {
-    public interface IConfiguratorRepositoryCollection
+    public interface IConfiguratorDatabase
     {
         DbObjectRepository<Config, ConfigCollection> Configs { get; }
 

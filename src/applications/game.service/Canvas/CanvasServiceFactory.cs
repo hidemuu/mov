@@ -18,14 +18,14 @@ namespace Mov.Game.Service.Canvas
 
         private readonly string baseName;
 
-        private readonly IGameRepositoryCollection repository;
+        private readonly IGameDatabase repository;
 
         #endregion フィールド
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public CanvasServiceFactory(IGameRepositoryCollection repository)
+        public CanvasServiceFactory(IGameDatabase repository)
         {
             this.baseName = this.GetType().Namespace;
             this.repository = repository;

@@ -24,7 +24,7 @@ namespace Mov.Game.Service.Machine
         /// <summary>
         /// リポジトリ
         /// </summary>
-        protected IGameRepositoryCollection Repository { get; private set; }
+        protected IGameDatabase Repository { get; private set; }
 
         /// <summary>
         /// ゲームエンジン
@@ -64,7 +64,7 @@ namespace Mov.Game.Service.Machine
         /// コンストラクター
         /// </summary>
         /// <param name="repository"></param>
-        public PackmanGameService(IGameRepositoryCollection repository) : base()
+        public PackmanGameService(IGameDatabase repository) : base()
         {
             this.Repository = repository;
             var map = GetLandmark();

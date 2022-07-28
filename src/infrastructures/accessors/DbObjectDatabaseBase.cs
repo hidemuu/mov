@@ -5,7 +5,7 @@ namespace Mov.Accessors
     /// <summary>
     /// リポジトリコレクションのベースクラス
     /// </summary>
-    public abstract class DbObjectRepositoryCollectionBase
+    public abstract class DbObjectDatabaseBase
     {
         #region フィールド
 
@@ -25,7 +25,7 @@ namespace Mov.Accessors
         /// </summary>
         /// <param name="dir"></param>
         /// <param name="extension"></param>
-        public DbObjectRepositoryCollectionBase(string dir, string extension)
+        public DbObjectDatabaseBase(string dir, string extension)
         {
             this.dir = dir;
             this.extension = extension;

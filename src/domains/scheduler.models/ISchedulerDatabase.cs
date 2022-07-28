@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Scheduler.Models
 {
-    public interface ISchedulerRepositoryCollection
+    public interface ISchedulerDatabase
     {
     }
 }

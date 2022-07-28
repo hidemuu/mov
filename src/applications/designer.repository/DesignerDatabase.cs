@@ -10,7 +10,7 @@ namespace Mov.Designer.Repository.Xml
     /// <summary>
     /// デザイナーのリポジトリ
     /// </summary>
-    public class DesignerRepositoryCollection : DbObjectRepositoryCollectionBase, IDesignerRepositoryCollection
+    public class DesignerDatabase : DbObjectDatabaseBase, IDesignerDatabase
     {
 
         #region コンストラクター
@@ -19,7 +19,7 @@ namespace Mov.Designer.Repository.Xml
         /// コンストラクター
         /// </summary>
         /// <param name="encoding"></param>
-        public DesignerRepositoryCollection(string resourceDir, string extension, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
+        public DesignerDatabase(string resourceDir, string extension, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
         {
             Shells = new DbObjectRepository<Shell, ShellCollection>(this.dir, GetRelativePath("shell"), encoding);
             LayoutNodes = new DbObjectRepository<LayoutNode, LayoutNodeCollection>(this.dir, GetRelativePath("layout_node"), encoding);

@@ -17,8 +17,8 @@ namespace Mov
     {
         #region プロパティ
 
-        internal DesignerRepositoryCollection Designer { get; }
-        internal ConfiguratorRepositoryCollection Configurator { get; }
+        internal DesignerDatabase Designer { get; }
+        internal ConfiguratorDatabase Configurator { get; }
 
         #endregion プロパティ
 
@@ -31,8 +31,8 @@ namespace Mov
             //var rootPath = assembly.Location.TrimEnd(assembly.ManifestModule.Name.ToCharArray());
             var rootPath = PathHelper.GetCurrentRootPath("mov");
             var resourcePath = Path.Combine(rootPath, "resources");
-            this.Designer = new DesignerRepositoryCollection(resourcePath, "xml");
-            this.Configurator = new ConfiguratorRepositoryCollection(resourcePath, "json");
+            this.Designer = new DesignerDatabase(resourcePath, "xml");
+            this.Configurator = new ConfiguratorDatabase(resourcePath, "json");
         }
 
         #region メソッド

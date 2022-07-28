@@ -20,7 +20,7 @@ namespace Mov.Game.Service.Canvas
 
         #region コンストラクター
 
-        public TreeCurveService(IGameRepositoryCollection repository) : base(repository)
+        public TreeCurveService(IGameDatabase repository) : base(repository)
         {
             
         }

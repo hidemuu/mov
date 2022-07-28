@@ -18,7 +18,7 @@ namespace Mov.Game.Service.Canvas
         /// <summary>
         /// リポジトリ
         /// </summary>
-        protected IGameRepositoryCollection Repository { get; private set; }
+        protected IGameDatabase Repository { get; private set; }
 
         /// <summary>
         /// 描画エンジン
@@ -29,7 +29,7 @@ namespace Mov.Game.Service.Canvas
 
         #region コンストラクター
 
-        public CanvasServiceBase(IGameRepositoryCollection repository) : base()
+        public CanvasServiceBase(IGameDatabase repository) : base()
         {
             this.Repository = repository;
             this.DrawEngine = new DrawEngine();

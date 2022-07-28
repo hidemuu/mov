@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Driver.Repository
 {
-    public class DriverRepositoryCollection : DbObjectRepositoryCollectionBase, IDriverRepositoryCollection
+    public class DriverDatabase : DbObjectDatabaseBase, IDriverDatabase
     {
         #region コンストラクター
 
@@ -14,7 +14,7 @@ namespace Mov.Driver.Repository
         /// コンストラクター
         /// </summary>
         /// <param name="encoding"></param>
-        public DriverRepositoryCollection(string resourceDir, string extension, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
+        public DriverDatabase(string resourceDir, string extension, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
         {
             Errors = new DbObjectRepository<Error, ErrorCollection > (this.dir, GetRelativePath("error"), encoding);
             Macros = new DbObjectRepository<Macro, MacroCollection>(this.dir, GetRelativePath("macro"), encoding);

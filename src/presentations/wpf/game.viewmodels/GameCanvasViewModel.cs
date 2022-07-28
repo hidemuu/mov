@@ -52,7 +52,7 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public GameCanvasViewModel(IRegionManager regionManager, IDialogService dialogService, IGameRepositoryCollection repository) : base(regionManager, dialogService, repository)
+        public GameCanvasViewModel(IRegionManager regionManager, IDialogService dialogService, IGameDatabase repository) : base(regionManager, dialogService, repository)
         {
             DrawCommand.Subscribe(OnDrawCommand).AddTo(Disposables);
         }

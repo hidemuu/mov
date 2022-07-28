@@ -37,7 +37,7 @@ namespace Mov.Designer.ViewModels
             { PAGE_NAME_THEME, "DesignerThemeView" },
         };
 
-        private readonly IDesignerRepositoryCollection repository;
+        private readonly IDesignerDatabase repository;
 
         #endregion フィールド
 
@@ -62,7 +62,7 @@ namespace Mov.Designer.ViewModels
         /// </summary>
         /// <param name="regionManager"></param>
         /// <param name="dialogService"></param>
-        public DesignerViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerRepositoryCollection repository) : base(regionManager, dialogService)
+        public DesignerViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerDatabase repository) : base(regionManager, dialogService)
         {
             this.repository = repository;
             ShowPageCommand.Subscribe(OnPageChangeCommand).AddTo(Disposables);

@@ -11,7 +11,7 @@ namespace Mov.Game.Service.Canvas
         
         #region コンストラクター
 
-        public SierpinskiCurveService(IGameRepositoryCollection repository) : base(repository)
+        public SierpinskiCurveService(IGameDatabase repository) : base(repository)
         {
         }
 

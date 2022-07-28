@@ -11,7 +11,7 @@ namespace Mov.Game.Service.Canvas
     {
         #region コンストラクター
 
-        public KochCurveService(IGameRepositoryCollection repository) : base(repository)
+        public KochCurveService(IGameDatabase repository) : base(repository)
         {
         }
 

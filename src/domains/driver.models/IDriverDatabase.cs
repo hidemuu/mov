@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Driver.Models
 {
-    public interface IDriverRepositoryCollection
+    public interface IDriverDatabase
     {
         DbObjectRepository<Error, ErrorCollection> Errors { get; }
 

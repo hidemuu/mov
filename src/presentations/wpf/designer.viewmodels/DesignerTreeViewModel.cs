@@ -19,7 +19,7 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        private readonly IDesignerRepositoryCollection repository;
+        private readonly IDesignerDatabase repository;
 
         private ICollection<ReactiveCommand<Guid>> addCommands = new List<ReactiveCommand<Guid>>();
 
@@ -51,7 +51,7 @@ namespace Mov.Designer.ViewModels
         /// コンストラクター
         /// </summary>
         /// <param name="repository"></param>
-        public DesignerTreeViewModel(IDesignerRepositoryCollection repository)
+        public DesignerTreeViewModel(IDesignerDatabase repository)
         {
             this.repository = repository;
             SaveCommand.Subscribe(OnSaveCommand).AddTo(Disposables);
@@ -190,7 +190,7 @@ namespace Mov.Designer.ViewModels
 
         private CompositeDisposable disposables = new CompositeDisposable();
 
-        private IDesignerRepositoryCollection repository;
+        private IDesignerDatabase repository;
 
         #endregion フィールド
 
@@ -224,7 +224,7 @@ namespace Mov.Designer.ViewModels
 
         #region コンストラクター
 
-        public DesignerTreeModel(LayoutNode tree, Content table, IDesignerRepositoryCollection repository, ICollection<ReactiveCommand<Guid>> addCommands, ICollection<ReactiveCommand<Guid>> removeCommands) : base(table, addCommands, removeCommands)
+        public DesignerTreeModel(LayoutNode tree, Content table, IDesignerDatabase repository, ICollection<ReactiveCommand<Guid>> addCommands, ICollection<ReactiveCommand<Guid>> removeCommands) : base(table, addCommands, removeCommands)
         {
             this.repository = repository;
             Codes = repository.Contents.Gets().Select(x => x.Code).Distinct().ToList();

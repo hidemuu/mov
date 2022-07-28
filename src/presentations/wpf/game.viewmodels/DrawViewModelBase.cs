@@ -25,7 +25,7 @@ namespace Mov.Game.ViewModels
     {
         #region フィールド
 
-        protected readonly IGameRepositoryCollection repository;
+        protected readonly IGameDatabase repository;
 
         private Bitmap bitmap;
         private Graphics graphics;
@@ -42,7 +42,7 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public DrawViewModelBase(IRegionManager regionManager, IDialogService dialogService, IGameRepositoryCollection repository) : base(regionManager, dialogService)
+        public DrawViewModelBase(IRegionManager regionManager, IDialogService dialogService, IGameDatabase repository) : base(regionManager, dialogService)
         {
             this.repository = repository;
 

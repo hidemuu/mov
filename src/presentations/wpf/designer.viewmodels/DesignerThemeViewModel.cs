@@ -16,7 +16,7 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        private readonly IDesignerRepositoryCollection repository;
+        private readonly IDesignerDatabase repository;
 
         #endregion フィールド
 
@@ -30,7 +30,7 @@ namespace Mov.Designer.ViewModels
 
         #region コンストラクター
 
-        public DesignerThemeViewModel(IDesignerRepositoryCollection repository)
+        public DesignerThemeViewModel(IDesignerDatabase repository)
         {
             this.repository = repository;
             // ComboBoxの初期値を設定するにはItemsSourceで利用しているインスタンスの中から指定する必要がある

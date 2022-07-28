@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public interface IDesignerRepositoryCollection
+    public interface IDesignerDatabase
     {
         DbObjectRepository<Content, ContentCollection> Contents { get; }
         DbObjectRepository<LayoutNode, LayoutNodeCollection> LayoutNodes { get; }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Loggers
+namespace Mov.Accessors
 {
     /// <summary>
     /// 性能ログクラス

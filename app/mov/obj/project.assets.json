@@ -1320,8 +1320,8 @@
     },
     "Mov.Loggers/1.0.0": {
       "type": "project",
-      "path": "../../src/infrastructures/loggers/Devices.csproj",
-      "msbuildProject": "../../src/infrastructures/loggers/Devices.csproj"
+      "path": "../../src/infrastructures/devices/Devices.csproj",
+      "msbuildProject": "../../src/infrastructures/devices/Devices.csproj"
     },
     "Mov.Scheduler.Models/1.0.0": {
       "type": "project",

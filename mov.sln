@@ -39,7 +39,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfDesigns", "src\infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mov", "app\mov\Mov.csproj", "{3E8328E2-8D91-4F05-AE24-8FB076969901}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Devices", "src\infrastructures\loggers\Devices.csproj", "{CCD6D19B-1136-4B7E-AAD8-0BFFCE9A58E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Devices", "src\infrastructures\devices\Devices.csproj", "{CCD6D19B-1136-4B7E-AAD8-0BFFCE9A58E9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurator.Views", "src\presentations\wpf\configurator.views\Configurator.Views.csproj", "{2E8D6B9A-EEB1-4A9F-8776-0BFCCA0D37F1}"
 EndProject
@@ -89,9 +89,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Repository", "src\ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Service", "src\applications\driver.service\Driver.Service.csproj", "{C47F2C6B-2A03-4280-91FE-6B3A201DDBC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bom.Models", "src\domains\Bom.Models\Bom.Models.csproj", "{25779A6A-4EED-4787-AE4D-134EF3CA2FD0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bom.Models", "src\domains\bom.models\Bom.Models.csproj", "{25779A6A-4EED-4787-AE4D-134EF3CA2FD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bom.Repository", "src\applications\Bom.Repository\Bom.Repository.csproj", "{3F3F67E7-0CBE-4686-9808-6510CF23B8ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bom.Repository", "src\applications\bom.repository\Bom.Repository.csproj", "{3F3F67E7-0CBE-4686-9808-6510CF23B8ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

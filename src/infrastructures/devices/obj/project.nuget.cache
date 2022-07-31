@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "KMJewYaLKAnFs3Mo92zX1dMLq1e70I3GZngb/PkEuG4gpL6aTb+Y+C1YDJBP5baSS0gcoAsKXj8HMw/+AJ3l3A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\devices\\Devices.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nando\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

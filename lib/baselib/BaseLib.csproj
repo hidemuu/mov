@@ -20,7 +20,7 @@
     <ProjectReference Include="..\..\src\domains\game.models\Game.Models.csproj" />
     <ProjectReference Include="..\..\src\domains\scheduler.models\Scheduler.Models.csproj" />
     <ProjectReference Include="..\..\src\infrastructures\accessors\Accessors.csproj" />
-    <ProjectReference Include="..\..\src\infrastructures\loggers\Devices.csproj" />
+    <ProjectReference Include="..\..\src\infrastructures\devices\Devices.csproj" />
     <ProjectReference Include="..\..\src\infrastructures\utilities\Utilities.csproj" />
   </ItemGroup>
 

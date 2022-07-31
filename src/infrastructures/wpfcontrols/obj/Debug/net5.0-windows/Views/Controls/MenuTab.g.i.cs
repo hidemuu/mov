@@ -63,7 +63,7 @@ namespace Mov.WpfControls.Views.Tabs {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mov.WpfControls;component/views/controls/menutab.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mov.WpfControls;V1.0.0.0;component/views/controls/menutab.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Controls\MenuTab.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

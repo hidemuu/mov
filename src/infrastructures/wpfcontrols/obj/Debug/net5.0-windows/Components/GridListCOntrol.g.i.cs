@@ -63,7 +63,7 @@ namespace Mov.WpfControls.Components {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mov.WpfControls;component/components/gridlistcontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mov.WpfControls;V1.0.0.0;component/components/gridlistcontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Components\GridListControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

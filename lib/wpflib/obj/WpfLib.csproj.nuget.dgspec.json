@@ -74,8 +74,8 @@
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\accessors\\Accessors.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\accessors\\Accessors.csproj"
               },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\loggers\\Devices.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\loggers\\Devices.csproj"
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\devices\\Devices.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\devices\\Devices.csproj"
               },
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj"
@@ -1151,14 +1151,14 @@
         }
       }
     },
-    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\loggers\\Devices.csproj": {
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\devices\\Devices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\loggers\\Devices.csproj",
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\devices\\Devices.csproj",
         "projectName": "Mov.Loggers",
-        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\loggers\\Devices.csproj",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\devices\\Devices.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\loggers\\obj\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\devices\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

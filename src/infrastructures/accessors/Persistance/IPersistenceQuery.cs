@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Accessors
 {
-    public interface IQuery<T>
+    public interface IPersistenceQuery<T>
     {
         IEnumerable<T> Get();
 

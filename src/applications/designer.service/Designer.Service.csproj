@@ -14,4 +14,8 @@
     <ProjectReference Include="..\designer.repository\Designer.Repository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Commands\" />
+  </ItemGroup>
+
 </Project>

@@ -6,4 +6,3 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\obj\Debug\ne
 C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Driver.Service.csproj.CoreCompileInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Mov.Driver.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Mov.Driver.Service.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Driver.Service.csproj.AssemblyReference.cache

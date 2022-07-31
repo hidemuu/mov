@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Accessors
 {
-    public interface ICommand<T>
+    public interface IPersistenceCommand<T>
     {
         void Post(T item);
 

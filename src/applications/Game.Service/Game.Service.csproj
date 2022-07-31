@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Folder Include="ZeroSum\" />
+    <Folder Include="Commands\" />
   </ItemGroup>
 
 </Project>

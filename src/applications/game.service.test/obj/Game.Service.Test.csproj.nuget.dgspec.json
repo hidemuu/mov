@@ -359,6 +359,10 @@
               "target": "Package",
               "version": "[27.2.1, )"
             },
+            "FluentFTP": {
+              "target": "Package",
+              "version": "[39.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.17, )"

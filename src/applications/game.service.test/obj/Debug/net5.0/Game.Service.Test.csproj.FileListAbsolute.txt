@@ -131,3 +131,4 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\game.service.test\bin\Debug
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service.test\bin\Debug\net5.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service.test\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service.test\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.service.test\bin\Debug\net5.0\FluentFTP.dll

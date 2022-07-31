@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "H9jyxjGy8URBvsdGWey1SQgbI2OG+iE+c6kd0jNEyc2W6noNWA90gt7SOpPnYgdY99lju94v79TvDj1nHcBtsg==",
+  "dgSpecHash": "TdGnnN33AhMlby/Xydu9pxgnXdQ3ZTQdVsHr+KBkaruUChCbZAtGsYmD3besAGlIsmAX28TOjSdvApYI6ePKEA==",
   "success": true,
   "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.service.test\\Game.Service.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nando\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\fluentftp\\39.0.0\\fluentftp.39.0.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",

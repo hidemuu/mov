@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "9Uv6h2DpO3JCrId7vf2KBxDOUo5F53pPFpRnW2gT657GI6fkEYE3KTirGJrT/TjYqHCShpGwBFJ8a8v2PzUPCQ==",
+  "dgSpecHash": "C8R2BaxLc0CEtr8BxCkjl6VcN2sfx4Wv5BMgOR5grJ+KJjg734/iaUhYZiYlJOxh70g78fM6JO7L2dxvbPk/xw==",
   "success": true,
   "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.repository\\Game.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nando\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\fluentftp\\39.0.0\\fluentftp.39.0.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",

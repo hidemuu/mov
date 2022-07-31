@@ -27,6 +27,15 @@
           "lib/net5.0/CsvHelper.dll": {}
         }
       },
+      "FluentFTP/39.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/FluentFTP.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/FluentFTP.dll": {}
+        }
+      },
       "gong-wpf-dragdrop/3.0.0": {
         "type": "package",
         "compile": {
@@ -603,6 +612,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "CsvHelper": "27.2.1",
+          "FluentFTP": "39.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.17",
           "Mov.Utilities": "1.0.0",
           "Newtonsoft.Json": "13.0.1"
@@ -1044,6 +1054,39 @@
         "lib/netstandard2.0/CsvHelper.xml",
         "lib/netstandard2.1/CsvHelper.dll",
         "lib/netstandard2.1/CsvHelper.xml"
+      ]
+    },
+    "FluentFTP/39.0.0": {
+      "sha512": "1hU6X8ZsKXjB4/ecO+yJPprcLNPVibCDtGHaq0x1EHBMjBwy7oKzjl6equ8Rb0Dt9J2dLc26IboBmO1kZGbHjg==",
+      "type": "package",
+      "path": "fluentftp/39.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "fluentftp.39.0.0.nupkg.sha512",
+        "fluentftp.nuspec",
+        "lib/net20/FluentFTP.dll",
+        "lib/net20/FluentFTP.xml",
+        "lib/net35/FluentFTP.dll",
+        "lib/net35/FluentFTP.xml",
+        "lib/net40/FluentFTP.dll",
+        "lib/net40/FluentFTP.xml",
+        "lib/net45/FluentFTP.dll",
+        "lib/net45/FluentFTP.xml",
+        "lib/net5.0/FluentFTP.dll",
+        "lib/net5.0/FluentFTP.xml",
+        "lib/net6.0/FluentFTP.dll",
+        "lib/net6.0/FluentFTP.xml",
+        "lib/netstandard1.4/FluentFTP.dll",
+        "lib/netstandard1.4/FluentFTP.xml",
+        "lib/netstandard1.6/FluentFTP.dll",
+        "lib/netstandard1.6/FluentFTP.xml",
+        "lib/netstandard2.0/FluentFTP.dll",
+        "lib/netstandard2.0/FluentFTP.xml",
+        "lib/netstandard2.1/FluentFTP.dll",
+        "lib/netstandard2.1/FluentFTP.xml",
+        "logo-nuget.png"
       ]
     },
     "gong-wpf-dragdrop/3.0.0": {
@@ -2250,8 +2293,8 @@
     },
     "Mov.Loggers/1.0.0": {
       "type": "project",
-      "path": "../../src/infrastructures/loggers/Loggers.csproj",
-      "msbuildProject": "../../src/infrastructures/loggers/Loggers.csproj"
+      "path": "../../src/infrastructures/loggers/Devices.csproj",
+      "msbuildProject": "../../src/infrastructures/loggers/Devices.csproj"
     },
     "Mov.Scheduler.Models/1.0.0": {
       "type": "project",

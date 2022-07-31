@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "i85l1hrzlyu90J47UD/omQyJB7lr6d2cIkyuK5XU/tphKqZrwNLw50pxN8VZPrLbH3I2cx5TQnj3NGIP8ilERw==",
+  "dgSpecHash": "kYFwDpd+c1+w1RQC6LTSx9nY3+Rld7G925RfE7So0ApyXEh1sjtcIoqZky+ttrak9DRz3rJg6HMfqrIkb8mE+g==",
   "success": true,
   "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\accessors\\Accessors.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nando\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\fluentftp\\39.0.0\\fluentftp.39.0.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",

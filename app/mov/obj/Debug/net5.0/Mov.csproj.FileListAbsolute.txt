@@ -75,3 +75,4 @@ C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Microsoft.Extension
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\FluentFTP.dll

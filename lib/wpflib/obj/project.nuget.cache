@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "LrQVuek2P2w+19elOBzCW+339T4iFpMsIoW/wZUB0QBEgIFOA64AwZagTspUqGo4ZLlVIrRoCkTc2QMMYt+/xg==",
+  "dgSpecHash": "xFSIXsiPBgR93wup/W/ytCv7dPnAtToYcZxIp7XlxaqcY9wkAed6LPnuoPa8FkpAIFPM9dqVOq1UsW7Wlr+xKg==",
   "success": true,
   "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\lib\\wpflib\\WpfLib.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nando\\.nuget\\packages\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\fluentftp\\39.0.0\\fluentftp.39.0.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\gong-wpf-dragdrop\\3.0.0\\gong-wpf-dragdrop.3.0.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\google.apis\\1.55.0\\google.apis.1.55.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\google.apis.auth\\1.55.0\\google.apis.auth.1.55.0.nupkg.sha512",

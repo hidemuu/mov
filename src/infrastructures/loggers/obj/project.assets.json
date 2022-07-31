@@ -187,9 +187,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\loggers\\Loggers.csproj",
+      "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\loggers\\Devices.csproj",
       "projectName": "Mov.Loggers",
-      "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\loggers\\Loggers.csproj",
+      "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\loggers\\Devices.csproj",
       "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\loggers\\obj\\",
       "projectStyle": "PackageReference",

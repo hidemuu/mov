@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "3DysQipLppKcC0t8z1fkFXqnOdAYrwyPU5DxG6bA5mfqCBEf5TOWyrNw6SE14liLLjJkNSFx1B0v05A/7wOtQw==",
+  "dgSpecHash": "6i+tWx2lNZSZrqNEiuolZ9KyzEglLkkTj4N/iGX8rJHAMiNLTMg3WZ4krHAcH44MlN7H9T0yPiC5URc2sKcTBA==",
   "success": true,
   "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.viewmodels\\Designer.ViewModels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nando\\.nuget\\packages\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\fluentftp\\39.0.0\\fluentftp.39.0.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\gong-wpf-dragdrop\\3.0.0\\gong-wpf-dragdrop.3.0.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\livecharts.wpf.netcore3\\0.9.7\\livecharts.wpf.netcore3.0.9.7.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\mahapps.metro\\2.4.9\\mahapps.metro.2.4.9.nupkg.sha512",

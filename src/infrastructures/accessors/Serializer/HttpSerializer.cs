@@ -24,10 +24,10 @@ namespace Mov.Accessors.Serializer
         /// コンストラクター
         /// </summary>
         /// <param name="baseUrl"></param>
-        public HttpSerializer(string baseUrl, string url)
+        public HttpSerializer(string baseUrl, string url = "")
         {
             this.baseUrl = baseUrl;
-            this.url = url;
+            this.url = string.IsNullOrEmpty(url) ? baseUrl : url;
         }
 
         #endregion コンストラクター

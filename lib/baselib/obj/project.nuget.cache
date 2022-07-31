@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "YJXupV8BrCmwH9KgofOfygyUkgiiTsvM+yFlRXhjKr3Kcbo24T7rytjBgC+tUqDwn9ajAJXQQlHSxf7/uKXZzA==",
+  "dgSpecHash": "8d6l64sWUU4I4KOTgYbxcs8KFWtSCvFGYoBK4ymmOywhVJ5l7VYiUFuWJJdvqiZjPqtm5hWqvhHxiE8B9Q+DlA==",
   "success": true,
   "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\lib\\baselib\\BaseLib.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nando\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\fluentftp\\39.0.0\\fluentftp.39.0.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\google.apis\\1.55.0\\google.apis.1.55.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\google.apis.auth\\1.55.0\\google.apis.auth.1.55.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\google.apis.calendar.v3\\1.55.0.2500\\google.apis.calendar.v3.1.55.0.2500.nupkg.sha512",

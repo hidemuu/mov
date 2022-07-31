@@ -7,7 +7,7 @@ namespace Mov.Accessors
     /// <summary>
     /// Jsonファイルのシリアライザー
     /// </summary>
-    public class JsonFileSerializer : ISerializer
+    public class JsonSerializer : ISerializer
     {
         #region フィールド
 
@@ -20,7 +20,7 @@ namespace Mov.Accessors
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public JsonFileSerializer(string basePath, string relativePath, string encoding)
+        public JsonSerializer(string basePath, string relativePath, string encoding)
         {
             this.basePath = basePath;
             this.path = Path.Combine(basePath, relativePath);

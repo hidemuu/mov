@@ -7,7 +7,7 @@ namespace Mov.Accessors
     /// <summary>
     /// XMLシリアライザー
     /// </summary>
-    public class XmlFileSerializer : ISerializer
+    public class XmlSerializer : ISerializer
     {
         #region フィールド
 
@@ -23,7 +23,7 @@ namespace Mov.Accessors
         /// コンストラクタ
         /// </summary>
         /// <param name="path">ファイルパス</param>
-        public XmlFileSerializer(string basePath, string relativePath, string encoding)
+        public XmlSerializer(string basePath, string relativePath, string encoding)
         {
             this.basePath = basePath;
             this.path = Path.Combine(basePath, relativePath);
@@ -43,7 +43,7 @@ namespace Mov.Accessors
         {
             using (var stream = new StreamReader(path))
             {
-                var serializer = new XmlSerializer(typeof(T));
+                var serializer = new System.Xml.Serialization.XmlSerializer(typeof(T));
                 return (T)serializer.Deserialize(stream);
             }
         }
@@ -56,7 +56,7 @@ namespace Mov.Accessors
         {
             using (var stream = new StreamWriter(path, false, encoding))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(T));
+                System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(T));
                 serializer.Serialize(stream, obj);
             }
         }

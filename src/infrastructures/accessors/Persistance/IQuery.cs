@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Accessors.Persistance
+namespace Mov.Accessors
 {
     public interface IQuery<T>
     {
-        IEnumerable<T> GetAll();
+        IEnumerable<T> Get();
 
         T Get(Guid id);
 
-        IEnumerable<T> FindByCriteria(string criteria);
+        IEnumerable<T> Get(string code);
     }
 }

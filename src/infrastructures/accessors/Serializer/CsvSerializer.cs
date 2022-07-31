@@ -10,7 +10,7 @@ namespace Mov.Accessors
     /// <summary>
     /// CSVシリアライザー
     /// </summary>
-    public class CsvFileSerializer : ISerializer
+    public class CsvSerializer : ISerializer
     {
         #region フィールド
 
@@ -25,7 +25,7 @@ namespace Mov.Accessors
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public CsvFileSerializer(string basePath, string relativePath, string encoding)
+        public CsvSerializer(string basePath, string relativePath, string encoding)
         {
             this.basePath = basePath;
             this.path = Path.Combine(basePath, relativePath);

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Accessors.Persistance
+namespace Mov.Accessors
 {
     public interface ICommand<T>
     {
-        void Save(T item);
+        void Post(T item);
 
         void Delete(T item);
     }

@@ -14,9 +14,6 @@ namespace Mov
             RepositoryHelper repositoryHelper = new RepositoryHelper();
             repositoryHelper.WriteAll();
             Console.ReadKey();
-            GameHelper gameHelper = new GameHelper();
-            gameHelper.TowerOfHanoi.Print();
-            Console.ReadKey();
         }
     }
 }

@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\bom.repository\\Bom.Repository.csproj",
-        "projectName": "Bom.Repository",
+        "projectName": "Mov.Bom.Repository",
         "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\bom.repository\\Bom.Repository.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\bom.repository\\obj\\",
@@ -76,7 +76,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\bom.models\\Bom.Models.csproj",
-        "projectName": "Bom.Models",
+        "projectName": "Mov.Bom.Models",
         "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\bom.models\\Bom.Models.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\bom.models\\obj\\",

@@ -11,11 +11,11 @@ namespace Mov
 {
     internal class ConsoleCommandExecuter
     {
-        private readonly ConfiguratorCommandHandler configurator;
+        private readonly ConfiguratorCommandExecuter configurator;
 
         public ConsoleCommandExecuter(IConfiguratorDatabase configuratorDatabase)
         {
-            this.configurator = new ConfiguratorCommandHandler(configuratorDatabase);
+            this.configurator = new ConfiguratorCommandExecuter(configuratorDatabase);
         }
 
         public Response Invoke()

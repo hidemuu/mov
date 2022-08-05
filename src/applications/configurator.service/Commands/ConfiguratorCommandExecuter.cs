@@ -8,14 +8,14 @@ using System.Text;
 
 namespace Mov.Configurator.Service.Commands
 {
-    public class ConfiguratorCommandHandler : CommandHandlerBase<IConfiguratorDatabase>
+    public class ConfiguratorCommandExecuter : CommandExecuterBase<IConfiguratorDatabase>
     {
         protected override IDictionary<string, ICommand<IConfiguratorDatabase>> Handler => new Dictionary<string, ICommand<IConfiguratorDatabase>>() 
         {
             { ConfiguratorCommandKey.WriteConsole.ToString(), new WriteConsoleCommand() },
         };
 
-        public ConfiguratorCommandHandler(IConfiguratorDatabase database) : base(database)
+        public ConfiguratorCommandExecuter(IConfiguratorDatabase database) : base(database)
         {
         }
 

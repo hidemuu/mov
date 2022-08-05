@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Utilities
 {
-    public interface ICommandHandler<T>
+    public interface ICommandExecuter<T>
     {
         Response Invoke(string command);
     }

@@ -3155,11 +3155,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\Bom.Models\\Bom.Models.csproj",
-      "projectName": "Bom.Models",
-      "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\Bom.Models\\Bom.Models.csproj",
+      "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\bom.models\\Bom.Models.csproj",
+      "projectName": "Mov.Bom.Models",
+      "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\bom.models\\Bom.Models.csproj",
       "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\Bom.Models\\obj\\",
+      "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\bom.models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

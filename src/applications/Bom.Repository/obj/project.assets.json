@@ -697,20 +697,6 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "Bom.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Accessors": "1.0.0",
-          "Mov.Utilities": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Bom.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Bom.Models.dll": {}
-        }
-      },
       "Mov.Accessors/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -726,6 +712,20 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Accessors.dll": {}
+        }
+      },
+      "Mov.Bom.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "Mov.Utilities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Bom.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Bom.Models.dll": {}
         }
       },
       "Mov.Utilities/1.0.0": {
@@ -3142,15 +3142,15 @@
         "version.txt"
       ]
     },
-    "Bom.Models/1.0.0": {
-      "type": "project",
-      "path": "../../domains/bom.models/Bom.Models.csproj",
-      "msbuildProject": "../../domains/bom.models/Bom.Models.csproj"
-    },
     "Mov.Accessors/1.0.0": {
       "type": "project",
       "path": "../../infrastructures/accessors/Accessors.csproj",
       "msbuildProject": "../../infrastructures/accessors/Accessors.csproj"
+    },
+    "Mov.Bom.Models/1.0.0": {
+      "type": "project",
+      "path": "../../domains/bom.models/Bom.Models.csproj",
+      "msbuildProject": "../../domains/bom.models/Bom.Models.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",
@@ -3160,7 +3160,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Bom.Models >= 1.0.0",
+      "Mov.Bom.Models >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -3174,7 +3174,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\bom.repository\\Bom.Repository.csproj",
-      "projectName": "Bom.Repository",
+      "projectName": "Mov.Bom.Repository",
       "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\bom.repository\\Bom.Repository.csproj",
       "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\bom.repository\\obj\\",

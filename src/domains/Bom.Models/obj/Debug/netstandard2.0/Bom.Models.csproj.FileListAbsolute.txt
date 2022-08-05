@@ -1,6 +1,3 @@
-C:\Users\nando\Documents\GitHub\mov\src\domains\Bom.Models\bin\Debug\netstandard2.0\Bom.Models.deps.json
-C:\Users\nando\Documents\GitHub\mov\src\domains\Bom.Models\bin\Debug\netstandard2.0\Bom.Models.dll
-C:\Users\nando\Documents\GitHub\mov\src\domains\Bom.Models\bin\Debug\netstandard2.0\Bom.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\domains\Bom.Models\bin\Debug\netstandard2.0\Mov.Accessors.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\Bom.Models\bin\Debug\netstandard2.0\Mov.Utilities.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\Bom.Models\bin\Debug\netstandard2.0\Mov.Accessors.pdb
@@ -10,5 +7,8 @@ C:\Users\nando\Documents\GitHub\mov\src\domains\Bom.Models\obj\Debug\netstandard
 C:\Users\nando\Documents\GitHub\mov\src\domains\Bom.Models\obj\Debug\netstandard2.0\Bom.Models.AssemblyInfo.cs
 C:\Users\nando\Documents\GitHub\mov\src\domains\Bom.Models\obj\Debug\netstandard2.0\Bom.Models.csproj.CoreCompileInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\domains\Bom.Models\obj\Debug\netstandard2.0\Bom.Models.csproj.CopyComplete
-C:\Users\nando\Documents\GitHub\mov\src\domains\Bom.Models\obj\Debug\netstandard2.0\Bom.Models.dll
-C:\Users\nando\Documents\GitHub\mov\src\domains\Bom.Models\obj\Debug\netstandard2.0\Bom.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\src\domains\bom.models\bin\Debug\netstandard2.0\Mov.Bom.Models.deps.json
+C:\Users\nando\Documents\GitHub\mov\src\domains\bom.models\bin\Debug\netstandard2.0\Mov.Bom.Models.dll
+C:\Users\nando\Documents\GitHub\mov\src\domains\bom.models\bin\Debug\netstandard2.0\Mov.Bom.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\src\domains\bom.models\obj\Debug\netstandard2.0\Mov.Bom.Models.dll
+C:\Users\nando\Documents\GitHub\mov\src\domains\bom.models\obj\Debug\netstandard2.0\Mov.Bom.Models.pdb

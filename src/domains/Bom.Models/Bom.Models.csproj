@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Bom.Models</AssemblyName>
+    <RootNamespace>Mov.Bom.Models</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

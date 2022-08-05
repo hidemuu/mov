@@ -7,11 +7,11 @@ namespace Mov.Configurator.Models
 {
     public interface IConfiguratorDatabase
     {
-        DbObjectRepository<Config, ConfigCollection> Configs { get; }
+        IRepository<Config, ConfigCollection> Configs { get; }
 
-        DbObjectRepository<Account, AccountCollection> Accounts { get; }
+        IRepository<Account, AccountCollection> Accounts { get; }
 
-        DbObjectRepository<Translate, TranslateCollection> Translates { get; }
+        IRepository<Translate, TranslateCollection> Translates { get; }
 
     }
 }

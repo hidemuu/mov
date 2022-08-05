@@ -27,15 +27,15 @@ namespace Mov.Driver.Repository
 
         #region プロパティ
 
-        public DbObjectRepository<Error, ErrorCollection> Errors { get; }
+        public IRepository<Error, ErrorCollection> Errors { get; }
 
-        public DbObjectRepository<Macro, MacroCollection> Macros { get; }
+        public IRepository<Macro, MacroCollection> Macros { get; }
 
-        public DbObjectRepository<Variable, VariableCollection> Variables { get; }
+        public IRepository<Variable, VariableCollection> Variables { get; }
 
-        public DbObjectRepository<Schema, SchemaCollection> Schemas { get; }
+        public IRepository<Schema, SchemaCollection> Schemas { get; }
 
-        public DbObjectRepository<Connect, ConnectCollection> Connects { get; }
+        public IRepository<Connect, ConnectCollection> Connects { get; }
 
         #endregion
     }

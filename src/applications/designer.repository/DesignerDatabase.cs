@@ -1,9 +1,5 @@
 ﻿using Mov.Accessors;
 using Mov.Designer.Models;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
 
 namespace Mov.Designer.Repository.Xml
 {
@@ -12,7 +8,6 @@ namespace Mov.Designer.Repository.Xml
     /// </summary>
     public class DesignerDatabase : DbObjectDatabaseBase, IDesignerDatabase
     {
-
         #region コンストラクター
 
         /// <summary>
@@ -31,15 +26,14 @@ namespace Mov.Designer.Repository.Xml
 
         #region プロパティ
 
-        public DbObjectRepository<Shell, ShellCollection> Shells { get; }
+        public IRepository<Shell, ShellCollection> Shells { get; }
 
-        public DbObjectRepository<LayoutNode, LayoutNodeCollection> LayoutNodes { get; }
+        public IRepository<LayoutNode, LayoutNodeCollection> LayoutNodes { get; }
 
-        public DbObjectRepository<Content, ContentCollection> Contents { get; }
+        public IRepository<Content, ContentCollection> Contents { get; }
 
-        public DbObjectRepository<Theme, ThemeCollection> Themes { get; }
+        public IRepository<Theme, ThemeCollection> Themes { get; }
 
-        #endregion
-
+        #endregion プロパティ
     }
 }

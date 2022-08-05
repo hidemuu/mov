@@ -8,7 +8,7 @@ namespace Mov.Accessors
     // <summary>
     /// データベースリポジトリインターフェース
     /// </summary>
-    public interface IRepository<T> where T : DbObject
+    public interface IRepository<T, C> where T : DbObject where C : DbObjectCollection<T>
     {
         /// <summary>
         /// インポート
@@ -103,6 +103,8 @@ namespace Mov.Accessors
         /// </summary>
         /// <param name="item"></param>
         void Delete(T item);
+
+        void Delete(Guid id);
 
         #endregion DELETE
 

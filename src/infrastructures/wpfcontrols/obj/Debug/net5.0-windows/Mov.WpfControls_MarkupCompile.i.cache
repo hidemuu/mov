@@ -16,5 +16,5 @@ TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 213-947300258
 Components\GridListControl.xaml;Components\TreeListView.xaml;CustomControls.xaml;Views\Controls\MenuTab.xaml;Views\Dialogs\AlertDialog.xaml;Views\Dialogs\SuccessDialog.xaml;Views\Dialogs\WarningDialog.xaml;Views\DialogWindow.xaml;
 
-True
+False
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Mov.Game.Models
+namespace Mov.Utilities
 {
     /// <summary>
     /// Nilクラス（空リストを表す）

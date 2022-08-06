@@ -16,5 +16,5 @@ TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 2371513395465
 DesignerDialogView.xaml;DesignerPartsView.xaml;DesignerShellView.xaml;DesignerTableView.xaml;DesignerThemeView.xaml;DesignerTreeView.xaml;DesignerView.xaml;Templates\LayoutNodeTemplate.xaml;
 
-True
+False
 

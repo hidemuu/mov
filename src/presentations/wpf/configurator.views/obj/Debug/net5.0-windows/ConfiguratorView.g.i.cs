@@ -75,7 +75,7 @@ namespace Mov.Configurator.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mov.Configurator.Views;component/configuratorview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mov.Configurator.Views;V1.0.0.0;component/configuratorview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ConfiguratorView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

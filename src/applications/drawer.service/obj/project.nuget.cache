@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "U6r0f/yH33Xo9omQ8XFspeK8l6sL22ppcJnF5vSp50CgWew32u8EgEndv07uD8SP1RuQpFUXJ8L1TpSS4RQFvw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\drawer.service\\Drawer.Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nando\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

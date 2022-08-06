@@ -148,3 +148,11 @@ C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Drawer.
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Drawer.Views.dll
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Drawer.ViewModels.pdb
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Drawer.Views.pdb
+C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Bom.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Bom.Views.dll
+C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Driver.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Driver.Views.dll
+C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Bom.ViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Bom.Views.pdb
+C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Driver.ViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Driver.Views.pdb

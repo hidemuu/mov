@@ -34,12 +34,20 @@ namespace Mov.Wpf.ViewModels
         /// <param name="dialogService"></param>
         public MainWindowViewModel(IRegionManager regionManager, IDialogService dialogService) : base(regionManager, dialogService)
         {
-            Models.Add(new MainWindowModel(0, "Designer", "Home", () => this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "DesignerView")));
-            Models.Add(new MainWindowModel(1, "Game", "blur", () => this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "GameMainView")));
-            Models.Add(new MainWindowModel(2, "Config", "Cog", () => this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "ConfiguratorView")));
-            Models.Add(new MainWindowModel(3, "Auth", "Account", () => this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "AuthorizerView")));
-            Models.Add(new MainWindowModel(4, "Scheduler", "calendar", () => this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "SchedulerView")));
-            Models.Add(new MainWindowModel(5, "Translator", "translate", () => this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "TranslatorView")));
+            Models.Add(new MainWindowModel(0, "Config", "Cog", () =>
+                this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "ConfiguratorView")));
+            Models.Add(new MainWindowModel(1, "Designer", "Home", () => 
+                this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "DesignerView")));
+            Models.Add(new MainWindowModel(2, "Game", "blur", () => 
+                this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "GameMainView")));
+            Models.Add(new MainWindowModel(3, "Draw", "blur", () =>
+                this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "DrawerView")));
+            Models.Add(new MainWindowModel(4, "Auth", "Account", () => 
+                this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "AuthorizerView")));
+            Models.Add(new MainWindowModel(5, "Scheduler", "calendar", () => 
+                this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "SchedulerView")));
+            Models.Add(new MainWindowModel(6, "Translator", "translate", () => 
+                this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, "TranslatorView")));
 
             TabChangeCommand.Subscribe(_ => OnChangeTab()).AddTo(Disposables);
 

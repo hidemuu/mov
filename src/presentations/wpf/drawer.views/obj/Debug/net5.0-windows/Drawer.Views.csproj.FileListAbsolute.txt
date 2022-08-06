@@ -24,10 +24,8 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\bin\Debug
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\bin\Debug\net5.0-windows\Mov.WpfControls.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\bin\Debug\net5.0-windows\Mov.WpfDesigns.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\obj\Debug\net5.0-windows\Drawer.Views.csproj.AssemblyReference.cache
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\obj\Debug\net5.0-windows\CanvasView.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\obj\Debug\net5.0-windows\Mov.Drawer.Views_MarkupCompile.cache
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\obj\Debug\net5.0-windows\Mov.Drawer.Views_MarkupCompile.lref
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\obj\Debug\net5.0-windows\CanvasView.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\obj\Debug\net5.0-windows\Mov.Drawer.Views.g.resources
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\obj\Debug\net5.0-windows\Drawer.Views.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\obj\Debug\net5.0-windows\Drawer.Views.AssemblyInfoInputs.cache
@@ -37,3 +35,5 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\obj\Debug
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\obj\Debug\net5.0-windows\Mov.Drawer.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\obj\Debug\net5.0-windows\ref\Mov.Drawer.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\obj\Debug\net5.0-windows\Mov.Drawer.Views.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\obj\Debug\net5.0-windows\DrawerView.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\obj\Debug\net5.0-windows\DrawerView.baml

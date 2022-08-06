@@ -18,9 +18,9 @@ namespace Mov.Drawer.Views
     /// <summary>
     /// CanvasView.xaml の相互作用ロジック
     /// </summary>
-    public partial class CanvasView : UserControl
+    public partial class DrawerView : UserControl
     {
-        public CanvasView()
+        public DrawerView()
         {
             InitializeComponent();
         }

@@ -20,7 +20,7 @@ using System.Windows.Media.Imaging;
 
 namespace Mov.Drawer.ViewModels
 {
-    public class CanvasViewModel : DrawViewModelBase
+    public class DrawerViewModel : DrawViewModelBase
     {
         #region フィールド
 
@@ -30,7 +30,7 @@ namespace Mov.Drawer.ViewModels
 
         #region プロパティ
 
-        public override DrawModel Model { get; } = new CanvasModel();
+        public override DrawModel Model { get; } = new DrawModel();
         
         protected override DrawServiceBase Service { get; set; }
 
@@ -50,7 +50,7 @@ namespace Mov.Drawer.ViewModels
 
         #region コンストラクター
 
-        public CanvasViewModel(IRegionManager regionManager, IDialogService dialogService, IDrawerDatabase repository) : base(regionManager, dialogService, repository)
+        public DrawerViewModel(IRegionManager regionManager, IDialogService dialogService, IDrawerDatabase repository) : base(regionManager, dialogService, repository)
         {
             this.serviceFactory = new CanvasServiceFactory(this.repository);
             var drawItems = this.repository.DrawItems.Gets();

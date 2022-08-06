@@ -38,6 +38,8 @@ using Mov.WpfControls.ViewModels.Dialogs;
 using Mov.WpfControls.Views;
 using Mov.Drawer.Models;
 using Mov.Drawer.Repository;
+using Mov.Drawer.Views;
+using Mov.Drawer.ViewModels;
 
 namespace Mov.Wpf
 {
@@ -135,6 +137,7 @@ namespace Mov.Wpf
             containerRegistry.RegisterForNavigation<GameConfigView>();
             containerRegistry.RegisterForNavigation<GameCanvasView>();
             containerRegistry.RegisterForNavigation<GameMapView>();
+            containerRegistry.RegisterForNavigation<DrawerView>();
 
             //Dialogの登録
             containerRegistry.RegisterDialog<AlertDialog, AlertDialogViewModel>();
@@ -184,6 +187,7 @@ namespace Mov.Wpf
             ViewModelLocationProvider.Register<GameTitleView, GameTitleViewModel>();
             ViewModelLocationProvider.Register<GameConfigView, GameConfigViewModel>();
             ViewModelLocationProvider.Register<GameCanvasView, GameCanvasViewModel>();
+            ViewModelLocationProvider.Register<DrawerView, DrawerViewModel>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

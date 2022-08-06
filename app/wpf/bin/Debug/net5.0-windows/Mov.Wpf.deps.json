@@ -544,6 +544,16 @@
           "Mov.Bom.Repository.dll": {}
         }
       },
+      "Mov.Bom.ViewModels/1.0.0": {
+        "runtime": {
+          "Mov.Bom.ViewModels.dll": {}
+        }
+      },
+      "Mov.Bom.Views/1.0.0": {
+        "runtime": {
+          "Mov.Bom.Views.dll": {}
+        }
+      },
       "Mov.Configurator.Models/1.0.0": {
         "dependencies": {
           "Mov.Accessors": "1.0.0",
@@ -700,6 +710,16 @@
           "Mov.Driver.Service.dll": {}
         }
       },
+      "Mov.Driver.ViewModels/1.0.0": {
+        "runtime": {
+          "Mov.Driver.ViewModels.dll": {}
+        }
+      },
+      "Mov.Driver.Views/1.0.0": {
+        "runtime": {
+          "Mov.Driver.Views.dll": {}
+        }
+      },
       "Mov.Game.Models/1.0.0": {
         "dependencies": {
           "Mov.Accessors": "1.0.0",
@@ -815,12 +835,16 @@
       "Mov.WpfLib/1.0.0": {
         "dependencies": {
           "Mov.BaseLib": "1.0.0",
+          "Mov.Bom.ViewModels": "1.0.0",
+          "Mov.Bom.Views": "1.0.0",
           "Mov.Configurator.ViewModels": "1.0.0",
           "Mov.Configurator.Views": "1.0.0",
           "Mov.Designer.ViewModels": "1.0.0",
           "Mov.Designer.Views": "1.0.0",
           "Mov.Drawer.ViewModels": "1.0.0",
           "Mov.Drawer.Views": "1.0.0",
+          "Mov.Driver.ViewModels": "1.0.0",
+          "Mov.Driver.Views": "1.0.0",
           "Mov.Game.ViewModels": "1.0.0",
           "Mov.Game.Views": "1.0.0",
           "Mov.Scheduler.ViewModels": "1.0.0",
@@ -1203,6 +1227,16 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Mov.Bom.ViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Bom.Views/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Mov.Configurator.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -1289,6 +1323,16 @@
       "sha512": ""
     },
     "Mov.Driver.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Driver.ViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Driver.Views/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

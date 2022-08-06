@@ -10,7 +10,7 @@ namespace Mov.Configurator.Service.Commands
     {
         public Response Invoke(IConfiguratorDatabase parameter)
         {
-            Console.WriteLine(parameter.Configs.ToString());
+            Console.WriteLine(parameter.UserSettings.ToString());
             return Response.Success;
         }
     }

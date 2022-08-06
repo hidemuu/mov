@@ -105,7 +105,7 @@ namespace Mov.Configurator.ViewModels
 
         private void Import()
         {
-            this.database.Configs.Import();
+            this.database.UserSettings.Import();
             this.database.Accounts.Import();
             this.database.Translates.Import();
         }
@@ -113,7 +113,7 @@ namespace Mov.Configurator.ViewModels
         private void Export()
         {
             PostItems();
-            this.database.Configs.Export();
+            this.database.UserSettings.Export();
             this.database.Accounts.Export();
             this.database.Translates.Export();
         }
@@ -123,7 +123,7 @@ namespace Mov.Configurator.ViewModels
             switch (this.currentComboItem)
             {
                 case DATA_NAME_CONFIG:
-                    this.database.Configs.Put(new Config());
+                    this.database.UserSettings.Put(new UserSetting());
                     BindConfigs();
                     break;
                 case DATA_NAME_ACCOUNTS:
@@ -143,7 +143,7 @@ namespace Mov.Configurator.ViewModels
             switch (this.currentComboItem)
             {
                 case DATA_NAME_CONFIG:
-                    this.database.Configs.Delete((Guid)selectedItem[0].GetValue());
+                    this.database.UserSettings.Delete((Guid)selectedItem[0].GetValue());
                     BindConfigs();
                     break;
                 case DATA_NAME_ACCOUNTS:
@@ -180,12 +180,12 @@ namespace Mov.Configurator.ViewModels
         private void BindConfigs()
         {
             Items.Clear();
-            var properties = Config.GetProperties();
-            foreach (Config item in this.database.Configs?.Gets())
+            var properties = UserSetting.GetProperties();
+            foreach (UserSetting item in this.database.UserSettings?.Gets())
             {
-                Items.Add(GetColumnItems<Config>(properties.Select(x => x.propertyInfo), item).ToArray());
+                Items.Add(GetColumnItems<UserSetting>(properties.Select(x => x.propertyInfo), item).ToArray());
             }
-            Attributes.Value = GetColumnAttributes<Config>(properties.Select(x => x.name)).ToArray();
+            Attributes.Value = GetColumnAttributes<UserSetting>(properties.Select(x => x.name)).ToArray();
         }
 
         private void BindAccounts()
@@ -246,8 +246,8 @@ namespace Mov.Configurator.ViewModels
 
         private void PostConfigs()
         {
-            var configs = GetDbObjects<Config>(Config.GetProperties().Select(x => x.propertyInfo)).ToList();
-            this.database.Configs.Posts(configs);
+            var configs = GetDbObjects<UserSetting>(UserSetting.GetProperties().Select(x => x.propertyInfo)).ToList();
+            this.database.UserSettings.Posts(configs);
         }
 
         private void PostAccounts()

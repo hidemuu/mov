@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.Bom.Views</AssemblyName>
+    <RootNamespace>Mov.Bom.Views</RootNamespace>
+  </PropertyGroup>
+
+</Project>

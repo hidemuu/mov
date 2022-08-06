@@ -1,0 +1,12 @@
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Driver.ViewModels\obj\Debug\net5.0-windows\Driver.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Driver.ViewModels\obj\Debug\net5.0-windows\Driver.ViewModels.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Driver.ViewModels\obj\Debug\net5.0-windows\Driver.ViewModels.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Driver.ViewModels\obj\Debug\net5.0-windows\Driver.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Driver.ViewModels\bin\Debug\net5.0-windows\Mov.Driver.ViewModels.deps.json
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Driver.ViewModels\bin\Debug\net5.0-windows\Mov.Driver.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Driver.ViewModels\bin\Debug\net5.0-windows\ref\Mov.Driver.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Driver.ViewModels\bin\Debug\net5.0-windows\Mov.Driver.ViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Driver.ViewModels\obj\Debug\net5.0-windows\Driver.ViewModels.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Driver.ViewModels\obj\Debug\net5.0-windows\Mov.Driver.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Driver.ViewModels\obj\Debug\net5.0-windows\ref\Mov.Driver.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Driver.ViewModels\obj\Debug\net5.0-windows\Mov.Driver.ViewModels.pdb

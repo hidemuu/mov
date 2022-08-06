@@ -1,0 +1,11 @@
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Bom.ViewModels\obj\Debug\net5.0-windows\Bom.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Bom.ViewModels\obj\Debug\net5.0-windows\Bom.ViewModels.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Bom.ViewModels\obj\Debug\net5.0-windows\Bom.ViewModels.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Bom.ViewModels\obj\Debug\net5.0-windows\Bom.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Bom.ViewModels\bin\Debug\net5.0-windows\Mov.Bom.ViewModels.deps.json
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Bom.ViewModels\bin\Debug\net5.0-windows\Mov.Bom.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Bom.ViewModels\bin\Debug\net5.0-windows\ref\Mov.Bom.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Bom.ViewModels\bin\Debug\net5.0-windows\Mov.Bom.ViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Bom.ViewModels\obj\Debug\net5.0-windows\Mov.Bom.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Bom.ViewModels\obj\Debug\net5.0-windows\ref\Mov.Bom.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Bom.ViewModels\obj\Debug\net5.0-windows\Mov.Bom.ViewModels.pdb

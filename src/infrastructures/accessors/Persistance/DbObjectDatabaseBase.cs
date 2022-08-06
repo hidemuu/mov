@@ -1,45 +1,44 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Mov.Accessors
 {
-    /// <summary>
-    /// リポジトリコレクションのベースクラス
-    /// </summary>
-    public abstract class DbObjectDatabaseBase
+    public abstract class DbObjectDatabaseBase<T>
     {
         #region フィールド
 
-        /// <summary>
-        /// ベースパス
-        /// </summary>
-        protected readonly string dir;
-        /// <summary>
-        /// 拡張子
-        /// </summary>
-        protected readonly string extension;
+        private readonly string resourceDir;
 
         #endregion フィールド
 
-        /// <summary>
-        /// コンストラクター
-        /// </summary>
-        /// <param name="dir"></param>
-        /// <param name="extension"></param>
-        public DbObjectDatabaseBase(string dir, string extension)
+        #region コンストラクター
+
+        public DbObjectDatabaseBase(string resourceDir)
         {
-            this.dir = dir;
-            this.extension = extension;
+            this.resourceDir = resourceDir;
         }
+
+        #endregion コンストラクター
+
+        #region プロパティ
+
+        public IDictionary<string, T> Repositories { get; protected set; }
+
+        #endregion プロパティ
 
         #region メソッド
 
-        /// <summary>
-        /// 相対パスを取得
-        /// </summary>
-        /// <param name="fileName">ファイル名</param>
-        /// <returns></returns>
-        protected string GetRelativePath(string fileName) => fileName + "." + this.extension;
-
         #endregion メソッド
+
+        #region 内部メソッド
+
+        private IEnumerable<string> GetDirectories()
+        {
+            return new List<string>();
+        }
+
+        #endregion 内部メソッド
+
     }
 }

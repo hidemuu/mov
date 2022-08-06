@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Drawer.Repository
 {
-    public class DrawerDatabase : DbObjectDatabaseBase, IDrawerDatabase
+    public class DrawerDatabase : DbObjectRepositoryBase, IDrawerDatabase
     {
         #region コンストラクター
 

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Mov.Game.Repository
 {
-    public class GameDatabase : DbObjectDatabaseBase, IGameDatabase
+    public class GameDatabase : DbObjectRepositoryBase, IGameDatabase
     {
         #region コンストラクター
 

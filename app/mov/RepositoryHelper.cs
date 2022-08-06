@@ -42,7 +42,7 @@ namespace Mov
             Console.WriteLine(Designer.LayoutNodes.ToString());
             Console.WriteLine(Designer.Shells.ToString());
             Console.WriteLine(Designer.Contents.ToString());
-            Console.WriteLine(Configurator.UserSettings.ToString());
+            Console.WriteLine(Configurator.Repositories[""].UserSettings.ToString());
         }
 
         #endregion メソッド

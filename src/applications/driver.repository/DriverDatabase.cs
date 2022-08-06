@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Driver.Repository
 {
-    public class DriverDatabase : DbObjectDatabaseBase, IDriverDatabase
+    public class DriverDatabase : DbObjectRepositoryBase, IDriverDatabase
     {
         #region コンストラクター
 

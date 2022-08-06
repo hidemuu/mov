@@ -11,37 +11,22 @@ namespace Mov.Configurator.Repository
     /// <summary>
     /// コンフィグレーションデータのリポジトリ
     /// </summary>
-    public class ConfiguratorDatabase : DbObjectDatabaseBase, IConfiguratorDatabase
+    public class ConfiguratorDatabase : DbObjectDatabaseBase<IConfiguratorRepository>, IConfiguratorDatabase
     {
         #region コンストラクター
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ConfiguratorDatabase(string resourceDir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
+        public ConfiguratorDatabase(string resourceDir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir)
         {
-            UserSettings = new DbObjectRepository<UserSetting, UserSettingCollection>(this.dir, GetRelativePath("config"), encode);
-            Accounts = new DbObjectRepository<Account, AccountCollection>(this.dir, GetRelativePath("account"), encode);
-            Translates = new DbObjectRepository<Translate, TranslateCollection>(this.dir, GetRelativePath("translate"), encode);
-            Icons = new DbObjectRepository<Icon, IconCollection>(this.dir, GetRelativePath("icon"), encode);
+            Repositories = new Dictionary<string, IConfiguratorRepository>()
+            {
+                { "", new ConfiguratorRepository(resourceDir, extension, encode) },
+            };
         }
 
         #endregion コンストラクター
-
-        #region プロパティ
-
-        /// <summary>
-        /// 設定のリポジトリ
-        /// </summary>
-        public IRepository<UserSetting, UserSettingCollection> UserSettings { get; }
-
-        public IRepository<Account, AccountCollection> Accounts { get; }
-
-        public IRepository<Translate, TranslateCollection> Translates { get; }
-
-        public IRepository<Icon, IconCollection> Icons { get; }
-
-        #endregion プロパティ
 
     }
 }

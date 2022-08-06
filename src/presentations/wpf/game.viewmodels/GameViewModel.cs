@@ -19,7 +19,7 @@ using System.Windows.Media.Imaging;
 
 namespace Mov.Game.ViewModels
 {
-    public class GameMainViewModel : RegionViewModelBase
+    public class GameViewModel : RegionViewModelBase
     {
         #region フィールド
 
@@ -44,7 +44,7 @@ namespace Mov.Game.ViewModels
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public GameMainViewModel(IRegionManager regionManager, IDialogService dialogService, IMachineGameService gameService) : base(regionManager, dialogService)
+        public GameViewModel(IRegionManager regionManager, IDialogService dialogService, IMachineGameService gameService) : base(regionManager, dialogService)
         {
             this.gameService = gameService;
 

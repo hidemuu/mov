@@ -613,6 +613,23 @@
           "bin/placeholder/Mov.Drawer.Service.dll": {}
         }
       },
+      "Mov.Drawer.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Drawer.Service": "1.0.0",
+          "Mov.WpfControls": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Drawer.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Drawer.ViewModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Mov.Game.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1825,6 +1842,11 @@
       "path": "../../../applications/drawer.service/Drawer.Service.csproj",
       "msbuildProject": "../../../applications/drawer.service/Drawer.Service.csproj"
     },
+    "Mov.Drawer.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../drawer.viewmodels/Drawer.ViewModels.csproj",
+      "msbuildProject": "../drawer.viewmodels/Drawer.ViewModels.csproj"
+    },
     "Mov.Game.Models/1.0.0": {
       "type": "project",
       "path": "../../../domains/game.models/Game.Models.csproj",
@@ -1858,6 +1880,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
+      "Mov.Drawer.ViewModels >= 1.0.0",
       "Mov.Game.Service >= 1.0.0",
       "Mov.WpfControls >= 1.0.0"
     ]
@@ -1904,6 +1927,9 @@
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.viewmodels\\Drawer.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.viewmodels\\Drawer.ViewModels.csproj"
             }
           }
         }

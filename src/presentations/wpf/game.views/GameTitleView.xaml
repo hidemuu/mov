@@ -59,10 +59,6 @@
                 Margin="10"
                 Command="{Binding ConfigCommand}"
                 Content="Config" />
-            <Button
-                Margin="10"
-                Command="{Binding CanvasCommand}"
-                Content="Canvas" />
         </StackPanel>
     </Grid>
 </UserControl>

@@ -131,10 +131,9 @@ namespace Mov.Wpf
             containerRegistry.RegisterForNavigation<DesignerPartsView>();
             containerRegistry.RegisterForNavigation<DesignerThemeView>();
             containerRegistry.RegisterForNavigation<SchedulerView>();
-            containerRegistry.RegisterForNavigation<GameMainView>();
+            containerRegistry.RegisterForNavigation<GameView>();
             containerRegistry.RegisterForNavigation<GameTitleView>();
             containerRegistry.RegisterForNavigation<GameConfigView>();
-            containerRegistry.RegisterForNavigation<GameCanvasView>();
             containerRegistry.RegisterForNavigation<GameMapView>();
             containerRegistry.RegisterForNavigation<DrawerView>();
 
@@ -181,11 +180,10 @@ namespace Mov.Wpf
             ViewModelLocationProvider.Register<DesignerPartsView, DesignerPartsViewModel>();
             ViewModelLocationProvider.Register<DesignerThemeView, DesignerThemeViewModel>();
             ViewModelLocationProvider.Register<SchedulerView, SchedulerViewModel>();
-            ViewModelLocationProvider.Register<GameMainView, GameMainViewModel>();
+            ViewModelLocationProvider.Register<GameView, GameViewModel>();
             ViewModelLocationProvider.Register<GameMapView, GameMapViewModel>();
             ViewModelLocationProvider.Register<GameTitleView, GameTitleViewModel>();
             ViewModelLocationProvider.Register<GameConfigView, GameConfigViewModel>();
-            ViewModelLocationProvider.Register<GameCanvasView, GameCanvasViewModel>();
             ViewModelLocationProvider.Register<DrawerView, DrawerViewModel>();
         }
 

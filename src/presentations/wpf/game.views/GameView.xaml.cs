@@ -19,9 +19,9 @@ namespace Mov.Game.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class GameMainView : UserControl
+    public partial class GameView : UserControl
     {
-        public GameMainView()
+        public GameView()
         {
             InitializeComponent();
         }

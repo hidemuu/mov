@@ -8,16 +8,13 @@
     <Page Update="Dialogs\StageClearDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="GameCanvasView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="GameConfigView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GameMapView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="GameMainView.xaml">
+    <Page Update="GameView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GameTitleView.xaml">

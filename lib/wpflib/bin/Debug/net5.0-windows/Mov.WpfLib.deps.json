@@ -765,6 +765,7 @@
       },
       "Mov.Game.ViewModels/1.0.0": {
         "dependencies": {
+          "Mov.Drawer.ViewModels": "1.0.0",
           "Mov.Game.Service": "1.0.0",
           "Mov.WpfControls": "1.0.0"
         },

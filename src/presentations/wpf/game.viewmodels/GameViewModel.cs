@@ -1,7 +1,6 @@
 using Mov.Game.Models;
 using Mov.Game.Models.Engines;
 using Mov.Game.Service;
-using Mov.Game.ViewModels.Models;
 using Mov.WpfControls.ViewModels;
 using Prism.Mvvm;
 using Prism.Regions;
@@ -29,7 +28,6 @@ namespace Mov.Game.ViewModels
 
         #region プロパティ
 
-        public GameMainModel Models { get; } = new GameMainModel();
 
         #endregion プロパティ
 

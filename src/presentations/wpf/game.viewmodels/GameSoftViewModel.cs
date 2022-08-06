@@ -5,7 +5,6 @@ using Mov.Game.Models.Engines;
 using Mov.Game.Models.interfaces;
 using Mov.Game.Service;
 using Mov.Game.Service.Machine;
-using Mov.Game.ViewModels.Models;
 using Prism.Mvvm;
 using Prism.Regions;
 using Prism.Services.Dialogs;
@@ -32,7 +31,7 @@ namespace Mov.Game.ViewModels
         #endregion フィールド
 
         #region プロパティ
-        public override GameMapModel Model { get; } = new GameMapModel();
+        public override GameSoftModel Model { get; } = new GameSoftModel();
         
         protected override DrawServiceBase Service { get; set; }
 

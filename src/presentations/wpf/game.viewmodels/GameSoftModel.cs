@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace Mov.Game.ViewModels.Models
+namespace Mov.Game.ViewModels
 {
-    public class GameMapModel : DrawModel
+    public class GameSoftModel : DrawModel
     {
 
         public ReactivePropertySlim<int> Life { get; set; } = new ReactivePropertySlim<int>();

@@ -750,6 +750,7 @@
       },
       "Mov.Game.ViewModels/1.0.0": {
         "dependencies": {
+          "Mov.Designer.ViewModels": "1.0.0",
           "Mov.Drawer.ViewModels": "1.0.0",
           "Mov.Game.Service": "1.0.0",
           "Mov.WpfControls": "1.0.0"
@@ -760,6 +761,7 @@
       },
       "Mov.Game.Views/1.0.0": {
         "dependencies": {
+          "Mov.Designer.Views": "1.0.0",
           "Mov.Game.ViewModels": "1.0.0"
         },
         "runtime": {

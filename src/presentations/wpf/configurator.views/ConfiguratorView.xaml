@@ -68,10 +68,10 @@
         </StackPanel>
         <wpfcontrols:GridListControl
             Grid.Row="1"
-            Attributes="{Binding Attributes.Value}"
-            Items="{Binding Items}"
-            SelectedItem="{Binding SelectedItem}"
             AddCommand="{Binding AddCommand}"
-            DeleteCommand="{Binding DeleteCommand}"/>
+            Attributes="{Binding Attributes.Value}"
+            DeleteCommand="{Binding DeleteCommand}"
+            Items="{Binding Items}"
+            SelectedItem="{Binding SelectedItem}" />
     </Grid>
 </UserControl>

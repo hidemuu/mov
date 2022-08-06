@@ -1,17 +1,17 @@
-﻿using Mov.Game.Models;
-using Mov.Game.Models.interfaces;
+﻿using Mov.Drawer.Models;
+using Mov.Drawer.Service;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Game.Service.Canvas
+namespace Mov.Drawer.Service.Canvas
 {
     public class SierpinskiCurveService : CanvasServiceBase
     {
         
         #region コンストラクター
 
-        public SierpinskiCurveService(IGameDatabase repository) : base(repository)
+        public SierpinskiCurveService(IDrawerDatabase repository) : base(repository)
         {
         }
 

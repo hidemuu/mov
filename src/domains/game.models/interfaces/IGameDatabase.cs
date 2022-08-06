@@ -9,6 +9,5 @@ namespace Mov.Game.Models.interfaces
     public interface IGameDatabase
     {
         IRepository<Landmark, LandmarkCollection> Landmarks { get; }
-        IRepository<DrawItem, DrawItemCollection> DrawItems { get; }
     }
 }

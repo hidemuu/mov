@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
-namespace Mov.Game.Service
+namespace Mov.Drawer.Service
 {
     public interface ICanvasService
     {

@@ -1,12 +1,12 @@
-﻿using Mov.Game.Models.interfaces;
+﻿using Mov.Drawer.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace Mov.Game.Service.Canvas
+namespace Mov.Drawer.Service
 {
-    public class CanvasServiceFactory
+    public class DrawServiceFactory
     {
         #region 定数
 
@@ -18,14 +18,14 @@ namespace Mov.Game.Service.Canvas
 
         private readonly string baseName;
 
-        private readonly IGameDatabase repository;
+        private readonly IDrawerDatabase repository;
 
         #endregion フィールド
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public CanvasServiceFactory(IGameDatabase repository)
+        public DrawServiceFactory(IDrawerDatabase repository)
         {
             this.baseName = this.GetType().Namespace;
             this.repository = repository;
@@ -33,16 +33,16 @@ namespace Mov.Game.Service.Canvas
 
         #region メソッド
 
-        public CanvasServiceBase Create(string code)
+        public DrawServiceBase Create(string code)
         {
-            
+
             Type type = Type.GetType(baseName + "." + code + BASE_TYPE_NAME);
             if (type == null)
             {
                 Debug.Assert(false, type.FullName);
                 return null;
             };
-            return (CanvasServiceBase)Activator.CreateInstance(type, this.repository);
+            return (DrawServiceBase)Activator.CreateInstance(type, this.repository);
         }
 
         #endregion メソッド

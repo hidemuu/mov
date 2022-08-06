@@ -1,12 +1,11 @@
-﻿using Mov.Game.Models.interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Game.Service
+namespace Mov.Drawer.Service
 {
     public abstract class DrawServiceBase
     {

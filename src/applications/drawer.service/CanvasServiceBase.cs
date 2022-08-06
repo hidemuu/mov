@@ -1,6 +1,5 @@
-﻿using Mov.Game.Models;
-using Mov.Game.Models.Engines;
-using Mov.Game.Models.interfaces;
+﻿using Mov.Drawer.Models;
+using Mov.Drawer.Service;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,7 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Game.Service.Canvas
+namespace Mov.Drawer.Service
 {
     public abstract class CanvasServiceBase : DrawServiceBase, ICanvasService
     {
@@ -18,7 +17,7 @@ namespace Mov.Game.Service.Canvas
         /// <summary>
         /// リポジトリ
         /// </summary>
-        protected IGameDatabase Repository { get; private set; }
+        protected IDrawerDatabase Repository { get; private set; }
 
         /// <summary>
         /// 描画エンジン
@@ -29,7 +28,7 @@ namespace Mov.Game.Service.Canvas
 
         #region コンストラクター
 
-        public CanvasServiceBase(IGameDatabase repository) : base()
+        public CanvasServiceBase(IDrawerDatabase repository) : base()
         {
             this.Repository = repository;
             this.DrawEngine = new DrawEngine();

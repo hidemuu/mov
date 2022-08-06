@@ -30,3 +30,9 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\De
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Utilities.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.WpfControls.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.WpfControls.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Drawer.Models.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Drawer.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Drawer.Service.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Drawer.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Drawer.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Drawer.Service.pdb

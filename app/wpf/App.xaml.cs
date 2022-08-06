@@ -36,6 +36,8 @@ using Mov.Game.Service.Machine;
 using Mov.WpfControls.Views.Dialogs;
 using Mov.WpfControls.ViewModels.Dialogs;
 using Mov.WpfControls.Views;
+using Mov.Drawer.Models;
+using Mov.Drawer.Repository;
 
 namespace Mov.Wpf
 {
@@ -114,7 +116,8 @@ namespace Mov.Wpf
             containerRegistry.RegisterInstance<IConfiguratorDatabase>(new ConfiguratorDatabase(resourcePath, "json"));
             containerRegistry.RegisterInstance<IDesignerDatabase>(new DesignerDatabase(resourcePath, "xml"));
             containerRegistry.RegisterInstance<IGameDatabase>(new GameDatabase(resourcePath, "json"));
-            
+            containerRegistry.RegisterInstance<IDrawerDatabase>(new DrawerDatabase(resourcePath, "json"));
+
             //サービスの登録
             containerRegistry.RegisterInstance<IMachineGameService>(Container.Resolve<PackmanGameService>());
 

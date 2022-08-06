@@ -7,16 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\applications\bom.repository\Bom.Repository.csproj" />
     <ProjectReference Include="..\..\src\applications\configurator.repository\Configurator.Repository.csproj" />
     <ProjectReference Include="..\..\src\applications\configurator.service\Configurator.Service.csproj" />
     <ProjectReference Include="..\..\src\applications\designer.repository\Designer.Repository.csproj" />
     <ProjectReference Include="..\..\src\applications\designer.service\Designer.Service.csproj" />
+    <ProjectReference Include="..\..\src\applications\driver.repository\Driver.Repository.csproj" />
+    <ProjectReference Include="..\..\src\applications\driver.service\Driver.Service.csproj" />
     <ProjectReference Include="..\..\src\applications\game.repository\Game.Repository.csproj" />
     <ProjectReference Include="..\..\src\applications\game.service\Game.Service.csproj" />
     <ProjectReference Include="..\..\src\applications\scheduler.repository\Scheduler.Repository.csproj" />
     <ProjectReference Include="..\..\src\applications\scheduler.service\Scheduler.Service.csproj" />
+    <ProjectReference Include="..\..\src\domains\bom.models\Bom.Models.csproj" />
     <ProjectReference Include="..\..\src\domains\configurator.models\Configurator.Models.csproj" />
     <ProjectReference Include="..\..\src\domains\designer.models\Designer.Models.csproj" />
+    <ProjectReference Include="..\..\src\domains\driver.models\Driver.Models.csproj" />
     <ProjectReference Include="..\..\src\domains\game.models\Game.Models.csproj" />
     <ProjectReference Include="..\..\src\domains\scheduler.models\Scheduler.Models.csproj" />
     <ProjectReference Include="..\..\src\infrastructures\accessors\Accessors.csproj" />

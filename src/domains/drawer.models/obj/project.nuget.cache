@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Cs6xyeSnhxfHJB07BZhZ4eJEYB88vRNHvTlh0sikyD9zOgLOJPHkThLEY9V3TXQTTpVLDPqZj9e9VXFhz3torw==",
+  "dgSpecHash": "lANp2npDDo23hZpXGqr73tAPG6WL0Rtb5rxksKbgrVBbc1BbdG/bN+yaHvq1rY9Rv3syKR86RzRa33NtQFr8KA==",
   "success": true,
   "projectFilePath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\drawer.models\\Drawer.Models.csproj",
   "expectedPackageFiles": [
@@ -33,6 +33,7 @@
     "C:\\Users\\nando\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
+    "C:\\Users\\nando\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\system.dynamic.runtime\\4.3.0\\system.dynamic.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\nando\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",

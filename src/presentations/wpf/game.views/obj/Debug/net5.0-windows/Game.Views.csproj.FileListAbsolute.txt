@@ -49,3 +49,9 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\n
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\GameMapView.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Utilities.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Utilities.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Drawer.Models.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Drawer.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Drawer.Service.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Drawer.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Drawer.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Drawer.Service.pdb

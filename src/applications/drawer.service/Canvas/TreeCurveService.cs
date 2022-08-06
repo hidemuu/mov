@@ -1,11 +1,11 @@
-﻿using Mov.Game.Models;
-using Mov.Game.Models.interfaces;
+﻿using Mov.Drawer.Models;
+using Mov.Drawer.Service;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
-namespace Mov.Game.Service.Canvas
+namespace Mov.Drawer.Service.Canvas
 {
     public class TreeCurveService : CanvasServiceBase
     {
@@ -20,7 +20,7 @@ namespace Mov.Game.Service.Canvas
 
         #region コンストラクター
 
-        public TreeCurveService(IGameDatabase repository) : base(repository)
+        public TreeCurveService(IDrawerDatabase repository) : base(repository)
         {
             
         }

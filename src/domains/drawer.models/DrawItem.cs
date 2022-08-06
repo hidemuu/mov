@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Game.Models
+namespace Mov.Drawer.Models
 {
     public class DrawItemCollection : DbObjectCollection<DrawItem>
     {

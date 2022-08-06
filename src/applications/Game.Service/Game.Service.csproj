@@ -11,8 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\domains\game.models\Game.Models.csproj" />
-    <ProjectReference Include="..\..\infrastructures\utilities\Utilities.csproj" />
+    <ProjectReference Include="..\drawer.service\Drawer.Service.csproj" />
     <ProjectReference Include="..\game.repository\Game.Repository.csproj" />
   </ItemGroup>
 

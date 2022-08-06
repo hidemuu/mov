@@ -1,7 +1,8 @@
-﻿using Mov.Game.Models;
+﻿using Mov.Drawer.Models;
+using Mov.Drawer.Service;
+using Mov.Game.Models;
 using Mov.Game.Models.interfaces;
 using Mov.Game.Service;
-using Mov.Game.Service.Canvas;
 using Mov.Game.ViewModels.Models;
 using Prism.Mvvm;
 using Prism.Regions;
@@ -25,6 +26,8 @@ namespace Mov.Game.ViewModels
     public class GameCanvasViewModel : DrawViewModelBase
     {
         #region フィールド
+
+        private readonly IDrawerDatabase drawerDatabase;
 
         private CanvasServiceFactory serviceFactory;
         
@@ -52,8 +55,9 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public GameCanvasViewModel(IRegionManager regionManager, IDialogService dialogService, IGameDatabase repository) : base(regionManager, dialogService, repository)
+        public GameCanvasViewModel(IRegionManager regionManager, IDialogService dialogService, IGameDatabase repository, IDrawerDatabase drawerDatabase) : base(regionManager, dialogService, repository)
         {
+            this.drawerDatabase = drawerDatabase;
             DrawCommand.Subscribe(OnDrawCommand).AddTo(Disposables);
         }
 
@@ -63,8 +67,8 @@ namespace Mov.Game.ViewModels
 
         protected override void Initialize()
         {
-            this.serviceFactory = new CanvasServiceFactory(this.repository);
-            var drawItems = repository.DrawItems.Gets();
+            this.serviceFactory = new CanvasServiceFactory(this.drawerDatabase);
+            var drawItems = this.drawerDatabase.DrawItems.Gets();
             var drawItem = drawItems.FirstOrDefault(x => x.Index == 0);
             CreateService(drawItem);
             Canvases.AddRangeOnScheduler(drawItems.Select(x => x.Category));

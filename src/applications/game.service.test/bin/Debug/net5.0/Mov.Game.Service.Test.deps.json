@@ -960,6 +960,32 @@
           "Mov.Accessors.dll": {}
         }
       },
+      "Mov.Drawer.Models/1.0.0": {
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "runtime": {
+          "Mov.Drawer.Models.dll": {}
+        }
+      },
+      "Mov.Drawer.Repository/1.0.0": {
+        "dependencies": {
+          "Mov.Drawer.Models": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Drawer.Repository.dll": {}
+        }
+      },
+      "Mov.Drawer.Service/1.0.0": {
+        "dependencies": {
+          "Mov.Drawer.Repository": "1.0.0",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "runtime": {
+          "Mov.Drawer.Service.dll": {}
+        }
+      },
       "Mov.Game.Models/1.0.0": {
         "dependencies": {
           "Mov.Accessors": "1.0.0",
@@ -980,9 +1006,8 @@
       },
       "Mov.Game.Service/1.0.0": {
         "dependencies": {
-          "Mov.Game.Models": "1.0.0",
+          "Mov.Drawer.Service": "1.0.0",
           "Mov.Game.Repository": "1.0.0",
-          "Mov.Utilities": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "runtime": {
@@ -1549,6 +1574,21 @@
       "hashPath": "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
     },
     "Mov.Accessors/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Drawer.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Drawer.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Drawer.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

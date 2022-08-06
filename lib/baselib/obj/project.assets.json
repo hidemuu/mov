@@ -784,6 +784,32 @@
           "bin/placeholder/Mov.Accessors.dll": {}
         }
       },
+      "Mov.Bom.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Bom.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Bom.Models.dll": {}
+        }
+      },
+      "Mov.Bom.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Bom.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Bom.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Bom.Repository.dll": {}
+        }
+      },
       "Mov.Configurator.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -868,6 +894,84 @@
           "bin/placeholder/Mov.Designer.Service.dll": {}
         }
       },
+      "Mov.Drawer.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Drawer.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Drawer.Models.dll": {}
+        }
+      },
+      "Mov.Drawer.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Drawer.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Drawer.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Drawer.Repository.dll": {}
+        }
+      },
+      "Mov.Drawer.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Drawer.Repository": "1.0.0",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Drawer.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Drawer.Service.dll": {}
+        }
+      },
+      "Mov.Driver.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Driver.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Driver.Models.dll": {}
+        }
+      },
+      "Mov.Driver.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "Mov.Driver.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Driver.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Driver.Repository.dll": {}
+        }
+      },
+      "Mov.Driver.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Driver.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Driver.Service.dll": {}
+        }
+      },
       "Mov.Game.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -900,9 +1004,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Game.Models": "1.0.0",
+          "Mov.Drawer.Service": "1.0.0",
           "Mov.Game.Repository": "1.0.0",
-          "Mov.Utilities": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -3537,6 +3640,16 @@
       "path": "../../src/infrastructures/accessors/Accessors.csproj",
       "msbuildProject": "../../src/infrastructures/accessors/Accessors.csproj"
     },
+    "Mov.Bom.Models/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/bom.models/Bom.Models.csproj",
+      "msbuildProject": "../../src/domains/bom.models/Bom.Models.csproj"
+    },
+    "Mov.Bom.Repository/1.0.0": {
+      "type": "project",
+      "path": "../../src/applications/bom.repository/Bom.Repository.csproj",
+      "msbuildProject": "../../src/applications/bom.repository/Bom.Repository.csproj"
+    },
     "Mov.Configurator.Models/1.0.0": {
       "type": "project",
       "path": "../../src/domains/configurator.models/Configurator.Models.csproj",
@@ -3566,6 +3679,36 @@
       "type": "project",
       "path": "../../src/applications/designer.service/Designer.Service.csproj",
       "msbuildProject": "../../src/applications/designer.service/Designer.Service.csproj"
+    },
+    "Mov.Drawer.Models/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/drawer.models/Drawer.Models.csproj",
+      "msbuildProject": "../../src/domains/drawer.models/Drawer.Models.csproj"
+    },
+    "Mov.Drawer.Repository/1.0.0": {
+      "type": "project",
+      "path": "../../src/applications/drawer.repository/Drawer.Repository.csproj",
+      "msbuildProject": "../../src/applications/drawer.repository/Drawer.Repository.csproj"
+    },
+    "Mov.Drawer.Service/1.0.0": {
+      "type": "project",
+      "path": "../../src/applications/drawer.service/Drawer.Service.csproj",
+      "msbuildProject": "../../src/applications/drawer.service/Drawer.Service.csproj"
+    },
+    "Mov.Driver.Models/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/driver.models/Driver.Models.csproj",
+      "msbuildProject": "../../src/domains/driver.models/Driver.Models.csproj"
+    },
+    "Mov.Driver.Repository/1.0.0": {
+      "type": "project",
+      "path": "../../src/applications/driver.repository/Driver.Repository.csproj",
+      "msbuildProject": "../../src/applications/driver.repository/Driver.Repository.csproj"
+    },
+    "Mov.Driver.Service/1.0.0": {
+      "type": "project",
+      "path": "../../src/applications/driver.service/Driver.Service.csproj",
+      "msbuildProject": "../../src/applications/driver.service/Driver.Service.csproj"
     },
     "Mov.Game.Models/1.0.0": {
       "type": "project",
@@ -3611,12 +3754,17 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "Mov.Accessors >= 1.0.0",
+      "Mov.Bom.Models >= 1.0.0",
+      "Mov.Bom.Repository >= 1.0.0",
       "Mov.Configurator.Models >= 1.0.0",
       "Mov.Configurator.Repository >= 1.0.0",
       "Mov.Configurator.Service >= 1.0.0",
       "Mov.Designer.Models >= 1.0.0",
       "Mov.Designer.Repository >= 1.0.0",
       "Mov.Designer.Service >= 1.0.0",
+      "Mov.Driver.Models >= 1.0.0",
+      "Mov.Driver.Repository >= 1.0.0",
+      "Mov.Driver.Service >= 1.0.0",
       "Mov.Game.Models >= 1.0.0",
       "Mov.Game.Repository >= 1.0.0",
       "Mov.Game.Service >= 1.0.0",
@@ -3665,6 +3813,9 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\bom.repository\\Bom.Repository.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\bom.repository\\Bom.Repository.csproj"
+            },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\configurator.repository\\Configurator.Repository.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\configurator.repository\\Configurator.Repository.csproj"
             },
@@ -3676,6 +3827,12 @@
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.service\\Designer.Service.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.service\\Designer.Service.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\driver.repository\\Driver.Repository.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\driver.repository\\Driver.Repository.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\driver.service\\Driver.Service.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\driver.service\\Driver.Service.csproj"
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.repository\\Game.Repository.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.repository\\Game.Repository.csproj"
@@ -3689,11 +3846,17 @@
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\scheduler.service\\Scheduler.Service.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\scheduler.service\\Scheduler.Service.csproj"
             },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\bom.models\\Bom.Models.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\bom.models\\Bom.Models.csproj"
+            },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\configurator.models\\Configurator.Models.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\configurator.models\\Configurator.Models.csproj"
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\designer.models\\Designer.Models.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\designer.models\\Designer.Models.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\driver.models\\Driver.Models.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\driver.models\\Driver.Models.csproj"
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\game.models\\Game.Models.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\game.models\\Game.Models.csproj"

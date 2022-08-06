@@ -10,12 +10,17 @@
       "Mov.BaseLib/1.0.0": {
         "dependencies": {
           "Mov.Accessors": "1.0.0",
+          "Mov.Bom.Models": "1.0.0",
+          "Mov.Bom.Repository": "1.0.0",
           "Mov.Configurator.Models": "1.0.0",
           "Mov.Configurator.Repository": "1.0.0",
           "Mov.Configurator.Service": "1.0.0",
           "Mov.Designer.Models": "1.0.0",
           "Mov.Designer.Repository": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
+          "Mov.Driver.Models": "1.0.0",
+          "Mov.Driver.Repository": "1.0.0",
+          "Mov.Driver.Service": "1.0.0",
           "Mov.Game.Models": "1.0.0",
           "Mov.Game.Repository": "1.0.0",
           "Mov.Game.Service": "1.0.0",
@@ -677,6 +682,22 @@
           "Mov.Accessors.dll": {}
         }
       },
+      "Mov.Bom.Models/1.0.0": {
+        "dependencies": {
+          "Mov.Accessors": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Bom.Models.dll": {}
+        }
+      },
+      "Mov.Bom.Repository/1.0.0": {
+        "dependencies": {
+          "Mov.Bom.Models": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Bom.Repository.dll": {}
+        }
+      },
       "Mov.Configurator.Models/1.0.0": {
         "dependencies": {
           "Mov.Accessors": "1.0.0",
@@ -731,6 +752,54 @@
           "Mov.Designer.Service.dll": {}
         }
       },
+      "Mov.Drawer.Models/1.0.0": {
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "runtime": {
+          "Mov.Drawer.Models.dll": {}
+        }
+      },
+      "Mov.Drawer.Repository/1.0.0": {
+        "dependencies": {
+          "Mov.Drawer.Models": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Drawer.Repository.dll": {}
+        }
+      },
+      "Mov.Drawer.Service/1.0.0": {
+        "dependencies": {
+          "Mov.Drawer.Repository": "1.0.0",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "runtime": {
+          "Mov.Drawer.Service.dll": {}
+        }
+      },
+      "Mov.Driver.Models/1.0.0": {
+        "dependencies": {
+          "Mov.Accessors": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Driver.Models.dll": {}
+        }
+      },
+      "Mov.Driver.Repository/1.0.0": {
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "Mov.Driver.Models": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Driver.Repository.dll": {}
+        }
+      },
+      "Mov.Driver.Service/1.0.0": {
+        "runtime": {
+          "Mov.Driver.Service.dll": {}
+        }
+      },
       "Mov.Game.Models/1.0.0": {
         "dependencies": {
           "Mov.Accessors": "1.0.0",
@@ -751,9 +820,8 @@
       },
       "Mov.Game.Service/1.0.0": {
         "dependencies": {
-          "Mov.Game.Models": "1.0.0",
+          "Mov.Drawer.Service": "1.0.0",
           "Mov.Game.Repository": "1.0.0",
-          "Mov.Utilities": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "runtime": {
@@ -1223,6 +1291,16 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Mov.Bom.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Bom.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Mov.Configurator.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -1249,6 +1327,36 @@
       "sha512": ""
     },
     "Mov.Designer.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Drawer.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Drawer.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Drawer.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Driver.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Driver.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Driver.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

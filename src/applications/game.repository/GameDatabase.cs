@@ -18,7 +18,6 @@ namespace Mov.Game.Repository
         public GameDatabase(string resourceDir, string extension, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
         {
             Landmarks = new DbObjectRepository<Landmark, LandmarkCollection>(this.dir, GetRelativePath("landmark"), encoding);
-            DrawItems = new DbObjectRepository<DrawItem, DrawItemCollection>(this.dir, GetRelativePath("draw_item"), encoding);
         }
 
         #endregion コンストラクター
@@ -26,8 +25,6 @@ namespace Mov.Game.Repository
         #region プロパティ
 
         public IRepository<Landmark, LandmarkCollection> Landmarks { get; }
-
-        public IRepository<DrawItem, DrawItemCollection> DrawItems { get; }
 
         #endregion プロパティ
     }

@@ -7,8 +7,4 @@
     <RootNamespace>Mov.Scheduler.Views</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\" />
-  </ItemGroup>
-
 </Project>

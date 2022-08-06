@@ -25,7 +25,7 @@ using System.Windows.Media.Imaging;
 
 namespace Mov.Game.ViewModels
 {
-    public class GameMapViewModel : DrawViewModelBase
+    public class GameSoftViewModel : DrawViewModelBase
     {
         #region フィールド
 
@@ -53,7 +53,7 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public GameMapViewModel(IRegionManager regionManager, IDialogService dialogService, IDrawerDatabase repository, IGameDatabase gameDatabase, IMachineGameService gameService) : base(regionManager, dialogService, repository)
+        public GameSoftViewModel(IRegionManager regionManager, IDialogService dialogService, IDrawerDatabase repository, IGameDatabase gameDatabase, IMachineGameService gameService) : base(regionManager, dialogService, repository)
         {
             KeyUpCommand.Subscribe(() => OnKeyUp()).AddTo(Disposables);
             KeyGestureEnterCommand.Subscribe(() => OnKeyGestureEnter()).AddTo(Disposables);

@@ -24,30 +24,40 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBlock
-            Grid.Row="0"
-            Margin="20,0,20,0"
-            VerticalAlignment="Center"
-            FontSize="25"
-            FontWeight="Bold"
-            Foreground="#3F487F"
-            Text="MovGame" />
         <StackPanel
-            Grid.Row="1"
+            Grid.Row="0"
             HorizontalAlignment="Left"
-            Orientation="Vertical">
+            Orientation="Horizontal">
+            <TextBlock
+                Margin="5"
+                FontSize="25"
+                Text="Soft : " />
             <ComboBox
-                Name="selectMapLv"
+                Name="selectSoft"
+                Width="200"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Right"
+                VerticalContentAlignment="Bottom"
+                FontSize="20"
+                ItemsSource="{Binding Softs}"
+                SelectedItem="{Binding SelectedSoft.Value}" />
+            <TextBlock
+                Margin="5"
+                FontSize="25"
+                Text="Lv : " />
+            <ComboBox
+                Name="selectLv"
                 Width="100"
-                Height="30"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Right"
+                VerticalContentAlignment="Bottom"
+                FontSize="20"
                 ItemsSource="{Binding Levels}"
                 SelectedItem="{Binding SelectedLevel.Value}" />
         </StackPanel>
         <StackPanel
-            Grid.Row="2"
+            Grid.Row="1"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Orientation="Horizontal">
@@ -55,10 +65,6 @@
                 Margin="10"
                 Command="{Binding StartCommand}"
                 Content="Start" />
-            <Button
-                Margin="10"
-                Command="{Binding ConfigCommand}"
-                Content="Config" />
         </StackPanel>
     </Grid>
 </UserControl>

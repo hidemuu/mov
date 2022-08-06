@@ -133,8 +133,7 @@ namespace Mov.Wpf
             containerRegistry.RegisterForNavigation<SchedulerView>();
             containerRegistry.RegisterForNavigation<GameView>();
             containerRegistry.RegisterForNavigation<GameTitleView>();
-            containerRegistry.RegisterForNavigation<GameConfigView>();
-            containerRegistry.RegisterForNavigation<GameMapView>();
+            containerRegistry.RegisterForNavigation<GameSoftView>();
             containerRegistry.RegisterForNavigation<DrawerView>();
 
             //Dialogの登録
@@ -181,9 +180,8 @@ namespace Mov.Wpf
             ViewModelLocationProvider.Register<DesignerThemeView, DesignerThemeViewModel>();
             ViewModelLocationProvider.Register<SchedulerView, SchedulerViewModel>();
             ViewModelLocationProvider.Register<GameView, GameViewModel>();
-            ViewModelLocationProvider.Register<GameMapView, GameMapViewModel>();
+            ViewModelLocationProvider.Register<GameSoftView, GameSoftViewModel>();
             ViewModelLocationProvider.Register<GameTitleView, GameTitleViewModel>();
-            ViewModelLocationProvider.Register<GameConfigView, GameConfigViewModel>();
             ViewModelLocationProvider.Register<DrawerView, DrawerViewModel>();
         }
 

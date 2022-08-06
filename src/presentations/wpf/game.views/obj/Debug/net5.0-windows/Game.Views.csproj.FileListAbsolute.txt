@@ -24,13 +24,11 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\n
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Game.Views.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Dialogs\GameOverDialog.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Dialogs\StageClearDialog.g.cs
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\GameConfigView.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\GameTitleView.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Mov.Game.Views_MarkupCompile.cache
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Mov.Game.Views_MarkupCompile.lref
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Dialogs\GameOverDialog.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Dialogs\StageClearDialog.baml
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\GameConfigView.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\GameTitleView.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Mov.Game.Views.g.resources
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Game.Views.GeneratedMSBuildEditorConfig.editorconfig
@@ -41,8 +39,6 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\n
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Mov.Game.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\ref\Mov.Game.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Mov.Game.Views.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\GameMapView.g.cs
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\GameMapView.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Utilities.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Utilities.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Drawer.Models.dll
@@ -55,3 +51,5 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\n
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Drawer.ViewModels.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\GameView.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\GameView.baml
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\GameSoftView.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\GameSoftView.baml

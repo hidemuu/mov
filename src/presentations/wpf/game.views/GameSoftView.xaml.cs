@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Mov.Game.Views
 {
     /// <summary>
-    /// ConfigView.xaml の相互作用ロジック
+    /// GameView.xaml の相互作用ロジック
     /// </summary>
-    public partial class GameConfigView : UserControl
+    public partial class GameSoftView : UserControl
     {
-        public GameConfigView()
+        public GameSoftView()
         {
             InitializeComponent();
         }

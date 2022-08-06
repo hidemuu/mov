@@ -25,6 +25,10 @@ namespace Mov.Game.ViewModels
         #region プロパティ
         public IRegionManager RegionManager { get; }
 
+        public ReactiveCollection<string> Softs { get; } = new ReactiveCollection<string>();
+
+        public ReactivePropertySlim<string> SelectedSoft { get; } = new ReactivePropertySlim<string>();
+
         public ReactiveCollection<int> Levels { get; } = new ReactiveCollection<int>();
 
         public ReactivePropertySlim<int> SelectedLevel { get; } = new ReactivePropertySlim<int>();
@@ -34,7 +38,6 @@ namespace Mov.Game.ViewModels
         #region コマンド
 
         public ReactiveCommand StartCommand { get; } = new ReactiveCommand();
-        public ReactiveCommand ConfigCommand { get; } = new ReactiveCommand();
 
         #endregion コマンド
 
@@ -45,9 +48,12 @@ namespace Mov.Game.ViewModels
             this.RegionManager = regionManager;
             this.gameService = gameService;
             StartCommand.Subscribe(OnStartCommand).AddTo(Disposables);
-            ConfigCommand.Subscribe(OnConfigCommand).AddTo(Disposables); ;
+            Softs.AddRangeOnScheduler(new string[] { GameViewConstants.VIEW_NAME_SOFT });
+            SelectedSoft.Value = GameViewConstants.VIEW_NAME_SOFT;
+            SelectedSoft.Where(x => !string.IsNullOrEmpty(x)).Subscribe(OnSoftSelectChanged).AddTo(Disposables);
             Levels.AddRangeOnScheduler(gameService.GetLevels());
-            SelectedLevel.Where(x => x > 0).Subscribe(OnLevelSelectChanged);
+            SelectedLevel.Value = 1;
+            SelectedLevel.Where(x => x > 0).Subscribe(OnLevelSelectChanged).AddTo(Disposables);
         }
 
         #endregion コンストラクター
@@ -57,12 +63,12 @@ namespace Mov.Game.ViewModels
         private void OnStartCommand()
         {
             if(SelectedLevel.Value > 0) this.gameService.SetLevel(SelectedLevel.Value);
-            this.RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_MAP);
+            this.RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, SelectedSoft.Value);
         }
 
-        private void OnConfigCommand()
+        private void OnSoftSelectChanged(string soft)
         {
-            this.RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_CONFIG);
+
         }
 
         private void OnLevelSelectChanged(int lv)

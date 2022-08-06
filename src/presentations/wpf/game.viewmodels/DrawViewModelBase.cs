@@ -1,4 +1,5 @@
-﻿using Mov.Drawer.Service;
+﻿using Mov.Drawer.Models;
+using Mov.Drawer.Service;
 using Mov.Game.Models.interfaces;
 using Mov.Game.Service;
 using Mov.Game.ViewModels.Models;
@@ -26,7 +27,7 @@ namespace Mov.Game.ViewModels
     {
         #region フィールド
 
-        protected readonly IGameDatabase repository;
+        protected readonly IDrawerDatabase repository;
 
         private Bitmap bitmap;
         private Graphics graphics;
@@ -43,23 +44,14 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public DrawViewModelBase(IRegionManager regionManager, IDialogService dialogService, IGameDatabase repository) : base(regionManager, dialogService)
+        public DrawViewModelBase(IRegionManager regionManager, IDialogService dialogService, IDrawerDatabase repository) : base(regionManager, dialogService)
         {
             this.repository = repository;
-
-            Initialize();
         }
 
         #endregion コンストラクター
 
         #region メソッド
-
-        protected virtual void Initialize()
-        {
-            this.bitmap = new Bitmap(Service.FrameWidth, Service.FrameHeight);
-            this.graphics = Graphics.FromImage(bitmap);
-
-        }
 
         protected override void Dispose(bool disposing)
         {
@@ -101,13 +93,20 @@ namespace Mov.Game.ViewModels
 
         protected override void OnLoaded()
         {
+            this.bitmap = new Bitmap(Service.FrameWidth, Service.FrameHeight);
+            this.graphics = Graphics.FromImage(bitmap);
             Start();
+        }
+
+        public override void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            base.OnNavigatedTo(navigationContext);
         }
 
         private void OnTimer()
         {
-            this.Service.Draw(graphics);
-            var hbitmap = bitmap.GetHbitmap();
+            this.Service.Draw(this.graphics);
+            var hbitmap = this.bitmap.GetHbitmap();
             //モデル生成
             Model.ImageSource.Value = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hbitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
             Update();

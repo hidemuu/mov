@@ -84,3 +84,7 @@ C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Bom.
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Driver.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Driver.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Driver.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Drawer.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Drawer.Views.dll
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Drawer.ViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Drawer.Views.pdb

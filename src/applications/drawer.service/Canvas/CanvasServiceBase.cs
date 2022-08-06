@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Drawer.Service
+namespace Mov.Drawer.Service.Canvas
 {
     public abstract class CanvasServiceBase : DrawServiceBase, ICanvasService
     {

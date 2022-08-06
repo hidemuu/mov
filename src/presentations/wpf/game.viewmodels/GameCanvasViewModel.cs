@@ -1,5 +1,6 @@
 ﻿using Mov.Drawer.Models;
 using Mov.Drawer.Service;
+using Mov.Drawer.Service.Canvas;
 using Mov.Game.Models;
 using Mov.Game.Models.interfaces;
 using Mov.Game.Service;
@@ -27,8 +28,6 @@ namespace Mov.Game.ViewModels
     {
         #region フィールド
 
-        private readonly IDrawerDatabase drawerDatabase;
-
         private CanvasServiceFactory serviceFactory;
         
         #endregion フィールド
@@ -55,26 +54,20 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public GameCanvasViewModel(IRegionManager regionManager, IDialogService dialogService, IGameDatabase repository, IDrawerDatabase drawerDatabase) : base(regionManager, dialogService, repository)
+        public GameCanvasViewModel(IRegionManager regionManager, IDialogService dialogService, IDrawerDatabase repository) : base(regionManager, dialogService, repository)
         {
-            this.drawerDatabase = drawerDatabase;
+            this.serviceFactory = new CanvasServiceFactory(this.repository);
+            var drawItems = this.repository.DrawItems.Gets();
+            var drawItem = drawItems.FirstOrDefault(x => x.Index == 0);
+            CreateService(drawItem);
+            Canvases.AddRangeOnScheduler(drawItems.Select(x => x.Category));
+            RefleshRate.Value = drawItem.RefleshRate;
             DrawCommand.Subscribe(OnDrawCommand).AddTo(Disposables);
         }
 
         #endregion コンストラクター
 
         #region メソッド
-
-        protected override void Initialize()
-        {
-            this.serviceFactory = new CanvasServiceFactory(this.drawerDatabase);
-            var drawItems = this.drawerDatabase.DrawItems.Gets();
-            var drawItem = drawItems.FirstOrDefault(x => x.Index == 0);
-            CreateService(drawItem);
-            Canvases.AddRangeOnScheduler(drawItems.Select(x => x.Category));
-            RefleshRate.Value = drawItem.RefleshRate;
-            base.Initialize();
-        }
 
         private void CreateService(DrawItem drawItem)
         {

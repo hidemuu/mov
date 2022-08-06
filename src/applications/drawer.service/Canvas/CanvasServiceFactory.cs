@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace Mov.Drawer.Service
+namespace Mov.Drawer.Service.Canvas
 {
     public class CanvasServiceFactory
     {

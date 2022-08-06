@@ -876,6 +876,39 @@
           "bin/placeholder/Mov.Drawer.Service.dll": {}
         }
       },
+      "Mov.Drawer.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Drawer.Service": "1.0.0",
+          "Mov.WpfControls": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Drawer.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Drawer.ViewModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.Drawer.Views/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Drawer.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Drawer.Views.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Drawer.Views.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Mov.Driver.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -2399,6 +2432,16 @@
       "path": "../../src/applications/drawer.service/Drawer.Service.csproj",
       "msbuildProject": "../../src/applications/drawer.service/Drawer.Service.csproj"
     },
+    "Mov.Drawer.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../src/presentations/wpf/drawer.viewmodels/Drawer.ViewModels.csproj",
+      "msbuildProject": "../../src/presentations/wpf/drawer.viewmodels/Drawer.ViewModels.csproj"
+    },
+    "Mov.Drawer.Views/1.0.0": {
+      "type": "project",
+      "path": "../../src/presentations/wpf/drawer.views/Drawer.Views.csproj",
+      "msbuildProject": "../../src/presentations/wpf/drawer.views/Drawer.Views.csproj"
+    },
     "Mov.Driver.Models/1.0.0": {
       "type": "project",
       "path": "../../src/domains/driver.models/Driver.Models.csproj",
@@ -2492,6 +2535,8 @@
       "Mov.Configurator.Views >= 1.0.0",
       "Mov.Designer.ViewModels >= 1.0.0",
       "Mov.Designer.Views >= 1.0.0",
+      "Mov.Drawer.ViewModels >= 1.0.0",
+      "Mov.Drawer.Views >= 1.0.0",
       "Mov.Game.ViewModels >= 1.0.0",
       "Mov.Game.Views >= 1.0.0",
       "Mov.Scheduler.ViewModels >= 1.0.0",
@@ -2557,6 +2602,12 @@
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.views\\Designer.Views.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.views\\Designer.Views.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.viewmodels\\Drawer.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.viewmodels\\Drawer.ViewModels.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.views\\Drawer.Views.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.views\\Drawer.Views.csproj"
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.viewmodels\\Game.ViewModels.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.viewmodels\\Game.ViewModels.csproj"

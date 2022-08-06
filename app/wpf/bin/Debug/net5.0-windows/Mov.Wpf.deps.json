@@ -661,6 +661,23 @@
           "Mov.Drawer.Service.dll": {}
         }
       },
+      "Mov.Drawer.ViewModels/1.0.0": {
+        "dependencies": {
+          "Mov.Drawer.Service": "1.0.0",
+          "Mov.WpfControls": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Drawer.ViewModels.dll": {}
+        }
+      },
+      "Mov.Drawer.Views/1.0.0": {
+        "dependencies": {
+          "Mov.Drawer.ViewModels": "1.0.0"
+        },
+        "runtime": {
+          "Mov.Drawer.Views.dll": {}
+        }
+      },
       "Mov.Driver.Models/1.0.0": {
         "dependencies": {
           "Mov.Accessors": "1.0.0"
@@ -802,6 +819,8 @@
           "Mov.Configurator.Views": "1.0.0",
           "Mov.Designer.ViewModels": "1.0.0",
           "Mov.Designer.Views": "1.0.0",
+          "Mov.Drawer.ViewModels": "1.0.0",
+          "Mov.Drawer.Views": "1.0.0",
           "Mov.Game.ViewModels": "1.0.0",
           "Mov.Game.Views": "1.0.0",
           "Mov.Scheduler.ViewModels": "1.0.0",
@@ -1245,6 +1264,16 @@
       "sha512": ""
     },
     "Mov.Drawer.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Drawer.ViewModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mov.Drawer.Views/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

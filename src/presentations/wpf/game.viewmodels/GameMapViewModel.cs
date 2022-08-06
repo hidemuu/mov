@@ -1,4 +1,5 @@
-﻿using Mov.Drawer.Service;
+﻿using Mov.Drawer.Models;
+using Mov.Drawer.Service;
 using Mov.Game.Models.Engines;
 using Mov.Game.Models.interfaces;
 using Mov.Game.Service;
@@ -51,7 +52,7 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public GameMapViewModel(IRegionManager regionManager, IDialogService dialogService, IGameDatabase repository, IMachineGameService gameService) : base(regionManager, dialogService, repository)
+        public GameMapViewModel(IRegionManager regionManager, IDialogService dialogService, IDrawerDatabase repository, IGameDatabase gameDatabase, IMachineGameService gameService) : base(regionManager, dialogService, repository)
         {
             KeyUpCommand.Subscribe(() => OnKeyUp()).AddTo(Disposables);
             KeyGestureEnterCommand.Subscribe(() => OnKeyGestureEnter()).AddTo(Disposables);
@@ -61,17 +62,12 @@ namespace Mov.Game.ViewModels
             KeyGestureDownCommand.Subscribe(() => OnKeyGestureDown()).AddTo(Disposables);
             KeyGestureLeftCommand.Subscribe(() => OnKeyGestureLeft()).AddTo(Disposables);
             KeyGestureRightCommand.Subscribe(() => OnKeyGestureRight()).AddTo(Disposables);
+            Service = new PackmanGameService(gameDatabase);
         }
 
         #endregion コンストラクター
 
         #region メソッド
-
-        protected override void Initialize()
-        {
-            Service = new PackmanGameService(repository);
-            base.Initialize();
-        }
 
         protected override void Update()
         {
@@ -107,6 +103,7 @@ namespace Mov.Game.ViewModels
                             packmanGameService.Wait();
                         }
                     });
+                    Stop();
                 }
                 //ステージクリアー時
                 if (packmanGameService.IsStageClear)

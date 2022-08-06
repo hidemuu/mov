@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Bom.Models
+namespace Mov.Bom.Models
 {
-    public interface IStockerRepository
+    public interface IBomDatabase
     {
         /// <summary>
         /// Returns the customers repository.

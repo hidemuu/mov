@@ -1,4 +1,4 @@
-﻿using Bom.Models;
+﻿using Mov.Bom.Models;
 using Mov.Accessors;
 using Mov.Accessors.Serializer;
 using System;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bom.Repository.Rest
+namespace Mov.Bom.Repository.Rest
 {
     /// <summary>
     /// Contains methods for interacting with the products backend using REST. 

@@ -1,7 +1,7 @@
 ﻿using Mov.Utilities;
 using System;
 
-namespace Bom.Models
+namespace Mov.Bom.Models
 {
     /// <summary>
     /// Contains constant values you'll need to insert before running the sample. 

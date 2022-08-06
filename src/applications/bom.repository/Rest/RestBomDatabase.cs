@@ -1,15 +1,15 @@
-﻿using Bom.Models;
+﻿using Mov.Bom.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Bom.Repository.Rest
+namespace Mov.Bom.Repository.Rest
 {
-    public class RestStockerRepository : IStockerRepository
+    public class RestBomDatabase : IBomDatabase
     {
         private readonly string _url;
 
-        public RestStockerRepository(string url)
+        public RestBomDatabase(string url)
         {
             _url = url;
         }

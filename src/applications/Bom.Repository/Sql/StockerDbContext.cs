@@ -1,10 +1,10 @@
-﻿using Bom.Models;
+﻿using Mov.Bom.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Bom.Repository.Sql
+namespace Mov.Bom.Repository.Sql
 {
     public class StockerDbContext : DbContext
     {

@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Bom.Models
+namespace Mov.Bom.Models
 {
     /// <summary>
     /// Represents a line item (product + quantity) on an order.

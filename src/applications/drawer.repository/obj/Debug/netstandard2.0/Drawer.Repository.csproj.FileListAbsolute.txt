@@ -1,0 +1,8 @@
+C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.repository\bin\Debug\netstandard2.0\Mov.Drawer.Repository.deps.json
+C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.repository\bin\Debug\netstandard2.0\Mov.Drawer.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.repository\bin\Debug\netstandard2.0\Mov.Drawer.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.repository\obj\Debug\netstandard2.0\Drawer.Repository.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.repository\obj\Debug\netstandard2.0\Drawer.Repository.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.repository\obj\Debug\netstandard2.0\Drawer.Repository.csproj.CoreCompileInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.repository\obj\Debug\netstandard2.0\Mov.Drawer.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.repository\obj\Debug\netstandard2.0\Mov.Drawer.Repository.pdb

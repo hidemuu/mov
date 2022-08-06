@@ -1,16 +1,16 @@
-﻿using Bom.Models;
+﻿using Mov.Bom.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Bom.Repository.Sql
+namespace Mov.Bom.Repository.Sql
 {
-    public class SqlStockerRepository : IStockerRepository
+    public class SqlBomDatabase : IBomDatabase
     {
         private readonly DbContextOptions<StockerDbContext> _dbOptions;
 
-        public SqlStockerRepository(DbContextOptionsBuilder<StockerDbContext>
+        public SqlBomDatabase(DbContextOptionsBuilder<StockerDbContext>
             dbOptionsBuilder)
         {
             _dbOptions = dbOptionsBuilder.Options;

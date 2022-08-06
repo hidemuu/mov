@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Bom.Models
+namespace Mov.Bom.Models
 {
     /// <summary>
     /// Represents a customer order.

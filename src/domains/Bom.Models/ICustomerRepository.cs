@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bom.Models
+namespace Mov.Bom.Models
 {
     /// <summary>
     /// Defines methods for interacting with the customers backend.

@@ -1,4 +1,4 @@
-﻿using Bom.Models;
+﻿using Mov.Bom.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bom.Repository.Sql
+namespace Mov.Bom.Repository.Sql
 {
     /// <summary>
     /// Contains methods for interacting with the customers backend using 

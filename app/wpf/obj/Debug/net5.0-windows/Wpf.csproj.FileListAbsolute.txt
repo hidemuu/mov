@@ -96,12 +96,10 @@ C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Utiliti
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.WpfControls.pdb
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.WpfDesigns.pdb
 C:\Users\nando\Documents\GitHub\mov\app\wpf\obj\Debug\net5.0-windows\Wpf.csproj.AssemblyReference.cache
-C:\Users\nando\Documents\GitHub\mov\app\wpf\obj\Debug\net5.0-windows\Views\MainWindow.g.cs
 C:\Users\nando\Documents\GitHub\mov\app\wpf\obj\Debug\net5.0-windows\App.g.cs
 C:\Users\nando\Documents\GitHub\mov\app\wpf\obj\Debug\net5.0-windows\Mov.Wpf_MarkupCompile.cache
 C:\Users\nando\Documents\GitHub\mov\app\wpf\obj\Debug\net5.0-windows\Mov.Wpf_MarkupCompile.lref
 C:\Users\nando\Documents\GitHub\mov\app\wpf\obj\Debug\net5.0-windows\App.baml
-C:\Users\nando\Documents\GitHub\mov\app\wpf\obj\Debug\net5.0-windows\Views\MainWindow.baml
 C:\Users\nando\Documents\GitHub\mov\app\wpf\obj\Debug\net5.0-windows\Mov.Wpf.g.resources
 C:\Users\nando\Documents\GitHub\mov\app\wpf\obj\Debug\net5.0-windows\Wpf.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\nando\Documents\GitHub\mov\app\wpf\obj\Debug\net5.0-windows\Wpf.AssemblyInfoInputs.cache
@@ -156,3 +154,5 @@ C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Bom.Vie
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Bom.Views.pdb
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Driver.ViewModels.pdb
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Driver.Views.pdb
+C:\Users\nando\Documents\GitHub\mov\app\wpf\obj\Debug\net5.0-windows\MainWindow.g.cs
+C:\Users\nando\Documents\GitHub\mov\app\wpf\obj\Debug\net5.0-windows\MainWindow.baml

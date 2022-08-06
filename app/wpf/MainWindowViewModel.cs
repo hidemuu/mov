@@ -1,4 +1,4 @@
-﻿using Mov.Wpf.Models;
+﻿using Mov.Wpf;
 using Mov.WpfControls.ViewModels;
 using Prism.Regions;
 using Prism.Services.Dialogs;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Reactive.Concurrency;
 using System.Threading;
 
-namespace Mov.Wpf.ViewModels
+namespace Mov.Wpf
 {
     public class MainWindowViewModel : RegionViewModelBase
     {

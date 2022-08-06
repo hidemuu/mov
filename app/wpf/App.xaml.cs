@@ -14,7 +14,6 @@ using Mov.Game.Views;
 using Mov.Scheduler.ViewModels;
 using Mov.Scheduler.Views;
 using Mov.Utilities;
-using Mov.Wpf.ViewModels;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Mvvm;

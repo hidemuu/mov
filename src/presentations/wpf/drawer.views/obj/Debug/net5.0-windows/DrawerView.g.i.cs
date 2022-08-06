@@ -90,7 +90,7 @@ namespace Mov.Drawer.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Mov.Drawer.Views;component/drawerview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Mov.Drawer.Views;V1.0.0.0;component/drawerview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\DrawerView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

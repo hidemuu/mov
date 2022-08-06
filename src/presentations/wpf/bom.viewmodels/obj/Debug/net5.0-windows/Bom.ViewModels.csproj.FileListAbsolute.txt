@@ -9,3 +9,4 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Bom.ViewModels\bin\Deb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Bom.ViewModels\obj\Debug\net5.0-windows\Mov.Bom.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Bom.ViewModels\obj\Debug\net5.0-windows\ref\Mov.Bom.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Bom.ViewModels\obj\Debug\net5.0-windows\Mov.Bom.ViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\obj\Debug\net5.0-windows\Bom.ViewModels.csproj.AssemblyReference.cache

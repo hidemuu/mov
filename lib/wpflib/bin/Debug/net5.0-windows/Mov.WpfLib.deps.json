@@ -727,12 +727,16 @@
         }
       },
       "Mov.Driver.Service/1.0.0": {
+        "dependencies": {
+          "Mov.Driver.Repository": "1.0.0"
+        },
         "runtime": {
           "Mov.Driver.Service.dll": {}
         }
       },
       "Mov.Driver.ViewModels/1.0.0": {
         "dependencies": {
+          "Mov.Designer.ViewModels": "1.0.0",
           "Mov.Driver.Service": "1.0.0",
           "Mov.WpfControls": "1.0.0"
         },
@@ -742,6 +746,7 @@
       },
       "Mov.Driver.Views/1.0.0": {
         "dependencies": {
+          "Mov.Designer.Views": "1.0.0",
           "Mov.Driver.ViewModels": "1.0.0"
         },
         "runtime": {
@@ -778,7 +783,6 @@
       },
       "Mov.Game.ViewModels/1.0.0": {
         "dependencies": {
-          "Mov.Designer.ViewModels": "1.0.0",
           "Mov.Drawer.ViewModels": "1.0.0",
           "Mov.Game.Service": "1.0.0",
           "Mov.WpfControls": "1.0.0"
@@ -789,7 +793,6 @@
       },
       "Mov.Game.Views/1.0.0": {
         "dependencies": {
-          "Mov.Designer.Views": "1.0.0",
           "Mov.Game.ViewModels": "1.0.0"
         },
         "runtime": {

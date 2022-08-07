@@ -19,11 +19,13 @@ namespace Mov.Configurator.ViewModels
     {
         #region 定数
 
-        private const string DATA_NAME_CONFIG = "Config";
+        private const string DATA_NAME_USER_SETTINGS = "UserSetting";
 
         private const string DATA_NAME_ACCOUNTS = "Account";
 
         private const string DATA_NAME_TRANSLATES = "Translate";
+
+        private const string DATA_NAME_ICONS = "Icon";
 
         #endregion 定数
 
@@ -31,9 +33,9 @@ namespace Mov.Configurator.ViewModels
 
         private readonly IConfiguratorDatabase database;
 
-        private string currentComboItem;
+        private IConfiguratorRepository repository;
 
-        private string dirName = "";
+        private string currentComboItem;
 
         #endregion フィールド
 
@@ -44,10 +46,10 @@ namespace Mov.Configurator.ViewModels
 
         public ReactiveCollection<string> ComboItems { get; } = new ReactiveCollection<string>()
         {
-            DATA_NAME_CONFIG, DATA_NAME_ACCOUNTS, DATA_NAME_TRANSLATES,
+            DATA_NAME_USER_SETTINGS, DATA_NAME_ACCOUNTS, DATA_NAME_TRANSLATES, DATA_NAME_ICONS,
         };
 
-        public ReactivePropertySlim<string> SelectedComboItem { get; } = new ReactivePropertySlim<string>(DATA_NAME_CONFIG);
+        public ReactivePropertySlim<string> SelectedComboItem { get; } = new ReactivePropertySlim<string>(DATA_NAME_USER_SETTINGS);
 
         public ReactivePropertySlim<ColumnItem[]> SelectedItem { get; } = new ReactivePropertySlim<ColumnItem[]>();
 
@@ -73,6 +75,7 @@ namespace Mov.Configurator.ViewModels
         public ConfiguratorViewModel(IRegionManager regionManager, IDialogService dialogService, IConfiguratorDatabase database) : base(regionManager, dialogService)
         {
             this.database = database;
+            this.repository = database.GetRepository("");
             //サブスクライブ
             SelectedComboItem.Subscribe(OnSelectedComboItemChanged).AddTo(Disposables);
             ImportCommand.Subscribe(Import).AddTo(Disposables);
@@ -107,27 +110,26 @@ namespace Mov.Configurator.ViewModels
 
         private void Import()
         {
-            var repository = this.database.GetRepository(this.dirName);
             repository.UserSettings.Import();
             repository.Accounts.Import();
             repository.Translates.Import();
+            repository.Icons.Import();
         }
 
         private void Export()
         {
             PostItems();
-            var repository = this.database.GetRepository(this.dirName);
             repository.UserSettings.Export();
             repository.Accounts.Export();
             repository.Translates.Export();
+            repository.Icons.Export();
         }
 
         private void Add(object parameter)
         {
-            var repository = this.database.GetRepository(this.dirName);
             switch (this.currentComboItem)
             {
-                case DATA_NAME_CONFIG:
+                case DATA_NAME_USER_SETTINGS:
                     repository.UserSettings.Put(new UserSetting());
                     BindConfigs();
                     break;
@@ -139,16 +141,19 @@ namespace Mov.Configurator.ViewModels
                     repository.Translates.Put(new Translate());
                     BindTranslates();
                     break;
+                case DATA_NAME_ICONS:
+                    repository.Icons.Put(new Icon());
+                    BindIcons();
+                    break;
             }
         }
 
         private void Delete(object parameter)
         {
-            var repository = this.database.GetRepository(this.dirName);
             var selectedItem = SelectedItem.Value;
             switch (this.currentComboItem)
             {
-                case DATA_NAME_CONFIG:
+                case DATA_NAME_USER_SETTINGS:
                     repository.UserSettings.Delete((Guid)selectedItem[0].GetValue());
                     BindConfigs();
                     break;
@@ -159,6 +164,10 @@ namespace Mov.Configurator.ViewModels
                 case DATA_NAME_TRANSLATES:
                     repository.Translates.Delete((Guid)selectedItem[0].GetValue());
                     BindTranslates();
+                    break;
+                case DATA_NAME_ICONS:
+                    repository.Icons.Delete((Guid)selectedItem[0].GetValue());
+                    BindIcons();
                     break;
             }
         }
@@ -171,7 +180,7 @@ namespace Mov.Configurator.ViewModels
         {
             switch (selectedItem)
             {
-                case DATA_NAME_CONFIG:
+                case DATA_NAME_USER_SETTINGS:
                     BindConfigs();
                     break;
                 case DATA_NAME_ACCOUNTS:
@@ -180,6 +189,9 @@ namespace Mov.Configurator.ViewModels
                 case DATA_NAME_TRANSLATES:
                     BindTranslates();
                     break;
+                case DATA_NAME_ICONS:
+                    BindIcons();
+                    break;
             }
         }
 
@@ -187,7 +199,7 @@ namespace Mov.Configurator.ViewModels
         {
             Items.Clear();
             var properties = UserSetting.GetProperties();
-            foreach (UserSetting item in this.database.GetRepository(this.dirName)?.UserSettings?.Gets())
+            foreach (UserSetting item in this.repository?.UserSettings?.Gets())
             {
                 Items.Add(GetColumnItems<UserSetting>(properties.Select(x => x.propertyInfo), item).ToArray());
             }
@@ -198,7 +210,7 @@ namespace Mov.Configurator.ViewModels
         {
             Items.Clear();
             var properties = Account.GetProperties();
-            foreach (Account item in this.database.GetRepository(this.dirName)?.Accounts?.Gets())
+            foreach (Account item in this.repository?.Accounts?.Gets())
             {
                 Items.Add(GetColumnItems<Account>(properties.Select(x => x.propertyInfo), item).ToArray());
             }
@@ -209,14 +221,24 @@ namespace Mov.Configurator.ViewModels
         {
             Items.Clear();
             var properties = Translate.GetProperties();
-            foreach (Translate item in this.database.GetRepository(this.dirName)?.Translates?.Gets())
+            foreach (Translate item in this.repository?.Translates?.Gets())
             {
                 Items.Add(GetColumnItems<Translate>(properties.Select(x => x.propertyInfo), item).ToArray());
             }
             Attributes.Value = GetColumnAttributes<Translate>(properties.Select(x => x.name)).ToArray();
         }
 
-        
+        private void BindIcons()
+        {
+            Items.Clear();
+            var properties = Icon.GetProperties();
+            foreach (Icon item in this.repository?.Icons?.Gets())
+            {
+                Items.Add(GetColumnItems<Icon>(properties.Select(x => x.propertyInfo), item).ToArray());
+            }
+            Attributes.Value = GetColumnAttributes<Icon>(properties.Select(x => x.name)).ToArray();
+        }
+
 
         private IEnumerable<ColumnItem> GetColumnItems<T>(IEnumerable<PropertyInfo> propertyInfos, T item)
         {
@@ -238,7 +260,7 @@ namespace Mov.Configurator.ViewModels
         {
             switch (currentComboItem)
             {
-                case DATA_NAME_CONFIG:
+                case DATA_NAME_USER_SETTINGS:
                     PostConfigs();
                     break;
                 case DATA_NAME_ACCOUNTS:
@@ -247,25 +269,34 @@ namespace Mov.Configurator.ViewModels
                 case DATA_NAME_TRANSLATES:
                     PostTranslates();
                     break;
+                case DATA_NAME_ICONS:
+                    PostIcons();
+                    break;
             }
         }
 
         private void PostConfigs()
         {
             var configs = GetDbObjects<UserSetting>(UserSetting.GetProperties().Select(x => x.propertyInfo)).ToList();
-            this.database.GetRepository(this.dirName)?.UserSettings.Posts(configs);
+            this.repository?.UserSettings.Posts(configs);
         }
 
         private void PostAccounts()
         {
             var accounts = GetDbObjects<Account>(Account.GetProperties().Select(x => x.propertyInfo)).ToList();
-            this.database.GetRepository(this.dirName)?.Accounts.Posts(accounts);
+            this.repository?.Accounts.Posts(accounts);
         }
 
         private void PostTranslates()
         {
             var translates = GetDbObjects<Translate>(Translate.GetProperties().Select(x => x.propertyInfo)).ToList();
-            this.database.GetRepository(this.dirName)?.Translates.Posts(translates);
+            this.repository?.Translates.Posts(translates);
+        }
+
+        private void PostIcons()
+        {
+            var icons = GetDbObjects<Icon>(Icon.GetProperties().Select(x => x.propertyInfo)).ToList();
+            this.repository?.Icons.Posts(icons);
         }
 
         private IEnumerable<T> GetDbObjects<T>(IEnumerable<PropertyInfo> propertyInfos)

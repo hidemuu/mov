@@ -43,6 +43,8 @@ using Mov.Driver.Views;
 using Mov.Bom.Views;
 using Mov.Driver.ViewModels;
 using Mov.Bom.ViewModels;
+using Mov.Driver.Models;
+using Mov.Driver.Repository;
 
 namespace Mov.Wpf
 {
@@ -122,6 +124,7 @@ namespace Mov.Wpf
             containerRegistry.RegisterInstance<IDesignerDatabase>(new DesignerDatabase(Path.Combine(resourcePath, "designer"), "xml"));
             containerRegistry.RegisterInstance<IGameDatabase>(new GameDatabase(Path.Combine(resourcePath, "game"), "json"));
             containerRegistry.RegisterInstance<IDrawerDatabase>(new DrawerDatabase(Path.Combine(resourcePath, "drawer"), "json"));
+            containerRegistry.RegisterInstance<IDriverDatabase>(new DriverDatabase(Path.Combine(resourcePath, "driver"), "json"));
 
             //サービスの登録
             containerRegistry.RegisterInstance<IMachineGameService>(Container.Resolve<PackmanGameService>());

@@ -577,6 +577,9 @@
       "Mov.Driver.Service/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Driver.Repository": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Mov.Driver.Service.dll": {}
         },

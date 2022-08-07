@@ -796,6 +796,9 @@
         }
       },
       "Mov.Driver.Service/1.0.0": {
+        "dependencies": {
+          "Mov.Driver.Repository": "1.0.0"
+        },
         "runtime": {
           "Mov.Driver.Service.dll": {}
         }

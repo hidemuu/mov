@@ -4,6 +4,8 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
 
@@ -45,5 +47,17 @@ namespace Mov.Configurator.Models
         [DisplayName("name")]
         [DisplayIndex(11)]
         public string Name { get; set; } = string.Empty;
+
+        /// <summary>
+        /// パス
+        /// </summary>
+        [JsonProperty("path")]
+        [XmlElement("path")]
+        [LanguageKey("path")]
+        [DisplayName("path")]
+        [DisplayIndex(12)]
+        public string Path { get; set; } = string.Empty;
+
+        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<Icon>().OrderBy(x => x.index);
     }
 }

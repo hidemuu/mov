@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 
-8-663277912
+9744319001
 
-13-1624846424
+14260764506
 2371513395465
-DesignerDialogView.xaml;DesignerPartsView.xaml;DesignerShellView.xaml;DesignerTableView.xaml;DesignerThemeView.xaml;DesignerTreeView.xaml;DesignerView.xaml;Templates\LayoutNodeTemplate.xaml;
+DesignerDialogView.xaml;DesignerPartsControl.xaml;DesignerPartsView.xaml;DesignerShellView.xaml;DesignerTableView.xaml;DesignerThemeView.xaml;DesignerTreeView.xaml;DesignerView.xaml;Templates\LayoutNodeTemplate.xaml;
 
-False
+True
 

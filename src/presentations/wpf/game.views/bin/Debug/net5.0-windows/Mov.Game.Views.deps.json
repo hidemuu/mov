@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v5.0": {
       "Mov.Game.Views/1.0.0": {
         "dependencies": {
-          "Mov.Designer.Views": "1.0.0",
           "Mov.Game.ViewModels": "1.0.0"
         },
         "runtime": {
@@ -451,50 +450,6 @@
           "Mov.Accessors.dll": {}
         }
       },
-      "Mov.Designer.Models/1.0.0": {
-        "dependencies": {
-          "Mov.Accessors": "1.0.0",
-          "System.ComponentModel.Annotations": "5.0.0"
-        },
-        "runtime": {
-          "Mov.Designer.Models.dll": {}
-        }
-      },
-      "Mov.Designer.Repository/1.0.0": {
-        "dependencies": {
-          "Mov.Designer.Models": "1.0.0"
-        },
-        "runtime": {
-          "Mov.Designer.Repository.dll": {}
-        }
-      },
-      "Mov.Designer.Service/1.0.0": {
-        "dependencies": {
-          "Mov.Designer.Repository": "1.0.0",
-          "ReactiveProperty.Core": "8.0.1"
-        },
-        "runtime": {
-          "Mov.Designer.Service.dll": {}
-        }
-      },
-      "Mov.Designer.ViewModels/1.0.0": {
-        "dependencies": {
-          "Mov.Designer.Repository": "1.0.0",
-          "Mov.Designer.Service": "1.0.0",
-          "Mov.WpfControls": "1.0.0"
-        },
-        "runtime": {
-          "Mov.Designer.ViewModels.dll": {}
-        }
-      },
-      "Mov.Designer.Views/1.0.0": {
-        "dependencies": {
-          "Mov.Designer.ViewModels": "1.0.0"
-        },
-        "runtime": {
-          "Mov.Designer.Views.dll": {}
-        }
-      },
       "Mov.Drawer.Models/1.0.0": {
         "dependencies": {
           "Mov.Accessors": "1.0.0",
@@ -560,7 +515,6 @@
       },
       "Mov.Game.ViewModels/1.0.0": {
         "dependencies": {
-          "Mov.Designer.ViewModels": "1.0.0",
           "Mov.Drawer.ViewModels": "1.0.0",
           "Mov.Game.Service": "1.0.0",
           "Mov.WpfControls": "1.0.0"
@@ -922,31 +876,6 @@
       "hashPath": "unity.container.5.11.11.nupkg.sha512"
     },
     "Mov.Accessors/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Mov.Designer.Models/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Mov.Designer.Repository/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Mov.Designer.Service/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Mov.Designer.ViewModels/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Mov.Designer.Views/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

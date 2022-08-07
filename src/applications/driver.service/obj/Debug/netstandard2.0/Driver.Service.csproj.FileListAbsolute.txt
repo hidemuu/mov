@@ -7,3 +7,12 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\obj\Debug\ne
 C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Mov.Driver.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Mov.Driver.Service.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Driver.Service.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Accessors.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Driver.Models.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Driver.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Utilities.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Driver.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Accessors.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Driver.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Utilities.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Driver.Service.csproj.CopyComplete

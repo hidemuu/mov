@@ -13,8 +13,8 @@ TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 51422595522
 
 8545581383
-247-1318391280
+242-59694289
 Dialogs\GameOverDialog.xaml;Dialogs\StageClearDialog.xaml;GameSoftView.xaml;GameTitleView.xaml;GameView.xaml;
 
-False
+True
 

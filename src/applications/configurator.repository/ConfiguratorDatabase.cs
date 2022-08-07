@@ -11,19 +11,16 @@ namespace Mov.Configurator.Repository
     /// <summary>
     /// コンフィグレーションデータのリポジトリ
     /// </summary>
-    public class ConfiguratorDatabase : DbObjectDatabaseBase<IConfiguratorRepository>, IConfiguratorDatabase
+    public class ConfiguratorDatabase : DbObjectDatabaseBase<IConfiguratorRepository, ConfiguratorRepository>, IConfiguratorDatabase
     {
         #region コンストラクター
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ConfiguratorDatabase(string resourceDir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir)
+        public ConfiguratorDatabase(string dir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
         {
-            Repositories = new Dictionary<string, IConfiguratorRepository>()
-            {
-                { "", new ConfiguratorRepository(resourceDir, extension, encode) },
-            };
+            
         }
 
         #endregion コンストラクター

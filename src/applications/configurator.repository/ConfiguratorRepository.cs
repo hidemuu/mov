@@ -9,12 +9,12 @@ namespace Mov.Configurator.Repository
     public class ConfiguratorRepository : DbObjectRepositoryBase, IConfiguratorRepository
     {
 
-        public ConfiguratorRepository(string resourceDir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
+        public ConfiguratorRepository(string dir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(dir, extension)
         {
-            UserSettings = new DbObjectRepository<UserSetting, UserSettingCollection>(this.dir, GetRelativePath("config"), encode);
-            Accounts = new DbObjectRepository<Account, AccountCollection>(this.dir, GetRelativePath("account"), encode);
-            Translates = new DbObjectRepository<Translate, TranslateCollection>(this.dir, GetRelativePath("translate"), encode);
-            Icons = new DbObjectRepository<Icon, IconCollection>(this.dir, GetRelativePath("icon"), encode);
+            UserSettings = new DbObjectRepository<UserSetting, UserSettingCollection>(dir, GetRelativePath("user_setting"), encode);
+            Accounts = new DbObjectRepository<Account, AccountCollection>(dir, GetRelativePath("account"), encode);
+            Translates = new DbObjectRepository<Translate, TranslateCollection>(dir, GetRelativePath("translate"), encode);
+            Icons = new DbObjectRepository<Icon, IconCollection>(dir, GetRelativePath("icon"), encode);
         }
 
         #region プロパティ

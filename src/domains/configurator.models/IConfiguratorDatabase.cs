@@ -9,5 +9,6 @@ namespace Mov.Configurator.Models
     {
         IDictionary<string, IConfiguratorRepository> Repositories { get; }
 
+        IConfiguratorRepository GetRepository(string dirName);
     }
 }

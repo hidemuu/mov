@@ -1,0 +1,26 @@
+﻿{
+    "user_settings": [
+        {
+            "category": "test1",
+            "name": "test110111111",
+            "value": "0",
+            "default": "0",
+            "description": "test",
+            "access_lv": 0,
+            "id": "df23cd15-1af3-44ee-952f-9820ca8cb826",
+            "index": 1,
+            "code": "test0"
+        },
+        {
+            "category": "test2",
+            "name": "test2",
+            "value": "1",
+            "default": "1",
+            "description": "test2",
+            "access_lv": 1,
+            "id": "5af0c9ba-6ef5-47c1-b5d8-457185063930",
+            "index": 2,
+            "code": "test2"
+        }
+    ]
+}

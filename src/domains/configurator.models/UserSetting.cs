@@ -13,19 +13,19 @@ namespace Mov.Configurator.Models
     /// <summary>
     /// 設定のコレクション
     /// </summary>
-    [XmlRoot("configs")]
+    [XmlRoot("user_settings")]
     public class UserSettingCollection : DbObjectCollection<UserSetting>
     {
         /// <inheritdoc />
-        [JsonProperty("configs")]
-        [XmlElement(Type = typeof(UserSetting), ElementName = "config")]
+        [JsonProperty("user_settings")]
+        [XmlElement(Type = typeof(UserSetting), ElementName = "user_setting")]
         public override UserSetting[] Items { get; set; }
     }
 
     /// <summary>
     /// 設定
     /// </summary>
-    [XmlRoot("config")]
+    [XmlRoot("user_setting")]
     public class UserSetting : DbObject
     {
         #region プロパティ

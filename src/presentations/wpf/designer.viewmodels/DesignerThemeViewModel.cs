@@ -2,6 +2,8 @@
 using Mov.Designer.Models;
 using Mov.WpfControls.ViewModels;
 using Mov.WpfDesigns.Services;
+using Prism.Regions;
+using Prism.Services.Dialogs;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
 using System;
@@ -12,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Designer.ViewModels
 {
-    public class DesignerThemeViewModel : ViewModelBase
+    public class DesignerThemeViewModel : RegionViewModelBase
     {
         #region フィールド
 
@@ -32,10 +34,9 @@ namespace Mov.Designer.ViewModels
 
         #region コンストラクター
 
-        public DesignerThemeViewModel(IDesignerDatabase database)
+        public DesignerThemeViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerDatabase database) : base(regionManager, dialogService)
         {
             this.database = database;
-            this.repository = database.GetRepository("");
             // ComboBoxの初期値を設定するにはItemsSourceで利用しているインスタンスの中から指定する必要がある
             SelectedSwatch = new ReactivePropertySlim<Swatch>(Swatches.FirstOrDefault(s => s.Name == ThemeService.CurrentTheme.Name));
             SelectedSwatch.Subscribe(s => ChangeTheme(s)).AddTo(this.Disposables);
@@ -43,6 +44,12 @@ namespace Mov.Designer.ViewModels
         }
 
         #endregion コンストラクター
+
+        public override void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            base.OnNavigatedTo(navigationContext);
+            this.repository = navigationContext.Parameters[DesignerViewModel.PARAM_NAME_DESIGN_REPOSITORY] as IDesignerRepository;
+        }
 
         #region メソッド
 

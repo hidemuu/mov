@@ -2,6 +2,8 @@
 using Mov.Designer.Service;
 using Mov.Designer.Service.Nodes;
 using Mov.WpfControls.ViewModels;
+using Prism.Regions;
+using Prism.Services.Dialogs;
 using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
@@ -11,11 +13,13 @@ using System.Threading.Tasks;
 
 namespace Mov.Designer.ViewModels
 {
-    public class DesignerPartsViewModel : ViewModelBase
+    public class DesignerPartsViewModel : RegionViewModelBase
     {
         #region フィールド
 
         private LayoutBuilder builder;
+
+        private IDesignerRepository repository;
 
         #endregion フィールド
 
@@ -30,9 +34,10 @@ namespace Mov.Designer.ViewModels
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public DesignerPartsViewModel(IDesignerDatabase database)
+        public DesignerPartsViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerDatabase database) : base(regionManager, dialogService)
         {
-            builder = new LayoutBuilder(database.GetRepository(""));
+            //this.repository = database.GetRepository("");
+            //builder = new LayoutBuilder(this.repository);
         }
 
         #endregion コンストラクター
@@ -41,6 +46,15 @@ namespace Mov.Designer.ViewModels
 
         protected override void OnLoaded()
         {
+            //Models.Clear();
+            //Models.AddRangeOnScheduler(builder.Build().Layout.Children);
+        }
+
+        public override void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            base.OnNavigatedTo(navigationContext);
+            this.repository = navigationContext.Parameters[DesignerViewModel.PARAM_NAME_DESIGN_REPOSITORY] as IDesignerRepository;
+            builder = new LayoutBuilder(this.repository);
             Models.Clear();
             Models.AddRangeOnScheduler(builder.Build().Layout.Children);
         }

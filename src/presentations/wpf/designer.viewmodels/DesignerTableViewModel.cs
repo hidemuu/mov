@@ -2,6 +2,8 @@
 using Mov.Designer.Service;
 using Mov.WpfControls;
 using Mov.WpfControls.ViewModels;
+using Prism.Regions;
+using Prism.Services.Dialogs;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
 using System;
@@ -14,7 +16,7 @@ using System.Windows;
 
 namespace Mov.Designer.ViewModels
 {
-    public class DesignerTableViewModel : ViewModelBase
+    public class DesignerTableViewModel : RegionViewModelBase
     {
         #region フィールド
 
@@ -58,15 +60,13 @@ namespace Mov.Designer.ViewModels
         /// コンストラクター
         /// </summary>
         /// <param name="repository"></param>
-        public DesignerTableViewModel(IDesignerDatabase database)
+        public DesignerTableViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerDatabase database) : base(regionManager, dialogService)
         {
             this.database = database;
-            this.repository = database.GetRepository("");
             SaveCommand.Subscribe(OnSaveCommand).AddTo(Disposables);
             EditCommand.Subscribe(OnEditCommand).AddTo(Disposables);
             UpCommand.Subscribe(OnUpCommand).AddTo(Disposables);
             DownCommand.Subscribe(OnDownCommand).AddTo(Disposables);
-            CreateModels();
         }
 
         #endregion コンストラクター
@@ -78,6 +78,12 @@ namespace Mov.Designer.ViewModels
 
         }
 
+        public override void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            base.OnNavigatedTo(navigationContext);
+            this.repository = navigationContext.Parameters[DesignerViewModel.PARAM_NAME_DESIGN_REPOSITORY] as IDesignerRepository;
+            CreateModels();
+        }
         private void OnEditCommand()
         {
             IsEdit.Value = !IsEdit.Value;

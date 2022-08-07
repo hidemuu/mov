@@ -16,7 +16,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <!--<ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />-->
+                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -116,6 +116,13 @@
                         </Style>
                     </Button.Style>
                 </Button>
+                <ComboBox
+                    Width="100"
+                    Height="30"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Bottom"
+                    ItemsSource="{Binding ComboItems}"
+                    SelectedItem="{Binding SelectedComboItem.Value}" />
             </StackPanel>
         </StackPanel>
         <ContentControl

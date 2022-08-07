@@ -28,31 +28,4 @@
         </i:EventTrigger>
     </i:Interaction.Triggers>
     <local:DesignerPartsControl Models="{Binding Models}" />
-    <!--<ItemsControl
-        x:Name="Root"
-        ItemTemplateSelector="{StaticResource layoutNodeSelector}"
-        ItemsSource="{Binding Models}"
-        ScrollViewer.CanContentScroll="True">
-        --><!--  ItemsControlの中身  --><!--
-        <ItemsControl.Template>
-            <ControlTemplate TargetType="{x:Type ItemsControl}">
-                <Border
-                    Background="LightGray"
-                    BorderBrush="Red"
-                    BorderThickness="5">
-                    <ItemsPresenter Margin="5" />
-                </Border>
-            </ControlTemplate>
-        </ItemsControl.Template>
-        --><!--  ItensControlの並べ方  --><!--
-        <ItemsControl.ItemsPanel>
-            <ItemsPanelTemplate>
-                <VirtualizingStackPanel />
-            </ItemsPanelTemplate>
-        </ItemsControl.ItemsPanel>
-        --><!--  ItemsCOntrolの要素に適応するStyle  -->
-        <!--<ItemsControl.ItemContainerStyle>
-            <Style TargetType="{x:Type ContentPresenter}" />
-        </ItemsControl.ItemContainerStyle>--><!--
-    </ItemsControl>-->
 </UserControl>

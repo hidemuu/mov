@@ -39,11 +39,8 @@ namespace Mov.Accessors
 
         private void CreateRepository(IEnumerable<DirectoryInfo> directories, string baseDir, string extension, string encode)
         {
-            if (directories == null || !directories.Any())
-            {
-                Repositories.Add("", (T)Activator.CreateInstance(typeof(TInstance), baseDir, extension, encode));
-                return;
-            }
+            
+            Repositories.Add("", (T)Activator.CreateInstance(typeof(TInstance), baseDir, extension, encode));
             foreach (var directory in directories)
             {
                 Repositories.Add(directory.Name, (T)Activator.CreateInstance(typeof(TInstance), directory.FullName, extension, encode));

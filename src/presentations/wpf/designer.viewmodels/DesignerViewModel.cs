@@ -17,6 +17,8 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
+        public const string PARAM_NAME_DESIGN_REPOSITORY = "repository";
+
         public const string REGION_NAME_CONTENT = "DESIGNER_CENTER";
 
         public const string PAGE_NAME_TREE = "Tree";
@@ -47,6 +49,14 @@ namespace Mov.Designer.ViewModels
 
         public ReactivePropertySlim<string> PageName { get; set; } = new ReactivePropertySlim<string>(PAGE_NAME_TREE);
 
+
+        public ReactiveCollection<string> ComboItems { get; } = new ReactiveCollection<string>()
+        {
+            "", "driver",
+        };
+        public ReactivePropertySlim<string> SelectedComboItem { get; } = new ReactivePropertySlim<string>("");
+
+
         #endregion プロパティ
 
         #region コマンド
@@ -67,7 +77,7 @@ namespace Mov.Designer.ViewModels
         public DesignerViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerDatabase database) : base(regionManager, dialogService)
         {
             this.database = database;
-            this.repository = database.GetRepository("");
+            this.repository = database.GetRepository(SelectedComboItem.Value);
             ShowPageCommand.Subscribe(OnPageChangeCommand).AddTo(Disposables);
             SaveCommand.Subscribe(OnSaveCommand).AddTo(Disposables);
         }
@@ -76,7 +86,11 @@ namespace Mov.Designer.ViewModels
 
         #region イベント
 
-        protected override void OnLoaded() => OnPageChangeCommand(this.PageName.Value);
+        protected override void OnLoaded() 
+        { 
+            OnPageChangeCommand(this.PageName.Value);
+            SelectedComboItem.Subscribe(OnSelectedComboItemChanged).AddTo(Disposables);
+        }
 
         #endregion イベント
 
@@ -85,7 +99,19 @@ namespace Mov.Designer.ViewModels
         private void OnPageChangeCommand(string pageName)
         {
             this.PageName.Value = pageName;
-            this.RegionManager.RequestNavigate(REGION_NAME_CONTENT, pageDictionary[this.PageName.Value]);
+            RequestNavigate(pageName, SelectedComboItem.Value);
+        }
+
+        private void OnSelectedComboItemChanged(string selectedComboItem)
+        {
+            RequestNavigate(this.PageName.Value, selectedComboItem);
+        }
+
+        private void RequestNavigate(string pageName, string selectedComboItem)
+        {
+            var param = new NavigationParameters();
+            param.Add(PARAM_NAME_DESIGN_REPOSITORY, database.GetRepository(selectedComboItem));
+            this.RegionManager.RequestNavigate(REGION_NAME_CONTENT, pageDictionary[pageName], param);
         }
 
         private void OnSaveCommand(string parameter)

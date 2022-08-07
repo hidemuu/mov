@@ -6,5 +6,8 @@ namespace Mov.Scheduler.Models
 {
     public interface ISchedulerDatabase
     {
+        IDictionary<string, ISchedulerRepository> Repositories { get; }
+
+        ISchedulerRepository GetRepository(string dirName);
     }
 }

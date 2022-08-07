@@ -24,7 +24,7 @@ namespace Mov.Drawer.ViewModels
     {
         #region フィールド
 
-        protected readonly IDrawerDatabase repository;
+        protected readonly IDrawerRepository repository;
 
         private Bitmap bitmap;
         private Graphics graphics;
@@ -41,7 +41,7 @@ namespace Mov.Drawer.ViewModels
 
         #region コンストラクター
 
-        public DrawViewModelBase(IRegionManager regionManager, IDialogService dialogService, IDrawerDatabase repository) : base(regionManager, dialogService)
+        public DrawViewModelBase(IRegionManager regionManager, IDialogService dialogService, IDrawerRepository repository) : base(regionManager, dialogService)
         {
             this.repository = repository;
         }

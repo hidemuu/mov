@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Bom.Models
 {
-    public interface IBomDatabase
+    public interface IBomRepository
     {
         /// <summary>
         /// Returns the customers repository.

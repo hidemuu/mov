@@ -3,10 +3,10 @@ using Mov.Configurator.Repository;
 using Mov.Configurator.ViewModels;
 using Mov.Configurator.Views;
 using Mov.Designer.Models;
-using Mov.Designer.Repository.Xml;
+using Mov.Designer.Repository;
 using Mov.Designer.ViewModels;
 using Mov.Designer.Views;
-using Mov.Game.Models.interfaces;
+using Mov.Game.Models;
 using Mov.Game.Repository;
 using Mov.Game.Service;
 using Mov.Game.ViewModels;
@@ -115,9 +115,9 @@ namespace Mov.Wpf
             var rootPath = PathHelper.GetCurrentRootPath("mov");
             var resourcePath = Path.Combine(rootPath, "resources");
             containerRegistry.RegisterInstance<IConfiguratorDatabase>(new ConfiguratorDatabase(Path.Combine(resourcePath, "configurator"), "json"));
-            containerRegistry.RegisterInstance<IDesignerDatabase>(new DesignerDatabase(Path.Combine(resourcePath, "designer"), "xml"));
-            containerRegistry.RegisterInstance<IGameDatabase>(new GameDatabase(Path.Combine(resourcePath, "game"), "json"));
-            containerRegistry.RegisterInstance<IDrawerDatabase>(new DrawerDatabase(Path.Combine(resourcePath, "drawer"), "json"));
+            containerRegistry.RegisterInstance<IDesignerRepository>(new DesignerRepository(Path.Combine(resourcePath, "designer"), "xml"));
+            containerRegistry.RegisterInstance<IGameRepository>(new GameRepository(Path.Combine(resourcePath, "game"), "json"));
+            containerRegistry.RegisterInstance<IDrawerRepository>(new DrawerRepository(Path.Combine(resourcePath, "drawer"), "json"));
 
             //サービスの登録
             containerRegistry.RegisterInstance<IMachineGameService>(Container.Resolve<PackmanGameService>());

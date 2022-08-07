@@ -10,7 +10,7 @@ namespace Mov.Designer.Service
     {
         #region フィールド
 
-        private readonly IDesignerDatabase repository;
+        private readonly IDesignerRepository repository;
 
         #endregion フィールド
 
@@ -25,7 +25,7 @@ namespace Mov.Designer.Service
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public LayoutBuilder(IDesignerDatabase repository)
+        public LayoutBuilder(IDesignerRepository repository)
         {
             this.repository = repository;
         }

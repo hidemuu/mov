@@ -1,5 +1,5 @@
 ﻿using Mov.Configurator.Repository;
-using Mov.Designer.Repository.Xml;
+using Mov.Designer.Repository;
 using Mov.Utilities;
 using System;
 using System.Collections.Generic;

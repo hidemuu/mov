@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Mov.Bom.Repository.Rest
 {
-    public class RestBomDatabase : IBomDatabase
+    public class RestBomRepository : IBomRepository
     {
         private readonly string _url;
 
-        public RestBomDatabase(string url)
+        public RestBomRepository(string url)
         {
             _url = url;
         }

@@ -2,7 +2,6 @@
 using Mov.Game.Models;
 using Mov.Game.Models.Characters;
 using Mov.Game.Models.Engines;
-using Mov.Game.Models.interfaces;
 using Mov.Game.Models.Maps;
 using Mov.Game.Repository;
 using System;
@@ -25,7 +24,7 @@ namespace Mov.Game.Service.Machine
         /// <summary>
         /// リポジトリ
         /// </summary>
-        protected IGameDatabase Repository { get; private set; }
+        protected IGameRepository Repository { get; private set; }
 
         /// <summary>
         /// ゲームエンジン
@@ -65,7 +64,7 @@ namespace Mov.Game.Service.Machine
         /// コンストラクター
         /// </summary>
         /// <param name="repository"></param>
-        public PackmanGameService(IGameDatabase repository) : base()
+        public PackmanGameService(IGameRepository repository) : base()
         {
             this.Repository = repository;
             var map = GetLandmark();

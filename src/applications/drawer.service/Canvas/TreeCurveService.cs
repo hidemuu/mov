@@ -20,7 +20,7 @@ namespace Mov.Drawer.Service.Canvas
 
         #region コンストラクター
 
-        public TreeCurveService(IDrawerDatabase repository) : base(repository)
+        public TreeCurveService(IDrawerRepository repository) : base(repository)
         {
             
         }

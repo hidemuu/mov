@@ -11,7 +11,7 @@ namespace Mov.Drawer.Service.Canvas
         
         #region コンストラクター
 
-        public SierpinskiCurveService(IDrawerDatabase repository) : base(repository)
+        public SierpinskiCurveService(IDrawerRepository repository) : base(repository)
         {
         }
 

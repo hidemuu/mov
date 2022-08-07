@@ -10,10 +10,6 @@ namespace Mov.Accessors
         #region フィールド
 
         /// <summary>
-        /// ベースパス
-        /// </summary>
-        protected readonly string dir;
-        /// <summary>
         /// 拡張子
         /// </summary>
         protected readonly string extension;
@@ -23,11 +19,9 @@ namespace Mov.Accessors
         /// <summary>
         /// コンストラクター
         /// </summary>
-        /// <param name="dir"></param>
         /// <param name="extension"></param>
-        public DbObjectRepositoryBase(string dir, string extension)
+        public DbObjectRepositoryBase(string extension)
         {
-            this.dir = dir;
             this.extension = extension;
         }
 

@@ -6,24 +6,11 @@ using System.Text;
 
 namespace Mov.Drawer.Repository
 {
-    public class DrawerDatabase : DbObjectRepositoryBase, IDrawerDatabase
+    public class DrawerDatabase : DbObjectDatabaseBase<IDrawerRepository, DrawerRepository>, IDrawerDatabase
     {
-        #region コンストラクター
-
-        /// <summary>
-        /// コンストラクター
-        /// </summary>
-        public DrawerDatabase(string resourceDir, string extension, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(resourceDir, extension)
+        public DrawerDatabase(string dir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
         {
-            DrawItems = new DbObjectRepository<DrawItem, DrawItemCollection>(this.dir, GetRelativePath("draw_item"), encoding);
+
         }
-
-        #endregion コンストラクター
-
-        #region プロパティ
-
-        public IRepository<DrawItem, DrawItemCollection> DrawItems { get; }
-
-        #endregion プロパティ
     }
 }

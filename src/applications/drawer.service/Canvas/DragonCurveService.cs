@@ -12,7 +12,7 @@ namespace Mov.Drawer.Service.Canvas
         
         #region コンストラクター
 
-        public DragonCurveService(IDrawerDatabase repository) : base(repository)
+        public DragonCurveService(IDrawerRepository repository) : base(repository)
         {
         }
 

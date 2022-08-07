@@ -2,7 +2,7 @@
 using Mov.Drawer.Service;
 using Mov.Drawer.ViewModels;
 using Mov.Game.Models.Engines;
-using Mov.Game.Models.interfaces;
+using Mov.Game.Models;
 using Mov.Game.Service;
 using Mov.Game.Service.Machine;
 using Prism.Mvvm;
@@ -52,7 +52,7 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public GameSoftViewModel(IRegionManager regionManager, IDialogService dialogService, IDrawerDatabase repository, IGameDatabase gameDatabase, IMachineGameService gameService) : base(regionManager, dialogService, repository)
+        public GameSoftViewModel(IRegionManager regionManager, IDialogService dialogService, IDrawerRepository repository, IGameRepository gameDatabase, IMachineGameService gameService) : base(regionManager, dialogService, repository)
         {
             KeyUpCommand.Subscribe(() => OnKeyUp()).AddTo(Disposables);
             KeyGestureEnterCommand.Subscribe(() => OnKeyGestureEnter()).AddTo(Disposables);

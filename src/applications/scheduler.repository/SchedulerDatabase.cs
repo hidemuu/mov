@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Mov.Scheduler.Repository
 {
-    public class SchedulerDatabase : DbObjectRepositoryBase, ISchedulerDatabase
+    public class SchedulerDatabase : DbObjectDatabaseBase<ISchedulerRepository, SchedulerRepository>, ISchedulerDatabase
     {
-        public SchedulerDatabase(string resourceDir, string extension, string encoding = "utf-8") : base(resourceDir, extension)
+        public SchedulerDatabase(string dir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
         {
-           
+
         }
     }
 }

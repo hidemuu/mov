@@ -18,14 +18,14 @@ namespace Mov.Drawer.Service.Canvas
 
         private readonly string baseName;
 
-        private readonly IDrawerDatabase repository;
+        private readonly IDrawerRepository repository;
 
         #endregion フィールド
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public CanvasServiceFactory(IDrawerDatabase repository)
+        public CanvasServiceFactory(IDrawerRepository repository)
         {
             this.baseName = this.GetType().Namespace;
             this.repository = repository;

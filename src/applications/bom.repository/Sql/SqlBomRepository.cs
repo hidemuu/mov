@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Mov.Bom.Repository.Sql
 {
-    public class SqlBomDatabase : IBomDatabase
+    public class SqlBomRepository : IBomRepository
     {
         private readonly DbContextOptions<StockerDbContext> _dbOptions;
 
-        public SqlBomDatabase(DbContextOptionsBuilder<StockerDbContext>
+        public SqlBomRepository(DbContextOptionsBuilder<StockerDbContext>
             dbOptionsBuilder)
         {
             _dbOptions = dbOptionsBuilder.Options;

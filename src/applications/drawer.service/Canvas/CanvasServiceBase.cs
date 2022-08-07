@@ -17,7 +17,7 @@ namespace Mov.Drawer.Service.Canvas
         /// <summary>
         /// リポジトリ
         /// </summary>
-        protected IDrawerDatabase Repository { get; private set; }
+        protected IDrawerRepository Repository { get; private set; }
 
         /// <summary>
         /// 描画エンジン
@@ -28,7 +28,7 @@ namespace Mov.Drawer.Service.Canvas
 
         #region コンストラクター
 
-        public CanvasServiceBase(IDrawerDatabase repository) : base()
+        public CanvasServiceBase(IDrawerRepository repository) : base()
         {
             this.Repository = repository;
             this.DrawEngine = new DrawEngine();

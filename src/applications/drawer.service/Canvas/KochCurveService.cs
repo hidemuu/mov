@@ -11,7 +11,7 @@ namespace Mov.Drawer.Service.Canvas
     {
         #region コンストラクター
 
-        public KochCurveService(IDrawerDatabase repository) : base(repository)
+        public KochCurveService(IDrawerRepository repository) : base(repository)
         {
         }
 

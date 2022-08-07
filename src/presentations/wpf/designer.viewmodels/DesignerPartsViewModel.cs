@@ -30,7 +30,7 @@ namespace Mov.Designer.ViewModels
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public DesignerPartsViewModel(IDesignerDatabase repository)
+        public DesignerPartsViewModel(IDesignerRepository repository)
         {
             builder = new LayoutBuilder(repository);
         }

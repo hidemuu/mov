@@ -50,7 +50,7 @@ namespace Mov.Drawer.ViewModels
 
         #region コンストラクター
 
-        public DrawerViewModel(IRegionManager regionManager, IDialogService dialogService, IDrawerRepository repository) : base(regionManager, dialogService, repository)
+        public DrawerViewModel(IRegionManager regionManager, IDialogService dialogService, IDrawerDatabase database) : base(regionManager, dialogService, database)
         {
             this.serviceFactory = new CanvasServiceFactory(this.repository);
             var drawItems = this.repository.DrawItems.Gets();

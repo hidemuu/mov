@@ -64,9 +64,9 @@ namespace Mov.Game.Service.Machine
         /// コンストラクター
         /// </summary>
         /// <param name="repository"></param>
-        public PackmanGameService(IGameRepository repository) : base()
+        public PackmanGameService(IGameDatabase database) : base()
         {
-            this.Repository = repository;
+            this.Repository = database.GetRepository("");
             var map = GetLandmark();
             gameEngine = new FsmGameEngine();
             FrameWidth = map.GetCol() * gameEngine.UnitWidth;

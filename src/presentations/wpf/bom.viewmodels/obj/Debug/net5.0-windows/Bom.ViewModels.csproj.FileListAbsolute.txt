@@ -10,3 +10,15 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Bom.ViewModels\obj\Deb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Bom.ViewModels\obj\Debug\net5.0-windows\ref\Mov.Bom.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\Bom.ViewModels\obj\Debug\net5.0-windows\Mov.Bom.ViewModels.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\obj\Debug\net5.0-windows\Bom.ViewModels.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Assets\Fonts\iconfont.ttf
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Assets\Photos\alter.png
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Assets\Photos\home.png
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Assets\Photos\push.png
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Assets\Photos\success.png
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Mov.Utilities.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Mov.WpfControls.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Mov.WpfDesigns.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Mov.WpfControls.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Mov.Utilities.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Mov.WpfDesigns.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\obj\Debug\net5.0-windows\Bom.ViewModels.csproj.CopyComplete

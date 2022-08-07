@@ -545,11 +545,17 @@
         }
       },
       "Mov.Bom.ViewModels/1.0.0": {
+        "dependencies": {
+          "Mov.WpfControls": "1.0.0"
+        },
         "runtime": {
           "Mov.Bom.ViewModels.dll": {}
         }
       },
       "Mov.Bom.Views/1.0.0": {
+        "dependencies": {
+          "Mov.Bom.ViewModels": "1.0.0"
+        },
         "runtime": {
           "Mov.Bom.Views.dll": {}
         }
@@ -711,11 +717,18 @@
         }
       },
       "Mov.Driver.ViewModels/1.0.0": {
+        "dependencies": {
+          "Mov.Driver.Service": "1.0.0",
+          "Mov.WpfControls": "1.0.0"
+        },
         "runtime": {
           "Mov.Driver.ViewModels.dll": {}
         }
       },
       "Mov.Driver.Views/1.0.0": {
+        "dependencies": {
+          "Mov.Driver.ViewModels": "1.0.0"
+        },
         "runtime": {
           "Mov.Driver.Views.dll": {}
         }
@@ -795,6 +808,7 @@
       },
       "Mov.Scheduler.ViewModels/1.0.0": {
         "dependencies": {
+          "Mov.Scheduler.Service": "1.0.0",
           "Mov.WpfControls": "1.0.0"
         },
         "runtime": {
@@ -802,6 +816,9 @@
         }
       },
       "Mov.Scheduler.Views/1.0.0": {
+        "dependencies": {
+          "Mov.Scheduler.ViewModels": "1.0.0"
+        },
         "runtime": {
           "Mov.Scheduler.Views.dll": {}
         }

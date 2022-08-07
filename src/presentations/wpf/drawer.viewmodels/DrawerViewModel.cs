@@ -46,6 +46,8 @@ namespace Mov.Drawer.ViewModels
 
         public ReactiveCommand DrawCommand { get; } = new ReactiveCommand();
 
+        public ReactiveCommand StopCommand { get; } = new ReactiveCommand();
+
         #endregion コマンド
 
         #region コンストラクター
@@ -59,6 +61,7 @@ namespace Mov.Drawer.ViewModels
             Canvases.AddRangeOnScheduler(drawItems.Select(x => x.Category));
             RefleshRate.Value = drawItem.RefleshRate;
             DrawCommand.Subscribe(OnDrawCommand).AddTo(Disposables);
+            StopCommand.Subscribe(OnStopCommand).AddTo(Disposables);
         }
 
         #endregion コンストラクター
@@ -92,6 +95,11 @@ namespace Mov.Drawer.ViewModels
             Stop();
             UpdateService(SelectedCanvas.Value);
             Start();
+        }
+
+        private void OnStopCommand()
+        {
+            Stop();
         }
 
         private void UpdateService(string category)

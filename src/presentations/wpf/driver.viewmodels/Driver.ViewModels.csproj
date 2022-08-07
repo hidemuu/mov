@@ -7,4 +7,9 @@
     <RootNamespace>Mov.Driver.ViewModels</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\applications\driver.service\Driver.Service.csproj" />
+    <ProjectReference Include="..\..\..\infrastructures\wpfcontrols\WpfControls.csproj" />
+  </ItemGroup>
+
 </Project>

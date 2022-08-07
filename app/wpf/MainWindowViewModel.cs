@@ -1,6 +1,8 @@
-﻿using Mov.Configurator.Views;
+﻿using Mov.Bom.Views;
+using Mov.Configurator.Views;
 using Mov.Designer.Views;
 using Mov.Drawer.Views;
+using Mov.Driver.Views;
 using Mov.Game.Views;
 using Mov.Scheduler.Views;
 using Mov.Wpf;
@@ -47,7 +49,11 @@ namespace Mov.Wpf
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(GameView))));
             Models.Add(new MainWindowModel(3, "Draw", "blur", () =>
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(DrawerView))));
-            Models.Add(new MainWindowModel(4, "Scheduler", "calendar", () => 
+            Models.Add(new MainWindowModel(4, "Driver", "blur", () =>
+                this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(DriverView))));
+            Models.Add(new MainWindowModel(5, "Bom", "blur", () =>
+                this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(BomView))));
+            Models.Add(new MainWindowModel(6, "Scheduler", "calendar", () => 
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(SchedulerView))));
 
             TabChangeCommand.Subscribe(_ => OnChangeTab()).AddTo(Disposables);

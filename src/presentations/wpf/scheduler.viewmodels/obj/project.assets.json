@@ -280,6 +280,16 @@
           "lib/netcoreapp3.0/Unity.Container.dll": {}
         }
       },
+      "Mov.Scheduler.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Scheduler.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Scheduler.Service.dll": {}
+        }
+      },
       "Mov.Utilities/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -954,6 +964,11 @@
         "unity.container.nuspec"
       ]
     },
+    "Mov.Scheduler.Service/1.0.0": {
+      "type": "project",
+      "path": "../../../applications/scheduler.service/Scheduler.Service.csproj",
+      "msbuildProject": "../../../applications/scheduler.service/Scheduler.Service.csproj"
+    },
     "Mov.Utilities/1.0.0": {
       "type": "project",
       "path": "../../../infrastructures/utilities/Utilities.csproj",
@@ -972,6 +987,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
+      "Mov.Scheduler.Service >= 1.0.0",
       "Mov.WpfControls >= 1.0.0"
     ]
   },
@@ -1012,6 +1028,9 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\scheduler.service\\Scheduler.Service.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\scheduler.service\\Scheduler.Service.csproj"
+            },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj"
             }

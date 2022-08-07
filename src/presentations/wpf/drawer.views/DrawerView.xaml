@@ -47,6 +47,10 @@
                 Margin="10"
                 Command="{Binding DrawCommand}"
                 Content="Draw" />
+            <Button
+                Margin="10"
+                Command="{Binding StopCommand}"
+                Content="Stop" />
         </StackPanel>
         <Image
             x:Name="image"

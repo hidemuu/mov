@@ -39,6 +39,10 @@ using Mov.Drawer.Models;
 using Mov.Drawer.Repository;
 using Mov.Drawer.Views;
 using Mov.Drawer.ViewModels;
+using Mov.Driver.Views;
+using Mov.Bom.Views;
+using Mov.Driver.ViewModels;
+using Mov.Bom.ViewModels;
 
 namespace Mov.Wpf
 {
@@ -135,6 +139,8 @@ namespace Mov.Wpf
             containerRegistry.RegisterForNavigation<GameTitleView>();
             containerRegistry.RegisterForNavigation<GameSoftView>();
             containerRegistry.RegisterForNavigation<DrawerView>();
+            containerRegistry.RegisterForNavigation<DriverView>();
+            containerRegistry.RegisterForNavigation<BomView>();
 
             //Dialogの登録
             containerRegistry.RegisterDialog<AlertDialog, AlertDialogViewModel>();
@@ -183,6 +189,8 @@ namespace Mov.Wpf
             ViewModelLocationProvider.Register<GameSoftView, GameSoftViewModel>();
             ViewModelLocationProvider.Register<GameTitleView, GameTitleViewModel>();
             ViewModelLocationProvider.Register<DrawerView, DrawerViewModel>();
+            ViewModelLocationProvider.Register<DriverView, DriverViewModel>();
+            ViewModelLocationProvider.Register<BomView, BomViewModel>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

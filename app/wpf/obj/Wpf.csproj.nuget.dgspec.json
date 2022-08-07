@@ -2135,7 +2135,11 @@
         "frameworks": {
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -2199,7 +2203,11 @@
         "frameworks": {
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\bom.viewmodels\\Bom.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\bom.viewmodels\\Bom.ViewModels.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -2689,7 +2697,14 @@
         "frameworks": {
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\driver.service\\Driver.Service.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\driver.service\\Driver.Service.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -2753,7 +2768,11 @@
         "frameworks": {
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\driver.viewmodels\\Driver.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\driver.viewmodels\\Driver.ViewModels.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -2966,6 +2985,9 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\scheduler.service\\Scheduler.Service.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\scheduler.service\\Scheduler.Service.csproj"
+              },
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj"
               }
@@ -3033,7 +3055,11 @@
         "frameworks": {
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.viewmodels\\Scheduler.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.viewmodels\\Scheduler.ViewModels.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

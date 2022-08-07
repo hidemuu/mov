@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "Mov.Scheduler.ViewModels/1.0.0": {
         "dependencies": {
+          "Mov.Scheduler.Service": "1.0.0",
           "Mov.WpfControls": "1.0.0"
         },
         "runtime": {
@@ -207,6 +208,11 @@
           }
         }
       },
+      "Mov.Scheduler.Service/1.0.0": {
+        "runtime": {
+          "Mov.Scheduler.Service.dll": {}
+        }
+      },
       "Mov.Utilities/1.0.0": {
         "runtime": {
           "Mov.Utilities.dll": {}
@@ -397,6 +403,11 @@
       "sha512": "sha512-47u4MBG8hxV2ZBUK7LlXcZQW8yWSqUSCRG+2/TBA2CSkxkQlMfVUJ0RJODJsZgsiSgy4N0M8HIr7J88drYR/OQ==",
       "path": "unity.container/5.11.11",
       "hashPath": "unity.container.5.11.11.nupkg.sha512"
+    },
+    "Mov.Scheduler.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",

@@ -34,3 +34,5 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.viewmodels\b
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.viewmodels\obj\Debug\net5.0-windows\Scheduler.ViewModels.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.viewmodels\bin\Debug\net5.0-windows\Mov.Utilities.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.viewmodels\bin\Debug\net5.0-windows\Mov.Utilities.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.viewmodels\bin\Debug\net5.0-windows\Mov.Scheduler.Service.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.viewmodels\bin\Debug\net5.0-windows\Mov.Scheduler.Service.pdb

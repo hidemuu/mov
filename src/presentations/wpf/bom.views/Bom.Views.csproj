@@ -7,4 +7,21 @@
     <RootNamespace>Mov.Bom.Views</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\bom.viewmodels\Bom.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="BomView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="BomView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
 </Project>

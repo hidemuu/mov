@@ -56,19 +56,19 @@ namespace Mov.Designer.Service
             LayoutNodeBase node;
             foreach (var tree in trees)
             {
+                Content content = new Content();
+                foreach (var table in repository.Contents.Gets())
+                {
+                    if (!tree.Code.Equals(table.Code, StringComparison.OrdinalIgnoreCase)) continue;
+                    content = table;
+                    break;
+                }
                 switch (tree.LayoutNodeType)
                 {
                     case LayoutNodeType.Root:
                         node = new RootLayoutNode(tree);
                         break;
-                    case LayoutNodeType.Content:
-                        Content content = new Content();
-                        foreach(var table in repository.Contents.Gets())
-                        {
-                            if (!tree.Code.Equals(table.Code, StringComparison.OrdinalIgnoreCase)) continue;
-                            content = table;
-                            break;
-                        }
+                    case LayoutNodeType.Content:       
                         node = new ContentLayoutNode(tree, content);
                         break;
                     case LayoutNodeType.Expander:

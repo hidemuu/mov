@@ -78,6 +78,12 @@ namespace Mov.Designer.ViewModels
 
         }
 
+        public override void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+            base.OnNavigatedFrom(navigationContext);
+            Post();
+        }
+
         public override void OnNavigatedTo(NavigationContext navigationContext)
         {
             base.OnNavigatedTo(navigationContext);
@@ -95,15 +101,20 @@ namespace Mov.Designer.ViewModels
 
         private void OnSaveCommand(string parameter)
         {
+            Post();
+            repository.LayoutNodes.Export();
+            repository.Contents.Export();
+            MessageBox.Show("保存しました");
+        }
+
+        private void Post()
+        {
             var trees = new List<LayoutNode>();
             GetLayoutTrees(trees, Models);
             repository.LayoutNodes.Posts(trees);
-            repository.LayoutNodes.Export();
             var tables = new List<Content>();
             GetContentTables(tables, Models);
             repository.Contents.Posts(tables);
-            repository.Contents.Export();
-            MessageBox.Show("保存しました");
         }
 
         private void OnAddCommand(Guid id)
@@ -174,6 +185,7 @@ namespace Mov.Designer.ViewModels
                     Index = model.Index.Value,
                     Code = model.Code.Value,
                     ControlType = model.ControlType.Value,
+                    Name = model.Name.Value,
                 };
                 items.Add(item);
                 GetContentTables(items, model.Children);

@@ -36,8 +36,7 @@ namespace Mov.Designer.ViewModels
         /// </summary>
         public DesignerPartsViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerDatabase database) : base(regionManager, dialogService)
         {
-            //this.repository = database.GetRepository("");
-            //builder = new LayoutBuilder(this.repository);
+            
         }
 
         #endregion コンストラクター
@@ -46,8 +45,7 @@ namespace Mov.Designer.ViewModels
 
         protected override void OnLoaded()
         {
-            //Models.Clear();
-            //Models.AddRangeOnScheduler(builder.Build().Layout.Children);
+
         }
 
         public override void OnNavigatedTo(NavigationContext navigationContext)

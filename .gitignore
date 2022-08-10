@@ -2,4 +2,7 @@ bin/
 *.exe
 *.dll
 *.pdb
+*.cache
+*.g.i.cs
+*.i.lref
 assets/*

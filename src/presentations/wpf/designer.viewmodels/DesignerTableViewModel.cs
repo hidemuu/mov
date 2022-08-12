@@ -53,7 +53,6 @@ namespace Mov.Designer.ViewModels
 
         #endregion コマンド
 
-
         #region コンストラクター
 
         /// <summary>
@@ -107,7 +106,7 @@ namespace Mov.Designer.ViewModels
 
         private void Post()
         {
-            var tables = new List<Content>();
+            var tables = new List<LayoutContent>();
             GetContentTables(tables, Models);
             repository.Contents.Posts(tables);
         }
@@ -134,7 +133,7 @@ namespace Mov.Designer.ViewModels
         {
             var table = this.repository.Contents.Get(id);
             if (table == null) return;
-            this.repository.Contents.Put(new Content(), table.Id);
+            this.repository.Contents.Put(new LayoutContent(), table.Id);
             CreateModels();
             UpdateEditMode(Models);
         }
@@ -169,11 +168,11 @@ namespace Mov.Designer.ViewModels
             }
         }
 
-        private void GetContentTables(ICollection<Content> items, IEnumerable<DesignerTableModel> models)
+        private void GetContentTables(ICollection<LayoutContent> items, IEnumerable<DesignerTableModel> models)
         {
             foreach (var model in models)
             {
-                var item = new Content
+                var item = new LayoutContent
                 {
                     Id = model.Id.Value,
                     Index = model.Index.Value,
@@ -197,6 +196,7 @@ namespace Mov.Designer.ViewModels
         #endregion メソッド
 
     }
+
     #region クラス
 
     public class DesignerTableModel
@@ -233,7 +233,7 @@ namespace Mov.Designer.ViewModels
 
         #region コンストラクター
 
-        public DesignerTableModel(Content item, ICollection<ReactiveCommand<Guid>> addCommands, ICollection<ReactiveCommand<Guid>> removeCommands)
+        public DesignerTableModel(LayoutContent item, ICollection<ReactiveCommand<Guid>> addCommands, ICollection<ReactiveCommand<Guid>> removeCommands)
         {
             Update(item);
             //コマンド
@@ -245,7 +245,7 @@ namespace Mov.Designer.ViewModels
 
         #region 継承メソッド
 
-        protected virtual void Update(Content item)
+        protected virtual void Update(LayoutContent item)
         {
             if (item == null) return;
             Id.Value = item.Id;

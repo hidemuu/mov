@@ -7,14 +7,14 @@ namespace Mov.Driver.Models
 {
     public interface IDriverRepository
     {
-        IRepository<Error, ErrorCollection> Errors { get; }
+        IDbObjectRepository<Error, ErrorCollection> Errors { get; }
 
-        IRepository<Macro, MacroCollection> Macros { get; }
+        IDbObjectRepository<Macro, MacroCollection> Macros { get; }
 
-        IRepository<Variable, VariableCollection> Variables { get; }
+        IDbObjectRepository<Variable, VariableCollection> Variables { get; }
 
-        IRepository<Schema, SchemaCollection> Schemas { get; }
+        IDbObjectRepository<Schema, SchemaCollection> Schemas { get; }
 
-        IRepository<Connect, ConnectCollection> Connects { get; }
+        IDbObjectRepository<Connect, ConnectCollection> Connects { get; }
     }
 }

@@ -23,7 +23,7 @@ namespace Mov.Designer.Views.Selector
                 if (TryGetType(node.ControlType, out Type type))
                 {
                     var factory = new FrameworkElementFactory(type);
-                    factory.SetValue(Label.ContentProperty, node.Name.Value);
+                    factory.SetValue(Label.ContentProperty, node.Name);
                     return new DataTemplate() { VisualTree = factory, };
                 };
 

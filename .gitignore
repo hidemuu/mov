@@ -5,4 +5,7 @@ bin/
 *.cache
 *.g.i.cs
 *.i.lref
+package-lock.json
+.vs/*
 assets/*
+node_modules/*

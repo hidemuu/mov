@@ -10,10 +10,6 @@ namespace Mov.Designer.Models
     public enum LayoutNodeType
     {
         /// <summary>
-        /// ルート
-        /// </summary>
-        Root,
-        /// <summary>
         /// コンテンツ
         /// </summary>
         Content,

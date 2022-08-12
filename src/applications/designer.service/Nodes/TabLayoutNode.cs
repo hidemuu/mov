@@ -22,7 +22,7 @@ namespace Mov.Designer.Service.Nodes
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public TabLayoutNode(LayoutNode layout) : base(layout)
+        public TabLayoutNode(LayoutNode layout, LayoutContent content) : base(layout, content)
         {
 
         }

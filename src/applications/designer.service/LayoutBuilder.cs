@@ -11,6 +11,7 @@ namespace Mov.Designer.Service
         #region フィールド
 
         private readonly IDesignerRepository repository;
+        private readonly LayoutNodeFactory factory;
 
         #endregion フィールド
 
@@ -28,6 +29,7 @@ namespace Mov.Designer.Service
         public LayoutBuilder(IDesignerRepository repository)
         {
             this.repository = repository;
+            this.factory = new LayoutNodeFactory(repository);
         }
 
         #endregion コンストラクター
@@ -46,44 +48,16 @@ namespace Mov.Designer.Service
 
         private LayoutNodeBase Create()
         {
-            var node = new RootLayoutNode();
+            var node = new ContentLayoutNode();
             CreateLayoutNode(node.Children, repository.LayoutNodes.Gets());
             return node;
         }
 
         private void CreateLayoutNode(ICollection<LayoutNodeBase> nodes, IEnumerable<LayoutNode> trees)
         {
-            LayoutNodeBase node;
             foreach (var tree in trees)
             {
-                Content content = new Content();
-                foreach (var table in repository.Contents.Gets())
-                {
-                    if (!tree.Code.Equals(table.Code, StringComparison.OrdinalIgnoreCase)) continue;
-                    content = table;
-                    break;
-                }
-                switch (tree.LayoutNodeType)
-                {
-                    case LayoutNodeType.Root:
-                        node = new RootLayoutNode(tree);
-                        break;
-                    case LayoutNodeType.Content:       
-                        node = new ContentLayoutNode(tree, content);
-                        break;
-                    case LayoutNodeType.Expander:
-                        node = new ExpanderLayoutNode(tree);
-                        break;
-                    case LayoutNodeType.Scrollbar:
-                        node = new ScrollbarLayoutNode(tree);
-                        break;
-                    case LayoutNodeType.Tab:
-                        node = new TabLayoutNode(tree);
-                        break;
-                    default:
-                        node = new ContentLayoutNode();
-                        break;
-                }
+                var node = this.factory.Create(tree);
                 nodes.Add(node);
                 //子階層再帰処理
                 if (tree.Children.Count > 0)

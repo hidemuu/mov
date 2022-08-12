@@ -25,7 +25,7 @@
                     <TextBlock
                         Margin="0"
                         Padding="0"
-                        Text="{Binding Name.Value}" />
+                        Text="{Binding Name}" />
                 </StackPanel>
             </Expander.Header>
             <StackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}">

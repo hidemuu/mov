@@ -12,6 +12,8 @@ namespace Mov.Designer.Service
     {
         #region フィールド
 
+        private readonly LayoutNode node;
+
         /// <summary>
         /// 子階層
         /// </summary>
@@ -32,9 +34,24 @@ namespace Mov.Designer.Service
         public OrientationType OrientationType { get; } = OrientationType.Horizontal;
 
         /// <summary>
+        /// レイアウトスタイル
+        /// </summary>
+        public string LayoutStyle { get; set; }
+
+        /// <summary>
         /// 開閉状態
         /// </summary>
         public ReactivePropertySlim<bool> IsExpand { get; } = new ReactivePropertySlim<bool>(true);
+
+        /// <summary>
+        /// 表示状態
+        /// </summary>
+        public ReactivePropertySlim<bool> IsVisible { get; } = new ReactivePropertySlim<bool>(true);
+
+        /// <summary>
+        /// 活性状態
+        /// </summary>
+        public ReactivePropertySlim<bool> IsEnable { get; } = new ReactivePropertySlim<bool>(true);
 
         /// <summary>
         /// 子階層
@@ -48,20 +65,21 @@ namespace Mov.Designer.Service
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public LayoutNodeBase()
+        public LayoutNodeBase() : base()
         {
-
+            this.node = new LayoutNode();
         }
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public LayoutNodeBase(LayoutNode tree)
+        /// <param name="node"></param>
+        /// <param name="content"></param>
+        public LayoutNodeBase(LayoutNode node, LayoutContent content) : base(content)
         {
-            Code = tree.Code;
-            Name.Value = tree.Code;
-            IsExpand.Value = tree.IsExpand;
-            LayoutStyle = tree.Style;
+            this.node = node;
+            IsExpand.Value = node.IsExpand;
+            LayoutStyle = node.Style;
         }
 
         #endregion コンストラクター

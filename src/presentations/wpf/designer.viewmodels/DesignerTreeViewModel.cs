@@ -112,7 +112,7 @@ namespace Mov.Designer.ViewModels
             var trees = new List<LayoutNode>();
             GetLayoutTrees(trees, Models);
             repository.LayoutNodes.Posts(trees);
-            var tables = new List<Content>();
+            var tables = new List<LayoutContent>();
             GetContentTables(tables, Models);
             repository.Contents.Posts(tables);
         }
@@ -175,11 +175,11 @@ namespace Mov.Designer.ViewModels
             }
         }
 
-        private void GetContentTables(ICollection<Content> items, IEnumerable<DesignerTreeModel> models)
+        private void GetContentTables(ICollection<LayoutContent> items, IEnumerable<DesignerTreeModel> models)
         {
             foreach (var model in models)
             {
-                var item = new Content
+                var item = new LayoutContent
                 {
                     Id = model.Id.Value,
                     Index = model.Index.Value,
@@ -246,7 +246,7 @@ namespace Mov.Designer.ViewModels
 
         #region コンストラクター
 
-        public DesignerTreeModel(LayoutNode tree, Content table, IDesignerRepository repository, ICollection<ReactiveCommand<Guid>> addCommands, ICollection<ReactiveCommand<Guid>> removeCommands) : base(table, addCommands, removeCommands)
+        public DesignerTreeModel(LayoutNode tree, LayoutContent table, IDesignerRepository repository, ICollection<ReactiveCommand<Guid>> addCommands, ICollection<ReactiveCommand<Guid>> removeCommands) : base(table, addCommands, removeCommands)
         {
             this.repository = repository;
             Codes = repository.Contents.Gets().Select(x => x.Code).Distinct().ToList();
@@ -278,10 +278,10 @@ namespace Mov.Designer.ViewModels
             Update(item);
         }
 
-        protected override void Update(Content item)
+        protected override void Update(LayoutContent item)
         {
             if (item == null) return;
-            var table = new Content(item);
+            var table = new LayoutContent(item);
             table.Id = Id.Value;
             table.Index = Index.Value;
             base.Update(table);

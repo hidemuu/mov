@@ -40,16 +40,31 @@ namespace Mov.Designer.Models
         /// </summary>
         [XmlElement("style")]
         public string Style { get; set; }
-        /// <summary>
-        /// パラメータ
-        /// </summary>
-        [XmlElement("parameter")]
-        public string Parameter { get; set; }
+        
         /// <summary>
         /// 展開・非展開
         /// </summary>
         [XmlElement("expand")]
         public bool IsExpand { get; set; } = true;
+
+        /// <summary>
+        /// 表示・非表示
+        /// </summary>
+        [XmlElement("visible")]
+        public bool IsVisible { get; set; } = true;
+
+        /// <summary>
+        /// 活性・非活性
+        /// </summary>
+        [XmlElement("enable")]
+        public bool IsEnable { get; set; } = true;
+
+        /// <summary>
+        /// パラメータ
+        /// </summary>
+        [XmlElement("parameter")]
+        public string Parameter { get; set; }
+
         /// <summary>
         /// 子階層
         /// </summary>

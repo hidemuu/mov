@@ -7,8 +7,8 @@ namespace Mov.Designer.Models
 {
     public interface IDesignerRepository
     {
-        IRepository<Content, ContentCollection> Contents { get; }
-        IRepository<LayoutNode, LayoutNodeCollection> LayoutNodes { get; }
-        IRepository<Shell, ShellCollection> Shells { get; }
+        IDbObjectRepository<LayoutContent, LayoutContentCollection> Contents { get; }
+        IDbObjectRepository<LayoutNode, LayoutNodeCollection> LayoutNodes { get; }
+        IDbObjectRepository<Shell, ShellCollection> Shells { get; }
     }
 }

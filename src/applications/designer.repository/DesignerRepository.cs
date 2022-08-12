@@ -18,7 +18,7 @@ namespace Mov.Designer.Repository
         {
             Shells = new DbObjectRepository<Shell, ShellCollection>(dir, GetRelativePath("shell"), encoding);
             LayoutNodes = new DbObjectRepository<LayoutNode, LayoutNodeCollection>(dir, GetRelativePath("layout_node"), encoding);
-            Contents = new DbObjectRepository<Content, ContentCollection>(dir, GetRelativePath("content"), encoding);
+            Contents = new DbObjectRepository<LayoutContent, LayoutContentCollection>(dir, GetRelativePath("content"), encoding);
             Themes = new DbObjectRepository<Theme, ThemeCollection>(dir, GetRelativePath("theme"), encoding);
         }
 
@@ -26,13 +26,13 @@ namespace Mov.Designer.Repository
 
         #region プロパティ
 
-        public IRepository<Shell, ShellCollection> Shells { get; }
+        public IDbObjectRepository<Shell, ShellCollection> Shells { get; }
 
-        public IRepository<LayoutNode, LayoutNodeCollection> LayoutNodes { get; }
+        public IDbObjectRepository<LayoutNode, LayoutNodeCollection> LayoutNodes { get; }
 
-        public IRepository<Content, ContentCollection> Contents { get; }
+        public IDbObjectRepository<LayoutContent, LayoutContentCollection> Contents { get; }
 
-        public IRepository<Theme, ThemeCollection> Themes { get; }
+        public IDbObjectRepository<Theme, ThemeCollection> Themes { get; }
 
         #endregion プロパティ
     }

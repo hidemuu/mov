@@ -8,27 +8,38 @@ namespace Mov.Designer.Service
 {
     public abstract class LayoutBase
     {
+        #region フィールド
+
+        private readonly LayoutContent content;
+
+        #endregion フィールド
+
         #region プロパティ
 
         /// <summary>
         /// コード
         /// </summary>
-        public string Code { get; set; }
+        public string Code => this.content.Code;
 
         /// <summary>
         /// 名称
         /// </summary>
-        public ReactivePropertySlim<string> Name { get; } = new ReactivePropertySlim<string>();
+        public string Name => this.content.Name;
+
+        /// <summary>
+        /// コントロール種別
+        /// </summary>
+        public string ControlType => this.content.ControlType;
+
+        /// <summary>
+        /// マクロ
+        /// </summary>
+        public string Macro => this.content.Macro;
 
         /// <summary>
         /// 並び順インデックス
         /// </summary>
         public ReactivePropertySlim<int> Index { get; } = new ReactivePropertySlim<int>();
-
-        /// <summary>
-        /// レイアウトスタイル
-        /// </summary>
-        public string LayoutStyle { get; set; }
 
         /// <summary>
         /// インデント
@@ -44,7 +55,16 @@ namespace Mov.Designer.Service
         /// </summary>
         public LayoutBase()
         {
+            this.content = new LayoutContent();
+        }
 
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
+        /// <param name="content"></param>
+        public LayoutBase(LayoutContent content)
+        {
+            this.content = content;
         }
 
         #endregion コンストラクター

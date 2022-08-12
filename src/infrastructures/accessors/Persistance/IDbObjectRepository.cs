@@ -8,7 +8,7 @@ namespace Mov.Accessors
     // <summary>
     /// データベースリポジトリインターフェース
     /// </summary>
-    public interface IRepository<T, C> where T : DbObject where C : DbObjectCollection<T>
+    public interface IDbObjectRepository<T, C> where T : DbObject where C : DbObjectCollection<T>
     {
         /// <summary>
         /// インポート

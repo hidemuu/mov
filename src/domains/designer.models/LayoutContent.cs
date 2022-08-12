@@ -8,18 +8,18 @@ namespace Mov.Designer.Models
     /// コンテンツのコレクション
     /// </summary>
     [XmlRoot("contents")]
-    public class ContentCollection : DbObjectCollection<Content>
+    public class LayoutContentCollection : DbObjectCollection<LayoutContent>
     {
         /// <inheritdoc />
-        [XmlElement(Type = typeof(Content), ElementName = "content")]
-        public override Content[] Items { get; set; }
+        [XmlElement(Type = typeof(LayoutContent), ElementName = "content")]
+        public override LayoutContent[] Items { get; set; }
     }
 
     /// <summary>
     /// コンテンツ
     /// </summary>
     [XmlRoot("content")]
-    public class Content : DbObject
+    public class LayoutContent : DbObject
     {
         #region プロパティ
 
@@ -59,18 +59,6 @@ namespace Mov.Designer.Models
         [XmlElement("macro")]
         public string Macro { get; set; } = string.Empty;
 
-        /// <summary>
-        /// 表示・非表示
-        /// </summary>
-        [XmlElement("visible")]
-        public bool IsVisible { get; set; } = true;
-
-        /// <summary>
-        /// 活性・非活性
-        /// </summary>
-        [XmlElement("enable")]
-        public bool IsEnable { get; set; } = true;
-
         #endregion プロパティ
 
         #region コンストラクター
@@ -78,7 +66,7 @@ namespace Mov.Designer.Models
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public Content()
+        public LayoutContent()
         {
 
         }
@@ -87,7 +75,7 @@ namespace Mov.Designer.Models
         /// コンストラクター（ディープコピー）
         /// </summary>
         /// <param name="src"></param>
-        public Content(Content src) : base(src)
+        public LayoutContent(LayoutContent src) : base(src)
         {
             Name = src.Name;
             Icon = src.Icon;
@@ -95,8 +83,6 @@ namespace Mov.Designer.Models
             Schema = src.Schema;
             DefaultValues = src.DefaultValues;
             Macro = src.Macro;
-            IsVisible = src.IsVisible;
-            IsEnable = src.IsEnable;
         }
 
         #endregion コンストラクター

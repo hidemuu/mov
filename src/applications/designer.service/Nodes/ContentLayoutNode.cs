@@ -12,15 +12,7 @@ namespace Mov.Designer.Service.Nodes
 
         public override LayoutNodeType LayoutNodeType => LayoutNodeType.Content;
 
-        public string ControlType { get; } = string.Empty;
 
-        public string ControlStyle { get; } = string.Empty;
-
-        public string Macro { get; } = string.Empty;
-
-        public ReactivePropertySlim<bool> IsVisible { get; } = new ReactivePropertySlim<bool>(true);
-
-        public ReactivePropertySlim<bool> IsEnable { get; } = new ReactivePropertySlim<bool>(true);
 
         #endregion プロパティ
 
@@ -34,13 +26,14 @@ namespace Mov.Designer.Service.Nodes
 
         }
 
-        public ContentLayoutNode(LayoutNode layout, Content content) : base(layout)
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
+        /// <param name="node"></param>
+        /// <param name="content"></param>
+        public ContentLayoutNode(LayoutNode node, LayoutContent content) : base(node, content)
         {
-            Code = content.Code;
-            ControlType = content.ControlType;
-            Macro = content.Macro;
-            IsVisible.Value = content.IsVisible;
-            IsEnable.Value = content.IsEnable;
+            
         }
 
         #endregion コンストラクター
@@ -49,7 +42,7 @@ namespace Mov.Designer.Service.Nodes
 
         public override string ToString()
         {
-            return base.ToString() + " [ControlType] " + ControlType + " [ControlStyle] " + ControlStyle + " [Macro] " + Macro;
+            return base.ToString() + " [ControlType] " + ControlType + " [Macro] " + Macro;
         }
 
         #endregion メソッド

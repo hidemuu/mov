@@ -7,6 +7,6 @@ namespace Mov.Drawer.Models
 {
     public interface IDrawerRepository
     {
-        IRepository<DrawItem, DrawItemCollection> DrawItems { get; }
+        IDbObjectRepository<DrawItem, DrawItemCollection> DrawItems { get; }
     }
 }

@@ -7,8 +7,6 @@ namespace Mov.Designer.Service.Nodes
 {
     public class TableLayoutNode : LayoutNodeBase
     {
-        public override LayoutNodeType LayoutNodeType => LayoutNodeType.Table;
-
 
 
         #region コンストラクター

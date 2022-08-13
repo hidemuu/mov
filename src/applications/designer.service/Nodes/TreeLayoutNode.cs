@@ -7,7 +7,6 @@ namespace Mov.Designer.Service.Nodes
 {
     public class TreeLayoutNode : LayoutNodeBase
     {
-        public override LayoutNodeType LayoutNodeType => LayoutNodeType.Tree;
 
         #region コンストラクター
 

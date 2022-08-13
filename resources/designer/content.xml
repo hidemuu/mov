@@ -9,8 +9,6 @@
     <control_type />
     <schema />
     <macro />
-    <visible>true</visible>
-    <enable>true</enable>
   </content>
   <content>
     <id>ef9472f6-9cef-428a-86cf-85e35dcf2b90</id>
@@ -21,8 +19,6 @@
     <control_type />
     <schema />
     <macro />
-    <visible>true</visible>
-    <enable>true</enable>
   </content>
   <content>
     <id>db10ae8a-aad5-4c78-86d8-a429d2d36e68</id>
@@ -33,8 +29,6 @@
     <control_type>Label</control_type>
     <schema />
     <macro />
-    <visible>true</visible>
-    <enable>true</enable>
   </content>
   <content>
     <id>b285c6a8-d47d-40e8-bc8b-e6e6df68d90c</id>
@@ -45,7 +39,5 @@
     <control_type>Label</control_type>
     <schema />
     <macro />
-    <visible>true</visible>
-    <enable>true</enable>
   </content>
 </contents>

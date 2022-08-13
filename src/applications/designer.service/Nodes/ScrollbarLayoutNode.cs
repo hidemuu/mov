@@ -7,7 +7,6 @@ namespace Mov.Designer.Service.Nodes
 {
     public class ScrollbarLayoutNode : LayoutNodeBase
     {
-        public override LayoutNodeType LayoutNodeType => LayoutNodeType.Scrollbar;
 
         #region コンストラクター
 

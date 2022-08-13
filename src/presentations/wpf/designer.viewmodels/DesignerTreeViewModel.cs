@@ -112,9 +112,9 @@ namespace Mov.Designer.ViewModels
             var trees = new List<LayoutNode>();
             GetLayoutTrees(trees, Models);
             repository.LayoutNodes.Posts(trees);
-            var tables = new List<LayoutContent>();
-            GetContentTables(tables, Models);
-            repository.Contents.Posts(tables);
+            //var tables = new List<LayoutContent>();
+            //GetContentTables(tables, Models);
+            //repository.Contents.Posts(tables);
         }
 
         private void OnAddCommand(Guid id)
@@ -246,21 +246,21 @@ namespace Mov.Designer.ViewModels
 
         #region コンストラクター
 
-        public DesignerTreeModel(LayoutNode tree, LayoutContent table, IDesignerRepository repository, ICollection<ReactiveCommand<Guid>> addCommands, ICollection<ReactiveCommand<Guid>> removeCommands) : base(table, addCommands, removeCommands)
+        public DesignerTreeModel(LayoutNode node, LayoutContent table, IDesignerRepository repository, ICollection<ReactiveCommand<Guid>> addCommands, ICollection<ReactiveCommand<Guid>> removeCommands) : base(table, addCommands, removeCommands)
         {
             this.repository = repository;
             Codes = repository.Contents.Gets().Select(x => x.Code).Distinct().ToList();
             //プロパティ
-            Id.Value = tree.Id;
-            Index.Value = tree.Index;
-            Code.Value = tree.Code;
-            IsExpand.Value = tree.IsExpand;
-            LayoutType.Value = tree.LayoutNodeType;
-            OrientationType.Value = tree.OrientationType;
-            LayoutStyle.Value = tree.Style;
-            LayoutParameter.Value = tree.Parameter;
+            Id.Value = node.Id;
+            Index.Value = node.Index;
+            Code.Value = node.Code;
+            IsExpand.Value = node.IsExpand;
+            LayoutType.Value = node.LayoutNodeType;
+            OrientationType.Value = node.OrientationType;
+            LayoutStyle.Value = node.Style;
+            LayoutParameter.Value = node.Parameter;
             //子階層へ
-            foreach (var child in tree.Children)
+            foreach (var child in node.Children)
             {
                 Children.Add(new DesignerTreeModel(child, repository.Contents.Get(child.Code), repository, addCommands, removeCommands));
             }

@@ -24,19 +24,14 @@ namespace Mov.Designer.Service
         #region プロパティ
 
         /// <summary>
-        /// レイアウトタイプ
-        /// </summary>
-        public abstract LayoutNodeType LayoutNodeType { get; }
-
-        /// <summary>
         /// 配置方向
         /// </summary>
-        public OrientationType OrientationType { get; } = OrientationType.Horizontal;
+        public OrientationType OrientationType => node.OrientationType;
 
         /// <summary>
         /// レイアウトスタイル
         /// </summary>
-        public string LayoutStyle { get; set; }
+        public string LayoutStyle => node.Style;
 
         /// <summary>
         /// 開閉状態
@@ -79,7 +74,8 @@ namespace Mov.Designer.Service
         {
             this.node = node;
             IsExpand.Value = node.IsExpand;
-            LayoutStyle = node.Style;
+            IsVisible.Value = node.IsVisible;
+            IsEnable.Value = node.IsEnable;
         }
 
         #endregion コンストラクター
@@ -108,7 +104,7 @@ namespace Mov.Designer.Service
 
         public override string ToString()
         {
-            return base.ToString() + " [NodeType] " + LayoutNodeType.ToString();
+            return base.ToString();
         }
 
         #endregion メソッド

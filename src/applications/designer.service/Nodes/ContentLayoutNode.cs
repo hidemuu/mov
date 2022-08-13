@@ -10,10 +10,6 @@ namespace Mov.Designer.Service.Nodes
     {
         #region プロパティ
 
-        public override LayoutNodeType LayoutNodeType => LayoutNodeType.Content;
-
-
-
         #endregion プロパティ
 
         #region コンストラクター

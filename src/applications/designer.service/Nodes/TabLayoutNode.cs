@@ -7,7 +7,6 @@ namespace Mov.Designer.Service.Nodes
 {
     public class TabLayoutNode : LayoutNodeBase
     {
-        public override LayoutNodeType LayoutNodeType => LayoutNodeType.Tab;
 
         #region コンストラクター
 

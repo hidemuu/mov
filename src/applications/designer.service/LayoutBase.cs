@@ -39,7 +39,7 @@ namespace Mov.Designer.Service
         /// <summary>
         /// 並び順インデックス
         /// </summary>
-        public ReactivePropertySlim<int> Index { get; } = new ReactivePropertySlim<int>();
+        public int Index => this.content.Index;
 
         /// <summary>
         /// インデント

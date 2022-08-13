@@ -209,13 +209,12 @@ namespace Mov.Designer.ViewModels
     public class DesignerTableModelAttribute
     {
         public ColumnAttribute Index { get; } = new ColumnAttribute("index", 30);
-        public ColumnAttribute Code { get; } = new ColumnAttribute("code", 100);
-        public ColumnAttribute Name { get; } = new ColumnAttribute("name", 100);
-        public ColumnAttribute Command { get; } = new ColumnAttribute("command", 100);
-        public ColumnAttribute ControlType { get; } = new ColumnAttribute("controlType", 100);
-        public ColumnAttribute ControlStyle { get; } = new ColumnAttribute("controlStyle", 100);
-        public ColumnAttribute Parameter { get; } = new ColumnAttribute("parameter", 100);
-        public ColumnAttribute Edit { get; } = new ColumnAttribute("edit", 0);
+        public ColumnAttribute Code { get; } = new ColumnAttribute("code", 120);
+        public ColumnAttribute Name { get; } = new ColumnAttribute("name", 120);
+        public ColumnAttribute Command { get; } = new ColumnAttribute("command", 120);
+        public ColumnAttribute ControlType { get; } = new ColumnAttribute("type", 120);
+        public ColumnAttribute ControlStyle { get; } = new ColumnAttribute("style", 120);
+        public ColumnAttribute Parameter { get; } = new ColumnAttribute("parameter", 120);
     }
 
     #endregion クラス

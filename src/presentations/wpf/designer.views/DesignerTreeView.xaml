@@ -5,9 +5,9 @@
     xmlns:components="clr-namespace:Mov.WpfControls.Components;assembly=Mov.WpfControls"
     xmlns:converter="clr-namespace:Mov.WpfControls.Converters;assembly=Mov.WpfControls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dd="urn:gong-wpf-dragdrop"
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:local="clr-namespace:Mov.Designer.Views"
-    xmlns:dd="urn:gong-wpf-dragdrop"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
     xmlns:vm="clr-namespace:Mov.Designer.ViewModels;assembly=Mov.Designer.ViewModels"
@@ -39,17 +39,29 @@
         </Grid.RowDefinitions>
         <components:TreeListView
             x:Name="treeviewMain"
-            x:FieldModifier="public"
-            AllowsColumnReorder="True"
-            ItemsSource="{Binding Models}"
             dd:DragDrop.IsDragSource="True"
             dd:DragDrop.IsDropTarget="True"
-            dd:DragDrop.UseDefaultDragAdorner="True">
+            dd:DragDrop.UseDefaultDragAdorner="True"
+            x:FieldModifier="public"
+            AllowsColumnReorder="True"
+            ItemsSource="{Binding Models}">
+            <components:TreeListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem
+                        Command="{Binding AddCommand}"
+                        CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=components:TreeListView}}"
+                        Header="追加" />
+                    <MenuItem
+                        Command="{Binding DeleteCommand}"
+                        CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=components:TreeListView}}"
+                        Header="削除" />
+                </ContextMenu>
+            </components:TreeListView.ContextMenu>
             <components:TreeListView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Children}" />
             </components:TreeListView.ItemTemplate>
             <components:TreeListView.Columns>
-                <GridViewColumn Width="{Binding Attribute.Edit.Width.Value}" Header="{Binding Attribute.Edit.Header.Value}">
+                <!--<GridViewColumn Width="{Binding Attribute.Edit.Width.Value}" Header="{Binding Attribute.Edit.Header.Value}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
                             <StackPanel Orientation="Horizontal" Visibility="{Binding IsEdit.Value, Converter={StaticResource boolToVisibilityConverter}}">
@@ -74,7 +86,7 @@
                             </StackPanel>
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
-                </GridViewColumn>
+                </GridViewColumn>-->
                 <GridViewColumn Width="{Binding Attribute.Code.Width.Value}" Header="{Binding Attribute.Code.Header.Value}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">

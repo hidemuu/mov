@@ -34,11 +34,11 @@
                         <Setter.Value>
                             <ContextMenu DataContext="{Binding PlacementTarget.Tag, RelativeSource={RelativeSource Self}}">
                                 <MenuItem
-                                    Command="{Binding AddCommand}"
+                                    Command="{Binding AddCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}"
                                     CommandParameter="{Binding PlacementTarget.Content, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
                                     Header="追加" />
                                 <MenuItem
-                                    Command="{Binding DeleteCommand}"
+                                    Command="{Binding DeleteCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}"
                                     CommandParameter="{Binding PlacementTarget.Content, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
                                     Header="削除" />
                             </ContextMenu>

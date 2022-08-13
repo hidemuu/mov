@@ -4,7 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:converter="clr-namespace:Mov.WpfControls.Converters;assembly=Mov.WpfControls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dd="urn:gong-wpf-dragdrop"
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:interactivity="clr-namespace:Reactive.Bindings.Interactivity;assembly=ReactiveProperty"
     xmlns:local="clr-namespace:Mov.Designer.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
@@ -31,36 +33,32 @@
         <ListView
             x:Name="listView"
             Grid.Row="0"
+            dd:DragDrop.IsDragSource="True"
+            dd:DragDrop.IsDropTarget="True"
+            dd:DragDrop.UseDefaultDragAdorner="True"
             ItemsSource="{Binding Models}"
             SelectedItem="{Binding SelectedModel.Value}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="Tag" Value="{Binding DataContext, RelativeSource={RelativeSource AncestorType=ListView}}" />
+                    <Setter Property="ContextMenu">
+                        <Setter.Value>
+                            <ContextMenu DataContext="{Binding PlacementTarget.Tag, RelativeSource={RelativeSource Self}}">
+                                <MenuItem
+                                    Command="{Binding AddCommand}"
+                                    CommandParameter="{Binding PlacementTarget.Content, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+                                    Header="追加" />
+                                <MenuItem
+                                    Command="{Binding DeleteCommand}"
+                                    CommandParameter="{Binding PlacementTarget.Content, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+                                    Header="削除" />
+                            </ContextMenu>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="{Binding Attribute.Edit.Width.Value}" Header="{Binding Attribute.Edit.Header.Value}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
-                                <StackPanel Orientation="Horizontal" Visibility="{Binding IsEdit.Value, Converter={StaticResource boolToVisibilityConverter}}">
-                                    <Button
-                                        Width="16"
-                                        Height="20"
-                                        Padding="0"
-                                        Command="{Binding AddCommand}"
-                                        CommandParameter="{Binding Id.Value}"
-                                        Content="+"
-                                        FontSize="16"
-                                        Foreground="White" />
-                                    <Button
-                                        Width="16"
-                                        Height="20"
-                                        Padding="0"
-                                        Command="{Binding RemoveCommand}"
-                                        CommandParameter="{Binding Id.Value}"
-                                        Content="-"
-                                        FontSize="16"
-                                        Foreground="White" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
                     <GridViewColumn
                         x:Name="indexColumn"
                         Width="{Binding Attribute.Index.Width.Value}"
@@ -137,54 +135,6 @@
         <Button
             Width="32"
             Height="32"
-            Margin="0,0,104,8"
-            Padding="0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Bottom"
-            HorizontalContentAlignment="Center"
-            VerticalContentAlignment="Center"
-            Command="{Binding UpCommand}"
-            Content="↑"
-            Cursor="Hand"
-            Focusable="False"
-            FontSize="20"
-            ToolTip="上に移動"
-            ToolTipService.Placement="Right" />
-        <Button
-            Width="32"
-            Height="32"
-            Margin="0,0,72,8"
-            Padding="0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Bottom"
-            HorizontalContentAlignment="Center"
-            VerticalContentAlignment="Center"
-            Command="{Binding DownCommand}"
-            Content="↓"
-            Cursor="Hand"
-            Focusable="False"
-            FontSize="20"
-            ToolTip="下に移動"
-            ToolTipService.Placement="Right" />
-        <Button
-            Width="32"
-            Height="32"
-            Margin="0,0,40,8"
-            Padding="0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Bottom"
-            HorizontalContentAlignment="Center"
-            VerticalContentAlignment="Center"
-            Command="{Binding EditCommand}"
-            Content="E"
-            Cursor="Hand"
-            Focusable="False"
-            FontSize="20"
-            ToolTip="編集します"
-            ToolTipService.Placement="Right" />
-        <Button
-            Width="32"
-            Height="32"
             Margin="0,0,8,8"
             Padding="0"
             HorizontalAlignment="Right"
@@ -192,7 +142,7 @@
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
             Command="{Binding SaveCommand}"
-            Content="S"
+            Content="Save"
             Cursor="Hand"
             Focusable="False"
             FontSize="20"

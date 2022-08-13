@@ -196,7 +196,6 @@ namespace Mov.Designer.ViewModels
         {
             foreach(var model in treeModels)
             {
-                model.IsEdit.Value = IsEdit.Value;
                 UpdateEditMode(model.Children);
             }
         }
@@ -246,7 +245,7 @@ namespace Mov.Designer.ViewModels
 
         #region コンストラクター
 
-        public DesignerTreeModel(LayoutNode node, LayoutContent table, IDesignerRepository repository, ICollection<ReactiveCommand<Guid>> addCommands, ICollection<ReactiveCommand<Guid>> removeCommands) : base(table, addCommands, removeCommands)
+        public DesignerTreeModel(LayoutNode node, LayoutContent table, IDesignerRepository repository, ICollection<ReactiveCommand<Guid>> addCommands, ICollection<ReactiveCommand<Guid>> removeCommands) : base(table)
         {
             this.repository = repository;
             Codes = repository.Contents.Gets().Select(x => x.Code).Distinct().ToList();

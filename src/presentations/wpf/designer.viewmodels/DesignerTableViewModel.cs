@@ -24,10 +24,6 @@ namespace Mov.Designer.ViewModels
 
         private IDesignerRepository repository;
 
-        private ICollection<ReactiveCommand<Guid>> addCommands = new List<ReactiveCommand<Guid>>();
-
-        private ICollection<ReactiveCommand<Guid>> removeCommands = new List<ReactiveCommand<Guid>>();
-
         private CompositeDisposable modelDisposables = new CompositeDisposable();
 
         #endregion フィールド
@@ -36,20 +32,15 @@ namespace Mov.Designer.ViewModels
 
         public ReactiveCollection<DesignerTableModel> Models { get; } = new ReactiveCollection<DesignerTableModel>();
         public DesignerTableModelAttribute Attribute { get; } = new DesignerTableModelAttribute();
-        public ReactivePropertySlim<bool> IsEdit { get; } = new ReactivePropertySlim<bool>(false);
         public ReactivePropertySlim<DesignerTableModel> SelectedModel { get; } = new ReactivePropertySlim<DesignerTableModel>();
 
         #endregion プロパティ
 
         #region コマンド
 
-        public ReactiveCommand EditCommand { get; } = new ReactiveCommand();
         public ReactiveCommand SaveCommand { get; } = new ReactiveCommand();
-        public ReactiveCommand AddCommand { get; } = new ReactiveCommand();
-        public ReactiveCommand DeleteCommand { get; } = new ReactiveCommand();
-        public ReactiveCommand UpCommand { get; } = new ReactiveCommand();
-        public ReactiveCommand DownCommand { get; } = new ReactiveCommand();
-
+        public ReactiveCommand<object> AddCommand { get; } = new ReactiveCommand<object>();
+        public ReactiveCommand<object> DeleteCommand { get; } = new ReactiveCommand<object>();
 
         #endregion コマンド
 
@@ -63,9 +54,8 @@ namespace Mov.Designer.ViewModels
         {
             this.database = database;
             SaveCommand.Subscribe(OnSaveCommand).AddTo(Disposables);
-            EditCommand.Subscribe(OnEditCommand).AddTo(Disposables);
-            UpCommand.Subscribe(OnUpCommand).AddTo(Disposables);
-            DownCommand.Subscribe(OnDownCommand).AddTo(Disposables);
+            AddCommand.Subscribe(OnAddCommand).AddTo(Disposables);
+            DeleteCommand.Subscribe(OnRemoveCommand).AddTo(Disposables);
         }
 
         #endregion コンストラクター
@@ -89,13 +79,6 @@ namespace Mov.Designer.ViewModels
             this.repository = navigationContext.Parameters[DesignerViewModel.PARAM_NAME_DESIGN_REPOSITORY] as IDesignerRepository;
             CreateModels();
         }
-        private void OnEditCommand()
-        {
-            IsEdit.Value = !IsEdit.Value;
-            if (IsEdit.Value) Attribute.Edit.Width.Value = 45;
-            else Attribute.Edit.Width.Value = 0;
-            UpdateEditMode(Models);
-        }
 
         private void OnSaveCommand()
         {
@@ -111,42 +94,29 @@ namespace Mov.Designer.ViewModels
             repository.Contents.Posts(tables);
         }
 
-        private void OnUpCommand()
+        private void OnAddCommand(object parameter)
         {
-            var selectedModel = SelectedModel.Value;
-            if (selectedModel == null) return;
-            repository.Contents.MovePrev(selectedModel.Id.Value);
-            CreateModels();
-            UpdateEditMode(Models);
+            if(parameter is DesignerTableModel model)
+            {
+                var table = this.repository.Contents.Get(model.Id.Value);
+                if (table == null) return;
+                this.repository.Contents.Put(new LayoutContent(), table.Id);
+                CreateModels();
+            }
         }
 
-        private void OnDownCommand()
+        private void OnRemoveCommand(object parameter)
         {
-            var selectedModel = SelectedModel.Value;
-            if (selectedModel == null) return;
-            repository.Contents.MoveNext(selectedModel.Id.Value);
-            CreateModels();
-            UpdateEditMode(Models);
+            if (parameter is DesignerTableModel model)
+            {
+                var table = this.repository.Contents.Get(model.Id.Value);
+                if (table == null) return;
+                this.repository.Contents.Delete(table);
+                CreateModels();
+            }
         }
 
-        private void OnAddCommand(Guid id)
-        {
-            var table = this.repository.Contents.Get(id);
-            if (table == null) return;
-            this.repository.Contents.Put(new LayoutContent(), table.Id);
-            CreateModels();
-            UpdateEditMode(Models);
-        }
-
-        private void OnRemoveCommand(Guid id)
-        {
-            var table = this.repository.Contents.Get(id);
-            if (table == null) return;
-            this.repository.Contents.Delete(table);
-            CreateModels();
-            UpdateEditMode(Models);
-        }
-
+        
         #endregion イベントハンドラ
 
         #region メソッド
@@ -156,15 +126,7 @@ namespace Mov.Designer.ViewModels
             modelDisposables.Clear();
             foreach (var table in repository.Contents.Gets())
             {
-                Models.Add(new DesignerTableModel(table, addCommands, removeCommands));
-            }
-            foreach (var addCommand in addCommands)
-            {
-                addCommand.Subscribe(OnAddCommand).AddTo(modelDisposables);
-            }
-            foreach (var removeCommand in removeCommands)
-            {
-                removeCommand.Subscribe(OnRemoveCommand).AddTo(modelDisposables);
+                Models.Add(new DesignerTableModel(table));
             }
         }
 
@@ -185,13 +147,6 @@ namespace Mov.Designer.ViewModels
             }
         }
 
-        private void UpdateEditMode(IEnumerable<DesignerTableModel> models)
-        {
-            foreach (var model in models)
-            {
-                model.IsEdit.Value = IsEdit.Value;
-            }
-        }
 
         #endregion メソッド
 
@@ -219,26 +174,18 @@ namespace Mov.Designer.ViewModels
         public ReactivePropertySlim<string> Parameter { get; } = new ReactivePropertySlim<string>();
 
         public ReactivePropertySlim<string> ToolTip { get; } = new ReactivePropertySlim<string>();
-        public ReactivePropertySlim<bool> IsEdit { get; } = new ReactivePropertySlim<bool>(false);
 
         #endregion プロパティ
 
         #region コマンド
 
-        public ReactiveCommand<Guid> AddCommand { get; } = new ReactiveCommand<Guid>();
-
-        public ReactiveCommand<Guid> RemoveCommand { get; } = new ReactiveCommand<Guid>();
-
         #endregion コマンド
 
         #region コンストラクター
 
-        public DesignerTableModel(LayoutContent item, ICollection<ReactiveCommand<Guid>> addCommands, ICollection<ReactiveCommand<Guid>> removeCommands)
+        public DesignerTableModel(LayoutContent item)
         {
             Update(item);
-            //コマンド
-            addCommands.Add(AddCommand);
-            removeCommands.Add(RemoveCommand);
         }
 
         #endregion コンストラクター

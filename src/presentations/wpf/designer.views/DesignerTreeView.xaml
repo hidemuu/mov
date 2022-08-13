@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:dd="urn:gong-wpf-dragdrop"
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:interactivity="clr-namespace:Reactive.Bindings.Interactivity;assembly=ReactiveProperty.WPF"
     xmlns:local="clr-namespace:Mov.Designer.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
@@ -44,16 +45,22 @@
             dd:DragDrop.UseDefaultDragAdorner="True"
             x:FieldModifier="public"
             AllowsColumnReorder="True"
+            BindableSelectedItem="{Binding SelectedModel.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
             ItemsSource="{Binding Models}">
+            <!--<i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectedItemChanged">
+                    <interactivity:EventToReactiveCommand Command="{Binding SelectedItemChangedCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>-->
             <components:TreeListView.ContextMenu>
                 <ContextMenu>
                     <MenuItem
                         Command="{Binding AddCommand}"
-                        CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=components:TreeListView}}"
+                        CommandParameter="{Binding BindableSelectedItem, RelativeSource={RelativeSource AncestorType=components:TreeListView}}"
                         Header="追加" />
                     <MenuItem
                         Command="{Binding DeleteCommand}"
-                        CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=components:TreeListView}}"
+                        CommandParameter="{Binding BindableSelectedItem, RelativeSource={RelativeSource AncestorType=components:TreeListView}}"
                         Header="削除" />
                 </ContextMenu>
             </components:TreeListView.ContextMenu>
@@ -121,70 +128,49 @@
                 <GridViewColumn Width="{Binding Attribute.LayoutStyle.Width.Value}" Header="{Binding Attribute.LayoutStyle.Header.Value}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
-                            <TextBox
-                                Foreground="Black"
-                                IsEnabled="{Binding IsEdit.Value}"
-                                Text="{Binding LayoutStyle.Value, Mode=TwoWay}" />
+                            <TextBox Foreground="Black" Text="{Binding LayoutStyle.Value, Mode=TwoWay}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.LayoutParameter.Width.Value}" Header="{Binding Attribute.LayoutParameter.Header.Value}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
-                            <TextBox
-                                Foreground="Black"
-                                IsEnabled="{Binding IsEdit.Value}"
-                                Text="{Binding LayoutParameter.Value, Mode=TwoWay}" />
+                            <TextBox Foreground="Black" Text="{Binding LayoutParameter.Value, Mode=TwoWay}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.Name.Width.Value}" Header="{Binding Attribute.Name.Header.Value}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
-                            <TextBox
-                                Foreground="Black"
-                                IsEnabled="{Binding IsEdit.Value}"
-                                Text="{Binding Name.Value, Mode=TwoWay}" />
+                            <TextBox Foreground="Black" Text="{Binding Name.Value, Mode=TwoWay}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.Command.Width.Value}" Header="{Binding Attribute.Command.Header.Value}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
-                            <TextBox
-                                Foreground="Black"
-                                IsEnabled="{Binding IsEdit.Value}"
-                                Text="{Binding Command.Value, Mode=TwoWay}" />
+                            <TextBox Foreground="Black" Text="{Binding Command.Value, Mode=TwoWay}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.ControlType.Width.Value}" Header="{Binding Attribute.ControlType.Header.Value}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
-                            <TextBox
-                                Foreground="Black"
-                                IsEnabled="{Binding IsEdit.Value}"
-                                Text="{Binding ControlType.Value, Mode=TwoWay}" />
+                            <TextBox Foreground="Black" Text="{Binding ControlType.Value, Mode=TwoWay}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.ControlStyle.Width.Value}" Header="{Binding Attribute.ControlStyle.Header.Value}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
-                            <TextBox
-                                Foreground="Black"
-                                IsEnabled="{Binding IsEdit.Value}"
-                                Text="{Binding ControlStyle.Value, Mode=TwoWay}" />
+                            <TextBox Foreground="Black" Text="{Binding ControlStyle.Value, Mode=TwoWay}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.Parameter.Width.Value}" Header="{Binding Attribute.Parameter.Header.Value}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
-                            <TextBox
-                                Foreground="Black"
-                                IsEnabled="{Binding IsEdit.Value}"
-                                Text="{Binding Parameter.Value, Mode=TwoWay}" />
+                            <TextBox Foreground="Black" Text="{Binding Parameter.Value, Mode=TwoWay}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>

@@ -27,6 +27,19 @@ namespace Mov.WpfControls.Components
            typeof(TreeListView),
            new UIPropertyMetadata(null));
 
+        public static readonly DependencyProperty BindableSelectedItemProperty =
+            DependencyProperty.Register(nameof(BindableSelectedItem),
+                typeof(object), typeof(TreeListView), new UIPropertyMetadata(null));
+
+        /// <summary>
+        /// Bind 可能な SelectedItem を表し、SelectedItem を設定または取得します。
+        /// </summary>
+        public object BindableSelectedItem
+        {
+            get { return (object)this.GetValue(BindableSelectedItemProperty); }
+            set { this.SetValue(BindableSelectedItemProperty, value); }
+        }
+
         /// <summary>
         /// Gets or sets whether columns in a TreeListView can be
         /// reordered by a drag-and-drop operation. This is a dependency property.
@@ -58,9 +71,24 @@ namespace Mov.WpfControls.Components
         public TreeListView()
         {
             Columns = new GridViewColumnCollection();
+            this.SelectedItemChanged += this.OnSelectedItemChanged;
         }
 
         #endregion コンストラクター
+
+        #region イベント
+
+        protected virtual void OnSelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            if (this.SelectedItem == null)
+            {
+                return;
+            }
+
+            this.SetValue(BindableSelectedItemProperty, this.SelectedItem);
+        }
+
+        #endregion イベント
 
     }
 }

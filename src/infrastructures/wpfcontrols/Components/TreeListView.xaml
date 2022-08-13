@@ -5,6 +5,7 @@
     xmlns:local="clr-namespace:Mov.WpfControls.Components">
     <local:TreeListViewConverter x:Key="TreeListViewConverter" />
 
+    <!--  ツリーの各項目のテンプレート  -->
     <ControlTemplate x:Key="TreeListViewItem" TargetType="TreeViewItem">
         <StackPanel>
             <Border x:Name="Border">
@@ -34,22 +35,32 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <!--  エキスパンダー部のテンプレート  -->
     <ControlTemplate x:Key="TreeListViewExpander" TargetType="{x:Type local:TreeListViewExpander}">
         <StackPanel x:Name="ContainerElement" Orientation="Horizontal">
+            <!--  インデント付加のコンバーター  -->
             <FrameworkElement Width="{Binding RelativeSource={x:Static RelativeSource.Self}, Converter={StaticResource TreeListViewConverter}}" />
+            <!--  クリック範囲の余白  -->
+            <TextBlock Width="10" />
+            <!--  エキスパンダー  -->
+            <Expander
+                x:Name="ContainerExpander"
+                VerticalAlignment="Center"
+                IsExpanded="{Binding IsExpanded, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem}}" />
             <!--<ToggleButton
                 Margin="1"
                 VerticalAlignment="Center"
                 IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem}}" />-->
-            <Expander VerticalAlignment="Center" IsExpanded="{Binding IsExpanded, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem}}" />
         </StackPanel>
         <ControlTemplate.Triggers>
+            <!--  アイテムが存在しない場合のエキスパンダーの表示制御  -->
             <DataTrigger Binding="{Binding HasItems, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem}}" Value="False">
-                <Setter TargetName="ContainerElement" Property="Visibility" Value="Hidden" />
+                <!--<Setter TargetName="ContainerElement" Property="Visibility" Value="Hidden" />-->
             </DataTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <!--  ツリー本体のスタイルテンプレート  -->
     <Style TargetType="{x:Type local:TreeListView}">
         <Setter Property="Template">
             <Setter.Value>

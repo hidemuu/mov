@@ -33,6 +33,7 @@ namespace Mov.Designer.ViewModels
 
         public ReactiveCollection<DesignerTreeModel> Models { get; } = new ReactiveCollection<DesignerTreeModel>();
         public DesignerTreeModelAttribute Attribute { get; } = new DesignerTreeModelAttribute();
+        public ReactivePropertySlim<object> SelectedModel { get; } = new ReactivePropertySlim<object>();
 
         #endregion プロパティ
 
@@ -45,6 +46,7 @@ namespace Mov.Designer.ViewModels
 
         public ReactiveCommand<object> DeleteCommand { get; } = new ReactiveCommand<object>();
 
+        public ReactiveCommand<RoutedPropertyChangedEventArgs<object>> SelectedItemChangedCommand { get; } = new ReactiveCommand<RoutedPropertyChangedEventArgs<object>>();
 
         #endregion コマンド
 
@@ -61,6 +63,7 @@ namespace Mov.Designer.ViewModels
             UnLoadedCommand.Subscribe(() => OnUnLoaded()).AddTo(Disposables);
             AddCommand.Subscribe(OnAddCommand).AddTo(Disposables);
             DeleteCommand.Subscribe(OnRemoveCommand).AddTo(Disposables);
+            SelectedItemChangedCommand.Subscribe(OnSelectedItemChangedCommand).AddTo(Disposables);
             modelDisposables.AddTo(Disposables);
         }
 
@@ -111,7 +114,7 @@ namespace Mov.Designer.ViewModels
 
         private void OnAddCommand(object parameter)
         {
-            if(parameter is DesignerTreeModel model)
+            if(SelectedModel.Value != null && SelectedModel.Value is DesignerTreeModel model)
             {
                 var tree = this.repository.LayoutNodes.Get(model.Id.Value);
                 if (tree == null) return;
@@ -122,13 +125,18 @@ namespace Mov.Designer.ViewModels
 
         private void OnRemoveCommand(object parameter)
         {
-            if (parameter is DesignerTreeModel model)
+            if (SelectedModel.Value != null && SelectedModel.Value is DesignerTreeModel model)
             {
                 var tree = this.repository.LayoutNodes.Get(model.Id.Value);
                 if (tree == null) return;
                 this.repository.LayoutNodes.Delete(tree);
                 CreateModels();
             }
+        }
+
+        private void OnSelectedItemChangedCommand(object parameter)
+        {
+            
         }
 
         #endregion イベント

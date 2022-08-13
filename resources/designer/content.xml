@@ -4,27 +4,27 @@
     <id>7cf274d0-7032-4770-a337-f9cdb4d939ac</id>
     <index>0</index>
     <code>Root</code>
-    <name>ルート1</name>
+    <name>route</name>
     <icon />
-    <control_type />
+    <control_type>Label</control_type>
     <schema />
     <macro />
   </content>
   <content>
     <id>ef9472f6-9cef-428a-86cf-85e35dcf2b90</id>
     <index>1</index>
-    <code>Test1</code>
-    <name>test</name>
+    <code>Main</code>
+    <name>main</name>
     <icon />
-    <control_type />
+    <control_type>Label</control_type>
     <schema />
     <macro />
   </content>
   <content>
     <id>db10ae8a-aad5-4c78-86d8-a429d2d36e68</id>
     <index>2</index>
-    <code>Test12</code>
-    <name />
+    <code>Content1</code>
+    <name>項目1</name>
     <icon />
     <control_type>Label</control_type>
     <schema />
@@ -33,8 +33,8 @@
   <content>
     <id>b285c6a8-d47d-40e8-bc8b-e6e6df68d90c</id>
     <index>10</index>
-    <code>Test2</code>
-    <name />
+    <code>Content2</code>
+    <name>項目2</name>
     <icon />
     <control_type>Label</control_type>
     <schema />

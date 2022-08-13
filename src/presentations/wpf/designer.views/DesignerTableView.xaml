@@ -105,7 +105,7 @@
                         Header="{Binding Attribute.ControlType.Header.Value}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
-                                <TextBox Width="{Binding Width, ElementName=controlTypeColumn}" Text="{Binding ControlType.Value, Mode=TwoWay}" />
+                                <ComboBox Width="{Binding Width, ElementName=controlTypeColumn}" ItemsSource="{Binding ControlTypes}" SelectedItem="{Binding ControlType.Value, Mode=TwoWay}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

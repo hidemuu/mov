@@ -12,5 +12,6 @@ namespace Mov.Designer.Models
         Label,
         SpinBox,
         ComboBox,
+        CheckBox,
     }
 }

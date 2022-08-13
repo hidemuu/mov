@@ -25,7 +25,7 @@ namespace Mov.Designer.ViewModels
 
         private IDesignerRepository repository;
 
-        private CompositeDisposable modelDisposables = new CompositeDisposable();
+        private bool isEdited = false;
 
         #endregion フィールド
 
@@ -39,14 +39,11 @@ namespace Mov.Designer.ViewModels
 
         #region コマンド
 
-        public ReactiveCommand UnLoadedCommand { get; } = new ReactiveCommand();
         public ReactiveCommand<string> SaveCommand { get; } = new ReactiveCommand<string>();
 
         public ReactiveCommand<object> AddCommand { get; } = new ReactiveCommand<object>();
 
         public ReactiveCommand<object> DeleteCommand { get; } = new ReactiveCommand<object>();
-
-        public ReactiveCommand<RoutedPropertyChangedEventArgs<object>> SelectedItemChangedCommand { get; } = new ReactiveCommand<RoutedPropertyChangedEventArgs<object>>();
 
         #endregion コマンド
 
@@ -60,11 +57,8 @@ namespace Mov.Designer.ViewModels
         {
             this.database = database;
             SaveCommand.Subscribe(OnSaveCommand).AddTo(Disposables);
-            UnLoadedCommand.Subscribe(() => OnUnLoaded()).AddTo(Disposables);
             AddCommand.Subscribe(OnAddCommand).AddTo(Disposables);
             DeleteCommand.Subscribe(OnRemoveCommand).AddTo(Disposables);
-            SelectedItemChangedCommand.Subscribe(OnSelectedItemChangedCommand).AddTo(Disposables);
-            modelDisposables.AddTo(Disposables);
         }
 
         #endregion コンストラクター
@@ -76,14 +70,18 @@ namespace Mov.Designer.ViewModels
 
         }
 
-        protected void OnUnLoaded()
-        {
-
-        }
-
         public override void OnNavigatedFrom(NavigationContext navigationContext)
         {
             base.OnNavigatedFrom(navigationContext);
+            if (isEdited)
+            {
+                var msg = MessageBox.Show("変更を反映しますか？", "Information", MessageBoxButton.YesNo);
+                switch (msg)
+                {
+                    case MessageBoxResult.No:
+                        return;
+                }
+            }
             Post();
         }
 
@@ -92,6 +90,7 @@ namespace Mov.Designer.ViewModels
             base.OnNavigatedTo(navigationContext);
             this.repository = navigationContext.Parameters[DesignerViewModel.PARAM_NAME_DESIGN_REPOSITORY] as IDesignerRepository;
             CreateModels();
+            isEdited = false;
         }
 
         private void OnSaveCommand(string parameter)
@@ -120,6 +119,7 @@ namespace Mov.Designer.ViewModels
                 if (tree == null) return;
                 this.repository.LayoutNodes.Put(new LayoutNode(), tree.Id);
                 CreateModels();
+                isEdited = true;
             }
         }
 
@@ -131,21 +131,17 @@ namespace Mov.Designer.ViewModels
                 if (tree == null) return;
                 this.repository.LayoutNodes.Delete(tree);
                 CreateModels();
+                isEdited = true;
             }
         }
 
-        private void OnSelectedItemChangedCommand(object parameter)
-        {
-            
-        }
-
+        
         #endregion イベント
 
         #region メソッド
         private void CreateModels()
         {
             Models.Clear();
-            modelDisposables.Clear();
             foreach (var tree in repository.LayoutNodes.Gets())
             {
                 Models.Add(new DesignerTreeModel(tree, repository.Contents.Get(tree.Code), repository));
@@ -280,11 +276,11 @@ namespace Mov.Designer.ViewModels
 
     public class DesignerTreeModelAttribute : DesignerTableModelAttribute
     {
-        public ColumnAttribute LayoutType { get; } = new ColumnAttribute("layoutType", 100);
-        public ColumnAttribute OrientationType { get; } = new ColumnAttribute("orientation", 100);
-        public ColumnAttribute LayoutStyle { get; } = new ColumnAttribute("layoutStyle", 100);
-        public ColumnAttribute LayoutParameter { get; } = new ColumnAttribute("layoutParameter", 100);
-        public ColumnAttribute IsExpand { get; } = new ColumnAttribute("isExpand", 40);
+        public ColumnAttribute LayoutType { get; } = new ColumnAttribute("Type", 120);
+        public ColumnAttribute OrientationType { get; } = new ColumnAttribute("方向", 100);
+        public ColumnAttribute LayoutStyle { get; } = new ColumnAttribute("Style", 100);
+        public ColumnAttribute LayoutParameter { get; } = new ColumnAttribute("Parameter", 120);
+        public ColumnAttribute IsExpand { get; } = new ColumnAttribute("開閉", 40);
     }
 
     #endregion クラス

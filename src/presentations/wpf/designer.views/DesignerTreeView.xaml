@@ -30,9 +30,6 @@
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
         </i:EventTrigger>
-        <i:EventTrigger EventName="Unloaded">
-            <i:InvokeCommandAction Command="{Binding UnLoadedCommand}" />
-        </i:EventTrigger>
     </i:Interaction.Triggers>
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
@@ -47,11 +44,6 @@
             AllowsColumnReorder="True"
             BindableSelectedItem="{Binding SelectedModel.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
             ItemsSource="{Binding Models}">
-            <!--<i:Interaction.Triggers>
-                <i:EventTrigger EventName="SelectedItemChanged">
-                    <interactivity:EventToReactiveCommand Command="{Binding SelectedItemChangedCommand}" />
-                </i:EventTrigger>
-            </i:Interaction.Triggers>-->
             <components:TreeListView.ContextMenu>
                 <ContextMenu>
                     <MenuItem
@@ -68,32 +60,6 @@
                 <HierarchicalDataTemplate ItemsSource="{Binding Children}" />
             </components:TreeListView.ItemTemplate>
             <components:TreeListView.Columns>
-                <!--<GridViewColumn Width="{Binding Attribute.Edit.Width.Value}" Header="{Binding Attribute.Edit.Header.Value}">
-                    <GridViewColumn.CellTemplate>
-                        <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
-                            <StackPanel Orientation="Horizontal" Visibility="{Binding IsEdit.Value, Converter={StaticResource boolToVisibilityConverter}}">
-                                <Button
-                                    Width="16"
-                                    Height="20"
-                                    Padding="0"
-                                    Command="{Binding AddCommand}"
-                                    CommandParameter="{Binding Id.Value}"
-                                    Content="+"
-                                    FontSize="16"
-                                    Foreground="White" />
-                                <Button
-                                    Width="16"
-                                    Height="20"
-                                    Padding="0"
-                                    Command="{Binding RemoveCommand}"
-                                    CommandParameter="{Binding Id.Value}"
-                                    Content="-"
-                                    FontSize="16"
-                                    Foreground="White" />
-                            </StackPanel>
-                        </DataTemplate>
-                    </GridViewColumn.CellTemplate>
-                </GridViewColumn>-->
                 <GridViewColumn Width="{Binding Attribute.Code.Width.Value}" Header="{Binding Attribute.Code.Header.Value}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
@@ -176,22 +142,6 @@
                 </GridViewColumn>
             </components:TreeListView.Columns>
         </components:TreeListView>
-        <Button
-            Width="32"
-            Height="32"
-            Margin="0,0,40,8"
-            Padding="0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Bottom"
-            HorizontalContentAlignment="Center"
-            VerticalContentAlignment="Center"
-            Command="{Binding EditCommand}"
-            Content="E"
-            Cursor="Hand"
-            Focusable="False"
-            FontSize="20"
-            ToolTip="編集します"
-            ToolTipService.Placement="Right" />
         <Button
             Width="32"
             Height="32"

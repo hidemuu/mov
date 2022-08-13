@@ -29,7 +29,7 @@ namespace Mov.Designer.Service
         /// <summary>
         /// コントロール種別
         /// </summary>
-        public string ControlType => this.content.ControlType;
+        public ControlType ControlType => this.content.ControlType;
 
         /// <summary>
         /// マクロ

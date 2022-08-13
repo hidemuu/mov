@@ -5,21 +5,30 @@
     <index>0</index>
     <code>Root</code>
     <node_type>Expander</node_type>
+    <orientation>Horizontal</orientation>
     <expand>true</expand>
+    <visible>true</visible>
+    <enable>true</enable>
     <children>
       <layout>
         <id>bb3ad72c-20c3-475c-8f15-254198563ea2</id>
         <index>1</index>
-        <code>Test1</code>
+        <code>Main</code>
         <node_type>Expander</node_type>
+        <orientation>Horizontal</orientation>
         <expand>true</expand>
+        <visible>true</visible>
+        <enable>true</enable>
         <children>
           <layout>
             <id>0899237b-70cf-4b59-8374-34ef3b13255c</id>
             <index>2</index>
-            <code>Test12</code>
+            <code>Content1</code>
             <node_type>Content</node_type>
+            <orientation>Horizontal</orientation>
             <expand>false</expand>
+            <visible>true</visible>
+            <enable>true</enable>
             <children />
           </layout>
         </children>
@@ -27,10 +36,47 @@
       <layout>
         <id>1b0a48e4-8ee1-4c4d-bb11-9e295adaef69</id>
         <index>10</index>
-        <code>Test2</code>
+        <code>Main</code>
         <node_type>Content</node_type>
+        <orientation>Horizontal</orientation>
         <expand>false</expand>
+        <visible>true</visible>
+        <enable>true</enable>
         <children />
+      </layout>
+      <layout>
+        <id>7055949b-a62f-417f-aa85-f1862c233af6</id>
+        <index>0</index>
+        <code>Main</code>
+        <node_type>Content</node_type>
+        <orientation>Horizontal</orientation>
+        <expand>true</expand>
+        <visible>true</visible>
+        <enable>true</enable>
+        <children>
+          <layout>
+            <id>e9d9eb48-0dce-465e-aa76-3782d0f13218</id>
+            <index>0</index>
+            <code>Content2</code>
+            <node_type>Content</node_type>
+            <orientation>Horizontal</orientation>
+            <expand>true</expand>
+            <visible>true</visible>
+            <enable>true</enable>
+            <children />
+          </layout>
+          <layout>
+            <id>c93295c9-e035-4d50-b099-7276300f670b</id>
+            <index>0</index>
+            <code>Content2</code>
+            <node_type>Content</node_type>
+            <orientation>Horizontal</orientation>
+            <expand>true</expand>
+            <visible>true</visible>
+            <enable>true</enable>
+            <children />
+          </layout>
+        </children>
       </layout>
     </children>
   </layout>

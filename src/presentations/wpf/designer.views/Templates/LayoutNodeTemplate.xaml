@@ -4,13 +4,16 @@
     xmlns:converter="clr-namespace:Mov.Designer.Views.Converters"
     xmlns:nodes="clr-namespace:Mov.Designer.Service.Nodes;assembly=Mov.Designer.Service"
     xmlns:selector="clr-namespace:Mov.Designer.Views.Selector">
-
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="LayoutContentTemplate.xaml" />
+    </ResourceDictionary.MergedDictionaries>
     <selector:ContentSelector x:Key="contentSelector" />
     <converter:OrientationConverter x:Key="orientationConverter" />
 
     <DataTemplate x:Key="ContentTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
         <StackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}">
-            <ContentControl Content="{Binding}" ContentTemplateSelector="{StaticResource contentSelector}" />
+            <ContentControl Content="{Binding}" ContentTemplateSelector="{StaticResource layoutContentSelector}" />
+            <!--<ContentControl Content="{Binding}" ContentTemplateSelector="{StaticResource contentSelector}" />-->
             <ItemsControl
                 Margin="16,0,0,0"
                 ItemTemplateSelector="{DynamicResource layoutNodeSelector}"
@@ -78,7 +81,7 @@
                             Header="Index">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock HorizontalAlignment="Stretch" Text="{Binding Index.Value}" />
+                                    <TextBlock HorizontalAlignment="Stretch" Text="{Binding Index}" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

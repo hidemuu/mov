@@ -1,4 +1,5 @@
 ﻿using Mov.Accessors;
+using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
@@ -39,7 +40,7 @@ namespace Mov.Designer.Models
         /// コントロールの種類
         /// </summary>
         [XmlElement("control_type")]
-        public string ControlType { get; set; } = string.Empty;
+        public ControlType ControlType { get; set; } = ControlType.Label;
 
         /// <summary>
         /// コントロールのスキーマ
@@ -97,6 +98,8 @@ namespace Mov.Designer.Models
 
         /// <inheritdoc />
         public override string ToHeaderString() => GetString(new string[] { "Id", "Code" }, 10);
+
+        public static ControlType[] GetControlTypes => (ControlType[])Enum.GetValues(typeof(ControlType));
 
         #endregion メソッド
     }

@@ -52,6 +52,9 @@
     <Page Update="DesignerView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Templates\LayoutContentTemplate.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Templates\LayoutNodeTemplate.xaml">
       <SubType>Designer</SubType>
     </Page>

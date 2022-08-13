@@ -169,11 +169,13 @@ namespace Mov.Designer.ViewModels
         public ReactivePropertySlim<string> Code { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<string> Name { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<string> Command { get; } = new ReactivePropertySlim<string>();
-        public ReactivePropertySlim<string> ControlType { get; } = new ReactivePropertySlim<string>();
+        public ReactivePropertySlim<ControlType> ControlType { get; } = new ReactivePropertySlim<ControlType>();
         public ReactivePropertySlim<string> ControlStyle { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<string> Parameter { get; } = new ReactivePropertySlim<string>();
 
         public ReactivePropertySlim<string> ToolTip { get; } = new ReactivePropertySlim<string>();
+
+        public List<ControlType> ControlTypes { get; set; } = LayoutContent.GetControlTypes.ToList();
 
         #endregion プロパティ
 
@@ -209,12 +211,12 @@ namespace Mov.Designer.ViewModels
     public class DesignerTableModelAttribute
     {
         public ColumnAttribute Index { get; } = new ColumnAttribute("index", 30);
-        public ColumnAttribute Code { get; } = new ColumnAttribute("code", 120);
-        public ColumnAttribute Name { get; } = new ColumnAttribute("name", 120);
-        public ColumnAttribute Command { get; } = new ColumnAttribute("command", 120);
-        public ColumnAttribute ControlType { get; } = new ColumnAttribute("type", 120);
-        public ColumnAttribute ControlStyle { get; } = new ColumnAttribute("style", 120);
-        public ColumnAttribute Parameter { get; } = new ColumnAttribute("parameter", 120);
+        public ColumnAttribute Code { get; } = new ColumnAttribute("コード", 120);
+        public ColumnAttribute Name { get; } = new ColumnAttribute("名称", 120);
+        public ColumnAttribute Command { get; } = new ColumnAttribute("コマンド", 120);
+        public ColumnAttribute ControlType { get; } = new ColumnAttribute("タイプ", 120);
+        public ColumnAttribute ControlStyle { get; } = new ColumnAttribute("スタイル", 120);
+        public ColumnAttribute Parameter { get; } = new ColumnAttribute("パラメータ", 120);
     }
 
     #endregion クラス

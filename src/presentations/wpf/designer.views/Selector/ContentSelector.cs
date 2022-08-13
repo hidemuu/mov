@@ -20,7 +20,7 @@ namespace Mov.Designer.Views.Selector
            
             if (item is ContentLayoutNode node)
             {
-                if (TryGetType(node.ControlType, out Type type))
+                if (TryGetType(node.ControlType.ToString(), out Type type))
                 {
                     var factory = new FrameworkElementFactory(type);
                     factory.SetValue(Label.ContentProperty, node.Name);

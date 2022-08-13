@@ -33,7 +33,6 @@ namespace Mov.Designer.Views.Selector
         #endregion プロパティ
 
         #region メソッド
-
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
             if(item is LayoutNodeBase node)

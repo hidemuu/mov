@@ -16,11 +16,21 @@ namespace Mov.Designer.Views.Selector
 
         public DataTemplate LabelTemplate { get; set; }
 
+        public DataTemplate ButtonTemplate { get; set; }
+
+        public DataTemplate RadioButtonTemplate { get; set; }
+
+        public DataTemplate TextBoxTemplate { get; set; }
+
         public DataTemplate ComboBoxTemplate { get; set; }
 
         public DataTemplate SpinBoxTemplate { get; set; }
 
         public DataTemplate CheckBoxTemplate { get; set; }
+
+        public DataTemplate ListBoxTemplate { get; set; }
+
+        public DataTemplate DatePickerTemplate { get; set; }
 
         #endregion プロパティ
 
@@ -33,12 +43,22 @@ namespace Mov.Designer.Views.Selector
                 {
                     case Models.ControlType.Label:
                         return LabelTemplate;
+                    case Models.ControlType.Button:
+                        return ButtonTemplate;
+                    case Models.ControlType.RadioButton:
+                        return RadioButtonTemplate;
+                    case Models.ControlType.TextBox:
+                        return TextBoxTemplate;
                     case Models.ControlType.ComboBox:
                         return ComboBoxTemplate;
                     case Models.ControlType.SpinBox:
                         return SpinBoxTemplate;
                     case Models.ControlType.CheckBox:
                         return CheckBoxTemplate;
+                    case Models.ControlType.ListBox:
+                        return ListBoxTemplate;
+                    case Models.ControlType.DatePicker:
+                        return DatePickerTemplate;
                 }
                 //どれにも該当しない場合、
                 if (TryGetType(node.ControlType.ToString(), out Type type))

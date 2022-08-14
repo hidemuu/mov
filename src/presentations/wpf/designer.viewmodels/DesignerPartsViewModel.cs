@@ -51,7 +51,7 @@ namespace Mov.Designer.ViewModels
         public override void OnNavigatedTo(NavigationContext navigationContext)
         {
             base.OnNavigatedTo(navigationContext);
-            this.repository = navigationContext.Parameters[DesignerViewModel.PARAM_NAME_DESIGN_REPOSITORY] as IDesignerRepository;
+            this.repository = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_REPOSITORY] as IDesignerRepository;
             builder = new LayoutBuilder(this.repository);
             Models.Clear();
             Models.AddRangeOnScheduler(builder.Build().Layout.Children);

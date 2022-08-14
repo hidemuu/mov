@@ -13,6 +13,26 @@
         <ComboBox />
     </DataTemplate>
 
+    <DataTemplate x:Key="ListBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
+        <ListBox />
+    </DataTemplate>
+
+    <DataTemplate x:Key="ButtonTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
+        <Button />
+    </DataTemplate>
+
+    <DataTemplate x:Key="RadioButtonTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
+        <RadioButton />
+    </DataTemplate>
+
+    <DataTemplate x:Key="TextBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
+        <TextBox />
+    </DataTemplate>
+
+    <DataTemplate x:Key="DatePickerTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
+        <DatePicker />
+    </DataTemplate>
+
     <DataTemplate x:Key="CheckBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
         <StackPanel Orientation="Horizontal">
             <CheckBox IsChecked="False" />
@@ -48,9 +68,14 @@
 
     <selector:LayoutContentSelector
         x:Key="layoutContentSelector"
+        RadioButtonTemplate="{StaticResource RadioButtonTemplate}"
+        ButtonTemplate="{StaticResource ButtonTemplate}"
         CheckBoxTemplate="{StaticResource CheckBoxTemplate}"
         ComboBoxTemplate="{StaticResource ComboBoxTemplate}"
+        DatePickerTemplate="{StaticResource DatePickerTemplate}"
         LabelTemplate="{StaticResource LabelTemplate}"
-        SpinBoxTemplate="{StaticResource SpinBoxTemplate}" />
+        ListBoxTemplate="{StaticResource ListBoxTemplate}"
+        SpinBoxTemplate="{StaticResource SpinBoxTemplate}"
+        TextBoxTemplate="{StaticResource TextBoxTemplate}" />
 
 </ResourceDictionary>

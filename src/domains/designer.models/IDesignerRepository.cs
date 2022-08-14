@@ -10,5 +10,6 @@ namespace Mov.Designer.Models
         IDbObjectRepository<LayoutContent, LayoutContentCollection> Contents { get; }
         IDbObjectRepository<LayoutNode, LayoutNodeCollection> Nodes { get; }
         IDbObjectRepository<Shell, ShellCollection> Shells { get; }
+        IDbObjectRepository<Theme, ThemeCollection> Themes { get; }
     }
 }

@@ -11,15 +11,15 @@
     <converter:OrientationConverter x:Key="orientationConverter" />
 
     <DataTemplate x:Key="ContentTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
-        <ContentControl Content="{Binding}" ContentTemplateSelector="{StaticResource layoutContentSelector}" />
+        <ContentControl
+            Margin="16,0,0,0"
+            Content="{Binding}"
+            ContentTemplateSelector="{StaticResource layoutContentSelector}" />
         <!--<ContentControl Content="{Binding}" ContentTemplateSelector="{StaticResource contentSelector}" />-->
     </DataTemplate>
 
     <DataTemplate x:Key="GroupTemplate" DataType="{x:Type nodes:GroupLayoutNode}">
-        <ItemsControl
-            Margin="16,0,0,0"
-            ItemTemplateSelector="{DynamicResource layoutNodeSelector}"
-            ItemsSource="{Binding Children}">
+        <ItemsControl ItemTemplateSelector="{DynamicResource layoutNodeSelector}" ItemsSource="{Binding Children}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}" />
@@ -29,22 +29,25 @@
     </DataTemplate>
 
     <DataTemplate x:Key="ExpanderTemplate" DataType="{x:Type nodes:ExpanderLayoutNode}">
-        <Expander IsExpanded="{Binding IsExpand.Value}">
+        <Expander
+            x:Name="ExpanderNode"
+            BorderBrush="Gainsboro"
+            BorderThickness="1"
+            IsExpanded="{Binding IsExpand.Value}">
             <Expander.Header>
-                <StackPanel Margin="0" Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal">
                     <TextBlock
+                        Width="{Binding ElementName=ExpanderNode, Path=ActualWidth}"
                         Margin="0"
                         Padding="0"
+                        FlowDirection="LeftToRight"
                         Text="{Binding Name}" />
                 </StackPanel>
             </Expander.Header>
-            <ItemsControl
-                Margin="16,0,0,0"
-                ItemTemplateSelector="{DynamicResource layoutNodeSelector}"
-                ItemsSource="{Binding Children}">
+            <ItemsControl ItemTemplateSelector="{DynamicResource layoutNodeSelector}" ItemsSource="{Binding Children}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <StackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}" />
+                        <StackPanel Margin="16,0,0,0" Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}" />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>

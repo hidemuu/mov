@@ -17,7 +17,7 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        public const string PARAM_NAME_DESIGN_REPOSITORY = "repository";
+        public const string NAVIGATION_PARAM_NAME_REPOSITORY = "repository";
 
         public const string REGION_NAME_CONTENT = "DESIGNER_CENTER";
 
@@ -110,7 +110,7 @@ namespace Mov.Designer.ViewModels
         private void RequestNavigate(string pageName, string selectedComboItem)
         {
             var param = new NavigationParameters();
-            param.Add(PARAM_NAME_DESIGN_REPOSITORY, database.GetRepository(selectedComboItem));
+            param.Add(NAVIGATION_PARAM_NAME_REPOSITORY, database.GetRepository(selectedComboItem));
             this.RegionManager.RequestNavigate(REGION_NAME_CONTENT, pageDictionary[pageName], param);
         }
 

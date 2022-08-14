@@ -39,7 +39,7 @@ namespace Mov
 
         internal void WriteAll()
         {
-            Console.WriteLine(Designer.LayoutNodes.ToString());
+            Console.WriteLine(Designer.Nodes.ToString());
             Console.WriteLine(Designer.Shells.ToString());
             Console.WriteLine(Designer.Contents.ToString());
             Console.WriteLine(Configurator.Repositories[""].UserSettings.ToString());

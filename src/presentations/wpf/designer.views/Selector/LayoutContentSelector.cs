@@ -1,4 +1,5 @@
 ﻿using Mov.Designer.Service;
+using Mov.Designer.Service.Nodes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace Mov.Designer.Views.Selector
         #region メソッド
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
-            if (item is LayoutBase node)
+            if (item is ContentLayoutNode node)
             {
                 switch (node.ControlType) 
                 {
@@ -39,11 +40,44 @@ namespace Mov.Designer.Views.Selector
                     case Models.ControlType.CheckBox:
                         return CheckBoxTemplate;
                 }
-                return null;
+                //どれにも該当しない場合、
+                if (TryGetType(node.ControlType.ToString(), out Type type))
+                {
+                    var factory = new FrameworkElementFactory(type);
+                    factory.SetValue(Label.ContentProperty, node.Name);
+                    return new DataTemplate() { VisualTree = factory, };
+                };
+
+                return new DataTemplate() { VisualTree = GetDefault(node), };
             }
             return base.SelectTemplate(item, container);
         }
 
         #endregion メソッド
+
+        #region 内部メソッド
+
+        private bool TryGetType(string typeName, out Type type)
+        {
+            if (string.IsNullOrEmpty(typeName))
+            {
+                type = null;
+                return false;
+            }
+            string dllName = "System.Windows.Controls";
+            string assemblyName = "PresentationFramework";
+            type = Type.GetType(dllName + "." + typeName + ", " + assemblyName);
+            if (type != null) return true;
+            return false;
+        }
+
+        private FrameworkElementFactory GetDefault(ContentLayoutNode node)
+        {
+            var defaultFactory = new FrameworkElementFactory(typeof(Label));
+            defaultFactory.SetValue(Label.ContentProperty, "【NotFound】" + node.ToString());
+            return defaultFactory;
+        }
+
+        #endregion 内部メソッド
     }
 }

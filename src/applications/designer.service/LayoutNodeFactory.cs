@@ -31,17 +31,17 @@ namespace Mov.Designer.Service
         public LayoutNodeBase Create(LayoutNode node)
         {
             var content = GetContent(node);
-            switch (node.LayoutNodeType)
+            switch (node.NodeType)
             {
-                case LayoutNodeType.Content:
+                case NodeType.Content:
                     return new ContentLayoutNode(node, content);
-                case LayoutNodeType.Group:
+                case NodeType.Group:
                     return new GroupLayoutNode(node, content);
-                case LayoutNodeType.Expander:
+                case NodeType.Expander:
                     return new ExpanderLayoutNode(node, content);
-                case LayoutNodeType.Scrollbar:
+                case NodeType.Scrollbar:
                     return new ScrollbarLayoutNode(node, content);
-                case LayoutNodeType.Tab:
+                case NodeType.Tab:
                     return new TabLayoutNode(node, content);
                 default:
                     return new ContentLayoutNode();

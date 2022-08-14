@@ -16,12 +16,16 @@
     </DataTemplate>
 
     <DataTemplate x:Key="GroupTemplate" DataType="{x:Type nodes:GroupLayoutNode}">
-        <StackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}">
-            <ItemsControl
-                Margin="16,0,0,0"
-                ItemTemplateSelector="{DynamicResource layoutNodeSelector}"
-                ItemsSource="{Binding Children}" />
-        </StackPanel>
+        <ItemsControl
+            Margin="16,0,0,0"
+            ItemTemplateSelector="{DynamicResource layoutNodeSelector}"
+            ItemsSource="{Binding Children}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
     </DataTemplate>
 
     <DataTemplate x:Key="ExpanderTemplate" DataType="{x:Type nodes:ExpanderLayoutNode}">
@@ -34,20 +38,28 @@
                         Text="{Binding Name}" />
                 </StackPanel>
             </Expander.Header>
-            <StackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}">
-                <ItemsControl
-                    Margin="16,0,0,0"
-                    ItemTemplateSelector="{DynamicResource layoutNodeSelector}"
-                    ItemsSource="{Binding Children}" />
-            </StackPanel>
+            <ItemsControl
+                Margin="16,0,0,0"
+                ItemTemplateSelector="{DynamicResource layoutNodeSelector}"
+                ItemsSource="{Binding Children}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
         </Expander>
     </DataTemplate>
 
     <DataTemplate x:Key="ScrollbarTemplate" DataType="{x:Type nodes:ScrollbarLayoutNode}">
         <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
-            <StackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}">
-                <ItemsControl ItemTemplateSelector="{DynamicResource layoutNodeSelector}" ItemsSource="{Binding Children}" />
-            </StackPanel>
+            <ItemsControl ItemTemplateSelector="{DynamicResource layoutNodeSelector}" ItemsSource="{Binding Children}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
         </ScrollViewer>
     </DataTemplate>
 

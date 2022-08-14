@@ -10,18 +10,18 @@ namespace Mov.Designer.Models
     /// <summary>
     /// レイアウトノードのコレクション
     /// </summary>
-    [XmlRoot("layouts")]
+    [XmlRoot("nodes")]
     public class LayoutNodeCollection : DbObjectCollection<LayoutNode>
     {
         /// <inheritdoc />
-        [XmlElement(Type = typeof(LayoutNode), ElementName = "layout")]
+        [XmlElement(Type = typeof(LayoutNode), ElementName = "node")]
         public override LayoutNode[] Items { get; set; }
     }
 
     /// <summary>
     /// レイアウトノード
     /// </summary>
-    [XmlRoot("layout")]
+    [XmlRoot("node")]
     public class LayoutNode : DbObjectNode<LayoutNode>
     {
         #region プロパティ
@@ -29,7 +29,7 @@ namespace Mov.Designer.Models
         /// ノード種別
         /// </summary>
         [XmlElement("node_type")]
-        public LayoutNodeType LayoutNodeType { get; set; } = LayoutNodeType.Content;
+        public NodeType NodeType { get; set; } = NodeType.Content;
         /// <summary>
         /// 表示方向
         /// </summary>
@@ -69,7 +69,7 @@ namespace Mov.Designer.Models
         /// 子階層
         /// </summary>
         [XmlArray("children")]
-        [XmlArrayItem("layout")]
+        [XmlArrayItem("node")]
         public override List<LayoutNode> Children { get; set; } = new List<LayoutNode>();
 
         #endregion プロパティ
@@ -77,15 +77,15 @@ namespace Mov.Designer.Models
         #region メソッド
 
         /// <inheritdoc />
-        public override string ToString() => GetString(new string[] { Id.ToString(), Code, LayoutNodeType.ToString() });
+        public override string ToString() => GetString(new string[] { Id.ToString(), Code, NodeType.ToString() });
 
         /// <inheritdoc />
-        public override string ToContentString() => GetString(new string[] { Id.ToString(), Code, LayoutNodeType.ToString() }, 10);
+        public override string ToContentString() => GetString(new string[] { Id.ToString(), Code, NodeType.ToString() }, 10);
 
         /// <inheritdoc />
         public override string ToHeaderString() => GetString(new string[] { "Id", "Code", "LayoutType" }, 10);
 
-        public static LayoutNodeType[] GetNodeTypes => (LayoutNodeType[])Enum.GetValues(typeof(LayoutNodeType));
+        public static NodeType[] GetNodeTypes => (NodeType[])Enum.GetValues(typeof(NodeType));
 
         public static OrientationType[] GetOrientationTypes => (OrientationType[])Enum.GetValues(typeof(OrientationType));
 

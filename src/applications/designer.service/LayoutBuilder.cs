@@ -49,7 +49,7 @@ namespace Mov.Designer.Service
         private LayoutNodeBase Create()
         {
             var node = new ContentLayoutNode();
-            CreateLayoutNode(node.Children, repository.LayoutNodes.Gets());
+            CreateLayoutNode(node.Children, repository.Nodes.Gets());
             return node;
         }
 

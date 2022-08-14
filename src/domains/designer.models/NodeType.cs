@@ -7,7 +7,7 @@ namespace Mov.Designer.Models
     /// <summary>
     /// ノード種別
     /// </summary>
-    public enum LayoutNodeType
+    public enum NodeType
     {
         /// <summary>
         /// コンテンツ

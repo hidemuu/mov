@@ -96,7 +96,7 @@ namespace Mov.Designer.ViewModels
         private void OnSaveCommand(string parameter)
         {
             Post();
-            repository.LayoutNodes.Export();
+            repository.Nodes.Export();
             repository.Contents.Export();
             MessageBox.Show("保存しました");
         }
@@ -105,7 +105,7 @@ namespace Mov.Designer.ViewModels
         {
             var trees = new List<LayoutNode>();
             GetLayoutTrees(trees, Models);
-            repository.LayoutNodes.Posts(trees);
+            repository.Nodes.Posts(trees);
             //var tables = new List<LayoutContent>();
             //GetContentTables(tables, Models);
             //repository.Contents.Posts(tables);
@@ -115,9 +115,9 @@ namespace Mov.Designer.ViewModels
         {
             if(SelectedModel.Value != null && SelectedModel.Value is DesignerTreeModel model)
             {
-                var tree = this.repository.LayoutNodes.Get(model.Id.Value);
+                var tree = this.repository.Nodes.Get(model.Id.Value);
                 if (tree == null) return;
-                this.repository.LayoutNodes.Put(new LayoutNode(), tree.Id);
+                this.repository.Nodes.Put(new LayoutNode(), tree.Id);
                 CreateModels();
                 isEdited = true;
             }
@@ -127,9 +127,9 @@ namespace Mov.Designer.ViewModels
         {
             if (SelectedModel.Value != null && SelectedModel.Value is DesignerTreeModel model)
             {
-                var tree = this.repository.LayoutNodes.Get(model.Id.Value);
+                var tree = this.repository.Nodes.Get(model.Id.Value);
                 if (tree == null) return;
-                this.repository.LayoutNodes.Delete(tree);
+                this.repository.Nodes.Delete(tree);
                 CreateModels();
                 isEdited = true;
             }
@@ -142,7 +142,7 @@ namespace Mov.Designer.ViewModels
         private void CreateModels()
         {
             Models.Clear();
-            foreach (var tree in repository.LayoutNodes.Gets())
+            foreach (var tree in repository.Nodes.Gets())
             {
                 Models.Add(new DesignerTreeModel(tree, repository.Contents.Get(tree.Code), repository));
             }
@@ -158,7 +158,8 @@ namespace Mov.Designer.ViewModels
                     Index = model.Index.Value,
                     Code = model.Code.Value,
                     IsExpand = model.IsExpand.Value,
-                    LayoutNodeType = model.LayoutType.Value,
+                    OrientationType = model.OrientationType.Value,
+                    NodeType = model.LayoutType.Value,
                     Style = model.LayoutStyle.Value,
                     Parameter = model.LayoutParameter.Value,
                 };
@@ -201,7 +202,7 @@ namespace Mov.Designer.ViewModels
 
         #region プロパティ
 
-        public ReactivePropertySlim<LayoutNodeType> LayoutType { get; } = new ReactivePropertySlim<LayoutNodeType>(LayoutNodeType.Content);
+        public ReactivePropertySlim<NodeType> LayoutType { get; } = new ReactivePropertySlim<NodeType>(NodeType.Content);
         public ReactivePropertySlim<OrientationType> OrientationType { get; } = new ReactivePropertySlim<OrientationType>(Designer.Models.OrientationType.Horizontal);
         public ReactivePropertySlim<string> LayoutStyle { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<string> LayoutParameter { get; } = new ReactivePropertySlim<string>();
@@ -209,7 +210,7 @@ namespace Mov.Designer.ViewModels
 
         public List<string> Codes { get; set; } = new List<string>();
 
-        public List<LayoutNodeType> NodeTypes { get; set; } = LayoutNode.GetNodeTypes.ToList();
+        public List<NodeType> NodeTypes { get; set; } = LayoutNode.GetNodeTypes.ToList();
 
         public List<OrientationType> OrientationTypes { get; set; } = LayoutNode.GetOrientationTypes.ToList();
 
@@ -228,7 +229,7 @@ namespace Mov.Designer.ViewModels
             Index.Value = node.Index;
             Code.Value = node.Code;
             IsExpand.Value = node.IsExpand;
-            LayoutType.Value = node.LayoutNodeType;
+            LayoutType.Value = node.NodeType;
             OrientationType.Value = node.OrientationType;
             LayoutStyle.Value = node.Style;
             LayoutParameter.Value = node.Parameter;

@@ -10,7 +10,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="ComboBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
-        <ComboBox ItemsSource="{Binding Name}" SelectedItem="{Binding Name}" />
+        <ComboBox />
     </DataTemplate>
 
     <DataTemplate x:Key="CheckBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
@@ -48,9 +48,9 @@
 
     <selector:LayoutContentSelector
         x:Key="layoutContentSelector"
+        CheckBoxTemplate="{StaticResource CheckBoxTemplate}"
         ComboBoxTemplate="{StaticResource ComboBoxTemplate}"
         LabelTemplate="{StaticResource LabelTemplate}"
-        CheckBoxTemplate="{StaticResource CheckBoxTemplate}"
         SpinBoxTemplate="{StaticResource SpinBoxTemplate}" />
 
 </ResourceDictionary>

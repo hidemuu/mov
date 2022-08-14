@@ -14,6 +14,10 @@ namespace Mov.Designer.Models
         /// </summary>
         Content,
         /// <summary>
+        /// グループ
+        /// </summary>
+        Group,
+        /// <summary>
         /// エキスパンダー
         /// </summary>
         Expander,

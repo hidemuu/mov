@@ -11,9 +11,12 @@
     <converter:OrientationConverter x:Key="orientationConverter" />
 
     <DataTemplate x:Key="ContentTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
+        <ContentControl Content="{Binding}" ContentTemplateSelector="{StaticResource layoutContentSelector}" />
+        <!--<ContentControl Content="{Binding}" ContentTemplateSelector="{StaticResource contentSelector}" />-->
+    </DataTemplate>
+
+    <DataTemplate x:Key="GroupTemplate" DataType="{x:Type nodes:GroupLayoutNode}">
         <StackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}">
-            <ContentControl Content="{Binding}" ContentTemplateSelector="{StaticResource layoutContentSelector}" />
-            <!--<ContentControl Content="{Binding}" ContentTemplateSelector="{StaticResource contentSelector}" />-->
             <ItemsControl
                 Margin="16,0,0,0"
                 ItemTemplateSelector="{DynamicResource layoutNodeSelector}"
@@ -95,6 +98,7 @@
         x:Key="layoutNodeSelector"
         ContentTemplate="{StaticResource ContentTemplate}"
         ExpanderTemplate="{StaticResource ExpanderTemplate}"
+        GroupTemplate="{StaticResource GroupTemplate}"
         ScrollbarTemplate="{StaticResource ScrollbarTemplate}"
         TabTemplate="{StaticResource TabTemplate}"
         TableTemplate="{StaticResource TableTemplate}"

@@ -35,6 +35,8 @@ namespace Mov.Designer.Service
             {
                 case LayoutNodeType.Content:
                     return new ContentLayoutNode(node, content);
+                case LayoutNodeType.Group:
+                    return new GroupLayoutNode(node, content);
                 case LayoutNodeType.Expander:
                     return new ExpanderLayoutNode(node, content);
                 case LayoutNodeType.Scrollbar:

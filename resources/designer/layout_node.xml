@@ -48,7 +48,7 @@
         <id>7055949b-a62f-417f-aa85-f1862c233af6</id>
         <index>0</index>
         <code>Main</code>
-        <node_type>Content</node_type>
+        <node_type>Group</node_type>
         <orientation>Horizontal</orientation>
         <expand>true</expand>
         <visible>true</visible>

@@ -18,6 +18,8 @@ namespace Mov.Designer.Views.Selector
 
         public DataTemplate ExpanderTemplate { get; set; }
 
+        public DataTemplate GroupTemplate { get; set; }
+
         public DataTemplate ScrollbarTemplate { get; set; }
 
         public DataTemplate TabTemplate { get; set; }
@@ -39,6 +41,7 @@ namespace Mov.Designer.Views.Selector
             {
                 if (node is ContentLayoutNode content) return ContentTemplate;        
                 if (node is ExpanderLayoutNode expander) return ExpanderTemplate;
+                if (node is GroupLayoutNode group) return GroupTemplate;
                 if (node is ScrollbarLayoutNode scrollbar) return ScrollbarTemplate;
                 if (node is TabLayoutNode tab) return TabTemplate;
                 if (node is TableLayoutNode table) return TableTemplate;

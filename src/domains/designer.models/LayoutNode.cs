@@ -85,6 +85,11 @@ namespace Mov.Designer.Models
         /// <inheritdoc />
         public override string ToHeaderString() => GetString(new string[] { "Id", "Code", "LayoutType" }, 10);
 
+        public static LayoutNodeType[] GetNodeTypes => (LayoutNodeType[])Enum.GetValues(typeof(LayoutNodeType));
+
+        public static OrientationType[] GetOrientationTypes => (OrientationType[])Enum.GetValues(typeof(OrientationType));
+
+
         #endregion メソッド
 
 

@@ -209,19 +209,9 @@ namespace Mov.Designer.ViewModels
 
         public List<string> Codes { get; set; } = new List<string>();
 
-        public List<LayoutNodeType> NodeTypes { get; set; } = new List<LayoutNodeType>
-            {
-                LayoutNodeType.Content,
-                LayoutNodeType.Expander,
-                LayoutNodeType.Scrollbar,
-                LayoutNodeType.Tab
-            };
+        public List<LayoutNodeType> NodeTypes { get; set; } = LayoutNode.GetNodeTypes.ToList();
 
-        public List<OrientationType> OrientationTypes { get; set; } = new List<OrientationType>
-            {
-                Designer.Models.OrientationType.Horizontal,
-                Designer.Models.OrientationType.Vertical,
-            };
+        public List<OrientationType> OrientationTypes { get; set; } = LayoutNode.GetOrientationTypes.ToList();
 
         public List<DesignerTreeModel> Children { get; set; } = new List<DesignerTreeModel>();
 

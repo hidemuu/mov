@@ -23,7 +23,7 @@
           <node>
             <id>0899237b-70cf-4b59-8374-34ef3b13255c</id>
             <index>2</index>
-            <code>Content1</code>
+            <code>Text1</code>
             <node_type>Content</node_type>
             <orientation>Horizontal</orientation>
             <expand>false</expand>
@@ -36,7 +36,7 @@
       <node>
         <id>1b0a48e4-8ee1-4c4d-bb11-9e295adaef69</id>
         <index>10</index>
-        <code>Main</code>
+        <code>Text1</code>
         <node_type>Content</node_type>
         <orientation>Horizontal</orientation>
         <expand>false</expand>
@@ -49,7 +49,7 @@
         <index>0</index>
         <code>Main</code>
         <node_type>Group</node_type>
-        <orientation>Horizontal</orientation>
+        <orientation>Vertical</orientation>
         <expand>true</expand>
         <visible>true</visible>
         <enable>true</enable>
@@ -57,7 +57,7 @@
           <node>
             <id>e9d9eb48-0dce-465e-aa76-3782d0f13218</id>
             <index>0</index>
-            <code>Content2</code>
+            <code>Text1</code>
             <node_type>Content</node_type>
             <orientation>Horizontal</orientation>
             <expand>true</expand>
@@ -68,7 +68,84 @@
           <node>
             <id>c93295c9-e035-4d50-b099-7276300f670b</id>
             <index>0</index>
-            <code>Content2</code>
+            <code>Button1</code>
+            <node_type>Content</node_type>
+            <orientation>Horizontal</orientation>
+            <expand>true</expand>
+            <visible>true</visible>
+            <enable>true</enable>
+            <children />
+          </node>
+          <node>
+            <id>134e5aff-c177-463a-9ca9-44959b46182d</id>
+            <index>0</index>
+            <code>Button2</code>
+            <node_type>Content</node_type>
+            <orientation>Horizontal</orientation>
+            <expand>true</expand>
+            <visible>true</visible>
+            <enable>true</enable>
+            <children />
+          </node>
+          <node>
+            <id>6f9aced6-e6ab-4bef-9c5c-ef9cd8534ca2</id>
+            <index>0</index>
+            <code>Item1</code>
+            <node_type>Content</node_type>
+            <orientation>Horizontal</orientation>
+            <expand>true</expand>
+            <visible>true</visible>
+            <enable>true</enable>
+            <children />
+          </node>
+          <node>
+            <id>e5de0887-3301-4e52-902d-f18d0abaf555</id>
+            <index>0</index>
+            <code>Item2</code>
+            <node_type>Content</node_type>
+            <orientation>Horizontal</orientation>
+            <expand>true</expand>
+            <visible>true</visible>
+            <enable>true</enable>
+            <children />
+          </node>
+          <node>
+            <id>cf5f2d74-333c-43d7-8052-47d26b46e234</id>
+            <index>0</index>
+            <code>Item3</code>
+            <node_type>Content</node_type>
+            <orientation>Horizontal</orientation>
+            <expand>true</expand>
+            <visible>true</visible>
+            <enable>true</enable>
+            <children />
+          </node>
+          <node>
+            <id>241daa73-caf9-404b-a53c-7c9bbef6079e</id>
+            <index>0</index>
+            <code>Item4</code>
+            <node_type>Content</node_type>
+            <orientation>Horizontal</orientation>
+            <expand>true</expand>
+            <visible>true</visible>
+            <enable>true</enable>
+            <children />
+          </node>
+          <node>
+            <id>d6ecaba7-0619-415d-a919-841403b91f46</id>
+            <index>0</index>
+            <code>Item5</code>
+            <node_type>Content</node_type>
+            <orientation>Horizontal</orientation>
+            <expand>true</expand>
+            <visible>true</visible>
+            <enable>true</enable>
+            <children />
+          </node>
+          <node>
+            <id>cfa4df2c-038c-47ef-b597-03e6df483ea1</id>
+            <index>0</index>
+            <code>Date1</code>
             <node_type>Content</node_type>
             <orientation>Horizontal</orientation>
             <expand>true</expand>

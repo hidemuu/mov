@@ -6,11 +6,11 @@
     xmlns:selector="clr-namespace:Mov.Designer.Views.Selector">
 
     <DataTemplate x:Key="LabelTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
-        <Label Content="{Binding Name}" />
+        <Label VerticalAlignment="Center" Content="{Binding Name}" />
     </DataTemplate>
 
     <DataTemplate x:Key="ComboBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
-        <ComboBox />
+        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Center" />
     </DataTemplate>
 
     <DataTemplate x:Key="ListBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
@@ -18,15 +18,27 @@
     </DataTemplate>
 
     <DataTemplate x:Key="ButtonTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
-        <Button />
+        <Button
+            Height="32"
+            MaxWidth="100"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="{Binding Name}" />
     </DataTemplate>
 
     <DataTemplate x:Key="RadioButtonTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
-        <RadioButton />
+        <RadioButton
+            MaxWidth="100"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="{Binding Name}" />
     </DataTemplate>
 
     <DataTemplate x:Key="TextBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
-        <TextBox />
+        <TextBox
+            MaxWidth="100"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center" />
     </DataTemplate>
 
     <DataTemplate x:Key="DatePickerTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
@@ -34,7 +46,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="CheckBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
-        <StackPanel Orientation="Horizontal">
+        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
             <CheckBox IsChecked="False" />
             <Label Content="{Binding Name}" />
         </StackPanel>
@@ -42,9 +54,9 @@
 
     <DataTemplate x:Key="SpinBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
         <Grid
-            Height="23"
-            Margin="152,63,11,0"
-            VerticalAlignment="Top">
+            Height="32"
+            Margin="0,0,0,0"
+            VerticalAlignment="Center">
             <TextBox
                 x:Name="txtNum"
                 Margin="3,2,13,3"
@@ -68,13 +80,13 @@
 
     <selector:LayoutContentSelector
         x:Key="layoutContentSelector"
-        RadioButtonTemplate="{StaticResource RadioButtonTemplate}"
         ButtonTemplate="{StaticResource ButtonTemplate}"
         CheckBoxTemplate="{StaticResource CheckBoxTemplate}"
         ComboBoxTemplate="{StaticResource ComboBoxTemplate}"
         DatePickerTemplate="{StaticResource DatePickerTemplate}"
         LabelTemplate="{StaticResource LabelTemplate}"
         ListBoxTemplate="{StaticResource ListBoxTemplate}"
+        RadioButtonTemplate="{StaticResource RadioButtonTemplate}"
         SpinBoxTemplate="{StaticResource SpinBoxTemplate}"
         TextBoxTemplate="{StaticResource TextBoxTemplate}" />
 

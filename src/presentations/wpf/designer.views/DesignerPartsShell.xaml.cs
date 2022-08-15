@@ -3,6 +3,7 @@ using Mov.Designer.Service;
 using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,7 +35,7 @@ namespace Mov.Designer.Views
         public static readonly DependencyProperty ModelsProperty =
             DependencyProperty.Register(nameof(Models), typeof(ReactiveCollection<LayoutNodeBase>),
             typeof(DesignerPartsShell),
-            new UIPropertyMetadata(null, new PropertyChangedCallback(OnModelsChanged)));
+            new UIPropertyMetadata(new ReactiveCollection<LayoutNodeBase>(), new PropertyChangedCallback(OnModelsChanged)));
 
         public ReactiveCollection<LayoutNodeBase> Models
         {
@@ -45,7 +46,7 @@ namespace Mov.Designer.Views
         public static readonly DependencyProperty TopModelsProperty =
             DependencyProperty.Register(nameof(TopModels), typeof(ReactiveCollection<LayoutNodeBase>),
             typeof(DesignerPartsShell),
-            new UIPropertyMetadata(null, new PropertyChangedCallback(OnModelsChanged)));
+            new UIPropertyMetadata(new ReactiveCollection<LayoutNodeBase>(), new PropertyChangedCallback(OnModelsChanged)));
 
         public ReactiveCollection<LayoutNodeBase> TopModels
         {
@@ -56,7 +57,7 @@ namespace Mov.Designer.Views
         public static readonly DependencyProperty BottomModelsProperty =
             DependencyProperty.Register(nameof(BottomModels), typeof(ReactiveCollection<LayoutNodeBase>),
             typeof(DesignerPartsShell),
-            new UIPropertyMetadata(null, new PropertyChangedCallback(OnModelsChanged)));
+            new UIPropertyMetadata(new ReactiveCollection<LayoutNodeBase>(), new PropertyChangedCallback(OnModelsChanged)));
 
         public ReactiveCollection<LayoutNodeBase> BottomModels
         {
@@ -67,7 +68,7 @@ namespace Mov.Designer.Views
         public static readonly DependencyProperty LeftModelsProperty =
             DependencyProperty.Register(nameof(LeftModels), typeof(ReactiveCollection<LayoutNodeBase>),
             typeof(DesignerPartsShell),
-            new UIPropertyMetadata(null, new PropertyChangedCallback(OnModelsChanged)));
+            new UIPropertyMetadata(new ReactiveCollection<LayoutNodeBase>(), new PropertyChangedCallback(OnModelsChanged)));
 
         public ReactiveCollection<LayoutNodeBase> LeftModels
         {
@@ -78,7 +79,7 @@ namespace Mov.Designer.Views
         public static readonly DependencyProperty RightModelsProperty =
             DependencyProperty.Register(nameof(RightModels), typeof(ReactiveCollection<LayoutNodeBase>),
             typeof(DesignerPartsShell),
-            new UIPropertyMetadata(null, new PropertyChangedCallback(OnModelsChanged)));
+            new UIPropertyMetadata(new ReactiveCollection<LayoutNodeBase>(), new PropertyChangedCallback(OnModelsChanged)));
 
         public ReactiveCollection<LayoutNodeBase> RightModels
         {
@@ -160,12 +161,24 @@ namespace Mov.Designer.Views
                     if (control.IsUpdate)
                     {
                         var builder = new LayoutBuilder(control.Repository);
-                        if (control.Models == null)
-                        {
-                            control.Models = new ReactiveCollection<LayoutNodeBase>();
-                        }
                         control.Models.Clear();
-                        control.Models.AddRangeOnScheduler(builder.Build().Layout.Children);
+                        control.TopModels.Clear();
+                        control.BottomModels.Clear();
+                        control.LeftModels.Clear();
+                        control.RightModels.Clear();
+                        var build = builder.Build();
+                        if(build.CenterNode == null)
+                        {
+                            control.Models.AddRange(build.Nodes);
+                        }
+                        else
+                        {
+                            control.Models.AddRange(build.CenterNode.Children);
+                        }
+                        control.TopModels.AddRange(build.TopNode.Children);
+                        control.BottomModels.AddRange(build.BottomNode.Children);
+                        control.LeftModels.AddRange(build.LeftNode.Children);
+                        control.RightModels.AddRange(build.RightNode.Children);
                     }
                 }
             }

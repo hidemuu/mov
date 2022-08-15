@@ -1,6 +1,98 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <nodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <node>
+    <id>4343e3c8-858d-4153-b85d-c544dfa351ba</id>
+    <index>0</index>
+    <code>Top</code>
+    <node_type>Region</node_type>
+    <orientation>Horizontal</orientation>
+    <expand>true</expand>
+    <visible>true</visible>
+    <enable>true</enable>
+    <children>
+      <node>
+        <id>36d93c07-d4a4-427a-a1fa-7e1aa3d2ad95</id>
+        <index>0</index>
+        <code>Text1</code>
+        <node_type>Content</node_type>
+        <orientation>Horizontal</orientation>
+        <expand>true</expand>
+        <visible>true</visible>
+        <enable>true</enable>
+        <children />
+      </node>
+    </children>
+  </node>
+  <node>
+    <id>d9b32bce-196f-4364-8e22-6e0eb94c6e10</id>
+    <index>0</index>
+    <code>Bottom</code>
+    <node_type>Region</node_type>
+    <orientation>Horizontal</orientation>
+    <expand>true</expand>
+    <visible>true</visible>
+    <enable>true</enable>
+    <children>
+      <node>
+        <id>b2513b59-3007-4aed-b78d-9b95bea3ec2d</id>
+        <index>0</index>
+        <code>Text1</code>
+        <node_type>Content</node_type>
+        <orientation>Horizontal</orientation>
+        <expand>true</expand>
+        <visible>true</visible>
+        <enable>true</enable>
+        <children />
+      </node>
+    </children>
+  </node>
+  <node>
+    <id>a6db4a1d-fed5-484c-9395-5adf00454dea</id>
+    <index>0</index>
+    <code>Left</code>
+    <node_type>Region</node_type>
+    <orientation>Vertical</orientation>
+    <expand>true</expand>
+    <visible>true</visible>
+    <enable>true</enable>
+    <children>
+      <node>
+        <id>de436309-c1c2-48a3-82eb-d080babc7a5c</id>
+        <index>0</index>
+        <code>Text1</code>
+        <node_type>Content</node_type>
+        <orientation>Horizontal</orientation>
+        <expand>true</expand>
+        <visible>true</visible>
+        <enable>true</enable>
+        <children />
+      </node>
+    </children>
+  </node>
+  <node>
+    <id>eba432f4-c0bb-4a80-a721-6e62ba83d845</id>
+    <index>0</index>
+    <code>Right</code>
+    <node_type>Region</node_type>
+    <orientation>Vertical</orientation>
+    <expand>true</expand>
+    <visible>true</visible>
+    <enable>true</enable>
+    <children>
+      <node>
+        <id>11db8b89-5c28-40e8-a6e6-375302917a87</id>
+        <index>0</index>
+        <code>Text1</code>
+        <node_type>Content</node_type>
+        <orientation>Horizontal</orientation>
+        <expand>true</expand>
+        <visible>true</visible>
+        <enable>true</enable>
+        <children />
+      </node>
+    </children>
+  </node>
+  <node>
     <id>338a9cfb-d67c-44a1-bf5c-4911869961d7</id>
     <index>0</index>
     <code>Center</code>

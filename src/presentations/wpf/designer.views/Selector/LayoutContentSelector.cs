@@ -1,10 +1,5 @@
-﻿using Mov.Designer.Service;
-using Mov.Designer.Service.Nodes;
+﻿using Mov.Designer.Service.Nodes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -35,30 +30,22 @@ namespace Mov.Designer.Views.Selector
         #endregion プロパティ
 
         #region メソッド
+
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
             if (item is ContentLayoutNode node)
             {
-                switch (node.ControlType) 
+                switch (node.ControlType)
                 {
-                    case Models.ControlType.Label:
-                        return LabelTemplate;
-                    case Models.ControlType.Button:
-                        return ButtonTemplate;
-                    case Models.ControlType.RadioButton:
-                        return RadioButtonTemplate;
-                    case Models.ControlType.TextBox:
-                        return TextBoxTemplate;
-                    case Models.ControlType.ComboBox:
-                        return ComboBoxTemplate;
-                    case Models.ControlType.SpinBox:
-                        return SpinBoxTemplate;
-                    case Models.ControlType.CheckBox:
-                        return CheckBoxTemplate;
-                    case Models.ControlType.ListBox:
-                        return ListBoxTemplate;
-                    case Models.ControlType.DatePicker:
-                        return DatePickerTemplate;
+                    case Models.ControlType.Label: return LabelTemplate;
+                    case Models.ControlType.Button: return ButtonTemplate;
+                    case Models.ControlType.RadioButton: return RadioButtonTemplate;
+                    case Models.ControlType.TextBox: return TextBoxTemplate;
+                    case Models.ControlType.ComboBox: return ComboBoxTemplate;
+                    case Models.ControlType.SpinBox: return SpinBoxTemplate;
+                    case Models.ControlType.CheckBox: return CheckBoxTemplate;
+                    case Models.ControlType.ListBox: return ListBoxTemplate;
+                    case Models.ControlType.DatePicker: return DatePickerTemplate;
                 }
                 //どれにも該当しない場合、
                 if (TryGetType(node.ControlType.ToString(), out Type type))

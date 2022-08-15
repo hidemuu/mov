@@ -17,7 +17,17 @@ namespace Mov.Designer.Service
 
         #region プロパティ
 
-        public LayoutNodeBase Layout { get; private set; }
+        public IEnumerable<LayoutNodeBase> Nodes { get; private set; }
+
+        public LayoutNodeBase CenterNode { get; private set; }
+
+        public LayoutNodeBase TopNode { get; private set; }
+
+        public LayoutNodeBase BottomNode { get; private set; }
+
+        public LayoutNodeBase LeftNode { get; private set; }
+
+        public LayoutNodeBase RightNode { get; private set; }
 
         #endregion プロパティ
 
@@ -38,7 +48,21 @@ namespace Mov.Designer.Service
 
         public LayoutBuilder Build()
         {
-            Layout = Create();
+            Nodes = Create();
+            foreach(var node in Nodes)
+            {
+                if(node is RegionLayoutNode regionNode)
+                {
+                    switch (regionNode.Code) 
+                    {
+                        case "Center": CenterNode = regionNode; break;
+                        case "Top": TopNode = regionNode; break;
+                        case "Bottom": BottomNode = regionNode; break;
+                        case "Left": LeftNode = regionNode; break;
+                        case "Right": RightNode = regionNode; break;
+                    }
+                }
+            }
             return this;
         }
 
@@ -46,23 +70,23 @@ namespace Mov.Designer.Service
 
         #region 内部メソッド
 
-        private LayoutNodeBase Create()
+        private IEnumerable<LayoutNodeBase> Create()
         {
             var node = new ContentLayoutNode();
             CreateLayoutNode(node.Children, repository.Nodes.Gets());
-            return node;
+            return node.Children;
         }
 
-        private void CreateLayoutNode(ICollection<LayoutNodeBase> nodes, IEnumerable<LayoutNode> trees)
+        private void CreateLayoutNode(ICollection<LayoutNodeBase> nodes, IEnumerable<LayoutNode> repositoryNodes)
         {
-            foreach (var tree in trees)
+            foreach (var repositoryNode in repositoryNodes)
             {
-                var node = this.factory.Create(tree);
+                var node = this.factory.Create(repositoryNode);
                 nodes.Add(node);
                 //子階層再帰処理
-                if (tree.Children.Count > 0)
+                if (repositoryNode.Children.Count > 0)
                 {
-                    CreateLayoutNode(node.Children, tree.Children);
+                    CreateLayoutNode(node.Children, repositoryNode.Children);
                 }
             }
         }

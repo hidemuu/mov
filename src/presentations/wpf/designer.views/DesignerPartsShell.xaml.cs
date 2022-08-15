@@ -32,6 +32,8 @@ namespace Mov.Designer.Views
 
         #region プロパティ
 
+        #region センター
+
         public static readonly DependencyProperty ModelsProperty =
             DependencyProperty.Register(nameof(Models), typeof(ReactiveCollection<LayoutNodeBase>),
             typeof(DesignerPartsShell),
@@ -42,6 +44,43 @@ namespace Mov.Designer.Views
             get { return (ReactiveCollection<LayoutNodeBase>)GetValue(ModelsProperty); }
             set { SetValue(ModelsProperty, value); }
         }
+
+        public static readonly DependencyProperty ModelBackgroundProperty =
+            DependencyProperty.Register(nameof(ModelBackground), typeof(Brush),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(Brushes.Transparent));
+
+        public Brush ModelBackground
+        {
+            get { return (Brush)GetValue(ModelBackgroundProperty); }
+            set { SetValue(ModelBackgroundProperty, value); }
+        }
+
+        public static readonly DependencyProperty ModelBorderBrushProperty =
+            DependencyProperty.Register(nameof(ModelBorderBrush), typeof(Brush),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(Brushes.Transparent));
+
+        public Brush ModelBorderBrush
+        {
+            get { return (Brush)GetValue(ModelBorderBrushProperty); }
+            set { SetValue(ModelBorderBrushProperty, value); }
+        }
+
+        public static readonly DependencyProperty ModelBorderThicknessProperty =
+            DependencyProperty.Register(nameof(ModelBorderThickness), typeof(Thickness),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(new Thickness{ Top =1, Bottom = 1, Left = 1, Right = 1 }));
+
+        public Thickness ModelBorderThickness
+        {
+            get { return (Thickness)GetValue(ModelBorderThicknessProperty); }
+            set { SetValue(ModelBorderThicknessProperty, value); }
+        }
+
+        #endregion センター
+
+        #region トップ
 
         public static readonly DependencyProperty TopModelsProperty =
             DependencyProperty.Register(nameof(TopModels), typeof(ReactiveCollection<LayoutNodeBase>),
@@ -65,6 +104,43 @@ namespace Mov.Designer.Views
             set { SetValue(TopHeightProperty, value); }
         }
 
+        public static readonly DependencyProperty TopBackgroundProperty =
+            DependencyProperty.Register(nameof(TopBackground), typeof(Brush),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(Brushes.Transparent));
+
+        public Brush TopBackground
+        {
+            get { return (Brush)GetValue(TopBackgroundProperty); }
+            set { SetValue(TopBackgroundProperty, value); }
+        }
+
+        public static readonly DependencyProperty TopBorderBrushProperty =
+            DependencyProperty.Register(nameof(TopBorderBrush), typeof(Brush),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(Brushes.Transparent));
+
+        public Brush TopBorderBrush
+        {
+            get { return (Brush)GetValue(TopBorderBrushProperty); }
+            set { SetValue(TopBorderBrushProperty, value); }
+        }
+
+        public static readonly DependencyProperty TopBorderThicknessProperty =
+            DependencyProperty.Register(nameof(TopBorderThickness), typeof(Thickness),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(new Thickness { Top = 1, Bottom = 1, Left = 1, Right = 1 }));
+
+        public Thickness TopBorderThickness
+        {
+            get { return (Thickness)GetValue(TopBorderThicknessProperty); }
+            set { SetValue(TopBorderThicknessProperty, value); }
+        }
+
+        #endregion トップ
+
+        #region ボトム
+
         public static readonly DependencyProperty BottomModelsProperty =
             DependencyProperty.Register(nameof(BottomModels), typeof(ReactiveCollection<LayoutNodeBase>),
             typeof(DesignerPartsShell),
@@ -86,6 +162,43 @@ namespace Mov.Designer.Views
             get { return (double)GetValue(BottomHeightProperty); }
             set { SetValue(BottomHeightProperty, value); }
         }
+
+        public static readonly DependencyProperty BottomBackgroundProperty =
+            DependencyProperty.Register(nameof(BottomBackground), typeof(Brush),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(Brushes.Transparent));
+
+        public Brush BottomBackground
+        {
+            get { return (Brush)GetValue(BottomBackgroundProperty); }
+            set { SetValue(BottomBackgroundProperty, value); }
+        }
+
+        public static readonly DependencyProperty BottomBorderBrushProperty =
+            DependencyProperty.Register(nameof(BottomBorderBrush), typeof(Brush),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(Brushes.Transparent));
+
+        public Brush BottomBorderBrush
+        {
+            get { return (Brush)GetValue(BottomBorderBrushProperty); }
+            set { SetValue(BottomBorderBrushProperty, value); }
+        }
+
+        public static readonly DependencyProperty BottomBorderThicknessProperty =
+            DependencyProperty.Register(nameof(BottomBorderThickness), typeof(Thickness),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(new Thickness { Top = 1, Bottom = 1, Left = 1, Right = 1 }));
+
+        public Thickness BottomBorderThickness
+        {
+            get { return (Thickness)GetValue(BottomBorderThicknessProperty); }
+            set { SetValue(BottomBorderThicknessProperty, value); }
+        }
+
+        #endregion ボトム
+
+        #region レフト
 
         public static readonly DependencyProperty LeftModelsProperty =
             DependencyProperty.Register(nameof(LeftModels), typeof(ReactiveCollection<LayoutNodeBase>),
@@ -109,6 +222,43 @@ namespace Mov.Designer.Views
             set { SetValue(LeftWidthProperty, value); }
         }
 
+        public static readonly DependencyProperty LeftBackgroundProperty =
+            DependencyProperty.Register(nameof(LeftBackground), typeof(Brush),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(Brushes.Transparent));
+
+        public Brush LeftBackground
+        {
+            get { return (Brush)GetValue(LeftBackgroundProperty); }
+            set { SetValue(LeftBackgroundProperty, value); }
+        }
+
+        public static readonly DependencyProperty LeftBorderBrushProperty =
+            DependencyProperty.Register(nameof(LeftBorderBrush), typeof(Brush),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(Brushes.Transparent));
+
+        public Brush LeftBorderBrush
+        {
+            get { return (Brush)GetValue(LeftBorderBrushProperty); }
+            set { SetValue(LeftBorderBrushProperty, value); }
+        }
+
+        public static readonly DependencyProperty LeftBorderThicknessProperty =
+            DependencyProperty.Register(nameof(LeftBorderThickness), typeof(Thickness),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(new Thickness { Top = 1, Bottom = 1, Left = 1, Right = 1 }));
+
+        public Thickness LeftBorderThickness
+        {
+            get { return (Thickness)GetValue(LeftBorderThicknessProperty); }
+            set { SetValue(LeftBorderThicknessProperty, value); }
+        }
+
+        #endregion レフト
+
+        #region ライト
+
         public static readonly DependencyProperty RightModelsProperty =
             DependencyProperty.Register(nameof(RightModels), typeof(ReactiveCollection<LayoutNodeBase>),
             typeof(DesignerPartsShell),
@@ -131,10 +281,48 @@ namespace Mov.Designer.Views
             set { SetValue(RightWidthProperty, value); }
         }
 
+        public static readonly DependencyProperty RightBackgroundProperty =
+            DependencyProperty.Register(nameof(RightBackground), typeof(Brush),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(Brushes.Transparent));
+
+        public Brush RightBackground
+        {
+            get { return (Brush)GetValue(RightBackgroundProperty); }
+            set { SetValue(RightBackgroundProperty, value); }
+        }
+
+        public static readonly DependencyProperty RightBorderBrushProperty =
+            DependencyProperty.Register(nameof(RightBorderBrush), typeof(Brush),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(Brushes.Transparent));
+
+        public Brush RightBorderBrush
+        {
+            get { return (Brush)GetValue(RightBorderBrushProperty); }
+            set { SetValue(RightBorderBrushProperty, value); }
+        }
+
+        public static readonly DependencyProperty RightBorderThicknessProperty =
+            DependencyProperty.Register(nameof(RightBorderThickness), typeof(Thickness),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(new Thickness { Top = 1, Bottom = 1, Left = 1, Right = 1 }));
+
+        public Thickness RightBorderThickness
+        {
+            get { return (Thickness)GetValue(RightBorderThicknessProperty); }
+            set { SetValue(RightBorderThicknessProperty, value); }
+        }
+
+        #endregion ライト
+
+        #region リポジトリ
+
         public static readonly DependencyProperty RepositoryProperty =
             DependencyProperty.Register(nameof(Repository), typeof(IDesignerRepository),
             typeof(DesignerPartsShell),
             new UIPropertyMetadata(null, new PropertyChangedCallback(OnRepositoryChanged)));
+
 
         public IDesignerRepository Repository
         {
@@ -152,6 +340,8 @@ namespace Mov.Designer.Views
             get { return (bool)GetValue(IsUpdateProperty); }
             set { SetValue(IsUpdateProperty, value); }
         }
+
+        #endregion リポジトリ
 
         #endregion プロパティ
 
@@ -233,22 +423,36 @@ namespace Mov.Designer.Views
                         if(topShell != null)
                         {
                             control.TopHeight = topShell.Height;
+                            control.TopBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(topShell.BackgroundColor);
+                            control.TopBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(topShell.BorderColor);
+                            control.TopBorderThickness = new Thickness(topShell.BorderThickness);
                         }
                         if (bottomShell != null)
                         {
                             control.BottomHeight = bottomShell.Height;
+                            control.BottomBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(bottomShell.BackgroundColor);
+                            control.BottomBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(bottomShell.BorderColor);
+                            control.BottomBorderThickness = new Thickness(bottomShell.BorderThickness);
                         }
                         if (leftShell != null)
                         {
                             control.LeftWidth = leftShell.Width;
+                            control.LeftBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(leftShell.BackgroundColor);
+                            control.LeftBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(leftShell.BorderColor);
+                            control.LeftBorderThickness = new Thickness(leftShell.BorderThickness);
                         }
                         if (rightShell != null)
                         {
                             control.RightWidth = rightShell.Width;
+                            control.RightBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(rightShell.BackgroundColor);
+                            control.RightBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(rightShell.BorderColor);
+                            control.RightBorderThickness = new Thickness(rightShell.BorderThickness);
                         }
                         if (centerShell != null)
                         {
-                            
+                            control.ModelBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(centerShell.BackgroundColor);
+                            control.ModelBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(centerShell.BorderColor);
+                            control.ModelBorderThickness = new Thickness(centerShell.BorderThickness);
                         }
                     }
                 }

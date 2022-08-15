@@ -8,8 +8,8 @@
     <width>0</width>
     <location>Center</location>
     <background_color>Transparent</background_color>
-    <border_color>Transparent</border_color>
-    <border_thickness>1</border_thickness>
+    <border_color>Black</border_color>
+    <border_thickness>0</border_thickness>
   </shell>
   <shell>
     <id>dccb3eaa-2e8e-4a9e-a895-0a18f081fb31</id>
@@ -18,7 +18,7 @@
     <height>50</height>
     <width>0</width>
     <location>Top</location>
-    <background_color>Transparent</background_color>
+    <background_color>AliceBlue</background_color>
     <border_color>Transparent</border_color>
     <border_thickness>1</border_thickness>
   </shell>
@@ -29,7 +29,7 @@
     <height>50</height>
     <width>0</width>
     <location>Bottom</location>
-    <background_color>Transparent</background_color>
+    <background_color>AliceBlue</background_color>
     <border_color>Transparent</border_color>
     <border_thickness>1</border_thickness>
   </shell>

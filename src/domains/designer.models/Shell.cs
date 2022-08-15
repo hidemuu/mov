@@ -80,7 +80,7 @@ namespace Mov.Designer.Models
         [LanguageKey("border_thickness")]
         [DisplayName("border_thickness")]
         [DisplayIndex(15)]
-        public int BorderThickness { get; set; } = 1;
+        public double BorderThickness { get; set; } = 1;
 
         #endregion プロパティ
 

@@ -51,6 +51,26 @@
     <macro />
   </content>
   <content>
+    <id>0e1d50ae-f863-4299-bbc1-a18fa21a0bf7</id>
+    <index>0</index>
+    <code>Group</code>
+    <name />
+    <icon />
+    <control_type>Label</control_type>
+    <schema />
+    <macro />
+  </content>
+  <content>
+    <id>7e17ae8f-5989-4230-ac32-6ee3a5711a26</id>
+    <index>0</index>
+    <code>Expander</code>
+    <name />
+    <icon />
+    <control_type>Label</control_type>
+    <schema />
+    <macro />
+  </content>
+  <content>
     <id>ef9472f6-9cef-428a-86cf-85e35dcf2b90</id>
     <index>1</index>
     <code>Main</code>

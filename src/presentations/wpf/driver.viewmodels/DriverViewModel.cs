@@ -33,7 +33,7 @@ namespace Mov.Driver.ViewModels
         {
             this.driverDatabase = driverDatabase;
             this.designerDatabase = designerDatabase;
-            DesignerRepository = designerDatabase.GetRepository("");
+            DesignerRepository = designerDatabase.GetRepository("driver");
         }
 
         #endregion コンストラクター

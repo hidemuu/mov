@@ -38,12 +38,21 @@ namespace Mov.Designer.Models
         public string Name { get; set; } = string.Empty;
 
         /// <summary>
+        /// カテゴリ
+        /// </summary>
+        [XmlElement("category")]
+        [LanguageKey("category")]
+        [DisplayName("category")]
+        [DisplayIndex(11)]
+        public string Category { get; set; } = string.Empty;
+
+        /// <summary>
         /// アイコン
         /// </summary>
         [XmlElement("icon")]
         [LanguageKey("icon")]
         [DisplayName("icon")]
-        [DisplayIndex(11)]
+        [DisplayIndex(12)]
         public string Icon { get; set; } = string.Empty;
 
         /// <summary>
@@ -52,7 +61,7 @@ namespace Mov.Designer.Models
         [XmlElement("control_type")]
         [LanguageKey("control_type")]
         [DisplayName("control_type")]
-        [DisplayIndex(12)]
+        [DisplayIndex(13)]
         public ControlType ControlType { get; set; } = ControlType.Label;
 
         /// <summary>
@@ -61,17 +70,17 @@ namespace Mov.Designer.Models
         [XmlElement("schema")]
         [LanguageKey("schema")]
         [DisplayName("schema")]
-        [DisplayIndex(13)]
+        [DisplayIndex(14)]
         public string Schema { get; set; } = string.Empty;
 
         /// <summary>
         /// 初期値
         /// </summary>
-        [XmlElement("default_values")]
-        [LanguageKey("default_values")]
-        [DisplayName("default_alues")]
-        [DisplayIndex(14)]
-        public List<string> DefaultValues { get; set; } = new List<string>();
+        [XmlElement("default_value")]
+        [LanguageKey("default_value")]
+        [DisplayName("default_value")]
+        [DisplayIndex(15)]
+        public string DefaultValue { get; set; } = string.Empty;
 
         /// <summary>
         /// マクロ
@@ -79,7 +88,7 @@ namespace Mov.Designer.Models
         [XmlElement("macro")]
         [LanguageKey("macro")]
         [DisplayName("macro")]
-        [DisplayIndex(15)]
+        [DisplayIndex(16)]
         public string Macro { get; set; } = string.Empty;
 
         #endregion プロパティ
@@ -104,7 +113,7 @@ namespace Mov.Designer.Models
             Icon = src.Icon;
             ControlType = src.ControlType;
             Schema = src.Schema;
-            DefaultValues = src.DefaultValues;
+            DefaultValue = src.DefaultValue;
             Macro = src.Macro;
         }
 

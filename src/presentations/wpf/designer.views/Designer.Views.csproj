@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Bebavior\" />
     <Folder Include="Controls\" />
   </ItemGroup>
 

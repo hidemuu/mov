@@ -1,7 +1,9 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:behavior="clr-namespace:Mov.Designer.Views.Bebavior"
     xmlns:converter="clr-namespace:Mov.Designer.Views.Converters"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:nodes="clr-namespace:Mov.Designer.Service.Nodes;assembly=Mov.Designer.Service"
     xmlns:selector="clr-namespace:Mov.Designer.Views.Selector">
     <ResourceDictionary.MergedDictionaries>
@@ -14,7 +16,11 @@
         <ContentControl
             Margin="16,0,0,0"
             Content="{Binding}"
-            ContentTemplateSelector="{StaticResource layoutContentSelector}" />
+            ContentTemplateSelector="{StaticResource layoutContentSelector}">
+            <i:Interaction.Behaviors>
+                <behavior:LayoutContentBehavior />
+            </i:Interaction.Behaviors>
+        </ContentControl>
         <!--<ContentControl Content="{Binding}" ContentTemplateSelector="{StaticResource contentSelector}" />-->
     </DataTemplate>
 

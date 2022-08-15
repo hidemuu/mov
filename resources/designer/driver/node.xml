@@ -11,15 +11,49 @@
     <enable>true</enable>
     <children>
       <node>
-        <id>36d93c07-d4a4-427a-a1fa-7e1aa3d2ad95</id>
+        <id>1d7d7d72-d75a-4e01-bca7-19c7847c028b</id>
         <index>0</index>
-        <code>Text1</code>
-        <node_type>Content</node_type>
+        <code>Group</code>
+        <node_type>Group</node_type>
         <orientation>Horizontal</orientation>
         <expand>true</expand>
         <visible>true</visible>
         <enable>true</enable>
-        <children />
+        <children>
+          <node>
+            <id>7fbbfae8-c0d7-4bda-a8df-26bdd05d3930</id>
+            <index>0</index>
+            <code>Button1</code>
+            <node_type>Content</node_type>
+            <orientation>Horizontal</orientation>
+            <expand>true</expand>
+            <visible>true</visible>
+            <enable>true</enable>
+            <children />
+          </node>
+          <node>
+            <id>31e9f69e-5e01-4603-bc5d-d1d60e4e613d</id>
+            <index>0</index>
+            <code>Button1</code>
+            <node_type>Content</node_type>
+            <orientation>Horizontal</orientation>
+            <expand>true</expand>
+            <visible>true</visible>
+            <enable>true</enable>
+            <children />
+          </node>
+          <node>
+            <id>36d93c07-d4a4-427a-a1fa-7e1aa3d2ad95</id>
+            <index>0</index>
+            <code>Button1</code>
+            <node_type>Content</node_type>
+            <orientation>Horizontal</orientation>
+            <expand>true</expand>
+            <visible>true</visible>
+            <enable>true</enable>
+            <children />
+          </node>
+        </children>
       </node>
     </children>
   </node>
@@ -36,13 +70,36 @@
       <node>
         <id>b2513b59-3007-4aed-b78d-9b95bea3ec2d</id>
         <index>0</index>
-        <code>Text1</code>
-        <node_type>Content</node_type>
+        <code>Group</code>
+        <node_type>Group</node_type>
         <orientation>Horizontal</orientation>
         <expand>true</expand>
         <visible>true</visible>
         <enable>true</enable>
-        <children />
+        <children>
+          <node>
+            <id>acd456b9-188a-499b-87fb-f2e7b3a8ea39</id>
+            <index>0</index>
+            <code>Text1</code>
+            <node_type>Content</node_type>
+            <orientation>Horizontal</orientation>
+            <expand>true</expand>
+            <visible>true</visible>
+            <enable>true</enable>
+            <children />
+          </node>
+          <node>
+            <id>a741f477-2e87-4107-9a51-4799251ea4ce</id>
+            <index>0</index>
+            <code>Text1</code>
+            <node_type>Content</node_type>
+            <orientation>Horizontal</orientation>
+            <expand>true</expand>
+            <visible>true</visible>
+            <enable>true</enable>
+            <children />
+          </node>
+        </children>
       </node>
     </children>
   </node>
@@ -59,8 +116,8 @@
       <node>
         <id>de436309-c1c2-48a3-82eb-d080babc7a5c</id>
         <index>0</index>
-        <code>Text1</code>
-        <node_type>Content</node_type>
+        <code>Group</code>
+        <node_type>Group</node_type>
         <orientation>Horizontal</orientation>
         <expand>true</expand>
         <visible>true</visible>
@@ -82,8 +139,8 @@
       <node>
         <id>11db8b89-5c28-40e8-a6e6-375302917a87</id>
         <index>0</index>
-        <code>Text1</code>
-        <node_type>Content</node_type>
+        <code>Group</code>
+        <node_type>Group</node_type>
         <orientation>Horizontal</orientation>
         <expand>true</expand>
         <visible>true</visible>
@@ -139,7 +196,7 @@
       <node>
         <id>7055949b-a62f-417f-aa85-f1862c233af6</id>
         <index>0</index>
-        <code>Main</code>
+        <code>Group</code>
         <node_type>Group</node_type>
         <orientation>Horizontal</orientation>
         <expand>true</expand>
@@ -202,6 +259,29 @@
             <children />
           </node>
           <node>
+            <id>cfa4df2c-038c-47ef-b597-03e6df483ea1</id>
+            <index>0</index>
+            <code>Date1</code>
+            <node_type>Content</node_type>
+            <orientation>Horizontal</orientation>
+            <expand>true</expand>
+            <visible>true</visible>
+            <enable>true</enable>
+            <children />
+          </node>
+        </children>
+      </node>
+      <node>
+        <id>e5541d59-f2c3-4362-9063-8a411b7691fc</id>
+        <index>0</index>
+        <code>Group</code>
+        <node_type>Group</node_type>
+        <orientation>Horizontal</orientation>
+        <expand>true</expand>
+        <visible>true</visible>
+        <enable>true</enable>
+        <children>
+          <node>
             <id>cf5f2d74-333c-43d7-8052-47d26b46e234</id>
             <index>0</index>
             <code>Item3</code>
@@ -227,17 +307,6 @@
             <id>d6ecaba7-0619-415d-a919-841403b91f46</id>
             <index>0</index>
             <code>Item5</code>
-            <node_type>Content</node_type>
-            <orientation>Horizontal</orientation>
-            <expand>true</expand>
-            <visible>true</visible>
-            <enable>true</enable>
-            <children />
-          </node>
-          <node>
-            <id>cfa4df2c-038c-47ef-b597-03e6df483ea1</id>
-            <index>0</index>
-            <code>Date1</code>
             <node_type>Content</node_type>
             <orientation>Horizontal</orientation>
             <expand>true</expand>

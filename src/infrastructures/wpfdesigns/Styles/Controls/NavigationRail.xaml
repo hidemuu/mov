@@ -3,9 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../BaseStyles.xaml" />
-    </ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary.MergedDictionaries />
 
     <Style
         x:Key="VerticalTabHeaderTextStyleKey"

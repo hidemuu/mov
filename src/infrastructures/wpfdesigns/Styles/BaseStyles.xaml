@@ -3,9 +3,6 @@
         <!--  コントロール  -->
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
         <ResourceDictionary Source="BaseThemes.xaml" />
-        <ResourceDictionary Source="BaseColors.xaml" />
-        <ResourceDictionary Source="BaseFonts.xaml" />
-        <ResourceDictionary Source="BaseSizes.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="ContentRoot" TargetType="FrameworkElement">

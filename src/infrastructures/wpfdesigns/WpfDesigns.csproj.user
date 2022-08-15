@@ -2,6 +2,9 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Page Update="Styles\BaseControls.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Themes\BaseColors.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -102,9 +105,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Controls\NavigationRail.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Styles\ControlStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

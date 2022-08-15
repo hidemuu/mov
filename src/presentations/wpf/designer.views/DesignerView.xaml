@@ -43,7 +43,7 @@
                     CommandParameter="{x:Static vm:DesignerViewModel.PAGE_NAME_TREE}"
                     Content="{x:Static vm:DesignerViewModel.PAGE_NAME_TREE}">
                     <Button.Style>
-                        <Style TargetType="{x:Type Button}">
+                        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding PageName.Value}" Value="{x:Static vm:DesignerViewModel.PAGE_NAME_TREE}">
                                     <Setter Property="Background" Value="SkyBlue" />
@@ -59,7 +59,7 @@
                     CommandParameter="{x:Static vm:DesignerViewModel.PAGE_NAME_TABLE}"
                     Content="{x:Static vm:DesignerViewModel.PAGE_NAME_TABLE}">
                     <Button.Style>
-                        <Style TargetType="{x:Type Button}">
+                        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding PageName.Value}" Value="{x:Static vm:DesignerViewModel.PAGE_NAME_TABLE}">
                                     <Setter Property="Background" Value="SkyBlue" />
@@ -75,7 +75,7 @@
                     CommandParameter="{x:Static vm:DesignerViewModel.PAGE_NAME_SHELL}"
                     Content="{x:Static vm:DesignerViewModel.PAGE_NAME_SHELL}">
                     <Button.Style>
-                        <Style TargetType="{x:Type Button}">
+                        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding PageName.Value}" Value="{x:Static vm:DesignerViewModel.PAGE_NAME_SHELL}">
                                     <Setter Property="Background" Value="SkyBlue" />
@@ -91,7 +91,7 @@
                     CommandParameter="{x:Static vm:DesignerViewModel.PAGE_NAME_PARTS}"
                     Content="{x:Static vm:DesignerViewModel.PAGE_NAME_PARTS}">
                     <Button.Style>
-                        <Style TargetType="{x:Type Button}">
+                        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding PageName.Value}" Value="{x:Static vm:DesignerViewModel.PAGE_NAME_PARTS}">
                                     <Setter Property="Background" Value="SkyBlue" />
@@ -107,7 +107,7 @@
                     CommandParameter="{x:Static vm:DesignerViewModel.PAGE_NAME_THEME}"
                     Content="{x:Static vm:DesignerViewModel.PAGE_NAME_THEME}">
                     <Button.Style>
-                        <Style TargetType="{x:Type Button}">
+                        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding PageName.Value}" Value="{x:Static vm:DesignerViewModel.PAGE_NAME_THEME}">
                                     <Setter Property="Background" Value="SkyBlue" />

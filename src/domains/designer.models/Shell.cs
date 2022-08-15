@@ -1,5 +1,6 @@
 ﻿using Mov.Accessors;
 using Mov.Utilities.Attributes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace Mov.Designer.Models
         [LanguageKey("height")]
         [DisplayName("height")]
         [DisplayIndex(10)]
-        public double Height { get; set; }
+        public double Height { get; set; } = 100.0;
 
         /// <summary>
         /// 幅
@@ -43,16 +44,43 @@ namespace Mov.Designer.Models
         [LanguageKey("width")]
         [DisplayName("width")]
         [DisplayIndex(11)]
-        public double Width { get; set; }
+        public double Width { get; set; } = 50.0;
 
         /// <summary>
-        /// 初期表示位置
+        /// 表示位置
         /// </summary>
-        [XmlElement("startup_location")]
-        [LanguageKey("startup_location")]
-        [DisplayName("startup_location")]
+        [XmlElement("location")]
+        [LanguageKey("location")]
+        [DisplayName("location")]
         [DisplayIndex(12)]
-        public string StartupLocation { get; set; }
+        public LocationType Location { get; set; } = LocationType.Center;
+
+        /// <summary>
+        /// 背景色
+        /// </summary>
+        [XmlElement("background_color")]
+        [LanguageKey("background_color")]
+        [DisplayName("background_color")]
+        [DisplayIndex(13)]
+        public string BackgroundColor { get; set; } = "Transparent";
+
+        /// <summary>
+        /// ボーダー色
+        /// </summary>
+        [XmlElement("border_color")]
+        [LanguageKey("border_color")]
+        [DisplayName("border_color")]
+        [DisplayIndex(14)]
+        public string BorderColor { get; set; } = "Transparent";
+
+        /// <summary>
+        /// ボーダー太さ
+        /// </summary>
+        [XmlElement("border_thickness")]
+        [LanguageKey("border_thickness")]
+        [DisplayName("border_thickness")]
+        [DisplayIndex(15)]
+        public int BorderThickness { get; set; } = 1;
 
         #endregion プロパティ
 
@@ -66,6 +94,9 @@ namespace Mov.Designer.Models
 
         /// <inheritdoc />
         public override string ToHeaderString() => GetString(new string[] { "Id", "Code" }, 10);
+
+        //public static LocationType[] GetLocationTypes => (LocationType[])Enum.GetValues(typeof(LocationType));
+
 
         public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<Shell>().OrderBy(x => x.index);
 

@@ -30,6 +30,8 @@ namespace Mov.WpfControls.ViewModels
 
         #endregion コマンド
 
+        #region コンストラクター
+
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -41,11 +43,14 @@ namespace Mov.WpfControls.ViewModels
             DeleteCommand.Subscribe(OnDeleteCommand).AddTo(Disposables);
         }
 
+        #endregion コンストラクター
+
         #region イベント
 
         public override void OnNavigatedFrom(NavigationContext navigationContext)
         {
             base.OnNavigatedFrom(navigationContext);
+            PostItems();
             Export();
         }
 
@@ -70,7 +75,7 @@ namespace Mov.WpfControls.ViewModels
 
         #endregion イベント
 
-        #region 内部メソッド
+        #region 継承メソッド
 
         protected abstract void Import(NavigationContext navigationContext);
 
@@ -118,6 +123,6 @@ namespace Mov.WpfControls.ViewModels
             }
         }
 
-        #endregion 内部メソッド
+        #endregion 継承メソッド
     }
 }

@@ -50,7 +50,7 @@ namespace Mov.WpfControls
             {
                 return Guid.Parse(Value.Value.ToString());
             }
-            return Convert.ChangeType(Value.Value, Type);
+            return Value?.Value != null ? Convert.ChangeType(Value.Value, Type) : null;
         }
 
         public void SetValue(object value)
@@ -58,6 +58,11 @@ namespace Mov.WpfControls
             if(Type == typeof(Guid))
             {
                 Value.Value = Guid.Parse(value.ToString());
+                return;
+            }
+            if(Type.BaseType == typeof(Enum))
+            {
+                Value.Value = Enum.Parse(Type, value.ToString());
                 return;
             }
             Value.Value = Convert.ChangeType(value, Type);

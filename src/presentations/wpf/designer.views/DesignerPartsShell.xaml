@@ -9,10 +9,22 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
     <DockPanel LastChildFill="True">
-        <local:DesignerPartsControl DockPanel.Dock="Top" Models="{Binding TopModels, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:DesignerPartsShell}}" />
-        <local:DesignerPartsControl DockPanel.Dock="Bottom" Models="{Binding BottomModels, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:DesignerPartsShell}}" />
-        <local:DesignerPartsControl DockPanel.Dock="Left" Models="{Binding LeftModels, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:DesignerPartsShell}}" />
-        <local:DesignerPartsControl DockPanel.Dock="Right" Models="{Binding RightModels, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:DesignerPartsShell}}" />
+        <local:DesignerPartsControl
+            Height="{Binding TopHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:DesignerPartsShell}}"
+            DockPanel.Dock="Top"
+            Models="{Binding TopModels, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:DesignerPartsShell}}" />
+        <local:DesignerPartsControl
+            Height="{Binding BottomHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:DesignerPartsShell}}"
+            DockPanel.Dock="Bottom"
+            Models="{Binding BottomModels, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:DesignerPartsShell}}" />
+        <local:DesignerPartsControl
+            Width="{Binding LeftWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:DesignerPartsShell}}"
+            DockPanel.Dock="Left"
+            Models="{Binding LeftModels, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:DesignerPartsShell}}" />
+        <local:DesignerPartsControl
+            Width="{Binding RightWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:DesignerPartsShell}}"
+            DockPanel.Dock="Right"
+            Models="{Binding RightModels, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:DesignerPartsShell}}" />
         <local:DesignerPartsControl Models="{Binding Models, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:DesignerPartsShell}}" />
     </DockPanel>
 </UserControl>

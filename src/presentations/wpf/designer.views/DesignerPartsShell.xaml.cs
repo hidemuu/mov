@@ -54,6 +54,17 @@ namespace Mov.Designer.Views
             set { SetValue(TopModelsProperty, value); }
         }
 
+        public static readonly DependencyProperty TopHeightProperty =
+            DependencyProperty.Register(nameof(TopHeight), typeof(double),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(50.0));
+
+        public double TopHeight
+        {
+            get { return (double)GetValue(TopHeightProperty); }
+            set { SetValue(TopHeightProperty, value); }
+        }
+
         public static readonly DependencyProperty BottomModelsProperty =
             DependencyProperty.Register(nameof(BottomModels), typeof(ReactiveCollection<LayoutNodeBase>),
             typeof(DesignerPartsShell),
@@ -63,6 +74,17 @@ namespace Mov.Designer.Views
         {
             get { return (ReactiveCollection<LayoutNodeBase>)GetValue(BottomModelsProperty); }
             set { SetValue(BottomModelsProperty, value); }
+        }
+
+        public static readonly DependencyProperty BottomHeightProperty =
+            DependencyProperty.Register(nameof(BottomHeight), typeof(double),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(50.0));
+
+        public double BottomHeight
+        {
+            get { return (double)GetValue(BottomHeightProperty); }
+            set { SetValue(BottomHeightProperty, value); }
         }
 
         public static readonly DependencyProperty LeftModelsProperty =
@@ -76,6 +98,17 @@ namespace Mov.Designer.Views
             set { SetValue(LeftModelsProperty, value); }
         }
 
+        public static readonly DependencyProperty LeftWidthProperty =
+            DependencyProperty.Register(nameof(LeftWidth), typeof(double),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(100.0));
+
+        public double LeftWidth
+        {
+            get { return (double)GetValue(LeftWidthProperty); }
+            set { SetValue(LeftWidthProperty, value); }
+        }
+
         public static readonly DependencyProperty RightModelsProperty =
             DependencyProperty.Register(nameof(RightModels), typeof(ReactiveCollection<LayoutNodeBase>),
             typeof(DesignerPartsShell),
@@ -85,6 +118,17 @@ namespace Mov.Designer.Views
         {
             get { return (ReactiveCollection<LayoutNodeBase>)GetValue(RightModelsProperty); }
             set { SetValue(RightModelsProperty, value); }
+        }
+
+        public static readonly DependencyProperty RightWidthProperty =
+            DependencyProperty.Register(nameof(RightWidth), typeof(double),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(100.0));
+
+        public double RightWidth
+        {
+            get { return (double)GetValue(RightWidthProperty); }
+            set { SetValue(RightWidthProperty, value); }
         }
 
         public static readonly DependencyProperty RepositoryProperty =
@@ -179,6 +223,33 @@ namespace Mov.Designer.Views
                         control.BottomModels.AddRange(build.BottomNode.Children);
                         control.LeftModels.AddRange(build.LeftNode.Children);
                         control.RightModels.AddRange(build.RightNode.Children);
+
+                        var topShell = control.Repository?.Shells?.Get("Top");
+                        var bottomShell = control.Repository?.Shells?.Get("Bottom");
+                        var leftShell = control.Repository?.Shells?.Get("Left");
+                        var rightShell = control.Repository?.Shells?.Get("Right");
+                        var centerShell = control.Repository?.Shells?.Get("Center");
+
+                        if(topShell != null)
+                        {
+                            control.TopHeight = topShell.Height;
+                        }
+                        if (bottomShell != null)
+                        {
+                            control.BottomHeight = bottomShell.Height;
+                        }
+                        if (leftShell != null)
+                        {
+                            control.LeftWidth = leftShell.Width;
+                        }
+                        if (rightShell != null)
+                        {
+                            control.RightWidth = rightShell.Width;
+                        }
+                        if (centerShell != null)
+                        {
+                            
+                        }
                     }
                 }
             }

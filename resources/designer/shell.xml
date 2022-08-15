@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shells xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:xxsd="http://www.w3.org/2001/XMLSchema">
-    <shell>
-      <index>0</index>
-      <code>Test1</code>
-    </shell>
-</layouts>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<shells xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <shell>
+    <id>dccb3eaa-2e8e-4a9e-a895-0a18f081fb31</id>
+    <index>0</index>
+    <code>Test1</code>
+    <height>0</height>
+    <width>0</width>
+  </shell>
+</shells>

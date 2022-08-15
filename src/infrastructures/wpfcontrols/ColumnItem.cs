@@ -37,7 +37,7 @@ namespace Mov.WpfControls
         {
             Path.Value = path;
             Value.Value = value;
-            Type = value.GetType();
+            Type = value?.GetType();
         }
 
         #endregion コンストラクター
@@ -65,7 +65,7 @@ namespace Mov.WpfControls
 
         public override string ToString()
         {
-            return Value.Value.ToString();
+            return Value?.Value?.ToString();
         }
 
         #endregion メソッド

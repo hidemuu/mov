@@ -6,11 +6,18 @@
     xmlns:local="clr-namespace:Mov.Designer.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
-    xmlns:vm="clr-namespace:Mov.Designer.ViewModels;assembly=Mov.Designer.ViewModels"
+    xmlns:vm="clr-namespace:Mov.Designer.ViewModels;assembly=Mov.Designer.ViewModels" xmlns:wpfcontrols="clr-namespace:Mov.WpfControls.Components;assembly=Mov.WpfControls"
     d:DataContext="{d:DesignInstance vm:DesignerShellViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
-    <Grid />
+    <Grid>
+        <wpfcontrols:GridListControl
+            AddCommand="{Binding AddCommand}"
+            Attributes="{Binding Attributes.Value}"
+            DeleteCommand="{Binding DeleteCommand}"
+            Items="{Binding Items}"
+            SelectedItem="{Binding SelectedItem}" />
+    </Grid>
 </UserControl>

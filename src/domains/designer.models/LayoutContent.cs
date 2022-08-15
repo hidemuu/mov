@@ -1,6 +1,10 @@
 ﻿using Mov.Accessors;
+using Mov.Utilities.Attributes;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
 using System.Xml.Serialization;
 
 namespace Mov.Designer.Models
@@ -28,36 +32,54 @@ namespace Mov.Designer.Models
         /// 名称
         /// </summary>
         [XmlElement("name")]
+        [LanguageKey("name")]
+        [DisplayName("name")]
+        [DisplayIndex(10)]
         public string Name { get; set; } = string.Empty;
 
         /// <summary>
         /// アイコン
         /// </summary>
         [XmlElement("icon")]
+        [LanguageKey("icon")]
+        [DisplayName("icon")]
+        [DisplayIndex(11)]
         public string Icon { get; set; } = string.Empty;
 
         /// <summary>
         /// コントロールの種類
         /// </summary>
         [XmlElement("control_type")]
+        [LanguageKey("control_type")]
+        [DisplayName("control_type")]
+        [DisplayIndex(12)]
         public ControlType ControlType { get; set; } = ControlType.Label;
 
         /// <summary>
         /// コントロールのスキーマ
         /// </summary>
         [XmlElement("schema")]
+        [LanguageKey("schema")]
+        [DisplayName("schema")]
+        [DisplayIndex(13)]
         public string Schema { get; set; } = string.Empty;
 
         /// <summary>
         /// 初期値
         /// </summary>
         [XmlElement("default_values")]
+        [LanguageKey("default_values")]
+        [DisplayName("default_alues")]
+        [DisplayIndex(14)]
         public List<string> DefaultValues { get; set; } = new List<string>();
 
         /// <summary>
         /// マクロ
         /// </summary>
         [XmlElement("macro")]
+        [LanguageKey("macro")]
+        [DisplayName("macro")]
+        [DisplayIndex(15)]
         public string Macro { get; set; } = string.Empty;
 
         #endregion プロパティ
@@ -100,6 +122,9 @@ namespace Mov.Designer.Models
         public override string ToHeaderString() => GetString(new string[] { "Id", "Code" }, 10);
 
         public static ControlType[] GetControlTypes => (ControlType[])Enum.GetValues(typeof(ControlType));
+
+        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<LayoutContent>().OrderBy(x => x.index);
+
 
         #endregion メソッド
     }

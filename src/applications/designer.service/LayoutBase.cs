@@ -46,6 +46,11 @@ namespace Mov.Designer.Service
         /// </summary>
         public ReactivePropertySlim<double> Indent { get; } = new ReactivePropertySlim<double>();
 
+        /// <summary>
+        /// 値
+        /// </summary>
+        public ReactivePropertySlim<string> Value { get; } = new ReactivePropertySlim<string>();
+
         #endregion プロパティ
 
         #region コンストラクター

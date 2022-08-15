@@ -33,4 +33,3 @@ C:\Users\nando\Documents\GitHub\mov\src\infrastructures\utilities\obj\Debug\nets
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\utilities\obj\Debug\netstandard2.0\Utilities.csproj.CoreCompileInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\utilities\obj\Debug\netstandard2.0\Mov.Utilities.dll
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\utilities\obj\Debug\netstandard2.0\Mov.Utilities.pdb
-C:\Users\nando\Documents\GitHub\mov\src\infrastructures\utilities\obj\Debug\netstandard2.0\Utilities.csproj.AssemblyReference.cache

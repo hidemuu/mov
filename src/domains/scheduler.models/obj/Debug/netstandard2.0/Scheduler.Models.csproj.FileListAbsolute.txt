@@ -33,4 +33,3 @@ C:\Users\nando\Documents\GitHub\mov\src\domains\scheduler.models\obj\Debug\netst
 C:\Users\nando\Documents\GitHub\mov\src\domains\scheduler.models\obj\Debug\netstandard2.0\Scheduler.Models.csproj.CoreCompileInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\domains\scheduler.models\obj\Debug\netstandard2.0\Mov.Scheduler.Models.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\scheduler.models\obj\Debug\netstandard2.0\Mov.Scheduler.Models.pdb
-C:\Users\nando\Documents\GitHub\mov\src\domains\scheduler.models\obj\Debug\netstandard2.0\Scheduler.Models.csproj.AssemblyReference.cache

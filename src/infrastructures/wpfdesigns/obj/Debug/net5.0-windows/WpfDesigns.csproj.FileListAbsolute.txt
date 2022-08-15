@@ -112,3 +112,5 @@ C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Mov.WpfDesigns.dll
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\ref\Mov.WpfDesigns.dll
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Mov.WpfDesigns.pdb
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Styles\BaseColors.baml
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\wpfdesigns\obj\Debug\net5.0-windows\Styles\BaseSizes.baml

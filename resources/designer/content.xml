@@ -64,7 +64,7 @@
     <id>954c9d20-e3db-4a8c-a276-2fafa4b72041</id>
     <index>0</index>
     <code>Item2</code>
-    <name />
+    <name>項目5</name>
     <icon />
     <control_type>ComboBox</control_type>
     <schema />
@@ -74,7 +74,7 @@
     <id>ae4a5dcf-c678-49ef-9151-c89df302a74b</id>
     <index>0</index>
     <code>Item3</code>
-    <name />
+    <name>項目5</name>
     <icon />
     <control_type>TextBox</control_type>
     <schema />
@@ -84,7 +84,7 @@
     <id>0dc60abf-d65c-4e2d-bac2-4ef1bc4f1b2c</id>
     <index>0</index>
     <code>Item4</code>
-    <name />
+    <name>項目5</name>
     <icon />
     <control_type>CheckBox</control_type>
     <schema />
@@ -94,7 +94,7 @@
     <id>f90fe4dc-bc56-41b6-b2e6-dffd1b5a87ae</id>
     <index>0</index>
     <code>Item5</code>
-    <name />
+    <name>項目5</name>
     <icon />
     <control_type>ListBox</control_type>
     <schema />
@@ -104,7 +104,7 @@
     <id>d4975470-eaa7-40e6-baef-a8c53265d6d0</id>
     <index>0</index>
     <code>Date1</code>
-    <name />
+    <name>日付1</name>
     <icon />
     <control_type>DatePicker</control_type>
     <schema />

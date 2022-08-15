@@ -1,85 +1,12 @@
-﻿<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
         <!--  コントロール  -->
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
-
         <ResourceDictionary Source="BaseThemes.xaml" />
+        <ResourceDictionary Source="BaseColors.xaml" />
         <ResourceDictionary Source="BaseFonts.xaml" />
+        <ResourceDictionary Source="BaseSizes.xaml" />
     </ResourceDictionary.MergedDictionaries>
-
-    <!--  MahApps Brushes  -->
-    <SolidColorBrush x:Key="HighlightBrush" Color="{DynamicResource Primary700}" />
-    <SolidColorBrush x:Key="AccentBaseColorBrush" Color="{DynamicResource Primary600}" />
-    <SolidColorBrush x:Key="AccentColorBrush" Color="{DynamicResource Primary500}" />
-    <SolidColorBrush x:Key="AccentColorBrush2" Color="{DynamicResource Primary400}" />
-    <SolidColorBrush x:Key="AccentColorBrush3" Color="{DynamicResource Primary300}" />
-    <SolidColorBrush x:Key="AccentColorBrush4" Color="{DynamicResource Primary200}" />
-    <SolidColorBrush x:Key="WindowTitleColorBrush" Color="{DynamicResource Primary700}" />
-    <SolidColorBrush x:Key="AccentSelectedColorBrush" Color="{DynamicResource Primary500Foreground}" />
-    <LinearGradientBrush x:Key="ProgressBrush" StartPoint="1.002,0.5" EndPoint="0.001,0.5">
-        <GradientStop Offset="0" Color="{DynamicResource Primary700}" />
-        <GradientStop Offset="1" Color="{DynamicResource Primary300}" />
-    </LinearGradientBrush>
-    <SolidColorBrush x:Key="CheckmarkFill" Color="{DynamicResource Primary500}" />
-    <SolidColorBrush x:Key="RightArrowFill" Color="{DynamicResource Primary500}" />
-    <SolidColorBrush x:Key="IdealForegroundColorBrush" Color="{DynamicResource Primary500Foreground}" />
-    <SolidColorBrush
-        x:Key="IdealForegroundDisabledBrush"
-        Opacity="0.4"
-        Color="{DynamicResource Primary500}" />
-    <SolidColorBrush x:Key="MahApps.Metro.Brushes.ToggleSwitchButton.OnSwitchBrush.Win10" Color="{DynamicResource Primary500}" />
-    <SolidColorBrush x:Key="MahApps.Metro.Brushes.ToggleSwitchButton.OnSwitchMouseOverBrush.Win10" Color="{DynamicResource Primary400}" />
-    <SolidColorBrush x:Key="MahApps.Metro.Brushes.ToggleSwitchButton.ThumbIndicatorCheckedBrush.Win10" Color="{DynamicResource Primary500Foreground}" />
-
-    <!--  Original  -->
-    <SolidColorBrush x:Key="NavigationRailBorderBrush" Color="{StaticResource Blue GreyPrimary50}" />
-
-    <!--  ブラシリソース  -->
-    <SolidColorBrush x:Key="MenuBackgroundBrush" Color="#FF272424" />
-    <SolidColorBrush x:Key="StartButtonBackgroundBrushOFF" Color="#FF272424" />
-    <SolidColorBrush x:Key="StartButtonBackgroundBrushHover" Color="LightSlateGray" />
-    <SolidColorBrush x:Key="StartButtonBackgroundBrushON" Color="SteelBlue" />
-    <SolidColorBrush x:Key="StartButtonForegroundBrushOFF" Color="White" />
-    <SolidColorBrush x:Key="StartButtonForegroundBrushHover" Color="White" />
-    <SolidColorBrush x:Key="StartButtonForegroundBrushON" Color="White" />
-    <SolidColorBrush x:Key="StartButtonBorderBrushOFF" Color="#FF272424" />
-    <SolidColorBrush x:Key="StartButtonBorderBrushHover" Color="LawnGreen" />
-    <SolidColorBrush x:Key="StartButtonBorderBrushON" Color="WhiteSmoke" />
-    <!--  通常時のボーダーの色  -->
-    <SolidColorBrush x:Key="NormalBorderBrush" Color="#FF272424" />
-    <!--  通常時のボタンの色  -->
-    <SolidColorBrush x:Key="NormalButtonBrush" Color="White" />
-    <!--  通常時のボタンの背景色  -->
-    <SolidColorBrush x:Key="NormalBackgroundBrush" Color="Transparent" />
-    <!--  マウスオーバー時のボーダーの色  -->
-    <SolidColorBrush x:Key="HoverBorderBrush" Color="LawnGreen" />
-    <!--  マウスオーバー時のボタンの色  -->
-    <SolidColorBrush x:Key="HoverButtonBrush" Color="#ffffff" />
-    <!--  マウスオーバー時のボタンの背景色  -->
-    <SolidColorBrush x:Key="HoverBackgroundBrush" Color="#66ffffff" />
-
-    <!--  default accent colors and brushes  -->
-    <Color x:Key="AccentColor">#1ba1e2</Color>
-    <SolidColorBrush x:Key="Accent" Color="{DynamicResource AccentColor}" />
-
-    <!--  layout margins  -->
-    <Thickness x:Key="RootMargin">-42,-8,-16,-16</Thickness>
-    <Thickness x:Key="ContentMargin">16,28,16,16</Thickness>
-    <Thickness x:Key="StatusMargin">-16,16,0,0</Thickness>
-    <Thickness x:Key="HeaderMargin">0,-28,44,0</Thickness>
-
-    <Thickness x:Key="SplitLeft">0,0,0,0</Thickness>
-    <Thickness x:Key="SplitRight">16,0,0,0</Thickness>
-
-    <!--  Close system button  -->
-    <sys:Double x:Key="CloseButtonWidth">32</sys:Double>
-
-    <!--  System Button  -->
-    <sys:Double x:Key="SystemButtonHeight">24</sys:Double>
-    <sys:Double x:Key="SystemButtonWidth">32</sys:Double>
 
     <Style x:Key="ContentRoot" TargetType="FrameworkElement">
         <Setter Property="Margin" Value="{StaticResource ContentMargin}" />

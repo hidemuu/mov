@@ -22,7 +22,7 @@
         <ItemsControl ItemTemplateSelector="{DynamicResource layoutNodeSelector}" ItemsSource="{Binding Children}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}" />
+                    <VirtualizingStackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}" />
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
         </ItemsControl>
@@ -47,7 +47,7 @@
             <ItemsControl ItemTemplateSelector="{DynamicResource layoutNodeSelector}" ItemsSource="{Binding Children}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <StackPanel Margin="16,0,0,0" Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}" />
+                        <VirtualizingStackPanel Margin="16,0,0,0" Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}" />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
@@ -59,7 +59,7 @@
             <ItemsControl ItemTemplateSelector="{DynamicResource layoutNodeSelector}" ItemsSource="{Binding Children}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <StackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}" />
+                        <VirtualizingStackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}" />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>

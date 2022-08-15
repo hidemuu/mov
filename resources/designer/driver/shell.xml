@@ -1,8 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shells xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns:xxsd="http://www.w3.org/2001/XMLSchema">
-    <shell>
-      <index>0</index>
-      <code>Test1</code>
-    </shell>
-</layouts>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<shells xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <shell>
+    <id>f2080bea-612f-4527-91f0-d4a714c8973a</id>
+    <index>0</index>
+    <code>Center</code>
+    <height>0</height>
+    <width>0</width>
+    <location>Center</location>
+    <background_color>Transparent</background_color>
+    <border_color>Black</border_color>
+    <border_thickness>0</border_thickness>
+  </shell>
+  <shell>
+    <id>dccb3eaa-2e8e-4a9e-a895-0a18f081fb31</id>
+    <index>0</index>
+    <code>Top</code>
+    <height>50</height>
+    <width>0</width>
+    <location>Top</location>
+    <background_color>AliceBlue</background_color>
+    <border_color>Transparent</border_color>
+    <border_thickness>1</border_thickness>
+  </shell>
+  <shell>
+    <id>95d4b723-60c8-4c92-83ae-af227077f02b</id>
+    <index>0</index>
+    <code>Bottom</code>
+    <height>50</height>
+    <width>0</width>
+    <location>Bottom</location>
+    <background_color>AliceBlue</background_color>
+    <border_color>Transparent</border_color>
+    <border_thickness>1</border_thickness>
+  </shell>
+  <shell>
+    <id>48055f52-327f-4a24-8a13-50ab8a86a196</id>
+    <index>0</index>
+    <code>Left</code>
+    <height>0</height>
+    <width>100</width>
+    <location>Left</location>
+    <background_color>Transparent</background_color>
+    <border_color>Transparent</border_color>
+    <border_thickness>1</border_thickness>
+  </shell>
+  <shell>
+    <id>92ad511d-4f9a-4a5d-abd2-419a2a8bee2c</id>
+    <index>0</index>
+    <code>Right</code>
+    <height>0</height>
+    <width>100</width>
+    <location>Right</location>
+    <background_color>Transparent</background_color>
+    <border_color>Transparent</border_color>
+    <border_thickness>1</border_thickness>
+  </shell>
+</shells>

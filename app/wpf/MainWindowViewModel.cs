@@ -43,15 +43,15 @@ namespace Mov.Wpf
         {
             Models.Add(new MainWindowModel(0, "Config", "Cog", () =>
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(ConfiguratorView))));
-            Models.Add(new MainWindowModel(1, "Designer", "Home", () => 
+            Models.Add(new MainWindowModel(1, "Designer", "Collage", () => 
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(DesignerView))));
             Models.Add(new MainWindowModel(2, "Game", "blur", () => 
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(GameView))));
-            Models.Add(new MainWindowModel(3, "Draw", "blur", () =>
+            Models.Add(new MainWindowModel(3, "Draw", "Sprout", () =>
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(DrawerView))));
-            Models.Add(new MainWindowModel(4, "Driver", "blur", () =>
+            Models.Add(new MainWindowModel(4, "Driver", "Octahedron", () =>
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(DriverView))));
-            Models.Add(new MainWindowModel(5, "Bom", "blur", () =>
+            Models.Add(new MainWindowModel(5, "Bom", "DNS", () =>
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(BomView))));
             Models.Add(new MainWindowModel(6, "Scheduler", "calendar", () => 
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(SchedulerView))));

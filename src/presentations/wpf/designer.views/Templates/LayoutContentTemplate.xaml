@@ -5,87 +5,145 @@
     xmlns:nodes="clr-namespace:Mov.Designer.Service.Nodes;assembly=Mov.Designer.Service"
     xmlns:selector="clr-namespace:Mov.Designer.Views.Selector">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/Mov.WpfDesigns;component/Themes/BaseThemes.xaml" />
+        <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <DataTemplate x:Key="LabelTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
-        <Label
-            Width="{StaticResource ControlWidth}"
-            Height="{StaticResource ControlHeight}"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Content="{Binding Name}" />
+        <Label Content="{Binding Name}">
+            <Label.Style>
+                <Style BasedOn="{StaticResource {x:Type Label}}" TargetType="{x:Type Label}">
+                    <Style.Setters>
+                        <Setter Property="Width" Value="{StaticResource ControlWidth}" />
+                        <Setter Property="Height" Value="{StaticResource ControlHeight}" />
+                        <Setter Property="HorizontalAlignment" Value="Left" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                    </Style.Setters>
+                </Style>
+            </Label.Style>
+        </Label>
     </DataTemplate>
 
     <DataTemplate x:Key="ComboBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
-        <ComboBox
-            Width="{StaticResource ControlWidth}"
-            Height="{StaticResource ControlHeight}"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center" />
+        <ComboBox>
+            <ComboBox.Style>
+                <Style BasedOn="{StaticResource {x:Type ComboBox}}" TargetType="{x:Type ComboBox}">
+                    <Style.Setters>
+                        <Setter Property="Width" Value="{StaticResource ControlWidth}" />
+                        <Setter Property="Height" Value="{StaticResource ControlHeight}" />
+                        <Setter Property="HorizontalAlignment" Value="Left" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                    </Style.Setters>
+                </Style>
+            </ComboBox.Style>
+        </ComboBox>
     </DataTemplate>
 
     <DataTemplate x:Key="ListBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
-        <ListBox />
+        <ListBox>
+            <ListBox.Style>
+                <Style BasedOn="{StaticResource {x:Type ListBox}}" TargetType="{x:Type ListBox}">
+                    <Style.Setters>
+                        <Setter Property="Width" Value="{StaticResource ControlWidth}" />
+                        <Setter Property="Height" Value="{StaticResource ControlHeight}" />
+                        <Setter Property="HorizontalAlignment" Value="Left" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                    </Style.Setters>
+                </Style>
+            </ListBox.Style>
+        </ListBox>
     </DataTemplate>
 
     <DataTemplate x:Key="ButtonTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
-        <Button
-            Width="{StaticResource ControlWidth}"
-            Height="{StaticResource ControlHeight}"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Content="{Binding Name}" />
+        <Button Content="{Binding Name}">
+            <Button.Style>
+                <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+                    <Style.Setters>
+                        <Setter Property="Width" Value="{StaticResource ControlWidth}" />
+                        <Setter Property="Height" Value="{StaticResource ControlHeight}" />
+                        <Setter Property="HorizontalAlignment" Value="Left" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                    </Style.Setters>
+                </Style>
+            </Button.Style>
+        </Button>
     </DataTemplate>
 
     <DataTemplate x:Key="RadioButtonTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
-        <RadioButton
-            Width="{StaticResource ControlWidth}"
-            Height="{StaticResource ControlHeight}"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Content="{Binding Name}" />
+        <RadioButton Content="{Binding Name}">
+            <RadioButton.Style>
+                <Style BasedOn="{StaticResource {x:Type RadioButton}}" TargetType="{x:Type RadioButton}">
+                    <Style.Setters>
+                        <Setter Property="Width" Value="{StaticResource ControlWidth}" />
+                        <Setter Property="Height" Value="{StaticResource ControlHeight}" />
+                        <Setter Property="HorizontalAlignment" Value="Left" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                    </Style.Setters>
+                </Style>
+            </RadioButton.Style>
+        </RadioButton>
     </DataTemplate>
 
     <DataTemplate x:Key="TextBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
-        <StackPanel
-            Width="{StaticResource ControlWidth}"
-            Height="{StaticResource ControlHeight}"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal">
+            <StackPanel.Style>
+                <Style TargetType="{x:Type StackPanel}">
+                    <Style.Setters>
+                        <Setter Property="Width" Value="{StaticResource ControlWidth}" />
+                        <Setter Property="Height" Value="{StaticResource ControlHeight}" />
+                        <Setter Property="HorizontalAlignment" Value="Left" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                    </Style.Setters>
+                </Style>
+            </StackPanel.Style>
             <Label VerticalAlignment="Center" Content="{Binding Name}" />
             <TextBox VerticalAlignment="Center" Text="{Binding Value.Value}" />
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="DatePickerTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
-        <DatePicker
-            Width="{StaticResource ControlWidth}"
-            Height="{StaticResource ControlHeight}"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center" />
+        <DatePicker>
+            <DatePicker.Style>
+                <Style BasedOn="{StaticResource {x:Type DatePicker}}" TargetType="{x:Type DatePicker}">
+                    <Style.Setters>
+                        <Setter Property="Width" Value="{StaticResource ControlWidth}" />
+                        <Setter Property="Height" Value="{StaticResource ControlHeight}" />
+                        <Setter Property="HorizontalAlignment" Value="Left" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                    </Style.Setters>
+                </Style>
+            </DatePicker.Style>
+        </DatePicker>
     </DataTemplate>
 
     <DataTemplate x:Key="CheckBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
-        <StackPanel
-            Width="{StaticResource ControlWidth}"
-            Height="{StaticResource ControlHeight}"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal">
+            <StackPanel.Style>
+                <Style TargetType="{x:Type StackPanel}">
+                    <Style.Setters>
+                        <Setter Property="Width" Value="{StaticResource ControlWidth}" />
+                        <Setter Property="Height" Value="{StaticResource ControlHeight}" />
+                        <Setter Property="HorizontalAlignment" Value="Left" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                    </Style.Setters>
+                </Style>
+            </StackPanel.Style>
             <CheckBox VerticalAlignment="Center" IsChecked="False" />
             <Label VerticalAlignment="Center" Content="{Binding Name}" />
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="SpinBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
-        <Grid
-            Width="{StaticResource ControlWidth}"
-            Height="{StaticResource ControlHeight}"
-            Margin="0,0,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center">
+        <Grid>
+            <Grid.Style>
+                <Style TargetType="{x:Type Grid}">
+                    <Style.Setters>
+                        <Setter Property="Width" Value="{StaticResource ControlWidth}" />
+                        <Setter Property="Height" Value="{StaticResource ControlHeight}" />
+                        <Setter Property="HorizontalAlignment" Value="Left" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                    </Style.Setters>
+                </Style>
+            </Grid.Style>
             <TextBox
                 x:Name="txtNum"
                 Margin="3,2,13,3"

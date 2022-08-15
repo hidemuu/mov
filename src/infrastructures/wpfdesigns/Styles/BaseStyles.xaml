@@ -8,4 +8,11 @@
         <Setter Property="Margin" Value="{StaticResource ContentMargin}" />
     </Style>
 
+    <Style x:Key="BaseLayout" TargetType="FrameworkElement">
+        <Setter Property="Width" Value="{StaticResource ControlWidth}" />
+        <Setter Property="Height" Value="{StaticResource ControlHeight}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
 </ResourceDictionary>

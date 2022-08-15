@@ -39,6 +39,7 @@ namespace Mov.Designer.Views.Selector
         {
             if(item is LayoutNodeBase node)
             {
+                if (node is RegionLayoutNode region) return GroupTemplate;
                 if (node is ContentLayoutNode content) return ContentTemplate;        
                 if (node is ExpanderLayoutNode expander) return ExpanderTemplate;
                 if (node is GroupLayoutNode group) return GroupTemplate;

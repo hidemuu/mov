@@ -17,15 +17,13 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        private LayoutBuilder builder;
-
-        private IDesignerRepository repository;
-
         #endregion フィールド
 
         #region プロパティ
 
-        public ReactiveCollection<LayoutNodeBase> Models { get; } = new ReactiveCollection<LayoutNodeBase>();
+        public ReactivePropertySlim<IDesignerRepository> Repository { get; private set; } = new ReactivePropertySlim<IDesignerRepository>();
+
+        public ReactivePropertySlim<bool> IsUpdate { get; private set; } = new ReactivePropertySlim<bool>(false);
 
         #endregion プロパティ
 
@@ -48,13 +46,17 @@ namespace Mov.Designer.ViewModels
 
         }
 
+        public override void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+            base.OnNavigatedFrom(navigationContext);
+            this.IsUpdate.Value = false;
+        }
+
         public override void OnNavigatedTo(NavigationContext navigationContext)
         {
             base.OnNavigatedTo(navigationContext);
-            this.repository = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_REPOSITORY] as IDesignerRepository;
-            builder = new LayoutBuilder(this.repository);
-            Models.Clear();
-            Models.AddRangeOnScheduler(builder.Build().Layout.Children);
+            this.Repository.Value = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_REPOSITORY] as IDesignerRepository;
+            IsUpdate.Value = true;
         }
 
         #endregion イベント

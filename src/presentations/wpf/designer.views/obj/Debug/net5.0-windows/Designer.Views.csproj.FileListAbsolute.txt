@@ -71,3 +71,5 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Deb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Mov.Designer.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\ref\Mov.Designer.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Mov.Designer.Views.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerPartsShell.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerPartsShell.baml

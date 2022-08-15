@@ -8,6 +8,9 @@
     <Compile Update="DesignerDialogView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="DesignerPartsShell.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="DesignerPartsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -32,6 +35,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="DesignerDialogView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DesignerPartsShell.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="DesignerPartsView.xaml">

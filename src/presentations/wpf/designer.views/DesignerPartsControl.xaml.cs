@@ -36,17 +36,7 @@ namespace Mov.Designer.Views
             set { SetValue(ModelsProperty, value); }
         }
 
-        public static readonly DependencyProperty RepositoryProperty =
-            DependencyProperty.Register(nameof(Repository), typeof(IDesignerRepository),
-            typeof(DesignerPartsControl),
-            new UIPropertyMetadata(null, new PropertyChangedCallback(OnRepositoryChanged)));
-
-        public IDesignerRepository Repository
-        {
-            get { return (IDesignerRepository)GetValue(RepositoryProperty); }
-            set { SetValue(RepositoryProperty, value); }
-        }
-
+        
         #endregion プロパティ
 
         #region コンストラクター
@@ -68,24 +58,6 @@ namespace Mov.Designer.Views
                 if (control.Models != null || !control.Models.Any())
                 {
                     
-                }
-            }
-        }
-
-        private static void OnRepositoryChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
-        {
-            var control = obj as DesignerPartsControl;
-            if (control != null)
-            {
-                if (control.Repository != null)
-                {
-                    var builder = new LayoutBuilder(control.Repository);
-                    if(control.Models == null)
-                    {
-                        control.Models = new ReactiveCollection<LayoutNodeBase>();
-                    }
-                    control.Models.Clear();
-                    control.Models.AddRangeOnScheduler(builder.Build().Layout.Children);
                 }
             }
         }

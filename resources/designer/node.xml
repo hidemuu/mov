@@ -3,8 +3,8 @@
   <node>
     <id>338a9cfb-d67c-44a1-bf5c-4911869961d7</id>
     <index>0</index>
-    <code>Root</code>
-    <node_type>Group</node_type>
+    <code>Center</code>
+    <node_type>Region</node_type>
     <orientation>Vertical</orientation>
     <expand>true</expand>
     <visible>true</visible>
@@ -49,7 +49,7 @@
         <index>0</index>
         <code>Main</code>
         <node_type>Group</node_type>
-        <orientation>Vertical</orientation>
+        <orientation>Horizontal</orientation>
         <expand>true</expand>
         <visible>true</visible>
         <enable>true</enable>

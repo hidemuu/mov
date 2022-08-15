@@ -26,5 +26,5 @@
             <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
         </i:EventTrigger>
     </i:Interaction.Triggers>
-    <local:DesignerPartsControl Models="{Binding Models}" />
+    <local:DesignerPartsShell Repository="{Binding Repository.Value}" IsUpdate="{Binding IsUpdate.Value}" />
 </UserControl>

@@ -10,6 +10,10 @@ namespace Mov.Designer.Models
     public enum NodeType
     {
         /// <summary>
+        /// リージョン
+        /// </summary>
+        Region,
+        /// <summary>
         /// コンテンツ
         /// </summary>
         Content,

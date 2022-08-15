@@ -33,6 +33,8 @@ namespace Mov.Designer.Service
             var content = GetContent(node);
             switch (node.NodeType)
             {
+                case NodeType.Region:
+                    return new RegionLayoutNode(node, content);
                 case NodeType.Content:
                     return new ContentLayoutNode(node, content);
                 case NodeType.Group:

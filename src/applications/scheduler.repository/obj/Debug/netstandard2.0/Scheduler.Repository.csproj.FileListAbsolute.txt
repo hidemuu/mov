@@ -39,8 +39,10 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.repository\bin\De
 C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.repository\bin\Debug\netstandard2.0\Mov.Scheduler.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.repository\bin\Debug\netstandard2.0\Mov.Accessors.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.repository\bin\Debug\netstandard2.0\Mov.Scheduler.Models.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.repository\bin\Debug\netstandard2.0\Mov.Utilities.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.repository\bin\Debug\netstandard2.0\Mov.Scheduler.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.repository\bin\Debug\netstandard2.0\Mov.Accessors.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.repository\bin\Debug\netstandard2.0\Mov.Utilities.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.repository\obj\Debug\netstandard2.0\Scheduler.Repository.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.repository\obj\Debug\netstandard2.0\Scheduler.Repository.AssemblyInfoInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.repository\obj\Debug\netstandard2.0\Scheduler.Repository.AssemblyInfo.cs
@@ -48,5 +50,3 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.repository\obj\De
 C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.repository\obj\Debug\netstandard2.0\Scheduler.Repository.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.repository\obj\Debug\netstandard2.0\Mov.Scheduler.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.repository\obj\Debug\netstandard2.0\Mov.Scheduler.Repository.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.repository\bin\Debug\netstandard2.0\Mov.Utilities.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.repository\bin\Debug\netstandard2.0\Mov.Utilities.pdb

@@ -11,7 +11,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary x:Name="LayoutNodeTemplate" Source="Templates/LayoutNodeTemplate.xaml" />
+                <ResourceDictionary Source="Templates/LayoutNodeTemplate.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>

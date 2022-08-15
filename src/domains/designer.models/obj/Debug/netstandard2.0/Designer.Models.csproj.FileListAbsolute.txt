@@ -35,7 +35,9 @@ C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netsta
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Designer.Models.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Designer.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Accessors.dll
+C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Utilities.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Accessors.pdb
+C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Utilities.pdb
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\obj\Debug\netstandard2.0\Designer.Models.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\obj\Debug\netstandard2.0\Designer.Models.AssemblyInfoInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\obj\Debug\netstandard2.0\Designer.Models.AssemblyInfo.cs
@@ -43,5 +45,3 @@ C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\obj\Debug\netsta
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\obj\Debug\netstandard2.0\Designer.Models.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\obj\Debug\netstandard2.0\Mov.Designer.Models.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\obj\Debug\netstandard2.0\Mov.Designer.Models.pdb
-C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Utilities.dll
-C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Utilities.pdb

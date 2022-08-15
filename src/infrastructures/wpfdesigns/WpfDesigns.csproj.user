@@ -2,16 +2,16 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Page Update="Styles\BaseColors.xaml">
+    <Page Update="Themes\BaseColors.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\BaseFonts.xaml">
+    <Page Update="Themes\BaseFonts.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\BaseSizes.xaml">
+    <Page Update="Themes\BaseSizes.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\BaseThemes.xaml">
+    <Page Update="Themes\BaseThemes.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Components\Button.xaml">
@@ -59,10 +59,10 @@
     <Page Update="Styles\Components\ProgressRing.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Themes\ModernUI.Dark.xaml">
+    <Page Update="Themes\ModernUI.Dark.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Themes\ModernUI.Light.xaml">
+    <Page Update="Themes\ModernUI.Light.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Components\PasswordBox.xaml">

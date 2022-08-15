@@ -45,8 +45,10 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\bin\Deb
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\bin\Debug\netstandard2.0\Mov.Designer.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\bin\Debug\netstandard2.0\Mov.Accessors.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\bin\Debug\netstandard2.0\Mov.Designer.Models.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\bin\Debug\netstandard2.0\Mov.Utilities.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\bin\Debug\netstandard2.0\Mov.Designer.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\bin\Debug\netstandard2.0\Mov.Accessors.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\bin\Debug\netstandard2.0\Mov.Utilities.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\obj\Debug\netstandard2.0\Designer.Repository.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\obj\Debug\netstandard2.0\Designer.Repository.AssemblyInfoInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\obj\Debug\netstandard2.0\Designer.Repository.AssemblyInfo.cs
@@ -54,5 +56,3 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\obj\Deb
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\obj\Debug\netstandard2.0\Designer.Repository.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\obj\Debug\netstandard2.0\Mov.Designer.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\obj\Debug\netstandard2.0\Mov.Designer.Repository.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\bin\Debug\netstandard2.0\Mov.Utilities.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\bin\Debug\netstandard2.0\Mov.Utilities.pdb

@@ -29,6 +29,7 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Deb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Designer.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Designer.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Designer.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Utilities.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.WpfControls.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.WpfDesigns.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Designer.ViewModels.pdb
@@ -36,10 +37,12 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Deb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Designer.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Designer.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Designer.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Utilities.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.WpfControls.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.WpfDesigns.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Designer.Views.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerDialogView.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerPartsControl.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerPartsView.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerShellView.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerTableView.g.cs
@@ -50,12 +53,15 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Deb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Mov.Designer.Views_MarkupCompile.cache
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Mov.Designer.Views_MarkupCompile.lref
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerDialogView.baml
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerPartsControl.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerPartsView.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerShellView.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerTableView.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerThemeView.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerTreeView.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerView.baml
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Templates\LayoutContentTemplate.baml
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Templates\LayoutNodeTemplate.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Mov.Designer.Views.g.resources
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Designer.Views.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Designer.Views.AssemblyInfoInputs.cache
@@ -65,9 +71,3 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Deb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Mov.Designer.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\ref\Mov.Designer.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Mov.Designer.Views.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Templates\LayoutNodeTemplate.baml
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Utilities.dll
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Utilities.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerPartsControl.g.cs
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerPartsControl.baml
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Templates\LayoutContentTemplate.baml

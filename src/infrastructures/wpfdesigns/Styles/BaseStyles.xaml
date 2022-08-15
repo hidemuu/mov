@@ -2,7 +2,7 @@
     <ResourceDictionary.MergedDictionaries>
         <!--  コントロール  -->
         <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
-        <ResourceDictionary Source="BaseThemes.xaml" />
+        <ResourceDictionary Source="../Themes/BaseThemes.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="ContentRoot" TargetType="FrameworkElement">

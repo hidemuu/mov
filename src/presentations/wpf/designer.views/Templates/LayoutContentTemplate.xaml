@@ -5,7 +5,7 @@
     xmlns:nodes="clr-namespace:Mov.Designer.Service.Nodes;assembly=Mov.Designer.Service"
     xmlns:selector="clr-namespace:Mov.Designer.Views.Selector">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseSizes.xaml" />
+        <ResourceDictionary Source="/Mov.WpfDesigns;component/Themes/BaseSizes.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <DataTemplate x:Key="LabelTemplate" DataType="{x:Type nodes:ContentLayoutNode}">

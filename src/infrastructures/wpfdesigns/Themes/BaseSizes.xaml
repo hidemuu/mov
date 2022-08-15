@@ -15,7 +15,7 @@
 
     <!--  sizes  -->
     <sys:Double x:Key="ControlHeight">32</sys:Double>
-    <sys:Double x:Key="ControlWidth">150</sys:Double>
+    <sys:Double x:Key="ControlWidth">100</sys:Double>
     <sys:Double x:Key="ControlMaxWidth">150</sys:Double>
 
     <!--  Close system button  -->

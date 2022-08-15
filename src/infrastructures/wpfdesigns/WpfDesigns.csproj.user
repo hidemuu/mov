@@ -14,49 +14,49 @@
     <Page Update="Themes\BaseThemes.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\Button.xaml">
+    <Page Update="Styles\Controls\Button.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\Calendar.xaml">
+    <Page Update="Styles\Controls\Calendar.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\CheckBox.xaml">
+    <Page Update="Styles\Controls\CheckBox.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\ComboBox.xaml">
+    <Page Update="Styles\Controls\ComboBox.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\ContextMenu.xaml">
+    <Page Update="Styles\Controls\ContextMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\DataGrid.xaml">
+    <Page Update="Styles\Controls\DataGrid.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\Expander.xaml">
+    <Page Update="Styles\Controls\Expander.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\GridSplitter.xaml">
+    <Page Update="Styles\Controls\GridSplitter.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\Hyperlink.xaml">
+    <Page Update="Styles\Controls\Hyperlink.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\Label.xaml">
+    <Page Update="Styles\Controls\Label.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\ListBox.xaml">
+    <Page Update="Styles\Controls\ListBox.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\ListView.xaml">
+    <Page Update="Styles\Controls\ListView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\MenuItem.xaml">
+    <Page Update="Styles\Controls\MenuItem.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\ProgressBar.xaml">
+    <Page Update="Styles\Controls\ProgressBar.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\ProgressRing.xaml">
+    <Page Update="Styles\Controls\ProgressRing.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Themes\ModernUI.Dark.xaml">
@@ -65,46 +65,46 @@
     <Page Update="Themes\ModernUI.Light.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\PasswordBox.xaml">
+    <Page Update="Styles\Controls\PasswordBox.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\RadioButton.xaml">
+    <Page Update="Styles\Controls\RadioButton.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\ScrollBar.xaml">
+    <Page Update="Styles\Controls\ScrollBar.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\Slider.xaml">
+    <Page Update="Styles\Controls\Slider.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\TextBlock.xaml">
+    <Page Update="Styles\Controls\TextBlock.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\TextBox.xaml">
+    <Page Update="Styles\Controls\TextBox.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\ToolTip.xaml">
+    <Page Update="Styles\Controls\ToolTip.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\TreeView.xaml">
+    <Page Update="Styles\Controls\TreeView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\BaseStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\ChipBorder.xaml">
+    <Page Update="Styles\Controls\ChipBorder.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\MacLikeScrollBar.xaml">
+    <Page Update="Styles\Controls\MacLikeScrollBar.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\MaterialTextBlock.xaml">
+    <Page Update="Styles\Controls\MaterialTextBlock.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Components\NavigationRail.xaml">
+    <Page Update="Styles\Controls\NavigationRail.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\ComponentStyles.xaml">
+    <Page Update="Styles\ControlStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -31,7 +31,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <!--<ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />-->
                 <!--<ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/ComponentStyles.xaml" />-->
-                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/Components/NavigationRail.xaml" />
+                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/Controls/NavigationRail.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </metro:MetroWindow.Resources>

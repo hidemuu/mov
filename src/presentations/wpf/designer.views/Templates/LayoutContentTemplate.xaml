@@ -5,18 +5,21 @@
     xmlns:nodes="clr-namespace:Mov.Designer.Service.Nodes;assembly=Mov.Designer.Service"
     xmlns:selector="clr-namespace:Mov.Designer.Views.Selector">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/Mov.WpfDesigns;component/Themes/BaseSizes.xaml" />
+        <ResourceDictionary Source="/Mov.WpfDesigns;component/Themes/BaseThemes.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <DataTemplate x:Key="LabelTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
         <Label
+            Width="{StaticResource ControlWidth}"
             Height="{StaticResource ControlHeight}"
+            HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Content="{Binding Name}" />
     </DataTemplate>
 
     <DataTemplate x:Key="ComboBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
         <ComboBox
+            Width="{StaticResource ControlWidth}"
             Height="{StaticResource ControlHeight}"
             HorizontalAlignment="Left"
             VerticalAlignment="Center" />
@@ -28,8 +31,8 @@
 
     <DataTemplate x:Key="ButtonTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
         <Button
+            Width="{StaticResource ControlWidth}"
             Height="{StaticResource ControlHeight}"
-            MaxWidth="100"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Content="{Binding Name}" />
@@ -37,8 +40,8 @@
 
     <DataTemplate x:Key="RadioButtonTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
         <RadioButton
+            Width="{StaticResource ControlWidth}"
             Height="{StaticResource ControlHeight}"
-            MaxWidth="100"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Content="{Binding Name}" />
@@ -46,8 +49,8 @@
 
     <DataTemplate x:Key="TextBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
         <StackPanel
+            Width="{StaticResource ControlWidth}"
             Height="{StaticResource ControlHeight}"
-            MaxWidth="100"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Orientation="Horizontal">
@@ -58,15 +61,17 @@
 
     <DataTemplate x:Key="DatePickerTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
         <DatePicker
+            Width="{StaticResource ControlWidth}"
             Height="{StaticResource ControlHeight}"
-            MaxWidth="150"
             HorizontalAlignment="Left"
             VerticalAlignment="Center" />
     </DataTemplate>
 
     <DataTemplate x:Key="CheckBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
         <StackPanel
+            Width="{StaticResource ControlWidth}"
             Height="{StaticResource ControlHeight}"
+            HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Orientation="Horizontal">
             <CheckBox VerticalAlignment="Center" IsChecked="False" />
@@ -76,8 +81,8 @@
 
     <DataTemplate x:Key="SpinBoxTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
         <Grid
+            Width="{StaticResource ControlWidth}"
             Height="{StaticResource ControlHeight}"
-            MaxWidth="150"
             Margin="0,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center">

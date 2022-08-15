@@ -27,9 +27,12 @@
     <Folder Include="ClientApp\src\commons\%40types\" />
     <Folder Include="ClientApp\src\commons\constants\" />
     <Folder Include="ClientApp\src\commons\functions\" />
-    <Folder Include="ClientApp\src\components\atoms\" />
-    <Folder Include="ClientApp\src\components\molecules\" />
-    <Folder Include="ClientApp\src\components\organisms\" />
+    <Folder Include="ClientApp\src\components\controls\atoms\" />
+    <Folder Include="ClientApp\src\components\controls\molecules\" />
+    <Folder Include="ClientApp\src\components\controls\organisms\" />
+    <Folder Include="ClientApp\src\components\pages\" />
+    <Folder Include="ClientApp\src\components\templates\" />
+    <Folder Include="ClientApp\src\components\controls\" />
     <Folder Include="ClientApp\src\styles\" />
   </ItemGroup>
 

@@ -9,7 +9,6 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="LayoutContentTemplate.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    <selector:ContentSelector x:Key="contentSelector" />
     <converter:OrientationConverter x:Key="orientationConverter" />
 
     <DataTemplate x:Key="ContentTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
@@ -21,7 +20,6 @@
                 <behavior:LayoutContentBehavior />
             </i:Interaction.Behaviors>
         </ContentControl>
-        <!--<ContentControl Content="{Binding}" ContentTemplateSelector="{StaticResource contentSelector}" />-->
     </DataTemplate>
 
     <DataTemplate x:Key="GroupTemplate" DataType="{x:Type nodes:GroupLayoutNode}">

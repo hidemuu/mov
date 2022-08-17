@@ -1,6 +1,7 @@
 ﻿using Mov.Designer.Models;
 using Mov.Designer.Service;
 using Mov.WpfControls;
+using Mov.WpfControls.Components;
 using Mov.WpfControls.ViewModels;
 using Prism.Regions;
 using Prism.Services.Dialogs;
@@ -34,6 +35,8 @@ namespace Mov.Designer.ViewModels
         public ReactiveCollection<DesignerTreeModel> Models { get; } = new ReactiveCollection<DesignerTreeModel>();
         public DesignerTreeModelAttribute Attribute { get; } = new DesignerTreeModelAttribute();
         public ReactivePropertySlim<object> SelectedModel { get; } = new ReactivePropertySlim<object>();
+
+        public TreeListViewDropHandler<DesignerTreeModel> TreeListViewDropHandler { get; set; } = new TreeListViewDropHandler<DesignerTreeModel>();
 
         #endregion プロパティ
 
@@ -89,7 +92,7 @@ namespace Mov.Designer.ViewModels
         {
             base.OnNavigatedTo(navigationContext);
             this.repository = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_REPOSITORY] as IDesignerRepository;
-            CreateModels();
+            BindModels();
             isEdited = false;
         }
 
@@ -118,7 +121,7 @@ namespace Mov.Designer.ViewModels
                 var tree = this.repository.Nodes.Get(model.Id.Value);
                 if (tree == null) return;
                 this.repository.Nodes.Put(new LayoutNode(), tree.Id);
-                CreateModels();
+                BindModels();
                 isEdited = true;
             }
         }
@@ -130,7 +133,7 @@ namespace Mov.Designer.ViewModels
                 var tree = this.repository.Nodes.Get(model.Id.Value);
                 if (tree == null) return;
                 this.repository.Nodes.Delete(tree);
-                CreateModels();
+                BindModels();
                 isEdited = true;
             }
         }
@@ -139,7 +142,7 @@ namespace Mov.Designer.ViewModels
         #endregion イベント
 
         #region メソッド
-        private void CreateModels()
+        private void BindModels()
         {
             Models.Clear();
             foreach (var tree in repository.Nodes.Gets())

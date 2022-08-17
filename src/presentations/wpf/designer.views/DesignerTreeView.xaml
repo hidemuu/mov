@@ -39,11 +39,13 @@
             x:Name="treeviewMain"
             dd:DragDrop.IsDragSource="True"
             dd:DragDrop.IsDropTarget="True"
+            dd:DragDrop.DropHandler="{Binding TreeListViewDropHandler}"
             dd:DragDrop.UseDefaultDragAdorner="True"
             x:FieldModifier="public"
             AllowsColumnReorder="True"
             BindableSelectedItem="{Binding SelectedModel.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
             ItemsSource="{Binding Models}">
+            <!--  コンテキストメニュー  -->
             <components:TreeListView.ContextMenu>
                 <ContextMenu>
                     <MenuItem
@@ -56,9 +58,11 @@
                         Header="削除" />
                 </ContextMenu>
             </components:TreeListView.ContextMenu>
+            <!--  アイテムテンプレート  -->
             <components:TreeListView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Children}" />
             </components:TreeListView.ItemTemplate>
+            <!--  列  -->
             <components:TreeListView.Columns>
                 <GridViewColumn Width="{Binding Attribute.Code.Width.Value}" Header="{Binding Attribute.Code.Header.Value}">
                     <GridViewColumn.CellTemplate>

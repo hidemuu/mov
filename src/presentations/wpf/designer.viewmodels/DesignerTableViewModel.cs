@@ -154,7 +154,7 @@ namespace Mov.Designer.ViewModels
 
     #region クラス
 
-    public class DesignerTableModel
+    public class DesignerTableModel : DragDropItem
     {
         #region フィールド
 

@@ -7,8 +7,8 @@
     <IsPackable>false</IsPackable>
     <SpaRoot>ClientApp\</SpaRoot>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
-    <AssemblyName>Mov.Asp</AssemblyName>
-    <RootNamespace>Mov.Asp</RootNamespace>
+    <AssemblyName>Mov.AspReact</AssemblyName>
+    <RootNamespace>Mov.AspReact</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

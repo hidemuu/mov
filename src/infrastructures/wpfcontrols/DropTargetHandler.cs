@@ -1,4 +1,5 @@
 ﻿using GongSolutions.Wpf.DragDrop;
+using Mov.WpfControls.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Windows.Controls;
 
 namespace Mov.WpfControls.Components
 {
-    public class TreeListViewDropHandler<T> : IDropTarget where T : DragDropItem
+    public class DropTargetHandler<T> : IDropTarget where T : DragDropViewModelBase
     {
         public void DragOver(IDropInfo dropInfo)
         {

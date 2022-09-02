@@ -18,7 +18,7 @@ using System.Windows.Controls;
 
 namespace Mov.Designer.ViewModels
 {
-    public class DesignerTreeViewModel : RegionViewModelBase
+    public class DesignerTreeViewModel : DragDropViewModelBase
     {
         #region フィールド
 
@@ -35,8 +35,6 @@ namespace Mov.Designer.ViewModels
         public ReactiveCollection<DesignerTreeModel> Models { get; } = new ReactiveCollection<DesignerTreeModel>();
         public DesignerTreeModelAttribute Attribute { get; } = new DesignerTreeModelAttribute();
         public ReactivePropertySlim<object> SelectedModel { get; } = new ReactivePropertySlim<object>();
-
-        public TreeListViewDropHandler<DesignerTreeModel> TreeListViewDropHandler { get; set; } = new TreeListViewDropHandler<DesignerTreeModel>();
 
         #endregion プロパティ
 

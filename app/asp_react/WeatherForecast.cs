@@ -1,6 +1,6 @@
 using System;
 
-namespace Mov.Asp
+namespace Mov.AspReact
 {
     public class WeatherForecast
     {

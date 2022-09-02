@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Mov.Asp.Controllers
+namespace Mov.AspReact.Controllers
 {
     [ApiController]
     [Route("[controller]")]

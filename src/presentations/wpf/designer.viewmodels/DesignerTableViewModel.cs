@@ -16,7 +16,7 @@ using System.Windows;
 
 namespace Mov.Designer.ViewModels
 {
-    public class DesignerTableViewModel : RegionViewModelBase
+    public class DesignerTableViewModel : DragDropViewModelBase
     {
         #region フィールド
 
@@ -154,7 +154,7 @@ namespace Mov.Designer.ViewModels
 
     #region クラス
 
-    public class DesignerTableModel : DragDropItem
+    public class DesignerTableModel
     {
         #region フィールド
 

@@ -67,7 +67,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "presentations", "presentati
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wpf", "wpf", "{C849D8F6-439F-467D-A7A8-8996F6ECF9E4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Asp", "app\Asp\Asp.csproj", "{247C1D7D-DFE0-4E98-B8D5-D4D02795F26C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspReact", "app\asp_react\AspReact.csproj", "{247C1D7D-DFE0-4E98-B8D5-D4D02795F26C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Service.Test", "src\applications\designer.service.test\Designer.Service.Test.csproj", "{13F22A58-0498-4CC3-85EC-F63E7AE2C897}"
 EndProject
@@ -105,13 +105,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawer.Views", "src\present
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawer.ViewModels", "src\presentations\wpf\drawer.viewmodels\Drawer.ViewModels.csproj", "{C78A5DFA-C4A3-4067-82C4-6CDD2D6137CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bom.Views", "src\presentations\wpf\bom.views\Bom.Views.csproj", "{A9D32FAC-54F4-4840-9FFD-07DC9AB95AFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bom.Views", "src\presentations\wpf\bom.views\Bom.Views.csproj", "{A9D32FAC-54F4-4840-9FFD-07DC9AB95AFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bom.ViewModels", "src\presentations\wpf\bom.viewmodels\Bom.ViewModels.csproj", "{32FE2901-08D3-4917-B028-9436FC48F752}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bom.ViewModels", "src\presentations\wpf\bom.viewmodels\Bom.ViewModels.csproj", "{32FE2901-08D3-4917-B028-9436FC48F752}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Views", "src\presentations\wpf\driver.views\Driver.Views.csproj", "{189F7CC7-4950-416F-87CC-2FB14C9655C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Views", "src\presentations\wpf\driver.views\Driver.Views.csproj", "{189F7CC7-4950-416F-87CC-2FB14C9655C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.ViewModels", "src\presentations\wpf\driver.viewmodels\Driver.ViewModels.csproj", "{AF1A18E7-C6FA-446B-B3DA-99B2041CB3AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.ViewModels", "src\presentations\wpf\driver.viewmodels\Driver.ViewModels.csproj", "{AF1A18E7-C6FA-446B-B3DA-99B2041CB3AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -13,6 +13,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.9" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.8.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
@@ -24,15 +28,24 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\js\commons\" />
-    <Folder Include="ClientApp\src\ts\commons\%40types\" />
+    <None Remove="ClientApp\src\ts\App.tsx" />
+    <None Remove="ClientApp\src\ts\pages\Home.tsx" />
+    <None Remove="ClientApp\src\ts\pages\Layout.tsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\js\commons\constants\" />
     <Folder Include="ClientApp\src\ts\commons\constants\" />
-    <Folder Include="ClientApp\src\ts\commons\functions\" />
-    <Folder Include="ClientApp\src\js\components\atoms\" />
-    <Folder Include="ClientApp\src\js\components\molecules\" />
-    <Folder Include="ClientApp\src\js\components\organisms\" />
     <Folder Include="ClientApp\src\js\templates\" />
-    <Folder Include="ClientApp\src\ts\components\" />
+    <Folder Include="ClientApp\src\ts\components\molecules\" />
+    <Folder Include="ClientApp\src\ts\components\organisms\" />
+    <Folder Include="ClientApp\src\ts\templates\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\ts\App.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\ts\pages\Home.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\ts\pages\Layout.tsx" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

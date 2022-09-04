@@ -10,4 +10,8 @@
     <ProjectReference Include="..\..\infrastructures\accessors\Accessors.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="OpenCV\" />
+  </ItemGroup>
+
 </Project>

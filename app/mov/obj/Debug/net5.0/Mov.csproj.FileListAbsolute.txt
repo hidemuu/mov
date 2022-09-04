@@ -92,3 +92,5 @@ C:\Users\nando\Documents\GitHub\mov\app\mov\obj\Debug\net5.0\Mov.dll
 C:\Users\nando\Documents\GitHub\mov\app\mov\obj\Debug\net5.0\ref\Mov.dll
 C:\Users\nando\Documents\GitHub\mov\app\mov\obj\Debug\net5.0\Mov.pdb
 C:\Users\nando\Documents\GitHub\mov\app\mov\obj\Debug\net5.0\Mov.genruntimeconfig.cache
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Renci.SshNet.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\SshNet.Security.Cryptography.dll

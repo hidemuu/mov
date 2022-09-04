@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="RosberryPi\" />
-    <Folder Include="OpenCV\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\driver.repository\Driver.Repository.csproj" />
   </ItemGroup>
 

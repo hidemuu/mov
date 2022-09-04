@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Driver.Service.PLC
+namespace Mov.Driver.Models.PLC
 {
     public interface IPLCDriver
     {

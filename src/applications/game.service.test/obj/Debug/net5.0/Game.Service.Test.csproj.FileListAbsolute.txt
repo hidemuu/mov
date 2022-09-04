@@ -138,3 +138,5 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\game.service.test\obj\Debug
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service.test\obj\Debug\net5.0\ref\Mov.Game.Service.Test.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service.test\obj\Debug\net5.0\Mov.Game.Service.Test.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service.test\obj\Debug\net5.0\Game.Service.Test.genruntimeconfig.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.service.test\bin\Debug\net5.0\Renci.SshNet.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.service.test\bin\Debug\net5.0\SshNet.Security.Cryptography.dll

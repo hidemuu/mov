@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Driver.Service.PLC.Melsec
+namespace Mov.Driver.Models.PLC.Melsec
 {
     public static class ActDefine
     {

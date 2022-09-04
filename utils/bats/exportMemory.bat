@@ -1,0 +1,1 @@
+sqlcmd -S (LocalDb)\MSSQLLocalDB -E -i memories.sql -v param='9999' -b -s, -W -o memory.csv

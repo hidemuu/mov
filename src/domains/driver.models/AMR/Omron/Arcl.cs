@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Mov.Driver.Service.AMR.Omron
+namespace Mov.Driver.Models.AMR.Omron
 {
     public class Arcl : IAMRDriver
     {

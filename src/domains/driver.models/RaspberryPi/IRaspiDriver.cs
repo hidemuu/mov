@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Driver.Service.AMR
+namespace Mov.Driver.Models.RaspberryPi
 {
-    public interface IFleetDriver
+    public interface IRaspiDriver
     {
     }
 }

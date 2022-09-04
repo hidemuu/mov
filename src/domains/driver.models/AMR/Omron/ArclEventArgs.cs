@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Driver.Service.AMR.Omron
+namespace Mov.Driver.Models.AMR.Omron
 {
     public class ArclEventArgs : EventArgs
     {

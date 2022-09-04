@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Driver.Service.CNC
+namespace Mov.Driver.Models.AMR
 {
-    public interface ICNCDriver
+    public interface IFleetDriver
     {
     }
 }

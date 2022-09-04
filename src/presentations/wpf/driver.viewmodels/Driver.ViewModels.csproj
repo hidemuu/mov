@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\applications\driver.service\Driver.Service.csproj" />
-    <ProjectReference Include="..\..\..\infrastructures\wpfcontrols\WpfControls.csproj" />
+    <ProjectReference Include="..\..\..\infrastructures\wpf\wpfcontrols\WpfControls.csproj" />
     <ProjectReference Include="..\designer.viewmodels\Designer.ViewModels.csproj" />
   </ItemGroup>
 

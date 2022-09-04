@@ -18,7 +18,6 @@ C:\Users\nando\Documents\GitHub\mov\src\services\scheduler\service\obj\Debug\net
 C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.service\bin\Debug\netstandard2.0\Mov.Scheduler.Service.deps.json
 C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.service\bin\Debug\netstandard2.0\Mov.Scheduler.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.service\bin\Debug\netstandard2.0\Mov.Scheduler.Service.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.service\obj\Debug\netstandard2.0\Scheduler.Service.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.service\obj\Debug\netstandard2.0\Scheduler.Service.AssemblyInfoInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.service\obj\Debug\netstandard2.0\Scheduler.Service.AssemblyInfo.cs
 C:\Users\nando\Documents\GitHub\mov\src\applications\scheduler.service\obj\Debug\netstandard2.0\Scheduler.Service.csproj.CoreCompileInputs.cache

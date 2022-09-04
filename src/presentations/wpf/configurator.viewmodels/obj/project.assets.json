@@ -1698,13 +1698,13 @@
     },
     "Mov.WpfControls/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/wpfcontrols/WpfControls.csproj",
-      "msbuildProject": "../../../infrastructures/wpfcontrols/WpfControls.csproj"
+      "path": "../../../infrastructures/wpf/wpfcontrols/WpfControls.csproj",
+      "msbuildProject": "../../../infrastructures/wpf/wpfcontrols/WpfControls.csproj"
     },
     "Mov.WpfDesigns/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/wpfdesigns/WpfDesigns.csproj",
-      "msbuildProject": "../../../infrastructures/wpfdesigns/WpfDesigns.csproj"
+      "path": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj",
+      "msbuildProject": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1761,8 +1761,8 @@
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfcontrols\\WpfControls.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfcontrols\\WpfControls.csproj"
             }
           }
         }

@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\infrastructures\wpfcontrols\WpfControls.csproj" />
-    <ProjectReference Include="..\..\src\infrastructures\wpfdesigns\WpfDesigns.csproj" />
+    <ProjectReference Include="..\..\src\infrastructures\wpf\wpfcontrols\WpfControls.csproj" />
+    <ProjectReference Include="..\..\src\infrastructures\wpf\wpfdesigns\WpfDesigns.csproj" />
     <ProjectReference Include="..\..\src\presentations\wpf\bom.viewmodels\Bom.ViewModels.csproj" />
     <ProjectReference Include="..\..\src\presentations\wpf\bom.views\Bom.Views.csproj" />
     <ProjectReference Include="..\..\src\presentations\wpf\configurator.viewmodels\Configurator.ViewModels.csproj" />

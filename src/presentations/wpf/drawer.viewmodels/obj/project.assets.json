@@ -1789,13 +1789,13 @@
     },
     "Mov.WpfControls/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/wpfcontrols/WpfControls.csproj",
-      "msbuildProject": "../../../infrastructures/wpfcontrols/WpfControls.csproj"
+      "path": "../../../infrastructures/wpf/wpfcontrols/WpfControls.csproj",
+      "msbuildProject": "../../../infrastructures/wpf/wpfcontrols/WpfControls.csproj"
     },
     "Mov.WpfDesigns/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/wpfdesigns/WpfDesigns.csproj",
-      "msbuildProject": "../../../infrastructures/wpfdesigns/WpfDesigns.csproj"
+      "path": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj",
+      "msbuildProject": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1813,11 +1813,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\Drawer.ViewModels\\Drawer.ViewModels.csproj",
+      "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.viewmodels\\Drawer.ViewModels.csproj",
       "projectName": "Mov.Drawer.ViewModels",
-      "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\Drawer.ViewModels\\Drawer.ViewModels.csproj",
+      "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.viewmodels\\Drawer.ViewModels.csproj",
       "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\Drawer.ViewModels\\obj\\",
+      "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.viewmodels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -1844,8 +1844,8 @@
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\drawer.service\\Drawer.Service.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\drawer.service\\Drawer.Service.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfcontrols\\WpfControls.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfcontrols\\WpfControls.csproj"
             }
           }
         }

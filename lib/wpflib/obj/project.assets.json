@@ -2614,13 +2614,13 @@
     },
     "Mov.WpfControls/1.0.0": {
       "type": "project",
-      "path": "../../src/infrastructures/wpfcontrols/WpfControls.csproj",
-      "msbuildProject": "../../src/infrastructures/wpfcontrols/WpfControls.csproj"
+      "path": "../../src/infrastructures/wpf/wpfcontrols/WpfControls.csproj",
+      "msbuildProject": "../../src/infrastructures/wpf/wpfcontrols/WpfControls.csproj"
     },
     "Mov.WpfDesigns/1.0.0": {
       "type": "project",
-      "path": "../../src/infrastructures/wpfdesigns/WpfDesigns.csproj",
-      "msbuildProject": "../../src/infrastructures/wpfdesigns/WpfDesigns.csproj"
+      "path": "../../src/infrastructures/wpf/wpfdesigns/WpfDesigns.csproj",
+      "msbuildProject": "../../src/infrastructures/wpf/wpfdesigns/WpfDesigns.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2684,11 +2684,11 @@
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\lib\\baselib\\BaseLib.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\lib\\baselib\\BaseLib.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfcontrols\\WpfControls.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfcontrols\\WpfControls.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfcontrols\\WpfControls.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfdesigns\\WpfDesigns.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpfdesigns\\WpfDesigns.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfdesigns\\WpfDesigns.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfdesigns\\WpfDesigns.csproj"
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\bom.viewmodels\\Bom.ViewModels.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\bom.viewmodels\\Bom.ViewModels.csproj"

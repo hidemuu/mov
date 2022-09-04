@@ -2646,13 +2646,13 @@
     },
     "Mov.WpfControls/1.0.0": {
       "type": "project",
-      "path": "../../src/infrastructures/wpfcontrols/WpfControls.csproj",
-      "msbuildProject": "../../src/infrastructures/wpfcontrols/WpfControls.csproj"
+      "path": "../../src/infrastructures/wpf/wpfcontrols/WpfControls.csproj",
+      "msbuildProject": "../../src/infrastructures/wpf/wpfcontrols/WpfControls.csproj"
     },
     "Mov.WpfDesigns/1.0.0": {
       "type": "project",
-      "path": "../../src/infrastructures/wpfdesigns/WpfDesigns.csproj",
-      "msbuildProject": "../../src/infrastructures/wpfdesigns/WpfDesigns.csproj"
+      "path": "../../src/infrastructures/wpf/wpfdesigns/WpfDesigns.csproj",
+      "msbuildProject": "../../src/infrastructures/wpf/wpfdesigns/WpfDesigns.csproj"
     },
     "Mov.WpfLib/1.0.0": {
       "type": "project",

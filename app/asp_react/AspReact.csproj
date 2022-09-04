@@ -24,18 +24,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\js\commons\" />
     <Folder Include="ClientApp\src\ts\commons\%40types\" />
     <Folder Include="ClientApp\src\ts\commons\constants\" />
     <Folder Include="ClientApp\src\ts\commons\functions\" />
-    <Folder Include="ClientApp\src\components\controls\atoms\" />
-    <Folder Include="ClientApp\src\components\controls\molecules\" />
-    <Folder Include="ClientApp\src\components\controls\organisms\" />
-    <Folder Include="ClientApp\src\components\pages\" />
-    <Folder Include="ClientApp\src\components\templates\" />
-    <Folder Include="ClientApp\src\components\controls\" />
-    <Folder Include="ClientApp\src\styles\" />
-    <Folder Include="ClientApp\src\ts\" />
-    <Folder Include="ClientApp\src\js\" />
+    <Folder Include="ClientApp\src\js\components\atoms\" />
+    <Folder Include="ClientApp\src\js\components\molecules\" />
+    <Folder Include="ClientApp\src\js\components\organisms\" />
+    <Folder Include="ClientApp\src\js\templates\" />
+    <Folder Include="ClientApp\src\ts\components\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

@@ -80,6 +80,23 @@ namespace Mov.Accessors.Connector
             return this.client.IsConnected;
         }
 
+        /// <summary>
+        /// コマンド実行
+        /// </summary>
+        /// <param name="command"></param>
+        public void RunCommand(string command)
+        {
+            this.client.RunCommand(command);
+        }
+
+        /// <summary>
+        /// 切断処理
+        /// </summary>
+        public void Disconnect()
+        {
+            this.client.Disconnect();
+        }
+
         #endregion メソッド
 
         #region 内部メソッド

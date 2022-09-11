@@ -16,6 +16,8 @@ namespace Mov.Driver.Repository
         /// <param name="encoding"></param>
         public DriverRepository(string dir, string extension, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(extension)
         {
+            Commands = new DbObjectRepository<Command, CommandCollection>(dir, GetRelativePath("command"), encoding);
+            Queries = new DbObjectRepository<Query, QueryCollection>(dir, GetRelativePath("query"), encoding);
             Errors = new DbObjectRepository<Error, ErrorCollection > (dir, GetRelativePath("error"), encoding);
             Macros = new DbObjectRepository<Macro, MacroCollection>(dir, GetRelativePath("macro"), encoding);
             Variables = new DbObjectRepository<Variable, VariableCollection>(dir, GetRelativePath("variable"), encoding);
@@ -26,6 +28,10 @@ namespace Mov.Driver.Repository
         #endregion コンストラクター
 
         #region プロパティ
+
+        public IDbObjectRepository<Command, CommandCollection> Commands { get; }
+
+        public IDbObjectRepository<Query, QueryCollection> Queries { get; }
 
         public IDbObjectRepository<Error, ErrorCollection> Errors { get; }
 

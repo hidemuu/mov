@@ -11,6 +11,10 @@ namespace Mov.Driver.Models
 
         IDbObjectRepository<Macro, MacroCollection> Macros { get; }
 
+        IDbObjectRepository<Command, CommandCollection> Commands { get; }
+
+        IDbObjectRepository<Query, QueryCollection> Queries { get; }
+
         IDbObjectRepository<Variable, VariableCollection> Variables { get; }
 
         IDbObjectRepository<Schema, SchemaCollection> Schemas { get; }

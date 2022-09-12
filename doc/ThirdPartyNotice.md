@@ -57,3 +57,6 @@
 * React Charts (https://react-charts.js.org/)
 * React Hook Form (https://react-hook-form.com/jp/)
 * Natural Earth (https://www.naturalearthdata.com/)
+
+* Resas API
+

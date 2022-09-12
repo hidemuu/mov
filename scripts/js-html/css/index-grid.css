@@ -1,0 +1,174 @@
+﻿@charset "UTF-8";
+
+body {
+    margin: 0;
+}
+
+/* メインレイアウト */
+header, footer, main, nav, aside {
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+header {
+    /*width: 100%;
+    background-color: #333333;*/
+    /*font-family: sans-serif;*/
+    text-align: left;
+    font-size: 24px;
+    /*font-weight: bold;*/
+    color: whitesmoke;
+    line-height: 1.0;
+    /*position: fixed;*/
+}
+
+footer {
+    color: whitesmoke;
+    background-color: transparent;
+}
+
+main {
+    border-radius: 8px;
+    padding: 10px;
+    background-color: rgba(255,255,255,1);
+    font-size: 1rem;
+}
+
+nav {
+    /*border-color: #fa0;
+    border-radius: 8px;
+    border: 3px solid #ccc;*/
+    color: whitesmoke;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.2);
+    font-size: 0.75rem;
+}
+
+aside {
+    /*border-color: #fa0;
+    border-radius: 8px;
+    border: 3px solid #ccc;*/
+    color: whitesmoke;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.2);
+    /*opacity: 0.5;*/
+    font-size: 0.75rem;
+}
+
+/* コンテナ - デバイス幅が600px未満の時 */
+.grid_container {
+    display: grid; /* グリッドコンテナであることを定義 */
+    grid-template-areas: 'header' /* 1行目 */
+    /*'nav'*/ /* 2行目 */
+    'main' /* 3行目 */
+    /*'aside'*/ /* 4行目 */
+    'footer' /* 5行目 */;
+    /*grid-template-rows: 45px 50px 1fr auto 20px;*/ /* 行の高さ */
+    grid-template-rows: 45px 1fr 20px; /* 行の高さ */
+    grid-template-columns: 1fr; /* 列の幅 */
+    grid-row-gap: 0; /*行と行の間の余白 */
+}
+
+/* コンテナ - デバイス幅が600px以上の時 */
+@media screen and (min-width: 600px) {
+    .grid_container {
+        grid-template-areas: 'header header header' /* 1行目 */
+        /*'nav main aside'*/ /* 2行目 */
+        'nav main main' /* 2行目 */
+        'footer footer footer'; /* 3行目 */
+        grid-template-rows: 45px 1fr 20px; /* 行の高さ */
+        grid-template-columns: 200px 1fr auto; /* 列の幅 */
+        grid-row-gap: 10px; /* 行と行の間の余白 */
+        grid-column-gap: 10px; /* 列と列の間の余白 */
+        /* ショートハンドだと
+        grid-gap: 10px 10px;
+        */
+        height: 100vh; /* フッタの位置を最下部に */
+    }
+}
+
+.grid_header {
+    grid-area: header;
+    width: 100%;
+    background-color: #333333;
+    position: fixed; /* 固定 */
+}
+
+    .grid_header a {
+        font-size: 16px;
+        color: silver;
+    }
+
+    .grid_header label {
+        font-size: 16px;
+        color: whitesmoke;
+    }
+
+.grid_header_contents {
+    /*margin: auto;*/
+    /*max-width: 800px;*/
+    /*padding: 10px;*/
+    text-align: left;
+    font-size: 24px;
+    /*font-weight: bold;*/
+    color: whitesmoke;
+    /*line-height: 1.0;*/
+}
+
+    .grid_header_contents a {
+        font-size: 16px;
+        color: silver;
+    }
+
+    .grid_header_contents label {
+        font-size: 16px;
+        color: whitesmoke;
+    }
+
+.grid_footer {
+    grid-area: footer;
+    /*min-height: 100vh;*/
+    /*width: 100%;*/
+    position: fixed; /* 固定 */
+    bottom: 0;
+}
+
+.grid_footer_contents {
+    text-align: left;
+    color: whitesmoke;
+}
+
+.grid_main {
+    grid-area: main;
+    box-shadow: inset 0px 0px 6px 4px rgba(0,0,0,0.3);
+    /*overflow: scroll;*/
+}
+    .grid_main h2 {
+        padding-left: 10px;
+        /*border-left: 8px solid #2097B6;*/
+        border-left: 8px solid #333333;
+    }
+
+    .grid_main h3 {
+        padding: 10px;
+        /*border-top: 1px dotted #2097B6;
+    border-left: 3px solid #2097B6;
+    color: #2097B6;*/
+        border-top: 1px dotted #333333;
+        border-left: 3px solid #333333;
+        color: #333333;
+    }
+
+.grid_nav {
+    grid-area: nav;
+    /*overflow: scroll;*/
+}
+
+.grid_aside {
+    grid-area: aside;
+    /*overflow: scroll;*/
+}
+
+
+
+

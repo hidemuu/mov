@@ -1,15 +1,15 @@
 ﻿{
     "user_settings": [
         {
-            "category": "test1",
-            "name": "test110111111",
-            "value": "0",
-            "default": "0",
-            "description": "test",
+            "category": "Api",
+            "name": "ResasApiKey",
+            "value": "5niNZIxqm4aBrmmidirQ3baQDMzNuT44FXUKpISj",
+            "default": "5niNZIxqm4aBrmmidirQ3baQDMzNuT44FXUKpISj",
+            "description": "ResasApiを使用するAPIキー",
             "access_lv": 0,
             "id": "df23cd15-1af3-44ee-952f-9820ca8cb826",
             "index": 1,
-            "code": "test0"
+            "code": "ResasApiKey"
         },
         {
             "category": "test2",

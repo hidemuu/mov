@@ -2,10 +2,9 @@
 
 *.exe
 *.dll
-*.g.i.cs
-*.i.lref
 package-lock.json
 assets/*
+resources/*
 node_modules/*
 
 ## Ignore Visual Studio temporary files, build results, and

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="description" content="APIサービス">
+	<title>CovidReader</title>
+<!-- Bootstrap CSS -->
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="css/bootstrap-5.1.0-dist/bootstrap.min.css"> -->
+<!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700"> -->
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+<!--<link rel=stylesheet href="css/font-awesome.min.css">-->
+<!--<link rel="stylesheet" href="css/index.css">-->
+<!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>-->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+	<script src="index.js"></script>
+	<script src="chart_draw.js"></script>
+	<script src="table.js"></script>
+</head>
+<body>
+	<header class="sticky-top">
+		<nav class="navbar navbar-expand-lg navbar-light text-dark bg-dark">
+			<div class="container">
+				<a class="navbar-brand text-white" href="#">CovidReader</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item active"><a class="nav-link text-white" href="#chart">Chart <span class="sr-only">(current)</span></a></li>
+						<li class="nav-item"><a class="nav-link text-white" href="#table">Table</a></li>
+						<li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container my-5" id="chart">
+		<h2 class= "py-4 text-dark">Chart</h2>
+		<canvas id="myChart"></canvas>
+	</div>
+
+	<div class="container my-5" id="table">
+		<h2 class="py-4 text-dark">Table</h2>
+		<table class="table table-striped">
+			<caption>ChartTable</caption>
+			<thead id="mythead"><!--<tr><td>Date<td>Data--></thead>
+			<tbody id="mytable"></tbody>
+		</table>
+	</div>
+
+	<div class="container my-5" id="contact">
+		<h2 class="py-4 text-dark">Contact</h2>
+		<form>
+			<div class="form-group">
+				<label for="exampleInputEmail1">Email address</label>
+				<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+				<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Password</label>
+				<input type="password" class="form-control" id="exampleInputPassword1">
+			</div>
+			<div class="form-group form-check">
+				<input type="checkbox" class="form-check-input" id="exampleCheck1">
+				<label class="form-check-label" for="exampleCheck1">Check me out</label>
+			</div>
+			<button type="submit" class="btn btn-success">Submit</button>
+		</form>
+	</div>
+
+<!-- フッター -->
+	<footer class="bg-dark text-center">
+		<div class="container">
+			<p class="my-0 text-white py-3">CovidReader</p>
+		</div>
+	</footer>
+</body>
+</html>

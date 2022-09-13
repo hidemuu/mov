@@ -7,8 +7,10 @@ using System.Text;
 
 namespace Mov.Analizer.Models.Resas
 {
-    public class Prefecture
+    public class Prefecture : IResasResult
     {
+        public const string URI = "https://opendata.resas-portal.go.jp/api/v1/prefectures";
+
         [Name("prefCode")]
         [JsonProperty("prefCode")]
         [DisplayName("コード")]

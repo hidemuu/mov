@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Analizer.Models.Resas
+namespace Mov.Accessors
 {
-    public class City : IResasResult
+    public interface IRepository
     {
     }
 }

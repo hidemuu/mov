@@ -13,7 +13,7 @@ namespace Mov.Analizer.Models.Resas
 
         [Name("prefCode")]
         [JsonProperty("prefCode")]
-        [DisplayName("コード")]
+        [DisplayName("都道府県コード")]
         public int Code { get; set; }
         [Name("prefName")]
         [JsonProperty("prefName")]

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Analizer.Repository.Resas
 {
-    class RestPrefectureRepository
+    public class RestPrefectureRepository
     {
     }
 }

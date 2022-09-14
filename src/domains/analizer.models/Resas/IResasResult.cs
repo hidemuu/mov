@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Analizer.Models.Resas
 {
-    interface IResasData
+    public interface IResasResult
     {
     }
 }

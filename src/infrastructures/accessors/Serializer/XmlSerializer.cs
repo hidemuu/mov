@@ -11,7 +11,7 @@ namespace Mov.Accessors
     {
         #region フィールド
 
-        private readonly string basePath;
+        private readonly string endpoint;
         private string path;
         private Encoding encoding;
 
@@ -23,10 +23,10 @@ namespace Mov.Accessors
         /// コンストラクタ
         /// </summary>
         /// <param name="path">ファイルパス</param>
-        public XmlSerializer(string basePath, string relativePath, string encoding)
+        public XmlSerializer(string endpoint, string path, string encoding)
         {
-            this.basePath = basePath;
-            this.path = Path.Combine(basePath, relativePath);
+            this.endpoint = endpoint;
+            this.path = Path.Combine(endpoint, path);
             if (string.IsNullOrEmpty(Path.GetExtension(path))) this.path += DbConstants.PATH_EXTENSION_XML;
             this.encoding = Encoding.GetEncoding(encoding);
         }

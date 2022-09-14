@@ -13,7 +13,7 @@ namespace Mov.Accessors.Serializer
         /// <summary>
         /// The Base URL for the API.
         /// /// </summary>
-        private readonly string baseUrl;
+        private readonly string endpoint;
         private readonly string url;
 
         #endregion フィールド
@@ -24,10 +24,10 @@ namespace Mov.Accessors.Serializer
         /// コンストラクター
         /// </summary>
         /// <param name="baseUrl"></param>
-        public HttpSerializer(string baseUrl, string url = "")
+        public HttpSerializer(string endpoint, string url = "")
         {
-            this.baseUrl = baseUrl;
-            this.url = string.IsNullOrEmpty(url) ? baseUrl : url;
+            this.endpoint = endpoint;
+            this.url = string.IsNullOrEmpty(url) ? endpoint : url;
         }
 
         #endregion コンストラクター
@@ -104,7 +104,7 @@ namespace Mov.Accessors.Serializer
         /// <summary>
         /// Constructs the base HTTP client, including correct authorization and API version headers.
         /// </summary>
-        private HttpClient BaseClient() => new HttpClient { BaseAddress = new Uri(this.baseUrl) };
+        private HttpClient BaseClient() => new HttpClient { BaseAddress = new Uri(this.endpoint) };
 
         /// <summary>
         /// Helper class for formatting <see cref="StringContent"/> as UTF8 application/json.

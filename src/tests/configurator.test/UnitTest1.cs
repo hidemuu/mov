@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace Configurator.Service.Test
+namespace Configurator.Test
 {
     public class Tests
     {

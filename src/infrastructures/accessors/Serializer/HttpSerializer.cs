@@ -23,7 +23,7 @@ namespace Mov.Accessors.Serializer
         /// <summary>
         /// コンストラクター
         /// </summary>
-        /// <param name="baseUrl"></param>
+        /// <param name="endpoint"></param>
         public HttpSerializer(string endpoint, string url = "")
         {
             this.endpoint = endpoint;

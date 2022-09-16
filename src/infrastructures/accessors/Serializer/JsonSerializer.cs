@@ -32,12 +32,12 @@ namespace Mov.Accessors
         /// データをファイルから読み出して指定クラスにデシリアライズ
         /// </summary>
         /// <returns></returns>
-        public T Read<T>(string url)
+        public TResponse Get<TResponse>(string url)
         {
             //Json文字列の取得
             string jsonString = ReadStream(url);
             //指定オブジェクトにデシリアライズ
-            return JsonConvert.DeserializeObject<T>(jsonString);
+            return JsonConvert.DeserializeObject<TResponse>(jsonString);
         }
 
         /// <summary>
@@ -45,11 +45,12 @@ namespace Mov.Accessors
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="obj"></param>
-        public void Write<T>(string url, T obj)
+        public TResponse Post<TRequest, TResponse>(string url, TRequest obj)
         {
             //Jsonデータにシリアライズ
             var json = JsonConvert.SerializeObject(obj);
             WriteStream(url, json, false);
+            return default;
         }
 
         #endregion メソッド

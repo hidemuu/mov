@@ -14,12 +14,12 @@ namespace Mov.Accessors
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        T Read<T>(string url);
+        TResponse Get<TResponse>(string url);
         /// <summary>
         /// 書き込み
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="obj"></param>
-        void Write<T>(string url, T obj);
+        TResponse Post<TRequest, TResponse>(string url, TRequest obj);
     }
 }

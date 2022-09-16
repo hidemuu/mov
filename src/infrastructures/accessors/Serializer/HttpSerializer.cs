@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Accessors.Serializer
 {
-    public class HttpSerializer : ISerializer
+    public class HttpSerializer : ISerializer, IAsyncSerializer
     {
         #region フィールド
 
@@ -32,7 +32,7 @@ namespace Mov.Accessors.Serializer
 
         #region メソッド
 
-        public T Read<T>(string url)
+        public TResponse Get<TResponse>(string url)
         {
             using (var client = BaseClient())
             {
@@ -40,30 +40,31 @@ namespace Mov.Accessors.Serializer
                 Task.WhenAll(responseTask);
                 var jsonTask = responseTask.Result.Content.ReadAsStringAsync();
                 Task.WhenAll(jsonTask);
-                T obj = JsonConvert.DeserializeObject<T>(jsonTask.Result);
+                TResponse obj = JsonConvert.DeserializeObject<TResponse>(jsonTask.Result);
                 return obj;
             }
         }
 
-        public void Write<T>(string url, T body)
+        public TResponse Post<TRequest, TResponse>(string url, TRequest body)
         {
             using (var client = BaseClient())
             {
                 var responseTask = client.PostAsync(url, new JsonStringContent(body));
                 Task.WhenAll(responseTask);
+                return default;
             }
         }
 
         /// <summary>
         /// Makes an HTTP GET request to the given controller and returns the deserialized response content.
         /// </summary>
-        public async Task<T> GetAsync<T>(string url)
+        public async Task<TResponse> GetAsync<TResponse>(string url)
         {
             using (var client = BaseClient())
             {
                 var response = await client.GetAsync(url);
                 string json = await response.Content.ReadAsStringAsync();
-                T obj = JsonConvert.DeserializeObject<T>(json);
+                TResponse obj = JsonConvert.DeserializeObject<TResponse>(json);
                 return obj;
             }
         }
@@ -72,13 +73,13 @@ namespace Mov.Accessors.Serializer
         /// Makes an HTTP POST request to the given controller with the given object as the body.
         /// Returns the deserialized response content.
         /// </summary>
-        public async Task<T> PostAsync<TRequest, T>(string url, TRequest body)
+        public async Task<TResponse> PostAsync<TRequest, TResponse>(string url, TRequest body)
         {
             using (var client = BaseClient())
             {
                 var response = await client.PostAsync(url, new JsonStringContent(body));
                 string json = await response.Content.ReadAsStringAsync();
-                T obj = JsonConvert.DeserializeObject<T>(json);
+                TResponse obj = JsonConvert.DeserializeObject<TResponse>(json);
                 return obj;
             }
         }

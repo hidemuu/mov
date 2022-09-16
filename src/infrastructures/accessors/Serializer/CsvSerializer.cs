@@ -40,7 +40,7 @@ namespace Mov.Accessors
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="list"></param>
-        public void Write<T>(string url, T list)
+        public TResponse Post<TRequest, TResponse>(string url, TRequest list)
         {
             var isExist = File.Exists(this.endpoint);
 
@@ -56,6 +56,7 @@ namespace Mov.Accessors
                     //config.Delimiter = "\t";
                     //csv.WriteRecords(list);
                     csv.WriteRecord(list);
+                    return default;
                 }
             }
         }
@@ -65,7 +66,7 @@ namespace Mov.Accessors
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public T Read<T>(string url)
+        public T Get<T>(string url)
         {
             var configuration = new CsvConfiguration(CultureInfo.InvariantCulture)
             {

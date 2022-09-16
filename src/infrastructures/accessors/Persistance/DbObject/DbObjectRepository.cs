@@ -58,18 +58,18 @@ namespace Mov.Accessors
         /// <summary>
         /// インポート
         /// </summary>
-        public void Import() => collection = serializer.Read<C>("");
+        public void Import() => collection = serializer.Get<C>("");
 
         /// <summary>
         /// エクスポート
         /// </summary>
-        public void Export() => serializer.Write<C>("", this.collection);
+        public void Export() => serializer.Post<C, C>("", this.collection);
 
         /// <summary>
         /// 単一データエクスポート
         /// </summary>
         /// <param name="item"></param>
-        public void Export(T item) => serializer.Write<T>("", item);
+        public void Export(T item) => serializer.Post<T, T>("", item);
 
         #region GET
 

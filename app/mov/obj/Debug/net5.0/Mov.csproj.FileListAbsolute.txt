@@ -53,7 +53,6 @@ C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Driver.Service.
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Game.Models.dll
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Game.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Game.Service.dll
-C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Loggers.dll
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Scheduler.Models.dll
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Scheduler.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Scheduler.Service.dll
@@ -77,7 +76,6 @@ C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Driver.Service.
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Game.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Game.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Game.Service.pdb
-C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Loggers.pdb
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Scheduler.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Scheduler.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Scheduler.Service.pdb

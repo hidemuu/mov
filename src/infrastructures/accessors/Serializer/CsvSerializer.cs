@@ -15,8 +15,7 @@ namespace Mov.Accessors
         #region フィールド
 
         private readonly string endpoint;
-        private string path;
-        private Encoding encoding;
+        private readonly Encoding encoding;
 
         #endregion フィールド
 
@@ -25,11 +24,10 @@ namespace Mov.Accessors
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public CsvSerializer(string endpoint, string path, string encoding)
+        public CsvSerializer(string endpoint, string encoding)
         {
             this.endpoint = endpoint;
-            this.path = Path.Combine(endpoint, path);
-            if (string.IsNullOrEmpty(Path.GetExtension(path))) this.path += DbConstants.PATH_EXTENSION_CSV;
+            if (string.IsNullOrEmpty(Path.GetExtension(endpoint))) this.endpoint += DbConstants.PATH_EXTENSION_CSV;
             this.encoding = Encoding.GetEncoding(encoding);
         }
 
@@ -44,12 +42,12 @@ namespace Mov.Accessors
         /// <param name="list"></param>
         public void Write<T>(T list)
         {
-            var isExist = File.Exists(path);
+            var isExist = File.Exists(this.endpoint);
 
             var configuration = new CsvConfiguration(CultureInfo.CurrentCulture);
             configuration.HasHeaderRecord = true;
 
-            using (var sw = new StreamWriter(path, true, encoding))
+            using (var sw = new StreamWriter(this.endpoint, true, this.encoding))
             {
                 using (var csv = new CsvWriter(sw, configuration))
                 {
@@ -75,7 +73,7 @@ namespace Mov.Accessors
                 PrepareHeaderForMatch = args => args.Header.ToLower(),
             };
 
-            using (var sr = new StreamReader(path, encoding))
+            using (var sr = new StreamReader(this.endpoint, this.encoding))
             {
                 using (var csv = new CsvReader(sr, configuration))
                 {

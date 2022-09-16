@@ -14,8 +14,7 @@ namespace Mov.Accessors.Serializer
         /// The Base URL for the API.
         /// /// </summary>
         private readonly string endpoint;
-        private readonly string url;
-
+        
         #endregion フィールド
 
         #region コンストラクター
@@ -24,10 +23,9 @@ namespace Mov.Accessors.Serializer
         /// コンストラクター
         /// </summary>
         /// <param name="endpoint"></param>
-        public HttpSerializer(string endpoint, string url = "")
+        public HttpSerializer(string endpoint)
         {
             this.endpoint = endpoint;
-            this.url = string.IsNullOrEmpty(url) ? endpoint : url;
         }
 
         #endregion コンストラクター
@@ -38,7 +36,7 @@ namespace Mov.Accessors.Serializer
         {
             using (var client = BaseClient())
             {
-                var responseTask = client.GetAsync(this.url);
+                var responseTask = client.GetAsync(this.endpoint);
                 Task.WhenAll(responseTask);
                 var jsonTask = responseTask.Result.Content.ReadAsStringAsync();
                 Task.WhenAll(jsonTask);
@@ -51,7 +49,7 @@ namespace Mov.Accessors.Serializer
         {
             using (var client = BaseClient())
             {
-                var responseTask = client.PostAsync(this.url, new JsonStringContent(body));
+                var responseTask = client.PostAsync(this.endpoint, new JsonStringContent(body));
                 Task.WhenAll(responseTask);
             }
         }

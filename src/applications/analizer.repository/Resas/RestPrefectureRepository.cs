@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Mov.Analizer.Repository.Resas
 {
-    public class RestPrefectureRepository : RestRepositoryBase<Prefecture>
+    public class RestPrefectureRepository : RestRepositoryBase<ResasResult<Prefecture>>, IPrefectureRepository
     {
-        public RestPrefectureRepository() : base("api/v1/prefectures", "")
+        public RestPrefectureRepository(string endpoint, string auth) : base(endpoint + "prefectures", auth)
         {
 
         }

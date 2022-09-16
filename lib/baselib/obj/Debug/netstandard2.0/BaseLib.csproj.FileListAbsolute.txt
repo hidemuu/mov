@@ -19,7 +19,6 @@ C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Dri
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Models.dll
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Service.dll
-C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Loggers.dll
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Scheduler.Models.dll
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Scheduler.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Scheduler.Service.dll
@@ -42,7 +41,6 @@ C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Dri
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Scheduler.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Accessors.pdb
-C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Loggers.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Utilities.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Drawer.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Drawer.Repository.pdb

@@ -12,7 +12,7 @@ namespace Mov.Accessors
 
         public JsonRepositoryBase(string fileName, string encode = "utf-8")
         {
-            serializer = new JsonSerializer(fileName, "", encode);
+            serializer = new JsonSerializer(fileName, encode);
         }
 
         public async Task<IEnumerable<T>> GetAsync()

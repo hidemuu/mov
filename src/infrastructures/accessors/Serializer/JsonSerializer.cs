@@ -12,19 +12,17 @@ namespace Mov.Accessors
         #region フィールド
 
         private readonly string endpoint;
-        private string path;
-        private Encoding encoding;
+        private readonly Encoding encoding;
 
         #endregion フィールド
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public JsonSerializer(string endpoint, string path, string encoding)
+        public JsonSerializer(string endpoint, string encoding)
         {
             this.endpoint = endpoint;
-            this.path = Path.Combine(endpoint, path);
-            if (string.IsNullOrEmpty(Path.GetExtension(path))) this.path += DbConstants.PATH_EXTENSION_JSON;
+            if (string.IsNullOrEmpty(Path.GetExtension(endpoint))) this.endpoint += DbConstants.PATH_EXTENSION_JSON;
             this.encoding = Encoding.GetEncoding(encoding);
         }
 
@@ -60,7 +58,7 @@ namespace Mov.Accessors
 
         private string ReadStream()
         {
-            using (var stream = new StreamReader(this.path, encoding))
+            using (var stream = new StreamReader(this.endpoint, this.encoding))
             {
                 if (stream != null)
                 {
@@ -77,7 +75,7 @@ namespace Mov.Accessors
         /// <param name="isappend">追記モード（falseなら上書き保存）</param>
         private void WriteStream(string json, bool isappend)
         {
-            using (var stream = new StreamWriter(this.path, isappend, encoding))
+            using (var stream = new StreamWriter(this.endpoint, isappend, this.encoding))
             {
                 if (stream != null)
                 {

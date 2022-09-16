@@ -405,7 +405,6 @@
           "Mov.Game.Models": "1.0.0",
           "Mov.Game.Repository": "1.0.0",
           "Mov.Game.Service": "1.0.0",
-          "Mov.Loggers": "1.0.0",
           "Mov.Scheduler.Models": "1.0.0",
           "Mov.Scheduler.Repository": "1.0.0",
           "Mov.Scheduler.Service": "1.0.0",
@@ -650,16 +649,6 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Game.Service.dll": {}
-        }
-      },
-      "Mov.Loggers/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Mov.Loggers.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Loggers.dll": {}
         }
       },
       "Mov.Scheduler.Models/1.0.0": {
@@ -1554,11 +1543,6 @@
       "type": "project",
       "path": "../../src/applications/game.service/Game.Service.csproj",
       "msbuildProject": "../../src/applications/game.service/Game.Service.csproj"
-    },
-    "Mov.Loggers/1.0.0": {
-      "type": "project",
-      "path": "../../src/infrastructures/devices/Devices.csproj",
-      "msbuildProject": "../../src/infrastructures/devices/Devices.csproj"
     },
     "Mov.Scheduler.Models/1.0.0": {
       "type": "project",

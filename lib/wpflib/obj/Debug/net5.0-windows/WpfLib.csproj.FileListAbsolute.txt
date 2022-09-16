@@ -38,7 +38,6 @@ C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Game
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Game.Service.dll
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Game.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Game.Views.dll
-C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Loggers.dll
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Scheduler.Models.dll
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Scheduler.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Scheduler.Service.dll
@@ -82,7 +81,6 @@ C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Driv
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Game.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Game.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Game.Service.pdb
-C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Loggers.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Scheduler.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Scheduler.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Scheduler.Service.pdb

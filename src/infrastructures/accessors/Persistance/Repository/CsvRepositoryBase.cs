@@ -11,7 +11,7 @@ namespace Mov.Accessors
 
         public CsvRepositoryBase(string fileName, string encode = "utf-8")
         {
-            serializer = new CsvSerializer(fileName, "", encode);
+            serializer = new CsvSerializer(fileName, encode);
         }
 
         public async Task<T> GetAsync()

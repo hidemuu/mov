@@ -12,8 +12,7 @@ namespace Mov.Accessors
         #region フィールド
 
         private readonly string endpoint;
-        private string path;
-        private Encoding encoding;
+        private  readonly Encoding encoding;
 
         #endregion フィールド
 
@@ -23,11 +22,10 @@ namespace Mov.Accessors
         /// コンストラクタ
         /// </summary>
         /// <param name="path">ファイルパス</param>
-        public XmlSerializer(string endpoint, string path, string encoding)
+        public XmlSerializer(string endpoint, string encoding)
         {
             this.endpoint = endpoint;
-            this.path = Path.Combine(endpoint, path);
-            if (string.IsNullOrEmpty(Path.GetExtension(path))) this.path += DbConstants.PATH_EXTENSION_XML;
+            if (string.IsNullOrEmpty(Path.GetExtension(endpoint))) this.endpoint += DbConstants.PATH_EXTENSION_XML;
             this.encoding = Encoding.GetEncoding(encoding);
         }
 
@@ -41,7 +39,7 @@ namespace Mov.Accessors
         /// <returns></returns>
         public T Read<T>()
         {
-            using (var stream = new StreamReader(path))
+            using (var stream = new StreamReader(this.endpoint))
             {
                 var serializer = new System.Xml.Serialization.XmlSerializer(typeof(T));
                 return (T)serializer.Deserialize(stream);
@@ -54,7 +52,7 @@ namespace Mov.Accessors
         /// <param name="obj"></param>
         public void Write<T>(T obj)
         {
-            using (var stream = new StreamWriter(path, false, encoding))
+            using (var stream = new StreamWriter(this.endpoint, false, this.encoding))
             {
                 System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(T));
                 serializer.Serialize(stream, obj);

@@ -40,14 +40,14 @@ namespace Mov.Accessors
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="list"></param>
-        public void Write<T>(T list)
+        public void Write<T>(string url, T list)
         {
             var isExist = File.Exists(this.endpoint);
 
             var configuration = new CsvConfiguration(CultureInfo.CurrentCulture);
             configuration.HasHeaderRecord = true;
 
-            using (var sw = new StreamWriter(this.endpoint, true, this.encoding))
+            using (var sw = new StreamWriter(Path.Combine(this.endpoint, url), true, this.encoding))
             {
                 using (var csv = new CsvWriter(sw, configuration))
                 {
@@ -65,7 +65,7 @@ namespace Mov.Accessors
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public T Read<T>()
+        public T Read<T>(string url)
         {
             var configuration = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
@@ -73,7 +73,7 @@ namespace Mov.Accessors
                 PrepareHeaderForMatch = args => args.Header.ToLower(),
             };
 
-            using (var sr = new StreamReader(this.endpoint, this.encoding))
+            using (var sr = new StreamReader(Path.Combine(this.endpoint, url), this.encoding))
             {
                 using (var csv = new CsvReader(sr, configuration))
                 {

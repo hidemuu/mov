@@ -37,9 +37,9 @@ namespace Mov.Accessors
         /// データをファイルから読み出して指定クラスにデシリアライズ
         /// </summary>
         /// <returns></returns>
-        public T Read<T>()
+        public T Read<T>(string url)
         {
-            using (var stream = new StreamReader(this.endpoint))
+            using (var stream = new StreamReader(Path.Combine(this.endpoint, url)))
             {
                 var serializer = new System.Xml.Serialization.XmlSerializer(typeof(T));
                 return (T)serializer.Deserialize(stream);
@@ -50,9 +50,9 @@ namespace Mov.Accessors
         /// シリアライズしてファイルに書き込み
         /// </summary>
         /// <param name="obj"></param>
-        public void Write<T>(T obj)
+        public void Write<T>(string url, T obj)
         {
-            using (var stream = new StreamWriter(this.endpoint, false, this.encoding))
+            using (var stream = new StreamWriter(Path.Combine(this.endpoint, url), false, this.encoding))
             {
                 System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(T));
                 serializer.Serialize(stream, obj);

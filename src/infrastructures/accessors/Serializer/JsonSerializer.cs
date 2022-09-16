@@ -32,10 +32,10 @@ namespace Mov.Accessors
         /// データをファイルから読み出して指定クラスにデシリアライズ
         /// </summary>
         /// <returns></returns>
-        public T Read<T>()
+        public T Read<T>(string url)
         {
             //Json文字列の取得
-            string jsonString = ReadStream();
+            string jsonString = ReadStream(url);
             //指定オブジェクトにデシリアライズ
             return JsonConvert.DeserializeObject<T>(jsonString);
         }
@@ -45,20 +45,20 @@ namespace Mov.Accessors
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="obj"></param>
-        public void Write<T>(T obj)
+        public void Write<T>(string url, T obj)
         {
             //Jsonデータにシリアライズ
             var json = JsonConvert.SerializeObject(obj);
-            WriteStream(json, false);
+            WriteStream(url, json, false);
         }
 
         #endregion メソッド
 
         #region 内部メソッド
 
-        private string ReadStream()
+        private string ReadStream(string url)
         {
-            using (var stream = new StreamReader(this.endpoint, this.encoding))
+            using (var stream = new StreamReader(Path.Combine(this.endpoint, url), this.encoding))
             {
                 if (stream != null)
                 {
@@ -73,9 +73,9 @@ namespace Mov.Accessors
         /// </summary>
         /// <param name="json"></param>
         /// <param name="isappend">追記モード（falseなら上書き保存）</param>
-        private void WriteStream(string json, bool isappend)
+        private void WriteStream(string url, string json, bool isappend)
         {
-            using (var stream = new StreamWriter(this.endpoint, isappend, this.encoding))
+            using (var stream = new StreamWriter(Path.Combine(this.endpoint, url), isappend, this.encoding))
             {
                 if (stream != null)
                 {

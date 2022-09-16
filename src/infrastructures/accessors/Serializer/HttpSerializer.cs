@@ -32,11 +32,11 @@ namespace Mov.Accessors.Serializer
 
         #region メソッド
 
-        public T Read<T>()
+        public T Read<T>(string url)
         {
             using (var client = BaseClient())
             {
-                var responseTask = client.GetAsync(this.endpoint);
+                var responseTask = client.GetAsync(url);
                 Task.WhenAll(responseTask);
                 var jsonTask = responseTask.Result.Content.ReadAsStringAsync();
                 Task.WhenAll(jsonTask);
@@ -45,11 +45,11 @@ namespace Mov.Accessors.Serializer
             }
         }
 
-        public void Write<T>(T body)
+        public void Write<T>(string url, T body)
         {
             using (var client = BaseClient())
             {
-                var responseTask = client.PostAsync(this.endpoint, new JsonStringContent(body));
+                var responseTask = client.PostAsync(url, new JsonStringContent(body));
                 Task.WhenAll(responseTask);
             }
         }

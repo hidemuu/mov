@@ -16,12 +16,12 @@ namespace Mov.Accessors
 
         public async Task<T> GetAsync()
         {
-            return await Task.Run(() => serializer.Read<T>());
+            return await Task.Run(() => serializer.Read<T>(""));
         }
 
         public async Task PostAsync(T item)
         {
-            await Task.Run(() => serializer.Write<T>(item));
+            await Task.Run(() => serializer.Write<T>("", item));
         }
 
         public async Task PostAsync(IEnumerable<T> items)

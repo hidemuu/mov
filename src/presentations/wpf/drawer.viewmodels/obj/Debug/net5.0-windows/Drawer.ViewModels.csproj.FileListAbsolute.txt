@@ -32,3 +32,5 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.viewmodels\obj\
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.viewmodels\obj\Debug\net5.0-windows\Mov.Drawer.ViewModels.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.viewmodels\bin\Debug\net5.0-windows\Mov.Framework.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.viewmodels\bin\Debug\net5.0-windows\Mov.Framework.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.viewmodels\bin\Debug\net5.0-windows\Mov.Controllers.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.viewmodels\bin\Debug\net5.0-windows\Mov.Controllers.pdb

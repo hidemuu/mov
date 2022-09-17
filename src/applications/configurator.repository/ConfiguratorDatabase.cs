@@ -12,7 +12,7 @@ namespace Mov.Configurator.Repository
     /// <summary>
     /// コンフィグレーションデータのリポジトリ
     /// </summary>
-    public class ConfiguratorDatabase : DbObjectDatabaseBase<IConfiguratorRepository, ConfiguratorRepository>, IConfiguratorDatabase
+    public class ConfiguratorDatabase : DomainDatabaseBase<IConfiguratorRepository, ConfiguratorRepository>, IConfiguratorDatabase
     {
         #region コンストラクター
 

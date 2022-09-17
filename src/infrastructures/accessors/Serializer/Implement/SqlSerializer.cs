@@ -6,5 +6,17 @@ namespace Mov.Accessors.Serializer
 {
     public class SqlSerializer
     {
+        #region フィールド
+
+        #endregion フィールド
+
+        #region コンストラクター
+
+        #endregion コンストラクター
+
+        #region メソッド
+
+        #endregion メソッド
+
     }
 }

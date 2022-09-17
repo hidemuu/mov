@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Configurator.Repository
 {
-    public class ConfiguratorRepository : DbObjectRepositoryBase, IConfiguratorRepository
+    public class ConfiguratorRepository : DomainRepositoryBase, IConfiguratorRepository
     {
 
         public ConfiguratorRepository(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(extension)

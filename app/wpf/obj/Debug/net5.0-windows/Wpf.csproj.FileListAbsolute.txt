@@ -158,3 +158,5 @@ C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Renci.SshNe
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\SshNet.Security.Cryptography.dll
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Framework.dll
 C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Framework.pdb
+C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Controllers.dll
+C:\Users\nando\Documents\GitHub\mov\app\wpf\bin\Debug\net5.0-windows\Mov.Controllers.pdb

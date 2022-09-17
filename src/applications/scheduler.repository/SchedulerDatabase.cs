@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Scheduler.Repository
 {
-    public class SchedulerDatabase : DbObjectDatabaseBase<ISchedulerRepository, SchedulerRepository>, ISchedulerDatabase
+    public class SchedulerDatabase : DomainDatabaseBase<ISchedulerRepository, SchedulerRepository>, ISchedulerDatabase
     {
         public SchedulerDatabase(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
         {

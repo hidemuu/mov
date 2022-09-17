@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Accessors.Serializer
 {
-    public class HttpSerializer : ISerializer, IAsyncSerializer
+    public class HttpSerializer : ISerializer, ISerializerAsync
     {
         #region フィールド
 

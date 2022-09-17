@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Controllers</AssemblyName>
+    <RootNamespace>Mov.Controllers</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Crud\Implement\Transaction\" />
+  </ItemGroup>
+
+</Project>

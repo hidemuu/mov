@@ -7,7 +7,7 @@ namespace Mov.Designer.Repository
     /// <summary>
     /// デザイナーのリポジトリ
     /// </summary>
-    public class DesignerRepository : DbObjectRepositoryBase, IDesignerRepository
+    public class DesignerRepository : DomainRepositoryBase, IDesignerRepository
     {
         #region コンストラクター
 

@@ -1,0 +1,39 @@
+﻿using System.IO;
+
+namespace Mov.Framework
+{
+    /// <summary>
+    /// ドメイン単位のリポジトリのベースクラス
+    /// </summary>
+    public abstract class DomainRepositoryBase
+    {
+        #region フィールド
+
+        /// <summary>
+        /// 拡張子
+        /// </summary>
+        protected readonly string extension;
+
+        #endregion フィールド
+
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
+        /// <param name="extension"></param>
+        public DomainRepositoryBase(string extension)
+        {
+            this.extension = extension;
+        }
+
+        #region メソッド
+
+        /// <summary>
+        /// 相対パスを取得
+        /// </summary>
+        /// <param name="fileName">ファイル名</param>
+        /// <returns></returns>
+        protected string GetRelativePath(string fileName) => fileName + "." + this.extension;
+
+        #endregion メソッド
+    }
+}

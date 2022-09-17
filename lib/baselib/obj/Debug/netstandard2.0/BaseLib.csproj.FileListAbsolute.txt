@@ -54,3 +54,5 @@ C:\Users\nando\Documents\GitHub\mov\lib\baselib\obj\Debug\netstandard2.0\Mov.Bas
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\obj\Debug\netstandard2.0\Mov.BaseLib.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Framework.dll
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Framework.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Controllers.dll
+C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Controllers.pdb

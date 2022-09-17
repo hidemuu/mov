@@ -47,3 +47,5 @@ C:\Users\nando\Documents\GitHub\mov\src\domains\configurator.models\obj\Debug\ne
 C:\Users\nando\Documents\GitHub\mov\src\domains\configurator.models\obj\Debug\netstandard2.0\Mov.Configurator.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\domains\configurator.models\bin\Debug\netstandard2.0\Mov.Framework.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\configurator.models\bin\Debug\netstandard2.0\Mov.Framework.pdb
+C:\Users\nando\Documents\GitHub\mov\src\domains\configurator.models\bin\Debug\netstandard2.0\Mov.Controllers.dll
+C:\Users\nando\Documents\GitHub\mov\src\domains\configurator.models\bin\Debug\netstandard2.0\Mov.Controllers.pdb

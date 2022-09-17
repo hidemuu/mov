@@ -14,12 +14,4 @@
     <PackageReference Include="SSH.NET" Version="2020.0.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\utilities\Utilities.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Crud\Implement\Transaction\" />
-  </ItemGroup>
-
 </Project>

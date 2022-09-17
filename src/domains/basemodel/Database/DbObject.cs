@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Framework
+namespace Mov.BaseModel
 {
     /// <summary>
     /// データベースの基本オブジェクト

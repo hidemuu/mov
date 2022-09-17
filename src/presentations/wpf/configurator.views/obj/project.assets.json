@@ -550,11 +550,25 @@
           "bin/placeholder/Mov.Accessors.dll": {}
         }
       },
+      "Mov.BaseModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "Mov.Utilities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.BaseModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.BaseModel.dll": {}
+        }
+      },
       "Mov.Configurator.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Framework": "1.0.0",
+          "Mov.BaseModel": "1.0.0",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
@@ -583,21 +597,11 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "Mov.Controllers/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Mov.Controllers.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Controllers.dll": {}
-        }
-      },
       "Mov.Designer.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Framework": "1.0.0",
+          "Mov.BaseModel": "1.0.0",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
@@ -632,21 +636,6 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Designer.Service.dll": {}
-        }
-      },
-      "Mov.Framework/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Accessors": "1.0.0",
-          "Mov.Controllers": "1.0.0",
-          "Mov.Utilities": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Framework.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Framework.dll": {}
         }
       },
       "Mov.Utilities/1.0.0": {
@@ -1799,6 +1788,11 @@
       "path": "../../../infrastructures/accessors/Accessors.csproj",
       "msbuildProject": "../../../infrastructures/accessors/Accessors.csproj"
     },
+    "Mov.BaseModel/1.0.0": {
+      "type": "project",
+      "path": "../../../domains/basemodel/BaseModel.csproj",
+      "msbuildProject": "../../../domains/basemodel/BaseModel.csproj"
+    },
     "Mov.Configurator.Models/1.0.0": {
       "type": "project",
       "path": "../../../domains/configurator.models/Configurator.Models.csproj",
@@ -1808,11 +1802,6 @@
       "type": "project",
       "path": "../configurator.viewmodels/Configurator.ViewModels.csproj",
       "msbuildProject": "../configurator.viewmodels/Configurator.ViewModels.csproj"
-    },
-    "Mov.Controllers/1.0.0": {
-      "type": "project",
-      "path": "../../../infrastructures/controllers/Controllers.csproj",
-      "msbuildProject": "../../../infrastructures/controllers/Controllers.csproj"
     },
     "Mov.Designer.Models/1.0.0": {
       "type": "project",
@@ -1828,11 +1817,6 @@
       "type": "project",
       "path": "../../../applications/designer.service/Designer.Service.csproj",
       "msbuildProject": "../../../applications/designer.service/Designer.Service.csproj"
-    },
-    "Mov.Framework/1.0.0": {
-      "type": "project",
-      "path": "../../../domains/framework/Framework.csproj",
-      "msbuildProject": "../../../domains/framework/Framework.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",

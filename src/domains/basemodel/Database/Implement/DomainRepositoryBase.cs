@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Mov.Framework
+namespace Mov.BaseModel
 {
     /// <summary>
     /// ドメイン単位のリポジトリのベースクラス

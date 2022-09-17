@@ -56,7 +56,5 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\obj\Deb
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\obj\Debug\netstandard2.0\Designer.Repository.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\obj\Debug\netstandard2.0\Mov.Designer.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\obj\Debug\netstandard2.0\Mov.Designer.Repository.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\bin\Debug\netstandard2.0\Mov.Framework.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\bin\Debug\netstandard2.0\Mov.Framework.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\bin\Debug\netstandard2.0\Mov.Controllers.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\bin\Debug\netstandard2.0\Mov.Controllers.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\bin\Debug\netstandard2.0\Mov.BaseModel.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\designer.repository\bin\Debug\netstandard2.0\Mov.BaseModel.pdb

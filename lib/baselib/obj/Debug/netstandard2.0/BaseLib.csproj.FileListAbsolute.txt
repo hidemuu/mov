@@ -80,3 +80,5 @@ C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Aut
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Authorizer.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Authorizer.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Authorizer.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.BaseModel.dll
+C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.BaseModel.pdb

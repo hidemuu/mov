@@ -809,7 +809,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Framework": "1.0.0"
+          "Mov.BaseModel": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Analizer.Models.dll": {}
@@ -848,7 +848,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Framework": "1.0.0"
+          "Mov.BaseModel": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Authorizer.Models.dll": {}
@@ -883,11 +883,25 @@
           "bin/placeholder/Mov.Authorizer.Service.dll": {}
         }
       },
+      "Mov.BaseModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "Mov.Utilities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.BaseModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.BaseModel.dll": {}
+        }
+      },
       "Mov.Bom.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Framework": "1.0.0"
+          "Mov.BaseModel": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Bom.Models.dll": {}
@@ -926,7 +940,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Framework": "1.0.0",
+          "Mov.BaseModel": "1.0.0",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
@@ -976,7 +990,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Framework": "1.0.0",
+          "Mov.BaseModel": "1.0.0",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
@@ -1017,7 +1031,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Framework": "1.0.0",
+          "Mov.BaseModel": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -1059,7 +1073,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Framework": "1.0.0"
+          "Mov.BaseModel": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Driver.Models.dll": {}
@@ -1098,9 +1112,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
-          "Mov.Controllers": "1.0.0",
-          "Mov.Utilities": "1.0.0"
+          "Mov.Controllers": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Framework.dll": {}
@@ -1113,7 +1125,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Framework": "1.0.0",
+          "Mov.BaseModel": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -1168,7 +1180,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Framework": "1.0.0"
+          "Mov.BaseModel": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Scheduler.Models.dll": {}
@@ -1208,7 +1220,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Framework": "1.0.0"
+          "Mov.BaseModel": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Translator.Models.dll": {}
@@ -1254,6 +1266,7 @@
           "Mov.Designer.Service": "1.0.0",
           "Mov.Drawer.Service": "1.0.0",
           "Mov.Driver.Service": "1.0.0",
+          "Mov.Framework": "1.0.0",
           "Mov.Game.Service": "1.0.0",
           "Mov.Scheduler.Service": "1.0.0",
           "Mov.Translator.Service": "1.0.0"
@@ -3938,6 +3951,11 @@
       "type": "project",
       "path": "../../src/applications/authorizer.service/Authorizer.Service.csproj",
       "msbuildProject": "../../src/applications/authorizer.service/Authorizer.Service.csproj"
+    },
+    "Mov.BaseModel/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/basemodel/BaseModel.csproj",
+      "msbuildProject": "../../src/domains/basemodel/BaseModel.csproj"
     },
     "Mov.Bom.Models/1.0.0": {
       "type": "project",

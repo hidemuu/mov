@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Mov.Framework
+namespace Mov.BaseModel
 {
     public abstract class DomainDatabaseBase<T, TInstance> where TInstance : T
     {

@@ -1,5 +1,5 @@
 ﻿using Mov.Accessors;
-using Mov.Framework;
+using Mov.BaseModel;
 using Mov.Scheduler.Models;
 using System;
 using System.Collections.Generic;

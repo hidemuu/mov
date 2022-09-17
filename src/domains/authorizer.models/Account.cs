@@ -1,5 +1,5 @@
 ﻿using Mov.Accessors;
-using Mov.Framework;
+using Mov.BaseModel;
 using Mov.Utilities.Attributes;
 using Newtonsoft.Json;
 using System;

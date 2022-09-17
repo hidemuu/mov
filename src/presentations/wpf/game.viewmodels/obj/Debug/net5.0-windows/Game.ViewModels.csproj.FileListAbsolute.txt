@@ -38,9 +38,7 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\obj\De
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\obj\Debug\net5.0-windows\Mov.Game.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\obj\Debug\net5.0-windows\ref\Mov.Game.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\obj\Debug\net5.0-windows\Mov.Game.ViewModels.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Framework.dll
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Framework.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Controllers.dll
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Controllers.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Painters.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Painters.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.BaseModel.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.BaseModel.pdb

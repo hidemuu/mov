@@ -16,9 +16,7 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\obj\Debug\ne
 C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\obj\Debug\netstandard2.0\Drawer.Service.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\obj\Debug\netstandard2.0\Mov.Drawer.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\obj\Debug\netstandard2.0\Mov.Drawer.Service.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Framework.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Framework.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Controllers.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Controllers.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Painters.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Painters.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.BaseModel.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.BaseModel.pdb

@@ -122,3 +122,5 @@ C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Auth
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Authorizer.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Authorizer.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Authorizer.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.BaseModel.dll
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.BaseModel.pdb

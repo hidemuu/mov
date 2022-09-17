@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Configurator.Service.Commands
+namespace Mov.UseCases
 {
     public enum ConfiguratorCommandKey
     {

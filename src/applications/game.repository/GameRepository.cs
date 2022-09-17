@@ -1,5 +1,5 @@
 ﻿using Mov.Accessors;
-using Mov.Framework;
+using Mov.BaseModel;
 using Mov.Game.Models;
 using Mov.Game.Models.Maps;
 using System;

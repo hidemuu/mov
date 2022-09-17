@@ -120,3 +120,5 @@ C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Authorizer.Serv
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Authorizer.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Authorizer.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Authorizer.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.BaseModel.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.BaseModel.pdb

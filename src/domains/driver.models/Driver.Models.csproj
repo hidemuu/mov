@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\framework\Framework.csproj" />
+    <Folder Include="Drivers\OpenCV\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Drivers\OpenCV\" />
+    <ProjectReference Include="..\basemodel\BaseModel.csproj" />
   </ItemGroup>
 
 </Project>

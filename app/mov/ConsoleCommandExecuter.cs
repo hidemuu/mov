@@ -1,6 +1,6 @@
 ﻿using Mov.Configurator.Models;
-using Mov.Configurator.Service.Commands;
 using Mov.Controllers;
+using Mov.UseCases;
 using Mov.Utilities;
 using System;
 using System.Collections.Generic;

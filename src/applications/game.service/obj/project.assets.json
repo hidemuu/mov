@@ -744,36 +744,25 @@
           "bin/placeholder/Mov.Accessors.dll": {}
         }
       },
-      "Mov.Controllers/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Mov.Controllers.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Controllers.dll": {}
-        }
-      },
-      "Mov.Framework/1.0.0": {
+      "Mov.BaseModel/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Mov.Accessors": "1.0.0",
-          "Mov.Controllers": "1.0.0",
           "Mov.Utilities": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Mov.Framework.dll": {}
+          "bin/placeholder/Mov.BaseModel.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Mov.Framework.dll": {}
+          "bin/placeholder/Mov.BaseModel.dll": {}
         }
       },
       "Mov.Game.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Framework": "1.0.0",
+          "Mov.BaseModel": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -3331,15 +3320,10 @@
       "path": "../../infrastructures/accessors/Accessors.csproj",
       "msbuildProject": "../../infrastructures/accessors/Accessors.csproj"
     },
-    "Mov.Controllers/1.0.0": {
+    "Mov.BaseModel/1.0.0": {
       "type": "project",
-      "path": "../../infrastructures/controllers/Controllers.csproj",
-      "msbuildProject": "../../infrastructures/controllers/Controllers.csproj"
-    },
-    "Mov.Framework/1.0.0": {
-      "type": "project",
-      "path": "../../domains/framework/Framework.csproj",
-      "msbuildProject": "../../domains/framework/Framework.csproj"
+      "path": "../../domains/basemodel/BaseModel.csproj",
+      "msbuildProject": "../../domains/basemodel/BaseModel.csproj"
     },
     "Mov.Game.Models/1.0.0": {
       "type": "project",

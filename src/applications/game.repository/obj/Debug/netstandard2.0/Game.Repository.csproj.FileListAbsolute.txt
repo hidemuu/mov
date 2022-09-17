@@ -14,7 +14,5 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\obj\Debug\n
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\obj\Debug\netstandard2.0\Game.Repository.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\obj\Debug\netstandard2.0\Mov.Game.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\obj\Debug\netstandard2.0\Mov.Game.Repository.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Framework.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Framework.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Controllers.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Controllers.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.BaseModel.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.BaseModel.pdb

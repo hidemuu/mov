@@ -13,7 +13,7 @@ namespace Mov.Framework
     /// データベースリポジトリ基本クラス
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class DbObjectRepository<T, C> : IDbObjectRepository<T, C> where T : DbObject where C : DbObjectCollection<T>
+    public class DbObjectRepository<T, C> : IDbObjectRepository<T> where T : DbObject where C : DbObjectCollection<T>
     {
         #region フィールド
 

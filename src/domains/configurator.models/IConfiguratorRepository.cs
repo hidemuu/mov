@@ -8,12 +8,12 @@ namespace Mov.Configurator.Models
 {
     public interface IConfiguratorRepository
     {
-        IDbObjectRepository<UserSetting, UserSettingCollection> UserSettings { get; }
+        IDbObjectRepository<UserSetting> UserSettings { get; }
 
-        IDbObjectRepository<Account, AccountCollection> Accounts { get; }
+        IDbObjectRepository<Account> Accounts { get; }
 
-        IDbObjectRepository<Translate, TranslateCollection> Translates { get; }
+        IDbObjectRepository<Translate> Translates { get; }
 
-        IDbObjectRepository<Icon, IconCollection> Icons { get; }
+        IDbObjectRepository<Icon> Icons { get; }
     }
 }

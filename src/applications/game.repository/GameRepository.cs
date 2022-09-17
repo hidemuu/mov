@@ -24,7 +24,7 @@ namespace Mov.Game.Repository
 
         #region プロパティ
 
-        public IDbObjectRepository<Landmark, LandmarkCollection> Landmarks { get; }
+        public IDbObjectRepository<Landmark> Landmarks { get; }
 
         #endregion プロパティ
     }

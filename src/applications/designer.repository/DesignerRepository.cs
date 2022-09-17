@@ -27,13 +27,13 @@ namespace Mov.Designer.Repository
 
         #region プロパティ
 
-        public IDbObjectRepository<Shell, ShellCollection> Shells { get; }
+        public IDbObjectRepository<Shell> Shells { get; }
 
-        public IDbObjectRepository<LayoutNode, LayoutNodeCollection> Nodes { get; }
+        public IDbObjectRepository<LayoutNode> Nodes { get; }
 
-        public IDbObjectRepository<LayoutContent, LayoutContentCollection> Contents { get; }
+        public IDbObjectRepository<LayoutContent> Contents { get; }
 
-        public IDbObjectRepository<Theme, ThemeCollection> Themes { get; }
+        public IDbObjectRepository<Theme> Themes { get; }
 
         #endregion プロパティ
     }

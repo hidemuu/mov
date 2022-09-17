@@ -23,7 +23,7 @@ namespace Mov.Drawer.Repository
 
         #region プロパティ
 
-        public IDbObjectRepository<DrawItem, DrawItemCollection> DrawItems { get; }
+        public IDbObjectRepository<DrawItem> DrawItems { get; }
 
         #endregion プロパティ
     }

@@ -20,13 +20,13 @@ namespace Mov.Configurator.Repository
 
         #region プロパティ
 
-        public IDbObjectRepository<UserSetting, UserSettingCollection> UserSettings { get; }
+        public IDbObjectRepository<UserSetting> UserSettings { get; }
 
-        public IDbObjectRepository<Account, AccountCollection> Accounts { get; }
+        public IDbObjectRepository<Account> Accounts { get; }
 
-        public IDbObjectRepository<Translate, TranslateCollection> Translates { get; }
+        public IDbObjectRepository<Translate> Translates { get; }
 
-        public IDbObjectRepository<Icon, IconCollection> Icons { get; }
+        public IDbObjectRepository<Icon> Icons { get; }
 
         #endregion
     }

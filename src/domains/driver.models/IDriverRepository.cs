@@ -8,18 +8,18 @@ namespace Mov.Driver.Models
 {
     public interface IDriverRepository
     {
-        IDbObjectRepository<Error, ErrorCollection> Errors { get; }
+        IDbObjectRepository<Error> Errors { get; }
 
-        IDbObjectRepository<Macro, MacroCollection> Macros { get; }
+        IDbObjectRepository<Macro> Macros { get; }
 
-        IDbObjectRepository<Command, CommandCollection> Commands { get; }
+        IDbObjectRepository<Command> Commands { get; }
 
-        IDbObjectRepository<Query, QueryCollection> Queries { get; }
+        IDbObjectRepository<Query> Queries { get; }
 
-        IDbObjectRepository<Variable, VariableCollection> Variables { get; }
+        IDbObjectRepository<Variable> Variables { get; }
 
-        IDbObjectRepository<Schema, SchemaCollection> Schemas { get; }
+        IDbObjectRepository<Schema> Schemas { get; }
 
-        IDbObjectRepository<Connect, ConnectCollection> Connects { get; }
+        IDbObjectRepository<Connect> Connects { get; }
     }
 }

@@ -30,19 +30,19 @@ namespace Mov.Driver.Repository
 
         #region プロパティ
 
-        public IDbObjectRepository<Command, CommandCollection> Commands { get; }
+        public IDbObjectRepository<Command> Commands { get; }
 
-        public IDbObjectRepository<Query, QueryCollection> Queries { get; }
+        public IDbObjectRepository<Query> Queries { get; }
 
-        public IDbObjectRepository<Error, ErrorCollection> Errors { get; }
+        public IDbObjectRepository<Error> Errors { get; }
 
-        public IDbObjectRepository<Macro, MacroCollection> Macros { get; }
+        public IDbObjectRepository<Macro> Macros { get; }
 
-        public IDbObjectRepository<Variable, VariableCollection> Variables { get; }
+        public IDbObjectRepository<Variable> Variables { get; }
 
-        public IDbObjectRepository<Schema, SchemaCollection> Schemas { get; }
+        public IDbObjectRepository<Schema> Schemas { get; }
 
-        public IDbObjectRepository<Connect, ConnectCollection> Connects { get; }
+        public IDbObjectRepository<Connect> Connects { get; }
 
         #endregion
     }

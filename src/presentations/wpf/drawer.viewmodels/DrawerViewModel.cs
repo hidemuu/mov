@@ -33,7 +33,7 @@ namespace Mov.Drawer.ViewModels
 
         public override DrawModel Model { get; } = new DrawModel();
         
-        protected override ScreenCreatorBase Service { get; set; }
+        protected override GraphicControllerBase Service { get; set; }
 
         public ReactiveCollection<string> Canvases { get; } = new ReactiveCollection<string>();
 

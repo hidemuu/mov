@@ -108,3 +108,17 @@ C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Anal
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Analizer.Service.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Bom.Service.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Painters.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Translator.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Translator.Service.dll
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.UseCases.dll
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Translator.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Translator.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.UseCases.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Translator.Models.dll
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Translator.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Authorizer.Models.dll
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Authorizer.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Authorizer.Service.dll
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Authorizer.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Authorizer.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Authorizer.Service.pdb

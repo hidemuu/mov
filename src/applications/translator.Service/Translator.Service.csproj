@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Translator.Service</AssemblyName>
+    <RootNamespace>Mov.Translator.Service</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\translator.repository\Translator.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

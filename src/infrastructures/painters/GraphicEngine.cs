@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Drawer.Models
 {
-    public class DrawEngine
+    public class GraphicEngine
     {
         #region フィールド
 
@@ -22,7 +22,7 @@ namespace Mov.Drawer.Models
 
         #region コンストラクター
 
-        public DrawEngine()
+        public GraphicEngine()
         {
         }
 

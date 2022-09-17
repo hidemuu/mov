@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Drawer.Service.Canvas
 {
-    public abstract class CanvasServiceBase : ScreenCreatorBase, ICanvasService
+    public abstract class CanvasServiceBase : GraphicControllerBase, ICanvasService
     {
 
         #region プロパティ
@@ -23,7 +23,7 @@ namespace Mov.Drawer.Service.Canvas
         /// <summary>
         /// 描画エンジン
         /// </summary>
-        protected DrawEngine DrawEngine { get; private set; }
+        protected GraphicEngine DrawEngine { get; private set; }
         
         #endregion プロパティ
 
@@ -32,7 +32,7 @@ namespace Mov.Drawer.Service.Canvas
         public CanvasServiceBase(IDrawerRepository repository) : base()
         {
             this.Repository = repository;
-            this.DrawEngine = new DrawEngine();
+            this.DrawEngine = new GraphicEngine();
         }
 
         #endregion コンストラクター

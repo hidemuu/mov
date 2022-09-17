@@ -13,7 +13,7 @@ namespace Mov.Game.Service.Puzzle
     /// <summary>
     /// ハノイの塔のゲームサービス
     /// </summary>
-    public class TowerOfHanoiGameService : ScreenCreatorBase, IConsoleGameService
+    public class TowerOfHanoiGameService : GraphicControllerBase, IConsoleGameService
     {
         #region フィールド
 

@@ -9,11 +9,5 @@ namespace Mov.Configurator.Models
     public interface IConfiguratorRepository
     {
         IDbObjectRepository<UserSetting> UserSettings { get; }
-
-        IDbObjectRepository<Account> Accounts { get; }
-
-        IDbObjectRepository<Translate> Translates { get; }
-
-        IDbObjectRepository<Icon> Icons { get; }
     }
 }

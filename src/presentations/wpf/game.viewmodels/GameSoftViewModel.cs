@@ -34,7 +34,7 @@ namespace Mov.Game.ViewModels
         #region プロパティ
         public override GameSoftModel Model { get; } = new GameSoftModel();
         
-        protected override ScreenCreatorBase Service { get; set; }
+        protected override GraphicControllerBase Service { get; set; }
 
         #endregion プロパティ
 

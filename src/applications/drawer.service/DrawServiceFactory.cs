@@ -34,7 +34,7 @@ namespace Mov.Drawer.Service
 
         #region メソッド
 
-        public ScreenCreatorBase Create(string code)
+        public GraphicControllerBase Create(string code)
         {
 
             Type type = Type.GetType(baseName + "." + code + BASE_TYPE_NAME);
@@ -43,7 +43,7 @@ namespace Mov.Drawer.Service
                 Debug.Assert(false, type.FullName);
                 return null;
             };
-            return (ScreenCreatorBase)Activator.CreateInstance(type, this.repository);
+            return (GraphicControllerBase)Activator.CreateInstance(type, this.repository);
         }
 
         #endregion メソッド

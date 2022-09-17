@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Painters
 {
-    public abstract class ScreenCreatorBase
+    public abstract class GraphicControllerBase
     {
         #region フィールド
 
@@ -58,7 +58,7 @@ namespace Mov.Painters
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ScreenCreatorBase()
+        public GraphicControllerBase()
         {
             screenBitmap = new Bitmap(FrameWidth, FrameHeight);
             ScreenGraphics = Graphics.FromImage(screenBitmap);

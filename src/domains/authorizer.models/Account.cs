@@ -11,7 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Configurator.Models
+namespace Mov.Authorizer.Models
 {
     /// <summary>
     /// アカウントリスト

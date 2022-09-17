@@ -17,7 +17,7 @@ namespace Mov.Game.Service.Machine
     /// <summary>
     /// パックマンっぽいゲームサービス
     /// </summary>
-    public class PackmanGameService : ScreenCreatorBase, IMachineGameService
+    public class PackmanGameService : GraphicControllerBase, IMachineGameService
     {
         #region フィールド
 

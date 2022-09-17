@@ -109,29 +109,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\analizer.service\\Analizer.Service.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\analizer.service\\Analizer.Service.csproj"
-              },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\bom.service\\Bom.Service.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\bom.service\\Bom.Service.csproj"
-              },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\configurator.service\\Configurator.Service.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\configurator.service\\Configurator.Service.csproj"
-              },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.service\\Designer.Service.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.service\\Designer.Service.csproj"
-              },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\drawer.service\\Drawer.Service.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\drawer.service\\Drawer.Service.csproj"
-              },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\driver.service\\Driver.Service.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\driver.service\\Driver.Service.csproj"
-              },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.service\\Game.Service.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.service\\Game.Service.csproj"
-              },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\scheduler.service\\Scheduler.Service.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\scheduler.service\\Scheduler.Service.csproj"
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\usecases\\UseCases.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\usecases\\UseCases.csproj"
               }
             }
           }
@@ -357,6 +336,142 @@
             "projectReferences": {
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\analizer.repository\\Analizer.Repository.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\analizer.repository\\Analizer.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\authorizer.repository\\Authorizer.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\authorizer.repository\\Authorizer.Repository.csproj",
+        "projectName": "Mov.Authorizer.Repository",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\authorizer.repository\\Authorizer.Repository.csproj",
+        "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\authorizer.repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\nando\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\authorizer.models\\Authorizer.Models.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\authorizer.models\\Authorizer.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\authorizer.service\\Authorizer.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\authorizer.service\\Authorizer.Service.csproj",
+        "projectName": "Mov.Authorizer.Service",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\authorizer.service\\Authorizer.Service.csproj",
+        "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\authorizer.service\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\nando\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\authorizer.repository\\Authorizer.Repository.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\authorizer.repository\\Authorizer.Repository.csproj"
               }
             }
           }
@@ -1374,6 +1489,237 @@
         }
       }
     },
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\translator.repository\\Translator.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\translator.repository\\Translator.Repository.csproj",
+        "projectName": "Mov.Translator.Repository",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\translator.repository\\Translator.Repository.csproj",
+        "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\translator.repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\nando\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\translator.models\\Translator.Models.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\translator.models\\Translator.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\translator.service\\Translator.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\translator.service\\Translator.Service.csproj",
+        "projectName": "Mov.Translator.Service",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\translator.service\\Translator.Service.csproj",
+        "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\translator.service\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\nando\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\translator.repository\\Translator.Repository.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\translator.repository\\Translator.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\usecases\\UseCases.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\usecases\\UseCases.csproj",
+        "projectName": "Mov.UseCases",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\usecases\\UseCases.csproj",
+        "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\usecases\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\nando\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\analizer.service\\Analizer.Service.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\analizer.service\\Analizer.Service.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\authorizer.service\\Authorizer.Service.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\authorizer.service\\Authorizer.Service.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\bom.service\\Bom.Service.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\bom.service\\Bom.Service.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\configurator.service\\Configurator.Service.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\configurator.service\\Configurator.Service.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.service\\Designer.Service.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.service\\Designer.Service.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\drawer.service\\Drawer.Service.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\drawer.service\\Drawer.Service.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\driver.service\\Driver.Service.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\driver.service\\Driver.Service.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.service\\Game.Service.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.service\\Game.Service.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\scheduler.service\\Scheduler.Service.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\scheduler.service\\Scheduler.Service.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\translator.service\\Translator.Service.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\translator.service\\Translator.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\analizer.models\\Analizer.Models.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -1382,6 +1728,74 @@
         "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\analizer.models\\Analizer.Models.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\analizer.models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\nando\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\framework\\Framework.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\framework\\Framework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\authorizer.models\\Authorizer.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\authorizer.models\\Authorizer.Models.csproj",
+        "projectName": "Mov.Authorizer.Models",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\authorizer.models\\Authorizer.Models.csproj",
+        "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\authorizer.models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -1948,6 +2362,74 @@
         "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\scheduler.models\\Scheduler.Models.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\scheduler.models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\nando\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\framework\\Framework.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\framework\\Framework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\translator.models\\Translator.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\translator.models\\Translator.Models.csproj",
+        "projectName": "Mov.Translator.Models",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\translator.models\\Translator.Models.csproj",
+        "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\translator.models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

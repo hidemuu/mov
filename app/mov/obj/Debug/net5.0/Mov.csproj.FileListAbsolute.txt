@@ -106,3 +106,17 @@ C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Bom.Service.pdb
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Painters.pdb
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Drawer.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Drawer.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Translator.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Translator.Service.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.UseCases.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Translator.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Translator.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.UseCases.pdb
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Translator.Models.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Translator.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Authorizer.Models.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Authorizer.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Authorizer.Service.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Authorizer.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Authorizer.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Authorizer.Service.pdb

@@ -37,7 +37,7 @@ namespace Mov.Drawer.ViewModels
         #region プロパティ
 
         public abstract DrawModel Model { get; }
-        protected abstract ScreenCreatorBase Service { get; set; }
+        protected abstract GraphicControllerBase Service { get; set; }
         public ReactiveTimer Timer { get; } = new ReactiveTimer(TimeSpan.FromMilliseconds(10), new SynchronizationContextScheduler(SynchronizationContext.Current));
 
         #endregion プロパティ

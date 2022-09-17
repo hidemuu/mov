@@ -111,18 +111,12 @@ namespace Mov.Configurator.ViewModels
         private void Import()
         {
             repository.UserSettings.Import();
-            repository.Accounts.Import();
-            repository.Translates.Import();
-            repository.Icons.Import();
         }
 
         private void Export()
         {
             PostItems();
             repository.UserSettings.Export();
-            repository.Accounts.Export();
-            repository.Translates.Export();
-            repository.Icons.Export();
         }
 
         private void Add(object parameter)
@@ -132,18 +126,6 @@ namespace Mov.Configurator.ViewModels
                 case DATA_NAME_USER_SETTINGS:
                     repository.UserSettings.Put(new UserSetting());
                     BindConfigs();
-                    break;
-                case DATA_NAME_ACCOUNTS:
-                    repository.Accounts.Put(new Account());
-                    BindAccounts();
-                    break;
-                case DATA_NAME_TRANSLATES:
-                    repository.Translates.Put(new Translate());
-                    BindTranslates();
-                    break;
-                case DATA_NAME_ICONS:
-                    repository.Icons.Put(new Icon());
-                    BindIcons();
                     break;
             }
         }
@@ -156,18 +138,6 @@ namespace Mov.Configurator.ViewModels
                 case DATA_NAME_USER_SETTINGS:
                     repository.UserSettings.Delete((Guid)selectedItem[0].GetValue());
                     BindConfigs();
-                    break;
-                case DATA_NAME_ACCOUNTS:
-                    repository.Accounts.Delete((Guid)selectedItem[0].GetValue());
-                    BindAccounts();
-                    break;
-                case DATA_NAME_TRANSLATES:
-                    repository.Translates.Delete((Guid)selectedItem[0].GetValue());
-                    BindTranslates();
-                    break;
-                case DATA_NAME_ICONS:
-                    repository.Icons.Delete((Guid)selectedItem[0].GetValue());
-                    BindIcons();
                     break;
             }
         }
@@ -183,15 +153,6 @@ namespace Mov.Configurator.ViewModels
                 case DATA_NAME_USER_SETTINGS:
                     BindConfigs();
                     break;
-                case DATA_NAME_ACCOUNTS:
-                    BindAccounts();
-                    break;
-                case DATA_NAME_TRANSLATES:
-                    BindTranslates();
-                    break;
-                case DATA_NAME_ICONS:
-                    BindIcons();
-                    break;
             }
         }
 
@@ -206,38 +167,7 @@ namespace Mov.Configurator.ViewModels
             Attributes.Value = GetColumnAttributes<UserSetting>(properties.Select(x => x.name)).ToArray();
         }
 
-        private void BindAccounts()
-        {
-            Items.Clear();
-            var properties = Account.GetProperties();
-            foreach (Account item in this.repository?.Accounts?.Gets())
-            {
-                Items.Add(GetColumnItems<Account>(properties.Select(x => x.propertyInfo), item).ToArray());
-            }
-            Attributes.Value = GetColumnAttributes<Account>(properties.Select(x => x.name)).ToArray();
-        }
-
-        private void BindTranslates()
-        {
-            Items.Clear();
-            var properties = Translate.GetProperties();
-            foreach (Translate item in this.repository?.Translates?.Gets())
-            {
-                Items.Add(GetColumnItems<Translate>(properties.Select(x => x.propertyInfo), item).ToArray());
-            }
-            Attributes.Value = GetColumnAttributes<Translate>(properties.Select(x => x.name)).ToArray();
-        }
-
-        private void BindIcons()
-        {
-            Items.Clear();
-            var properties = Icon.GetProperties();
-            foreach (Icon item in this.repository?.Icons?.Gets())
-            {
-                Items.Add(GetColumnItems<Icon>(properties.Select(x => x.propertyInfo), item).ToArray());
-            }
-            Attributes.Value = GetColumnAttributes<Icon>(properties.Select(x => x.name)).ToArray();
-        }
+       
 
 
         private IEnumerable<ColumnItem> GetColumnItems<T>(IEnumerable<PropertyInfo> propertyInfos, T item)
@@ -263,15 +193,6 @@ namespace Mov.Configurator.ViewModels
                 case DATA_NAME_USER_SETTINGS:
                     PostConfigs();
                     break;
-                case DATA_NAME_ACCOUNTS:
-                    PostAccounts();
-                    break;
-                case DATA_NAME_TRANSLATES:
-                    PostTranslates();
-                    break;
-                case DATA_NAME_ICONS:
-                    PostIcons();
-                    break;
             }
         }
 
@@ -281,23 +202,7 @@ namespace Mov.Configurator.ViewModels
             this.repository?.UserSettings.Posts(configs);
         }
 
-        private void PostAccounts()
-        {
-            var accounts = GetDbObjects<Account>(Account.GetProperties().Select(x => x.propertyInfo)).ToList();
-            this.repository?.Accounts.Posts(accounts);
-        }
-
-        private void PostTranslates()
-        {
-            var translates = GetDbObjects<Translate>(Translate.GetProperties().Select(x => x.propertyInfo)).ToList();
-            this.repository?.Translates.Posts(translates);
-        }
-
-        private void PostIcons()
-        {
-            var icons = GetDbObjects<Icon>(Icon.GetProperties().Select(x => x.propertyInfo)).ToList();
-            this.repository?.Icons.Posts(icons);
-        }
+       
 
         private IEnumerable<T> GetDbObjects<T>(IEnumerable<PropertyInfo> propertyInfos)
         {

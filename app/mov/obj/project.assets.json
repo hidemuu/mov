@@ -424,18 +424,50 @@
           "bin/placeholder/Mov.Analizer.Service.dll": {}
         }
       },
+      "Mov.Authorizer.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Framework": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Authorizer.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Authorizer.Models.dll": {}
+        }
+      },
+      "Mov.Authorizer.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Authorizer.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Authorizer.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Authorizer.Repository.dll": {}
+        }
+      },
+      "Mov.Authorizer.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Authorizer.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Authorizer.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Authorizer.Service.dll": {}
+        }
+      },
       "Mov.BaseLib/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Analizer.Service": "1.0.0",
-          "Mov.Bom.Service": "1.0.0",
-          "Mov.Configurator.Service": "1.0.0",
-          "Mov.Designer.Service": "1.0.0",
-          "Mov.Drawer.Service": "1.0.0",
-          "Mov.Driver.Service": "1.0.0",
-          "Mov.Game.Service": "1.0.0",
-          "Mov.Scheduler.Service": "1.0.0"
+          "Mov.UseCases": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.BaseLib.dll": {}
@@ -765,6 +797,67 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Scheduler.Service.dll": {}
+        }
+      },
+      "Mov.Translator.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Framework": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Translator.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Translator.Models.dll": {}
+        }
+      },
+      "Mov.Translator.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Translator.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Translator.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Translator.Repository.dll": {}
+        }
+      },
+      "Mov.Translator.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Translator.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Translator.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Translator.Service.dll": {}
+        }
+      },
+      "Mov.UseCases/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Analizer.Service": "1.0.0",
+          "Mov.Authorizer.Service": "1.0.0",
+          "Mov.Bom.Service": "1.0.0",
+          "Mov.Configurator.Service": "1.0.0",
+          "Mov.Designer.Service": "1.0.0",
+          "Mov.Drawer.Service": "1.0.0",
+          "Mov.Driver.Service": "1.0.0",
+          "Mov.Game.Service": "1.0.0",
+          "Mov.Scheduler.Service": "1.0.0",
+          "Mov.Translator.Service": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.UseCases.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.UseCases.dll": {}
         }
       },
       "Mov.Utilities/1.0.0": {
@@ -1550,6 +1643,21 @@
       "path": "../../src/applications/analizer.service/Analizer.Service.csproj",
       "msbuildProject": "../../src/applications/analizer.service/Analizer.Service.csproj"
     },
+    "Mov.Authorizer.Models/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/authorizer.models/Authorizer.Models.csproj",
+      "msbuildProject": "../../src/domains/authorizer.models/Authorizer.Models.csproj"
+    },
+    "Mov.Authorizer.Repository/1.0.0": {
+      "type": "project",
+      "path": "../../src/applications/authorizer.repository/Authorizer.Repository.csproj",
+      "msbuildProject": "../../src/applications/authorizer.repository/Authorizer.Repository.csproj"
+    },
+    "Mov.Authorizer.Service/1.0.0": {
+      "type": "project",
+      "path": "../../src/applications/authorizer.service/Authorizer.Service.csproj",
+      "msbuildProject": "../../src/applications/authorizer.service/Authorizer.Service.csproj"
+    },
     "Mov.BaseLib/1.0.0": {
       "type": "project",
       "path": "../../lib/baselib/BaseLib.csproj",
@@ -1674,6 +1782,26 @@
       "type": "project",
       "path": "../../src/applications/scheduler.service/Scheduler.Service.csproj",
       "msbuildProject": "../../src/applications/scheduler.service/Scheduler.Service.csproj"
+    },
+    "Mov.Translator.Models/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/translator.models/Translator.Models.csproj",
+      "msbuildProject": "../../src/domains/translator.models/Translator.Models.csproj"
+    },
+    "Mov.Translator.Repository/1.0.0": {
+      "type": "project",
+      "path": "../../src/applications/translator.repository/Translator.Repository.csproj",
+      "msbuildProject": "../../src/applications/translator.repository/Translator.Repository.csproj"
+    },
+    "Mov.Translator.Service/1.0.0": {
+      "type": "project",
+      "path": "../../src/applications/translator.service/Translator.Service.csproj",
+      "msbuildProject": "../../src/applications/translator.service/Translator.Service.csproj"
+    },
+    "Mov.UseCases/1.0.0": {
+      "type": "project",
+      "path": "../../src/applications/usecases/UseCases.csproj",
+      "msbuildProject": "../../src/applications/usecases/UseCases.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",

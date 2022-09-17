@@ -33,6 +33,6 @@ namespace Mov.Bom.Repository.Rest
             await _http.PostAsync<Customer, Customer>("customer", customer);
 
         public async Task DeleteAsync(Guid customerId) =>
-            await _http.DeleteAsync("customer", customerId);
+            await _http.DeleteAsync("customer", customerId.ToString());
     }
 }

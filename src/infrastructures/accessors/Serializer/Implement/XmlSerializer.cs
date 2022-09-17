@@ -22,10 +22,10 @@ namespace Mov.Accessors
         /// コンストラクタ
         /// </summary>
         /// <param name="path">ファイルパス</param>
-        public XmlSerializer(string endpoint, string encoding)
+        public XmlSerializer(string endpoint, string encoding = SerializeConstants.ENCODE_NAME_UTF8)
         {
             this.endpoint = endpoint;
-            if (string.IsNullOrEmpty(Path.GetExtension(endpoint))) this.endpoint += DbConstants.PATH_EXTENSION_XML;
+            if (string.IsNullOrEmpty(Path.GetExtension(endpoint))) this.endpoint += SerializeConstants.PATH_EXTENSION_XML;
             this.encoding = Encoding.GetEncoding(encoding);
         }
 

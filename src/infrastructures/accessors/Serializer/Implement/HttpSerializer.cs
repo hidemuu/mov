@@ -14,7 +14,9 @@ namespace Mov.Accessors.Serializer
         /// The Base URL for the API.
         /// /// </summary>
         private readonly string endpoint;
-        
+
+        private readonly Encoding encoding;
+
         #endregion フィールド
 
         #region コンストラクター
@@ -23,9 +25,10 @@ namespace Mov.Accessors.Serializer
         /// コンストラクター
         /// </summary>
         /// <param name="endpoint"></param>
-        public HttpSerializer(string endpoint)
+        public HttpSerializer(string endpoint, string encoding = SerializeConstants.ENCODE_NAME_UTF8)
         {
             this.endpoint = endpoint;
+            this.encoding = Encoding.GetEncoding(encoding);
         }
 
         #endregion コンストラクター
@@ -49,7 +52,7 @@ namespace Mov.Accessors.Serializer
         {
             using (var client = BaseClient())
             {
-                var responseTask = client.PostAsync(url, new JsonStringContent(body));
+                var responseTask = client.PostAsync(url, new JsonStringContent(body, this.encoding));
                 Task.WhenAll(responseTask);
                 return default;
             }
@@ -77,7 +80,7 @@ namespace Mov.Accessors.Serializer
         {
             using (var client = BaseClient())
             {
-                var response = await client.PostAsync(url, new JsonStringContent(body));
+                var response = await client.PostAsync(url, new JsonStringContent(body, this.encoding));
                 string json = await response.Content.ReadAsStringAsync();
                 TResponse obj = JsonConvert.DeserializeObject<TResponse>(json);
                 return obj;
@@ -88,11 +91,11 @@ namespace Mov.Accessors.Serializer
         /// Makes an HTTP DELETE request to the given controller and includes all the given
         /// object's properties as URL parameters. Returns the deserialized response content.
         /// </summary>
-        public async Task DeleteAsync(string url, Guid objectId)
+        public async Task DeleteAsync(string url, string key)
         {
             using (var client = BaseClient())
             {
-                await client.DeleteAsync($"{url}/{objectId}");
+                await client.DeleteAsync($"{url}/{key}");
             }
         }
 
@@ -113,8 +116,8 @@ namespace Mov.Accessors.Serializer
             /// <summary>
             /// Creates <see cref="StringContent"/> formatted as UTF8 application/json.
             /// </summary>
-            public JsonStringContent(object obj)
-                : base(JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json")
+            public JsonStringContent(object obj, Encoding encoding)
+                : base(JsonConvert.SerializeObject(obj), encoding, "application/json")
             { }
         }
 

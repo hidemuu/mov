@@ -14,7 +14,7 @@ namespace Mov.Designer.Repository
         /// コンストラクター
         /// </summary>
         /// <param name="encoding"></param>
-        public DesignerRepository(string dir, string extension, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(extension)
+        public DesignerRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(extension)
         {
             Shells = new DbObjectRepository<Shell, ShellCollection>(dir, GetRelativePath("shell"), encoding);
             Nodes = new DbObjectRepository<LayoutNode, LayoutNodeCollection>(dir, GetRelativePath("node"), encoding);

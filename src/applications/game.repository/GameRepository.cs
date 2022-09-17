@@ -14,7 +14,7 @@ namespace Mov.Game.Repository
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public GameRepository(string dir, string extension, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(extension)
+        public GameRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(extension)
         {
             Landmarks = new DbObjectRepository<Landmark, LandmarkCollection>(dir, GetRelativePath("landmark"), encoding);
         }

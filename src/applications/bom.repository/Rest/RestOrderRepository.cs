@@ -36,6 +36,6 @@ namespace Mov.Bom.Repository.Rest
             await _http.PostAsync<Order, Order>("order", order);
 
         public async Task DeleteAsync(Guid orderId) =>
-            await _http.DeleteAsync("order", orderId);
+            await _http.DeleteAsync("order", orderId.ToString());
     }
 }

@@ -14,7 +14,7 @@ namespace Mov.Driver.Repository
         /// コンストラクター
         /// </summary>
         /// <param name="encoding"></param>
-        public DriverRepository(string dir, string extension, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(extension)
+        public DriverRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(extension)
         {
             Commands = new DbObjectRepository<Command, CommandCollection>(dir, GetRelativePath("command"), encoding);
             Queries = new DbObjectRepository<Query, QueryCollection>(dir, GetRelativePath("query"), encoding);

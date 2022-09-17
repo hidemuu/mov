@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\infrastructures\accessors\Accessors.csproj" />
+    <ProjectReference Include="..\framework\Framework.csproj" />
   </ItemGroup>
 
 </Project>

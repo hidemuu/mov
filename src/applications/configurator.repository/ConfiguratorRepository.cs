@@ -9,7 +9,7 @@ namespace Mov.Configurator.Repository
     public class ConfiguratorRepository : DbObjectRepositoryBase, IConfiguratorRepository
     {
 
-        public ConfiguratorRepository(string dir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(extension)
+        public ConfiguratorRepository(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(extension)
         {
             UserSettings = new DbObjectRepository<UserSetting, UserSettingCollection>(dir, GetRelativePath("user_setting"), encode);
             Accounts = new DbObjectRepository<Account, AccountCollection>(dir, GetRelativePath("account"), encode);

@@ -650,25 +650,13 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
-          "Mov.Bom.Models": "1.0.0",
           "Mov.Bom.Repository": "1.0.0",
-          "Mov.Configurator.Models": "1.0.0",
-          "Mov.Configurator.Repository": "1.0.0",
           "Mov.Configurator.Service": "1.0.0",
-          "Mov.Designer.Models": "1.0.0",
-          "Mov.Designer.Repository": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
-          "Mov.Driver.Models": "1.0.0",
-          "Mov.Driver.Repository": "1.0.0",
           "Mov.Driver.Service": "1.0.0",
-          "Mov.Game.Models": "1.0.0",
-          "Mov.Game.Repository": "1.0.0",
           "Mov.Game.Service": "1.0.0",
-          "Mov.Scheduler.Models": "1.0.0",
           "Mov.Scheduler.Repository": "1.0.0",
-          "Mov.Scheduler.Service": "1.0.0",
-          "Mov.Utilities": "1.0.0"
+          "Mov.Scheduler.Service": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.BaseLib.dll": {}
@@ -681,7 +669,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0"
+          "Mov.Framework": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Bom.Models.dll": {}
@@ -739,8 +727,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
-          "Mov.Utilities": "1.0.0",
+          "Mov.Framework": "1.0.0",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
@@ -817,7 +804,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
+          "Mov.Framework": "1.0.0",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
@@ -892,7 +879,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
+          "Mov.Framework": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -966,7 +953,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0"
+          "Mov.Framework": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Driver.Models.dll": {}
@@ -1037,11 +1024,24 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "Mov.Framework/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Framework.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Framework.dll": {}
+        }
+      },
       "Mov.Game.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
+          "Mov.Framework": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -2627,6 +2627,11 @@
       "path": "../../src/presentations/wpf/driver.views/Driver.Views.csproj",
       "msbuildProject": "../../src/presentations/wpf/driver.views/Driver.Views.csproj"
     },
+    "Mov.Framework/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/framework/Framework.csproj",
+      "msbuildProject": "../../src/domains/framework/Framework.csproj"
+    },
     "Mov.Game.Models/1.0.0": {
       "type": "project",
       "path": "../../src/domains/game.models/Game.Models.csproj",
@@ -2696,22 +2701,13 @@
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
       "Mov.BaseLib >= 1.0.0",
-      "Mov.Bom.ViewModels >= 1.0.0",
       "Mov.Bom.Views >= 1.0.0",
-      "Mov.Configurator.ViewModels >= 1.0.0",
       "Mov.Configurator.Views >= 1.0.0",
-      "Mov.Designer.ViewModels >= 1.0.0",
       "Mov.Designer.Views >= 1.0.0",
-      "Mov.Drawer.ViewModels >= 1.0.0",
       "Mov.Drawer.Views >= 1.0.0",
-      "Mov.Driver.ViewModels >= 1.0.0",
       "Mov.Driver.Views >= 1.0.0",
-      "Mov.Game.ViewModels >= 1.0.0",
       "Mov.Game.Views >= 1.0.0",
-      "Mov.Scheduler.ViewModels >= 1.0.0",
-      "Mov.Scheduler.Views >= 1.0.0",
-      "Mov.WpfControls >= 1.0.0",
-      "Mov.WpfDesigns >= 1.0.0"
+      "Mov.Scheduler.Views >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2754,50 +2750,23 @@
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\lib\\baselib\\BaseLib.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\lib\\baselib\\BaseLib.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfcontrols\\WpfControls.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfcontrols\\WpfControls.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfdesigns\\WpfDesigns.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfdesigns\\WpfDesigns.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\bom.viewmodels\\Bom.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\bom.viewmodels\\Bom.ViewModels.csproj"
-            },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\bom.views\\Bom.Views.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\bom.views\\Bom.Views.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\configurator.viewmodels\\Configurator.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\configurator.viewmodels\\Configurator.ViewModels.csproj"
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\configurator.views\\Configurator.Views.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\configurator.views\\Configurator.Views.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.viewmodels\\Designer.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.viewmodels\\Designer.ViewModels.csproj"
-            },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.views\\Designer.Views.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.views\\Designer.Views.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.viewmodels\\Drawer.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.viewmodels\\Drawer.ViewModels.csproj"
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.views\\Drawer.Views.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.views\\Drawer.Views.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\driver.viewmodels\\Driver.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\driver.viewmodels\\Driver.ViewModels.csproj"
-            },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\driver.views\\Driver.Views.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\driver.views\\Driver.Views.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.viewmodels\\Game.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.viewmodels\\Game.ViewModels.csproj"
-            },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.views\\Game.Views.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.views\\Game.Views.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.viewmodels\\Scheduler.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.viewmodels\\Scheduler.ViewModels.csproj"
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.views\\Scheduler.Views.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.views\\Scheduler.Views.csproj"

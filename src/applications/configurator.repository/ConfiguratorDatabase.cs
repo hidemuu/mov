@@ -18,7 +18,7 @@ namespace Mov.Configurator.Repository
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ConfiguratorDatabase(string dir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
+        public ConfiguratorDatabase(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
         {
             
         }

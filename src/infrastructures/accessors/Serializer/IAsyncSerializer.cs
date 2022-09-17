@@ -14,6 +14,6 @@ namespace Mov.Accessors.Serializer
 
         Task<TResponse> PostAsync<TRequest, TResponse>(string url, TRequest body);
 
-        Task DeleteAsync(string url, Guid objectId);
+        Task DeleteAsync(string url, string key);
     }
 }

@@ -555,7 +555,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
+          "Mov.Framework": "1.0.0",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
@@ -590,6 +590,19 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Designer.Service.dll": {}
+        }
+      },
+      "Mov.Framework/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Framework.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Framework.dll": {}
         }
       },
       "Mov.Utilities/1.0.0": {
@@ -1756,6 +1769,11 @@
       "type": "project",
       "path": "../../../applications/designer.service/Designer.Service.csproj",
       "msbuildProject": "../../../applications/designer.service/Designer.Service.csproj"
+    },
+    "Mov.Framework/1.0.0": {
+      "type": "project",
+      "path": "../../../domains/framework/Framework.csproj",
+      "msbuildProject": "../../../domains/framework/Framework.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",

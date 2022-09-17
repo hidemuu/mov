@@ -11,9 +11,9 @@ namespace Mov.Accessors
         private readonly HttpSerializer serializer;
         private readonly string key;
 
-        public RestRepositoryBase(string url, string key)
+        public RestRepositoryBase(string url, string key, string encode = SerializeConstants.ENCODE_NAME_UTF8)
         {
-            this.serializer = new HttpSerializer(url);
+            this.serializer = new HttpSerializer(url, encode);
             this.key = "?apikey=" + key;
         }
 

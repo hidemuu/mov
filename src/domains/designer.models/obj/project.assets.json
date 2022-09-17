@@ -736,6 +736,19 @@
           "bin/placeholder/Mov.Accessors.dll": {}
         }
       },
+      "Mov.Framework/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Framework.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Framework.dll": {}
+        }
+      },
       "Mov.Utilities/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -3220,6 +3233,11 @@
       "path": "../../infrastructures/accessors/Accessors.csproj",
       "msbuildProject": "../../infrastructures/accessors/Accessors.csproj"
     },
+    "Mov.Framework/1.0.0": {
+      "type": "project",
+      "path": "../framework/Framework.csproj",
+      "msbuildProject": "../framework/Framework.csproj"
+    },
     "Mov.Utilities/1.0.0": {
       "type": "project",
       "path": "../../infrastructures/utilities/Utilities.csproj",
@@ -3228,7 +3246,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Mov.Accessors >= 1.0.0",
+      "Mov.Framework >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
       "System.ComponentModel.Annotations >= 5.0.0"
     ]
@@ -3270,8 +3288,8 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\accessors\\Accessors.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\accessors\\Accessors.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\framework\\Framework.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\framework\\Framework.csproj"
             }
           }
         }

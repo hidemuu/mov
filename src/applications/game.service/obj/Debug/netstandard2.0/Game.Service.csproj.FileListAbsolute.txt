@@ -22,3 +22,5 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\obj\Debug\nets
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\obj\Debug\netstandard2.0\Game.Service.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\obj\Debug\netstandard2.0\Mov.Game.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\obj\Debug\netstandard2.0\Mov.Game.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Framework.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Framework.pdb

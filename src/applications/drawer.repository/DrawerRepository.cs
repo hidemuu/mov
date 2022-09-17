@@ -13,7 +13,7 @@ namespace Mov.Drawer.Repository
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public DrawerRepository(string dir, string extension, string encoding = DbConstants.ENCODE_NAME_UTF8) : base(extension)
+        public DrawerRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(extension)
         {
             DrawItems = new DbObjectRepository<DrawItem, DrawItemCollection>(dir, GetRelativePath("draw_item"), encoding);
         }

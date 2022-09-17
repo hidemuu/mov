@@ -745,11 +745,24 @@
           "bin/placeholder/Mov.Accessors.dll": {}
         }
       },
+      "Mov.Framework/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Framework.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Framework.dll": {}
+        }
+      },
       "Mov.Game.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
+          "Mov.Framework": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -3280,6 +3293,11 @@
       "type": "project",
       "path": "../../infrastructures/accessors/Accessors.csproj",
       "msbuildProject": "../../infrastructures/accessors/Accessors.csproj"
+    },
+    "Mov.Framework/1.0.0": {
+      "type": "project",
+      "path": "../../domains/framework/Framework.csproj",
+      "msbuildProject": "../../domains/framework/Framework.csproj"
     },
     "Mov.Game.Models/1.0.0": {
       "type": "project",

@@ -650,25 +650,13 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
-          "Mov.Bom.Models": "1.0.0",
           "Mov.Bom.Repository": "1.0.0",
-          "Mov.Configurator.Models": "1.0.0",
-          "Mov.Configurator.Repository": "1.0.0",
           "Mov.Configurator.Service": "1.0.0",
-          "Mov.Designer.Models": "1.0.0",
-          "Mov.Designer.Repository": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
-          "Mov.Driver.Models": "1.0.0",
-          "Mov.Driver.Repository": "1.0.0",
           "Mov.Driver.Service": "1.0.0",
-          "Mov.Game.Models": "1.0.0",
-          "Mov.Game.Repository": "1.0.0",
           "Mov.Game.Service": "1.0.0",
-          "Mov.Scheduler.Models": "1.0.0",
           "Mov.Scheduler.Repository": "1.0.0",
-          "Mov.Scheduler.Service": "1.0.0",
-          "Mov.Utilities": "1.0.0"
+          "Mov.Scheduler.Service": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.BaseLib.dll": {}
@@ -681,7 +669,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0"
+          "Mov.Framework": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Bom.Models.dll": {}
@@ -739,8 +727,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
-          "Mov.Utilities": "1.0.0",
+          "Mov.Framework": "1.0.0",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
@@ -817,7 +804,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
+          "Mov.Framework": "1.0.0",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
@@ -892,7 +879,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
+          "Mov.Framework": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -966,7 +953,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0"
+          "Mov.Framework": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Driver.Models.dll": {}
@@ -1037,11 +1024,24 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "Mov.Framework/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Framework.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Framework.dll": {}
+        }
+      },
       "Mov.Game.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
+          "Mov.Framework": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -1237,22 +1237,13 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Mov.BaseLib": "1.0.0",
-          "Mov.Bom.ViewModels": "1.0.0",
           "Mov.Bom.Views": "1.0.0",
-          "Mov.Configurator.ViewModels": "1.0.0",
           "Mov.Configurator.Views": "1.0.0",
-          "Mov.Designer.ViewModels": "1.0.0",
           "Mov.Designer.Views": "1.0.0",
-          "Mov.Drawer.ViewModels": "1.0.0",
           "Mov.Drawer.Views": "1.0.0",
-          "Mov.Driver.ViewModels": "1.0.0",
           "Mov.Driver.Views": "1.0.0",
-          "Mov.Game.ViewModels": "1.0.0",
           "Mov.Game.Views": "1.0.0",
-          "Mov.Scheduler.ViewModels": "1.0.0",
-          "Mov.Scheduler.Views": "1.0.0",
-          "Mov.WpfControls": "1.0.0",
-          "Mov.WpfDesigns": "1.0.0"
+          "Mov.Scheduler.Views": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.WpfLib.dll": {}
@@ -2658,6 +2649,11 @@
       "type": "project",
       "path": "../../src/presentations/wpf/driver.views/Driver.Views.csproj",
       "msbuildProject": "../../src/presentations/wpf/driver.views/Driver.Views.csproj"
+    },
+    "Mov.Framework/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/framework/Framework.csproj",
+      "msbuildProject": "../../src/domains/framework/Framework.csproj"
     },
     "Mov.Game.Models/1.0.0": {
       "type": "project",

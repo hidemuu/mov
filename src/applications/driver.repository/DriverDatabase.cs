@@ -8,7 +8,7 @@ namespace Mov.Driver.Repository
 {
     public class DriverDatabase : DbObjectDatabaseBase<IDriverRepository, DriverRepository>, IDriverDatabase
     {
-        public DriverDatabase(string dir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
+        public DriverDatabase(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
         {
 
         }

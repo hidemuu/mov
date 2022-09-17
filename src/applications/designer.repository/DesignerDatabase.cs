@@ -9,7 +9,7 @@ namespace Mov.Designer.Repository
 {
     public class DesignerDatabase : DbObjectDatabaseBase<IDesignerRepository, DesignerRepository>, IDesignerDatabase
     {
-        public DesignerDatabase(string dir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
+        public DesignerDatabase(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
         {
 
         }

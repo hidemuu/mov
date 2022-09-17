@@ -39,11 +39,11 @@ namespace Mov.Accessors
 
             switch (extension)
             {
-                case DbConstants.PATH_EXTENSION_JSON:
+                case SerializeConstants.PATH_EXTENSION_JSON:
                     this.serializer = new JsonSerializer(Path.Combine(basePath, relativePath), encoding);
                     break;
 
-                case DbConstants.PATH_EXTENSION_XML:
+                case SerializeConstants.PATH_EXTENSION_XML:
                     this.serializer = new XmlSerializer(Path.Combine(basePath, relativePath), encoding);
                     break;
 

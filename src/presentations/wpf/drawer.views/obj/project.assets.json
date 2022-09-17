@@ -598,7 +598,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
+          "Mov.Framework": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -651,6 +651,19 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
+      },
+      "Mov.Framework/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Framework.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Framework.dll": {}
+        }
       },
       "Mov.Utilities/1.0.0": {
         "type": "project",
@@ -1889,6 +1902,11 @@
       "type": "project",
       "path": "../drawer.viewmodels/Drawer.ViewModels.csproj",
       "msbuildProject": "../drawer.viewmodels/Drawer.ViewModels.csproj"
+    },
+    "Mov.Framework/1.0.0": {
+      "type": "project",
+      "path": "../../../domains/framework/Framework.csproj",
+      "msbuildProject": "../../../domains/framework/Framework.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",

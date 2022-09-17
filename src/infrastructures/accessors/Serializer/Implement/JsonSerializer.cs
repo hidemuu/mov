@@ -19,10 +19,10 @@ namespace Mov.Accessors
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public JsonSerializer(string endpoint, string encoding)
+        public JsonSerializer(string endpoint, string encoding = SerializeConstants.ENCODE_NAME_UTF8)
         {
             this.endpoint = endpoint;
-            if (string.IsNullOrEmpty(Path.GetExtension(endpoint))) this.endpoint += DbConstants.PATH_EXTENSION_JSON;
+            if (string.IsNullOrEmpty(Path.GetExtension(endpoint))) this.endpoint += SerializeConstants.PATH_EXTENSION_JSON;
             this.encoding = Encoding.GetEncoding(encoding);
         }
 

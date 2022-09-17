@@ -53,3 +53,5 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\n
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Mov.Game.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\ref\Mov.Game.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Mov.Game.Views.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Framework.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Framework.pdb

@@ -8,7 +8,7 @@ namespace Mov.Game.Repository
 {
     public class GameDatabase : DbObjectDatabaseBase<IGameRepository, GameRepository>, IGameDatabase
     {
-        public GameDatabase(string dir, string extension, string encode = DbConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
+        public GameDatabase(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
         {
 
         }

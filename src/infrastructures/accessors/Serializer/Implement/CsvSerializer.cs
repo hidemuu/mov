@@ -24,10 +24,10 @@ namespace Mov.Accessors
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public CsvSerializer(string endpoint, string encoding)
+        public CsvSerializer(string endpoint, string encoding = SerializeConstants.ENCODE_NAME_UTF8)
         {
             this.endpoint = endpoint;
-            if (string.IsNullOrEmpty(Path.GetExtension(endpoint))) this.endpoint += DbConstants.PATH_EXTENSION_CSV;
+            if (string.IsNullOrEmpty(Path.GetExtension(endpoint))) this.endpoint += SerializeConstants.PATH_EXTENSION_CSV;
             this.encoding = Encoding.GetEncoding(encoding);
         }
 

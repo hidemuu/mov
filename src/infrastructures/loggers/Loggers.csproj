@@ -6,4 +6,8 @@
     <RootNamespace>Mov.Loggers</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="NLog" Version="5.0.4" />
+  </ItemGroup>
+
 </Project>

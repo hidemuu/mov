@@ -95,7 +95,7 @@ namespace Mov.Accessors.Serializer
         {
             using (var client = BaseClient())
             {
-                await client.DeleteAsync($"{url}/{key}");
+                var response = await client.DeleteAsync($"{url}/{key}");
             }
         }
 

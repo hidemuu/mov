@@ -1,6 +1,8 @@
-﻿using Mov.Analizer.Models.Resas;
+﻿using Mov.Accessors;
+using Mov.Analizer.Models.Resas;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Mov.Analizer.Repository.Resas
@@ -18,6 +20,6 @@ namespace Mov.Analizer.Repository.Resas
             this.auth = auth;
         }
 
-        public IPrefectureRepository Prefectures => new RestPrefectureRepository(this.endpoint, this.auth);
+        public IRepository<ResasResponse<Prefecture>> Prefectures => new RestRepository<ResasResponse<Prefecture>>(Path.Combine(this.endpoint, "prefectures"), this.auth);
     }
 }

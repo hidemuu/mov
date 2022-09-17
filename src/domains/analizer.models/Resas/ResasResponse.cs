@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Analizer.Models.Resas
 {
-    public class ResasResult<T> where T : IResasResult
+    public class ResasResponse<T> where T : IResasResult
     {
         
         [Name("message")]

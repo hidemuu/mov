@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace Configurator.Test
+namespace Mov.Framework.Test
 {
     public class Tests
     {

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Configurator.Repository
+namespace Mov.Configurator.Models
 {
     public class ConfiguratorDbContext : DbContext
     {

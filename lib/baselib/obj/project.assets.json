@@ -940,9 +940,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "CsvHelper": "27.2.1",
-          "Mov.Configurator.Models": "1.0.0",
-          "Newtonsoft.Json": "13.0.1"
+          "Mov.Configurator.Models": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Configurator.Repository.dll": {}

@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace Mov.Designer.Service.Test
+namespace Mov.UseCase.Test
 {
     public class Tests
     {

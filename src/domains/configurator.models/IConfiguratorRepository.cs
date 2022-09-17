@@ -8,6 +8,6 @@ namespace Mov.Configurator.Models
 {
     public interface IConfiguratorRepository
     {
-        IDbObjectRepository<UserSetting> UserSettings { get; }
+        IDbObjectRepository<Config> UserSettings { get; }
     }
 }

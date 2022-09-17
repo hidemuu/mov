@@ -5,9 +5,9 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyName>Mov.Configurator.Test</AssemblyName>
+    <AssemblyName>Mov.UseCase.Test</AssemblyName>
 
-    <RootNamespace>Mov.Configurator.Test</RootNamespace>
+    <RootNamespace>Mov.UseCase.Test</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

@@ -9,6 +9,6 @@ namespace Mov.Accessors
         /// <summary>
         /// ID
         /// </summary>
-        public TKey Id { get; set; }
+        public virtual TKey Id { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace Mov.Game.Service.Test
+namespace Mov.Game.Test
 {
     public class Tests
     {

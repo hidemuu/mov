@@ -15,19 +15,19 @@ namespace Mov.Configurator.Models
     /// 設定のコレクション
     /// </summary>
     [XmlRoot("user_settings")]
-    public class UserSettingCollection : DbObjectCollection<UserSetting>
+    public class ConfigCollection : DbObjectCollection<Config>
     {
         /// <inheritdoc />
         [JsonProperty("user_settings")]
-        [XmlElement(Type = typeof(UserSetting), ElementName = "user_setting")]
-        public override UserSetting[] Items { get; set; }
+        [XmlElement(Type = typeof(Config), ElementName = "user_setting")]
+        public override Config[] Items { get; set; }
     }
 
     /// <summary>
     /// 設定
     /// </summary>
     [XmlRoot("user_setting")]
-    public class UserSetting : DbObject
+    public class Config : DbObject
     {
         #region プロパティ
 
@@ -105,7 +105,7 @@ namespace Mov.Configurator.Models
         /// <inheritdoc />
         public override string ToHeaderString() => GetString(new string[] { "Id", "Code", "Category", "Name", "Value", "Description" }, 10);
 
-        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<UserSetting>().OrderBy(x => x.index);
+        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<Config>().OrderBy(x => x.index);
 
         #endregion メソッド
     }

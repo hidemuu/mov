@@ -67,7 +67,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wpf", "wpf", "{C849D8F6-439
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspReact", "app\asp_react\AspReact.csproj", "{247C1D7D-DFE0-4E98-B8D5-D4D02795F26C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Test", "src\tests\designer.test\Designer.Test.csproj", "{13F22A58-0498-4CC3-85EC-F63E7AE2C897}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UseCase.Test", "src\tests\usecase.test\UseCase.Test.csproj", "{13F22A58-0498-4CC3-85EC-F63E7AE2C897}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Models", "src\domains\game.models\Game.Models.csproj", "{9DB59F57-98ED-4D5D-92E8-1BFACE2AE80C}"
 EndProject
@@ -91,7 +91,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bom.Models", "src\domains\b
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bom.Repository", "src\applications\bom.repository\Bom.Repository.csproj", "{3F3F67E7-0CBE-4686-9808-6510CF23B8ED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurator.Test", "src\tests\configurator.test\Configurator.Test.csproj", "{C996F66A-A028-49FA-8629-FC02DE5BA395}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Test", "src\tests\framework.test\Framework.Test.csproj", "{C996F66A-A028-49FA-8629-FC02DE5BA395}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawer.Models", "src\domains\drawer.models\Drawer.Models.csproj", "{26A953C6-D56C-4218-A809-2699844E0422}"
 EndProject

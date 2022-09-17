@@ -12,12 +12,12 @@ namespace Mov.Configurator.Repository
 
         public ConfiguratorRepository(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(extension)
         {
-            UserSettings = new DbObjectRepository<UserSetting, UserSettingCollection>(dir, GetRelativePath("user_setting"), encode);
+            UserSettings = new DbObjectRepository<Config, ConfigCollection>(dir, GetRelativePath("user_setting"), encode);
         }
 
         #region プロパティ
 
-        public IDbObjectRepository<UserSetting> UserSettings { get; }
+        public IDbObjectRepository<Config> UserSettings { get; }
 
         #endregion
     }

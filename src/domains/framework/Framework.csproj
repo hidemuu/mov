@@ -8,6 +8,16 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\infrastructures\controllers\Controllers.csproj" />
+    <ProjectReference Include="..\analizer.models\Analizer.Models.csproj" />
+    <ProjectReference Include="..\authorizer.models\Authorizer.Models.csproj" />
+    <ProjectReference Include="..\bom.models\Bom.Models.csproj" />
+    <ProjectReference Include="..\configurator.models\Configurator.Models.csproj" />
+    <ProjectReference Include="..\designer.models\Designer.Models.csproj" />
+    <ProjectReference Include="..\drawer.models\Drawer.Models.csproj" />
+    <ProjectReference Include="..\driver.models\Driver.Models.csproj" />
+    <ProjectReference Include="..\game.models\Game.Models.csproj" />
+    <ProjectReference Include="..\scheduler.models\Scheduler.Models.csproj" />
+    <ProjectReference Include="..\translator.models\Translator.Models.csproj" />
   </ItemGroup>
 
 </Project>

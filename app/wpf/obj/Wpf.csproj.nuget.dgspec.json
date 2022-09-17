@@ -2305,6 +2305,36 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\analizer.models\\Analizer.Models.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\analizer.models\\Analizer.Models.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\authorizer.models\\Authorizer.Models.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\authorizer.models\\Authorizer.Models.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\bom.models\\Bom.Models.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\bom.models\\Bom.Models.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\configurator.models\\Configurator.Models.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\configurator.models\\Configurator.Models.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\designer.models\\Designer.Models.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\designer.models\\Designer.Models.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\drawer.models\\Drawer.Models.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\drawer.models\\Drawer.Models.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\driver.models\\Driver.Models.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\driver.models\\Driver.Models.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\game.models\\Game.Models.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\game.models\\Game.Models.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\scheduler.models\\Scheduler.Models.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\scheduler.models\\Scheduler.Models.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\translator.models\\Translator.Models.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\translator.models\\Translator.Models.csproj"
+              },
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\controllers\\Controllers.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\controllers\\Controllers.csproj"
               }

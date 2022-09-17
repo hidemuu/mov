@@ -9,7 +9,7 @@ namespace Mov.Analizer.Models.Resas
 {
     public class Prefecture : IResasResult
     {
-        public const string URI = "https://opendata.resas-portal.go.jp/api/v1/prefectures";
+        public const string URI = "prefectures";
 
         [Name("prefCode")]
         [JsonProperty("prefCode")]

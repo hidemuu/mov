@@ -8,5 +8,7 @@ namespace Mov.Analizer.Models.Resas
     public interface IResasRepository
     {
         IRepository<ResasResponse<Prefecture>> Prefectures { get; }
+
+        IRepository<ResasResponse<City>> Cities { get; }
     }
 }

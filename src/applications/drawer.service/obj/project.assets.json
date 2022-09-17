@@ -796,6 +796,19 @@
           "bin/placeholder/Mov.Framework.dll": {}
         }
       },
+      "Mov.Painters/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "System.Drawing.Common": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Painters.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Painters.dll": {}
+        }
+      },
       "Mov.Utilities/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -3338,6 +3351,11 @@
       "path": "../../domains/framework/Framework.csproj",
       "msbuildProject": "../../domains/framework/Framework.csproj"
     },
+    "Mov.Painters/1.0.0": {
+      "type": "project",
+      "path": "../../infrastructures/painters/Painters.csproj",
+      "msbuildProject": "../../infrastructures/painters/Painters.csproj"
+    },
     "Mov.Utilities/1.0.0": {
       "type": "project",
       "path": "../../infrastructures/utilities/Utilities.csproj",
@@ -3347,6 +3365,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "Mov.Drawer.Repository >= 1.0.0",
+      "Mov.Painters >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
       "System.Drawing.Common >= 6.0.0"
     ]
@@ -3390,6 +3409,9 @@
           "projectReferences": {
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\drawer.repository\\Drawer.Repository.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\drawer.repository\\Drawer.Repository.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\painters\\Painters.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\painters\\Painters.csproj"
             }
           }
         }

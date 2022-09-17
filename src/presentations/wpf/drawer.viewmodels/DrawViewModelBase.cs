@@ -1,5 +1,6 @@
 ﻿using Mov.Drawer.Models;
 using Mov.Drawer.Service;
+using Mov.Painters;
 using Mov.WpfControls.ViewModels;
 using Prism.Mvvm;
 using Prism.Regions;
@@ -36,7 +37,7 @@ namespace Mov.Drawer.ViewModels
         #region プロパティ
 
         public abstract DrawModel Model { get; }
-        protected abstract DrawServiceBase Service { get; set; }
+        protected abstract ScreenCreatorBase Service { get; set; }
         public ReactiveTimer Timer { get; } = new ReactiveTimer(TimeSpan.FromMilliseconds(10), new SynchronizationContextScheduler(SynchronizationContext.Current));
 
         #endregion プロパティ

@@ -636,7 +636,6 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
           "Mov.Driver.Models": "1.0.0"
         },
         "compile": {

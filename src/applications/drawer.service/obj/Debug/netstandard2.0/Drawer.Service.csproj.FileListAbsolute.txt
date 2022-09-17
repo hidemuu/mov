@@ -20,3 +20,5 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\ne
 C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Framework.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Controllers.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Controllers.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Painters.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Painters.pdb

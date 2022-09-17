@@ -7,35 +7,35 @@ using System.Threading.Tasks;
 
 namespace Mov.Accessors
 {
-    public class SqlRepository<T> : IRepository<T> where T: EntityObject
+    public class SqlRepository<TModel, TKey> : IRepository<TModel> where TModel : EntityObject<TKey>
     {
         private readonly DbContext db;
-        private readonly DbSet<T> ts;
+        private readonly DbSet<TModel> ts;
 
-        public SqlRepository(DbContext db, DbSet<T> ts)
+        public SqlRepository(DbContext db, DbSet<TModel> ts)
         {
             this.db = db;
             this.ts = ts;
 
         }
 
-        public async Task<IEnumerable<T>> GetAsync()
+        public async Task<IEnumerable<TModel>> GetAsync()
         {
             return await ts
                 .AsNoTracking()
                 .ToListAsync();
         }
 
-        public async Task<T> GetAsync(string param)
+        public async Task<TModel> GetAsync(string param)
         {
             return await ts
                 .AsNoTracking()
-                .FirstOrDefaultAsync(x => x.Code == param);
+                .FirstOrDefaultAsync(x => x.Id.ToString() == param);
         }
 
-        public async Task PostAsync(T item)
+        public async Task PostAsync(TModel item)
         {
-            var current = await ts.FirstOrDefaultAsync(_m => _m.Id == item.Id);
+            var current = await ts.FirstOrDefaultAsync(_m => _m.Id.Equals(item.Id));
             if (null == current)
             {
                 ts.Add(item);
@@ -50,7 +50,7 @@ namespace Mov.Accessors
             await db.SaveChangesAsync();
         }
 
-        public async Task PostAsync(IEnumerable<T> items)
+        public async Task PostAsync(IEnumerable<TModel> items)
         {
             await Task.Run(async () =>
             {
@@ -64,10 +64,10 @@ namespace Mov.Accessors
 
         public async Task DeleteAsync(string name)
         {
-            var query = ts.Where(x => x.Code == name);
+            var query = ts.Where(x => x.Id.ToString() == name);
             foreach (var q in query)
             {
-                var item = await ts.FirstOrDefaultAsync(_m => _m.Id == q.Id);
+                var item = await ts.FirstOrDefaultAsync(_m => _m.Id.Equals(q.Id));
                 if (null != item)
                 {
                     ts.Remove(item);

@@ -6,4 +6,8 @@
     <RootNamespace>Mov.Analizer.Service</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\analizer.repository\Analizer.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -21,6 +21,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media.Imaging;
+using Mov.Painters;
 
 namespace Mov.Game.ViewModels
 {
@@ -33,7 +34,7 @@ namespace Mov.Game.ViewModels
         #region プロパティ
         public override GameSoftModel Model { get; } = new GameSoftModel();
         
-        protected override DrawServiceBase Service { get; set; }
+        protected override ScreenCreatorBase Service { get; set; }
 
         #endregion プロパティ
 

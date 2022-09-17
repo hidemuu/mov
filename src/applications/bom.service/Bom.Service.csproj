@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Bom.Service</AssemblyName>
+    <RootNamespace>Mov.Bom.Service</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\bom.repository\Bom.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

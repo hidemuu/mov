@@ -635,6 +635,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Mov.Drawer.Repository": "1.0.0",
+          "Mov.Painters": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -694,7 +695,6 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
           "Mov.Game.Models": "1.0.0"
         },
         "compile": {
@@ -708,8 +708,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Drawer.Service": "1.0.0",
           "Mov.Game.Repository": "1.0.0",
+          "Mov.Painters": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -717,6 +717,19 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Game.Service.dll": {}
+        }
+      },
+      "Mov.Painters/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "System.Drawing.Common": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Painters.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Painters.dll": {}
         }
       },
       "Mov.Utilities/1.0.0": {
@@ -1981,6 +1994,11 @@
       "type": "project",
       "path": "../../../applications/game.service/Game.Service.csproj",
       "msbuildProject": "../../../applications/game.service/Game.Service.csproj"
+    },
+    "Mov.Painters/1.0.0": {
+      "type": "project",
+      "path": "../../../infrastructures/painters/Painters.csproj",
+      "msbuildProject": "../../../infrastructures/painters/Painters.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",

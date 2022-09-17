@@ -3434,7 +3434,6 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "Google.Apis.Calendar.v3 >= 1.55.0.2500",
-      "Mov.Accessors >= 1.0.0",
       "Mov.Scheduler.Models >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
@@ -3478,9 +3477,6 @@
           "projectReferences": {
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\scheduler.models\\Scheduler.Models.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\scheduler.models\\Scheduler.Models.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\accessors\\Accessors.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\accessors\\Accessors.csproj"
             }
           }
         }

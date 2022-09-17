@@ -754,47 +754,6 @@
           "bin/placeholder/Mov.Controllers.dll": {}
         }
       },
-      "Mov.Drawer.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Framework": "1.0.0",
-          "System.Drawing.Common": "6.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Drawer.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Drawer.Models.dll": {}
-        }
-      },
-      "Mov.Drawer.Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Drawer.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Drawer.Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Drawer.Repository.dll": {}
-        }
-      },
-      "Mov.Drawer.Service/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Drawer.Repository": "1.0.0",
-          "System.Drawing.Common": "6.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Drawer.Service.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Drawer.Service.dll": {}
-        }
-      },
       "Mov.Framework/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -828,7 +787,6 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
           "Mov.Game.Models": "1.0.0"
         },
         "compile": {
@@ -836,6 +794,19 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Game.Repository.dll": {}
+        }
+      },
+      "Mov.Painters/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "System.Drawing.Common": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Painters.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Painters.dll": {}
         }
       },
       "Mov.Utilities/1.0.0": {
@@ -3365,21 +3336,6 @@
       "path": "../../infrastructures/controllers/Controllers.csproj",
       "msbuildProject": "../../infrastructures/controllers/Controllers.csproj"
     },
-    "Mov.Drawer.Models/1.0.0": {
-      "type": "project",
-      "path": "../../domains/drawer.models/Drawer.Models.csproj",
-      "msbuildProject": "../../domains/drawer.models/Drawer.Models.csproj"
-    },
-    "Mov.Drawer.Repository/1.0.0": {
-      "type": "project",
-      "path": "../drawer.repository/Drawer.Repository.csproj",
-      "msbuildProject": "../drawer.repository/Drawer.Repository.csproj"
-    },
-    "Mov.Drawer.Service/1.0.0": {
-      "type": "project",
-      "path": "../drawer.service/Drawer.Service.csproj",
-      "msbuildProject": "../drawer.service/Drawer.Service.csproj"
-    },
     "Mov.Framework/1.0.0": {
       "type": "project",
       "path": "../../domains/framework/Framework.csproj",
@@ -3395,6 +3351,11 @@
       "path": "../game.repository/Game.Repository.csproj",
       "msbuildProject": "../game.repository/Game.Repository.csproj"
     },
+    "Mov.Painters/1.0.0": {
+      "type": "project",
+      "path": "../../infrastructures/painters/Painters.csproj",
+      "msbuildProject": "../../infrastructures/painters/Painters.csproj"
+    },
     "Mov.Utilities/1.0.0": {
       "type": "project",
       "path": "../../infrastructures/utilities/Utilities.csproj",
@@ -3403,8 +3364,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Mov.Drawer.Service >= 1.0.0",
       "Mov.Game.Repository >= 1.0.0",
+      "Mov.Painters >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
       "System.Drawing.Common >= 6.0.0"
     ]
@@ -3446,11 +3407,11 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\drawer.service\\Drawer.Service.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\drawer.service\\Drawer.Service.csproj"
-            },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.repository\\Game.Repository.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.repository\\Game.Repository.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\painters\\Painters.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\painters\\Painters.csproj"
             }
           }
         }

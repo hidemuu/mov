@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\domains\game.models\Game.Models.csproj" />
-    <ProjectReference Include="..\..\infrastructures\accessors\Accessors.csproj" />
   </ItemGroup>
 
 </Project>

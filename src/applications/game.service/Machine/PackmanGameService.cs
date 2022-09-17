@@ -1,9 +1,9 @@
-﻿using Mov.Drawer.Service;
-using Mov.Game.Models;
+﻿using Mov.Game.Models;
 using Mov.Game.Models.Characters;
 using Mov.Game.Models.Engines;
 using Mov.Game.Models.Maps;
 using Mov.Game.Repository;
+using Mov.Painters;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -17,7 +17,7 @@ namespace Mov.Game.Service.Machine
     /// <summary>
     /// パックマンっぽいゲームサービス
     /// </summary>
-    public class PackmanGameService : DrawServiceBase, IMachineGameService
+    public class PackmanGameService : ScreenCreatorBase, IMachineGameService
     {
         #region フィールド
 

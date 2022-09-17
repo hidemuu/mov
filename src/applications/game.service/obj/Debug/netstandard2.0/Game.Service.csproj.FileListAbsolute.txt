@@ -2,17 +2,11 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\nets
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Game.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Game.Service.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Accessors.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Drawer.Models.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Drawer.Repository.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Drawer.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Game.Models.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Game.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Utilities.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Drawer.Service.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Game.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Accessors.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Drawer.Models.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Drawer.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Game.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Utilities.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\obj\Debug\netstandard2.0\Game.Service.csproj.AssemblyReference.cache
@@ -26,3 +20,5 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\nets
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Framework.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Controllers.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Controllers.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Painters.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Painters.pdb

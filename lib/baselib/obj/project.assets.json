@@ -805,6 +805,45 @@
           "bin/placeholder/Mov.Accessors.dll": {}
         }
       },
+      "Mov.Analizer.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Framework": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Analizer.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Analizer.Models.dll": {}
+        }
+      },
+      "Mov.Analizer.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Analizer.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Analizer.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Analizer.Repository.dll": {}
+        }
+      },
+      "Mov.Analizer.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Analizer.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Analizer.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Analizer.Service.dll": {}
+        }
+      },
       "Mov.Bom.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -829,6 +868,19 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Bom.Repository.dll": {}
+        }
+      },
+      "Mov.Bom.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Bom.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Bom.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Bom.Service.dll": {}
         }
       },
       "Mov.Configurator.Models/1.0.0": {
@@ -956,6 +1008,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Mov.Drawer.Repository": "1.0.0",
+          "Mov.Painters": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -982,7 +1035,6 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
           "Mov.Driver.Models": "1.0.0"
         },
         "compile": {
@@ -1038,7 +1090,6 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
           "Mov.Game.Models": "1.0.0"
         },
         "compile": {
@@ -1052,8 +1103,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Drawer.Service": "1.0.0",
           "Mov.Game.Repository": "1.0.0",
+          "Mov.Painters": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -1061,6 +1112,19 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Game.Service.dll": {}
+        }
+      },
+      "Mov.Painters/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "System.Drawing.Common": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Painters.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Painters.dll": {}
         }
       },
       "Mov.Scheduler.Models/1.0.0": {
@@ -1081,7 +1145,6 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Google.Apis.Calendar.v3": "1.55.0.2500",
-          "Mov.Accessors": "1.0.0",
           "Mov.Scheduler.Models": "1.0.0"
         },
         "compile": {
@@ -1094,6 +1157,9 @@
       "Mov.Scheduler.Service/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Scheduler.Repository": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Mov.Scheduler.Service.dll": {}
         },
@@ -3745,6 +3811,21 @@
       "path": "../../src/infrastructures/accessors/Accessors.csproj",
       "msbuildProject": "../../src/infrastructures/accessors/Accessors.csproj"
     },
+    "Mov.Analizer.Models/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/analizer.models/Analizer.Models.csproj",
+      "msbuildProject": "../../src/domains/analizer.models/Analizer.Models.csproj"
+    },
+    "Mov.Analizer.Repository/1.0.0": {
+      "type": "project",
+      "path": "../../src/applications/analizer.repository/Analizer.Repository.csproj",
+      "msbuildProject": "../../src/applications/analizer.repository/Analizer.Repository.csproj"
+    },
+    "Mov.Analizer.Service/1.0.0": {
+      "type": "project",
+      "path": "../../src/applications/analizer.service/Analizer.Service.csproj",
+      "msbuildProject": "../../src/applications/analizer.service/Analizer.Service.csproj"
+    },
     "Mov.Bom.Models/1.0.0": {
       "type": "project",
       "path": "../../src/domains/bom.models/Bom.Models.csproj",
@@ -3754,6 +3835,11 @@
       "type": "project",
       "path": "../../src/applications/bom.repository/Bom.Repository.csproj",
       "msbuildProject": "../../src/applications/bom.repository/Bom.Repository.csproj"
+    },
+    "Mov.Bom.Service/1.0.0": {
+      "type": "project",
+      "path": "../../src/applications/bom.service/Bom.Service.csproj",
+      "msbuildProject": "../../src/applications/bom.service/Bom.Service.csproj"
     },
     "Mov.Configurator.Models/1.0.0": {
       "type": "project",
@@ -3840,6 +3926,11 @@
       "path": "../../src/applications/game.service/Game.Service.csproj",
       "msbuildProject": "../../src/applications/game.service/Game.Service.csproj"
     },
+    "Mov.Painters/1.0.0": {
+      "type": "project",
+      "path": "../../src/infrastructures/painters/Painters.csproj",
+      "msbuildProject": "../../src/infrastructures/painters/Painters.csproj"
+    },
     "Mov.Scheduler.Models/1.0.0": {
       "type": "project",
       "path": "../../src/domains/scheduler.models/Scheduler.Models.csproj",
@@ -3863,12 +3954,13 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Mov.Bom.Repository >= 1.0.0",
+      "Mov.Analizer.Service >= 1.0.0",
+      "Mov.Bom.Service >= 1.0.0",
       "Mov.Configurator.Service >= 1.0.0",
       "Mov.Designer.Service >= 1.0.0",
+      "Mov.Drawer.Service >= 1.0.0",
       "Mov.Driver.Service >= 1.0.0",
       "Mov.Game.Service >= 1.0.0",
-      "Mov.Scheduler.Repository >= 1.0.0",
       "Mov.Scheduler.Service >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
@@ -3910,8 +4002,11 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\bom.repository\\Bom.Repository.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\bom.repository\\Bom.Repository.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\analizer.service\\Analizer.Service.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\analizer.service\\Analizer.Service.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\bom.service\\Bom.Service.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\bom.service\\Bom.Service.csproj"
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\configurator.service\\Configurator.Service.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\configurator.service\\Configurator.Service.csproj"
@@ -3919,14 +4014,14 @@
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.service\\Designer.Service.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.service\\Designer.Service.csproj"
             },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\drawer.service\\Drawer.Service.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\drawer.service\\Drawer.Service.csproj"
+            },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\driver.service\\Driver.Service.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\driver.service\\Driver.Service.csproj"
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.service\\Game.Service.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.service\\Game.Service.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\scheduler.repository\\Scheduler.Repository.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\scheduler.repository\\Scheduler.Repository.csproj"
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\scheduler.service\\Scheduler.Service.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\scheduler.service\\Scheduler.Service.csproj"

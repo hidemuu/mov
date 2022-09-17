@@ -1,5 +1,6 @@
 ﻿using Mov.Drawer.Models;
 using Mov.Drawer.Service;
+using Mov.Painters;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Drawer.Service.Canvas
 {
-    public abstract class CanvasServiceBase : DrawServiceBase, ICanvasService
+    public abstract class CanvasServiceBase : ScreenCreatorBase, ICanvasService
     {
 
         #region プロパティ

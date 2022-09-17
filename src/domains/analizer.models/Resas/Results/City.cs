@@ -6,5 +6,6 @@ namespace Mov.Analizer.Models.Resas
 {
     public class City : IResasResult
     {
+        public const string URI = "cities";
     }
 }

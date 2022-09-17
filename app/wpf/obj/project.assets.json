@@ -645,16 +645,56 @@
           "bin/placeholder/Mov.Accessors.dll": {}
         }
       },
+      "Mov.Analizer.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Framework": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Analizer.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Analizer.Models.dll": {}
+        }
+      },
+      "Mov.Analizer.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Analizer.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Analizer.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Analizer.Repository.dll": {}
+        }
+      },
+      "Mov.Analizer.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Analizer.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Analizer.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Analizer.Service.dll": {}
+        }
+      },
       "Mov.BaseLib/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Bom.Repository": "1.0.0",
+          "Mov.Analizer.Service": "1.0.0",
+          "Mov.Bom.Service": "1.0.0",
           "Mov.Configurator.Service": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
+          "Mov.Drawer.Service": "1.0.0",
           "Mov.Driver.Service": "1.0.0",
           "Mov.Game.Service": "1.0.0",
-          "Mov.Scheduler.Repository": "1.0.0",
           "Mov.Scheduler.Service": "1.0.0"
         },
         "compile": {
@@ -688,6 +728,19 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Bom.Repository.dll": {}
+        }
+      },
+      "Mov.Bom.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Bom.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Bom.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Bom.Service.dll": {}
         }
       },
       "Mov.Bom.ViewModels/1.0.0": {
@@ -916,6 +969,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Mov.Drawer.Repository": "1.0.0",
+          "Mov.Painters": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -975,7 +1029,6 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
           "Mov.Driver.Models": "1.0.0"
         },
         "compile": {
@@ -1066,7 +1119,6 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Accessors": "1.0.0",
           "Mov.Game.Models": "1.0.0"
         },
         "compile": {
@@ -1080,8 +1132,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Drawer.Service": "1.0.0",
           "Mov.Game.Repository": "1.0.0",
+          "Mov.Painters": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -1125,6 +1177,19 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "Mov.Painters/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "System.Drawing.Common": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Painters.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Painters.dll": {}
+        }
+      },
       "Mov.Scheduler.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1143,7 +1208,6 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Google.Apis.Calendar.v3": "1.55.0.2500",
-          "Mov.Accessors": "1.0.0",
           "Mov.Scheduler.Models": "1.0.0"
         },
         "compile": {
@@ -1156,6 +1220,9 @@
       "Mov.Scheduler.Service/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Scheduler.Repository": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Mov.Scheduler.Service.dll": {}
         },
@@ -2539,6 +2606,21 @@
       "path": "../../src/infrastructures/accessors/Accessors.csproj",
       "msbuildProject": "../../src/infrastructures/accessors/Accessors.csproj"
     },
+    "Mov.Analizer.Models/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/analizer.models/Analizer.Models.csproj",
+      "msbuildProject": "../../src/domains/analizer.models/Analizer.Models.csproj"
+    },
+    "Mov.Analizer.Repository/1.0.0": {
+      "type": "project",
+      "path": "../../src/applications/analizer.repository/Analizer.Repository.csproj",
+      "msbuildProject": "../../src/applications/analizer.repository/Analizer.Repository.csproj"
+    },
+    "Mov.Analizer.Service/1.0.0": {
+      "type": "project",
+      "path": "../../src/applications/analizer.service/Analizer.Service.csproj",
+      "msbuildProject": "../../src/applications/analizer.service/Analizer.Service.csproj"
+    },
     "Mov.BaseLib/1.0.0": {
       "type": "project",
       "path": "../../lib/baselib/BaseLib.csproj",
@@ -2553,6 +2635,11 @@
       "type": "project",
       "path": "../../src/applications/bom.repository/Bom.Repository.csproj",
       "msbuildProject": "../../src/applications/bom.repository/Bom.Repository.csproj"
+    },
+    "Mov.Bom.Service/1.0.0": {
+      "type": "project",
+      "path": "../../src/applications/bom.service/Bom.Service.csproj",
+      "msbuildProject": "../../src/applications/bom.service/Bom.Service.csproj"
     },
     "Mov.Bom.ViewModels/1.0.0": {
       "type": "project",
@@ -2698,6 +2785,11 @@
       "type": "project",
       "path": "../../src/presentations/wpf/game.views/Game.Views.csproj",
       "msbuildProject": "../../src/presentations/wpf/game.views/Game.Views.csproj"
+    },
+    "Mov.Painters/1.0.0": {
+      "type": "project",
+      "path": "../../src/infrastructures/painters/Painters.csproj",
+      "msbuildProject": "../../src/infrastructures/painters/Painters.csproj"
     },
     "Mov.Scheduler.Models/1.0.0": {
       "type": "project",

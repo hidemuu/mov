@@ -5,14 +5,14 @@ using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Drawer.Service
+namespace Mov.Painters
 {
-    public abstract class DrawServiceBase
+    public abstract class ScreenCreatorBase
     {
         #region フィールド
 
         /// <summary>
-        /// ゲームスレッド
+        /// スレッド
         /// </summary>
         private Task task;
         /// <summary>
@@ -58,7 +58,7 @@ namespace Mov.Drawer.Service
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public DrawServiceBase()
+        public ScreenCreatorBase()
         {
             screenBitmap = new Bitmap(FrameWidth, FrameHeight);
             ScreenGraphics = Graphics.FromImage(screenBitmap);

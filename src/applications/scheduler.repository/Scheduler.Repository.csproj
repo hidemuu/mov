@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\domains\scheduler.models\Scheduler.Models.csproj" />
-    <ProjectReference Include="..\..\infrastructures\accessors\Accessors.csproj" />
   </ItemGroup>
 
 </Project>

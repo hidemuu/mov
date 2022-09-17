@@ -1,5 +1,5 @@
-﻿using Mov.Drawer.Service;
-using Mov.Game.Models;
+﻿using Mov.Game.Models;
+using Mov.Painters;
 using Mov.Utilities;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ namespace Mov.Game.Service.Puzzle
     /// <summary>
     /// ハノイの塔のゲームサービス
     /// </summary>
-    public class TowerOfHanoiGameService : DrawServiceBase, IConsoleGameService
+    public class TowerOfHanoiGameService : ScreenCreatorBase, IConsoleGameService
     {
         #region フィールド
 

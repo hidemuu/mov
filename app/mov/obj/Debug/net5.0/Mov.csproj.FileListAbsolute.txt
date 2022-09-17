@@ -45,7 +45,6 @@ C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Designer.Models
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Designer.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Designer.Service.dll
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Drawer.Models.dll
-C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Drawer.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Drawer.Service.dll
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Driver.Models.dll
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Driver.Repository.dll
@@ -68,7 +67,6 @@ C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Designer.Models
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Designer.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Designer.Service.pdb
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Drawer.Models.pdb
-C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Drawer.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Drawer.Service.pdb
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Driver.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Driver.Repository.pdb
@@ -96,3 +94,15 @@ C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Framework.dll
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Framework.pdb
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Controllers.dll
 C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Controllers.pdb
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Analizer.Models.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Analizer.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Analizer.Service.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Bom.Service.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Painters.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Analizer.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Analizer.Repository.pdb
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Analizer.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Bom.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Painters.pdb
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Drawer.Repository.dll
+C:\Users\nando\Documents\GitHub\mov\app\mov\bin\Debug\net5.0\Mov.Drawer.Repository.pdb

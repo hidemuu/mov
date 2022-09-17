@@ -3328,7 +3328,6 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Mov.Accessors >= 1.0.0",
       "Mov.Game.Models >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
@@ -3372,9 +3371,6 @@
           "projectReferences": {
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\game.models\\Game.Models.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\game.models\\Game.Models.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\accessors\\Accessors.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\accessors\\Accessors.csproj"
             }
           }
         }

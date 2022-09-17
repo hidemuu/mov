@@ -1,6 +1,7 @@
 ﻿using Mov.Drawer.Models;
 using Mov.Drawer.Service;
 using Mov.Drawer.Service.Canvas;
+using Mov.Painters;
 using Prism.Mvvm;
 using Prism.Regions;
 using Prism.Services.Dialogs;
@@ -32,7 +33,7 @@ namespace Mov.Drawer.ViewModels
 
         public override DrawModel Model { get; } = new DrawModel();
         
-        protected override DrawServiceBase Service { get; set; }
+        protected override ScreenCreatorBase Service { get; set; }
 
         public ReactiveCollection<string> Canvases { get; } = new ReactiveCollection<string>();
 

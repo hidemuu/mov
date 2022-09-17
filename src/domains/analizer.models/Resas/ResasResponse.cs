@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Analizer.Models.Resas
 {
-    public class ResasResponse<T> where T : IResasResult
+    public class ResasResponse<TResult> where TResult : IResasResult
     {
         
         [Name("message")]
@@ -17,6 +17,6 @@ namespace Mov.Analizer.Models.Resas
         [Name("result")]
         [JsonProperty("result")]
         [DisplayName("結果")]
-        public List<T> Results { get; set; }
+        public List<TResult> Results { get; set; } = new List<TResult>();
     }
 }

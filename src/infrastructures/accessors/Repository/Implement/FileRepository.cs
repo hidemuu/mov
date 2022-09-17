@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Accessors
 {
-    public abstract class FileRepository<T> : IRepository<T>
+    public abstract class FileRepository<TModel> : IRepository<TModel>
     {
         private readonly ISerializer serializer;
 
@@ -32,24 +32,24 @@ namespace Mov.Accessors
             }
         }
 
-        public async Task<IEnumerable<T>> GetAsync()
+        public async Task<IEnumerable<TModel>> GetAsync()
         {
-            return await Task.Run(() => serializer.Get<IEnumerable<T>>(""));
+            return await Task.Run(() => serializer.Get<IEnumerable<TModel>>(""));
         }
 
-        public async Task<T> GetAsync(string param)
+        public async Task<TModel> GetAsync(string param)
         {
-            return await Task.Run(() => serializer.Get<T>(param));
+            return await Task.Run(() => serializer.Get<TModel>(param));
         }
 
-        public async Task PostAsync(T item)
+        public async Task PostAsync(TModel item)
         {
-            await Task.Run(() => serializer.Post<T, T>("", item));
+            await Task.Run(() => serializer.Post<TModel, TModel>("", item));
         }
 
-        public async Task PostAsync(IEnumerable<T> items)
+        public async Task PostAsync(IEnumerable<TModel> items)
         {
-            await Task.Run(() => serializer.Post<IEnumerable<T>, IEnumerable<T>>("", items));
+            await Task.Run(() => serializer.Post<IEnumerable<TModel>, IEnumerable<TModel>>("", items));
 
         }
 

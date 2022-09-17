@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\infrastructures\painters\Painters.csproj" />
     <ProjectReference Include="..\drawer.repository\Drawer.Repository.csproj" />
   </ItemGroup>
 

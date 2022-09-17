@@ -635,6 +635,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Mov.Drawer.Repository": "1.0.0",
+          "Mov.Painters": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -657,6 +658,19 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Framework.dll": {}
+        }
+      },
+      "Mov.Painters/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "System.Drawing.Common": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Painters.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Painters.dll": {}
         }
       },
       "Mov.Utilities/1.0.0": {
@@ -1901,6 +1915,11 @@
       "type": "project",
       "path": "../../../domains/framework/Framework.csproj",
       "msbuildProject": "../../../domains/framework/Framework.csproj"
+    },
+    "Mov.Painters/1.0.0": {
+      "type": "project",
+      "path": "../../../infrastructures/painters/Painters.csproj",
+      "msbuildProject": "../../../infrastructures/painters/Painters.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",

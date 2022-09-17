@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Accessors;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Accessors
+namespace Mov.Framework
 {
     /// <summary>
     /// データベースリポジトリ基本クラス
@@ -14,7 +15,6 @@ namespace Mov.Accessors
     /// <typeparam name="T"></typeparam>
     public class DbObjectRepository<T, C> : IDbObjectRepository<T, C> where T : DbObject where C : DbObjectCollection<T>
     {
-       
         #region フィールド
 
         /// <summary>

@@ -1617,7 +1617,11 @@
         "frameworks": {
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\framework\\Framework.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\framework\\Framework.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

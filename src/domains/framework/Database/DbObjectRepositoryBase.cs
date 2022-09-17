@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Mov.Accessors
+namespace Mov.Framework
 {
     /// <summary>
     /// リポジトリコレクションのベースクラス

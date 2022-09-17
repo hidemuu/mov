@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Accessors
+namespace Mov.Framework
 {
     // <summary>
     /// データベースリポジトリインターフェース
     /// </summary>
-    public interface IDbObjectRepository<T, C> where T : DbObject where C : DbObjectCollection<T>
+    public interface IDbObjectRepository<T, C> where T : DbObject where C : DbObjectCollection<T> 
     {
         /// <summary>
         /// インポート

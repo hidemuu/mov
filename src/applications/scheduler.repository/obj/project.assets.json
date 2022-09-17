@@ -788,9 +788,25 @@
           "bin/placeholder/Mov.Accessors.dll": {}
         }
       },
+      "Mov.Framework/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Framework.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Framework.dll": {}
+        }
+      },
       "Mov.Scheduler.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Framework": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Mov.Scheduler.Models.dll": {}
         },
@@ -3382,6 +3398,11 @@
       "type": "project",
       "path": "../../infrastructures/accessors/Accessors.csproj",
       "msbuildProject": "../../infrastructures/accessors/Accessors.csproj"
+    },
+    "Mov.Framework/1.0.0": {
+      "type": "project",
+      "path": "../../domains/framework/Framework.csproj",
+      "msbuildProject": "../../domains/framework/Framework.csproj"
     },
     "Mov.Scheduler.Models/1.0.0": {
       "type": "project",

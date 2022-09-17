@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Mov.Accessors
+namespace Mov.Framework
 {
     public abstract class DbObjectDatabaseBase<T, TInstance> where TInstance : T
     {

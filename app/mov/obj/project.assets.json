@@ -654,6 +654,9 @@
       "Mov.Scheduler.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Framework": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Mov.Scheduler.Models.dll": {}
         },

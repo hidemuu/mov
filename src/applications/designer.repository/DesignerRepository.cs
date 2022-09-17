@@ -1,5 +1,6 @@
 ﻿using Mov.Accessors;
 using Mov.Designer.Models;
+using Mov.Framework;
 
 namespace Mov.Designer.Repository
 {

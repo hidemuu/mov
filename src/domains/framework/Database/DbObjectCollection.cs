@@ -2,7 +2,7 @@
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Accessors
+namespace Mov.Framework
 {
     /// <summary>
     /// データベースオブジェクトのコレクション

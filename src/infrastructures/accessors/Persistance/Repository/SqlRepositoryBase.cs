@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Mov.Accessors.Persistance;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Accessors
 {
-    public abstract class SqlRepositoryBase<T> : IRepository where T: DbObject
+    public abstract class SqlRepositoryBase<T> : IRepository where T: PersistanceObject
     {
         private readonly DbContext db;
         private readonly DbSet<T> ts;

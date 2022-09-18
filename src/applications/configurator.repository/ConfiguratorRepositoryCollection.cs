@@ -1,4 +1,5 @@
 ﻿using Mov.Accessors;
+using Mov.Accessors.Repository.Implement;
 using Mov.BaseModel;
 using Mov.Configurator.Models;
 using System;
@@ -12,7 +13,7 @@ namespace Mov.Configurator.Repository
     /// <summary>
     /// コンフィグレーションデータのリポジトリ
     /// </summary>
-    public class ConfiguratorRepositoryCollection : DomainRepositoryCollectionBase<IConfiguratorRepository, FileConfiguratorRepository>, IConfiguratorRepositoryCollection
+    public class ConfiguratorRepositoryCollection : FileDomainRepositoryCollection<IConfiguratorRepository, FileConfiguratorRepository>, IConfiguratorRepositoryCollection
     {
         #region コンストラクター
 

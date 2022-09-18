@@ -1,4 +1,5 @@
 ﻿using Mov.Accessors;
+using Mov.Accessors.Repository.Implement;
 using Mov.BaseModel;
 using Mov.Drawer.Models;
 using System;
@@ -7,14 +8,14 @@ using System.Text;
 
 namespace Mov.Drawer.Repository
 {
-    public class DrawerRepository : DomainRepositoryBase, IDrawerRepository
+    public class DrawerRepository : FileDomainRepositoryBase, IDrawerRepository
     {
         #region コンストラクター
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public DrawerRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(extension)
+        public DrawerRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encoding)
         {
             DrawItems = new DbObjectRepository<DrawItem, DrawItemCollection>(dir, GetRelativePath("draw_item"), encoding);
         }

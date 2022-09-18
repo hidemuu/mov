@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Mov.Accessors
 {
-    public abstract class FileRepository<TModel> : IRepository<TModel>
+    public abstract class FileEntityRepository<TModel> : IEntityRepository<TModel>
     {
         private readonly ISerializer serializer;
 
-        public FileRepository(string fileName, string encode = SerializeConstants.ENCODE_NAME_UTF8)
+        public FileEntityRepository(string fileName, string encode = SerializeConstants.ENCODE_NAME_UTF8)
         {
             var extension = Path.GetExtension(fileName);
             if (string.IsNullOrEmpty(extension)) Debug.Assert(false, "拡張子が含まれていません");

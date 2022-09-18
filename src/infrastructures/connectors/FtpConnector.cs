@@ -9,6 +9,21 @@ namespace Mov.Connectors
 {
     public class FtpConnector
     {
+        #region フィールド
+
+        #endregion フィールド
+
+        #region コンストラクター
+
+        public FtpConnector()
+        {
+
+        }
+
+        #endregion コンストラクター
+
+        #region メソッド
+
         public void Upload()
         {
             FtpClient client = new FtpClient();
@@ -49,10 +64,16 @@ namespace Mov.Connectors
             }
         }
 
+        #endregion メソッド
+
+        #region 内部メソッド
+
         private void OnValidateCertificate(FtpClient control, FtpSslValidationEventArgs e)
         {
             // 証明書の内容を確認しない
             e.Accept = true;
         }
+
+        #endregion 内部メソッド
     }
 }

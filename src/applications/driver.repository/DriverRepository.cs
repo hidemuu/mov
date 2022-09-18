@@ -1,4 +1,5 @@
 ﻿using Mov.Accessors;
+using Mov.Accessors.Repository.Implement;
 using Mov.BaseModel;
 using Mov.Driver.Models;
 using System;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace Mov.Driver.Repository
 {
-    public class DriverRepository : DomainRepositoryBase, IDriverRepository
+    public class DriverRepository : FileDomainRepositoryBase, IDriverRepository
     {
         #region コンストラクター
 
@@ -15,7 +16,7 @@ namespace Mov.Driver.Repository
         /// コンストラクター
         /// </summary>
         /// <param name="encoding"></param>
-        public DriverRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(extension)
+        public DriverRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encoding)
         {
             Commands = new DbObjectRepository<Command, CommandCollection>(dir, GetRelativePath("command"), encoding);
             Queries = new DbObjectRepository<Query, QueryCollection>(dir, GetRelativePath("query"), encoding);

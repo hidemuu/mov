@@ -1,4 +1,5 @@
 ﻿using Mov.Accessors;
+using Mov.Accessors.Repository.Implement;
 using Mov.BaseModel;
 using Mov.Configurator.Models;
 using System;
@@ -7,10 +8,10 @@ using System.Text;
 
 namespace Mov.Configurator.Repository
 {
-    public class FileConfiguratorRepository : DomainRepositoryBase, IConfiguratorRepository
+    public class FileConfiguratorRepository : FileDomainRepositoryBase, IConfiguratorRepository
     {
 
-        public FileConfiguratorRepository(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(extension)
+        public FileConfiguratorRepository(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
         {
             UserSettings = new DbObjectRepository<Config, ConfigCollection>(dir, GetRelativePath("user_setting"), encode);
         }

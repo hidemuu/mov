@@ -47,7 +47,7 @@ namespace Mov.Designer.ViewModels
 
         #region プロパティ
 
-        public ReactivePropertySlim<string> PageName { get; set; } = new ReactivePropertySlim<string>(PAGE_NAME_TREE);
+        public ReactivePropertySlim<string> PageName { get; set; } = new ReactivePropertySlim<string>(PAGE_NAME_PARTS);
 
 
         public ReactiveCollection<string> ComboItems { get; } = new ReactiveCollection<string>()

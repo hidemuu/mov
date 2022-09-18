@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Mov.Accessors
 {
-    public class RestRepository<TModel> : IRepository<TModel>
+    public class RestEntityRepository<TModel> : IEntityRepository<TModel>
     {
         private readonly HttpSerializer serializer;
         private readonly string key;
 
-        public RestRepository(string url, string key, string encode = SerializeConstants.ENCODE_NAME_UTF8)
+        public RestEntityRepository(string url, string key, string encode = SerializeConstants.ENCODE_NAME_UTF8)
         {
             this.serializer = new HttpSerializer(url, encode);
             this.key = string.IsNullOrEmpty(key) ? string.Empty : "?apikey=" + key;

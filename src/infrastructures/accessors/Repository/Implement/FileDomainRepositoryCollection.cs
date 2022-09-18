@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Accessors.Repository.Implement
 {
-    public class DomainRepositoryCollection<TRepository, TInstance> : IDomainRepositoryCollection<TRepository> where TInstance : TRepository
+    public class FileDomainRepositoryCollection<TRepository, TInstance> : IDomainRepositoryCollection<TRepository> where TInstance : TRepository
     {
         #region プロパティ
 
@@ -15,7 +15,7 @@ namespace Mov.Accessors.Repository.Implement
 
         #region コンストラクター
 
-        public DomainRepositoryCollection(string baseDir, string extension, string encode)
+        public FileDomainRepositoryCollection(string baseDir, string extension, string encode)
         {
             Repositories = new Dictionary<string, TRepository>();
             var directories = GetDirectories(baseDir);

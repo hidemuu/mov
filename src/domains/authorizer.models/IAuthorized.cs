@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Accessors.Authorizer
+namespace Mov.Authorizer.Models
 {
     public interface IAuthorized
     {

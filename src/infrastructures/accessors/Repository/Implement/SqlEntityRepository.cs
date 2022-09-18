@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Mov.Accessors
 {
-    public class SqlRepository<TModel, TKey> : IRepository<TModel> where TModel : EntityObject<TKey>
+    public class SqlEntityRepository<TModel, TKey> : IEntityRepository<TModel> where TModel : EntityObject<TKey>
     {
         private readonly DbContext db;
         private readonly DbSet<TModel> ts;
 
-        public SqlRepository(DbContext db, DbSet<TModel> ts)
+        public SqlEntityRepository(DbContext db, DbSet<TModel> ts)
         {
             this.db = db;
             this.ts = ts;

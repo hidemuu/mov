@@ -1,11 +1,10 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Mov.BaseModel
+namespace Mov.Accessors.Repository.Implement
 {
-    /// <summary>
-    /// ドメイン単位のリポジトリのベースクラス
-    /// </summary>
-    public abstract class DomainRepositoryBase
+    public abstract class FileDomainRepositoryBase
     {
         #region フィールド
 
@@ -20,7 +19,7 @@ namespace Mov.BaseModel
         /// コンストラクター
         /// </summary>
         /// <param name="extension"></param>
-        public DomainRepositoryBase(string extension)
+        public FileDomainRepositoryBase(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8)
         {
             this.extension = extension;
         }

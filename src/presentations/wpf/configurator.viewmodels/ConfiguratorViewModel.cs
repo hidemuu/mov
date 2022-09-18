@@ -1,4 +1,5 @@
-﻿using Mov.Configurator.Models;
+﻿using Mov.Accessors.Repository;
+using Mov.Configurator.Models;
 using Mov.Utilities.Attributes;
 using Mov.WpfControls;
 using Mov.WpfControls.ViewModels;
@@ -31,7 +32,7 @@ namespace Mov.Configurator.ViewModels
 
         #region フィールド
 
-        private readonly IConfiguratorRepositoryCollection database;
+        private readonly IDomainRepositoryCollection<IConfiguratorRepository> database;
 
         private IConfiguratorRepository repository;
 
@@ -72,7 +73,7 @@ namespace Mov.Configurator.ViewModels
         /// </summary>
         /// <param name="regionManager"></param>
         /// <param name="dialogService"></param>
-        public ConfiguratorViewModel(IRegionManager regionManager, IDialogService dialogService, IConfiguratorRepositoryCollection database) : base(regionManager, dialogService)
+        public ConfiguratorViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IConfiguratorRepository> database) : base(regionManager, dialogService)
         {
             this.database = database;
             this.repository = database.GetRepository("");
@@ -110,13 +111,13 @@ namespace Mov.Configurator.ViewModels
 
         private void Import()
         {
-            repository.UserSettings.Import();
+            repository.UserSettings.Read();
         }
 
         private void Export()
         {
             PostItems();
-            repository.UserSettings.Export();
+            repository.UserSettings.Read();
         }
 
         private void Add(object parameter)
@@ -160,7 +161,7 @@ namespace Mov.Configurator.ViewModels
         {
             Items.Clear();
             var properties = Config.GetProperties();
-            foreach (Config item in this.repository?.UserSettings?.Gets())
+            foreach (Config item in this.repository?.UserSettings?.Get())
             {
                 Items.Add(GetColumnItems<Config>(properties.Select(x => x.propertyInfo), item).ToArray());
             }

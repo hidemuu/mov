@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Accessors
 {
-    public class RestEntityRepository<TModel> : IEntityRepository<TModel>
+    public class RestEntityRepository<TEntity> : IEntityRepositoryAsync<TEntity>
     {
         private readonly HttpSerializer serializer;
         private readonly string key;
@@ -17,16 +17,16 @@ namespace Mov.Accessors
             this.key = string.IsNullOrEmpty(key) ? string.Empty : "?apikey=" + key;
         }
 
-        public async Task<IEnumerable<TModel>> GetAsync() =>
-            await this.serializer.GetAsync<IEnumerable<TModel>>(this.key);
+        public async Task<IEnumerable<TEntity>> GetAsync() =>
+            await this.serializer.GetAsync<IEnumerable<TEntity>>(this.key);
 
-        public async Task<TModel> GetAsync(string param) =>
-           await this.serializer.GetAsync<TModel>($"/{param}" + this.key);
+        public async Task<TEntity> GetAsync(string param) =>
+           await this.serializer.GetAsync<TEntity>($"/{param}" + this.key);
 
-        public async Task PostAsync(TModel item) =>
-            await this.serializer.PostAsync<TModel, TModel>(this.key, item);
+        public async Task PostAsync(TEntity item) =>
+            await this.serializer.PostAsync<TEntity, TEntity>(this.key, item);
 
-        public Task PostAsync(IEnumerable<TModel> items)
+        public Task PostAsync(IEnumerable<TEntity> items)
         {
             throw new NotImplementedException();
         }

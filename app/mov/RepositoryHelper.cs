@@ -1,4 +1,6 @@
-﻿using Mov.Configurator.Models;
+﻿using Mov.Accessors.Repository;
+using Mov.Accessors.Repository.Implement;
+using Mov.Configurator.Models;
 using Mov.Configurator.Repository;
 using Mov.Designer.Models;
 using Mov.Designer.Repository;
@@ -18,7 +20,7 @@ namespace Mov.ConsoleApp
         #region プロパティ
 
         internal DesignerRepository Designer { get; }
-        internal ConfiguratorRepositoryCollection Configurator { get; }
+        internal IDomainRepositoryCollection<IConfiguratorRepository> Configurator { get; }
 
         #endregion プロパティ
 
@@ -32,7 +34,7 @@ namespace Mov.ConsoleApp
             var rootPath = PathHelper.GetCurrentRootPath("mov");
             var resourcePath = Path.Combine(rootPath, "resources");
             this.Designer = new DesignerRepository(resourcePath, "xml");
-            this.Configurator = new ConfiguratorRepositoryCollection(resourcePath, "json");
+            this.Configurator = new FileDomainRepositoryCollection<IConfiguratorRepository, FileConfiguratorRepository>(resourcePath, "json");
         }
 
         #region メソッド

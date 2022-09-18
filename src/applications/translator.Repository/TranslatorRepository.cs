@@ -12,9 +12,9 @@ namespace Mov.Translator.Repository
     {
         public TranslatorRepository(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
         {
-            Translates = new DbObjectRepository<Translate, TranslateCollection>(dir, GetRelativePath("translate"), encode);
+            Translates = new FileDbObjectRepository<Translate, TranslateCollection>(dir, GetRelativePath("translate"), encode);
         }
 
-        public IDbObjectRepository<Translate> Translates { get; }
+        public IDbObjectRepository<Translate, TranslateCollection> Translates { get; }
     }
 }

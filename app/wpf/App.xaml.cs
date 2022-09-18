@@ -45,6 +45,8 @@ using Mov.Driver.ViewModels;
 using Mov.Bom.ViewModels;
 using Mov.Driver.Models;
 using Mov.Driver.Repository;
+using Mov.Accessors.Repository;
+using Mov.Accessors.Repository.Implement;
 
 namespace Mov.WpfApp
 {
@@ -120,7 +122,7 @@ namespace Mov.WpfApp
             //var rootPath = assembly.Location.TrimEnd(assembly.ManifestModule.Name.ToCharArray());
             var rootPath = PathHelper.GetCurrentRootPath("mov");
             var resourcePath = Path.Combine(rootPath, "resources");
-            containerRegistry.RegisterInstance<IConfiguratorRepositoryCollection>(new ConfiguratorRepositoryCollection(Path.Combine(resourcePath, "configurator"), "json"));
+            containerRegistry.RegisterInstance<IDomainRepositoryCollection<IConfiguratorRepository>>(new FileDomainRepositoryCollection<IConfiguratorRepository, FileConfiguratorRepository>(Path.Combine(resourcePath, "configurator"), "json"));
             containerRegistry.RegisterInstance<IDesignerDatabase>(new DesignerDatabase(Path.Combine(resourcePath, "designer"), "xml"));
             containerRegistry.RegisterInstance<IGameDatabase>(new GameDatabase(Path.Combine(resourcePath, "game"), "json"));
             containerRegistry.RegisterInstance<IDrawerDatabase>(new DrawerDatabase(Path.Combine(resourcePath, "drawer"), "json"));

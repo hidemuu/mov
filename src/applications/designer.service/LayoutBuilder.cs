@@ -73,7 +73,7 @@ namespace Mov.Designer.Service
         private IEnumerable<LayoutNodeBase> Create()
         {
             var node = new ContentLayoutNode();
-            CreateLayoutNode(node.Children, repository.Nodes.Gets());
+            CreateLayoutNode(node.Children, repository.Nodes.Get());
             return node.Children;
         }
 

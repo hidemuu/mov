@@ -15,7 +15,7 @@ namespace Mov.Accessors.Repository.Implement
 
         #region コンストラクター
 
-        public FileDomainRepositoryCollection(string baseDir, string extension, string encode)
+        public FileDomainRepositoryCollection(string baseDir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8)
         {
             Repositories = new Dictionary<string, TRepository>();
             var directories = GetDirectories(baseDir);

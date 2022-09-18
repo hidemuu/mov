@@ -7,33 +7,33 @@ using System.Threading.Tasks;
 
 namespace Mov.Accessors
 {
-    public class SqlEntityRepository<TModel, TKey> : IEntityRepository<TModel> where TModel : EntityObject<TKey>
+    public class SqlEntityRepository<TEntity, TKey> : IEntityRepositoryAsync<TEntity> where TEntity : EntityObject<TKey>
     {
         private readonly DbContext db;
-        private readonly DbSet<TModel> ts;
+        private readonly DbSet<TEntity> ts;
 
-        public SqlEntityRepository(DbContext db, DbSet<TModel> ts)
+        public SqlEntityRepository(DbContext db, DbSet<TEntity> ts)
         {
             this.db = db;
             this.ts = ts;
 
         }
 
-        public async Task<IEnumerable<TModel>> GetAsync()
+        public async Task<IEnumerable<TEntity>> GetAsync()
         {
             return await ts
                 .AsNoTracking()
                 .ToListAsync();
         }
 
-        public async Task<TModel> GetAsync(string param)
+        public async Task<TEntity> GetAsync(string param)
         {
             return await ts
                 .AsNoTracking()
                 .FirstOrDefaultAsync(x => x.Id.ToString() == param);
         }
 
-        public async Task PostAsync(TModel item)
+        public async Task PostAsync(TEntity item)
         {
             var current = await ts.FirstOrDefaultAsync(_m => _m.Id.Equals(item.Id));
             if (null == current)
@@ -50,7 +50,7 @@ namespace Mov.Accessors
             await db.SaveChangesAsync();
         }
 
-        public async Task PostAsync(IEnumerable<TModel> items)
+        public async Task PostAsync(IEnumerable<TEntity> items)
         {
             await Task.Run(async () =>
             {

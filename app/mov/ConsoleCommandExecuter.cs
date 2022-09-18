@@ -1,4 +1,5 @@
-﻿using Mov.Configurator.Models;
+﻿using Mov.Accessors.Repository;
+using Mov.Configurator.Models;
 using Mov.Controllers;
 using Mov.UseCases;
 using Mov.Utilities;
@@ -14,7 +15,7 @@ namespace Mov.ConsoleApp
     {
         private readonly ConfiguratorCommandExecuter configurator;
 
-        public ConsoleCommandExecuter(IConfiguratorRepositoryCollection configuratorDatabase)
+        public ConsoleCommandExecuter(IDomainRepositoryCollection<IConfiguratorRepository> configuratorDatabase)
         {
             this.configurator = new ConfiguratorCommandExecuter(configuratorDatabase);
         }

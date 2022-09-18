@@ -18,26 +18,26 @@ namespace Mov.Designer.Repository
         /// <param name="encoding"></param>
         public DesignerRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encoding)
         {
-            Shells = new DbObjectRepository<Shell, ShellCollection>(dir, GetRelativePath("shell"), encoding);
-            Nodes = new DbObjectRepository<LayoutNode, LayoutNodeCollection>(dir, GetRelativePath("node"), encoding);
-            Contents = new DbObjectRepository<LayoutContent, LayoutContentCollection>(dir, GetRelativePath("content"), encoding);
-            Themes = new DbObjectRepository<Theme, ThemeCollection>(dir, GetRelativePath("theme"), encoding);
-            Icons = new DbObjectRepository<Icon, IconCollection>(dir, GetRelativePath("icon"), encoding);
+            Shells = new FileDbObjectRepository<Shell, ShellCollection>(dir, GetRelativePath("shell"), encoding);
+            Nodes = new FileDbObjectRepository<LayoutNode, LayoutNodeCollection>(dir, GetRelativePath("node"), encoding);
+            Contents = new FileDbObjectRepository<LayoutContent, LayoutContentCollection>(dir, GetRelativePath("content"), encoding);
+            Themes = new FileDbObjectRepository<Theme, ThemeCollection>(dir, GetRelativePath("theme"), encoding);
+            Icons = new FileDbObjectRepository<Icon, IconCollection>(dir, GetRelativePath("icon"), encoding);
         }
 
         #endregion コンストラクター
 
         #region プロパティ
 
-        public IDbObjectRepository<Shell> Shells { get; }
+        public IDbObjectRepository<Shell, ShellCollection> Shells { get; }
 
-        public IDbObjectRepository<LayoutNode> Nodes { get; }
+        public IDbObjectRepository<LayoutNode, LayoutNodeCollection> Nodes { get; }
 
-        public IDbObjectRepository<LayoutContent> Contents { get; }
+        public IDbObjectRepository<LayoutContent, LayoutContentCollection> Contents { get; }
 
-        public IDbObjectRepository<Theme> Themes { get; }
+        public IDbObjectRepository<Theme, ThemeCollection> Themes { get; }
 
-        public IDbObjectRepository<Icon> Icons { get; }
+        public IDbObjectRepository<Icon, IconCollection> Icons { get; }
 
         #endregion プロパティ
     }

@@ -36,19 +36,19 @@ namespace Mov.Designer.ViewModels
         protected override void Import(NavigationContext navigationContext)
         {
             this.repository = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_REPOSITORY] as IDesignerRepository;
-            this.repository.Shells.Import();
+            this.repository.Shells.Read();
         }
 
         protected override void Export()
         {
-            this.repository.Shells.Export();
+            this.repository.Shells.Write();
         }
 
         protected override void BindItems()
         {
             Items.Clear();
             var properties = Shell.GetProperties();
-            foreach (Shell item in this.repository?.Shells?.Gets())
+            foreach (Shell item in this.repository?.Shells?.Get())
             {
                 Items.Add(GetColumnItems(properties.Select(x => x.propertyInfo), item).ToArray());
             }

@@ -13,103 +13,56 @@ namespace Mov.BaseModel
     /// データベースリポジトリ基本クラス
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class DbObjectRepository<T, C> : IDbObjectRepository<T> where T : DbObject where C : DbObjectCollection<T>
+    public class FileDbObjectRepository<T, C> : FileEntityRepository<T, C>, IDbObjectRepository<T, C> where T : DbObject where C : DbObjectCollection<T>
     {
         #region フィールド
-
-        /// <summary>
-        /// シリアライザー
-        /// </summary>
-        protected readonly ISerializer serializer;
-
-        /// <summary>
-        /// 内部保持変数
-        /// </summary>
-        private C collection = null;
 
         #endregion フィールド
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public DbObjectRepository(string basePath, string relativePath, string encoding)
+        public FileDbObjectRepository(string basePath, string relativePath, string encoding) : base(Path.Combine(basePath, relativePath), encoding)
         {
-            var extension = System.IO.Path.GetExtension(relativePath);
-            if (string.IsNullOrEmpty(extension)) Debug.Assert(false);
-
-            switch (extension)
-            {
-                case SerializeConstants.PATH_EXTENSION_JSON:
-                    this.serializer = new JsonSerializer(Path.Combine(basePath, relativePath), encoding);
-                    break;
-
-                case SerializeConstants.PATH_EXTENSION_XML:
-                    this.serializer = new XmlSerializer(Path.Combine(basePath, relativePath), encoding);
-                    break;
-
-                default:
-                    Debug.Assert(false);
-                    break;
-            }
+           
         }
 
         #region メソッド
 
-        /// <summary>
-        /// インポート
-        /// </summary>
-        public void Import() => collection = serializer.Get<C>("");
-
-        /// <summary>
-        /// エクスポート
-        /// </summary>
-        public void Export() => serializer.Post<C, C>("", this.collection);
-
-        /// <summary>
-        /// 単一データエクスポート
-        /// </summary>
-        /// <param name="item"></param>
-        public void Export(T item) => serializer.Post<T, T>("", item);
-
+        
         #region GET
 
         /// <summary>
         /// 全データ取得
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<T> Gets()
+        public IEnumerable<T> Get()
         {
-            if (collection == null) Import();
-            if (collection == null) return new List<T>();
-            return collection.Items;
+            if (body == default) Read();
+            if (body == default) return new List<T>();
+            return body.Items;
         }
-
-        /// <summary>
-        /// 全データ取得（非同期）
-        /// </summary>
-        /// <returns></returns>
-        public async Task<IEnumerable<T>> GetsAsync() => await Task.Run(Gets);
 
         /// <summary>
         /// データ取得
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public T Get(Guid id) => Get(Gets(), id);
+        public T Get(Guid id) => Get(Get(), id);
 
         /// <summary>
         /// データ取得
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public T Get(int index) => Get(Gets(), index);
+        public T Get(int index) => Get(Get(), index);
 
         /// <summary>
         /// データ取得
         /// </summary>
         /// <param name="code"></param>
         /// <returns></returns>
-        public T Get(string code) => Get(Gets(), code);
+        public T Get(string code) => Get(Get(), code);
 
         #endregion GET
 
@@ -121,7 +74,7 @@ namespace Mov.BaseModel
         /// <param name="items"></param>
         public void Posts(IEnumerable<T> items)
         {
-            List<T> srcs = Gets().ToList();
+            List<T> srcs = Get().ToList();
             foreach (var item in items)
             {
                 var src = srcs.FirstOrDefault(x => x.Id == item.Id);
@@ -131,7 +84,7 @@ namespace Mov.BaseModel
                 srcs.Add(item);
             }
             if (!srcs.Any()) return;
-            collection.Items = srcs.ToArray();
+            body.Items = srcs.ToArray();
         }
 
         /// <summary>
@@ -140,7 +93,7 @@ namespace Mov.BaseModel
         /// <param name="item"></param>
         public void Post(T item)
         {
-            var src = Gets().FirstOrDefault(x => x.Id == item.Id);
+            var src = Get().FirstOrDefault(x => x.Id == item.Id);
             src = item;
         }
 
@@ -154,10 +107,10 @@ namespace Mov.BaseModel
         /// <param name="item"></param>
         public void Put(T item)
         {
-            var items = Gets().ToList();
+            var items = Get().ToList();
             items.Add(item);
-            if (collection == null) collection = (C)Activator.CreateInstance(typeof(C));
-            collection.Items = items.ToArray();
+            if (body == default) body = (C)Activator.CreateInstance(typeof(C));
+            body.Items = items.ToArray();
         }
 
         /// <summary>
@@ -169,7 +122,7 @@ namespace Mov.BaseModel
         {
             if (item is DbObjectNode<T>)
             {
-                var src = Get(Gets(), id);
+                var src = Get(Get(), id);
                 if (src == null) return;
                 if (src is DbObjectNode<T> node)
                 {
@@ -190,16 +143,16 @@ namespace Mov.BaseModel
         /// <param name="item"></param>
         public void Delete(T item)
         {
-            var srcs = Gets().ToList();
+            var srcs = Get().ToList();
             Remove(srcs, item);
-            collection.Items = srcs.ToArray();
+            body.Items = srcs.ToArray();
         }
 
         public void Delete(Guid id)
         {
-            var srcs = Gets().ToList();
+            var srcs = Get().ToList();
             Remove(srcs, Get(id));
-            collection.Items = srcs.ToArray();
+            body.Items = srcs.ToArray();
         }
 
         #endregion DELETE
@@ -213,9 +166,9 @@ namespace Mov.BaseModel
         /// <param name="movedId">移動先ID</param>
         public void Move(Guid id, Guid movedId)
         {
-            var src = Gets().FirstOrDefault(x => x.Id == id);
+            var src = Get().FirstOrDefault(x => x.Id == id);
             if (src == null) return;
-            var moved = Gets().FirstOrDefault(x => x.Id == movedId);
+            var moved = Get().FirstOrDefault(x => x.Id == movedId);
             if (moved == null) return;
             if (src is DbObjectNode<T> srcNode)
             {
@@ -238,32 +191,32 @@ namespace Mov.BaseModel
             var arrayIndex = GetArrayIndex(id);
             var movedIndex = arrayIndex - 1;
             if (movedIndex < 0) return;
-            var items = Gets().ToArray();
+            var items = Get().ToArray();
             var src = items[arrayIndex];
             var moved = items[movedIndex];
-            var querys = Gets().ToArray();
+            var querys = Get().ToArray();
             querys[arrayIndex] = moved;
             querys[movedIndex] = src;
-            collection.Items = querys;
+            body.Items = querys;
         }
 
         public void MoveNext(Guid id)
         {
             var arrayIndex = GetArrayIndex(id);
             var movedIndex = arrayIndex + 1;
-            if (movedIndex > collection.Items.Length) return;
-            var items = Gets().ToArray();
+            if (movedIndex > body.Items.Length) return;
+            var items = Get().ToArray();
             var src = items[arrayIndex];
             var moved = items[movedIndex];
-            var querys = Gets().ToArray();
+            var querys = Get().ToArray();
             querys[arrayIndex] = moved;
             querys[movedIndex] = src;
-            collection.Items = querys;
+            body.Items = querys;
         }
 
         private int GetArrayIndex(Guid id)
         {
-            var items = Gets().ToArray();
+            var items = Get().ToArray();
             for (int i = 0; i < items.Length; i++)
             {
                 if (!items[i].Id.Equals(id)) continue;
@@ -277,7 +230,7 @@ namespace Mov.BaseModel
         /// <inheritdoc />
         public override string ToString()
         {
-            var items = Gets();
+            var items = Get();
             if (items == null) return string.Empty;
             var stringBuilder = new StringBuilder();
             stringBuilder.Append(">> ").AppendLine(typeof(T).Name);

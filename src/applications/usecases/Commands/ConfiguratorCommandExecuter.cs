@@ -1,4 +1,5 @@
-﻿using Mov.Configurator.Models;
+﻿using Mov.Accessors.Repository;
+using Mov.Configurator.Models;
 using Mov.Controllers;
 using System;
 using System.Collections.Generic;
@@ -7,14 +8,14 @@ using System.Text;
 
 namespace Mov.UseCases
 {
-    public class ConfiguratorCommandExecuter : CommandExecuterBase<IConfiguratorRepositoryCollection>
+    public class ConfiguratorCommandExecuter : CommandExecuterBase<IDomainRepositoryCollection<IConfiguratorRepository>>
     {
-        protected override IDictionary<string, ICommand<IConfiguratorRepositoryCollection>> Handler => new Dictionary<string, ICommand<IConfiguratorRepositoryCollection>>() 
+        protected override IDictionary<string, ICommand<IDomainRepositoryCollection<IConfiguratorRepository>>> Handler => new Dictionary<string, ICommand<IDomainRepositoryCollection<IConfiguratorRepository>>>() 
         {
             { ConfiguratorCommandKey.WriteConsole.ToString(), new WriteConsoleCommand() },
         };
 
-        public ConfiguratorCommandExecuter(IConfiguratorRepositoryCollection database) : base(database)
+        public ConfiguratorCommandExecuter(IDomainRepositoryCollection<IConfiguratorRepository> database) : base(database)
         {
         }
 

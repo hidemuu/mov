@@ -119,10 +119,10 @@ namespace Mov.Designer.ViewModels
             switch (this.PageName.Value)
             {
                 case PAGE_NAME_TREE:
-                    this.repository.Nodes.Export();
+                    this.repository.Nodes.Write();
                     break;
                 case PAGE_NAME_TABLE:
-                    this.repository.Contents.Export();
+                    this.repository.Contents.Write();
                     break;
             }
         }

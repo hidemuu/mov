@@ -18,32 +18,32 @@ namespace Mov.Driver.Repository
         /// <param name="encoding"></param>
         public DriverRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encoding)
         {
-            Commands = new DbObjectRepository<Command, CommandCollection>(dir, GetRelativePath("command"), encoding);
-            Queries = new DbObjectRepository<Query, QueryCollection>(dir, GetRelativePath("query"), encoding);
-            Errors = new DbObjectRepository<Error, ErrorCollection > (dir, GetRelativePath("error"), encoding);
-            Macros = new DbObjectRepository<Macro, MacroCollection>(dir, GetRelativePath("macro"), encoding);
-            Variables = new DbObjectRepository<Variable, VariableCollection>(dir, GetRelativePath("variable"), encoding);
-            Schemas = new DbObjectRepository<Schema, SchemaCollection>(dir, GetRelativePath("schema"), encoding);
-            Connects = new DbObjectRepository<Connect, ConnectCollection>(dir, GetRelativePath("connect"), encoding);
+            Commands = new FileDbObjectRepository<Command, CommandCollection>(dir, GetRelativePath("command"), encoding);
+            Queries = new FileDbObjectRepository<Query, QueryCollection>(dir, GetRelativePath("query"), encoding);
+            Errors = new FileDbObjectRepository<Error, ErrorCollection> (dir, GetRelativePath("error"), encoding);
+            Macros = new FileDbObjectRepository<Macro, MacroCollection>(dir, GetRelativePath("macro"), encoding);
+            Variables = new FileDbObjectRepository<Variable, VariableCollection>(dir, GetRelativePath("variable"), encoding);
+            Schemas = new FileDbObjectRepository<Schema, SchemaCollection>(dir, GetRelativePath("schema"), encoding);
+            Connects = new FileDbObjectRepository<Connect, ConnectCollection>(dir, GetRelativePath("connect"), encoding);
         }
 
         #endregion コンストラクター
 
         #region プロパティ
 
-        public IDbObjectRepository<Command> Commands { get; }
+        public IDbObjectRepository<Command, CommandCollection> Commands { get; }
 
-        public IDbObjectRepository<Query> Queries { get; }
+        public IDbObjectRepository<Query, QueryCollection> Queries { get; }
 
-        public IDbObjectRepository<Error> Errors { get; }
+        public IDbObjectRepository<Error, ErrorCollection> Errors { get; }
 
-        public IDbObjectRepository<Macro> Macros { get; }
+        public IDbObjectRepository<Macro, MacroCollection> Macros { get; }
 
-        public IDbObjectRepository<Variable> Variables { get; }
+        public IDbObjectRepository<Variable, VariableCollection> Variables { get; }
 
-        public IDbObjectRepository<Schema> Schemas { get; }
+        public IDbObjectRepository<Schema, SchemaCollection> Schemas { get; }
 
-        public IDbObjectRepository<Connect> Connects { get; }
+        public IDbObjectRepository<Connect, ConnectCollection> Connects { get; }
 
         #endregion
     }

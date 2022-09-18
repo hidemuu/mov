@@ -97,8 +97,8 @@ namespace Mov.Designer.ViewModels
         private void OnSaveCommand(string parameter)
         {
             Post();
-            repository.Nodes.Export();
-            repository.Contents.Export();
+            repository.Nodes.Write();
+            repository.Contents.Write();
             MessageBox.Show("保存しました");
         }
 
@@ -143,7 +143,7 @@ namespace Mov.Designer.ViewModels
         private void BindModels()
         {
             Models.Clear();
-            foreach (var tree in repository.Nodes.Gets())
+            foreach (var tree in repository.Nodes.Get())
             {
                 Models.Add(new DesignerTreeModel(tree, repository.Contents.Get(tree.Code), repository));
             }
@@ -224,7 +224,7 @@ namespace Mov.Designer.ViewModels
         public DesignerTreeModel(LayoutNode node, LayoutContent table, IDesignerRepository repository) : base(table)
         {
             this.repository = repository;
-            Codes = repository.Contents.Gets().Select(x => x.Code).Distinct().ToList();
+            Codes = repository.Contents.Get().Select(x => x.Code).Distinct().ToList();
             //プロパティ
             Id.Value = node.Id;
             Index.Value = node.Index;

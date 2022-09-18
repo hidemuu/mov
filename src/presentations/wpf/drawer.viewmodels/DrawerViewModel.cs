@@ -56,7 +56,7 @@ namespace Mov.Drawer.ViewModels
         public DrawerViewModel(IRegionManager regionManager, IDialogService dialogService, IDrawerDatabase database) : base(regionManager, dialogService, database)
         {
             this.serviceFactory = new CanvasServiceFactory(this.repository);
-            var drawItems = this.repository.DrawItems.Gets();
+            var drawItems = this.repository.DrawItems.Get();
             var drawItem = drawItems.FirstOrDefault(x => x.Index == 0);
             CreateService(drawItem);
             Canvases.AddRangeOnScheduler(drawItems.Select(x => x.Category));

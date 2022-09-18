@@ -83,7 +83,7 @@ namespace Mov.Designer.ViewModels
         private void OnSaveCommand()
         {
             Post();
-            repository.Contents.Export();
+            repository.Contents.Write();
             MessageBox.Show("保存しました");
         }
 
@@ -124,7 +124,7 @@ namespace Mov.Designer.ViewModels
         {
             Models.Clear();
             modelDisposables.Clear();
-            foreach (var table in repository.Contents.Gets())
+            foreach (var table in repository.Contents.Get())
             {
                 Models.Add(new DesignerTableModel(table));
             }

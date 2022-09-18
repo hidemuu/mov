@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Accessors
 {
-    public interface IEntityRepository<TEntity>
+    public interface IEntityRepositoryAsync<TEntity>
     {
         Task<IEnumerable<TEntity>> GetAsync();
 

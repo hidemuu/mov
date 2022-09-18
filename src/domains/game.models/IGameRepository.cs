@@ -9,6 +9,6 @@ namespace Mov.Game.Models
 {
     public interface IGameRepository
     {
-        IDbObjectRepository<Landmark> Landmarks { get; }
+        IDbObjectRepository<Landmark, LandmarkCollection> Landmarks { get; }
     }
 }

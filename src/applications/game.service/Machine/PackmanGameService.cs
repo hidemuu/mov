@@ -115,12 +115,12 @@ namespace Mov.Game.Service.Machine
 
         public IEnumerable<int> GetLevels()
         {
-            return Repository.Landmarks.Gets().Select(x => x.Lv);
+            return Repository.Landmarks.Get().Select(x => x.Lv);
         }
 
         public Landmark GetLandmark()
         {
-            return Repository.Landmarks.Gets().FirstOrDefault(x => x.Lv == Level);
+            return Repository.Landmarks.Get().FirstOrDefault(x => x.Lv == Level);
         }
 
         /// <summary>

@@ -20,10 +20,10 @@ namespace Mov.Analizer.Repository.Resas
             this.auth = auth;
         }
 
-        public IEntityRepository<ResasResponse<Prefecture>> Prefectures => 
+        public IEntityRepositoryAsync<ResasResponse<Prefecture>> Prefectures => 
             new RestEntityRepository<ResasResponse<Prefecture>>(Path.Combine(this.endpoint, Prefecture.URI), this.auth);
 
-        public IEntityRepository<ResasResponse<City>> Cities =>
+        public IEntityRepositoryAsync<ResasResponse<City>> Cities =>
             new RestEntityRepository<ResasResponse<City>>(Path.Combine(this.endpoint, City.URI), this.auth);
     }
 }

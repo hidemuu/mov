@@ -46,7 +46,7 @@ using Mov.Bom.ViewModels;
 using Mov.Driver.Models;
 using Mov.Driver.Repository;
 
-namespace Mov.Wpf
+namespace Mov.WpfApp
 {
     /// <summary>
     /// Interaction logic for App.xaml

@@ -5,7 +5,7 @@ using Mov.Drawer.Views;
 using Mov.Driver.Views;
 using Mov.Game.Views;
 using Mov.Scheduler.Views;
-using Mov.Wpf;
+using Mov.WpfApp;
 using Mov.WpfControls.ViewModels;
 using Prism.Regions;
 using Prism.Services.Dialogs;
@@ -16,7 +16,7 @@ using System.Linq;
 using System.Reactive.Concurrency;
 using System.Threading;
 
-namespace Mov.Wpf
+namespace Mov.WpfApp
 {
     public class MainWindowViewModel : RegionViewModelBase
     {

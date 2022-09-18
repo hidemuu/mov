@@ -1,7 +1,7 @@
 ﻿using Reactive.Bindings;
 using System;
 
-namespace Mov.Wpf
+namespace Mov.WpfApp
 {
     public class MainWindowModel
     {

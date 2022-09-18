@@ -33,11 +33,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurator.Service", "src
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scheduler.Service", "src\applications\scheduler.service\Scheduler.Service.csproj", "{17FD151F-48BB-485A-AE50-879DC3D0E21E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpf", "app\wpf\Wpf.csproj", "{F5F1E59C-747B-4CAE-BA8C-9EC761A8F8E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp", "app\wpf\WpfApp.csproj", "{F5F1E59C-747B-4CAE-BA8C-9EC761A8F8E2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfDesigns", "src\infrastructures\wpf\wpfdesigns\WpfDesigns.csproj", "{B4C24F0A-3910-4BB0-8B24-5EEA28C1B85A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mov", "app\mov\Mov.csproj", "{3E8328E2-8D91-4F05-AE24-8FB076969901}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "app\mov\ConsoleApp.csproj", "{3E8328E2-8D91-4F05-AE24-8FB076969901}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurator.Views", "src\presentations\wpf\configurator.views\Configurator.Views.csproj", "{2E8D6B9A-EEB1-4A9F-8776-0BFCCA0D37F1}"
 EndProject
@@ -149,7 +149,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Translator.Service", "src\a
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UseCases", "src\applications\usecases\UseCases.csproj", "{E65958B3-D9D5-49A8-8723-3D525AE21522}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseModel", "src\domains\basemodel\BaseModel.csproj", "{27EADBD6-9C9D-4EB9-A846-A0F67DA32EA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseModel", "src\domains\basemodel\BaseModel.csproj", "{27EADBD6-9C9D-4EB9-A846-A0F67DA32EA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

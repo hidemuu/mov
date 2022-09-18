@@ -1849,9 +1849,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\app\\mov\\Mov.csproj",
-      "projectName": "Mov",
-      "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\app\\mov\\Mov.csproj",
+      "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\app\\mov\\ConsoleApp.csproj",
+      "projectName": "Mov.ConsoleApp",
+      "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\app\\mov\\ConsoleApp.csproj",
       "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\app\\mov\\obj\\",
       "projectStyle": "PackageReference",

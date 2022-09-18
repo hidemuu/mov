@@ -4,8 +4,8 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
-    <AssemblyName>Mov.Wpf</AssemblyName>
-    <RootNamespace>Mov.Wpf</RootNamespace>
+    <AssemblyName>Mov.WpfApp</AssemblyName>
+    <RootNamespace>Mov.WpfApp</RootNamespace>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
 

@@ -3,6 +3,8 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>Mov.ConsoleApp</AssemblyName>
+    <RootNamespace>Mov.ConsoleApp</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

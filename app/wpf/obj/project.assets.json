@@ -3006,9 +3006,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\app\\wpf\\Wpf.csproj",
-      "projectName": "Mov.Wpf",
-      "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\app\\wpf\\Wpf.csproj",
+      "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\app\\wpf\\WpfApp.csproj",
+      "projectName": "Mov.WpfApp",
+      "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\app\\wpf\\WpfApp.csproj",
       "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\app\\wpf\\obj\\",
       "projectStyle": "PackageReference",

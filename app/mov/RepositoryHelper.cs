@@ -11,7 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov
+namespace Mov.ConsoleApp
 {
     internal class RepositoryHelper
     {

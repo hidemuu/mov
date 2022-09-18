@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace Mov.Accessors.Connector
+namespace Mov.Connectors
 {
     /// <summary>
     /// Telnet接続ロジッククラス

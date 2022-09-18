@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace Mov.Accessors
 {
-    public interface IRepository<T>
+    public interface IRepository<TModel>
     {
-        Task<IEnumerable<T>> GetAsync();
+        Task<IEnumerable<TModel>> GetAsync();
 
-        Task<T> GetAsync(string param);
+        Task<TModel> GetAsync(string param);
 
-        Task PostAsync(T item);
+        Task PostAsync(TModel item);
     }
 }

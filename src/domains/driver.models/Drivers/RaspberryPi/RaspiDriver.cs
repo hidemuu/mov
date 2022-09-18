@@ -1,4 +1,4 @@
-﻿using Mov.Accessors.Connector;
+﻿using Mov.Connectors;
 using System;
 using System.Collections.Generic;
 using System.Text;

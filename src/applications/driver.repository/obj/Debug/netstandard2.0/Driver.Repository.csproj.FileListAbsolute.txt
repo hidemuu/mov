@@ -16,3 +16,5 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\driver.repository\obj\Debug
 C:\Users\nando\Documents\GitHub\mov\src\applications\driver.repository\obj\Debug\netstandard2.0\Mov.Driver.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\driver.repository\bin\Debug\netstandard2.0\Mov.BaseModel.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\driver.repository\bin\Debug\netstandard2.0\Mov.BaseModel.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.repository\bin\Debug\netstandard2.0\Mov.Connectors.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\driver.repository\bin\Debug\netstandard2.0\Mov.Connectors.pdb

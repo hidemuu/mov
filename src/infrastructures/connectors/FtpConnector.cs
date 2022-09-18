@@ -5,7 +5,7 @@ using System.Net;
 using System.Security.Authentication;
 using System.Text;
 
-namespace Mov.Accessors.Connector
+namespace Mov.Connectors
 {
     public class FtpConnector
     {

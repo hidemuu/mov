@@ -13,3 +13,6 @@ C:\Users\nando\Documents\GitHub\mov\src\domains\driver.models\obj\Debug\netstand
 C:\Users\nando\Documents\GitHub\mov\src\domains\driver.models\obj\Debug\netstandard2.0\Mov.Driver.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\domains\driver.models\bin\Debug\netstandard2.0\Mov.BaseModel.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\driver.models\bin\Debug\netstandard2.0\Mov.BaseModel.pdb
+C:\Users\nando\Documents\GitHub\mov\src\domains\driver.models\bin\Debug\netstandard2.0\Mov.Connectors.dll
+C:\Users\nando\Documents\GitHub\mov\src\domains\driver.models\bin\Debug\netstandard2.0\Mov.Connectors.pdb
+C:\Users\nando\Documents\GitHub\mov\src\domains\driver.models\obj\Debug\netstandard2.0\Driver.Models.csproj.AssemblyReference.cache

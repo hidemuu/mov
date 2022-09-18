@@ -12,14 +12,14 @@ namespace Mov.Configurator.Repository
     /// <summary>
     /// コンフィグレーションデータのリポジトリ
     /// </summary>
-    public class ConfiguratorDatabase : DomainDatabaseBase<IConfiguratorRepository, ConfiguratorRepository>, IConfiguratorDatabase
+    public class ConfiguratorRepositoryCollection : DomainRepositoryCollectionBase<IConfiguratorRepository, FileConfiguratorRepository>, IConfiguratorRepositoryCollection
     {
         #region コンストラクター
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ConfiguratorDatabase(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
+        public ConfiguratorRepositoryCollection(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
         {
             
         }

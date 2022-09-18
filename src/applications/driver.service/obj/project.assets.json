@@ -723,10 +723,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "CsvHelper": "27.2.1",
-          "FluentFTP": "39.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.17",
-          "Newtonsoft.Json": "13.0.1",
-          "SSH.NET": "2020.0.2"
+          "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
           "bin/placeholder/Mov.Accessors.dll": {}
@@ -749,11 +747,26 @@
           "bin/placeholder/Mov.BaseModel.dll": {}
         }
       },
+      "Mov.Connectors/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "FluentFTP": "39.0.0",
+          "SSH.NET": "2020.0.2"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Connectors.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Connectors.dll": {}
+        }
+      },
       "Mov.Driver.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.BaseModel": "1.0.0"
+          "Mov.BaseModel": "1.0.0",
+          "Mov.Connectors": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Driver.Models.dll": {}
@@ -3262,6 +3275,11 @@
       "type": "project",
       "path": "../../domains/basemodel/BaseModel.csproj",
       "msbuildProject": "../../domains/basemodel/BaseModel.csproj"
+    },
+    "Mov.Connectors/1.0.0": {
+      "type": "project",
+      "path": "../../infrastructures/connectors/Connectors.csproj",
+      "msbuildProject": "../../infrastructures/connectors/Connectors.csproj"
     },
     "Mov.Driver.Models/1.0.0": {
       "type": "project",

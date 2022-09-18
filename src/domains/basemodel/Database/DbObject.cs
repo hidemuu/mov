@@ -1,4 +1,5 @@
-﻿using Mov.Utilities.Attributes;
+﻿using Mov.Accessors;
+using Mov.Utilities.Attributes;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

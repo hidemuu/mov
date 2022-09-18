@@ -31,7 +31,7 @@ namespace Mov.Configurator.ViewModels
 
         #region フィールド
 
-        private readonly IConfiguratorDatabase database;
+        private readonly IConfiguratorRepositoryCollection database;
 
         private IConfiguratorRepository repository;
 
@@ -72,7 +72,7 @@ namespace Mov.Configurator.ViewModels
         /// </summary>
         /// <param name="regionManager"></param>
         /// <param name="dialogService"></param>
-        public ConfiguratorViewModel(IRegionManager regionManager, IDialogService dialogService, IConfiguratorDatabase database) : base(regionManager, dialogService)
+        public ConfiguratorViewModel(IRegionManager regionManager, IDialogService dialogService, IConfiguratorRepositoryCollection database) : base(regionManager, dialogService)
         {
             this.database = database;
             this.repository = database.GetRepository("");

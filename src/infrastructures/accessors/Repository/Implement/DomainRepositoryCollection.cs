@@ -1,24 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 
-namespace Mov.BaseModel
+namespace Mov.Accessors.Repository.Implement
 {
-    public abstract class DomainDatabaseBase<T, TInstance> where TInstance : T
+    public class DomainRepositoryCollection<TRepository, TInstance> : IDomainRepositoryCollection<TRepository> where TInstance : TRepository
     {
         #region プロパティ
 
-        public IDictionary<string, T> Repositories { get; }
+        public IDictionary<string, TRepository> Repositories { get; }
 
         #endregion プロパティ
 
         #region コンストラクター
 
-        public DomainDatabaseBase(string baseDir, string extension, string encode)
+        public DomainRepositoryCollection(string baseDir, string extension, string encode)
         {
-            Repositories = new Dictionary<string, T>();
+            Repositories = new Dictionary<string, TRepository>();
             var directories = GetDirectories(baseDir);
             CreateRepository(directories, baseDir, extension, encode);
         }
@@ -27,9 +26,9 @@ namespace Mov.BaseModel
 
         #region メソッド
 
-        public T GetRepository(string dirName)
+        public TRepository GetRepository(string dirName)
         {
-            if (!Repositories.TryGetValue(dirName, out T repository)) return default(T);
+            if (!Repositories.TryGetValue(dirName, out TRepository repository)) return default(TRepository);
             return repository;
         }
 
@@ -39,22 +38,21 @@ namespace Mov.BaseModel
 
         private void CreateRepository(IEnumerable<DirectoryInfo> directories, string baseDir, string extension, string encode)
         {
-            
-            Repositories.Add("", (T)Activator.CreateInstance(typeof(TInstance), baseDir, extension, encode));
+
+            Repositories.Add("", (TRepository)Activator.CreateInstance(typeof(TInstance), baseDir, extension, encode));
             foreach (var directory in directories)
             {
-                Repositories.Add(directory.Name, (T)Activator.CreateInstance(typeof(TInstance), directory.FullName, extension, encode));
+                Repositories.Add(directory.Name, (TRepository)Activator.CreateInstance(typeof(TInstance), directory.FullName, extension, encode));
             }
         }
 
         private IEnumerable<DirectoryInfo> GetDirectories(string baseDir)
         {
             var directoryInfo = new DirectoryInfo(baseDir);
-            if(!directoryInfo.Exists) return null;
+            if (!directoryInfo.Exists) return null;
             return directoryInfo.GetDirectories();
         }
 
         #endregion 内部メソッド
-
     }
 }

@@ -49,3 +49,5 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug\net5.0-windows\Mov.Driver.Views.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.BaseModel.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.BaseModel.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Connectors.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Connectors.pdb

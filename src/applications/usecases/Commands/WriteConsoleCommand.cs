@@ -7,9 +7,9 @@ using System.Text;
 
 namespace Mov.UseCases
 {
-    public class WriteConsoleCommand : ICommand<IConfiguratorDatabase>
+    public class WriteConsoleCommand : ICommand<IConfiguratorRepositoryCollection>
     {
-        public Response Invoke(IConfiguratorDatabase parameter)
+        public Response Invoke(IConfiguratorRepositoryCollection parameter)
         {
             Console.WriteLine(parameter.Repositories[""].UserSettings.ToString());
             return Response.Success;

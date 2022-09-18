@@ -14,7 +14,7 @@ namespace Mov.ConsoleApp
     {
         private readonly ConfiguratorCommandExecuter configurator;
 
-        public ConsoleCommandExecuter(IConfiguratorDatabase configuratorDatabase)
+        public ConsoleCommandExecuter(IConfiguratorRepositoryCollection configuratorDatabase)
         {
             this.configurator = new ConfiguratorCommandExecuter(configuratorDatabase);
         }

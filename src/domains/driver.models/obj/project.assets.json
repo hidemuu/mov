@@ -723,10 +723,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "CsvHelper": "27.2.1",
-          "FluentFTP": "39.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.17",
-          "Newtonsoft.Json": "13.0.1",
-          "SSH.NET": "2020.0.2"
+          "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
           "bin/placeholder/Mov.Accessors.dll": {}
@@ -747,6 +745,20 @@
         },
         "runtime": {
           "bin/placeholder/Mov.BaseModel.dll": {}
+        }
+      },
+      "Mov.Connectors/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "FluentFTP": "39.0.0",
+          "SSH.NET": "2020.0.2"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Connectors.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Connectors.dll": {}
         }
       },
       "Mov.Utilities/1.0.0": {
@@ -3237,6 +3249,11 @@
       "path": "../basemodel/BaseModel.csproj",
       "msbuildProject": "../basemodel/BaseModel.csproj"
     },
+    "Mov.Connectors/1.0.0": {
+      "type": "project",
+      "path": "../../infrastructures/connectors/Connectors.csproj",
+      "msbuildProject": "../../infrastructures/connectors/Connectors.csproj"
+    },
     "Mov.Utilities/1.0.0": {
       "type": "project",
       "path": "../../infrastructures/utilities/Utilities.csproj",
@@ -3246,6 +3263,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "Mov.BaseModel >= 1.0.0",
+      "Mov.Connectors >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -3288,6 +3306,9 @@
           "projectReferences": {
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\basemodel\\BaseModel.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\basemodel\\BaseModel.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\connectors\\Connectors.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\connectors\\Connectors.csproj"
             }
           }
         }

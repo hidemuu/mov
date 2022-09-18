@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Drawer.Repository
 {
-    public class DrawerDatabase : DomainDatabaseBase<IDrawerRepository, DrawerRepository>, IDrawerDatabase
+    public class DrawerDatabase : DomainRepositoryCollectionBase<IDrawerRepository, DrawerRepository>, IDrawerDatabase
     {
         public DrawerDatabase(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
         {

@@ -7,7 +7,7 @@ namespace Mov.Accessors
     /// <summary>
     /// データベースの定数
     /// </summary>
-    public static class DbConstants
+    public static class EntityConstants
     {
         /// <summary>
         /// スペース

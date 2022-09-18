@@ -7,10 +7,10 @@ using System.Text;
 
 namespace Mov.Configurator.Repository
 {
-    public class ConfiguratorRepository : DomainRepositoryBase, IConfiguratorRepository
+    public class FileConfiguratorRepository : DomainRepositoryBase, IConfiguratorRepository
     {
 
-        public ConfiguratorRepository(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(extension)
+        public FileConfiguratorRepository(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(extension)
         {
             UserSettings = new DbObjectRepository<Config, ConfigCollection>(dir, GetRelativePath("user_setting"), encode);
         }

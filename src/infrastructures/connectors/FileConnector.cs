@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Mov.Accessors.Connector
+namespace Mov.Connectors
 {
     /// <summary>
     /// ファイル接続ロジッククラス
@@ -40,7 +40,7 @@ namespace Mov.Accessors.Connector
             }
             catch (Exception ex)
             {
-                Console.WriteLine(DateTime.Now.ToString(DbConstants.DATE_FORMAT) + "/" + ex.Message + "/" + ex.Source + "/" + "バックアップ失敗");
+                Console.WriteLine(DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss.fff") + "/" + ex.Message + "/" + ex.Source + "/" + "バックアップ失敗");
                 return false;
             }
 

@@ -633,10 +633,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "CsvHelper": "27.2.1",
-          "FluentFTP": "39.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.17",
-          "Newtonsoft.Json": "13.0.1",
-          "SSH.NET": "2020.0.2"
+          "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
           "bin/placeholder/Mov.Accessors.dll": {}
@@ -821,6 +819,16 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "Mov.Calculators/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Calculators.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Calculators.dll": {}
+        }
+      },
       "Mov.Configurator.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -895,6 +903,20 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
+      },
+      "Mov.Connectors/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "FluentFTP": "39.0.0",
+          "SSH.NET": "2020.0.2"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Connectors.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Connectors.dll": {}
+        }
       },
       "Mov.Controllers/1.0.0": {
         "type": "project",
@@ -1060,7 +1082,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.BaseModel": "1.0.0"
+          "Mov.BaseModel": "1.0.0",
+          "Mov.Connectors": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Driver.Models.dll": {}
@@ -1137,6 +1160,7 @@
           "Mov.Analizer.Models": "1.0.0",
           "Mov.Authorizer.Models": "1.0.0",
           "Mov.Bom.Models": "1.0.0",
+          "Mov.Calculators": "1.0.0",
           "Mov.Configurator.Models": "1.0.0",
           "Mov.Controllers": "1.0.0",
           "Mov.Designer.Models": "1.0.0",
@@ -1184,6 +1208,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Mov.Calculators": "1.0.0",
           "Mov.Game.Repository": "1.0.0",
           "Mov.Painters": "1.0.0",
           "System.Drawing.Common": "6.0.0"
@@ -2762,6 +2787,11 @@
       "path": "../../src/presentations/wpf/bom.views/Bom.Views.csproj",
       "msbuildProject": "../../src/presentations/wpf/bom.views/Bom.Views.csproj"
     },
+    "Mov.Calculators/1.0.0": {
+      "type": "project",
+      "path": "../../src/infrastructures/calculators/Calculators.csproj",
+      "msbuildProject": "../../src/infrastructures/calculators/Calculators.csproj"
+    },
     "Mov.Configurator.Models/1.0.0": {
       "type": "project",
       "path": "../../src/domains/configurator.models/Configurator.Models.csproj",
@@ -2786,6 +2816,11 @@
       "type": "project",
       "path": "../../src/presentations/wpf/configurator.views/Configurator.Views.csproj",
       "msbuildProject": "../../src/presentations/wpf/configurator.views/Configurator.Views.csproj"
+    },
+    "Mov.Connectors/1.0.0": {
+      "type": "project",
+      "path": "../../src/infrastructures/connectors/Connectors.csproj",
+      "msbuildProject": "../../src/infrastructures/connectors/Connectors.csproj"
     },
     "Mov.Controllers/1.0.0": {
       "type": "project",

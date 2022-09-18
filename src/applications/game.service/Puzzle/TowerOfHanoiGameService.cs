@@ -1,4 +1,5 @@
-﻿using Mov.Game.Models;
+﻿using Mov.Calculators;
+using Mov.Game.Models;
 using Mov.Painters;
 using Mov.Utilities;
 using System;

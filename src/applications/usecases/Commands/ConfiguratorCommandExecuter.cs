@@ -7,14 +7,14 @@ using System.Text;
 
 namespace Mov.UseCases
 {
-    public class ConfiguratorCommandExecuter : CommandExecuterBase<IConfiguratorDatabase>
+    public class ConfiguratorCommandExecuter : CommandExecuterBase<IConfiguratorRepositoryCollection>
     {
-        protected override IDictionary<string, ICommand<IConfiguratorDatabase>> Handler => new Dictionary<string, ICommand<IConfiguratorDatabase>>() 
+        protected override IDictionary<string, ICommand<IConfiguratorRepositoryCollection>> Handler => new Dictionary<string, ICommand<IConfiguratorRepositoryCollection>>() 
         {
             { ConfiguratorCommandKey.WriteConsole.ToString(), new WriteConsoleCommand() },
         };
 
-        public ConfiguratorCommandExecuter(IConfiguratorDatabase database) : base(database)
+        public ConfiguratorCommandExecuter(IConfiguratorRepositoryCollection database) : base(database)
         {
         }
 

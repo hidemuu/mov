@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Net;
 using System.Net.Sockets;
 
-namespace Mov.Accessors.Connector
+namespace Mov.Connectors
 {
     /// <summary>
     /// Telnetソケットクラス

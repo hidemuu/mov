@@ -10,7 +10,7 @@ namespace Mov.Designer.Repository
     /// </summary>
     public class FileDesignerRepository : FileDomainRepositoryBase, IDesignerRepository
     {
-        public override string RelativePath => "designer";
+        public override string DomainPath => "designer";
 
         #region コンストラクター
 

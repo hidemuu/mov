@@ -41,10 +41,9 @@ namespace Mov.Accessors.Repository.Implement
 
         private void CreateRepository(string endpoint, string extension, string encode)
         {
-            var instance = (TInstance)Activator.CreateInstance(typeof(TInstance), endpoint, "", extension, encode);
-            var baseDir = instance.GetRelativePath();
-            var directories = GetDirectories(baseDir);
-            Repositories.Add("", (TRepository)Activator.CreateInstance(typeof(TInstance), endpoint, "", extension, encode));
+            var defaultRepository = (TRepository)Activator.CreateInstance(typeof(TInstance), endpoint, "", extension, encode);
+            var directories = GetDirectories(defaultRepository.GetRelativePath());
+            Repositories.Add("", defaultRepository);
             foreach (var directory in directories)
             {
                 Repositories.Add(directory.Name, (TRepository)Activator.CreateInstance(typeof(TInstance), endpoint, directory.Name, extension, encode));

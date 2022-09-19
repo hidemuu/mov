@@ -9,6 +9,8 @@ namespace Mov.Accessors.Repository.Domain
         /// <summary>
         /// ドメインの相対パス
         /// </summary>
-        string RelativePath { get; }
+        string DomainPath { get; }
+
+        string GetRelativePath();
     }
 }

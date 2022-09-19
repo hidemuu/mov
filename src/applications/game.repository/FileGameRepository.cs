@@ -11,7 +11,7 @@ namespace Mov.Game.Repository
 {
     public class FileGameRepository : FileDomainRepositoryBase, IGameRepository
     {
-        public override string RelativePath => "game";
+        public override string DomainPath => "game";
 
         #region コンストラクター
 

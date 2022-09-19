@@ -11,7 +11,7 @@ namespace Mov.Configurator.Repository
 {
     public class FileConfiguratorRepository : FileDomainRepositoryBase, IConfiguratorRepository
     {
-        public override string RelativePath => "configurator";
+        public override string DomainPath => "configurator";
 
         public FileConfiguratorRepository(string endpoint, string fileDir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8)
             : base(endpoint, fileDir, extension, encoding)

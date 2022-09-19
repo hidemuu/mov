@@ -10,7 +10,7 @@ namespace Mov.Driver.Repository
 {
     public class FileDriverRepository : FileDomainRepositoryBase, IDriverRepository
     {
-        public override string RelativePath => "driver";
+        public override string DomainPath => "driver";
 
         #region コンストラクター
 

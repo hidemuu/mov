@@ -25,7 +25,7 @@ namespace Mov.Accessors.Repository.Implement
 
         #region プロパティ
 
-        public abstract string RelativePath { get; }
+        public abstract string DomainPath { get; }
 
         #endregion プロパティ
 
@@ -51,7 +51,7 @@ namespace Mov.Accessors.Repository.Implement
         /// 相対パスを取得
         /// </summary>
         /// <returns></returns>
-        public string GetRelativePath() => Path.Combine(this.endpoint, RelativePath);
+        public string GetRelativePath() => Path.Combine(this.endpoint, DomainPath);
 
         /// <summary>
         /// フルパスを取得

@@ -1,9 +1,12 @@
-﻿using Mov.Accessors.Repository;
+﻿using Mov.Accessors;
+using Mov.Accessors.Repository;
 using Mov.Accessors.Repository.Implement;
 using Mov.Configurator.Models;
 using Mov.Configurator.Repository;
 using Mov.Designer.Models;
 using Mov.Designer.Repository;
+using Mov.UseCases.Creators;
+using Mov.UseCases.Factories;
 using Mov.Utilities;
 using System;
 using System.Collections.Generic;
@@ -19,7 +22,6 @@ namespace Mov.ConsoleApp
     {
         #region プロパティ
 
-        internal FileDesignerRepository Designer { get; }
         internal IDomainRepositoryCollection<IConfiguratorRepository> Configurator { get; }
 
         #endregion プロパティ
@@ -29,21 +31,14 @@ namespace Mov.ConsoleApp
         /// </summary>
         internal RepositoryHelper()
         {
-            var assembly = Assembly.GetEntryAssembly();
-            //var rootPath = assembly.Location.TrimEnd(assembly.ManifestModule.Name.ToCharArray());
-            var rootPath = PathHelper.GetCurrentRootPath("mov");
-            var resourcePath = Path.Combine(rootPath, "resources");
-            this.Designer = new FileDesignerRepository(resourcePath, "xml");
-            this.Configurator = new FileDomainRepositoryCollection<IConfiguratorRepository, FileConfiguratorRepository>(resourcePath, "json");
+            var factory = new FileDomainRepositoryFactory(PathCreator.GetResourcePath());
+            this.Configurator = factory.Create<IConfiguratorRepository>(SerializeConstants.PATH_JSON);
         }
 
         #region メソッド
 
         internal void WriteAll()
         {
-            Console.WriteLine(Designer.Nodes.ToString());
-            Console.WriteLine(Designer.Shells.ToString());
-            Console.WriteLine(Designer.Contents.ToString());
             Console.WriteLine(Configurator.Repositories[""].Configs.ToString());
         }
 

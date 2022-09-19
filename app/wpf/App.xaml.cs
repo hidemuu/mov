@@ -48,6 +48,9 @@ using Mov.Driver.Repository;
 using Mov.Accessors.Repository;
 using Mov.Accessors.Repository.Implement;
 using Mov.UseCases.Factories;
+using Mov.Accessors;
+using Mov.UseCases;
+using Mov.UseCases.Creators;
 
 namespace Mov.WpfApp
 {
@@ -118,21 +121,18 @@ namespace Mov.WpfApp
             //DIコンテナ GetContainerでUnityのコンテナに直接アクセス可能
             var container = containerRegistry.GetContainer();
 
-            //リポジトリの登録
-            var assembly = Assembly.GetEntryAssembly();
-            //var rootPath = assembly.Location.TrimEnd(assembly.ManifestModule.Name.ToCharArray());
-            var rootPath = PathHelper.GetCurrentRootPath("mov");     
-            var repositoryFactory = new FileDomainRepositoryFactory(Path.Combine(rootPath, "resources"));
+            //リポジトリの登録  
+            var repositoryFactory = new FileDomainRepositoryFactory(PathCreator.GetResourcePath());
             containerRegistry.RegisterInstance<IDomainRepositoryCollection<IConfiguratorRepository>>(
-                repositoryFactory.Create<IConfiguratorRepository>("json"));
+                repositoryFactory.Create<IConfiguratorRepository>(SerializeConstants.PATH_JSON));
             containerRegistry.RegisterInstance<IDomainRepositoryCollection<IDesignerRepository>>(
-                repositoryFactory.Create<IDesignerRepository>("xml"));
+                repositoryFactory.Create<IDesignerRepository>(SerializeConstants.PATH_XML));
             containerRegistry.RegisterInstance<IDomainRepositoryCollection<IGameRepository>>(
-                repositoryFactory.Create<IGameRepository>("json"));
+                repositoryFactory.Create<IGameRepository>(SerializeConstants.PATH_JSON));
             containerRegistry.RegisterInstance<IDomainRepositoryCollection<IDrawerRepository>>(
-                repositoryFactory.Create<IDrawerRepository>("json"));
+                repositoryFactory.Create<IDrawerRepository>(SerializeConstants.PATH_JSON));
             containerRegistry.RegisterInstance<IDomainRepositoryCollection<IDriverRepository>>(
-                repositoryFactory.Create<IDriverRepository>("json"));
+                repositoryFactory.Create<IDriverRepository>(SerializeConstants.PATH_JSON));
 
             //サービスの登録
             containerRegistry.RegisterInstance<IMachineGameService>(Container.Resolve<PackmanGameService>());

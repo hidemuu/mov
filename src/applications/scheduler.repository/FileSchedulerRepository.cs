@@ -10,7 +10,7 @@ namespace Mov.Scheduler.Repository
 {
     public class FileSchedulerRepository : FileDomainRepositoryBase, ISchedulerRepository
     {
-        public override string RelativePath => "scheduler";
+        public override string DomainPath => "scheduler";
 
         public FileSchedulerRepository(string endpoint, string fileDir, string extension, string encoding = "utf-8") 
             : base(endpoint, fileDir, extension, encoding)

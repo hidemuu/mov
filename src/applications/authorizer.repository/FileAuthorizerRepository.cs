@@ -8,11 +8,11 @@ using System.Text;
 
 namespace Mov.Authorizer.Repository
 {
-    public class AuthorizerRepository : FileDomainRepositoryBase
+    public class FileAuthorizerRepository : FileDomainRepositoryBase
     {
-        public override string RelativePath => "authorizer";
+        public override string DomainPath => "authorizer";
 
-        public AuthorizerRepository(string endpoint, string fileDir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(endpoint, fileDir, extension, encode)
+        public FileAuthorizerRepository(string endpoint, string fileDir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(endpoint, fileDir, extension, encode)
         {
             Accounts = new FileDbObjectRepository<Account, AccountCollection>(GetPath("account"), encode);
         }

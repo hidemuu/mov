@@ -1,4 +1,5 @@
-﻿using Mov.Designer.Models;
+﻿using Mov.Accessors.Repository;
+using Mov.Designer.Models;
 using Mov.Designer.Service;
 using Mov.WpfControls;
 using Mov.WpfControls.ViewModels;
@@ -20,7 +21,7 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        private readonly IDesignerDatabase database;
+        private readonly IDomainRepositoryCollection<IDesignerRepository> database;
 
         private IDesignerRepository repository;
 
@@ -50,7 +51,7 @@ namespace Mov.Designer.ViewModels
         /// コンストラクター
         /// </summary>
         /// <param name="repository"></param>
-        public DesignerTableViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerDatabase database) : base(regionManager, dialogService)
+        public DesignerTableViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDesignerRepository> database) : base(regionManager, dialogService)
         {
             this.database = database;
             SaveCommand.Subscribe(OnSaveCommand).AddTo(Disposables);

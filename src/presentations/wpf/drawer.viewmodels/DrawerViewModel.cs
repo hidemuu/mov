@@ -1,4 +1,5 @@
-﻿using Mov.Drawer.Models;
+﻿using Mov.Accessors.Repository;
+using Mov.Drawer.Models;
 using Mov.Drawer.Service;
 using Mov.Drawer.Service.Canvas;
 using Mov.Painters;
@@ -53,7 +54,7 @@ namespace Mov.Drawer.ViewModels
 
         #region コンストラクター
 
-        public DrawerViewModel(IRegionManager regionManager, IDialogService dialogService, IDrawerDatabase database) : base(regionManager, dialogService, database)
+        public DrawerViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDrawerRepository> database) : base(regionManager, dialogService, database)
         {
             this.serviceFactory = new CanvasServiceFactory(this.repository);
             var drawItems = this.repository.DrawItems.Get();

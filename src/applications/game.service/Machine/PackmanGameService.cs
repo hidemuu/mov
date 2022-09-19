@@ -1,4 +1,5 @@
-﻿using Mov.Game.Models;
+﻿using Mov.Accessors.Repository;
+using Mov.Game.Models;
 using Mov.Game.Models.Characters;
 using Mov.Game.Models.Engines;
 using Mov.Game.Models.Maps;
@@ -64,7 +65,7 @@ namespace Mov.Game.Service.Machine
         /// コンストラクター
         /// </summary>
         /// <param name="repository"></param>
-        public PackmanGameService(IGameDatabase database) : base()
+        public PackmanGameService(IDomainRepositoryCollection<IGameRepository> database) : base()
         {
             this.Repository = database.GetRepository("");
             var map = GetLandmark();

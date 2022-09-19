@@ -1,4 +1,5 @@
 ﻿using MaterialDesignColors;
+using Mov.Accessors.Repository;
 using Mov.Designer.Models;
 using Mov.WpfControls.ViewModels;
 using Mov.WpfDesigns.Services;
@@ -18,7 +19,7 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        private readonly IDesignerDatabase database;
+        private readonly IDomainRepositoryCollection<IDesignerRepository> database;
 
         private IDesignerRepository repository;
 
@@ -34,7 +35,7 @@ namespace Mov.Designer.ViewModels
 
         #region コンストラクター
 
-        public DesignerThemeViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerDatabase database) : base(regionManager, dialogService)
+        public DesignerThemeViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDesignerRepository> database) : base(regionManager, dialogService)
         {
             this.database = database;
             // ComboBoxの初期値を設定するにはItemsSourceで利用しているインスタンスの中から指定する必要がある

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Mov.Driver.Repository
 {
-    public class DriverRepository : FileDomainRepositoryBase, IDriverRepository
+    public class FileDriverRepository : FileDomainRepositoryBase, IDriverRepository
     {
         #region コンストラクター
 
@@ -16,7 +16,7 @@ namespace Mov.Driver.Repository
         /// コンストラクター
         /// </summary>
         /// <param name="encoding"></param>
-        public DriverRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encoding)
+        public FileDriverRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encoding)
         {
             Commands = new FileDbObjectRepository<Command, CommandCollection>(dir, GetRelativePath("command"), encoding);
             Queries = new FileDbObjectRepository<Query, QueryCollection>(dir, GetRelativePath("query"), encoding);

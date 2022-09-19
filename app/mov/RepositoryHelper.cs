@@ -19,7 +19,7 @@ namespace Mov.ConsoleApp
     {
         #region プロパティ
 
-        internal DesignerRepository Designer { get; }
+        internal FileDesignerRepository Designer { get; }
         internal IDomainRepositoryCollection<IConfiguratorRepository> Configurator { get; }
 
         #endregion プロパティ
@@ -33,7 +33,7 @@ namespace Mov.ConsoleApp
             //var rootPath = assembly.Location.TrimEnd(assembly.ManifestModule.Name.ToCharArray());
             var rootPath = PathHelper.GetCurrentRootPath("mov");
             var resourcePath = Path.Combine(rootPath, "resources");
-            this.Designer = new DesignerRepository(resourcePath, "xml");
+            this.Designer = new FileDesignerRepository(resourcePath, "xml");
             this.Configurator = new FileDomainRepositoryCollection<IConfiguratorRepository, FileConfiguratorRepository>(resourcePath, "json");
         }
 

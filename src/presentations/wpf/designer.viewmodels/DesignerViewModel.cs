@@ -1,4 +1,5 @@
-﻿using Mov.Designer.Models;
+﻿using Mov.Accessors.Repository;
+using Mov.Designer.Models;
 using Mov.WpfControls.ViewModels;
 using Prism.Regions;
 using Prism.Services.Dialogs;
@@ -39,7 +40,7 @@ namespace Mov.Designer.ViewModels
             { PAGE_NAME_THEME, "DesignerThemeView" },
         };
 
-        private readonly IDesignerDatabase database;
+        private readonly IDomainRepositoryCollection<IDesignerRepository> database;
 
         private IDesignerRepository repository;
 
@@ -74,7 +75,7 @@ namespace Mov.Designer.ViewModels
         /// </summary>
         /// <param name="regionManager"></param>
         /// <param name="dialogService"></param>
-        public DesignerViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerDatabase database) : base(regionManager, dialogService)
+        public DesignerViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDesignerRepository> database) : base(regionManager, dialogService)
         {
             this.database = database;
             this.repository = database.GetRepository(SelectedComboItem.Value);

@@ -122,11 +122,21 @@ namespace Mov.WpfApp
             //var rootPath = assembly.Location.TrimEnd(assembly.ManifestModule.Name.ToCharArray());
             var rootPath = PathHelper.GetCurrentRootPath("mov");
             var resourcePath = Path.Combine(rootPath, "resources");
-            containerRegistry.RegisterInstance<IDomainRepositoryCollection<IConfiguratorRepository>>(new FileDomainRepositoryCollection<IConfiguratorRepository, FileConfiguratorRepository>(Path.Combine(resourcePath, "configurator"), "json"));
-            containerRegistry.RegisterInstance<IDesignerDatabase>(new DesignerDatabase(Path.Combine(resourcePath, "designer"), "xml"));
-            containerRegistry.RegisterInstance<IGameDatabase>(new GameDatabase(Path.Combine(resourcePath, "game"), "json"));
-            containerRegistry.RegisterInstance<IDrawerDatabase>(new DrawerDatabase(Path.Combine(resourcePath, "drawer"), "json"));
-            containerRegistry.RegisterInstance<IDriverDatabase>(new DriverDatabase(Path.Combine(resourcePath, "driver"), "json"));
+            containerRegistry.RegisterInstance<IDomainRepositoryCollection<IConfiguratorRepository>>(
+                new FileDomainRepositoryCollection<IConfiguratorRepository, FileConfiguratorRepository>(
+                    Path.Combine(resourcePath, "configurator"), "json"));
+            containerRegistry.RegisterInstance <IDomainRepositoryCollection<IDesignerRepository>> (
+                new FileDomainRepositoryCollection<IDesignerRepository, FileDesignerRepository>(
+                    Path.Combine(resourcePath, "designer"), "xml"));
+            containerRegistry.RegisterInstance<IDomainRepositoryCollection<IGameRepository>>(
+                new FileDomainRepositoryCollection<IGameRepository, FileGameRepository>(
+                    Path.Combine(resourcePath, "game"), "json"));
+            containerRegistry.RegisterInstance<IDomainRepositoryCollection<IDrawerRepository>>(
+                new FileDomainRepositoryCollection<IDrawerRepository, FileDrawerRepository>(
+                    Path.Combine(resourcePath, "drawer"), "json"));
+            containerRegistry.RegisterInstance<IDomainRepositoryCollection<IDriverRepository>>(
+                new FileDomainRepositoryCollection<IDriverRepository, FileDriverRepository>(
+                    Path.Combine(resourcePath, "driver"), "json"));
 
             //サービスの登録
             containerRegistry.RegisterInstance<IMachineGameService>(Container.Resolve<PackmanGameService>());

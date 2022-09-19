@@ -8,7 +8,7 @@ namespace Mov.Designer.Repository
     /// <summary>
     /// デザイナーのリポジトリ
     /// </summary>
-    public class DesignerRepository : FileDomainRepositoryBase, IDesignerRepository
+    public class FileDesignerRepository : FileDomainRepositoryBase, IDesignerRepository
     {
         #region コンストラクター
 
@@ -16,7 +16,7 @@ namespace Mov.Designer.Repository
         /// コンストラクター
         /// </summary>
         /// <param name="encoding"></param>
-        public DesignerRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encoding)
+        public FileDesignerRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encoding)
         {
             Shells = new FileDbObjectRepository<Shell, ShellCollection>(dir, GetRelativePath("shell"), encoding);
             Nodes = new FileDbObjectRepository<LayoutNode, LayoutNodeCollection>(dir, GetRelativePath("node"), encoding);

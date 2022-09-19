@@ -8,14 +8,14 @@ using System.Text;
 
 namespace Mov.Drawer.Repository
 {
-    public class DrawerRepository : FileDomainRepositoryBase, IDrawerRepository
+    public class FileDrawerRepository : FileDomainRepositoryBase, IDrawerRepository
     {
         #region コンストラクター
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public DrawerRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encoding)
+        public FileDrawerRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encoding)
         {
             DrawItems = new FileDbObjectRepository<DrawItem, DrawItemCollection>(dir, GetRelativePath("draw_item"), encoding);
         }

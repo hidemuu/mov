@@ -1,4 +1,5 @@
-﻿using Mov.Drawer.Models;
+﻿using Mov.Accessors.Repository;
+using Mov.Drawer.Models;
 using Mov.Drawer.Service;
 using Mov.Painters;
 using Mov.WpfControls.ViewModels;
@@ -25,7 +26,7 @@ namespace Mov.Drawer.ViewModels
     {
         #region フィールド
 
-        protected readonly IDrawerDatabase database;
+        protected readonly IDomainRepositoryCollection<IDrawerRepository> database;
 
         protected IDrawerRepository repository;
 
@@ -44,7 +45,7 @@ namespace Mov.Drawer.ViewModels
 
         #region コンストラクター
 
-        public DrawViewModelBase(IRegionManager regionManager, IDialogService dialogService, IDrawerDatabase database) : base(regionManager, dialogService)
+        public DrawViewModelBase(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDrawerRepository> database) : base(regionManager, dialogService)
         {
             this.database = database;
             this.repository = database.GetRepository("");

@@ -1,4 +1,5 @@
-﻿using Mov.Designer.Models;
+﻿using Mov.Accessors.Repository;
+using Mov.Designer.Models;
 using Mov.Designer.Service;
 using Mov.Designer.Service.Nodes;
 using Mov.WpfControls.ViewModels;
@@ -32,7 +33,7 @@ namespace Mov.Designer.ViewModels
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public DesignerPartsViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerDatabase database) : base(regionManager, dialogService)
+        public DesignerPartsViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDesignerRepository> database) : base(regionManager, dialogService)
         {
             
         }

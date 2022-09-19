@@ -8,9 +8,9 @@ using System.Text;
 
 namespace Mov.Scheduler.Repository
 {
-    public class SchedulerRepository : FileDomainRepositoryBase, ISchedulerRepository
+    public class FileSchedulerRepository : FileDomainRepositoryBase, ISchedulerRepository
     {
-        public SchedulerRepository(string dir, string extension, string encoding = "utf-8") : base(dir, extension, encoding)
+        public FileSchedulerRepository(string dir, string extension, string encoding = "utf-8") : base(dir, extension, encoding)
         {
            
         }

@@ -22,6 +22,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using Mov.Painters;
+using Mov.Accessors.Repository;
 
 namespace Mov.Game.ViewModels
 {
@@ -53,7 +54,7 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public GameSoftViewModel(IRegionManager regionManager, IDialogService dialogService, IDrawerDatabase database, IGameDatabase gameDatabase, IMachineGameService gameService) : base(regionManager, dialogService, database)
+        public GameSoftViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDrawerRepository> database, IDomainRepositoryCollection<IGameRepository> gameDatabase, IMachineGameService gameService) : base(regionManager, dialogService, database)
         {
             KeyUpCommand.Subscribe(() => OnKeyUp()).AddTo(Disposables);
             KeyGestureEnterCommand.Subscribe(() => OnKeyGestureEnter()).AddTo(Disposables);

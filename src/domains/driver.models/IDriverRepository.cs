@@ -1,4 +1,5 @@
 ﻿using Mov.Accessors;
+using Mov.Accessors.Repository.Domain;
 using Mov.BaseModel;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace Mov.Driver.Models
 {
-    public interface IDriverRepository
+    public interface IDriverRepository : IDomainRepository
     {
         IDbObjectRepository<Error, ErrorCollection> Errors { get; }
 

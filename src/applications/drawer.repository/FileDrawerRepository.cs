@@ -10,6 +10,8 @@ namespace Mov.Drawer.Repository
 {
     public class FileDrawerRepository : FileDomainRepositoryBase, IDrawerRepository
     {
+        public override string RelativePath => "drawer";
+
         #region コンストラクター
 
         /// <summary>

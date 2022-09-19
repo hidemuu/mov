@@ -1,4 +1,5 @@
 ﻿using Mov.Accessors.Repository;
+using Mov.Accessors.Repository.Domain;
 using Mov.Accessors.Repository.Implement;
 using Mov.Configurator.Models;
 using Mov.Configurator.Repository;
@@ -28,7 +29,7 @@ namespace Mov.UseCases.Factories
             this.resourcePath = resourcePath;
         }
 
-        public IDomainRepositoryCollection<TRepository> Create<TRepository>(string fileType)
+        public IDomainRepositoryCollection<TRepository> Create<TRepository>(string fileType) where TRepository : IDomainRepository
         {
             var repositoryType = typeof(TRepository);
             if (repositoryType is IConfiguratorRepository)

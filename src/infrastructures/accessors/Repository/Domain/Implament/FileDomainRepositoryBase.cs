@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Mov.Accessors.Repository.Domain;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Mov.Accessors.Repository.Implement
 {
-    public abstract class FileDomainRepositoryBase
+    public abstract class FileDomainRepositoryBase : IDomainRepository
     {
         #region フィールド
 
@@ -15,6 +16,14 @@ namespace Mov.Accessors.Repository.Implement
 
         #endregion フィールド
 
+        #region プロパティ
+
+        public abstract string RelativePath { get; }
+
+        #endregion プロパティ
+
+        #region コンストラクター
+
         /// <summary>
         /// コンストラクター
         /// </summary>
@@ -23,6 +32,8 @@ namespace Mov.Accessors.Repository.Implement
         {
             this.extension = extension;
         }
+
+        #endregion コンストラクター
 
         #region メソッド
 

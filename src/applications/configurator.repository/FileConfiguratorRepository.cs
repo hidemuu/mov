@@ -1,4 +1,5 @@
 ﻿using Mov.Accessors;
+using Mov.Accessors.Repository.Domain;
 using Mov.Accessors.Repository.Implement;
 using Mov.BaseModel;
 using Mov.Configurator.Models;
@@ -10,6 +11,7 @@ namespace Mov.Configurator.Repository
 {
     public class FileConfiguratorRepository : FileDomainRepositoryBase, IConfiguratorRepository
     {
+        public override string RelativePath => "configurator";
 
         public FileConfiguratorRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8)
             : base(dir, extension, encoding)

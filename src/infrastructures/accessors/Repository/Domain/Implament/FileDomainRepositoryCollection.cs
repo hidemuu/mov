@@ -1,11 +1,14 @@
-﻿using System;
+﻿using Mov.Accessors.Repository.Domain;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
 namespace Mov.Accessors.Repository.Implement
 {
-    public class FileDomainRepositoryCollection<TRepository, TInstance> : IDomainRepositoryCollection<TRepository>
+    public class FileDomainRepositoryCollection<TRepository, TInstance>
+        : IDomainRepositoryCollection<TRepository> 
+        where TRepository : IDomainRepository
     {
         #region プロパティ
 

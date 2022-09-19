@@ -32,27 +32,27 @@ namespace Mov.UseCases.Factories
         public IDomainRepositoryCollection<TRepository> Create<TRepository>(string fileType) where TRepository : IDomainRepository
         {
             var repositoryType = typeof(TRepository);
-            if (repositoryType is IConfiguratorRepository)
+            if (repositoryType == typeof(IConfiguratorRepository))
             {
                 return new FileDomainRepositoryCollection<TRepository, FileConfiguratorRepository>(
                     Path.Combine(this.resourcePath, "configurator"), fileType);
             }
-            if (repositoryType is IDesignerRepository)
+            if (repositoryType == typeof(IDesignerRepository))
             {
                 return new FileDomainRepositoryCollection<TRepository, FileDesignerRepository>(
                     Path.Combine(this.resourcePath, "designer"), fileType);
             }
-            if (repositoryType is IDrawerRepository)
+            if (repositoryType == typeof(IDrawerRepository))
             {
                 return new FileDomainRepositoryCollection<TRepository, FileDrawerRepository>(
                     Path.Combine(this.resourcePath, "drawer"), fileType);
             }
-            if (repositoryType is IDriverRepository)
+            if (repositoryType == typeof(IDriverRepository))
             {
                 return new FileDomainRepositoryCollection<TRepository, FileDriverRepository>(
                     Path.Combine(this.resourcePath, "driver"), fileType);
             }
-            if (repositoryType is IGameRepository)
+            if (repositoryType == typeof(IGameRepository))
             {
                 return new FileDomainRepositoryCollection<TRepository, FileGameRepository>(
                     Path.Combine(this.resourcePath, "game"), fileType);

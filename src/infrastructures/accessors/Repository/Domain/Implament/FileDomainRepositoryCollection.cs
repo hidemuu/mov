@@ -9,6 +9,7 @@ namespace Mov.Accessors.Repository.Implement
     public class FileDomainRepositoryCollection<TRepository, TInstance>
         : IDomainRepositoryCollection<TRepository> 
         where TRepository : IDomainRepository
+        where TInstance : FileDomainRepositoryBase
     {
         #region プロパティ
 
@@ -18,8 +19,9 @@ namespace Mov.Accessors.Repository.Implement
 
         #region コンストラクター
 
-        public FileDomainRepositoryCollection(string baseDir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8)
+        public FileDomainRepositoryCollection(string endpoint, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8)
         {
+            var baseDir = endpoint;
             Repositories = new Dictionary<string, TRepository>();
             var directories = GetDirectories(baseDir);
             CreateRepository(directories, baseDir, extension, encode);

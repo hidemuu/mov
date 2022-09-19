@@ -28,7 +28,7 @@ namespace Mov.Accessors.Repository.Implement
         /// コンストラクター
         /// </summary>
         /// <param name="extension"></param>
-        public FileDomainRepositoryBase(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8)
+        public FileDomainRepositoryBase(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8)
         {
             this.extension = extension;
         }

@@ -121,27 +121,18 @@ namespace Mov.WpfApp
             //リポジトリの登録
             var assembly = Assembly.GetEntryAssembly();
             //var rootPath = assembly.Location.TrimEnd(assembly.ManifestModule.Name.ToCharArray());
-            var rootPath = PathHelper.GetCurrentRootPath("mov");
-            var resourcePath = Path.Combine(rootPath, "resources");
+            var rootPath = PathHelper.GetCurrentRootPath("mov");     
+            var repositoryFactory = new FileDomainRepositoryFactory(Path.Combine(rootPath, "resources"));
             containerRegistry.RegisterInstance<IDomainRepositoryCollection<IConfiguratorRepository>>(
-                new FileDomainRepositoryCollection<IConfiguratorRepository, FileConfiguratorRepository>(
-                    Path.Combine(resourcePath, "configurator"), "json"));
-            containerRegistry.RegisterInstance <IDomainRepositoryCollection<IDesignerRepository>> (
-                new FileDomainRepositoryCollection<IDesignerRepository, FileDesignerRepository>(
-                    Path.Combine(resourcePath, "designer"), "xml"));
+                repositoryFactory.Create<IConfiguratorRepository>("json"));
+            containerRegistry.RegisterInstance<IDomainRepositoryCollection<IDesignerRepository>>(
+                repositoryFactory.Create<IDesignerRepository>("xml"));
             containerRegistry.RegisterInstance<IDomainRepositoryCollection<IGameRepository>>(
-                new FileDomainRepositoryCollection<IGameRepository, FileGameRepository>(
-                    Path.Combine(resourcePath, "game"), "json"));
+                repositoryFactory.Create<IGameRepository>("json"));
             containerRegistry.RegisterInstance<IDomainRepositoryCollection<IDrawerRepository>>(
-                new FileDomainRepositoryCollection<IDrawerRepository, FileDrawerRepository>(
-                    Path.Combine(resourcePath, "drawer"), "json"));
+                repositoryFactory.Create<IDrawerRepository>("json"));
             containerRegistry.RegisterInstance<IDomainRepositoryCollection<IDriverRepository>>(
-                new FileDomainRepositoryCollection<IDriverRepository, FileDriverRepository>(
-                    Path.Combine(resourcePath, "driver"), "json"));
-
-            var repositoryFactory = new FileDomainRepositoryFactory(resourcePath);
-            //containerRegistry.RegisterInstance<IDomainRepositoryCollection<IConfiguratorRepository>>(
-            //    (FileDomainRepositoryCollection<IConfiguratorRepository, FileConfiguratorRepository>)repositoryFactory.Create<IConfiguratorRepository>(resourcePath));
+                repositoryFactory.Create<IDriverRepository>("json"));
 
             //サービスの登録
             containerRegistry.RegisterInstance<IMachineGameService>(Container.Resolve<PackmanGameService>());

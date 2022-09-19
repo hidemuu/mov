@@ -8,11 +8,11 @@ using System.Text;
 
 namespace Mov.UseCases
 {
-    public class WriteConsoleCommand : ICommand<IDomainRepositoryCollection<IConfiguratorRepository>>
+    public class WriteConsoleCommand : ICommand<IDomainRepositoryCollection<IConfiguratorRepository>, Response>
     {
         public Response Invoke(IDomainRepositoryCollection<IConfiguratorRepository> parameter)
         {
-            Console.WriteLine(parameter.Repositories[""].UserSettings.ToString());
+            Console.WriteLine(parameter.Repositories[""].Configs.ToString());
             return Response.Success;
         }
     }

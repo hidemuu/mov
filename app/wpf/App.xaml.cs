@@ -47,6 +47,7 @@ using Mov.Driver.Models;
 using Mov.Driver.Repository;
 using Mov.Accessors.Repository;
 using Mov.Accessors.Repository.Implement;
+using Mov.UseCases.Factories;
 
 namespace Mov.WpfApp
 {
@@ -137,6 +138,10 @@ namespace Mov.WpfApp
             containerRegistry.RegisterInstance<IDomainRepositoryCollection<IDriverRepository>>(
                 new FileDomainRepositoryCollection<IDriverRepository, FileDriverRepository>(
                     Path.Combine(resourcePath, "driver"), "json"));
+
+            var repositoryFactory = new FileDomainRepositoryFactory(resourcePath);
+            //containerRegistry.RegisterInstance<IDomainRepositoryCollection<IConfiguratorRepository>>(
+            //    (FileDomainRepositoryCollection<IConfiguratorRepository, FileConfiguratorRepository>)repositoryFactory.Create<IConfiguratorRepository>(resourcePath));
 
             //サービスの登録
             containerRegistry.RegisterInstance<IMachineGameService>(Container.Resolve<PackmanGameService>());

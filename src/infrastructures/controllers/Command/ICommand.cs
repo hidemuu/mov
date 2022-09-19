@@ -8,8 +8,8 @@ namespace Mov.Controllers
     /// コマンドのインターフェース
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface ICommand<T>
+    public interface ICommand<TParameter, TResponse>
     {
-        Response Invoke(T parameter);
+        TResponse Invoke(TParameter parameter);
     }
 }

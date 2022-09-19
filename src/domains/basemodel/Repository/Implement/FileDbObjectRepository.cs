@@ -12,8 +12,10 @@ namespace Mov.BaseModel
     /// <summary>
     /// データベースリポジトリ基本クラス
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public class FileDbObjectRepository<T, C> : FileEntityRepository<T, C>, IDbObjectRepository<T, C> where T : DbObject where C : DbObjectCollection<T>
+    /// <typeparam name="TEntity"></typeparam>
+    public class FileDbObjectRepository<TEntity, TBody> 
+        : FileEntityRepository<TEntity, TBody>, IDbObjectRepository<TEntity, TBody> 
+        where TEntity : DbObject where TBody : DbObjectCollection<TEntity>
     {
         #region フィールド
 
@@ -22,7 +24,8 @@ namespace Mov.BaseModel
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FileDbObjectRepository(string basePath, string relativePath, string encoding) : base(Path.Combine(basePath, relativePath), encoding)
+        public FileDbObjectRepository(string basePath, string relativePath, string encoding) 
+            : base(Path.Combine(basePath, relativePath), encoding)
         {
            
         }
@@ -36,10 +39,10 @@ namespace Mov.BaseModel
         /// 全データ取得
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<T> Get()
+        public IEnumerable<TEntity> Get()
         {
             if (body == default) Read();
-            if (body == default) return new List<T>();
+            if (body == default) return new List<TEntity>();
             return body.Items;
         }
 
@@ -48,21 +51,21 @@ namespace Mov.BaseModel
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public T Get(Guid id) => Get(Get(), id);
+        public TEntity Get(Guid id) => Get(Get(), id);
 
         /// <summary>
         /// データ取得
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public T Get(int index) => Get(Get(), index);
+        public TEntity Get(int index) => Get(Get(), index);
 
         /// <summary>
         /// データ取得
         /// </summary>
         /// <param name="code"></param>
         /// <returns></returns>
-        public T Get(string code) => Get(Get(), code);
+        public TEntity Get(string code) => Get(Get(), code);
 
         #endregion GET
 
@@ -72,9 +75,9 @@ namespace Mov.BaseModel
         /// 全データ追加・更新
         /// </summary>
         /// <param name="items"></param>
-        public void Posts(IEnumerable<T> items)
+        public void Posts(IEnumerable<TEntity> items)
         {
-            List<T> srcs = Get().ToList();
+            List<TEntity> srcs = Get().ToList();
             foreach (var item in items)
             {
                 var src = srcs.FirstOrDefault(x => x.Id == item.Id);
@@ -91,7 +94,7 @@ namespace Mov.BaseModel
         /// データ追加・更新
         /// </summary>
         /// <param name="item"></param>
-        public void Post(T item)
+        public void Post(TEntity item)
         {
             var src = Get().FirstOrDefault(x => x.Id == item.Id);
             src = item;
@@ -105,11 +108,11 @@ namespace Mov.BaseModel
         /// データ追加
         /// </summary>
         /// <param name="item"></param>
-        public void Put(T item)
+        public void Put(TEntity item)
         {
             var items = Get().ToList();
             items.Add(item);
-            if (body == default) body = (C)Activator.CreateInstance(typeof(C));
+            if (body == default) body = (TBody)Activator.CreateInstance(typeof(TBody));
             body.Items = items.ToArray();
         }
 
@@ -118,13 +121,13 @@ namespace Mov.BaseModel
         /// </summary>
         /// <param name="item"></param>
         /// <param name="id"></param>
-        public void Put(T item, Guid id)
+        public void Put(TEntity item, Guid id)
         {
-            if (item is DbObjectNode<T>)
+            if (item is DbObjectNode<TEntity>)
             {
                 var src = Get(Get(), id);
                 if (src == null) return;
-                if (src is DbObjectNode<T> node)
+                if (src is DbObjectNode<TEntity> node)
                 {
                     node.Children.Add(item);
                     return;
@@ -141,7 +144,7 @@ namespace Mov.BaseModel
         /// データ削除
         /// </summary>
         /// <param name="item"></param>
-        public void Delete(T item)
+        public void Delete(TEntity item)
         {
             var srcs = Get().ToList();
             Remove(srcs, item);
@@ -170,12 +173,12 @@ namespace Mov.BaseModel
             if (src == null) return;
             var moved = Get().FirstOrDefault(x => x.Id == movedId);
             if (moved == null) return;
-            if (src is DbObjectNode<T> srcNode)
+            if (src is DbObjectNode<TEntity> srcNode)
             {
-                if (!(moved is DbObjectNode<T> movedNode)) return;
-                var srcNodeClone = new DbObjectNode<T>(srcNode);
-                srcNode = new DbObjectNode<T>(movedNode);
-                movedNode = new DbObjectNode<T>(srcNodeClone);
+                if (!(moved is DbObjectNode<TEntity> movedNode)) return;
+                var srcNodeClone = new DbObjectNode<TEntity>(srcNode);
+                srcNode = new DbObjectNode<TEntity>(movedNode);
+                movedNode = new DbObjectNode<TEntity>(srcNodeClone);
             }
             else if (src is DbObject srcObject)
             {
@@ -233,7 +236,7 @@ namespace Mov.BaseModel
             var items = Get();
             if (items == null) return string.Empty;
             var stringBuilder = new StringBuilder();
-            stringBuilder.Append(">> ").AppendLine(typeof(T).Name);
+            stringBuilder.Append(">> ").AppendLine(typeof(TEntity).Name);
             GetStrings(items.ToList(), stringBuilder);
             return stringBuilder.ToString();
         }
@@ -242,14 +245,14 @@ namespace Mov.BaseModel
 
         #region 内部メソッド
 
-        private T Get(IEnumerable<T> items, object key)
+        private TEntity Get(IEnumerable<TEntity> items, object key)
         {
-            T item = null;
+            TEntity item = null;
             if (key is Guid id) item = items.FirstOrDefault(x => x.Id == id);
             if (key is int index) item = items.FirstOrDefault(x => x.Index == index);
             if (key is string code) item = items.FirstOrDefault(x => x.Code == code);
             if (item != null) return item;
-            if (!(items is IEnumerable<DbObjectNode<T>> nodes)) return item;
+            if (!(items is IEnumerable<DbObjectNode<TEntity>> nodes)) return item;
             foreach (var node in nodes)
             {
                 item = Get(node.Children, key);
@@ -258,10 +261,10 @@ namespace Mov.BaseModel
             return item;
         }
 
-        private void Remove(ICollection<T> items, T item)
+        private void Remove(ICollection<TEntity> items, TEntity item)
         {
             var isSuccess = items.Remove(item);
-            if (items is IEnumerable<DbObjectNode<T>> nodes)
+            if (items is IEnumerable<DbObjectNode<TEntity>> nodes)
             {
                 foreach (var node in nodes)
                 {
@@ -275,7 +278,7 @@ namespace Mov.BaseModel
         /// </summary>
         /// <param name="items"></param>
         /// <param name="stringBuilder"></param>
-        private void GetStrings(List<T> items, StringBuilder stringBuilder)
+        private void GetStrings(List<TEntity> items, StringBuilder stringBuilder)
         {
             bool isWightedHeader = false;
             foreach (var item in items)
@@ -291,7 +294,7 @@ namespace Mov.BaseModel
                     stringBuilder.AppendLine();
                     isWightedHeader = true;
                 }
-                if (item is DbObjectNode<T> node)
+                if (item is DbObjectNode<TEntity> node)
                 {
                     stringBuilder.AppendLine(node.ToStringTables());
                     continue;

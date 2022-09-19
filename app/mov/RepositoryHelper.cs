@@ -44,7 +44,7 @@ namespace Mov.ConsoleApp
             Console.WriteLine(Designer.Nodes.ToString());
             Console.WriteLine(Designer.Shells.ToString());
             Console.WriteLine(Designer.Contents.ToString());
-            Console.WriteLine(Configurator.Repositories[""].UserSettings.ToString());
+            Console.WriteLine(Configurator.Repositories[""].Configs.ToString());
         }
 
         #endregion メソッド

@@ -111,13 +111,13 @@ namespace Mov.Configurator.ViewModels
 
         private void Import()
         {
-            repository.UserSettings.Read();
+            repository.Configs.Read();
         }
 
         private void Export()
         {
             PostItems();
-            repository.UserSettings.Read();
+            repository.Configs.Write();
         }
 
         private void Add(object parameter)
@@ -125,7 +125,7 @@ namespace Mov.Configurator.ViewModels
             switch (this.currentComboItem)
             {
                 case DATA_NAME_USER_SETTINGS:
-                    repository.UserSettings.Put(new Config());
+                    repository.Configs.Put(new Config());
                     BindConfigs();
                     break;
             }
@@ -137,7 +137,7 @@ namespace Mov.Configurator.ViewModels
             switch (this.currentComboItem)
             {
                 case DATA_NAME_USER_SETTINGS:
-                    repository.UserSettings.Delete((Guid)selectedItem[0].GetValue());
+                    repository.Configs.Delete((Guid)selectedItem[0].GetValue());
                     BindConfigs();
                     break;
             }
@@ -161,7 +161,7 @@ namespace Mov.Configurator.ViewModels
         {
             Items.Clear();
             var properties = Config.GetProperties();
-            foreach (Config item in this.repository?.UserSettings?.Get())
+            foreach (Config item in this.repository?.Configs?.Get())
             {
                 Items.Add(GetColumnItems<Config>(properties.Select(x => x.propertyInfo), item).ToArray());
             }
@@ -200,7 +200,7 @@ namespace Mov.Configurator.ViewModels
         private void PostConfigs()
         {
             var configs = GetDbObjects<Config>(Config.GetProperties().Select(x => x.propertyInfo)).ToList();
-            this.repository?.UserSettings.Posts(configs);
+            this.repository?.Configs.Posts(configs);
         }
 
        

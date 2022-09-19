@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Accessors.Repository.Implement
 {
-    public class FileDomainRepositoryCollection<TRepository, TInstance> : IDomainRepositoryCollection<TRepository> where TInstance : TRepository
+    public class FileDomainRepositoryCollection<TRepository, TInstance> : IDomainRepositoryCollection<TRepository>
     {
         #region プロパティ
 

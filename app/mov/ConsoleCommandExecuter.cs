@@ -13,16 +13,16 @@ namespace Mov.ConsoleApp
 {
     internal class ConsoleCommandExecuter
     {
-        private readonly ConfiguratorCommandExecuter configurator;
+        private readonly CommandExecuter configurator;
 
         public ConsoleCommandExecuter(IDomainRepositoryCollection<IConfiguratorRepository> configuratorDatabase)
         {
-            this.configurator = new ConfiguratorCommandExecuter(configuratorDatabase);
+            this.configurator = new CommandExecuter(configuratorDatabase);
         }
 
-        public Response Invoke()
+        public Response Invoke(string parameter)
         {
-            return configurator.Invoke(ConfiguratorCommandKey.WriteConsole);
+            return configurator.Invoke(parameter);
         }
 
     }

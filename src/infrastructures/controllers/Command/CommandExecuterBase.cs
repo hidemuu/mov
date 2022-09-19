@@ -6,14 +6,14 @@ namespace Mov.Controllers
     /// コマンド実行のベースクラス
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class CommandExecuterBase<T> : ICommandExecuter<T>
+    public abstract class CommandExecuterBase<TPamameter, TResponse> : ICommandExecuter<TResponse>
     {
         #region フィールド
 
         /// <summary>
         /// コマンドパラメータ
         /// </summary>
-        private readonly T parameter;
+        private readonly TPamameter parameter;
 
         #endregion フィールド
 
@@ -22,7 +22,7 @@ namespace Mov.Controllers
         /// <summary>
         /// コマンドハンドラー
         /// </summary>
-        protected abstract IDictionary<string, ICommand<T>> Handler { get; }
+        protected abstract IDictionary<string, ICommand<TPamameter, TResponse>> Handler { get; }
 
         #endregion プロパティ
 
@@ -32,7 +32,7 @@ namespace Mov.Controllers
         /// コンストラクター
         /// </summary>
         /// <param name="parameter"></param>
-        public CommandExecuterBase(T parameter)
+        public CommandExecuterBase(TPamameter parameter)
         {
             this.parameter = parameter;
         }
@@ -46,7 +46,7 @@ namespace Mov.Controllers
         /// </summary>
         /// <param name="command"></param>
         /// <returns></returns>
-        public Response Invoke(string command)
+        public TResponse Invoke(string command)
         {
             return Handler[command].Invoke(this.parameter);
         }

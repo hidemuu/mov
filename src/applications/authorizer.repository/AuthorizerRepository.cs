@@ -12,9 +12,9 @@ namespace Mov.Authorizer.Repository
     {
         public override string RelativePath => "authorizer";
 
-        public AuthorizerRepository(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
+        public AuthorizerRepository(string endpoint, string fileDir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(endpoint, fileDir, extension, encode)
         {
-            Accounts = new FileDbObjectRepository<Account, AccountCollection>(dir, GetRelativePath("account"), encode);
+            Accounts = new FileDbObjectRepository<Account, AccountCollection>(GetPath("account"), encode);
         }
 
         public IDbObjectRepository<Account, AccountCollection> Accounts { get; }

@@ -21,10 +21,8 @@ namespace Mov.Accessors.Repository.Implement
 
         public FileDomainRepositoryCollection(string endpoint, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8)
         {
-            var baseDir = endpoint;
             Repositories = new Dictionary<string, TRepository>();
-            var directories = GetDirectories(baseDir);
-            CreateRepository(directories, baseDir, extension, encode);
+            CreateRepository(endpoint, extension, encode);
         }
 
         #endregion コンストラクター
@@ -41,13 +39,15 @@ namespace Mov.Accessors.Repository.Implement
 
         #region 内部メソッド
 
-        private void CreateRepository(IEnumerable<DirectoryInfo> directories, string baseDir, string extension, string encode)
+        private void CreateRepository(string endpoint, string extension, string encode)
         {
-
-            Repositories.Add("", (TRepository)Activator.CreateInstance(typeof(TInstance), baseDir, extension, encode));
+            var instance = (TInstance)Activator.CreateInstance(typeof(TInstance), endpoint, "", extension, encode);
+            var baseDir = instance.GetRelativePath();
+            var directories = GetDirectories(baseDir);
+            Repositories.Add("", (TRepository)Activator.CreateInstance(typeof(TInstance), endpoint, "", extension, encode));
             foreach (var directory in directories)
             {
-                Repositories.Add(directory.Name, (TRepository)Activator.CreateInstance(typeof(TInstance), directory.FullName, extension, encode));
+                Repositories.Add(directory.Name, (TRepository)Activator.CreateInstance(typeof(TInstance), endpoint, directory.Name, extension, encode));
             }
         }
 

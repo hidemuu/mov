@@ -18,9 +18,10 @@ namespace Mov.Game.Repository
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FileGameRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encoding)
+        public FileGameRepository(string endpoint, string fileDir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) 
+            : base(endpoint, fileDir, extension, encoding)
         {
-            Landmarks = new FileDbObjectRepository<Landmark, LandmarkCollection>(dir, GetRelativePath("landmark"), encoding);
+            Landmarks = new FileDbObjectRepository<Landmark, LandmarkCollection>(GetPath("landmark"), encoding);
         }
 
         #endregion コンストラクター

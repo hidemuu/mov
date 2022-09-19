@@ -11,9 +11,10 @@ namespace Mov.Translator.Repository
     public class FileTranslatorRepository : FileDomainRepositoryBase
     {
         public override string RelativePath => "translator";
-        public FileTranslatorRepository(string dir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encode)
+        public FileTranslatorRepository(string endpoint, string fileDir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) 
+            : base(endpoint, fileDir, extension, encode)
         {
-            Translates = new FileDbObjectRepository<Translate, TranslateCollection>(dir, GetRelativePath("translate"), encode);
+            Translates = new FileDbObjectRepository<Translate, TranslateCollection>(GetPath("translate"), encode);
         }
 
         public IDbObjectRepository<Translate, TranslateCollection> Translates { get; }

@@ -13,10 +13,10 @@ namespace Mov.Configurator.Repository
     {
         public override string RelativePath => "configurator";
 
-        public FileConfiguratorRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8)
-            : base(dir, extension, encoding)
+        public FileConfiguratorRepository(string endpoint, string fileDir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8)
+            : base(endpoint, fileDir, extension, encoding)
         {
-            Configs = new FileDbObjectRepository<Config, ConfigCollection>(dir, GetRelativePath("config"), encoding);
+            Configs = new FileDbObjectRepository<Config, ConfigCollection>(GetPath("config"), encoding);
         }
 
         #region プロパティ

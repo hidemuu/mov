@@ -17,9 +17,10 @@ namespace Mov.Drawer.Repository
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FileDrawerRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encoding)
+        public FileDrawerRepository(string endpoint,  string fileDir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) 
+            : base(endpoint, fileDir, extension, encoding)
         {
-            DrawItems = new FileDbObjectRepository<DrawItem, DrawItemCollection>(dir, GetRelativePath("draw_item"), encoding);
+            DrawItems = new FileDbObjectRepository<DrawItem, DrawItemCollection>(GetPath("draw_item"), encoding);
         }
 
         #endregion コンストラクター

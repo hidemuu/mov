@@ -12,7 +12,8 @@ namespace Mov.Scheduler.Repository
     {
         public override string RelativePath => "scheduler";
 
-        public FileSchedulerRepository(string dir, string extension, string encoding = "utf-8") : base(dir, extension, encoding)
+        public FileSchedulerRepository(string endpoint, string fileDir, string extension, string encoding = "utf-8") 
+            : base(endpoint, fileDir, extension, encoding)
         {
            
         }

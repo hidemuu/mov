@@ -35,27 +35,27 @@ namespace Mov.UseCases.Factories
             if (repositoryType == typeof(IConfiguratorRepository))
             {
                 return new FileDomainRepositoryCollection<TRepository, FileConfiguratorRepository>(
-                    Path.Combine(this.resourcePath, "configurator"), fileType);
+                    this.resourcePath, fileType);
             }
             if (repositoryType == typeof(IDesignerRepository))
             {
                 return new FileDomainRepositoryCollection<TRepository, FileDesignerRepository>(
-                    Path.Combine(this.resourcePath, "designer"), fileType);
+                    this.resourcePath, fileType);
             }
             if (repositoryType == typeof(IDrawerRepository))
             {
                 return new FileDomainRepositoryCollection<TRepository, FileDrawerRepository>(
-                    Path.Combine(this.resourcePath, "drawer"), fileType);
+                    this.resourcePath, fileType);
             }
             if (repositoryType == typeof(IDriverRepository))
             {
                 return new FileDomainRepositoryCollection<TRepository, FileDriverRepository>(
-                    Path.Combine(this.resourcePath, "driver"), fileType);
+                    this.resourcePath, fileType);
             }
             if (repositoryType == typeof(IGameRepository))
             {
                 return new FileDomainRepositoryCollection<TRepository, FileGameRepository>(
-                    Path.Combine(this.resourcePath, "game"), fileType);
+                    this.resourcePath, fileType);
             }
             return null;
         }

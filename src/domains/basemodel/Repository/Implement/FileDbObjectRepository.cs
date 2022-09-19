@@ -24,8 +24,8 @@ namespace Mov.BaseModel
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FileDbObjectRepository(string basePath, string relativePath, string encoding) 
-            : base(Path.Combine(basePath, relativePath), encoding)
+        public FileDbObjectRepository(string fileName, string encoding) 
+            : base(fileName, encoding)
         {
            
         }

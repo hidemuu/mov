@@ -18,13 +18,14 @@ namespace Mov.Designer.Repository
         /// コンストラクター
         /// </summary>
         /// <param name="encoding"></param>
-        public FileDesignerRepository(string dir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) : base(dir, extension, encoding)
+        public FileDesignerRepository(string endpoint, string fileDir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) 
+            : base(endpoint, fileDir, extension, encoding)
         {
-            Shells = new FileDbObjectRepository<Shell, ShellCollection>(dir, GetRelativePath("shell"), encoding);
-            Nodes = new FileDbObjectRepository<LayoutNode, LayoutNodeCollection>(dir, GetRelativePath("node"), encoding);
-            Contents = new FileDbObjectRepository<LayoutContent, LayoutContentCollection>(dir, GetRelativePath("content"), encoding);
-            Themes = new FileDbObjectRepository<Theme, ThemeCollection>(dir, GetRelativePath("theme"), encoding);
-            Icons = new FileDbObjectRepository<Icon, IconCollection>(dir, GetRelativePath("icon"), encoding);
+            Shells = new FileDbObjectRepository<Shell, ShellCollection>(GetPath("shell"), encoding);
+            Nodes = new FileDbObjectRepository<LayoutNode, LayoutNodeCollection>(GetPath("node"), encoding);
+            Contents = new FileDbObjectRepository<LayoutContent, LayoutContentCollection>(GetPath("content"), encoding);
+            Themes = new FileDbObjectRepository<Theme, ThemeCollection>(GetPath("theme"), encoding);
+            Icons = new FileDbObjectRepository<Icon, IconCollection>(GetPath("icon"), encoding);
         }
 
         #endregion コンストラクター

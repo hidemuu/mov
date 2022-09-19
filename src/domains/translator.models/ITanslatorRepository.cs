@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Driver.Models.RaspberryPi
+namespace Mov.Translator.Models
 {
-    public interface IRaspiDriver
+    public interface ITanslatorRepository
     {
     }
 }

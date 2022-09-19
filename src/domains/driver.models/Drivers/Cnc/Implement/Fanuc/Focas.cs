@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Driver.Models.CNC.Fanuc
 {
-    public class Focas : ICNCDriver
+    public class Focas : ICncDriver
     {
         /* Axis define */
 #if FS30D

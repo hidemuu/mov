@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Driver.Models.CNC
+namespace Mov.Driver.Models.RaspberryPi
 {
-    public interface ICncDriver
+    public interface IRaspberryPiDriver
     {
     }
 }

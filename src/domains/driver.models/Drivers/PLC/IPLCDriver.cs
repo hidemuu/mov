@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Driver.Models.PLC
 {
-    public interface IPLCDriver
+    public interface IPlcDriver
     {
         Task<int> ConnectAsync(int id, int protocol, string password, int timeOut);
         Task<int> DisConnectAsync();

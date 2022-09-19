@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Driver.Models.RaspberryPi
 {
-    public class RaspiDriver : IRaspiDriver
+    public class RaspberryPiDriver : IRaspberryPiDriver
     {
         #region フィールド
 
@@ -16,7 +16,7 @@ namespace Mov.Driver.Models.RaspberryPi
 
         #region コンストラクター
 
-        public RaspiDriver()
+        public RaspberryPiDriver()
         {
             this.connector = new SshConnector();
         }

@@ -8,8 +8,8 @@ namespace Mov.Controllers
     /// アクションのインターフェース（戻り値なし）
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface IAction<T>
+    public interface IAction<TParameter>
     {
-        void Invoke(T parameter);
+        void Invoke(TParameter parameter);
     }
 }

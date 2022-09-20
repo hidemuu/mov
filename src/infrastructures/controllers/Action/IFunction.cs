@@ -7,10 +7,9 @@ namespace Mov.Controllers
     /// <summary>
     /// ファンクションのインターフェース
     /// </summary>
-    /// <typeparam name="TRequest"></typeparam>
     /// <typeparam name="TResult"></typeparam>
-    public interface IFunction<TRequest, TResult>
+    public interface IFunction<TResult>
     {
-        TResult Invoke(TRequest parameter);
+        TResult Invoke();
     }
 }

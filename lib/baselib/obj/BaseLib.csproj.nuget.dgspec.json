@@ -1725,6 +1725,12 @@
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\accessors\\Accessors.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\accessors\\Accessors.csproj"
               },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\calculators\\Calculators.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\calculators\\Calculators.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\controllers\\Controllers.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\controllers\\Controllers.csproj"
+              },
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj"
               }
@@ -2177,12 +2183,6 @@
               },
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\translator.models\\Translator.Models.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\translator.models\\Translator.Models.csproj"
-              },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\calculators\\Calculators.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\calculators\\Calculators.csproj"
-              },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\controllers\\Controllers.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\controllers\\Controllers.csproj"
               }
             }
           }

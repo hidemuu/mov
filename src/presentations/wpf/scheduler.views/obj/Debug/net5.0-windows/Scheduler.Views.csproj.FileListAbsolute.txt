@@ -56,3 +56,7 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.views\bin\De
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.views\bin\Debug\net5.0-windows\Mov.Scheduler.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.views\bin\Debug\net5.0-windows\Mov.BaseModel.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.views\bin\Debug\net5.0-windows\Mov.BaseModel.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.views\bin\Debug\net5.0-windows\Mov.Calculators.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.views\bin\Debug\net5.0-windows\Mov.Controllers.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.views\bin\Debug\net5.0-windows\Mov.Calculators.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\scheduler.views\bin\Debug\net5.0-windows\Mov.Controllers.pdb

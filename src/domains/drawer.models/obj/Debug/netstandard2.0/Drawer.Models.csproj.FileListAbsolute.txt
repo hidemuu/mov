@@ -14,3 +14,7 @@ C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\obj\Debug\netstand
 C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\obj\Debug\netstandard2.0\Mov.Drawer.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\bin\Debug\netstandard2.0\Mov.BaseModel.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\bin\Debug\netstandard2.0\Mov.BaseModel.pdb
+C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\bin\Debug\netstandard2.0\Mov.Calculators.dll
+C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\bin\Debug\netstandard2.0\Mov.Controllers.dll
+C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\bin\Debug\netstandard2.0\Mov.Calculators.pdb
+C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\bin\Debug\netstandard2.0\Mov.Controllers.pdb

@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Mov.Controllers
 {
     /// <summary>
-    /// コマンド実行のベースクラス
+    /// コマンド実行クラス
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class CommandExecuterBase<TPamameter, TResponse> : ICommandExecuter<TResponse>
+    public class CommandExecuter<TPamameter, TResponse>
     {
         #region フィールド
 
@@ -15,16 +16,12 @@ namespace Mov.Controllers
         /// </summary>
         private readonly TPamameter parameter;
 
-        #endregion フィールド
-
-        #region プロパティ
-
         /// <summary>
         /// コマンドハンドラー
         /// </summary>
-        protected abstract IDictionary<string, ICommand<TPamameter, TResponse>> Handler { get; }
+        private IDictionary<string, ICommand<TPamameter, TResponse>> handler { get; }
 
-        #endregion プロパティ
+        #endregion フィールド
 
         #region コンストラクター
 
@@ -32,9 +29,10 @@ namespace Mov.Controllers
         /// コンストラクター
         /// </summary>
         /// <param name="parameter"></param>
-        public CommandExecuterBase(TPamameter parameter)
+        public CommandExecuter(TPamameter parameter, IDictionary<string, ICommand<TPamameter, TResponse>> handler)
         {
             this.parameter = parameter;
+            this.handler = handler;
         }
 
         #endregion コンストラクター
@@ -48,7 +46,7 @@ namespace Mov.Controllers
         /// <returns></returns>
         public TResponse Invoke(string command, string[] args)
         {
-            return Handler[command].Invoke(this.parameter, args);
+            return this.handler[command].Invoke(this.parameter, args);
         }
 
         /// <summary>
@@ -57,12 +55,27 @@ namespace Mov.Controllers
         /// <returns></returns>
         public IEnumerable<string> GetCommands()
         {
-            return Handler.Keys;
+            return this.handler.Keys;
         }
 
+        public IEnumerable<Tuple<string, string>> GetCommandHelps()
+        {
+            var commandHelps = new List<Tuple<string, string>>();
+            foreach(var command in this.handler)
+            {
+                commandHelps.Add(new Tuple<string, string>(command.Key, command.Value.Help()));
+            }
+            return commandHelps;
+        }
+
+        /// <summary>
+        /// コマンドの存在チェック
+        /// </summary>
+        /// <param name="command"></param>
+        /// <returns></returns>
         public bool Exists(string command)
         {
-            return Handler.ContainsKey(command);
+            return this.handler.ContainsKey(command);
         }
 
         #endregion メソッド

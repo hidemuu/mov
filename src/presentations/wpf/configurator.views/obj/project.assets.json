@@ -523,6 +523,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Mov.Accessors": "1.0.0",
+          "Mov.Calculators": "1.0.0",
+          "Mov.Controllers": "1.0.0",
           "Mov.Utilities": "1.0.0"
         },
         "compile": {
@@ -530,6 +532,16 @@
         },
         "runtime": {
           "bin/placeholder/Mov.BaseModel.dll": {}
+        }
+      },
+      "Mov.Calculators/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Calculators.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Calculators.dll": {}
         }
       },
       "Mov.Configurator.Models/1.0.0": {
@@ -564,6 +576,16 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
+      },
+      "Mov.Controllers/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Controllers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Controllers.dll": {}
+        }
       },
       "Mov.Designer.Models/1.0.0": {
         "type": "project",
@@ -1664,6 +1686,11 @@
       "path": "../../../domains/basemodel/BaseModel.csproj",
       "msbuildProject": "../../../domains/basemodel/BaseModel.csproj"
     },
+    "Mov.Calculators/1.0.0": {
+      "type": "project",
+      "path": "../../../infrastructures/calculators/Calculators.csproj",
+      "msbuildProject": "../../../infrastructures/calculators/Calculators.csproj"
+    },
     "Mov.Configurator.Models/1.0.0": {
       "type": "project",
       "path": "../../../domains/configurator.models/Configurator.Models.csproj",
@@ -1673,6 +1700,11 @@
       "type": "project",
       "path": "../configurator.viewmodels/Configurator.ViewModels.csproj",
       "msbuildProject": "../configurator.viewmodels/Configurator.ViewModels.csproj"
+    },
+    "Mov.Controllers/1.0.0": {
+      "type": "project",
+      "path": "../../../infrastructures/controllers/Controllers.csproj",
+      "msbuildProject": "../../../infrastructures/controllers/Controllers.csproj"
     },
     "Mov.Designer.Models/1.0.0": {
       "type": "project",

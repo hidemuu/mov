@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Framework
+namespace Mov.Controllers
 {
     public enum DomainResponse
     {

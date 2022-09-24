@@ -22,3 +22,5 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\nets
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.BaseModel.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Calculators.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Calculators.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Controllers.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Controllers.pdb

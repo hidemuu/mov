@@ -9,7 +9,7 @@ namespace Mov.Bom.Models
     /// never store sensitive information in code or share server-side keys with
     /// the client.
     /// </summary>
-    public static class Constants
+    public static class BomConstants
     {
         /// <summary>
         /// ルートパス（絶対パス）

@@ -479,6 +479,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Mov.Accessors": "1.0.0",
+          "Mov.Calculators": "1.0.0",
+          "Mov.Controllers": "1.0.0",
           "Mov.Utilities": "1.0.0"
         },
         "compile": {
@@ -731,9 +733,7 @@
           "Mov.Analizer.Models": "1.0.0",
           "Mov.Authorizer.Models": "1.0.0",
           "Mov.Bom.Models": "1.0.0",
-          "Mov.Calculators": "1.0.0",
           "Mov.Configurator.Models": "1.0.0",
-          "Mov.Controllers": "1.0.0",
           "Mov.Designer.Models": "1.0.0",
           "Mov.Drawer.Models": "1.0.0",
           "Mov.Driver.Models": "1.0.0",

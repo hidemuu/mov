@@ -3,6 +3,7 @@ using Mov.Accessors.Repository;
 using Mov.Analizer.Models;
 using Mov.Configurator.Models;
 using Mov.Configurator.Repository;
+using Mov.Configurator.Service;
 using Mov.Controllers;
 using Mov.Designer.Models;
 using Mov.Designer.Repository;
@@ -47,31 +48,32 @@ namespace Mov.ConsoleApp
             driverRepository = fileRepositoryFactory.Create<IDriverRepository>(SerializeConstants.PATH_JSON);
             analizerRepository = fileRepositoryFactory.Create<IAnalizerRepository>(SerializeConstants.PATH_JSON);
             translatorRepository = fileRepositoryFactory.Create<ITranslatorRepository>(SerializeConstants.PATH_JSON);
-            Console.WriteLine("ドメインを入力してください");
             Console.ReadKey();
+            Console.WriteLine("ドメインを入力してください");
             //コントローラー生成
-            switch (Console.ReadLine() ?? string.Empty) 
+            var input = Console.ReadLine() ?? string.Empty;
+            switch (input) 
             {
                 case "config":
-                    domainController = new DomainController(configRepository.DefaultRepository);
+                    domainController = new DomainController(configRepository.DefaultRepository, new ConfiguratorService(configRepository.DefaultRepository));
                     break;
                 case "design":
-                    domainController = new DomainController(designerRepository.DefaultRepository);
+                    domainController = new DomainController(designerRepository.DefaultRepository, null);
                     break;
                 case "game":
-                    domainController = new DomainController(gameRepository.DefaultRepository);
+                    domainController = new DomainController(gameRepository.DefaultRepository, null);
                     break;
                 case "driver":
-                    domainController = new DomainController(driverRepository.DefaultRepository);
+                    domainController = new DomainController(driverRepository.DefaultRepository, null);
                     break;
                 case "analizer":
-                    domainController = new DomainController(analizerRepository.DefaultRepository);
+                    domainController = new DomainController(analizerRepository.DefaultRepository, null);
                     break;
                 case "translator":
-                    domainController = new DomainController(translatorRepository.DefaultRepository);
+                    domainController = new DomainController(translatorRepository.DefaultRepository, null);
                     break;
                 default:
-                    domainController = new DomainController(configRepository.DefaultRepository);
+                    domainController = new DomainController(configRepository.DefaultRepository, new ConfiguratorService(configRepository.DefaultRepository));
                     break;
             }
             Console.WriteLine("コントローラーを生成しました");
@@ -82,7 +84,8 @@ namespace Mov.ConsoleApp
             while (true)
             {
                 Console.Write("> ");
-                if(!TryGetCommandParameter(Console.ReadLine() ?? string.Empty, out string command, out string[] parameters))
+                input = Console.ReadLine() ?? string.Empty;
+                if (!TryGetCommandParameter(input, out string command, out string[] parameters))
                 {
                     Console.WriteLine("コマンドを入力してください");
                     continue;

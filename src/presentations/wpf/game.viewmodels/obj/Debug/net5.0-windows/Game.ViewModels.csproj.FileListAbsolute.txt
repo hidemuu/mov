@@ -44,3 +44,5 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\De
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.BaseModel.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Calculators.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Calculators.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Controllers.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Controllers.pdb

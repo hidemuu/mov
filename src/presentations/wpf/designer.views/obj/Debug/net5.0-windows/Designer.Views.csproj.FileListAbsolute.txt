@@ -75,3 +75,7 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Deb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerPartsShell.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.BaseModel.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.BaseModel.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Calculators.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Controllers.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Calculators.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Controllers.pdb

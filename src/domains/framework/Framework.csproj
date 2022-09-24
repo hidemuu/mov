@@ -7,8 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\infrastructures\calculators\Calculators.csproj" />
-    <ProjectReference Include="..\..\infrastructures\controllers\Controllers.csproj" />
     <ProjectReference Include="..\analizer.models\Analizer.Models.csproj" />
     <ProjectReference Include="..\authorizer.models\Authorizer.Models.csproj" />
     <ProjectReference Include="..\bom.models\Bom.Models.csproj" />

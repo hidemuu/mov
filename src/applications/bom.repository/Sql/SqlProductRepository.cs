@@ -14,9 +14,9 @@ namespace Mov.Bom.Repository.Sql
     /// </summary>
     public class SqlProductRepository : IProductRepository
     {
-        private readonly StockerDbContext _db;
+        private readonly BomDbContext _db;
 
-        public SqlProductRepository(StockerDbContext db)
+        public SqlProductRepository(BomDbContext db)
         {
             _db = db;
         }

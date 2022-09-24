@@ -5,7 +5,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 
-namespace Mov.UseCases.Creators
+namespace Mov.Framework
 {
     public static class PathCreator
     {
@@ -13,9 +13,9 @@ namespace Mov.UseCases.Creators
         {
             //var assembly = Assembly.GetEntryAssembly();
             //var rootPath = assembly.Location.TrimEnd(assembly.ManifestModule.Name.ToCharArray());
-            return PathHelper.GetCurrentRootPath(UseCaseConstants.SOLUTION_NAME); 
+            return PathHelper.GetCurrentRootPath(FrameworkConstants.SOLUTION_NAME); 
         }
 
-        public static string GetResourcePath() => Path.Combine(GetSolutionPath(), UseCaseConstants.RESOURCE_NAME);
+        public static string GetResourcePath() => Path.Combine(GetSolutionPath(), FrameworkConstants.RESOURCE_NAME);
     }
 }

@@ -15,6 +15,8 @@ namespace Mov.Accessors.Repository.Implement
 
         public IDictionary<string, TRepository> Repositories { get; }
 
+        public TRepository DefaultRepository => GetRepository("");
+
         #endregion プロパティ
 
         #region コンストラクター
@@ -31,6 +33,7 @@ namespace Mov.Accessors.Repository.Implement
 
         public TRepository GetRepository(string dirName)
         {
+            if (string.IsNullOrEmpty(dirName)) return Repositories[""];
             if (!Repositories.TryGetValue(dirName, out TRepository repository)) return default(TRepository);
             return repository;
         }

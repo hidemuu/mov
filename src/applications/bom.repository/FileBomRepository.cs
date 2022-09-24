@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.UseCases.Factories
+namespace Mov.Bom.Repository
 {
-    public class CommandFactory
+    public class FileBomRepository
     {
     }
 }

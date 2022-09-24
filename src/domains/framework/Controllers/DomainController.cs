@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 
-namespace Mov.UseCases
+namespace Mov.Framework
 {
     public class DomainController : IController
     {
@@ -39,6 +39,19 @@ namespace Mov.UseCases
         public bool ExistsCommand(string command)
         {
             return this.executer.Exists(command);
+        }
+
+        public virtual string GetCommandHelp()
+        {
+            var help = string.Empty;
+            var newLine = Environment.NewLine;
+            var commands = GetCommands();
+            foreach(var command in commands)
+            {
+                help += command + newLine;
+            }
+            help = help.TrimEnd(newLine.ToCharArray());
+            return help;
         }
     }
 }

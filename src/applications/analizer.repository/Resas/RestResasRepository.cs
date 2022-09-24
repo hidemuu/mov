@@ -14,6 +14,8 @@ namespace Mov.Analizer.Repository.Resas
         private readonly string endpoint;
         private readonly string auth;
 
+        public string DomainPath => "api/v1/";
+
         public RestResasRepository(string endpoint, string auth)
         {
             this.endpoint = string.IsNullOrEmpty(endpoint) ? DEFAULT_END_POINT : endpoint;
@@ -25,5 +27,10 @@ namespace Mov.Analizer.Repository.Resas
 
         public IEntityRepositoryAsync<ResasResponse<City>> Cities =>
             new RestEntityRepository<ResasResponse<City>>(Path.Combine(this.endpoint, City.URI), this.auth);
+
+        public string GetRelativePath()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

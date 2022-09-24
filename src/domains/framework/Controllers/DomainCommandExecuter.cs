@@ -7,12 +7,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 
-namespace Mov.UseCases
+namespace Mov.Framework
 {
-    internal class DomainCommandExecuter : CommandExecuterBase<IDomainRepository, Response>
+    internal class DomainCommandExecuter : CommandExecuterBase<IDomainRepository, DomainResponse>
     {
-        protected override IDictionary<string, ICommand<IDomainRepository, Response>> Handler 
-            => new Dictionary<string, ICommand<IDomainRepository, Response>>() 
+        protected override IDictionary<string, ICommand<IDomainRepository, DomainResponse>> Handler 
+            => new Dictionary<string, ICommand<IDomainRepository, DomainResponse>>() 
         {
             { "WriteConsole", new WriteConsoleCommand() },
         };

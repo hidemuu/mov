@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Translator.Models
+namespace Mov.Analizer.Models
 {
-    public interface ITranslatorRepository : IDomainRepository
+    public interface IAnalizerRepository : IDomainRepository
     {
     }
 }

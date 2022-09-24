@@ -13,26 +13,26 @@ namespace Mov.Bom.Repository.Rest
     /// </summary>
     public class RestCustomerRepository : ICustomerRepository
     {
-        private readonly HttpSerializer _http;
+        private readonly HttpSerializer serializer;
 
         public RestCustomerRepository(string baseUrl)
         {
-            _http = new HttpSerializer(baseUrl);
+            this.serializer = new HttpSerializer(baseUrl);
         }
 
         public async Task<IEnumerable<Customer>> GetAsync() =>
-            await _http.GetAsync<IEnumerable<Customer>>("customer");
+            await this.serializer.GetAsync<IEnumerable<Customer>>("customer");
 
         public async Task<IEnumerable<Customer>> GetAsync(string search) =>
-            await _http.GetAsync<IEnumerable<Customer>>($"customer/search?value={search}");
+            await this.serializer.GetAsync<IEnumerable<Customer>>($"customer/search?value={search}");
 
         public async Task<Customer> GetAsync(Guid id) =>
-            await _http.GetAsync<Customer>($"customer/{id}");
+            await this.serializer.GetAsync<Customer>($"customer/{id}");
 
         public async Task<Customer> UpsertAsync(Customer customer) =>
-            await _http.PostAsync<Customer, Customer>("customer", customer);
+            await this.serializer.PostAsync<Customer, Customer>("customer", customer);
 
         public async Task DeleteAsync(Guid customerId) =>
-            await _http.DeleteAsync("customer", customerId.ToString());
+            await this.serializer.DeleteAsync("customer", customerId.ToString());
     }
 }

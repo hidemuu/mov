@@ -14,9 +14,9 @@ namespace Mov.Bom.Repository.Sql
     /// </summary>
     public class SqlOrderRepository : IOrderRepository
     {
-        private readonly StockerDbContext _db;
+        private readonly BomDbContext _db;
 
-        public SqlOrderRepository(StockerDbContext db) => _db = db;
+        public SqlOrderRepository(BomDbContext db) => _db = db;
 
         public async Task<IEnumerable<Order>> GetAsync() =>
             await _db.Orders

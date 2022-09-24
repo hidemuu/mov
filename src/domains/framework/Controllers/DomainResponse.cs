@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Controllers
+namespace Mov.Framework
 {
-    public enum Response
+    public enum DomainResponse
     {
         None,
         Success,

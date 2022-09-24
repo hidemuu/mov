@@ -6,13 +6,13 @@ using System.Text;
 
 namespace Mov.Bom.Repository.Sql
 {
-    public class StockerDbContext : DbContext
+    public class BomDbContext : DbContext
     {
-        public StockerDbContext() { }
+        public BomDbContext() { }
         /// <summary>
         /// Creates a new Contoso DbContext.
         /// </summary>
-        public StockerDbContext(DbContextOptions<StockerDbContext> options) : base(options)
+        public BomDbContext(DbContextOptions<BomDbContext> options) : base(options)
         { }
 
         /// <summary>

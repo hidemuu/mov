@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Analizer.Models.Resas
 {
-    public interface IResasRepository
+    public interface IResasRepository : IAnalizerRepository
     {
         IEntityRepositoryAsync<ResasResponse<Prefecture>> Prefectures { get; }
 

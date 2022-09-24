@@ -8,25 +8,24 @@ namespace Mov.Bom.Repository.Sql
 {
     public class SqlBomRepository : IBomRepository
     {
-        private readonly DbContextOptions<StockerDbContext> _dbOptions;
+        private readonly DbContextOptions<BomDbContext> dbOptions;
 
-        public SqlBomRepository(DbContextOptionsBuilder<StockerDbContext>
-            dbOptionsBuilder)
+        public SqlBomRepository(DbContextOptionsBuilder<BomDbContext> dbOptionsBuilder)
         {
-            _dbOptions = dbOptionsBuilder.Options;
-            using (var db = new StockerDbContext(_dbOptions))
+            this.dbOptions = dbOptionsBuilder.Options;
+            using (var db = new BomDbContext(this.dbOptions))
             {
                 db.Database.EnsureCreated();
             }
         }
 
         public ICustomerRepository Customers => new SqlCustomerRepository(
-            new StockerDbContext(_dbOptions));
+            new BomDbContext(this.dbOptions));
 
         public IOrderRepository Orders => new SqlOrderRepository(
-            new StockerDbContext(_dbOptions));
+            new BomDbContext(this.dbOptions));
 
         public IProductRepository Products => new SqlProductRepository(
-            new StockerDbContext(_dbOptions));
+            new BomDbContext(this.dbOptions));
     }
 }

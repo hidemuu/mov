@@ -35,5 +35,11 @@ namespace Mov.Controllers
         /// <param name="command"></param>
         /// <returns></returns>
         bool ExistsCommand(string command);
+
+        /// <summary>
+        /// コマンドのヘルプを取得
+        /// </summary>
+        /// <returns></returns>
+        string GetCommandHelp();
     }
 }

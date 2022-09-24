@@ -1,14 +1,16 @@
 ﻿using Mov.Accessors;
 using Mov.Accessors.Repository;
+using Mov.Analizer.Models;
 using Mov.Configurator.Models;
 using Mov.Configurator.Repository;
 using Mov.Controllers;
 using Mov.Designer.Models;
 using Mov.Designer.Repository;
 using Mov.Driver.Models;
+using Mov.Framework;
 using Mov.Game.Models;
+using Mov.Translator.Models;
 using Mov.UseCases;
-using Mov.UseCases.Creators;
 using Mov.UseCases.Factories;
 using Mov.Utilities;
 using System;
@@ -26,6 +28,8 @@ namespace Mov.ConsoleApp
         static IDomainRepositoryCollection<IDesignerRepository> designerRepository;
         static IDomainRepositoryCollection<IGameRepository> gameRepository;
         static IDomainRepositoryCollection<IDriverRepository> driverRepository;
+        static IDomainRepositoryCollection<IAnalizerRepository> analizerRepository;
+        static IDomainRepositoryCollection<ITranslatorRepository> translatorRepository;
         static IController domainController;
 
         private delegate void CommandHandler(IEnumerable<string> parameters);
@@ -36,18 +40,45 @@ namespace Mov.ConsoleApp
         {
             Console.WriteLine("Hello Mov!");
             //リポジトリ生成
-            var repositoryFactory = new FileDomainRepositoryCollectionFactory(PathCreator.GetResourcePath());
-            configRepository = repositoryFactory.Create<IConfiguratorRepository>(SerializeConstants.PATH_JSON);
-            designerRepository = repositoryFactory.Create<IDesignerRepository>(SerializeConstants.PATH_XML);
-            gameRepository = repositoryFactory.Create<IGameRepository>(SerializeConstants.PATH_JSON);
-            driverRepository = repositoryFactory.Create<IDriverRepository>(SerializeConstants.PATH_JSON);
-            Console.ReadKey();
+            var fileRepositoryFactory = new FileDomainRepositoryCollectionFactory(PathCreator.GetResourcePath());
+            configRepository = fileRepositoryFactory.Create<IConfiguratorRepository>(SerializeConstants.PATH_JSON);
+            designerRepository = fileRepositoryFactory.Create<IDesignerRepository>(SerializeConstants.PATH_XML);
+            gameRepository = fileRepositoryFactory.Create<IGameRepository>(SerializeConstants.PATH_JSON);
+            driverRepository = fileRepositoryFactory.Create<IDriverRepository>(SerializeConstants.PATH_JSON);
+            analizerRepository = fileRepositoryFactory.Create<IAnalizerRepository>(SerializeConstants.PATH_JSON);
+            translatorRepository = fileRepositoryFactory.Create<ITranslatorRepository>(SerializeConstants.PATH_JSON);
             Console.WriteLine("ドメインを入力してください");
-            //コントローラー生成
-            domainController = new DomainController(configRepository.Repositories[""]);
-
-            //コマンド処理開始
             Console.ReadKey();
+            //コントローラー生成
+            switch (Console.ReadLine() ?? string.Empty) 
+            {
+                case "config":
+                    domainController = new DomainController(configRepository.DefaultRepository);
+                    break;
+                case "design":
+                    domainController = new DomainController(designerRepository.DefaultRepository);
+                    break;
+                case "game":
+                    domainController = new DomainController(gameRepository.DefaultRepository);
+                    break;
+                case "driver":
+                    domainController = new DomainController(driverRepository.DefaultRepository);
+                    break;
+                case "analizer":
+                    domainController = new DomainController(analizerRepository.DefaultRepository);
+                    break;
+                case "translator":
+                    domainController = new DomainController(translatorRepository.DefaultRepository);
+                    break;
+                default:
+                    domainController = new DomainController(configRepository.DefaultRepository);
+                    break;
+            }
+            Console.WriteLine("コントローラーを生成しました");
+            Console.WriteLine("----- コマンドリスト ------");
+            Console.WriteLine(domainController.GetCommandHelp());
+            Console.WriteLine("----- end ------");
+            //コマンド処理開始
             while (true)
             {
                 Console.Write("> ");

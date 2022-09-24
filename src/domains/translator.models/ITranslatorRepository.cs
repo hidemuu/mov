@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Translator.Models
 {
-    public interface ITanslatorRepository
+    public interface ITranslatorRepository
     {
     }
 }

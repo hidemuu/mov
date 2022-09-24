@@ -46,9 +46,23 @@ namespace Mov.Controllers
         /// </summary>
         /// <param name="command"></param>
         /// <returns></returns>
-        public TResponse Invoke(string command)
+        public TResponse Invoke(string command, string[] args)
         {
-            return Handler[command].Invoke(this.parameter);
+            return Handler[command].Invoke(this.parameter, args);
+        }
+
+        /// <summary>
+        /// コマンド一覧を取得
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<string> GetCommands()
+        {
+            return Handler.Keys;
+        }
+
+        public bool Exists(string command)
+        {
+            return Handler.ContainsKey(command);
         }
 
         #endregion メソッド

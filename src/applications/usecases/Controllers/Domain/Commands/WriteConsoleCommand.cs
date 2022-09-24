@@ -9,11 +9,10 @@ using System.Text;
 
 namespace Mov.UseCases
 {
-    internal class WriteConsoleCommand : ICommand<IDomainRepositoryCollection<IDomainRepository>, Response>
+    internal class WriteConsoleCommand : ICommand<IDomainRepository, Response>
     {
-        public Response Invoke(IDomainRepositoryCollection<IDomainRepository> parameter)
+        public Response Invoke(IDomainRepository repository, string[] args)
         {
-            var repository = parameter.Repositories[""];
             if(repository is IConfiguratorRepository configrator)
             {
                 Console.WriteLine(configrator.Configs.ToString());

@@ -7,7 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Action\Genaral\" />
     <Folder Include="Crud\Implement\Transaction\" />
+    <Folder Include="Strategy\" />
+    <Folder Include="Job\" />
   </ItemGroup>
 
 </Project>

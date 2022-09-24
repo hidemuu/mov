@@ -7,6 +7,6 @@ namespace Mov.Controllers
 {
     public interface ICommandExecuter<T>
     {
-        T Invoke(string command);
+        T Invoke(string command, string[] args);
     }
 }

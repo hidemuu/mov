@@ -19,12 +19,12 @@ using System.Text;
 
 namespace Mov.UseCases.Factories
 {
-    public class FileDomainRepositoryFactory
+    public class FileDomainRepositoryCollectionFactory
     {
 
         private readonly string resourcePath;
 
-        public FileDomainRepositoryFactory(string resourcePath)
+        public FileDomainRepositoryCollectionFactory(string resourcePath)
         {
             this.resourcePath = resourcePath;
         }

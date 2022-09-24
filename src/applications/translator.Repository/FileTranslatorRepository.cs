@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Mov.Translator.Repository
 {
-    public class FileTranslatorRepository : FileDomainRepositoryBase
+    public class FileTranslatorRepository : FileDomainRepositoryBase, ITranslatorRepository
     {
         public override string DomainPath => "translator";
         public FileTranslatorRepository(string endpoint, string fileDir, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8) 

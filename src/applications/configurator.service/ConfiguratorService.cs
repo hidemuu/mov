@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Configurator.Models;
+using System;
 
 namespace Mov.Configurator.Service
 {
@@ -8,11 +9,16 @@ namespace Mov.Configurator.Service
     public class ConfiguratorService
     {
         /// <summary>
+        /// リポジトリ
+        /// </summary>
+        private readonly IConfiguratorRepository repository;
+
+        /// <summary>
         /// コンストラクター
         /// </summary>
-        public ConfiguratorService()
+        public ConfiguratorService(IConfiguratorRepository repository)
         {
-
+            this.repository = repository;
         }
     }
 }

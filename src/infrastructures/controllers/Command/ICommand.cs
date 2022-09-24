@@ -10,6 +10,6 @@ namespace Mov.Controllers
     /// <typeparam name="T"></typeparam>
     public interface ICommand<TParameter, TResponse>
     {
-        TResponse Invoke(TParameter parameter);
+        TResponse Invoke(TParameter parameter, string[] args);
     }
 }

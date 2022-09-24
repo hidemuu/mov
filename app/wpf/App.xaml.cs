@@ -122,7 +122,7 @@ namespace Mov.WpfApp
             var container = containerRegistry.GetContainer();
 
             //リポジトリの登録  
-            var repositoryFactory = new FileDomainRepositoryFactory(PathCreator.GetResourcePath());
+            var repositoryFactory = new FileDomainRepositoryCollectionFactory(PathCreator.GetResourcePath());
             containerRegistry.RegisterInstance<IDomainRepositoryCollection<IConfiguratorRepository>>(
                 repositoryFactory.Create<IConfiguratorRepository>(SerializeConstants.PATH_JSON));
             containerRegistry.RegisterInstance<IDomainRepositoryCollection<IDesignerRepository>>(

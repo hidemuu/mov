@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Designer.Service
 {
-    public class LayoutBuilder
+    public class LayoutService
     {
         #region フィールド
 
@@ -36,7 +36,7 @@ namespace Mov.Designer.Service
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public LayoutBuilder(IDesignerRepository repository)
+        public LayoutService(IDesignerRepository repository)
         {
             this.repository = repository;
             this.factory = new LayoutNodeFactory(repository);
@@ -46,7 +46,7 @@ namespace Mov.Designer.Service
 
         #region メソッド
 
-        public LayoutBuilder Build()
+        public LayoutService Build()
         {
             Nodes = Create();
             foreach(var node in Nodes)

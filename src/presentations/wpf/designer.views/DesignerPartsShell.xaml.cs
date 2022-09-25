@@ -394,7 +394,7 @@ namespace Mov.Designer.Views
                 {
                     if (control.IsUpdate)
                     {
-                        var builder = new LayoutService(control.Repository);
+                        var builder = new LayoutBuilder(control.Repository);
                         control.Models.Clear();
                         control.TopModels.Clear();
                         control.BottomModels.Clear();

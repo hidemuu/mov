@@ -13,4 +13,8 @@
     <Folder Include="Job\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\utilities\Utilities.csproj" />
+  </ItemGroup>
+
 </Project>

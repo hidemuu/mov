@@ -13,51 +13,13 @@ namespace Mov.Configurator.Service
     /// <summary>
     /// コンフィグレーションのサービス
     /// </summary>
-    public class ConfiguratorService : IService
+    public class ConfiguratorService : DomainService<IConfiguratorRepository>
     {
-        /// <summary>
-        /// リポジトリ
-        /// </summary>
-        private readonly IConfiguratorRepository repository;
-
-        
-        private readonly CommandExecuter<IConfiguratorRepository, DomainResponse> executer;
-
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ConfiguratorService(IConfiguratorRepository repository)
+        public ConfiguratorService(IConfiguratorRepository repository) : base(repository, new ConfiguratorCommandFactory())
         {
-            this.repository = repository;
-            this.executer = new CommandExecuter<IConfiguratorRepository, DomainResponse>(this.repository, ConfiguratorCommandFactory.Create());
         }
-
-        public bool ExecuteCommand(string command, string[] args)
-        {
-            var response = this.executer.Invoke(command, args);
-            return true;
-        }
-
-        public IEnumerable<string> GetCommands()
-        {
-            return this.executer.GetCommands();
-        }
-
-        public bool ExistsCommand(string command)
-        {
-            return this.executer.Exists(command);
-        }
-
-        public virtual string GetCommandHelp()
-        {
-            var help = string.Empty;
-            foreach (var commandHelp in this.executer.GetCommandHelps())
-            {
-                help += commandHelp.Item1 + " : " + commandHelp.Item2 + UtilityConstants.NewLine;
-            }
-            help = help.TrimEnd(UtilityConstants.NewLine.ToCharArray());
-            return help;
-        }
-
     }
 }

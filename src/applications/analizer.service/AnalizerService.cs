@@ -1,10 +1,18 @@
-﻿using System;
+﻿using Mov.Analizer.Models;
+using Mov.Controllers.Service;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Mov.Analizer.Service
 {
-    class AnalizerService
+    public class AnalizerService : DomainService<IAnalizerRepository>
     {
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
+        public AnalizerService(IAnalizerRepository repository) : base(repository, new AnalizerCommandFactory())
+        {
+        }
     }
 }

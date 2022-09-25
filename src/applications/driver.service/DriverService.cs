@@ -1,10 +1,18 @@
-﻿using System;
+﻿using Mov.Controllers.Service;
+using Mov.Driver.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Mov.Driver.Service
 {
-    class DriverService
+    public class DriverService : DomainService<IDriverRepository>
     {
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
+        public DriverService(IDriverRepository repository) : base(repository, new DriverCommandFactory())
+        {
+        }
     }
 }

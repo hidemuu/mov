@@ -1,10 +1,18 @@
-﻿using System;
+﻿using Mov.Bom.Models;
+using Mov.Controllers.Service;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Mov.Bom.Service
 {
-    class BomService
+    public class BomService : DomainService<IBomRepository>
     {
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
+        public BomService(IBomRepository repository) : base(repository, new BomCommandFactory())
+        {
+        }
     }
 }

@@ -30,22 +30,28 @@ namespace Mov.ConsoleApp
     {
         #region 定数
 
+        const string ANALIZE = "analize";
+        const string AUTH = "auth";
+        const string BOM = "bom";
         const string CONFIG = "config";
         const string DESIGN = "design";
-        const string GAME = "game";
+        const string DRAW = "draw";
         const string DRIVER = "driver";
-        const string ANALIZE = "analize";
+        const string GAME = "game";
+        const string SCHEDULE = "schedule";
         const string TRANSLATE = "translate";
 
         #endregion 定数
 
         #region フィールド
 
+        static bool running = true;
+
+        static IDomainRepositoryCollection<IAnalizerRepository> analizerRepository;
         static IDomainRepositoryCollection<IConfiguratorRepository> configRepository;
         static IDomainRepositoryCollection<IDesignerRepository> designerRepository;
-        static IDomainRepositoryCollection<IGameRepository> gameRepository;
         static IDomainRepositoryCollection<IDriverRepository> driverRepository;
-        static IDomainRepositoryCollection<IAnalizerRepository> analizerRepository;
+        static IDomainRepositoryCollection<IGameRepository> gameRepository;
         static IDomainRepositoryCollection<ITranslatorRepository> translatorRepository;
         static IController domainController;
 
@@ -56,53 +62,66 @@ namespace Mov.ConsoleApp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Mov!");
+            //共通コマンド生成
+            var handlers = new Dictionary<string, CommandHandler>()
+            {
+                {"end", EndProgram }
+            };
             //リポジトリ生成
             CreateRepository(PathCreator.GetResourcePath());
             //Console.ReadKey();
 
-            //コントローラー生成
-            while (true)
+            while (running)
             {
-                Console.WriteLine("ドメインを入力してください");
-                Console.WriteLine(CONFIG + " : " + "コンフィグ");
-                Console.WriteLine(DESIGN + " : " + "デザイン");
-                Console.WriteLine(GAME + " : " + "ゲーム");
-                Console.WriteLine(DRIVER + " : " + "ドライバー");
-                Console.WriteLine(ANALIZE + " : " + "アナライザー");
-                Console.WriteLine(TRANSLATE + " : " + "翻訳");
-                var input = Console.ReadLine() ?? string.Empty;
-                if (!CreateDomainController(input))
+                //コントローラー生成
+                while (running)
                 {
-                    Console.WriteLine("コントローラーの生成に失敗しました");
-                    continue;
+                    Console.WriteLine("ドメインを入力してください");
+                    Console.WriteLine(ANALIZE + " : " + "アナライザー");
+                    Console.WriteLine(CONFIG + " : " + "コンフィグ");
+                    Console.WriteLine(DESIGN + " : " + "デザイン");
+                    Console.WriteLine(DRIVER + " : " + "ドライバー");
+                    Console.WriteLine(GAME + " : " + "ゲーム");
+                    Console.WriteLine(TRANSLATE + " : " + "翻訳");
+                    var input = Console.ReadLine() ?? string.Empty;
+                    if (!CreateDomainController(input))
+                    {
+                        Console.WriteLine("コントローラーの生成に失敗しました");
+                        continue;
+                    }
+                    Console.WriteLine("コントローラーを生成しました");
+                    Console.WriteLine("----- コマンドリスト ------");
+                    Console.WriteLine(domainController.GetCommandHelp());
+                    Console.WriteLine("----- end ------");
+                    break;
                 }
-                Console.WriteLine("コントローラーを生成しました");
-                Console.WriteLine("----- コマンドリスト ------");
-                Console.WriteLine(domainController.GetCommandHelp());
-                Console.WriteLine("----- end ------");
-                break;
-            }
-            
-            //コマンド処理開始
-            while (true)
-            {
-                Console.Write("> ");
-                var input = Console.ReadLine() ?? string.Empty;
-                if (!TryGetCommandParameter(input, out string command, out string[] parameters))
-                {
-                    Console.WriteLine("コマンドを入力してください");
-                    continue;
-                }
-                if (!domainController.ExistsCommand(command))
-                {
-                    Console.WriteLine($"コマンドが登録されていません : {command}");
-                }
-                else
-                {
-                    domainController.ExecuteCommand(command, parameters);
-                }
-            }
 
+                //コマンド処理
+                while (running)
+                {
+                    Console.Write("> ");
+                    var input = Console.ReadLine() ?? string.Empty;
+                    if (!TryGetCommandParameter(input, out string command, out string[] parameters))
+                    {
+                        Console.WriteLine("コマンドを入力してください");
+                        continue;
+                    }
+                    if (handlers.ContainsKey(command))
+                    {
+                        handlers[command].Invoke(parameters);
+                        continue;
+                    }
+                    if (!domainController.ExistsCommand(command))
+                    {
+                        Console.WriteLine($"コマンドが登録されていません : {command}");
+                    }
+                    else
+                    {
+                        domainController.ExecuteCommand(command, parameters);
+                    }
+                }
+            }
+            Console.WriteLine("アプリケーションを終了します");
         }
 
         #region メソッド
@@ -174,5 +193,14 @@ namespace Mov.ConsoleApp
         }
 
         #endregion メソッド
+
+        #region コマンドハンドラ
+
+        private static void EndProgram(IEnumerable<string> parameters)
+        {
+            running = false;
+        }
+
+        #endregion コマンドハンドラ
     }
 }

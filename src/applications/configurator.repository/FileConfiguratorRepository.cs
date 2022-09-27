@@ -17,11 +17,17 @@ namespace Mov.Configurator.Repository
             : base(endpoint, fileDir, extension, encoding)
         {
             UserSettings = new FileDbObjectRepository<UserSetting, UserSettingCollection>(GetPath("user_setting"), encoding);
+            Errors = new FileDbObjectRepository<Error, ErrorCollection>(GetPath("error"), encoding);
+            Schemas = new FileDbObjectRepository<Schema, SchemaCollection>(GetPath("schema"), encoding);
         }
 
         #region プロパティ
 
         public IDbObjectRepository<UserSetting, UserSettingCollection> UserSettings { get; }
+
+        public IDbObjectRepository<Error, ErrorCollection> Errors { get; }
+
+        public IDbObjectRepository<Schema, SchemaCollection> Schemas { get; }
 
         #endregion
     }

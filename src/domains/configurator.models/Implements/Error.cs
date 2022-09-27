@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Driver.Models
+namespace Mov.Configurator.Models
 {
     /// <summary>
     /// エラーのコレクション

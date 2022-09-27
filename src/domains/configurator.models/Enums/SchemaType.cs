@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Driver.Models
+namespace Mov.Configurator.Models
 {
     /// <summary>
     /// スキーマ種別

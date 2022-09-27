@@ -23,10 +23,8 @@ namespace Mov.Driver.Repository
         {
             Commands = new FileDbObjectRepository<Command, CommandCollection>(GetPath("command"), encoding);
             Queries = new FileDbObjectRepository<Query, QueryCollection>(GetPath("query"), encoding);
-            Errors = new FileDbObjectRepository<Error, ErrorCollection> (GetPath("error"), encoding);
             Macros = new FileDbObjectRepository<Macro, MacroCollection>(GetPath("macro"), encoding);
             Variables = new FileDbObjectRepository<Variable, VariableCollection>(GetPath("variable"), encoding);
-            Schemas = new FileDbObjectRepository<Schema, SchemaCollection>(GetPath("schema"), encoding);
             Connects = new FileDbObjectRepository<Connect, ConnectCollection>(GetPath("connect"), encoding);
         }
 
@@ -38,13 +36,9 @@ namespace Mov.Driver.Repository
 
         public IDbObjectRepository<Query, QueryCollection> Queries { get; }
 
-        public IDbObjectRepository<Error, ErrorCollection> Errors { get; }
-
         public IDbObjectRepository<Macro, MacroCollection> Macros { get; }
 
         public IDbObjectRepository<Variable, VariableCollection> Variables { get; }
-
-        public IDbObjectRepository<Schema, SchemaCollection> Schemas { get; }
 
         public IDbObjectRepository<Connect, ConnectCollection> Connects { get; }
 

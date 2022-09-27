@@ -10,5 +10,9 @@ namespace Mov.Configurator.Models
     public interface IConfiguratorRepository : IDomainRepository
     {
         IDbObjectRepository<UserSetting, UserSettingCollection> UserSettings { get; }
+
+        IDbObjectRepository<Error, ErrorCollection> Errors { get; }
+
+        IDbObjectRepository<Schema, SchemaCollection> Schemas { get; }
     }
 }

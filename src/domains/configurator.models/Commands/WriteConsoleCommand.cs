@@ -15,6 +15,8 @@ namespace Mov.Configurator.Models
         public DomainResponse Invoke(IConfiguratorRepository repository, string[] args)
         {
             Console.WriteLine(repository.UserSettings.ToString());
+            Console.WriteLine(repository.Errors.ToString());
+            Console.WriteLine(repository.Schemas.ToString());
             return DomainResponse.Success;
         }
 

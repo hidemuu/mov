@@ -230,6 +230,10 @@ namespace Mov.BaseModel
 
         #endregion MOVE
 
+        #endregion メソッド
+
+        #region オーバーライドメソッド
+
         /// <inheritdoc />
         public override string ToString()
         {
@@ -241,7 +245,7 @@ namespace Mov.BaseModel
             return stringBuilder.ToString();
         }
 
-        #endregion メソッド
+        #endregion オーバーライドメソッド
 
         #region 内部メソッド
 

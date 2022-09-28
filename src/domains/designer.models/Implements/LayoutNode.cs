@@ -106,13 +106,10 @@ namespace Mov.Designer.Models
         #region メソッド
 
         /// <inheritdoc />
-        public override string ToString() => GetString(new string[] { Id.ToString(), Code, NodeType.ToString() });
-
+        public override string[] ToStrings() => new string[] { Code, NodeType.ToString() };
+        
         /// <inheritdoc />
-        public override string ToContentString() => GetString(new string[] { Id.ToString(), Code, NodeType.ToString() }, 10);
-
-        /// <inheritdoc />
-        public override string ToHeaderString() => GetString(new string[] { "Id", "Code", "LayoutType" }, 10);
+        public override string ToHeaderString() => GetString(new string[] { "Code", "LayoutType" }, 10);
 
         public static NodeType[] GetNodeTypes => (NodeType[])Enum.GetValues(typeof(NodeType));
 

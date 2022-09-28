@@ -122,15 +122,6 @@ namespace Mov.Designer.Models
 
         #region メソッド
 
-        /// <inheritdoc />
-        public override string ToString() => GetString(new string[] { Id.ToString(), Code });
-
-        /// <inheritdoc />
-        public override string ToContentString() => GetString(new string[] { Id.ToString(), Code }, 10);
-
-        /// <inheritdoc />
-        public override string ToHeaderString() => GetString(new string[] { "Id", "Code" }, 10);
-
         public static ControlType[] GetControlTypes => (ControlType[])Enum.GetValues(typeof(ControlType));
 
         public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<LayoutContent>().OrderBy(x => x.index);

@@ -97,13 +97,10 @@ namespace Mov.Configurator.Models
         #region メソッド
 
         /// <inheritdoc />
-        public override string ToString() => GetString(new string[] { Id.ToString(), Code, Category, Name, Value, Description });
+        public override string[] ToStrings() => new string[] { Code, Category, Name, Value, Description };
 
         /// <inheritdoc />
-        public override string ToContentString() => GetString(new string[] { Id.ToString(), Code, Category, Name, Value, Description }, 10);
-
-        /// <inheritdoc />
-        public override string ToHeaderString() => GetString(new string[] { "Id", "Code", "Category", "Name", "Value", "Description" }, 10);
+        public override string ToHeaderString() => GetString(new string[] { "Code", "Category", "Name", "Value", "Description" }, 10);
 
         public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<UserSetting>().OrderBy(x => x.index);
 

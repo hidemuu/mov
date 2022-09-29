@@ -23,6 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 
 namespace Mov.ConsoleApp
 {
@@ -45,6 +46,8 @@ namespace Mov.ConsoleApp
 
         #region フィールド
 
+        static Mutex mutex = new Mutex(false, "Mov_ConsoleApp");
+
         static bool running = true;
 
         static IDomainRepositoryCollection<IAnalizerRepository> analizerRepository;
@@ -63,7 +66,34 @@ namespace Mov.ConsoleApp
 
         static void Main(string[] args)
         {
+            if (!mutex.WaitOne(0, false))
+            {
+                Console.WriteLine("二重起動できません。");
+                mutex.Close();
+                mutex = null;
+                Console.ReadKey();
+                return;
+            }
+
             Console.WriteLine("Hello Mov!");
+            
+            Run();
+
+            Console.WriteLine("アプリケーションを終了します");
+            Console.ReadKey();
+
+            if (mutex != null)
+            {
+                mutex.ReleaseMutex();
+                mutex.Close();
+            }
+
+        }
+
+        #region メソッド
+
+        static void Run()
+        {
             //共通コマンド生成
             handlers = new Dictionary<string, CommandHandler>()
             {
@@ -72,7 +102,6 @@ namespace Mov.ConsoleApp
             };
             //リポジトリ生成
             CreateRepository(PathCreator.GetResourcePath());
-            //Console.ReadKey();
 
             while (running)
             {
@@ -124,10 +153,7 @@ namespace Mov.ConsoleApp
                     }
                 }
             }
-            Console.WriteLine("アプリケーションを終了します");
         }
-
-        #region メソッド
 
         static bool TryGetCommandParameter(string input, out string command, out string[] parameters)
         {

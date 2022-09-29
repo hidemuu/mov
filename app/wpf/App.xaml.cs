@@ -61,7 +61,7 @@ namespace Mov.WpfApp
     {
         #region フィールド
 
-        private Mutex mutex = new Mutex(false, "HalationGhostPrismMov");
+        private Mutex mutex = new Mutex(false, "Mov_WpfApp");
 
         #endregion フィールド
 

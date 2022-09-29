@@ -10,7 +10,7 @@ namespace Mov.Game.Service.Tracking
     /// <summary>
     /// 騎士の巡回問題
     /// </summary>
-    public class KnightsTourGameService : ITrackingGameService
+    public class KnightsTourGame : ITrackingGame
     {
         #region フィールド
 
@@ -33,7 +33,7 @@ namespace Mov.Game.Service.Tracking
         /// コンストラクター
         /// </summary>
         /// <param name="n"></param>
-        public KnightsTourGameService(int n)
+        public KnightsTourGame(int n)
         {
             this.n = n;
             this.bd = ConsCell.MakeIntArray2(n, n, 0);

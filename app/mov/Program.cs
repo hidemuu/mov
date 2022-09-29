@@ -55,7 +55,9 @@ namespace Mov.ConsoleApp
         static IDomainRepositoryCollection<ITranslatorRepository> translatorRepository;
         static IController domainController;
 
-        private delegate void CommandHandler(IEnumerable<string> parameters);
+        static IDictionary<string, CommandHandler> handlers;
+
+        delegate void CommandHandler(IEnumerable<string> parameters);
 
         #endregion フィールド
 
@@ -63,9 +65,10 @@ namespace Mov.ConsoleApp
         {
             Console.WriteLine("Hello Mov!");
             //共通コマンド生成
-            var handlers = new Dictionary<string, CommandHandler>()
+            handlers = new Dictionary<string, CommandHandler>()
             {
-                {"end", EndProgram }
+                {"end", EndProgram },
+                {"help", Help }
             };
             //リポジトリ生成
             CreateRepository(PathCreator.GetResourcePath());
@@ -83,6 +86,8 @@ namespace Mov.ConsoleApp
                     Console.WriteLine(DRIVER + " : " + "ドライバー");
                     Console.WriteLine(GAME + " : " + "ゲーム");
                     Console.WriteLine(TRANSLATE + " : " + "翻訳");
+                    Console.WriteLine("--------------");
+                    Console.Write("> ");
                     var input = Console.ReadLine() ?? string.Empty;
                     if (!CreateDomainController(input))
                     {
@@ -90,9 +95,7 @@ namespace Mov.ConsoleApp
                         continue;
                     }
                     Console.WriteLine("コントローラーを生成しました");
-                    Console.WriteLine("----- コマンドリスト ------");
-                    Console.WriteLine(domainController.GetCommandHelp());
-                    Console.WriteLine("----- end ------");
+                    Help(new string[] { });
                     break;
                 }
 
@@ -199,6 +202,17 @@ namespace Mov.ConsoleApp
         private static void EndProgram(IEnumerable<string> parameters)
         {
             running = false;
+        }
+
+        private static void Help(IEnumerable<string> parameters)
+        {
+            Console.WriteLine("----- コマンドリスト ------");
+            foreach(var key in handlers.Keys)
+            {
+                Console.WriteLine(key);
+            }
+            Console.WriteLine(domainController.GetCommandHelp());
+            Console.WriteLine("----- end ------");
         }
 
         #endregion コマンドハンドラ

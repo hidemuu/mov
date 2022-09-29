@@ -75,11 +75,13 @@ namespace Mov.BaseModel
 
         public virtual string[] ToStrings() => new string[] { Code };
 
+        public virtual string[] ToHeaderStrings() => new string[] { "Code" };
+
         /// <summary>
         ///ヘッダー文字列取得
         /// </summary>
         /// <returns></returns>
-        public virtual string ToHeaderString() => GetString(new string[] { "Code", }, 10);
+        public string ToHeaderString() => GetString(ToHeaderStrings(), 10);
 
         /// <summary>
         ///コンテンツ文字列取得

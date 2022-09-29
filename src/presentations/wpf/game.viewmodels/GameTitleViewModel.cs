@@ -1,4 +1,5 @@
-﻿using Mov.Game.Service;
+﻿using Mov.Game.Models;
+using Mov.Game.Service;
 using Mov.WpfControls.ViewModels;
 using Prism.Mvvm;
 using Prism.Regions;
@@ -18,7 +19,7 @@ namespace Mov.Game.ViewModels
     {
         #region フィールド
 
-        private IMachineGameService gameService;
+        private IMachineGame gameService;
 
         #endregion フィールド
 
@@ -43,7 +44,7 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public GameTitleViewModel(IRegionManager regionManager, IMachineGameService gameService)
+        public GameTitleViewModel(IRegionManager regionManager, IMachineGame gameService)
         {
             this.RegionManager = regionManager;
             this.gameService = gameService;

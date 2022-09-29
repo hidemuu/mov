@@ -18,7 +18,7 @@ namespace Mov.Game.Service.Machine
     /// <summary>
     /// パックマンっぽいゲームサービス
     /// </summary>
-    public class PackmanGameService : GraphicControllerBase, IMachineGameService
+    public class PackmanGame : GraphicControllerBase, IMachineGame
     {
         #region フィールド
 
@@ -65,7 +65,7 @@ namespace Mov.Game.Service.Machine
         /// コンストラクター
         /// </summary>
         /// <param name="repository"></param>
-        public PackmanGameService(IDomainRepositoryCollection<IGameRepository> database) : base()
+        public PackmanGame(IDomainRepositoryCollection<IGameRepository> database) : base()
         {
             this.Repository = database.GetRepository("");
             var map = GetLandmark();

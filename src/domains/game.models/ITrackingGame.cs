@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Game.Service
+namespace Mov.Game.Models
 {
-    public interface ITrackingGameService
+    public interface ITrackingGame
     {
     }
 }

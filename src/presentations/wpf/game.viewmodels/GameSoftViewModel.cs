@@ -54,7 +54,7 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public GameSoftViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDrawerRepository> database, IDomainRepositoryCollection<IGameRepository> gameDatabase, IMachineGameService gameService) : base(regionManager, dialogService, database)
+        public GameSoftViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDrawerRepository> database, IDomainRepositoryCollection<IGameRepository> gameDatabase, IMachineGame gameService) : base(regionManager, dialogService, database)
         {
             KeyUpCommand.Subscribe(() => OnKeyUp()).AddTo(Disposables);
             KeyGestureEnterCommand.Subscribe(() => OnKeyGestureEnter()).AddTo(Disposables);
@@ -64,7 +64,7 @@ namespace Mov.Game.ViewModels
             KeyGestureDownCommand.Subscribe(() => OnKeyGestureDown()).AddTo(Disposables);
             KeyGestureLeftCommand.Subscribe(() => OnKeyGestureLeft()).AddTo(Disposables);
             KeyGestureRightCommand.Subscribe(() => OnKeyGestureRight()).AddTo(Disposables);
-            Service = new PackmanGameService(gameDatabase);
+            Service = new PackmanGame(gameDatabase);
         }
 
         #endregion コンストラクター
@@ -73,7 +73,7 @@ namespace Mov.Game.ViewModels
 
         protected override void Update()
         {
-            if(Service is PackmanGameService packmanGameService)
+            if(Service is PackmanGame packmanGameService)
             {
                 Model.Level.Value = packmanGameService.Level;
                 Model.Life.Value = packmanGameService.GetLife();
@@ -85,7 +85,7 @@ namespace Mov.Game.ViewModels
 
         protected override void Next()
         {
-            if (Service is PackmanGameService packmanGameService)
+            if (Service is PackmanGame packmanGameService)
             {
                 //ゲームオーバー時
                 if (packmanGameService.IsGameOver)
@@ -133,7 +133,7 @@ namespace Mov.Game.ViewModels
 
         private void OnKeyUp()
         {
-            if (Service is PackmanGameService packmanGameService)
+            if (Service is PackmanGame packmanGameService)
             {
                 packmanGameService.SetKeyCode(FsmGameEngine.KEY_CODE_NONE);
             }
@@ -151,7 +151,7 @@ namespace Mov.Game.ViewModels
 
         private void OnKeyGestureUp()
         {
-            if (Service is PackmanGameService packmanGameService)
+            if (Service is PackmanGame packmanGameService)
             {
                 packmanGameService.SetKeyCode(FsmGameEngine.KEY_CODE_UP);
             }
@@ -159,7 +159,7 @@ namespace Mov.Game.ViewModels
 
         private void OnKeyGestureUpAndShift()
         {
-            if (Service is PackmanGameService packmanGameService)
+            if (Service is PackmanGame packmanGameService)
             {
                 packmanGameService.SetKeyCode(FsmGameEngine.KEY_CODE_UP);
             }
@@ -167,7 +167,7 @@ namespace Mov.Game.ViewModels
 
         private void OnKeyGestureDown()
         {
-            if (Service is PackmanGameService packmanGameService)
+            if (Service is PackmanGame packmanGameService)
             {
                 packmanGameService.SetKeyCode(FsmGameEngine.KEY_CODE_DOWN);
             }
@@ -175,7 +175,7 @@ namespace Mov.Game.ViewModels
 
         private void OnKeyGestureLeft()
         {
-            if (Service is PackmanGameService packmanGameService)
+            if (Service is PackmanGame packmanGameService)
             {
                 packmanGameService.SetKeyCode(FsmGameEngine.KEY_CODE_LEFT);
             }
@@ -183,7 +183,7 @@ namespace Mov.Game.ViewModels
 
         private void OnKeyGestureRight()
         {
-            if (Service is PackmanGameService packmanGameService)
+            if (Service is PackmanGame packmanGameService)
             {
                 packmanGameService.SetKeyCode(FsmGameEngine.KEY_CODE_RIGHT);
             }

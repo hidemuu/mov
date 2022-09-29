@@ -100,7 +100,7 @@ namespace Mov.Configurator.Models
         public override string[] ToStrings() => new string[] { Code, Category, Name, Value, Description };
 
         /// <inheritdoc />
-        public override string ToHeaderString() => GetString(new string[] { "Code", "Category", "Name", "Value", "Description" }, 10);
+        public override string[] ToHeaderStrings() => new string[] { "Code", "Category", "Name", "Value", "Description" };
 
         public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<UserSetting>().OrderBy(x => x.index);
 

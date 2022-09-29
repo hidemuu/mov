@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
-namespace Mov.Game.Service
+namespace Mov.Game.Models
 {
-    public interface IMachineGameService
+    public interface IMachineGame
     {
         #region プロパティ
 

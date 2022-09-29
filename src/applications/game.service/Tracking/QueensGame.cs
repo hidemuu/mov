@@ -10,7 +10,7 @@ namespace Mov.Game.Service.Tracking
     /// <summary>
     /// Nクイーン問題クラス
     /// </summary>
-    public class QueensGameService : ITrackingGameService, IConsoleGameService
+    public class QueensGame : ITrackingGame, IConsoleGame
     {
         #region フィールド 
 
@@ -29,7 +29,7 @@ namespace Mov.Game.Service.Tracking
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public QueensGameService()
+        public QueensGame()
         {
 
         }

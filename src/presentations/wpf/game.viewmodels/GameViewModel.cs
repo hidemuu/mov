@@ -22,7 +22,7 @@ namespace Mov.Game.ViewModels
     {
         #region フィールド
 
-        private readonly IMachineGameService gameService;
+        private readonly IMachineGame gameService;
 
         #endregion フィールド
 
@@ -42,7 +42,7 @@ namespace Mov.Game.ViewModels
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public GameViewModel(IRegionManager regionManager, IDialogService dialogService, IMachineGameService gameService) : base(regionManager, dialogService)
+        public GameViewModel(IRegionManager regionManager, IDialogService dialogService, IMachineGame gameService) : base(regionManager, dialogService)
         {
             this.gameService = gameService;
 

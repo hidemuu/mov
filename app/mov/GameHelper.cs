@@ -11,7 +11,7 @@ namespace Mov.ConsoleApp
     {
         #region プロパティ
 
-        internal TowerOfHanoiGameService TowerOfHanoi { get; }
+        internal TowerOfHanoiGame TowerOfHanoi { get; }
 
         #endregion プロパティ
 
@@ -20,7 +20,7 @@ namespace Mov.ConsoleApp
         /// </summary>
         internal GameHelper()
         {
-            TowerOfHanoi = new TowerOfHanoiGameService(3);
+            TowerOfHanoi = new TowerOfHanoiGame(3);
         }
 
         #region メソッド

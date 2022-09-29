@@ -107,9 +107,9 @@ namespace Mov.Designer.Models
 
         /// <inheritdoc />
         public override string[] ToStrings() => new string[] { Code, NodeType.ToString() };
-        
+
         /// <inheritdoc />
-        public override string ToHeaderString() => GetString(new string[] { "Code", "LayoutType" }, 10);
+        public override string[] ToHeaderStrings() => new string[] { "Code", "LayoutType" };
 
         public static NodeType[] GetNodeTypes => (NodeType[])Enum.GetValues(typeof(NodeType));
 

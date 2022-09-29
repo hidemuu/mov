@@ -14,7 +14,7 @@ namespace Mov.Game.Service.Puzzle
     /// <summary>
     /// ハノイの塔のゲームサービス
     /// </summary>
-    public class TowerOfHanoiGameService : GraphicControllerBase, IConsoleGameService
+    public class TowerOfHanoiGame : GraphicControllerBase, IConsoleGame
     {
         #region フィールド
 
@@ -44,7 +44,7 @@ namespace Mov.Game.Service.Puzzle
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public TowerOfHanoiGameService(int n)
+        public TowerOfHanoiGame(int n)
         {
             this.n = n;
             this.tower = new ConsCell[] { ConsCell.Range(1, n + 1), ConsCell.Nil, ConsCell.Nil };

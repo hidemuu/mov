@@ -37,17 +37,6 @@ namespace Mov.BaseModel
         #region GET
 
         /// <summary>
-        /// 全データ取得
-        /// </summary>
-        /// <returns></returns>
-        //public IEnumerable<TEntity> Get()
-        //{
-        //    if (body == default) Read();
-        //    if (body == default) return new List<TEntity>();
-        //    return body.Items;
-        //}
-
-        /// <summary>
         /// データ取得
         /// </summary>
         /// <param name="id"></param>
@@ -232,21 +221,6 @@ namespace Mov.BaseModel
         #endregion MOVE
 
         #endregion メソッド
-
-        #region オーバーライドメソッド
-
-        /// <inheritdoc />
-        //public override string ToString()
-        //{
-        //    var items = Get();
-        //    if (items == null) return string.Empty;
-        //    var stringBuilder = new StringBuilder();
-        //    stringBuilder.Append(">> ").AppendLine(typeof(TEntity).Name);
-        //    GetStrings(items.ToList(), stringBuilder);
-        //    return stringBuilder.ToString();
-        //}
-
-        #endregion オーバーライドメソッド
 
         #region 内部メソッド
 

@@ -183,7 +183,10 @@ namespace Mov.Accessors
             for (int i = 0; i < headerLengths.Length; i++)
             {
                 //ヘッダー文字を最大長さに調整
-                headerLine = headerLine.PadRight(headerLengths[i], EntityConstants.HEADER_LINE);
+                for(int j = 0; j < headerLengths[i]; j++)
+                {
+                    headerLine += EntityConstants.HEADER_LINE;
+                }
                 stringBuilder.Append(headerStrings[i].PadRight(headerLengths[i]));
             }
             stringBuilder.AppendLine();

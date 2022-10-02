@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Controllers.Service
 {
-    public class DomainService<TRepository> : IService
+    public class RepositoryCommandService<TRepository> : ICommandService
     {
         /// <summary>
         /// リポジトリ
@@ -19,7 +19,7 @@ namespace Mov.Controllers.Service
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public DomainService(TRepository repository, ICommandFactory<TRepository, DomainResponse> commandFactory)
+        public RepositoryCommandService(TRepository repository, ICommandFactory<TRepository, DomainResponse> commandFactory)
         {
             this.repository = repository;
             this.executer = new CommandExecuter<TRepository, DomainResponse>(this.repository, commandFactory.Create());

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Game.Service
 {
-    public class GameService : DomainService<IGameRepository>
+    public class GameService : RepositoryCommandService<IGameRepository>, IGameService
     {
         /// <summary>
         /// コンストラクター

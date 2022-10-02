@@ -13,7 +13,7 @@ namespace Mov.Configurator.Service
     /// <summary>
     /// コンフィグレーションのサービス
     /// </summary>
-    public class ConfiguratorService : DomainService<IConfiguratorRepository>
+    public class ConfiguratorService : RepositoryCommandService<IConfiguratorRepository>
     {
         /// <summary>
         /// コンストラクター

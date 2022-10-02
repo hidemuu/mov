@@ -20,9 +20,9 @@ namespace Mov.Framework
 
         private readonly IDomainRepository repository;
 
-        private readonly IService service;
+        private readonly ICommandService service;
 
-        public DomainController(IDomainRepository repository, IService service)
+        public DomainController(IDomainRepository repository, ICommandService service)
         {
             this.repository = repository;
             this.service = service;

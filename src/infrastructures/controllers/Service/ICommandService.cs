@@ -5,9 +5,9 @@ using System.Text;
 namespace Mov.Controllers.Service
 {
     /// <summary>
-    /// サービスのインターフェース
+    /// コマンドで制御するサービスのインターフェース
     /// </summary>
-    public interface IService
+    public interface ICommandService
     {
         /// <summary>
         /// 単一コマンド実行

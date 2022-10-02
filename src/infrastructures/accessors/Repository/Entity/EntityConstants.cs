@@ -22,6 +22,10 @@ namespace Mov.Accessors
         /// </summary>
         public const string ESCAPE = "/";
         /// <summary>
+        /// ヘッダー線文字
+        /// </summary>
+        public const char HEADER_LINE = '-';
+        /// <summary>
         /// 日付フォーマット
         /// </summary>
         public const string DATE_FORMAT = "yyyy/MM/dd HH:mm:ss.fff";

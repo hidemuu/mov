@@ -1,4 +1,5 @@
 ﻿using Mov.Accessors;
+using Mov.Accessors.Repository.Entity;
 using Mov.Utilities.Attributes;
 using Newtonsoft.Json;
 using System;
@@ -13,7 +14,7 @@ namespace Mov.BaseModel
     /// <summary>
     /// データベースの基本オブジェクト
     /// </summary>
-    public class DbObject
+    public class DbObject : IEntityObject
     {
         #region プロパティ
 
@@ -73,28 +74,28 @@ namespace Mov.BaseModel
 
         #region メソッド
 
-        public virtual string[] ToStrings() => new string[] { Code };
+        public virtual string[] GetContentStrings() => new string[] { Code };
 
-        public virtual string[] ToHeaderStrings() => new string[] { "Code" };
+        public virtual string[] GetHeaderStrings() => new string[] { "Code" };
 
         /// <summary>
         ///ヘッダー文字列取得
         /// </summary>
         /// <returns></returns>
-        public string ToHeaderString() => GetString(ToHeaderStrings(), 10);
+        public string ToHeaderString() => GetString(GetHeaderStrings(), 10);
 
         /// <summary>
         ///コンテンツ文字列取得
         /// </summary>
         /// <returns></returns>
-        public string ToContentString() => GetString(ToStrings(), 10);
+        public string ToContentString() => GetString(GetContentStrings(), 10);
 
         #endregion メソッド
 
         #region オーバーライドメソッド
 
         /// <inheritdoc />
-        public override string ToString() => GetString(ToStrings());
+        public override string ToString() => GetString(GetContentStrings());
 
         #endregion オーバーライドメソッド
 

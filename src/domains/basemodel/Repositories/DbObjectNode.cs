@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Mov.Accessors.Repository.Entity;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
@@ -9,7 +10,7 @@ namespace Mov.BaseModel
     /// データベースオブジェクトのノード
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class DbObjectNode<T> : DbObject where T : DbObject
+    public class DbObjectNode<T> : DbObject, IEntityNode<T> where T : DbObject
     {
         #region プロパティ
 
@@ -50,7 +51,7 @@ namespace Mov.BaseModel
 
         #region メソッド
 
-        public string ToStringTables()
+        public string ToNodeString()
         {
             var stringBuilder = new StringBuilder(ToContentString());
             stringBuilder.AppendLine();

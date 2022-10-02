@@ -15,7 +15,8 @@ namespace Mov.BaseModel
     /// <typeparam name="TEntity"></typeparam>
     public class FileDbObjectRepository<TEntity, TBody> 
         : FileEntityRepository<TEntity, TBody>, IDbObjectRepository<TEntity, TBody> 
-        where TEntity : DbObject where TBody : DbObjectCollection<TEntity>
+        where TEntity : DbObject 
+        where TBody : DbObjectCollection<TEntity>
     {
         #region フィールド
 
@@ -39,12 +40,12 @@ namespace Mov.BaseModel
         /// 全データ取得
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<TEntity> Get()
-        {
-            if (body == default) Read();
-            if (body == default) return new List<TEntity>();
-            return body.Items;
-        }
+        //public IEnumerable<TEntity> Get()
+        //{
+        //    if (body == default) Read();
+        //    if (body == default) return new List<TEntity>();
+        //    return body.Items;
+        //}
 
         /// <summary>
         /// データ取得
@@ -65,7 +66,7 @@ namespace Mov.BaseModel
         /// </summary>
         /// <param name="code"></param>
         /// <returns></returns>
-        public TEntity Get(string code) => Get(Get(), code);
+        public override TEntity Get(string code) => Get(Get(), code);
 
         #endregion GET
 
@@ -94,7 +95,7 @@ namespace Mov.BaseModel
         /// データ追加・更新
         /// </summary>
         /// <param name="item"></param>
-        public void Post(TEntity item)
+        public override void Post(TEntity item)
         {
             var src = Get().FirstOrDefault(x => x.Id == item.Id);
             src = item;
@@ -235,15 +236,15 @@ namespace Mov.BaseModel
         #region オーバーライドメソッド
 
         /// <inheritdoc />
-        public override string ToString()
-        {
-            var items = Get();
-            if (items == null) return string.Empty;
-            var stringBuilder = new StringBuilder();
-            stringBuilder.Append(">> ").AppendLine(typeof(TEntity).Name);
-            GetStrings(items.ToList(), stringBuilder);
-            return stringBuilder.ToString();
-        }
+        //public override string ToString()
+        //{
+        //    var items = Get();
+        //    if (items == null) return string.Empty;
+        //    var stringBuilder = new StringBuilder();
+        //    stringBuilder.Append(">> ").AppendLine(typeof(TEntity).Name);
+        //    GetStrings(items.ToList(), stringBuilder);
+        //    return stringBuilder.ToString();
+        //}
 
         #endregion オーバーライドメソッド
 
@@ -300,7 +301,7 @@ namespace Mov.BaseModel
                 }
                 if (item is DbObjectNode<TEntity> node)
                 {
-                    stringBuilder.AppendLine(node.ToStringTables());
+                    stringBuilder.AppendLine(node.ToNodeString());
                     continue;
                 }
                 stringBuilder.AppendLine(item.ToContentString());

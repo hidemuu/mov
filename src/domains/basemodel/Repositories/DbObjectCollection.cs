@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Mov.Accessors.Repository.Entity;
+using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
@@ -8,7 +9,7 @@ namespace Mov.BaseModel
     /// データベースオブジェクトのコレクション
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class DbObjectCollection<T> where T : DbObject
+    public abstract class DbObjectCollection<T> : IEntityCollection<T> where T : DbObject
     {
         #region プロパティ
 

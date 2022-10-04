@@ -30,24 +30,10 @@ namespace Mov.ConsoleApp
 {
     class Program
     {
-        #region 定数
-
-        const string ANALIZE = "analize";
-        const string AUTH = "auth";
-        const string BOM = "bom";
-        const string CONFIG = "config";
-        const string DESIGN = "design";
-        const string DRAW = "draw";
-        const string DRIVER = "driver";
-        const string GAME = "game";
-        const string SCHEDULE = "schedule";
-        const string TRANSLATE = "translate";
-
-        #endregion 定数
 
         #region フィールド
 
-        static Mutex mutex = new Mutex(false, "Mov_ConsoleApp");
+        static Mutex mutex = new Mutex(false, FrameworkConstants.APP_NAME + "_ConsoleApp");
 
         static bool running = true;
 
@@ -110,12 +96,12 @@ namespace Mov.ConsoleApp
                 while (running)
                 {
                     Console.WriteLine("ドメインを入力してください");
-                    Console.WriteLine(ANALIZE + " : " + "アナライザー");
-                    Console.WriteLine(CONFIG + " : " + "コンフィグ");
-                    Console.WriteLine(DESIGN + " : " + "デザイン");
-                    Console.WriteLine(DRIVER + " : " + "ドライバー");
-                    Console.WriteLine(GAME + " : " + "ゲーム");
-                    Console.WriteLine(TRANSLATE + " : " + "翻訳");
+                    Console.WriteLine(FrameworkConstants.DOMAIN_NAME_ANALIZE + " : " + "アナライザー");
+                    Console.WriteLine(FrameworkConstants.DOMAIN_NAME_CONFIG + " : " + "コンフィグ");
+                    Console.WriteLine(FrameworkConstants.DOMAIN_NAME_DESIGN + " : " + "デザイン");
+                    Console.WriteLine(FrameworkConstants.DOMAIN_NAME_DRIVER + " : " + "ドライバー");
+                    Console.WriteLine(FrameworkConstants.DOMAIN_NAME_GAME + " : " + "ゲーム");
+                    Console.WriteLine(FrameworkConstants.DOMAIN_NAME_TRANSLATE + " : " + "翻訳");
                     Console.WriteLine("--------------");
                     Console.Write("> ");
                     var input = Console.ReadLine() ?? string.Empty;
@@ -186,32 +172,32 @@ namespace Mov.ConsoleApp
         {
             switch (domain)
             {
-                case CONFIG:
+                case FrameworkConstants.DOMAIN_NAME_CONFIG:
                     domainController = new DomainController<IDomainRepository>(
                         configRepository.DefaultRepository,
                         new ConfiguratorService(configRepository.DefaultRepository));
                     break;
-                case DESIGN:
+                case FrameworkConstants.DOMAIN_NAME_DESIGN:
                     domainController = new DomainController<IDomainRepository>(
                         designerRepository.DefaultRepository,
                         new DesignerService(designerRepository.DefaultRepository));
                     break;
-                case GAME:
+                case FrameworkConstants.DOMAIN_NAME_GAME:
                     domainController = new DomainController<IDomainRepository>(
                         gameRepository.DefaultRepository,
                         new GameService(gameRepository.DefaultRepository));
                     break;
-                case DRIVER:
+                case FrameworkConstants.DOMAIN_NAME_DRIVER:
                     domainController = new DomainController<IDomainRepository>(
                         driverRepository.DefaultRepository,
                         new DriverService(driverRepository.DefaultRepository));
                     break;
-                case ANALIZE:
+                case FrameworkConstants.DOMAIN_NAME_ANALIZE:
                     domainController = new DomainController<IDomainRepository>(
                         analizerRepository.DefaultRepository,
                         new AnalizerService(analizerRepository.DefaultRepository));
                     break;
-                case TRANSLATE:
+                case FrameworkConstants.DOMAIN_NAME_TRANSLATE:
                     domainController = new DomainController<IDomainRepository>(
                         translatorRepository.DefaultRepository,
                         new TranslatorService(translatorRepository.DefaultRepository));

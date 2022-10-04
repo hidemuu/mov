@@ -1,5 +1,6 @@
 ﻿using Mov.Accessors;
 using Mov.Accessors.Repository;
+using Mov.Accessors.Repository.Domain;
 using Mov.Analizer.Models;
 using Mov.Analizer.Service;
 using Mov.Configurator.Models;
@@ -186,32 +187,32 @@ namespace Mov.ConsoleApp
             switch (domain)
             {
                 case CONFIG:
-                    domainController = new DomainController(
+                    domainController = new DomainController<IDomainRepository>(
                         configRepository.DefaultRepository,
                         new ConfiguratorService(configRepository.DefaultRepository));
                     break;
                 case DESIGN:
-                    domainController = new DomainController(
+                    domainController = new DomainController<IDomainRepository>(
                         designerRepository.DefaultRepository,
                         new DesignerService(designerRepository.DefaultRepository));
                     break;
                 case GAME:
-                    domainController = new DomainController(
+                    domainController = new DomainController<IDomainRepository>(
                         gameRepository.DefaultRepository,
                         new GameService(gameRepository.DefaultRepository));
                     break;
                 case DRIVER:
-                    domainController = new DomainController(
+                    domainController = new DomainController<IDomainRepository>(
                         driverRepository.DefaultRepository,
                         new DriverService(driverRepository.DefaultRepository));
                     break;
                 case ANALIZE:
-                    domainController = new DomainController(
+                    domainController = new DomainController<IDomainRepository>(
                         analizerRepository.DefaultRepository,
                         new AnalizerService(analizerRepository.DefaultRepository));
                     break;
                 case TRANSLATE:
-                    domainController = new DomainController(
+                    domainController = new DomainController<IDomainRepository>(
                         translatorRepository.DefaultRepository,
                         new TranslatorService(translatorRepository.DefaultRepository));
                     break;

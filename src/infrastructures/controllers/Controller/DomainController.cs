@@ -1,8 +1,4 @@
-﻿using Mov.Accessors.Repository;
-using Mov.Accessors.Repository.Domain;
-using Mov.BaseModel;
-using Mov.Configurator.Models;
-using Mov.Controllers;
+﻿using Mov.Controllers;
 using Mov.Controllers.Service;
 using Mov.Utilities;
 using System;
@@ -10,19 +6,19 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 
-namespace Mov.Framework
+namespace Mov.Controllers
 {
     /// <summary>
     /// ドメイン単位のコントローラー
     /// </summary>
-    public class DomainController : IController
+    public class DomainController<TRepository> : IController
     {
 
-        private readonly IDomainRepository repository;
+        private readonly TRepository repository;
 
         private readonly ICommandService service;
 
-        public DomainController(IDomainRepository repository, ICommandService service)
+        public DomainController(TRepository repository, ICommandService service)
         {
             this.repository = repository;
             this.service = service;

@@ -173,34 +173,28 @@ namespace Mov.ConsoleApp
             switch (domain)
             {
                 case FrameworkConstants.DOMAIN_NAME_CONFIG:
-                    domainController = new DomainController<IDomainRepository>(
-                        configRepository.DefaultRepository,
-                        new ConfiguratorService(configRepository.DefaultRepository));
+                    domainController = new DomainControllerFactory<IConfiguratorRepository>()
+                        .Create(configRepository.DefaultRepository);
                     break;
                 case FrameworkConstants.DOMAIN_NAME_DESIGN:
-                    domainController = new DomainController<IDomainRepository>(
-                        designerRepository.DefaultRepository,
-                        new DesignerService(designerRepository.DefaultRepository));
+                    domainController = new DomainControllerFactory<IDesignerRepository>()
+                        .Create(designerRepository.DefaultRepository);
                     break;
                 case FrameworkConstants.DOMAIN_NAME_GAME:
-                    domainController = new DomainController<IDomainRepository>(
-                        gameRepository.DefaultRepository,
-                        new GameService(gameRepository.DefaultRepository));
+                    domainController = new DomainControllerFactory<IGameRepository>()
+                        .Create(gameRepository.DefaultRepository);
                     break;
                 case FrameworkConstants.DOMAIN_NAME_DRIVER:
-                    domainController = new DomainController<IDomainRepository>(
-                        driverRepository.DefaultRepository,
-                        new DriverService(driverRepository.DefaultRepository));
+                    domainController = new DomainControllerFactory<IDriverRepository>()
+                        .Create(driverRepository.DefaultRepository);
                     break;
                 case FrameworkConstants.DOMAIN_NAME_ANALIZE:
-                    domainController = new DomainController<IDomainRepository>(
-                        analizerRepository.DefaultRepository,
-                        new AnalizerService(analizerRepository.DefaultRepository));
+                    domainController = new DomainControllerFactory<IAnalizerRepository>()
+                        .Create(analizerRepository.DefaultRepository);
                     break;
                 case FrameworkConstants.DOMAIN_NAME_TRANSLATE:
-                    domainController = new DomainController<IDomainRepository>(
-                        translatorRepository.DefaultRepository,
-                        new TranslatorService(translatorRepository.DefaultRepository));
+                    domainController = new DomainControllerFactory<ITranslatorRepository>()
+                        .Create(translatorRepository.DefaultRepository);
                     break;
                 default:
                     return false;

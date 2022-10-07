@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Driver.Service
 {
-    public class DriverService : RepositoryCommandService<IDriverRepository>
+    public class DriverService : RepositoryCommandService<IDriverRepository>, IDriverService
     {
         /// <summary>
         /// コンストラクター

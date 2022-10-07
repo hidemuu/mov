@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Designer.Service
 {
-    public class DesignerService : RepositoryCommandService<IDesignerRepository>
+    public class DesignerService : RepositoryCommandService<IDesignerRepository>, IDesignerService
     {
         /// <summary>
         /// コンストラクター

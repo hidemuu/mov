@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Bom.Service
 {
-    public class BomService : RepositoryCommandService<IBomRepository>
+    public class BomService : RepositoryCommandService<IBomRepository>, IBomService
     {
         /// <summary>
         /// コンストラクター

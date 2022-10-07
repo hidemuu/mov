@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Analizer.Service
 {
-    public class AnalizerService : RepositoryCommandService<IAnalizerRepository>
+    public class AnalizerService : RepositoryCommandService<IAnalizerRepository>, IAnalizerService
     {
         /// <summary>
         /// コンストラクター

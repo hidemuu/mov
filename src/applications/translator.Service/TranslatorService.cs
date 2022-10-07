@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Translator.Service
 {
-    public class TranslatorService : RepositoryCommandService<ITranslatorRepository>
+    public class TranslatorService : RepositoryCommandService<ITranslatorRepository>, ITranslatorService
     {
         public TranslatorService(ITranslatorRepository repository) : base(repository, new TranslatorCommandFactory())
         {

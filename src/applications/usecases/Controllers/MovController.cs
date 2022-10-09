@@ -24,8 +24,8 @@ namespace Mov.UseCases.Controllers
             this.engine = engine;
             var factory = new DomainControllerFactory("Commands");
             domainControllers.Add(DomainType.Config, factory.Create(this.engine.Service.Configurator));
-            //domainControllers.Add(DomainType.Driver, factory.Create(this.engine.Service.Driver));
-            //domainControllers.Add(DomainType.Game, factory.Create(this.engine.Service.Game));
+            domainControllers.Add(DomainType.Game, factory.Create(this.engine.Service.Game));
+            domainControllers.Add(DomainType.Driver, factory.Create(this.engine.Service.Driver));
         }
 
         #endregion コンストラクター
@@ -107,7 +107,7 @@ namespace Mov.UseCases.Controllers
             stringBuilder.AppendLine(DomainType.Design.ToString().ToLower() + " : " + "デザイン");
             stringBuilder.AppendLine(DomainType.Driver.ToString().ToLower() + " : " + "ドライバー");
             stringBuilder.AppendLine(DomainType.Game.ToString().ToLower() + " : " + "ゲーム");
-            stringBuilder.AppendLine(DomainType.Translate.ToString().ToLower() + " : " + "翻訳");
+            stringBuilder.Append(DomainType.Translate.ToString().ToLower() + " : " + "翻訳");
             return stringBuilder.ToString();
         }
 

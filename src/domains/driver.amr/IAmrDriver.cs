@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Driver.Models.AMR
+namespace Mov.Driver.Amr
 {
     public interface IAmrDriver
     {

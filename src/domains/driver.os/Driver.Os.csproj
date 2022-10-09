@@ -1,14 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Mov.Driver.Models</AssemblyName>
-    <RootNamespace>Mov.Driver.Models</RootNamespace>
+    <AssemblyName>Mov.Driver.Os</AssemblyName>
+    <RootNamespace>Mov.Driver.Os</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\infrastructures\connectors\Connectors.csproj" />
-    <ProjectReference Include="..\basemodel\BaseModel.csproj" />
   </ItemGroup>
 
 </Project>

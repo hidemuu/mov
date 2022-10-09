@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Mov.Driver.Models.CNC.Fanuc
+namespace Mov.Driver.Cnc.Fanuc
 {
     public class Focas : ICncDriver
     {

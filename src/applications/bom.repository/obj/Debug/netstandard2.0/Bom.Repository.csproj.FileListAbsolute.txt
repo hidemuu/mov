@@ -2,10 +2,16 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\ne
 C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.Bom.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.Bom.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.Accessors.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.BaseModel.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.Bom.Models.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.Calculators.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.Controllers.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.Utilities.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.Bom.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.Accessors.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.BaseModel.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.Calculators.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.Controllers.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.Utilities.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\obj\Debug\netstandard2.0\Bom.Repository.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\obj\Debug\netstandard2.0\Bom.Repository.AssemblyInfoInputs.cache
@@ -14,9 +20,3 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\obj\Debug\ne
 C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\obj\Debug\netstandard2.0\Bom.Repository.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\obj\Debug\netstandard2.0\Mov.Bom.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\obj\Debug\netstandard2.0\Mov.Bom.Repository.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.BaseModel.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.BaseModel.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.Calculators.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.Controllers.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.Calculators.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\bom.repository\bin\Debug\netstandard2.0\Mov.Controllers.pdb

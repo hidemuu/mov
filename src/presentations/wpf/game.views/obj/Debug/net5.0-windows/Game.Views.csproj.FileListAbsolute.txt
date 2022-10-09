@@ -8,6 +8,9 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\n
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\ref\Mov.Game.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Game.Views.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Accessors.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.BaseModel.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Calculators.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Controllers.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Drawer.Models.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Drawer.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Drawer.Service.dll
@@ -16,11 +19,15 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\n
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Game.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Game.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Game.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Painters.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Utilities.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.WpfControls.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.WpfDesigns.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Game.ViewModels.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Accessors.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.BaseModel.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Calculators.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Controllers.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Drawer.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Drawer.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Drawer.Service.pdb
@@ -28,6 +35,7 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\n
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Game.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Game.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Game.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Painters.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Utilities.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.WpfControls.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.WpfDesigns.pdb
@@ -53,11 +61,3 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\n
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Mov.Game.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\ref\Mov.Game.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Mov.Game.Views.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Painters.dll
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Painters.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.BaseModel.dll
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.BaseModel.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Calculators.dll
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Calculators.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Controllers.dll
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Controllers.pdb

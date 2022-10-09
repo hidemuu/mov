@@ -1,11 +1,5 @@
-﻿using Mov.Accessors.Repository;
-using Mov.Accessors.Repository.Domain;
-using Mov.BaseModel;
-using Mov.Controllers;
-using Mov.Utilities;
+﻿using Mov.Controllers;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Driver.Models.Commands
 {

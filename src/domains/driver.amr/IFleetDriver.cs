@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Driver.Models.AMR
+namespace Mov.Driver.Amr
 {
     public interface IFleetDriver
     {

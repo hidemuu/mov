@@ -117,6 +117,7 @@ namespace Mov.ConsoleApp
                 while (running)
                 {
                     Console.WriteLine("ドメインを入力してください");
+                    Console.WriteLine("--------------");
                     Console.WriteLine(controller.GetDomainHelp());
                     Console.WriteLine("--------------");
                     Console.Write("> ");

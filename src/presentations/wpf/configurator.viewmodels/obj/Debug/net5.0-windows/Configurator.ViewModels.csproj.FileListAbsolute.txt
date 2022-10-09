@@ -27,7 +27,10 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodel
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\ref\Mov.Configurator.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.Configurator.ViewModels.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.Accessors.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.BaseModel.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.Calculators.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.Configurator.Models.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.Controllers.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.Designer.Models.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.Designer.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.Designer.Service.dll
@@ -39,6 +42,9 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodel
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.Utilities.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.WpfControls.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.Accessors.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.BaseModel.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.Calculators.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.Controllers.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.Designer.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.Designer.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.WpfDesigns.pdb
@@ -51,9 +57,3 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodel
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\obj\Debug\net5.0-windows\Mov.Configurator.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\obj\Debug\net5.0-windows\ref\Mov.Configurator.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\obj\Debug\net5.0-windows\Mov.Configurator.ViewModels.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.BaseModel.dll
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.BaseModel.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.Calculators.dll
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.Controllers.dll
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.Calculators.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\configurator.viewmodels\bin\Debug\net5.0-windows\Mov.Controllers.pdb

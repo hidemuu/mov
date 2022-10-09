@@ -44,10 +44,16 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin
 C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.Configurator.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.Configurator.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.Accessors.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.BaseModel.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.Calculators.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.Configurator.Models.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.Controllers.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.Utilities.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.Configurator.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.Accessors.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.BaseModel.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.Calculators.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.Controllers.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.Utilities.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\obj\Debug\netstandard2.0\Configurator.Repository.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\obj\Debug\netstandard2.0\Configurator.Repository.AssemblyInfoInputs.cache
@@ -56,9 +62,3 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\obj
 C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\obj\Debug\netstandard2.0\Configurator.Repository.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\obj\Debug\netstandard2.0\Mov.Configurator.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\obj\Debug\netstandard2.0\Mov.Configurator.Repository.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.BaseModel.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.BaseModel.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.Calculators.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.Controllers.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.Calculators.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.repository\bin\Debug\netstandard2.0\Mov.Controllers.pdb

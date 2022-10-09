@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Driver.Cnc</AssemblyName>
+    <RootNamespace>Mov.Driver.Cnc</RootNamespace>
+  </PropertyGroup>
+
+</Project>

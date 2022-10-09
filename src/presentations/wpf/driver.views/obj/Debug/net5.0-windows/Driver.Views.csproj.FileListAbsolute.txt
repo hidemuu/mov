@@ -8,6 +8,10 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\ref\Mov.Driver.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Driver.Views.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Accessors.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.BaseModel.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Calculators.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Connectors.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Controllers.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Designer.Models.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Designer.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Designer.Service.dll
@@ -23,6 +27,10 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Designer.Views.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Driver.ViewModels.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Accessors.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.BaseModel.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Calculators.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Connectors.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Controllers.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Designer.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Designer.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Designer.Service.pdb
@@ -47,11 +55,3 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug\net5.0-windows\Mov.Driver.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug\net5.0-windows\ref\Mov.Driver.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug\net5.0-windows\Mov.Driver.Views.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.BaseModel.dll
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.BaseModel.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Connectors.dll
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Connectors.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Calculators.dll
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Controllers.dll
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Calculators.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Controllers.pdb

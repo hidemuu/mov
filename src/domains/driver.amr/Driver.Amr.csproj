@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Driver.Amr</AssemblyName>
+    <RootNamespace>Mov.Driver.Amr</RootNamespace>
+  </PropertyGroup>
+
+</Project>

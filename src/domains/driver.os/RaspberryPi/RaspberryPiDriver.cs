@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Driver.Models.RaspberryPi
+namespace Mov.Driver.Os.RaspberryPi
 {
     public class RaspberryPiDriver : IRaspberryPiDriver
     {

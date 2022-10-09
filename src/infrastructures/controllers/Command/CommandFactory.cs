@@ -1,7 +1,10 @@
 ﻿using Mov.Controllers.Command;
+using Mov.Utilities.Helper;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace Mov.Controllers
@@ -11,36 +14,38 @@ namespace Mov.Controllers
         
         #region フィールド
 
-        private readonly string baseName;
-
-        private readonly string baseTypeName;
-
+        private readonly Assembly assembly;
+        
         #endregion フィールド
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public CommandFactory(string baseTypeName)
+        public CommandFactory()
         {
-            this.baseName = this.GetType().Namespace;
-            this.baseTypeName = baseTypeName;
+            this.assembly = ReflectionHelper.GetTypeAssembly<TParameter>();
         }
 
         #region メソッド
 
-        public IDictionary<string, ICommand<TParameter, TResponse>> Create()
+        public CommandDictionary<TParameter, TResponse> Create(string endpoint)
         {
-            var dictionary = new Dictionary<string, ICommand<TParameter, TResponse>>();
-            Type type = Type.GetType(baseName + "." + baseTypeName);
-            if (type == null)
+            var result = new CommandDictionary<TParameter, TResponse>();
+            var types = ReflectionHelper.GetTypesInNamespace(this.assembly, endpoint);
+            if (types == null)
             {
-                Debug.Assert(false, type.FullName);
+                Debug.Assert(false, endpoint);
                 return default;
             };
-            dictionary.Add(baseTypeName, (ICommand<TParameter, TResponse>)Activator.CreateInstance(type));
-            return dictionary;
+            foreach (var type in types)
+            {
+                var instance = (ICommand<TParameter, TResponse>)Activator.CreateInstance(type);
+                result.Add(instance.Name, instance);
+            }
+            return result;
         }
 
         #endregion メソッド
+
     }
 }

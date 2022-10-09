@@ -7,13 +7,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Bom.Models
+namespace Mov.Analizer.Models.Commands
 {
-    internal class WriteConsoleCommand : ICommand<IBomRepository, DomainResponse>
+    internal class WriteConsoleCommand : ICommand<IAnalizerRepository, CommandResponse>
     {
-        public DomainResponse Invoke(IBomRepository repository, string[] args)
+        public string Name => "WriteConsole";
+
+        public string ShortName => "wc";
+
+        public CommandResponse Invoke(IAnalizerRepository repository, string[] args)
         {
-            return DomainResponse.Success;
+            return CommandResponse.Success;
         }
 
         public string Help()

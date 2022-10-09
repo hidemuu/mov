@@ -7,14 +7,18 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Driver.Models
+namespace Mov.Driver.Models.Commands
 {
-    internal class WriteConsoleCommand : ICommand<IDriverRepository, DomainResponse>
+    internal class WriteConsoleCommand : ICommand<IDriverRepository, CommandResponse>
     {
-        public DomainResponse Invoke(IDriverRepository repository, string[] args)
+        public string Name => "WriteConsole";
+
+        public string ShortName => "wc";
+
+        public CommandResponse Invoke(IDriverRepository repository, string[] args)
         {
             Console.WriteLine(repository.Commands.ToString());
-            return DomainResponse.Success;
+            return CommandResponse.Success;
         }
 
         public string Help()

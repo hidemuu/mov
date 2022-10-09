@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Mov.Game.Models
 {
-    public interface IGameService
+    public enum GameCommands
     {
-        IGameRepository Repository { get; }
+        WriteConsole = 1,
     }
 }

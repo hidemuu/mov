@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace Mov.Utilities
 {
     /// <summary>
-    /// 絶対パス取得ロジック
+    /// パス処理のヘルパークラス
     /// </summary>
     public static class PathHelper
     {
@@ -33,6 +34,12 @@ namespace Mov.Utilities
                 }
             }
             return rootPath;
+        }
+
+        public static string GetAssemblyRootPath()
+        {
+            var assembly = Assembly.GetEntryAssembly();
+            return assembly.Location.TrimEnd(assembly.ManifestModule.Name.ToCharArray());
         }
 
         /// <summary>

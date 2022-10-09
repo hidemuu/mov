@@ -1,17 +1,16 @@
-﻿using Mov.Controllers.Service;
-using Mov.Designer.Models;
+﻿using Mov.Designer.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Mov.Designer.Service
 {
-    public class DesignerService : RepositoryCommandService<IDesignerRepository>, IDesignerService
+    public class DesignerService : IDesignerService
     {
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public DesignerService(IDesignerRepository repository) : base(repository, new DesignerCommandFactory())
+        public DesignerService(IDesignerRepository repository)
         {
         }
     }

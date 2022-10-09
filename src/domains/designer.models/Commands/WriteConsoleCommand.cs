@@ -7,14 +7,18 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Models
+namespace Mov.Designer.Models.Commands
 {
-    internal class WriteConsoleCommand : ICommand<IDesignerRepository, DomainResponse>
+    internal class WriteConsoleCommand : ICommand<IDesignerRepository, CommandResponse>
     {
-        public DomainResponse Invoke(IDesignerRepository repository, string[] args)
+        public string Name => "WriteConsole";
+
+        public string ShortName => "wc";
+
+        public CommandResponse Invoke(IDesignerRepository repository, string[] args)
         {
             Console.WriteLine(repository.Nodes.ToString());
-            return DomainResponse.Success;
+            return CommandResponse.Success;
         }
 
         public string Help()

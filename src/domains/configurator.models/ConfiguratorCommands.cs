@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Mov.Configurator.Models
 {
-    public interface IConfiguratorService
+    public enum ConfiguratorCommands
     {
-        IConfiguratorRepository Repository { get; }
+        WriteConsole,
     }
 }

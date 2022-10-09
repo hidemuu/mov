@@ -1,5 +1,4 @@
 ﻿using Mov.Controllers;
-using Mov.Controllers.Service;
 using Mov.Utilities;
 using System;
 using System.Collections.Generic;
@@ -11,17 +10,18 @@ namespace Mov.Controllers
     /// <summary>
     /// ドメイン単位のコントローラー
     /// </summary>
-    public class DomainController<TRepository> : IController
+    public class DomainController<TService> : IController
     {
 
-        private readonly TRepository repository;
+        private readonly TService service;
 
-        private readonly ICommandService service;
+        private readonly CommandExecuter<TService, CommandResponse> executer;
 
-        public DomainController(TRepository repository, ICommandService service)
+
+        public DomainController(TService service, string endpoint)
         {
-            this.repository = repository;
             this.service = service;
+            this.executer = new CommandExecuter<TService, CommandResponse>(service, endpoint);
         }
 
         public bool Execute()
@@ -31,23 +31,23 @@ namespace Mov.Controllers
 
         public bool ExecuteCommand(string command, string[] args)
         {
-            var response = this.service.ExecuteCommand(command, args);
+            var response = this.executer.Invoke(command, args);
             return true;
         }
 
         public IEnumerable<string> GetCommands()
         {
-            return this.service.GetCommands();
+            return this.executer.GetCommands();
         }
 
         public bool ExistsCommand(string command)
         {
-            return this.service.ExistsCommand(command);
+            return this.executer.Exists(command);
         }
 
         public virtual string GetCommandHelp()
         {
-            return this.service.GetCommandHelp();
+            return this.executer.GetHelp();
         }
     }
 }

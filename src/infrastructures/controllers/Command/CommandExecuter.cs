@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Utilities;
+using System;
 using System.Collections.Generic;
 
 namespace Mov.Controllers
@@ -6,20 +7,20 @@ namespace Mov.Controllers
     /// <summary>
     /// コマンド実行クラス
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public class CommandExecuter<TPamameter, TResponse>
+    /// <typeparam name="TParameter"></typeparam>
+    public class CommandExecuter<TParameter, TResponse>
     {
         #region フィールド
 
         /// <summary>
         /// コマンドパラメータ
         /// </summary>
-        private readonly TPamameter parameter;
+        private readonly TParameter parameter;
 
         /// <summary>
         /// コマンドハンドラー
         /// </summary>
-        private IDictionary<string, ICommand<TPamameter, TResponse>> handler { get; }
+        private CommandDictionary<TParameter, TResponse> handler { get; }
 
         #endregion フィールド
 
@@ -29,10 +30,11 @@ namespace Mov.Controllers
         /// コンストラクター
         /// </summary>
         /// <param name="parameter"></param>
-        public CommandExecuter(TPamameter parameter, IDictionary<string, ICommand<TPamameter, TResponse>> handler)
+        public CommandExecuter(TParameter parameter, string endpoint)
         {
             this.parameter = parameter;
-            this.handler = handler;
+            var factory = new CommandFactory<TParameter, TResponse>();
+            this.handler = factory.Create(endpoint);
         }
 
         #endregion コンストラクター
@@ -66,6 +68,17 @@ namespace Mov.Controllers
                 commandHelps.Add(new Tuple<string, string>(command.Key, command.Value.Help()));
             }
             return commandHelps;
+        }
+
+        public string GetHelp()
+        {
+            var help = string.Empty;
+            foreach (var commandHelp in GetCommandHelps())
+            {
+                help += commandHelp.Item1 + " : " + commandHelp.Item2 + UtilityConstants.NewLine;
+            }
+            help = help.TrimEnd(UtilityConstants.NewLine.ToCharArray());
+            return help;
         }
 
         /// <summary>

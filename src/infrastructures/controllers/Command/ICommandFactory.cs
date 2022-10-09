@@ -6,6 +6,6 @@ namespace Mov.Controllers.Command
 {
     public interface ICommandFactory<TParameter, TResponse>
     {
-        IDictionary<string, ICommand<TParameter, TResponse>> Create();
+        CommandDictionary<TParameter, TResponse> Create(string endpoint);
     }
 }

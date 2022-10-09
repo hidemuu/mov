@@ -7,13 +7,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Translator.Models
+namespace Mov.Bom.Models.Commands
 {
-    internal class WriteConsoleCommand : ICommand<ITranslatorRepository, DomainResponse>
+    internal class WriteConsoleCommand : ICommand<IBomRepository, CommandResponse>
     {
-        public DomainResponse Invoke(ITranslatorRepository repository, string[] args)
+        public string Name => "WriteConsole";
+
+        public string ShortName => "wc";
+
+        public CommandResponse Invoke(IBomRepository repository, string[] args)
         {
-            return DomainResponse.Success;
+            return CommandResponse.Success;
         }
 
         public string Help()

@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Mov.Controllers
 {
-    public enum DomainResponse
+    /// <summary>
+    /// 
+    /// </summary>
+    public interface IScheduler
     {
-        None,
-        Success,
-        Error,
     }
 }

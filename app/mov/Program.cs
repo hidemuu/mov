@@ -170,30 +170,30 @@ namespace Mov.ConsoleApp
 
         static bool CreateDomainController(string domain)
         {
+            var factory = new DomainControllerFactory("Commands");
             switch (domain)
             {
                 case FrameworkConstants.DOMAIN_NAME_CONFIG:
-                    domainController = new DomainControllerFactory<IConfiguratorRepository>()
-                        .Create(configRepository.DefaultRepository);
+                    domainController = factory.Create(new ConfiguratorService(configRepository.DefaultRepository));
                     break;
                 case FrameworkConstants.DOMAIN_NAME_DESIGN:
-                    domainController = new DomainControllerFactory<IDesignerRepository>()
+                    domainController = factory
                         .Create(designerRepository.DefaultRepository);
                     break;
                 case FrameworkConstants.DOMAIN_NAME_GAME:
-                    domainController = new DomainControllerFactory<IGameRepository>()
+                    domainController = factory
                         .Create(gameRepository.DefaultRepository);
                     break;
                 case FrameworkConstants.DOMAIN_NAME_DRIVER:
-                    domainController = new DomainControllerFactory<IDriverRepository>()
+                    domainController = factory
                         .Create(driverRepository.DefaultRepository);
                     break;
                 case FrameworkConstants.DOMAIN_NAME_ANALIZE:
-                    domainController = new DomainControllerFactory<IAnalizerRepository>()
+                    domainController = factory
                         .Create(analizerRepository.DefaultRepository);
                     break;
                 case FrameworkConstants.DOMAIN_NAME_TRANSLATE:
-                    domainController = new DomainControllerFactory<ITranslatorRepository>()
+                    domainController = factory
                         .Create(translatorRepository.DefaultRepository);
                     break;
                 default:

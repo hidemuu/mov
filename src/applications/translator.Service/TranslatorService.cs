@@ -1,14 +1,13 @@
-﻿using Mov.Controllers.Service;
-using Mov.Translator.Models;
+﻿using Mov.Translator.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Mov.Translator.Service
 {
-    public class TranslatorService : RepositoryCommandService<ITranslatorRepository>, ITranslatorService
+    public class TranslatorService : ITranslatorService
     {
-        public TranslatorService(ITranslatorRepository repository) : base(repository, new TranslatorCommandFactory())
+        public TranslatorService(ITranslatorRepository repository)
         {
         }
     }

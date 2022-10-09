@@ -6,5 +6,6 @@ namespace Mov.Driver.Models
 {
     public interface IDriverService
     {
+        IDriverRepository Repository { get; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -41,9 +42,17 @@ namespace Mov.Utilities.Helper
         {
             var assemblyName = assembly.GetName().Name;
             var name_space = assemblyName + "." + endpoint;
-            return
-              assembly.GetTypes()
-                      .Where(t => string.Equals(t.Namespace, name_space, StringComparison.Ordinal));
+            try
+            {
+                var types = assembly.GetTypes();
+                return
+                  types.Where(t => string.Equals(t.Namespace, name_space, StringComparison.Ordinal));
+            }
+            catch(Exception ex)
+            {
+                Debug.Assert(false, ex.Message);
+            }
+            return null;
         }
     }
 }

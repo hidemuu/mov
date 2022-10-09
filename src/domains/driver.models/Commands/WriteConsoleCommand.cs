@@ -9,15 +9,15 @@ using System.Text;
 
 namespace Mov.Driver.Models.Commands
 {
-    internal class WriteConsoleCommand : ICommand<IDriverRepository, CommandResponse>
+    internal class WriteConsoleCommand : ICommand<IDriverService, CommandResponse>
     {
-        public string Name => "WriteConsole";
+        public string Name => DriverCommandType.WriteConsole.ToString();
 
         public string ShortName => "wc";
 
-        public CommandResponse Invoke(IDriverRepository repository, string[] args)
+        public CommandResponse Invoke(IDriverService service, string[] args)
         {
-            Console.WriteLine(repository.Commands.ToString());
+            Console.WriteLine(service.Repository.Commands.ToString());
             return CommandResponse.Success;
         }
 

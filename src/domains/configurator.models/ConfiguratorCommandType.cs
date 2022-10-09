@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Configurator.Models
 {
-    public enum ConfiguratorCommands
+    public enum ConfiguratorCommandType
     {
         WriteConsole,
     }

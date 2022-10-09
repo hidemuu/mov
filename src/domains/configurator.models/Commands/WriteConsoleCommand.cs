@@ -12,7 +12,7 @@ namespace Mov.Configurator.Models.Commands
 {
     internal class WriteConsoleCommand : ICommand<IConfiguratorService, CommandResponse>
     {
-        public string Name => ConfiguratorCommands.WriteConsole.ToString();
+        public string Name => ConfiguratorCommandType.WriteConsole.ToString();
 
         public string ShortName => "wc";
 

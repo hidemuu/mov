@@ -20,6 +20,7 @@ using Mov.Game.Service.Puzzle;
 using Mov.Translator.Models;
 using Mov.Translator.Service;
 using Mov.UseCases;
+using Mov.UseCases.Controllers;
 using Mov.UseCases.Factories;
 using Mov.UseCases.Repositories;
 using Mov.UseCases.Services;
@@ -43,7 +44,7 @@ namespace Mov.ConsoleApp
 
         static IMovRepository repository;
         static IMovEngine engine;
-        static IController domainController;
+        static IMovController controller;
 
         static IDictionary<string, CommandHandler> handlers;
 
@@ -95,7 +96,7 @@ namespace Mov.ConsoleApp
             };
             //リポジトリ生成
             repository = new FileMovRepository(PathCreator.GetResourcePath());
-            //ドメインエンジン生成
+            //エンジン生成
             engine = new MovEngine(0, new MovService(
                 new AnalizerService(repository.Analizer),
                 new ConfiguratorService(repository.Configurator),
@@ -104,6 +105,7 @@ namespace Mov.ConsoleApp
                 new ConsoleGameService(repository.Game, new TowerOfHanoiGame(3)),
                 new TranslatorService(repository.Translator)
                 ));
+            controller = new MovController(engine);
         }
 
         static void Run()
@@ -115,16 +117,11 @@ namespace Mov.ConsoleApp
                 while (running)
                 {
                     Console.WriteLine("ドメインを入力してください");
-                    Console.WriteLine(FrameworkConstants.DOMAIN_NAME_ANALIZE + " : " + "アナライザー");
-                    Console.WriteLine(FrameworkConstants.DOMAIN_NAME_CONFIG + " : " + "コンフィグ");
-                    Console.WriteLine(FrameworkConstants.DOMAIN_NAME_DESIGN + " : " + "デザイン");
-                    Console.WriteLine(FrameworkConstants.DOMAIN_NAME_DRIVER + " : " + "ドライバー");
-                    Console.WriteLine(FrameworkConstants.DOMAIN_NAME_GAME + " : " + "ゲーム");
-                    Console.WriteLine(FrameworkConstants.DOMAIN_NAME_TRANSLATE + " : " + "翻訳");
+                    Console.WriteLine(controller.GetDomainHelp());
                     Console.WriteLine("--------------");
                     Console.Write("> ");
                     var input = Console.ReadLine() ?? string.Empty;
-                    if (!CreateDomainController(input))
+                    if (!controller.SetDomain(input))
                     {
                         Console.WriteLine("コントローラーの生成に失敗しました");
                         continue;
@@ -149,13 +146,13 @@ namespace Mov.ConsoleApp
                         handlers[command].Invoke(parameters);
                         continue;
                     }
-                    if (!domainController.ExistsCommand(command))
+                    if (!controller.ExistsDomainCommand(command))
                     {
                         Console.WriteLine($"コマンドが登録されていません : {command}");
                     }
                     else
                     {
-                        domainController.ExecuteCommand(command, parameters);
+                        controller.ExecuteDomainCommand(command, parameters);
                     }
                 }
             }
@@ -176,41 +173,6 @@ namespace Mov.ConsoleApp
             return true;
         }
 
-        
-        static bool CreateDomainController(string domain)
-        {
-            var factory = new DomainControllerFactory("Commands");
-            switch (domain)
-            {
-                case FrameworkConstants.DOMAIN_NAME_CONFIG:
-                    domainController = factory.Create(engine.Service.Configurator);
-                    break;
-                //case FrameworkConstants.DOMAIN_NAME_DESIGN:
-                //    domainController = factory
-                //        .Create(designerRepository.DefaultRepository);
-                //    break;
-                //case FrameworkConstants.DOMAIN_NAME_GAME:
-                //    domainController = factory
-                //        .Create(gameRepository.DefaultRepository);
-                //    break;
-                //case FrameworkConstants.DOMAIN_NAME_DRIVER:
-                //    domainController = factory
-                //        .Create(driverRepository.DefaultRepository);
-                //    break;
-                //case FrameworkConstants.DOMAIN_NAME_ANALIZE:
-                //    domainController = factory
-                //        .Create(analizerRepository.DefaultRepository);
-                //    break;
-                //case FrameworkConstants.DOMAIN_NAME_TRANSLATE:
-                //    domainController = factory
-                //        .Create(translatorRepository.DefaultRepository);
-                //    break;
-                default:
-                    return false;
-            }
-            return true;
-        }
-
         #endregion メソッド
 
         #region コマンドハンドラ
@@ -227,7 +189,7 @@ namespace Mov.ConsoleApp
             {
                 Console.WriteLine(key);
             }
-            Console.WriteLine(domainController.GetCommandHelp());
+            Console.WriteLine(controller.GetDomainCommandHelp());
             Console.WriteLine("----- end ------");
         }
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Driver.Models
 {
-    public enum DriverCommands
+    public enum DriverCommandType
     {
         WriteConsole = 1,
     }

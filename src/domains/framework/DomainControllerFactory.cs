@@ -8,6 +8,7 @@ using Mov.Game.Models;
 using Mov.Translator.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Mov.Framework
@@ -26,41 +27,41 @@ namespace Mov.Framework
 
         public IController Create<TService>(TService service)
         {
-            if(service is IConfiguratorService configuratorService)
+            try
             {
-                return new DomainController<IConfiguratorService>(configuratorService, this.commandPath);
+                //return new DomainController<TService>(service, this.commandPath);
+                if (service is IConfiguratorService configuratorService)
+                {
+                    return new DomainController<IConfiguratorService>(configuratorService, this.commandPath);
+                }
+                if (service is IDesignerService designerService)
+                {
+                    return new DomainController<IDesignerService>(designerService, this.commandPath);
+                }
+                if (service is IGameService gameService)
+                {
+                    return new DomainController<IGameService>(gameService, this.commandPath);
+                }
+                if (service is IDriverService driverService)
+                {
+                    return new DomainController<IDriverService>(driverService, this.commandPath);
+                }
+                if (service is IAnalizerService analizerService)
+                {
+                    return new DomainController<IAnalizerService>(analizerService, this.commandPath);
+                }
+                if (service is ITranslatorService translatorService)
+                {
+                    return new DomainController<ITranslatorService>(translatorService, this.commandPath);
+                }
             }
-            //if (repository is IDesignerRepository designerRepository)
-            //{
-            //    return new DomainController<IDesignerRepository>(
-            //            designerRepository,
-            //            new DesignerService(designerRepository));
-            //}
-            //if (repository is IGameRepository gameRepository)
-            //{
-            //    return new DomainController<IGameRepository>(
-            //            gameRepository,
-            //            new GameService(gameRepository));
-            //}
-            //if (repository is IDriverRepository driverRepository)
-            //{
-            //    return new DomainController<IDriverRepository>(
-            //            driverRepository,
-            //            new DriverService(driverRepository));
-            //}
-            //if (repository is IAnalizerRepository analizerRepository)
-            //{
-            //    return new DomainController<IAnalizerRepository>(
-            //            analizerRepository,
-            //            new AnalizerService(analizerRepository));
-            //}
-            //if (repository is ITranslatorRepository translatorRepository)
-            //{
-            //    return new DomainController<ITranslatorRepository>(
-            //            translatorRepository,
-            //            new TranslatorService(translatorRepository));
-            //}
+            catch (Exception ex)
+            {
+                Debug.Assert(false, "サービスが見つかりません" + Environment.NewLine + ex.Message);
+            }
             return null;
+            
+
         }
 
     }

@@ -32,16 +32,24 @@ namespace Mov.Controllers
         {
             var result = new CommandDictionary<TParameter, TResponse>();
             var types = ReflectionHelper.GetTypesInNamespace(this.assembly, endpoint);
-            if (types == null)
+            if (types == null || types.Count() == 0)
             {
-                Debug.Assert(false, endpoint);
+                Debug.Assert(false, "登録できるコマンドが見つかりません" + Environment.NewLine + endpoint);
                 return default;
             };
-            foreach (var type in types)
+            try
             {
-                var instance = (ICommand<TParameter, TResponse>)Activator.CreateInstance(type);
-                result.Add(instance.Name, instance);
+                foreach (var type in types)
+                {
+                    var instance = (ICommand<TParameter, TResponse>)Activator.CreateInstance(type);
+                    result.Add(instance.Name, instance);
+                }
             }
+            catch(Exception ex)
+            {
+                Debug.Assert(false, ex.Message);
+            }
+           
             return result;
         }
 

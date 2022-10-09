@@ -135,7 +135,7 @@ namespace Mov.WpfApp
                 repositoryFactory.Create<IDriverRepository>(SerializeConstants.PATH_JSON));
 
             //サービスの登録
-            containerRegistry.RegisterInstance<IMachineGame>(Container.Resolve<PackmanGame>());
+            containerRegistry.RegisterInstance<IActionGame>(Container.Resolve<PackmanGame>());
 
             //Viewの登録
             containerRegistry.RegisterForNavigation<ConfiguratorView>();

@@ -13,8 +13,12 @@ using Mov.Designer.Service;
 using Mov.Driver.Models;
 using Mov.Driver.Service;
 using Mov.Framework;
+using Mov.Framework.Controllers;
+using Mov.Framework.Repositories;
+using Mov.Framework.Services;
 using Mov.Game.Models;
 using Mov.Game.Service;
+using Mov.Game.Service.Puzzle;
 using Mov.Translator.Models;
 using Mov.Translator.Service;
 using Mov.UseCases;
@@ -43,6 +47,8 @@ namespace Mov.ConsoleApp
         static IDomainRepositoryCollection<IDriverRepository> driverRepository;
         static IDomainRepositoryCollection<IGameRepository> gameRepository;
         static IDomainRepositoryCollection<ITranslatorRepository> translatorRepository;
+        static IMovRepository repository;
+        static IMovEngine engine;
         static IController domainController;
 
         static IDictionary<string, CommandHandler> handlers;
@@ -53,6 +59,7 @@ namespace Mov.ConsoleApp
 
         static void Main(string[] args)
         {
+            //二重起動防止
             if (!mutex.WaitOne(0, false))
             {
                 Console.WriteLine("二重起動できません。");
@@ -63,9 +70,14 @@ namespace Mov.ConsoleApp
             }
 
             Console.WriteLine("Hello Mov!");
-            
+
+            //初期化
+            Initialize();
+
+            //実行
             Run();
 
+            //終了処理
             Console.WriteLine("アプリケーションを終了します");
             Console.ReadKey();
 
@@ -79,7 +91,7 @@ namespace Mov.ConsoleApp
 
         #region メソッド
 
-        static void Run()
+        static void Initialize()
         {
             //共通コマンド生成
             handlers = new Dictionary<string, CommandHandler>()
@@ -88,8 +100,28 @@ namespace Mov.ConsoleApp
                 {"help", Help }
             };
             //リポジトリ生成
-            CreateRepository(PathCreator.GetResourcePath());
+            CreateFileRepository(PathCreator.GetResourcePath());
+            repository = new MovRepository(
+                analizerRepository?.DefaultRepository, 
+                configRepository?.DefaultRepository,
+                designerRepository?.DefaultRepository,
+                driverRepository?.DefaultRepository,
+                gameRepository?.DefaultRepository,
+                translatorRepository?.DefaultRepository);
+            //ドメインエンジン生成
+            engine = new MovEngine(0, new MovService(
+                new AnalizerService(repository.Analizer),
+                new ConfiguratorService(repository.Configurator),
+                new DesignerService(repository.Designer),
+                new DriverService(repository.Driver),
+                new ConsoleGameService(repository.Game, new TowerOfHanoiGame(3)),
+                new TranslatorService(repository.Translator)
+                ));
+        }
 
+        static void Run()
+        {
+           
             while (running)
             {
                 //コントローラー生成
@@ -157,7 +189,7 @@ namespace Mov.ConsoleApp
             return true;
         }
 
-        static void CreateRepository(string resourcePath)
+        static void CreateFileRepository(string resourcePath)
         {
             var fileRepositoryFactory = new FileDomainRepositoryCollectionFactory(resourcePath);
             configRepository = fileRepositoryFactory.Create<IConfiguratorRepository>(SerializeConstants.PATH_JSON);
@@ -174,7 +206,7 @@ namespace Mov.ConsoleApp
             switch (domain)
             {
                 case FrameworkConstants.DOMAIN_NAME_CONFIG:
-                    domainController = factory.Create(new ConfiguratorService(configRepository.DefaultRepository));
+                    domainController = factory.Create(engine.Service.Configurator);
                     break;
                 case FrameworkConstants.DOMAIN_NAME_DESIGN:
                     domainController = factory

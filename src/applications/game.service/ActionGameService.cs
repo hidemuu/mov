@@ -5,16 +5,19 @@ using System.Text;
 
 namespace Mov.Game.Service
 {
-    public class GameService : IGameService
+    public class ActionGameService : IGameService
     {
         public IGameRepository Repository { get; }
+
+        private IActionGame game;
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public GameService(IGameRepository repository)
+        public ActionGameService(IGameRepository repository, IActionGame game)
         {
             this.Repository = repository;
+            this.game = game;
         }
     }
 }

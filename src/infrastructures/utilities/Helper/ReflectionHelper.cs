@@ -21,6 +21,16 @@ namespace Mov.Utilities.Helper
             return Assembly.GetAssembly(typeof(T)); ;
         }
 
+        public static Assembly GetBaseTypeAssembly<T>()
+        {
+            var type = typeof(T);
+            if (!type.IsInterface)
+            {
+                type = type?.GetInterfaces()?.FirstOrDefault() ?? type;
+            }
+            return Assembly.GetAssembly(type);
+        }
+
         /// <summary>
         /// 指定アセンブリの指定名前空間のType一覧を取得する
         /// </summary>

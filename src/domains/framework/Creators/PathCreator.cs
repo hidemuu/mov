@@ -11,8 +11,6 @@ namespace Mov.Framework
     {
         public static string GetSolutionPath() 
         {
-            //var assembly = Assembly.GetEntryAssembly();
-            //var rootPath = assembly.Location.TrimEnd(assembly.ManifestModule.Name.ToCharArray());
             return PathHelper.GetCurrentRootPath(FrameworkConstants.SOLUTION_NAME); 
         }
 

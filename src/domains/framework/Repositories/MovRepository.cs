@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Mov.Analizer.Models;
+using Mov.Configurator.Models;
+using Mov.Designer.Models;
+using Mov.Driver.Models;
+using Mov.Game.Models;
+using Mov.Translator.Models;
+
+namespace Mov.Framework.Repositories
+{
+    public class MovRepository : IMovRepository
+    {
+        public IAnalizerRepository Analizer { get; }
+        public IConfiguratorRepository Configurator { get; }
+        public IDesignerRepository Designer { get; }
+        public IDriverRepository Driver { get; }
+        public IGameRepository Game { get; }
+        public ITranslatorRepository Translator { get; }
+
+        public MovRepository(IAnalizerRepository analizer, IConfiguratorRepository configurator,
+            IDesignerRepository designer, IDriverRepository driver,
+            IGameRepository game, ITranslatorRepository translator)
+        {
+            this.Analizer = analizer;
+            this.Configurator = configurator;
+            this.Designer = designer;
+            this.Driver = driver;
+            this.Game = game;
+            this.Translator = translator;
+        }
+
+    }
+}

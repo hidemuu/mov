@@ -14,8 +14,6 @@ using Mov.Driver.Models;
 using Mov.Driver.Service;
 using Mov.Framework;
 using Mov.Framework.Controllers;
-using Mov.Framework.Repositories;
-using Mov.Framework.Services;
 using Mov.Game.Models;
 using Mov.Game.Service;
 using Mov.Game.Service.Puzzle;
@@ -23,6 +21,8 @@ using Mov.Translator.Models;
 using Mov.Translator.Service;
 using Mov.UseCases;
 using Mov.UseCases.Factories;
+using Mov.UseCases.Repositories;
+using Mov.UseCases.Services;
 using Mov.Utilities;
 using System;
 using System.Collections.Generic;
@@ -41,12 +41,6 @@ namespace Mov.ConsoleApp
 
         static bool running = true;
 
-        static IDomainRepositoryCollection<IAnalizerRepository> analizerRepository;
-        static IDomainRepositoryCollection<IConfiguratorRepository> configRepository;
-        static IDomainRepositoryCollection<IDesignerRepository> designerRepository;
-        static IDomainRepositoryCollection<IDriverRepository> driverRepository;
-        static IDomainRepositoryCollection<IGameRepository> gameRepository;
-        static IDomainRepositoryCollection<ITranslatorRepository> translatorRepository;
         static IMovRepository repository;
         static IMovEngine engine;
         static IController domainController;
@@ -100,14 +94,7 @@ namespace Mov.ConsoleApp
                 {"help", Help }
             };
             //リポジトリ生成
-            CreateFileRepository(PathCreator.GetResourcePath());
-            repository = new MovRepository(
-                analizerRepository?.DefaultRepository, 
-                configRepository?.DefaultRepository,
-                designerRepository?.DefaultRepository,
-                driverRepository?.DefaultRepository,
-                gameRepository?.DefaultRepository,
-                translatorRepository?.DefaultRepository);
+            repository = new FileMovRepository(PathCreator.GetResourcePath());
             //ドメインエンジン生成
             engine = new MovEngine(0, new MovService(
                 new AnalizerService(repository.Analizer),
@@ -189,17 +176,7 @@ namespace Mov.ConsoleApp
             return true;
         }
 
-        static void CreateFileRepository(string resourcePath)
-        {
-            var fileRepositoryFactory = new FileDomainRepositoryCollectionFactory(resourcePath);
-            configRepository = fileRepositoryFactory.Create<IConfiguratorRepository>(SerializeConstants.PATH_JSON);
-            designerRepository = fileRepositoryFactory.Create<IDesignerRepository>(SerializeConstants.PATH_XML);
-            gameRepository = fileRepositoryFactory.Create<IGameRepository>(SerializeConstants.PATH_JSON);
-            driverRepository = fileRepositoryFactory.Create<IDriverRepository>(SerializeConstants.PATH_JSON);
-            analizerRepository = fileRepositoryFactory.Create<IAnalizerRepository>(SerializeConstants.PATH_JSON);
-            translatorRepository = fileRepositoryFactory.Create<ITranslatorRepository>(SerializeConstants.PATH_JSON);
-        }
-
+        
         static bool CreateDomainController(string domain)
         {
             var factory = new DomainControllerFactory("Commands");
@@ -208,26 +185,26 @@ namespace Mov.ConsoleApp
                 case FrameworkConstants.DOMAIN_NAME_CONFIG:
                     domainController = factory.Create(engine.Service.Configurator);
                     break;
-                case FrameworkConstants.DOMAIN_NAME_DESIGN:
-                    domainController = factory
-                        .Create(designerRepository.DefaultRepository);
-                    break;
-                case FrameworkConstants.DOMAIN_NAME_GAME:
-                    domainController = factory
-                        .Create(gameRepository.DefaultRepository);
-                    break;
-                case FrameworkConstants.DOMAIN_NAME_DRIVER:
-                    domainController = factory
-                        .Create(driverRepository.DefaultRepository);
-                    break;
-                case FrameworkConstants.DOMAIN_NAME_ANALIZE:
-                    domainController = factory
-                        .Create(analizerRepository.DefaultRepository);
-                    break;
-                case FrameworkConstants.DOMAIN_NAME_TRANSLATE:
-                    domainController = factory
-                        .Create(translatorRepository.DefaultRepository);
-                    break;
+                //case FrameworkConstants.DOMAIN_NAME_DESIGN:
+                //    domainController = factory
+                //        .Create(designerRepository.DefaultRepository);
+                //    break;
+                //case FrameworkConstants.DOMAIN_NAME_GAME:
+                //    domainController = factory
+                //        .Create(gameRepository.DefaultRepository);
+                //    break;
+                //case FrameworkConstants.DOMAIN_NAME_DRIVER:
+                //    domainController = factory
+                //        .Create(driverRepository.DefaultRepository);
+                //    break;
+                //case FrameworkConstants.DOMAIN_NAME_ANALIZE:
+                //    domainController = factory
+                //        .Create(analizerRepository.DefaultRepository);
+                //    break;
+                //case FrameworkConstants.DOMAIN_NAME_TRANSLATE:
+                //    domainController = factory
+                //        .Create(translatorRepository.DefaultRepository);
+                //    break;
                 default:
                     return false;
             }

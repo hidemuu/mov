@@ -5,10 +5,11 @@ using Mov.Analizer.Models;
 using Mov.Configurator.Models;
 using Mov.Designer.Models;
 using Mov.Driver.Models;
+using Mov.Framework;
 using Mov.Game.Models;
 using Mov.Translator.Models;
 
-namespace Mov.Framework.Services
+namespace Mov.UseCases.Services
 {
     public class MovService : IMovService
     {

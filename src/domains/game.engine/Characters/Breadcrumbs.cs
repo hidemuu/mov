@@ -1,11 +1,10 @@
-﻿using Mov.Game.Models.Characters.Functions;
-using Mov.Game.Models.Engines;
+﻿using Mov.Game.Engine.Characters.Functions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Mov.Game.Models.Characters
+namespace Mov.Game.Engine.Characters
 {
     /// <summary>
     /// パンくず拾いクラス

@@ -751,6 +751,19 @@
           "bin/placeholder/Mov.Controllers.dll": {}
         }
       },
+      "Mov.Game.Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Game.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Game.Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Game.Engine.dll": {}
+        }
+      },
       "Mov.Game.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -3231,6 +3244,11 @@
       "path": "../../infrastructures/controllers/Controllers.csproj",
       "msbuildProject": "../../infrastructures/controllers/Controllers.csproj"
     },
+    "Mov.Game.Engine/1.0.0": {
+      "type": "project",
+      "path": "../../domains/game.engine/Game.Engine.csproj",
+      "msbuildProject": "../../domains/game.engine/Game.Engine.csproj"
+    },
     "Mov.Game.Models/1.0.0": {
       "type": "project",
       "path": "../../domains/game.models/Game.Models.csproj",
@@ -3255,6 +3273,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "Mov.Calculators >= 1.0.0",
+      "Mov.Game.Engine >= 1.0.0",
       "Mov.Game.Repository >= 1.0.0",
       "Mov.Painters >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
@@ -3300,6 +3319,9 @@
           "projectReferences": {
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.repository\\Game.Repository.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.repository\\Game.Repository.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\game.engine\\Game.Engine.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\game.engine\\Game.Engine.csproj"
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\calculators\\Calculators.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\calculators\\Calculators.csproj"

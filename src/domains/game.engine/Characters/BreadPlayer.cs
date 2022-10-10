@@ -1,9 +1,8 @@
-﻿using Mov.Game.Models.Engines;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Game.Models.Characters
+namespace Mov.Game.Engine.Characters
 {
     public class BreadPlayer : Player
     {

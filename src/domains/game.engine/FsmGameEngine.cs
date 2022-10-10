@@ -1,10 +1,10 @@
-﻿using Mov.Game.Models.Characters;
+﻿using Mov.Game.Engine.Characters;
 using Mov.Game.Models;
 using Mov.Game.Models.Maps;
 using System;
 using System.Collections.Generic;
 
-namespace Mov.Game.Models.Engines
+namespace Mov.Game.Engine
 {
     /// <summary>
     /// 有限状態マシン（Finite State Machine）手法のゲームエンジン

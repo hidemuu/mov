@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Game.Models.Characters.Functions
+namespace Mov.Game.Engine.Characters.Functions
 {
     /// <summary>
     /// 位置クラス

@@ -19,5 +19,10 @@ namespace Mov.Game.Service
             this.Repository = repository;
             this.game = game;
         }
+
+        public void Run()
+        {
+            this.game.Run();
+        }
     }
 }

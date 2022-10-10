@@ -1,7 +1,7 @@
 ﻿using Mov.Accessors.Repository;
+using Mov.Game.Engine;
+using Mov.Game.Engine.Characters;
 using Mov.Game.Models;
-using Mov.Game.Models.Characters;
-using Mov.Game.Models.Engines;
 using Mov.Game.Models.Maps;
 using Mov.Game.Repository;
 using Mov.Painters;

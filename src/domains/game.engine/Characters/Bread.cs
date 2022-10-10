@@ -1,11 +1,10 @@
-﻿using Mov.Game.Models.Engines;
-using Mov.Game.Models.Maps;
+﻿using Mov.Game.Models.Maps;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
-namespace Mov.Game.Models.Characters
+namespace Mov.Game.Engine.Characters
 {
     public class Bread : CharacterBase
     {

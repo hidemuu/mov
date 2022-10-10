@@ -659,6 +659,19 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "Mov.Game.Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Game.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Game.Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Game.Engine.dll": {}
+        }
+      },
       "Mov.Game.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -691,6 +704,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Mov.Calculators": "1.0.0",
+          "Mov.Game.Engine": "1.0.0",
           "Mov.Game.Repository": "1.0.0",
           "Mov.Painters": "1.0.0",
           "System.Drawing.Common": "6.0.0"
@@ -1888,6 +1902,11 @@
       "type": "project",
       "path": "../drawer.viewmodels/Drawer.ViewModels.csproj",
       "msbuildProject": "../drawer.viewmodels/Drawer.ViewModels.csproj"
+    },
+    "Mov.Game.Engine/1.0.0": {
+      "type": "project",
+      "path": "../../../domains/game.engine/Game.Engine.csproj",
+      "msbuildProject": "../../../domains/game.engine/Game.Engine.csproj"
     },
     "Mov.Game.Models/1.0.0": {
       "type": "project",

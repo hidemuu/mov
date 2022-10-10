@@ -155,15 +155,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculators", "src\infrastr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Connectors", "src\infrastructures\connectors\Connectors.csproj", "{4357C224-B898-40AB-83D5-EF658F44BF8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Plc", "src\domains\driver.plc\Driver.Plc.csproj", "{B40F6174-9208-4D9D-866B-7226AEEAB52D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Plc", "src\domains\driver.plc\Driver.Plc.csproj", "{B40F6174-9208-4D9D-866B-7226AEEAB52D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Cnc", "src\domains\driver.cnc\Driver.Cnc.csproj", "{2A832F93-AD3C-42BC-BD31-EC231C176419}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Cnc", "src\domains\driver.cnc\Driver.Cnc.csproj", "{2A832F93-AD3C-42BC-BD31-EC231C176419}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Amr", "src\domains\driver.amr\Driver.Amr.csproj", "{65DB4BC6-C700-490F-9172-413056142D7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Amr", "src\domains\driver.amr\Driver.Amr.csproj", "{65DB4BC6-C700-490F-9172-413056142D7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Os", "src\domains\driver.os\Driver.Os.csproj", "{3F7F06D7-B652-42E7-97D6-BEFB39B1D42E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Os", "src\domains\driver.os\Driver.Os.csproj", "{3F7F06D7-B652-42E7-97D6-BEFB39B1D42E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Imp", "src\domains\driver.imp\Driver.Imp.csproj", "{D85CC665-3CB2-4935-9006-6B065B740E59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Imp", "src\domains\driver.imp\Driver.Imp.csproj", "{D85CC665-3CB2-4935-9006-6B065B740E59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Engine", "src\domains\game.engine\Game.Engine.csproj", "{232D5ED0-27AB-4349-8EA9-EC379ECE8CFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -455,6 +457,10 @@ Global
 		{D85CC665-3CB2-4935-9006-6B065B740E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D85CC665-3CB2-4935-9006-6B065B740E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D85CC665-3CB2-4935-9006-6B065B740E59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{232D5ED0-27AB-4349-8EA9-EC379ECE8CFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{232D5ED0-27AB-4349-8EA9-EC379ECE8CFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{232D5ED0-27AB-4349-8EA9-EC379ECE8CFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{232D5ED0-27AB-4349-8EA9-EC379ECE8CFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -538,6 +544,7 @@ Global
 		{65DB4BC6-C700-490F-9172-413056142D7A} = {438402C2-B5EF-4CB6-9BFB-EDA2D4132DE4}
 		{3F7F06D7-B652-42E7-97D6-BEFB39B1D42E} = {438402C2-B5EF-4CB6-9BFB-EDA2D4132DE4}
 		{D85CC665-3CB2-4935-9006-6B065B740E59} = {438402C2-B5EF-4CB6-9BFB-EDA2D4132DE4}
+		{232D5ED0-27AB-4349-8EA9-EC379ECE8CFF} = {438402C2-B5EF-4CB6-9BFB-EDA2D4132DE4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD9C3231-BF2C-413C-B738-70985D9981AE}

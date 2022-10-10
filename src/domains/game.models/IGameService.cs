@@ -7,5 +7,7 @@ namespace Mov.Game.Models
     public interface IGameService
     {
         IGameRepository Repository { get; }
+
+        void Run();
     }
 }

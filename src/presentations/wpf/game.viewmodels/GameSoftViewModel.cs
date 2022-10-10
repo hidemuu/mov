@@ -1,7 +1,6 @@
 ﻿using Mov.Drawer.Models;
 using Mov.Drawer.Service;
 using Mov.Drawer.ViewModels;
-using Mov.Game.Models.Engines;
 using Mov.Game.Models;
 using Mov.Game.Service;
 using Mov.Game.Service.Machine;
@@ -23,6 +22,7 @@ using System.Windows;
 using System.Windows.Media.Imaging;
 using Mov.Painters;
 using Mov.Accessors.Repository;
+using Mov.Game.Engine;
 
 namespace Mov.Game.ViewModels
 {

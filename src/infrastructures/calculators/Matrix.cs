@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MathNet.Numerics.LinearAlgebra.Double;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -16,7 +17,6 @@ namespace Mov.Calculators
         /// <returns></returns>
         public static double[,] Transpose(double[,] data)
         {
-
             double[,] result = new double[data.GetLength(1), data.GetLength(0)];
 
             for (int i = 0; i < data.GetLength(1); i++)

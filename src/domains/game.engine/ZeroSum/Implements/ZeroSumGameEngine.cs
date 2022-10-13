@@ -5,9 +5,9 @@ using System.Text;
 namespace Mov.Game.Engine
 {
     /// <summary>
-    /// 推論ゲームエンジン
+    /// ゼロサムゲームエンジン
     /// </summary>
-    public class InferenceGameEngine
+    public class ZeroSumGameEngine : IZeroSumGameEngine
     {
     }
 }

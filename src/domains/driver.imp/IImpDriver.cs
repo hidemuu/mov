@@ -2,7 +2,7 @@
 
 namespace Mov.Driver.Imp
 {
-    public class Class1
+    public interface IImpDriver
     {
     }
 }

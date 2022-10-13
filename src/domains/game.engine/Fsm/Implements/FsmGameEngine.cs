@@ -9,7 +9,7 @@ namespace Mov.Game.Engine
     /// <summary>
     /// 有限状態マシン（Finite State Machine）手法のゲームエンジン
     /// </summary>
-    public class FsmGameEngine
+    public class FsmGameEngine : IFsmGameEngine
     {
         #region 定数
         /// <summary>

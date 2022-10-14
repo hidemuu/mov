@@ -1,11 +1,11 @@
 ﻿using System.Drawing;
 
-namespace Mov.Game.Engine.Characters
+namespace Mov.Game.Engine
 {
     /// <summary>
     /// キャラクター基本クラス
     /// </summary>
-    public abstract class CharacterBase
+    public abstract class FsmCharacterBase : IFsmCharacter
     {
         #region 抽象プロパティ
 
@@ -74,7 +74,7 @@ namespace Mov.Game.Engine.Characters
         /// コンストラクタ
         /// </summary>
         /// <param name="gameEngine"></param>
-        public CharacterBase(FsmGameEngine gameEngine)
+        public FsmCharacterBase(FsmGameEngine gameEngine)
         {
             this.GameEngine = gameEngine;
         }

@@ -64,11 +64,11 @@ namespace Mov.Game.Engine
         /// <summary>
         /// キャラクタ配列
         /// </summary>
-        public List<CharacterBase> Characters { get; private set; }
+        public List<FsmCharacterBase> Characters { get; private set; }
         /// <summary>
         /// 敵キャラ配列
         /// </summary>
-        public List<Alien> Aliens { get; private set; }
+        public List<FsmCharacterBase> Aliens { get; private set; }
         /// <summary>
         /// マップ情報
         /// </summary>
@@ -83,8 +83,8 @@ namespace Mov.Game.Engine
         /// </summary>
         public FsmGameEngine()
         {
-            Characters = new List<CharacterBase>();
-            Aliens = new List<Alien>();
+            Characters = new List<FsmCharacterBase>();
+            Aliens = new List<FsmCharacterBase>();
         }
 
         #endregion コンストラクター
@@ -118,7 +118,7 @@ namespace Mov.Game.Engine
             {
                 dic.Add(t, val++);
             }
-            Characters.Sort(delegate (CharacterBase x, CharacterBase y)
+            Characters.Sort(delegate (FsmCharacterBase x, FsmCharacterBase y)
             {
                 var dif = dic[x.TypeCode] - dic[y.TypeCode];
                 if (dif > 0) return 1;
@@ -132,7 +132,7 @@ namespace Mov.Game.Engine
         /// </summary>
         /// <param name="characters"></param>
         /// <param name="map"></param>
-        protected void AddCharacters(List<CharacterBase> characters, int[,] map)
+        protected void AddCharacters(List<FsmCharacterBase> characters, int[,] map)
         {
             var row = map.GetLength(0);
             var col = map.GetLength(1);
@@ -159,7 +159,7 @@ namespace Mov.Game.Engine
         /// </summary>
         /// <param name="characters"></param>
         /// <param name="targets"></param>
-        protected void AddCharacters(List<CharacterBase> characters, CharacterBase[] targets)
+        protected void AddCharacters(List<FsmCharacterBase> characters, FsmCharacterBase[] targets)
         {
             foreach (var target in targets)
             {
@@ -171,7 +171,7 @@ namespace Mov.Game.Engine
         /// </summary>
         /// <param name="characters"></param>
         /// <param name="character"></param>
-        protected void AddCharacters(List<CharacterBase> characters, CharacterBase character)
+        protected void AddCharacters(List<FsmCharacterBase> characters, FsmCharacterBase character)
         {
             characters.Add(character);
         }
@@ -180,7 +180,7 @@ namespace Mov.Game.Engine
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        protected virtual CharacterBase MakeCharacter(int type)
+        protected virtual FsmCharacterBase MakeCharacter(int type)
         {
             switch (type)
             {
@@ -221,7 +221,7 @@ namespace Mov.Game.Engine
         /// <param name="x">X位置</param>
         /// <param name="y">Y位置</param>
         /// <returns></returns>
-        public int GetCollision(CharacterBase targetCharacter, int x, int y)
+        public int GetCollision(FsmCharacterBase targetCharacter, int x, int y)
         {
             foreach (var character in Characters)
             {

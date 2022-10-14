@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Game.Engine.Characters
 {
-    public class Alien : CharacterBase
+    public class Alien : FsmCharacterBase
     {
         #region フィールド
         /// <summary>

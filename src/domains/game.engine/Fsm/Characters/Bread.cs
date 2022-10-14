@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Game.Engine.Characters
 {
-    public class Bread : CharacterBase
+    public class Bread : FsmCharacterBase
     {
 
         #region プロパティ

@@ -9,7 +9,7 @@ namespace Mov.Game.Engine.Characters
     /// <summary>
     /// プレイヤークラス
     /// </summary>
-    public class Player : CharacterBase
+    public class Player : FsmCharacterBase
     {
         #region フィールド
 

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Game.Engine.Characters
 {
-    public class Wall : CharacterBase
+    public class Wall : FsmCharacterBase
     {
         #region プロパティ
 

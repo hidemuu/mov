@@ -105,6 +105,14 @@
           }
         }
       },
+      "MathNet.Numerics/5.0.0": {
+        "runtime": {
+          "lib/net5.0/MathNet.Numerics.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.0"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
@@ -351,6 +359,25 @@
           }
         }
       },
+      "SSH.NET/2020.0.2": {
+        "dependencies": {
+          "SshNet.Security.Cryptography": "1.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Renci.SshNet.dll": {
+            "assemblyVersion": "2020.0.2.0",
+            "fileVersion": "2020.0.2.0"
+          }
+        }
+      },
+      "SshNet.Security.Cryptography/1.3.0": {
+        "runtime": {
+          "lib/netstandard2.0/SshNet.Security.Cryptography.dll": {
+            "assemblyVersion": "1.3.0.0",
+            "fileVersion": "1.3.0.0"
+          }
+        }
+      },
       "System.Collections.Immutable/1.7.1": {
         "runtime": {
           "lib/netstandard2.0/System.Collections.Immutable.dll": {
@@ -496,6 +523,13 @@
       "sha512": "sha512-434F7yyMRPKCI/CmujDQTY7DSSK12YMV0cz7NXiZzmGi+BGIBsPrJxCMHdHM3ydYQovhIMMrQa4yxLzp4fZcvA==",
       "path": "materialdesignthemes.mahapps/0.1.9",
       "hashPath": "materialdesignthemes.mahapps.0.1.9.nupkg.sha512"
+    },
+    "MathNet.Numerics/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pg1W2VwaEQMAiTpGK840hZgzavnqjlCMTVSbtVCXVyT+7AX4mc1o89SPv4TBlAjhgCOo9c1Y+jZ5m3ti2YgGgA==",
+      "path": "mathnet.numerics/5.0.0",
+      "hashPath": "mathnet.numerics.5.0.0.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "type": "package",
@@ -664,6 +698,20 @@
       "sha512": "sha512-MbHaIBMJJomJRwIgOp1LjwnXNpc7LKtbVSmtZd9xs7ghE9moraWdAucHgFZNw9LpYMAVRVHwRe+C6iJuDo+n2Q==",
       "path": "reactiveproperty.wpf/8.0.1",
       "hashPath": "reactiveproperty.wpf.8.0.1.nupkg.sha512"
+    },
+    "SSH.NET/2020.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-G0dNlTBAM00KZXv1wWVwgg26d9/METcM6qWBpNQwllzQmmbu+Zu+FS1L1X4fFgGdPu3e8k9mmTBu6SwtQ0614g==",
+      "path": "ssh.net/2020.0.2",
+      "hashPath": "ssh.net.2020.0.2.nupkg.sha512"
+    },
+    "SshNet.Security.Cryptography/1.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5pBIXRjcSO/amY8WztpmNOhaaCNHY/B6CcYDI7FSTgqSyo/ZUojlLiKcsl+YGbxQuLX439qIkMfP0PHqxqJi/Q==",
+      "path": "sshnet.security.cryptography/1.3.0",
+      "hashPath": "sshnet.security.cryptography.1.3.0.nupkg.sha512"
     },
     "System.Collections.Immutable/1.7.1": {
       "type": "package",

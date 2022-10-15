@@ -16,9 +16,7 @@
     mc:Ignorable="d">
     <UserControl.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-
-            </ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary.MergedDictionaries />
         </ResourceDictionary>
     </UserControl.Resources>
     <i:Interaction.Triggers>
@@ -26,5 +24,5 @@
             <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
         </i:EventTrigger>
     </i:Interaction.Triggers>
-    <local:DesignerPartsShell Repository="{Binding Repository.Value}" IsUpdate="{Binding IsUpdate.Value}" />
+    <local:DesignerPartsShell IsUpdate="{Binding IsUpdate.Value}" Repository="{Binding Repository.Value}" />
 </UserControl>

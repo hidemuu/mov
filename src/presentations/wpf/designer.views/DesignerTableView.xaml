@@ -19,7 +19,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />
+                <!--<ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />-->
             </ResourceDictionary.MergedDictionaries>
             <converter:BoolToVisibillityConverter x:Key="boolToVisibilityConverter" />
         </ResourceDictionary>
@@ -105,7 +105,10 @@
                         Header="{Binding Attribute.ControlType.Header.Value}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
-                                <ComboBox Width="{Binding Width, ElementName=controlTypeColumn}" ItemsSource="{Binding ControlTypes}" SelectedItem="{Binding ControlType.Value, Mode=TwoWay}" />
+                                <ComboBox
+                                    Width="{Binding Width, ElementName=controlTypeColumn}"
+                                    ItemsSource="{Binding ControlTypes}"
+                                    SelectedItem="{Binding ControlType.Value, Mode=TwoWay}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

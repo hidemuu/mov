@@ -46,7 +46,7 @@ namespace Mov.Game.Engine
         /// <summary>
         /// ゲームエンジン
         /// </summary>
-        protected FsmGameEngine GameEngine { get; private set; }
+        protected IFsmGameEngine GameEngine { get; private set; }
 
         /// <summary>
         /// 方向
@@ -74,7 +74,7 @@ namespace Mov.Game.Engine
         /// コンストラクタ
         /// </summary>
         /// <param name="gameEngine"></param>
-        public FsmCharacterBase(FsmGameEngine gameEngine)
+        public FsmCharacterBase(IFsmGameEngine gameEngine)
         {
             this.GameEngine = gameEngine;
         }

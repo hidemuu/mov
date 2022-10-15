@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Mov.Driver.Models
+namespace Mov.Functions
 {
     public interface IMeasurable
     {

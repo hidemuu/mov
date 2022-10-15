@@ -7,7 +7,7 @@ namespace Mov.Game.Engine.Characters.Functions
     /// <summary>
     /// 位置クラス
     /// </summary>
-    public class Position
+    public class TablePosition
     {
         #region プロパティ
 
@@ -21,7 +21,7 @@ namespace Mov.Game.Engine.Characters.Functions
         /// </summary>
         /// <param name="row"></param>
         /// <param name="col"></param>
-        public Position(int row, int col)
+        public TablePosition(int row, int col)
         {
             this.Row = row;
             this.Col = col;
@@ -34,7 +34,7 @@ namespace Mov.Game.Engine.Characters.Functions
         /// </summary>
         /// <param name="p"></param>
         /// <returns></returns>
-        public bool Equals(Position p)
+        public bool Equals(TablePosition p)
         {
             return this.Row == p.Row && this.Col == p.Col;
         }

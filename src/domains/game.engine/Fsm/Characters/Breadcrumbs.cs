@@ -15,9 +15,9 @@ namespace Mov.Game.Engine.Characters
         #region フィールド
 
         private int len;
-        private FsmGameEngine gameEngine;
+        private IFsmGameEngine gameEngine;
         private int[,] map;
-        private LinkedList<Position> positions = new LinkedList<Position>();
+        private LinkedList<TablePosition> positions = new LinkedList<TablePosition>();
         private int[,] dirOffset = { { 1, 0 }, { 0, 1 }, { -1, 0 }, { 0, -1 } };
         private int[] tryPlan = { 0, 1, 3, 2 };
 
@@ -36,7 +36,7 @@ namespace Mov.Game.Engine.Characters
         /// <param name="gameEngine"></param>
         /// <param name="mapRow"></param>
         /// <param name="mapCol"></param>
-        public Breadcrumbs(int len, FsmGameEngine gameEngine, int mapRow, int mapCol)
+        public Breadcrumbs(int len, IFsmGameEngine gameEngine, int mapRow, int mapCol)
         {
             this.len = len;
             this.gameEngine = gameEngine;
@@ -60,7 +60,7 @@ namespace Mov.Game.Engine.Characters
                 positions.RemoveFirst();
                 this.map[pos.Row, pos.Col] = 0;
             }
-            var p = new Position(row, col);
+            var p = new TablePosition(row, col);
             if (this.map[row, col] != 0)
             {
                 var idx = -1;

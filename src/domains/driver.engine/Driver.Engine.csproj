@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Driver.Engine</AssemblyName>
+    <RootNamespace>Mov.Driver.Engine</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

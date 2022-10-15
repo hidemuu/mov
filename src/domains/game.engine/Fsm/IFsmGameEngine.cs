@@ -26,11 +26,11 @@ namespace Mov.Game.Engine
         /// <summary>
         /// キャラクタ配列
         /// </summary>
-        List<FsmCharacterBase> Characters { get; }
+        List<IFsmCharacter> Characters { get; }
         /// <summary>
         /// 敵キャラ配列
         /// </summary>
-        List<FsmCharacterBase> Aliens { get; }
+        List<IFsmCharacter> Aliens { get; }
         /// <summary>
         /// マップ情報
         /// </summary>
@@ -66,7 +66,7 @@ namespace Mov.Game.Engine
         /// <param name="x">X位置</param>
         /// <param name="y">Y位置</param>
         /// <returns></returns>
-        int GetCollision(FsmCharacterBase targetCharacter, int x, int y);
+        int GetCollision(IFsmCharacter targetCharacter, int x, int y);
 
         #endregion メソッド
     }

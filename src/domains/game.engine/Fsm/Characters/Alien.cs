@@ -32,7 +32,7 @@ namespace Mov.Game.Engine.Characters
         /// コンストラクタ
         /// </summary>
         /// <param name="gameEngine"></param>
-        public Alien(FsmGameEngine gameEngine) : base(gameEngine)
+        public Alien(IFsmGameEngine gameEngine) : base(gameEngine)
         {
         }
 

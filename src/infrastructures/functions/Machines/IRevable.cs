@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Driver.Models
+namespace Mov.Functions
 {
-    public interface ILamp
+    public interface IRevable
     {
-
+        void Rev();
     }
 }

@@ -22,7 +22,7 @@ namespace Mov.Game.Engine.Characters
         /// コンストラクタ
         /// </summary>
         /// <param name="gameEngine"></param>
-        public Bread(FsmGameEngine gameEngine) : base(gameEngine)
+        public Bread(IFsmGameEngine gameEngine) : base(gameEngine)
         {
             SetPosition(-100, -100);
         }

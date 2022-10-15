@@ -42,7 +42,7 @@ namespace Mov.Game.Engine.Characters
         /// コンストラクタ
         /// </summary>
         /// <param name="gameEngine"></param>
-        public Player(FsmGameEngine gameEngine) : base(gameEngine)
+        public Player(IFsmGameEngine gameEngine) : base(gameEngine)
         {
         }
 

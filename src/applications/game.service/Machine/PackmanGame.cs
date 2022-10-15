@@ -183,7 +183,7 @@ namespace Mov.Game.Service.Machine
         /// キャラクター描画
         /// </summary>
         /// <param name="character"></param>
-        protected virtual void DrawCharacter(FsmCharacterBase character)
+        protected virtual void DrawCharacter(IFsmCharacter character)
         {
             character.Draw(ScreenGraphics);
         }

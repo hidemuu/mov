@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Driver.Models
+namespace Mov.Functions
 {
-    public interface IFeeder
+    public interface IMobile
     {
         string GetName();
+        
     }
 }

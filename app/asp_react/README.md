@@ -13,6 +13,9 @@ $ npm install (念の為)
 $ npm install --save-dev babel-plugin-react-html-attrs
 $ npm install --save react-chartjs-2 chart.js
 $ npm install --save react-bootstrap-table-next
+$ npm install swr
+$ npm install react-content-loader
+$ npm install --save-dev @types/react-content-loader
 
 ### webpackコマンド
 $ webpack --mode development

@@ -29,15 +29,22 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\ts\App.tsx" />
+    <None Remove="ClientApp\src\ts\components\atoms\Message.tsx" />
+    <None Remove="ClientApp\src\ts\components\atoms\Name.tsx" />
+    <None Remove="ClientApp\src\ts\components\atoms\Text.tsx" />
+    <None Remove="ClientApp\src\ts\components\molecules\Container.tsx" />
+    <None Remove="ClientApp\src\ts\components\molecules\ParentContainer.tsx" />
+    <None Remove="ClientApp\src\ts\pages\Analizer.tsx" />
+    <None Remove="ClientApp\src\ts\pages\Bom.tsx" />
+    <None Remove="ClientApp\src\ts\pages\Configurator.tsx" />
+    <None Remove="ClientApp\src\ts\pages\Driver.tsx" />
     <None Remove="ClientApp\src\ts\pages\Home.tsx" />
-    <None Remove="ClientApp\src\ts\pages\Layout.tsx" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="ClientApp\src\js\commons\constants\" />
     <Folder Include="ClientApp\src\ts\commons\constants\" />
     <Folder Include="ClientApp\src\js\templates\" />
-    <Folder Include="ClientApp\src\ts\components\molecules\" />
     <Folder Include="ClientApp\src\ts\components\organisms\" />
     <Folder Include="ClientApp\src\ts\templates\" />
   </ItemGroup>
@@ -45,7 +52,6 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\ts\App.tsx" />
     <TypeScriptCompile Include="ClientApp\src\ts\pages\Home.tsx" />
-    <TypeScriptCompile Include="ClientApp\src\ts\pages\Layout.tsx" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

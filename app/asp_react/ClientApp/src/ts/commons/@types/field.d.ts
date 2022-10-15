@@ -1,22 +1,6 @@
 ﻿declare namespace Field {
 
-    // FetchData
-    export interface IFetchData {
-        id: object,
-        index: number,
-        date: Date,
-        calc: string,
-        countryName: string,
-        prefName: string,
-        cityName: string,
-        deathNumber: number,
-        cureNumber: number,
-        patientNumber: number,
-        recoveryNumber: number,
-        severeNumber: number,
-        testNumber: number,
-    }
-
+    
     // Chart
     export interface IChartIndex {
         endDate: Date,
@@ -35,20 +19,10 @@
         tabNumber: number
     }
 
-    export interface IChartData {
-        data: IFetchData[],
-        chart: Model.IChart,
-    }
-
     // Table
     export interface ITableIndex {
         endDate: Date,
         tabNumber: number
-    }
-
-    export interface ITableData {
-        data: IFetchData[],
-        table: Model.ITable,
     }
 
     // Dashboard

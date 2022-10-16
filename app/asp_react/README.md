@@ -16,9 +16,17 @@ $ npm install --save react-bootstrap-table-next
 $ npm install swr
 $ npm install react-content-loader
 $ npm install --save-dev @types/react-content-loader
+$ npm install --save-dev styled-components
+$ npx sb init
+$ npm install --save-dev @testing-library/react
+$ npm install --save-dev @types/jest
+$ npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
 
 ### webpackコマンド
 $ webpack --mode development
+
+### Storybook
+$ npm run storybook
 
 ### Visual Studio Codeから実行
 $ dotnet run (.csprojファイルのディレクトリで)

@@ -1,20 +1,20 @@
-﻿using Prism.Regions;
-using Prism.Services.Dialogs;
+﻿using Prism.Services.Dialogs;
+using Reactive.Bindings;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.WpfMvvms.ViewModels
+namespace Mov.WpfMvvms
 {
-    public abstract class DialogRegionViewModelBase : RegionViewModelBase, IDialogAware
+    /// <summary>
+    /// ダイアログビューモデル基盤クラス
+    /// </summary>
+    public abstract class DialogViewModelBase : ViewModelBase, IDialogAware
     {
         #region フィールド
-
+         
         /// <summary>
-        /// タイトル
-        /// </summary>
+         /// タイトル
+         /// </summary>
         public abstract string Title { get; }
 
         /// <summary>
@@ -30,10 +30,14 @@ namespace Mov.WpfMvvms.ViewModels
 
         #endregion フィールド
 
+        #region コマンド
+        
+        #endregion 
+
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public DialogRegionViewModelBase(IRegionManager regionManager, IDialogService dialogService) : base(regionManager, dialogService)
+        public DialogViewModelBase()
         {
 
         }

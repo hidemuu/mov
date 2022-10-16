@@ -154,9 +154,9 @@ namespace Mov.WpfApp
             containerRegistry.RegisterForNavigation<BomView>();
 
             //Dialogの登録
-            containerRegistry.RegisterDialog<AlertDialog, AlertDialogViewModel>();
-            containerRegistry.RegisterDialog<SuccessDialog, SuccessDialogViewModel>();
-            containerRegistry.RegisterDialog<WarningDialog, WarningDialogViewModel>();
+            //containerRegistry.RegisterDialog<AlertDialog, AlertDialogViewModel>();
+            //containerRegistry.RegisterDialog<SuccessDialog, SuccessDialogViewModel>();
+            //containerRegistry.RegisterDialog<WarningDialog, WarningDialogViewModel>();
             containerRegistry.RegisterDialog<GameOverDialog, GameOverDialogViewModel>();
             containerRegistry.RegisterDialog<StageClearDialog, StageClearDialogViewModel>();
             containerRegistry.RegisterDialogWindow<DialogWindow>();

@@ -1,4 +1,5 @@
 ﻿using GongSolutions.Wpf.DragDrop;
+using Mov.WpfControls.Components;
 using Mov.WpfControls.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Mov.WpfControls.Components
+namespace Mov.WpfMvvms
 {
     public class DropTargetHandler<T> : IDropTarget where T : DragDropViewModelBase
     {

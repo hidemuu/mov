@@ -130,3 +130,5 @@ C:\Users\nando\Documents\GitHub\mov\lib\wpflib\obj\Debug\net5.0-windows\ref\Mov.
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\obj\Debug\net5.0-windows\Mov.WpfLib.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Game.Engine.dll
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Game.Engine.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.WpfMvvms.dll
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.WpfMvvms.pdb

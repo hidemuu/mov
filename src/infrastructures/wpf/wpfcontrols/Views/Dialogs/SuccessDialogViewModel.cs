@@ -6,14 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.WpfMvvms.ViewModels.Dialogs
+namespace Mov.WpfControls.ViewModels.Dialogs
 {
-    public class SuccessDialogViewModel : DialogViewModelBase
+    public class SuccessDialogViewModel
     {
 
         #region フィールド
 
-        public override string Title => "Notification";
+        public string Title => "Notification";
 
         public ReactivePropertySlim<string> Message { get; } = new ReactivePropertySlim<string>();
 
@@ -36,13 +36,13 @@ namespace Mov.WpfMvvms.ViewModels.Dialogs
 
         #region メソッド
 
-        protected override async void OnLoaded()
+        protected async void OnLoaded()
         {
             await Task.Delay(2000);
-            RequestCloseInvoke(new DialogResult(ButtonResult.No));
+            //RequestCloseInvoke(new DialogResult(ButtonResult.No));
         }
 
-        public override void OnDialogOpened(IDialogParameters parameters)
+        public void OnDialogOpened(IDialogParameters parameters)
         {
             Message.Value = parameters.GetValue<string>("message");
         }

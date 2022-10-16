@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.WpfControls.ViewModels
+namespace Mov.WpfMvvms
 {
     public class DragDropViewModelBase : RegionViewModelBase, INotifyPropertyChanged
     {

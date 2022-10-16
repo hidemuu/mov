@@ -659,6 +659,23 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
+      },
+      "Mov.WpfMvvms/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.WpfControls": "1.0.0",
+          "Prism.Unity": "8.1.97"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfMvvms.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfMvvms.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       }
     }
   },
@@ -1729,13 +1746,18 @@
       "type": "project",
       "path": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj",
       "msbuildProject": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj"
+    },
+    "Mov.WpfMvvms/1.0.0": {
+      "type": "project",
+      "path": "../../../infrastructures/wpf/wpfmvvms/WpfMvvms.csproj",
+      "msbuildProject": "../../../infrastructures/wpf/wpfmvvms/WpfMvvms.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
       "Mov.Designer.Repository >= 1.0.0",
       "Mov.Designer.Service >= 1.0.0",
-      "Mov.WpfControls >= 1.0.0"
+      "Mov.WpfMvvms >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1781,8 +1803,8 @@
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.service\\Designer.Service.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.service\\Designer.Service.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfcontrols\\WpfControls.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfcontrols\\WpfControls.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfmvvms\\WpfMvvms.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfmvvms\\WpfMvvms.csproj"
             }
           }
         }

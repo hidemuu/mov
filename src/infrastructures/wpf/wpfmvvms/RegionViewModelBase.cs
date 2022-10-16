@@ -1,8 +1,8 @@
 ﻿using Prism.Regions;
 using Prism.Services.Dialogs;
 
-namespace Mov.WpfControls.ViewModels
-{
+namespace Mov.WpfMvvms
+{ 
     /// <summary>
     /// リージョンビューモデル基盤クラス
     /// </summary>

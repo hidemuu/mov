@@ -11,7 +11,7 @@
     <ProjectReference Include="..\..\..\applications\designer.service\Designer.Service.csproj" />
     <ProjectReference Include="..\..\..\domains\configurator.models\Configurator.Models.csproj" />
     <ProjectReference Include="..\..\..\infrastructures\utilities\Utilities.csproj" />
-    <ProjectReference Include="..\..\..\infrastructures\wpf\wpfcontrols\WpfControls.csproj" />
+    <ProjectReference Include="..\..\..\infrastructures\wpf\wpfmvvms\WpfMvvms.csproj" />
   </ItemGroup>
 
 </Project>

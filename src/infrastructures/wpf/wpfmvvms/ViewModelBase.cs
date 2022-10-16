@@ -9,7 +9,7 @@ using System.Reactive.Disposables;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.WpfControls.ViewModels
+namespace Mov.WpfMvvms
 {
     /// <summary>
     /// ビューモデル基盤クラス

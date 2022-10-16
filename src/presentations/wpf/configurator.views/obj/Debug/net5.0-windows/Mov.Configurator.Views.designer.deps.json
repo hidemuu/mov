@@ -26,14 +26,6 @@
           }
         }
       },
-      "FluentFTP/39.0.0": {
-        "runtime": {
-          "lib/net5.0/FluentFTP.dll": {
-            "assemblyVersion": "39.0.0.0",
-            "fileVersion": "39.0.0.0"
-          }
-        }
-      },
       "gong-wpf-dragdrop/3.0.0": {
         "runtime": {
           "lib/net5.0-windows7.0/GongSolutions.WPF.DragDrop.dll": {
@@ -102,6 +94,14 @@
           "lib/netcoreapp3.1/MaterialDesignThemes.MahApps.dll": {
             "assemblyVersion": "0.1.9.2",
             "fileVersion": "0.1.9.2"
+          }
+        }
+      },
+      "MathNet.Numerics/5.0.0": {
+        "runtime": {
+          "lib/net5.0/MathNet.Numerics.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.0"
           }
         }
       },
@@ -448,13 +448,6 @@
       "path": "csvhelper/27.2.1",
       "hashPath": "csvhelper.27.2.1.nupkg.sha512"
     },
-    "FluentFTP/39.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-1hU6X8ZsKXjB4/ecO+yJPprcLNPVibCDtGHaq0x1EHBMjBwy7oKzjl6equ8Rb0Dt9J2dLc26IboBmO1kZGbHjg==",
-      "path": "fluentftp/39.0.0",
-      "hashPath": "fluentftp.39.0.0.nupkg.sha512"
-    },
     "gong-wpf-dragdrop/3.0.0": {
       "type": "package",
       "serviceable": true,
@@ -496,6 +489,13 @@
       "sha512": "sha512-434F7yyMRPKCI/CmujDQTY7DSSK12YMV0cz7NXiZzmGi+BGIBsPrJxCMHdHM3ydYQovhIMMrQa4yxLzp4fZcvA==",
       "path": "materialdesignthemes.mahapps/0.1.9",
       "hashPath": "materialdesignthemes.mahapps.0.1.9.nupkg.sha512"
+    },
+    "MathNet.Numerics/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pg1W2VwaEQMAiTpGK840hZgzavnqjlCMTVSbtVCXVyT+7AX4mc1o89SPv4TBlAjhgCOo9c1Y+jZ5m3ti2YgGgA==",
+      "path": "mathnet.numerics/5.0.0",
+      "hashPath": "mathnet.numerics.5.0.0.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "type": "package",

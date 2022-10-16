@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.WpfControls.ViewModels
+namespace Mov.WpfMvvms
 {
     public abstract class DialogRegionViewModelBase : RegionViewModelBase, IDialogAware
     {

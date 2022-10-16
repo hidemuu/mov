@@ -9,7 +9,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:prism="http://prismlibrary.com/"
-    xmlns:wvm="clr-namespace:Mov.WpfControls.ViewModels;assembly=Mov.WpfControls"
+    xmlns:wvm="clr-namespace:Mov.WpfMvvms;assembly=Mov.WpfMvvms"
     Title="Mov"
     Width="1000"
     Height="600"

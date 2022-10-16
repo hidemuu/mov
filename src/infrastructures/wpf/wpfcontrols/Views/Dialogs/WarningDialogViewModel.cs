@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace Mov.WpfControls.ViewModels.Dialogs
 {
-    public class SuccessDialogViewModel : DialogViewModelBase
+    public class WarningDialogViewModel
     {
-
         #region フィールド
 
-        public override string Title => "Notification";
+        public string Title => "Notification";
 
         public ReactivePropertySlim<string> Message { get; } = new ReactivePropertySlim<string>();
 
@@ -24,25 +23,26 @@ namespace Mov.WpfControls.ViewModels.Dialogs
         #region コマンド
 
 
+
         #endregion
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public SuccessDialogViewModel()
+        public WarningDialogViewModel()
         {
 
         }
 
         #region メソッド
 
-        protected override async void OnLoaded()
+        protected async void OnLoaded()
         {
             await Task.Delay(2000);
-            RequestCloseInvoke(new DialogResult(ButtonResult.No));
+            //RequestCloseInvoke(new DialogResult(ButtonResult.No));
         }
 
-        public override void OnDialogOpened(IDialogParameters parameters)
+        public void OnDialogOpened(IDialogParameters parameters)
         {
             Message.Value = parameters.GetValue<string>("message");
         }

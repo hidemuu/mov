@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.WpfMvvms.ViewModels.Dialogs
+namespace Mov.WpfControls.ViewModels.Dialogs
 {
-    public class AlertDialogViewModel : DialogViewModelBase
+    public class AlertDialogViewModel
     {
 
         #region フィールド
 
-        public override string Title => "Notification";
+        public string Title => "Notification";
 
         public ReactivePropertySlim<string> Message { get; } = new ReactivePropertySlim<string>();
 
@@ -33,7 +33,7 @@ namespace Mov.WpfMvvms.ViewModels.Dialogs
         /// </summary>
         public AlertDialogViewModel()
         {
-            RequestCloseCommand.Subscribe(OnRequestClose).AddTo(Disposables);
+            RequestCloseCommand.Subscribe(OnRequestClose);
         }
 
         void OnRequestClose(string parameter)
@@ -46,11 +46,11 @@ namespace Mov.WpfMvvms.ViewModels.Dialogs
                 result = ButtonResult.No;
             else
                 result = ButtonResult.None;
-            RequestCloseInvoke(new DialogResult(result));
+            //RequestCloseInvoke(new DialogResult(result));
 
         }
 
-        public override void OnDialogOpened(IDialogParameters parameters)
+        public void OnDialogOpened(IDialogParameters parameters)
         {
             Message.Value = parameters.GetValue<string>("message");
         }

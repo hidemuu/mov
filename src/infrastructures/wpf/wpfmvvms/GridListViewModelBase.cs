@@ -1,4 +1,5 @@
-﻿using Prism.Regions;
+﻿using Mov.WpfControls;
+using Prism.Regions;
 using Prism.Services.Dialogs;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
@@ -9,7 +10,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.WpfControls.ViewModels
+namespace Mov.WpfMvvms
 {
     public abstract class GridListViewModelBase<T> : RegionViewModelBase
     {

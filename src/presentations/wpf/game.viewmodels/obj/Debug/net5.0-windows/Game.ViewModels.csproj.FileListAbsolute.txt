@@ -56,3 +56,5 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\De
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Designer.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Designer.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.Designer.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.WpfMvvms.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.viewmodels\bin\Debug\net5.0-windows\Mov.WpfMvvms.pdb

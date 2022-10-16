@@ -659,7 +659,7 @@
         "dependencies": {
           "Mov.Designer.Repository": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
-          "Mov.WpfControls": "1.0.0"
+          "Mov.WpfMvvms": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Designer.ViewModels.dll": {}
@@ -718,7 +718,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Mov.Drawer.Service": "1.0.0",
-          "Mov.WpfControls": "1.0.0"
+          "Mov.WpfMvvms": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Drawer.ViewModels.dll": {}
@@ -845,6 +845,23 @@
         },
         "runtime": {
           "bin/placeholder/Mov.WpfDesigns.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.WpfMvvms/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.WpfControls": "1.0.0",
+          "Prism.Unity": "8.1.97"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfMvvms.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfMvvms.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -2037,14 +2054,18 @@
       "type": "project",
       "path": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj",
       "msbuildProject": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj"
+    },
+    "Mov.WpfMvvms/1.0.0": {
+      "type": "project",
+      "path": "../../../infrastructures/wpf/wpfmvvms/WpfMvvms.csproj",
+      "msbuildProject": "../../../infrastructures/wpf/wpfmvvms/WpfMvvms.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
       "Mov.Designer.ViewModels >= 1.0.0",
       "Mov.Drawer.ViewModels >= 1.0.0",
-      "Mov.Game.Service >= 1.0.0",
-      "Mov.WpfControls >= 1.0.0"
+      "Mov.Game.Service >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2086,9 +2107,6 @@
           "projectReferences": {
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.service\\Game.Service.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.service\\Game.Service.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfcontrols\\WpfControls.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfcontrols\\WpfControls.csproj"
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.viewmodels\\Designer.ViewModels.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.viewmodels\\Designer.ViewModels.csproj"

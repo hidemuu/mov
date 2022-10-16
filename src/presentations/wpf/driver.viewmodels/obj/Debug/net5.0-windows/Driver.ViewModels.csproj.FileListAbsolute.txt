@@ -46,3 +46,5 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\obj\
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\obj\Debug\net5.0-windows\Mov.Driver.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\obj\Debug\net5.0-windows\ref\Mov.Driver.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\obj\Debug\net5.0-windows\Mov.Driver.ViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\bin\Debug\net5.0-windows\Mov.WpfMvvms.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\bin\Debug\net5.0-windows\Mov.WpfMvvms.pdb

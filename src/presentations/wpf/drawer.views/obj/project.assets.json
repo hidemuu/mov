@@ -659,7 +659,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Mov.Drawer.Service": "1.0.0",
-          "Mov.WpfControls": "1.0.0"
+          "Mov.WpfMvvms": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Drawer.ViewModels.dll": {}
@@ -729,6 +729,23 @@
         },
         "runtime": {
           "bin/placeholder/Mov.WpfDesigns.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.WpfMvvms/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.WpfControls": "1.0.0",
+          "Prism.Unity": "8.1.97"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfMvvms.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfMvvms.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -1881,6 +1898,11 @@
       "type": "project",
       "path": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj",
       "msbuildProject": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj"
+    },
+    "Mov.WpfMvvms/1.0.0": {
+      "type": "project",
+      "path": "../../../infrastructures/wpf/wpfmvvms/WpfMvvms.csproj",
+      "msbuildProject": "../../../infrastructures/wpf/wpfmvvms/WpfMvvms.csproj"
     }
   },
   "projectFileDependencyGroups": {

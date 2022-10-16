@@ -10,7 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\applications\designer.repository\Designer.Repository.csproj" />
     <ProjectReference Include="..\..\..\applications\designer.service\Designer.Service.csproj" />
-    <ProjectReference Include="..\..\..\infrastructures\wpf\wpfcontrols\WpfControls.csproj" />
+    <ProjectReference Include="..\..\..\infrastructures\wpf\wpfmvvms\WpfMvvms.csproj" />
   </ItemGroup>
 
 </Project>

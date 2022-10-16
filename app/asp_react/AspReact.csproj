@@ -29,7 +29,6 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\ts\App.tsx" />
-    <None Remove="ClientApp\src\ts\commons\functions\fetcher.ts" />
     <None Remove="ClientApp\src\ts\components\atoms\Buttons.tsx" />
     <None Remove="ClientApp\src\ts\components\atoms\Clock.tsx" />
     <None Remove="ClientApp\src\ts\components\atoms\Counter.tsx" />
@@ -46,6 +45,8 @@
     <None Remove="ClientApp\src\ts\pages\Configurator.tsx" />
     <None Remove="ClientApp\src\ts\pages\Driver.tsx" />
     <None Remove="ClientApp\src\ts\pages\Home.tsx" />
+    <None Remove="ClientApp\src\ts\commons\services\auth\signin.ts" />
+    <None Remove="ClientApp\src\ts\commons\services\users\get-user.ts" />
   </ItemGroup>
 
   <ItemGroup>

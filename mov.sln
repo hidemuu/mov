@@ -171,9 +171,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Engine", "src\domain
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Functions", "src\infrastructures\functions\Functions.csproj", "{832DE7C7-66D0-4F88-B4C4-99251BDFE8AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analizer.Views", "src\presentations\wpf\analizer.views\Analizer.Views.csproj", "{CBC0EDEF-FDC3-4E4A-9D8B-66A9E8DA4EE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.Views", "src\presentations\wpf\analizer.views\Analizer.Views.csproj", "{CBC0EDEF-FDC3-4E4A-9D8B-66A9E8DA4EE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analizer.ViewModels", "src\presentations\wpf\analizer.viewmodels\Analizer.ViewModels.csproj", "{1668CF71-ECBF-4E36-9177-3F0815218C9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.ViewModels", "src\presentations\wpf\analizer.viewmodels\Analizer.ViewModels.csproj", "{1668CF71-ECBF-4E36-9177-3F0815218C9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfMvvms", "src\infrastructures\wpf\wpfmvvms\WpfMvvms.csproj", "{A39F158B-77FA-4365-9BF3-F087BDA425D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -485,6 +487,10 @@ Global
 		{1668CF71-ECBF-4E36-9177-3F0815218C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1668CF71-ECBF-4E36-9177-3F0815218C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1668CF71-ECBF-4E36-9177-3F0815218C9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A39F158B-77FA-4365-9BF3-F087BDA425D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A39F158B-77FA-4365-9BF3-F087BDA425D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A39F158B-77FA-4365-9BF3-F087BDA425D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A39F158B-77FA-4365-9BF3-F087BDA425D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -573,6 +579,7 @@ Global
 		{832DE7C7-66D0-4F88-B4C4-99251BDFE8AC} = {12313AF5-0452-4C20-8955-3E8ECDE42301}
 		{CBC0EDEF-FDC3-4E4A-9D8B-66A9E8DA4EE2} = {C849D8F6-439F-467D-A7A8-8996F6ECF9E4}
 		{1668CF71-ECBF-4E36-9177-3F0815218C9F} = {C849D8F6-439F-467D-A7A8-8996F6ECF9E4}
+		{A39F158B-77FA-4365-9BF3-F087BDA425D0} = {FCE6A383-D625-466D-99BD-868912D6BD07}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD9C3231-BF2C-413C-B738-70985D9981AE}

@@ -28,6 +28,9 @@ $ webpack --mode development
 ### Storybook
 $ npm run storybook
 
+### Next.js
+$ npx create-next-app@latest --ts (プロジェクト名)
+
 ### Visual Studio Codeから実行
 $ dotnet run (.csprojファイルのディレクトリで)
 $ npm run wstart

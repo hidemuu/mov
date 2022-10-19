@@ -9,6 +9,7 @@ import GlobalSpinnerContextProvider from './contexts/GlobalSpinnerContext'
 import { ShoppingCartContextProvider } from './contexts/ShoppingCartContext'
 import type { ApiContext } from './commons/@types/data'
 import { fetcher } from './commons/utils/fetcher'
+import Header from './components/organisms/Header'
 
 import Home from './pages/Home';
 
@@ -46,8 +47,9 @@ const context: ApiContext = {
 function App() {
     return (
       <div className="App">
+        {/* <Header /> */}
             <header className="App-header">
-                <p> Mov.AspReact </p>
+                <p> Mov.AspReact-Test </p>
             </header>
             <Home />
         </div >

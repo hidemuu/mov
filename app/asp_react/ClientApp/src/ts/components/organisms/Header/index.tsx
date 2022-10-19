@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from 'react-router-dom';
 // import Link from 'next/link'
 import styled from 'styled-components'
 import AppLogo from '../../../components/atoms/AppLogo'
@@ -55,8 +56,8 @@ const Header = () => {
     <HeaderRoot>
       <Flex paddingLeft={3} paddingRight={3} justifyContent="space-between">
         <Nav as="nav" height="56px" alignItems="center">
-          {/* <NavLink>
-            <Link href="/" passHref>
+          <NavLink>
+            <Link to="/">
               <Anchor as="a">
                 <AppLogo />
               </Anchor>
@@ -64,28 +65,28 @@ const Header = () => {
           </NavLink>
           <NavLink>
             <Box display={{ base: 'none', md: 'block' }}>
-              <Link href="/search" passHref>
+              <Link to="/search">
                 <Anchor as="a">すべて</Anchor>
               </Link>
             </Box>
           </NavLink>
           <NavLink>
             <Box display={{ base: 'none', md: 'block' }}>
-              <Link href="/search/clothes" passHref>
+              <Link to="/search/clothes">
                 <Anchor as="a">トップス</Anchor>
               </Link>
             </Box>
           </NavLink>
           <NavLink>
             <Box display={{ base: 'none', md: 'block' }}>
-              <Link href="/search/book" passHref>
+              <Link to="/search/book">
                 <Anchor as="a">本</Anchor>
               </Link>
             </Box>
           </NavLink>
           <NavLink>
             <Box display={{ base: 'none', md: 'block' }}>
-              <Link href="/search/shoes" passHref>
+              <Link to="/search/shoes">
                 <Anchor as="a">シューズ</Anchor>
               </Link>
             </Box>
@@ -94,22 +95,22 @@ const Header = () => {
         <Nav as="nav" height="56px" alignItems="center">
           <NavLink>
             <Box display={{ base: 'block', md: 'none' }}>
-              <Link href="/search" passHref>
+              <Link to="/search">
                 <Anchor as="a">
-                  <SearchIcon />
+                  {/* <SearchIcon /> */}
                 </Anchor>
               </Link>
             </Box>
           </NavLink>
           <NavLink>
-            <Link href="/cart" passHref>
+            <Link to="/cart">
               <Anchor as="a">
-                <BadgeIconButton
+                {/* <BadgeIconButton
                   icon={<ShoppingCartIcon size={24} />}
                   size="24px"
                   badgeContent={cart.length === 0 ? undefined : cart.length}
                   badgeBackgroundColor="primary"
-                />
+                /> */}
               </Anchor>
             </Link>
           </NavLink>
@@ -118,7 +119,7 @@ const Header = () => {
               // 認証していたらアイコンを表示
               if (authUser) {
                 return (
-                  <Link href={`/users/${authUser.id}`} passHref>
+                  <Link to={`/users/${authUser.id}`}>
                     <Anchor as="a">
                       <ShapeImage
                         shape="circle"
@@ -136,9 +137,9 @@ const Header = () => {
               } else {
                 // サインインしてない場合はアイコンを表示
                 return (
-                  <Link href="/signin" passHref>
+                  <Link to="/signin">
                     <Anchor as="a">
-                      <PersonIcon size={24} />
+                      {/* <PersonIcon size={24} /> */}
                     </Anchor>
                   </Link>
                 )
@@ -146,10 +147,10 @@ const Header = () => {
             })()}
           </NavLink>
           <NavLink>
-            <Link href="/sell" passHref>
+            <Link to="/sell">
               <Button as="a">出品</Button>
             </Link>
-          </NavLink> */}
+          </NavLink>
         </Nav>
       </Flex>
     </HeaderRoot>

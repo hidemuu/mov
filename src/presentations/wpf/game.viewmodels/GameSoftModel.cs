@@ -1,5 +1,4 @@
-﻿using Mov.Drawer.ViewModels;
-using Reactive.Bindings;
+﻿using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,7 @@ using System.Windows.Media.Imaging;
 
 namespace Mov.Game.ViewModels
 {
-    public class GameSoftModel : DrawModel
+    public class GameSoftModel
     {
 
         public ReactivePropertySlim<int> Life { get; set; } = new ReactivePropertySlim<int>();

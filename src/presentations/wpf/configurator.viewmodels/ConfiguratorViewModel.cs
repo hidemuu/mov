@@ -1,7 +1,7 @@
 ﻿using Mov.Accessors.Repository;
 using Mov.Configurator.Models;
 using Mov.Utilities.Attributes;
-using Mov.WpfControls;
+using Mov.WpfModels;
 using Mov.WpfMvvms;
 using Prism.Regions;
 using Prism.Services.Dialogs;

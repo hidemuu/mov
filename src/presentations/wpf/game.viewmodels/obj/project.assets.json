@@ -39,23 +39,6 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "LiveCharts.Wpf.NetCore3/0.9.7": {
-        "type": "package",
-        "dependencies": {
-          "System.Data.DataSetExtensions": "4.5.0"
-        },
-        "compile": {
-          "lib/netcoreapp3.1/LiveCharts.Wpf.dll": {},
-          "lib/netcoreapp3.1/LiveCharts.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/LiveCharts.Wpf.dll": {},
-          "lib/netcoreapp3.1/LiveCharts.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
       "MahApps.Metro/2.4.9": {
         "type": "package",
         "dependencies": {
@@ -448,15 +431,6 @@
           "lib/netstandard2.1/System.ComponentModel.Annotations.dll": {}
         }
       },
-      "System.Data.DataSetExtensions/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Data.DataSetExtensions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Data.DataSetExtensions.dll": {}
-        }
-      },
       "System.Diagnostics.DiagnosticSource/4.7.1": {
         "type": "package",
         "compile": {
@@ -612,124 +586,6 @@
           "bin/placeholder/Mov.Controllers.dll": {}
         }
       },
-      "Mov.Designer.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.BaseModel": "1.0.0",
-          "System.ComponentModel.Annotations": "5.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Designer.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Designer.Models.dll": {}
-        }
-      },
-      "Mov.Designer.Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Designer.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Designer.Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Designer.Repository.dll": {}
-        }
-      },
-      "Mov.Designer.Service/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Designer.Repository": "1.0.0",
-          "ReactiveProperty.Core": "8.0.1"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Designer.Service.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Designer.Service.dll": {}
-        }
-      },
-      "Mov.Designer.ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Mov.Designer.Repository": "1.0.0",
-          "Mov.Designer.Service": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Designer.ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Designer.ViewModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.Drawer.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.BaseModel": "1.0.0",
-          "System.Drawing.Common": "6.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Drawer.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Drawer.Models.dll": {}
-        }
-      },
-      "Mov.Drawer.Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Drawer.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Drawer.Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Drawer.Repository.dll": {}
-        }
-      },
-      "Mov.Drawer.Service/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Drawer.Repository": "1.0.0",
-          "Mov.Painters": "1.0.0",
-          "System.Drawing.Common": "6.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Drawer.Service.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Drawer.Service.dll": {}
-        }
-      },
-      "Mov.Drawer.ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Mov.Drawer.Service": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Drawer.ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Drawer.ViewModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
       "Mov.Game.Engine/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -810,27 +666,6 @@
           "bin/placeholder/Mov.Utilities.dll": {}
         }
       },
-      "Mov.WpfControls/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "LiveCharts.Wpf.NetCore3": "0.9.7",
-          "Mov.Utilities": "1.0.0",
-          "Mov.WpfDesigns": "1.0.0",
-          "Prism.Unity": "8.1.97",
-          "ReactiveProperty.WPF": "8.0.1",
-          "gong-wpf-dragdrop": "3.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.WpfControls.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.WpfControls.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
       "Mov.WpfDesigns/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -850,13 +685,32 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "Mov.WpfModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "ReactiveProperty.WPF": "8.0.1",
+          "gong-wpf-dragdrop": "3.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Mov.WpfMvvms/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Mov.Painters": "1.0.0",
-          "Mov.WpfControls": "1.0.0",
+          "Mov.WpfDesigns": "1.0.0",
+          "Mov.WpfModels": "1.0.0",
           "Prism.Unity": "8.1.97",
+          "ReactiveProperty.WPF": "8.0.1",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -965,23 +819,6 @@
         "lib/netcoreapp3.1/GongSolutions.WPF.DragDrop.dll",
         "lib/netcoreapp3.1/GongSolutions.WPF.DragDrop.pdb",
         "lib/netcoreapp3.1/GongSolutions.WPF.DragDrop.xml"
-      ]
-    },
-    "LiveCharts.Wpf.NetCore3/0.9.7": {
-      "sha512": "d0HkmjLi+HifeXyD+E14aOMPDRmwkkiqPYW4GDbUS8Z1m6eQPGCShcDcbWwP4tBoWzGEkkSsy+XSHvaoW50b0Q==",
-      "type": "package",
-      "path": "livecharts.wpf.netcore3/0.9.7",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net40/LiveCharts.Wpf.dll",
-        "lib/net40/LiveCharts.dll",
-        "lib/net40/LiveCharts.xml",
-        "lib/netcoreapp3.1/LiveCharts.Wpf.dll",
-        "lib/netcoreapp3.1/LiveCharts.dll",
-        "lib/netcoreapp3.1/LiveCharts.xml",
-        "livecharts.wpf.netcore3.0.9.7.nupkg.sha512",
-        "livecharts.wpf.netcore3.nuspec"
       ]
     },
     "MahApps.Metro/2.4.9": {
@@ -1716,25 +1553,6 @@
         "version.txt"
       ]
     },
-    "System.Data.DataSetExtensions/4.5.0": {
-      "sha512": "221clPs1445HkTBZPL+K9sDBdJRB8UN8rgjO3ztB0CQ26z//fmJXtlsr6whGatscsKGBrhJl5bwJuKSA8mwFOw==",
-      "type": "package",
-      "path": "system.data.datasetextensions/4.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net45/_._",
-        "lib/netstandard2.0/System.Data.DataSetExtensions.dll",
-        "ref/net45/_._",
-        "ref/netstandard2.0/System.Data.DataSetExtensions.dll",
-        "system.data.datasetextensions.4.5.0.nupkg.sha512",
-        "system.data.datasetextensions.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
     "System.Diagnostics.DiagnosticSource/4.7.1": {
       "sha512": "j81Lovt90PDAq8kLpaJfJKV/rWdWuEk6jfV+MBkee33vzYLEUsy4gXK8laa9V2nZlLM9VM9yA/OOQxxPEJKAMw==",
       "type": "package",
@@ -1993,46 +1811,6 @@
       "path": "../../../infrastructures/controllers/Controllers.csproj",
       "msbuildProject": "../../../infrastructures/controllers/Controllers.csproj"
     },
-    "Mov.Designer.Models/1.0.0": {
-      "type": "project",
-      "path": "../../../domains/designer.models/Designer.Models.csproj",
-      "msbuildProject": "../../../domains/designer.models/Designer.Models.csproj"
-    },
-    "Mov.Designer.Repository/1.0.0": {
-      "type": "project",
-      "path": "../../../applications/designer.repository/Designer.Repository.csproj",
-      "msbuildProject": "../../../applications/designer.repository/Designer.Repository.csproj"
-    },
-    "Mov.Designer.Service/1.0.0": {
-      "type": "project",
-      "path": "../../../applications/designer.service/Designer.Service.csproj",
-      "msbuildProject": "../../../applications/designer.service/Designer.Service.csproj"
-    },
-    "Mov.Designer.ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../designer.viewmodels/Designer.ViewModels.csproj",
-      "msbuildProject": "../designer.viewmodels/Designer.ViewModels.csproj"
-    },
-    "Mov.Drawer.Models/1.0.0": {
-      "type": "project",
-      "path": "../../../domains/drawer.models/Drawer.Models.csproj",
-      "msbuildProject": "../../../domains/drawer.models/Drawer.Models.csproj"
-    },
-    "Mov.Drawer.Repository/1.0.0": {
-      "type": "project",
-      "path": "../../../applications/drawer.repository/Drawer.Repository.csproj",
-      "msbuildProject": "../../../applications/drawer.repository/Drawer.Repository.csproj"
-    },
-    "Mov.Drawer.Service/1.0.0": {
-      "type": "project",
-      "path": "../../../applications/drawer.service/Drawer.Service.csproj",
-      "msbuildProject": "../../../applications/drawer.service/Drawer.Service.csproj"
-    },
-    "Mov.Drawer.ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../drawer.viewmodels/Drawer.ViewModels.csproj",
-      "msbuildProject": "../drawer.viewmodels/Drawer.ViewModels.csproj"
-    },
     "Mov.Game.Engine/1.0.0": {
       "type": "project",
       "path": "../../../domains/game.engine/Game.Engine.csproj",
@@ -2063,15 +1841,15 @@
       "path": "../../../infrastructures/utilities/Utilities.csproj",
       "msbuildProject": "../../../infrastructures/utilities/Utilities.csproj"
     },
-    "Mov.WpfControls/1.0.0": {
-      "type": "project",
-      "path": "../../../infrastructures/wpf/wpfcontrols/WpfControls.csproj",
-      "msbuildProject": "../../../infrastructures/wpf/wpfcontrols/WpfControls.csproj"
-    },
     "Mov.WpfDesigns/1.0.0": {
       "type": "project",
       "path": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj",
       "msbuildProject": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj"
+    },
+    "Mov.WpfModels/1.0.0": {
+      "type": "project",
+      "path": "../../../infrastructures/wpf/wpfmodels/WpfModels.csproj",
+      "msbuildProject": "../../../infrastructures/wpf/wpfmodels/WpfModels.csproj"
     },
     "Mov.WpfMvvms/1.0.0": {
       "type": "project",
@@ -2086,9 +1864,8 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
-      "Mov.Designer.ViewModels >= 1.0.0",
-      "Mov.Drawer.ViewModels >= 1.0.0",
-      "Mov.Game.Service >= 1.0.0"
+      "Mov.Game.Service >= 1.0.0",
+      "Mov.WpfViewModels >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2131,11 +1908,8 @@
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.service\\Game.Service.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.service\\Game.Service.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.viewmodels\\Designer.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.viewmodels\\Designer.ViewModels.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.viewmodels\\Drawer.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.viewmodels\\Drawer.ViewModels.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviewmodels\\WpfViewModels.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviewmodels\\WpfViewModels.csproj"
             }
           }
         }

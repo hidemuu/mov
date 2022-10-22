@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\utilities\Utilities.csproj" />
     <ProjectReference Include="..\wpfdesigns\WpfDesigns.csproj" />
+    <ProjectReference Include="..\wpfmodels\WpfModels.csproj" />
   </ItemGroup>
 
   <ItemGroup>

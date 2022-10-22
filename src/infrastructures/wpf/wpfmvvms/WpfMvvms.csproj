@@ -9,12 +9,14 @@
 
   <ItemGroup>
     <PackageReference Include="Prism.Unity" Version="8.1.97" />
+    <PackageReference Include="ReactiveProperty.WPF" Version="8.0.1" />
     <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\painters\Painters.csproj" />
-    <ProjectReference Include="..\wpfcontrols\WpfControls.csproj" />
+    <ProjectReference Include="..\wpfdesigns\WpfDesigns.csproj" />
+    <ProjectReference Include="..\wpfmodels\WpfModels.csproj" />
   </ItemGroup>
 
 </Project>

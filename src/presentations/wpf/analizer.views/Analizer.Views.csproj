@@ -10,7 +10,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\infrastructures\wpf\wpfviews\WpfViews.csproj" />
     <ProjectReference Include="..\Analizer.ViewModels\Analizer.ViewModels.csproj" />
-    <ProjectReference Include="..\designer.views\Designer.Views.csproj" />
   </ItemGroup>
 
 </Project>

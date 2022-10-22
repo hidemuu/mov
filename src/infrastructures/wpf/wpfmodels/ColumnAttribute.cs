@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.WpfControls
+namespace Mov.WpfModels
 {
     /// <summary>
     /// 列のアトリビュート

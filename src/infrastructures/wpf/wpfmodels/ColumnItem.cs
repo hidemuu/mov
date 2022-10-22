@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Controls;
 
-namespace Mov.WpfControls
+namespace Mov.WpfModels
 {
     /// <summary>
     /// 列のアイテム

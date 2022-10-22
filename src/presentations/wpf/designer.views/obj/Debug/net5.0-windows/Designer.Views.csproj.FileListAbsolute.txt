@@ -87,3 +87,5 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Deb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.WpfViews.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Painters.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.WpfViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.WpfModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.WpfModels.pdb

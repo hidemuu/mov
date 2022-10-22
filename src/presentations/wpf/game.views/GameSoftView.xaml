@@ -78,7 +78,7 @@
             x:Name="image"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Source="{Binding Model.ImageSource.Value}"
+            Source="{Binding ImageSource.Value}"
             Stretch="None" />
     </DockPanel>
 </UserControl>

@@ -1,6 +1,4 @@
 ﻿using Mov.Drawer.Models;
-using Mov.Drawer.Service;
-using Mov.Drawer.ViewModels;
 using Mov.Game.Models;
 using Mov.Game.Service;
 using Mov.Game.Service.Machine;
@@ -23,17 +21,18 @@ using System.Windows.Media.Imaging;
 using Mov.Painters;
 using Mov.Accessors.Repository;
 using Mov.Game.Engine;
+using Mov.WpfMvvms;
 
 namespace Mov.Game.ViewModels
 {
-    public class GameSoftViewModel : DrawViewModelBase
+    public class GameSoftViewModel : GraphicViewModelBase
     {
         #region フィールド
 
         #endregion フィールド
 
         #region プロパティ
-        public override GameSoftModel Model { get; } = new GameSoftModel();
+        public GameSoftModel Model { get; } = new GameSoftModel();
         
         protected override GraphicControllerBase Service { get; set; }
 
@@ -54,7 +53,7 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public GameSoftViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDrawerRepository> database, IDomainRepositoryCollection<IGameRepository> gameDatabase, IActionGame gameService) : base(regionManager, dialogService, database)
+        public GameSoftViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IGameRepository> gameDatabase, IActionGame gameService) : base(regionManager, dialogService)
         {
             KeyUpCommand.Subscribe(() => OnKeyUp()).AddTo(Disposables);
             KeyGestureEnterCommand.Subscribe(() => OnKeyGestureEnter()).AddTo(Disposables);

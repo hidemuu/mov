@@ -612,141 +612,6 @@
           "bin/placeholder/Mov.Controllers.dll": {}
         }
       },
-      "Mov.Designer.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.BaseModel": "1.0.0",
-          "System.ComponentModel.Annotations": "5.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Designer.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Designer.Models.dll": {}
-        }
-      },
-      "Mov.Designer.Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Designer.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Designer.Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Designer.Repository.dll": {}
-        }
-      },
-      "Mov.Designer.Service/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Designer.Repository": "1.0.0",
-          "ReactiveProperty.Core": "8.0.1"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Designer.Service.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Designer.Service.dll": {}
-        }
-      },
-      "Mov.Designer.ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Mov.Designer.Repository": "1.0.0",
-          "Mov.Designer.Service": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Designer.ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Designer.ViewModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.Designer.Views/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Mov.Designer.ViewModels": "1.0.0",
-          "Mov.WpfViews": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Designer.Views.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Designer.Views.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.Drawer.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.BaseModel": "1.0.0",
-          "System.Drawing.Common": "6.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Drawer.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Drawer.Models.dll": {}
-        }
-      },
-      "Mov.Drawer.Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Drawer.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Drawer.Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Drawer.Repository.dll": {}
-        }
-      },
-      "Mov.Drawer.Service/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Drawer.Repository": "1.0.0",
-          "Mov.Painters": "1.0.0",
-          "System.Drawing.Common": "6.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Drawer.Service.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Drawer.Service.dll": {}
-        }
-      },
-      "Mov.Drawer.ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Mov.Drawer.Service": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Drawer.ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Drawer.ViewModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
       "Mov.Game.Engine/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -808,9 +673,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Mov.Designer.ViewModels": "1.0.0",
-          "Mov.Drawer.ViewModels": "1.0.0",
-          "Mov.Game.Service": "1.0.0"
+          "Mov.Game.Service": "1.0.0",
+          "Mov.WpfViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Game.ViewModels.dll": {}
@@ -852,6 +716,7 @@
           "LiveCharts.Wpf.NetCore3": "0.9.7",
           "Mov.Utilities": "1.0.0",
           "Mov.WpfDesigns": "1.0.0",
+          "Mov.WpfModels": "1.0.0",
           "Prism.Unity": "8.1.97",
           "ReactiveProperty.WPF": "8.0.1",
           "gong-wpf-dragdrop": "3.0.0"
@@ -885,13 +750,32 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "Mov.WpfModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "ReactiveProperty.WPF": "8.0.1",
+          "gong-wpf-dragdrop": "3.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Mov.WpfMvvms/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Mov.Painters": "1.0.0",
-          "Mov.WpfControls": "1.0.0",
+          "Mov.WpfDesigns": "1.0.0",
+          "Mov.WpfModels": "1.0.0",
           "Prism.Unity": "8.1.97",
+          "ReactiveProperty.WPF": "8.0.1",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -924,6 +808,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "Mov.WpfControls": "1.0.0",
           "Mov.WpfMvvms": "1.0.0"
         },
         "compile": {
@@ -2044,51 +1929,6 @@
       "path": "../../../infrastructures/controllers/Controllers.csproj",
       "msbuildProject": "../../../infrastructures/controllers/Controllers.csproj"
     },
-    "Mov.Designer.Models/1.0.0": {
-      "type": "project",
-      "path": "../../../domains/designer.models/Designer.Models.csproj",
-      "msbuildProject": "../../../domains/designer.models/Designer.Models.csproj"
-    },
-    "Mov.Designer.Repository/1.0.0": {
-      "type": "project",
-      "path": "../../../applications/designer.repository/Designer.Repository.csproj",
-      "msbuildProject": "../../../applications/designer.repository/Designer.Repository.csproj"
-    },
-    "Mov.Designer.Service/1.0.0": {
-      "type": "project",
-      "path": "../../../applications/designer.service/Designer.Service.csproj",
-      "msbuildProject": "../../../applications/designer.service/Designer.Service.csproj"
-    },
-    "Mov.Designer.ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../designer.viewmodels/Designer.ViewModels.csproj",
-      "msbuildProject": "../designer.viewmodels/Designer.ViewModels.csproj"
-    },
-    "Mov.Designer.Views/1.0.0": {
-      "type": "project",
-      "path": "../designer.views/Designer.Views.csproj",
-      "msbuildProject": "../designer.views/Designer.Views.csproj"
-    },
-    "Mov.Drawer.Models/1.0.0": {
-      "type": "project",
-      "path": "../../../domains/drawer.models/Drawer.Models.csproj",
-      "msbuildProject": "../../../domains/drawer.models/Drawer.Models.csproj"
-    },
-    "Mov.Drawer.Repository/1.0.0": {
-      "type": "project",
-      "path": "../../../applications/drawer.repository/Drawer.Repository.csproj",
-      "msbuildProject": "../../../applications/drawer.repository/Drawer.Repository.csproj"
-    },
-    "Mov.Drawer.Service/1.0.0": {
-      "type": "project",
-      "path": "../../../applications/drawer.service/Drawer.Service.csproj",
-      "msbuildProject": "../../../applications/drawer.service/Drawer.Service.csproj"
-    },
-    "Mov.Drawer.ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../drawer.viewmodels/Drawer.ViewModels.csproj",
-      "msbuildProject": "../drawer.viewmodels/Drawer.ViewModels.csproj"
-    },
     "Mov.Game.Engine/1.0.0": {
       "type": "project",
       "path": "../../../domains/game.engine/Game.Engine.csproj",
@@ -2134,6 +1974,11 @@
       "path": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj",
       "msbuildProject": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj"
     },
+    "Mov.WpfModels/1.0.0": {
+      "type": "project",
+      "path": "../../../infrastructures/wpf/wpfmodels/WpfModels.csproj",
+      "msbuildProject": "../../../infrastructures/wpf/wpfmodels/WpfModels.csproj"
+    },
     "Mov.WpfMvvms/1.0.0": {
       "type": "project",
       "path": "../../../infrastructures/wpf/wpfmvvms/WpfMvvms.csproj",
@@ -2152,8 +1997,8 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
-      "Mov.Designer.Views >= 1.0.0",
-      "Mov.Game.ViewModels >= 1.0.0"
+      "Mov.Game.ViewModels >= 1.0.0",
+      "Mov.WpfViews >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2193,8 +2038,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.views\\Designer.Views.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.views\\Designer.Views.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviews\\WpfViews.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviews\\WpfViews.csproj"
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.viewmodels\\Game.ViewModels.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.viewmodels\\Game.ViewModels.csproj"

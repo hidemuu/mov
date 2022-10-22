@@ -51,3 +51,5 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\bin\Debug
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\bin\Debug\net5.0-windows\Mov.WpfViews.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\bin\Debug\net5.0-windows\Mov.WpfViews.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\bin\Debug\net5.0-windows\Mov.WpfViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\bin\Debug\net5.0-windows\Mov.WpfModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\drawer.views\bin\Debug\net5.0-windows\Mov.WpfModels.pdb

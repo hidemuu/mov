@@ -369,6 +369,7 @@
           "LiveCharts.Wpf.NetCore3": "0.9.7",
           "Mov.Utilities": "1.0.0",
           "Mov.WpfDesigns": "1.0.0",
+          "Mov.WpfModels": "1.0.0",
           "Prism.Unity": "8.1.97",
           "ReactiveProperty.WPF": "8.0.1",
           "gong-wpf-dragdrop": "3.0.0"
@@ -402,13 +403,32 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "Mov.WpfModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "ReactiveProperty.WPF": "8.0.1",
+          "gong-wpf-dragdrop": "3.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Mov.WpfMvvms/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Mov.Painters": "1.0.0",
-          "Mov.WpfControls": "1.0.0",
+          "Mov.WpfDesigns": "1.0.0",
+          "Mov.WpfModels": "1.0.0",
           "Prism.Unity": "8.1.97",
+          "ReactiveProperty.WPF": "8.0.1",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -441,6 +461,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "Mov.WpfControls": "1.0.0",
           "Mov.WpfMvvms": "1.0.0"
         },
         "compile": {
@@ -1169,6 +1190,11 @@
       "type": "project",
       "path": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj",
       "msbuildProject": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj"
+    },
+    "Mov.WpfModels/1.0.0": {
+      "type": "project",
+      "path": "../../../infrastructures/wpf/wpfmodels/WpfModels.csproj",
+      "msbuildProject": "../../../infrastructures/wpf/wpfmodels/WpfModels.csproj"
     },
     "Mov.WpfMvvms/1.0.0": {
       "type": "project",

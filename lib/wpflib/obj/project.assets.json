@@ -1256,9 +1256,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Mov.Designer.ViewModels": "1.0.0",
-          "Mov.Drawer.ViewModels": "1.0.0",
-          "Mov.Game.Service": "1.0.0"
+          "Mov.Game.Service": "1.0.0",
+          "Mov.WpfViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Game.ViewModels.dll": {}
@@ -1274,8 +1273,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Mov.Designer.Views": "1.0.0",
-          "Mov.Game.ViewModels": "1.0.0"
+          "Mov.Game.ViewModels": "1.0.0",
+          "Mov.WpfViews": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Game.Views.dll": {}
@@ -1453,6 +1452,7 @@
           "LiveCharts.Wpf.NetCore3": "0.9.7",
           "Mov.Utilities": "1.0.0",
           "Mov.WpfDesigns": "1.0.0",
+          "Mov.WpfModels": "1.0.0",
           "Prism.Unity": "8.1.97",
           "ReactiveProperty.WPF": "8.0.1",
           "gong-wpf-dragdrop": "3.0.0"
@@ -1486,13 +1486,32 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "Mov.WpfModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "ReactiveProperty.WPF": "8.0.1",
+          "gong-wpf-dragdrop": "3.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Mov.WpfMvvms/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Mov.Painters": "1.0.0",
-          "Mov.WpfControls": "1.0.0",
+          "Mov.WpfDesigns": "1.0.0",
+          "Mov.WpfModels": "1.0.0",
           "Prism.Unity": "8.1.97",
+          "ReactiveProperty.WPF": "8.0.1",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
@@ -1525,6 +1544,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "Mov.WpfControls": "1.0.0",
           "Mov.WpfMvvms": "1.0.0"
         },
         "compile": {
@@ -3108,6 +3128,11 @@
       "type": "project",
       "path": "../../src/infrastructures/wpf/wpfdesigns/WpfDesigns.csproj",
       "msbuildProject": "../../src/infrastructures/wpf/wpfdesigns/WpfDesigns.csproj"
+    },
+    "Mov.WpfModels/1.0.0": {
+      "type": "project",
+      "path": "../../src/infrastructures/wpf/wpfmodels/WpfModels.csproj",
+      "msbuildProject": "../../src/infrastructures/wpf/wpfmodels/WpfModels.csproj"
     },
     "Mov.WpfMvvms/1.0.0": {
       "type": "project",

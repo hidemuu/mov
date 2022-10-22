@@ -1,4 +1,4 @@
-﻿using Mov.WpfControls.Components;
+﻿using Mov.WpfModels;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using Reactive.Bindings;
@@ -20,7 +20,7 @@ namespace Mov.WpfMvvms
 
         public ReactivePropertySlim<bool> IsDropTarget { get; } = new ReactivePropertySlim<bool>(true);
 
-        public DropTargetHandler<DragDropViewModelBase> DropTargetHandler { get; set; } = new DropTargetHandler<DragDropViewModelBase>();
+        //public DropTargetHandler<DragDropViewModelBase> DropTargetHandler { get; set; } = new DropTargetHandler<DragDropViewModelBase>();
 
         #endregion プロパティ
 

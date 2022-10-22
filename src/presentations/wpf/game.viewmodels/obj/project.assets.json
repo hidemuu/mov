@@ -659,7 +659,7 @@
         "dependencies": {
           "Mov.Designer.Repository": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
-          "Mov.WpfMvvms": "1.0.0"
+          "Mov.WpfViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Designer.ViewModels.dll": {}
@@ -718,7 +718,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Mov.Drawer.Service": "1.0.0",
-          "Mov.WpfMvvms": "1.0.0"
+          "Mov.WpfViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Drawer.ViewModels.dll": {}
@@ -854,14 +854,32 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "Mov.Painters": "1.0.0",
           "Mov.WpfControls": "1.0.0",
-          "Prism.Unity": "8.1.97"
+          "Prism.Unity": "8.1.97",
+          "System.Drawing.Common": "6.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.WpfMvvms.dll": {}
         },
         "runtime": {
           "bin/placeholder/Mov.WpfMvvms.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.WpfViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.WpfMvvms": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfViewModels.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -2059,6 +2077,11 @@
       "type": "project",
       "path": "../../../infrastructures/wpf/wpfmvvms/WpfMvvms.csproj",
       "msbuildProject": "../../../infrastructures/wpf/wpfmvvms/WpfMvvms.csproj"
+    },
+    "Mov.WpfViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../../infrastructures/wpf/wpfviewmodels/WpfViewModels.csproj",
+      "msbuildProject": "../../../infrastructures/wpf/wpfviewmodels/WpfViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {

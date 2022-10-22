@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Mov.WpfControls.Views.Tabs
+namespace Mov.WpfViews.Dialogs
 {
     /// <summary>
-    /// MenuTab.xaml の相互作用ロジック
+    /// WarningDialog.xaml の相互作用ロジック
     /// </summary>
-    public partial class MenuTab : UserControl
+    public partial class WarningDialog : UserControl
     {
-        public MenuTab()
+        public WarningDialog()
         {
             InitializeComponent();
         }

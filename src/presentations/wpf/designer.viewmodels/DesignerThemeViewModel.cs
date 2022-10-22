@@ -1,7 +1,6 @@
 ﻿using MaterialDesignColors;
 using Mov.Accessors.Repository;
 using Mov.Designer.Models;
-using Mov.WpfControls.ViewModels;
 using Mov.WpfDesigns.Services;
 using Mov.WpfMvvms;
 using Prism.Regions;

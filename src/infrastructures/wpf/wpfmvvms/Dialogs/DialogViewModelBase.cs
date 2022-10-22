@@ -10,12 +10,14 @@ namespace Mov.WpfMvvms
     /// </summary>
     public abstract class DialogViewModelBase : ViewModelBase, IDialogAware
     {
-        #region フィールド
+        #region プロパティ
          
         /// <summary>
          /// タイトル
          /// </summary>
         public abstract string Title { get; }
+
+        public ReactivePropertySlim<string> Message { get; } = new ReactivePropertySlim<string>();
 
         /// <summary>
         /// ダイアログクローズ可否
@@ -23,30 +25,43 @@ namespace Mov.WpfMvvms
         /// <returns></returns>
         public virtual bool CanCloseDialog() => true;
 
+        #endregion プロパティ
+
+        #region コマンド
+
         /// <summary>
         /// クローズリクエストイベント
         /// </summary>
         public event Action<IDialogResult> RequestClose;
 
-        #endregion フィールド
+        public ReactiveCommand<string> RequestCloseCommand { get; } = new ReactiveCommand<string>();
 
-        #region コマンド
-        
-        #endregion 
+        #endregion コマンド
+
+        #region コンストラクター
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
         public DialogViewModelBase()
         {
-
+            RequestCloseCommand.Subscribe(OnRequestClose);
         }
 
-        #region メソッド
+        #endregion コンストラクター
 
-        public void RequestCloseInvoke(IDialogResult dialogResult)
+        #region イベント
+
+        public virtual void OnRequestClose(string parameter)
         {
-            this.RequestClose?.Invoke(dialogResult);
+            ButtonResult result = ButtonResult.None;
+
+            if (parameter?.ToLower() == "true")
+                result = ButtonResult.Yes;
+            else if (parameter?.ToLower() == "false")
+                result = ButtonResult.No;
+            else
+                result = ButtonResult.None;
         }
 
         /// <summary>
@@ -58,8 +73,11 @@ namespace Mov.WpfMvvms
         /// ダイアログオープン時処理
         /// </summary>
         /// <param name="parameters"></param>
-        public virtual void OnDialogOpened(IDialogParameters parameters) { }
+        public virtual void OnDialogOpened(IDialogParameters parameters)
+        {
+            Message.Value = parameters.GetValue<string>("message");
+        }
 
-        #endregion
+        #endregion イベント
     }
 }

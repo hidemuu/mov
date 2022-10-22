@@ -1,15 +1,16 @@
-﻿using Reactive.Bindings;
+﻿using Mov.WpfMvvms;
+using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
 using System;
 using System.Linq;
 using System.Reactive.Disposables;
 using System.Windows.Controls;
 
-namespace Mov.WpfControls.ViewModels.Tabs
+namespace Mov.WpfViewModels
 {
     public class MenuTabViewModel
     {
-        public ReactiveCollection<MenuTabViewModelContent> Models { get; } = new ReactiveCollection<MenuTabViewModelContent>();
+        public ReactiveCollection<MenuTabModel> Models { get; } = new ReactiveCollection<MenuTabModel>();
         public ReactivePropertySlim<int> TabPage { get; set; } = new ReactivePropertySlim<int>(-1);
         public ReactiveCommand TabChangeCommand { get; } = new ReactiveCommand();
 

@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\applications\scheduler.service\Scheduler.Service.csproj" />
-    <ProjectReference Include="..\..\..\infrastructures\wpf\wpfmvvms\WpfMvvms.csproj" />
+    <ProjectReference Include="..\..\..\infrastructures\wpf\wpfviewmodels\WpfViewModels.csproj" />
   </ItemGroup>
 
 </Project>

@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Mov.WpfControls.Views.Dialogs
+namespace Mov.WpfViews.Tabs
 {
     /// <summary>
-    /// SuccessDialog.xaml の相互作用ロジック
+    /// MenuTab.xaml の相互作用ロジック
     /// </summary>
-    public partial class SuccessDialog : UserControl
+    public partial class MenuTab : UserControl
     {
-        public SuccessDialog()
+        public MenuTab()
         {
             InitializeComponent();
         }

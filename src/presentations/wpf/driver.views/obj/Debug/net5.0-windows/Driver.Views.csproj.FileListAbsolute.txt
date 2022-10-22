@@ -57,3 +57,9 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug\net5.0-windows\Mov.Driver.Views.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.WpfMvvms.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.WpfMvvms.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Painters.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.WpfViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.WpfViews.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.Painters.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.WpfViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.WpfViews.pdb

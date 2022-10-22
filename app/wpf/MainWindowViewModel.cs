@@ -6,7 +6,6 @@ using Mov.Driver.Views;
 using Mov.Game.Views;
 using Mov.Scheduler.Views;
 using Mov.WpfApp;
-using Mov.WpfControls.ViewModels;
 using Mov.WpfMvvms;
 using Prism.Regions;
 using Prism.Services.Dialogs;

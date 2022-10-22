@@ -9,7 +9,8 @@ module.exports = {
   mode: 'development',
   output: {
     path: outputPath,
-    filename: 'index.min.js'
+    filename: 'index.min.js',
+    libraryTarget: 'commonjs2',
   },
   devServer: {
     contentBase: outputPath,
@@ -19,6 +20,7 @@ module.exports = {
   resolve: {
       extensions: ['.webpack.js', '.web.js', '.ts', '.js', '.jsx', '.tsx']
   },
+  devtool: "source-map",
   module: {
       rules: [
           {
@@ -29,6 +31,7 @@ module.exports = {
                   //loader: 'babel-loader',
                   loader: "ts-loader",
                   options: {
+                    transpileOnly: true,
                     presets: [
                       '@babel/preset-env',
                       '@babel/preset-react' //ReactのPresetを追加

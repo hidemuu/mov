@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.WpfControls.ViewModels.Dialogs
+namespace Mov.WpfViewModels.Dialogs
 {
     public class AlertDialogViewModel
     {

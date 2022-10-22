@@ -32,9 +32,6 @@ using System.Windows;
 using Mov.Game.Views.Dialogs;
 using Mov.Game.ViewModels.Dialogs;
 using Mov.Game.Service.Machine;
-using Mov.WpfControls.Views.Dialogs;
-using Mov.WpfControls.ViewModels.Dialogs;
-using Mov.WpfControls.Views;
 using Mov.Drawer.Models;
 using Mov.Drawer.Repository;
 using Mov.Drawer.Views;
@@ -51,6 +48,7 @@ using Mov.UseCases.Factories;
 using Mov.Accessors;
 using Mov.UseCases;
 using Mov.Framework;
+using Mov.WpfViews;
 
 namespace Mov.WpfApp
 {

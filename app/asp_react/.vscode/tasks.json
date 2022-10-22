@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build",
+			"path": "ClientApp",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build - ClientApp",
+			"detail": "react-scripts build"
+		}
+	]
+}

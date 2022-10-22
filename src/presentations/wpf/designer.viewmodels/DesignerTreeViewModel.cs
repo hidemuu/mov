@@ -3,7 +3,6 @@ using Mov.Designer.Models;
 using Mov.Designer.Service;
 using Mov.WpfControls;
 using Mov.WpfControls.Components;
-using Mov.WpfControls.ViewModels;
 using Mov.WpfMvvms;
 using Prism.Regions;
 using Prism.Services.Dialogs;

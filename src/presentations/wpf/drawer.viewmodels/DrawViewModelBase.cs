@@ -2,7 +2,6 @@
 using Mov.Drawer.Models;
 using Mov.Drawer.Service;
 using Mov.Painters;
-using Mov.WpfControls.ViewModels;
 using Mov.WpfMvvms;
 using Prism.Mvvm;
 using Prism.Regions;

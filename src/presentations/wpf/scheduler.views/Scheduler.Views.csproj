@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\infrastructures\wpf\wpfviews\WpfViews.csproj" />
     <ProjectReference Include="..\scheduler.viewmodels\Scheduler.ViewModels.csproj" />
   </ItemGroup>
 

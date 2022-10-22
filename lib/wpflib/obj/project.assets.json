@@ -802,7 +802,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Mov.WpfMvvms": "1.0.0"
+          "Mov.WpfViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Bom.ViewModels.dll": {}
@@ -818,7 +818,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Mov.Bom.ViewModels": "1.0.0"
+          "Mov.Bom.ViewModels": "1.0.0",
+          "Mov.WpfViews": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Bom.Views.dll": {}
@@ -890,7 +891,7 @@
           "Mov.Configurator.Models": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
           "Mov.Utilities": "1.0.0",
-          "Mov.WpfMvvms": "1.0.0"
+          "Mov.WpfViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Configurator.ViewModels.dll": {}
@@ -906,7 +907,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Mov.Configurator.ViewModels": "1.0.0"
+          "Mov.Configurator.ViewModels": "1.0.0",
+          "Mov.WpfViews": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Configurator.Views.dll": {}
@@ -992,7 +994,7 @@
         "dependencies": {
           "Mov.Designer.Repository": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
-          "Mov.WpfMvvms": "1.0.0"
+          "Mov.WpfViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Designer.ViewModels.dll": {}
@@ -1008,7 +1010,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Mov.Designer.ViewModels": "1.0.0"
+          "Mov.Designer.ViewModels": "1.0.0",
+          "Mov.WpfViews": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Designer.Views.dll": {}
@@ -1067,7 +1070,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Mov.Drawer.Service": "1.0.0",
-          "Mov.WpfMvvms": "1.0.0"
+          "Mov.WpfViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Drawer.ViewModels.dll": {}
@@ -1083,7 +1086,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Mov.Drawer.ViewModels": "1.0.0"
+          "Mov.Drawer.ViewModels": "1.0.0",
+          "Mov.WpfViews": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Drawer.Views.dll": {}
@@ -1341,7 +1345,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Mov.Scheduler.Service": "1.0.0",
-          "Mov.WpfMvvms": "1.0.0"
+          "Mov.WpfViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Scheduler.ViewModels.dll": {}
@@ -1357,7 +1361,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Mov.Scheduler.ViewModels": "1.0.0"
+          "Mov.Scheduler.ViewModels": "1.0.0",
+          "Mov.WpfViews": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Scheduler.Views.dll": {}
@@ -1485,14 +1490,48 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "Mov.Painters": "1.0.0",
           "Mov.WpfControls": "1.0.0",
-          "Prism.Unity": "8.1.97"
+          "Prism.Unity": "8.1.97",
+          "System.Drawing.Common": "6.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.WpfMvvms.dll": {}
         },
         "runtime": {
           "bin/placeholder/Mov.WpfMvvms.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.WpfViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.WpfMvvms": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfViewModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.WpfViews/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.WpfMvvms": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfViews.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfViews.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -3074,6 +3113,16 @@
       "type": "project",
       "path": "../../src/infrastructures/wpf/wpfmvvms/WpfMvvms.csproj",
       "msbuildProject": "../../src/infrastructures/wpf/wpfmvvms/WpfMvvms.csproj"
+    },
+    "Mov.WpfViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../src/infrastructures/wpf/wpfviewmodels/WpfViewModels.csproj",
+      "msbuildProject": "../../src/infrastructures/wpf/wpfviewmodels/WpfViewModels.csproj"
+    },
+    "Mov.WpfViews/1.0.0": {
+      "type": "project",
+      "path": "../../src/infrastructures/wpf/wpfviews/WpfViews.csproj",
+      "msbuildProject": "../../src/infrastructures/wpf/wpfviews/WpfViews.csproj"
     }
   },
   "projectFileDependencyGroups": {

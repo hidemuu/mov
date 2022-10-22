@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Mov.WpfControls.Views.Dialogs
+namespace Mov.WpfViews.Dialogs
 {
     /// <summary>
-    /// AlertDialog.xaml の相互作用ロジック
+    /// SuccessDialog.xaml の相互作用ロジック
     /// </summary>
-    public partial class AlertDialog : UserControl
+    public partial class SuccessDialog : UserControl
     {
-        public AlertDialog()
+        public SuccessDialog()
         {
             InitializeComponent();
         }

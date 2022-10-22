@@ -40,6 +40,7 @@ https://qiita.com/TsutomuNakamura/items/72d8cf9f07a5a30be048
 https://qiita.com/koedamon/items/8fb75a7c001da40c7bea
 https://qiita.com/masafullversion/items/0238b7c069ebf4f1f072
 https://qiita.com/banban525/items/b66a439d588858ba3a11
+https://clickan.click/vsc-ts/
 
 ### ディレクトリの作成
 $ mkdir js-react
@@ -67,6 +68,7 @@ $ npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel
 $ npm install --save-dev react react-dom
 $ npm install --save-dev babel-plugin-react-html-attrs
 $ npm install --save-dev @babel/compat-data
+$ npm install ts-loader --save-dev
 $ npm install --save-dev react-router react-router-dom
 $ npm install --save react-chartjs-2 chart.js
 $ npm install --save moment react-moment

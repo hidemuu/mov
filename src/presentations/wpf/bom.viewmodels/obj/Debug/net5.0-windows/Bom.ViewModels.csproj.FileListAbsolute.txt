@@ -24,3 +24,7 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\obj\Deb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\obj\Debug\net5.0-windows\Mov.Bom.ViewModels.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Mov.WpfMvvms.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Mov.WpfMvvms.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Mov.Painters.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Mov.WpfViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Mov.WpfViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Mov.Painters.pdb

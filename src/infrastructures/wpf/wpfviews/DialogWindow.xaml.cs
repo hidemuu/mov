@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prism.Services.Dialogs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,19 +11,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Mov.WpfControls.Views.Dialogs
+namespace Mov.WpfViews
 {
     /// <summary>
-    /// WarningDialog.xaml の相互作用ロジック
+    /// DialogWindow.xaml の相互作用ロジック
     /// </summary>
-    public partial class WarningDialog : UserControl
+    public partial class DialogWindow : Window, IDialogWindow
     {
-        public WarningDialog()
+        public DialogWindow()
         {
             InitializeComponent();
         }
+
+        protected override void OnSourceInitialized(EventArgs e)
+        {
+            
+        }
+
+        public IDialogResult Result { get; set; }
     }
 }

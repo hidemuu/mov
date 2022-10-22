@@ -23,11 +23,7 @@ namespace Mov.WpfMvvms
         /// </summary>
         protected CompositeDisposable Disposables = new CompositeDisposable();
 
-        private bool _disposed;
-
-        #endregion
-
-        #region プロパティ
+        private bool disposed;
 
         #endregion
 
@@ -60,12 +56,12 @@ namespace Mov.WpfMvvms
 
         protected virtual void Dispose(bool disposing)
         {
-            if (_disposed) return;
+            if (this.disposed) return;
             if (disposing)
             {
                 Disposables.Dispose();
             }
-            _disposed = true;
+            this.disposed = true;
         }
 
         /// <summary>

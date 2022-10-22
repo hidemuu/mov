@@ -1,6 +1,5 @@
 ﻿using GongSolutions.Wpf.DragDrop;
 using Mov.WpfControls.Components;
-using Mov.WpfControls.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

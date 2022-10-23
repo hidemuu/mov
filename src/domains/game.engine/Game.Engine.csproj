@@ -10,4 +10,8 @@
     <ProjectReference Include="..\game.models\Game.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Tactics\" />
+  </ItemGroup>
+
 </Project>

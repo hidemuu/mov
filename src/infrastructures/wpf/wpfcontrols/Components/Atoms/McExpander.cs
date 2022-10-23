@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 
-namespace Mov.WpfControls.Components
+namespace Mov.WpfControls.Components.Atoms
 {
     /// <summary>
     /// Represents a control that can switch states in order to expand a node of a TreeListView.
     /// </summary>
-    public class TreeListViewExpander : Expander { }
+    public class McExpander : Expander { }
 }

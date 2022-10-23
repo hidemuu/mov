@@ -21,7 +21,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <!--<ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />-->
-                <ResourceDictionary Source="/Mov.WpfControls;component/Components/TreeListView.xaml" />
+                <ResourceDictionary Source="/Mov.WpfControls;component/Components/Organisms/TreeListView.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <converter:BoolToVisibillityConverter x:Key="boolToVisibilityConverter" />
         </ResourceDictionary>
@@ -78,7 +78,7 @@
                     <GridViewColumn.CellTemplate>
                         <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
                             <StackPanel Orientation="Horizontal">
-                                <components:TreeListViewExpander />
+                                <Expander />
                                 <ComboBox ItemsSource="{Binding Codes}" SelectedItem="{Binding Code.Value}" />
                             </StackPanel>
                         </DataTemplate>

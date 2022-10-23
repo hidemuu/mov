@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace Mov.WpfControls.Components
+namespace Mov.WpfControls.Converters
 {
     /// <summary>
     /// Represents a convert that can calculate the indentation of any element in a class derived from TreeView.

@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:components="clr-namespace:Mov.WpfControls.Components;assembly=Mov.WpfControls"
+    xmlns:atom="clr-namespace:Mov.WpfControls.Components.Atoms;assembly=Mov.WpfControls"
     xmlns:converter="clr-namespace:Mov.WpfControls.Converters;assembly=Mov.WpfControls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:dd="urn:gong-wpf-dragdrop"
@@ -21,7 +22,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <!--<ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />-->
-                <ResourceDictionary Source="/Mov.WpfControls;component/Components/Organisms/TreeListView.xaml" />
+                <ResourceDictionary Source="/Mov.WpfControls;component/Styles/McTreeListViewStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <converter:BoolToVisibillityConverter x:Key="boolToVisibilityConverter" />
         </ResourceDictionary>
@@ -60,11 +61,11 @@
                 <ContextMenu>
                     <MenuItem
                         Command="{Binding AddCommand}"
-                        CommandParameter="{Binding BindableSelectedItem, RelativeSource={RelativeSource AncestorType=components:TreeListView}}"
+                        CommandParameter="{Binding BindableSelectedItem, RelativeSource={RelativeSource AncestorType=components:McTreeListView}}"
                         Header="追加" />
                     <MenuItem
                         Command="{Binding DeleteCommand}"
-                        CommandParameter="{Binding BindableSelectedItem, RelativeSource={RelativeSource AncestorType=components:TreeListView}}"
+                        CommandParameter="{Binding BindableSelectedItem, RelativeSource={RelativeSource AncestorType=components:McTreeListView}}"
                         Header="削除" />
                 </ContextMenu>
             </components:McTreeListView.ContextMenu>
@@ -78,7 +79,7 @@
                     <GridViewColumn.CellTemplate>
                         <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
                             <StackPanel Orientation="Horizontal">
-                                <Expander />
+                                <atom:McExpander />
                                 <ComboBox ItemsSource="{Binding Codes}" SelectedItem="{Binding Code.Value}" />
                             </StackPanel>
                         </DataTemplate>

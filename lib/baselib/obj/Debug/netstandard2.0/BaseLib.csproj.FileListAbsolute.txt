@@ -28,6 +28,7 @@ C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Dri
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Driver.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Driver.Service.dll
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Framework.dll
+C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Engine.dll
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Models.dll
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Service.dll
@@ -68,6 +69,7 @@ C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Dri
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Driver.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Driver.Service.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Framework.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Engine.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Service.pdb
@@ -86,5 +88,3 @@ C:\Users\nando\Documents\GitHub\mov\lib\baselib\obj\Debug\netstandard2.0\BaseLib
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\obj\Debug\netstandard2.0\BaseLib.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\obj\Debug\netstandard2.0\Mov.BaseLib.dll
 C:\Users\nando\Documents\GitHub\mov\lib\baselib\obj\Debug\netstandard2.0\Mov.BaseLib.pdb
-C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Engine.dll
-C:\Users\nando\Documents\GitHub\mov\lib\baselib\bin\Debug\netstandard2.0\Mov.Game.Engine.pdb

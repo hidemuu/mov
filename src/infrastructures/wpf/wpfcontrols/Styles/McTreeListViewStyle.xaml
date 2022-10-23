@@ -2,66 +2,15 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:atom="clr-namespace:Mov.WpfControls.Components.Atoms"
+    xmlns:converter="clr-namespace:Mov.WpfControls.Converters"
     xmlns:dd="urn:gong-wpf-dragdrop"
     xmlns:local="clr-namespace:Mov.WpfControls.Components">
-    <local:TreeListViewConverter x:Key="TreeListViewConverter" />
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Templates/McTreeListViewTemplate.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <converter:TreeListViewConverter x:Key="TreeListViewConverter" />
 
-    <!--  ツリーの各項目のテンプレート  -->
-    <ControlTemplate x:Key="TreeListViewItem" TargetType="TreeViewItem">
-        <StackPanel>
-            <Border x:Name="Border">
-                <GridViewRowPresenter Columns="{Binding Columns, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:TreeListView}}" Content="{TemplateBinding Header}" />
-            </Border>
-            <ItemsPresenter x:Name="ItemsPresenter" Visibility="Collapsed" />
-        </StackPanel>
-        <ControlTemplate.Triggers>
-            <Trigger Property="IsExpanded" Value="True">
-                <Setter TargetName="ItemsPresenter" Property="Visibility" Value="Visible" />
-            </Trigger>
-            <Trigger Property="IsSelected" Value="true">
-                <Setter TargetName="Border" Property="Background" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
-                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" />
-            </Trigger>
-            <MultiTrigger>
-                <MultiTrigger.Conditions>
-                    <Condition Property="IsSelected" Value="true" />
-                    <Condition Property="IsSelectionActive" Value="false" />
-                </MultiTrigger.Conditions>
-                <Setter TargetName="Border" Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
-                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
-            </MultiTrigger>
-            <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
-            </Trigger>
-        </ControlTemplate.Triggers>
-    </ControlTemplate>
-
-    <!--  エキスパンダー部のテンプレート  -->
-    <ControlTemplate x:Key="TreeListViewExpander" TargetType="{x:Type Expander}">
-        <StackPanel x:Name="ContainerElement" Orientation="Horizontal">
-            <!--  インデント付加のコンバーター  -->
-            <FrameworkElement Width="{Binding RelativeSource={x:Static RelativeSource.Self}, Converter={StaticResource TreeListViewConverter}}" />
-            <!--  クリック範囲の余白  -->
-            <TextBlock Width="10" />
-            <!--  エキスパンダー  -->
-            <Expander
-                x:Name="ContainerExpander"
-                VerticalAlignment="Center"
-                IsExpanded="{Binding IsExpanded, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem}}" />
-            <!--<ToggleButton
-                Margin="1"
-                VerticalAlignment="Center"
-                IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem}}" />-->
-        </StackPanel>
-        <ControlTemplate.Triggers>
-            <!--  アイテムが存在しない場合のエキスパンダーの表示制御  -->
-            <DataTrigger Binding="{Binding HasItems, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem}}" Value="False">
-                <!--<Setter TargetName="ContainerElement" Property="Visibility" Value="Hidden" />-->
-            </DataTrigger>
-        </ControlTemplate.Triggers>
-    </ControlTemplate>
-
-    <!--  ツリー本体のスタイルテンプレート  -->
+    <!--  ツリー本体のスタイル  -->
     <Style TargetType="{x:Type local:McTreeListView}">
         <Setter Property="Template">
             <Setter.Value>
@@ -71,8 +20,8 @@
                             <Setter Property="Template" Value="{StaticResource TreeListViewItem}" />
                             <Setter Property="IsExpanded" Value="True" />
                         </Style>
-                        <Style TargetType="Expander">
-                            <Setter Property="Template" Value="{StaticResource atom:McExpander}" />
+                        <Style TargetType="atom:McExpander">
+                            <Setter Property="Template" Value="{StaticResource TreeListViewExpander}" />
                         </Style>
                     </ControlTemplate.Resources>
                     <Border

@@ -21,14 +21,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Components\Organisms\McTreeListView.xaml">
+    <Page Update="Styles\McTreeListViewStyle.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Styles\" />
+    <Page Update="Templates\McTreeListViewTemplate.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
 </Project>

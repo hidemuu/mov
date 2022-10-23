@@ -191,7 +191,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Macros", "src\infrastructur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfMacros", "src\infrastructures\wpf\wpfmacros\WpfMacros.csproj", "{DFA0B4A2-82C2-490C-B8F7-710894BFD9B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Layouts", "src\infrastructures\layouts\Layouts.csproj", "{10012596-A26F-4DFD-9DB6-D05C72ED48F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Layouts", "src\infrastructures\layouts\Layouts.csproj", "{10012596-A26F-4DFD-9DB6-D05C72ED48F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfLayouts", "src\infrastructures\wpf\wpflayouts\WpfLayouts.csproj", "{81A9BAE8-8384-45EA-9E2F-ABDC18D815EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -539,6 +541,10 @@ Global
 		{10012596-A26F-4DFD-9DB6-D05C72ED48F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10012596-A26F-4DFD-9DB6-D05C72ED48F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10012596-A26F-4DFD-9DB6-D05C72ED48F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81A9BAE8-8384-45EA-9E2F-ABDC18D815EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81A9BAE8-8384-45EA-9E2F-ABDC18D815EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81A9BAE8-8384-45EA-9E2F-ABDC18D815EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81A9BAE8-8384-45EA-9E2F-ABDC18D815EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -636,6 +642,7 @@ Global
 		{BF354BC2-8232-4C49-8C8D-59118C55AB43} = {12313AF5-0452-4C20-8955-3E8ECDE42301}
 		{DFA0B4A2-82C2-490C-B8F7-710894BFD9B4} = {FCE6A383-D625-466D-99BD-868912D6BD07}
 		{10012596-A26F-4DFD-9DB6-D05C72ED48F8} = {12313AF5-0452-4C20-8955-3E8ECDE42301}
+		{81A9BAE8-8384-45EA-9E2F-ABDC18D815EE} = {FCE6A383-D625-466D-99BD-868912D6BD07}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD9C3231-BF2C-413C-B738-70985D9981AE}

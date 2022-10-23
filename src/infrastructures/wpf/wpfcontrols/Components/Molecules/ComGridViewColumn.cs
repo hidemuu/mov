@@ -9,14 +9,14 @@ using System.Windows.Controls;
 
 namespace Mov.WpfControls.Components.Molecules
 {
-    public class LayGridViewColumn : GridViewColumn
+    public class ComGridViewColumn : GridViewColumn
     {
 
         #region プロパティ
 
         public static readonly DependencyProperty AttributeProperty =
             DependencyProperty.Register(nameof(Attribute), typeof(ColumnAttribute),
-            typeof(LayGridViewColumn),
+            typeof(ComGridViewColumn),
             new UIPropertyMetadata(null, new PropertyChangedCallback(OnAttributeChanged)));
 
         public ColumnAttribute Attribute
@@ -32,7 +32,7 @@ namespace Mov.WpfControls.Components.Molecules
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public LayGridViewColumn()
+        public ComGridViewColumn()
         {
 
         }
@@ -48,7 +48,7 @@ namespace Mov.WpfControls.Components.Molecules
         /// <param name="e"></param>
         private static void OnAttributeChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
         {
-            var control = obj as LayGridViewColumn;
+            var control = obj as ComGridViewColumn;
             if (control != null)
             {
                 if(control.Attribute != null)

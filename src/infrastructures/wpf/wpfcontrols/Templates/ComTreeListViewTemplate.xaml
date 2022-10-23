@@ -11,7 +11,7 @@
     <ControlTemplate x:Key="TreeListViewItem" TargetType="TreeViewItem">
         <StackPanel>
             <Border x:Name="Border">
-                <GridViewRowPresenter Columns="{Binding Columns, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayTreeListView}}" Content="{TemplateBinding Header}" />
+                <GridViewRowPresenter Columns="{Binding Columns, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:ComTreeListView}}" Content="{TemplateBinding Header}" />
             </Border>
             <ItemsPresenter x:Name="ItemsPresenter" Visibility="Collapsed" />
         </StackPanel>
@@ -38,7 +38,7 @@
     </ControlTemplate>
 
     <!--  エキスパンダー部のテンプレート  -->
-    <ControlTemplate x:Key="TreeListViewExpander" TargetType="{x:Type atom:LayExpander}">
+    <ControlTemplate x:Key="TreeListViewExpander" TargetType="{x:Type atom:ComExpander}">
         <StackPanel x:Name="ContainerElement" Orientation="Horizontal">
             <!--  インデント付加のコンバーター  -->
             <FrameworkElement Width="{Binding RelativeSource={x:Static RelativeSource.Self}, Converter={StaticResource TreeListViewConverter}}" />

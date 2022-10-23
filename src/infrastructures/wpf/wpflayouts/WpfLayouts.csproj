@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.WpfLayouts</AssemblyName>
+    <RootNamespace>Mov.WpfLayouts</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Components\Molecules\" />
+    <Folder Include="Components\Organisms\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\layouts\Layouts.csproj" />
+    <ProjectReference Include="..\wpfcontrols\WpfControls.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Themes\Generic.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

@@ -8,7 +8,12 @@
             <Setter.Value>
                 <ControlTemplate>
                     <DockPanel>
-                        <Button Content="{Binding LayoutContent.Name, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}" />
+                        <Button
+                            Width="{Binding LayoutContent.Width, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}"
+                            Height="{Binding LayoutContent.Height, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}"
+                            HorizontalAlignment="{Binding LayoutContent.HorizontalAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}"
+                            VerticalAlignment="{Binding LayoutContent.VerticalAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}"
+                            Content="{Binding LayoutContent.Name, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}" />
                     </DockPanel>
                 </ControlTemplate>
             </Setter.Value>

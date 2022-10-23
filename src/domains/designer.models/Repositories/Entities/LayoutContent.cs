@@ -93,6 +93,43 @@ namespace Mov.Designer.Models
         [DisplayIndex(16)]
         public string Macro { get; set; } = string.Empty;
 
+        /// <summary>
+        /// 高さ
+        /// </summary>
+        [XmlElement("height")]
+        [LanguageKey("height")]
+        [DisplayName("height")]
+        [DisplayIndex(17)]
+        public double Height { get; set; } = 32;
+
+        /// <summary>
+        /// 幅
+        /// </summary>
+        [XmlElement("width")]
+        [LanguageKey("width")]
+        [DisplayName("width")]
+        [DisplayIndex(18)]
+        public double Width { get; set; } = 100;
+
+        /// <summary>
+        /// 水平位置
+        /// </summary>
+        [XmlElement("horizontal_alignment")]
+        [LanguageKey("horizontal_alignment")]
+        [DisplayName("horizontal_alignment")]
+        [DisplayIndex(19)]
+        public string HorizontalAlignment { get; set; } = "Left";
+
+        /// <summary>
+        /// 垂直位置
+        /// </summary>
+        [XmlElement("vertical_alignment")]
+        [LanguageKey("vertical_alignment")]
+        [DisplayName("vertical_alignment")]
+        [DisplayIndex(20)]
+        public string VerticalAlignment { get; set; } = "Center";
+
+
         #endregion プロパティ
 
         #region コンストラクター

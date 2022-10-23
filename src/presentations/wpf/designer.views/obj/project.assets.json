@@ -746,6 +746,23 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "Mov.WpfLayouts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Layouts": "1.0.0",
+          "Mov.WpfControls": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfLayouts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfLayouts.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Mov.WpfModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -1970,6 +1987,11 @@
       "path": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj",
       "msbuildProject": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj"
     },
+    "Mov.WpfLayouts/1.0.0": {
+      "type": "project",
+      "path": "../../../infrastructures/wpf/wpflayouts/WpfLayouts.csproj",
+      "msbuildProject": "../../../infrastructures/wpf/wpflayouts/WpfLayouts.csproj"
+    },
     "Mov.WpfModels/1.0.0": {
       "type": "project",
       "path": "../../../infrastructures/wpf/wpfmodels/WpfModels.csproj",
@@ -1994,6 +2016,7 @@
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
       "Mov.Designer.ViewModels >= 1.0.0",
+      "Mov.WpfLayouts >= 1.0.0",
       "Mov.WpfViews >= 1.0.0"
     ]
   },
@@ -2034,6 +2057,9 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpflayouts\\WpfLayouts.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpflayouts\\WpfLayouts.csproj"
+            },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviews\\WpfViews.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviews\\WpfViews.csproj"
             },

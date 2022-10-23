@@ -1,4 +1,5 @@
 ﻿using Mov.Designer.Models;
+using Mov.Layouts;
 using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
@@ -10,36 +11,13 @@ namespace Mov.Designer.Service
     {
         #region フィールド
 
-        private readonly LayoutContent content;
+        public LayoutContent Content { get; }
 
         #endregion フィールド
 
         #region プロパティ
 
-        /// <summary>
-        /// コード
-        /// </summary>
-        public string Code => this.content.Code;
-
-        /// <summary>
-        /// 名称
-        /// </summary>
-        public string Name => this.content.Name;
-
-        /// <summary>
-        /// コントロール種別
-        /// </summary>
-        public ControlType ControlType => this.content.ControlType;
-
-        /// <summary>
-        /// マクロ
-        /// </summary>
-        public string Macro => this.content.Macro;
-
-        /// <summary>
-        /// 並び順インデックス
-        /// </summary>
-        public int Index => this.content.Index;
+        
 
         /// <summary>
         /// インデント
@@ -60,7 +38,7 @@ namespace Mov.Designer.Service
         /// </summary>
         public LayoutBase()
         {
-            this.content = new LayoutContent();
+            this.Content = new LayoutContent();
         }
 
         /// <summary>
@@ -69,7 +47,7 @@ namespace Mov.Designer.Service
         /// <param name="content"></param>
         public LayoutBase(LayoutContent content)
         {
-            this.content = content;
+            this.Content = content;
         }
 
         #endregion コンストラクター
@@ -78,7 +56,7 @@ namespace Mov.Designer.Service
 
         public override string ToString()
         {
-            return "[Code] " + Code + " [Name] " + Name;
+            return "[Code] " + Content.Code + " [Name] " + Content.Name;
         }
 
         #endregion メソッド

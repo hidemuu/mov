@@ -38,7 +38,7 @@ namespace Mov.Designer.Service.Nodes
 
         public override string ToString()
         {
-            return base.ToString() + " [ControlType] " + ControlType + " [Macro] " + Macro;
+            return base.ToString() + " [ControlType] " + Content.ControlType + " [Macro] " + Content.Macro;
         }
 
         #endregion メソッド

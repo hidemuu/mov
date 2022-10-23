@@ -1046,6 +1046,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Mov.Designer.ViewModels": "1.0.0",
+          "Mov.WpfLayouts": "1.0.0",
           "Mov.WpfViews": "1.0.0"
         },
         "compile": {
@@ -1573,6 +1574,23 @@
         },
         "runtime": {
           "bin/placeholder/Mov.WpfDesigns.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.WpfLayouts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Layouts": "1.0.0",
+          "Mov.WpfControls": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfLayouts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfLayouts.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -3262,6 +3280,11 @@
       "type": "project",
       "path": "../../src/infrastructures/wpf/wpfdesigns/WpfDesigns.csproj",
       "msbuildProject": "../../src/infrastructures/wpf/wpfdesigns/WpfDesigns.csproj"
+    },
+    "Mov.WpfLayouts/1.0.0": {
+      "type": "project",
+      "path": "../../src/infrastructures/wpf/wpflayouts/WpfLayouts.csproj",
+      "msbuildProject": "../../src/infrastructures/wpf/wpflayouts/WpfLayouts.csproj"
     },
     "Mov.WpfLib/1.0.0": {
       "type": "project",

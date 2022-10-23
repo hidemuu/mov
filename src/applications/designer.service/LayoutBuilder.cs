@@ -53,7 +53,7 @@ namespace Mov.Designer.Service
             {
                 if(node is RegionLayoutNode regionNode)
                 {
-                    switch (regionNode.Code) 
+                    switch (regionNode.Content.Code) 
                     {
                         case "Center": CenterNode = regionNode; break;
                         case "Top": TopNode = regionNode; break;

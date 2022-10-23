@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Mov.Designer.Service
 {
-    public abstract class LayoutNodeBase : LayoutBase, IEnumerable<LayoutNodeBase>
+    public abstract class LayoutNodeBase : LayoutBase
     {
         #region フィールド
 
@@ -82,16 +82,7 @@ namespace Mov.Designer.Service
 
         #region メソッド
 
-        public IEnumerator<LayoutNodeBase> GetEnumerator()
-        {
-            return (IEnumerator<LayoutNodeBase>)children;
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return this.GetEnumerator();
-        }
-
+        
         public void Add(LayoutNodeBase layout)
         {
             children.Add(layout);

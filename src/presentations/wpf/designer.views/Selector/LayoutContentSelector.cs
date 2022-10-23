@@ -35,7 +35,7 @@ namespace Mov.Designer.Views.Selector
         {
             if (item is ContentLayoutNode node)
             {
-                switch (node.ControlType)
+                switch (node.Content.ControlType)
                 {
                     case Models.ControlType.Label: return LabelTemplate;
                     case Models.ControlType.Button: return ButtonTemplate;
@@ -48,10 +48,10 @@ namespace Mov.Designer.Views.Selector
                     case Models.ControlType.DatePicker: return DatePickerTemplate;
                 }
                 //どれにも該当しない場合、
-                if (TryGetType(node.ControlType.ToString(), out Type type))
+                if (TryGetType(node.Content.ControlType.ToString(), out Type type))
                 {
                     var factory = new FrameworkElementFactory(type);
-                    factory.SetValue(Label.ContentProperty, node.Name);
+                    factory.SetValue(Label.ContentProperty, node.Content.Name);
                     return new DataTemplate() { VisualTree = factory, };
                 };
 

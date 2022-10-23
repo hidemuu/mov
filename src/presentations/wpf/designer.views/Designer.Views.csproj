@@ -12,8 +12,4 @@
     <ProjectReference Include="..\designer.viewmodels\Designer.ViewModels.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controls\" />
-  </ItemGroup>
-
 </Project>

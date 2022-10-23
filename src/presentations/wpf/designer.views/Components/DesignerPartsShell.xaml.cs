@@ -414,11 +414,11 @@ namespace Mov.Designer.Views
                         control.LeftModels.AddRange(build.LeftNode.Children);
                         control.RightModels.AddRange(build.RightNode.Children);
 
-                        var topShell = control.Repository?.Shells?.Get("Top");
-                        var bottomShell = control.Repository?.Shells?.Get("Bottom");
-                        var leftShell = control.Repository?.Shells?.Get("Left");
-                        var rightShell = control.Repository?.Shells?.Get("Right");
-                        var centerShell = control.Repository?.Shells?.Get("Center");
+                        var topShell = control.Repository?.Shells?.Get(LocationType.Top.ToString());
+                        var bottomShell = control.Repository?.Shells?.Get(LocationType.Bottom.ToString());
+                        var leftShell = control.Repository?.Shells?.Get(LocationType.Left.ToString());
+                        var rightShell = control.Repository?.Shells?.Get(LocationType.Right.ToString());
+                        var centerShell = control.Repository?.Shells?.Get(LocationType.Center.ToString());
 
                         if(topShell != null)
                         {

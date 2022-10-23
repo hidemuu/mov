@@ -2,13 +2,13 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="DesignerPartsControl.xaml.cs">
+    <Compile Update="Components\DesignerPartsControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="DesignerDialogView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="DesignerPartsShell.xaml.cs">
+    <Compile Update="Components\DesignerPartsShell.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="DesignerPartsView.xaml.cs">
@@ -31,13 +31,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="DesignerPartsControl.xaml">
+    <Page Update="Components\DesignerPartsControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="DesignerDialogView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="DesignerPartsShell.xaml">
+    <Page Update="Components\DesignerPartsShell.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="DesignerPartsView.xaml">

@@ -18,7 +18,7 @@
                     <ControlTemplate.Resources>
                         <Style TargetType="TreeViewItem">
                             <Setter Property="Template" Value="{StaticResource TreeListViewItem}" />
-                            <Setter Property="IsExpanded" Value="True" />
+                            <Setter Property="IsExpanded" Value="False" />
                         </Style>
                         <Style TargetType="atom:McExpander">
                             <Setter Property="Template" Value="{StaticResource TreeListViewExpander}" />

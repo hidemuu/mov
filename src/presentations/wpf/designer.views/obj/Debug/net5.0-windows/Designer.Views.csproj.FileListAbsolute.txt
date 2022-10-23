@@ -58,8 +58,6 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Deb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.WpfViewModels.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Designer.Views.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerDialogView.g.cs
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerPartsControl.g.cs
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerPartsShell.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerPartsView.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerShellView.g.cs
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerTableView.g.cs
@@ -70,8 +68,6 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Deb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Mov.Designer.Views_MarkupCompile.cache
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Mov.Designer.Views_MarkupCompile.lref
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerDialogView.baml
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerPartsControl.baml
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerPartsShell.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerPartsView.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerShellView.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerTableView.baml
@@ -89,3 +85,7 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Deb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Mov.Designer.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\ref\Mov.Designer.Views.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Mov.Designer.Views.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Components\DesignerPartsControl.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Components\DesignerPartsControl.baml
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Components\DesignerPartsShell.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Components\DesignerPartsShell.baml

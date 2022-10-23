@@ -129,6 +129,14 @@ namespace Mov.Designer.Models
         [DisplayIndex(20)]
         public string VerticalAlignment { get; set; } = "Center";
 
+        /// <summary>
+        /// パラメータ
+        /// </summary>
+        [XmlElement("parameter")]
+        [LanguageKey("parameter")]
+        [DisplayName("parameter")]
+        [DisplayIndex(21)]
+        public string Parameter { get; set; } = string.Empty;
 
         #endregion プロパティ
 
@@ -161,6 +169,10 @@ namespace Mov.Designer.Models
         #region メソッド
 
         public static ControlType[] GetControlTypes => (ControlType[])Enum.GetValues(typeof(ControlType));
+
+        public static string[] GetHorizontalAlignments => new string[] { "Left", "Right", "Center", "Stretch" };
+
+        public static string[] GetVerticalAlignments => new string[] { "Top", "Bottom", "Center", "Stretch" };
 
         public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<LayoutContent>().OrderBy(x => x.index);
 

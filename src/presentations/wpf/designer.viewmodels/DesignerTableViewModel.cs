@@ -91,7 +91,7 @@ namespace Mov.Designer.ViewModels
         private void Post()
         {
             var tables = new List<LayoutContent>();
-            GetContentTables(tables, Models);
+            ConvertModelToContent(tables, Models);
             repository.Contents.Posts(tables);
         }
 
@@ -131,7 +131,7 @@ namespace Mov.Designer.ViewModels
             }
         }
 
-        private void GetContentTables(ICollection<LayoutContent> items, IEnumerable<DesignerTableModel> models)
+        private void ConvertModelToContent(ICollection<LayoutContent> items, IEnumerable<DesignerTableModel> models)
         {
             foreach (var model in models)
             {
@@ -142,7 +142,11 @@ namespace Mov.Designer.ViewModels
                     Code = model.Code.Value,
                     ControlType = model.ControlType.Value,
                     Name = model.Name.Value,
-
+                    Height = model.Height.Value,
+                    Width = model.Width.Value,
+                    HorizontalAlignment = model.HorizontalAlignment.Value,
+                    VerticalAlignment = model.VerticalAlignment.Value,
+                    Parameter = model.Parameter.Value,
                 };
                 items.Add(item);
             }
@@ -172,11 +176,21 @@ namespace Mov.Designer.ViewModels
         public ReactivePropertySlim<string> Command { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<ControlType> ControlType { get; } = new ReactivePropertySlim<ControlType>();
         public ReactivePropertySlim<string> ControlStyle { get; } = new ReactivePropertySlim<string>();
+
+        public ReactivePropertySlim<double> Width { get; } = new ReactivePropertySlim<double>(150);
+        public ReactivePropertySlim<double> Height { get; } = new ReactivePropertySlim<double>(32);
+
+        public ReactivePropertySlim<string> HorizontalAlignment { get; } = new ReactivePropertySlim<string>("Left");
+        public ReactivePropertySlim<string> VerticalAlignment { get; } = new ReactivePropertySlim<string>("Center");
         public ReactivePropertySlim<string> Parameter { get; } = new ReactivePropertySlim<string>();
 
         public ReactivePropertySlim<string> ToolTip { get; } = new ReactivePropertySlim<string>();
 
         public List<ControlType> ControlTypes { get; set; } = LayoutContent.GetControlTypes.ToList();
+
+        public List<string> HolizontalAlignments { get; set; } = LayoutContent.GetHorizontalAlignments.ToList();
+
+        public List<string> VerticalAlignments { get; set; } = LayoutContent.GetVerticalAlignments.ToList();
 
         #endregion プロパティ
 
@@ -203,6 +217,11 @@ namespace Mov.Designer.ViewModels
             Code.Value = item.Code;
             Name.Value = item.Name;
             ControlType.Value = item.ControlType;
+            Height.Value = item.Height;
+            Width.Value = item.Width;
+            HorizontalAlignment.Value = item.HorizontalAlignment;
+            VerticalAlignment.Value = item.VerticalAlignment;
+            Parameter.Value = item.Parameter;
         }
 
         #endregion 継承メソッド
@@ -217,6 +236,10 @@ namespace Mov.Designer.ViewModels
         public ColumnAttribute Command { get; } = new ColumnAttribute("コマンド", 120);
         public ColumnAttribute ControlType { get; } = new ColumnAttribute("タイプ", 120);
         public ColumnAttribute ControlStyle { get; } = new ColumnAttribute("スタイル", 120);
+        public ColumnAttribute Height { get; } = new ColumnAttribute("高さ", 90);
+        public ColumnAttribute Width { get; } = new ColumnAttribute("幅", 90);
+        public ColumnAttribute HorizontalAlignment { get; } = new ColumnAttribute("水平", 120);
+        public ColumnAttribute VerticalAlignment { get; } = new ColumnAttribute("垂直", 120);
         public ColumnAttribute Parameter { get; } = new ColumnAttribute("パラメータ", 120);
     }
 

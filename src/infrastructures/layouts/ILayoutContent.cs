@@ -11,6 +11,12 @@ namespace Mov.Layouts
     public interface ILayoutContent
     {
         /// <summary>
+        /// コード
+        /// </summary>
+        [XmlElement("code")]
+        string Code { get; }
+
+        /// <summary>
         /// 名称
         /// </summary>
         [XmlElement("name")]
@@ -64,5 +70,11 @@ namespace Mov.Layouts
         /// </summary>
         [XmlElement("macro")]
         string Macro { get; }
+
+        /// <summary>
+        /// パラメータ
+        /// </summary>
+        [XmlElement("parameter")]
+        string Parameter { get; }
     }
 }

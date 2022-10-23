@@ -90,16 +90,6 @@
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn
-                        x:Name="commandColumn"
-                        Width="{Binding Attribute.Command.Width.Value}"
-                        Header="{Binding Attribute.Command.Header.Value}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
-                                <TextBox Width="{Binding Width, ElementName=commandColumn}" Text="{Binding Command.Value, Mode=TwoWay}" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn
                         x:Name="controlTypeColumn"
                         Width="{Binding Attribute.ControlType.Width.Value}"
                         Header="{Binding Attribute.ControlType.Header.Value}">
@@ -113,12 +103,48 @@
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn
-                        x:Name="controlStyleColumn"
-                        Width="{Binding Attribute.ControlStyle.Width.Value}"
-                        Header="{Binding Attribute.ControlStyle.Header.Value}">
+                        x:Name="heightColumn"
+                        Width="{Binding Attribute.Height.Width.Value}"
+                        Header="{Binding Attribute.Height.Header.Value}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
-                                <TextBox Width="{Binding Width, ElementName=controlStyleColumn}" Text="{Binding ControlStyle.Value, Mode=TwoWay}" />
+                                <TextBox Width="{Binding Width, ElementName=heightColumn}" Text="{Binding Height.Value, Mode=TwoWay}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn
+                        x:Name="widthColumn"
+                        Width="{Binding Attribute.Width.Width.Value}"
+                        Header="{Binding Attribute.Width.Header.Value}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
+                                <TextBox Width="{Binding Width, ElementName=widthColumn}" Text="{Binding Width.Value, Mode=TwoWay}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn
+                        x:Name="horizontalAlignmentColumn"
+                        Width="{Binding Attribute.HorizontalAlignment.Width.Value}"
+                        Header="{Binding Attribute.HorizontalAlignment.Header.Value}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
+                                <ComboBox
+                                    Width="{Binding Width, ElementName=horizontalAlignmentColumn}"
+                                    ItemsSource="{Binding HolizontalAlignments}"
+                                    SelectedItem="{Binding HorizontalAlignment.Value, Mode=TwoWay}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn
+                        x:Name="verticalAlignmentColumn"
+                        Width="{Binding Attribute.VerticalAlignment.Width.Value}"
+                        Header="{Binding Attribute.VerticalAlignment.Header.Value}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
+                                <ComboBox
+                                    Width="{Binding Width, ElementName=verticalAlignmentColumn}"
+                                    ItemsSource="{Binding VerticalAlignments}"
+                                    SelectedItem="{Binding VerticalAlignment.Value, Mode=TwoWay}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

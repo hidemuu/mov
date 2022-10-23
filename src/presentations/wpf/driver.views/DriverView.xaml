@@ -3,7 +3,6 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:designers="clr-namespace:Mov.Designer.Views;assembly=Mov.Designer.Views"
     xmlns:local="clr-namespace:Mov.Driver.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
@@ -14,6 +13,6 @@
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
     <Grid>
-        <designers:DesignerPartsShell Repository="{Binding DesignerRepository}" />
+
     </Grid>
 </UserControl>

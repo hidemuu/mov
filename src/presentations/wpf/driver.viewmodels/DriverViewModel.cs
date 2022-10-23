@@ -1,5 +1,4 @@
 ﻿using Mov.Accessors.Repository;
-using Mov.Designer.Models;
 using Mov.Driver.Models;
 using Mov.WpfMvvms;
 using Prism.Regions;
@@ -18,23 +17,19 @@ namespace Mov.Driver.ViewModels
 
         private readonly IDomainRepositoryCollection<IDriverRepository> driverDatabase;
 
-        private readonly IDomainRepositoryCollection<IDesignerRepository> designerDatabase;
-
         #endregion フィールド
 
         #region プロパティ
 
-        public IDesignerRepository DesignerRepository { get; }
+        
 
         #endregion プロパティ
 
         #region コンストラクター
 
-        public DriverViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDriverRepository> driverDatabase, IDomainRepositoryCollection<IDesignerRepository> designerDatabase) : base(regionManager, dialogService)
+        public DriverViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDriverRepository> driverDatabase) : base(regionManager, dialogService)
         {
             this.driverDatabase = driverDatabase;
-            this.designerDatabase = designerDatabase;
-            DesignerRepository = designerDatabase.GetRepository("driver");
         }
 
         #endregion コンストラクター

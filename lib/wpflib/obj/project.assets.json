@@ -1177,8 +1177,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Mov.Designer.ViewModels": "1.0.0",
-          "Mov.Driver.Service": "1.0.0"
+          "Mov.Driver.Service": "1.0.0",
+          "Mov.WpfViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Driver.ViewModels.dll": {}
@@ -1194,8 +1194,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Mov.Designer.Views": "1.0.0",
-          "Mov.Driver.ViewModels": "1.0.0"
+          "Mov.Driver.ViewModels": "1.0.0",
+          "Mov.WpfViews": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Driver.Views.dll": {}

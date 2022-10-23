@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace Mov.WpfLayouts.Components.Atoms
 {
-    public class LayButton : Button
+    public class LayButton : Button, ILayControl
     {
         static LayButton()
         {
@@ -27,10 +27,5 @@ namespace Mov.WpfLayouts.Components.Atoms
         public static readonly DependencyProperty LayoutContentProperty =
             DependencyProperty.Register(nameof(LayoutContent), typeof(ILayoutContent), typeof(LayButton), new PropertyMetadata(default));
 
-        
-        public LayButton()
-        {
-            
-        }
     }
 }

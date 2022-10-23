@@ -23,7 +23,7 @@ namespace Mov.WpfControls.Components
         }
 
         public static readonly DependencyProperty ColumnsProperty =
-           DependencyProperty.Register("Columns", typeof(GridViewColumnCollection),
+           DependencyProperty.Register(nameof(Columns), typeof(GridViewColumnCollection),
            typeof(ComTreeListView),
            new UIPropertyMetadata(null));
 

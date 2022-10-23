@@ -759,6 +759,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Mov.BaseModel": "1.0.0",
+          "Mov.Layouts": "1.0.0",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
@@ -766,6 +767,16 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Designer.Models.dll": {}
+        }
+      },
+      "Mov.Layouts/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Layouts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Layouts.dll": {}
         }
       },
       "Mov.Utilities/1.0.0": {
@@ -3196,6 +3207,11 @@
       "type": "project",
       "path": "../../domains/designer.models/Designer.Models.csproj",
       "msbuildProject": "../../domains/designer.models/Designer.Models.csproj"
+    },
+    "Mov.Layouts/1.0.0": {
+      "type": "project",
+      "path": "../../infrastructures/layouts/Layouts.csproj",
+      "msbuildProject": "../../infrastructures/layouts/Layouts.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",

@@ -39,3 +39,5 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\obj\Debug\
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\obj\Debug\netstandard2.0\Designer.Service.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\obj\Debug\netstandard2.0\Mov.Designer.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\obj\Debug\netstandard2.0\Mov.Designer.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Layouts.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Layouts.pdb

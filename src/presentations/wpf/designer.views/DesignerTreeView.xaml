@@ -22,7 +22,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <!--<ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />-->
-                <ResourceDictionary Source="/Mov.WpfControls;component/Styles/McTreeListViewStyle.xaml" />
+                <ResourceDictionary Source="/Mov.WpfControls;component/Styles/LayTreeListViewStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <converter:BoolToVisibillityConverter x:Key="boolToVisibilityConverter" />
         </ResourceDictionary>
@@ -36,7 +36,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <components:McTreeListView
+        <components:LayTreeListView
             x:Name="treeviewMain"
             dd:DragDrop.DropHandler="{Binding DropTargetHandler}"
             dd:DragDrop.IsDragSource="{Binding IsDragSource.Value}"
@@ -57,29 +57,29 @@
                 </DataTemplate>
             </dd:DragDrop.DragAdornerTemplate>
             <!--  コンテキストメニュー  -->
-            <components:McTreeListView.ContextMenu>
+            <components:LayTreeListView.ContextMenu>
                 <ContextMenu>
                     <MenuItem
                         Command="{Binding AddCommand}"
-                        CommandParameter="{Binding BindableSelectedItem, RelativeSource={RelativeSource AncestorType=components:McTreeListView}}"
+                        CommandParameter="{Binding BindableSelectedItem, RelativeSource={RelativeSource AncestorType=components:LayTreeListView}}"
                         Header="追加" />
                     <MenuItem
                         Command="{Binding DeleteCommand}"
-                        CommandParameter="{Binding BindableSelectedItem, RelativeSource={RelativeSource AncestorType=components:McTreeListView}}"
+                        CommandParameter="{Binding BindableSelectedItem, RelativeSource={RelativeSource AncestorType=components:LayTreeListView}}"
                         Header="削除" />
                 </ContextMenu>
-            </components:McTreeListView.ContextMenu>
+            </components:LayTreeListView.ContextMenu>
             <!--  アイテムテンプレート  -->
-            <components:McTreeListView.ItemTemplate>
+            <components:LayTreeListView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Children}" />
-            </components:McTreeListView.ItemTemplate>
+            </components:LayTreeListView.ItemTemplate>
             <!--  列  -->
-            <components:McTreeListView.Columns>
+            <components:LayTreeListView.Columns>
                 <GridViewColumn Width="{Binding Attribute.Code.Width.Value}" Header="{Binding Attribute.Code.Header.Value}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
                             <StackPanel Orientation="Horizontal">
-                                <atom:McExpander />
+                                <atom:LayExpander />
                                 <ComboBox ItemsSource="{Binding Codes}" SelectedItem="{Binding Code.Value}" />
                             </StackPanel>
                         </DataTemplate>
@@ -155,8 +155,8 @@
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
-            </components:McTreeListView.Columns>
-        </components:McTreeListView>
+            </components:LayTreeListView.Columns>
+        </components:LayTreeListView>
         <Button
             Width="64"
             Height="32"

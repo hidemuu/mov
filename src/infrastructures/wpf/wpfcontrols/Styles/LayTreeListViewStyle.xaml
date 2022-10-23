@@ -6,21 +6,21 @@
     xmlns:dd="urn:gong-wpf-dragdrop"
     xmlns:local="clr-namespace:Mov.WpfControls.Components">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../Templates/McTreeListViewTemplate.xaml" />
+        <ResourceDictionary Source="../Templates/LayTreeListViewTemplate.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <converter:TreeListViewConverter x:Key="TreeListViewConverter" />
 
     <!--  ツリー本体のスタイル  -->
-    <Style TargetType="{x:Type local:McTreeListView}">
+    <Style TargetType="{x:Type local:LayTreeListView}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type local:McTreeListView}">
+                <ControlTemplate TargetType="{x:Type local:LayTreeListView}">
                     <ControlTemplate.Resources>
                         <Style TargetType="TreeViewItem">
                             <Setter Property="Template" Value="{StaticResource TreeListViewItem}" />
                             <Setter Property="IsExpanded" Value="False" />
                         </Style>
-                        <Style TargetType="atom:McExpander">
+                        <Style TargetType="atom:LayExpander">
                             <Setter Property="Template" Value="{StaticResource TreeListViewExpander}" />
                         </Style>
                     </ControlTemplate.Resources>

@@ -1,5 +1,6 @@
 ﻿using Mov.Accessors;
 using Mov.BaseModel;
+using Mov.Layouts;
 using Mov.Utilities.Attributes;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace Mov.Designer.Models
     /// コンテンツ
     /// </summary>
     [XmlRoot("content")]
-    public class LayoutContent : DbObject
+    public class LayoutContent : DbObject, ILayoutContent
     {
         #region プロパティ
 

@@ -7,7 +7,7 @@ namespace Mov.WpfControls.Components
     /// ツリー型のリストビューコントロール
     /// </summary>
     /// <remarks>https://sabeeshwpf.blogspot.com/2012/12/treelistview-in-wpf.html</remarks>
-    public class McTreeListView : TreeView
+    public class LayTreeListView : TreeView
     {
 
         #region プロパティ
@@ -24,12 +24,12 @@ namespace Mov.WpfControls.Components
 
         public static readonly DependencyProperty ColumnsProperty =
            DependencyProperty.Register("Columns", typeof(GridViewColumnCollection),
-           typeof(McTreeListView),
+           typeof(LayTreeListView),
            new UIPropertyMetadata(null));
 
         public static readonly DependencyProperty BindableSelectedItemProperty =
             DependencyProperty.Register(nameof(BindableSelectedItem),
-                typeof(object), typeof(McTreeListView), new UIPropertyMetadata(null));
+                typeof(object), typeof(LayTreeListView), new UIPropertyMetadata(null));
 
         /// <summary>
         /// Bind 可能な SelectedItem を表し、SelectedItem を設定または取得します。
@@ -52,23 +52,23 @@ namespace Mov.WpfControls.Components
 
         public static readonly DependencyProperty AllowsColumnReorderProperty =
             DependencyProperty.Register("AllowsColumnReorder", typeof(bool),
-                typeof(McTreeListView),
+                typeof(LayTreeListView),
                 new UIPropertyMetadata(null));
 
         #endregion プロパティ
 
         #region コンストラクター
 
-        static McTreeListView()
+        static LayTreeListView()
         {
             //Override the default style and the default control template
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(McTreeListView), new FrameworkPropertyMetadata(typeof(McTreeListView)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(LayTreeListView), new FrameworkPropertyMetadata(typeof(LayTreeListView)));
         }
 
         /// <summary>
         /// Initialize a new instance of TreeListView.
         /// </summary>
-        public McTreeListView()
+        public LayTreeListView()
         {
             Columns = new GridViewColumnCollection();
             this.SelectedItemChanged += this.OnSelectedItemChanged;

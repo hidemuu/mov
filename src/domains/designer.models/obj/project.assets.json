@@ -754,6 +754,16 @@
           "bin/placeholder/Mov.Controllers.dll": {}
         }
       },
+      "Mov.Layouts/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Layouts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Layouts.dll": {}
+        }
+      },
       "Mov.Utilities/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -3178,6 +3188,11 @@
       "path": "../../infrastructures/controllers/Controllers.csproj",
       "msbuildProject": "../../infrastructures/controllers/Controllers.csproj"
     },
+    "Mov.Layouts/1.0.0": {
+      "type": "project",
+      "path": "../../infrastructures/layouts/Layouts.csproj",
+      "msbuildProject": "../../infrastructures/layouts/Layouts.csproj"
+    },
     "Mov.Utilities/1.0.0": {
       "type": "project",
       "path": "../../infrastructures/utilities/Utilities.csproj",
@@ -3187,6 +3202,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "Mov.BaseModel >= 1.0.0",
+      "Mov.Layouts >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
       "System.ComponentModel.Annotations >= 5.0.0"
     ]
@@ -3230,6 +3246,9 @@
           "projectReferences": {
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\basemodel\\BaseModel.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\basemodel\\BaseModel.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\layouts\\Layouts.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\layouts\\Layouts.csproj"
             }
           }
         }

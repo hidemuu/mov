@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\infrastructures\layouts\Layouts.csproj" />
     <ProjectReference Include="..\basemodel\BaseModel.csproj" />
   </ItemGroup>
 

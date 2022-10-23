@@ -48,69 +48,69 @@
             </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView>
-                    <molecule:McGridViewColumn Attribute="{Binding Attributes[0], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <molecule:McGridViewColumn.CellTemplate>
+                    <molecule:LayGridViewColumn Attribute="{Binding Attributes[0], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:LayGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <molecule:McGridViewColumnItem Item="{Binding [0]}" />
+                                <molecule:LayGridViewColumnItem Item="{Binding [0]}" />
                             </DataTemplate>
-                        </molecule:McGridViewColumn.CellTemplate>
-                    </molecule:McGridViewColumn>
-                    <molecule:McGridViewColumn Attribute="{Binding Attributes[1], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <molecule:McGridViewColumn.CellTemplate>
+                        </molecule:LayGridViewColumn.CellTemplate>
+                    </molecule:LayGridViewColumn>
+                    <molecule:LayGridViewColumn Attribute="{Binding Attributes[1], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:LayGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <molecule:McGridViewColumnItem Item="{Binding [1]}" />
+                                <molecule:LayGridViewColumnItem Item="{Binding [1]}" />
                             </DataTemplate>
-                        </molecule:McGridViewColumn.CellTemplate>
-                    </molecule:McGridViewColumn>
-                    <molecule:McGridViewColumn Attribute="{Binding Attributes[2], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <molecule:McGridViewColumn.CellTemplate>
+                        </molecule:LayGridViewColumn.CellTemplate>
+                    </molecule:LayGridViewColumn>
+                    <molecule:LayGridViewColumn Attribute="{Binding Attributes[2], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:LayGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <molecule:McGridViewColumnItem Item="{Binding [2]}" />
+                                <molecule:LayGridViewColumnItem Item="{Binding [2]}" />
                             </DataTemplate>
-                        </molecule:McGridViewColumn.CellTemplate>
-                    </molecule:McGridViewColumn>
-                    <molecule:McGridViewColumn Attribute="{Binding Attributes[3], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <molecule:McGridViewColumn.CellTemplate>
+                        </molecule:LayGridViewColumn.CellTemplate>
+                    </molecule:LayGridViewColumn>
+                    <molecule:LayGridViewColumn Attribute="{Binding Attributes[3], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:LayGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <molecule:McGridViewColumnItem Item="{Binding [3]}" />
+                                <molecule:LayGridViewColumnItem Item="{Binding [3]}" />
                             </DataTemplate>
-                        </molecule:McGridViewColumn.CellTemplate>
-                    </molecule:McGridViewColumn>
-                    <molecule:McGridViewColumn Attribute="{Binding Attributes[4], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <molecule:McGridViewColumn.CellTemplate>
+                        </molecule:LayGridViewColumn.CellTemplate>
+                    </molecule:LayGridViewColumn>
+                    <molecule:LayGridViewColumn Attribute="{Binding Attributes[4], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:LayGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <molecule:McGridViewColumnItem Item="{Binding [4]}" />
+                                <molecule:LayGridViewColumnItem Item="{Binding [4]}" />
                             </DataTemplate>
-                        </molecule:McGridViewColumn.CellTemplate>
-                    </molecule:McGridViewColumn>
-                    <molecule:McGridViewColumn Attribute="{Binding Attributes[5], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <molecule:McGridViewColumn.CellTemplate>
+                        </molecule:LayGridViewColumn.CellTemplate>
+                    </molecule:LayGridViewColumn>
+                    <molecule:LayGridViewColumn Attribute="{Binding Attributes[5], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:LayGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <molecule:McGridViewColumnItem Item="{Binding [5]}" />
+                                <molecule:LayGridViewColumnItem Item="{Binding [5]}" />
                             </DataTemplate>
-                        </molecule:McGridViewColumn.CellTemplate>
-                    </molecule:McGridViewColumn>
-                    <molecule:McGridViewColumn Attribute="{Binding Attributes[6], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <molecule:McGridViewColumn.CellTemplate>
+                        </molecule:LayGridViewColumn.CellTemplate>
+                    </molecule:LayGridViewColumn>
+                    <molecule:LayGridViewColumn Attribute="{Binding Attributes[6], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:LayGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <molecule:McGridViewColumnItem Item="{Binding [6]}" />
+                                <molecule:LayGridViewColumnItem Item="{Binding [6]}" />
                             </DataTemplate>
-                        </molecule:McGridViewColumn.CellTemplate>
-                    </molecule:McGridViewColumn>
-                    <molecule:McGridViewColumn Attribute="{Binding Attributes[7], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <molecule:McGridViewColumn.CellTemplate>
+                        </molecule:LayGridViewColumn.CellTemplate>
+                    </molecule:LayGridViewColumn>
+                    <molecule:LayGridViewColumn Attribute="{Binding Attributes[7], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:LayGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <molecule:McGridViewColumnItem Item="{Binding [7]}" />
+                                <molecule:LayGridViewColumnItem Item="{Binding [7]}" />
                             </DataTemplate>
-                        </molecule:McGridViewColumn.CellTemplate>
-                    </molecule:McGridViewColumn>
-                    <molecule:McGridViewColumn Attribute="{Binding Attributes[8], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <molecule:McGridViewColumn.CellTemplate>
+                        </molecule:LayGridViewColumn.CellTemplate>
+                    </molecule:LayGridViewColumn>
+                    <molecule:LayGridViewColumn Attribute="{Binding Attributes[8], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:LayGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <molecule:McGridViewColumnItem Item="{Binding [8]}" />
+                                <molecule:LayGridViewColumnItem Item="{Binding [8]}" />
                             </DataTemplate>
-                        </molecule:McGridViewColumn.CellTemplate>
-                    </molecule:McGridViewColumn>
+                        </molecule:LayGridViewColumn.CellTemplate>
+                    </molecule:LayGridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

@@ -986,6 +986,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Mov.BaseModel": "1.0.0",
+          "Mov.Layouts": "1.0.0",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
@@ -1319,6 +1320,16 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
+      },
+      "Mov.Layouts/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Layouts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Layouts.dll": {}
+        }
       },
       "Mov.Painters/1.0.0": {
         "type": "project",
@@ -3154,6 +3165,11 @@
       "type": "project",
       "path": "../../src/presentations/wpf/game.views/Game.Views.csproj",
       "msbuildProject": "../../src/presentations/wpf/game.views/Game.Views.csproj"
+    },
+    "Mov.Layouts/1.0.0": {
+      "type": "project",
+      "path": "../../src/infrastructures/layouts/Layouts.csproj",
+      "msbuildProject": "../../src/infrastructures/layouts/Layouts.csproj"
     },
     "Mov.Painters/1.0.0": {
       "type": "project",

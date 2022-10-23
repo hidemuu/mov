@@ -7,6 +7,7 @@
     xmlns:dd="urn:gong-wpf-dragdrop"
     xmlns:local="clr-namespace:Mov.WpfControls.Components"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:molecule="clr-namespace:Mov.WpfControls.Components.Molecules"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
@@ -47,69 +48,69 @@
             </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView>
-                    <local:GridListColumn Attribute="{Binding Attributes[0], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <local:GridListColumn.CellTemplate>
+                    <molecule:McGridViewColumn Attribute="{Binding Attributes[0], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:McGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <local:GridListColumnItem Item="{Binding [0]}" />
+                                <molecule:McGridViewColumnItem Item="{Binding [0]}" />
                             </DataTemplate>
-                        </local:GridListColumn.CellTemplate>
-                    </local:GridListColumn>
-                    <local:GridListColumn Attribute="{Binding Attributes[1], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <local:GridListColumn.CellTemplate>
+                        </molecule:McGridViewColumn.CellTemplate>
+                    </molecule:McGridViewColumn>
+                    <molecule:McGridViewColumn Attribute="{Binding Attributes[1], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:McGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <local:GridListColumnItem Item="{Binding [1]}" />
+                                <molecule:McGridViewColumnItem Item="{Binding [1]}" />
                             </DataTemplate>
-                        </local:GridListColumn.CellTemplate>
-                    </local:GridListColumn>
-                    <local:GridListColumn Attribute="{Binding Attributes[2], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <local:GridListColumn.CellTemplate>
+                        </molecule:McGridViewColumn.CellTemplate>
+                    </molecule:McGridViewColumn>
+                    <molecule:McGridViewColumn Attribute="{Binding Attributes[2], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:McGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <local:GridListColumnItem Item="{Binding [2]}" />
+                                <molecule:McGridViewColumnItem Item="{Binding [2]}" />
                             </DataTemplate>
-                        </local:GridListColumn.CellTemplate>
-                    </local:GridListColumn>
-                    <local:GridListColumn Attribute="{Binding Attributes[3], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <local:GridListColumn.CellTemplate>
+                        </molecule:McGridViewColumn.CellTemplate>
+                    </molecule:McGridViewColumn>
+                    <molecule:McGridViewColumn Attribute="{Binding Attributes[3], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:McGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <local:GridListColumnItem Item="{Binding [3]}" />
+                                <molecule:McGridViewColumnItem Item="{Binding [3]}" />
                             </DataTemplate>
-                        </local:GridListColumn.CellTemplate>
-                    </local:GridListColumn>
-                    <local:GridListColumn Attribute="{Binding Attributes[4], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <local:GridListColumn.CellTemplate>
+                        </molecule:McGridViewColumn.CellTemplate>
+                    </molecule:McGridViewColumn>
+                    <molecule:McGridViewColumn Attribute="{Binding Attributes[4], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:McGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <local:GridListColumnItem Item="{Binding [4]}" />
+                                <molecule:McGridViewColumnItem Item="{Binding [4]}" />
                             </DataTemplate>
-                        </local:GridListColumn.CellTemplate>
-                    </local:GridListColumn>
-                    <local:GridListColumn Attribute="{Binding Attributes[5], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <local:GridListColumn.CellTemplate>
+                        </molecule:McGridViewColumn.CellTemplate>
+                    </molecule:McGridViewColumn>
+                    <molecule:McGridViewColumn Attribute="{Binding Attributes[5], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:McGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <local:GridListColumnItem Item="{Binding [5]}" />
+                                <molecule:McGridViewColumnItem Item="{Binding [5]}" />
                             </DataTemplate>
-                        </local:GridListColumn.CellTemplate>
-                    </local:GridListColumn>
-                    <local:GridListColumn Attribute="{Binding Attributes[6], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <local:GridListColumn.CellTemplate>
+                        </molecule:McGridViewColumn.CellTemplate>
+                    </molecule:McGridViewColumn>
+                    <molecule:McGridViewColumn Attribute="{Binding Attributes[6], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:McGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <local:GridListColumnItem Item="{Binding [6]}" />
+                                <molecule:McGridViewColumnItem Item="{Binding [6]}" />
                             </DataTemplate>
-                        </local:GridListColumn.CellTemplate>
-                    </local:GridListColumn>
-                    <local:GridListColumn Attribute="{Binding Attributes[7], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <local:GridListColumn.CellTemplate>
+                        </molecule:McGridViewColumn.CellTemplate>
+                    </molecule:McGridViewColumn>
+                    <molecule:McGridViewColumn Attribute="{Binding Attributes[7], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:McGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <local:GridListColumnItem Item="{Binding [7]}" />
+                                <molecule:McGridViewColumnItem Item="{Binding [7]}" />
                             </DataTemplate>
-                        </local:GridListColumn.CellTemplate>
-                    </local:GridListColumn>
-                    <local:GridListColumn Attribute="{Binding Attributes[8], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <local:GridListColumn.CellTemplate>
+                        </molecule:McGridViewColumn.CellTemplate>
+                    </molecule:McGridViewColumn>
+                    <molecule:McGridViewColumn Attribute="{Binding Attributes[8], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:McGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <local:GridListColumnItem Item="{Binding [8]}" />
+                                <molecule:McGridViewColumnItem Item="{Binding [8]}" />
                             </DataTemplate>
-                        </local:GridListColumn.CellTemplate>
-                    </local:GridListColumn>
+                        </molecule:McGridViewColumn.CellTemplate>
+                    </molecule:McGridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

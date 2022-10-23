@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Mov.WpfControls.Components
+namespace Mov.WpfControls.Components.Molecules
 {
-    public class GridListColumn : GridViewColumn
+    public class McGridViewColumn : GridViewColumn
     {
 
         #region プロパティ
 
         public static readonly DependencyProperty AttributeProperty =
             DependencyProperty.Register(nameof(Attribute), typeof(ColumnAttribute),
-            typeof(GridListColumn),
+            typeof(McGridViewColumn),
             new UIPropertyMetadata(null, new PropertyChangedCallback(OnAttributeChanged)));
 
         public ColumnAttribute Attribute
@@ -32,7 +32,7 @@ namespace Mov.WpfControls.Components
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public GridListColumn()
+        public McGridViewColumn()
         {
 
         }
@@ -48,7 +48,7 @@ namespace Mov.WpfControls.Components
         /// <param name="e"></param>
         private static void OnAttributeChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
         {
-            var control = obj as GridListColumn;
+            var control = obj as McGridViewColumn;
             if (control != null)
             {
                 if(control.Attribute != null)

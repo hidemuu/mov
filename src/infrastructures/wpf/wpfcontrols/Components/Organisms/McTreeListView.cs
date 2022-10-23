@@ -7,7 +7,7 @@ namespace Mov.WpfControls.Components
     /// ツリー型のリストビューコントロール
     /// </summary>
     /// <remarks>https://sabeeshwpf.blogspot.com/2012/12/treelistview-in-wpf.html</remarks>
-    public class TreeListView : TreeView
+    public class McTreeListView : TreeView
     {
 
         #region プロパティ
@@ -24,12 +24,12 @@ namespace Mov.WpfControls.Components
 
         public static readonly DependencyProperty ColumnsProperty =
            DependencyProperty.Register("Columns", typeof(GridViewColumnCollection),
-           typeof(TreeListView),
+           typeof(McTreeListView),
            new UIPropertyMetadata(null));
 
         public static readonly DependencyProperty BindableSelectedItemProperty =
             DependencyProperty.Register(nameof(BindableSelectedItem),
-                typeof(object), typeof(TreeListView), new UIPropertyMetadata(null));
+                typeof(object), typeof(McTreeListView), new UIPropertyMetadata(null));
 
         /// <summary>
         /// Bind 可能な SelectedItem を表し、SelectedItem を設定または取得します。
@@ -52,23 +52,23 @@ namespace Mov.WpfControls.Components
 
         public static readonly DependencyProperty AllowsColumnReorderProperty =
             DependencyProperty.Register("AllowsColumnReorder", typeof(bool),
-                typeof(TreeListView),
+                typeof(McTreeListView),
                 new UIPropertyMetadata(null));
 
         #endregion プロパティ
 
         #region コンストラクター
 
-        static TreeListView()
+        static McTreeListView()
         {
             //Override the default style and the default control template
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(TreeListView), new FrameworkPropertyMetadata(typeof(TreeListView)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(McTreeListView), new FrameworkPropertyMetadata(typeof(McTreeListView)));
         }
 
         /// <summary>
         /// Initialize a new instance of TreeListView.
         /// </summary>
-        public TreeListView()
+        public McTreeListView()
         {
             Columns = new GridViewColumnCollection();
             this.SelectedItemChanged += this.OnSelectedItemChanged;

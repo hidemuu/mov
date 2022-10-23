@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.WpfMacros</AssemblyName>
+    <RootNamespace>Mov.WpfMacros</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\macros\Macros.csproj" />
+    <ProjectReference Include="..\wpfcontrols\WpfControls.csproj" />
+  </ItemGroup>
+
+</Project>

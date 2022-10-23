@@ -193,7 +193,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UseCase.ViewModels", "src\p
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfModels", "src\infrastructures\wpf\wpfmodels\WpfModels.csproj", "{EB2C4672-1DA7-4026-B079-BC162AFF4A50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Macros", "src\infrastructures\macros\Macros.csproj", "{BF354BC2-8232-4C49-8C8D-59118C55AB43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Macros", "src\infrastructures\macros\Macros.csproj", "{BF354BC2-8232-4C49-8C8D-59118C55AB43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfMacros", "src\infrastructures\wpf\wpfmacros\WpfMacros.csproj", "{DFA0B4A2-82C2-490C-B8F7-710894BFD9B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -533,6 +535,10 @@ Global
 		{BF354BC2-8232-4C49-8C8D-59118C55AB43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF354BC2-8232-4C49-8C8D-59118C55AB43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF354BC2-8232-4C49-8C8D-59118C55AB43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFA0B4A2-82C2-490C-B8F7-710894BFD9B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFA0B4A2-82C2-490C-B8F7-710894BFD9B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFA0B4A2-82C2-490C-B8F7-710894BFD9B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFA0B4A2-82C2-490C-B8F7-710894BFD9B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -631,6 +637,7 @@ Global
 		{807AD8B0-FDFA-44F2-95F1-2D7B708BBF25} = {C849D8F6-439F-467D-A7A8-8996F6ECF9E4}
 		{EB2C4672-1DA7-4026-B079-BC162AFF4A50} = {FCE6A383-D625-466D-99BD-868912D6BD07}
 		{BF354BC2-8232-4C49-8C8D-59118C55AB43} = {12313AF5-0452-4C20-8955-3E8ECDE42301}
+		{DFA0B4A2-82C2-490C-B8F7-710894BFD9B4} = {FCE6A383-D625-466D-99BD-868912D6BD07}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD9C3231-BF2C-413C-B738-70985D9981AE}

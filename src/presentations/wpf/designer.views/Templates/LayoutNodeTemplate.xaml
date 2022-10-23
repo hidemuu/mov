@@ -7,9 +7,9 @@
     xmlns:nodes="clr-namespace:Mov.Designer.Service.Nodes;assembly=Mov.Designer.Service"
     xmlns:selector="clr-namespace:Mov.Designer.Views.Selector">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="LayoutContentTemplate.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <converter:OrientationConverter x:Key="orientationConverter" />
+    <selector:LayoutContentSelector x:Key="layoutContentSelector" />
 
     <DataTemplate x:Key="ContentTemplate" DataType="{x:Type nodes:ContentLayoutNode}">
         <ContentControl

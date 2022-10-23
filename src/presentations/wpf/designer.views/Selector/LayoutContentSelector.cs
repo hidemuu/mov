@@ -10,28 +10,7 @@ namespace Mov.Designer.Views.Selector
 {
     public class LayoutContentSelector : DataTemplateSelector
     {
-        #region プロパティ
-
-        public DataTemplate LabelTemplate { get; set; }
-
-        public DataTemplate ButtonTemplate { get; set; }
-
-        public DataTemplate RadioButtonTemplate { get; set; }
-
-        public DataTemplate TextBoxTemplate { get; set; }
-
-        public DataTemplate ComboBoxTemplate { get; set; }
-
-        public DataTemplate SpinBoxTemplate { get; set; }
-
-        public DataTemplate CheckBoxTemplate { get; set; }
-
-        public DataTemplate ListBoxTemplate { get; set; }
-
-        public DataTemplate DatePickerTemplate { get; set; }
-
-        #endregion プロパティ
-
+        
         #region メソッド
 
         public override DataTemplate SelectTemplate(object item, DependencyObject container)

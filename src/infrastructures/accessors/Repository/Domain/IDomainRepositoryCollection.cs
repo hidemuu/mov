@@ -17,6 +17,12 @@ namespace Mov.Accessors.Repository
         TRepository DefaultRepository { get; }
 
         /// <summary>
+        /// リポジトリ名のリストを取得
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<string> GetRepositoryNames();
+
+        /// <summary>
         /// 指定のリポジトリを取得
         /// </summary>
         /// <param name="dirName"></param>

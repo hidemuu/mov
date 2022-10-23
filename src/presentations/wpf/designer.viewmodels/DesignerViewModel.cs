@@ -51,10 +51,8 @@ namespace Mov.Designer.ViewModels
         public ReactivePropertySlim<string> PageName { get; set; } = new ReactivePropertySlim<string>(PAGE_NAME_PARTS);
 
 
-        public ReactiveCollection<string> ComboItems { get; } = new ReactiveCollection<string>()
-        {
-            "", "driver",
-        };
+        public ReactiveCollection<string> ComboItems { get; } = new ReactiveCollection<string>();
+        
         public ReactivePropertySlim<string> SelectedComboItem { get; } = new ReactivePropertySlim<string>("");
 
 
@@ -78,6 +76,7 @@ namespace Mov.Designer.ViewModels
         public DesignerViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDesignerRepository> database) : base(regionManager, dialogService)
         {
             this.database = database;
+            this.ComboItems.AddRangeOnScheduler(database.GetRepositoryNames());
             this.repository = database.GetRepository(SelectedComboItem.Value);
             ShowPageCommand.Subscribe(OnPageChangeCommand).AddTo(Disposables);
             SaveCommand.Subscribe(OnSaveCommand).AddTo(Disposables);

@@ -31,6 +31,11 @@ namespace Mov.Accessors.Repository.Implement
 
         #region メソッド
 
+        public IEnumerable<string> GetRepositoryNames()
+        {
+            return Repositories.Keys;
+        }
+
         public TRepository GetRepository(string dirName)
         {
             if (string.IsNullOrEmpty(dirName)) return Repositories[""];

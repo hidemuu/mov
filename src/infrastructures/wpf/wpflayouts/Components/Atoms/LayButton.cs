@@ -25,7 +25,7 @@ namespace Mov.WpfLayouts.Components.Atoms
         }
 
         public static readonly DependencyProperty LayoutContentProperty =
-            DependencyProperty.Register("LayoutContent", typeof(ILayoutContent), typeof(LayButton), new PropertyMetadata(default));
+            DependencyProperty.Register(nameof(LayoutContent), typeof(ILayoutContent), typeof(LayButton), new PropertyMetadata(default));
 
         
         public LayButton()

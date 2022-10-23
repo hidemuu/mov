@@ -16,6 +16,7 @@
     <ProjectReference Include="..\driver.views\Driver.Views.csproj" />
     <ProjectReference Include="..\game.views\Game.Views.csproj" />
     <ProjectReference Include="..\scheduler.views\Scheduler.Views.csproj" />
+    <ProjectReference Include="..\usecase.viewmodels\UseCase.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

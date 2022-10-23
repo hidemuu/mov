@@ -138,3 +138,11 @@ C:\Users\nando\Documents\GitHub\mov\lib\wpflib\obj\Debug\net5.0-windows\WpfLib.c
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\obj\Debug\net5.0-windows\Mov.WpfLib.dll
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\obj\Debug\net5.0-windows\ref\Mov.WpfLib.dll
 C:\Users\nando\Documents\GitHub\mov\lib\wpflib\obj\Debug\net5.0-windows\Mov.WpfLib.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Analizer.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Analizer.Views.dll
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.UseCase.ViewModels.dll
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.UseCase.Views.dll
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.UseCase.Views.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Analizer.ViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.Analizer.Views.pdb
+C:\Users\nando\Documents\GitHub\mov\lib\wpflib\bin\Debug\net5.0-windows\Mov.UseCase.ViewModels.pdb

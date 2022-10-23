@@ -691,6 +691,40 @@
           "bin/placeholder/Mov.Analizer.Service.dll": {}
         }
       },
+      "Mov.Analizer.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Analizer.Service": "1.0.0",
+          "Mov.WpfViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Analizer.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Analizer.ViewModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.Analizer.Views/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Analizer.ViewModels": "1.0.0",
+          "Mov.WpfViews": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Analizer.Views.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Analizer.Views.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Mov.Authorizer.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1412,6 +1446,53 @@
           "bin/placeholder/Mov.Translator.Service.dll": {}
         }
       },
+      "Mov.UseCase.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Analizer.ViewModels": "1.0.0",
+          "Mov.Bom.ViewModels": "1.0.0",
+          "Mov.Configurator.ViewModels": "1.0.0",
+          "Mov.Designer.ViewModels": "1.0.0",
+          "Mov.Drawer.ViewModels": "1.0.0",
+          "Mov.Driver.ViewModels": "1.0.0",
+          "Mov.Game.ViewModels": "1.0.0",
+          "Mov.Scheduler.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.UseCase.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.UseCase.ViewModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.UseCase.Views/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Analizer.Views": "1.0.0",
+          "Mov.Bom.Views": "1.0.0",
+          "Mov.Configurator.Views": "1.0.0",
+          "Mov.Designer.Views": "1.0.0",
+          "Mov.Drawer.Views": "1.0.0",
+          "Mov.Driver.Views": "1.0.0",
+          "Mov.Game.Views": "1.0.0",
+          "Mov.Scheduler.Views": "1.0.0",
+          "Mov.UseCase.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.UseCase.Views.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.UseCase.Views.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Mov.UseCases/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1491,13 +1572,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Mov.BaseLib": "1.0.0",
-          "Mov.Bom.Views": "1.0.0",
-          "Mov.Configurator.Views": "1.0.0",
-          "Mov.Designer.Views": "1.0.0",
-          "Mov.Drawer.Views": "1.0.0",
-          "Mov.Driver.Views": "1.0.0",
-          "Mov.Game.Views": "1.0.0",
-          "Mov.Scheduler.Views": "1.0.0"
+          "Mov.UseCase.Views": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.WpfLib.dll": {}
@@ -2887,6 +2962,16 @@
       "path": "../../src/applications/analizer.service/Analizer.Service.csproj",
       "msbuildProject": "../../src/applications/analizer.service/Analizer.Service.csproj"
     },
+    "Mov.Analizer.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../src/presentations/wpf/analizer.viewmodels/Analizer.ViewModels.csproj",
+      "msbuildProject": "../../src/presentations/wpf/analizer.viewmodels/Analizer.ViewModels.csproj"
+    },
+    "Mov.Analizer.Views/1.0.0": {
+      "type": "project",
+      "path": "../../src/presentations/wpf/analizer.views/Analizer.Views.csproj",
+      "msbuildProject": "../../src/presentations/wpf/analizer.views/Analizer.Views.csproj"
+    },
     "Mov.Authorizer.Models/1.0.0": {
       "type": "project",
       "path": "../../src/domains/authorizer.models/Authorizer.Models.csproj",
@@ -3131,6 +3216,16 @@
       "type": "project",
       "path": "../../src/applications/translator.service/Translator.Service.csproj",
       "msbuildProject": "../../src/applications/translator.service/Translator.Service.csproj"
+    },
+    "Mov.UseCase.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../src/presentations/wpf/usecase.viewmodels/UseCase.ViewModels.csproj",
+      "msbuildProject": "../../src/presentations/wpf/usecase.viewmodels/UseCase.ViewModels.csproj"
+    },
+    "Mov.UseCase.Views/1.0.0": {
+      "type": "project",
+      "path": "../../src/presentations/wpf/usecase.views/UseCase.Views.csproj",
+      "msbuildProject": "../../src/presentations/wpf/usecase.views/UseCase.Views.csproj"
     },
     "Mov.UseCases/1.0.0": {
       "type": "project",

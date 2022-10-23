@@ -49,6 +49,8 @@ using Mov.Accessors;
 using Mov.UseCases;
 using Mov.Framework;
 using Mov.WpfViews;
+using Mov.UseCase.Views;
+using Mov.UseCase.ViewModels;
 
 namespace Mov.WpfApp
 {
@@ -136,6 +138,7 @@ namespace Mov.WpfApp
             containerRegistry.RegisterInstance<IActionGame>(Container.Resolve<PackmanGame>());
 
             //Viewの登録
+            containerRegistry.RegisterForNavigation<DashboardView>();
             containerRegistry.RegisterForNavigation<ConfiguratorView>();
             containerRegistry.RegisterForNavigation<DesignerView>();
             containerRegistry.RegisterForNavigation<DesignerTreeView>();
@@ -186,6 +189,7 @@ namespace Mov.WpfApp
             });
 
             ViewModelLocationProvider.Register<MainWindow, MainWindowViewModel>();
+            ViewModelLocationProvider.Register<DashboardView, DashboardViewModel>();
             ViewModelLocationProvider.Register<ConfiguratorView, ConfiguratorViewModel>();
             ViewModelLocationProvider.Register<DesignerView, DesignerViewModel>();
             ViewModelLocationProvider.Register<DesignerTreeView, DesignerTreeViewModel>();

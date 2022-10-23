@@ -106,26 +106,8 @@
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\lib\\baselib\\BaseLib.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\lib\\baselib\\BaseLib.csproj"
               },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\bom.views\\Bom.Views.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\bom.views\\Bom.Views.csproj"
-              },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\configurator.views\\Configurator.Views.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\configurator.views\\Configurator.Views.csproj"
-              },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.views\\Designer.Views.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.views\\Designer.Views.csproj"
-              },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.views\\Drawer.Views.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.views\\Drawer.Views.csproj"
-              },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\driver.views\\Driver.Views.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\driver.views\\Driver.Views.csproj"
-              },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.views\\Game.Views.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.views\\Game.Views.csproj"
-              },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.views\\Scheduler.Views.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.views\\Scheduler.Views.csproj"
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\usecase.views\\UseCase.Views.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\usecase.views\\UseCase.Views.csproj"
               }
             }
           }
@@ -3477,6 +3459,148 @@
         }
       }
     },
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\analizer.viewmodels\\Analizer.ViewModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\analizer.viewmodels\\Analizer.ViewModels.csproj",
+        "projectName": "Mov.Analizer.ViewModels",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\analizer.viewmodels\\Analizer.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\analizer.viewmodels\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\nando\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\analizer.service\\Analizer.Service.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\analizer.service\\Analizer.Service.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviewmodels\\WpfViewModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviewmodels\\WpfViewModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\analizer.views\\Analizer.Views.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\analizer.views\\Analizer.Views.csproj",
+        "projectName": "Mov.Analizer.Views",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\analizer.views\\Analizer.Views.csproj",
+        "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\analizer.views\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\nando\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviews\\WpfViews.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviews\\WpfViews.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\Analizer.ViewModels\\Analizer.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\Analizer.ViewModels\\Analizer.ViewModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\bom.viewmodels\\Bom.ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -4442,6 +4566,187 @@
               },
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.viewmodels\\Scheduler.ViewModels.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.viewmodels\\Scheduler.ViewModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\usecase.viewmodels\\UseCase.ViewModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\usecase.viewmodels\\UseCase.ViewModels.csproj",
+        "projectName": "Mov.UseCase.ViewModels",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\usecase.viewmodels\\UseCase.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\usecase.viewmodels\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\nando\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\analizer.viewmodels\\Analizer.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\analizer.viewmodels\\Analizer.ViewModels.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\bom.viewmodels\\Bom.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\bom.viewmodels\\Bom.ViewModels.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\configurator.viewmodels\\Configurator.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\configurator.viewmodels\\Configurator.ViewModels.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.viewmodels\\Designer.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.viewmodels\\Designer.ViewModels.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.viewmodels\\Drawer.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.viewmodels\\Drawer.ViewModels.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\driver.viewmodels\\Driver.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\driver.viewmodels\\Driver.ViewModels.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.viewmodels\\Game.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.viewmodels\\Game.ViewModels.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.viewmodels\\Scheduler.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.viewmodels\\Scheduler.ViewModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\usecase.views\\UseCase.Views.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\usecase.views\\UseCase.Views.csproj",
+        "projectName": "Mov.UseCase.Views",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\usecase.views\\UseCase.Views.csproj",
+        "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\usecase.views\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\nando\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\analizer.views\\Analizer.Views.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\analizer.views\\Analizer.Views.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\bom.views\\Bom.Views.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\bom.views\\Bom.Views.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\configurator.views\\Configurator.Views.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\configurator.views\\Configurator.Views.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.views\\Designer.Views.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\designer.views\\Designer.Views.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.views\\Drawer.Views.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\drawer.views\\Drawer.Views.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\driver.views\\Driver.Views.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\driver.views\\Driver.Views.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.views\\Game.Views.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\game.views\\Game.Views.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.views\\Scheduler.Views.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.views\\Scheduler.Views.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\usecase.viewmodels\\UseCase.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\usecase.viewmodels\\UseCase.ViewModels.csproj"
               }
             }
           }

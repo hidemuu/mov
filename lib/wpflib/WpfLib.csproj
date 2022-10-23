@@ -8,13 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\presentations\wpf\bom.views\Bom.Views.csproj" />
-    <ProjectReference Include="..\..\src\presentations\wpf\configurator.views\Configurator.Views.csproj" />
-    <ProjectReference Include="..\..\src\presentations\wpf\designer.views\Designer.Views.csproj" />
-    <ProjectReference Include="..\..\src\presentations\wpf\drawer.views\Drawer.Views.csproj" />
-    <ProjectReference Include="..\..\src\presentations\wpf\driver.views\Driver.Views.csproj" />
-    <ProjectReference Include="..\..\src\presentations\wpf\game.views\Game.Views.csproj" />
-    <ProjectReference Include="..\..\src\presentations\wpf\scheduler.views\Scheduler.Views.csproj" />
+    <ProjectReference Include="..\..\src\presentations\wpf\usecase.views\UseCase.Views.csproj" />
     <ProjectReference Include="..\baselib\BaseLib.csproj" />
   </ItemGroup>
 

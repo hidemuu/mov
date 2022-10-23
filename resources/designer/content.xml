@@ -5,9 +5,11 @@
     <index>0</index>
     <code>Center</code>
     <name>センター</name>
+    <category />
     <icon />
     <control_type>Label</control_type>
     <schema />
+    <default_value />
     <macro />
   </content>
   <content>
@@ -15,9 +17,11 @@
     <index>0</index>
     <code>Top</code>
     <name>トップ</name>
+    <category />
     <icon />
     <control_type>Label</control_type>
     <schema />
+    <default_value />
     <macro />
   </content>
   <content>
@@ -25,9 +29,11 @@
     <index>0</index>
     <code>Bottom</code>
     <name>ボトム</name>
+    <category />
     <icon />
     <control_type>Label</control_type>
     <schema />
+    <default_value />
     <macro />
   </content>
   <content>
@@ -35,9 +41,11 @@
     <index>0</index>
     <code>Left</code>
     <name>レフト</name>
+    <category />
     <icon />
     <control_type>Label</control_type>
     <schema />
+    <default_value />
     <macro />
   </content>
   <content>
@@ -45,9 +53,11 @@
     <index>0</index>
     <code>Right</code>
     <name>ライト</name>
+    <category />
     <icon />
     <control_type>Label</control_type>
     <schema />
+    <default_value />
     <macro />
   </content>
   <content>
@@ -55,19 +65,23 @@
     <index>1</index>
     <code>Main</code>
     <name>main</name>
+    <category />
     <icon />
     <control_type>Label</control_type>
     <schema />
+    <default_value />
     <macro />
   </content>
   <content>
     <id>db10ae8a-aad5-4c78-86d8-a429d2d36e68</id>
     <index>2</index>
-    <code>Text1</code>
-    <name>項目1</name>
+    <code>TextLabel</code>
+    <name>テキスト</name>
+    <category />
     <icon />
     <control_type>Label</control_type>
     <schema />
+    <default_value />
     <macro />
   </content>
   <content>
@@ -75,9 +89,11 @@
     <index>10</index>
     <code>Button1</code>
     <name>項目2</name>
+    <category />
     <icon />
     <control_type>Button</control_type>
     <schema />
+    <default_value />
     <macro />
   </content>
   <content>
@@ -85,9 +101,11 @@
     <index>0</index>
     <code>Button2</code>
     <name>項目3</name>
+    <category />
     <icon />
     <control_type>RadioButton</control_type>
     <schema />
+    <default_value />
     <macro />
   </content>
   <content>
@@ -95,9 +113,11 @@
     <index>0</index>
     <code>Item1</code>
     <name>項目4</name>
+    <category />
     <icon />
     <control_type>SpinBox</control_type>
     <schema />
+    <default_value />
     <macro />
   </content>
   <content>
@@ -105,9 +125,11 @@
     <index>0</index>
     <code>Item2</code>
     <name>項目5</name>
+    <category />
     <icon />
     <control_type>ComboBox</control_type>
     <schema />
+    <default_value />
     <macro />
   </content>
   <content>
@@ -115,9 +137,11 @@
     <index>0</index>
     <code>Item3</code>
     <name>項目5</name>
+    <category />
     <icon />
     <control_type>TextBox</control_type>
     <schema />
+    <default_value />
     <macro />
   </content>
   <content>
@@ -125,9 +149,11 @@
     <index>0</index>
     <code>Item4</code>
     <name>項目5</name>
+    <category />
     <icon />
     <control_type>CheckBox</control_type>
     <schema />
+    <default_value />
     <macro />
   </content>
   <content>
@@ -135,9 +161,11 @@
     <index>0</index>
     <code>Item5</code>
     <name>項目5</name>
+    <category />
     <icon />
     <control_type>ListBox</control_type>
     <schema />
+    <default_value />
     <macro />
   </content>
   <content>
@@ -145,9 +173,11 @@
     <index>0</index>
     <code>Date1</code>
     <name>日付1</name>
+    <category />
     <icon />
     <control_type>DatePicker</control_type>
     <schema />
+    <default_value />
     <macro />
   </content>
 </contents>

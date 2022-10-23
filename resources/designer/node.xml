@@ -13,7 +13,7 @@
       <node>
         <id>36d93c07-d4a4-427a-a1fa-7e1aa3d2ad95</id>
         <index>0</index>
-        <code>Text1</code>
+        <code>TextLabel</code>
         <node_type>Content</node_type>
         <orientation>Horizontal</orientation>
         <expand>true</expand>
@@ -36,7 +36,7 @@
       <node>
         <id>b2513b59-3007-4aed-b78d-9b95bea3ec2d</id>
         <index>0</index>
-        <code>Text1</code>
+        <code>TextLabel</code>
         <node_type>Content</node_type>
         <orientation>Horizontal</orientation>
         <expand>true</expand>
@@ -59,7 +59,7 @@
       <node>
         <id>de436309-c1c2-48a3-82eb-d080babc7a5c</id>
         <index>0</index>
-        <code>Text1</code>
+        <code>TextLabel</code>
         <node_type>Content</node_type>
         <orientation>Horizontal</orientation>
         <expand>true</expand>
@@ -82,7 +82,7 @@
       <node>
         <id>11db8b89-5c28-40e8-a6e6-375302917a87</id>
         <index>0</index>
-        <code>Text1</code>
+        <code>TextLabel</code>
         <node_type>Content</node_type>
         <orientation>Horizontal</orientation>
         <expand>true</expand>
@@ -115,7 +115,7 @@
           <node>
             <id>0899237b-70cf-4b59-8374-34ef3b13255c</id>
             <index>2</index>
-            <code>Text1</code>
+            <code>TextLabel</code>
             <node_type>Content</node_type>
             <orientation>Horizontal</orientation>
             <expand>false</expand>
@@ -128,7 +128,7 @@
       <node>
         <id>1b0a48e4-8ee1-4c4d-bb11-9e295adaef69</id>
         <index>10</index>
-        <code>Text1</code>
+        <code>TextLabel</code>
         <node_type>Content</node_type>
         <orientation>Horizontal</orientation>
         <expand>false</expand>
@@ -149,7 +149,7 @@
           <node>
             <id>e9d9eb48-0dce-465e-aa76-3782d0f13218</id>
             <index>0</index>
-            <code>Text1</code>
+            <code>TextLabel</code>
             <node_type>Content</node_type>
             <orientation>Horizontal</orientation>
             <expand>true</expand>

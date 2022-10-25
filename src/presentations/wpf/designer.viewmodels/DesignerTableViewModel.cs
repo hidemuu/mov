@@ -233,9 +233,7 @@ namespace Mov.Designer.ViewModels
         public ColumnAttribute Index { get; } = new ColumnAttribute("index", 30);
         public ColumnAttribute Code { get; } = new ColumnAttribute("コード", 120);
         public ColumnAttribute Name { get; } = new ColumnAttribute("名称", 120);
-        public ColumnAttribute Command { get; } = new ColumnAttribute("コマンド", 120);
         public ColumnAttribute ControlType { get; } = new ColumnAttribute("タイプ", 120);
-        public ColumnAttribute ControlStyle { get; } = new ColumnAttribute("スタイル", 120);
         public ColumnAttribute Height { get; } = new ColumnAttribute("高さ", 90);
         public ColumnAttribute Width { get; } = new ColumnAttribute("幅", 90);
         public ColumnAttribute HorizontalAlignment { get; } = new ColumnAttribute("水平", 120);

@@ -15,7 +15,7 @@ namespace Mov.Accessors.Repository.Implement
 
         public IDictionary<string, TRepository> Repositories { get; }
 
-        public TRepository DefaultRepository => GetRepository("");
+        public TRepository DefaultRepository => GetRepository(GetDefaultRepositoryName());
 
         #endregion プロパティ
 
@@ -30,6 +30,11 @@ namespace Mov.Accessors.Repository.Implement
         #endregion コンストラクター
 
         #region メソッド
+
+        public string GetDefaultRepositoryName()
+        {
+            return "dashboard";
+        }
 
         public IEnumerable<string> GetRepositoryNames()
         {

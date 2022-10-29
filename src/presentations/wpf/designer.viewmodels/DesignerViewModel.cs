@@ -48,12 +48,12 @@ namespace Mov.Designer.ViewModels
 
         #region プロパティ
 
-        public ReactivePropertySlim<string> PageName { get; set; } = new ReactivePropertySlim<string>(PAGE_NAME_PARTS);
+        public ReactivePropertySlim<string> PageName { get; set; } = new ReactivePropertySlim<string>(PAGE_NAME_TREE);
 
 
         public ReactiveCollection<string> ComboItems { get; } = new ReactiveCollection<string>();
         
-        public ReactivePropertySlim<string> SelectedComboItem { get; } = new ReactivePropertySlim<string>("");
+        public ReactivePropertySlim<string> SelectedComboItem { get; } = new ReactivePropertySlim<string>();
 
 
         #endregion プロパティ
@@ -76,6 +76,7 @@ namespace Mov.Designer.ViewModels
         public DesignerViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDesignerRepository> database) : base(regionManager, dialogService)
         {
             this.database = database;
+            this.SelectedComboItem.Value = database.GetDefaultRepositoryName();
             this.ComboItems.AddRangeOnScheduler(database.GetRepositoryNames());
             this.repository = database.GetRepository(SelectedComboItem.Value);
             ShowPageCommand.Subscribe(OnPageChangeCommand).AddTo(Disposables);

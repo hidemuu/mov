@@ -8,14 +8,40 @@ https://zenn.dev/h0ge/articles/cd2f3e75259786
 # CSharp React
 
 ### パッケージインストール
+https://qiita.com/righteous/items/e5448cb2e7e11ab7d477
 $ cd .\ClientApp\
-$ npm install (念の為)
+$ npm install (package.jsonインストール)
+
+$ npm install --save react react-dom
+$ npm install --save-dev @types/react @types/react-dom
+
 $ npm install --save-dev babel-plugin-react-html-attrs
 $ npm install --save react-chartjs-2 chart.js
 $ npm install --save react-bootstrap-table-next
+$ npm install swr
+$ npm install react-content-loader
+$ npm install --save-dev @types/react-content-loader
+$ npm install --save-dev styled-components
+$ npx sb init
+$ npm install --save-dev prettier
+$ npm install --save-dev @testing-library/react
+$ npm install --save-dev @types/jest
+$ npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
+
+### 実行
+$ npm run start
 
 ### webpackコマンド
 $ webpack --mode development
+
+### Storybook
+$ npm run storybook
+
+### Prettier
+$ npm run prettier-format
+
+### Next.js
+$ npx create-next-app@latest --ts (プロジェクト名)
 
 ### Visual Studio Codeから実行
 $ dotnet run (.csprojファイルのディレクトリで)
@@ -26,6 +52,7 @@ https://qiita.com/TsutomuNakamura/items/72d8cf9f07a5a30be048
 https://qiita.com/koedamon/items/8fb75a7c001da40c7bea
 https://qiita.com/masafullversion/items/0238b7c069ebf4f1f072
 https://qiita.com/banban525/items/b66a439d588858ba3a11
+https://clickan.click/vsc-ts/
 
 ### ディレクトリの作成
 $ mkdir js-react
@@ -53,6 +80,7 @@ $ npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel
 $ npm install --save-dev react react-dom
 $ npm install --save-dev babel-plugin-react-html-attrs
 $ npm install --save-dev @babel/compat-data
+$ npm install ts-loader --save-dev
 $ npm install --save-dev react-router react-router-dom
 $ npm install --save react-chartjs-2 chart.js
 $ npm install --save moment react-moment

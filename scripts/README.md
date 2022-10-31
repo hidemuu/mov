@@ -12,7 +12,7 @@ https://qiita.com/righteous/items/e5448cb2e7e11ab7d477
 $ cd .\ClientApp\
 $ npm install (package.jsonインストール)
 
-$ npm install --save react react-dom
+$ npm install --save react react-dom next
 $ npm install --save-dev @types/react @types/react-dom
 
 $ npm install --save-dev babel-plugin-react-html-attrs

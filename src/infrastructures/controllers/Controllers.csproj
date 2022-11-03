@@ -7,10 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Action\Implement\" />
-    <Folder Include="Crud\Implement\Transaction\" />
-    <Folder Include="Strategy\" />
-    <Folder Include="Transaction\" />
+    <Folder Include="Shields\Implements\" />
+    <Folder Include="Templates\Action\Implement\" />
+    <Folder Include="Templates\Crud\Implement\Transaction\" />
+    <Folder Include="Templates\Transaction\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>

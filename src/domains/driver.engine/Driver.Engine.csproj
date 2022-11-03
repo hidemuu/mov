@@ -6,4 +6,9 @@
     <RootNamespace>Mov.Driver.Engine</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\driver.clients\Driver.Clients.csproj" />
+    <ProjectReference Include="..\driver.models\Driver.Models.csproj" />
+  </ItemGroup>
+
 </Project>

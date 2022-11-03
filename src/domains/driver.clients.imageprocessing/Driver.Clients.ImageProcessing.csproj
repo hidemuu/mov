@@ -10,4 +10,8 @@
     <Folder Include="OpenCV\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\driver.clients\Driver.Clients.csproj" />
+  </ItemGroup>
+
 </Project>

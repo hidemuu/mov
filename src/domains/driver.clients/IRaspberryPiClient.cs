@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Driver.Os
 {
-    public interface IRaspberryPiDriver
+    public interface IRaspberryPiClient
     {
     }
 }

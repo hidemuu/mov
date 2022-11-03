@@ -14,7 +14,7 @@ namespace Mov.Driver.Plc.Melsec
         Connect = 0,
     }
 
-    public class PlcDriver : IPlcDriver
+    public class PlcDriver : IPlcClient
     {
         //----- フィールド ----------------
         private MelsecConnector _connector;

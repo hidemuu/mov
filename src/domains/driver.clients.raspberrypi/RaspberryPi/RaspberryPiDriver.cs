@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Driver.Os.RaspberryPi
 {
-    public class RaspberryPiDriver : IRaspberryPiDriver
+    public class RaspberryPiDriver : IRaspberryPiClient
     {
         #region フィールド
 

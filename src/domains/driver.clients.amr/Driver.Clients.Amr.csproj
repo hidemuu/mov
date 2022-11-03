@@ -6,4 +6,8 @@
     <RootNamespace>Mov.Driver.Clients.Amr</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\driver.clients\Driver.Clients.csproj" />
+  </ItemGroup>
+
 </Project>

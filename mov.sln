@@ -155,21 +155,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculators", "src\infrastr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Connectors", "src\infrastructures\connectors\Connectors.csproj", "{4357C224-B898-40AB-83D5-EF658F44BF8F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Plc", "src\domains\driver.plc\Driver.Plc.csproj", "{B40F6174-9208-4D9D-866B-7226AEEAB52D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.Plc", "src\domains\driver.clients.plc\Driver.Clients.Plc.csproj", "{B40F6174-9208-4D9D-866B-7226AEEAB52D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Cnc", "src\domains\driver.cnc\Driver.Cnc.csproj", "{2A832F93-AD3C-42BC-BD31-EC231C176419}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.Cnc", "src\domains\driver.clients.cnc\Driver.Clients.Cnc.csproj", "{2A832F93-AD3C-42BC-BD31-EC231C176419}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Amr", "src\domains\driver.amr\Driver.Amr.csproj", "{65DB4BC6-C700-490F-9172-413056142D7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.Amr", "src\domains\driver.clients.amr\Driver.Clients.Amr.csproj", "{65DB4BC6-C700-490F-9172-413056142D7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Os", "src\domains\driver.os\Driver.Os.csproj", "{3F7F06D7-B652-42E7-97D6-BEFB39B1D42E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.RaspberryPi", "src\domains\driver.clients.raspberrypi\Driver.Clients.RaspberryPi.csproj", "{3F7F06D7-B652-42E7-97D6-BEFB39B1D42E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Imp", "src\domains\driver.imp\Driver.Imp.csproj", "{D85CC665-3CB2-4935-9006-6B065B740E59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.ImageProcessing", "src\domains\driver.clients.imageprocessing\Driver.Clients.ImageProcessing.csproj", "{D85CC665-3CB2-4935-9006-6B065B740E59}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Engine", "src\domains\game.engine\Game.Engine.csproj", "{232D5ED0-27AB-4349-8EA9-EC379ECE8CFF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Engine", "src\domains\driver.engine\Driver.Engine.csproj", "{8676BF73-F91C-4CF4-A183-37F4CE5953D7}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Functions", "src\infrastructures\functions\Functions.csproj", "{832DE7C7-66D0-4F88-B4C4-99251BDFE8AC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.Views", "src\presentations\wpf\analizer.views\Analizer.Views.csproj", "{CBC0EDEF-FDC3-4E4A-9D8B-66A9E8DA4EE2}"
 EndProject
@@ -193,7 +191,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfMacros", "src\infrastruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Layouts", "src\infrastructures\layouts\Layouts.csproj", "{10012596-A26F-4DFD-9DB6-D05C72ED48F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfLayouts", "src\infrastructures\wpf\wpflayouts\WpfLayouts.csproj", "{81A9BAE8-8384-45EA-9E2F-ABDC18D815EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfLayouts", "src\infrastructures\wpf\wpflayouts\WpfLayouts.csproj", "{81A9BAE8-8384-45EA-9E2F-ABDC18D815EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Clients", "src\domains\driver.clients\Driver.Clients.csproj", "{53D3658B-D945-414C-9219-C9289934BC9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -493,10 +493,6 @@ Global
 		{8676BF73-F91C-4CF4-A183-37F4CE5953D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8676BF73-F91C-4CF4-A183-37F4CE5953D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8676BF73-F91C-4CF4-A183-37F4CE5953D7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{832DE7C7-66D0-4F88-B4C4-99251BDFE8AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{832DE7C7-66D0-4F88-B4C4-99251BDFE8AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{832DE7C7-66D0-4F88-B4C4-99251BDFE8AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{832DE7C7-66D0-4F88-B4C4-99251BDFE8AC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CBC0EDEF-FDC3-4E4A-9D8B-66A9E8DA4EE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CBC0EDEF-FDC3-4E4A-9D8B-66A9E8DA4EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBC0EDEF-FDC3-4E4A-9D8B-66A9E8DA4EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -545,6 +541,10 @@ Global
 		{81A9BAE8-8384-45EA-9E2F-ABDC18D815EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81A9BAE8-8384-45EA-9E2F-ABDC18D815EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81A9BAE8-8384-45EA-9E2F-ABDC18D815EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53D3658B-D945-414C-9219-C9289934BC9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53D3658B-D945-414C-9219-C9289934BC9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53D3658B-D945-414C-9219-C9289934BC9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53D3658B-D945-414C-9219-C9289934BC9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -630,7 +630,6 @@ Global
 		{D85CC665-3CB2-4935-9006-6B065B740E59} = {438402C2-B5EF-4CB6-9BFB-EDA2D4132DE4}
 		{232D5ED0-27AB-4349-8EA9-EC379ECE8CFF} = {438402C2-B5EF-4CB6-9BFB-EDA2D4132DE4}
 		{8676BF73-F91C-4CF4-A183-37F4CE5953D7} = {438402C2-B5EF-4CB6-9BFB-EDA2D4132DE4}
-		{832DE7C7-66D0-4F88-B4C4-99251BDFE8AC} = {12313AF5-0452-4C20-8955-3E8ECDE42301}
 		{CBC0EDEF-FDC3-4E4A-9D8B-66A9E8DA4EE2} = {C849D8F6-439F-467D-A7A8-8996F6ECF9E4}
 		{1668CF71-ECBF-4E36-9177-3F0815218C9F} = {C849D8F6-439F-467D-A7A8-8996F6ECF9E4}
 		{A39F158B-77FA-4365-9BF3-F087BDA425D0} = {FCE6A383-D625-466D-99BD-868912D6BD07}
@@ -643,6 +642,7 @@ Global
 		{DFA0B4A2-82C2-490C-B8F7-710894BFD9B4} = {FCE6A383-D625-466D-99BD-868912D6BD07}
 		{10012596-A26F-4DFD-9DB6-D05C72ED48F8} = {12313AF5-0452-4C20-8955-3E8ECDE42301}
 		{81A9BAE8-8384-45EA-9E2F-ABDC18D815EE} = {FCE6A383-D625-466D-99BD-868912D6BD07}
+		{53D3658B-D945-414C-9219-C9289934BC9D} = {438402C2-B5EF-4CB6-9BFB-EDA2D4132DE4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD9C3231-BF2C-413C-B738-70985D9981AE}

@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Mov.Driver.Amr</AssemblyName>
-    <RootNamespace>Mov.Driver.Amr</RootNamespace>
+    <AssemblyName>Mov.Driver.Clients</AssemblyName>
+    <RootNamespace>Mov.Driver.Clients</RootNamespace>
   </PropertyGroup>
 
 </Project>

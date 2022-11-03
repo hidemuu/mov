@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Mov.Driver.Os</AssemblyName>
-    <RootNamespace>Mov.Driver.Os</RootNamespace>
+    <AssemblyName>Mov.Driver.Clients.RaspberryPi</AssemblyName>
+    <RootNamespace>Mov.Driver.Clients.RaspberryPi</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

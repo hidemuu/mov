@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Mov.Driver.Plc</AssemblyName>
-    <RootNamespace>Mov.Driver.Plc</RootNamespace>
+    <AssemblyName>Mov.Driver.Clients.Cnc</AssemblyName>
+    <RootNamespace>Mov.Driver.Clients.Cnc</RootNamespace>
   </PropertyGroup>
 
 </Project>

@@ -14,7 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\lib\wpflib\WpfLib.csproj" />
+    <ProjectReference Include="..\..\src\applications\usecases\UseCases.csproj" />
+    <ProjectReference Include="..\..\src\presentations\wpf\usecase.views\UseCase.Views.csproj" />
   </ItemGroup>
 
 </Project>

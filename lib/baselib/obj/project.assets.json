@@ -812,6 +812,19 @@
           "bin/placeholder/Mov.Accessors.dll": {}
         }
       },
+      "Mov.Analizer.Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Analizer.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Analizer.Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Analizer.Engine.dll": {}
+        }
+      },
       "Mov.Analizer.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -849,6 +862,19 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Analizer.Service.dll": {}
+        }
+      },
+      "Mov.Authorizer.Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Authorizer.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Authorizer.Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Authorizer.Engine.dll": {}
         }
       },
       "Mov.Authorizer.Models/1.0.0": {
@@ -906,6 +932,19 @@
           "bin/placeholder/Mov.BaseModel.dll": {}
         }
       },
+      "Mov.Bom.Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Bom.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Bom.Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Bom.Engine.dll": {}
+        }
+      },
       "Mov.Bom.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -956,6 +995,19 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Calculators.dll": {}
+        }
+      },
+      "Mov.Configurator.Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Configurator.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Configurator.Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Configurator.Engine.dll": {}
         }
       },
       "Mov.Configurator.Models/1.0.0": {
@@ -1026,6 +1078,19 @@
           "bin/placeholder/Mov.Controllers.dll": {}
         }
       },
+      "Mov.Designer.Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Designer.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Designer.Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Designer.Engine.dll": {}
+        }
+      },
       "Mov.Designer.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1068,6 +1133,19 @@
           "bin/placeholder/Mov.Designer.Service.dll": {}
         }
       },
+      "Mov.Drawer.Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Drawer.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Drawer.Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Drawer.Engine.dll": {}
+        }
+      },
       "Mov.Drawer.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1108,6 +1186,30 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Drawer.Service.dll": {}
+        }
+      },
+      "Mov.Driver.Clients/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Driver.Clients.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Driver.Clients.dll": {}
+        }
+      },
+      "Mov.Driver.Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Driver.Clients": "1.0.0",
+          "Mov.Driver.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Driver.Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Driver.Engine.dll": {}
         }
       },
       "Mov.Driver.Models/1.0.0": {
@@ -1154,16 +1256,16 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Analizer.Models": "1.0.0",
-          "Mov.Authorizer.Models": "1.0.0",
-          "Mov.Bom.Models": "1.0.0",
-          "Mov.Configurator.Models": "1.0.0",
-          "Mov.Designer.Models": "1.0.0",
-          "Mov.Drawer.Models": "1.0.0",
-          "Mov.Driver.Models": "1.0.0",
-          "Mov.Game.Models": "1.0.0",
-          "Mov.Scheduler.Models": "1.0.0",
-          "Mov.Translator.Models": "1.0.0"
+          "Mov.Analizer.Engine": "1.0.0",
+          "Mov.Authorizer.Engine": "1.0.0",
+          "Mov.Bom.Engine": "1.0.0",
+          "Mov.Configurator.Engine": "1.0.0",
+          "Mov.Designer.Engine": "1.0.0",
+          "Mov.Drawer.Engine": "1.0.0",
+          "Mov.Driver.Engine": "1.0.0",
+          "Mov.Game.Engine": "1.0.0",
+          "Mov.Scheduler.Engine": "1.0.0",
+          "Mov.Translator.Engine": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Framework.dll": {}
@@ -1252,6 +1354,19 @@
           "bin/placeholder/Mov.Painters.dll": {}
         }
       },
+      "Mov.Scheduler.Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Scheduler.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Scheduler.Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Scheduler.Engine.dll": {}
+        }
+      },
       "Mov.Scheduler.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1290,6 +1405,19 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Scheduler.Service.dll": {}
+        }
+      },
+      "Mov.Translator.Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Translator.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Translator.Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Translator.Engine.dll": {}
         }
       },
       "Mov.Translator.Models/1.0.0": {
@@ -4020,6 +4148,11 @@
       "path": "../../src/infrastructures/accessors/Accessors.csproj",
       "msbuildProject": "../../src/infrastructures/accessors/Accessors.csproj"
     },
+    "Mov.Analizer.Engine/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/analizer.engine/Analizer.Engine.csproj",
+      "msbuildProject": "../../src/domains/analizer.engine/Analizer.Engine.csproj"
+    },
     "Mov.Analizer.Models/1.0.0": {
       "type": "project",
       "path": "../../src/domains/analizer.models/Analizer.Models.csproj",
@@ -4034,6 +4167,11 @@
       "type": "project",
       "path": "../../src/applications/analizer.service/Analizer.Service.csproj",
       "msbuildProject": "../../src/applications/analizer.service/Analizer.Service.csproj"
+    },
+    "Mov.Authorizer.Engine/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/authorizer.engine/Authorizer.Engine.csproj",
+      "msbuildProject": "../../src/domains/authorizer.engine/Authorizer.Engine.csproj"
     },
     "Mov.Authorizer.Models/1.0.0": {
       "type": "project",
@@ -4055,6 +4193,11 @@
       "path": "../../src/domains/basemodel/BaseModel.csproj",
       "msbuildProject": "../../src/domains/basemodel/BaseModel.csproj"
     },
+    "Mov.Bom.Engine/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/bom.engine/Bom.Engine.csproj",
+      "msbuildProject": "../../src/domains/bom.engine/Bom.Engine.csproj"
+    },
     "Mov.Bom.Models/1.0.0": {
       "type": "project",
       "path": "../../src/domains/bom.models/Bom.Models.csproj",
@@ -4074,6 +4217,11 @@
       "type": "project",
       "path": "../../src/infrastructures/calculators/Calculators.csproj",
       "msbuildProject": "../../src/infrastructures/calculators/Calculators.csproj"
+    },
+    "Mov.Configurator.Engine/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/configurator.engine/Configurator.Engine.csproj",
+      "msbuildProject": "../../src/domains/configurator.engine/Configurator.Engine.csproj"
     },
     "Mov.Configurator.Models/1.0.0": {
       "type": "project",
@@ -4100,6 +4248,11 @@
       "path": "../../src/infrastructures/controllers/Controllers.csproj",
       "msbuildProject": "../../src/infrastructures/controllers/Controllers.csproj"
     },
+    "Mov.Designer.Engine/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/designer.engine/Designer.Engine.csproj",
+      "msbuildProject": "../../src/domains/designer.engine/Designer.Engine.csproj"
+    },
     "Mov.Designer.Models/1.0.0": {
       "type": "project",
       "path": "../../src/domains/designer.models/Designer.Models.csproj",
@@ -4115,6 +4268,11 @@
       "path": "../../src/applications/designer.service/Designer.Service.csproj",
       "msbuildProject": "../../src/applications/designer.service/Designer.Service.csproj"
     },
+    "Mov.Drawer.Engine/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/drawer.engine/Drawer.Engine.csproj",
+      "msbuildProject": "../../src/domains/drawer.engine/Drawer.Engine.csproj"
+    },
     "Mov.Drawer.Models/1.0.0": {
       "type": "project",
       "path": "../../src/domains/drawer.models/Drawer.Models.csproj",
@@ -4129,6 +4287,16 @@
       "type": "project",
       "path": "../../src/applications/drawer.service/Drawer.Service.csproj",
       "msbuildProject": "../../src/applications/drawer.service/Drawer.Service.csproj"
+    },
+    "Mov.Driver.Clients/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/driver.clients/Driver.Clients.csproj",
+      "msbuildProject": "../../src/domains/driver.clients/Driver.Clients.csproj"
+    },
+    "Mov.Driver.Engine/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/driver.engine/Driver.Engine.csproj",
+      "msbuildProject": "../../src/domains/driver.engine/Driver.Engine.csproj"
     },
     "Mov.Driver.Models/1.0.0": {
       "type": "project",
@@ -4180,6 +4348,11 @@
       "path": "../../src/infrastructures/painters/Painters.csproj",
       "msbuildProject": "../../src/infrastructures/painters/Painters.csproj"
     },
+    "Mov.Scheduler.Engine/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/scheduler.engine/Scheduler.Engine.csproj",
+      "msbuildProject": "../../src/domains/scheduler.engine/Scheduler.Engine.csproj"
+    },
     "Mov.Scheduler.Models/1.0.0": {
       "type": "project",
       "path": "../../src/domains/scheduler.models/Scheduler.Models.csproj",
@@ -4194,6 +4367,11 @@
       "type": "project",
       "path": "../../src/applications/scheduler.service/Scheduler.Service.csproj",
       "msbuildProject": "../../src/applications/scheduler.service/Scheduler.Service.csproj"
+    },
+    "Mov.Translator.Engine/1.0.0": {
+      "type": "project",
+      "path": "../../src/domains/translator.engine/Translator.Engine.csproj",
+      "msbuildProject": "../../src/domains/translator.engine/Translator.Engine.csproj"
     },
     "Mov.Translator.Models/1.0.0": {
       "type": "project",

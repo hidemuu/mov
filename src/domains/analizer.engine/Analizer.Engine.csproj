@@ -6,4 +6,8 @@
     <RootNamespace>Mov.Analizer.Engine</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\analizer.models\Analizer.Models.csproj" />
+  </ItemGroup>
+
 </Project>

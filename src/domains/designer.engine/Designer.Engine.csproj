@@ -6,4 +6,8 @@
     <RootNamespace>Mov.Designer.Engine</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\designer.models\Designer.Models.csproj" />
+  </ItemGroup>
+
 </Project>

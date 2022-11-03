@@ -6,4 +6,8 @@
     <RootNamespace>Mov.Drawer.Engine</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\drawer.models\Drawer.Models.csproj" />
+  </ItemGroup>
+
 </Project>

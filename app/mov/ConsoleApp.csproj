@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\lib\baselib\BaseLib.csproj" />
+    <ProjectReference Include="..\..\src\applications\usecases\UseCases.csproj" />
   </ItemGroup>
 
 </Project>

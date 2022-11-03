@@ -6,4 +6,8 @@
     <RootNamespace>Mov.Scheduler.Engine</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\scheduler.models\Scheduler.Models.csproj" />
+  </ItemGroup>
+
 </Project>

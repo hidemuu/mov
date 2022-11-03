@@ -6,4 +6,8 @@
     <RootNamespace>Mov.Bom.Engine</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\bom.models\Bom.Models.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -6,4 +6,8 @@
     <RootNamespace>Mov.Translator.Engine</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\translator.models\Translator.Models.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -7,16 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\analizer.models\Analizer.Models.csproj" />
-    <ProjectReference Include="..\authorizer.models\Authorizer.Models.csproj" />
-    <ProjectReference Include="..\bom.models\Bom.Models.csproj" />
-    <ProjectReference Include="..\configurator.models\Configurator.Models.csproj" />
-    <ProjectReference Include="..\designer.models\Designer.Models.csproj" />
-    <ProjectReference Include="..\drawer.models\Drawer.Models.csproj" />
-    <ProjectReference Include="..\driver.models\Driver.Models.csproj" />
-    <ProjectReference Include="..\game.models\Game.Models.csproj" />
-    <ProjectReference Include="..\scheduler.models\Scheduler.Models.csproj" />
-    <ProjectReference Include="..\translator.models\Translator.Models.csproj" />
+    <ProjectReference Include="..\analizer.engine\Analizer.Engine.csproj" />
+    <ProjectReference Include="..\authorizer.engine\Authorizer.Engine.csproj" />
+    <ProjectReference Include="..\bom.engine\Bom.Engine.csproj" />
+    <ProjectReference Include="..\configurator.engine\Configurator.Engine.csproj" />
+    <ProjectReference Include="..\designer.engine\Designer.Engine.csproj" />
+    <ProjectReference Include="..\drawer.engine\Drawer.Engine.csproj" />
+    <ProjectReference Include="..\driver.engine\Driver.Engine.csproj" />
+    <ProjectReference Include="..\game.engine\Game.Engine.csproj" />
+    <ProjectReference Include="..\scheduler.engine\Scheduler.Engine.csproj" />
+    <ProjectReference Include="..\translator.engine\Translator.Engine.csproj" />
   </ItemGroup>
 
 </Project>

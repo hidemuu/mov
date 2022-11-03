@@ -24,5 +24,10 @@ namespace Mov.WpfControls.Components.Atoms
         {
             InitializeComponent();
         }
+
+        private void CartesianChart_DataClick(object sender, LiveCharts.ChartPoint chartPoint)
+        {
+
+        }
     }
 }

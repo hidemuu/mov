@@ -14,13 +14,13 @@ namespace Mov.WpfControls.Components
     /// <summary>
     /// グリッド型のリストビュー
     /// </summary>
-    public class ComGridListView : ListView
+    public class MovGridListView : ListView
     {
         #region プロパティ
 
         public static readonly DependencyProperty ColumnItemsProperty =
             DependencyProperty.Register(nameof(ColumnItems), typeof(ReactiveCollection<ColumnItem[]>),
-            typeof(ComGridListView),
+            typeof(MovGridListView),
             new UIPropertyMetadata(null));
 
         public ReactiveCollection<ColumnItem[]> ColumnItems
@@ -31,7 +31,7 @@ namespace Mov.WpfControls.Components
 
         public static readonly DependencyProperty SelectedColumnItemProperty =
             DependencyProperty.Register(nameof(SelectedColumnItem), typeof(ColumnItem[]),
-            typeof(ComGridListView),
+            typeof(MovGridListView),
             new UIPropertyMetadata(null));
 
         public ColumnItem[] SelectedColumnItem
@@ -42,7 +42,7 @@ namespace Mov.WpfControls.Components
 
         public static readonly DependencyProperty ColumnAttributesProperty =
             DependencyProperty.Register(nameof(ColumnAttributes), typeof(ColumnAttribute[]),
-            typeof(ComGridListView),
+            typeof(MovGridListView),
             new UIPropertyMetadata(null));
 
         public ColumnAttribute[] ColumnAttributes
@@ -58,7 +58,7 @@ namespace Mov.WpfControls.Components
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ComGridListView()
+        public MovGridListView()
         {
             ItemsSource = ColumnItems;
             SelectedItem = SelectedColumnItem;
@@ -66,11 +66,11 @@ namespace Mov.WpfControls.Components
             //列
             for(var columnCount = 0; columnCount < ColumnAttributes.Length; columnCount++)
             {
-                var column = new ComGridViewColumn();
+                var column = new MovGridViewColumn();
                 column.Attribute = ColumnAttributes[columnCount];
                 var dataTemplate = new DataTemplate();
-                var columnItem = new FrameworkElementFactory(typeof(ComGridViewColumnItem));
-                columnItem.SetValue(ComGridViewColumnItem.ItemProperty, Items[columnCount]);
+                var columnItem = new FrameworkElementFactory(typeof(MovGridViewColumnItem));
+                columnItem.SetValue(MovGridViewColumnItem.ItemProperty, Items[columnCount]);
                 dataTemplate.VisualTree = columnItem;
                 column.CellTemplate = dataTemplate;
                 gridView.Columns.Add(column);

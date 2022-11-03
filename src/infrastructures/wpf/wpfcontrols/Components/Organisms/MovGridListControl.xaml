@@ -48,69 +48,69 @@
             </ListView.ItemContainerStyle>
             <ListView.View>
                 <GridView>
-                    <molecule:ComGridViewColumn Attribute="{Binding Attributes[0], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <molecule:ComGridViewColumn.CellTemplate>
+                    <molecule:MovGridViewColumn Attribute="{Binding Attributes[0], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:MovGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <molecule:ComGridViewColumnItem Item="{Binding [0]}" />
+                                <molecule:MovGridViewColumnItem Item="{Binding [0]}" />
                             </DataTemplate>
-                        </molecule:ComGridViewColumn.CellTemplate>
-                    </molecule:ComGridViewColumn>
-                    <molecule:ComGridViewColumn Attribute="{Binding Attributes[1], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <molecule:ComGridViewColumn.CellTemplate>
+                        </molecule:MovGridViewColumn.CellTemplate>
+                    </molecule:MovGridViewColumn>
+                    <molecule:MovGridViewColumn Attribute="{Binding Attributes[1], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:MovGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <molecule:ComGridViewColumnItem Item="{Binding [1]}" />
+                                <molecule:MovGridViewColumnItem Item="{Binding [1]}" />
                             </DataTemplate>
-                        </molecule:ComGridViewColumn.CellTemplate>
-                    </molecule:ComGridViewColumn>
-                    <molecule:ComGridViewColumn Attribute="{Binding Attributes[2], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <molecule:ComGridViewColumn.CellTemplate>
+                        </molecule:MovGridViewColumn.CellTemplate>
+                    </molecule:MovGridViewColumn>
+                    <molecule:MovGridViewColumn Attribute="{Binding Attributes[2], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:MovGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <molecule:ComGridViewColumnItem Item="{Binding [2]}" />
+                                <molecule:MovGridViewColumnItem Item="{Binding [2]}" />
                             </DataTemplate>
-                        </molecule:ComGridViewColumn.CellTemplate>
-                    </molecule:ComGridViewColumn>
-                    <molecule:ComGridViewColumn Attribute="{Binding Attributes[3], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <molecule:ComGridViewColumn.CellTemplate>
+                        </molecule:MovGridViewColumn.CellTemplate>
+                    </molecule:MovGridViewColumn>
+                    <molecule:MovGridViewColumn Attribute="{Binding Attributes[3], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:MovGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <molecule:ComGridViewColumnItem Item="{Binding [3]}" />
+                                <molecule:MovGridViewColumnItem Item="{Binding [3]}" />
                             </DataTemplate>
-                        </molecule:ComGridViewColumn.CellTemplate>
-                    </molecule:ComGridViewColumn>
-                    <molecule:ComGridViewColumn Attribute="{Binding Attributes[4], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <molecule:ComGridViewColumn.CellTemplate>
+                        </molecule:MovGridViewColumn.CellTemplate>
+                    </molecule:MovGridViewColumn>
+                    <molecule:MovGridViewColumn Attribute="{Binding Attributes[4], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:MovGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <molecule:ComGridViewColumnItem Item="{Binding [4]}" />
+                                <molecule:MovGridViewColumnItem Item="{Binding [4]}" />
                             </DataTemplate>
-                        </molecule:ComGridViewColumn.CellTemplate>
-                    </molecule:ComGridViewColumn>
-                    <molecule:ComGridViewColumn Attribute="{Binding Attributes[5], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <molecule:ComGridViewColumn.CellTemplate>
+                        </molecule:MovGridViewColumn.CellTemplate>
+                    </molecule:MovGridViewColumn>
+                    <molecule:MovGridViewColumn Attribute="{Binding Attributes[5], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:MovGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <molecule:ComGridViewColumnItem Item="{Binding [5]}" />
+                                <molecule:MovGridViewColumnItem Item="{Binding [5]}" />
                             </DataTemplate>
-                        </molecule:ComGridViewColumn.CellTemplate>
-                    </molecule:ComGridViewColumn>
-                    <molecule:ComGridViewColumn Attribute="{Binding Attributes[6], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <molecule:ComGridViewColumn.CellTemplate>
+                        </molecule:MovGridViewColumn.CellTemplate>
+                    </molecule:MovGridViewColumn>
+                    <molecule:MovGridViewColumn Attribute="{Binding Attributes[6], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:MovGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <molecule:ComGridViewColumnItem Item="{Binding [6]}" />
+                                <molecule:MovGridViewColumnItem Item="{Binding [6]}" />
                             </DataTemplate>
-                        </molecule:ComGridViewColumn.CellTemplate>
-                    </molecule:ComGridViewColumn>
-                    <molecule:ComGridViewColumn Attribute="{Binding Attributes[7], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <molecule:ComGridViewColumn.CellTemplate>
+                        </molecule:MovGridViewColumn.CellTemplate>
+                    </molecule:MovGridViewColumn>
+                    <molecule:MovGridViewColumn Attribute="{Binding Attributes[7], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:MovGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <molecule:ComGridViewColumnItem Item="{Binding [7]}" />
+                                <molecule:MovGridViewColumnItem Item="{Binding [7]}" />
                             </DataTemplate>
-                        </molecule:ComGridViewColumn.CellTemplate>
-                    </molecule:ComGridViewColumn>
-                    <molecule:ComGridViewColumn Attribute="{Binding Attributes[8], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
-                        <molecule:ComGridViewColumn.CellTemplate>
+                        </molecule:MovGridViewColumn.CellTemplate>
+                    </molecule:MovGridViewColumn>
+                    <molecule:MovGridViewColumn Attribute="{Binding Attributes[8], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:MovGridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <molecule:ComGridViewColumnItem Item="{Binding [8]}" />
+                                <molecule:MovGridViewColumnItem Item="{Binding [8]}" />
                             </DataTemplate>
-                        </molecule:ComGridViewColumn.CellTemplate>
-                    </molecule:ComGridViewColumn>
+                        </molecule:MovGridViewColumn.CellTemplate>
+                    </molecule:MovGridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

@@ -7,7 +7,7 @@ namespace Mov.WpfControls.Components
     /// ツリー型のリストビューコントロール
     /// </summary>
     /// <remarks>https://sabeeshwpf.blogspot.com/2012/12/treelistview-in-wpf.html</remarks>
-    public class ComTreeListView : TreeView
+    public class MovTreeListView : TreeView
     {
 
         #region プロパティ
@@ -24,12 +24,12 @@ namespace Mov.WpfControls.Components
 
         public static readonly DependencyProperty ColumnsProperty =
            DependencyProperty.Register(nameof(Columns), typeof(GridViewColumnCollection),
-           typeof(ComTreeListView),
+           typeof(MovTreeListView),
            new UIPropertyMetadata(null));
 
         public static readonly DependencyProperty BindableSelectedItemProperty =
             DependencyProperty.Register(nameof(BindableSelectedItem),
-                typeof(object), typeof(ComTreeListView), new UIPropertyMetadata(null));
+                typeof(object), typeof(MovTreeListView), new UIPropertyMetadata(null));
 
         /// <summary>
         /// Bind 可能な SelectedItem を表し、SelectedItem を設定または取得します。
@@ -52,23 +52,23 @@ namespace Mov.WpfControls.Components
 
         public static readonly DependencyProperty AllowsColumnReorderProperty =
             DependencyProperty.Register("AllowsColumnReorder", typeof(bool),
-                typeof(ComTreeListView),
+                typeof(MovTreeListView),
                 new UIPropertyMetadata(null));
 
         #endregion プロパティ
 
         #region コンストラクター
 
-        static ComTreeListView()
+        static MovTreeListView()
         {
             //Override the default style and the default control template
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ComTreeListView), new FrameworkPropertyMetadata(typeof(ComTreeListView)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(MovTreeListView), new FrameworkPropertyMetadata(typeof(MovTreeListView)));
         }
 
         /// <summary>
         /// Initialize a new instance of TreeListView.
         /// </summary>
-        public ComTreeListView()
+        public MovTreeListView()
         {
             Columns = new GridViewColumnCollection();
             this.SelectedItemChanged += this.OnSelectedItemChanged;

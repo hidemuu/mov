@@ -12,14 +12,14 @@ using System.Windows.Controls;
 
 namespace Mov.WpfControls.Components.Molecules
 {
-    public class ComGridViewColumnItem : TextBox
+    public class MovGridViewColumnItem : TextBox
     {
 
         #region プロパティ
 
         public static readonly DependencyProperty ItemProperty =
             DependencyProperty.Register(nameof(Item), typeof(ColumnItem),
-            typeof(ComGridViewColumnItem),
+            typeof(MovGridViewColumnItem),
             new UIPropertyMetadata(null, new PropertyChangedCallback(OnItemChanged)));
 
         public ColumnItem Item
@@ -36,7 +36,7 @@ namespace Mov.WpfControls.Components.Molecules
 
         #region コンストラクター
 
-        public ComGridViewColumnItem()
+        public MovGridViewColumnItem()
         {
             HorizontalAlignment = HorizontalAlignment.Stretch;
             TextChanged += OnTextChanged;
@@ -53,7 +53,7 @@ namespace Mov.WpfControls.Components.Molecules
         /// <param name="e"></param>
         private static void OnItemChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
         {
-            var ctrl = obj as ComGridViewColumnItem;
+            var ctrl = obj as MovGridViewColumnItem;
             if (ctrl != null && ctrl.Item != null)
             {
                 ctrl.Text = ctrl.Item.ToString();
@@ -67,7 +67,7 @@ namespace Mov.WpfControls.Components.Molecules
         /// <param name="e"></param>
         private void OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            if(sender is ComGridViewColumnItem item && item != null)
+            if(sender is MovGridViewColumnItem item && item != null)
             {
                 Item.SetValue(item.Text);
             }

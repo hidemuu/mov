@@ -7,6 +7,8 @@
     <converter:StringToHolizontalAlignmentConverter x:Key="StringToHolizontalAlignmentConverter" />
     <converter:StringToVerticalAlignmentConverter x:Key="StringToVerticalAlignmentConverter" />
 
+    <!--  Atoms  -->
+
     <Style TargetType="{x:Type atom:LayButton}">
         <Setter Property="Template">
             <Setter.Value>
@@ -160,5 +162,9 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <!--  Molecules  -->
+
+    <!--  Organisms  -->
 
 </ResourceDictionary>

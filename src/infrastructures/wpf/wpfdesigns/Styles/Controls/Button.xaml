@@ -2,6 +2,16 @@
 
     <ResourceDictionary.MergedDictionaries />
 
+    <SolidColorBrush x:Key="SelectButtonBackgroundBrushOFF" Color="WhiteSmoke" />
+    <SolidColorBrush x:Key="SelectButtonBackgroundBrushHover" Color="LightSlateGray" />
+    <SolidColorBrush x:Key="SelectButtonBackgroundBrushON" Color="DeepSkyBlue" />
+    <SolidColorBrush x:Key="SelectButtonForegroundBrushOFF" Color="Black" />
+    <SolidColorBrush x:Key="SelectButtonForegroundBrushHover" Color="Black" />
+    <SolidColorBrush x:Key="SelectButtonForegroundBrushON" Color="Black" />
+    <SolidColorBrush x:Key="SelectButtonBorderBrushOFF" Color="WhiteSmoke" />
+    <SolidColorBrush x:Key="SelectButtonBorderBrushHover" Color="LawnGreen" />
+    <SolidColorBrush x:Key="SelectButtonBorderBrushON" Color="WhiteSmoke" />
+
     <!--  コントロール  -->
 
     <!--<Style
@@ -112,6 +122,48 @@
 
     <!--  スタイル  -->
 
+    <Style x:Key="SelectButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource SelectButtonBackgroundBrushOFF}" />
+        <Setter Property="Foreground" Value="{StaticResource SelectButtonForegroundBrushOFF}" />
+        <Setter Property="Margin" Value="1,1,1,1" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        Name="buttonBorder"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="2"
+                        CornerRadius="1">
+                        <Viewbox Margin="5,2,5,2">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="{TemplateBinding FontSize}"
+                                Text="{TemplateBinding Content}" />
+                        </Viewbox>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!--  マウスオーバー  -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="buttonBorder" Property="BorderBrush" Value="{StaticResource SelectButtonBorderBrushHover}" />
+                            <Setter TargetName="buttonBorder" Property="Background" Value="{StaticResource SelectButtonBackgroundBrushHover}" />
+                            <Setter Property="Foreground" Value="{StaticResource SelectButtonForegroundBrushHover}" />
+                        </Trigger>
+                        <!--  ボタンを押した時  -->
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="buttonBorder" Property="Background" Value="{StaticResource SelectButtonBackgroundBrushOFF}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
     <Style
         x:Key="AlertButton"
         BasedOn="{StaticResource SystemButtonBase}"
@@ -129,48 +181,6 @@
         </Style.Triggers>
     </Style>
 
-    <Style
-        x:Key="SystemButton"
-        BasedOn="{StaticResource SystemButtonBase}"
-        TargetType="ButtonBase">
-        <Setter Property="Width" Value="{DynamicResource SystemButtonWidth}" />
-        <Setter Property="Height" Value="{DynamicResource SystemButtonHeight}" />
-        <Setter Property="Foreground" Value="{DynamicResource ButtonText}" />
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{DynamicResource SystemButtonBackgroundOnMoseOver}" />
-                <Setter Property="Foreground" Value="{DynamicResource SystemButtonForegroundOnMoseOver}" />
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Background" Value="{DynamicResource SystemButtonBackgroundIsPressed}" />
-                <Setter Property="Foreground" Value="{DynamicResource SystemButtonForegroundIsPressed}" />
-            </Trigger>
-            <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Foreground" Value="{DynamicResource ButtonTextDisabled}" />
-            </Trigger>
-        </Style.Triggers>
-    </Style>
-
-    <Style
-        x:Key="SystemCloseButton"
-        BasedOn="{StaticResource SystemButton}"
-        TargetType="ButtonBase">
-        <Setter Property="Width" Value="{DynamicResource CloseButtonWidth}" />
-        <Setter Property="Background" Value="{DynamicResource CloseButtonBackground}" />
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{DynamicResource CloseButtonBackgroundOnMoseOver}" />
-                <Setter Property="Foreground" Value="{DynamicResource CloseButtonForegroundOnMoseOver}" />
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Background" Value="{DynamicResource CloseButtonBackgroundIsPressed}" />
-                <Setter Property="Foreground" Value="{DynamicResource CloseButtonForegroundIsPressed}" />
-            </Trigger>
-            <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Foreground" Value="{DynamicResource ButtonTextDisabled}" />
-            </Trigger>
-        </Style.Triggers>
-    </Style>
 
     <Style
         x:Key="SystemButtonLink"

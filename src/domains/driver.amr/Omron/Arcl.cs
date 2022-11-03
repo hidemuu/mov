@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Driver.Amr.Omron
 {
-    public class Arcl : IAmrDriver
+    public class Arcl : IAmrClient
     {
         //----- 機能コード ------------------
         /// <summary>

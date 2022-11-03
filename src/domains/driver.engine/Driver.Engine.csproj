@@ -6,12 +6,4 @@
     <RootNamespace>Mov.Driver.Engine</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Cnc\" />
-    <Folder Include="Plc\" />
-    <Folder Include="Amr\" />
-    <Folder Include="Imp\" />
-    <Folder Include="RaspberryPi\" />
-  </ItemGroup>
-
 </Project>

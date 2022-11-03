@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Driver.Amr
 {
-    public interface IFleetDriver
+    public interface IFleetClient
     {
     }
 }

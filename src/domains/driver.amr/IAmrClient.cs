@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Driver.Amr
 {
-    public interface IAmrDriver
+    public interface IAmrClient
     {
         bool Connect(string host, string password, int mode = 0);
         bool Connected();

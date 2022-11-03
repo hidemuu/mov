@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Driver.Cnc
+namespace Mov.Driver.Engine.Amr
 {
-    public interface ICncDriver
+    public interface IAmrEngine
     {
     }
 }

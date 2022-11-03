@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Authorizer.Engine</AssemblyName>
+    <RootNamespace>Mov.Authorizer.Engine</RootNamespace>
+  </PropertyGroup>
+
+</Project>

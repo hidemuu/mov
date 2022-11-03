@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Bom.Engine</AssemblyName>
+    <RootNamespace>Mov.Bom.Engine</RootNamespace>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Translator.Engine</AssemblyName>
+    <RootNamespace>Mov.Translator.Engine</RootNamespace>
+  </PropertyGroup>
+
+</Project>

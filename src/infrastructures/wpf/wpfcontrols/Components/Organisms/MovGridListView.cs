@@ -18,19 +18,14 @@ namespace Mov.WpfControls.Components
     {
         #region プロパティ
 
-        public static readonly DependencyProperty ColumnItemsProperty =
-            DependencyProperty.Register(nameof(ColumnItems), typeof(ReactiveCollection<ColumnItem[]>),
-            typeof(MovGridListView),
-            new UIPropertyMetadata(null));
-
         public ReactiveCollection<ColumnItem[]> ColumnItems
         {
             get { return (ReactiveCollection<ColumnItem[]>)GetValue(ColumnItemsProperty); }
             set { SetValue(ColumnItemsProperty, value); }
         }
 
-        public static readonly DependencyProperty SelectedColumnItemProperty =
-            DependencyProperty.Register(nameof(SelectedColumnItem), typeof(ColumnItem[]),
+        public static readonly DependencyProperty ColumnItemsProperty =
+            DependencyProperty.Register(nameof(ColumnItems), typeof(ReactiveCollection<ColumnItem[]>),
             typeof(MovGridListView),
             new UIPropertyMetadata(null));
 
@@ -40,8 +35,8 @@ namespace Mov.WpfControls.Components
             set { SetValue(SelectedColumnItemProperty, value); }
         }
 
-        public static readonly DependencyProperty ColumnAttributesProperty =
-            DependencyProperty.Register(nameof(ColumnAttributes), typeof(ColumnAttribute[]),
+        public static readonly DependencyProperty SelectedColumnItemProperty =
+            DependencyProperty.Register(nameof(SelectedColumnItem), typeof(ColumnItem[]),
             typeof(MovGridListView),
             new UIPropertyMetadata(null));
 
@@ -50,6 +45,11 @@ namespace Mov.WpfControls.Components
             get { return (ColumnAttribute[])GetValue(ColumnAttributesProperty); }
             set { SetValue(ColumnAttributesProperty, value); }
         }
+
+        public static readonly DependencyProperty ColumnAttributesProperty =
+            DependencyProperty.Register(nameof(ColumnAttributes), typeof(ColumnAttribute[]),
+            typeof(MovGridListView),
+            new UIPropertyMetadata(null));
 
         #endregion プロパティ
 

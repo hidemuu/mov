@@ -17,15 +17,7 @@ namespace Mov.WpfControls.Components.Atoms
 
         #region プロパティ
 
-        public string Text
-        {
-            get { return (string)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
-        }
-
-        public static readonly DependencyProperty TextProperty =
-            DependencyProperty.Register(nameof(Text), typeof(string), typeof(MovButton), new PropertyMetadata(default));
-
+        
         #endregion プロパティ
 
     }

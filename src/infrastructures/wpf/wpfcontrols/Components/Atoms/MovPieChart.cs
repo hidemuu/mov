@@ -14,5 +14,12 @@ namespace Mov.WpfControls.Components.Atoms
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(MovPieChart), new FrameworkPropertyMetadata(typeof(MovPieChart)));
         }
+
+        #region プロパティ
+
+
+
+        #endregion プロパティ
+
     }
 }

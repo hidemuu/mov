@@ -14,13 +14,13 @@
     <Style TargetType="{x:Type atom:MovButton}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate>
+                <ControlTemplate TargetType="{x:Type atom:MovButton}">
                     <Button
                         Width="{TemplateBinding Width}"
                         Height="{TemplateBinding Height}"
                         HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                         VerticalAlignment="{TemplateBinding VerticalAlignment}"
-                        Content="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:MovButton}}}" />
+                        Content="{TemplateBinding Content}" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -29,19 +29,17 @@
     <Style TargetType="{x:Type atom:MovCartesianChart}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate>
+                <ControlTemplate TargetType="{x:Type atom:MovCartesianChart}">
                     <lvc:CartesianChart
                         Name="Chart1"
-                        Grid.Row="1"
-                        Grid.Column="0"
                         Background="#FF272424"
                         Foreground="White"
                         LegendLocation="Right"
-                        Series="{Binding Series}">
+                        Series="{TemplateBinding Series}">
                         <lvc:CartesianChart.AxisX>
                             <lvc:Axis
                                 Foreground="LightGray"
-                                Labels="{Binding Labels}"
+                                Labels="{Binding LabelsX, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:MovCartesianChart}}}"
                                 LabelsRotation="-45">
                                 <lvc:Axis.Separator>
                                     <lvc:Separator
@@ -59,8 +57,8 @@
                         <lvc:CartesianChart.AxisY>
                             <lvc:Axis
                                 Foreground="LightGray"
-                                MaxValue="{Binding MaxValue}"
-                                MinValue="{Binding MinValue}">
+                                MaxValue="{Binding MaxValueY, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:MovCartesianChart}}}"
+                                MinValue="{Binding MinValueY, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:MovCartesianChart}}}">
                                 <lvc:Axis.Separator>
                                     <lvc:Separator StrokeDashArray="4" StrokeThickness="1.5">
                                         <lvc:Separator.Stroke>
@@ -79,10 +77,10 @@
     <Style TargetType="{x:Type atom:MovPieChart}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate>
+                <ControlTemplate TargetType="{x:Type atom:MovPieChart}">
                     <lvc:PieChart
-                        Series="{Binding Series}"
-                        SeriesColors="{Binding SeriesColors, Mode=OneWay}"
+                        Series="{TemplateBinding Series}"
+                        SeriesColors="{TemplateBinding SeriesColors}"
                         StartingRotationAngle="0" />
                 </ControlTemplate>
             </Setter.Value>

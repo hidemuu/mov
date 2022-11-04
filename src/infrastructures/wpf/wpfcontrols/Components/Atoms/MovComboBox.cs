@@ -3,10 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace Mov.WpfControls.Components.Atoms
 {
-    class MovComboBox
+    public class MovComboBox : ComboBox
     {
+        static MovComboBox()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(MovComboBox), new FrameworkPropertyMetadata(typeof(MovComboBox)));
+        }
+
     }
 }

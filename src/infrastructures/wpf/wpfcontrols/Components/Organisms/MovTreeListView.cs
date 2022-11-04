@@ -10,6 +10,12 @@ namespace Mov.WpfControls.Components
     public class MovTreeListView : TreeView
     {
 
+        static MovTreeListView()
+        {
+            //Override the default style and the default control template
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(MovTreeListView), new FrameworkPropertyMetadata(typeof(MovTreeListView)));
+        }
+
         #region プロパティ
 
         /// <summary>
@@ -27,10 +33,6 @@ namespace Mov.WpfControls.Components
            typeof(MovTreeListView),
            new UIPropertyMetadata(null));
 
-        public static readonly DependencyProperty BindableSelectedItemProperty =
-            DependencyProperty.Register(nameof(BindableSelectedItem),
-                typeof(object), typeof(MovTreeListView), new UIPropertyMetadata(null));
-
         /// <summary>
         /// Bind 可能な SelectedItem を表し、SelectedItem を設定または取得します。
         /// </summary>
@@ -39,6 +41,10 @@ namespace Mov.WpfControls.Components
             get { return (object)this.GetValue(BindableSelectedItemProperty); }
             set { this.SetValue(BindableSelectedItemProperty, value); }
         }
+
+        public static readonly DependencyProperty BindableSelectedItemProperty =
+            DependencyProperty.Register(nameof(BindableSelectedItem),
+                typeof(object), typeof(MovTreeListView), new UIPropertyMetadata(null));
 
         /// <summary>
         /// Gets or sets whether columns in a TreeListView can be
@@ -51,19 +57,13 @@ namespace Mov.WpfControls.Components
         }
 
         public static readonly DependencyProperty AllowsColumnReorderProperty =
-            DependencyProperty.Register("AllowsColumnReorder", typeof(bool),
+            DependencyProperty.Register(nameof(AllowsColumnReorder), typeof(bool),
                 typeof(MovTreeListView),
                 new UIPropertyMetadata(null));
 
         #endregion プロパティ
 
         #region コンストラクター
-
-        static MovTreeListView()
-        {
-            //Override the default style and the default control template
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(MovTreeListView), new FrameworkPropertyMetadata(typeof(MovTreeListView)));
-        }
 
         /// <summary>
         /// Initialize a new instance of TreeListView.

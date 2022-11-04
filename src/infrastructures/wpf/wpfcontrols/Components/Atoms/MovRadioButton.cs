@@ -8,11 +8,11 @@ using System.Windows.Controls;
 
 namespace Mov.WpfControls.Components.Atoms
 {
-    public class MovLamp : Label
+    public class MovRadioButton : RadioButton
     {
-        static MovLamp()
+        static MovRadioButton()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(MovLamp), new FrameworkPropertyMetadata(typeof(MovLamp)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(MovRadioButton), new FrameworkPropertyMetadata(typeof(MovRadioButton)));
         }
 
     }

@@ -152,7 +152,7 @@ namespace Mov.WpfApp
                 .Create<IAnalizerRepository>(SerializeConstants.PATH_JSON);
             containerRegistry.RegisterInstance(fileAnalizerRepositories);
 
-            containerRegistry.RegisterInstance<IGameRepository>(fileGameRepositories.DefaultRepository);
+            containerRegistry.RegisterInstance<IGameRepository>(fileGameRepositories.GetRepository(""));
 
             //インターフェースとクラスを紐付けて登録
             //container.RegisterType<IHomeService, HomeService>();
@@ -161,7 +161,8 @@ namespace Mov.WpfApp
             //containerRegistry.RegisterSingleton<IApplicationCommands, ApplicationCommands>();
 
             //サービスの登録
-            containerRegistry.RegisterInstance<IGameService>(Container.Resolve<ConsoleGameService>());
+            containerRegistry.RegisterInstance<IGameService>(Container.Resolve<GraphicGameService>());
+            //containerRegistry.RegisterInstance<IGameService>(new GraphicGameService(fileGameRepositories.DefaultRepository));
 
             //Viewの登録
             containerRegistry.RegisterForNavigation<DashboardView>();

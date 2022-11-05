@@ -872,6 +872,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Mov.BaseModel": "1.0.0",
+          "Mov.Painters": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {

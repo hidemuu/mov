@@ -4,6 +4,7 @@ using Mov.Game.Engine.Characters;
 using Mov.Game.Models;
 using Mov.Game.Models.Maps;
 using Mov.Game.Repository;
+using Mov.Game.Service.Implements;
 using Mov.Painters;
 using System;
 using System.Collections.Generic;
@@ -18,44 +19,30 @@ namespace Mov.Game.Service.Machine
     /// <summary>
     /// パックマンっぽいゲームサービス
     /// </summary>
-    public class PackmanGame : GraphicControllerBase, IActionGame
+    public class PackmanGame : IActionGame
     {
         #region フィールド
 
         /// <summary>
-        /// リポジトリ
-        /// </summary>
-        private readonly IGameRepository repository;
-
-        /// <summary>
         /// ゲームエンジン
         /// </summary>
-        private IFsmGameEngine engine;
-        
+        public IFsmGameEngine Engine { get; }
+
         #endregion フィールド
 
         #region プロパティ
 
         /// <summary>
-        /// ゲームオーバー判定
+        /// グラフィックコントローラー
         /// </summary>
-        public bool IsGameOver { get; private set; } = false;
-        /// <summary>
-        /// ステージクリア判定
-        /// </summary>
-        public bool IsStageClear { get; private set; } = false;
-        /// <summary>
-        /// スコア
-        /// </summary>
-        public int Score { get; private set; } = 0;
+        public GraphicControllerBase GraphicController { get; }
+
+        
         /// <summary>
         /// トータルスコア
         /// </summary>
         public int TotalScore { get; private set; } = 0;
-        /// <summary>
-        /// レベル
-        /// </summary>
-        public int Level { get; private set; } = 1;
+        
 
         #endregion フィールド
 
@@ -65,13 +52,10 @@ namespace Mov.Game.Service.Machine
         /// コンストラクター
         /// </summary>
         /// <param name="repository"></param>
-        public PackmanGame(IDomainRepositoryCollection<IGameRepository> repositories, IGameService service) : base()
+        public PackmanGame(IGameService service) : base()
         {
-            this.repository = repositories.GetRepository("");
-            var map = GetLandmark();
-            this.engine = new FsmGameEngine(service);
-            FrameWidth = map.GetCol() * engine.UnitWidth;
-            FrameHeight = map.GetRow() * engine.UnitHeight;
+            this.Engine = new FsmGameEngine(service);
+            this.GraphicController = new FsmGameGraphicController(this.Engine);
         }
 
         #endregion コンストラクター
@@ -81,23 +65,20 @@ namespace Mov.Game.Service.Machine
         /// <summary>
         /// 初期化処理
         /// </summary>
-        public override void Initialize()
+        public void Initialize()
         {
-            base.Initialize();
-            Score = 0;
-            engine.Initialize(GetLandmark());
-            IsGameOver = false;
-            IsStageClear = false;
+            this.GraphicController.Initialize();
         }
 
         public void Next()
         {
-            Level++;
-            TotalScore += Score;
-            Score = 0;
-            engine.Initialize(GetLandmark());
-            IsActive = true;
-            IsStageClear = false;
+            
+            this.Engine.Service.Level++;
+            TotalScore += this.Engine.Service.Score;
+            this.Engine.Service.Score = 0;
+            this.Engine.Initialize(GetLandmark());
+            this.GraphicController.IsActive = true;
+            this.Engine.Service.IsStageClear = false;
         }
 
         /// <summary>
@@ -106,22 +87,22 @@ namespace Mov.Game.Service.Machine
         /// <param name="keyCode"></param>
         public void SetKeyCode(int keyCode)
         {
-            engine.KeyCode = keyCode;
+            this.Engine.KeyCode = keyCode;
         }
 
         public void SetLevel(int lv)
         {
-            Level = lv;
+            this.Engine.Service.Level = lv;
         }
 
         public IEnumerable<int> GetLevels()
         {
-            return repository.Landmarks.Get().Select(x => x.Lv);
+            return this.Engine.Service.Repository.Landmarks.Get().Select(x => x.Lv);
         }
 
         public Landmark GetLandmark()
         {
-            return repository.Landmarks.Get().FirstOrDefault(x => x.Lv == Level);
+            return this.Engine.Service.Repository.Landmarks.Get().FirstOrDefault(x => x.Lv == this.Engine.Service.Level);
         }
 
         /// <summary>
@@ -130,7 +111,7 @@ namespace Mov.Game.Service.Machine
         /// <returns></returns>
         public int GetLife()
         {
-            foreach (var character in engine.Characters)
+            foreach (var character in this.Engine.Characters)
             {
                 switch (character.TypeCode)
                 {
@@ -141,54 +122,13 @@ namespace Mov.Game.Service.Machine
             return -1;
         }
 
-        #endregion メソッド
-
-        #region 抽象メソッド
-
-        protected override void Ready()
-        {
-            foreach (var character in engine.Characters)
-            {
-                switch (character.TypeCode)
-                {
-                    //プレイヤー
-                    case GameMap.PLAYER:
-                        //移動処理
-                        if (character.Move()) Score++;
-                        //ダメージ判定
-                        if (character.IsDamage()) character.AddLife(-1);
-                        //ゲームオーバー判定
-                        if (character.Life <= 0) IsGameOver = true;
-                        //ステージクリア判定
-                        if (Score >= GetLandmark().ClearScore) IsStageClear = true;
-                        break;
-                    //敵
-                    case GameMap.ALIEN:
-                        //移動処理
-                        character.Move();
-                        break;
-                }
-            }
-        }
-
-        protected override void DrawScreen()
-        {
-            foreach (var character in engine.Characters)
-            {
-                if (character.TypeCode != GameMap.ROAD) DrawCharacter(character);
-            }
-        }
-
-        /// <summary>
-        /// キャラクター描画
-        /// </summary>
-        /// <param name="character"></param>
-        protected virtual void DrawCharacter(IFsmCharacter character)
-        {
-            character.Draw(ScreenGraphics);
-        }
         
-        #endregion 抽象メソッド
+        public void Wait()
+        {
+            this.GraphicController.Wait();
+        }
+
+        #endregion メソッド
 
     }
 }

@@ -11,6 +11,9 @@ namespace Mov.Game.Engine
     public interface IFsmGameEngine
     {
         #region プロパティ
+
+        IGameService Service { get; }
+
         /// <summary>
         /// ユニット幅
         /// </summary>
@@ -35,6 +38,7 @@ namespace Mov.Game.Engine
         /// マップ情報
         /// </summary>
         int[,] Map { get; }
+        
 
         #endregion プロパティ
 
@@ -67,6 +71,10 @@ namespace Mov.Game.Engine
         /// <param name="y">Y位置</param>
         /// <returns></returns>
         int GetCollision(IFsmCharacter targetCharacter, int x, int y);
+
+        IEnumerable<int> GetLevels();
+
+        Landmark GetLandmark(int level);
 
         #endregion メソッド
     }

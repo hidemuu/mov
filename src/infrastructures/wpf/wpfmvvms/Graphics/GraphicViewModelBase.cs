@@ -29,7 +29,7 @@ namespace Mov.WpfMvvms
 
         public ReactivePropertySlim<BitmapSource> ImageSource { get; set; } = new ReactivePropertySlim<BitmapSource>();
 
-        protected abstract GraphicControllerBase Service { get; set; }
+        protected abstract GraphicControllerBase Controller { get; set; }
 
         public ReactiveTimer Timer { get; } = new ReactiveTimer(TimeSpan.FromMilliseconds(10), new SynchronizationContextScheduler(SynchronizationContext.Current));
 
@@ -48,7 +48,7 @@ namespace Mov.WpfMvvms
 
         protected override void Dispose(bool disposing)
         {
-            Service.End();
+            this.Controller.End();
             base.Dispose(disposing);
         }
 
@@ -70,13 +70,13 @@ namespace Mov.WpfMvvms
             Timer.AddTo(Disposables);
             Timer.Start();
 
-            Service.Initialize();
-            Service.Run();
+            this.Controller.Initialize();
+            this.Controller.Run();
         }
 
         protected void Stop()
         {
-            Service.Wait();
+            Controller.Wait();
             Timer.Stop();
         }
 
@@ -86,7 +86,7 @@ namespace Mov.WpfMvvms
 
         protected override void OnLoaded()
         {
-            this.bitmap = new Bitmap(Service.FrameWidth, Service.FrameHeight);
+            this.bitmap = new Bitmap(this.Controller.FrameWidth, this.Controller.FrameHeight);
             this.graphics = Graphics.FromImage(bitmap);
             Start();
         }
@@ -98,7 +98,7 @@ namespace Mov.WpfMvvms
 
         private void OnTimer()
         {
-            this.Service.Draw(this.graphics);
+            this.Controller.Draw(this.graphics);
             var hbitmap = this.bitmap.GetHbitmap();
             //モデル生成
             ImageSource.Value = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hbitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());

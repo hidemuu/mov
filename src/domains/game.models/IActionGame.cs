@@ -1,5 +1,7 @@
-﻿using Mov.Game.Models;
+﻿using Mov.Game.Engine;
+using Mov.Game.Models;
 using Mov.Game.Models.Maps;
+using Mov.Painters;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -11,13 +13,9 @@ namespace Mov.Game.Models
     {
         #region プロパティ
 
-        bool IsGameOver { get; }
+        IFsmGameEngine Engine { get; }
 
-        bool IsStageClear { get; }
-        
-        int Score { get; }
-
-        int Level { get; }
+        GraphicControllerBase GraphicController { get; }
 
         #endregion プロパティ
 
@@ -31,25 +29,18 @@ namespace Mov.Game.Models
         /// 次ステージ移行
         /// </summary>
         void Next();
+        
         /// <summary>
-        /// 起動処理
+        /// 待機処理
         /// </summary>
-        void Run();
-        /// <summary>
-        /// 終了処理
-        /// </summary>
-        void End();
+        void Wait();
+        
         /// <summary>
         /// キーコード設定
         /// </summary>
         /// <param name="keyCode">キーコード</param>
         void SetKeyCode(int keyCode);
-        /// <summary>
-        /// 描画
-        /// </summary>
-        /// <param name="g"></param>
-        void Draw(Graphics graphics);
-
+        
         int GetLife();
 
         void SetLevel(int lv);

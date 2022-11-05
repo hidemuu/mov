@@ -29,12 +29,14 @@ namespace Mov.Game.ViewModels
     {
         #region フィールド
 
+        private IActionGame game;
+
         #endregion フィールド
 
         #region プロパティ
         public GameSoftModel Model { get; } = new GameSoftModel();
         
-        protected override GraphicControllerBase Service { get; set; }
+        protected override GraphicControllerBase Controller { get; set; }
 
         #endregion プロパティ
 
@@ -53,7 +55,7 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public GameSoftViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IGameRepository> gameDatabase, IGameService service) : base(regionManager, dialogService)
+        public GameSoftViewModel(IRegionManager regionManager, IDialogService dialogService, IGameService service) : base(regionManager, dialogService)
         {
             KeyUpCommand.Subscribe(() => OnKeyUp()).AddTo(Disposables);
             KeyGestureEnterCommand.Subscribe(() => OnKeyGestureEnter()).AddTo(Disposables);
@@ -63,7 +65,8 @@ namespace Mov.Game.ViewModels
             KeyGestureDownCommand.Subscribe(() => OnKeyGestureDown()).AddTo(Disposables);
             KeyGestureLeftCommand.Subscribe(() => OnKeyGestureLeft()).AddTo(Disposables);
             KeyGestureRightCommand.Subscribe(() => OnKeyGestureRight()).AddTo(Disposables);
-            Service = new PackmanGame(gameDatabase, service);
+            this.game = new PackmanGame(service);
+            Controller = this.game.GraphicController;
         }
 
         #endregion コンストラクター
@@ -72,57 +75,51 @@ namespace Mov.Game.ViewModels
 
         protected override void Update()
         {
-            if(Service is PackmanGame packmanGameService)
-            {
-                Model.Level.Value = packmanGameService.Level;
-                Model.Life.Value = packmanGameService.GetLife();
-                Model.CurrentScore.Value = packmanGameService.Score;
-                Model.ClearScore.Value = packmanGameService.GetLandmark().ClearScore;
-            }
+            Model.Level.Value = this.game.Engine.Service.Level;
+            Model.Life.Value = this.game.GetLife();
+            Model.CurrentScore.Value = this.game.Engine.Service.Score;
+            Model.ClearScore.Value = this.game.GetLandmark().ClearScore;
             base.Update();
         }
 
         protected override void Next()
         {
-            if (Service is PackmanGame packmanGameService)
+            //ゲームオーバー時
+            if (this.game.Engine.Service.IsGameOver)
             {
-                //ゲームオーバー時
-                if (packmanGameService.IsGameOver)
+                DialogService.ShowDialog(GameViewConstants.DIALOG_NAME_GAME_OVER, new DialogParameters($"message={"ゲームオーバー!"}"), result =>
                 {
-                    DialogService.ShowDialog(GameViewConstants.DIALOG_NAME_GAME_OVER, new DialogParameters($"message={"ゲームオーバー!"}"), result =>
+                    if (result.Result == ButtonResult.Yes)
                     {
-                        if (result.Result == ButtonResult.Yes)
-                        {
-                            RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_TITLE);
-                            Disposables.Clear();
-                            packmanGameService.Wait();
-                        }
-                        else
-                        {
-                            RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_TITLE);
-                            Disposables.Clear();
-                            packmanGameService.Wait();
-                        }
-                    });
-                    Stop();
-                }
-                //ステージクリアー時
-                if (packmanGameService.IsStageClear)
-                {
-                    DialogService.ShowDialog(GameViewConstants.DIALOG_NAME_STAGE_CLEAR, new DialogParameters($"message={"ステージクリア!"}"), result =>
+                        RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_TITLE);
+                        Disposables.Clear();
+                        this.game.Wait();
+                    }
+                    else
                     {
-                        if (result.Result == ButtonResult.Yes)
-                        {
-                            packmanGameService.Next();
-                        }
-                        else
-                        {
-                            packmanGameService.Next();
-                        }
-                    });
-                }
+                        RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, GameViewConstants.VIEW_NAME_TITLE);
+                        Disposables.Clear();
+                        this.game.Wait();
+                    }
+                });
+                Stop();
             }
-                
+            //ステージクリアー時
+            if (this.game.Engine.Service.IsStageClear)
+            {
+                DialogService.ShowDialog(GameViewConstants.DIALOG_NAME_STAGE_CLEAR, new DialogParameters($"message={"ステージクリア!"}"), result =>
+                {
+                    if (result.Result == ButtonResult.Yes)
+                    {
+                        this.game.Next();
+                    }
+                    else
+                    {
+                        this.game.Next();
+                    }
+                });
+            }
+
             base.Next();
         }
 
@@ -132,10 +129,7 @@ namespace Mov.Game.ViewModels
 
         private void OnKeyUp()
         {
-            if (Service is PackmanGame packmanGameService)
-            {
-                packmanGameService.SetKeyCode(FsmGameEngine.KEY_CODE_NONE);
-            }
+            this.game.SetKeyCode(FsmGameEngine.KEY_CODE_NONE);
         }
 
         private void OnKeyGestureEnter()
@@ -150,42 +144,27 @@ namespace Mov.Game.ViewModels
 
         private void OnKeyGestureUp()
         {
-            if (Service is PackmanGame packmanGameService)
-            {
-                packmanGameService.SetKeyCode(FsmGameEngine.KEY_CODE_UP);
-            }
+            this.game.SetKeyCode(FsmGameEngine.KEY_CODE_UP);
         }
 
         private void OnKeyGestureUpAndShift()
         {
-            if (Service is PackmanGame packmanGameService)
-            {
-                packmanGameService.SetKeyCode(FsmGameEngine.KEY_CODE_UP);
-            }
+            this.game.SetKeyCode(FsmGameEngine.KEY_CODE_UP);
         }
 
         private void OnKeyGestureDown()
         {
-            if (Service is PackmanGame packmanGameService)
-            {
-                packmanGameService.SetKeyCode(FsmGameEngine.KEY_CODE_DOWN);
-            }
+            this.game.SetKeyCode(FsmGameEngine.KEY_CODE_DOWN);
         }
 
         private void OnKeyGestureLeft()
         {
-            if (Service is PackmanGame packmanGameService)
-            {
-                packmanGameService.SetKeyCode(FsmGameEngine.KEY_CODE_LEFT);
-            }
+            this.game.SetKeyCode(FsmGameEngine.KEY_CODE_LEFT);
         }
 
         private void OnKeyGestureRight()
         {
-            if (Service is PackmanGame packmanGameService)
-            {
-                packmanGameService.SetKeyCode(FsmGameEngine.KEY_CODE_RIGHT);
-            }
+            this.game.SetKeyCode(FsmGameEngine.KEY_CODE_RIGHT);
         }
 
         #endregion イベントハンドラ

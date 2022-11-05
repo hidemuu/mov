@@ -3,6 +3,7 @@ using Mov.Game.Models;
 using Mov.Game.Models.Maps;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Mov.Game.Engine
 {
@@ -37,8 +38,6 @@ namespace Mov.Game.Engine
 
         #region フィールド
 
-        private readonly IGameService service;
-
         /// <summary>
         /// 追跡パンくず
         /// </summary>
@@ -51,6 +50,8 @@ namespace Mov.Game.Engine
         #endregion フィールド
 
         #region プロパティ
+
+        public IGameService Service { get; }
         /// <summary>
         /// ユニット幅
         /// </summary>
@@ -85,7 +86,7 @@ namespace Mov.Game.Engine
         /// </summary>
         public FsmGameEngine(IGameService service)
         {
-            this.service = service;
+            this.Service = service;
             Characters = new List<IFsmCharacter>();
             Aliens = new List<IFsmCharacter>();
         }
@@ -243,6 +244,16 @@ namespace Mov.Game.Engine
                 }
             }
             return GameMap.NONE;
+        }
+
+        public IEnumerable<int> GetLevels()
+        {
+            return this.Service.Repository.Landmarks.Get().Select(x => x.Lv);
+        }
+
+        public Landmark GetLandmark(int level)
+        {
+            return this.Service.Repository.Landmarks.Get().FirstOrDefault(x => x.Lv == level);
         }
 
         #endregion メソッド

@@ -331,6 +331,9 @@
             "projectReferences": {
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\basemodel\\BaseModel.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\basemodel\\BaseModel.csproj"
+              },
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\painters\\Painters.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\painters\\Painters.csproj"
               }
             }
           }

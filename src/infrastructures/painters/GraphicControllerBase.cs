@@ -40,7 +40,7 @@ namespace Mov.Painters
         /// <summary>
         /// スレッド継続フラグ
         /// </summary>
-        protected bool IsActive { get; set; } = true;
+        public bool IsActive { get; set; } = true;
         /// <summary>
         /// ビットマップ画面作成中フラグ
         /// </summary>
@@ -65,6 +65,43 @@ namespace Mov.Painters
         }
 
         #endregion コンストラクター
+
+        #region 抽象メソッド
+
+        /// <summary>
+        /// 描画準備
+        /// </summary>
+        protected abstract void Ready();
+
+        /// <summary>
+        /// スクリーン初期化
+        /// </summary>
+        protected virtual void ClearScreen()
+        {
+            ScreenGraphics.Clear(Color.White);
+        }
+
+        /// <summary>
+        /// スクリーン描画
+        /// </summary>
+        protected abstract void DrawScreen();
+
+        /// <summary>
+        /// スクリーン更新
+        /// </summary>
+        protected virtual void InvalidateScreen()
+        {
+            //throw new NotImplementedException();
+        }
+        /// <summary>
+        /// スクリーン廃棄
+        /// </summary>
+        protected virtual void DisposeScreen()
+        {
+            ScreenGraphics.Dispose();
+        }
+
+        #endregion 抽象メソッド
 
         #region メソッド
 
@@ -142,41 +179,6 @@ namespace Mov.Painters
 
         #endregion メソッド
 
-        #region 抽象メソッド
-
-        /// <summary>
-        /// 描画準備
-        /// </summary>
-        protected abstract void Ready();
-
-        /// <summary>
-        /// スクリーン初期化
-        /// </summary>
-        protected virtual void ClearScreen()
-        {
-            ScreenGraphics.Clear(Color.White);
-        }
-
-        /// <summary>
-        /// スクリーン描画
-        /// </summary>
-        protected abstract void DrawScreen();
-
-        /// <summary>
-        /// スクリーン更新
-        /// </summary>
-        protected virtual void InvalidateScreen()
-        {
-            //throw new NotImplementedException();
-        }
-        /// <summary>
-        /// スクリーン廃棄
-        /// </summary>
-        protected virtual void DisposeScreen()
-        {
-            ScreenGraphics.Dispose();
-        }
-
-        #endregion 抽象メソッド
+        
     }
 }

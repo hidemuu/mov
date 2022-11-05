@@ -33,7 +33,7 @@ namespace Mov.Designer.ViewModels
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public DesignerPartsViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDesignerRepository> database) : base(regionManager, dialogService)
+        public DesignerPartsViewModel(IRegionManager regionManager, IDialogService dialogService) : base(regionManager, dialogService)
         {
             
         }

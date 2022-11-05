@@ -13,8 +13,13 @@
     d:DesignWidth="800"
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
-    <DockPanel LastChildFill="True">
-        <atom:MovButton Height="40" DockPanel.Dock="Bottom" />
+    <DockPanel Margin="5" LastChildFill="True">
+        <StackPanel
+            Height="40"
+            DockPanel.Dock="Bottom"
+            Orientation="Horizontal">
+            <atom:MovButton />
+        </StackPanel>
         <atom:MovCartesianChart />
     </DockPanel>
 </UserControl>

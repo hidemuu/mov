@@ -22,8 +22,6 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        private readonly IDomainRepositoryCollection<IDesignerRepository> database;
-
         private IDesignerRepository repository;
 
         private bool isEdited = false;
@@ -56,7 +54,6 @@ namespace Mov.Designer.ViewModels
         /// <param name="repository"></param>
         public DesignerTreeViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDesignerRepository> database) : base(regionManager, dialogService)
         {
-            this.database = database;
             SaveCommand.Subscribe(OnSaveCommand).AddTo(Disposables);
             AddCommand.Subscribe(OnAddCommand).AddTo(Disposables);
             DeleteCommand.Subscribe(OnRemoveCommand).AddTo(Disposables);

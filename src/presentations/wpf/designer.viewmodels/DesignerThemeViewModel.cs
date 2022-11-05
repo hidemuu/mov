@@ -19,8 +19,6 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        private readonly IDomainRepositoryCollection<IDesignerRepository> database;
-
         private IDesignerRepository repository;
 
         #endregion フィールド
@@ -35,9 +33,8 @@ namespace Mov.Designer.ViewModels
 
         #region コンストラクター
 
-        public DesignerThemeViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDesignerRepository> database) : base(regionManager, dialogService)
+        public DesignerThemeViewModel(IRegionManager regionManager, IDialogService dialogService) : base(regionManager, dialogService)
         {
-            this.database = database;
             // ComboBoxの初期値を設定するにはItemsSourceで利用しているインスタンスの中から指定する必要がある
             SelectedSwatch = new ReactivePropertySlim<Swatch>(Swatches.FirstOrDefault(s => s.Name == ThemeService.CurrentTheme.Name));
             SelectedSwatch.Subscribe(s => ChangeTheme(s)).AddTo(this.Disposables);

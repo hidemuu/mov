@@ -40,7 +40,7 @@ namespace Mov.Designer.ViewModels
             { PAGE_NAME_THEME, "DesignerThemeView" },
         };
 
-        private readonly IDomainRepositoryCollection<IDesignerRepository> database;
+        private readonly IDomainRepositoryCollection<IDesignerRepository> repositories;
 
         private IDesignerRepository repository;
 
@@ -73,12 +73,12 @@ namespace Mov.Designer.ViewModels
         /// </summary>
         /// <param name="regionManager"></param>
         /// <param name="dialogService"></param>
-        public DesignerViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDesignerRepository> database) : base(regionManager, dialogService)
+        public DesignerViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDesignerRepository> repositories) : base(regionManager, dialogService)
         {
-            this.database = database;
-            this.SelectedComboItem.Value = database.GetDefaultRepositoryName();
-            this.ComboItems.AddRangeOnScheduler(database.GetRepositoryNames());
-            this.repository = database.GetRepository(SelectedComboItem.Value);
+            this.repositories = repositories;
+            this.SelectedComboItem.Value = repositories.GetDefaultRepositoryName();
+            this.ComboItems.AddRangeOnScheduler(repositories.GetRepositoryNames());
+            this.repository = repositories.GetRepository(SelectedComboItem.Value);
             ShowPageCommand.Subscribe(OnPageChangeCommand).AddTo(Disposables);
             SaveCommand.Subscribe(OnSaveCommand).AddTo(Disposables);
         }
@@ -111,7 +111,7 @@ namespace Mov.Designer.ViewModels
         private void RequestNavigate(string pageName, string selectedComboItem)
         {
             var param = new NavigationParameters();
-            param.Add(NAVIGATION_PARAM_NAME_REPOSITORY, database.GetRepository(selectedComboItem));
+            param.Add(NAVIGATION_PARAM_NAME_REPOSITORY, this.repositories.GetRepository(selectedComboItem));
             this.RegionManager.RequestNavigate(REGION_NAME_CONTENT, pageDictionary[pageName], param);
         }
 

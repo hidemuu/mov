@@ -21,8 +21,6 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        private readonly IDomainRepositoryCollection<IDesignerRepository> database;
-
         private IDesignerRepository repository;
 
         private CompositeDisposable modelDisposables = new CompositeDisposable();
@@ -51,9 +49,8 @@ namespace Mov.Designer.ViewModels
         /// コンストラクター
         /// </summary>
         /// <param name="repository"></param>
-        public DesignerTableViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDesignerRepository> database) : base(regionManager, dialogService)
+        public DesignerTableViewModel(IRegionManager regionManager, IDialogService dialogService) : base(regionManager, dialogService)
         {
-            this.database = database;
             SaveCommand.Subscribe(OnSaveCommand).AddTo(Disposables);
             AddCommand.Subscribe(OnAddCommand).AddTo(Disposables);
             DeleteCommand.Subscribe(OnRemoveCommand).AddTo(Disposables);

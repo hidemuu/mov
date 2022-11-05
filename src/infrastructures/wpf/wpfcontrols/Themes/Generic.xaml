@@ -10,137 +10,20 @@
     xmlns:organism="clr-namespace:Mov.WpfControls.Components.Organisms">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovButton.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovCartesianChart.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovCheckBox.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovComboBox.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovDatePicker.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovExpander.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovLabel.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovLamp.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovPieChart.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovRadioButton.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovTextBox.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Molecules/MovNumericUpDown.xaml" />
         <!--<ResourceDictionary Source="Mov.WpfControls;component/Themes/Organisms/MovTreeListView.xaml" />-->
     </ResourceDictionary.MergedDictionaries>
     <converter:StringToHolizontalAlignmentConverter x:Key="StringToHolizontalAlignmentConverter" />
     <converter:StringToVerticalAlignmentConverter x:Key="StringToVerticalAlignmentConverter" />
-
-    <!--  Atoms  -->
-
-    <Style TargetType="{x:Type atom:MovCartesianChart}">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type atom:MovCartesianChart}">
-                    <lvc:CartesianChart
-                        Name="Chart1"
-                        Background="#FF272424"
-                        Foreground="White"
-                        LegendLocation="Right"
-                        Series="{TemplateBinding Series}">
-                        <lvc:CartesianChart.AxisX>
-                            <lvc:Axis
-                                Foreground="LightGray"
-                                Labels="{Binding LabelsX, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:MovCartesianChart}}}"
-                                LabelsRotation="-45">
-                                <lvc:Axis.Separator>
-                                    <lvc:Separator
-                                        IsEnabled="True"
-                                        Step="1"
-                                        StrokeDashArray="2"
-                                        StrokeThickness="1">
-                                        <lvc:Separator.Stroke>
-                                            <SolidColorBrush Color="#404F56" />
-                                        </lvc:Separator.Stroke>
-                                    </lvc:Separator>
-                                </lvc:Axis.Separator>
-                            </lvc:Axis>
-                        </lvc:CartesianChart.AxisX>
-                        <lvc:CartesianChart.AxisY>
-                            <lvc:Axis
-                                Foreground="LightGray"
-                                MaxValue="{Binding MaxValueY, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:MovCartesianChart}}}"
-                                MinValue="{Binding MinValueY, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:MovCartesianChart}}}">
-                                <lvc:Axis.Separator>
-                                    <lvc:Separator StrokeDashArray="4" StrokeThickness="1.5">
-                                        <lvc:Separator.Stroke>
-                                            <SolidColorBrush Color="#404F56" />
-                                        </lvc:Separator.Stroke>
-                                    </lvc:Separator>
-                                </lvc:Axis.Separator>
-                            </lvc:Axis>
-                        </lvc:CartesianChart.AxisY>
-                    </lvc:CartesianChart>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <Style TargetType="{x:Type atom:MovPieChart}">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type atom:MovPieChart}">
-                    <lvc:PieChart
-                        Series="{TemplateBinding Series}"
-                        SeriesColors="{TemplateBinding SeriesColors}"
-                        StartingRotationAngle="0" />
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <!--  Molecules  -->
-
-    <Style TargetType="{x:Type molecule:MovNumericUpDown}">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type molecule:MovNumericUpDown}">
-                    <Border
-                        Width="231"
-                        Height="86"
-                        Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="21*" />
-                                <RowDefinition Height="22*" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <TextBlock
-                                x:Name="textBlockValue"
-                                Grid.RowSpan="2"
-                                Width="Auto"
-                                Height="Auto"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Center"
-                                Foreground="Black"
-                                TextWrapping="Wrap" />
-                            <RepeatButton
-                                x:Name="PART_UpButton"
-                                Grid.Column="1"
-                                Width="Auto"
-                                Height="Auto"
-                                Margin="2.5"
-                                Content="Up" />
-                            <RepeatButton
-                                x:Name="PART_DownButton"
-                                Grid.Row="1"
-                                Grid.Column="1"
-                                Margin="2.5"
-                                Content="Down" />
-                        </Grid>
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="PositiveNegative">
-                                <VisualState x:Name="Positive" />
-                                <VisualState x:Name="Negative">
-                                    <Storyboard>
-                                        <ColorAnimation
-                                            Storyboard.TargetName="textBlockValue"
-                                            Storyboard.TargetProperty="Foreground.Color"
-                                            To="Red" />
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <!--  Organisms  -->
 
 </ResourceDictionary>

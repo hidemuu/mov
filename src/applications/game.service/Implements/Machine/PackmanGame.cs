@@ -25,12 +25,12 @@ namespace Mov.Game.Service.Machine
         /// <summary>
         /// リポジトリ
         /// </summary>
-        protected IGameRepository Repository { get; private set; }
+        private readonly IGameRepository repository;
 
         /// <summary>
         /// ゲームエンジン
         /// </summary>
-        private FsmGameEngine gameEngine;
+        private IFsmGameEngine engine;
         
         #endregion フィールド
 
@@ -65,13 +65,13 @@ namespace Mov.Game.Service.Machine
         /// コンストラクター
         /// </summary>
         /// <param name="repository"></param>
-        public PackmanGame(IDomainRepositoryCollection<IGameRepository> database) : base()
+        public PackmanGame(IDomainRepositoryCollection<IGameRepository> repositories, IGameService service) : base()
         {
-            this.Repository = database.GetRepository("");
+            this.repository = repositories.GetRepository("");
             var map = GetLandmark();
-            gameEngine = new FsmGameEngine();
-            FrameWidth = map.GetCol() * gameEngine.UnitWidth;
-            FrameHeight = map.GetRow() * gameEngine.UnitHeight;
+            this.engine = new FsmGameEngine(service);
+            FrameWidth = map.GetCol() * engine.UnitWidth;
+            FrameHeight = map.GetRow() * engine.UnitHeight;
         }
 
         #endregion コンストラクター
@@ -85,7 +85,7 @@ namespace Mov.Game.Service.Machine
         {
             base.Initialize();
             Score = 0;
-            gameEngine.Initialize(GetLandmark());
+            engine.Initialize(GetLandmark());
             IsGameOver = false;
             IsStageClear = false;
         }
@@ -95,7 +95,7 @@ namespace Mov.Game.Service.Machine
             Level++;
             TotalScore += Score;
             Score = 0;
-            gameEngine.Initialize(GetLandmark());
+            engine.Initialize(GetLandmark());
             IsActive = true;
             IsStageClear = false;
         }
@@ -106,7 +106,7 @@ namespace Mov.Game.Service.Machine
         /// <param name="keyCode"></param>
         public void SetKeyCode(int keyCode)
         {
-            gameEngine.KeyCode = keyCode;
+            engine.KeyCode = keyCode;
         }
 
         public void SetLevel(int lv)
@@ -116,12 +116,12 @@ namespace Mov.Game.Service.Machine
 
         public IEnumerable<int> GetLevels()
         {
-            return Repository.Landmarks.Get().Select(x => x.Lv);
+            return repository.Landmarks.Get().Select(x => x.Lv);
         }
 
         public Landmark GetLandmark()
         {
-            return Repository.Landmarks.Get().FirstOrDefault(x => x.Lv == Level);
+            return repository.Landmarks.Get().FirstOrDefault(x => x.Lv == Level);
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Mov.Game.Service.Machine
         /// <returns></returns>
         public int GetLife()
         {
-            foreach (var character in gameEngine.Characters)
+            foreach (var character in engine.Characters)
             {
                 switch (character.TypeCode)
                 {
@@ -147,7 +147,7 @@ namespace Mov.Game.Service.Machine
 
         protected override void Ready()
         {
-            foreach (var character in gameEngine.Characters)
+            foreach (var character in engine.Characters)
             {
                 switch (character.TypeCode)
                 {
@@ -173,7 +173,7 @@ namespace Mov.Game.Service.Machine
 
         protected override void DrawScreen()
         {
-            foreach (var character in gameEngine.Characters)
+            foreach (var character in engine.Characters)
             {
                 if (character.TypeCode != GameMap.ROAD) DrawCharacter(character);
             }

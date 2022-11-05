@@ -19,8 +19,6 @@ namespace Mov.Game.ViewModels
     {
         #region フィールド
 
-        private IActionGame gameService;
-
         #endregion フィールド
 
         #region プロパティ
@@ -44,15 +42,14 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public GameTitleViewModel(IRegionManager regionManager, IActionGame gameService)
+        public GameTitleViewModel(IRegionManager regionManager)
         {
             this.RegionManager = regionManager;
-            this.gameService = gameService;
             StartCommand.Subscribe(OnStartCommand).AddTo(Disposables);
             Softs.AddRangeOnScheduler(new string[] { GameViewConstants.VIEW_NAME_SOFT });
             SelectedSoft.Value = GameViewConstants.VIEW_NAME_SOFT;
             SelectedSoft.Where(x => !string.IsNullOrEmpty(x)).Subscribe(OnSoftSelectChanged).AddTo(Disposables);
-            Levels.AddRangeOnScheduler(gameService.GetLevels());
+            //Levels.AddRangeOnScheduler(gameService.GetLevels());
             SelectedLevel.Value = 1;
             SelectedLevel.Where(x => x > 0).Subscribe(OnLevelSelectChanged).AddTo(Disposables);
         }
@@ -63,7 +60,7 @@ namespace Mov.Game.ViewModels
 
         private void OnStartCommand()
         {
-            if(SelectedLevel.Value > 0) this.gameService.SetLevel(SelectedLevel.Value);
+            //if(SelectedLevel.Value > 0) this.gameService.SetLevel(SelectedLevel.Value);
             this.RegionManager.RequestNavigate(GameViewConstants.REGION_NAME_MAIN, SelectedSoft.Value);
         }
 

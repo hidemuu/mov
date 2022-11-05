@@ -53,7 +53,7 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public GameSoftViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IGameRepository> gameDatabase, IActionGame gameService) : base(regionManager, dialogService)
+        public GameSoftViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IGameRepository> gameDatabase, IGameService service) : base(regionManager, dialogService)
         {
             KeyUpCommand.Subscribe(() => OnKeyUp()).AddTo(Disposables);
             KeyGestureEnterCommand.Subscribe(() => OnKeyGestureEnter()).AddTo(Disposables);
@@ -63,7 +63,7 @@ namespace Mov.Game.ViewModels
             KeyGestureDownCommand.Subscribe(() => OnKeyGestureDown()).AddTo(Disposables);
             KeyGestureLeftCommand.Subscribe(() => OnKeyGestureLeft()).AddTo(Disposables);
             KeyGestureRightCommand.Subscribe(() => OnKeyGestureRight()).AddTo(Disposables);
-            Service = new PackmanGame(gameDatabase);
+            Service = new PackmanGame(gameDatabase, service);
         }
 
         #endregion コンストラクター

@@ -21,8 +21,6 @@ namespace Mov.Game.ViewModels
     {
         #region フィールド
 
-        private readonly IActionGame gameService;
-
         #endregion フィールド
 
         #region プロパティ
@@ -41,9 +39,8 @@ namespace Mov.Game.ViewModels
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public GameViewModel(IRegionManager regionManager, IDialogService dialogService, IActionGame gameService) : base(regionManager, dialogService)
+        public GameViewModel(IRegionManager regionManager, IDialogService dialogService) : base(regionManager, dialogService)
         {
-            this.gameService = gameService;
 
             ReturnCommand.Subscribe(() => OnReturnCommand()).AddTo(Disposables);
 

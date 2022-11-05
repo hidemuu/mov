@@ -125,22 +125,43 @@ namespace Mov.WpfApp
             var container = containerRegistry.GetContainer();
 
             //リポジトリの登録  
-            var repositoryFactory = new FileDomainRepositoryCollectionFactory(PathCreator.GetResourcePath());
-            containerRegistry.RegisterInstance<IDomainRepositoryCollection<IConfiguratorRepository>>(
-                repositoryFactory.Create<IConfiguratorRepository>(SerializeConstants.PATH_JSON));
-            containerRegistry.RegisterInstance<IDomainRepositoryCollection<IDesignerRepository>>(
-                repositoryFactory.Create<IDesignerRepository>(SerializeConstants.PATH_XML));
-            containerRegistry.RegisterInstance<IDomainRepositoryCollection<IGameRepository>>(
-                repositoryFactory.Create<IGameRepository>(SerializeConstants.PATH_JSON));
-            containerRegistry.RegisterInstance<IDomainRepositoryCollection<IDrawerRepository>>(
-                repositoryFactory.Create<IDrawerRepository>(SerializeConstants.PATH_JSON));
-            containerRegistry.RegisterInstance<IDomainRepositoryCollection<IDriverRepository>>(
-                repositoryFactory.Create<IDriverRepository>(SerializeConstants.PATH_JSON));
-            containerRegistry.RegisterInstance<IDomainRepositoryCollection<IAnalizerRepository>>(
-                repositoryFactory.Create<IAnalizerRepository>(SerializeConstants.PATH_JSON));
+            var resourcePath = PathCreator.GetResourcePath();
+            var fileRepositoriesFactory = new FileDomainRepositoryCollectionFactory(resourcePath);
+            
+            var fileConfigulatorRepositories = fileRepositoriesFactory
+                .Create<IConfiguratorRepository>(SerializeConstants.PATH_JSON);
+            containerRegistry.RegisterInstance(fileConfigulatorRepositories);
+            
+            var fileDesignerRepositories = fileRepositoriesFactory
+                .Create<IDesignerRepository>(SerializeConstants.PATH_XML);
+            containerRegistry.RegisterInstance(fileDesignerRepositories);
+
+            var fileGameRepositories = fileRepositoriesFactory
+                .Create<IGameRepository>(SerializeConstants.PATH_JSON);
+            containerRegistry.RegisterInstance(fileGameRepositories);
+
+            var fileDrawerRepositories = fileRepositoriesFactory
+                .Create<IDrawerRepository>(SerializeConstants.PATH_JSON);
+            containerRegistry.RegisterInstance(fileDrawerRepositories);
+
+            var fileDriverRepositories = fileRepositoriesFactory
+                .Create<IDriverRepository>(SerializeConstants.PATH_JSON);
+            containerRegistry.RegisterInstance(fileDriverRepositories);
+
+            var fileAnalizerRepositories = fileRepositoriesFactory
+                .Create<IAnalizerRepository>(SerializeConstants.PATH_JSON);
+            containerRegistry.RegisterInstance(fileAnalizerRepositories);
+
+            containerRegistry.RegisterInstance<IGameRepository>(fileGameRepositories.DefaultRepository);
+
+            //インターフェースとクラスを紐付けて登録
+            //container.RegisterType<IHomeService, HomeService>();
+
+            // シングルトンとして登録
+            //containerRegistry.RegisterSingleton<IApplicationCommands, ApplicationCommands>();
 
             //サービスの登録
-            containerRegistry.RegisterInstance<IActionGame>(Container.Resolve<PackmanGame>());
+            containerRegistry.RegisterInstance<IGameService>(Container.Resolve<ConsoleGameService>());
 
             //Viewの登録
             containerRegistry.RegisterForNavigation<DashboardView>();

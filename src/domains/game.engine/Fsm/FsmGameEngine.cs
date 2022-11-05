@@ -37,6 +37,8 @@ namespace Mov.Game.Engine
 
         #region フィールド
 
+        private readonly IGameService service;
+
         /// <summary>
         /// 追跡パンくず
         /// </summary>
@@ -81,8 +83,9 @@ namespace Mov.Game.Engine
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FsmGameEngine()
+        public FsmGameEngine(IGameService service)
         {
+            this.service = service;
             Characters = new List<IFsmCharacter>();
             Aliens = new List<IFsmCharacter>();
         }

@@ -9,20 +9,17 @@ namespace Mov.Game.Service
     {
         public IGameRepository Repository { get; }
 
-        private IConsoleGame game;
-
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ConsoleGameService(IGameRepository repository, IConsoleGame game)
+        public ConsoleGameService(IGameRepository repository)
         {
             this.Repository = repository;
-            this.game = game;
         }
 
         public void Run()
         {
-            this.game.Print();
+            
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Mov.Bom.Views;
+﻿using Mov.Analizer.Views;
+using Mov.Bom.Views;
 using Mov.Configurator.Views;
 using Mov.Designer.Views;
 using Mov.Drawer.Views;
@@ -58,6 +59,8 @@ namespace Mov.WpfApp
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(BomView))));
             Models.Add(new MainWindowModel(7, "Scheduler", "calendar", () => 
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(SchedulerView))));
+            Models.Add(new MainWindowModel(8, "Analizer", "ChartLine", () =>
+                this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(AnalizerView))));
 
             TabChangeCommand.Subscribe(_ => OnChangeTab()).AddTo(Disposables);
 

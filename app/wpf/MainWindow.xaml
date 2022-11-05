@@ -12,7 +12,7 @@
     xmlns:wvm="clr-namespace:Mov.WpfMvvms;assembly=Mov.WpfMvvms"
     Title="Mov"
     Width="1000"
-    Height="700"
+    Height="800"
     d:DataContext="{d:DesignInstance local:MainWindowViewModel}"
     prism:ViewModelLocator.AutoWireViewModel="True"
     Background="{DynamicResource MaterialDesignPaper}"

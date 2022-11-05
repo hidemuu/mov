@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\analizer.viewmodels\Analizer.ViewModels.csproj" />
+    <ProjectReference Include="..\authorizer.viewmodels\Authorizer.ViewModels.csproj" />
     <ProjectReference Include="..\bom.viewmodels\Bom.ViewModels.csproj" />
     <ProjectReference Include="..\configurator.viewmodels\Configurator.ViewModels.csproj" />
     <ProjectReference Include="..\designer.viewmodels\Designer.ViewModels.csproj" />
@@ -16,6 +17,7 @@
     <ProjectReference Include="..\driver.viewmodels\Driver.ViewModels.csproj" />
     <ProjectReference Include="..\game.viewmodels\Game.ViewModels.csproj" />
     <ProjectReference Include="..\scheduler.viewmodels\Scheduler.ViewModels.csproj" />
+    <ProjectReference Include="..\translator.viewmodels\Translator.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

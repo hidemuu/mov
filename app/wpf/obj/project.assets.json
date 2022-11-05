@@ -790,6 +790,40 @@
           "bin/placeholder/Mov.Authorizer.Service.dll": {}
         }
       },
+      "Mov.Authorizer.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Authorizer.Service": "1.0.0",
+          "Mov.WpfViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Authorizer.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Authorizer.ViewModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.Authorizer.Views/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Authorizer.ViewModels": "1.0.0",
+          "Mov.WpfViews": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Authorizer.Views.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Authorizer.Views.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Mov.BaseModel/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1574,18 +1608,54 @@
           "bin/placeholder/Mov.Translator.Service.dll": {}
         }
       },
+      "Mov.Translator.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Translator.Service": "1.0.0",
+          "Mov.WpfViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Translator.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Translator.ViewModels.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.Translator.Views/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Translator.ViewModels": "1.0.0",
+          "Mov.WpfViews": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Translator.Views.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Translator.Views.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Mov.UseCase.ViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Mov.Analizer.ViewModels": "1.0.0",
+          "Mov.Authorizer.ViewModels": "1.0.0",
           "Mov.Bom.ViewModels": "1.0.0",
           "Mov.Configurator.ViewModels": "1.0.0",
           "Mov.Designer.ViewModels": "1.0.0",
           "Mov.Drawer.ViewModels": "1.0.0",
           "Mov.Driver.ViewModels": "1.0.0",
           "Mov.Game.ViewModels": "1.0.0",
-          "Mov.Scheduler.ViewModels": "1.0.0"
+          "Mov.Scheduler.ViewModels": "1.0.0",
+          "Mov.Translator.ViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.UseCase.ViewModels.dll": {}
@@ -1602,6 +1672,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Mov.Analizer.Views": "1.0.0",
+          "Mov.Authorizer.Views": "1.0.0",
           "Mov.Bom.Views": "1.0.0",
           "Mov.Configurator.Views": "1.0.0",
           "Mov.Designer.Views": "1.0.0",
@@ -1609,6 +1680,7 @@
           "Mov.Driver.Views": "1.0.0",
           "Mov.Game.Views": "1.0.0",
           "Mov.Scheduler.Views": "1.0.0",
+          "Mov.Translator.Views": "1.0.0",
           "Mov.UseCase.ViewModels": "1.0.0"
         },
         "compile": {
@@ -3125,6 +3197,16 @@
       "path": "../../src/applications/authorizer.service/Authorizer.Service.csproj",
       "msbuildProject": "../../src/applications/authorizer.service/Authorizer.Service.csproj"
     },
+    "Mov.Authorizer.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../src/presentations/wpf/authorizer.viewmodels/Authorizer.ViewModels.csproj",
+      "msbuildProject": "../../src/presentations/wpf/authorizer.viewmodels/Authorizer.ViewModels.csproj"
+    },
+    "Mov.Authorizer.Views/1.0.0": {
+      "type": "project",
+      "path": "../../src/presentations/wpf/authorizer.views/Authorizer.Views.csproj",
+      "msbuildProject": "../../src/presentations/wpf/authorizer.views/Authorizer.Views.csproj"
+    },
     "Mov.BaseModel/1.0.0": {
       "type": "project",
       "path": "../../src/domains/basemodel/BaseModel.csproj",
@@ -3394,6 +3476,16 @@
       "type": "project",
       "path": "../../src/applications/translator.service/Translator.Service.csproj",
       "msbuildProject": "../../src/applications/translator.service/Translator.Service.csproj"
+    },
+    "Mov.Translator.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../src/presentations/wpf/translator.viewmodels/Translator.ViewModels.csproj",
+      "msbuildProject": "../../src/presentations/wpf/translator.viewmodels/Translator.ViewModels.csproj"
+    },
+    "Mov.Translator.Views/1.0.0": {
+      "type": "project",
+      "path": "../../src/presentations/wpf/translator.views/Translator.Views.csproj",
+      "msbuildProject": "../../src/presentations/wpf/translator.views/Translator.Views.csproj"
     },
     "Mov.UseCase.ViewModels/1.0.0": {
       "type": "project",

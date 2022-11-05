@@ -77,4 +77,3 @@ C:\Users\nando\Documents\GitHub\mov\app\asp_net\obj\Debug\net5.0\ref\Mov.AspNet.
 C:\Users\nando\Documents\GitHub\mov\app\asp_net\obj\Debug\net5.0\Mov.AspNet.pdb
 C:\Users\nando\Documents\GitHub\mov\app\asp_net\obj\Debug\net5.0\AspNet.genruntimeconfig.cache
 C:\Users\nando\Documents\GitHub\mov\app\asp_net\obj\Debug\net5.0\AspNet.csproj.CopyComplete
-C:\Users\nando\Documents\GitHub\mov\app\asp_net\obj\Debug\net5.0\AspNet.csproj.AssemblyReference.cache

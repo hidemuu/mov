@@ -51,6 +51,9 @@ using Mov.Framework;
 using Mov.WpfViews;
 using Mov.UseCase.Views;
 using Mov.UseCase.ViewModels;
+using Mov.Analizer.Models;
+using Mov.Analizer.Views;
+using Mov.Analizer.ViewModels;
 
 namespace Mov.WpfApp
 {
@@ -133,6 +136,8 @@ namespace Mov.WpfApp
                 repositoryFactory.Create<IDrawerRepository>(SerializeConstants.PATH_JSON));
             containerRegistry.RegisterInstance<IDomainRepositoryCollection<IDriverRepository>>(
                 repositoryFactory.Create<IDriverRepository>(SerializeConstants.PATH_JSON));
+            containerRegistry.RegisterInstance<IDomainRepositoryCollection<IAnalizerRepository>>(
+                repositoryFactory.Create<IAnalizerRepository>(SerializeConstants.PATH_JSON));
 
             //サービスの登録
             containerRegistry.RegisterInstance<IActionGame>(Container.Resolve<PackmanGame>());
@@ -153,6 +158,7 @@ namespace Mov.WpfApp
             containerRegistry.RegisterForNavigation<DrawerView>();
             containerRegistry.RegisterForNavigation<DriverView>();
             containerRegistry.RegisterForNavigation<BomView>();
+            containerRegistry.RegisterForNavigation<AnalizerView>();
 
             //Dialogの登録
             //containerRegistry.RegisterDialog<AlertDialog, AlertDialogViewModel>();
@@ -204,6 +210,7 @@ namespace Mov.WpfApp
             ViewModelLocationProvider.Register<DrawerView, DrawerViewModel>();
             ViewModelLocationProvider.Register<DriverView, DriverViewModel>();
             ViewModelLocationProvider.Register<BomView, BomViewModel>();
+            ViewModelLocationProvider.Register<AnalizerView, AnalizerViewModel>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

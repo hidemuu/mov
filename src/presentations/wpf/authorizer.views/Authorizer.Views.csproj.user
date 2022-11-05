@@ -5,39 +5,9 @@
     <Compile Update="AuthorizerView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Dialogs\Contents\CreateAccountView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Dialogs\Contents\LoginMainContentView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Dialogs\Contents\NoContentView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Dialogs\LoginDialog.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\UserTableView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="AuthorizerView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Dialogs\Contents\CreateAccountView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Dialogs\Contents\LoginMainContentView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Dialogs\Contents\NoContentView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Dialogs\LoginDialog.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\UserTableView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

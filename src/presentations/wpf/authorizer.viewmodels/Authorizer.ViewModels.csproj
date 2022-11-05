@@ -8,7 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\infrastructures\wpfcontrols\WpfControls.csproj" />
+    <ProjectReference Include="..\..\..\applications\authorizer.service\Authorizer.Service.csproj" />
+    <ProjectReference Include="..\..\..\infrastructures\wpf\wpfviewmodels\WpfViewModels.csproj" />
   </ItemGroup>
 
 </Project>

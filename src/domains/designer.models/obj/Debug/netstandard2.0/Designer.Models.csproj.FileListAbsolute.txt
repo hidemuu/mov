@@ -38,7 +38,9 @@ C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netsta
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.BaseModel.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Calculators.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Controllers.dll
+C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Layouts.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Utilities.dll
+C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Layouts.pdb
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.BaseModel.pdb
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Accessors.pdb
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Calculators.pdb
@@ -51,5 +53,3 @@ C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\obj\Debug\netsta
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\obj\Debug\netstandard2.0\Designer.Models.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\obj\Debug\netstandard2.0\Mov.Designer.Models.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\obj\Debug\netstandard2.0\Mov.Designer.Models.pdb
-C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Layouts.dll
-C:\Users\nando\Documents\GitHub\mov\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Layouts.pdb

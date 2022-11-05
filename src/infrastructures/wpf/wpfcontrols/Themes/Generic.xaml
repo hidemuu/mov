@@ -5,29 +5,17 @@
     xmlns:converter="clr-namespace:Mov.WpfControls.Converters"
     xmlns:dd="urn:gong-wpf-dragdrop"
     xmlns:local="clr-namespace:Mov.WpfControls.Components"
-    xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf">
+    xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+    xmlns:molecule="clr-namespace:Mov.WpfControls.Components.Molecules"
+    xmlns:organism="clr-namespace:Mov.WpfControls.Components.Organisms">
     <ResourceDictionary.MergedDictionaries>
-        <!--<ResourceDictionary Source="Organisms/MovTreeListView.xaml" />-->
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovButton.xaml" />
+        <!--<ResourceDictionary Source="Mov.WpfControls;component/Themes/Organisms/MovTreeListView.xaml" />-->
     </ResourceDictionary.MergedDictionaries>
     <converter:StringToHolizontalAlignmentConverter x:Key="StringToHolizontalAlignmentConverter" />
     <converter:StringToVerticalAlignmentConverter x:Key="StringToVerticalAlignmentConverter" />
 
     <!--  Atoms  -->
-
-    <Style TargetType="{x:Type atom:MovButton}">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type atom:MovButton}">
-                    <Button
-                        Width="{TemplateBinding Width}"
-                        Height="{TemplateBinding Height}"
-                        HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
-                        VerticalAlignment="{TemplateBinding VerticalAlignment}"
-                        Content="{TemplateBinding Content}" />
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
 
     <Style TargetType="{x:Type atom:MovCartesianChart}">
         <Setter Property="Template">
@@ -91,6 +79,67 @@
     </Style>
 
     <!--  Molecules  -->
+
+    <Style TargetType="{x:Type molecule:MovNumericUpDown}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type molecule:MovNumericUpDown}">
+                    <Border
+                        Width="231"
+                        Height="86"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="21*" />
+                                <RowDefinition Height="22*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                x:Name="textBlockValue"
+                                Grid.RowSpan="2"
+                                Width="Auto"
+                                Height="Auto"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Foreground="Black"
+                                TextWrapping="Wrap" />
+                            <RepeatButton
+                                x:Name="PART_UpButton"
+                                Grid.Column="1"
+                                Width="Auto"
+                                Height="Auto"
+                                Margin="2.5"
+                                Content="Up" />
+                            <RepeatButton
+                                x:Name="PART_DownButton"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="2.5"
+                                Content="Down" />
+                        </Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="PositiveNegative">
+                                <VisualState x:Name="Positive" />
+                                <VisualState x:Name="Negative">
+                                    <Storyboard>
+                                        <ColorAnimation
+                                            Storyboard.TargetName="textBlockValue"
+                                            Storyboard.TargetProperty="Foreground.Color"
+                                            To="Red" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
     <!--  Organisms  -->
 

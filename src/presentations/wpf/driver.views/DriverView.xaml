@@ -12,7 +12,5 @@
     d:DesignWidth="800"
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
-    <Grid>
-
-    </Grid>
+    <Grid />
 </UserControl>

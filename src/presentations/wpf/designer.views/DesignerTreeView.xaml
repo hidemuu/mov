@@ -127,24 +127,10 @@
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>
-                <GridViewColumn Width="{Binding Attribute.Command.Width.Value}" Header="{Binding Attribute.Command.Header.Value}">
-                    <GridViewColumn.CellTemplate>
-                        <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
-                            <TextBox Foreground="Black" Text="{Binding Command.Value, Mode=TwoWay}" />
-                        </DataTemplate>
-                    </GridViewColumn.CellTemplate>
-                </GridViewColumn>
                 <GridViewColumn Width="{Binding Attribute.ControlType.Width.Value}" Header="{Binding Attribute.ControlType.Header.Value}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
                             <TextBox Foreground="Black" Text="{Binding ControlType.Value, Mode=TwoWay}" />
-                        </DataTemplate>
-                    </GridViewColumn.CellTemplate>
-                </GridViewColumn>
-                <GridViewColumn Width="{Binding Attribute.ControlStyle.Width.Value}" Header="{Binding Attribute.ControlStyle.Header.Value}">
-                    <GridViewColumn.CellTemplate>
-                        <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
-                            <TextBox Foreground="Black" Text="{Binding ControlStyle.Value, Mode=TwoWay}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>

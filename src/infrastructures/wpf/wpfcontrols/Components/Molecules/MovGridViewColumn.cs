@@ -11,7 +11,7 @@ namespace Mov.WpfControls.Components.Molecules
 {
     public class MovGridViewColumn : GridViewColumn
     {
-
+        
         #region プロパティ
 
         public static readonly DependencyProperty AttributeProperty =

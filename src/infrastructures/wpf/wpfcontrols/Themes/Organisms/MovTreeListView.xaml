@@ -6,7 +6,7 @@
     xmlns:dd="urn:gong-wpf-dragdrop"
     xmlns:local="clr-namespace:Mov.WpfControls.Components">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="../Templates/MovTreeListViewTemplate.xaml" />
+        <ResourceDictionary Source="MovTreeListViewTemplate.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <converter:TreeListViewConverter x:Key="TreeListViewConverter" />
 

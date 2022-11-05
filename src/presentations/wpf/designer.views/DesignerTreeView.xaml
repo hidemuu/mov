@@ -22,7 +22,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <!--<ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />-->
-                <ResourceDictionary Source="/Mov.WpfControls;component/Styles/MovTreeListViewStyle.xaml" />
+                <ResourceDictionary Source="/Mov.WpfControls;component/Themes/Organisms/MovTreeListView.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <converter:BoolToVisibillityConverter x:Key="boolToVisibilityConverter" />
         </ResourceDictionary>

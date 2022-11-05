@@ -15,6 +15,11 @@ namespace Mov.WpfControls.Components.Molecules
     public class MovGridViewColumnItem : TextBox
     {
 
+        static MovGridViewColumnItem()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(MovGridViewColumnItem), new FrameworkPropertyMetadata(typeof(MovGridViewColumnItem)));
+        }
+
         #region プロパティ
 
         public static readonly DependencyProperty ItemProperty =

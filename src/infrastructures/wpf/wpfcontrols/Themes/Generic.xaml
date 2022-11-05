@@ -6,6 +6,9 @@
     xmlns:dd="urn:gong-wpf-dragdrop"
     xmlns:local="clr-namespace:Mov.WpfControls.Components"
     xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf">
+    <ResourceDictionary.MergedDictionaries>
+        <!--<ResourceDictionary Source="Organisms/MovTreeListView.xaml" />-->
+    </ResourceDictionary.MergedDictionaries>
     <converter:StringToHolizontalAlignmentConverter x:Key="StringToHolizontalAlignmentConverter" />
     <converter:StringToVerticalAlignmentConverter x:Key="StringToVerticalAlignmentConverter" />
 

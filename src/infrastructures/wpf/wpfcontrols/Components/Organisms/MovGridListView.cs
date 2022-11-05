@@ -16,6 +16,11 @@ namespace Mov.WpfControls.Components
     /// </summary>
     public class MovGridListView : ListView
     {
+        static MovGridListView()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(MovGridListView), new FrameworkPropertyMetadata(typeof(MovGridListView)));
+        }
+
         #region プロパティ
 
         public ReactiveCollection<ColumnItem[]> ColumnItems

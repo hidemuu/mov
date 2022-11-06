@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Mov.Game.Models
 {
-    public interface IActionGame
+    public interface IGraphicGame
     {
         #region プロパティ
 

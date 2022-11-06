@@ -30,7 +30,7 @@ namespace Mov.Game.ViewModels
     {
         #region フィールド
 
-        private IActionGame game;
+        private IGraphicGame game;
 
         #endregion フィールド
 

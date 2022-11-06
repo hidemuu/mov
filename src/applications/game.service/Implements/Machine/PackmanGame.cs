@@ -18,7 +18,7 @@ namespace Mov.Game.Service.Machine
     /// <summary>
     /// パックマンっぽいゲームサービス
     /// </summary>
-    public class PackmanGame : IActionGame
+    public class PackmanGame : IGraphicGame
     {
         #region フィールド
 

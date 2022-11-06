@@ -77,7 +77,7 @@ namespace Mov.Game.ViewModels
         protected override void Update()
         {
             Model.Level.Value = this.game.Engine.Service.Level;
-            Model.Life.Value = this.game.GetLife();
+            Model.Life.Value = this.game.Engine.GetPlayerLife();
             Model.CurrentScore.Value = this.game.Engine.Service.Score;
             Model.ClearScore.Value = this.game.Engine.Service.GetLandmark().ClearScore;
             base.Update();

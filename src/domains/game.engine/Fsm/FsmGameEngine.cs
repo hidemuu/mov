@@ -90,7 +90,7 @@ namespace Mov.Game.Engine
         public virtual void Initialize()
         {
             var landMark = Service.GetLandmark();
-            Map = GameMap.MakeMap(landMark);
+            Map = Map2D.MakeMap(landMark);
             breadcrumbs = new Breadcrumbs(15, this, landMark.GetRow(), landMark.GetCol());
             Characters.Clear();
             Aliens.Clear();
@@ -231,6 +231,23 @@ namespace Mov.Game.Engine
                             }
                         }
                         break;
+                }
+            }
+            return (int)CharacterType.NONE;
+        }
+
+        /// <summary>
+        /// ライフ取得
+        /// </summary>
+        /// <returns></returns>
+        public int GetPlayerLife()
+        {
+            foreach (var character in this.Characters)
+            {
+                switch (character.Type)
+                {
+                    case CharacterType.PLAYER:
+                        return character.Life;
                 }
             }
             return (int)CharacterType.NONE;

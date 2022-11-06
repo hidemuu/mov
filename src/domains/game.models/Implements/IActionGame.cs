@@ -39,10 +39,6 @@ namespace Mov.Game.Models
         /// </summary>
         /// <param name="keyCode">キーコード</param>
         void SetKeyCode(int keyCode);
-        
-        int GetLife();
-
-        void SetLevel(int lv);
 
         #endregion メソッド
     }

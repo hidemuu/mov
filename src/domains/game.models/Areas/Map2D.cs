@@ -6,7 +6,7 @@ namespace Mov.Game.Models.Maps
     /// <summary>
     /// マップ生成情報
     /// </summary>
-    public class GameMap
+    public class Map2D
     {
         
         #region フィールド

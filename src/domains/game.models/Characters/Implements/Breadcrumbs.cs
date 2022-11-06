@@ -41,8 +41,8 @@ namespace Mov.Game.Models.Characters
         {
             this.len = len;
             this.engine = engine;
-            breads = new Bread[len];
-            for (var i = 0; i < len; i++) breads[i] = new Bread(engine);
+            this.breads = new Bread[len];
+            for (var i = 0; i < len; i++) this.breads[i] = new Bread(engine);
             this.map = new int[mapRow, mapCol];
         }
 

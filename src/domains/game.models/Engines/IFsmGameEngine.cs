@@ -84,6 +84,12 @@ namespace Mov.Game.Models
         /// <returns></returns>
         int GetCollision(ICharacter targetCharacter, int x, int y);
 
+        /// <summary>
+        /// ライフ取得
+        /// </summary>
+        /// <returns></returns>
+        int GetPlayerLife();
+
         #endregion メソッド
     }
 }

@@ -89,29 +89,6 @@ namespace Mov.Game.Service.Machine
             this.Engine.KeyCode = keyCode;
         }
 
-        public void SetLevel(int lv)
-        {
-            this.Engine.Service.Level = lv;
-        }
-
-        /// <summary>
-        /// ライフ取得
-        /// </summary>
-        /// <returns></returns>
-        public int GetLife()
-        {
-            foreach (var character in this.Engine.Characters)
-            {
-                switch (character.Type)
-                {
-                    case CharacterType.PLAYER:
-                        return character.Life;
-                }
-            }
-            return -1;
-        }
-
-        
         public void Wait()
         {
             this.GraphicController.Wait();

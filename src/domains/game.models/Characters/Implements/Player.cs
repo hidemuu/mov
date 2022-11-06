@@ -25,12 +25,12 @@ namespace Mov.Game.Models.Characters
         private int lastDy = -1;
 
         private bool isCollision = false;
-        
+
         #endregion
 
         #region プロパティ
 
-        public override int TypeCode { get; protected set; } = GameMap.PLAYER;
+        public override CharacterType Type { get; protected set; } = CharacterType.PLAYER;
         public override int Speed { get; protected set; } = 1;
         public override int Life { get; protected set; } = 1;
         protected override Brush BodyBrush { get; set; } = new SolidBrush(Color.CornflowerBlue);
@@ -86,7 +86,7 @@ namespace Mov.Game.Models.Characters
             var x = X + (dx * Speed);
             var y = Y + (dy * Speed);
             //壁でなく他のキャラに衝突しなければ進む
-            if (!Engine.IsWall(x, y) && Engine.GetCollision(this, x, y) == GameMap.NONE)
+            if (!Engine.IsWall(x, y) && Engine.GetCollision(this, x, y) == (int)CharacterType.NONE)
             {
                 SetPosition(x, y);
                 lastDx = dx;
@@ -94,7 +94,7 @@ namespace Mov.Game.Models.Characters
                 return true;
             }
             //敵に衝突した時
-            if (Engine.GetCollision(this, x, y) == GameMap.ALIEN) isCollision = true;
+            if (Engine.GetCollision(this, x, y) == (int)CharacterType.ALIEN) isCollision = true;
             return false;
         }
 

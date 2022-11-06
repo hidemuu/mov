@@ -102,9 +102,9 @@ namespace Mov.Game.Service.Machine
         {
             foreach (var character in this.Engine.Characters)
             {
-                switch (character.TypeCode)
+                switch (character.Type)
                 {
-                    case GameMap.PLAYER:
+                    case CharacterType.PLAYER:
                         return character.Life;
                 }
             }

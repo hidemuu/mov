@@ -12,8 +12,7 @@ namespace Mov.Game.Engine
     /// 有限状態マシン（Finite State Machine）手法のゲームエンジン
     /// </summary>
     public class FsmGameEngine : IFsmGameEngine
-    {
-        
+    {   
 
         #region フィールド
 
@@ -31,6 +30,14 @@ namespace Mov.Game.Engine
         #region プロパティ
 
         public IGameService Service { get; }
+        /// <summary>
+        /// マップ幅
+        /// </summary>
+        public int MapWidth { get; }
+        /// <summary>
+        /// マップ高さ
+        /// </summary>
+        public int MapHeight { get; }
         /// <summary>
         /// ユニット幅
         /// </summary>
@@ -68,6 +75,9 @@ namespace Mov.Game.Engine
             this.Service = service;
             Characters = new List<ICharacter>();
             Aliens = new List<ICharacter>();
+            var map = Service.GetLandmark();
+            MapWidth = map.GetCol() * UnitWidth;
+            MapHeight = map.GetRow() * UnitHeight;
         }
 
         #endregion コンストラクター
@@ -87,7 +97,7 @@ namespace Mov.Game.Engine
             KeyCode = UtilityConstants.KEY_CODE_NONE;
             AddCharacters(Characters, Map);
             AddCharacters(Characters, breadcrumbs.breads);
-            SortCharacters(new int[] { GameMap.WALL, GameMap.BREAD, GameMap.ALIEN, GameMap.PLAYER, GameMap.TREASURE });
+            SortCharacters(new int[] { (int)CharacterType.WALL, (int)CharacterType.BREAD, (int)CharacterType.ALIEN, (int)CharacterType.PLAYER, (int)CharacterType.TREASURE });
         }
 
         /// <summary>
@@ -104,7 +114,7 @@ namespace Mov.Game.Engine
             }
             Characters.Sort(delegate (ICharacter x, ICharacter y)
             {
-                var dif = dic[x.TypeCode] - dic[y.TypeCode];
+                var dif = dic[(int)x.Type] - dic[(int)y.Type];
                 if (dif > 0) return 1;
                 else if (dif < 0) return -1;
                 return 0;
@@ -125,12 +135,12 @@ namespace Mov.Game.Engine
                 for (var c = 0; c < col; c++)
                 {
                     var type = map[r, c];
-                    if (type != GameMap.ROAD)
+                    if (type != (int)CharacterType.ROAD)
                     {
                         var character = MakeCharacter(type);
                         character.SetPosition(c * UnitWidth, r * UnitHeight);
                         characters.Add(character);
-                        if (type == GameMap.ALIEN)
+                        if (type == (int)CharacterType.ALIEN)
                         {
                             Aliens.Add((Alien)character);
                         }
@@ -168,14 +178,14 @@ namespace Mov.Game.Engine
         {
             switch (type)
             {
-                case GameMap.WALL: return new Wall(this);
-                case GameMap.PLAYER:
+                case (int)CharacterType.WALL: return new Wall(this);
+                case (int)CharacterType.PLAYER:
                     if (isUseBreadcrumbs) return new BreadPlayer(this, breadcrumbs);
                     else return new Player(this);
-                case GameMap.ALIEN:
+                case (int)CharacterType.ALIEN:
                     if (isUseBreadcrumbs) return new BreadAlien(this, breadcrumbs);
                     else return new Alien(this);
-                case GameMap.TREASURE:
+                case (int)CharacterType.TREASURE:
                     return new Treasure(this);
                 default: return null;
             }
@@ -192,10 +202,10 @@ namespace Mov.Game.Engine
             var col1 = x / UnitWidth;
             var row2 = (y + UnitHeight - 1) / UnitHeight;
             var col2 = (x + UnitWidth - 1) / UnitWidth;
-            return Map[row1, col1] == GameMap.WALL ||
-                   Map[row1, col2] == GameMap.WALL ||
-                   Map[row2, col1] == GameMap.WALL ||
-                   Map[row2, col2] == GameMap.WALL;
+            return Map[row1, col1] == (int)CharacterType.WALL ||
+                   Map[row1, col2] == (int)CharacterType.WALL ||
+                   Map[row2, col1] == (int)CharacterType.WALL ||
+                   Map[row2, col2] == (int)CharacterType.WALL;
         }
 
         /// <summary>
@@ -209,21 +219,21 @@ namespace Mov.Game.Engine
         {
             foreach (var character in Characters)
             {
-                switch (character.TypeCode)
+                switch (character.Type)
                 {
-                    case GameMap.ALIEN:
-                    case GameMap.PLAYER:
+                    case CharacterType.ALIEN:
+                    case CharacterType.PLAYER:
                         if (character != targetCharacter)
                         {
                             if (Math.Abs(character.X - x) < UnitWidth && Math.Abs(character.Y - y) < UnitHeight)
                             {
-                                return character.TypeCode;
+                                return (int)character.Type;
                             }
                         }
                         break;
                 }
             }
-            return GameMap.NONE;
+            return (int)CharacterType.NONE;
         }
 
         #endregion メソッド

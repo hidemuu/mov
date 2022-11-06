@@ -25,9 +25,8 @@ namespace Mov.Game.Service.Implements
         public FsmGameGraphicController(IFsmGameEngine engine) : base()
         {
             this.engine = engine;
-            var map = engine.Service.GetLandmark();
-            FrameWidth = map.GetCol() * engine.UnitWidth;
-            FrameHeight = map.GetRow() * engine.UnitHeight;
+            FrameWidth = engine.MapWidth;
+            FrameHeight = engine.MapHeight;
         }
 
         #endregion コンストラクター
@@ -38,10 +37,10 @@ namespace Mov.Game.Service.Implements
         {
             foreach (var character in this.engine.Characters)
             {
-                switch (character.TypeCode)
+                switch (character.Type)
                 {
                     //プレイヤー
-                    case GameMap.PLAYER:
+                    case CharacterType.PLAYER:
                         //移動処理
                         if (character.Move()) this.engine.Service.Score++;
                         //ダメージ判定
@@ -52,7 +51,7 @@ namespace Mov.Game.Service.Implements
                         if (this.engine.Service.Score >= this.engine.Service.GetLandmark().ClearScore) this.engine.Service.IsStageClear = true;
                         break;
                     //敵
-                    case GameMap.ALIEN:
+                    case CharacterType.ALIEN:
                         //移動処理
                         character.Move();
                         break;
@@ -64,7 +63,7 @@ namespace Mov.Game.Service.Implements
         {
             foreach (var character in this.engine.Characters)
             {
-                if (character.TypeCode != GameMap.ROAD) DrawCharacter(character);
+                if (character.Type != CharacterType.ROAD) DrawCharacter(character);
             }
         }
 

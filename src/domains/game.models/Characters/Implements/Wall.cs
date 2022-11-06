@@ -13,7 +13,7 @@ namespace Mov.Game.Models.Characters
 
         protected override Brush BodyBrush { get; set; } = new SolidBrush(Color.DarkGray);
 
-        public override int TypeCode { get; protected set; } = GameMap.WALL;
+        public override CharacterType Type { get; protected set; } = CharacterType.WALL;
         public override int Speed { get; protected set; } = 0;
         public override int Life { get; protected set; } = 1;
 

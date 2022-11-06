@@ -12,7 +12,7 @@ namespace Mov.Game.Models
         /// <summary>
         /// 種類
         /// </summary>
-        int TypeCode { get; }
+        CharacterType Type { get; }
 
         /// <summary>
         /// 速度

@@ -12,7 +12,19 @@ namespace Mov.Game.Models
     {
         #region プロパティ
 
+        /// <summary>
+        /// サービス
+        /// </summary>
         IGameService Service { get; }
+
+        /// <summary>
+        /// 画面幅
+        /// </summary>
+        int MapWidth { get; }
+        /// <summary>
+        /// 画面高さ
+        /// </summary>
+        int MapHeight { get; }
 
         /// <summary>
         /// ユニット幅

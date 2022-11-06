@@ -13,7 +13,7 @@ namespace Mov.Game.Models
         /// <summary>
         /// 種類
         /// </summary>
-        public abstract int TypeCode { get; protected set; }
+        public abstract CharacterType Type { get; protected set; }
 
         /// <summary>
         /// 速度

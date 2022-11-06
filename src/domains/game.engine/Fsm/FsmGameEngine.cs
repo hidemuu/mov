@@ -1,6 +1,7 @@
-﻿using Mov.Game.Engine.Characters;
-using Mov.Game.Models;
+﻿using Mov.Game.Models;
+using Mov.Game.Models.Characters;
 using Mov.Game.Models.Maps;
+using Mov.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,29 +13,7 @@ namespace Mov.Game.Engine
     /// </summary>
     public class FsmGameEngine : IFsmGameEngine
     {
-        #region 定数
-        /// <summary>
-        /// キー指定無
-        /// </summary>
-        public const int KEY_CODE_NONE = 0;
-        /// <summary>
-        /// 左キー
-        /// </summary>
-        public const int KEY_CODE_LEFT = 37;
-        /// <summary>
-        /// 右キー
-        /// </summary>
-        public const int KEY_CODE_RIGHT = 39;
-        /// <summary>
-        /// 上キー
-        /// </summary>
-        public const int KEY_CODE_UP = 38;
-        /// <summary>
-        /// 下キー
-        /// </summary>
-        public const int KEY_CODE_DOWN = 40;
-
-        #endregion 定数
+        
 
         #region フィールド
 
@@ -63,15 +42,15 @@ namespace Mov.Game.Engine
         /// <summary>
         /// 入力キーコード
         /// </summary>
-        public int KeyCode { get; set; } = KEY_CODE_NONE;
+        public int KeyCode { get; set; } = UtilityConstants.KEY_CODE_NONE;
         /// <summary>
         /// キャラクタ配列
         /// </summary>
-        public List<IFsmCharacter> Characters { get; private set; }
+        public List<ICharacter> Characters { get; private set; }
         /// <summary>
         /// 敵キャラ配列
         /// </summary>
-        public List<IFsmCharacter> Aliens { get; private set; }
+        public List<ICharacter> Aliens { get; private set; }
         /// <summary>
         /// マップ情報
         /// </summary>
@@ -87,8 +66,8 @@ namespace Mov.Game.Engine
         public FsmGameEngine(IGameService service)
         {
             this.Service = service;
-            Characters = new List<IFsmCharacter>();
-            Aliens = new List<IFsmCharacter>();
+            Characters = new List<ICharacter>();
+            Aliens = new List<ICharacter>();
         }
 
         #endregion コンストラクター
@@ -105,7 +84,7 @@ namespace Mov.Game.Engine
             breadcrumbs = new Breadcrumbs(15, this, landMark.GetRow(), landMark.GetCol());
             Characters.Clear();
             Aliens.Clear();
-            KeyCode = KEY_CODE_NONE;
+            KeyCode = UtilityConstants.KEY_CODE_NONE;
             AddCharacters(Characters, Map);
             AddCharacters(Characters, breadcrumbs.breads);
             SortCharacters(new int[] { GameMap.WALL, GameMap.BREAD, GameMap.ALIEN, GameMap.PLAYER, GameMap.TREASURE });
@@ -123,7 +102,7 @@ namespace Mov.Game.Engine
             {
                 dic.Add(t, val++);
             }
-            Characters.Sort(delegate (IFsmCharacter x, IFsmCharacter y)
+            Characters.Sort(delegate (ICharacter x, ICharacter y)
             {
                 var dif = dic[x.TypeCode] - dic[y.TypeCode];
                 if (dif > 0) return 1;
@@ -137,7 +116,7 @@ namespace Mov.Game.Engine
         /// </summary>
         /// <param name="characters"></param>
         /// <param name="map"></param>
-        protected void AddCharacters(List<IFsmCharacter> characters, int[,] map)
+        protected void AddCharacters(List<ICharacter> characters, int[,] map)
         {
             var row = map.GetLength(0);
             var col = map.GetLength(1);
@@ -164,7 +143,7 @@ namespace Mov.Game.Engine
         /// </summary>
         /// <param name="characters"></param>
         /// <param name="targets"></param>
-        protected void AddCharacters(List<IFsmCharacter> characters, IFsmCharacter[] targets)
+        protected void AddCharacters(List<ICharacter> characters, ICharacter[] targets)
         {
             foreach (var target in targets)
             {
@@ -176,7 +155,7 @@ namespace Mov.Game.Engine
         /// </summary>
         /// <param name="characters"></param>
         /// <param name="character"></param>
-        protected void AddCharacters(List<IFsmCharacter> characters, IFsmCharacter character)
+        protected void AddCharacters(List<ICharacter> characters, ICharacter character)
         {
             characters.Add(character);
         }
@@ -185,7 +164,7 @@ namespace Mov.Game.Engine
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        protected virtual IFsmCharacter MakeCharacter(int type)
+        protected virtual ICharacter MakeCharacter(int type)
         {
             switch (type)
             {
@@ -226,7 +205,7 @@ namespace Mov.Game.Engine
         /// <param name="x">X位置</param>
         /// <param name="y">Y位置</param>
         /// <returns></returns>
-        public int GetCollision(IFsmCharacter targetCharacter, int x, int y)
+        public int GetCollision(ICharacter targetCharacter, int x, int y)
         {
             foreach (var character in Characters)
             {
@@ -245,16 +224,6 @@ namespace Mov.Game.Engine
                 }
             }
             return GameMap.NONE;
-        }
-
-        public IEnumerable<int> GetLevels()
-        {
-            return this.Service.GetLevels();
-        }
-
-        public Landmark GetLandmark()
-        {
-            return this.Service.GetLandmark();
         }
 
         #endregion メソッド

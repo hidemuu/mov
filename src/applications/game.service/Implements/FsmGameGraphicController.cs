@@ -72,7 +72,7 @@ namespace Mov.Game.Service.Implements
         /// キャラクター描画
         /// </summary>
         /// <param name="character"></param>
-        protected virtual void DrawCharacter(IFsmCharacter character)
+        protected virtual void DrawCharacter(ICharacter character)
         {
             character.Draw(ScreenGraphics);
         }

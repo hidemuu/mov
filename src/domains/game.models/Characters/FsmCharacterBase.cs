@@ -1,12 +1,12 @@
 ﻿using Mov.Game.Models;
 using System.Drawing;
 
-namespace Mov.Game.Engine
+namespace Mov.Game.Models
 {
     /// <summary>
     /// キャラクター基本クラス
     /// </summary>
-    public abstract class FsmCharacterBase : IFsmCharacter
+    public abstract class FsmCharacterBase : ICharacter
     {
         #region 抽象プロパティ
 
@@ -47,7 +47,7 @@ namespace Mov.Game.Engine
         /// <summary>
         /// ゲームエンジン
         /// </summary>
-        protected IFsmGameEngine GameEngine { get; private set; }
+        protected IFsmGameEngine Engine { get; private set; }
 
         /// <summary>
         /// 方向
@@ -74,10 +74,10 @@ namespace Mov.Game.Engine
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="gameEngine"></param>
-        public FsmCharacterBase(IFsmGameEngine gameEngine)
+        /// <param name="engine"></param>
+        public FsmCharacterBase(IFsmGameEngine engine)
         {
-            this.GameEngine = gameEngine;
+            this.Engine = engine;
         }
 
         #region メソッド
@@ -91,9 +91,9 @@ namespace Mov.Game.Engine
         {
             X = x;
             Y = y;
-            Row = Y / GameEngine.UnitHeight;
-            Col = X / GameEngine.UnitWidth;
-            Reached = Y % GameEngine.UnitHeight == 0 && X % GameEngine.UnitWidth == 0;
+            Row = Y / Engine.UnitHeight;
+            Col = X / Engine.UnitWidth;
+            Reached = Y % Engine.UnitHeight == 0 && X % Engine.UnitWidth == 0;
         }
 
         /// <summary>

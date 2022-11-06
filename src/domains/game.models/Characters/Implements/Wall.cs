@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
-namespace Mov.Game.Engine.Characters
+namespace Mov.Game.Models.Characters
 {
     public class Wall : FsmCharacterBase
     {
@@ -21,7 +21,7 @@ namespace Mov.Game.Engine.Characters
 
         #region コンストラクター
 
-        public Wall(IFsmGameEngine gameEngine) : base(gameEngine)
+        public Wall(IFsmGameEngine engine) : base(engine)
         {
         }
 
@@ -31,7 +31,7 @@ namespace Mov.Game.Engine.Characters
 
         public override void Draw(Graphics graphics)
         {
-            graphics.FillRectangle(BodyBrush, X, Y, GameEngine.UnitWidth, GameEngine.UnitHeight);
+            graphics.FillRectangle(BodyBrush, X, Y, Engine.UnitWidth, Engine.UnitHeight);
         }
 
         public override bool Move()

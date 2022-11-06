@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Game.Engine.Characters
+namespace Mov.Game.Models.Characters
 {
     public class BreadPlayer : Player
     {
@@ -15,9 +15,9 @@ namespace Mov.Game.Engine.Characters
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="gameEngine"></param>
+        /// <param name="engine"></param>
         /// <param name="breadcrumbs"></param>
-        public BreadPlayer(IFsmGameEngine gameEngine, Breadcrumbs breadcrumbs) : base(gameEngine)
+        public BreadPlayer(IFsmGameEngine engine, Breadcrumbs breadcrumbs) : base(engine)
         {
             this.breadcrumbs = breadcrumbs;
         }

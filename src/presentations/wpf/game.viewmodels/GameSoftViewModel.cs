@@ -22,6 +22,7 @@ using Mov.Painters;
 using Mov.Accessors.Repository;
 using Mov.Game.Engine;
 using Mov.WpfMvvms;
+using Mov.Utilities;
 
 namespace Mov.Game.ViewModels
 {
@@ -129,7 +130,7 @@ namespace Mov.Game.ViewModels
 
         private void OnKeyUp()
         {
-            this.game.SetKeyCode(FsmGameEngine.KEY_CODE_NONE);
+            this.game.SetKeyCode(UtilityConstants.KEY_CODE_NONE);
         }
 
         private void OnKeyGestureEnter()
@@ -144,27 +145,27 @@ namespace Mov.Game.ViewModels
 
         private void OnKeyGestureUp()
         {
-            this.game.SetKeyCode(FsmGameEngine.KEY_CODE_UP);
+            this.game.SetKeyCode(UtilityConstants.KEY_CODE_UP);
         }
 
         private void OnKeyGestureUpAndShift()
         {
-            this.game.SetKeyCode(FsmGameEngine.KEY_CODE_UP);
+            this.game.SetKeyCode(UtilityConstants.KEY_CODE_UP);
         }
 
         private void OnKeyGestureDown()
         {
-            this.game.SetKeyCode(FsmGameEngine.KEY_CODE_DOWN);
+            this.game.SetKeyCode(UtilityConstants.KEY_CODE_DOWN);
         }
 
         private void OnKeyGestureLeft()
         {
-            this.game.SetKeyCode(FsmGameEngine.KEY_CODE_LEFT);
+            this.game.SetKeyCode(UtilityConstants.KEY_CODE_LEFT);
         }
 
         private void OnKeyGestureRight()
         {
-            this.game.SetKeyCode(FsmGameEngine.KEY_CODE_RIGHT);
+            this.game.SetKeyCode(UtilityConstants.KEY_CODE_RIGHT);
         }
 
         #endregion イベントハンドラ

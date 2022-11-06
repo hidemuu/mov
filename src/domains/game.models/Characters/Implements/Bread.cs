@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
-namespace Mov.Game.Engine.Characters
+namespace Mov.Game.Models.Characters
 {
     public class Bread : FsmCharacterBase
     {
@@ -22,8 +22,8 @@ namespace Mov.Game.Engine.Characters
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="gameEngine"></param>
-        public Bread(IFsmGameEngine gameEngine) : base(gameEngine)
+        /// <param name="engine"></param>
+        public Bread(IFsmGameEngine engine) : base(engine)
         {
             SetPosition(-100, -100);
         }

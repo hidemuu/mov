@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Game.Models
 {
-    public interface IFsmCharacter
+    public interface ICharacter
     {
         #region プロパティ
 

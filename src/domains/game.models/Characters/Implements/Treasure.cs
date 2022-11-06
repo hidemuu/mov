@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
-namespace Mov.Game.Engine.Characters
+namespace Mov.Game.Models.Characters
 {
     public class Treasure : FsmCharacterBase
     {
@@ -20,7 +20,7 @@ namespace Mov.Game.Engine.Characters
 
         #region コンストラクター
 
-        public Treasure(IFsmGameEngine gameEngine) : base(gameEngine)
+        public Treasure(IFsmGameEngine engine) : base(engine)
         {
         }
 
@@ -30,7 +30,7 @@ namespace Mov.Game.Engine.Characters
 
         public override void Draw(Graphics graphics)
         {
-            graphics.FillRectangle(BodyBrush, X + GameEngine.UnitWidth / 4, Y + GameEngine.UnitHeight / 4, GameEngine.UnitWidth / 2, GameEngine.UnitHeight / 2);
+            graphics.FillRectangle(BodyBrush, X + Engine.UnitWidth / 4, Y + Engine.UnitHeight / 4, Engine.UnitWidth / 2, Engine.UnitHeight / 2);
         }
 
         public override bool Move()

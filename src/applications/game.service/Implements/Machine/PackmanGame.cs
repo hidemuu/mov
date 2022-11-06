@@ -1,6 +1,5 @@
 ﻿using Mov.Accessors.Repository;
 using Mov.Game.Engine;
-using Mov.Game.Engine.Characters;
 using Mov.Game.Models;
 using Mov.Game.Models.Maps;
 using Mov.Game.Repository;
@@ -51,8 +50,8 @@ namespace Mov.Game.Service.Machine
         /// <summary>
         /// コンストラクター
         /// </summary>
-        /// <param name="repository"></param>
-        public PackmanGame(IGameService service) : base()
+        /// <param name="service"></param>
+        public PackmanGame(IGameService service)
         {
             this.Engine = new FsmGameEngine(service);
             this.GraphicController = new FsmGameGraphicController(this.Engine);
@@ -77,8 +76,8 @@ namespace Mov.Game.Service.Machine
             TotalScore += this.Engine.Service.Score;
             this.Engine.Service.Score = 0;
             this.Engine.Initialize();
-            this.GraphicController.IsActive = true;
             this.Engine.Service.IsStageClear = false;
+            this.GraphicController.IsActive = true;
         }
 
         /// <summary>

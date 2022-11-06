@@ -29,11 +29,11 @@ namespace Mov.Game.Models
         /// <summary>
         /// キャラクタ配列
         /// </summary>
-        List<IFsmCharacter> Characters { get; }
+        List<ICharacter> Characters { get; }
         /// <summary>
         /// 敵キャラ配列
         /// </summary>
-        List<IFsmCharacter> Aliens { get; }
+        List<ICharacter> Aliens { get; }
         /// <summary>
         /// マップ情報
         /// </summary>
@@ -70,7 +70,7 @@ namespace Mov.Game.Models
         /// <param name="x">X位置</param>
         /// <param name="y">Y位置</param>
         /// <returns></returns>
-        int GetCollision(IFsmCharacter targetCharacter, int x, int y);
+        int GetCollision(ICharacter targetCharacter, int x, int y);
 
         #endregion メソッド
     }

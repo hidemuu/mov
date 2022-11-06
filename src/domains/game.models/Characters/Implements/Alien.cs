@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
-namespace Mov.Game.Engine.Characters
+namespace Mov.Game.Models.Characters
 {
     public class Alien : FsmCharacterBase
     {
@@ -32,15 +32,15 @@ namespace Mov.Game.Engine.Characters
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="gameEngine"></param>
-        public Alien(IFsmGameEngine gameEngine) : base(gameEngine)
+        /// <param name="engine"></param>
+        public Alien(IFsmGameEngine engine) : base(engine)
         {
         }
 
         #region メソッド
         public override void Draw(Graphics graphics)
         {
-            graphics.FillRectangle(BodyBrush, X + 2, Y + 2, GameEngine.UnitWidth - 4, GameEngine.UnitHeight - 4);
+            graphics.FillRectangle(BodyBrush, X + 2, Y + 2, Engine.UnitWidth - 4, Engine.UnitHeight - 4);
         }
         /// <summary>
         /// 移動先を設定
@@ -64,13 +64,13 @@ namespace Mov.Game.Engine.Characters
         {
             var x1 = X + dirOffset[nextDirection, 0];
             var y1 = Y + dirOffset[nextDirection, 1];
-            if (GameEngine.IsWall(x1, y1) || GameEngine.GetCollision(this, x1, y1) != GameMap.NONE)
+            if (Engine.IsWall(x1, y1) || Engine.GetCollision(this, x1, y1) != GameMap.NONE)
             {
                 nextDirection = (nextDirection + tryPlan[(int)(rnd.NextDouble() * 2.1)]) % 4;
                 x1 = X + dirOffset[nextDirection, 0];
                 y1 = Y + dirOffset[nextDirection, 1];
             }
-            if (!GameEngine.IsWall(x1, y1) && GameEngine.GetCollision(this, x1, y1) == GameMap.NONE)
+            if (!Engine.IsWall(x1, y1) && Engine.GetCollision(this, x1, y1) == GameMap.NONE)
             {
                 Direction = nextDirection;
                 SetPosition(x1, y1);

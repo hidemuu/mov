@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Game.Models.Commands
+namespace Mov.Game.Engine.Commands
 {
     internal class WriteConsoleCommand : ICommand<IGameService, CommandResponse>
     {

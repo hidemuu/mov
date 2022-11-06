@@ -1,11 +1,12 @@
 ﻿using Mov.Game.Models;
 using Mov.Game.Models.Maps;
+using Mov.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
-namespace Mov.Game.Engine.Characters
+namespace Mov.Game.Models.Characters
 {
     /// <summary>
     /// プレイヤークラス
@@ -42,8 +43,8 @@ namespace Mov.Game.Engine.Characters
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="gameEngine"></param>
-        public Player(IFsmGameEngine gameEngine) : base(gameEngine)
+        /// <param name="engine"></param>
+        public Player(IFsmGameEngine engine) : base(engine)
         {
         }
 
@@ -53,7 +54,7 @@ namespace Mov.Game.Engine.Characters
 
         public override void Draw(Graphics graphics)
         {
-            graphics.FillRectangle(BodyBrush, X + 2, Y + 2, GameEngine.UnitWidth - 4, GameEngine.UnitHeight - 4);
+            graphics.FillRectangle(BodyBrush, X + 2, Y + 2, Engine.UnitWidth - 4, Engine.UnitHeight - 4);
         }
 
         /// <summary>
@@ -67,12 +68,12 @@ namespace Mov.Game.Engine.Characters
             var dy = 0;
 
             //押されているキーに対する処理
-            switch (GameEngine.KeyCode)
+            switch (Engine.KeyCode)
             {
-                case FsmGameEngine.KEY_CODE_LEFT: dx = -1; break;
-                case FsmGameEngine.KEY_CODE_RIGHT: dx = 1; break;
-                case FsmGameEngine.KEY_CODE_UP: dy = -1; break;
-                case FsmGameEngine.KEY_CODE_DOWN: dy = 1; break;
+                case UtilityConstants.KEY_CODE_LEFT: dx = -1; break;
+                case UtilityConstants.KEY_CODE_RIGHT: dx = 1; break;
+                case UtilityConstants.KEY_CODE_UP: dy = -1; break;
+                case UtilityConstants.KEY_CODE_DOWN: dy = 1; break;
                 default: return false;
             }
 
@@ -85,7 +86,7 @@ namespace Mov.Game.Engine.Characters
             var x = X + (dx * Speed);
             var y = Y + (dy * Speed);
             //壁でなく他のキャラに衝突しなければ進む
-            if (!GameEngine.IsWall(x, y) && GameEngine.GetCollision(this, x, y) == GameMap.NONE)
+            if (!Engine.IsWall(x, y) && Engine.GetCollision(this, x, y) == GameMap.NONE)
             {
                 SetPosition(x, y);
                 lastDx = dx;
@@ -93,7 +94,7 @@ namespace Mov.Game.Engine.Characters
                 return true;
             }
             //敵に衝突した時
-            if (GameEngine.GetCollision(this, x, y) == GameMap.ALIEN) isCollision = true;
+            if (Engine.GetCollision(this, x, y) == GameMap.ALIEN) isCollision = true;
             return false;
         }
 
@@ -110,7 +111,7 @@ namespace Mov.Game.Engine.Characters
         /// <summary>
         /// 中間位置判定
         /// </summary>
-        private bool IsMiddlePosition => X % GameEngine.UnitWidth != 0 || Y % GameEngine.UnitHeight != 0;
+        private bool IsMiddlePosition => X % Engine.UnitWidth != 0 || Y % Engine.UnitHeight != 0;
 
         #endregion
 

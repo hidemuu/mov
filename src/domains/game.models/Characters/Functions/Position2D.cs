@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Game.Engine.Characters.Functions
+namespace Mov.Game.Models.Characters.Functions
 {
     /// <summary>
     /// 位置クラス
     /// </summary>
-    public class TablePosition
+    public class Position2D
     {
         #region プロパティ
 
@@ -21,7 +21,7 @@ namespace Mov.Game.Engine.Characters.Functions
         /// </summary>
         /// <param name="row"></param>
         /// <param name="col"></param>
-        public TablePosition(int row, int col)
+        public Position2D(int row, int col)
         {
             this.Row = row;
             this.Col = col;
@@ -34,7 +34,7 @@ namespace Mov.Game.Engine.Characters.Functions
         /// </summary>
         /// <param name="p"></param>
         /// <returns></returns>
-        public bool Equals(TablePosition p)
+        public bool Equals(Position2D p)
         {
             return this.Row == p.Row && this.Col == p.Col;
         }

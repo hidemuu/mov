@@ -11,7 +11,7 @@ namespace Mov.Game.Engine
     /// <summary>
     /// 有限状態マシン（Finite State Machine）手法のゲームエンジン
     /// </summary>
-    public class FsmGameEngine : IFsmGameEngine
+    public class FiniteStateMachineGameEngine : IFiniteStateMachineGameEngine
     {   
 
         #region フィールド
@@ -70,7 +70,7 @@ namespace Mov.Game.Engine
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FsmGameEngine(IGameService service)
+        public FiniteStateMachineGameEngine(IGameService service)
         {
             this.Service = service;
             Characters = new List<ICharacter>();

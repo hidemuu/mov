@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Game.Models.Characters
 {
-    public class Bread : FsmCharacterBase
+    public class Bread : FiniteStateMachineCharacterBase
     {
 
         #region プロパティ
@@ -23,7 +23,7 @@ namespace Mov.Game.Models.Characters
         /// コンストラクタ
         /// </summary>
         /// <param name="engine"></param>
-        public Bread(IFsmGameEngine engine) : base(engine)
+        public Bread(IFiniteStateMachineGameEngine engine) : base(engine)
         {
             SetPosition(-100, -100);
         }

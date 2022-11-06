@@ -25,7 +25,7 @@ namespace Mov.Game.Service.Machine
         /// <summary>
         /// ゲームエンジン
         /// </summary>
-        public IFsmGameEngine Engine { get; }
+        public IFiniteStateMachineGameEngine Engine { get; }
 
         #endregion フィールド
 
@@ -53,8 +53,8 @@ namespace Mov.Game.Service.Machine
         /// <param name="service"></param>
         public PackmanGame(IGameService service)
         {
-            this.Engine = new FsmGameEngine(service);
-            this.GraphicController = new FsmGameGraphicController(this.Engine);
+            this.Engine = new FiniteStateMachineGameEngine(service);
+            this.GraphicController = new FiniteStateMachineGameGraphicController(this.Engine);
         }
 
         #endregion コンストラクター

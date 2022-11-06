@@ -11,7 +11,7 @@ namespace Mov.Game.Models.Characters
     /// <summary>
     /// プレイヤークラス
     /// </summary>
-    public class Player : FsmCharacterBase
+    public class Player : FiniteStateMachineCharacterBase
     {
         #region フィールド
 
@@ -44,7 +44,7 @@ namespace Mov.Game.Models.Characters
         /// コンストラクタ
         /// </summary>
         /// <param name="engine"></param>
-        public Player(IFsmGameEngine engine) : base(engine)
+        public Player(IFiniteStateMachineGameEngine engine) : base(engine)
         {
         }
 

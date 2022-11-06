@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Game.Models.Characters
 {
-    public class Wall : FsmCharacterBase
+    public class Wall : FiniteStateMachineCharacterBase
     {
         #region プロパティ
 
@@ -21,7 +21,7 @@ namespace Mov.Game.Models.Characters
 
         #region コンストラクター
 
-        public Wall(IFsmGameEngine engine) : base(engine)
+        public Wall(IFiniteStateMachineGameEngine engine) : base(engine)
         {
         }
 

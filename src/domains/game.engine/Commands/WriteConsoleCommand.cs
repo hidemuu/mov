@@ -12,7 +12,7 @@ namespace Mov.Game.Engine.Commands
 {
     internal class WriteConsoleCommand : ICommand<IGameService, CommandResponse>
     {
-        public string Name => GameCommands.WriteConsole.ToString();
+        public string Name => GameCommandType.WriteConsole.ToString();
 
         public string ShortName => "wc";
 

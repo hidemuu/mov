@@ -9,20 +9,20 @@ using System.Text;
 
 namespace Mov.Game.Service.Implements
 {
-    public class FsmGameGraphicController : GraphicControllerBase
+    public class FiniteStateMachineGameGraphicController : GraphicControllerBase
     {
         #region フィールド
 
         /// <summary>
         /// ゲームエンジン
         /// </summary>
-        private IFsmGameEngine engine;
+        private IFiniteStateMachineGameEngine engine;
 
         #endregion フィールド
 
         #region コンストラクター
 
-        public FsmGameGraphicController(IFsmGameEngine engine) : base()
+        public FiniteStateMachineGameGraphicController(IFiniteStateMachineGameEngine engine) : base()
         {
             this.engine = engine;
             FrameWidth = engine.MapWidth;

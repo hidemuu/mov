@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Game.Models.Characters
 {
-    public class Alien : FsmCharacterBase
+    public class Alien : FiniteStateMachineCharacterBase
     {
         #region フィールド
         /// <summary>
@@ -33,7 +33,7 @@ namespace Mov.Game.Models.Characters
         /// コンストラクタ
         /// </summary>
         /// <param name="engine"></param>
-        public Alien(IFsmGameEngine engine) : base(engine)
+        public Alien(IFiniteStateMachineGameEngine engine) : base(engine)
         {
         }
 

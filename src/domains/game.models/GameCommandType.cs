@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Game.Models
 {
-    public enum GameCommands
+    public enum GameCommandType
     {
         WriteConsole = 1,
     }

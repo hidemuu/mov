@@ -17,7 +17,7 @@ namespace Mov.Game.Models.Characters
         /// </summary>
         /// <param name="engine"></param>
         /// <param name="breadcrumbs"></param>
-        public BreadPlayer(IFsmGameEngine engine, Breadcrumbs breadcrumbs) : base(engine)
+        public BreadPlayer(IFiniteStateMachineGameEngine engine, Breadcrumbs breadcrumbs) : base(engine)
         {
             this.breadcrumbs = breadcrumbs;
         }

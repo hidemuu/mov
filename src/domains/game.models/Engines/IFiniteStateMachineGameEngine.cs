@@ -8,7 +8,7 @@ namespace Mov.Game.Models
     /// <summary>
     /// 有限状態マシン（Finite State Machine）手法のゲームエンジン
     /// </summary>
-    public interface IFsmGameEngine
+    public interface IFiniteStateMachineGameEngine
     {
         #region プロパティ
 

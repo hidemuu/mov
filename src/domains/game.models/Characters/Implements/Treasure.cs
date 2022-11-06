@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Game.Models.Characters
 {
-    public class Treasure : FsmCharacterBase
+    public class Treasure : FiniteStateMachineCharacterBase
     {
         #region プロパティ
 
@@ -20,7 +20,7 @@ namespace Mov.Game.Models.Characters
 
         #region コンストラクター
 
-        public Treasure(IFsmGameEngine engine) : base(engine)
+        public Treasure(IFiniteStateMachineGameEngine engine) : base(engine)
         {
         }
 

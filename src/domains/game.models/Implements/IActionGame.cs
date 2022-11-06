@@ -12,7 +12,7 @@ namespace Mov.Game.Models
     {
         #region プロパティ
 
-        IFsmGameEngine Engine { get; }
+        IFiniteStateMachineGameEngine Engine { get; }
 
         GraphicControllerBase GraphicController { get; }
 

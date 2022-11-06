@@ -6,7 +6,7 @@ namespace Mov.Game.Models
     /// <summary>
     /// キャラクター基本クラス
     /// </summary>
-    public abstract class FsmCharacterBase : ICharacter
+    public abstract class FiniteStateMachineCharacterBase : ICharacter
     {
         #region 抽象プロパティ
 
@@ -47,7 +47,7 @@ namespace Mov.Game.Models
         /// <summary>
         /// ゲームエンジン
         /// </summary>
-        protected IFsmGameEngine Engine { get; private set; }
+        protected IFiniteStateMachineGameEngine Engine { get; private set; }
 
         /// <summary>
         /// 方向
@@ -75,7 +75,7 @@ namespace Mov.Game.Models
         /// コンストラクタ
         /// </summary>
         /// <param name="engine"></param>
-        public FsmCharacterBase(IFsmGameEngine engine)
+        public FiniteStateMachineCharacterBase(IFiniteStateMachineGameEngine engine)
         {
             this.Engine = engine;
         }

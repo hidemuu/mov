@@ -1,5 +1,4 @@
-﻿using Mov.Game.Engine;
-using Mov.Game.Models;
+﻿using Mov.Game.Models;
 using Mov.Game.Models.Maps;
 using Mov.Painters;
 using System;
@@ -44,10 +43,6 @@ namespace Mov.Game.Models
         int GetLife();
 
         void SetLevel(int lv);
-
-        IEnumerable<int> GetLevels();
-
-        Landmark GetLandmark();
 
         #endregion メソッド
     }

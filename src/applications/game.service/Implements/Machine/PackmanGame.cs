@@ -76,7 +76,7 @@ namespace Mov.Game.Service.Machine
             this.Engine.Service.Level++;
             TotalScore += this.Engine.Service.Score;
             this.Engine.Service.Score = 0;
-            this.Engine.Initialize(GetLandmark());
+            this.Engine.Initialize();
             this.GraphicController.IsActive = true;
             this.Engine.Service.IsStageClear = false;
         }
@@ -93,16 +93,6 @@ namespace Mov.Game.Service.Machine
         public void SetLevel(int lv)
         {
             this.Engine.Service.Level = lv;
-        }
-
-        public IEnumerable<int> GetLevels()
-        {
-            return this.Engine.Service.Repository.Landmarks.Get().Select(x => x.Lv);
-        }
-
-        public Landmark GetLandmark()
-        {
-            return this.Engine.Service.Repository.Landmarks.Get().FirstOrDefault(x => x.Lv == this.Engine.Service.Level);
         }
 
         /// <summary>

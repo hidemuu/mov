@@ -1,11 +1,12 @@
 ﻿using Mov.Game.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Mov.Game.Service
 {
-    public class ConsoleGameService : IGameService
+    public class GameService : IGameService
     {
         public IGameRepository Repository { get; }
 
@@ -15,12 +16,12 @@ namespace Mov.Game.Service
 
         public int Score { get; set; }
 
-        public int Level { get; set; }
+        public int Level { get; set; } = 1;
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ConsoleGameService(IGameRepository repository)
+        public GameService(IGameRepository repository)
         {
             this.Repository = repository;
         }
@@ -28,6 +29,16 @@ namespace Mov.Game.Service
         public void Run()
         {
             
+        }
+
+        public IEnumerable<int> GetLevels()
+        {
+            return this.Repository.Landmarks.Get().Select(x => x.Lv);
+        }
+
+        public Landmark GetLandmark()
+        {
+            return this.Repository.Landmarks.Get().FirstOrDefault(x => x.Lv == Level);
         }
     }
 }

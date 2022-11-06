@@ -1,4 +1,5 @@
 ﻿using Mov.Game.Engine;
+using Mov.Game.Models;
 using Mov.Game.Models.Maps;
 using Mov.Painters;
 using System;
@@ -19,37 +20,12 @@ namespace Mov.Game.Service.Implements
 
         #endregion フィールド
 
-        #region プロパティ
-
-        /// <summary>
-        /// ゲームオーバー判定
-        /// </summary>
-        public bool IsGameOver { get; private set; } = false;
-        /// <summary>
-        /// ステージクリア判定
-        /// </summary>
-        public bool IsStageClear { get; private set; } = false;
-        /// <summary>
-        /// スコア
-        /// </summary>
-        public int Score { get; private set; } = 0;
-        /// <summary>
-        /// トータルスコア
-        /// </summary>
-        public int TotalScore { get; private set; } = 0;
-        /// <summary>
-        /// レベル
-        /// </summary>
-        public int Level { get; private set; } = 1;
-
-        #endregion プロパティ
-
         #region コンストラクター
 
         public FsmGameGraphicController(IFsmGameEngine engine) : base()
         {
             this.engine = engine;
-            var map = engine.GetLandmark(Level);
+            var map = engine.Service.GetLandmark();
             FrameWidth = map.GetCol() * engine.UnitWidth;
             FrameHeight = map.GetRow() * engine.UnitHeight;
         }
@@ -67,13 +43,13 @@ namespace Mov.Game.Service.Implements
                     //プレイヤー
                     case GameMap.PLAYER:
                         //移動処理
-                        if (character.Move()) Score++;
+                        if (character.Move()) this.engine.Service.Score++;
                         //ダメージ判定
                         if (character.IsDamage()) character.AddLife(-1);
                         //ゲームオーバー判定
-                        if (character.Life <= 0) IsGameOver = true;
+                        if (character.Life <= 0) this.engine.Service.IsGameOver = true;
                         //ステージクリア判定
-                        if (Score >= this.engine.GetLandmark(Level).ClearScore) IsStageClear = true;
+                        if (this.engine.Service.Score >= this.engine.Service.GetLandmark().ClearScore) this.engine.Service.IsStageClear = true;
                         break;
                     //敵
                     case GameMap.ALIEN:
@@ -86,7 +62,7 @@ namespace Mov.Game.Service.Implements
 
         protected override void DrawScreen()
         {
-            foreach (var character in engine.Characters)
+            foreach (var character in this.engine.Characters)
             {
                 if (character.TypeCode != GameMap.ROAD) DrawCharacter(character);
             }
@@ -111,20 +87,19 @@ namespace Mov.Game.Service.Implements
         public override void Initialize()
         {
             base.Initialize();
-            Score = 0;
-            engine.Initialize(this.engine.GetLandmark(Level));
-            IsGameOver = false;
-            IsStageClear = false;
+            this.engine.Service.Score = 0;
+            this.engine.Initialize();
+            this.engine.Service.IsGameOver = false;
+            this.engine.Service.IsStageClear = false;
         }
 
         public void Next()
         {
-            Level++;
-            TotalScore += Score;
-            Score = 0;
-            engine.Initialize(this.engine.GetLandmark(Level));
-            IsActive = true;
-            IsStageClear = false;
+            this.engine.Service.Level++;
+            this.engine.Service.Score = 0;
+            this.engine.Initialize();
+            this.IsActive = true;
+            this.engine.Service.IsStageClear = false;
         }
 
         #endregion メソッド

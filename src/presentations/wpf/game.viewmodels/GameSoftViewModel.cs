@@ -78,7 +78,7 @@ namespace Mov.Game.ViewModels
             Model.Level.Value = this.game.Engine.Service.Level;
             Model.Life.Value = this.game.GetLife();
             Model.CurrentScore.Value = this.game.Engine.Service.Score;
-            Model.ClearScore.Value = this.game.GetLandmark().ClearScore;
+            Model.ClearScore.Value = this.game.Engine.Service.GetLandmark().ClearScore;
             base.Update();
         }
 

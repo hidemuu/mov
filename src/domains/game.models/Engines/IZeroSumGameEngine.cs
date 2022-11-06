@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Game.Engine
+namespace Mov.Game.Models
 {
     /// <summary>
-    /// 推論ゲームエンジン
+    /// ゼロサムゲームエンジン
     /// </summary>
-    public interface IInferenceGameEngine
+    public interface IZeroSumGameEngine
     {
     }
 }

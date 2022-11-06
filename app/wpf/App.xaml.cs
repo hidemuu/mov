@@ -161,7 +161,7 @@ namespace Mov.WpfApp
             //containerRegistry.RegisterSingleton<IApplicationCommands, ApplicationCommands>();
 
             //サービスの登録
-            containerRegistry.RegisterInstance<IGameService>(Container.Resolve<GraphicGameService>());
+            containerRegistry.RegisterInstance<IGameService>(Container.Resolve<GameService>());
             //containerRegistry.RegisterInstance<IGameService>(new GraphicGameService(fileGameRepositories.DefaultRepository));
 
             //Viewの登録

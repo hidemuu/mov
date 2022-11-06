@@ -102,7 +102,7 @@ namespace Mov.ConsoleApp
                 new ConfiguratorService(repository.Configurator),
                 new DesignerService(repository.Designer),
                 new DriverService(repository.Driver),
-                new ConsoleGameService(repository.Game),
+                new GameService(repository.Game),
                 new TranslatorService(repository.Translator)
                 ));
             controller = new MovController(engine);

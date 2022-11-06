@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Game.Engine
+namespace Mov.Game.Models
 {
     /// <summary>
     /// 有限状態マシン（Finite State Machine）手法のゲームエンジン
@@ -47,7 +47,7 @@ namespace Mov.Game.Engine
         /// <summary>
         /// 初期化処理
         /// </summary>
-        void Initialize(Landmark landMark);
+        void Initialize();
 
         /// <summary>
         /// キャラクターソート
@@ -71,10 +71,6 @@ namespace Mov.Game.Engine
         /// <param name="y">Y位置</param>
         /// <returns></returns>
         int GetCollision(IFsmCharacter targetCharacter, int x, int y);
-
-        IEnumerable<int> GetLevels();
-
-        Landmark GetLandmark(int level);
 
         #endregion メソッド
     }

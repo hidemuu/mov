@@ -98,8 +98,9 @@ namespace Mov.Game.Engine
         /// <summary>
         /// 初期化処理
         /// </summary>
-        public virtual void Initialize(Landmark landMark)
+        public virtual void Initialize()
         {
+            var landMark = Service.GetLandmark();
             Map = GameMap.MakeMap(landMark);
             breadcrumbs = new Breadcrumbs(15, this, landMark.GetRow(), landMark.GetCol());
             Characters.Clear();
@@ -248,12 +249,12 @@ namespace Mov.Game.Engine
 
         public IEnumerable<int> GetLevels()
         {
-            return this.Service.Repository.Landmarks.Get().Select(x => x.Lv);
+            return this.Service.GetLevels();
         }
 
-        public Landmark GetLandmark(int level)
+        public Landmark GetLandmark()
         {
-            return this.Service.Repository.Landmarks.Get().FirstOrDefault(x => x.Lv == level);
+            return this.Service.GetLandmark();
         }
 
         #endregion メソッド

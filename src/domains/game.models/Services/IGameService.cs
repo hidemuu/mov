@@ -36,6 +36,10 @@ namespace Mov.Game.Models
 
         void Run();
 
+        IEnumerable<int> GetLevels();
+
+        Landmark GetLandmark();
+
         #endregion メソッド
     }
 }

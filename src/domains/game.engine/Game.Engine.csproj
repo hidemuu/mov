@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Tactics\" />
-    <Folder Include="LandMake\" />
+    <Folder Include="Implements\Tactics\" />
+    <Folder Include="Implements\LandMake\" />
   </ItemGroup>
 
 </Project>

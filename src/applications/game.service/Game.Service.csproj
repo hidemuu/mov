@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Implements\ZeroSum\" />
+    <Folder Include="Contents\ZeroSum\" />
   </ItemGroup>
 
 </Project>

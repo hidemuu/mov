@@ -17,15 +17,11 @@ namespace Mov.Configurator.Service
     {
         #region フィールド
 
-        private readonly IConfiguratorRepository repository;
+        private readonly IConfiguratorEngine engine;
 
         #endregion フィールド
 
         #region プロパティ
-
-        public IConfiguratorQuery Query { get; }
-
-        public IConfiguratorCommand Command { get; }
 
         #endregion プロパティ
 
@@ -34,16 +30,19 @@ namespace Mov.Configurator.Service
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ConfiguratorService(IConfiguratorRepository repository)
+        public ConfiguratorService(IConfiguratorEngine engine)
         {
-            this.repository = repository;
-            this.Query = new ConfiguratorQuery(repository);
-            this.Command = new ConfiguratorCommand(repository);
+            this.engine = engine;
         }
 
         #endregion コンストラクター
 
         #region メソッド
+
+        public override string ToString()
+        {
+            return engine.ToString();
+        }
 
         #endregion メソッド
     }

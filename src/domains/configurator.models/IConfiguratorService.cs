@@ -10,11 +10,6 @@ namespace Mov.Configurator.Models
     {
         #region プロパティ
 
-        IConfiguratorQuery Query { get; }
-
-        IConfiguratorCommand Command { get; }
-
-
         #endregion プロパティ
     }
 }

@@ -97,14 +97,14 @@ namespace Mov.ConsoleApp
             //リポジトリ生成
             repository = new FileMovRepository(PathCreator.GetResourcePath());
             //エンジン生成
-            engine = new MovEngine(0, new MovService(
-                new AnalizerService(repository.Analizer),
-                new ConfiguratorService(repository.Configurator),
-                new DesignerService(repository.Designer),
-                new DriverService(repository.Driver),
-                new GameService(repository.Game),
-                new TranslatorService(repository.Translator)
-                ));
+            //engine = new MovEngine(0, new MovService(
+            //    new AnalizerService(repository.Analizer),
+            //    new ConfiguratorService(repository.Configurator),
+            //    new DesignerService(repository.Designer),
+            //    new DriverService(repository.Driver),
+            //    new GameService(repository.Game),
+            //    new TranslatorService(repository.Translator)
+            //    ));
             controller = new MovController(engine);
         }
 

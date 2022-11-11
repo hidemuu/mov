@@ -742,6 +742,19 @@
           "bin/placeholder/Mov.Calculators.dll": {}
         }
       },
+      "Mov.Configurator.Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Configurator.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Configurator.Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Configurator.Engine.dll": {}
+        }
+      },
       "Mov.Configurator.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -3202,6 +3215,11 @@
       "path": "../../infrastructures/calculators/Calculators.csproj",
       "msbuildProject": "../../infrastructures/calculators/Calculators.csproj"
     },
+    "Mov.Configurator.Engine/1.0.0": {
+      "type": "project",
+      "path": "../../domains/configurator.engine/Configurator.Engine.csproj",
+      "msbuildProject": "../../domains/configurator.engine/Configurator.Engine.csproj"
+    },
     "Mov.Configurator.Models/1.0.0": {
       "type": "project",
       "path": "../../domains/configurator.models/Configurator.Models.csproj",
@@ -3225,6 +3243,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Mov.Configurator.Engine >= 1.0.0",
       "Mov.Configurator.Repository >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
@@ -3268,6 +3287,9 @@
           "projectReferences": {
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\configurator.repository\\Configurator.Repository.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\configurator.repository\\Configurator.Repository.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\configurator.engine\\Configurator.Engine.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\configurator.engine\\Configurator.Engine.csproj"
             }
           }
         }

@@ -39,3 +39,5 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.service\obj\De
 C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.service\obj\Debug\netstandard2.0\Configurator.Service.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.service\obj\Debug\netstandard2.0\Mov.Configurator.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.service\obj\Debug\netstandard2.0\Mov.Configurator.Service.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.service\bin\Debug\netstandard2.0\Mov.Configurator.Engine.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\configurator.service\bin\Debug\netstandard2.0\Mov.Configurator.Engine.pdb

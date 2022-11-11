@@ -765,6 +765,20 @@
           "bin/placeholder/Mov.Controllers.dll": {}
         }
       },
+      "Mov.Designer.Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Designer.Models": "1.0.0",
+          "ReactiveProperty.Core": "8.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Designer.Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Designer.Engine.dll": {}
+        }
+      },
       "Mov.Designer.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -3246,6 +3260,11 @@
       "path": "../../infrastructures/controllers/Controllers.csproj",
       "msbuildProject": "../../infrastructures/controllers/Controllers.csproj"
     },
+    "Mov.Designer.Engine/1.0.0": {
+      "type": "project",
+      "path": "../../domains/designer.engine/Designer.Engine.csproj",
+      "msbuildProject": "../../domains/designer.engine/Designer.Engine.csproj"
+    },
     "Mov.Designer.Models/1.0.0": {
       "type": "project",
       "path": "../../domains/designer.models/Designer.Models.csproj",
@@ -3269,9 +3288,9 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Mov.Designer.Engine >= 1.0.0",
       "Mov.Designer.Repository >= 1.0.0",
-      "NETStandard.Library >= 2.0.3",
-      "ReactiveProperty.Core >= 8.0.1"
+      "NETStandard.Library >= 2.0.3"
     ]
   },
   "packageFolders": {
@@ -3313,6 +3332,9 @@
           "projectReferences": {
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.repository\\Designer.Repository.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.repository\\Designer.Repository.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\designer.engine\\Designer.Engine.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\designer.engine\\Designer.Engine.csproj"
             }
           }
         }
@@ -3332,10 +3354,6 @@
             "target": "Package",
             "version": "[2.0.3, )",
             "autoReferenced": true
-          },
-          "ReactiveProperty.Core": {
-            "target": "Package",
-            "version": "[8.0.1, )"
           }
         },
         "imports": [

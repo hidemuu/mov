@@ -614,6 +614,20 @@
           "bin/placeholder/Mov.Controllers.dll": {}
         }
       },
+      "Mov.Designer.Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Designer.Models": "1.0.0",
+          "ReactiveProperty.Core": "8.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Designer.Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Designer.Engine.dll": {}
+        }
+      },
       "Mov.Designer.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -646,8 +660,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Designer.Repository": "1.0.0",
-          "ReactiveProperty.Core": "8.0.1"
+          "Mov.Designer.Engine": "1.0.0",
+          "Mov.Designer.Repository": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Designer.Service.dll": {}
@@ -1943,6 +1957,11 @@
       "type": "project",
       "path": "../../../infrastructures/controllers/Controllers.csproj",
       "msbuildProject": "../../../infrastructures/controllers/Controllers.csproj"
+    },
+    "Mov.Designer.Engine/1.0.0": {
+      "type": "project",
+      "path": "../../../domains/designer.engine/Designer.Engine.csproj",
+      "msbuildProject": "../../../domains/designer.engine/Designer.Engine.csproj"
     },
     "Mov.Designer.Models/1.0.0": {
       "type": "project",

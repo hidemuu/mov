@@ -696,6 +696,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Mov.Analizer.Engine": "1.0.0",
           "Mov.Analizer.Repository": "1.0.0"
         },
         "compile": {
@@ -983,6 +984,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Mov.Configurator.Engine": "1.0.0",
           "Mov.Configurator.Repository": "1.0.0"
         },
         "compile": {
@@ -1060,7 +1062,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Designer.Models": "1.0.0"
+          "Mov.Designer.Models": "1.0.0",
+          "ReactiveProperty.Core": "8.0.1"
         },
         "compile": {
           "bin/placeholder/Mov.Designer.Engine.dll": {}
@@ -1101,8 +1104,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Designer.Repository": "1.0.0",
-          "ReactiveProperty.Core": "8.0.1"
+          "Mov.Designer.Engine": "1.0.0",
+          "Mov.Designer.Repository": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Designer.Service.dll": {}

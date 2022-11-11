@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.BaseModel
+namespace Mov.Accessors
 {
     /// <summary>
     /// データベースの基本オブジェクト

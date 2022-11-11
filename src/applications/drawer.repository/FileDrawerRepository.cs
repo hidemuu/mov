@@ -1,6 +1,5 @@
 ﻿using Mov.Accessors;
 using Mov.Accessors.Repository.Implement;
-using Mov.BaseModel;
 using Mov.Drawer.Models;
 using System;
 using System.Collections.Generic;

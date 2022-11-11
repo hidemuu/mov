@@ -1,6 +1,5 @@
 ﻿using Mov.Accessors.Repository;
 using Mov.Accessors.Repository.Domain;
-using Mov.BaseModel;
 using Mov.Controllers;
 using Mov.Game.Models;
 using Mov.Utilities;

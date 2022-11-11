@@ -1,7 +1,6 @@
 ﻿using Mov.Accessors;
 using Mov.Accessors.Repository.Domain;
 using Mov.Accessors.Repository.Implement;
-using Mov.BaseModel;
 using Mov.Configurator.Models;
 using System;
 using System.Collections.Generic;

@@ -1,5 +1,4 @@
 ﻿using Mov.Accessors.Repository.Domain;
-using Mov.BaseModel;
 using Mov.Configurator.Models;
 using Mov.Configurator.Models.Commands;
 using Mov.Controllers;

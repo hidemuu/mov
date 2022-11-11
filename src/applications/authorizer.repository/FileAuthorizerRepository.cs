@@ -1,7 +1,6 @@
 ﻿using Mov.Accessors;
 using Mov.Accessors.Repository.Implement;
 using Mov.Authorizer.Models;
-using Mov.BaseModel;
 using System;
 using System.Collections.Generic;
 using System.Text;

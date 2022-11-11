@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.BaseModel
+namespace Mov.Accessors
 {
     /// <summary>
     /// データベースリポジトリ基本クラス

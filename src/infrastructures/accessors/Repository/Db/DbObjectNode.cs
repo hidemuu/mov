@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.BaseModel
+namespace Mov.Accessors
 {
     /// <summary>
     /// データベースオブジェクトのノード

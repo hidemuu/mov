@@ -17,8 +17,4 @@
     <ProjectReference Include="..\game.repository\Game.Repository.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Contents\ZeroSum\" />
-  </ItemGroup>
-
 </Project>

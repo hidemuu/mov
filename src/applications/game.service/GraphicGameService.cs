@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Game.Service
 {
-    public class GameService : IGameService
+    public class GraphicGameService : IGameService
     {
 
         #region フィールド
@@ -24,7 +24,7 @@ namespace Mov.Game.Service
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public GameService(IFiniteStateMachineGameEngine finiteStateMachineGameEngine)
+        public GraphicGameService(IFiniteStateMachineGameEngine finiteStateMachineGameEngine)
         {
             this.finiteStateMachineGameEngine = finiteStateMachineGameEngine;
         }

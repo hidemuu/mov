@@ -14,8 +14,4 @@
     <ProjectReference Include="..\basemodel\BaseModel.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Actions\" />
-  </ItemGroup>
-
 </Project>

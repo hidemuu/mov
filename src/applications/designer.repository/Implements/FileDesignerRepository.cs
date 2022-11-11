@@ -24,7 +24,6 @@ namespace Mov.Designer.Repository
             Nodes = new FileDbObjectRepository<LayoutNode, LayoutNodeCollection>(GetPath("node"), encoding);
             Contents = new FileDbObjectRepository<LayoutContent, LayoutContentCollection>(GetPath("content"), encoding);
             Themes = new FileDbObjectRepository<Theme, ThemeCollection>(GetPath("theme"), encoding);
-            Icons = new FileDbObjectRepository<Icon, IconCollection>(GetPath("icon"), encoding);
         }
 
         #endregion コンストラクター
@@ -38,8 +37,6 @@ namespace Mov.Designer.Repository
         public IDbObjectRepository<LayoutContent, LayoutContentCollection> Contents { get; }
 
         public IDbObjectRepository<Theme, ThemeCollection> Themes { get; }
-
-        public IDbObjectRepository<Icon, IconCollection> Icons { get; }
 
         #endregion プロパティ
     }

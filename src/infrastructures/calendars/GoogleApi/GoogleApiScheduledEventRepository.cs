@@ -1,23 +1,23 @@
 ﻿using Google.Apis.Calendar.v3;
 using Google.Apis.Calendar.v3.Data;
 using Google.Apis.Services;
-using Mov.Scheduler.Models;
+using Mov.Calendars.GoogleApi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Scheduler.Repository.GoogleApi
+namespace Mov.Calendars.Repository.GoogleApi
 {
-    public class GoogleApiScheduledEventRepository : IScheduledEventRepository
+    public class GoogleApiScheduledEventRepository
     {
-        public async Task<ScheduledEvent[]> FetchScheduledEventsAsync(string[] targetKinds, DateTime from, DateTime to)
+        public async Task<Schedule[]> FetchScheduledEventsAsync(string[] targetKinds, DateTime from, DateTime to)
         {
             // アクセストークン取得
             var credential = await CredentialProvider.GetUserCredentialAsync();
             if(credential == null)
-                return new ScheduledEvent[0];
+                return new Schedule[0];
 
             // Create Google Calendar API service.
             var service = new CalendarService(new BaseClientService.Initializer()
@@ -38,9 +38,9 @@ namespace Mov.Scheduler.Repository.GoogleApi
             // List events.
             var events = await request.ExecuteAsync();
             if (events.Items == null)
-                return new ScheduledEvent[0];
+                return new Schedule[0];
 
-            var list = new List<ScheduledEvent>(events.Items.Count);
+            var list = new List<Schedule>(events.Items.Count);
             foreach (var eventItem in events.Items)
             {
                 // 時間未定のイベントは無視する
@@ -59,7 +59,7 @@ namespace Mov.Scheduler.Repository.GoogleApi
                     && eventItem.Start.DateTime == eventItem.End.DateTime)
                     continue;
 
-                var scheduledEvent = new ScheduledEvent
+                var scheduledEvent = new Schedule
                 {
                     Id = eventItem.Id,
                     Kind = kind,

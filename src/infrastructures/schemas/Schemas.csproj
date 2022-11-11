@@ -6,4 +6,8 @@
     <RootNamespace>Mov.Schemas</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\utilities\Utilities.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -7,8 +7,6 @@ namespace Mov.Designer.Models.Persistences
 {
     public interface IDesignerCommand
     {
-        IPersistenceCommand<Icon> Icon { get; }
-
         IPersistenceCommand<LayoutContent> LayoutContent { get; }
 
         IPersistenceCommand<LayoutNode> LayoutNode { get; }

@@ -7,8 +7,6 @@ namespace Mov.Designer.Models.Persistences
 {
     public interface IDesignerQuery
     {
-        IPersistenceQuery<Icon> Icon { get; }
-
         IPersistenceQuery<LayoutContent> LayoutContent { get; }
 
         IPersistenceQuery<LayoutNode> LayoutNode { get; }

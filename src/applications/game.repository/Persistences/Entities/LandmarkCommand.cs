@@ -25,6 +25,11 @@ namespace Mov.Game.Repository.Persistences.Entity
 
         #region メソッド
 
+        public void Write()
+        {
+            this.repository.Landmarks.Write();
+        }
+
         public void Delete(Landmark item)
         {
             this.repository.Landmarks.Delete(item);

@@ -25,6 +25,11 @@ namespace Mov.Designer.Repository.Persistences.Entities
 
         #region メソッド
 
+        public void Write()
+        {
+            this.repository.Shells.Write();
+        }
+
         public void Delete(Shell item)
         {
             this.repository.Shells.Delete(item);

@@ -24,6 +24,11 @@ namespace Mov.Configurator.Models.Persistences
 
         #region メソッド
 
+        public void Write()
+        {
+            this.repository.UserSettings.Write();
+        }
+
         public void Delete(UserSetting item)
         {
             this.repository.UserSettings.Delete(item);

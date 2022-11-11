@@ -25,6 +25,11 @@ namespace Mov.Designer.Repository.Persistences.Entities
 
         #region メソッド
 
+        public void Write()
+        {
+            this.repository.Contents.Write();
+        }
+
         public void Delete(LayoutContent item)
         {
             this.repository.Contents.Delete(item);

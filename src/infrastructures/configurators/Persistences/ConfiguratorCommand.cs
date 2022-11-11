@@ -1,22 +1,21 @@
 ﻿using Mov.Accessors;
-using Mov.Designer.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Repository.Persistences.Entities
+namespace Mov.Configurators
 {
-    public class ThemeCommand : IPersistenceCommand<Theme>
+    public class ConfiguratorCommand : IPersistenceCommand<Config>
     {
         #region フィールド
 
-        private readonly IDesignerRepository repository;
+        private readonly FileConfiguratorRepository repository;
 
         #endregion フィールド
 
         #region コンストラクター
 
-        public ThemeCommand(IDesignerRepository repository)
+        public ConfiguratorCommand(FileConfiguratorRepository repository)
         {
             this.repository = repository;
         }
@@ -27,17 +26,17 @@ namespace Mov.Designer.Repository.Persistences.Entities
 
         public void Write()
         {
-            this.repository.Themes.Write();
+            this.repository.Configs.Write();
         }
 
-        public void Delete(Theme item)
+        public void Delete(Config item)
         {
-            this.repository.Themes.Delete(item);
+            this.repository.Configs.Delete(item);
         }
 
-        public void Post(Theme item)
+        public void Post(Config item)
         {
-            this.repository.Themes.Post(item);
+            this.repository.Configs.Post(item);
         }
 
         #endregion メソッド

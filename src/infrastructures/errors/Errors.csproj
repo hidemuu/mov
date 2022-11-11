@@ -6,4 +6,10 @@
     <RootNamespace>Mov.Errors</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Persistences\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>

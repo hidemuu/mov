@@ -24,6 +24,11 @@ namespace Mov.Configurator.Models.Persistences
 
         #region メソッド
 
+        public void Write()
+        {
+            this.repository.Errors.Write();
+        }
+
         public void Delete(Error item)
         {
             this.repository.Errors.Delete(item);

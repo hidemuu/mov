@@ -24,6 +24,11 @@ namespace Mov.Configurator.Models.Persistences
 
         #region メソッド
 
+        public void Write()
+        {
+            this.repository.Schemas.Write();
+        }
+
         public void Delete(Schema item)
         {
             this.repository.Schemas.Delete(item);

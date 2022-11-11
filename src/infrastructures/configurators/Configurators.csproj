@@ -6,4 +6,8 @@
     <RootNamespace>Mov.Configurators</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\accessors\Accessors.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -6,4 +6,8 @@
     <RootNamespace>Mov.Translators</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\accessors\Accessors.csproj" />
+  </ItemGroup>
+
 </Project>

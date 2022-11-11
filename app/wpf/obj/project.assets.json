@@ -688,63 +688,10 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "Mov.Authorizer.Engine/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Authorizer.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Authorizer.Engine.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Authorizer.Engine.dll": {}
-        }
-      },
-      "Mov.Authorizer.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.BaseModel": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Authorizer.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Authorizer.Models.dll": {}
-        }
-      },
-      "Mov.Authorizer.Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Authorizer.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Authorizer.Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Authorizer.Repository.dll": {}
-        }
-      },
-      "Mov.Authorizer.Service/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Authorizer.Repository": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Authorizer.Service.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Authorizer.Service.dll": {}
-        }
-      },
       "Mov.Authorizer.ViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Mov.Authorizer.Service": "1.0.0",
           "Mov.WpfViewModels": "1.0.0"
         },
         "compile": {
@@ -1290,15 +1237,12 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Mov.Analizer.Engine": "1.0.0",
-          "Mov.Authorizer.Engine": "1.0.0",
           "Mov.Bom.Engine": "1.0.0",
           "Mov.Configurator.Engine": "1.0.0",
           "Mov.Designer.Engine": "1.0.0",
           "Mov.Drawer.Engine": "1.0.0",
           "Mov.Driver.Engine": "1.0.0",
-          "Mov.Game.Engine": "1.0.0",
-          "Mov.Scheduler.Engine": "1.0.0",
-          "Mov.Translator.Engine": "1.0.0"
+          "Mov.Game.Engine": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Framework.dll": {}
@@ -1421,63 +1365,10 @@
           "bin/placeholder/Mov.Painters.dll": {}
         }
       },
-      "Mov.Scheduler.Engine/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Scheduler.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Scheduler.Engine.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Scheduler.Engine.dll": {}
-        }
-      },
-      "Mov.Scheduler.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.BaseModel": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Scheduler.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Scheduler.Models.dll": {}
-        }
-      },
-      "Mov.Scheduler.Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Scheduler.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Scheduler.Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Scheduler.Repository.dll": {}
-        }
-      },
-      "Mov.Scheduler.Service/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Scheduler.Repository": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Scheduler.Service.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Scheduler.Service.dll": {}
-        }
-      },
       "Mov.Scheduler.ViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Mov.Scheduler.Service": "1.0.0",
           "Mov.WpfViewModels": "1.0.0"
         },
         "compile": {
@@ -1507,63 +1398,10 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "Mov.Translator.Engine/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Translator.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Translator.Engine.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Translator.Engine.dll": {}
-        }
-      },
-      "Mov.Translator.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.BaseModel": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Translator.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Translator.Models.dll": {}
-        }
-      },
-      "Mov.Translator.Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Translator.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Translator.Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Translator.Repository.dll": {}
-        }
-      },
-      "Mov.Translator.Service/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Translator.Repository": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Translator.Service.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Translator.Service.dll": {}
-        }
-      },
       "Mov.Translator.ViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Mov.Translator.Service": "1.0.0",
           "Mov.WpfViewModels": "1.0.0"
         },
         "compile": {
@@ -1649,16 +1487,13 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Mov.Analizer.Service": "1.0.0",
-          "Mov.Authorizer.Service": "1.0.0",
           "Mov.Bom.Service": "1.0.0",
           "Mov.Configurator.Service": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
           "Mov.Drawer.Service": "1.0.0",
           "Mov.Driver.Service": "1.0.0",
           "Mov.Framework": "1.0.0",
-          "Mov.Game.Service": "1.0.0",
-          "Mov.Scheduler.Service": "1.0.0",
-          "Mov.Translator.Service": "1.0.0"
+          "Mov.Game.Service": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.UseCases.dll": {}
@@ -3026,26 +2861,6 @@
       "path": "../../src/presentations/wpf/analizer.views/Analizer.Views.csproj",
       "msbuildProject": "../../src/presentations/wpf/analizer.views/Analizer.Views.csproj"
     },
-    "Mov.Authorizer.Engine/1.0.0": {
-      "type": "project",
-      "path": "../../src/domains/authorizer.engine/Authorizer.Engine.csproj",
-      "msbuildProject": "../../src/domains/authorizer.engine/Authorizer.Engine.csproj"
-    },
-    "Mov.Authorizer.Models/1.0.0": {
-      "type": "project",
-      "path": "../../src/domains/authorizer.models/Authorizer.Models.csproj",
-      "msbuildProject": "../../src/domains/authorizer.models/Authorizer.Models.csproj"
-    },
-    "Mov.Authorizer.Repository/1.0.0": {
-      "type": "project",
-      "path": "../../src/applications/authorizer.repository/Authorizer.Repository.csproj",
-      "msbuildProject": "../../src/applications/authorizer.repository/Authorizer.Repository.csproj"
-    },
-    "Mov.Authorizer.Service/1.0.0": {
-      "type": "project",
-      "path": "../../src/applications/authorizer.service/Authorizer.Service.csproj",
-      "msbuildProject": "../../src/applications/authorizer.service/Authorizer.Service.csproj"
-    },
     "Mov.Authorizer.ViewModels/1.0.0": {
       "type": "project",
       "path": "../../src/presentations/wpf/authorizer.viewmodels/Authorizer.ViewModels.csproj",
@@ -3276,26 +3091,6 @@
       "path": "../../src/infrastructures/painters/Painters.csproj",
       "msbuildProject": "../../src/infrastructures/painters/Painters.csproj"
     },
-    "Mov.Scheduler.Engine/1.0.0": {
-      "type": "project",
-      "path": "../../src/domains/scheduler.engine/Scheduler.Engine.csproj",
-      "msbuildProject": "../../src/domains/scheduler.engine/Scheduler.Engine.csproj"
-    },
-    "Mov.Scheduler.Models/1.0.0": {
-      "type": "project",
-      "path": "../../src/domains/scheduler.models/Scheduler.Models.csproj",
-      "msbuildProject": "../../src/domains/scheduler.models/Scheduler.Models.csproj"
-    },
-    "Mov.Scheduler.Repository/1.0.0": {
-      "type": "project",
-      "path": "../../src/applications/scheduler.repository/Scheduler.Repository.csproj",
-      "msbuildProject": "../../src/applications/scheduler.repository/Scheduler.Repository.csproj"
-    },
-    "Mov.Scheduler.Service/1.0.0": {
-      "type": "project",
-      "path": "../../src/applications/scheduler.service/Scheduler.Service.csproj",
-      "msbuildProject": "../../src/applications/scheduler.service/Scheduler.Service.csproj"
-    },
     "Mov.Scheduler.ViewModels/1.0.0": {
       "type": "project",
       "path": "../../src/presentations/wpf/scheduler.viewmodels/Scheduler.ViewModels.csproj",
@@ -3305,26 +3100,6 @@
       "type": "project",
       "path": "../../src/presentations/wpf/scheduler.views/Scheduler.Views.csproj",
       "msbuildProject": "../../src/presentations/wpf/scheduler.views/Scheduler.Views.csproj"
-    },
-    "Mov.Translator.Engine/1.0.0": {
-      "type": "project",
-      "path": "../../src/domains/translator.engine/Translator.Engine.csproj",
-      "msbuildProject": "../../src/domains/translator.engine/Translator.Engine.csproj"
-    },
-    "Mov.Translator.Models/1.0.0": {
-      "type": "project",
-      "path": "../../src/domains/translator.models/Translator.Models.csproj",
-      "msbuildProject": "../../src/domains/translator.models/Translator.Models.csproj"
-    },
-    "Mov.Translator.Repository/1.0.0": {
-      "type": "project",
-      "path": "../../src/applications/translator.repository/Translator.Repository.csproj",
-      "msbuildProject": "../../src/applications/translator.repository/Translator.Repository.csproj"
-    },
-    "Mov.Translator.Service/1.0.0": {
-      "type": "project",
-      "path": "../../src/applications/translator.service/Translator.Service.csproj",
-      "msbuildProject": "../../src/applications/translator.service/Translator.Service.csproj"
     },
     "Mov.Translator.ViewModels/1.0.0": {
       "type": "project",

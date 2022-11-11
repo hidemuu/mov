@@ -7,7 +7,6 @@ using Mov.Configurator.Models;
 using Mov.Designer.Models;
 using Mov.Driver.Models;
 using Mov.Game.Models;
-using Mov.Translator.Models;
 using Mov.UseCases.Factories;
 using Mov.Accessors;
 
@@ -20,7 +19,6 @@ namespace Mov.UseCases.Repositories
         public IDesignerRepository Designer { get; }
         public IDriverRepository Driver { get; }
         public IGameRepository Game { get; }
-        public ITranslatorRepository Translator { get; }
 
         public FileMovRepository(string endpoint)
         {
@@ -30,7 +28,6 @@ namespace Mov.UseCases.Repositories
             this.Game = fileRepositoryFactory.Create<IGameRepository>(SerializeConstants.PATH_JSON)?.DefaultRepository;
             this.Driver = fileRepositoryFactory.Create<IDriverRepository>(SerializeConstants.PATH_JSON)?.DefaultRepository;
             this.Analizer = fileRepositoryFactory.Create<IAnalizerRepository>(SerializeConstants.PATH_JSON)?.DefaultRepository;
-            this.Translator = fileRepositoryFactory.Create<ITranslatorRepository>(SerializeConstants.PATH_JSON)?.DefaultRepository;
         }
 
         

@@ -22,10 +22,12 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\bin\Debug\
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.BaseModel.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Calculators.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Controllers.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Designer.Engine.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Designer.Models.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Designer.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Layouts.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Utilities.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Designer.Engine.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Designer.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Accessors.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.BaseModel.pdb
@@ -41,5 +43,3 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\obj\Debug\
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\obj\Debug\netstandard2.0\Designer.Service.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\obj\Debug\netstandard2.0\Mov.Designer.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\obj\Debug\netstandard2.0\Mov.Designer.Service.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Designer.Engine.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Designer.Engine.pdb

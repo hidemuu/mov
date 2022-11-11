@@ -6,8 +6,4 @@
     <RootNamespace>Mov.Authorizer.Engine</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\authorizer.models\Authorizer.Models.csproj" />
-  </ItemGroup>
-
 </Project>

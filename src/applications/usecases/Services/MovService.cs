@@ -7,7 +7,6 @@ using Mov.Designer.Models;
 using Mov.Driver.Models;
 using Mov.Framework;
 using Mov.Game.Models;
-using Mov.Translator.Models;
 
 namespace Mov.UseCases.Services
 {
@@ -18,19 +17,17 @@ namespace Mov.UseCases.Services
         public IDesignerService Designer { get; }
         public IDriverService Driver { get; }
         public IGameService Game { get; }
-        public ITranslatorService Translator { get; }
 
         public MovService(
             IAnalizerService analizerService, IConfiguratorService configuratorService,
             IDesignerService designerService, IDriverService driverService,
-            IGameService gameService, ITranslatorService translatorService)
+            IGameService gameService)
         {
             this.Analizer = analizerService;
             this.Configurator = configuratorService;
             this.Designer = designerService;
             this.Driver = driverService;
             this.Game = gameService;
-            this.Translator = translatorService;
         }
     }
 }

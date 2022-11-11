@@ -17,8 +17,6 @@ using Mov.Framework.Controllers;
 using Mov.Game.Models;
 using Mov.Game.Service;
 using Mov.Game.Service.Puzzle;
-using Mov.Translator.Models;
-using Mov.Translator.Service;
 using Mov.UseCases;
 using Mov.UseCases.Controllers;
 using Mov.UseCases.Factories;

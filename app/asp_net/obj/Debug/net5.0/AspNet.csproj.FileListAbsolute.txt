@@ -49,6 +49,7 @@ C:\Users\nando\Documents\GitHub\mov\app\asp_net\bin\Debug\net5.0\ref\Mov.AspNet.
 C:\Users\nando\Documents\GitHub\mov\app\asp_net\bin\Debug\net5.0\Mov.AspNet.pdb
 C:\Users\nando\Documents\GitHub\mov\app\asp_net\bin\Debug\net5.0\Mov.AspNet.Views.dll
 C:\Users\nando\Documents\GitHub\mov\app\asp_net\bin\Debug\net5.0\Mov.AspNet.Views.pdb
+C:\Users\nando\Documents\GitHub\mov\app\asp_net\obj\Debug\net5.0\AspNet.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\app\asp_net\obj\Debug\net5.0\AspNet.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\nando\Documents\GitHub\mov\app\asp_net\obj\Debug\net5.0\AspNet.AssemblyInfoInputs.cache
 C:\Users\nando\Documents\GitHub\mov\app\asp_net\obj\Debug\net5.0\AspNet.AssemblyInfo.cs
@@ -77,4 +78,3 @@ C:\Users\nando\Documents\GitHub\mov\app\asp_net\obj\Debug\net5.0\ref\Mov.AspNet.
 C:\Users\nando\Documents\GitHub\mov\app\asp_net\obj\Debug\net5.0\Mov.AspNet.pdb
 C:\Users\nando\Documents\GitHub\mov\app\asp_net\obj\Debug\net5.0\AspNet.genruntimeconfig.cache
 C:\Users\nando\Documents\GitHub\mov\app\asp_net\obj\Debug\net5.0\AspNet.csproj.CopyComplete
-C:\Users\nando\Documents\GitHub\mov\app\asp_net\obj\Debug\net5.0\AspNet.csproj.AssemblyReference.cache

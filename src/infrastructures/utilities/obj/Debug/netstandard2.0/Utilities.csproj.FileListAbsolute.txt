@@ -28,9 +28,9 @@ C:\Users\nando\Documents\GitHub\mov\src\drivers\utilities\obj\Debug\netstandard2
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\utilities\bin\Debug\netstandard2.0\Mov.Utilities.deps.json
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\utilities\bin\Debug\netstandard2.0\Mov.Utilities.dll
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\utilities\bin\Debug\netstandard2.0\Mov.Utilities.pdb
+C:\Users\nando\Documents\GitHub\mov\src\infrastructures\utilities\obj\Debug\netstandard2.0\Utilities.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\utilities\obj\Debug\netstandard2.0\Utilities.AssemblyInfoInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\utilities\obj\Debug\netstandard2.0\Utilities.AssemblyInfo.cs
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\utilities\obj\Debug\netstandard2.0\Utilities.csproj.CoreCompileInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\utilities\obj\Debug\netstandard2.0\Mov.Utilities.dll
 C:\Users\nando\Documents\GitHub\mov\src\infrastructures\utilities\obj\Debug\netstandard2.0\Mov.Utilities.pdb
-C:\Users\nando\Documents\GitHub\mov\src\infrastructures\utilities\obj\Debug\netstandard2.0\Utilities.csproj.AssemblyReference.cache

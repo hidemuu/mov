@@ -7,7 +7,6 @@ using Mov.Designer.Models;
 using Mov.Driver.Models;
 using Mov.Framework;
 using Mov.Game.Models;
-using Mov.Translator.Models;
 
 namespace Mov.UseCases.Repositories
 {
@@ -18,18 +17,16 @@ namespace Mov.UseCases.Repositories
         public IDesignerRepository Designer { get; }
         public IDriverRepository Driver { get; }
         public IGameRepository Game { get; }
-        public ITranslatorRepository Translator { get; }
 
         public MovRepository(IAnalizerRepository analizer, IConfiguratorRepository configurator,
             IDesignerRepository designer, IDriverRepository driver,
-            IGameRepository game, ITranslatorRepository translator)
+            IGameRepository game)
         {
             this.Analizer = analizer;
             this.Configurator = configurator;
             this.Designer = designer;
             this.Driver = driver;
             this.Game = game;
-            this.Translator = translator;
         }
 
     }

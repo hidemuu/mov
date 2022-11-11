@@ -6,12 +6,14 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\n
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Calculators.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Controllers.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Game.Models.dll
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Painters.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Utilities.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Game.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Accessors.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.BaseModel.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Calculators.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Controllers.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Painters.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Utilities.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\obj\Debug\netstandard2.0\Game.Repository.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\obj\Debug\netstandard2.0\Game.Repository.AssemblyInfoInputs.cache
@@ -20,5 +22,3 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\obj\Debug\n
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\obj\Debug\netstandard2.0\Game.Repository.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\obj\Debug\netstandard2.0\Mov.Game.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\obj\Debug\netstandard2.0\Mov.Game.Repository.pdb
-C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Painters.dll
-C:\Users\nando\Documents\GitHub\mov\src\applications\game.repository\bin\Debug\netstandard2.0\Mov.Painters.pdb

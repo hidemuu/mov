@@ -5,7 +5,6 @@ using Mov.Controllers;
 using Mov.Designer.Models;
 using Mov.Driver.Models;
 using Mov.Game.Models;
-using Mov.Translator.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -49,10 +48,6 @@ namespace Mov.Framework
                 if (service is IAnalizerService analizerService)
                 {
                     return new DomainController<IAnalizerService>(analizerService, this.commandPath);
-                }
-                if (service is ITranslatorService translatorService)
-                {
-                    return new DomainController<ITranslatorService>(translatorService, this.commandPath);
                 }
             }
             catch (Exception ex)

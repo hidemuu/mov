@@ -17,7 +17,6 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Deb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Mov.WpfDesigns.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Mov.WpfModels.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\bin\Debug\net5.0-windows\Mov.WpfMvvms.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\obj\Debug\net5.0-windows\Bom.ViewModels.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\obj\Debug\net5.0-windows\Bom.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\obj\Debug\net5.0-windows\Bom.ViewModels.AssemblyInfoInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\bom.viewmodels\obj\Debug\net5.0-windows\Bom.ViewModels.AssemblyInfo.cs

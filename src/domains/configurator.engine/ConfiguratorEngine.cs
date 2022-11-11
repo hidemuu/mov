@@ -1,5 +1,6 @@
 ﻿using Mov.Configurator.Models;
 using System;
+using System.Linq;
 
 namespace Mov.Configurator.Engine
 {
@@ -24,17 +25,17 @@ namespace Mov.Configurator.Engine
 
         public Error GetError(string param)
         {
-            return this.service.Repository.Errors.Get(param);
+            return this.service.Query.Error.Get(param).FirstOrDefault();
         }
 
         public Schema GetSchema(string param)
         {
-            return this.service.Repository.Schemas.Get(param);
+            return this.service.Query.Schema.Get(param).FirstOrDefault();
         }
 
         public UserSetting GetUserSetting(string param)
         {
-            return this.service.Repository.UserSettings.Get(param);
+            return this.service.Query.UserSetting.Get(param).FirstOrDefault();
         }
 
 

@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Controllers
+namespace Mov.Accessors
 {
     public interface IPersistenceQuery<T>
     {
         IEnumerable<T> Get();
 
+        IEnumerable<T> Get(string param);
+
         T Get(Guid id);
 
-        IEnumerable<T> Get(string code);
+        
     }
 }

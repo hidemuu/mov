@@ -9,8 +9,6 @@
   <ItemGroup>
     <Folder Include="Shields\Implements\" />
     <Folder Include="Templates\Action\Implement\" />
-    <Folder Include="Templates\Crud\Implement\Transaction\" />
-    <Folder Include="Templates\Transaction\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -17,9 +17,9 @@ namespace Mov.Configurator.Models.Commands
 
         public CommandResponse Invoke(IConfiguratorService service, string[] args)
         {
-            Console.WriteLine(service.Repository.UserSettings.ToString());
-            Console.WriteLine(service.Repository.Errors.ToString());
-            Console.WriteLine(service.Repository.Schemas.ToString());
+            Console.WriteLine(service.Query.UserSetting.ToString());
+            Console.WriteLine(service.Query.Error.ToString());
+            Console.WriteLine(service.Query.Schema.ToString());
             return CommandResponse.Success;
         }
 

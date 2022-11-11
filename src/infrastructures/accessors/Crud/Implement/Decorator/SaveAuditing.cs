@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace Mov.Controllers
+namespace Mov.Accessors
 {
     public class SaveAuditing<T> : ISave<T>
     {

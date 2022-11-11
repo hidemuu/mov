@@ -10,8 +10,4 @@
     <ProjectReference Include="..\..\domains\game.models\Game.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Persistences\" />
-  </ItemGroup>
-
 </Project>

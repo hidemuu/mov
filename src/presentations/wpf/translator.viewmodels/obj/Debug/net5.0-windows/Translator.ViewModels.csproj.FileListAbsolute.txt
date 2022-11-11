@@ -25,3 +25,4 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.viewmodels\
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.viewmodels\obj\Debug\net5.0-windows\Mov.Translator.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.viewmodels\obj\Debug\net5.0-windows\ref\Mov.Translator.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.viewmodels\obj\Debug\net5.0-windows\Mov.Translator.ViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.viewmodels\obj\Debug\net5.0-windows\Translator.ViewModels.csproj.AssemblyReference.cache

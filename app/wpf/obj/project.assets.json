@@ -835,65 +835,11 @@
           "bin/placeholder/Mov.Calculators.dll": {}
         }
       },
-      "Mov.Configurator.Engine/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Configurator.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Configurator.Engine.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Configurator.Engine.dll": {}
-        }
-      },
-      "Mov.Configurator.Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.BaseModel": "1.0.0",
-          "System.ComponentModel.Annotations": "5.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Configurator.Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Configurator.Models.dll": {}
-        }
-      },
-      "Mov.Configurator.Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Configurator.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Configurator.Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Configurator.Repository.dll": {}
-        }
-      },
-      "Mov.Configurator.Service/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Configurator.Engine": "1.0.0",
-          "Mov.Configurator.Repository": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Configurator.Service.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Configurator.Service.dll": {}
-        }
-      },
       "Mov.Configurator.ViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "Mov.Configurator.Models": "1.0.0",
+          "Mov.Configurators": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
           "Mov.Utilities": "1.0.0",
           "Mov.WpfViewModels": "1.0.0"
@@ -924,6 +870,19 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
+      },
+      "Mov.Configurators/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Configurators.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Configurators.dll": {}
+        }
       },
       "Mov.Connectors/1.0.0": {
         "type": "project",
@@ -1238,7 +1197,6 @@
         "dependencies": {
           "Mov.Analizer.Engine": "1.0.0",
           "Mov.Bom.Engine": "1.0.0",
-          "Mov.Configurator.Engine": "1.0.0",
           "Mov.Designer.Engine": "1.0.0",
           "Mov.Drawer.Engine": "1.0.0",
           "Mov.Driver.Engine": "1.0.0",
@@ -1488,7 +1446,6 @@
         "dependencies": {
           "Mov.Analizer.Service": "1.0.0",
           "Mov.Bom.Service": "1.0.0",
-          "Mov.Configurator.Service": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
           "Mov.Drawer.Service": "1.0.0",
           "Mov.Driver.Service": "1.0.0",
@@ -2911,26 +2868,6 @@
       "path": "../../src/infrastructures/calculators/Calculators.csproj",
       "msbuildProject": "../../src/infrastructures/calculators/Calculators.csproj"
     },
-    "Mov.Configurator.Engine/1.0.0": {
-      "type": "project",
-      "path": "../../src/domains/configurator.engine/Configurator.Engine.csproj",
-      "msbuildProject": "../../src/domains/configurator.engine/Configurator.Engine.csproj"
-    },
-    "Mov.Configurator.Models/1.0.0": {
-      "type": "project",
-      "path": "../../src/domains/configurator.models/Configurator.Models.csproj",
-      "msbuildProject": "../../src/domains/configurator.models/Configurator.Models.csproj"
-    },
-    "Mov.Configurator.Repository/1.0.0": {
-      "type": "project",
-      "path": "../../src/applications/configurator.repository/Configurator.Repository.csproj",
-      "msbuildProject": "../../src/applications/configurator.repository/Configurator.Repository.csproj"
-    },
-    "Mov.Configurator.Service/1.0.0": {
-      "type": "project",
-      "path": "../../src/applications/configurator.service/Configurator.Service.csproj",
-      "msbuildProject": "../../src/applications/configurator.service/Configurator.Service.csproj"
-    },
     "Mov.Configurator.ViewModels/1.0.0": {
       "type": "project",
       "path": "../../src/presentations/wpf/configurator.viewmodels/Configurator.ViewModels.csproj",
@@ -2940,6 +2877,11 @@
       "type": "project",
       "path": "../../src/presentations/wpf/configurator.views/Configurator.Views.csproj",
       "msbuildProject": "../../src/presentations/wpf/configurator.views/Configurator.Views.csproj"
+    },
+    "Mov.Configurators/1.0.0": {
+      "type": "project",
+      "path": "../../src/infrastructures/configurators/Configurators.csproj",
+      "msbuildProject": "../../src/infrastructures/configurators/Configurators.csproj"
     },
     "Mov.Connectors/1.0.0": {
       "type": "project",

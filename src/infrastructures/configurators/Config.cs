@@ -2,8 +2,11 @@
 using Mov.Utilities.Attributes;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Reflection;
 using System.Xml.Serialization;
 
 namespace Mov.Configurators
@@ -79,5 +82,8 @@ namespace Mov.Configurators
         public int AccessLv { get; set; } = 0;
 
         #endregion プロパティ
+
+        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<Config>().OrderBy(x => x.index);
+
     }
 }

@@ -1,6 +1,4 @@
-﻿using Mov.Configurator.Models;
-using Mov.Configurator.Repository;
-using Mov.Configurator.ViewModels;
+﻿using Mov.Configurator.ViewModels;
 using Mov.Configurator.Views;
 using Mov.Designer.Models;
 using Mov.Designer.Repository;
@@ -59,6 +57,7 @@ using Mov.Game.Models.Parameters;
 using Mov.Designer.Models.Parameters;
 using Mov.Designer.Engine;
 using Mov.Designer.Service;
+using Mov.Configurators;
 
 namespace Mov.WpfApp
 {
@@ -134,7 +133,7 @@ namespace Mov.WpfApp
             var fileRepositoriesFactory = new FileDomainRepositoryCollectionFactory(resourcePath);
             
             var fileConfigulatorRepositories = fileRepositoriesFactory
-                .Create<IConfiguratorRepository>(SerializeConstants.PATH_JSON);
+                .Create<FileConfiguratorRepository>(SerializeConstants.PATH_JSON);
             containerRegistry.RegisterInstance(fileConfigulatorRepositories);
             
             var fileDesignerRepositories = fileRepositoriesFactory

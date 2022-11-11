@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\applications\designer.service\Designer.Service.csproj" />
-    <ProjectReference Include="..\..\..\domains\configurator.models\Configurator.Models.csproj" />
+    <ProjectReference Include="..\..\..\infrastructures\configurators\Configurators.csproj" />
     <ProjectReference Include="..\..\..\infrastructures\utilities\Utilities.csproj" />
     <ProjectReference Include="..\..\..\infrastructures\wpf\wpfviewmodels\WpfViewModels.csproj" />
   </ItemGroup>

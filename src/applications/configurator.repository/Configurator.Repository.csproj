@@ -6,8 +6,4 @@
     <RootNamespace>Mov.Configurator.Repository</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\domains\configurator.models\Configurator.Models.csproj" />
-  </ItemGroup>
-
 </Project>

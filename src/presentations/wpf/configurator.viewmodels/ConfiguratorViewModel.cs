@@ -1,5 +1,5 @@
 ﻿using Mov.Accessors.Repository;
-using Mov.Configurator.Models;
+using Mov.Configurators;
 using Mov.Utilities.Attributes;
 using Mov.WpfModels;
 using Mov.WpfMvvms;
@@ -32,9 +32,9 @@ namespace Mov.Configurator.ViewModels
 
         #region フィールド
 
-        private readonly IDomainRepositoryCollection<IConfiguratorRepository> database;
+        private readonly IDomainRepositoryCollection<FileConfiguratorRepository> database;
 
-        private IConfiguratorRepository repository;
+        private FileConfiguratorRepository repository;
 
         private string currentComboItem;
 
@@ -73,7 +73,7 @@ namespace Mov.Configurator.ViewModels
         /// </summary>
         /// <param name="regionManager"></param>
         /// <param name="dialogService"></param>
-        public ConfiguratorViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IConfiguratorRepository> database) : base(regionManager, dialogService)
+        public ConfiguratorViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<FileConfiguratorRepository> database) : base(regionManager, dialogService)
         {
             this.database = database;
             this.repository = database.GetRepository("");
@@ -111,13 +111,13 @@ namespace Mov.Configurator.ViewModels
 
         private void Import()
         {
-            repository.UserSettings.Read();
+            repository.Configs.Read();
         }
 
         private void Export()
         {
             PostItems();
-            repository.UserSettings.Write();
+            repository.Configs.Write();
         }
 
         private void Add(object parameter)
@@ -125,7 +125,7 @@ namespace Mov.Configurator.ViewModels
             switch (this.currentComboItem)
             {
                 case DATA_NAME_USER_SETTINGS:
-                    repository.UserSettings.Put(new UserSetting());
+                    repository.Configs.Put(new Config());
                     BindConfigs();
                     break;
             }
@@ -137,7 +137,7 @@ namespace Mov.Configurator.ViewModels
             switch (this.currentComboItem)
             {
                 case DATA_NAME_USER_SETTINGS:
-                    repository.UserSettings.Delete((Guid)selectedItem[0].GetValue());
+                    repository.Configs.Delete((Guid)selectedItem[0].GetValue());
                     BindConfigs();
                     break;
             }
@@ -160,12 +160,12 @@ namespace Mov.Configurator.ViewModels
         private void BindConfigs()
         {
             Items.Clear();
-            var properties = UserSetting.GetProperties();
-            foreach (UserSetting item in this.repository?.UserSettings?.Get())
+            var properties = Config.GetProperties();
+            foreach (Config item in this.repository?.Configs?.Get())
             {
-                Items.Add(GetColumnItems<UserSetting>(properties.Select(x => x.propertyInfo), item).ToArray());
+                Items.Add(GetColumnItems<Config>(properties.Select(x => x.propertyInfo), item).ToArray());
             }
-            Attributes.Value = GetColumnAttributes<UserSetting>(properties.Select(x => x.name)).ToArray();
+            Attributes.Value = GetColumnAttributes<Config>(properties.Select(x => x.name)).ToArray();
         }
 
        
@@ -199,8 +199,8 @@ namespace Mov.Configurator.ViewModels
 
         private void PostConfigs()
         {
-            var configs = GetDbObjects<UserSetting>(UserSetting.GetProperties().Select(x => x.propertyInfo)).ToList();
-            this.repository?.UserSettings.Posts(configs);
+            var configs = GetDbObjects<Config>(Config.GetProperties().Select(x => x.propertyInfo)).ToList();
+            this.repository?.Configs.Posts(configs);
         }
 
        

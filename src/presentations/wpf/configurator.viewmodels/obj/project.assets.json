@@ -574,18 +574,17 @@
           "bin/placeholder/Mov.Calculators.dll": {}
         }
       },
-      "Mov.Configurator.Models/1.0.0": {
+      "Mov.Configurators/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.BaseModel": "1.0.0",
-          "System.ComponentModel.Annotations": "5.0.0"
+          "Mov.Accessors": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Mov.Configurator.Models.dll": {}
+          "bin/placeholder/Mov.Configurators.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Mov.Configurator.Models.dll": {}
+          "bin/placeholder/Mov.Configurators.dll": {}
         }
       },
       "Mov.Controllers/1.0.0": {
@@ -1831,10 +1830,10 @@
       "path": "../../../infrastructures/calculators/Calculators.csproj",
       "msbuildProject": "../../../infrastructures/calculators/Calculators.csproj"
     },
-    "Mov.Configurator.Models/1.0.0": {
+    "Mov.Configurators/1.0.0": {
       "type": "project",
-      "path": "../../../domains/configurator.models/Configurator.Models.csproj",
-      "msbuildProject": "../../../domains/configurator.models/Configurator.Models.csproj"
+      "path": "../../../infrastructures/configurators/Configurators.csproj",
+      "msbuildProject": "../../../infrastructures/configurators/Configurators.csproj"
     },
     "Mov.Controllers/1.0.0": {
       "type": "project",
@@ -1899,7 +1898,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
-      "Mov.Configurator.Models >= 1.0.0",
+      "Mov.Configurators >= 1.0.0",
       "Mov.Designer.Service >= 1.0.0",
       "Mov.Utilities >= 1.0.0",
       "Mov.WpfViewModels >= 1.0.0"
@@ -1945,8 +1944,8 @@
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.service\\Designer.Service.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.service\\Designer.Service.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\configurator.models\\Configurator.Models.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\configurator.models\\Configurator.Models.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\configurators\\Configurators.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\configurators\\Configurators.csproj"
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj"

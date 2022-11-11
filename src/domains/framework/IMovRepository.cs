@@ -1,5 +1,4 @@
 ﻿using Mov.Analizer.Models;
-using Mov.Configurator.Models;
 using Mov.Designer.Models;
 using Mov.Driver.Models;
 using Mov.Game.Models;
@@ -12,7 +11,6 @@ namespace Mov.Framework
     public interface IMovRepository
     {
         IAnalizerRepository Analizer { get; }
-        IConfiguratorRepository Configurator { get; }
         IDesignerRepository Designer { get; }
         IDriverRepository Driver { get; }
         IGameRepository Game { get; }

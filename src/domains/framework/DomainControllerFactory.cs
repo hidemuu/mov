@@ -1,6 +1,5 @@
 ﻿using Mov.Accessors.Repository.Domain;
 using Mov.Analizer.Models;
-using Mov.Configurator.Models;
 using Mov.Controllers;
 using Mov.Designer.Models;
 using Mov.Driver.Models;
@@ -29,10 +28,6 @@ namespace Mov.Framework
             try
             {
                 //return new DomainController<TService>(service, this.commandPath);
-                if (service is IConfiguratorService configuratorService)
-                {
-                    return new DomainController<IConfiguratorService>(configuratorService, this.commandPath);
-                }
                 if (service is IDesignerService designerService)
                 {
                     return new DomainController<IDesignerService>(designerService, this.commandPath);

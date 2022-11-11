@@ -1,5 +1,4 @@
-﻿using Mov.Configurator.Service;
-using Mov.Controllers;
+﻿using Mov.Controllers;
 using Mov.Framework;
 using System;
 using System.Collections.Generic;
@@ -23,7 +22,6 @@ namespace Mov.UseCases.Controllers
         {
             this.engine = engine;
             var factory = new DomainControllerFactory("Commands");
-            domainControllers.Add(DomainType.Config, factory.Create(this.engine.Service.Configurator));
             domainControllers.Add(DomainType.Game, factory.Create(this.engine.Service.Game));
             domainControllers.Add(DomainType.Driver, factory.Create(this.engine.Service.Driver));
         }

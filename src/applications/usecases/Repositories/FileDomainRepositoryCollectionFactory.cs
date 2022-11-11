@@ -1,8 +1,6 @@
 ﻿using Mov.Accessors.Repository;
 using Mov.Accessors.Repository.Domain;
 using Mov.Accessors.Repository.Implement;
-using Mov.Configurator.Models;
-using Mov.Configurator.Repository;
 using Mov.Designer.Models;
 using Mov.Designer.Repository;
 using Mov.Drawer.Models;
@@ -32,11 +30,6 @@ namespace Mov.UseCases.Factories
         public IDomainRepositoryCollection<TRepository> Create<TRepository>(string fileType) where TRepository : IDomainRepository
         {
             var repositoryType = typeof(TRepository);
-            if (repositoryType == typeof(IConfiguratorRepository))
-            {
-                return new FileDomainRepositoryCollection<TRepository, FileConfiguratorRepository>(
-                    this.resourcePath, fileType);
-            }
             if (repositoryType == typeof(IDesignerRepository))
             {
                 return new FileDomainRepositoryCollection<TRepository, FileDesignerRepository>(

@@ -10,7 +10,6 @@
     <ProjectReference Include="..\..\domains\framework\Framework.csproj" />
     <ProjectReference Include="..\analizer.service\Analizer.Service.csproj" />
     <ProjectReference Include="..\bom.service\Bom.Service.csproj" />
-    <ProjectReference Include="..\configurator.service\Configurator.Service.csproj" />
     <ProjectReference Include="..\designer.service\Designer.Service.csproj" />
     <ProjectReference Include="..\drawer.service\Drawer.Service.csproj" />
     <ProjectReference Include="..\driver.service\Driver.Service.csproj" />

@@ -1,5 +1,4 @@
 ﻿using Mov.Analizer.Models;
-using Mov.Configurator.Models;
 using Mov.Designer.Models;
 using Mov.Driver.Models;
 using Mov.Game.Models;

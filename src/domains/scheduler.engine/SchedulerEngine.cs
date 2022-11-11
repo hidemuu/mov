@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Mov.Scheduler.Models;
+using System;
 
 namespace Mov.Scheduler.Engine
 {
-    public class SchedulerEngine
+    public class SchedulerEngine : ISchedulerEngine
     {
     }
 }

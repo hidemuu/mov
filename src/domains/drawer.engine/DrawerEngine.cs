@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Mov.Drawer.Models;
+using System;
 
 namespace Mov.Drawer.Engine
 {
-    public class DrawerEngine
+    public class DrawerEngine : IDrawerEngine
     {
     }
 }

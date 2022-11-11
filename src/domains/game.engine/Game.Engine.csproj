@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <Folder Include="Tactics\" />
+    <Folder Include="LandMake\" />
   </ItemGroup>
 
 </Project>

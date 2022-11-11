@@ -205,13 +205,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scheduler.Engine", "src\dom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Translator.Engine", "src\domains\translator.engine\Translator.Engine.csproj", "{15A9D0C8-0326-4903-A9C0-C2B5D13795CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorizer.Views", "src\presentations\wpf\authorizer.views\Authorizer.Views.csproj", "{5C0DEC81-05B8-4DDD-A381-9813F915F942}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authorizer.Views", "src\presentations\wpf\authorizer.views\Authorizer.Views.csproj", "{5C0DEC81-05B8-4DDD-A381-9813F915F942}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorizer.ViewModels", "src\presentations\wpf\authorizer.viewmodels\Authorizer.ViewModels.csproj", "{845450EA-74BC-41E3-AA89-3BFB22444049}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authorizer.ViewModels", "src\presentations\wpf\authorizer.viewmodels\Authorizer.ViewModels.csproj", "{845450EA-74BC-41E3-AA89-3BFB22444049}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Translator.Views", "src\presentations\wpf\translator.views\Translator.Views.csproj", "{DEE50B94-1819-43B3-B44F-8E9C25332EB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Translator.Views", "src\presentations\wpf\translator.views\Translator.Views.csproj", "{DEE50B94-1819-43B3-B44F-8E9C25332EB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Translator.ViewModels", "src\presentations\wpf\translator.viewmodels\Translator.ViewModels.csproj", "{3210669D-EEC7-4A8C-A7D2-41CA7E7D8FA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Translator.ViewModels", "src\presentations\wpf\translator.viewmodels\Translator.ViewModels.csproj", "{3210669D-EEC7-4A8C-A7D2-41CA7E7D8FA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IconPacks", "src\infrastructures\iconpacks\IconPacks.csproj", "{08DFE6F3-66B7-4F00-ABA2-118D891580D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Translators", "src\infrastructures\translators\Translators.csproj", "{B5CE2400-9599-4358-9C9C-2AAC6647823D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configurators", "src\infrastructures\configurators\Configurators.csproj", "{79131D5A-B023-4E3A-AFB3-0DE5039BFFC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -603,6 +609,18 @@ Global
 		{3210669D-EEC7-4A8C-A7D2-41CA7E7D8FA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3210669D-EEC7-4A8C-A7D2-41CA7E7D8FA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3210669D-EEC7-4A8C-A7D2-41CA7E7D8FA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08DFE6F3-66B7-4F00-ABA2-118D891580D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08DFE6F3-66B7-4F00-ABA2-118D891580D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08DFE6F3-66B7-4F00-ABA2-118D891580D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08DFE6F3-66B7-4F00-ABA2-118D891580D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5CE2400-9599-4358-9C9C-2AAC6647823D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5CE2400-9599-4358-9C9C-2AAC6647823D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5CE2400-9599-4358-9C9C-2AAC6647823D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5CE2400-9599-4358-9C9C-2AAC6647823D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79131D5A-B023-4E3A-AFB3-0DE5039BFFC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79131D5A-B023-4E3A-AFB3-0DE5039BFFC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79131D5A-B023-4E3A-AFB3-0DE5039BFFC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79131D5A-B023-4E3A-AFB3-0DE5039BFFC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -711,6 +729,9 @@ Global
 		{845450EA-74BC-41E3-AA89-3BFB22444049} = {C849D8F6-439F-467D-A7A8-8996F6ECF9E4}
 		{DEE50B94-1819-43B3-B44F-8E9C25332EB7} = {C849D8F6-439F-467D-A7A8-8996F6ECF9E4}
 		{3210669D-EEC7-4A8C-A7D2-41CA7E7D8FA5} = {C849D8F6-439F-467D-A7A8-8996F6ECF9E4}
+		{08DFE6F3-66B7-4F00-ABA2-118D891580D1} = {12313AF5-0452-4C20-8955-3E8ECDE42301}
+		{B5CE2400-9599-4358-9C9C-2AAC6647823D} = {12313AF5-0452-4C20-8955-3E8ECDE42301}
+		{79131D5A-B023-4E3A-AFB3-0DE5039BFFC6} = {12313AF5-0452-4C20-8955-3E8ECDE42301}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD9C3231-BF2C-413C-B738-70985D9981AE}

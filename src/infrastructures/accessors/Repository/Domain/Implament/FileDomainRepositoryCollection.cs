@@ -31,7 +31,7 @@ namespace Mov.Accessors.Repository.Implement
 
         #region メソッド
 
-        public string GetDefaultRepositoryName()
+        public virtual string GetDefaultRepositoryName()
         {
             return "dashboard";
         }

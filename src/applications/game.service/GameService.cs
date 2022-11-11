@@ -1,4 +1,5 @@
 ﻿using Mov.Game.Models;
+using Mov.Game.Service.Machine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,22 +9,24 @@ namespace Mov.Game.Service
 {
     public class GameService : IGameService
     {
-        public IGameRepository Repository { get; }
 
-        public bool IsGameOver { get; set; }
+        #region フィールド
 
-        public bool IsStageClear { get; set; }
+        private readonly IFiniteStateMachineGameEngine finiteStateMachineGameEngine;
 
-        public int Score { get; set; }
+        #endregion フィールド
 
-        public int Level { get; set; } = 1;
+        #region プロパティ
+
+
+        #endregion プロパティ
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public GameService(IGameRepository repository)
+        public GameService(IFiniteStateMachineGameEngine finiteStateMachineGameEngine)
         {
-            this.Repository = repository;
+            this.finiteStateMachineGameEngine = finiteStateMachineGameEngine;
         }
 
         public void Run()
@@ -31,14 +34,33 @@ namespace Mov.Game.Service
             
         }
 
+        public IGraphicGame CreateGraphicGame()
+        {
+            return new PackmanGame(this.finiteStateMachineGameEngine);
+        }
+
+        /// <summary>
+        /// ライフ取得
+        /// </summary>
+        /// <returns></returns>
+        public int GetPlayerLife()
+        {
+            return this.finiteStateMachineGameEngine.GetPlayerLife();
+        }
+
         public IEnumerable<int> GetLevels()
         {
-            return this.Repository.Landmarks.Get().Select(x => x.Lv);
+            return this.finiteStateMachineGameEngine.GetLevels();
         }
 
         public Landmark GetLandmark()
         {
-            return this.Repository.Landmarks.Get().FirstOrDefault(x => x.Lv == Level);
+            return this.finiteStateMachineGameEngine.GetLandmark();
+        }
+
+        public override string ToString()
+        {
+            return this.finiteStateMachineGameEngine.ToString();
         }
     }
 }

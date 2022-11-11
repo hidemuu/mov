@@ -12,9 +12,24 @@ namespace Mov.Game.Models
     {
         #region プロパティ
 
-        IFiniteStateMachineGameEngine Engine { get; }
-
         GraphicControllerBase GraphicController { get; }
+
+        /// <summary>
+        /// ゲームオーバー判定
+        /// </summary>
+        bool IsGameOver { get; set; }
+        /// <summary>
+        /// ステージクリア判定
+        /// </summary>
+        bool IsStageClear { get; set; }
+        /// <summary>
+        /// スコア
+        /// </summary>
+        int Score { get; set; }
+        /// <summary>
+        /// レベル
+        /// </summary>
+        int Level { get; set; }
 
         #endregion プロパティ
 

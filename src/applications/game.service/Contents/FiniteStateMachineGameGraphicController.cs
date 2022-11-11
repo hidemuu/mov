@@ -42,13 +42,13 @@ namespace Mov.Game.Service.Implements
                     //プレイヤー
                     case CharacterType.PLAYER:
                         //移動処理
-                        if (character.Move()) this.engine.Service.Score++;
+                        if (character.Move()) this.engine.Score++;
                         //ダメージ判定
                         if (character.IsDamage()) character.AddLife(-1);
                         //ゲームオーバー判定
-                        if (character.Life <= 0) this.engine.Service.IsGameOver = true;
+                        if (character.Life <= 0) this.engine.IsGameOver = true;
                         //ステージクリア判定
-                        if (this.engine.Service.Score >= this.engine.Service.GetLandmark().ClearScore) this.engine.Service.IsStageClear = true;
+                        if (this.engine.Score >= this.engine.GetLandmark().ClearScore) this.engine.IsStageClear = true;
                         break;
                     //敵
                     case CharacterType.ALIEN:
@@ -86,19 +86,19 @@ namespace Mov.Game.Service.Implements
         public override void Initialize()
         {
             base.Initialize();
-            this.engine.Service.Score = 0;
+            this.engine.Score = 0;
             this.engine.Initialize();
-            this.engine.Service.IsGameOver = false;
-            this.engine.Service.IsStageClear = false;
+            this.engine.IsGameOver = false;
+            this.engine.IsStageClear = false;
         }
 
         public void Next()
         {
-            this.engine.Service.Level++;
-            this.engine.Service.Score = 0;
+            this.engine.Level++;
+            this.engine.Score = 0;
             this.engine.Initialize();
             this.IsActive = true;
-            this.engine.Service.IsStageClear = false;
+            this.engine.IsStageClear = false;
         }
 
         #endregion メソッド

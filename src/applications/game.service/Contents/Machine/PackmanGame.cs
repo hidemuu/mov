@@ -25,7 +25,7 @@ namespace Mov.Game.Service.Machine
         /// <summary>
         /// ゲームエンジン
         /// </summary>
-        public IFiniteStateMachineGameEngine Engine { get; }
+        private readonly IFiniteStateMachineGameEngine engine;
 
         #endregion フィールド
 
@@ -36,7 +36,23 @@ namespace Mov.Game.Service.Machine
         /// </summary>
         public GraphicControllerBase GraphicController { get; }
 
-        
+        /// <summary>
+        /// ゲームオーバー判定
+        /// </summary>
+        public bool IsGameOver { get; set; }
+        /// <summary>
+        /// ステージクリア判定
+        /// </summary>
+        public bool IsStageClear { get; set; }
+        /// <summary>
+        /// スコア
+        /// </summary>
+        public int Score { get; set; }
+        /// <summary>
+        /// レベル
+        /// </summary>
+        public int Level { get; set; }
+
         /// <summary>
         /// トータルスコア
         /// </summary>
@@ -51,10 +67,14 @@ namespace Mov.Game.Service.Machine
         /// コンストラクター
         /// </summary>
         /// <param name="service"></param>
-        public PackmanGame(IGameService service)
+        public PackmanGame(IFiniteStateMachineGameEngine engine)
         {
-            this.Engine = new FiniteStateMachineGameEngine(service);
-            this.GraphicController = new FiniteStateMachineGameGraphicController(this.Engine);
+            this.engine = engine;
+            this.GraphicController = new FiniteStateMachineGameGraphicController(engine);
+            this.IsGameOver = engine.IsGameOver;
+            this.IsStageClear = engine.IsStageClear;
+            this.Score = engine.Score;
+            this.Level = engine.Level;
         }
 
         #endregion コンストラクター
@@ -72,11 +92,11 @@ namespace Mov.Game.Service.Machine
         public void Next()
         {
             
-            this.Engine.Service.Level++;
-            TotalScore += this.Engine.Service.Score;
-            this.Engine.Service.Score = 0;
-            this.Engine.Initialize();
-            this.Engine.Service.IsStageClear = false;
+            this.engine.Level++;
+            TotalScore += this.engine.Score;
+            this.engine.Score = 0;
+            this.engine.Initialize();
+            this.engine.IsStageClear = false;
             this.GraphicController.IsActive = true;
         }
 
@@ -86,7 +106,7 @@ namespace Mov.Game.Service.Machine
         /// <param name="keyCode"></param>
         public void SetKeyCode(int keyCode)
         {
-            this.Engine.KeyCode = keyCode;
+            this.engine.KeyCode = keyCode;
         }
 
         public void Wait()

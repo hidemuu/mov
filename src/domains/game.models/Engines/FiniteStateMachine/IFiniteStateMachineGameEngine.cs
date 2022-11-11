@@ -13,9 +13,21 @@ namespace Mov.Game.Models
         #region プロパティ
 
         /// <summary>
-        /// サービス
+        /// ゲームオーバー判定
         /// </summary>
-        IGameService Service { get; }
+        bool IsGameOver { get; set; }
+        /// <summary>
+        /// ステージクリア判定
+        /// </summary>
+        bool IsStageClear { get; set; }
+        /// <summary>
+        /// スコア
+        /// </summary>
+        int Score { get; set; }
+        /// <summary>
+        /// レベル
+        /// </summary>
+        int Level { get; set; }
 
         /// <summary>
         /// 画面幅
@@ -89,6 +101,10 @@ namespace Mov.Game.Models
         /// </summary>
         /// <returns></returns>
         int GetPlayerLife();
+
+        IEnumerable<int> GetLevels();
+
+        Landmark GetLandmark();
 
         #endregion メソッド
     }

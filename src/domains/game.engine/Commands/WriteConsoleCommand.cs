@@ -17,7 +17,7 @@ namespace Mov.Game.Engine.Commands
 
         public CommandResponse Invoke(IGameService service, string[] args)
         {
-            Console.WriteLine(service.Repository.Landmarks.ToString());
+            Console.WriteLine(service.ToString());
             return CommandResponse.Success;
         }
 

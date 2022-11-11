@@ -1,6 +1,7 @@
 ﻿using Mov.Game.Models;
 using Mov.Game.Models.Characters;
 using Mov.Game.Models.Maps;
+using Mov.Game.Models.Parameters;
 using Mov.Utilities;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,11 @@ namespace Mov.Game.Engine
     /// 有限状態マシン（Finite State Machine）手法のゲームエンジン
     /// </summary>
     public class FiniteStateMachineGameEngine : IFiniteStateMachineGameEngine
-    {   
+    {
 
         #region フィールド
+
+        public readonly IGameParameter parameter;
 
         /// <summary>
         /// 追跡パンくず
@@ -29,7 +32,23 @@ namespace Mov.Game.Engine
 
         #region プロパティ
 
-        public IGameService Service { get; }
+        /// <summary>
+        /// ゲームオーバー判定
+        /// </summary>
+        public bool IsGameOver { get; set; }
+        /// <summary>
+        /// ステージクリア判定
+        /// </summary>
+        public bool IsStageClear { get; set; }
+        /// <summary>
+        /// スコア
+        /// </summary>
+        public int Score { get; set; }
+        /// <summary>
+        /// レベル
+        /// </summary>
+        public int Level { get; set; } = 1;
+
         /// <summary>
         /// マップ幅
         /// </summary>
@@ -70,12 +89,12 @@ namespace Mov.Game.Engine
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FiniteStateMachineGameEngine(IGameService service)
+        public FiniteStateMachineGameEngine(IGameParameter parameter)
         {
-            this.Service = service;
+            this.parameter = parameter;
             Characters = new List<ICharacter>();
             Aliens = new List<ICharacter>();
-            var map = Service.GetLandmark();
+            var map = GetLandmark();
             MapWidth = map.GetCol() * UnitWidth;
             MapHeight = map.GetRow() * UnitHeight;
         }
@@ -89,7 +108,7 @@ namespace Mov.Game.Engine
         /// </summary>
         public virtual void Initialize()
         {
-            var landMark = Service.GetLandmark();
+            var landMark = GetLandmark();
             Map = Map2D.MakeMap(landMark);
             breadcrumbs = new Breadcrumbs(15, this, landMark.GetRow(), landMark.GetCol());
             Characters.Clear();
@@ -251,6 +270,21 @@ namespace Mov.Game.Engine
                 }
             }
             return (int)CharacterType.NONE;
+        }
+
+        public IEnumerable<int> GetLevels()
+        {
+            return this.parameter.Query.Landmark.Get().Select(x => x.Lv);
+        }
+
+        public Landmark GetLandmark()
+        {
+            return this.parameter.Query.Landmark.Get().FirstOrDefault(x => x.Lv == Level);
+        }
+
+        public override string ToString()
+        {
+            return this.parameter.Query.Landmark.ToString();
         }
 
         #endregion メソッド

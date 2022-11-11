@@ -30,6 +30,8 @@ namespace Mov.Game.ViewModels
     {
         #region フィールド
 
+        private readonly IGameService service;
+
         private IGraphicGame game;
 
         #endregion フィールド
@@ -66,7 +68,8 @@ namespace Mov.Game.ViewModels
             KeyGestureDownCommand.Subscribe(() => OnKeyGestureDown()).AddTo(Disposables);
             KeyGestureLeftCommand.Subscribe(() => OnKeyGestureLeft()).AddTo(Disposables);
             KeyGestureRightCommand.Subscribe(() => OnKeyGestureRight()).AddTo(Disposables);
-            this.game = new PackmanGame(service);
+            this.service = service;
+            this.game = service.CreateGraphicGame();
             Controller = this.game.GraphicController;
         }
 
@@ -76,17 +79,17 @@ namespace Mov.Game.ViewModels
 
         protected override void Update()
         {
-            Model.Level.Value = this.game.Engine.Service.Level;
-            Model.Life.Value = this.game.Engine.GetPlayerLife();
-            Model.CurrentScore.Value = this.game.Engine.Service.Score;
-            Model.ClearScore.Value = this.game.Engine.Service.GetLandmark().ClearScore;
+            Model.Level.Value = this.game.Level;
+            Model.Life.Value = this.service.GetPlayerLife();
+            Model.CurrentScore.Value = this.game.Score;
+            Model.ClearScore.Value = this.service.GetLandmark().ClearScore;
             base.Update();
         }
 
         protected override void Next()
         {
             //ゲームオーバー時
-            if (this.game.Engine.Service.IsGameOver)
+            if (this.game.IsGameOver)
             {
                 DialogService.ShowDialog(GameViewConstants.DIALOG_NAME_GAME_OVER, new DialogParameters($"message={"ゲームオーバー!"}"), result =>
                 {
@@ -106,7 +109,7 @@ namespace Mov.Game.ViewModels
                 Stop();
             }
             //ステージクリアー時
-            if (this.game.Engine.Service.IsStageClear)
+            if (this.game.IsStageClear)
             {
                 DialogService.ShowDialog(GameViewConstants.DIALOG_NAME_STAGE_CLEAR, new DialogParameters($"message={"ステージクリア!"}"), result =>
                 {

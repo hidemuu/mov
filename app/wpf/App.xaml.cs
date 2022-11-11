@@ -54,6 +54,8 @@ using Mov.UseCase.ViewModels;
 using Mov.Analizer.Models;
 using Mov.Analizer.Views;
 using Mov.Analizer.ViewModels;
+using Mov.Game.Engine;
+using Mov.Game.Models.Parameters;
 
 namespace Mov.WpfApp
 {
@@ -161,6 +163,8 @@ namespace Mov.WpfApp
             //containerRegistry.RegisterSingleton<IApplicationCommands, ApplicationCommands>();
 
             //サービスの登録
+            containerRegistry.RegisterInstance<IGameParameter>(Container.Resolve<GameParameter>());
+            containerRegistry.RegisterInstance<IFiniteStateMachineGameEngine>(Container.Resolve<FiniteStateMachineGameEngine>());
             containerRegistry.RegisterInstance<IGameService>(Container.Resolve<GameService>());
             //containerRegistry.RegisterInstance<IGameService>(new GraphicGameService(fileGameRepositories.DefaultRepository));
 

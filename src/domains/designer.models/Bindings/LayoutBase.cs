@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Service
+namespace Mov.Designer.Models
 {
     public abstract class LayoutBase
     {

@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Service.Nodes
+namespace Mov.Designer.Models.Nodes
 {
-    public class TabLayoutNode : LayoutNodeBase
+    public class ScrollbarLayoutNode : LayoutNodeBase
     {
 
         #region コンストラクター
@@ -13,7 +13,7 @@ namespace Mov.Designer.Service.Nodes
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public TabLayoutNode()
+        public ScrollbarLayoutNode()
         {
 
         }
@@ -21,7 +21,7 @@ namespace Mov.Designer.Service.Nodes
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public TabLayoutNode(LayoutNode layout, LayoutContent content) : base(layout, content)
+        public ScrollbarLayoutNode(LayoutNode layout, LayoutContent content) : base(layout, content)
         {
 
         }

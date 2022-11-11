@@ -3,16 +3,17 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Service.Nodes
+namespace Mov.Designer.Models.Nodes
 {
-    public class GroupLayoutNode : LayoutNodeBase
+    public class TreeLayoutNode : LayoutNodeBase
     {
+
         #region コンストラクター
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public GroupLayoutNode()
+        public TreeLayoutNode()
         {
 
         }
@@ -20,7 +21,7 @@ namespace Mov.Designer.Service.Nodes
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public GroupLayoutNode(LayoutNode layout, LayoutContent content) : base(layout, content)
+        public TreeLayoutNode(LayoutNode layout, LayoutContent content) : base(layout, content)
         {
 
         }

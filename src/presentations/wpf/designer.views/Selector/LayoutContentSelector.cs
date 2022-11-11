@@ -1,4 +1,4 @@
-﻿using Mov.Designer.Service.Nodes;
+﻿using Mov.Designer.Models.Nodes;
 using Mov.WpfLayouts.Components;
 using Mov.WpfLayouts.Components.Atoms;
 using Mov.WpfLayouts.Components.Molecules;

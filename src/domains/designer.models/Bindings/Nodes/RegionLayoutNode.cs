@@ -3,17 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Service.Nodes
+namespace Mov.Designer.Models.Nodes
 {
-    public class ScrollbarLayoutNode : LayoutNodeBase
+    public class RegionLayoutNode : LayoutNodeBase
     {
-
         #region コンストラクター
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ScrollbarLayoutNode()
+        public RegionLayoutNode()
         {
 
         }
@@ -21,7 +20,7 @@ namespace Mov.Designer.Service.Nodes
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ScrollbarLayoutNode(LayoutNode layout, LayoutContent content) : base(layout, content)
+        public RegionLayoutNode(LayoutNode node, LayoutContent content) : base(node, content)
         {
 
         }

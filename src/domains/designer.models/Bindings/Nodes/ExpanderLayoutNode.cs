@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Service.Nodes
+namespace Mov.Designer.Models.Nodes
 {
-    public class TreeLayoutNode : LayoutNodeBase
+    public class ExpanderLayoutNode : LayoutNodeBase
     {
 
         #region コンストラクター
@@ -13,7 +13,7 @@ namespace Mov.Designer.Service.Nodes
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public TreeLayoutNode()
+        public ExpanderLayoutNode()
         {
 
         }
@@ -21,7 +21,7 @@ namespace Mov.Designer.Service.Nodes
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public TreeLayoutNode(LayoutNode layout, LayoutContent content) : base(layout, content)
+        public ExpanderLayoutNode(LayoutNode layout, LayoutContent content) : base(layout, content)
         {
 
         }

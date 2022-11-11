@@ -19,7 +19,9 @@ namespace Mov.UseCase.ViewModels
     {
         #region プロパティ
 
-        public IDesignerRepository DesignerRepository { get; }
+        public IDesignerService DesignerService { get; }
+
+        public string RepositoryName { get; }
 
         #endregion プロパティ
 
@@ -28,9 +30,11 @@ namespace Mov.UseCase.ViewModels
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public DashboardViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDesignerRepository> designerRepository) : base(regionManager, dialogService)
+        public DashboardViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerService designerService, IDomainRepositoryCollection<IDesignerRepository> designerRepository) : base(regionManager, dialogService)
         {
-            DesignerRepository = designerRepository.GetRepository("dashboard");
+            DesignerService = designerService;
+
+            RepositoryName = "dashboard";
 
             // 定期更新スレッド
             var timer = new ReactiveTimer(TimeSpan.FromMilliseconds(10), new SynchronizationContextScheduler(SynchronizationContext.Current));

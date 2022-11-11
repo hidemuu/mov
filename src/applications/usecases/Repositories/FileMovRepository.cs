@@ -23,11 +23,11 @@ namespace Mov.UseCases.Repositories
         public FileMovRepository(string endpoint)
         {
             var fileRepositoryFactory = new FileDomainRepositoryCollectionFactory(endpoint);
-            this.Configurator = fileRepositoryFactory.Create<IConfiguratorRepository>(SerializeConstants.PATH_JSON)?.DefaultRepository;
-            this.Designer = fileRepositoryFactory.Create<IDesignerRepository>(SerializeConstants.PATH_XML)?.DefaultRepository;
-            this.Game = fileRepositoryFactory.Create<IGameRepository>(SerializeConstants.PATH_JSON)?.DefaultRepository;
-            this.Driver = fileRepositoryFactory.Create<IDriverRepository>(SerializeConstants.PATH_JSON)?.DefaultRepository;
-            this.Analizer = fileRepositoryFactory.Create<IAnalizerRepository>(SerializeConstants.PATH_JSON)?.DefaultRepository;
+            this.Configurator = fileRepositoryFactory.Create<IConfiguratorRepository>(SerializeConstants.PATH_JSON)?.GetDefaultRepository();
+            this.Designer = fileRepositoryFactory.Create<IDesignerRepository>(SerializeConstants.PATH_XML)?.GetDefaultRepository();
+            this.Game = fileRepositoryFactory.Create<IGameRepository>(SerializeConstants.PATH_JSON)?.GetDefaultRepository();
+            this.Driver = fileRepositoryFactory.Create<IDriverRepository>(SerializeConstants.PATH_JSON)?.GetDefaultRepository();
+            this.Analizer = fileRepositoryFactory.Create<IAnalizerRepository>(SerializeConstants.PATH_JSON)?.GetDefaultRepository();
         }
 
         

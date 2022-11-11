@@ -15,7 +15,7 @@ namespace Mov.Accessors.Repository.Implement
 
         public IDictionary<string, TRepository> Repositories { get; }
 
-        public TRepository DefaultRepository => GetRepository(GetDefaultRepositoryName());
+        public string DefaultRepositoryName => "dashboard";
 
         #endregion プロパティ
 
@@ -31,11 +31,6 @@ namespace Mov.Accessors.Repository.Implement
 
         #region メソッド
 
-        public virtual string GetDefaultRepositoryName()
-        {
-            return "dashboard";
-        }
-
         public IEnumerable<string> GetRepositoryNames()
         {
             return Repositories.Keys;
@@ -47,6 +42,8 @@ namespace Mov.Accessors.Repository.Implement
             if (!Repositories.TryGetValue(dirName, out TRepository repository)) return default(TRepository);
             return repository;
         }
+
+        public TRepository GetDefaultRepository() => GetRepository(DefaultRepositoryName);
 
         #endregion メソッド
 

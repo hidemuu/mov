@@ -6,5 +6,27 @@ namespace Mov.Designer.Models
 {
     public interface IDesignerService
     {
+        IEnumerable<LayoutNodeBase> GetNodes();
+
+        LayoutNodeBase GetCenterNode();
+
+        LayoutNodeBase GetTopNode();
+
+        LayoutNodeBase GetBottomNode();
+
+        LayoutNodeBase GetLeftNode();
+
+        LayoutNodeBase GetRightNode();
+
+        Shell GetCenterShell();
+
+        Shell GetTopShell();
+
+        Shell GetBottomShell();
+
+        Shell GetLeftShell();
+
+        Shell GetRightShell();
+
     }
 }

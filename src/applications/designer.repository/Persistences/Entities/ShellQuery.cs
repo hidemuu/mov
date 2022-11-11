@@ -26,19 +26,24 @@ namespace Mov.Designer.Repository.Persistences.Entities
 
         #region メソッド
 
-        public IEnumerable<Shell> Get()
+        public IEnumerable<Shell> Gets()
         {
             return this.repository.Shells.Get();
         }
 
-        public IEnumerable<Shell> Get(string param)
+        public IEnumerable<Shell> Gets(string param)
         {
-            return Get().Where(x => x.Code == param);
+            return Gets().Where(x => x.Code == param);
         }
 
         public Shell Get(Guid id)
         {
             return this.repository.Shells.Get(id);
+        }
+
+        public Shell Get(string param)
+        {
+            return this.repository.Shells.Get(param);
         }
 
         public override string ToString() => this.repository.Shells.ToString();

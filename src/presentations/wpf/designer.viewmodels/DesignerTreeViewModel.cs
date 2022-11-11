@@ -24,6 +24,10 @@ namespace Mov.Designer.ViewModels
 
         private IDesignerRepository repository;
 
+        private IDesignerService service;
+
+        private string repositoryName;
+
         private bool isEdited = false;
 
         #endregion フィールド
@@ -86,7 +90,8 @@ namespace Mov.Designer.ViewModels
         public override void OnNavigatedTo(NavigationContext navigationContext)
         {
             base.OnNavigatedTo(navigationContext);
-            this.repository = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_REPOSITORY] as IDesignerRepository;
+            this.service = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_SERVICE] as IDesignerService;
+            this.repositoryName = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_REPOSITORY_NAME] as string;
             BindModels();
             isEdited = false;
         }

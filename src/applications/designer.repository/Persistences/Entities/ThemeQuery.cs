@@ -26,19 +26,24 @@ namespace Mov.Designer.Repository.Persistences.Entities
 
         #region メソッド
 
-        public IEnumerable<Theme> Get()
+        public IEnumerable<Theme> Gets()
         {
             return this.repository.Themes.Get();
         }
 
-        public IEnumerable<Theme> Get(string param)
+        public IEnumerable<Theme> Gets(string param)
         {
-            return Get().Where(x => x.Code == param);
+            return Gets().Where(x => x.Code == param);
         }
 
         public Theme Get(Guid id)
         {
             return this.repository.Themes.Get(id);
+        }
+
+        public Theme Get(string param)
+        {
+            return this.repository.Themes.Get(param);
         }
 
         public override string ToString() => this.repository.Themes.ToString();

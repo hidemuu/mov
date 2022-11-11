@@ -20,6 +20,10 @@ namespace Mov.Designer.ViewModels
 
         public const string NAVIGATION_PARAM_NAME_REPOSITORY = "repository";
 
+        public const string NAVIGATION_PARAM_NAME_SERVICE = "service";
+
+        public const string NAVIGATION_PARAM_NAME_REPOSITORY_NAME = "repositoryName";
+
         public const string REGION_NAME_CONTENT = "DESIGNER_CENTER";
 
         public const string PAGE_NAME_TREE = "Tree";
@@ -43,6 +47,8 @@ namespace Mov.Designer.ViewModels
         private readonly IDomainRepositoryCollection<IDesignerRepository> repositories;
 
         private IDesignerRepository repository;
+
+        private readonly IDesignerService service;
 
         #endregion フィールド
 
@@ -73,10 +79,11 @@ namespace Mov.Designer.ViewModels
         /// </summary>
         /// <param name="regionManager"></param>
         /// <param name="dialogService"></param>
-        public DesignerViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDesignerRepository> repositories) : base(regionManager, dialogService)
+        public DesignerViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerService service, IDomainRepositoryCollection<IDesignerRepository> repositories) : base(regionManager, dialogService)
         {
+            this.service = service;
             this.repositories = repositories;
-            this.SelectedComboItem.Value = repositories.GetDefaultRepositoryName();
+            this.SelectedComboItem.Value = repositories.DefaultRepositoryName;
             this.ComboItems.AddRangeOnScheduler(repositories.GetRepositoryNames());
             this.repository = repositories.GetRepository(SelectedComboItem.Value);
             ShowPageCommand.Subscribe(OnPageChangeCommand).AddTo(Disposables);
@@ -111,7 +118,8 @@ namespace Mov.Designer.ViewModels
         private void RequestNavigate(string pageName, string selectedComboItem)
         {
             var param = new NavigationParameters();
-            param.Add(NAVIGATION_PARAM_NAME_REPOSITORY, this.repositories.GetRepository(selectedComboItem));
+            param.Add(NAVIGATION_PARAM_NAME_SERVICE, this.service);
+            param.Add(NAVIGATION_PARAM_NAME_REPOSITORY_NAME, selectedComboItem);
             this.RegionManager.RequestNavigate(REGION_NAME_CONTENT, pageDictionary[pageName], param);
         }
 

@@ -25,19 +25,24 @@ namespace Mov.Configurator.Models.Persistences
 
         #region メソッド
 
-        public IEnumerable<Schema> Get()
+        public IEnumerable<Schema> Gets()
         {
             return this.repository.Schemas.Get();
         }
 
-        public IEnumerable<Schema> Get(string param)
+        public IEnumerable<Schema> Gets(string param)
         {
-            return Get().Where(x => x.Name == param);
+            return Gets().Where(x => x.Name == param);
         }
 
         public Schema Get(Guid id)
         {
             return this.repository.Schemas.Get(id);
+        }
+
+        public Schema Get(string param)
+        {
+            return this.repository.Schemas.Get(param);
         }
 
         public override string ToString() => this.repository.Schemas.ToString();

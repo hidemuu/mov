@@ -56,6 +56,9 @@ using Mov.Analizer.Views;
 using Mov.Analizer.ViewModels;
 using Mov.Game.Engine;
 using Mov.Game.Models.Parameters;
+using Mov.Designer.Models.Parameters;
+using Mov.Designer.Engine;
+using Mov.Designer.Service;
 
 namespace Mov.WpfApp
 {
@@ -154,6 +157,7 @@ namespace Mov.WpfApp
                 .Create<IAnalizerRepository>(SerializeConstants.PATH_JSON);
             containerRegistry.RegisterInstance(fileAnalizerRepositories);
 
+            containerRegistry.RegisterInstance<IDesignerRepository>(fileDesignerRepositories.GetRepository("dashboard"));
             containerRegistry.RegisterInstance<IGameRepository>(fileGameRepositories.GetRepository(""));
 
             //インターフェースとクラスを紐付けて登録
@@ -163,6 +167,10 @@ namespace Mov.WpfApp
             //containerRegistry.RegisterSingleton<IApplicationCommands, ApplicationCommands>();
 
             //サービスの登録
+            containerRegistry.RegisterInstance<IDesignerParameter>(Container.Resolve<DesignerParameter>());
+            containerRegistry.RegisterInstance<IDesignerEngine>(Container.Resolve<DesignerEngine>());
+            containerRegistry.RegisterInstance<IDesignerService>(Container.Resolve<DesignerService>());
+
             containerRegistry.RegisterInstance<IGameParameter>(Container.Resolve<GameParameter>());
             containerRegistry.RegisterInstance<IFiniteStateMachineGameEngine>(Container.Resolve<FiniteStateMachineGameEngine>());
             containerRegistry.RegisterInstance<IGameService>(Container.Resolve<GraphicGameService>());

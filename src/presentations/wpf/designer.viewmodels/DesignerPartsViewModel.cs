@@ -1,5 +1,6 @@
 ﻿using Mov.Accessors.Repository;
 using Mov.Designer.Models;
+using Mov.Designer.Models.Persistences;
 using Mov.Designer.Service;
 using Mov.WpfMvvms;
 using Prism.Regions;
@@ -21,7 +22,9 @@ namespace Mov.Designer.ViewModels
 
         #region プロパティ
 
-        public ReactivePropertySlim<IDesignerRepository> Repository { get; private set; } = new ReactivePropertySlim<IDesignerRepository>();
+        public ReactivePropertySlim<IDesignerService> Service { get; private set; } = new ReactivePropertySlim<IDesignerService>();
+
+        public ReactivePropertySlim<string> RepositoryName { get; private set; } = new ReactivePropertySlim<string>();
 
         public ReactivePropertySlim<bool> IsUpdate { get; private set; } = new ReactivePropertySlim<bool>(false);
 
@@ -55,7 +58,8 @@ namespace Mov.Designer.ViewModels
         public override void OnNavigatedTo(NavigationContext navigationContext)
         {
             base.OnNavigatedTo(navigationContext);
-            this.Repository.Value = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_REPOSITORY] as IDesignerRepository;
+            this.Service.Value = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_SERVICE] as IDesignerService;
+            this.RepositoryName.Value = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_REPOSITORY_NAME] as string;
             IsUpdate.Value = true;
         }
 

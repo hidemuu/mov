@@ -1,5 +1,6 @@
 ﻿using Mov.Designer.Engine;
 using Mov.Designer.Models;
+using Mov.Designer.Models.Persistences;
 using Mov.Designer.Service;
 using Reactive.Bindings;
 using System;
@@ -317,18 +318,29 @@ namespace Mov.Designer.Views
 
         #endregion ライト
 
-        #region リポジトリ
+        #region サービス
 
-        public static readonly DependencyProperty RepositoryProperty =
-            DependencyProperty.Register(nameof(Repository), typeof(IDesignerRepository),
+        public static readonly DependencyProperty ServiceProperty =
+            DependencyProperty.Register(nameof(Service), typeof(IDesignerService),
             typeof(DesignerPartsShell),
             new UIPropertyMetadata(null, new PropertyChangedCallback(OnRepositoryChanged)));
 
 
-        public IDesignerRepository Repository
+        public IDesignerService Service
         {
-            get { return (IDesignerRepository)GetValue(RepositoryProperty); }
-            set { SetValue(RepositoryProperty, value); }
+            get { return (IDesignerService)GetValue(ServiceProperty); }
+            set { SetValue(ServiceProperty, value); }
+        }
+
+        public static readonly DependencyProperty RepositoryNameProperty =
+            DependencyProperty.Register(nameof(RepositoryName), typeof(bool),
+            typeof(DesignerPartsShell),
+            new UIPropertyMetadata(true, new PropertyChangedCallback(OnRepositoryChanged)));
+
+        public bool RepositoryName
+        {
+            get { return (bool)GetValue(RepositoryNameProperty); }
+            set { SetValue(RepositoryNameProperty, value); }
         }
 
         public static readonly DependencyProperty IsUpdateProperty =
@@ -342,7 +354,7 @@ namespace Mov.Designer.Views
             set { SetValue(IsUpdateProperty, value); }
         }
 
-        #endregion リポジトリ
+        #endregion サービス
 
         #endregion プロパティ
 
@@ -391,35 +403,34 @@ namespace Mov.Designer.Views
             var control = obj as DesignerPartsShell;
             if (control != null)
             {
-                if (control.Repository != null)
+                if (control.Service != null)
                 {
                     if (control.IsUpdate)
                     {
-                        var builder = new LayoutBuilder(control.Repository);
                         control.Models.Clear();
                         control.TopModels.Clear();
                         control.BottomModels.Clear();
                         control.LeftModels.Clear();
                         control.RightModels.Clear();
-                        var build = builder.Build();
-                        if(build.CenterNode == null)
+                        var service = control.Service;
+                        if (service.GetCenterNode() == null)
                         {
-                            control.Models.AddRange(build.Nodes);
+                            control.Models.AddRange(service.GetNodes());
                         }
                         else
                         {
-                            control.Models.AddRange(build.CenterNode.Children);
+                            control.Models.AddRange(service.GetCenterNode().Children);
                         }
-                        control.TopModels.AddRange(build.TopNode.Children);
-                        control.BottomModels.AddRange(build.BottomNode.Children);
-                        control.LeftModels.AddRange(build.LeftNode.Children);
-                        control.RightModels.AddRange(build.RightNode.Children);
+                        control.TopModels.AddRange(service.GetTopNode().Children);
+                        control.BottomModels.AddRange(service.GetBottomNode().Children);
+                        control.LeftModels.AddRange(service.GetLeftNode().Children);
+                        control.RightModels.AddRange(service.GetRightNode().Children);
 
-                        var topShell = control.Repository?.Shells?.Get(LocationType.Top.ToString());
-                        var bottomShell = control.Repository?.Shells?.Get(LocationType.Bottom.ToString());
-                        var leftShell = control.Repository?.Shells?.Get(LocationType.Left.ToString());
-                        var rightShell = control.Repository?.Shells?.Get(LocationType.Right.ToString());
-                        var centerShell = control.Repository?.Shells?.Get(LocationType.Center.ToString());
+                        var topShell = service.GetTopShell();
+                        var bottomShell = service.GetBottomShell();
+                        var leftShell = service.GetLeftShell();
+                        var rightShell = service.GetRightShell();
+                        var centerShell = service.GetCenterShell();
 
                         if(topShell != null)
                         {

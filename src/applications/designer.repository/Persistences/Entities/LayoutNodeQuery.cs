@@ -26,14 +26,19 @@ namespace Mov.Designer.Repository.Persistences.Entities
 
         #region メソッド
 
-        public IEnumerable<LayoutNode> Get()
+        public IEnumerable<LayoutNode> Gets()
         {
             return this.repository.Nodes.Get();
         }
 
-        public IEnumerable<LayoutNode> Get(string param)
+        public IEnumerable<LayoutNode> Gets(string param)
         {
-            return Get().Where(x => x.Code == param);
+            return Gets().Where(x => x.Code == param);
+        }
+
+        public LayoutNode Get(string param)
+        {
+            return this.repository.Nodes.Get(param);
         }
 
         public LayoutNode Get(Guid id)

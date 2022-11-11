@@ -6,22 +6,29 @@ namespace Mov.Accessors.Repository
 {
     public interface IDomainRepositoryCollection<TRepository>
     {
+        #region プロパティ
+
         /// <summary>
         /// リポジトリのリスト
         /// </summary>
         IDictionary<string, TRepository> Repositories { get; }
 
         /// <summary>
-        /// 既定のリポジトリ
-        /// </summary>
-        TRepository DefaultRepository { get; }
-
-        /// <summary>
         /// 既定のリポジトリ名
         /// </summary>
         /// <returns></returns>
-        string GetDefaultRepositoryName();
+        string DefaultRepositoryName { get; }
 
+        #endregion プロパティ
+
+        #region メソッド
+
+        /// <summary>
+        /// 既定のリポジトリ
+        /// </summary>
+        TRepository GetDefaultRepository();
+
+        
         /// <summary>
         /// リポジトリ名のリストを取得
         /// </summary>
@@ -34,5 +41,7 @@ namespace Mov.Accessors.Repository
         /// <param name="dirName"></param>
         /// <returns></returns>
         TRepository GetRepository(string dirName);
+
+        #endregion メソッド
     }
 }

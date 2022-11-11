@@ -1,5 +1,6 @@
 ﻿using Mov.Designer.Models;
 using Mov.Designer.Models.Nodes;
+using Mov.Designer.Models.Persistences;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Mov.Designer.Engine
     {
         #region フィールド
 
-        private readonly IDesignerRepository repository;
+        private readonly IDesignerQuery query;
 
         #endregion フィールド
 
@@ -19,9 +20,9 @@ namespace Mov.Designer.Engine
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public LayoutNodeFactory(IDesignerRepository repository)
+        public LayoutNodeFactory(IDesignerQuery query)
         {
-            this.repository = repository;
+            this.query = query;
         }
 
         #endregion コンストラクター
@@ -56,7 +57,7 @@ namespace Mov.Designer.Engine
 
         private LayoutContent GetContent(LayoutNode node)
         {
-            return repository.Contents.Get(node.Code);
+            return query.LayoutContent.Get(node.Code);
         }
 
         #endregion 内部メソッド

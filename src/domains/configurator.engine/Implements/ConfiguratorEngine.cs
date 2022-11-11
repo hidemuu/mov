@@ -26,17 +26,17 @@ namespace Mov.Configurator.Engine
 
         public Error GetError(string param)
         {
-            return this.parameter.Query.Error.Get(param).FirstOrDefault();
+            return this.parameter.Query.Error.Get(param);
         }
 
         public Schema GetSchema(string param)
         {
-            return this.parameter.Query.Schema.Get(param).FirstOrDefault();
+            return this.parameter.Query.Schema.Get(param);
         }
 
         public UserSetting GetUserSetting(string param)
         {
-            return this.parameter.Query.UserSetting.Get(param).FirstOrDefault();
+            return this.parameter.Query.UserSetting.Get(param);
         }
 
         public override string ToString()

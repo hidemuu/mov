@@ -26,19 +26,24 @@ namespace Mov.Game.Repository.Persistences.Entity
 
         #region メソッド
 
-        public IEnumerable<Landmark> Get()
+        public IEnumerable<Landmark> Gets()
         {
             return this.repository.Landmarks.Get();
         }
 
-        public IEnumerable<Landmark> Get(string param)
+        public IEnumerable<Landmark> Gets(string param)
         {
-            return Get().Where(x => x.Code == param);
+            return Gets().Where(x => x.Code == param);
         }
 
         public Landmark Get(Guid id)
         {
             return this.repository.Landmarks.Get(id);
+        }
+
+        public Landmark Get(string param)
+        {
+            return this.repository.Landmarks.Get(param);
         }
 
         public override string ToString() => this.repository.Landmarks.ToString();

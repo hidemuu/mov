@@ -25,19 +25,24 @@ namespace Mov.Configurator.Models.Persistences
 
         #region メソッド
 
-        public IEnumerable<UserSetting> Get()
+        public IEnumerable<UserSetting> Gets()
         {
             return this.repository.UserSettings.Get();
         }
 
-        public IEnumerable<UserSetting> Get(string param)
+        public IEnumerable<UserSetting> Gets(string param)
         {
-            return Get().Where(x => x.Name == param);
+            return Gets().Where(x => x.Name == param);
         }
 
         public UserSetting Get(Guid id)
         {
             return this.repository.UserSettings.Get(id);
+        }
+
+        public UserSetting Get(string param)
+        {
+            return this.repository.UserSettings.Get(param);
         }
 
         public override string ToString() => this.repository.UserSettings.ToString();

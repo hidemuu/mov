@@ -6,9 +6,11 @@ namespace Mov.Accessors
 {
     public interface IPersistenceQuery<T>
     {
-        IEnumerable<T> Get();
+        IEnumerable<T> Gets();
 
-        IEnumerable<T> Get(string param);
+        IEnumerable<T> Gets(string param);
+
+        T Get(string param);
 
         T Get(Guid id);
 

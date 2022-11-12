@@ -53,7 +53,7 @@ namespace Mov.Designer.Models
         [LanguageKey("location")]
         [DisplayName("location")]
         [DisplayIndex(12)]
-        public LocationType Location { get; set; } = LocationType.Center;
+        public RegionType Location { get; set; } = RegionType.Center;
 
         /// <summary>
         /// 背景色

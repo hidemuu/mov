@@ -17,7 +17,7 @@ namespace Mov.Designer.Models
 
         IEnumerable<LayoutNodeBase> GetNodeModels();
 
-        LayoutNodeBase GetNodeModel(LocationType type);
+        LayoutNodeBase GetNodeModel(RegionType type);
 
         #endregion UIモデル
 
@@ -35,7 +35,7 @@ namespace Mov.Designer.Models
 
         LayoutContent GetContent(string code);
 
-        Shell GetShell(LocationType type);
+        Shell GetShell(RegionType type);
 
         #endregion クエリ
 

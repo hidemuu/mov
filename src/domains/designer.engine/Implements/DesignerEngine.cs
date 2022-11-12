@@ -21,9 +21,15 @@ namespace Mov.Designer.Engine
 
         #region プロパティ
 
+        #region クエリ・コマンド
+
         public IDesignerCommand Command { get; }
 
         public IDesignerQuery Query { get; }
+
+        #endregion クエリ・コマンド
+
+        #region UIモデル
 
         public IEnumerable<LayoutNodeBase> Nodes { get; private set; }
 
@@ -36,6 +42,8 @@ namespace Mov.Designer.Engine
         public LayoutNodeBase LeftNode { get; private set; }
 
         public LayoutNodeBase RightNode { get; private set; }
+
+        #endregion UIモデル
 
         #endregion プロパティ
 
@@ -63,11 +71,11 @@ namespace Mov.Designer.Engine
                 {
                     switch (regionNode.Content.Code)
                     {
-                        case "Center": CenterNode = regionNode; break;
-                        case "Top": TopNode = regionNode; break;
-                        case "Bottom": BottomNode = regionNode; break;
-                        case "Left": LeftNode = regionNode; break;
-                        case "Right": RightNode = regionNode; break;
+                        case RegionLayoutNode.REGION_CENTER: CenterNode = regionNode; break;
+                        case RegionLayoutNode.REGION_TOP: TopNode = regionNode; break;
+                        case RegionLayoutNode.REGION_BOTTOM: BottomNode = regionNode; break;
+                        case RegionLayoutNode.REGION_LEFT: LeftNode = regionNode; break;
+                        case RegionLayoutNode.REGION_RIGHT: RightNode = regionNode; break;
                     }
                 }
             }

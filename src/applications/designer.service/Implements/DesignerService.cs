@@ -39,19 +39,19 @@ namespace Mov.Designer.Service
             return this.engine.Nodes;
         }
 
-        public LayoutNodeBase GetNodeModel(LocationType type)
+        public LayoutNodeBase GetNodeModel(RegionType type)
         {
             switch (type)
             {
-                case LocationType.Center:
+                case RegionType.Center:
                     return this.engine.CenterNode;
-                case LocationType.Top:
+                case RegionType.Top:
                     return this.engine.TopNode;
-                case LocationType.Bottom:
+                case RegionType.Bottom:
                     return this.engine.BottomNode;
-                case LocationType.Left:
+                case RegionType.Left:
                     return this.engine.LeftNode;
-                case LocationType.Right:
+                case RegionType.Right:
                     return this.engine.RightNode;
             }
             return this.engine.CenterNode;
@@ -91,7 +91,7 @@ namespace Mov.Designer.Service
             return this.engine.Query.LayoutContent.Get(code);
         }
 
-        public Shell GetShell(LocationType type)
+        public Shell GetShell(RegionType type)
         {
             return this.engine.Query.Shell.Get(type.ToString());
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Designer.Models.Persistences;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,6 +8,10 @@ namespace Mov.Designer.Models
     public interface IDesignerEngine
     {
         #region プロパティ
+
+        IDesignerCommand Command { get; }
+
+        IDesignerQuery Query { get; }
 
         IEnumerable<LayoutNodeBase> Nodes { get; }
 
@@ -24,7 +29,7 @@ namespace Mov.Designer.Models
 
         #region メソッド
 
-        Shell GetShell(LocationType type);
+        
 
         #endregion メソッド
     }

@@ -15,7 +15,7 @@ namespace Mov.Accessors.Repository.Implement
 
         public IDictionary<string, TRepository> Repositories { get; }
 
-        public string DefaultRepositoryName => "dashboard";
+        public virtual string DefaultRepositoryName => "dashboard";
 
         #endregion プロパティ
 

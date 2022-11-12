@@ -24,11 +24,24 @@ namespace Mov.Designer.Repository
 
         #endregion プロパティ
 
+        #region コンストラクター
+
         public DesignerParameter(IDesignerRepository repository)
         {
             this.repository = repository;
             this.Command = new DesignerCommand(repository);
             this.Query = new DesignerQuery(repository);
         }
+
+        #endregion コンストラクター
+
+        #region メソッド
+
+        public void UpdateRepository(string name)
+        {
+
+        }
+
+        #endregion メソッド
     }
 }

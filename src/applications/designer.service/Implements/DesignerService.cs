@@ -52,7 +52,7 @@ namespace Mov.Designer.Service
 
         public Shell GetShell(LocationType type)
         {
-            return this.engine.GetShell(type);
+            return this.engine.Query.Shell.Get(type.ToString());
         }
 
         #endregion メソッド

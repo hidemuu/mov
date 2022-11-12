@@ -7,8 +7,17 @@ namespace Mov.Designer.Models.Parameters
 {
     public interface IDesignerParameter
     {
+        #region プロパティ
         IDesignerCommand Command { get; }
 
         IDesignerQuery Query { get; }
+
+        #endregion プロパティ
+
+        #region メソッド
+
+        void UpdateRepository(string name);
+
+        #endregion メソッド
     }
 }

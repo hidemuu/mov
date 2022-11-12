@@ -1,5 +1,6 @@
 ﻿using Mov.Accessors.Repository;
 using Mov.Designer.Models;
+using Mov.Designer.Models.Repositories;
 using Mov.WpfMvvms;
 using Prism.Regions;
 using Prism.Services.Dialogs;
@@ -30,7 +31,7 @@ namespace Mov.UseCase.ViewModels
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public DashboardViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerService designerService, IDomainRepositoryCollection<IDesignerRepository> designerRepository) : base(regionManager, dialogService)
+        public DashboardViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerService designerService, IDesignerRepositoryCollection designerRepository) : base(regionManager, dialogService)
         {
             DesignerService = designerService;
 

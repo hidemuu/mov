@@ -58,6 +58,9 @@ using Mov.Designer.Models.Parameters;
 using Mov.Designer.Engine;
 using Mov.Designer.Service;
 using Mov.Configurators;
+using Mov.Designer.Models.Repositories;
+using Mov.Designer.Repository.Implements;
+using Mov.Designer.Repository.Parameters;
 
 namespace Mov.WpfApp
 {
@@ -135,10 +138,6 @@ namespace Mov.WpfApp
             var fileConfigulatorRepositories = fileRepositoriesFactory
                 .Create<FileConfiguratorRepository>(SerializeConstants.PATH_JSON);
             containerRegistry.RegisterInstance(fileConfigulatorRepositories);
-            
-            var fileDesignerRepositories = fileRepositoriesFactory
-                .Create<IDesignerRepository>(SerializeConstants.PATH_XML);
-            containerRegistry.RegisterInstance(fileDesignerRepositories);
 
             var fileGameRepositories = fileRepositoriesFactory
                 .Create<IGameRepository>(SerializeConstants.PATH_JSON);
@@ -156,7 +155,7 @@ namespace Mov.WpfApp
                 .Create<IAnalizerRepository>(SerializeConstants.PATH_JSON);
             containerRegistry.RegisterInstance(fileAnalizerRepositories);
 
-            containerRegistry.RegisterInstance<IDesignerRepository>(fileDesignerRepositories.GetRepository("dashboard"));
+            containerRegistry.RegisterInstance<IDesignerRepositoryCollection>(new FileDesignerRepositoryCollection(resourcePath, SerializeConstants.PATH_XML));
             containerRegistry.RegisterInstance<IGameRepository>(fileGameRepositories.GetRepository(""));
 
             //インターフェースとクラスを紐付けて登録
@@ -166,7 +165,7 @@ namespace Mov.WpfApp
             //containerRegistry.RegisterSingleton<IApplicationCommands, ApplicationCommands>();
 
             //サービスの登録
-            containerRegistry.RegisterInstance<IDesignerParameter>(Container.Resolve<DesignerParameter>());
+            containerRegistry.RegisterInstance<IDesignerParameter>(Container.Resolve<DesignerCollectionParameter>());
             containerRegistry.RegisterInstance<IDesignerEngine>(Container.Resolve<DesignerEngine>());
             containerRegistry.RegisterInstance<IDesignerService>(Container.Resolve<DesignerService>());
 

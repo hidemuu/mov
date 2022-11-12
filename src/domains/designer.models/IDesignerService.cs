@@ -23,17 +23,21 @@ namespace Mov.Designer.Models
 
         #region クエリ
 
-        IEnumerable<LayoutNode> GetNodes();
+        void Read();
 
-        IEnumerable<LayoutContent> GetContents();
+        IEnumerable<LayoutNode> GetNodes();
 
         LayoutNode GetNode(Guid id);
 
-        LayoutContent GetContent(Guid id);
-
         LayoutNode GetNode(string code);
 
+        IEnumerable<LayoutContent> GetContents();
+
+        LayoutContent GetContent(Guid id);
+
         LayoutContent GetContent(string code);
+
+        IEnumerable<Shell> GetShells();
 
         Shell GetShell(RegionType type);
 
@@ -45,19 +49,28 @@ namespace Mov.Designer.Models
 
         void PostNodes(IEnumerable<LayoutNode> items);
 
-        void PostContents(IEnumerable<LayoutContent> items);
-
         void PostNode(LayoutNode item);
-
-        void PostContent(LayoutContent item);
 
         void PutNode(LayoutNode item);
 
-        void PutContent(LayoutContent item);
-
         void DeleteNode(LayoutNode item);
 
+        void PostContents(IEnumerable<LayoutContent> items);
+
+        void PostContent(LayoutContent item);
+
+        void PutContent(LayoutContent item);
+
         void DeleteContent(LayoutContent item);
+
+        void PostShells(IEnumerable<Shell> items);
+
+        void PostShell(Shell item);
+
+        void PutShell(Shell item);
+
+        void DeleteShell(Shell item);
+
 
         #endregion コマンド
 

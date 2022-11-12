@@ -19,7 +19,7 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        private IDesignerRepository repository;
+        private IDesignerService service;
 
         #endregion フィールド
 
@@ -46,7 +46,7 @@ namespace Mov.Designer.ViewModels
         public override void OnNavigatedTo(NavigationContext navigationContext)
         {
             base.OnNavigatedTo(navigationContext);
-            this.repository = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_REPOSITORY] as IDesignerRepository;
+            this.service = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_SERVICE] as IDesignerService;
         }
 
         #region メソッド

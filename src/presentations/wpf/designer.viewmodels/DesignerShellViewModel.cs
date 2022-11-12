@@ -17,7 +17,7 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        private IDesignerRepository repository;
+        private IDesignerService service;
 
         #endregion フィールド
 
@@ -34,20 +34,20 @@ namespace Mov.Designer.ViewModels
 
         protected override void Import(NavigationContext navigationContext)
         {
-            this.repository = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_REPOSITORY] as IDesignerRepository;
-            this.repository.Shells.Read();
+            this.service = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_SERVICE] as IDesignerService;
+            this.service.Read();
         }
 
         protected override void Export()
         {
-            this.repository.Shells.Write();
+            this.service.Write();
         }
 
         protected override void BindItems()
         {
             Items.Clear();
             var properties = Shell.GetProperties();
-            foreach (Shell item in this.repository?.Shells?.Get())
+            foreach (Shell item in this.service.GetShells())
             {
                 Items.Add(GetColumnItems(properties.Select(x => x.propertyInfo), item).ToArray());
             }
@@ -59,17 +59,17 @@ namespace Mov.Designer.ViewModels
         protected override void PostItems()
         {
             var configs = GetDbObjects(Shell.GetProperties().Select(x => x.propertyInfo)).ToList();
-            this.repository?.Shells.Posts(configs);
+            this.service.PostShells(configs);
         }
 
         protected override void PutItem()
         {
-            repository.Shells.Put(new Shell());
+            this.service.PutShell(new Shell());
         }
 
         protected override void DeleteItem()
         {
-            repository.Shells.Delete((Guid)SelectedItem.Value[0].GetValue());
+            //this.service.DeleteShell((Guid)SelectedItem.Value[0].GetValue());
         }
 
         

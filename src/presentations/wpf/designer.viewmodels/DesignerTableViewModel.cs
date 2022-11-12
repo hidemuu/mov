@@ -21,7 +21,7 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        private IDesignerRepository repository;
+        private IDesignerService service;
 
         private CompositeDisposable modelDisposables = new CompositeDisposable();
 
@@ -74,14 +74,14 @@ namespace Mov.Designer.ViewModels
         public override void OnNavigatedTo(NavigationContext navigationContext)
         {
             base.OnNavigatedTo(navigationContext);
-            this.repository = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_REPOSITORY] as IDesignerRepository;
+            this.service = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_SERVICE] as IDesignerService;
             CreateModels();
         }
 
         private void OnSaveCommand()
         {
             Post();
-            repository.Contents.Write();
+            this.service.Write();
             MessageBox.Show("保存しました");
         }
 
@@ -89,16 +89,16 @@ namespace Mov.Designer.ViewModels
         {
             var tables = new List<LayoutContent>();
             ConvertModelToContent(tables, Models);
-            repository.Contents.Posts(tables);
+            this.service.PostContents(tables);
         }
 
         private void OnAddCommand(object parameter)
         {
             if(parameter is DesignerTableModel model)
             {
-                var table = this.repository.Contents.Get(model.Id.Value);
+                var table = this.service.GetContent(model.Id.Value);
                 if (table == null) return;
-                this.repository.Contents.Put(new LayoutContent(), table.Id);
+                //this.repository.Contents.Put(new LayoutContent(), table.Id);
                 CreateModels();
             }
         }
@@ -107,9 +107,9 @@ namespace Mov.Designer.ViewModels
         {
             if (parameter is DesignerTableModel model)
             {
-                var table = this.repository.Contents.Get(model.Id.Value);
+                var table = this.service.GetContent(model.Id.Value);
                 if (table == null) return;
-                this.repository.Contents.Delete(table);
+                this.service.DeleteContent(table);
                 CreateModels();
             }
         }
@@ -122,7 +122,7 @@ namespace Mov.Designer.ViewModels
         {
             Models.Clear();
             modelDisposables.Clear();
-            foreach (var table in repository.Contents.Get())
+            foreach (var table in this.service.GetContents())
             {
                 Models.Add(new DesignerTableModel(table));
             }

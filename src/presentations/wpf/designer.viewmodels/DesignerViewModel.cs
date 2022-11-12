@@ -45,8 +45,6 @@ namespace Mov.Designer.ViewModels
             { PAGE_NAME_THEME, "DesignerThemeView" },
         };
 
-        private IDesignerRepository repository;
-
         private readonly IDesignerService service;
 
         #endregion フィールド
@@ -83,7 +81,6 @@ namespace Mov.Designer.ViewModels
             this.service = service;
             this.SelectedComboItem.Value = repositories.DefaultRepositoryName;
             this.ComboItems.AddRangeOnScheduler(repositories.GetRepositoryNames());
-            this.repository = repositories.GetRepository(SelectedComboItem.Value);
             ShowPageCommand.Subscribe(OnPageChangeCommand).AddTo(Disposables);
             SaveCommand.Subscribe(OnSaveCommand).AddTo(Disposables);
         }
@@ -123,15 +120,7 @@ namespace Mov.Designer.ViewModels
 
         private void OnSaveCommand(string parameter)
         {
-            switch (this.PageName.Value)
-            {
-                case PAGE_NAME_TREE:
-                    this.repository.Nodes.Write();
-                    break;
-                case PAGE_NAME_TABLE:
-                    this.repository.Contents.Write();
-                    break;
-            }
+            this.service.Write();
         }
 
         #endregion 内部メソッド

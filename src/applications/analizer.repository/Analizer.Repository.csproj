@@ -10,4 +10,8 @@
     <ProjectReference Include="..\..\domains\analizer.models\Analizer.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Persistents\Entities\" />
+  </ItemGroup>
+
 </Project>

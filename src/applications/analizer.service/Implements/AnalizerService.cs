@@ -10,7 +10,7 @@ namespace Mov.Analizer.Service
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public AnalizerService(IAnalizerRepository repository)
+        public AnalizerService(IAnalizerEngine engine)
         {
         }
     }

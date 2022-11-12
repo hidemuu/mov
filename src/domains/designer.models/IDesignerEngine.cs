@@ -24,15 +24,7 @@ namespace Mov.Designer.Models
 
         #region メソッド
 
-        Shell GetCenterShell();
-
-        Shell GetTopShell();
-
-        Shell GetBottomShell();
-
-        Shell GetLeftShell();
-
-        Shell GetRightShell();
+        Shell GetShell(LocationType type);
 
         #endregion メソッド
     }

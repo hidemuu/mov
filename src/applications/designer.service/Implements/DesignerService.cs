@@ -32,54 +32,27 @@ namespace Mov.Designer.Service
             return this.engine.Nodes;
         }
 
-        public LayoutNodeBase GetCenterNode()
+        public LayoutNodeBase GetNode(LocationType type)
         {
+            switch (type)
+            {
+                case LocationType.Center:
+                    return this.engine.CenterNode;
+                case LocationType.Top:
+                    return this.engine.TopNode;
+                case LocationType.Bottom:
+                    return this.engine.BottomNode;
+                case LocationType.Left:
+                    return this.engine.LeftNode;
+                case LocationType.Right:
+                    return this.engine.RightNode;
+            }
             return this.engine.CenterNode;
         }
 
-        public LayoutNodeBase GetTopNode()
+        public Shell GetShell(LocationType type)
         {
-            return this.engine.TopNode;
-        }
-
-        public LayoutNodeBase GetBottomNode()
-        {
-            return this.engine.BottomNode;
-        }
-
-        public LayoutNodeBase GetLeftNode()
-        {
-            return this.engine.LeftNode;
-        }
-
-        public LayoutNodeBase GetRightNode()
-        {
-            return this.engine.RightNode;
-        }
-
-        public Shell GetCenterShell()
-        {
-            return this.engine.GetCenterShell();
-        }
-
-        public Shell GetTopShell()
-        {
-            return this.engine.GetTopShell();
-        }
-
-        public Shell GetBottomShell()
-        {
-            return this.engine.GetBottomShell();
-        }
-
-        public Shell GetLeftShell()
-        {
-            return this.engine.GetLeftShell();
-        }
-
-        public Shell GetRightShell()
-        {
-            return this.engine.GetRightShell();
+            return this.engine.GetShell(type);
         }
 
         #endregion メソッド

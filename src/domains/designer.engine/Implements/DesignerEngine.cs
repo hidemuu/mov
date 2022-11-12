@@ -64,29 +64,9 @@ namespace Mov.Designer.Engine
             }
         }
 
-        public Shell GetCenterShell()
+        public Shell GetShell(LocationType type)
         {
-            return this.parameter.Query.Shell.Get(LocationType.Center.ToString());
-        }
-
-        public Shell GetTopShell()
-        {
-            return this.parameter.Query.Shell.Get(LocationType.Top.ToString());
-        }
-
-        public Shell GetBottomShell()
-        {
-            return this.parameter.Query.Shell.Get(LocationType.Bottom.ToString());
-        }
-
-        public Shell GetLeftShell()
-        {
-            return this.parameter.Query.Shell.Get(LocationType.Left.ToString());
-        }
-
-        public Shell GetRightShell()
-        {
-            return this.parameter.Query.Shell.Get(LocationType.Right.ToString());
+            return this.parameter.Query.Shell.Get(type.ToString());
         }
 
         #endregion メソッド

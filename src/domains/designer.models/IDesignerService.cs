@@ -6,27 +6,15 @@ namespace Mov.Designer.Models
 {
     public interface IDesignerService
     {
+
+        #region メソッド
         IEnumerable<LayoutNodeBase> GetNodes();
 
-        LayoutNodeBase GetCenterNode();
+        LayoutNodeBase GetNode(LocationType type);
 
-        LayoutNodeBase GetTopNode();
+        Shell GetShell(LocationType type);
 
-        LayoutNodeBase GetBottomNode();
-
-        LayoutNodeBase GetLeftNode();
-
-        LayoutNodeBase GetRightNode();
-
-        Shell GetCenterShell();
-
-        Shell GetTopShell();
-
-        Shell GetBottomShell();
-
-        Shell GetLeftShell();
-
-        Shell GetRightShell();
+        #endregion メソッド
 
     }
 }

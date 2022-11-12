@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Analizer.Repository.Persistents
 {
-    public class AnalizerQuery : IAnalizerQuery
+    public class ResasCommand : IResasCommand
     {
     }
 }

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Analizer.Models.Parameters
+namespace Mov.Analizer.Models.Persistences
 {
-    public interface IAnalizerParameter
+    public interface IResasCommand
     {
     }
 }

@@ -7,11 +7,5 @@ namespace Mov.Analizer.Service
 {
     public class AnalizerService : IAnalizerService
     {
-        /// <summary>
-        /// コンストラクター
-        /// </summary>
-        public AnalizerService(IAnalizerEngine engine)
-        {
-        }
     }
 }

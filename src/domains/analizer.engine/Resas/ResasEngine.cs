@@ -4,15 +4,15 @@ using System;
 
 namespace Mov.Analizer.Engine
 {
-    public class AnalizerEngine : IAnalizerEngine
+    public class ResasEngine : IResasEngine
     {
         #region フィールド
 
-        private readonly IAnalizerParameter parameter;
+        private readonly IResasParameter parameter;
 
         #endregion フィールド
 
-        public AnalizerEngine(IAnalizerParameter parameter)
+        public ResasEngine(IResasParameter parameter)
         {
             this.parameter = parameter;
         }

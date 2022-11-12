@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Analizer.Models.Persistences
 {
-    public interface IAnalizerQuery
+    public interface IResasQuery
     {
     }
 }

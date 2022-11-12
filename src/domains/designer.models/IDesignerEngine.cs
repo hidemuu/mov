@@ -6,17 +6,23 @@ namespace Mov.Designer.Models
 {
     public interface IDesignerEngine
     {
-        IEnumerable<LayoutNodeBase> GetNodes();
+        #region プロパティ
 
-        LayoutNodeBase GetCenterNode();
+        IEnumerable<LayoutNodeBase> Nodes { get; }
 
-        LayoutNodeBase GetTopNode();
+        LayoutNodeBase CenterNode { get; }
 
-        LayoutNodeBase GetBottomNode();
+        LayoutNodeBase TopNode { get; }
 
-        LayoutNodeBase GetLeftNode();
+        LayoutNodeBase BottomNode { get; }
 
-        LayoutNodeBase GetRightNode();
+        LayoutNodeBase LeftNode { get; }
+
+        LayoutNodeBase RightNode { get; }
+
+        #endregion プロパティ
+
+        #region メソッド
 
         Shell GetCenterShell();
 
@@ -27,5 +33,7 @@ namespace Mov.Designer.Models
         Shell GetLeftShell();
 
         Shell GetRightShell();
+
+        #endregion メソッド
     }
 }

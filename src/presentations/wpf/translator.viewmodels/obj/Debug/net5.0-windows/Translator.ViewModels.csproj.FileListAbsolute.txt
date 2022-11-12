@@ -17,6 +17,7 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.viewmodels\
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.viewmodels\bin\Debug\net5.0-windows\Mov.WpfDesigns.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.viewmodels\bin\Debug\net5.0-windows\Mov.WpfModels.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.viewmodels\bin\Debug\net5.0-windows\Mov.WpfMvvms.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.viewmodels\obj\Debug\net5.0-windows\Translator.ViewModels.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.viewmodels\obj\Debug\net5.0-windows\Translator.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.viewmodels\obj\Debug\net5.0-windows\Translator.ViewModels.AssemblyInfoInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.viewmodels\obj\Debug\net5.0-windows\Translator.ViewModels.AssemblyInfo.cs
@@ -25,4 +26,3 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.viewmodels\
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.viewmodels\obj\Debug\net5.0-windows\Mov.Translator.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.viewmodels\obj\Debug\net5.0-windows\ref\Mov.Translator.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.viewmodels\obj\Debug\net5.0-windows\Mov.Translator.ViewModels.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\translator.viewmodels\obj\Debug\net5.0-windows\Translator.ViewModels.csproj.AssemblyReference.cache

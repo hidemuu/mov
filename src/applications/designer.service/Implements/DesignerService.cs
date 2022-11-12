@@ -29,32 +29,32 @@ namespace Mov.Designer.Service
 
         public IEnumerable<LayoutNodeBase> GetNodes()
         {
-            return this.engine.GetNodes();
+            return this.engine.Nodes;
         }
 
         public LayoutNodeBase GetCenterNode()
         {
-            return this.engine.GetCenterNode();
+            return this.engine.CenterNode;
         }
 
         public LayoutNodeBase GetTopNode()
         {
-            return this.engine.GetTopNode();
+            return this.engine.TopNode;
         }
 
         public LayoutNodeBase GetBottomNode()
         {
-            return this.engine.GetBottomNode();
+            return this.engine.BottomNode;
         }
 
         public LayoutNodeBase GetLeftNode()
         {
-            return this.engine.GetLeftNode();
+            return this.engine.LeftNode;
         }
 
         public LayoutNodeBase GetRightNode()
         {
-            return this.engine.GetRightNode();
+            return this.engine.RightNode;
         }
 
         public Shell GetCenterShell()

@@ -6,6 +6,8 @@ namespace Mov.Accessors
 {
     public interface IPersistenceQuery<T>
     {
+        IEnumerable<T> Read();
+
         IEnumerable<T> Gets();
 
         IEnumerable<T> Gets(string param);

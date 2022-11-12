@@ -26,6 +26,11 @@ namespace Mov.Game.Repository.Persistences.Entity
 
         #region メソッド
 
+        public IEnumerable<Landmark> Read()
+        {
+            return this.repository.Landmarks.Read().Items;
+        }
+
         public IEnumerable<Landmark> Gets()
         {
             return this.repository.Landmarks.Get();

@@ -25,6 +25,11 @@ namespace Mov.Configurators
 
         #region メソッド
 
+        public IEnumerable<Config> Read()
+        {
+            return this.repository.Configs.Read().Items;
+        }
+
         public IEnumerable<Config> Gets()
         {
             return this.repository.Configs.Get();

@@ -26,6 +26,11 @@ namespace Mov.Designer.Repository.Persistences.Entities
 
         #region メソッド
 
+        public IEnumerable<LayoutNode> Read()
+        {
+            return this.repository.Nodes.Read().Items;
+        }
+
         public IEnumerable<LayoutNode> Gets()
         {
             return this.repository.Nodes.Get();

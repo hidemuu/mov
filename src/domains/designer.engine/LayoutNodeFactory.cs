@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Designer.Engine
 {
-    public class LayoutNodeFactory
+    internal class LayoutNodeFactory
     {
         #region フィールド
 

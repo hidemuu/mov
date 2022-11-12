@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resas\Persistents\Entities\" />
+    <Folder Include="Resas\Persistences\Entities\" />
   </ItemGroup>
 
 </Project>

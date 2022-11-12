@@ -8,6 +8,9 @@ namespace Mov.Designer.Models.Parameters
     public interface IDesignerParameter
     {
         #region プロパティ
+        
+        IDesignerRepository Repository { get; }
+        
         IDesignerCommand Command { get; }
 
         IDesignerQuery Query { get; }

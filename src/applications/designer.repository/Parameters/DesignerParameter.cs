@@ -12,11 +12,11 @@ namespace Mov.Designer.Repository
     {
         #region フィールド
 
-        private readonly IDesignerRepository repository;
-
         #endregion フィールド
 
         #region プロパティ
+
+        public IDesignerRepository Repository { get; }
 
         public IDesignerCommand Command { get; }
 
@@ -28,7 +28,7 @@ namespace Mov.Designer.Repository
 
         public DesignerParameter(IDesignerRepository repository)
         {
-            this.repository = repository;
+            this.Repository = repository;
             this.Command = new DesignerCommand(repository);
             this.Query = new DesignerQuery(repository);
         }

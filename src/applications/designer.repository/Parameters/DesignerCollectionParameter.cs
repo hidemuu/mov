@@ -19,6 +19,8 @@ namespace Mov.Designer.Repository.Parameters
 
         #region プロパティ
 
+        public IDesignerRepository Repository { get; private set; }
+
         public IDesignerCommand Command { get; private set; }
 
         public IDesignerQuery Query { get; private set; }
@@ -40,6 +42,7 @@ namespace Mov.Designer.Repository.Parameters
         public void UpdateRepository(string name)
         {
             var repository = repositories.GetRepository(name);
+            this.Repository = repository;
             this.Command = new DesignerCommand(repository);
             this.Query = new DesignerQuery(repository);
         }

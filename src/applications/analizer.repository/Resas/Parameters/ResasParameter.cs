@@ -1,4 +1,5 @@
 ﻿using Mov.Analizer.Models.Parameters;
+using Mov.Analizer.Models.Persistences;
 using Mov.Analizer.Models.Resas;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,10 @@ namespace Mov.Analizer.Repository.Parameters
         #endregion フィールド
 
         #region プロパティ
+
+        public IResasCommand Command { get; }
+
+        public IResasQuery Query { get; }
 
         #endregion プロパティ
 

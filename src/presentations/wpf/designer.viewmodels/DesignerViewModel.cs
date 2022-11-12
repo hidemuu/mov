@@ -1,5 +1,6 @@
 ﻿using Mov.Accessors.Repository;
 using Mov.Designer.Models;
+using Mov.Designer.Models.Repositories;
 using Mov.WpfMvvms;
 using Prism.Regions;
 using Prism.Services.Dialogs;
@@ -44,8 +45,6 @@ namespace Mov.Designer.ViewModels
             { PAGE_NAME_THEME, "DesignerThemeView" },
         };
 
-        private readonly IDomainRepositoryCollection<IDesignerRepository> repositories;
-
         private IDesignerRepository repository;
 
         private readonly IDesignerService service;
@@ -79,10 +78,9 @@ namespace Mov.Designer.ViewModels
         /// </summary>
         /// <param name="regionManager"></param>
         /// <param name="dialogService"></param>
-        public DesignerViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerService service, IDomainRepositoryCollection<IDesignerRepository> repositories) : base(regionManager, dialogService)
+        public DesignerViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerService service, IDesignerRepositoryCollection repositories) : base(regionManager, dialogService)
         {
             this.service = service;
-            this.repositories = repositories;
             this.SelectedComboItem.Value = repositories.DefaultRepositoryName;
             this.ComboItems.AddRangeOnScheduler(repositories.GetRepositoryNames());
             this.repository = repositories.GetRepository(SelectedComboItem.Value);

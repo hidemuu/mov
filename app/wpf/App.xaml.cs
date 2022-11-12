@@ -155,9 +155,6 @@ namespace Mov.WpfApp
                 .Create<IAnalizerRepository>(SerializeConstants.PATH_JSON);
             containerRegistry.RegisterInstance(fileAnalizerRepositories);
 
-            containerRegistry.RegisterInstance<IDesignerRepositoryCollection>(new FileDesignerRepositoryCollection(resourcePath, SerializeConstants.PATH_XML));
-            containerRegistry.RegisterInstance<IGameRepository>(fileGameRepositories.GetRepository(""));
-
             //インターフェースとクラスを紐付けて登録
             //container.RegisterType<IHomeService, HomeService>();
 
@@ -165,10 +162,12 @@ namespace Mov.WpfApp
             //containerRegistry.RegisterSingleton<IApplicationCommands, ApplicationCommands>();
 
             //サービスの登録
+            containerRegistry.RegisterInstance<IDesignerRepositoryCollection>(new FileDesignerRepositoryCollection(resourcePath, SerializeConstants.PATH_XML));
             containerRegistry.RegisterInstance<IDesignerParameter>(Container.Resolve<DesignerCollectionParameter>());
             containerRegistry.RegisterInstance<IDesignerEngine>(Container.Resolve<DesignerEngine>());
             containerRegistry.RegisterInstance<IDesignerService>(Container.Resolve<DesignerService>());
 
+            containerRegistry.RegisterInstance<IGameRepository>(fileGameRepositories.GetRepository(""));
             containerRegistry.RegisterInstance<IGameParameter>(Container.Resolve<GameParameter>());
             containerRegistry.RegisterInstance<IFiniteStateMachineGameEngine>(Container.Resolve<FiniteStateMachineGameEngine>());
             containerRegistry.RegisterInstance<IGameService>(Container.Resolve<GraphicGameService>());

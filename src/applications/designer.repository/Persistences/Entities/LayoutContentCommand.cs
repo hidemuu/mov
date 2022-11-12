@@ -34,10 +34,18 @@ namespace Mov.Designer.Repository.Persistences.Entities
         {
             this.repository.Contents.Delete(item);
         }
-
+        public void Posts(IEnumerable<LayoutContent> items)
+        {
+            this.repository.Contents.Posts(items);
+        }
         public void Post(LayoutContent item)
         {
             this.repository.Contents.Post(item);
+        }
+
+        public void Put(LayoutContent item)
+        {
+            this.repository.Contents.Put(item);
         }
 
         #endregion メソッド

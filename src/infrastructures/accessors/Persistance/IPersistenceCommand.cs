@@ -8,7 +8,11 @@ namespace Mov.Accessors
     {
         void Write();
 
+        void Posts(IEnumerable<T> items);
+
         void Post(T item);
+
+        void Put(T item);
 
         void Delete(T item);
     }

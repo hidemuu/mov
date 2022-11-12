@@ -34,9 +34,18 @@ namespace Mov.Configurators
             this.repository.Configs.Delete(item);
         }
 
+        public void Posts(IEnumerable<Config> items)
+        {
+            this.repository.Configs.Posts(items);
+        }
+
         public void Post(Config item)
         {
             this.repository.Configs.Post(item);
+        }
+        public void Put(Config item)
+        {
+            this.repository.Configs.Put(item);
         }
 
         #endregion メソッド

@@ -413,18 +413,18 @@ namespace Mov.Designer.Views
                         control.LeftModels.Clear();
                         control.RightModels.Clear();
                         var service = control.Service;
-                        if (service.GetNode(LocationType.Center) == null)
+                        if (service.GetNodeModel(LocationType.Center) == null)
                         {
-                            control.Models.AddRange(service.GetNodes());
+                            control.Models.AddRange(service.GetNodeModels());
                         }
                         else
                         {
-                            control.Models.AddRange(service.GetNode(LocationType.Center).Children);
+                            control.Models.AddRange(service.GetNodeModel(LocationType.Center).Children);
                         }
-                        control.TopModels.AddRange(service.GetNode(LocationType.Top).Children);
-                        control.BottomModels.AddRange(service.GetNode(LocationType.Bottom).Children);
-                        control.LeftModels.AddRange(service.GetNode(LocationType.Left).Children);
-                        control.RightModels.AddRange(service.GetNode(LocationType.Right).Children);
+                        control.TopModels.AddRange(service.GetNodeModel(LocationType.Top).Children);
+                        control.BottomModels.AddRange(service.GetNodeModel(LocationType.Bottom).Children);
+                        control.LeftModels.AddRange(service.GetNodeModel(LocationType.Left).Children);
+                        control.RightModels.AddRange(service.GetNodeModel(LocationType.Right).Children);
 
                         var topShell = service.GetShell(LocationType.Top);
                         var bottomShell = service.GetShell(LocationType.Bottom);

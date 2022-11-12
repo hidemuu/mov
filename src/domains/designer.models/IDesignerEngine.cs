@@ -29,7 +29,9 @@ namespace Mov.Designer.Models
 
         #region メソッド
 
-        
+        void BuildNode();
+
+        void UpdateRepository(string repositoryName);
 
         #endregion メソッド
     }

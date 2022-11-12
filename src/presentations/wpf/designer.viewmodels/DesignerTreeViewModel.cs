@@ -22,8 +22,6 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        private IDesignerRepository repository;
-
         private IDesignerService service;
 
         private string repositoryName;
@@ -56,7 +54,7 @@ namespace Mov.Designer.ViewModels
         /// コンストラクター
         /// </summary>
         /// <param name="repository"></param>
-        public DesignerTreeViewModel(IRegionManager regionManager, IDialogService dialogService, IDomainRepositoryCollection<IDesignerRepository> database) : base(regionManager, dialogService)
+        public DesignerTreeViewModel(IRegionManager regionManager, IDialogService dialogService) : base(regionManager, dialogService)
         {
             SaveCommand.Subscribe(OnSaveCommand).AddTo(Disposables);
             AddCommand.Subscribe(OnAddCommand).AddTo(Disposables);
@@ -99,8 +97,7 @@ namespace Mov.Designer.ViewModels
         private void OnSaveCommand(string parameter)
         {
             Post();
-            repository.Nodes.Write();
-            repository.Contents.Write();
+            this.service.Write();
             MessageBox.Show("保存しました");
         }
 
@@ -108,7 +105,7 @@ namespace Mov.Designer.ViewModels
         {
             var trees = new List<LayoutNode>();
             GetLayoutTrees(trees, Models);
-            repository.Nodes.Posts(trees);
+            this.service.PostNodes(trees);
             //var tables = new List<LayoutContent>();
             //GetContentTables(tables, Models);
             //repository.Contents.Posts(tables);
@@ -118,9 +115,9 @@ namespace Mov.Designer.ViewModels
         {
             if(SelectedModel.Value != null && SelectedModel.Value is DesignerTreeModel model)
             {
-                var tree = this.repository.Nodes.Get(model.Id.Value);
+                var tree = this.service.GetNode(model.Id.Value);
                 if (tree == null) return;
-                this.repository.Nodes.Put(new LayoutNode(), tree.Id);
+                //this.repository.Nodes.Put(new LayoutNode(), tree.Id);
                 BindModels();
                 isEdited = true;
             }
@@ -130,9 +127,9 @@ namespace Mov.Designer.ViewModels
         {
             if (SelectedModel.Value != null && SelectedModel.Value is DesignerTreeModel model)
             {
-                var tree = this.repository.Nodes.Get(model.Id.Value);
+                var tree = this.service.GetNode(model.Id.Value);
                 if (tree == null) return;
-                this.repository.Nodes.Delete(tree);
+                this.service.DeleteNode(tree);
                 BindModels();
                 isEdited = true;
             }
@@ -145,9 +142,9 @@ namespace Mov.Designer.ViewModels
         private void BindModels()
         {
             Models.Clear();
-            foreach (var tree in repository.Nodes.Get())
+            foreach (var tree in this.service.GetNodes())
             {
-                Models.Add(new DesignerTreeModel(tree, repository.Contents.Get(tree.Code), repository));
+                Models.Add(new DesignerTreeModel(tree, this.service.GetContent(tree.Code), this.service));
             }
         }
 
@@ -199,7 +196,7 @@ namespace Mov.Designer.ViewModels
 
         private CompositeDisposable disposables = new CompositeDisposable();
 
-        private IDesignerRepository repository;
+        private IDesignerService service;
 
         #endregion フィールド
 
@@ -223,10 +220,10 @@ namespace Mov.Designer.ViewModels
 
         #region コンストラクター
 
-        public DesignerTreeModel(LayoutNode node, LayoutContent table, IDesignerRepository repository) : base(table)
+        public DesignerTreeModel(LayoutNode node, LayoutContent table, IDesignerService service) : base(table)
         {
-            this.repository = repository;
-            Codes = repository.Contents.Get().Select(x => x.Code).Distinct().ToList();
+            this.service = service;
+            Codes = this.service.GetContents().Select(x => x.Code).Distinct().ToList();
             //プロパティ
             Id.Value = node.Id;
             Index.Value = node.Index;
@@ -239,7 +236,7 @@ namespace Mov.Designer.ViewModels
             //子階層へ
             foreach (var child in node.Children)
             {
-                Children.Add(new DesignerTreeModel(child, repository.Contents.Get(child.Code), repository));
+                Children.Add(new DesignerTreeModel(child, this.service.GetContent(child.Code), this.service));
             }
             Code.Subscribe(OnChangeCodeCommand).AddTo(disposables);
         }
@@ -250,7 +247,7 @@ namespace Mov.Designer.ViewModels
 
         private void OnChangeCodeCommand(string code)
         {
-            var item = this.repository.Contents.Get(code);
+            var item = this.service.GetContent(code);
             if (item == null) return;
             Update(item);
         }

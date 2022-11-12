@@ -13,6 +13,8 @@ namespace Mov.Designer.Engine
 
         private readonly int domainId;
 
+        private readonly IDesignerParameter parameter;
+
         private readonly LayoutNodeFactory factory;
 
         #endregion フィールド
@@ -41,17 +43,18 @@ namespace Mov.Designer.Engine
 
         public DesignerEngine(IDesignerParameter parameter)
         {
+            this.parameter = parameter;
             this.Query = parameter.Query;
             this.Command = parameter.Command;
             this.factory = new LayoutNodeFactory(parameter.Query);
-            Build();
+            BuildNode();
         }
 
         #endregion コンストラクター
 
         #region メソッド
 
-        public void Build()
+        public void BuildNode()
         {
             Nodes = CreateNodes();
             foreach (var node in Nodes)
@@ -68,6 +71,12 @@ namespace Mov.Designer.Engine
                     }
                 }
             }
+        }
+
+        public void UpdateRepository(string repositoryName)
+        {
+            this.parameter.UpdateRepository(repositoryName);
+            BuildNode();
         }
 
         #endregion メソッド

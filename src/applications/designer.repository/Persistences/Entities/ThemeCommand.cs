@@ -34,10 +34,17 @@ namespace Mov.Designer.Repository.Persistences.Entities
         {
             this.repository.Themes.Delete(item);
         }
-
+        public void Posts(IEnumerable<Theme> items)
+        {
+            this.repository.Themes.Posts(items);
+        }
         public void Post(Theme item)
         {
             this.repository.Themes.Post(item);
+        }
+        public void Put(Theme item)
+        {
+            this.repository.Themes.Put(item);
         }
 
         #endregion メソッド

@@ -12,9 +12,9 @@ namespace Mov.Accessors
 
         IEnumerable<T> Gets(string param);
 
-        T Get(string param);
-
         T Get(Guid id);
+
+        T Get(string param);
 
         
     }

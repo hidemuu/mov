@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Designer.Repository.Persistences.Entities
 {
-    public class ThemeQuery : IPersistenceQuery<Theme>
+    public class RepositoryThemeQuery : IPersistenceQuery<Theme>
     {
         #region フィールド
 
@@ -17,7 +17,7 @@ namespace Mov.Designer.Repository.Persistences.Entities
 
         #region コンストラクター
 
-        public ThemeQuery(IDesignerRepository repository)
+        public RepositoryThemeQuery(IDesignerRepository repository)
         {
             this.repository = repository;
         }

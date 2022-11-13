@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Designer.Repository.Persistences.Entities
 {
-    public class ShellQuery : IPersistenceQuery<Shell>
+    public class RepositoryShellQuery : IPersistenceQuery<Shell>
     {
         #region フィールド
 
@@ -17,7 +17,7 @@ namespace Mov.Designer.Repository.Persistences.Entities
 
         #region コンストラクター
 
-        public ShellQuery(IDesignerRepository repository)
+        public RepositoryShellQuery(IDesignerRepository repository)
         {
             this.repository = repository;
         }

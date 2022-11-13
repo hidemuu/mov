@@ -11,11 +11,11 @@ namespace Mov.Analizer.Repository.Parameters
     {
         #region フィールド
 
-        private readonly IResasRepository repository;
-
         #endregion フィールド
 
         #region プロパティ
+
+        public IResasRepository Repository { get; }
 
         public IResasCommand Command { get; }
 
@@ -27,7 +27,7 @@ namespace Mov.Analizer.Repository.Parameters
 
         public ResasParameter(IResasRepository repository)
         {
-            this.repository = repository;
+            this.Repository = repository;
         }
 
         #endregion コンストラクター

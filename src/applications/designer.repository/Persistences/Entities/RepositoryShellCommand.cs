@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Designer.Repository.Persistences.Entities
 {
-    public class LayoutContentCommand : IPersistenceCommand<LayoutContent>
+    public class RepositoryShellCommand : IPersistenceCommand<Shell>
     {
         #region フィールド
 
@@ -16,7 +16,7 @@ namespace Mov.Designer.Repository.Persistences.Entities
 
         #region コンストラクター
 
-        public LayoutContentCommand(IDesignerRepository repository)
+        public RepositoryShellCommand(IDesignerRepository repository)
         {
             this.repository = repository;
         }
@@ -27,25 +27,24 @@ namespace Mov.Designer.Repository.Persistences.Entities
 
         public void Write()
         {
-            this.repository.Contents.Write();
+            this.repository.Shells.Write();
         }
 
-        public void Delete(LayoutContent item)
+        public void Delete(Shell item)
         {
-            this.repository.Contents.Delete(item);
+            this.repository.Shells.Delete(item);
         }
-        public void Posts(IEnumerable<LayoutContent> items)
+        public void Posts(IEnumerable<Shell> items)
         {
-            this.repository.Contents.Posts(items);
+            this.repository.Shells.Posts(items);
         }
-        public void Post(LayoutContent item)
+        public void Post(Shell item)
         {
-            this.repository.Contents.Post(item);
+            this.repository.Shells.Post(item);
         }
-
-        public void Put(LayoutContent item)
+        public void Put(Shell item)
         {
-            this.repository.Contents.Put(item);
+            this.repository.Shells.Put(item);
         }
 
         #endregion メソッド

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Designer.Repository.Persistences.Entities
 {
-    public class ThemeCommand : IPersistenceCommand<Theme>
+    public class RepositoryLayoutNodeCommand : IPersistenceCommand<LayoutNode>
     {
         #region フィールド
 
@@ -16,7 +16,7 @@ namespace Mov.Designer.Repository.Persistences.Entities
 
         #region コンストラクター
 
-        public ThemeCommand(IDesignerRepository repository)
+        public RepositoryLayoutNodeCommand(IDesignerRepository repository)
         {
             this.repository = repository;
         }
@@ -27,24 +27,24 @@ namespace Mov.Designer.Repository.Persistences.Entities
 
         public void Write()
         {
-            this.repository.Themes.Write();
+            this.repository.Nodes.Write();
         }
 
-        public void Delete(Theme item)
+        public void Delete(LayoutNode item)
         {
-            this.repository.Themes.Delete(item);
+            this.repository.Nodes.Delete(item);
         }
-        public void Posts(IEnumerable<Theme> items)
+        public void Posts(IEnumerable<LayoutNode> items)
         {
-            this.repository.Themes.Posts(items);
+            this.repository.Nodes.Posts(items);
         }
-        public void Post(Theme item)
+        public void Post(LayoutNode item)
         {
-            this.repository.Themes.Post(item);
+            this.repository.Nodes.Post(item);
         }
-        public void Put(Theme item)
+        public void Put(LayoutNode item)
         {
-            this.repository.Themes.Put(item);
+            this.repository.Nodes.Put(item);
         }
 
         #endregion メソッド

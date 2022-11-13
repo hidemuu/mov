@@ -16,8 +16,8 @@ namespace Mov.Game.Repository
 
         public GameParameter(IGameRepository repository)
         {
-            this.Command = new GameCommand(repository);
-            this.Query = new GameQuery(repository);
+            this.Command = new RepositoryGameCommand(repository);
+            this.Query = new RepositoryGameQuery(repository);
         }
 
         

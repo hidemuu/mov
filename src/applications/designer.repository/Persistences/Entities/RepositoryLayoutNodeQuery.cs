@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Designer.Repository.Persistences.Entities
 {
-    public class LayoutNodeQuery : IPersistenceQuery<LayoutNode>
+    public class RepositoryLayoutNodeQuery : IPersistenceQuery<LayoutNode>
     {
         #region フィールド
 
@@ -17,7 +17,7 @@ namespace Mov.Designer.Repository.Persistences.Entities
 
         #region コンストラクター
 
-        public LayoutNodeQuery(IDesignerRepository repository)
+        public RepositoryLayoutNodeQuery(IDesignerRepository repository)
         {
             this.repository = repository;
         }

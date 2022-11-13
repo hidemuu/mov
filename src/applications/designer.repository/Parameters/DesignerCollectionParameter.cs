@@ -43,8 +43,8 @@ namespace Mov.Designer.Repository.Parameters
         {
             var repository = repositories.GetRepository(name);
             this.Repository = repository;
-            this.Command = new DesignerCommand(repository);
-            this.Query = new DesignerQuery(repository);
+            this.Command = new RepositoryDesignerCommand(repository);
+            this.Query = new RepositoryDesignerQuery(repository);
         }
 
         #endregion メソッド

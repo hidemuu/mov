@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Game.Repository.Persistences.Entity
 {
-    public class LandmarkQuery : IPersistenceQuery<Landmark>
+    public class RepositoryLandmarkQuery : IPersistenceQuery<Landmark>
     {
         #region フィールド
 
@@ -17,7 +17,7 @@ namespace Mov.Game.Repository.Persistences.Entity
 
         #region コンストラクター
 
-        public LandmarkQuery(IGameRepository repository)
+        public RepositoryLandmarkQuery(IGameRepository repository)
         {
             this.repository = repository;
         }

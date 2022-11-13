@@ -8,19 +8,19 @@ using System.Text;
 
 namespace Mov.Game.Repository.Persistences
 {
-    public class GameQuery : IGameQuery
+    public class RepositoryGameCommand : IGameCommand
     {
         #region プロパティ
 
-        public IPersistenceQuery<Landmark> Landmark { get; }
+        public IPersistenceCommand<Landmark> Landmark { get; }
 
         #endregion プロパティ
 
         #region コンストラクター
 
-        public GameQuery(IGameRepository repository)
+        public RepositoryGameCommand(IGameRepository repository)
         {
-            this.Landmark = new LandmarkQuery(repository);
+            this.Landmark = new RepositoryLandmarkCommand(repository);
         }
 
         #endregion コンストラクター

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Mov.Designer.Repository.Persistences
 {
-    public class DesignerCommand : IDesignerCommand
+    public class RepositoryDesignerCommand : IDesignerCommand
     {
         public IPersistenceCommand<LayoutContent> LayoutContent { get; }
 
@@ -18,12 +18,12 @@ namespace Mov.Designer.Repository.Persistences
 
         public IPersistenceCommand<Theme> Theme { get; }
 
-        public DesignerCommand(IDesignerRepository repository)
+        public RepositoryDesignerCommand(IDesignerRepository repository)
         {
-            this.LayoutContent = new LayoutContentCommand(repository);
-            this.LayoutNode = new LayoutNodeCommand(repository);
-            this.Shell = new ShellCommand(repository);
-            this.Theme = new ThemeCommand(repository);
+            this.LayoutContent = new RepositoryLayoutContentCommand(repository);
+            this.LayoutNode = new RepositoryLayoutNodeCommand(repository);
+            this.Shell = new RepositoryShellCommand(repository);
+            this.Theme = new RepositoryThemeCommand(repository);
         }
 
     }

@@ -29,8 +29,8 @@ namespace Mov.Designer.Repository
         public DesignerParameter(IDesignerRepository repository)
         {
             this.Repository = repository;
-            this.Command = new DesignerCommand(repository);
-            this.Query = new DesignerQuery(repository);
+            this.Command = new RepositoryDesignerCommand(repository);
+            this.Query = new RepositoryDesignerQuery(repository);
         }
 
         #endregion コンストラクター

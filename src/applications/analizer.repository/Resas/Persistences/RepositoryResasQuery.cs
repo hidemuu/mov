@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Mov.Analizer.Repository.Persistences
 {
-    public class ResasCommand : IResasCommand
+    public class RepositoryResasQuery : IResasQuery
     {
-        public ResasCommand(IResasRepository repository)
+        public RepositoryResasQuery(IResasRepository repository)
         {
 
         }

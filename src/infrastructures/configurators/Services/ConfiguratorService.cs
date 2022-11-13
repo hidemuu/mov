@@ -18,7 +18,8 @@ namespace Mov.Configurators
 
         public Config Get(string param)
         {
-            return this.query.Get(param);
+            throw new InvalidCastException();
+            //return this.query.Get(param);
         }
 
         public override string ToString()

@@ -7,6 +7,8 @@ namespace Mov.Game.Models.Parameters
 {
     public interface IGameParameter
     {
+        IGameRepository Repository { get; }
+
         IGameCommand Command { get; }
 
         IGameQuery Query { get; }

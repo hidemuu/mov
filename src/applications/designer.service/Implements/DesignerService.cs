@@ -63,50 +63,50 @@ namespace Mov.Designer.Service
 
         public void Read()
         {
-            this.engine.Query.LayoutNode.Read();
-            this.engine.Query.LayoutContent.Read();
-            this.engine.Query.Shell.Read();
+            this.engine.Repository.Nodes.Read();
+            this.engine.Repository.Contents.Read();
+            this.engine.Repository.Shells.Read();
         }
 
         public IEnumerable<LayoutNode> GetNodes()
         {
-            return this.engine.Query.LayoutNode.Gets();
+            return this.engine.Repository.Nodes.Get();
         }
 
         public LayoutNode GetNode(Guid id)
         {
-            return this.engine.Query.LayoutNode.Get(id);
+            return this.engine.Repository.Nodes.Get(id);
         }
 
         public LayoutNode GetNode(string code)
         {
-            return this.engine.Query.LayoutNode.Get(code);
+            return this.engine.Repository.Nodes.Get(code);
         }
 
 
         public IEnumerable<LayoutContent> GetContents()
         {
-            return this.engine.Query.LayoutContent.Gets();
+            return this.engine.Repository.Contents.Get();
         }
 
         public LayoutContent GetContent(Guid id)
         {
-            return this.engine.Query.LayoutContent.Get(id);
+            return this.engine.Repository.Contents.Get(id);
         }
 
         public LayoutContent GetContent(string code)
         {
-            return this.engine.Query.LayoutContent.Get(code);
+            return this.engine.Repository.Contents.Get(code);
         }
 
         public IEnumerable<Shell> GetShells()
         {
-            return this.engine.Query.Shell.Gets();
+            return this.engine.Repository.Shells.Get();
         }
 
         public Shell GetShell(RegionType type)
         {
-            return this.engine.Query.Shell.Get(type.ToString());
+            return this.engine.Repository.Shells.Get(type.ToString());
         }
 
         #endregion クエリ
@@ -115,69 +115,69 @@ namespace Mov.Designer.Service
 
         public void Write()
         {
-            this.engine.Command.LayoutNode.Write();
-            this.engine.Command.LayoutContent.Write();
-            this.engine.Command.Shell.Write();
+            this.engine.Repository.Nodes.Write();
+            this.engine.Repository.Contents.Write();
+            this.engine.Repository.Shells.Write();
         }
 
         public void PostNodes(IEnumerable<LayoutNode> items)
         {
-            this.engine.Command.LayoutNode.Posts(items);
+            this.engine.Repository.Nodes.Posts(items);
         }
 
         public void PostNode(LayoutNode item)
         {
-            this.engine.Command.LayoutNode.Post(item);
+            this.engine.Repository.Nodes.Post(item);
         }
 
         public void PutNode(LayoutNode item)
         {
-            this.engine.Command.LayoutNode.Put(item);
+            this.engine.Repository.Nodes.Put(item);
         }
 
         public void DeleteNode(LayoutNode item)
         {
-            this.engine.Command.LayoutNode.Delete(item);
+            this.engine.Repository.Nodes.Delete(item);
         }
 
         public void PostContents(IEnumerable<LayoutContent> items)
         {
-            this.engine.Command.LayoutContent.Posts(items);
+            this.engine.Repository.Contents.Posts(items);
         }
 
         public void PostContent(LayoutContent item)
         {
-            this.engine.Command.LayoutContent.Post(item);
+            this.engine.Repository.Contents.Post(item);
         }
 
         public void PutContent(LayoutContent item)
         {
-            this.engine.Command.LayoutContent.Put(item);
+            this.engine.Repository.Contents.Put(item);
         }
 
         public void DeleteContent(LayoutContent item)
         {
-            this.engine.Command.LayoutContent.Delete(item);
+            this.engine.Repository.Contents.Delete(item);
         }
 
         public void PostShells(IEnumerable<Shell> items)
         {
-            this.engine.Command.Shell.Posts(items);
+            this.engine.Repository.Shells.Posts(items);
         }
 
         public void PostShell(Shell item)
         {
-            this.engine.Command.Shell.Post(item);
+            this.engine.Repository.Shells.Post(item);
         }
 
         public void PutShell(Shell item)
         {
-            this.engine.Command.Shell.Put(item);
+            this.engine.Repository.Shells.Put(item);
         }
 
         public void DeleteShell(Shell item)
         {
-            this.engine.Command.Shell.Delete(item);
+            this.engine.Repository.Shells.Delete(item);
         }
 
         #endregion コマンド

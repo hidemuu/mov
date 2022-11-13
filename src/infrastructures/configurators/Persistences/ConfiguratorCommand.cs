@@ -1,4 +1,5 @@
 ﻿using Mov.Accessors;
+using Mov.Accessors.Crud.Persistence.Implement;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,40 +14,28 @@ namespace Mov.Configurators
 
         #endregion フィールド
 
+        #region プロパティ
+
+        public ISave<Config> Saver { get; }
+
+        public IDelete<Config> Deleter { get; }
+
+        #endregion プロパティ
+
         #region コンストラクター
 
         public ConfiguratorCommand(FileConfiguratorRepository repository)
         {
             this.repository = repository;
+            this.Saver = new DbObjectRepositorySaver<Config, ConfigCollection>(repository.Configs);
+            this.Deleter = new DbObjectRepositoryDeleter<Config, ConfigCollection>(repository.Configs);
         }
 
         #endregion コンストラクター
 
         #region メソッド
 
-        public void Write()
-        {
-            this.repository.Configs.Write();
-        }
-
-        public void Delete(Config item)
-        {
-            this.repository.Configs.Delete(item);
-        }
-
-        public void Posts(IEnumerable<Config> items)
-        {
-            this.repository.Configs.Posts(items);
-        }
-
-        public void Post(Config item)
-        {
-            this.repository.Configs.Post(item);
-        }
-        public void Put(Config item)
-        {
-            this.repository.Configs.Put(item);
-        }
+        
 
         #endregion メソッド
     }

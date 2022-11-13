@@ -4,16 +4,10 @@ using System.Text;
 
 namespace Mov.Accessors
 {
-    public interface IPersistenceCommand<T>
+    public interface IPersistenceCommand<TEntity>
     {
-        void Write();
-
-        void Posts(IEnumerable<T> items);
-
-        void Post(T item);
-
-        void Put(T item);
-
-        void Delete(T item);
+        ISave<TEntity> Saver { get; }
+        
+        IDelete<TEntity> Deleter { get; }
     }
 }

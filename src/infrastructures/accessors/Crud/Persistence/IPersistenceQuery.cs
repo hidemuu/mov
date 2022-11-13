@@ -4,18 +4,10 @@ using System.Text;
 
 namespace Mov.Accessors
 {
-    public interface IPersistenceQuery<T>
+    public interface IPersistenceQuery<TEntity>
     {
-        IEnumerable<T> Read();
+        IRead<TEntity> Reader { get; }
 
-        IEnumerable<T> Gets();
 
-        IEnumerable<T> Gets(string param);
-
-        T Get(Guid id);
-
-        T Get(string param);
-
-        
     }
 }

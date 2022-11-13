@@ -1,7 +1,7 @@
 ﻿using Mov.Accessors;
+using Mov.Accessors.Crud.Persistence.Implement;
 using Mov.Game.Models;
 using Mov.Game.Models.Persistences;
-using Mov.Game.Repository.Persistences.Entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,7 +20,7 @@ namespace Mov.Game.Repository.Persistences
 
         public RepositoryGameCommand(IGameRepository repository)
         {
-            this.Landmark = new RepositoryLandmarkCommand(repository);
+            this.Landmark = new DbObjectRepositoryCommand<Landmark, LandmarkCollection>(repository.Landmarks);
         }
 
         #endregion コンストラクター

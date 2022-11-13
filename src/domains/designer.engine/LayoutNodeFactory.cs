@@ -11,7 +11,7 @@ namespace Mov.Designer.Engine
     {
         #region フィールド
 
-        private readonly IDesignerQuery query;
+        private readonly IDesignerRepository repository;
 
         #endregion フィールド
 
@@ -20,9 +20,9 @@ namespace Mov.Designer.Engine
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public LayoutNodeFactory(IDesignerQuery query)
+        public LayoutNodeFactory(IDesignerRepository repository)
         {
-            this.query = query;
+            this.repository = repository;
         }
 
         #endregion コンストラクター
@@ -57,7 +57,7 @@ namespace Mov.Designer.Engine
 
         private LayoutContent GetContent(LayoutNode node)
         {
-            return query.LayoutContent.Get(node.Code);
+            return this.repository.Contents.Get(node.Code);
         }
 
         #endregion 内部メソッド

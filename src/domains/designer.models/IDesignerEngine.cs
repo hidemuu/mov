@@ -9,6 +9,8 @@ namespace Mov.Designer.Models
     {
         #region プロパティ
 
+        IDesignerRepository Repository { get; }
+
         IDesignerCommand Command { get; }
 
         IDesignerQuery Query { get; }

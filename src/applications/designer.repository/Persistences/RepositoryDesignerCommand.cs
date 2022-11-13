@@ -1,7 +1,7 @@
 ﻿using Mov.Accessors;
+using Mov.Accessors.Crud.Persistence.Implement;
 using Mov.Designer.Models;
 using Mov.Designer.Models.Persistences;
-using Mov.Designer.Repository.Persistences.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,10 +20,10 @@ namespace Mov.Designer.Repository.Persistences
 
         public RepositoryDesignerCommand(IDesignerRepository repository)
         {
-            this.LayoutContent = new RepositoryLayoutContentCommand(repository);
-            this.LayoutNode = new RepositoryLayoutNodeCommand(repository);
-            this.Shell = new RepositoryShellCommand(repository);
-            this.Theme = new RepositoryThemeCommand(repository);
+            this.LayoutNode = new DbObjectRepositoryCommand<LayoutNode, LayoutNodeCollection>(repository.Nodes);
+            this.LayoutContent = new DbObjectRepositoryCommand<LayoutContent, LayoutContentCollection>(repository.Contents);
+            this.Shell = new DbObjectRepositoryCommand<Shell, ShellCollection>(repository.Shells);
+            this.Theme = new DbObjectRepositoryCommand<Theme, ThemeCollection>(repository.Themes);
         }
 
     }

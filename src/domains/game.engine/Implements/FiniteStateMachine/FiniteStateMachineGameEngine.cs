@@ -274,12 +274,12 @@ namespace Mov.Game.Engine
 
         public IEnumerable<int> GetLevels()
         {
-            return this.parameter.Query.Landmark.Gets().Select(x => x.Lv);
+            return this.parameter.Repository.Landmarks.Get().Select(x => x.Lv);
         }
 
         public Landmark GetLandmark()
         {
-            return this.parameter.Query.Landmark.Gets().FirstOrDefault(x => x.Lv == Level);
+            return this.parameter.Repository.Landmarks.Get().FirstOrDefault(x => x.Lv == Level);
         }
 
         public override string ToString()

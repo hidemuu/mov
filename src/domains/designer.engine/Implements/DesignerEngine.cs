@@ -23,6 +23,8 @@ namespace Mov.Designer.Engine
 
         #region クエリ・コマンド
 
+        public IDesignerRepository Repository { get; }
+
         public IDesignerCommand Command { get; }
 
         public IDesignerQuery Query { get; }
@@ -52,9 +54,10 @@ namespace Mov.Designer.Engine
         public DesignerEngine(IDesignerParameter parameter)
         {
             this.parameter = parameter;
+            this.Repository = parameter.Repository;
             this.Query = parameter.Query;
             this.Command = parameter.Command;
-            this.factory = new LayoutNodeFactory(parameter.Query);
+            this.factory = new LayoutNodeFactory(parameter.Repository);
             BuildNode();
         }
 
@@ -94,7 +97,7 @@ namespace Mov.Designer.Engine
         private IEnumerable<LayoutNodeBase> CreateNodes()
         {
             var node = new ContentLayoutNode();
-            CreateLayoutNode(node.Children, this.Query.LayoutNode.Gets());
+            CreateLayoutNode(node.Children, this.Repository.Nodes.Get());
             return node.Children;
         }
 

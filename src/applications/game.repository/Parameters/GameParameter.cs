@@ -10,12 +10,15 @@ namespace Mov.Game.Repository
 {
     public class GameParameter : IGameParameter
     {
+        public IGameRepository Repository { get; }
+
         public IGameCommand Command { get; }
 
         public IGameQuery Query { get; }
 
         public GameParameter(IGameRepository repository)
         {
+            this.Repository = repository;
             this.Command = new RepositoryGameCommand(repository);
             this.Query = new RepositoryGameQuery(repository);
         }

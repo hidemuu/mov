@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Mov.Accessors
 {
-    public interface IRead<T>
+    public interface IRead<TEntity>
     {
-        IEnumerable<T> ReadAll();
-        T Read(Guid id);
+        IEnumerable<TEntity> ReadAll();
+        TEntity Read(Guid id);
 
     }
 }

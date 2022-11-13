@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Mov.Accessors
 {
-    public interface IDelete<T>
+    public interface IDelete<TEntity>
     {
-        void Delete(T entity);
+        void Delete(TEntity entity);
     }
 }

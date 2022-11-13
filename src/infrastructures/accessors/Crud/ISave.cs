@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Mov.Accessors
 {
-    public interface ISave<T>
+    public interface ISave<TEntity>
     {
-        void Save(T entity);
+        void Save(TEntity entity);
     }
 }

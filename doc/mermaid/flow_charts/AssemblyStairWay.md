@@ -2,7 +2,6 @@
 flowchart LR
     
     subgraph PresentationLayer
-        direction LR
         subgraph Analizer_Views
             direction BT
             Analizer.Views --> Analizer.ViewModels
@@ -11,7 +10,6 @@ flowchart LR
             direction BT
             Driver.Views --> Driver.ViewModels
         end
-        
     end
 
     Analizer_Views --> Analizer_Services
@@ -27,7 +25,6 @@ flowchart LR
             direction BT
             Driver.ServiceImplements --> Driver.Service
         end
-        
     end
 
     Analizer_Services --> Analizer_BusinessLogic
@@ -40,7 +37,6 @@ flowchart LR
             direction BT
             Analizer.Engine --> Analizer.Models
         end
-        
         subgraph Analizer_DataAccess
             direction BT
             Analizer.RepositoryImplements[("RepositoryImplements")] --> Analizer.Repository
@@ -49,7 +45,6 @@ flowchart LR
             direction BT
             Driver.Engine --> Driver.Models
         end
-        
         subgraph Driver_DataAccess
             direction BT
             Driver.RepositoryImplements[("RepositoryImplements")] --> Driver.Repository

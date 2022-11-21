@@ -45,7 +45,7 @@ namespace Mov.Game.Test
             var level = sut.GetLevels();
 
             //Assert
-            Assert.Pass();
+            //Assert.Pass();
             Assert.AreEqual(0, level, "");
         }
     }

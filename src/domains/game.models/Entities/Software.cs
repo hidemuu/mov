@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Game.Models.Repositories.Entities
 {
-    public class Software
+    public sealed class Software
     {
     }
 }

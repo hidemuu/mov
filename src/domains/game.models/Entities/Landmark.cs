@@ -12,7 +12,7 @@ namespace Mov.Game.Models
         public override Landmark[] Items { get; set; }
     }
 
-    public class Landmark : DbObject
+    public sealed class Landmark : DbObject
     {
         #region 定数
 

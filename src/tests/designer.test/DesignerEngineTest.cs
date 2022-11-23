@@ -37,7 +37,7 @@ namespace Mov.Designer.Test
         }
 
         [Test]
-        public void Test1()
+        public void GetContent()
         {
             //Arrange
             var sut = builder

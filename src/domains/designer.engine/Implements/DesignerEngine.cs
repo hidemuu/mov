@@ -68,6 +68,7 @@ namespace Mov.Designer.Engine
         public void BuildNode()
         {
             Nodes = CreateNodes();
+            if (Nodes == null) return;
             foreach (var node in Nodes)
             {
                 if (node is RegionLayoutNode regionNode)
@@ -97,7 +98,9 @@ namespace Mov.Designer.Engine
         private IEnumerable<LayoutNodeBase> CreateNodes()
         {
             var node = new ContentLayoutNode();
-            CreateLayoutNode(node.Children, this.Repository.Nodes.Get());
+            var data = this.Repository?.Nodes?.Get();
+            if (data == null) return default;
+            CreateLayoutNode(node.Children, data);
             return node.Children;
         }
 

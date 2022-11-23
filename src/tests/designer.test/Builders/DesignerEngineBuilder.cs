@@ -42,11 +42,19 @@ namespace Mov.Designer.Test
 
         #region メソッド
 
-        public DesignerEngineBuilder WithParameterCalled()
+        public DesignerEngineBuilder WithContentCalled(List<LayoutContent> contents)
         {
             var mockContent = new Mock<IDbObjectRepository<LayoutContent, LayoutContentCollection>>();
-            mockContent.Setup(x => x.Get()).Returns(new List<LayoutContent>());
+            mockContent.Setup(x => x.Get()).Returns(contents);
             this.mockRepository.Setup(x => x.Contents).Returns(mockContent.Object);
+            return this;
+        }
+
+        public DesignerEngineBuilder WithNodeCalled(List<LayoutNode> nodes)
+        {
+            var mockNode = new Mock<IDbObjectRepository<LayoutNode, LayoutNodeCollection>>();
+            mockNode.Setup(x => x.Get()).Returns(nodes);
+            this.mockRepository.Setup(x => x.Nodes).Returns(mockNode.Object);
             return this;
         }
 

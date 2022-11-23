@@ -7,26 +7,6 @@ namespace Mov.Utilities.Converter
     public static class DateTimeConverter
     {
         /// <summary>
-        /// 月の最初の日を求める（DateTime版）
-        /// </summary>
-        /// <param name="theDay">変換元日付型データ</param>
-        /// <returns>月の初日</returns>
-        public static DateTime GetFirstDayOfMonth(this DateTime theDay)
-        {
-            return new DateTime(theDay.Year, theDay.Month, 1);
-        }
-
-        /// <summary>
-        /// 月の最後の日を求める（DateTime版）
-        /// </summary>
-        /// <param name="theDay">変換元日付型データ</param>
-        /// <returns>月の最終日</returns>
-        public static DateTime GetLastDayOfMonth(this DateTime theDay)
-        {
-            int days = DateTime.DaysInMonth(theDay.Year, theDay.Month);
-            return new DateTime(theDay.Year, theDay.Month, days);
-        }
-        /// <summary>
         /// 年月日文字列から、日付フォーマット(yyyy/MM/dd)に従いDateTime型で出力
         /// </summary>
         /// <param name="y">年文字列</param>

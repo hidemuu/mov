@@ -6,12 +6,34 @@ namespace Mov.Utilities.ValueObjects
 {
     public abstract class ValueObjectBase<T> where T : ValueObjectBase<T>
     {
+        #region 抽象メソッド
+
+        protected abstract bool EqualCore(T other);
+
+        #endregion 抽象メソッド
+
+        #region メソッド
+
         public override bool Equals(object obj)
         {
             var vo = obj as T;
             if (vo == null) return false;
             return EqualCore(vo);
         }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        #endregion メソッド
+
+        #region 静的メソッド
 
         public static bool operator == (ValueObjectBase<T> vo1, ValueObjectBase<T> vo2)
         {
@@ -23,16 +45,7 @@ namespace Mov.Utilities.ValueObjects
             return !Equals(vo1, vo2);
         }
 
-        protected abstract bool EqualCore(T other);
+        #endregion 静的メソッド
 
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
     }
 }

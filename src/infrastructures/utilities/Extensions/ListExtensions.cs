@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Mov.Utilities.Converter
 {
+    /// <summary>
+    /// List型の拡張処理
+    /// </summary>
     public static class ListExtensions
     {
         /// <summary>

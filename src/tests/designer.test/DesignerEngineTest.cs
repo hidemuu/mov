@@ -36,6 +36,9 @@ namespace Mov.Designer.Test
             Trace.WriteLine("UnitTest1 ClassCleanup");
         }
 
+        /// <summary>
+        /// コンテンツ取得シナリオ
+        /// </summary>
         [Test]
         public void GetContent()
         {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Controllers.Action
+namespace Mov.Utilities
 {
     public interface IActionAsync
     {

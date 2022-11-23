@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Controllers.Action
+namespace Mov.Utilities
 {
-    public interface IFunctionAsync
+    public interface ITask
     {
+        void Invoke();
     }
 }

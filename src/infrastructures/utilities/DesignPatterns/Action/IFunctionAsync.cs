@@ -4,10 +4,7 @@ using System.Text;
 
 namespace Mov.Utilities
 {
-    public enum LocationTypes
+    public interface IFunctionAsync
     {
-        JP,
-        EN,
-        CN,
     }
 }

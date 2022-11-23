@@ -5,9 +5,9 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyName>Mov.Framework.Test</AssemblyName>
+    <AssemblyName>Mov.Analizer.Test</AssemblyName>
 
-    <RootNamespace>Mov.Framework.Test</RootNamespace>
+    <RootNamespace>Mov.Analizer.Test</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

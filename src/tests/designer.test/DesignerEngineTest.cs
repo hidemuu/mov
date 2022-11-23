@@ -1,8 +1,8 @@
 using NUnit.Framework;
 
-namespace Mov.UseCase.Test
+namespace Mov.Designer.Test
 {
-    public class Tests
+    public class DesignertEngineTest
     {
         [SetUp]
         public void Setup()

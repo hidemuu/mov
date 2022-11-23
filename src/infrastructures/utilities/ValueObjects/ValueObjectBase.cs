@@ -4,6 +4,10 @@ using System.Text;
 
 namespace Mov.Utilities.ValueObjects
 {
+    /// <summary>
+    /// ValueObjectのベースクラス
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public abstract class ValueObjectBase<T> where T : ValueObjectBase<T>
     {
         #region 抽象メソッド

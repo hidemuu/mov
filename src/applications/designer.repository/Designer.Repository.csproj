@@ -10,8 +10,4 @@
     <ProjectReference Include="..\..\domains\designer.models\Designer.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Persistences\Entities\" />
-  </ItemGroup>
-
 </Project>

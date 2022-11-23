@@ -1,6 +1,7 @@
 using Moq;
 using Mov.Game.Models;
 using Mov.Game.Service;
+using Mov.Utilities.Exceptions;
 using NUnit.Framework;
 using System.Diagnostics;
 
@@ -47,6 +48,8 @@ namespace Mov.Game.Test
             //Assert
             //Assert.Pass();
             Assert.AreEqual(0, level, "");
+            //var ex = Assert.Throws<InputException>(() => sut.GetLevels());
+            //ex.Message.IsNormalized();
         }
     }
 }

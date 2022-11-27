@@ -41,10 +41,8 @@ namespace Mov.Game.Test
         {
             //Arrange
             var sut = builder.WithEngineCalled().Build();
-
             //Act
             var level = sut.GetLevels();
-
             //Assert
             //Assert.Pass();
             Assert.AreEqual(0, level, "");

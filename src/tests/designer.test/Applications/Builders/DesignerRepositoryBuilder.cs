@@ -12,13 +12,27 @@ namespace Mov.Designer.Test.Builders
 {
     public class DesignerRepositoryBuilder
     {
+        #region フィールド
+
         private readonly IDesignerRepository repository;
         private readonly Mock<IDbObjectRepository<LayoutContent, LayoutContentCollection>> mockContent;
+
+        #endregion フィールド
+
+        #region コンストラクター
 
         public DesignerRepositoryBuilder()
         {
             this.mockContent = new Mock<IDbObjectRepository<LayoutContent, LayoutContentCollection>>();
             this.repository = new FileDesignerRepository("", "", "");
         }
+
+        #endregion コンストラクター
+
+        #region メソッド
+
+        public IDesignerRepository Build() => this.repository;
+
+        #endregion メソッド
     }
 }

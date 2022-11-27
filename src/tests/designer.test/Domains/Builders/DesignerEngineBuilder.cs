@@ -28,6 +28,7 @@ namespace Mov.Designer.Test
 
         public DesignerEngineBuilder()
         {
+            //モックオブジェクト生成
             this.mockParameter = new Mock<IDesignerParameter>();
             this.mockRepository = new Mock<IDesignerRepository>();
             this.mockQuery = new Mock<IDesignerQuery>();
@@ -35,6 +36,7 @@ namespace Mov.Designer.Test
             this.mockParameter.Setup(x => x.Repository).Returns(this.mockRepository.Object);
             this.mockParameter.Setup(x => x.Query).Returns(this.mockQuery.Object);
             this.mockParameter.Setup(x => x.Command).Returns(this.mockCommand.Object);
+            //インスタンス生成
             this.engine = new DesignerEngine(this.mockParameter.Object);
         }
 
@@ -44,9 +46,20 @@ namespace Mov.Designer.Test
 
         public DesignerEngineBuilder WithContentCalled(List<LayoutContent> contents)
         {
-            var mockContent = new Mock<IDbObjectRepository<LayoutContent, LayoutContentCollection>>();
-            mockContent.Setup(x => x.Get()).Returns(contents);
-            this.mockRepository.Setup(x => x.Contents).Returns(mockContent.Object);
+            var mockRepositoryContent = new Mock<IDbObjectRepository<LayoutContent, LayoutContentCollection>>();
+            mockRepositoryContent.Setup(x => x.Get()).Returns(contents);
+            mockRepositoryContent.Setup(x => x.Post(new LayoutContent()));
+            mockRepositoryContent.Setup(x => x.Delete(new LayoutContent()));
+            this.mockRepository.Setup(x => x.Contents).Returns(mockRepositoryContent.Object);
+
+            var mockQueryContent = new Mock<IPersistenceQuery<LayoutContent>>();
+            mockQueryContent.Setup(x => x.Reader.ReadAll()).Returns(contents);
+            this.mockQuery.Setup(x => x.LayoutContent).Returns(mockQueryContent.Object);
+
+            var mockCommandContent = new Mock<IPersistenceCommand<LayoutContent>>();
+            mockCommandContent.Setup(x => x.Saver.Save(new LayoutContent()));
+            this.mockCommand.Setup(x => x.LayoutContent).Returns(mockCommandContent.Object);
+
             return this;
         }
 
@@ -54,6 +67,8 @@ namespace Mov.Designer.Test
         {
             var mockNode = new Mock<IDbObjectRepository<LayoutNode, LayoutNodeCollection>>();
             mockNode.Setup(x => x.Get()).Returns(nodes);
+            mockNode.Setup(x => x.Post(new LayoutNode()));
+            mockNode.Setup(x => x.Delete(new LayoutNode()));
             this.mockRepository.Setup(x => x.Nodes).Returns(mockNode.Object);
             return this;
         }

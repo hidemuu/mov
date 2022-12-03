@@ -792,19 +792,6 @@
           "bin/placeholder/Mov.Game.Models.dll": {}
         }
       },
-      "Mov.Game.Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Game.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Game.Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Game.Repository.dll": {}
-        }
-      },
       "Mov.Painters/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -3262,8 +3249,8 @@
     },
     "Mov.Accessors/1.0.0": {
       "type": "project",
-      "path": "../../infrastructures/accessors/Accessors.csproj",
-      "msbuildProject": "../../infrastructures/accessors/Accessors.csproj"
+      "path": "../../commons/accessors/Accessors.csproj",
+      "msbuildProject": "../../commons/accessors/Accessors.csproj"
     },
     "Mov.BaseModel/1.0.0": {
       "type": "project",
@@ -3272,13 +3259,13 @@
     },
     "Mov.Calculators/1.0.0": {
       "type": "project",
-      "path": "../../infrastructures/calculators/Calculators.csproj",
-      "msbuildProject": "../../infrastructures/calculators/Calculators.csproj"
+      "path": "../../commons/calculators/Calculators.csproj",
+      "msbuildProject": "../../commons/calculators/Calculators.csproj"
     },
     "Mov.Controllers/1.0.0": {
       "type": "project",
-      "path": "../../infrastructures/controllers/Controllers.csproj",
-      "msbuildProject": "../../infrastructures/controllers/Controllers.csproj"
+      "path": "../../commons/controllers/Controllers.csproj",
+      "msbuildProject": "../../commons/controllers/Controllers.csproj"
     },
     "Mov.Game.Engine/1.0.0": {
       "type": "project",
@@ -3290,27 +3277,21 @@
       "path": "../../domains/game.models/Game.Models.csproj",
       "msbuildProject": "../../domains/game.models/Game.Models.csproj"
     },
-    "Mov.Game.Repository/1.0.0": {
-      "type": "project",
-      "path": "../game.repository/Game.Repository.csproj",
-      "msbuildProject": "../game.repository/Game.Repository.csproj"
-    },
     "Mov.Painters/1.0.0": {
       "type": "project",
-      "path": "../../infrastructures/painters/Painters.csproj",
-      "msbuildProject": "../../infrastructures/painters/Painters.csproj"
+      "path": "../../commons/painters/Painters.csproj",
+      "msbuildProject": "../../commons/painters/Painters.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",
-      "path": "../../infrastructures/utilities/Utilities.csproj",
-      "msbuildProject": "../../infrastructures/utilities/Utilities.csproj"
+      "path": "../../commons/utilities/Utilities.csproj",
+      "msbuildProject": "../../commons/utilities/Utilities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "Mov.Calculators >= 1.0.0",
       "Mov.Game.Engine >= 1.0.0",
-      "Mov.Game.Repository >= 1.0.0",
       "Mov.Painters >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
       "System.Drawing.Common >= 6.0.0"
@@ -3353,17 +3334,14 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.repository\\Game.Repository.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\game.repository\\Game.Repository.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\calculators\\Calculators.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\calculators\\Calculators.csproj"
+            },
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\painters\\Painters.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\painters\\Painters.csproj"
             },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\game.engine\\Game.Engine.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\game.engine\\Game.Engine.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\calculators\\Calculators.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\calculators\\Calculators.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\painters\\Painters.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\painters\\Painters.csproj"
             }
           }
         }

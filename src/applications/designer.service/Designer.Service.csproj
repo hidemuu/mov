@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\domains\designer.engine\Designer.Engine.csproj" />
-    <ProjectReference Include="..\designer.repository\Designer.Repository.csproj" />
   </ItemGroup>
 
 </Project>

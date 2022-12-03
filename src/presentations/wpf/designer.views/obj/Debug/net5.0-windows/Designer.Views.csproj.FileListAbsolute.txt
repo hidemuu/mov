@@ -30,7 +30,6 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Deb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Controllers.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Designer.Engine.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Designer.Models.dll
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Designer.Repository.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Designer.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Designer.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Layouts.dll
@@ -52,7 +51,6 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Deb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Controllers.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Designer.Engine.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Designer.Models.pdb
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Designer.Repository.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Designer.Service.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Layouts.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.Painters.pdb

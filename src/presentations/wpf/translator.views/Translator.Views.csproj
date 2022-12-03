@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\infrastructures\wpf\wpfviews\WpfViews.csproj" />
+    <ProjectReference Include="..\..\..\commons\wpf\wpfviews\WpfViews.csproj" />
     <ProjectReference Include="..\translator.viewmodels\Translator.ViewModels.csproj" />
   </ItemGroup>
 

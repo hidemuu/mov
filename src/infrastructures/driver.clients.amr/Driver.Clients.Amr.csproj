@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Driver.Clients.Amr</AssemblyName>
+    <RootNamespace>Mov.Driver.Clients.Amr</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\domains\driver.clients\Driver.Clients.csproj" />
+  </ItemGroup>
+
+</Project>

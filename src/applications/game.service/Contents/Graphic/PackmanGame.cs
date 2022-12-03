@@ -2,7 +2,6 @@
 using Mov.Game.Engine;
 using Mov.Game.Models;
 using Mov.Game.Models.Maps;
-using Mov.Game.Repository;
 using Mov.Game.Service.Implements;
 using Mov.Painters;
 using System;

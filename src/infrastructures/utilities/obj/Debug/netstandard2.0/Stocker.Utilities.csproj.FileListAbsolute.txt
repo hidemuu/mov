@@ -1,9 +1,0 @@
-C:\Users\nando\Documents\GitHub\Stocker\src\infrastructures\Stocker.Utilities\bin\Debug\netstandard2.0\Stocker.Utilities.deps.json
-C:\Users\nando\Documents\GitHub\Stocker\src\infrastructures\Stocker.Utilities\bin\Debug\netstandard2.0\Stocker.Utilities.dll
-C:\Users\nando\Documents\GitHub\Stocker\src\infrastructures\Stocker.Utilities\bin\Debug\netstandard2.0\Stocker.Utilities.pdb
-C:\Users\nando\Documents\GitHub\Stocker\src\infrastructures\Stocker.Utilities\obj\Debug\netstandard2.0\Stocker.Utilities.AssemblyInfoInputs.cache
-C:\Users\nando\Documents\GitHub\Stocker\src\infrastructures\Stocker.Utilities\obj\Debug\netstandard2.0\Stocker.Utilities.AssemblyInfo.cs
-C:\Users\nando\Documents\GitHub\Stocker\src\infrastructures\Stocker.Utilities\obj\Debug\netstandard2.0\Stocker.Utilities.csproj.CoreCompileInputs.cache
-C:\Users\nando\Documents\GitHub\Stocker\src\infrastructures\Stocker.Utilities\obj\Debug\netstandard2.0\Stocker.Utilities.dll
-C:\Users\nando\Documents\GitHub\Stocker\src\infrastructures\Stocker.Utilities\obj\Debug\netstandard2.0\Stocker.Utilities.pdb
-C:\Users\nando\Documents\GitHub\Stocker\src\infrastructures\Stocker.Utilities\obj\Debug\netstandard2.0\Stocker.Utilities.csproj.AssemblyReference.cache

@@ -617,25 +617,11 @@
           "bin/placeholder/Mov.Designer.Models.dll": {}
         }
       },
-      "Mov.Designer.Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Designer.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Designer.Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Designer.Repository.dll": {}
-        }
-      },
       "Mov.Designer.Service/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Designer.Engine": "1.0.0",
-          "Mov.Designer.Repository": "1.0.0"
+          "Mov.Designer.Engine": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Designer.Service.dll": {}
@@ -1804,8 +1790,8 @@
     },
     "Mov.Accessors/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/accessors/Accessors.csproj",
-      "msbuildProject": "../../../infrastructures/accessors/Accessors.csproj"
+      "path": "../../../commons/accessors/Accessors.csproj",
+      "msbuildProject": "../../../commons/accessors/Accessors.csproj"
     },
     "Mov.BaseModel/1.0.0": {
       "type": "project",
@@ -1814,13 +1800,13 @@
     },
     "Mov.Calculators/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/calculators/Calculators.csproj",
-      "msbuildProject": "../../../infrastructures/calculators/Calculators.csproj"
+      "path": "../../../commons/calculators/Calculators.csproj",
+      "msbuildProject": "../../../commons/calculators/Calculators.csproj"
     },
     "Mov.Controllers/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/controllers/Controllers.csproj",
-      "msbuildProject": "../../../infrastructures/controllers/Controllers.csproj"
+      "path": "../../../commons/controllers/Controllers.csproj",
+      "msbuildProject": "../../../commons/controllers/Controllers.csproj"
     },
     "Mov.Designer.Engine/1.0.0": {
       "type": "project",
@@ -1832,11 +1818,6 @@
       "path": "../../../domains/designer.models/Designer.Models.csproj",
       "msbuildProject": "../../../domains/designer.models/Designer.Models.csproj"
     },
-    "Mov.Designer.Repository/1.0.0": {
-      "type": "project",
-      "path": "../../../applications/designer.repository/Designer.Repository.csproj",
-      "msbuildProject": "../../../applications/designer.repository/Designer.Repository.csproj"
-    },
     "Mov.Designer.Service/1.0.0": {
       "type": "project",
       "path": "../../../applications/designer.service/Designer.Service.csproj",
@@ -1844,43 +1825,42 @@
     },
     "Mov.Layouts/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/layouts/Layouts.csproj",
-      "msbuildProject": "../../../infrastructures/layouts/Layouts.csproj"
+      "path": "../../../commons/layouts/Layouts.csproj",
+      "msbuildProject": "../../../commons/layouts/Layouts.csproj"
     },
     "Mov.Painters/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/painters/Painters.csproj",
-      "msbuildProject": "../../../infrastructures/painters/Painters.csproj"
+      "path": "../../../commons/painters/Painters.csproj",
+      "msbuildProject": "../../../commons/painters/Painters.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/utilities/Utilities.csproj",
-      "msbuildProject": "../../../infrastructures/utilities/Utilities.csproj"
+      "path": "../../../commons/utilities/Utilities.csproj",
+      "msbuildProject": "../../../commons/utilities/Utilities.csproj"
     },
     "Mov.WpfDesigns/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj",
-      "msbuildProject": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj"
+      "path": "../../../commons/wpf/wpfdesigns/WpfDesigns.csproj",
+      "msbuildProject": "../../../commons/wpf/wpfdesigns/WpfDesigns.csproj"
     },
     "Mov.WpfModels/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/wpf/wpfmodels/WpfModels.csproj",
-      "msbuildProject": "../../../infrastructures/wpf/wpfmodels/WpfModels.csproj"
+      "path": "../../../commons/wpf/wpfmodels/WpfModels.csproj",
+      "msbuildProject": "../../../commons/wpf/wpfmodels/WpfModels.csproj"
     },
     "Mov.WpfMvvms/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/wpf/wpfmvvms/WpfMvvms.csproj",
-      "msbuildProject": "../../../infrastructures/wpf/wpfmvvms/WpfMvvms.csproj"
+      "path": "../../../commons/wpf/wpfmvvms/WpfMvvms.csproj",
+      "msbuildProject": "../../../commons/wpf/wpfmvvms/WpfMvvms.csproj"
     },
     "Mov.WpfViewModels/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/wpf/wpfviewmodels/WpfViewModels.csproj",
-      "msbuildProject": "../../../infrastructures/wpf/wpfviewmodels/WpfViewModels.csproj"
+      "path": "../../../commons/wpf/wpfviewmodels/WpfViewModels.csproj",
+      "msbuildProject": "../../../commons/wpf/wpfviewmodels/WpfViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
-      "Mov.Designer.Repository >= 1.0.0",
       "Mov.Designer.Service >= 1.0.0",
       "Mov.WpfViewModels >= 1.0.0"
     ]
@@ -1922,14 +1902,11 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.repository\\Designer.Repository.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.repository\\Designer.Repository.csproj"
-            },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.service\\Designer.Service.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\designer.service\\Designer.Service.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviewmodels\\WpfViewModels.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviewmodels\\WpfViewModels.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfviewmodels\\WpfViewModels.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfviewmodels\\WpfViewModels.csproj"
             }
           }
         }

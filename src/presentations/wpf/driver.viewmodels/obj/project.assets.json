@@ -632,6 +632,30 @@
           "bin/placeholder/Mov.Controllers.dll": {}
         }
       },
+      "Mov.Driver.Clients/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Mov.Driver.Clients.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Driver.Clients.dll": {}
+        }
+      },
+      "Mov.Driver.Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Driver.Clients": "1.0.0",
+          "Mov.Driver.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Driver.Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Driver.Engine.dll": {}
+        }
+      },
       "Mov.Driver.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -646,24 +670,11 @@
           "bin/placeholder/Mov.Driver.Models.dll": {}
         }
       },
-      "Mov.Driver.Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Driver.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Driver.Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Driver.Repository.dll": {}
-        }
-      },
       "Mov.Driver.Service/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Driver.Repository": "1.0.0"
+          "Mov.Driver.Engine": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Driver.Service.dll": {}
@@ -1919,8 +1930,8 @@
     },
     "Mov.Accessors/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/accessors/Accessors.csproj",
-      "msbuildProject": "../../../infrastructures/accessors/Accessors.csproj"
+      "path": "../../../commons/accessors/Accessors.csproj",
+      "msbuildProject": "../../../commons/accessors/Accessors.csproj"
     },
     "Mov.BaseModel/1.0.0": {
       "type": "project",
@@ -1929,28 +1940,33 @@
     },
     "Mov.Calculators/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/calculators/Calculators.csproj",
-      "msbuildProject": "../../../infrastructures/calculators/Calculators.csproj"
+      "path": "../../../commons/calculators/Calculators.csproj",
+      "msbuildProject": "../../../commons/calculators/Calculators.csproj"
     },
     "Mov.Connectors/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/connectors/Connectors.csproj",
-      "msbuildProject": "../../../infrastructures/connectors/Connectors.csproj"
+      "path": "../../../commons/connectors/Connectors.csproj",
+      "msbuildProject": "../../../commons/connectors/Connectors.csproj"
     },
     "Mov.Controllers/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/controllers/Controllers.csproj",
-      "msbuildProject": "../../../infrastructures/controllers/Controllers.csproj"
+      "path": "../../../commons/controllers/Controllers.csproj",
+      "msbuildProject": "../../../commons/controllers/Controllers.csproj"
+    },
+    "Mov.Driver.Clients/1.0.0": {
+      "type": "project",
+      "path": "../../../domains/driver.clients/Driver.Clients.csproj",
+      "msbuildProject": "../../../domains/driver.clients/Driver.Clients.csproj"
+    },
+    "Mov.Driver.Engine/1.0.0": {
+      "type": "project",
+      "path": "../../../domains/driver.engine/Driver.Engine.csproj",
+      "msbuildProject": "../../../domains/driver.engine/Driver.Engine.csproj"
     },
     "Mov.Driver.Models/1.0.0": {
       "type": "project",
       "path": "../../../domains/driver.models/Driver.Models.csproj",
       "msbuildProject": "../../../domains/driver.models/Driver.Models.csproj"
-    },
-    "Mov.Driver.Repository/1.0.0": {
-      "type": "project",
-      "path": "../../../applications/driver.repository/Driver.Repository.csproj",
-      "msbuildProject": "../../../applications/driver.repository/Driver.Repository.csproj"
     },
     "Mov.Driver.Service/1.0.0": {
       "type": "project",
@@ -1959,33 +1975,33 @@
     },
     "Mov.Painters/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/painters/Painters.csproj",
-      "msbuildProject": "../../../infrastructures/painters/Painters.csproj"
+      "path": "../../../commons/painters/Painters.csproj",
+      "msbuildProject": "../../../commons/painters/Painters.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/utilities/Utilities.csproj",
-      "msbuildProject": "../../../infrastructures/utilities/Utilities.csproj"
+      "path": "../../../commons/utilities/Utilities.csproj",
+      "msbuildProject": "../../../commons/utilities/Utilities.csproj"
     },
     "Mov.WpfDesigns/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj",
-      "msbuildProject": "../../../infrastructures/wpf/wpfdesigns/WpfDesigns.csproj"
+      "path": "../../../commons/wpf/wpfdesigns/WpfDesigns.csproj",
+      "msbuildProject": "../../../commons/wpf/wpfdesigns/WpfDesigns.csproj"
     },
     "Mov.WpfModels/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/wpf/wpfmodels/WpfModels.csproj",
-      "msbuildProject": "../../../infrastructures/wpf/wpfmodels/WpfModels.csproj"
+      "path": "../../../commons/wpf/wpfmodels/WpfModels.csproj",
+      "msbuildProject": "../../../commons/wpf/wpfmodels/WpfModels.csproj"
     },
     "Mov.WpfMvvms/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/wpf/wpfmvvms/WpfMvvms.csproj",
-      "msbuildProject": "../../../infrastructures/wpf/wpfmvvms/WpfMvvms.csproj"
+      "path": "../../../commons/wpf/wpfmvvms/WpfMvvms.csproj",
+      "msbuildProject": "../../../commons/wpf/wpfmvvms/WpfMvvms.csproj"
     },
     "Mov.WpfViewModels/1.0.0": {
       "type": "project",
-      "path": "../../../infrastructures/wpf/wpfviewmodels/WpfViewModels.csproj",
-      "msbuildProject": "../../../infrastructures/wpf/wpfviewmodels/WpfViewModels.csproj"
+      "path": "../../../commons/wpf/wpfviewmodels/WpfViewModels.csproj",
+      "msbuildProject": "../../../commons/wpf/wpfviewmodels/WpfViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2034,8 +2050,8 @@
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\driver.service\\Driver.Service.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\applications\\driver.service\\Driver.Service.csproj"
             },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviewmodels\\WpfViewModels.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviewmodels\\WpfViewModels.csproj"
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfviewmodels\\WpfViewModels.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfviewmodels\\WpfViewModels.csproj"
             }
           }
         }

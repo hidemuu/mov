@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\applications\analizer.service\Analizer.Service.csproj" />
-    <ProjectReference Include="..\..\..\infrastructures\wpf\wpfviewmodels\WpfViewModels.csproj" />
+    <ProjectReference Include="..\..\..\commons\wpf\wpfviewmodels\WpfViewModels.csproj" />
   </ItemGroup>
 
 </Project>

@@ -4,14 +4,14 @@
     "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.views\\Scheduler.Views.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\painters\\Painters.csproj": {
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\painters\\Painters.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\painters\\Painters.csproj",
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\painters\\Painters.csproj",
         "projectName": "Mov.Painters",
-        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\painters\\Painters.csproj",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\painters\\Painters.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\painters\\obj\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\painters\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -72,14 +72,14 @@
         }
       }
     },
-    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj": {
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\utilities\\Utilities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj",
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\utilities\\Utilities.csproj",
         "projectName": "Mov.Utilities",
-        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\utilities\\Utilities.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\obj\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\utilities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -136,14 +136,14 @@
         }
       }
     },
-    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfcontrols\\WpfControls.csproj": {
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfcontrols\\WpfControls.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfcontrols\\WpfControls.csproj",
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfcontrols\\WpfControls.csproj",
         "projectName": "Mov.WpfControls",
-        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfcontrols\\WpfControls.csproj",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfcontrols\\WpfControls.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfcontrols\\obj\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfcontrols\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -167,14 +167,14 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\utilities\\Utilities.csproj"
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\utilities\\Utilities.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\utilities\\Utilities.csproj"
               },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfdesigns\\WpfDesigns.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfdesigns\\WpfDesigns.csproj"
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfdesigns\\WpfDesigns.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfdesigns\\WpfDesigns.csproj"
               },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfmodels\\WpfModels.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfmodels\\WpfModels.csproj"
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfmodels\\WpfModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfmodels\\WpfModels.csproj"
               }
             }
           }
@@ -228,14 +228,14 @@
         }
       }
     },
-    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfdesigns\\WpfDesigns.csproj": {
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfdesigns\\WpfDesigns.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfdesigns\\WpfDesigns.csproj",
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfdesigns\\WpfDesigns.csproj",
         "projectName": "Mov.WpfDesigns",
-        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfdesigns\\WpfDesigns.csproj",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfdesigns\\WpfDesigns.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfdesigns\\obj\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfdesigns\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -310,14 +310,14 @@
         }
       }
     },
-    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfmodels\\WpfModels.csproj": {
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfmodels\\WpfModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfmodels\\WpfModels.csproj",
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfmodels\\WpfModels.csproj",
         "projectName": "Mov.WpfModels",
-        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfmodels\\WpfModels.csproj",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfmodels\\WpfModels.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfmodels\\obj\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfmodels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -384,14 +384,14 @@
         }
       }
     },
-    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfmvvms\\WpfMvvms.csproj": {
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfmvvms\\WpfMvvms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfmvvms\\WpfMvvms.csproj",
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfmvvms\\WpfMvvms.csproj",
         "projectName": "Mov.WpfMvvms",
-        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfmvvms\\WpfMvvms.csproj",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfmvvms\\WpfMvvms.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfmvvms\\obj\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfmvvms\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -415,14 +415,14 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\painters\\Painters.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\painters\\Painters.csproj"
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\painters\\Painters.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\painters\\Painters.csproj"
               },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfdesigns\\WpfDesigns.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfdesigns\\WpfDesigns.csproj"
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfdesigns\\WpfDesigns.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfdesigns\\WpfDesigns.csproj"
               },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfmodels\\WpfModels.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfmodels\\WpfModels.csproj"
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfmodels\\WpfModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfmodels\\WpfModels.csproj"
               }
             }
           }
@@ -472,14 +472,14 @@
         }
       }
     },
-    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviewmodels\\WpfViewModels.csproj": {
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfviewmodels\\WpfViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviewmodels\\WpfViewModels.csproj",
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfviewmodels\\WpfViewModels.csproj",
         "projectName": "Mov.WpfViewModels",
-        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviewmodels\\WpfViewModels.csproj",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfviewmodels\\WpfViewModels.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviewmodels\\obj\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfviewmodels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -503,8 +503,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfmvvms\\WpfMvvms.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfmvvms\\WpfMvvms.csproj"
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfmvvms\\WpfMvvms.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfmvvms\\WpfMvvms.csproj"
               }
             }
           }
@@ -540,14 +540,14 @@
         }
       }
     },
-    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviews\\WpfViews.csproj": {
+    "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfviews\\WpfViews.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviews\\WpfViews.csproj",
+        "projectUniqueName": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfviews\\WpfViews.csproj",
         "projectName": "Mov.WpfViews",
-        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviews\\WpfViews.csproj",
+        "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfviews\\WpfViews.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviews\\obj\\",
+        "outputPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfviews\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -571,11 +571,11 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfcontrols\\WpfControls.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfcontrols\\WpfControls.csproj"
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfcontrols\\WpfControls.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfcontrols\\WpfControls.csproj"
               },
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfmvvms\\WpfMvvms.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfmvvms\\WpfMvvms.csproj"
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfmvvms\\WpfMvvms.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfmvvms\\WpfMvvms.csproj"
               }
             }
           }
@@ -642,8 +642,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviewmodels\\WpfViewModels.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviewmodels\\WpfViewModels.csproj"
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfviewmodels\\WpfViewModels.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfviewmodels\\WpfViewModels.csproj"
               }
             }
           }
@@ -710,8 +710,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviews\\WpfViews.csproj": {
-                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\wpf\\wpfviews\\WpfViews.csproj"
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfviews\\WpfViews.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\wpf\\wpfviews\\WpfViews.csproj"
               },
               "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.viewmodels\\Scheduler.ViewModels.csproj": {
                 "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\presentations\\wpf\\scheduler.viewmodels\\Scheduler.ViewModels.csproj"

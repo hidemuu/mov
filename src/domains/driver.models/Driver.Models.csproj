@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\infrastructures\connectors\Connectors.csproj" />
+    <ProjectReference Include="..\..\commons\connectors\Connectors.csproj" />
     <ProjectReference Include="..\basemodel\BaseModel.csproj" />
   </ItemGroup>
 

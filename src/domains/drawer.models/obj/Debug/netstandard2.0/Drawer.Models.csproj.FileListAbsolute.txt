@@ -11,10 +11,10 @@ C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\bin\Debug\netstand
 C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\bin\Debug\netstandard2.0\Mov.Calculators.pdb
 C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\bin\Debug\netstandard2.0\Mov.Controllers.pdb
 C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\bin\Debug\netstandard2.0\Mov.Utilities.pdb
-C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\obj\Debug\netstandard2.0\Drawer.Models.csproj.AssemblyReference.cache
 C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\obj\Debug\netstandard2.0\Drawer.Models.AssemblyInfoInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\obj\Debug\netstandard2.0\Drawer.Models.AssemblyInfo.cs
 C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\obj\Debug\netstandard2.0\Drawer.Models.csproj.CoreCompileInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\obj\Debug\netstandard2.0\Drawer.Models.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\obj\Debug\netstandard2.0\Mov.Drawer.Models.dll
 C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\obj\Debug\netstandard2.0\Mov.Drawer.Models.pdb
+C:\Users\nando\Documents\GitHub\mov\src\domains\drawer.models\obj\Debug\netstandard2.0\Drawer.Models.csproj.AssemblyReference.cache

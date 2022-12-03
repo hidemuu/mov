@@ -3222,8 +3222,8 @@
     },
     "Mov.Accessors/1.0.0": {
       "type": "project",
-      "path": "../../infrastructures/accessors/Accessors.csproj",
-      "msbuildProject": "../../infrastructures/accessors/Accessors.csproj"
+      "path": "../../commons/accessors/Accessors.csproj",
+      "msbuildProject": "../../commons/accessors/Accessors.csproj"
     },
     "Mov.BaseModel/1.0.0": {
       "type": "project",
@@ -3232,23 +3232,23 @@
     },
     "Mov.Calculators/1.0.0": {
       "type": "project",
-      "path": "../../infrastructures/calculators/Calculators.csproj",
-      "msbuildProject": "../../infrastructures/calculators/Calculators.csproj"
+      "path": "../../commons/calculators/Calculators.csproj",
+      "msbuildProject": "../../commons/calculators/Calculators.csproj"
     },
     "Mov.Controllers/1.0.0": {
       "type": "project",
-      "path": "../../infrastructures/controllers/Controllers.csproj",
-      "msbuildProject": "../../infrastructures/controllers/Controllers.csproj"
+      "path": "../../commons/controllers/Controllers.csproj",
+      "msbuildProject": "../../commons/controllers/Controllers.csproj"
     },
     "Mov.Painters/1.0.0": {
       "type": "project",
-      "path": "../../infrastructures/painters/Painters.csproj",
-      "msbuildProject": "../../infrastructures/painters/Painters.csproj"
+      "path": "../../commons/painters/Painters.csproj",
+      "msbuildProject": "../../commons/painters/Painters.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",
-      "path": "../../infrastructures/utilities/Utilities.csproj",
-      "msbuildProject": "../../infrastructures/utilities/Utilities.csproj"
+      "path": "../../commons/utilities/Utilities.csproj",
+      "msbuildProject": "../../commons/utilities/Utilities.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3295,11 +3295,11 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\painters\\Painters.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\painters\\Painters.csproj"
+            },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\basemodel\\BaseModel.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\basemodel\\BaseModel.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\painters\\Painters.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\painters\\Painters.csproj"
             }
           }
         }

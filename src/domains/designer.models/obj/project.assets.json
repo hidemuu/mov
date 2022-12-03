@@ -3200,8 +3200,8 @@
     },
     "Mov.Accessors/1.0.0": {
       "type": "project",
-      "path": "../../infrastructures/accessors/Accessors.csproj",
-      "msbuildProject": "../../infrastructures/accessors/Accessors.csproj"
+      "path": "../../commons/accessors/Accessors.csproj",
+      "msbuildProject": "../../commons/accessors/Accessors.csproj"
     },
     "Mov.BaseModel/1.0.0": {
       "type": "project",
@@ -3210,23 +3210,23 @@
     },
     "Mov.Calculators/1.0.0": {
       "type": "project",
-      "path": "../../infrastructures/calculators/Calculators.csproj",
-      "msbuildProject": "../../infrastructures/calculators/Calculators.csproj"
+      "path": "../../commons/calculators/Calculators.csproj",
+      "msbuildProject": "../../commons/calculators/Calculators.csproj"
     },
     "Mov.Controllers/1.0.0": {
       "type": "project",
-      "path": "../../infrastructures/controllers/Controllers.csproj",
-      "msbuildProject": "../../infrastructures/controllers/Controllers.csproj"
+      "path": "../../commons/controllers/Controllers.csproj",
+      "msbuildProject": "../../commons/controllers/Controllers.csproj"
     },
     "Mov.Layouts/1.0.0": {
       "type": "project",
-      "path": "../../infrastructures/layouts/Layouts.csproj",
-      "msbuildProject": "../../infrastructures/layouts/Layouts.csproj"
+      "path": "../../commons/layouts/Layouts.csproj",
+      "msbuildProject": "../../commons/layouts/Layouts.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",
-      "path": "../../infrastructures/utilities/Utilities.csproj",
-      "msbuildProject": "../../infrastructures/utilities/Utilities.csproj"
+      "path": "../../commons/utilities/Utilities.csproj",
+      "msbuildProject": "../../commons/utilities/Utilities.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3275,11 +3275,11 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
+            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\layouts\\Layouts.csproj": {
+              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\layouts\\Layouts.csproj"
+            },
             "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\basemodel\\BaseModel.csproj": {
               "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\domains\\basemodel\\BaseModel.csproj"
-            },
-            "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\layouts\\Layouts.csproj": {
-              "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\infrastructures\\layouts\\Layouts.csproj"
             }
           }
         }

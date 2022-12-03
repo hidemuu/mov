@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\infrastructures\painters\Painters.csproj" />
-    <ProjectReference Include="..\drawer.repository\Drawer.Repository.csproj" />
+    <ProjectReference Include="..\..\commons\painters\Painters.csproj" />
+    <ProjectReference Include="..\..\domains\drawer.engine\Drawer.Engine.csproj" />
   </ItemGroup>
 
 </Project>

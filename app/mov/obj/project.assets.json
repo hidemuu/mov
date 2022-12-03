@@ -384,8 +384,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Analizer.Engine": "1.0.0",
-          "Mov.Analizer.Repository": "1.0.0"
+          "Mov.Analizer.Engine": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Analizer.Service.dll": {}
@@ -453,7 +452,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Bom.Repository": "1.0.0"
+          "Mov.Bom.Engine": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Bom.Service.dll": {}
@@ -549,8 +548,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Designer.Engine": "1.0.0",
-          "Mov.Designer.Repository": "1.0.0"
+          "Mov.Designer.Engine": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Designer.Service.dll": {}
@@ -603,7 +601,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Drawer.Repository": "1.0.0",
+          "Mov.Drawer.Engine": "1.0.0",
           "Mov.Painters": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
@@ -669,7 +667,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Driver.Repository": "1.0.0"
+          "Mov.Driver.Engine": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Driver.Service.dll": {}
@@ -742,7 +740,6 @@
         "dependencies": {
           "Mov.Calculators": "1.0.0",
           "Mov.Game.Engine": "1.0.0",
-          "Mov.Game.Repository": "1.0.0",
           "Mov.Painters": "1.0.0",
           "System.Drawing.Common": "6.0.0"
         },
@@ -780,12 +777,18 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Mov.Analizer.Repository": "1.0.0",
           "Mov.Analizer.Service": "1.0.0",
+          "Mov.Bom.Repository": "1.0.0",
           "Mov.Bom.Service": "1.0.0",
+          "Mov.Designer.Repository": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
+          "Mov.Drawer.Repository": "1.0.0",
           "Mov.Drawer.Service": "1.0.0",
+          "Mov.Driver.Repository": "1.0.0",
           "Mov.Driver.Service": "1.0.0",
           "Mov.Framework": "1.0.0",
+          "Mov.Game.Repository": "1.0.0",
           "Mov.Game.Service": "1.0.0"
         },
         "compile": {
@@ -1480,8 +1483,8 @@
     },
     "Mov.Accessors/1.0.0": {
       "type": "project",
-      "path": "../../src/infrastructures/accessors/Accessors.csproj",
-      "msbuildProject": "../../src/infrastructures/accessors/Accessors.csproj"
+      "path": "../../src/commons/accessors/Accessors.csproj",
+      "msbuildProject": "../../src/commons/accessors/Accessors.csproj"
     },
     "Mov.Analizer.Engine/1.0.0": {
       "type": "project",
@@ -1495,8 +1498,8 @@
     },
     "Mov.Analizer.Repository/1.0.0": {
       "type": "project",
-      "path": "../../src/applications/analizer.repository/Analizer.Repository.csproj",
-      "msbuildProject": "../../src/applications/analizer.repository/Analizer.Repository.csproj"
+      "path": "../../src/infrastructures/analizer.repository/Analizer.Repository.csproj",
+      "msbuildProject": "../../src/infrastructures/analizer.repository/Analizer.Repository.csproj"
     },
     "Mov.Analizer.Service/1.0.0": {
       "type": "project",
@@ -1520,8 +1523,8 @@
     },
     "Mov.Bom.Repository/1.0.0": {
       "type": "project",
-      "path": "../../src/applications/bom.repository/Bom.Repository.csproj",
-      "msbuildProject": "../../src/applications/bom.repository/Bom.Repository.csproj"
+      "path": "../../src/infrastructures/bom.repository/Bom.Repository.csproj",
+      "msbuildProject": "../../src/infrastructures/bom.repository/Bom.Repository.csproj"
     },
     "Mov.Bom.Service/1.0.0": {
       "type": "project",
@@ -1530,18 +1533,18 @@
     },
     "Mov.Calculators/1.0.0": {
       "type": "project",
-      "path": "../../src/infrastructures/calculators/Calculators.csproj",
-      "msbuildProject": "../../src/infrastructures/calculators/Calculators.csproj"
+      "path": "../../src/commons/calculators/Calculators.csproj",
+      "msbuildProject": "../../src/commons/calculators/Calculators.csproj"
     },
     "Mov.Connectors/1.0.0": {
       "type": "project",
-      "path": "../../src/infrastructures/connectors/Connectors.csproj",
-      "msbuildProject": "../../src/infrastructures/connectors/Connectors.csproj"
+      "path": "../../src/commons/connectors/Connectors.csproj",
+      "msbuildProject": "../../src/commons/connectors/Connectors.csproj"
     },
     "Mov.Controllers/1.0.0": {
       "type": "project",
-      "path": "../../src/infrastructures/controllers/Controllers.csproj",
-      "msbuildProject": "../../src/infrastructures/controllers/Controllers.csproj"
+      "path": "../../src/commons/controllers/Controllers.csproj",
+      "msbuildProject": "../../src/commons/controllers/Controllers.csproj"
     },
     "Mov.Designer.Engine/1.0.0": {
       "type": "project",
@@ -1555,8 +1558,8 @@
     },
     "Mov.Designer.Repository/1.0.0": {
       "type": "project",
-      "path": "../../src/applications/designer.repository/Designer.Repository.csproj",
-      "msbuildProject": "../../src/applications/designer.repository/Designer.Repository.csproj"
+      "path": "../../src/infrastructures/designer.repository/Designer.Repository.csproj",
+      "msbuildProject": "../../src/infrastructures/designer.repository/Designer.Repository.csproj"
     },
     "Mov.Designer.Service/1.0.0": {
       "type": "project",
@@ -1575,8 +1578,8 @@
     },
     "Mov.Drawer.Repository/1.0.0": {
       "type": "project",
-      "path": "../../src/applications/drawer.repository/Drawer.Repository.csproj",
-      "msbuildProject": "../../src/applications/drawer.repository/Drawer.Repository.csproj"
+      "path": "../../src/infrastructures/drawer.repository/Drawer.Repository.csproj",
+      "msbuildProject": "../../src/infrastructures/drawer.repository/Drawer.Repository.csproj"
     },
     "Mov.Drawer.Service/1.0.0": {
       "type": "project",
@@ -1600,8 +1603,8 @@
     },
     "Mov.Driver.Repository/1.0.0": {
       "type": "project",
-      "path": "../../src/applications/driver.repository/Driver.Repository.csproj",
-      "msbuildProject": "../../src/applications/driver.repository/Driver.Repository.csproj"
+      "path": "../../src/infrastructures/driver.repository/Driver.Repository.csproj",
+      "msbuildProject": "../../src/infrastructures/driver.repository/Driver.Repository.csproj"
     },
     "Mov.Driver.Service/1.0.0": {
       "type": "project",
@@ -1625,8 +1628,8 @@
     },
     "Mov.Game.Repository/1.0.0": {
       "type": "project",
-      "path": "../../src/applications/game.repository/Game.Repository.csproj",
-      "msbuildProject": "../../src/applications/game.repository/Game.Repository.csproj"
+      "path": "../../src/infrastructures/game.repository/Game.Repository.csproj",
+      "msbuildProject": "../../src/infrastructures/game.repository/Game.Repository.csproj"
     },
     "Mov.Game.Service/1.0.0": {
       "type": "project",
@@ -1635,13 +1638,13 @@
     },
     "Mov.Layouts/1.0.0": {
       "type": "project",
-      "path": "../../src/infrastructures/layouts/Layouts.csproj",
-      "msbuildProject": "../../src/infrastructures/layouts/Layouts.csproj"
+      "path": "../../src/commons/layouts/Layouts.csproj",
+      "msbuildProject": "../../src/commons/layouts/Layouts.csproj"
     },
     "Mov.Painters/1.0.0": {
       "type": "project",
-      "path": "../../src/infrastructures/painters/Painters.csproj",
-      "msbuildProject": "../../src/infrastructures/painters/Painters.csproj"
+      "path": "../../src/commons/painters/Painters.csproj",
+      "msbuildProject": "../../src/commons/painters/Painters.csproj"
     },
     "Mov.UseCases/1.0.0": {
       "type": "project",
@@ -1650,8 +1653,8 @@
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",
-      "path": "../../src/infrastructures/utilities/Utilities.csproj",
-      "msbuildProject": "../../src/infrastructures/utilities/Utilities.csproj"
+      "path": "../../src/commons/utilities/Utilities.csproj",
+      "msbuildProject": "../../src/commons/utilities/Utilities.csproj"
     }
   },
   "projectFileDependencyGroups": {

@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\domains\analizer.engine\Analizer.Engine.csproj" />
-    <ProjectReference Include="..\analizer.repository\Analizer.Repository.csproj" />
   </ItemGroup>
 
 </Project>

@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\bom.repository\Bom.Repository.csproj" />
+    <ProjectReference Include="..\..\domains\bom.engine\Bom.Engine.csproj" />
   </ItemGroup>
 
 </Project>

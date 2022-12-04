@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Layouts.ValueObjects
 {
-    class ContentSize
+    class ContentVerticalAlignment
     {
     }
 }

@@ -16,4 +16,8 @@
     <ProjectReference Include="..\basemodel\BaseModel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DomainModels\ValueObjects\" />
+  </ItemGroup>
+
 </Project>

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Models.DomainModels.ValueObjects
+namespace Mov.Layouts.ValueObjects
 {
-    class Indent
+    class ContentStyle
     {
     }
 }

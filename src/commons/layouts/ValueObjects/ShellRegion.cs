@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Models.ValueObjects
+namespace Mov.Layouts.ValueObjects
 {
-    public sealed class Region : ValueObjectBase<Region>
+    public sealed class ShellRegion : ValueObjectBase<ShellRegion>
     {
-        protected override bool EqualCore(Region other)
+        protected override bool EqualCore(ShellRegion other)
         {
             throw new NotImplementedException();
         }

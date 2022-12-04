@@ -2,6 +2,7 @@
 using Mov.Designer.Models;
 using Mov.Designer.Models.Persistences;
 using Mov.Designer.Service;
+using Mov.Layouts;
 using Reactive.Bindings;
 using System;
 using System.Collections.Generic;

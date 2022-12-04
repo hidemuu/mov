@@ -27,7 +27,7 @@ namespace Mov.Designer.Models.Nodes
         /// </summary>
         /// <param name="node"></param>
         /// <param name="content"></param>
-        public ContentLayoutNode(LayoutNode node, LayoutContent content) : base(node, content)
+        public ContentLayoutNode(Node node, Content content) : base(node, content)
         {
             
         }

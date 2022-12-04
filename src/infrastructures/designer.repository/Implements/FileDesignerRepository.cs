@@ -21,8 +21,8 @@ namespace Mov.Designer.Repository
             : base(endpoint, fileDir, extension, encoding)
         {
             Shells = new FileDbObjectRepository<Shell, ShellCollection>(GetPath("shell"), encoding);
-            Nodes = new FileDbObjectRepository<LayoutNode, LayoutNodeCollection>(GetPath("node"), encoding);
-            Contents = new FileDbObjectRepository<LayoutContent, LayoutContentCollection>(GetPath("content"), encoding);
+            Nodes = new FileDbObjectRepository<Node, NodeCollection>(GetPath("node"), encoding);
+            Contents = new FileDbObjectRepository<Content, ContentCollection>(GetPath("content"), encoding);
             Themes = new FileDbObjectRepository<Theme, ThemeCollection>(GetPath("theme"), encoding);
         }
 
@@ -32,9 +32,9 @@ namespace Mov.Designer.Repository
 
         public IDbObjectRepository<Shell, ShellCollection> Shells { get; }
 
-        public IDbObjectRepository<LayoutNode, LayoutNodeCollection> Nodes { get; }
+        public IDbObjectRepository<Node, NodeCollection> Nodes { get; }
 
-        public IDbObjectRepository<LayoutContent, LayoutContentCollection> Contents { get; }
+        public IDbObjectRepository<Content, ContentCollection> Contents { get; }
 
         public IDbObjectRepository<Theme, ThemeCollection> Themes { get; }
 

@@ -14,18 +14,18 @@ namespace Mov.Designer.Models
     /// コンテンツのコレクション
     /// </summary>
     [XmlRoot("contents")]
-    public class LayoutContentCollection : DbObjectCollection<LayoutContent>
+    public class ContentCollection : DbObjectCollection<Content>
     {
         /// <inheritdoc />
-        [XmlElement(Type = typeof(LayoutContent), ElementName = "content")]
-        public override LayoutContent[] Items { get; set; }
+        [XmlElement(Type = typeof(Content), ElementName = "content")]
+        public override Content[] Items { get; set; }
     }
 
     /// <summary>
     /// コンテンツ
     /// </summary>
     [XmlRoot("content")]
-    public class LayoutContent : DbObject, ILayoutContent
+    public class Content : DbObject, ILayoutContent
     {
         #region プロパティ
 
@@ -144,7 +144,7 @@ namespace Mov.Designer.Models
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public LayoutContent()
+        public Content()
         {
 
         }
@@ -153,7 +153,7 @@ namespace Mov.Designer.Models
         /// コンストラクター（ディープコピー）
         /// </summary>
         /// <param name="src"></param>
-        public LayoutContent(LayoutContent src) : base(src)
+        public Content(Content src) : base(src)
         {
             Name = src.Name;
             Icon = src.Icon;
@@ -173,7 +173,7 @@ namespace Mov.Designer.Models
 
         public static string[] GetVerticalAlignments => new string[] { "Top", "Bottom", "Center", "Stretch" };
 
-        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<LayoutContent>().OrderBy(x => x.index);
+        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<Content>().OrderBy(x => x.index);
 
 
         #endregion メソッド

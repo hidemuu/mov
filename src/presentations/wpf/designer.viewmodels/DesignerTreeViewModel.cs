@@ -103,7 +103,7 @@ namespace Mov.Designer.ViewModels
 
         private void Post()
         {
-            var trees = new List<LayoutNode>();
+            var trees = new List<Node>();
             GetLayoutTrees(trees, Models);
             this.service.PostNodes(trees);
             //var tables = new List<LayoutContent>();
@@ -148,11 +148,11 @@ namespace Mov.Designer.ViewModels
             }
         }
 
-        private void GetLayoutTrees(ICollection<LayoutNode> items, IEnumerable<DesignerTreeModel> models)
+        private void GetLayoutTrees(ICollection<Node> items, IEnumerable<DesignerTreeModel> models)
         {
             foreach (var model in models)
             {
-                var item = new LayoutNode
+                var item = new Node
                 {
                     Id = model.Id.Value,
                     Index = model.Index.Value,
@@ -168,11 +168,11 @@ namespace Mov.Designer.ViewModels
             }
         }
 
-        private void GetContentTables(ICollection<LayoutContent> items, IEnumerable<DesignerTreeModel> models)
+        private void GetContentTables(ICollection<Content> items, IEnumerable<DesignerTreeModel> models)
         {
             foreach (var model in models)
             {
-                var item = new LayoutContent
+                var item = new Content
                 {
                     Id = model.Id.Value,
                     Index = model.Index.Value,
@@ -210,9 +210,9 @@ namespace Mov.Designer.ViewModels
 
         public List<string> Codes { get; set; } = new List<string>();
 
-        public List<NodeType> NodeTypes { get; set; } = LayoutNode.GetNodeTypes.ToList();
+        public List<NodeType> NodeTypes { get; set; } = Node.GetNodeTypes.ToList();
 
-        public List<OrientationType> OrientationTypes { get; set; } = LayoutNode.GetOrientationTypes.ToList();
+        public List<OrientationType> OrientationTypes { get; set; } = Node.GetOrientationTypes.ToList();
 
         public List<DesignerTreeModel> Children { get; set; } = new List<DesignerTreeModel>();
 
@@ -220,7 +220,7 @@ namespace Mov.Designer.ViewModels
 
         #region コンストラクター
 
-        public DesignerTreeModel(LayoutNode node, LayoutContent table, IDesignerService service) : base(table)
+        public DesignerTreeModel(Node node, Content table, IDesignerService service) : base(table)
         {
             this.service = service;
             Codes = this.service.GetContents().Select(x => x.Code).Distinct().ToList();
@@ -252,10 +252,10 @@ namespace Mov.Designer.ViewModels
             Update(item);
         }
 
-        protected override void Update(LayoutContent item)
+        protected override void Update(Content item)
         {
             if (item == null) return;
-            var table = new LayoutContent(item);
+            var table = new Content(item);
             table.Id = Id.Value;
             table.Index = Index.Value;
             base.Update(table);

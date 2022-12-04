@@ -25,17 +25,17 @@ namespace Mov.Designer.Models
 
         void Read();
 
-        IEnumerable<LayoutNode> GetNodes();
+        IEnumerable<Node> GetNodes();
 
-        LayoutNode GetNode(Guid id);
+        Node GetNode(Guid id);
 
-        LayoutNode GetNode(string code);
+        Node GetNode(string code);
 
-        IEnumerable<LayoutContent> GetContents();
+        IEnumerable<Content> GetContents();
 
-        LayoutContent GetContent(Guid id);
+        Content GetContent(Guid id);
 
-        LayoutContent GetContent(string code);
+        Content GetContent(string code);
 
         IEnumerable<Shell> GetShells();
 
@@ -47,21 +47,21 @@ namespace Mov.Designer.Models
 
         void Write();
 
-        void PostNodes(IEnumerable<LayoutNode> items);
+        void PostNodes(IEnumerable<Node> items);
 
-        void PostNode(LayoutNode item);
+        void PostNode(Node item);
 
-        void PutNode(LayoutNode item);
+        void PutNode(Node item);
 
-        void DeleteNode(LayoutNode item);
+        void DeleteNode(Node item);
 
-        void PostContents(IEnumerable<LayoutContent> items);
+        void PostContents(IEnumerable<Content> items);
 
-        void PostContent(LayoutContent item);
+        void PostContent(Content item);
 
-        void PutContent(LayoutContent item);
+        void PutContent(Content item);
 
-        void DeleteContent(LayoutContent item);
+        void DeleteContent(Content item);
 
         void PostShells(IEnumerable<Shell> items);
 

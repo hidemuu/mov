@@ -11,7 +11,7 @@ namespace Mov.Designer.Models
     {
         #region フィールド
 
-        private readonly LayoutNode node;
+        private readonly Node node;
 
         /// <summary>
         /// 子階層
@@ -61,7 +61,7 @@ namespace Mov.Designer.Models
         /// </summary>
         public LayoutNodeBase() : base()
         {
-            this.node = new LayoutNode();
+            this.node = new Node();
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Mov.Designer.Models
         /// </summary>
         /// <param name="node"></param>
         /// <param name="content"></param>
-        public LayoutNodeBase(LayoutNode node, LayoutContent content) : base(content)
+        public LayoutNodeBase(Node node, Content content) : base(content)
         {
             this.node = node;
             IsExpand.Value = node.IsExpand;

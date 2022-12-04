@@ -54,8 +54,8 @@ namespace Mov.Designer.Test
         {
             //Arrange
             var sut = this.builder
-                .WithContentCalled(new List<LayoutContent>())
-                .WithNodeCalled(new List<LayoutNode>())
+                .WithContentCalled(new List<Content>())
+                .WithNodeCalled(new List<Node>())
                 .Build();
 
             //Act

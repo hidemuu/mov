@@ -7,9 +7,9 @@ namespace Mov.Designer.Models.Persistences
 {
     public interface IDesignerQuery
     {
-        IPersistenceQuery<LayoutContent> LayoutContent { get; }
+        IPersistenceQuery<Content> LayoutContent { get; }
 
-        IPersistenceQuery<LayoutNode> LayoutNode { get; }
+        IPersistenceQuery<Node> LayoutNode { get; }
 
         IPersistenceQuery<Shell> Shell { get; }
 

@@ -7,9 +7,9 @@ namespace Mov.Designer.Models.Persistences
 {
     public interface IDesignerCommand
     {
-        IPersistenceCommand<LayoutContent> LayoutContent { get; }
+        IPersistenceCommand<Content> LayoutContent { get; }
 
-        IPersistenceCommand<LayoutNode> LayoutNode { get; }
+        IPersistenceCommand<Node> LayoutNode { get; }
 
         IPersistenceCommand<Shell> Shell { get; }
 

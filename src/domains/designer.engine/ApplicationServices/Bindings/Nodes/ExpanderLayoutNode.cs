@@ -21,7 +21,7 @@ namespace Mov.Designer.Models.Nodes
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ExpanderLayoutNode(LayoutNode layout, LayoutContent content) : base(layout, content)
+        public ExpanderLayoutNode(Node layout, Content content) : base(layout, content)
         {
 
         }

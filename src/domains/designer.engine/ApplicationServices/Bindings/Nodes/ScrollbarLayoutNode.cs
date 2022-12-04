@@ -21,7 +21,7 @@ namespace Mov.Designer.Models.Nodes
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public ScrollbarLayoutNode(LayoutNode layout, LayoutContent content) : base(layout, content)
+        public ScrollbarLayoutNode(Node layout, Content content) : base(layout, content)
         {
 
         }

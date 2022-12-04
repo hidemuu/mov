@@ -21,7 +21,7 @@ namespace Mov.Designer.Models.Nodes
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public TabLayoutNode(LayoutNode layout, LayoutContent content) : base(layout, content)
+        public TabLayoutNode(Node layout, Content content) : base(layout, content)
         {
 
         }

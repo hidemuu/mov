@@ -20,7 +20,7 @@ namespace Mov.Designer.Models.Nodes
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public GroupLayoutNode(LayoutNode layout, LayoutContent content) : base(layout, content)
+        public GroupLayoutNode(Node layout, Content content) : base(layout, content)
         {
 
         }

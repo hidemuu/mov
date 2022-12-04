@@ -11,7 +11,7 @@ namespace Mov.Designer.Models
     {
         #region フィールド
 
-        public LayoutContent Content { get; }
+        public Content Content { get; }
 
         #endregion フィールド
 
@@ -38,14 +38,14 @@ namespace Mov.Designer.Models
         /// </summary>
         public LayoutBase()
         {
-            this.Content = new LayoutContent();
+            this.Content = new Content();
         }
 
         /// <summary>
         /// コンストラクター
         /// </summary>
         /// <param name="content"></param>
-        public LayoutBase(LayoutContent content)
+        public LayoutBase(Content content)
         {
             this.Content = content;
         }

@@ -29,7 +29,7 @@ namespace Mov.Designer.Engine
 
         #region メソッド
 
-        public LayoutNodeBase Create(LayoutNode node)
+        public LayoutNodeBase Create(Node node)
         {
             var content = GetContent(node);
             switch (node.NodeType)
@@ -55,7 +55,7 @@ namespace Mov.Designer.Engine
 
         #region 内部メソッド
 
-        private LayoutContent GetContent(LayoutNode node)
+        private Content GetContent(Node node)
         {
             return this.repository.Contents.Get(node.Code);
         }

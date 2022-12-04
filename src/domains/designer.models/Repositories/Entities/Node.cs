@@ -15,18 +15,18 @@ namespace Mov.Designer.Models
     /// レイアウトノードのコレクション
     /// </summary>
     [XmlRoot("nodes")]
-    public class LayoutNodeCollection : DbObjectCollection<LayoutNode>
+    public class NodeCollection : DbObjectCollection<Node>
     {
         /// <inheritdoc />
-        [XmlElement(Type = typeof(LayoutNode), ElementName = "node")]
-        public override LayoutNode[] Items { get; set; }
+        [XmlElement(Type = typeof(Node), ElementName = "node")]
+        public override Node[] Items { get; set; }
     }
 
     /// <summary>
     /// レイアウトノード
     /// </summary>
     [XmlRoot("node")]
-    public class LayoutNode : DbObjectNode<LayoutNode>
+    public class Node : DbObjectNode<Node>
     {
         #region プロパティ
         /// <summary>
@@ -98,7 +98,7 @@ namespace Mov.Designer.Models
         [LanguageKey("children")]
         [DisplayName("children")]
         [DisplayIndex(17)]
-        public override List<LayoutNode> Children { get; set; } = new List<LayoutNode>();
+        public override List<Node> Children { get; set; } = new List<Node>();
 
         #endregion プロパティ
 
@@ -114,7 +114,7 @@ namespace Mov.Designer.Models
 
         public static OrientationType[] GetOrientationTypes => (OrientationType[])Enum.GetValues(typeof(OrientationType));
 
-        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<LayoutNode>().OrderBy(x => x.index);
+        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<Node>().OrderBy(x => x.index);
 
 
         #endregion メソッド

@@ -34,7 +34,7 @@ namespace Mov.Designer.Models.Nodes
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public RegionLayoutNode(LayoutNode node, LayoutContent content) : base(node, content)
+        public RegionLayoutNode(Node node, Content content) : base(node, content)
         {
 
         }

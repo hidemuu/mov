@@ -44,31 +44,31 @@ namespace Mov.Designer.Test
 
         #region メソッド
 
-        public DesignerEngineBuilder WithContentCalled(List<LayoutContent> contents)
+        public DesignerEngineBuilder WithContentCalled(List<Content> contents)
         {
-            var mockRepositoryContent = new Mock<IDbObjectRepository<LayoutContent, LayoutContentCollection>>();
+            var mockRepositoryContent = new Mock<IDbObjectRepository<Content, ContentCollection>>();
             mockRepositoryContent.Setup(x => x.Get()).Returns(contents);
-            mockRepositoryContent.Setup(x => x.Post(new LayoutContent()));
-            mockRepositoryContent.Setup(x => x.Delete(new LayoutContent()));
+            mockRepositoryContent.Setup(x => x.Post(new Content()));
+            mockRepositoryContent.Setup(x => x.Delete(new Content()));
             this.mockRepository.Setup(x => x.Contents).Returns(mockRepositoryContent.Object);
 
-            var mockQueryContent = new Mock<IPersistenceQuery<LayoutContent>>();
+            var mockQueryContent = new Mock<IPersistenceQuery<Content>>();
             mockQueryContent.Setup(x => x.Reader.ReadAll()).Returns(contents);
             this.mockQuery.Setup(x => x.LayoutContent).Returns(mockQueryContent.Object);
 
-            var mockCommandContent = new Mock<IPersistenceCommand<LayoutContent>>();
-            mockCommandContent.Setup(x => x.Saver.Save(new LayoutContent()));
+            var mockCommandContent = new Mock<IPersistenceCommand<Content>>();
+            mockCommandContent.Setup(x => x.Saver.Save(new Content()));
             this.mockCommand.Setup(x => x.LayoutContent).Returns(mockCommandContent.Object);
 
             return this;
         }
 
-        public DesignerEngineBuilder WithNodeCalled(List<LayoutNode> nodes)
+        public DesignerEngineBuilder WithNodeCalled(List<Node> nodes)
         {
-            var mockNode = new Mock<IDbObjectRepository<LayoutNode, LayoutNodeCollection>>();
+            var mockNode = new Mock<IDbObjectRepository<Node, NodeCollection>>();
             mockNode.Setup(x => x.Get()).Returns(nodes);
-            mockNode.Setup(x => x.Post(new LayoutNode()));
-            mockNode.Setup(x => x.Delete(new LayoutNode()));
+            mockNode.Setup(x => x.Post(new Node()));
+            mockNode.Setup(x => x.Delete(new Node()));
             this.mockRepository.Setup(x => x.Nodes).Returns(mockNode.Object);
             return this;
         }

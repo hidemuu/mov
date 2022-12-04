@@ -87,7 +87,7 @@ namespace Mov.Designer.ViewModels
 
         private void Post()
         {
-            var tables = new List<LayoutContent>();
+            var tables = new List<Content>();
             ConvertModelToContent(tables, Models);
             this.service.PostContents(tables);
         }
@@ -128,11 +128,11 @@ namespace Mov.Designer.ViewModels
             }
         }
 
-        private void ConvertModelToContent(ICollection<LayoutContent> items, IEnumerable<DesignerTableModel> models)
+        private void ConvertModelToContent(ICollection<Content> items, IEnumerable<DesignerTableModel> models)
         {
             foreach (var model in models)
             {
-                var item = new LayoutContent
+                var item = new Content
                 {
                     Id = model.Id.Value,
                     Index = model.Index.Value,
@@ -183,11 +183,11 @@ namespace Mov.Designer.ViewModels
 
         public ReactivePropertySlim<string> ToolTip { get; } = new ReactivePropertySlim<string>();
 
-        public List<ControlType> ControlTypes { get; set; } = LayoutContent.GetControlTypes.ToList();
+        public List<ControlType> ControlTypes { get; set; } = Content.GetControlTypes.ToList();
 
-        public List<string> HolizontalAlignments { get; set; } = LayoutContent.GetHorizontalAlignments.ToList();
+        public List<string> HolizontalAlignments { get; set; } = Content.GetHorizontalAlignments.ToList();
 
-        public List<string> VerticalAlignments { get; set; } = LayoutContent.GetVerticalAlignments.ToList();
+        public List<string> VerticalAlignments { get; set; } = Content.GetVerticalAlignments.ToList();
 
         #endregion プロパティ
 
@@ -197,7 +197,7 @@ namespace Mov.Designer.ViewModels
 
         #region コンストラクター
 
-        public DesignerTableModel(LayoutContent item)
+        public DesignerTableModel(Content item)
         {
             Update(item);
         }
@@ -206,7 +206,7 @@ namespace Mov.Designer.ViewModels
 
         #region 継承メソッド
 
-        protected virtual void Update(LayoutContent item)
+        protected virtual void Update(Content item)
         {
             if (item == null) return;
             Id.Value = item.Id;

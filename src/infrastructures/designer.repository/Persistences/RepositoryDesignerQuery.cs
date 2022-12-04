@@ -10,9 +10,9 @@ namespace Mov.Designer.Repository.Persistences
 {
     public class RepositoryDesignerQuery : IDesignerQuery
     {
-        public IPersistenceQuery<LayoutContent> LayoutContent { get; }
+        public IPersistenceQuery<Content> LayoutContent { get; }
 
-        public IPersistenceQuery<LayoutNode> LayoutNode { get; }
+        public IPersistenceQuery<Node> LayoutNode { get; }
 
         public IPersistenceQuery<Shell> Shell { get; }
 
@@ -20,8 +20,8 @@ namespace Mov.Designer.Repository.Persistences
 
         public RepositoryDesignerQuery(IDesignerRepository repository)
         {
-            this.LayoutNode = new DbObjectRepositoryQuery<LayoutNode, LayoutNodeCollection>(repository.Nodes);
-            this.LayoutContent = new DbObjectRepositoryQuery<LayoutContent, LayoutContentCollection>(repository.Contents);
+            this.LayoutNode = new DbObjectRepositoryQuery<Node, NodeCollection>(repository.Nodes);
+            this.LayoutContent = new DbObjectRepositoryQuery<Content, ContentCollection>(repository.Contents);
             this.Shell = new DbObjectRepositoryQuery<Shell, ShellCollection>(repository.Shells);
             this.Theme = new DbObjectRepositoryQuery<Theme, ThemeCollection>(repository.Themes);
         }

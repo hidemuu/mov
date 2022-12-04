@@ -68,33 +68,33 @@ namespace Mov.Designer.Service
             this.engine.Repository.Shells.Read();
         }
 
-        public IEnumerable<LayoutNode> GetNodes()
+        public IEnumerable<Node> GetNodes()
         {
             return this.engine.Repository.Nodes.Get();
         }
 
-        public LayoutNode GetNode(Guid id)
+        public Node GetNode(Guid id)
         {
             return this.engine.Repository.Nodes.Get(id);
         }
 
-        public LayoutNode GetNode(string code)
+        public Node GetNode(string code)
         {
             return this.engine.Repository.Nodes.Get(code);
         }
 
 
-        public IEnumerable<LayoutContent> GetContents()
+        public IEnumerable<Content> GetContents()
         {
             return this.engine.Repository.Contents.Get();
         }
 
-        public LayoutContent GetContent(Guid id)
+        public Content GetContent(Guid id)
         {
             return this.engine.Repository.Contents.Get(id);
         }
 
-        public LayoutContent GetContent(string code)
+        public Content GetContent(string code)
         {
             return this.engine.Repository.Contents.Get(code);
         }
@@ -120,42 +120,42 @@ namespace Mov.Designer.Service
             this.engine.Repository.Shells.Write();
         }
 
-        public void PostNodes(IEnumerable<LayoutNode> items)
+        public void PostNodes(IEnumerable<Node> items)
         {
             this.engine.Repository.Nodes.Posts(items);
         }
 
-        public void PostNode(LayoutNode item)
+        public void PostNode(Node item)
         {
             this.engine.Repository.Nodes.Post(item);
         }
 
-        public void PutNode(LayoutNode item)
+        public void PutNode(Node item)
         {
             this.engine.Repository.Nodes.Put(item);
         }
 
-        public void DeleteNode(LayoutNode item)
+        public void DeleteNode(Node item)
         {
             this.engine.Repository.Nodes.Delete(item);
         }
 
-        public void PostContents(IEnumerable<LayoutContent> items)
+        public void PostContents(IEnumerable<Content> items)
         {
             this.engine.Repository.Contents.Posts(items);
         }
 
-        public void PostContent(LayoutContent item)
+        public void PostContent(Content item)
         {
             this.engine.Repository.Contents.Post(item);
         }
 
-        public void PutContent(LayoutContent item)
+        public void PutContent(Content item)
         {
             this.engine.Repository.Contents.Put(item);
         }
 
-        public void DeleteContent(LayoutContent item)
+        public void DeleteContent(Content item)
         {
             this.engine.Repository.Contents.Delete(item);
         }

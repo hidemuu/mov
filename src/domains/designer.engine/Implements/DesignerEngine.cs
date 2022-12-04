@@ -104,7 +104,7 @@ namespace Mov.Designer.Engine
             return node.Children;
         }
 
-        private void CreateLayoutNode(ICollection<LayoutNodeBase> nodes, IEnumerable<LayoutNode> repositoryNodes)
+        private void CreateLayoutNode(ICollection<LayoutNodeBase> nodes, IEnumerable<Node> repositoryNodes)
         {
             foreach (var repositoryNode in repositoryNodes)
             {

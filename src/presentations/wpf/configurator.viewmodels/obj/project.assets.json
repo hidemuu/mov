@@ -605,7 +605,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Designer.Models": "1.0.0"
+          "Mov.Designer.Models": "1.0.0",
+          "ReactiveProperty.Core": "8.0.1"
         },
         "compile": {
           "bin/placeholder/Mov.Designer.Engine.dll": {}

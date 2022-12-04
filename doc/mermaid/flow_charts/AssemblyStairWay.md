@@ -1,5 +1,5 @@
 ```mermaid
-flowchart LR
+flowchart BT
     
     subgraph PresentationLayer
         subgraph Analizer_Views
@@ -20,80 +20,115 @@ flowchart LR
         end
     end
 
-    Analizer_Views --> Analizer_Services
-    Driver_Views --> Driver_Services
-    Designer_Views --> Designer_Services
-    Game_Views --> Game_Services
+    Analizer_Views --> Analizer_ApplicationService
+    Driver_Views --> Driver_ApplicationService
+    Designer_Views --> Designer_ApplicationService
+    Game_Views --> Game_ApplicationService
+
+    subgraph InfrastructureLayer
+        subgraph Analizer_Repository
+            direction BT
+            Analizer.RepositoryImplements[("AnalizerRepository")] --> Analizer.Repository
+        end
+        subgraph Driver_Repository
+            direction BT
+            Driver.RepositoryImplements[("DriverRepository")] --> Driver.Repository
+        end
+        subgraph Designer_Repository
+            direction BT
+            Designer.RepositoryImplements[("DesignerRepository")] --> Designer.Repository
+        end
+        subgraph Game_Repository
+            direction BT
+            Game.RepositoryImplements[("GameRepository")] --> Game.Repository
+        end
+    end
+
+    Analizer_Repository --> Analizer_ApplicationService
+    Driver_Repository --> Driver_ApplicationService
+    Designer_Repository --> Designer_ApplicationService
+    Game_Repository --> Game_ApplicationService
+    
 
     subgraph ApplicationLayer
-        subgraph Analizer_Services
+        subgraph Analizer_ApplicationService
             direction BT
             Analizer.ServiceImplements --> Analizer.Service
         end
-        subgraph Driver_Services
+        subgraph Driver_ApplicationService
             direction BT
             Driver.ServiceImplements --> Driver.Service
         end
-        subgraph Designer_Services
+        subgraph Designer_ApplicationService
             direction BT
             Designer.ServiceImplements --> Designer.Service
         end
-        subgraph Game_Services
+        subgraph Game_ApplicationService
             direction BT
             Game.ServiceImplements --> Game.Service
         end
     end
 
-    Analizer_Services --> Analizer_BusinessLogic
-    Analizer_Services --> Analizer_DataAccess
-    Driver_Services --> Driver_BusinessLogic
-    Driver_Services --> Driver_DataAccess
-    Designer_Services --> Designer_BusinessLogic
-    Designer_Services --> Designer_DataAccess
-    Game_Services --> Game_BusinessLogic
-    Game_Services --> Game_DataAccess
-
+    Analizer_ApplicationService --> Analizer_DomainService
+    Driver_ApplicationService --> Driver_DomainService
+    Designer_ApplicationService --> Designer_DomainService
+    Game_ApplicationService --> Game_DomainService
+    
     subgraph DomainLayer
-        subgraph Analizer_BusinessLogic
-            direction BT
-            Analizer.Engine --> Analizer.Models
+        
+        subgraph Analizer_Domain
+            direction LR
+            subgraph Analizer_DomainService
+                direction BT
+                Analizer.Engine
+            end
+            subgraph Analizer_DomainModel
+                direction BT
+                Analizer.Models
+            end
+            Analizer_DomainService --> Analizer_DomainModel
         end
-        subgraph Analizer_DataAccess
-            direction BT
-            Analizer.RepositoryImplements[("RepositoryImplements")] --> Analizer.Repository
+        
+        subgraph Driver_Domain
+            direction LR
+            subgraph Driver_DomainService
+                direction BT
+                Driver.Engine
+            end
+            subgraph Driver_DomainModel
+                direction BT
+                Driver.Models
+            end
+            Driver_DomainService --> Driver_DomainModel
         end
-        subgraph Driver_BusinessLogic
-            direction BT
-            Driver.Engine --> Driver.Models
+
+        subgraph Designer_Domain
+            direction LR
+            subgraph Designer_DomainService
+                direction BT
+                Designer.Engine
+            end
+            subgraph Designer_DomainModel
+                direction BT
+                Designer.Models
+            end
+            Designer_DomainService --> Designer_DomainModel
         end
-        subgraph Driver_DataAccess
-            direction BT
-            Driver.RepositoryImplements[("RepositoryImplements")] --> Driver.Repository
-        end
-        subgraph Designer_BusinessLogic
-            direction BT
-            Designer.Engine --> Designer.Models
-        end
-        subgraph Designer_DataAccess
-            direction BT
-            Designer.RepositoryImplements[("RepositoryImplements")] --> Designer.Repository
-        end
-        subgraph Game_BusinessLogic
-            direction BT
-            Game.Engine --> Game.Models
-        end
-        subgraph Game_DataAccess
-            direction BT
-            Game.RepositoryImplements[("RepositoryImplements")] --> Game.Repository
+
+        subgraph Game_Domain
+            direction LR
+            subgraph Game_DomainService
+                direction BT
+                Game.Engine
+            end
+            subgraph Game_DomainModel
+                direction BT
+                Game.Models
+            end
+            Game_DomainService --> Game_DomainModel
         end
     end
     
-    subgraph InfrastructureLayer
-        Analizer_DataAccess --> Accessor
-        Driver_DataAccess --> Accessor
-        Designer_DataAccess --> Accessor
-        Game_DataAccess --> Accessor
-        Accessor --> Utility
-    end
+    
     
 ```

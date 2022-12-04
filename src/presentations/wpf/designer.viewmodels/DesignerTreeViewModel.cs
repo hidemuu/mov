@@ -1,6 +1,7 @@
 ﻿using Mov.Accessors.Repository;
 using Mov.Designer.Models;
 using Mov.Designer.Service;
+using Mov.Layouts;
 using Mov.WpfModels;
 using Mov.WpfMvvms;
 using Prism.Regions;
@@ -203,7 +204,7 @@ namespace Mov.Designer.ViewModels
         #region プロパティ
 
         public ReactivePropertySlim<NodeType> LayoutType { get; } = new ReactivePropertySlim<NodeType>(NodeType.Content);
-        public ReactivePropertySlim<OrientationType> OrientationType { get; } = new ReactivePropertySlim<OrientationType>(Designer.Models.OrientationType.Horizontal);
+        public ReactivePropertySlim<OrientationType> OrientationType { get; } = new ReactivePropertySlim<OrientationType>(Mov.Layouts.OrientationType.Horizontal);
         public ReactivePropertySlim<string> LayoutStyle { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<string> LayoutParameter { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<bool> IsExpand { get; } = new ReactivePropertySlim<bool>(true);

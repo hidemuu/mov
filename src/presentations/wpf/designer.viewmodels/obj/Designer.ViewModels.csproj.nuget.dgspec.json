@@ -322,7 +322,11 @@
         "frameworks": {
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\utilities\\Utilities.csproj": {
+                "projectPath": "C:\\Users\\nando\\Documents\\GitHub\\mov\\src\\commons\\utilities\\Utilities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

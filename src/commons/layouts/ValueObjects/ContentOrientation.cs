@@ -3,33 +3,33 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Models.ValueObjects
+namespace Mov.Layouts.ValueObjects
 {
-    public sealed class Orientation : ValueObjectBase<Orientation>
+    public sealed class ContentOrientation : ValueObjectBase<ContentOrientation>
     {
         #region オブジェクト
 
         /// <summary>
         /// 水平
         /// </summary>
-        public static readonly Orientation Horizontal = new Orientation(0);
+        public static readonly ContentOrientation Horizontal = new ContentOrientation(OrientationType.Horizontal);
 
         /// <summary>
         /// 垂直
         /// </summary>
-        public static readonly Orientation Vertical = new Orientation(1);
+        public static readonly ContentOrientation Vertical = new ContentOrientation(OrientationType.Vertical);
 
         #endregion オブジェクト
 
         #region プロパティ
 
-        public int Value { get; }
+        public OrientationType Value { get; }
 
         #endregion プロパティ
 
         #region コンストラクター
 
-        public Orientation(int value)
+        public ContentOrientation(OrientationType value)
         {
             Value = value;
         }
@@ -38,7 +38,7 @@ namespace Mov.Designer.Models.ValueObjects
 
         #region メソッド
 
-        protected override bool EqualCore(Orientation other)
+        protected override bool EqualCore(ContentOrientation other)
         {
             throw new NotImplementedException();
         }

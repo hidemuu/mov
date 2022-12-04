@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public abstract class LayoutBase
+    public abstract class LayoutContentBase
     {
         #region フィールド
 
@@ -36,7 +36,7 @@ namespace Mov.Designer.Models
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public LayoutBase()
+        public LayoutContentBase()
         {
             this.Content = new Content();
         }
@@ -45,7 +45,7 @@ namespace Mov.Designer.Models
         /// コンストラクター
         /// </summary>
         /// <param name="content"></param>
-        public LayoutBase(Content content)
+        public LayoutContentBase(Content content)
         {
             this.Content = content;
         }

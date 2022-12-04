@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public abstract class LayoutNodeBase : LayoutBase
+    public abstract class LayoutNodeBase : LayoutContentBase
     {
         #region フィールド
 

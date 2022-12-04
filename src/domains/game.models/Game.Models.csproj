@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ValueObjects\" />
+    <Folder Include="DomainModels\ValueObjects\" />
   </ItemGroup>
 
 </Project>

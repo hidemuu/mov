@@ -33,6 +33,11 @@ namespace Mov.Layouts
         ContentIcon Icon { get; }
 
         /// <summary>
+        /// インデックス
+        /// </summary>
+        ContentIndent Indent { get; }
+
+        /// <summary>
         /// 幅
         /// </summary>
         ContentWidth Width { get; }
@@ -46,6 +51,11 @@ namespace Mov.Layouts
         /// 活性状態
         /// </summary>
         ContentEnable Enable { get; }
+
+        /// <summary>
+        /// 方向
+        /// </summary>
+        ContentOrientation Orientation { get; }
 
         /// <summary>
         /// 水平位置

@@ -1,5 +1,6 @@
 ﻿using Mov.Designer.Models;
 using Mov.Layouts;
+using Mov.Layouts.ValueObjects;
 using Reactive.Bindings;
 using System;
 using System.Collections;
@@ -35,9 +36,9 @@ namespace Mov.Designer.Models
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public LayoutNodeBase() : base()
+        public LayoutNodeBase() : this(new Node(), new Content())
         {
-            this.node = new Node();
+            
         }
 
         /// <summary>

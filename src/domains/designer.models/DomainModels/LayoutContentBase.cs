@@ -22,6 +22,8 @@ namespace Mov.Designer.Models
 
         public ContentIcon Icon { get; }
 
+        public ContentIndent Indent { get; }
+
         public ContentHeight Height { get; }
 
         public ContentWidth Width { get; }
@@ -29,6 +31,8 @@ namespace Mov.Designer.Models
         public ContentVisibility Visibility { get; }
 
         public ContentEnable Enable { get; }
+
+        public ContentOrientation Orientation { get; }
 
         public ContentHorizontalAlignment HorizontalAlignment { get; }
 
@@ -64,10 +68,12 @@ namespace Mov.Designer.Models
             this.Name = new ContentName(content.Name);
             this.ControlType = new ContentControlType(content.ControlType);
             this.Icon = new ContentIcon(content.Icon);
+            this.Indent = new ContentIndent(0);
             this.Height = new ContentHeight(content.Height);
             this.Width = new ContentWidth(content.Width);
             this.Visibility = new ContentVisibility(true);
             this.Enable = new ContentEnable(true);
+            this.Orientation = new ContentOrientation(OrientationType.Horizontal);
             this.HorizontalAlignment = new ContentHorizontalAlignment(content.HorizontalAlignment);
             this.VerticalAlignment = new ContentVerticalAlignment(content.VerticalAlignment);
             this.Schema = new ContentSchema(content.Schema);

@@ -25,7 +25,7 @@
         <ItemsControl ItemTemplateSelector="{DynamicResource layoutNodeSelector}" ItemsSource="{Binding Children}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <VirtualizingStackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}" />
+                    <VirtualizingStackPanel Orientation="{Binding Orientation.Value, Converter={StaticResource orientationConverter}}" />
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
         </ItemsControl>
@@ -36,7 +36,7 @@
             x:Name="ExpanderNode"
             BorderBrush="Gainsboro"
             BorderThickness="1"
-            IsExpanded="{Binding IsExpand.Value}">
+            IsExpanded="{Binding Expand.Value}">
             <Expander.Header>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock
@@ -44,13 +44,13 @@
                         Margin="0"
                         Padding="0"
                         FlowDirection="LeftToRight"
-                        Text="{Binding Name}" />
+                        Text="{Binding Name.Value}" />
                 </StackPanel>
             </Expander.Header>
             <ItemsControl ItemTemplateSelector="{DynamicResource layoutNodeSelector}" ItemsSource="{Binding Children}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <VirtualizingStackPanel Margin="16,0,0,0" Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}" />
+                        <VirtualizingStackPanel Margin="16,0,0,0" Orientation="{Binding Orientation.Value, Converter={StaticResource orientationConverter}}" />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
@@ -62,7 +62,7 @@
             <ItemsControl ItemTemplateSelector="{DynamicResource layoutNodeSelector}" ItemsSource="{Binding Children}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <VirtualizingStackPanel Orientation="{Binding OrientationType, Converter={StaticResource orientationConverter}}" />
+                        <VirtualizingStackPanel Orientation="{Binding Orientation.Value, Converter={StaticResource orientationConverter}}" />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
@@ -102,7 +102,7 @@
                             Header="Index">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock HorizontalAlignment="Stretch" Text="{Binding Index}" />
+                                    <TextBlock HorizontalAlignment="Stretch" Text="{Binding Code.Value}" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

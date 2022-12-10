@@ -50,21 +50,21 @@ namespace Mov.Layouts
         /// <summary>
         /// コントロールのスキーマ
         /// </summary>
-        string Schema { get; }
+        ContentSchema Schema { get; }
 
         /// <summary>
-        /// 初期値
+        /// 値
         /// </summary>
-        string DefaultValue { get; }
+        ContentValue Value { get; }
 
         /// <summary>
         /// マクロ
         /// </summary>
-        string Macro { get; }
+        ContentMacro Macro { get; }
 
         /// <summary>
         /// パラメータ
         /// </summary>
-        string Parameter { get; }
+        ContentParameter Parameter { get; }
     }
 }

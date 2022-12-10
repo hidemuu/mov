@@ -1,4 +1,5 @@
 ﻿using Mov.Designer.Models.Nodes;
+using Mov.Layouts;
 using Mov.WpfLayouts.Components;
 using Mov.WpfLayouts.Components.Atoms;
 using Mov.WpfLayouts.Components.Molecules;
@@ -20,39 +21,39 @@ namespace Mov.Designer.Views.Selector
                 FrameworkElementFactory factory;
                 switch (node.Content.ControlType)
                 {
-                    case Models.ControlType.Label:
+                    case ControlType.Label:
                         factory = new FrameworkElementFactory(typeof(LayLabel));
                         factory.SetValue(LayLabel.LayoutContentProperty, node.Content);
                         return new DataTemplate() { VisualTree = factory, };
-                    case Models.ControlType.Button:
+                    case ControlType.Button:
                         factory = new FrameworkElementFactory(typeof(LayButton));
                         factory.SetValue(LayButton.LayoutContentProperty, node.Content);
                         return new DataTemplate() { VisualTree = factory, };
-                    case Models.ControlType.RadioButton:
+                    case ControlType.RadioButton:
                         factory = new FrameworkElementFactory(typeof(LayRadioButton));
                         factory.SetValue(LayRadioButton.LayoutContentProperty, node.Content);
                         return new DataTemplate() { VisualTree = factory, };
-                    case Models.ControlType.TextBox:
+                    case ControlType.TextBox:
                         factory = new FrameworkElementFactory(typeof(LayTextBox));
                         factory.SetValue(LayTextBox.LayoutContentProperty, node.Content);
                         return new DataTemplate() { VisualTree = factory, };
-                    case Models.ControlType.ComboBox:
+                    case ControlType.ComboBox:
                         factory = new FrameworkElementFactory(typeof(LayComboBox));
                         factory.SetValue(LayComboBox.LayoutContentProperty, node.Content);
                         return new DataTemplate() { VisualTree = factory, };
-                    case Models.ControlType.SpinBox:
+                    case ControlType.SpinBox:
                         factory = new FrameworkElementFactory(typeof(LaySpinBox));
                         factory.SetValue(LaySpinBox.LayoutContentProperty, node.Content);
                         return new DataTemplate() { VisualTree = factory, };
-                    case Models.ControlType.CheckBox:
+                    case ControlType.CheckBox:
                         factory = new FrameworkElementFactory(typeof(LayCheckBox));
                         factory.SetValue(LayCheckBox.LayoutContentProperty, node.Content);
                         return new DataTemplate() { VisualTree = factory, };
-                    case Models.ControlType.ListBox:
+                    case ControlType.ListBox:
                         factory = new FrameworkElementFactory(typeof(LayListBox));
                         factory.SetValue(LayListBox.LayoutContentProperty, node.Content);
                         return new DataTemplate() { VisualTree = factory, };
-                    case Models.ControlType.DatePicker:
+                    case ControlType.DatePicker:
                         factory = new FrameworkElementFactory(typeof(LayDatePicker));
                         factory.SetValue(LayDatePicker.LayoutContentProperty, node.Content);
                         return new DataTemplate() { VisualTree = factory, };

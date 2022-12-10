@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Models
+namespace Mov.Layouts
 {
     /// <summary>
     /// コントロール種別

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Layouts.ValueObjects;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
@@ -26,7 +27,7 @@ namespace Mov.Layouts
         /// アイコン
         /// </summary>
         [XmlElement("icon")]
-        string Icon { get; }
+        ContentIcon Icon { get; }
 
         /// <summary>
         /// 幅

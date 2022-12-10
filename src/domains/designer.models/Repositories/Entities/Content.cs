@@ -25,7 +25,7 @@ namespace Mov.Designer.Models
     /// コンテンツ
     /// </summary>
     [XmlRoot("content")]
-    public class Content : DbObject, ILayoutContent
+    public class Content : DbObject
     {
         #region プロパティ
 

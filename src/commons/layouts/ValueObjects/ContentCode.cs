@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Layouts.ValueObjects
 {
-    public sealed class ContentVerticalAlignment : ValueObjectBase<ContentVerticalAlignment>
+    public sealed class ContentCode : ValueObjectBase<ContentCode>
     {
         #region プロパティ
 
@@ -15,16 +15,16 @@ namespace Mov.Layouts.ValueObjects
 
         #region コンストラクター
 
-        public ContentVerticalAlignment(string alignment)
+        public ContentCode(string code)
         {
-            this.Value = alignment;
+            this.Value = code;
         }
 
         #endregion コンストラクター
 
         #region メソッド
 
-        protected override bool EqualCore(ContentVerticalAlignment other)
+        protected override bool EqualCore(ContentCode other)
         {
             throw new NotImplementedException();
         }

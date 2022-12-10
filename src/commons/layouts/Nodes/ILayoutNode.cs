@@ -11,8 +11,5 @@ namespace Mov.Layouts
 
         NodeExpand Expand { get; }
 
-        NodeControlType ControlType { get; }
-
-        IEnumerable<ILayoutNode> Children { get; }
     }
 }

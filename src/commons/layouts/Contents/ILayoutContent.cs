@@ -1,4 +1,5 @@
-﻿using Mov.Layouts.ValueObjects;
+﻿using Mov.Layouts.Contents.ValueObjects;
+using Mov.Layouts.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,6 +23,11 @@ namespace Mov.Layouts
         ContentName Name { get; }
 
         /// <summary>
+        /// コントロールタイプ
+        /// </summary>
+        ContentControlType ControlType { get; }
+
+        /// <summary>
         /// アイコン
         /// </summary>
         ContentIcon Icon { get; }
@@ -32,6 +38,16 @@ namespace Mov.Layouts
         ContentWidth Width { get; }
 
         /// <summary>
+        /// 表示状態
+        /// </summary>
+        ContentVisibility Visibility { get; }
+
+        /// <summary>
+        /// 活性状態
+        /// </summary>
+        ContentEnable Enable { get; }
+
+        /// <summary>
         /// 水平位置
         /// </summary>
         ContentHorizontalAlignment HorizontalAlignment { get; }
@@ -40,7 +56,6 @@ namespace Mov.Layouts
         /// 垂直位置
         /// </summary>
         ContentVerticalAlignment VerticalAlignment { get; }
-
 
         /// <summary>
         /// 高さ

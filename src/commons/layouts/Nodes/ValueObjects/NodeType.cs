@@ -37,6 +37,10 @@ namespace Mov.Layouts.Nodes.ValueObjects
             throw new NotImplementedException();
         }
 
+        public bool IsRegion => this == Region;
+
+        public bool IsContent => this == Content;
+
         #endregion メソッド
     }
 }

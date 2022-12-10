@@ -1,5 +1,6 @@
 ﻿using Mov.Designer.Models;
 using Mov.Layouts;
+using Mov.Layouts.Contents.ValueObjects;
 using Mov.Layouts.ValueObjects;
 using Reactive.Bindings;
 using System;
@@ -22,11 +23,17 @@ namespace Mov.Designer.Models
 
         public ContentName Name { get; }
 
+        public ContentControlType ControlType { get; }
+
         public ContentIcon Icon { get; }
 
         public ContentHeight Height { get; }
 
         public ContentWidth Width { get; }
+
+        public ContentVisibility Visibility { get; }
+
+        public ContentEnable Enable { get; }
 
         public ContentHorizontalAlignment HorizontalAlignment { get; }
 
@@ -61,9 +68,12 @@ namespace Mov.Designer.Models
             this.Content = content;
             this.Code = new ContentCode(content.Code);
             this.Name = new ContentName(content.Name);
+            this.ControlType = new ContentControlType(content.ControlType);
             this.Icon = new ContentIcon(content.Icon);
             this.Height = new ContentHeight(content.Height);
             this.Width = new ContentWidth(content.Width);
+            this.Visibility = new ContentVisibility(true);
+            this.Enable = new ContentEnable(true);
             this.HorizontalAlignment = new ContentHorizontalAlignment(content.HorizontalAlignment);
             this.VerticalAlignment = new ContentVerticalAlignment(content.VerticalAlignment);
             this.Schema = new ContentSchema(content.Schema);

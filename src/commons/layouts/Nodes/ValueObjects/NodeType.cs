@@ -3,10 +3,18 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.ValueObjects
+namespace Mov.Layouts.Nodes.ValueObjects
 {
-    public sealed class ShellRegion : ValueObjectBase<ShellRegion>
+    public sealed class NodeType : ValueObjectBase<NodeType>
     {
+        #region オブジェクト
+
+        public static readonly NodeType Region = new NodeType("Region");
+
+        public static readonly NodeType Content = new NodeType("Content");
+
+        #endregion オブジェクト
+
         #region プロパティ
 
         public string Value { get; }
@@ -15,16 +23,16 @@ namespace Mov.Layouts.ValueObjects
 
         #region コンストラクター
 
-        public ShellRegion(string region)
+        public NodeType(string nodeType)
         {
-            this.Value = region;
+            this.Value = nodeType;
         }
 
         #endregion コンストラクター
 
         #region メソッド
 
-        protected override bool EqualCore(ShellRegion other)
+        protected override bool EqualCore(NodeType other)
         {
             throw new NotImplementedException();
         }

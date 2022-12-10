@@ -3,28 +3,28 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.ValueObjects
+namespace Mov.Layouts.Contents.ValueObjects
 {
-    public sealed class ShellRegion : ValueObjectBase<ShellRegion>
+    public sealed class ContentVisibility : ValueObjectBase<ContentVisibility>
     {
         #region プロパティ
 
-        public string Value { get; }
+        public bool Value { get; }
 
         #endregion プロパティ
 
         #region コンストラクター
 
-        public ShellRegion(string region)
+        public ContentVisibility(bool isVisible)
         {
-            this.Value = region;
+            this.Value = isVisible;
         }
 
         #endregion コンストラクター
 
         #region メソッド
 
-        protected override bool EqualCore(ShellRegion other)
+        protected override bool EqualCore(ContentVisibility other)
         {
             throw new NotImplementedException();
         }

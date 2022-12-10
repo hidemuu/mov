@@ -7,7 +7,7 @@ namespace Mov.Layouts
     /// <summary>
     /// ノード種別
     /// </summary>
-    public enum NodeType
+    public enum NodeTypes
     {
         /// <summary>
         /// リージョン

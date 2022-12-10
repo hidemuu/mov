@@ -35,17 +35,17 @@ namespace Mov.Designer.Engine
             var content = GetContent(node);
             switch (node.NodeType)
             {
-                case NodeType.Region:
+                case NodeTypes.Region:
                     return new RegionLayoutNode(node, content);
-                case NodeType.Content:
+                case NodeTypes.Content:
                     return new ContentLayoutNode(node, content);
-                case NodeType.Group:
+                case NodeTypes.Group:
                     return new GroupLayoutNode(node, content);
-                case NodeType.Expander:
+                case NodeTypes.Expander:
                     return new ExpanderLayoutNode(node, content);
-                case NodeType.Scrollbar:
+                case NodeTypes.Scrollbar:
                     return new ScrollbarLayoutNode(node, content);
-                case NodeType.Tab:
+                case NodeTypes.Tab:
                     return new TabLayoutNode(node, content);
                 default:
                     return new ContentLayoutNode();

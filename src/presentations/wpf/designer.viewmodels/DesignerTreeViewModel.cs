@@ -203,7 +203,7 @@ namespace Mov.Designer.ViewModels
 
         #region プロパティ
 
-        public ReactivePropertySlim<NodeType> LayoutType { get; } = new ReactivePropertySlim<NodeType>(NodeType.Content);
+        public ReactivePropertySlim<NodeTypes> LayoutType { get; } = new ReactivePropertySlim<NodeTypes>(Layouts.NodeTypes.Content);
         public ReactivePropertySlim<OrientationType> OrientationType { get; } = new ReactivePropertySlim<OrientationType>(Mov.Layouts.OrientationType.Horizontal);
         public ReactivePropertySlim<string> LayoutStyle { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<string> LayoutParameter { get; } = new ReactivePropertySlim<string>();
@@ -211,7 +211,7 @@ namespace Mov.Designer.ViewModels
 
         public List<string> Codes { get; set; } = new List<string>();
 
-        public List<NodeType> NodeTypes { get; set; } = Node.GetNodeTypes.ToList();
+        public List<NodeTypes> NodeTypes { get; set; } = Node.GetNodeTypes.ToList();
 
         public List<OrientationType> OrientationTypes { get; set; } = Node.GetOrientationTypes.ToList();
 

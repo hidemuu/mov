@@ -37,7 +37,7 @@ namespace Mov.Designer.Models
         [LanguageKey("node_type")]
         [DisplayName("node_type")]
         [DisplayIndex(10)]
-        public NodeType NodeType { get; set; } = NodeType.Content;
+        public NodeTypes NodeType { get; set; } = NodeTypes.Content;
         /// <summary>
         /// 表示方向
         /// </summary>
@@ -111,7 +111,7 @@ namespace Mov.Designer.Models
         /// <inheritdoc />
         public override string[] GetHeaderStrings() => new string[] { "Code", "LayoutType" };
 
-        public static NodeType[] GetNodeTypes => (NodeType[])Enum.GetValues(typeof(NodeType));
+        public static NodeTypes[] GetNodeTypes => (NodeTypes[])Enum.GetValues(typeof(NodeTypes));
 
         public static OrientationType[] GetOrientationTypes => (OrientationType[])Enum.GetValues(typeof(OrientationType));
 

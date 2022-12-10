@@ -26,7 +26,7 @@ namespace Mov.Layouts.ValueObjects
 
         protected override bool EqualCore(ContentIcon other)
         {
-            throw new NotImplementedException();
+            return this.Value.Equals(other.Value, StringComparison.Ordinal);
         }
 
         #endregion メソッド

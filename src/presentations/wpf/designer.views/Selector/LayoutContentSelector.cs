@@ -19,50 +19,50 @@ namespace Mov.Designer.Views.Selector
             if (item is ContentLayoutNode node)
             {
                 FrameworkElementFactory factory;
-                switch (node.Content.ControlType)
+                switch (node.ControlType.Value)
                 {
                     case ControlType.Label:
                         factory = new FrameworkElementFactory(typeof(LayLabel));
-                        factory.SetValue(LayLabel.LayoutContentProperty, node.Content);
+                        factory.SetValue(LayLabel.LayoutContentProperty, node);
                         return new DataTemplate() { VisualTree = factory, };
                     case ControlType.Button:
                         factory = new FrameworkElementFactory(typeof(LayButton));
-                        factory.SetValue(LayButton.LayoutContentProperty, node.Content);
+                        factory.SetValue(LayButton.LayoutContentProperty, node);
                         return new DataTemplate() { VisualTree = factory, };
                     case ControlType.RadioButton:
                         factory = new FrameworkElementFactory(typeof(LayRadioButton));
-                        factory.SetValue(LayRadioButton.LayoutContentProperty, node.Content);
+                        factory.SetValue(LayRadioButton.LayoutContentProperty, node);
                         return new DataTemplate() { VisualTree = factory, };
                     case ControlType.TextBox:
                         factory = new FrameworkElementFactory(typeof(LayTextBox));
-                        factory.SetValue(LayTextBox.LayoutContentProperty, node.Content);
+                        factory.SetValue(LayTextBox.LayoutContentProperty, node);
                         return new DataTemplate() { VisualTree = factory, };
                     case ControlType.ComboBox:
                         factory = new FrameworkElementFactory(typeof(LayComboBox));
-                        factory.SetValue(LayComboBox.LayoutContentProperty, node.Content);
+                        factory.SetValue(LayComboBox.LayoutContentProperty, node);
                         return new DataTemplate() { VisualTree = factory, };
                     case ControlType.SpinBox:
                         factory = new FrameworkElementFactory(typeof(LaySpinBox));
-                        factory.SetValue(LaySpinBox.LayoutContentProperty, node.Content);
+                        factory.SetValue(LaySpinBox.LayoutContentProperty, node);
                         return new DataTemplate() { VisualTree = factory, };
                     case ControlType.CheckBox:
                         factory = new FrameworkElementFactory(typeof(LayCheckBox));
-                        factory.SetValue(LayCheckBox.LayoutContentProperty, node.Content);
+                        factory.SetValue(LayCheckBox.LayoutContentProperty, node);
                         return new DataTemplate() { VisualTree = factory, };
                     case ControlType.ListBox:
                         factory = new FrameworkElementFactory(typeof(LayListBox));
-                        factory.SetValue(LayListBox.LayoutContentProperty, node.Content);
+                        factory.SetValue(LayListBox.LayoutContentProperty, node);
                         return new DataTemplate() { VisualTree = factory, };
                     case ControlType.DatePicker:
                         factory = new FrameworkElementFactory(typeof(LayDatePicker));
-                        factory.SetValue(LayDatePicker.LayoutContentProperty, node.Content);
+                        factory.SetValue(LayDatePicker.LayoutContentProperty, node);
                         return new DataTemplate() { VisualTree = factory, };
                 }
                 //どれにも該当しない場合、
-                if (TryGetType(node.Content.ControlType.ToString(), out Type type))
+                if (TryGetType(node.ControlType.ToString(), out Type type))
                 {
                     factory = new FrameworkElementFactory(type);
-                    factory.SetValue(Label.ContentProperty, node.Content.Name);
+                    factory.SetValue(Label.ContentProperty, node.Name);
                     return new DataTemplate() { VisualTree = factory, };
                 };
 

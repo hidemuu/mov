@@ -11,11 +11,6 @@ namespace Mov.Designer.Models
 {
     public abstract class LayoutContentBase : ILayoutContent
     {
-        #region フィールド
-
-        public Content Content { get; }
-
-        #endregion フィールド
 
         #region プロパティ
 
@@ -65,7 +60,6 @@ namespace Mov.Designer.Models
         /// <param name="content"></param>
         public LayoutContentBase(Content content)
         {
-            this.Content = content;
             this.Code = new ContentCode(content.Code);
             this.Name = new ContentName(content.Name);
             this.ControlType = new ContentControlType(content.ControlType);
@@ -88,7 +82,7 @@ namespace Mov.Designer.Models
 
         public override string ToString()
         {
-            return "[Code] " + Content.Code + " [Name] " + Content.Name;
+            return "[Code] " + Code.Value + " [Name] " + Name.Value;
         }
 
         #endregion メソッド

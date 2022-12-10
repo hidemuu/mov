@@ -24,31 +24,6 @@ namespace Mov.Designer.Models
         #region プロパティ
 
         /// <summary>
-        /// 配置方向
-        /// </summary>
-        public OrientationType OrientationType => node.OrientationType;
-
-        /// <summary>
-        /// レイアウトスタイル
-        /// </summary>
-        public string LayoutStyle => node.Style;
-
-        /// <summary>
-        /// 開閉状態
-        /// </summary>
-        public ReactivePropertySlim<bool> IsExpand { get; } = new ReactivePropertySlim<bool>(true);
-
-        /// <summary>
-        /// 表示状態
-        /// </summary>
-        public ReactivePropertySlim<bool> IsVisible { get; } = new ReactivePropertySlim<bool>(true);
-
-        /// <summary>
-        /// 活性状態
-        /// </summary>
-        public ReactivePropertySlim<bool> IsEnable { get; } = new ReactivePropertySlim<bool>(true);
-
-        /// <summary>
         /// 子階層
         /// </summary>
         public List<LayoutNodeBase> Children => children;
@@ -73,9 +48,6 @@ namespace Mov.Designer.Models
         public LayoutNodeBase(Node node, Content content) : base(content)
         {
             this.node = node;
-            IsExpand.Value = node.IsExpand;
-            IsVisible.Value = node.IsVisible;
-            IsEnable.Value = node.IsEnable;
         }
 
         #endregion コンストラクター

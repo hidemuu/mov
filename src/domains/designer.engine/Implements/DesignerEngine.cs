@@ -73,7 +73,7 @@ namespace Mov.Designer.Engine
             {
                 if (node is RegionLayoutNode regionNode)
                 {
-                    switch (regionNode.Content.Code)
+                    switch (regionNode.Code.Value)
                     {
                         case RegionLayoutNode.REGION_CENTER: CenterNode = regionNode; break;
                         case RegionLayoutNode.REGION_TOP: TopNode = regionNode; break;

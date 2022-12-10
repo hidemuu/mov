@@ -9,7 +9,7 @@ namespace Mov.Layouts.Nodes.ValueObjects
     {
         #region プロパティ
 
-        public bool Value { get; }
+        public bool Value { get; set; }
 
         #endregion プロパティ
 

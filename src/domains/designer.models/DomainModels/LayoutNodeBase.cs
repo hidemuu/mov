@@ -1,5 +1,6 @@
 ﻿using Mov.Designer.Models;
 using Mov.Layouts;
+using Mov.Layouts.Nodes.ValueObjects;
 using Mov.Layouts.ValueObjects;
 using Reactive.Bindings;
 using System;
@@ -9,11 +10,9 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public abstract class LayoutNodeBase : LayoutContentBase
+    public abstract class LayoutNodeBase : LayoutContentBase, ILayoutNode
     {
         #region フィールド
-
-        private readonly Node node;
 
         /// <summary>
         /// 子階層
@@ -23,6 +22,10 @@ namespace Mov.Designer.Models
         #endregion フィールド
 
         #region プロパティ
+
+        public NodeType NodeType { get; }
+
+        public NodeExpand Expand { get; }
 
         /// <summary>
         /// 子階層
@@ -48,7 +51,8 @@ namespace Mov.Designer.Models
         /// <param name="content"></param>
         public LayoutNodeBase(Node node, Content content) : base(content)
         {
-            this.node = node;
+            this.NodeType = new NodeType(node.NodeType.ToString());
+            this.Expand = new NodeExpand(true);
         }
 
         #endregion コンストラクター

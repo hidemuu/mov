@@ -14,68 +14,57 @@ namespace Mov.Layouts
         /// <summary>
         /// コード
         /// </summary>
-        [XmlElement("code")]
-        string Code { get; }
+        ContentCode Code { get; }
 
         /// <summary>
         /// 名称
         /// </summary>
-        [XmlElement("name")]
-        string Name { get; }
+        ContentName Name { get; }
 
         /// <summary>
         /// アイコン
         /// </summary>
-        [XmlElement("icon")]
         ContentIcon Icon { get; }
 
         /// <summary>
         /// 幅
         /// </summary>
-        [XmlElement("width")]
-        double Width { get; }
+        ContentWidth Width { get; }
 
         /// <summary>
         /// 水平位置
         /// </summary>
-        [XmlElement("horizontal_alignment")]
-        string HorizontalAlignment { get; }
+        ContentHorizontalAlignment HorizontalAlignment { get; }
 
         /// <summary>
         /// 垂直位置
         /// </summary>
-        [XmlElement("vertical_alignment")]
-        string VerticalAlignment { get; }
+        ContentVerticalAlignment VerticalAlignment { get; }
 
 
         /// <summary>
         /// 高さ
         /// </summary>
-        [XmlElement("height")]
-        double Height { get; }
+        ContentHeight Height { get; }
 
         /// <summary>
         /// コントロールのスキーマ
         /// </summary>
-        [XmlElement("schema")]
         string Schema { get; }
 
         /// <summary>
         /// 初期値
         /// </summary>
-        [XmlElement("default_value")]
         string DefaultValue { get; }
 
         /// <summary>
         /// マクロ
         /// </summary>
-        [XmlElement("macro")]
         string Macro { get; }
 
         /// <summary>
         /// パラメータ
         /// </summary>
-        [XmlElement("parameter")]
         string Parameter { get; }
     }
 }

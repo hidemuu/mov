@@ -5,8 +5,10 @@ using System.Text;
 
 namespace Mov.Layouts
 {
-    public interface ILayoutNode
+    public interface ILayoutNode : ILayoutContent
     {
         NodeExpand Expand { get; }
+
+        IEnumerable<ILayoutNode> Children { get; }
     }
 }

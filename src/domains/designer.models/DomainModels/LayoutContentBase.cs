@@ -1,5 +1,6 @@
 ﻿using Mov.Designer.Models;
 using Mov.Layouts;
+using Mov.Layouts.ValueObjects;
 using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public abstract class LayoutContentBase
+    public abstract class LayoutContentBase : ILayoutContent
     {
         #region フィールド
 
@@ -17,17 +18,27 @@ namespace Mov.Designer.Models
 
         #region プロパティ
 
-        
+        public ContentCode Code { get; }
 
-        /// <summary>
-        /// インデント
-        /// </summary>
-        public ReactivePropertySlim<double> Indent { get; } = new ReactivePropertySlim<double>();
+        public ContentName Name { get; }
 
-        /// <summary>
-        /// 値
-        /// </summary>
-        public ReactivePropertySlim<string> Value { get; } = new ReactivePropertySlim<string>();
+        public ContentIcon Icon { get; }
+
+        public ContentHeight Height { get; }
+
+        public ContentWidth Width { get; }
+
+        public ContentHorizontalAlignment HorizontalAlignment { get; }
+
+        public ContentVerticalAlignment VerticalAlignment { get; }
+
+        public ContentSchema Schema { get; }
+
+        public ContentValue ContentValue { get; }
+
+        public ContentMacro Macro { get; }
+
+        public ContentParameter Parameter { get; }
 
         #endregion プロパティ
 
@@ -36,9 +47,9 @@ namespace Mov.Designer.Models
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public LayoutContentBase()
+        public LayoutContentBase() : this(new Content())
         {
-            this.Content = new Content();
+            
         }
 
         /// <summary>
@@ -48,6 +59,17 @@ namespace Mov.Designer.Models
         public LayoutContentBase(Content content)
         {
             this.Content = content;
+            this.Code = new ContentCode(content.Code);
+            this.Name = new ContentName(content.Name);
+            this.Icon = new ContentIcon(content.Icon);
+            this.Height = new ContentHeight(content.Height);
+            this.Width = new ContentWidth(content.Width);
+            this.HorizontalAlignment = new ContentHorizontalAlignment(content.HorizontalAlignment);
+            this.VerticalAlignment = new ContentVerticalAlignment(content.VerticalAlignment);
+            this.Schema = new ContentSchema(content.Schema);
+            this.ContentValue = new ContentValue(content.DefaultValue);
+            this.Macro = new ContentMacro(content.Macro);
+            this.Parameter = new ContentParameter(content.Parameter);
         }
 
         #endregion コンストラクター

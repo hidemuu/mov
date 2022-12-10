@@ -55,7 +55,7 @@ namespace Mov.Layouts
         /// <summary>
         /// 値
         /// </summary>
-        ContentValue Value { get; }
+        ContentValue ContentValue { get; }
 
         /// <summary>
         /// マクロ

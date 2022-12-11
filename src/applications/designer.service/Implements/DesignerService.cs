@@ -31,12 +31,17 @@ namespace Mov.Designer.Service
         public DesignerService(IEnumerable<IDesignerEngine> engines)
         {
             this.engines = engines;
-            this.engine = engines.First();
+            SetEngine(0);
         }
 
         #endregion コンストラクター
 
         #region メソッド
+
+        public void SetEngine(int domainId)
+        {
+            this.engine = engines.FirstOrDefault(x => x.DomainId == domainId);
+        }
 
         #region UIモデル
 
@@ -61,37 +66,37 @@ namespace Mov.Designer.Service
 
         public IEnumerable<Node> GetNodes()
         {
-            return this.engine.Repository.Nodes.Get();
+            return this.engine.GetNodes();
         }
 
         public Node GetNode(Guid id)
         {
-            return this.engine.Repository.Nodes.Get(id);
+            return this.engine.GetNode(id);
         }
 
         public IEnumerable<Content> GetContents()
         {
-            return this.engine.Repository.Contents.Get();
+            return this.engine.GetContents();
         }
 
         public Content GetContent(Guid id)
         {
-            return this.engine.Repository.Contents.Get(id);
+            return this.engine.GetContent(id);
         }
 
         public Content GetContent(string code)
         {
-            return this.engine.Repository.Contents.Get(code);
+            return this.engine.GetContent(code);
         }
 
         public IEnumerable<Shell> GetShells()
         {
-            return this.engine.Repository.Shells.Get();
+            return this.engine.GetShells();
         }
 
         public Shell GetShell(ShellRegion region)
         {
-            return this.engine.Repository.Shells.Get(region.Value);
+            return this.engine.GetShell(region);
         }
 
         #endregion クエリ
@@ -105,38 +110,38 @@ namespace Mov.Designer.Service
 
         public void PostNodes(IEnumerable<Node> items)
         {
-            this.engine.Repository.Nodes.Posts(items);
+            this.engine.PostNodes(items);
         }
 
         public void DeleteNode(Node item)
         {
-            this.engine.Repository.Nodes.Delete(item);
+            this.engine.DeleteNode(item);
         }
 
         public void PostContents(IEnumerable<Content> items)
         {
-            this.engine.Repository.Contents.Posts(items);
+            this.engine.PostContents(items);
         }
 
         public void DeleteContent(Content item)
         {
-            this.engine.Repository.Contents.Delete(item);
+            this.engine.DeleteContent(item);
         }
 
         public void PostShells(IEnumerable<Shell> items)
         {
-            this.engine.Repository.Shells.Posts(items);
+            this.engine.PostShells(items);
         }
 
         public void PostShell(Shell item)
         {
-            this.engine.Repository.Shells.Post(item);
+            this.engine.PostShell(item);
         }
 
 
         public void DeleteShell(Shell item)
         {
-            this.engine.Repository.Shells.Delete(item);
+            this.engine.DeleteShell(item);
         }
 
         #endregion コマンド

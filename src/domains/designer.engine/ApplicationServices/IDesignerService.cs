@@ -15,6 +15,8 @@ namespace Mov.Designer.Models
 
         #region メソッド
 
+        void SetEngine(int domainId);
+
         #region UIモデル
 
         LayoutNode GetNodeModel(ShellRegion region);

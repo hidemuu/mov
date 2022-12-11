@@ -37,7 +37,7 @@ namespace Mov.Designer.Test
             this.mockParameter.Setup(x => x.Query).Returns(this.mockQuery.Object);
             this.mockParameter.Setup(x => x.Command).Returns(this.mockCommand.Object);
             //インスタンス生成
-            this.engine = new DesignerEngine(this.mockParameter.Object);
+            this.engine = new DesignerEngine(this.mockParameter.Object, 0);
         }
 
         #endregion コンストラクター

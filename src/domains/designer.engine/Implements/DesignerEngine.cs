@@ -12,8 +12,6 @@ namespace Mov.Designer.Engine
     {
         #region フィールド
 
-        private readonly int domainId;
-
         private readonly IDesignerParameter parameter;
 
         private readonly LayoutNodeFactory factory;
@@ -23,6 +21,8 @@ namespace Mov.Designer.Engine
         #endregion フィールド
 
         #region プロパティ
+
+        public int DomainId { get; }
 
         #region クエリ・コマンド
 
@@ -51,8 +51,9 @@ namespace Mov.Designer.Engine
 
         #region コンストラクター
 
-        public DesignerEngine(IDesignerParameter parameter)
+        public DesignerEngine(IDesignerParameter parameter, int domainId)
         {
+            this.DomainId = domainId;
             this.parameter = parameter;
             this.Repository = parameter.Repository;
             this.Query = parameter.Query;
@@ -83,12 +84,47 @@ namespace Mov.Designer.Engine
             }
         }
 
-        public void UpdateRepository(string repositoryName)
+        public void Read()
         {
-            this.parameter.UpdateRepository(repositoryName);
-            BuildNode();
+            this.Repository.Nodes.Read();
+            this.Repository.Contents.Read();
+            this.Repository.Shells.Read();
         }
 
+        public IEnumerable<Node> GetNodes()
+        {
+            return this.Repository.Nodes.Get();
+        }
+
+        public Node GetNode(Guid id)
+        {
+            return this.Repository.Nodes.Get(id);
+        }
+
+        public IEnumerable<Content> GetContents()
+        {
+            return this.Repository.Contents.Get();
+        }
+
+        public Content GetContent(Guid id)
+        {
+            return this.Repository.Contents.Get(id);
+        }
+
+        public Content GetContent(string code)
+        {
+            return this.Repository.Contents.Get(code);
+        }
+
+        public IEnumerable<Shell> GetShells()
+        {
+            return this.Repository.Shells.Get();
+        }
+
+        public Shell GetShell(ShellRegion region)
+        {
+            return this.Repository.Shells.Get(region.Value);
+        }
         public void Write()
         {
             this.Repository.Nodes.Write();
@@ -96,12 +132,42 @@ namespace Mov.Designer.Engine
             this.Repository.Shells.Write();
         }
 
-        public void Read()
+        public void PostNodes(IEnumerable<Node> items)
         {
-            this.Repository.Nodes.Read();
-            this.Repository.Contents.Read();
-            this.Repository.Shells.Read();
+            this.Repository.Nodes.Posts(items);
         }
+
+        public void DeleteNode(Node item)
+        {
+            this.Repository.Nodes.Delete(item);
+        }
+
+        public void PostContents(IEnumerable<Content> items)
+        {
+            this.Repository.Contents.Posts(items);
+        }
+
+        public void DeleteContent(Content item)
+        {
+            this.Repository.Contents.Delete(item);
+        }
+
+        public void PostShells(IEnumerable<Shell> items)
+        {
+            this.Repository.Shells.Posts(items);
+        }
+
+        public void PostShell(Shell item)
+        {
+            this.Repository.Shells.Post(item);
+        }
+
+
+        public void DeleteShell(Shell item)
+        {
+            this.Repository.Shells.Delete(item);
+        }
+
 
         #endregion メソッド
 

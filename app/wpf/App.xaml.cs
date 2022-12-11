@@ -165,11 +165,13 @@ namespace Mov.WpfApp
 
             //サービスの登録
 
+            var domainId = 0;
             var designerEngines = new List<IDesignerEngine>();
             foreach(var name in fileDesignerRepositories.GetRepositoryNames())
             {
                 var parameter = new DesignerParameter(fileDesignerRepositories.GetRepository(name), name);
-                designerEngines.Add(new DesignerEngine(parameter));
+                designerEngines.Add(new DesignerEngine(parameter, domainId));
+                domainId++;
             }
 
             containerRegistry.RegisterInstance<IDesignerService>(new DesignerService(designerEngines));

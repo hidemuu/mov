@@ -19,10 +19,5 @@ namespace Mov.Designer.Models.Parameters
 
         #endregion プロパティ
 
-        #region メソッド
-
-        void UpdateRepository(string name);
-
-        #endregion メソッド
     }
 }

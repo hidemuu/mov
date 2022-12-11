@@ -12,6 +12,8 @@ namespace Mov.Designer.Engine
     {
         #region フィールド
 
+        private string endpoint;
+
         private readonly IDesignerRepository repository;
 
         private readonly IDesignerCommand command;
@@ -48,6 +50,7 @@ namespace Mov.Designer.Engine
         public DesignerEngine(IDesignerParameter parameter, int domainId)
         {
             this.DomainId = domainId;
+            this.endpoint = parameter.EndPoint;
             this.repository = parameter.Repository;
             this.query = parameter.Query;
             this.command = parameter.Command;

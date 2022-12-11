@@ -38,13 +38,5 @@ namespace Mov.Designer.Repository
 
         #endregion コンストラクター
 
-        #region メソッド
-
-        public void UpdateRepository(string name)
-        {
-
-        }
-
-        #endregion メソッド
     }
 }

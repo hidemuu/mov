@@ -26,7 +26,7 @@ namespace Mov.Layouts.Nodes.ValueObjects
 
         protected override bool EqualCore(NodeExpand other)
         {
-            return this.Value == other.Value;
+            return this.Value.Equals(other.Value);
         }
 
         #endregion メソッド

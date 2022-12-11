@@ -1,6 +1,7 @@
 ﻿using Mov.Designer.Models;
 using Mov.Designer.Models.Persistences;
 using Mov.Layouts;
+using Mov.Layouts.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -40,21 +41,13 @@ namespace Mov.Designer.Service
             return this.engine.Nodes;
         }
 
-        public LayoutNode GetNodeModel(RegionType type)
+        public LayoutNode GetNodeModel(ShellRegion region)
         {
-            switch (type)
-            {
-                case RegionType.Center:
-                    return this.engine.CenterNode;
-                case RegionType.Top:
-                    return this.engine.TopNode;
-                case RegionType.Bottom:
-                    return this.engine.BottomNode;
-                case RegionType.Left:
-                    return this.engine.LeftNode;
-                case RegionType.Right:
-                    return this.engine.RightNode;
-            }
+            if (region.IsCenter) return this.engine.CenterNode;
+            if (region.IsTop) return this.engine.TopNode;
+            if (region.IsBottom) return this.engine.BottomNode;
+            if (region.IsLeft) return this.engine.LeftNode;
+            if (region.IsRight) return this.engine.RightNode;
             return this.engine.CenterNode;
         }
 
@@ -105,9 +98,9 @@ namespace Mov.Designer.Service
             return this.engine.Repository.Shells.Get();
         }
 
-        public Shell GetShell(RegionType type)
+        public Shell GetShell(ShellRegion region)
         {
-            return this.engine.Repository.Shells.Get(type.ToString());
+            return this.engine.Repository.Shells.Get(region.Value);
         }
 
         #endregion クエリ

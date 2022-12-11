@@ -26,7 +26,7 @@ namespace Mov.Layouts.Contents.ValueObjects
 
         protected override bool EqualCore(ContentVisibility other)
         {
-            throw new NotImplementedException();
+            return this.Value.Equals(other.Value);
         }
 
         #endregion メソッド

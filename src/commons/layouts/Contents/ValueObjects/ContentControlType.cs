@@ -48,7 +48,7 @@ namespace Mov.Layouts.Contents.ValueObjects
 
         protected override bool EqualCore(ContentControlType other)
         {
-            throw new NotImplementedException();
+            return this.Value.Equals(other.Value);
         }
 
         public bool IsLabel => this == Label;

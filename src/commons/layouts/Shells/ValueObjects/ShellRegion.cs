@@ -54,5 +54,21 @@ namespace Mov.Layouts.ValueObjects
         }
 
         #endregion メソッド
+
+        #region 静的メソッド
+
+        public static IEnumerable<string> GetStrings()
+        {
+            return new string[]
+            {
+                Center.Value,
+                Top.Value,
+                Bottom.Value,
+                Left.Value,
+                Right.Value,
+            };
+        }
+
+        #endregion 静的メソッド
     }
 }

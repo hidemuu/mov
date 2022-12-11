@@ -3,6 +3,7 @@ using Mov.Designer.Models;
 using Mov.Designer.Models.Persistences;
 using Mov.Designer.Service;
 using Mov.Layouts;
+using Mov.Layouts.ValueObjects;
 using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
@@ -414,24 +415,24 @@ namespace Mov.Designer.Views
                         control.LeftModels.Clear();
                         control.RightModels.Clear();
                         var service = control.Service;
-                        if (service.GetNodeModel(RegionType.Center) == null)
+                        if (service.GetNodeModel(ShellRegion.Center) == null)
                         {
                             control.Models.AddRange(service.GetNodeModels());
                         }
                         else
                         {
-                            control.Models.AddRange(service.GetNodeModel(RegionType.Center).Children);
+                            control.Models.AddRange(service.GetNodeModel(ShellRegion.Center).Children);
                         }
-                        control.TopModels.AddRange(service.GetNodeModel(RegionType.Top).Children);
-                        control.BottomModels.AddRange(service.GetNodeModel(RegionType.Bottom).Children);
-                        control.LeftModels.AddRange(service.GetNodeModel(RegionType.Left).Children);
-                        control.RightModels.AddRange(service.GetNodeModel(RegionType.Right).Children);
+                        control.TopModels.AddRange(service.GetNodeModel(ShellRegion.Top).Children);
+                        control.BottomModels.AddRange(service.GetNodeModel(ShellRegion.Bottom).Children);
+                        control.LeftModels.AddRange(service.GetNodeModel(ShellRegion.Left).Children);
+                        control.RightModels.AddRange(service.GetNodeModel(ShellRegion.Right).Children);
 
-                        var topShell = service.GetShell(RegionType.Top);
-                        var bottomShell = service.GetShell(RegionType.Bottom);
-                        var leftShell = service.GetShell(RegionType.Left);
-                        var rightShell = service.GetShell(RegionType.Right);
-                        var centerShell = service.GetShell(RegionType.Center);
+                        var topShell = service.GetShell(ShellRegion.Top);
+                        var bottomShell = service.GetShell(ShellRegion.Bottom);
+                        var leftShell = service.GetShell(ShellRegion.Left);
+                        var rightShell = service.GetShell(ShellRegion.Right);
+                        var centerShell = service.GetShell(ShellRegion.Center);
 
                         if(topShell != null)
                         {

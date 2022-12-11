@@ -98,7 +98,7 @@
                                 <ComboBox
                                     Width="{Binding Width, ElementName=controlTypeColumn}"
                                     ItemsSource="{Binding ControlTypes}"
-                                    SelectedItem="{Binding ControlType.Value, Mode=TwoWay}" />
+                                    SelectedItem="{Binding ControlType.Value.Value, Mode=TwoWay}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

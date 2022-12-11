@@ -7,9 +7,29 @@ namespace Mov.Layouts.ValueObjects
 {
     public sealed class ContentVerticalAlignment : ValueObjectBase<ContentVerticalAlignment>
     {
+        #region オブジェクト
+
+        public static readonly ContentVerticalAlignment Top = new ContentVerticalAlignment("Top");
+
+        public static readonly ContentVerticalAlignment Bottom = new ContentVerticalAlignment("Bottom");
+
+        public static readonly ContentVerticalAlignment Center = new ContentVerticalAlignment("Center");
+
+        public static readonly ContentVerticalAlignment Stretch = new ContentVerticalAlignment("Stretch");
+
+        #endregion オブジェクト
+
         #region プロパティ
 
         public string Value { get; }
+
+        public bool IsTop => this == Top;
+
+        public bool IsBottom => this == Bottom;
+
+        public bool IsCenter => this == Center;
+
+        public bool IsStretch => this == Stretch;
 
         #endregion プロパティ
 
@@ -30,5 +50,20 @@ namespace Mov.Layouts.ValueObjects
         }
 
         #endregion メソッド
+
+        #region 静的メソッド
+
+        public static IEnumerable<string> GetStrings()
+        {
+            return new string[]
+            {
+                Top.Value,
+                Bottom.Value,
+                Center.Value,
+                Stretch.Value,
+            };
+        }
+
+        #endregion 静的メソッド
     }
 }

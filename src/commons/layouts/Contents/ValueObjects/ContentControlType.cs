@@ -31,7 +31,7 @@ namespace Mov.Layouts.Contents.ValueObjects
 
         #region プロパティ
 
-        public string Value { get; }
+        public string Value { get; set; }
 
         public bool IsLabel => this == Label;
 

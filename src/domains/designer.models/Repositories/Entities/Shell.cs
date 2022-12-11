@@ -88,10 +88,7 @@ namespace Mov.Designer.Models
 
         #region メソッド
 
-        //public static LocationType[] GetLocationTypes => (LocationType[])Enum.GetValues(typeof(LocationType));
-
         public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<Shell>().OrderBy(x => x.index);
-
 
         #endregion メソッド
     }

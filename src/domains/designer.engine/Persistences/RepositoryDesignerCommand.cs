@@ -6,13 +6,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Repository.Persistences
+namespace Mov.Designer.Engine.Persistences
 {
     public class RepositoryDesignerCommand : IDesignerCommand
     {
-        public IPersistenceCommand<Content> LayoutContent { get; }
+        public IPersistenceCommand<Content> Content { get; }
 
-        public IPersistenceCommand<Node> LayoutNode { get; }
+        public IPersistenceCommand<Node> Node { get; }
 
         public IPersistenceCommand<Shell> Shell { get; }
 
@@ -20,8 +20,8 @@ namespace Mov.Designer.Repository.Persistences
 
         public RepositoryDesignerCommand(IDesignerRepository repository)
         {
-            this.LayoutNode = new DbObjectRepositoryCommand<Node, NodeCollection>(repository.Nodes);
-            this.LayoutContent = new DbObjectRepositoryCommand<Content, ContentCollection>(repository.Contents);
+            this.Node = new DbObjectRepositoryCommand<Node, NodeCollection>(repository.Nodes);
+            this.Content = new DbObjectRepositoryCommand<Content, ContentCollection>(repository.Contents);
             this.Shell = new DbObjectRepositoryCommand<Shell, ShellCollection>(repository.Shells);
             this.Theme = new DbObjectRepositoryCommand<Theme, ThemeCollection>(repository.Themes);
         }

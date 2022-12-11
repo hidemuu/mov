@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Repository.Persistences
+namespace Mov.Designer.Engine.Persistences
 {
     public class RepositoryDesignerQuery : IDesignerQuery
     {

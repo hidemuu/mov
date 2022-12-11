@@ -536,7 +536,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Designer.Models": "1.0.0"
+          "Mov.Designer.Engine": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Designer.Repository.dll": {}

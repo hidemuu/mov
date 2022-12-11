@@ -1,12 +1,12 @@
-﻿using Mov.Designer.Models;
+﻿using Mov.Designer.Engine.Persistences;
+using Mov.Designer.Models;
 using Mov.Designer.Models.Parameters;
 using Mov.Designer.Models.Persistences;
-using Mov.Designer.Repository.Persistences;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Repository
+namespace Mov.Designer.Engine
 {
     public class DesignerParameter : IDesignerParameter
     {

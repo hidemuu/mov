@@ -58,7 +58,7 @@ namespace Mov.Designer.Test
 
             var mockCommandContent = new Mock<IPersistenceCommand<Content>>();
             mockCommandContent.Setup(x => x.Saver.Save(new Content()));
-            this.mockCommand.Setup(x => x.LayoutContent).Returns(mockCommandContent.Object);
+            this.mockCommand.Setup(x => x.Content).Returns(mockCommandContent.Object);
 
             return this;
         }

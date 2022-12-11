@@ -1,6 +1,7 @@
 ﻿using Mov.Accessors;
 using Mov.Layouts;
 using Mov.Layouts.Contents.ValueObjects;
+using Mov.Layouts.ValueObjects;
 using Mov.Utilities.Attributes;
 using System;
 using System.Collections.Generic;
@@ -118,7 +119,7 @@ namespace Mov.Designer.Models
         [LanguageKey("horizontal_alignment")]
         [DisplayName("horizontal_alignment")]
         [DisplayIndex(19)]
-        public string HorizontalAlignment { get; set; } = "Left";
+        public string HorizontalAlignment { get; set; } = ContentHorizontalAlignment.Left.Value;
 
         /// <summary>
         /// 垂直位置
@@ -127,7 +128,7 @@ namespace Mov.Designer.Models
         [LanguageKey("vertical_alignment")]
         [DisplayName("vertical_alignment")]
         [DisplayIndex(20)]
-        public string VerticalAlignment { get; set; } = "Center";
+        public string VerticalAlignment { get; set; } = ContentVerticalAlignment.Center.Value;
 
         /// <summary>
         /// パラメータ
@@ -168,13 +169,7 @@ namespace Mov.Designer.Models
 
         #region メソッド
 
-        
-        public static string[] GetHorizontalAlignments => new string[] { "Left", "Right", "Center", "Stretch" };
-
-        public static string[] GetVerticalAlignments => new string[] { "Top", "Bottom", "Center", "Stretch" };
-
         public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<Content>().OrderBy(x => x.index);
-
 
         #endregion メソッド
     }

@@ -3,6 +3,7 @@ using Mov.Designer.Models;
 using Mov.Designer.Service;
 using Mov.Layouts;
 using Mov.Layouts.Contents.ValueObjects;
+using Mov.Layouts.ValueObjects;
 using Mov.WpfModels;
 using Mov.WpfMvvms;
 using Prism.Regions;
@@ -187,9 +188,9 @@ namespace Mov.Designer.ViewModels
 
         public List<string> ControlTypes { get; set; } = ContentControlType.GetStrings().ToList();
 
-        public List<string> HolizontalAlignments { get; set; } = Content.GetHorizontalAlignments.ToList();
+        public List<string> HolizontalAlignments { get; set; } = ContentHorizontalAlignment.GetStrings().ToList();
 
-        public List<string> VerticalAlignments { get; set; } = Content.GetVerticalAlignments.ToList();
+        public List<string> VerticalAlignments { get; set; } = ContentVerticalAlignment.GetStrings().ToList();
 
         #endregion プロパティ
 

@@ -2,6 +2,8 @@
 using Mov.Designer.Models.Nodes;
 using Mov.Designer.Models.Parameters;
 using Mov.Designer.Models.Persistences;
+using Mov.Layouts.Nodes.ValueObjects;
+using Mov.Layouts.ValueObjects;
 using System;
 using System.Collections.Generic;
 
@@ -33,17 +35,17 @@ namespace Mov.Designer.Engine
 
         #region UIモデル
 
-        public IEnumerable<LayoutNodeBase> Nodes { get; private set; }
+        public IEnumerable<LayoutNode> Nodes { get; private set; }
 
-        public LayoutNodeBase CenterNode { get; private set; }
+        public LayoutNode CenterNode { get; private set; }
 
-        public LayoutNodeBase TopNode { get; private set; }
+        public LayoutNode TopNode { get; private set; }
 
-        public LayoutNodeBase BottomNode { get; private set; }
+        public LayoutNode BottomNode { get; private set; }
 
-        public LayoutNodeBase LeftNode { get; private set; }
+        public LayoutNode LeftNode { get; private set; }
 
-        public LayoutNodeBase RightNode { get; private set; }
+        public LayoutNode RightNode { get; private set; }
 
         #endregion UIモデル
 
@@ -71,16 +73,14 @@ namespace Mov.Designer.Engine
             if (Nodes == null) return;
             foreach (var node in Nodes)
             {
-                if (node is RegionLayoutNode regionNode)
+                if (node.NodeType.IsRegion)
                 {
-                    switch (regionNode.Code.Value)
-                    {
-                        case RegionLayoutNode.REGION_CENTER: CenterNode = regionNode; break;
-                        case RegionLayoutNode.REGION_TOP: TopNode = regionNode; break;
-                        case RegionLayoutNode.REGION_BOTTOM: BottomNode = regionNode; break;
-                        case RegionLayoutNode.REGION_LEFT: LeftNode = regionNode; break;
-                        case RegionLayoutNode.REGION_RIGHT: RightNode = regionNode; break;
-                    }
+                    var region = new ShellRegion(node.Code.Value);
+                    if (region.IsCenter) CenterNode = node;
+                    if (region.IsTop) TopNode = node;
+                    if (region.IsBottom) BottomNode = node;
+                    if (region.IsLeft) LeftNode = node;
+                    if (region.IsRight) RightNode = node;
                 }
             }
         }
@@ -95,16 +95,16 @@ namespace Mov.Designer.Engine
 
         #region 内部メソッド
 
-        private IEnumerable<LayoutNodeBase> CreateNodes()
+        private IEnumerable<LayoutNode> CreateNodes()
         {
-            var node = new ContentLayoutNode();
+            var node = new LayoutNode();
             var data = this.Repository?.Nodes?.Get();
             if (data == null) return default;
             CreateLayoutNode(node.Children, data);
             return node.Children;
         }
 
-        private void CreateLayoutNode(ICollection<LayoutNodeBase> nodes, IEnumerable<Node> repositoryNodes)
+        private void CreateLayoutNode(ICollection<LayoutNode> nodes, IEnumerable<Node> repositoryNodes)
         {
             foreach (var repositoryNode in repositoryNodes)
             {

@@ -15,17 +15,17 @@ namespace Mov.Designer.Models
 
         IDesignerQuery Query { get; }
 
-        IEnumerable<LayoutNodeBase> Nodes { get; }
+        IEnumerable<LayoutNode> Nodes { get; }
 
-        LayoutNodeBase CenterNode { get; }
+        LayoutNode CenterNode { get; }
 
-        LayoutNodeBase TopNode { get; }
+        LayoutNode TopNode { get; }
 
-        LayoutNodeBase BottomNode { get; }
+        LayoutNode BottomNode { get; }
 
-        LayoutNodeBase LeftNode { get; }
+        LayoutNode LeftNode { get; }
 
-        LayoutNodeBase RightNode { get; }
+        LayoutNode RightNode { get; }
 
         #endregion プロパティ
 

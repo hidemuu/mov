@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Designer.Models.Nodes
 {
-    public class ContentLayoutNode : LayoutNodeBase
+    public class ContentLayoutNode : LayoutNode
     {
         #region プロパティ
 

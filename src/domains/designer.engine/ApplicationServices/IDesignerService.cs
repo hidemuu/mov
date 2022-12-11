@@ -16,9 +16,9 @@ namespace Mov.Designer.Models
 
         #region UIモデル
 
-        IEnumerable<LayoutNodeBase> GetNodeModels();
+        IEnumerable<LayoutNode> GetNodeModels();
 
-        LayoutNodeBase GetNodeModel(RegionType type);
+        LayoutNode GetNodeModel(RegionType type);
 
         #endregion UIモデル
 

@@ -35,12 +35,12 @@ namespace Mov.Designer.Service
 
         #region UIモデル
 
-        public IEnumerable<LayoutNodeBase> GetNodeModels()
+        public IEnumerable<LayoutNode> GetNodeModels()
         {
             return this.engine.Nodes;
         }
 
-        public LayoutNodeBase GetNodeModel(RegionType type)
+        public LayoutNode GetNodeModel(RegionType type)
         {
             switch (type)
             {

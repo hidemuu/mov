@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Designer.Models.Nodes
 {
-    public class ScrollbarLayoutNode : LayoutNodeBase
+    public class ScrollbarLayoutNode : LayoutNode
     {
 
         #region コンストラクター

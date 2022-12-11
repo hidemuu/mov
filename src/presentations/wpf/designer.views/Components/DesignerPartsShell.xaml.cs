@@ -38,13 +38,13 @@ namespace Mov.Designer.Views
         #region センター
 
         public static readonly DependencyProperty ModelsProperty =
-            DependencyProperty.Register(nameof(Models), typeof(ReactiveCollection<LayoutNodeBase>),
+            DependencyProperty.Register(nameof(Models), typeof(ReactiveCollection<LayoutNode>),
             typeof(DesignerPartsShell),
-            new UIPropertyMetadata(new ReactiveCollection<LayoutNodeBase>(), new PropertyChangedCallback(OnModelsChanged)));
+            new UIPropertyMetadata(new ReactiveCollection<LayoutNode>(), new PropertyChangedCallback(OnModelsChanged)));
 
-        public ReactiveCollection<LayoutNodeBase> Models
+        public ReactiveCollection<LayoutNode> Models
         {
-            get { return (ReactiveCollection<LayoutNodeBase>)GetValue(ModelsProperty); }
+            get { return (ReactiveCollection<LayoutNode>)GetValue(ModelsProperty); }
             set { SetValue(ModelsProperty, value); }
         }
 
@@ -86,13 +86,13 @@ namespace Mov.Designer.Views
         #region トップ
 
         public static readonly DependencyProperty TopModelsProperty =
-            DependencyProperty.Register(nameof(TopModels), typeof(ReactiveCollection<LayoutNodeBase>),
+            DependencyProperty.Register(nameof(TopModels), typeof(ReactiveCollection<LayoutNode>),
             typeof(DesignerPartsShell),
-            new UIPropertyMetadata(new ReactiveCollection<LayoutNodeBase>(), new PropertyChangedCallback(OnModelsChanged)));
+            new UIPropertyMetadata(new ReactiveCollection<LayoutNode>(), new PropertyChangedCallback(OnModelsChanged)));
 
-        public ReactiveCollection<LayoutNodeBase> TopModels
+        public ReactiveCollection<LayoutNode> TopModels
         {
-            get { return (ReactiveCollection<LayoutNodeBase>)GetValue(TopModelsProperty); }
+            get { return (ReactiveCollection<LayoutNode>)GetValue(TopModelsProperty); }
             set { SetValue(TopModelsProperty, value); }
         }
 
@@ -145,13 +145,13 @@ namespace Mov.Designer.Views
         #region ボトム
 
         public static readonly DependencyProperty BottomModelsProperty =
-            DependencyProperty.Register(nameof(BottomModels), typeof(ReactiveCollection<LayoutNodeBase>),
+            DependencyProperty.Register(nameof(BottomModels), typeof(ReactiveCollection<LayoutNode>),
             typeof(DesignerPartsShell),
-            new UIPropertyMetadata(new ReactiveCollection<LayoutNodeBase>(), new PropertyChangedCallback(OnModelsChanged)));
+            new UIPropertyMetadata(new ReactiveCollection<LayoutNode>(), new PropertyChangedCallback(OnModelsChanged)));
 
-        public ReactiveCollection<LayoutNodeBase> BottomModels
+        public ReactiveCollection<LayoutNode> BottomModels
         {
-            get { return (ReactiveCollection<LayoutNodeBase>)GetValue(BottomModelsProperty); }
+            get { return (ReactiveCollection<LayoutNode>)GetValue(BottomModelsProperty); }
             set { SetValue(BottomModelsProperty, value); }
         }
 
@@ -204,13 +204,13 @@ namespace Mov.Designer.Views
         #region レフト
 
         public static readonly DependencyProperty LeftModelsProperty =
-            DependencyProperty.Register(nameof(LeftModels), typeof(ReactiveCollection<LayoutNodeBase>),
+            DependencyProperty.Register(nameof(LeftModels), typeof(ReactiveCollection<LayoutNode>),
             typeof(DesignerPartsShell),
-            new UIPropertyMetadata(new ReactiveCollection<LayoutNodeBase>(), new PropertyChangedCallback(OnModelsChanged)));
+            new UIPropertyMetadata(new ReactiveCollection<LayoutNode>(), new PropertyChangedCallback(OnModelsChanged)));
 
-        public ReactiveCollection<LayoutNodeBase> LeftModels
+        public ReactiveCollection<LayoutNode> LeftModels
         {
-            get { return (ReactiveCollection<LayoutNodeBase>)GetValue(LeftModelsProperty); }
+            get { return (ReactiveCollection<LayoutNode>)GetValue(LeftModelsProperty); }
             set { SetValue(LeftModelsProperty, value); }
         }
 
@@ -263,13 +263,13 @@ namespace Mov.Designer.Views
         #region ライト
 
         public static readonly DependencyProperty RightModelsProperty =
-            DependencyProperty.Register(nameof(RightModels), typeof(ReactiveCollection<LayoutNodeBase>),
+            DependencyProperty.Register(nameof(RightModels), typeof(ReactiveCollection<LayoutNode>),
             typeof(DesignerPartsShell),
-            new UIPropertyMetadata(new ReactiveCollection<LayoutNodeBase>(), new PropertyChangedCallback(OnModelsChanged)));
+            new UIPropertyMetadata(new ReactiveCollection<LayoutNode>(), new PropertyChangedCallback(OnModelsChanged)));
 
-        public ReactiveCollection<LayoutNodeBase> RightModels
+        public ReactiveCollection<LayoutNode> RightModels
         {
-            get { return (ReactiveCollection<LayoutNodeBase>)GetValue(RightModelsProperty); }
+            get { return (ReactiveCollection<LayoutNode>)GetValue(RightModelsProperty); }
             set { SetValue(RightModelsProperty, value); }
         }
 

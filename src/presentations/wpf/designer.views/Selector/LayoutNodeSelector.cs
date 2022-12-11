@@ -38,16 +38,16 @@ namespace Mov.Designer.Views.Selector
         #region メソッド
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
-            if(item is LayoutNodeBase node)
+            if(item is LayoutNode node)
             {
-                if (node is RegionLayoutNode region) return GroupTemplate;
-                if (node is ContentLayoutNode content) return ContentTemplate;        
-                if (node is ExpanderLayoutNode expander) return ExpanderTemplate;
-                if (node is GroupLayoutNode group) return GroupTemplate;
-                if (node is ScrollbarLayoutNode scrollbar) return ScrollbarTemplate;
-                if (node is TabLayoutNode tab) return TabTemplate;
-                if (node is TableLayoutNode table) return TableTemplate;
-                if (node is TreeLayoutNode tree) return TreeTemplate;
+                if (node.NodeType.IsRegion) return GroupTemplate;
+                if (node.NodeType.IsContent) return ContentTemplate;        
+                if (node.NodeType.IsExpander) return ExpanderTemplate;
+                if (node.NodeType.IsGroup) return GroupTemplate;
+                if (node.NodeType.IsScroll) return ScrollbarTemplate;
+                if (node.NodeType.IsTab) return TabTemplate;
+                if (node.NodeType.IsTable) return TableTemplate;
+                if (node.NodeType.IsTree) return TreeTemplate;
                 return null;
             }
             return base.SelectTemplate(item, container);

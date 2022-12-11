@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Designer.Models.Nodes
 {
-    public class TreeLayoutNode : LayoutNodeBase
+    public class TreeLayoutNode : LayoutNode
     {
 
         #region コンストラクター

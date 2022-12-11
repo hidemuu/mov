@@ -95,7 +95,7 @@
                 <GridViewColumn Width="{Binding Attribute.LayoutType.Width.Value}" Header="{Binding Attribute.LayoutType.Header.Value}">
                     <GridViewColumn.CellTemplate>
                         <DataTemplate DataType="{x:Type vm:DesignerTreeModel}">
-                            <ComboBox ItemsSource="{Binding NodeTypes}" SelectedItem="{Binding LayoutType.Value}" />
+                            <ComboBox ItemsSource="{Binding NodeTypes}" SelectedItem="{Binding LayoutType.Value.Value}" />
                         </DataTemplate>
                     </GridViewColumn.CellTemplate>
                 </GridViewColumn>

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Designer.Models.Nodes
 {
-    public class TabLayoutNode : LayoutNodeBase
+    public class TabLayoutNode : LayoutNode
     {
 
         #region コンストラクター

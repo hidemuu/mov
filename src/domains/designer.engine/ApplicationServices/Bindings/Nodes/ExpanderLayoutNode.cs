@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Designer.Models.Nodes
 {
-    public class ExpanderLayoutNode : LayoutNodeBase
+    public class ExpanderLayoutNode : LayoutNode
     {
 
         #region コンストラクター

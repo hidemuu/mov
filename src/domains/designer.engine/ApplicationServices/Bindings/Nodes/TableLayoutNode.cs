@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Designer.Models.Nodes
 {
-    public class TableLayoutNode : LayoutNodeBase
+    public class TableLayoutNode : LayoutNode
     {
 
 

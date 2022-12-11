@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public abstract class LayoutContentBase : ILayoutContent
+    public class LayoutContent : ILayoutContent
     {
 
         #region プロパティ
@@ -53,7 +53,7 @@ namespace Mov.Designer.Models
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public LayoutContentBase() : this(new Content())
+        public LayoutContent() : this(new Content())
         {
             
         }
@@ -62,7 +62,7 @@ namespace Mov.Designer.Models
         /// コンストラクター
         /// </summary>
         /// <param name="content"></param>
-        public LayoutContentBase(Content content)
+        public LayoutContent(Content content)
         {
             this.Code = new ContentCode(content.Code);
             this.Name = new ContentName(content.Name);

@@ -37,7 +37,7 @@ namespace Mov.Designer.Models
         [LanguageKey("node_type")]
         [DisplayName("node_type")]
         [DisplayIndex(10)]
-        public NodeTypes NodeType { get; set; } = NodeTypes.Content;
+        public string NodeType { get; set; } = "Content";
         /// <summary>
         /// 表示方向
         /// </summary>

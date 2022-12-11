@@ -2,6 +2,7 @@
 using Mov.Designer.Models.Nodes;
 using Mov.Designer.Models.Persistences;
 using Mov.Layouts;
+using Mov.Layouts.Nodes.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -30,26 +31,10 @@ namespace Mov.Designer.Engine
 
         #region メソッド
 
-        public LayoutNodeBase Create(Node node)
+        public LayoutNode Create(Node node)
         {
             var content = GetContent(node);
-            switch (node.NodeType)
-            {
-                case NodeTypes.Region:
-                    return new RegionLayoutNode(node, content);
-                case NodeTypes.Content:
-                    return new ContentLayoutNode(node, content);
-                case NodeTypes.Group:
-                    return new GroupLayoutNode(node, content);
-                case NodeTypes.Expander:
-                    return new ExpanderLayoutNode(node, content);
-                case NodeTypes.Scrollbar:
-                    return new ScrollbarLayoutNode(node, content);
-                case NodeTypes.Tab:
-                    return new TabLayoutNode(node, content);
-                default:
-                    return new ContentLayoutNode();
-            }
+            return new LayoutNode(node, content);
         }
 
         #endregion メソッド

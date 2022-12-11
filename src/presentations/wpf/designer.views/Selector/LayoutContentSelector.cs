@@ -1,4 +1,5 @@
-﻿using Mov.Designer.Models.Nodes;
+﻿using Mov.Designer.Models;
+using Mov.Designer.Models.Nodes;
 using Mov.Layouts;
 using Mov.WpfLayouts.Components;
 using Mov.WpfLayouts.Components.Atoms;
@@ -16,7 +17,7 @@ namespace Mov.Designer.Views.Selector
 
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
-            if (item is ContentLayoutNode node)
+            if (item is LayoutNode node)
             {
                 FrameworkElementFactory factory;
                 switch (node.ControlType.Value)
@@ -90,7 +91,7 @@ namespace Mov.Designer.Views.Selector
             return false;
         }
 
-        private FrameworkElementFactory GetDefault(ContentLayoutNode node)
+        private FrameworkElementFactory GetDefault(LayoutNode node)
         {
             var defaultFactory = new FrameworkElementFactory(typeof(Label));
             defaultFactory.SetValue(Label.ContentProperty, "【NotFound】" + node.ToString());

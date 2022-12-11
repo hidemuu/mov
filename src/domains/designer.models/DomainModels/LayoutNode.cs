@@ -10,14 +10,14 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public abstract class LayoutNodeBase : LayoutContentBase, ILayoutNode
+    public class LayoutNode : LayoutContent, ILayoutNode
     {
         #region フィールド
 
         /// <summary>
         /// 子階層
         /// </summary>
-        private List<LayoutNodeBase> children = new List<LayoutNodeBase>();
+        private List<LayoutNode> children = new List<LayoutNode>();
 
         #endregion フィールド
 
@@ -30,7 +30,7 @@ namespace Mov.Designer.Models
         /// <summary>
         /// 子階層
         /// </summary>
-        public List<LayoutNodeBase> Children => children;
+        public List<LayoutNode> Children => children;
 
         #endregion プロパティ
 
@@ -39,7 +39,7 @@ namespace Mov.Designer.Models
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public LayoutNodeBase() : this(new Node(), new Content())
+        public LayoutNode() : this(new Node(), new Content())
         {
             
         }
@@ -49,9 +49,9 @@ namespace Mov.Designer.Models
         /// </summary>
         /// <param name="node"></param>
         /// <param name="content"></param>
-        public LayoutNodeBase(Node node, Content content) : base(content)
+        public LayoutNode(Node node, Content content) : base(content)
         {
-            this.NodeType = new NodeType(node.NodeType.ToString());
+            this.NodeType = new NodeType(node.NodeType);
             this.Expand = new NodeExpand(true);
         }
 
@@ -60,19 +60,19 @@ namespace Mov.Designer.Models
         #region メソッド
 
         
-        public void Add(LayoutNodeBase layout)
+        public void Add(LayoutNode layout)
         {
             children.Add(layout);
         }
 
-        public void AddRange(IEnumerable<LayoutNodeBase> layouts)
+        public void AddRange(IEnumerable<LayoutNode> layouts)
         {
             children.AddRange(layouts);
         }
 
         public override string ToString()
         {
-            return base.ToString();
+            return base.ToString() + " [ControlType] " + ControlType.Value + " [Macro] " + Macro.Value;
         }
 
         #endregion メソッド

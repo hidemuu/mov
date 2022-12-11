@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Designer.Models.Nodes
 {
-    public class RegionLayoutNode : LayoutNodeBase
+    public class RegionLayoutNode : LayoutNode
     {
         #region 定数
 

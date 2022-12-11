@@ -40,7 +40,7 @@ namespace Mov.Layouts.ValueObjects
 
         protected override bool EqualCore(ContentOrientation other)
         {
-            throw new NotImplementedException();
+            return this.Value.Equals(other.Value);
         }
 
         public bool IsHorizontal => this == Horizontal;

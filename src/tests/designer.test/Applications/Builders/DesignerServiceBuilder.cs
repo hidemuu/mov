@@ -23,7 +23,7 @@ namespace Mov.Designer.Test.Applications.Builders
         public DesignerServiceBuilder()
         {
             this.mockEngine = new Mock<IDesignerEngine>();
-            this.service = new DesignerService(this.mockEngine.Object);
+            this.service = new DesignerService(new IDesignerEngine[] { this.mockEngine.Object });
         }
 
         #endregion コンストラクター

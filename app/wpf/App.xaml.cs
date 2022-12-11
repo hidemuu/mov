@@ -60,7 +60,6 @@ using Mov.Designer.Service;
 using Mov.Configurators;
 using Mov.Designer.Models.Repositories;
 using Mov.Designer.Repository.Implements;
-using Mov.Designer.Repository.Parameters;
 
 namespace Mov.WpfApp
 {
@@ -155,6 +154,9 @@ namespace Mov.WpfApp
                 .Create<IAnalizerRepository>(SerializeConstants.PATH_JSON);
             containerRegistry.RegisterInstance(fileAnalizerRepositories);
 
+            var fileDesignerRepositories = new FileDesignerRepositoryCollection(resourcePath, SerializeConstants.PATH_XML);
+            containerRegistry.RegisterInstance<IDesignerRepositoryCollection>(fileDesignerRepositories);
+
             //インターフェースとクラスを紐付けて登録
             //container.RegisterType<IHomeService, HomeService>();
 
@@ -162,10 +164,15 @@ namespace Mov.WpfApp
             //containerRegistry.RegisterSingleton<IApplicationCommands, ApplicationCommands>();
 
             //サービスの登録
-            containerRegistry.RegisterInstance<IDesignerRepositoryCollection>(new FileDesignerRepositoryCollection(resourcePath, SerializeConstants.PATH_XML));
-            containerRegistry.RegisterInstance<IDesignerParameter>(Container.Resolve<DesignerCollectionParameter>());
-            containerRegistry.RegisterInstance<IDesignerEngine>(Container.Resolve<DesignerEngine>());
-            containerRegistry.RegisterInstance<IDesignerService>(Container.Resolve<DesignerService>());
+
+            var designerEngines = new List<IDesignerEngine>();
+            foreach(var name in fileDesignerRepositories.GetRepositoryNames())
+            {
+                var parameter = new DesignerParameter(fileDesignerRepositories.GetRepository(name), name);
+                designerEngines.Add(new DesignerEngine(parameter));
+            }
+
+            containerRegistry.RegisterInstance<IDesignerService>(new DesignerService(designerEngines));
 
             containerRegistry.RegisterInstance<IGameRepository>(fileGameRepositories.GetRepository(""));
             containerRegistry.RegisterInstance<IGameParameter>(Container.Resolve<GameParameter>());

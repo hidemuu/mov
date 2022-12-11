@@ -89,6 +89,20 @@ namespace Mov.Designer.Engine
             BuildNode();
         }
 
+        public void Write()
+        {
+            this.Repository.Nodes.Write();
+            this.Repository.Contents.Write();
+            this.Repository.Shells.Write();
+        }
+
+        public void Read()
+        {
+            this.Repository.Nodes.Read();
+            this.Repository.Contents.Read();
+            this.Repository.Shells.Read();
+        }
+
         #endregion メソッド
 
         #region 内部メソッド

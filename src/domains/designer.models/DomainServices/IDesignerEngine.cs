@@ -33,6 +33,10 @@ namespace Mov.Designer.Models
 
         void UpdateRepository(string repositoryName);
 
+        void Write();
+
+        void Read();
+
         #endregion メソッド
     }
 }

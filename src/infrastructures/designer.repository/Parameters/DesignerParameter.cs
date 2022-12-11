@@ -16,6 +16,8 @@ namespace Mov.Designer.Repository
 
         #region プロパティ
 
+        public string EndPoint { get; }
+
         public IDesignerRepository Repository { get; }
 
         public IDesignerCommand Command { get; }
@@ -26,8 +28,9 @@ namespace Mov.Designer.Repository
 
         #region コンストラクター
 
-        public DesignerParameter(IDesignerRepository repository)
+        public DesignerParameter(IDesignerRepository repository, string endpoint)
         {
+            this.EndPoint = endpoint;
             this.Repository = repository;
             this.Command = new RepositoryDesignerCommand(repository);
             this.Query = new RepositoryDesignerQuery(repository);

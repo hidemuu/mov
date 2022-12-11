@@ -4,6 +4,7 @@ using Mov.Layouts;
 using Mov.Layouts.ValueObjects;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Mov.Designer.Service
@@ -12,7 +13,9 @@ namespace Mov.Designer.Service
     {
         #region フィールド
 
-        private readonly IDesignerEngine engine;
+        private readonly IEnumerable<IDesignerEngine> engines;
+
+        private IDesignerEngine engine;
 
         #endregion フィールド
 
@@ -25,9 +28,10 @@ namespace Mov.Designer.Service
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public DesignerService(IDesignerEngine engine)
+        public DesignerService(IEnumerable<IDesignerEngine> engines)
         {
-            this.engine = engine;
+            this.engines = engines;
+            this.engine = engines.First();
         }
 
         #endregion コンストラクター
@@ -52,9 +56,7 @@ namespace Mov.Designer.Service
 
         public void Read()
         {
-            this.engine.Repository.Nodes.Read();
-            this.engine.Repository.Contents.Read();
-            this.engine.Repository.Shells.Read();
+            this.engine.Read();
         }
 
         public IEnumerable<Node> GetNodes()
@@ -98,9 +100,7 @@ namespace Mov.Designer.Service
 
         public void Write()
         {
-            this.engine.Repository.Nodes.Write();
-            this.engine.Repository.Contents.Write();
-            this.engine.Repository.Shells.Write();
+            this.engine.Write();
         }
 
         public void PostNodes(IEnumerable<Node> items)

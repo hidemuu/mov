@@ -12,26 +12,30 @@ namespace Mov.Layouts.ValueObjects
         /// <summary>
         /// 水平
         /// </summary>
-        public static readonly ContentOrientation Horizontal = new ContentOrientation(OrientationType.Horizontal);
+        public static readonly ContentOrientation Horizontal = new ContentOrientation("Horizontal");
 
         /// <summary>
         /// 垂直
         /// </summary>
-        public static readonly ContentOrientation Vertical = new ContentOrientation(OrientationType.Vertical);
+        public static readonly ContentOrientation Vertical = new ContentOrientation("Vertical");
 
         #endregion オブジェクト
 
         #region プロパティ
 
-        public OrientationType Value { get; }
+        public string Value { get; }
+
+        public bool IsHorizontal => this == Horizontal;
+
+        public bool IsVertical => this == Vertical;
 
         #endregion プロパティ
 
         #region コンストラクター
 
-        public ContentOrientation(OrientationType value)
+        public ContentOrientation(string orientation)
         {
-            Value = value;
+            this.Value = orientation;
         }
 
         #endregion コンストラクター
@@ -43,10 +47,19 @@ namespace Mov.Layouts.ValueObjects
             return this.Value.Equals(other.Value);
         }
 
-        public bool IsHorizontal => this == Horizontal;
-
-        public bool IsVertical => this == Vertical;
-
         #endregion メソッド
+
+        #region 静的メソッド
+
+        public static IEnumerable<string> GetStrings()
+        {
+            return new string[]
+            {
+                Horizontal.Value,
+                Vertical.Value,
+            };
+        }
+
+        #endregion 静的メソッド
     }
 }

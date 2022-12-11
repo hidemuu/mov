@@ -1,5 +1,6 @@
 ﻿using Mov.Designer.Models;
 using Mov.Layouts;
+using Mov.Layouts.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -20,8 +21,8 @@ namespace Mov.Designer.Views.Converters
             {
                 return DependencyProperty.UnsetValue;
             }
-            var isCanExcute = (OrientationType)value;
-            if (isCanExcute == OrientationType.Vertical)
+            var isCanExcute = (string)value;
+            if (isCanExcute == ContentOrientation.Vertical.Value)
             {
                 return Orientation.Vertical;
             }

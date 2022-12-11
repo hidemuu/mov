@@ -1,5 +1,6 @@
 ﻿using Mov.Accessors;
 using Mov.Layouts;
+using Mov.Layouts.ValueObjects;
 using Mov.Utilities.Attributes;
 using System;
 using System.Collections;
@@ -45,7 +46,7 @@ namespace Mov.Designer.Models
         [LanguageKey("orientation")]
         [DisplayName("orientation")]
         [DisplayIndex(11)]
-        public OrientationType OrientationType { get; set; } = OrientationType.Horizontal;
+        public string OrientationType { get; set; } = ContentOrientation.Horizontal.Value;
         /// <summary>
         /// スタイル
         /// </summary>
@@ -110,8 +111,6 @@ namespace Mov.Designer.Models
 
         /// <inheritdoc />
         public override string[] GetHeaderStrings() => new string[] { "Code", "LayoutType" };
-
-        public static OrientationType[] GetOrientationTypes => (OrientationType[])Enum.GetValues(typeof(OrientationType));
 
         public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<Node>().OrderBy(x => x.index);
 

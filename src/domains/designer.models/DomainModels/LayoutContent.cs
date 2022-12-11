@@ -73,7 +73,7 @@ namespace Mov.Designer.Models
             this.Width = new ContentWidth(content.Width);
             this.Visibility = new ContentVisibility(true);
             this.Enable = new ContentEnable(true);
-            this.Orientation = new ContentOrientation(OrientationType.Horizontal);
+            this.Orientation = ContentOrientation.Horizontal;
             this.HorizontalAlignment = new ContentHorizontalAlignment(content.HorizontalAlignment);
             this.VerticalAlignment = new ContentVerticalAlignment(content.VerticalAlignment);
             this.Schema = new ContentSchema(content.Schema);

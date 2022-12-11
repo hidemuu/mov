@@ -3,6 +3,7 @@ using Mov.Designer.Models;
 using Mov.Designer.Service;
 using Mov.Layouts;
 using Mov.Layouts.Nodes.ValueObjects;
+using Mov.Layouts.ValueObjects;
 using Mov.WpfModels;
 using Mov.WpfMvvms;
 using Prism.Regions;
@@ -160,7 +161,7 @@ namespace Mov.Designer.ViewModels
                     Index = model.Index.Value,
                     Code = model.Code.Value,
                     IsExpand = model.IsExpand.Value,
-                    OrientationType = model.OrientationType.Value,
+                    OrientationType = model.OrientationType.Value.Value,
                     NodeType = model.LayoutType.Value.Value,
                     Style = model.LayoutStyle.Value,
                     Parameter = model.LayoutParameter.Value,
@@ -205,7 +206,7 @@ namespace Mov.Designer.ViewModels
         #region プロパティ
 
         public ReactivePropertySlim<NodeType> LayoutType { get; } = new ReactivePropertySlim<NodeType>(NodeType.Content);
-        public ReactivePropertySlim<OrientationType> OrientationType { get; } = new ReactivePropertySlim<OrientationType>(Mov.Layouts.OrientationType.Horizontal);
+        public ReactivePropertySlim<ContentOrientation> OrientationType { get; } = new ReactivePropertySlim<ContentOrientation>(ContentOrientation.Horizontal);
         public ReactivePropertySlim<string> LayoutStyle { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<string> LayoutParameter { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<bool> IsExpand { get; } = new ReactivePropertySlim<bool>(true);
@@ -214,7 +215,7 @@ namespace Mov.Designer.ViewModels
 
         public List<string> NodeTypes { get; set; } = NodeType.GetStrings().ToList();
 
-        public List<OrientationType> OrientationTypes { get; set; } = Node.GetOrientationTypes.ToList();
+        public List<string> OrientationTypes { get; set; } = ContentOrientation.GetStrings().ToList();
 
         public List<DesignerTreeModel> Children { get; set; } = new List<DesignerTreeModel>();
 
@@ -232,7 +233,7 @@ namespace Mov.Designer.ViewModels
             Code.Value = node.Code;
             IsExpand.Value = node.IsExpand;
             LayoutType.Value = new NodeType(node.NodeType);
-            OrientationType.Value = node.OrientationType;
+            OrientationType.Value = new ContentOrientation(node.OrientationType);
             LayoutStyle.Value = node.Style;
             LayoutParameter.Value = node.Parameter;
             //子階層へ

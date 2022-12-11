@@ -1,5 +1,4 @@
 ﻿using Mov.Designer.Models;
-using Mov.Designer.Models.Nodes;
 using Mov.Designer.Models.Persistences;
 using Mov.Layouts;
 using Mov.Layouts.Nodes.ValueObjects;

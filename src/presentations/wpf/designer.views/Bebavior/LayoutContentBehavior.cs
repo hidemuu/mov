@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xaml.Behaviors;
-using Mov.Designer.Models.Nodes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,10 +32,7 @@ namespace Mov.Designer.Views.Bebavior
         {
             //振る舞い
             var control = sender as ContentControl;
-            if (control?.DataContext is ContentLayoutNode contentLayoutNode)
-            {
-
-            }
+            
         }
 
         #endregion イベント

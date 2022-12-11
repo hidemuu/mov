@@ -1,5 +1,4 @@
 ﻿using Mov.Designer.Models;
-using Mov.Designer.Models.Nodes;
 using Mov.Layouts;
 using Mov.WpfLayouts.Components;
 using Mov.WpfLayouts.Components.Atoms;

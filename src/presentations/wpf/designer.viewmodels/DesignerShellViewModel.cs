@@ -64,7 +64,7 @@ namespace Mov.Designer.ViewModels
 
         protected override void PutItem()
         {
-            this.service.PutShell(new Shell());
+            this.service.PostShell(new Shell());
         }
 
         protected override void DeleteItem()

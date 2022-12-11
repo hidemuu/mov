@@ -67,12 +67,6 @@ namespace Mov.Designer.Service
             return this.engine.Repository.Nodes.Get(id);
         }
 
-        public Node GetNode(string code)
-        {
-            return this.engine.Repository.Nodes.Get(code);
-        }
-
-
         public IEnumerable<Content> GetContents()
         {
             return this.engine.Repository.Contents.Get();
@@ -114,16 +108,6 @@ namespace Mov.Designer.Service
             this.engine.Repository.Nodes.Posts(items);
         }
 
-        public void PostNode(Node item)
-        {
-            this.engine.Repository.Nodes.Post(item);
-        }
-
-        public void PutNode(Node item)
-        {
-            this.engine.Repository.Nodes.Put(item);
-        }
-
         public void DeleteNode(Node item)
         {
             this.engine.Repository.Nodes.Delete(item);
@@ -132,16 +116,6 @@ namespace Mov.Designer.Service
         public void PostContents(IEnumerable<Content> items)
         {
             this.engine.Repository.Contents.Posts(items);
-        }
-
-        public void PostContent(Content item)
-        {
-            this.engine.Repository.Contents.Post(item);
-        }
-
-        public void PutContent(Content item)
-        {
-            this.engine.Repository.Contents.Put(item);
         }
 
         public void DeleteContent(Content item)
@@ -159,10 +133,6 @@ namespace Mov.Designer.Service
             this.engine.Repository.Shells.Post(item);
         }
 
-        public void PutShell(Shell item)
-        {
-            this.engine.Repository.Shells.Put(item);
-        }
 
         public void DeleteShell(Shell item)
         {

@@ -29,8 +29,6 @@ namespace Mov.Designer.Models
 
         Node GetNode(Guid id);
 
-        Node GetNode(string code);
-
         IEnumerable<Content> GetContents();
 
         Content GetContent(Guid id);
@@ -49,25 +47,15 @@ namespace Mov.Designer.Models
 
         void PostNodes(IEnumerable<Node> items);
 
-        void PostNode(Node item);
-
-        void PutNode(Node item);
-
         void DeleteNode(Node item);
 
         void PostContents(IEnumerable<Content> items);
-
-        void PostContent(Content item);
-
-        void PutContent(Content item);
 
         void DeleteContent(Content item);
 
         void PostShells(IEnumerable<Shell> items);
 
         void PostShell(Shell item);
-
-        void PutShell(Shell item);
 
         void DeleteShell(Shell item);
 

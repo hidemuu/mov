@@ -36,11 +36,6 @@ namespace Mov.Designer.Service
 
         #region UIモデル
 
-        public IEnumerable<LayoutNode> GetNodeModels()
-        {
-            return this.engine.Nodes;
-        }
-
         public LayoutNode GetNodeModel(ShellRegion region)
         {
             if (region.IsCenter) return this.engine.CenterNode;

@@ -15,8 +15,6 @@ namespace Mov.Designer.Models
 
         IDesignerQuery Query { get; }
 
-        IEnumerable<LayoutNode> Nodes { get; }
-
         LayoutNode CenterNode { get; }
 
         LayoutNode TopNode { get; }

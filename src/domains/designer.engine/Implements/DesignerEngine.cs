@@ -18,6 +18,8 @@ namespace Mov.Designer.Engine
 
         private readonly LayoutNodeFactory factory;
 
+        private IEnumerable<LayoutNode> nodes;
+
         #endregion フィールド
 
         #region プロパティ
@@ -33,9 +35,6 @@ namespace Mov.Designer.Engine
         #endregion クエリ・コマンド
 
         #region UIモデル
-
-        public IEnumerable<LayoutNode> Nodes { get; private set; }
-
         public LayoutNode CenterNode { get; private set; }
 
         public LayoutNode TopNode { get; private set; }
@@ -68,9 +67,9 @@ namespace Mov.Designer.Engine
 
         public void BuildNode()
         {
-            Nodes = CreateNodes();
-            if (Nodes == null) return;
-            foreach (var node in Nodes)
+            this.nodes = CreateNodes();
+            if (this.nodes == null) return;
+            foreach (var node in this.nodes)
             {
                 if (node.NodeType.IsRegion)
                 {

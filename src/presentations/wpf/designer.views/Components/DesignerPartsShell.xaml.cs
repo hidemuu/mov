@@ -415,14 +415,8 @@ namespace Mov.Designer.Views
                         control.LeftModels.Clear();
                         control.RightModels.Clear();
                         var service = control.Service;
-                        if (service.GetNodeModel(ShellRegion.Center) == null)
-                        {
-                            control.Models.AddRange(service.GetNodeModels());
-                        }
-                        else
-                        {
-                            control.Models.AddRange(service.GetNodeModel(ShellRegion.Center).Children);
-                        }
+                        
+                        control.Models.AddRange(service.GetNodeModel(ShellRegion.Center).Children);
                         control.TopModels.AddRange(service.GetNodeModel(ShellRegion.Top).Children);
                         control.BottomModels.AddRange(service.GetNodeModel(ShellRegion.Bottom).Children);
                         control.LeftModels.AddRange(service.GetNodeModel(ShellRegion.Left).Children);

@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Transactions\" />
+    <Folder Include="Persistences\Transactions\" />
   </ItemGroup>
 
 </Project>

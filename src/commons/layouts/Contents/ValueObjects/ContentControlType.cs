@@ -9,35 +9,53 @@ namespace Mov.Layouts.Contents.ValueObjects
     {
         #region オブジェクト
 
-        public static readonly ContentControlType Label = new ContentControlType(ControlType.Label);
+        public static readonly ContentControlType Label = new ContentControlType("Label");
 
-        public static readonly ContentControlType Button = new ContentControlType(ControlType.Button);
+        public static readonly ContentControlType Button = new ContentControlType("Button");
 
-        public static readonly ContentControlType RadioButton = new ContentControlType(ControlType.RadioButton);
+        public static readonly ContentControlType RadioButton = new ContentControlType("RadioButton");
 
-        public static readonly ContentControlType SpinBox = new ContentControlType(ControlType.SpinBox);
+        public static readonly ContentControlType SpinBox = new ContentControlType("SpinBox");
 
-        public static readonly ContentControlType TextBox = new ContentControlType(ControlType.TextBox);
+        public static readonly ContentControlType TextBox = new ContentControlType("TextBox");
 
-        public static readonly ContentControlType ListBox = new ContentControlType(ControlType.ListBox);
+        public static readonly ContentControlType ListBox = new ContentControlType("ListBox");
         
-        public static readonly ContentControlType ComboBox = new ContentControlType(ControlType.ComboBox);
+        public static readonly ContentControlType ComboBox = new ContentControlType("ComboBox");
 
-        public static readonly ContentControlType CheckBox = new ContentControlType(ControlType.CheckBox);
+        public static readonly ContentControlType CheckBox = new ContentControlType("CheckBox");
 
-        public static readonly ContentControlType DatePicker = new ContentControlType(ControlType.DatePicker);
+        public static readonly ContentControlType DatePicker = new ContentControlType("DatePicker");
 
         #endregion オブジェクト
 
         #region プロパティ
 
-        public ControlType Value { get; }
+        public string Value { get; }
+
+        public bool IsLabel => this == Label;
+
+        public bool IsButton => this == Button;
+
+        public bool IsRadioButton => this == RadioButton;
+
+        public bool IsSpinBox => this == SpinBox;
+
+        public bool IsTextBox => this == TextBox;
+
+        public bool IsListBox => this == ListBox;
+
+        public bool IsComboBox => this == ComboBox;
+
+        public bool IsCheckBox => this == CheckBox;
+
+        public bool IsDatePicker => this == DatePicker;
 
         #endregion プロパティ
 
         #region コンストラクター
 
-        public ContentControlType(ControlType controlType)
+        public ContentControlType(string controlType)
         {
             this.Value = controlType;
         }
@@ -51,12 +69,27 @@ namespace Mov.Layouts.Contents.ValueObjects
             return this.Value.Equals(other.Value);
         }
 
-        public bool IsLabel => this == Label;
-
-        public bool IsButton => this == Button;
-
-        public bool IsRadioButton => this == RadioButton;
-
         #endregion メソッド
+
+        #region 静的メソッド
+
+        public static IEnumerable<string> GetStrings()
+        {
+            return new string[] 
+            {
+                Label.Value,
+                Button.Value,
+                RadioButton.Value,
+                SpinBox.Value,
+                TextBox.Value,
+                ListBox.Value,
+                ComboBox.Value,
+                CheckBox.Value,
+                DatePicker.Value,
+            };
+
+        }
+
+        #endregion 静的メソッド
     }
 }

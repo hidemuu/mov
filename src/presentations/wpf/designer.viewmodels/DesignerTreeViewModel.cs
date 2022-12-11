@@ -180,7 +180,7 @@ namespace Mov.Designer.ViewModels
                     Id = model.Id.Value,
                     Index = model.Index.Value,
                     Code = model.Code.Value,
-                    ControlType = model.ControlType.Value,
+                    ControlType = model.ControlType.Value.Value,
                     Name = model.Name.Value,
                 };
                 items.Add(item);

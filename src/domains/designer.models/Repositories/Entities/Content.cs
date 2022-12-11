@@ -1,5 +1,6 @@
 ﻿using Mov.Accessors;
 using Mov.Layouts;
+using Mov.Layouts.Contents.ValueObjects;
 using Mov.Utilities.Attributes;
 using System;
 using System.Collections.Generic;
@@ -63,7 +64,7 @@ namespace Mov.Designer.Models
         [LanguageKey("control_type")]
         [DisplayName("control_type")]
         [DisplayIndex(13)]
-        public ControlType ControlType { get; set; } = ControlType.Label;
+        public string ControlType { get; set; } = ContentControlType.Label.Value;
 
         /// <summary>
         /// コントロールのスキーマ
@@ -167,8 +168,7 @@ namespace Mov.Designer.Models
 
         #region メソッド
 
-        public static ControlType[] GetControlTypes => (ControlType[])Enum.GetValues(typeof(ControlType));
-
+        
         public static string[] GetHorizontalAlignments => new string[] { "Left", "Right", "Center", "Stretch" };
 
         public static string[] GetVerticalAlignments => new string[] { "Top", "Bottom", "Center", "Stretch" };

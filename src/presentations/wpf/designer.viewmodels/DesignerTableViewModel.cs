@@ -2,6 +2,7 @@
 using Mov.Designer.Models;
 using Mov.Designer.Service;
 using Mov.Layouts;
+using Mov.Layouts.Contents.ValueObjects;
 using Mov.WpfModels;
 using Mov.WpfMvvms;
 using Prism.Regions;
@@ -138,7 +139,7 @@ namespace Mov.Designer.ViewModels
                     Id = model.Id.Value,
                     Index = model.Index.Value,
                     Code = model.Code.Value,
-                    ControlType = model.ControlType.Value,
+                    ControlType = model.ControlType.Value.Value,
                     Name = model.Name.Value,
                     Height = model.Height.Value,
                     Width = model.Width.Value,
@@ -172,7 +173,7 @@ namespace Mov.Designer.ViewModels
         public ReactivePropertySlim<string> Code { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<string> Name { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<string> Command { get; } = new ReactivePropertySlim<string>();
-        public ReactivePropertySlim<ControlType> ControlType { get; } = new ReactivePropertySlim<ControlType>();
+        public ReactivePropertySlim<ContentControlType> ControlType { get; } = new ReactivePropertySlim<ContentControlType>();
         public ReactivePropertySlim<string> ControlStyle { get; } = new ReactivePropertySlim<string>();
 
         public ReactivePropertySlim<double> Width { get; } = new ReactivePropertySlim<double>(150);
@@ -184,7 +185,7 @@ namespace Mov.Designer.ViewModels
 
         public ReactivePropertySlim<string> ToolTip { get; } = new ReactivePropertySlim<string>();
 
-        public List<ControlType> ControlTypes { get; set; } = Content.GetControlTypes.ToList();
+        public List<string> ControlTypes { get; set; } = ContentControlType.GetStrings().ToList();
 
         public List<string> HolizontalAlignments { get; set; } = Content.GetHorizontalAlignments.ToList();
 
@@ -214,7 +215,7 @@ namespace Mov.Designer.ViewModels
             Index.Value = item.Index;
             Code.Value = item.Code;
             Name.Value = item.Name;
-            ControlType.Value = item.ControlType;
+            ControlType.Value = new ContentControlType(item.ControlType);
             Height.Value = item.Height;
             Width.Value = item.Width;
             HorizontalAlignment.Value = item.HorizontalAlignment;

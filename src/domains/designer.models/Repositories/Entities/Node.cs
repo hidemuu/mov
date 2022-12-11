@@ -111,8 +111,6 @@ namespace Mov.Designer.Models
         /// <inheritdoc />
         public override string[] GetHeaderStrings() => new string[] { "Code", "LayoutType" };
 
-        public static NodeTypes[] GetNodeTypes => (NodeTypes[])Enum.GetValues(typeof(NodeTypes));
-
         public static OrientationType[] GetOrientationTypes => (OrientationType[])Enum.GetValues(typeof(OrientationType));
 
         public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<Node>().OrderBy(x => x.index);

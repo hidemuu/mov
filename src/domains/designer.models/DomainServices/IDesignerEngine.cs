@@ -12,12 +12,6 @@ namespace Mov.Designer.Models
 
         int DomainId { get; }
 
-        IDesignerRepository Repository { get; }
-
-        IDesignerCommand Command { get; }
-
-        IDesignerQuery Query { get; }
-
         LayoutNode CenterNode { get; }
 
         LayoutNode TopNode { get; }

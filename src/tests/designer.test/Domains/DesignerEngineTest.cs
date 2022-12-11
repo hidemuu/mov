@@ -59,7 +59,7 @@ namespace Mov.Designer.Test
                 .Build();
 
             //Act
-            var contents = sut.Repository.Contents.Get();
+            var contents = sut.GetContents();
            
             //Assert
             //Assert.Pass();

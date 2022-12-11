@@ -12,7 +12,11 @@ namespace Mov.Designer.Engine
     {
         #region フィールド
 
-        private readonly IDesignerParameter parameter;
+        private readonly IDesignerRepository repository;
+
+        private readonly IDesignerCommand command;
+
+        private readonly IDesignerQuery query;
 
         private readonly LayoutNodeFactory factory;
 
@@ -23,16 +27,6 @@ namespace Mov.Designer.Engine
         #region プロパティ
 
         public int DomainId { get; }
-
-        #region クエリ・コマンド
-
-        public IDesignerRepository Repository { get; }
-
-        public IDesignerCommand Command { get; }
-
-        public IDesignerQuery Query { get; }
-
-        #endregion クエリ・コマンド
 
         #region UIモデル
         public LayoutNode CenterNode { get; private set; }
@@ -54,10 +48,9 @@ namespace Mov.Designer.Engine
         public DesignerEngine(IDesignerParameter parameter, int domainId)
         {
             this.DomainId = domainId;
-            this.parameter = parameter;
-            this.Repository = parameter.Repository;
-            this.Query = parameter.Query;
-            this.Command = parameter.Command;
+            this.repository = parameter.Repository;
+            this.query = parameter.Query;
+            this.command = parameter.Command;
             this.factory = new LayoutNodeFactory(parameter.Repository);
             BuildNode();
         }
@@ -86,86 +79,86 @@ namespace Mov.Designer.Engine
 
         public void Read()
         {
-            this.Repository.Nodes.Read();
-            this.Repository.Contents.Read();
-            this.Repository.Shells.Read();
+            this.repository.Nodes.Read();
+            this.repository.Contents.Read();
+            this.repository.Shells.Read();
         }
 
         public IEnumerable<Node> GetNodes()
         {
-            return this.Repository.Nodes.Get();
+            return this.repository.Nodes.Get();
         }
 
         public Node GetNode(Guid id)
         {
-            return this.Repository.Nodes.Get(id);
+            return this.repository.Nodes.Get(id);
         }
 
         public IEnumerable<Content> GetContents()
         {
-            return this.Repository.Contents.Get();
+            return this.repository.Contents.Get();
         }
 
         public Content GetContent(Guid id)
         {
-            return this.Repository.Contents.Get(id);
+            return this.repository.Contents.Get(id);
         }
 
         public Content GetContent(string code)
         {
-            return this.Repository.Contents.Get(code);
+            return this.repository.Contents.Get(code);
         }
 
         public IEnumerable<Shell> GetShells()
         {
-            return this.Repository.Shells.Get();
+            return this.repository.Shells.Get();
         }
 
         public Shell GetShell(ShellRegion region)
         {
-            return this.Repository.Shells.Get(region.Value);
+            return this.repository.Shells.Get(region.Value);
         }
         public void Write()
         {
-            this.Repository.Nodes.Write();
-            this.Repository.Contents.Write();
-            this.Repository.Shells.Write();
+            this.repository.Nodes.Write();
+            this.repository.Contents.Write();
+            this.repository.Shells.Write();
         }
 
         public void PostNodes(IEnumerable<Node> items)
         {
-            this.Repository.Nodes.Posts(items);
+            this.repository.Nodes.Posts(items);
         }
 
         public void DeleteNode(Node item)
         {
-            this.Repository.Nodes.Delete(item);
+            this.repository.Nodes.Delete(item);
         }
 
         public void PostContents(IEnumerable<Content> items)
         {
-            this.Repository.Contents.Posts(items);
+            this.repository.Contents.Posts(items);
         }
 
         public void DeleteContent(Content item)
         {
-            this.Repository.Contents.Delete(item);
+            this.repository.Contents.Delete(item);
         }
 
         public void PostShells(IEnumerable<Shell> items)
         {
-            this.Repository.Shells.Posts(items);
+            this.repository.Shells.Posts(items);
         }
 
         public void PostShell(Shell item)
         {
-            this.Repository.Shells.Post(item);
+            this.repository.Shells.Post(item);
         }
 
 
         public void DeleteShell(Shell item)
         {
-            this.Repository.Shells.Delete(item);
+            this.repository.Shells.Delete(item);
         }
 
 
@@ -176,7 +169,7 @@ namespace Mov.Designer.Engine
         private IEnumerable<LayoutNode> CreateNodes()
         {
             var node = new LayoutNode();
-            var data = this.Repository?.Nodes?.Get();
+            var data = this.repository?.Nodes?.Get();
             if (data == null) return default;
             CreateLayoutNode(node.Children, data);
             return node.Children;

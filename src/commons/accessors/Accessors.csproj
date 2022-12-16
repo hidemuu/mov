@@ -16,8 +16,4 @@
     <ProjectReference Include="..\utilities\Utilities.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Crud\Transaction\" />
-  </ItemGroup>
-
 </Project>

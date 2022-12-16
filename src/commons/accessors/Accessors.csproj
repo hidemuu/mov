@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\controllers\Controllers.csproj" />
     <ProjectReference Include="..\utilities\Utilities.csproj" />
   </ItemGroup>
 

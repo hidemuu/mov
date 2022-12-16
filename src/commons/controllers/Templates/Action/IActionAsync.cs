@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Utilities
+namespace Mov.Controllers
 {
-    public interface IFunctionAsync
+    public interface IActionAsync
     {
     }
 }

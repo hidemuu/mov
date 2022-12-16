@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Utilities
+namespace Mov.Controllers
 {
     /// <summary>
     /// アクションのインターフェース（戻り値なし）

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Utilities.DesignPatterns
+namespace Mov.Controllers
 {
     public interface IBuilder<T>
     {

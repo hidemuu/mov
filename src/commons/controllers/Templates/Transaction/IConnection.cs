@@ -10,8 +10,9 @@ namespace Mov.Controllers
 
         void Close();
 
-        ITransactionCommand CreateCommand();
-
         ITransaction BeginTransaction(int isolationLevel = 0, string name = "");
+
+        ITransactionCommand CreateCommand(ITransaction transaction);
+
     }
 }

@@ -28,12 +28,12 @@ namespace Mov.Accessors.Transaction.Implements
 
         public void Open()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void Close()
         {
-            throw new NotImplementedException();
+            
         }
 
         public ITransaction BeginTransaction(int isolationLevel = 0, string name = "")
@@ -41,9 +41,9 @@ namespace Mov.Accessors.Transaction.Implements
             return new EntityRepositoryTransaction<TEntity>(this.repository);
         }
 
-        public ITransactionCommand CreateCommand()
+        public ITransactionCommand CreateCommand(ITransaction transaction)
         {
-            return new EntityRepositoryTransactionCommand();
+            return new EntityRepositoryTransactionCommand<TEntity>(transaction, this.repository);
         }
 
         #endregion メソッド

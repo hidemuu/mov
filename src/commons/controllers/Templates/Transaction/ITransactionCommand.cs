@@ -18,8 +18,6 @@ namespace Mov.Controllers
 
         void ExecuteNonQuery(string command);
 
-        object Execute(string command);
-
         #endregion メソッド
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Controllers.Templates.Strategy
 {
-    public class StrategyExecuter
+    public class StrategyContext
     {
         #region フィールド
 
@@ -18,7 +18,7 @@ namespace Mov.Controllers.Templates.Strategy
 
         #region コンストラクター
 
-        public StrategyExecuter(IList<IStrategy> strategies)
+        public StrategyContext(IList<IStrategy> strategies)
         {
             _strategies = strategies;
             _currentStrategy = _strategies[0];

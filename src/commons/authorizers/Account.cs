@@ -1,16 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Authorizers
+namespace Mov.Authorizers
 {
     public class Account
     {
-        /// <summary>
-        /// ログインID
-        /// </summary>
-        public string LoginId { get; set; }
-        /// <summary>
-        /// パスワード
-        /// </summary>
-        public string Password { get; set; }
+        private readonly IRewardCard rewardCard;
+
+        public decimal Balance { get; private set; }
+
+        public Account(IRewardCard rewardCard)
+        {
+            this.rewardCard = rewardCard;
+        }
+
+        public void AddTransaction(decimal amount)
+        {
+            rewardCard.CalculatePoints(amount, Balance);
+            Balance += amount;
+        }
     }
 }

@@ -14,6 +14,8 @@ namespace Mov.Utilities.ValueObjects
 
         protected abstract bool EqualCore(T other);
 
+        protected abstract int GetHashCodeCore();
+
         #endregion 抽象メソッド
 
         #region メソッド
@@ -27,7 +29,7 @@ namespace Mov.Utilities.ValueObjects
 
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return GetHashCodeCore();
         }
 
         public override string ToString()

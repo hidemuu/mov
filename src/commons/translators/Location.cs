@@ -39,6 +39,11 @@ namespace Mov.Translators
             return IsJP && IsEN && IsCN;
         }
 
+        protected override int GetHashCodeCore()
+        {
+            return this.Value.GetHashCode();
+        }
+
         public bool IsJP => this == JP;
 
         public bool IsEN => this == EN;

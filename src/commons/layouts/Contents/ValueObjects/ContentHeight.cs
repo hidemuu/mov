@@ -29,6 +29,11 @@ namespace Mov.Layouts.ValueObjects
             return this.Value.Equals(other.Value);
         }
 
+        protected override int GetHashCodeCore()
+        {
+            return this.Value.GetHashCode();
+        }
+
         #endregion メソッド
     }
 }

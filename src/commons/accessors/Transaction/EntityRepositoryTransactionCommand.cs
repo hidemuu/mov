@@ -7,9 +7,24 @@ namespace Mov.Accessors.Transaction.Implements
 {
     public class EntityRepositoryTransactionCommand : ITransactionCommand
     {
-        public IConnection Connection => throw new NotImplementedException();
+        #region プロパティ
 
-        public ITransaction Transaction => throw new NotImplementedException();
+        public IConnection Connection { get; }
+
+        public ITransaction Transaction { get; }
+
+        #endregion プロパティ
+
+        #region コンストラクター
+
+        public EntityRepositoryTransactionCommand()
+        {
+
+        }
+
+        #endregion コンストラクター
+
+        #region メソッド
 
         public object Execute(string command)
         {
@@ -20,5 +35,7 @@ namespace Mov.Accessors.Transaction.Implements
         {
             throw new NotImplementedException();
         }
+
+        #endregion メソッド
     }
 }

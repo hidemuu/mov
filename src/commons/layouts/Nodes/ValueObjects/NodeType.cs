@@ -65,6 +65,11 @@ namespace Mov.Layouts.Nodes.ValueObjects
             return Value.Equals(other.Value, StringComparison.Ordinal);
         }
 
+        protected override int GetHashCodeCore()
+        {
+            return this.Value.GetHashCode();
+        }
+
         #endregion メソッド
 
         #region 静的メソッド

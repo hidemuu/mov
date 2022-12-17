@@ -8,12 +8,12 @@ namespace Mov.Designer.Models.Persistences
 {
     public interface IDesignerQuery
     {
-        IPersistenceQuery<Content> LayoutContent { get; }
+        IPersistenceQuery<Content> Contents { get; }
 
-        IPersistenceQuery<Node> LayoutNode { get; }
+        IPersistenceQuery<Node> Nodes { get; }
 
-        IPersistenceQuery<Shell> Shell { get; }
+        IPersistenceQuery<Shell> Shells { get; }
 
-        IPersistenceQuery<Theme> Theme { get; }
+        IPersistenceQuery<Theme> Themes { get; }
     }
 }

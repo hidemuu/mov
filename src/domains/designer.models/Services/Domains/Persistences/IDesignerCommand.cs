@@ -8,12 +8,12 @@ namespace Mov.Designer.Models.Persistences
 {
     public interface IDesignerCommand
     {
-        IPersistenceCommand<Content> Content { get; }
+        IPersistenceCommand<Content> Contents { get; }
 
-        IPersistenceCommand<Node> Node { get; }
+        IPersistenceCommand<Node> Nodes { get; }
 
-        IPersistenceCommand<Shell> Shell { get; }
+        IPersistenceCommand<Shell> Shells { get; }
 
-        IPersistenceCommand<Theme> Theme { get; }
+        IPersistenceCommand<Theme> Themes { get; }
     }
 }

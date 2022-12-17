@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Mov.Analizer.Models.Commands
 {
-    internal class WriteConsoleCommand : ICommand<IAnalizerRepository, CommandResponse>
+    internal class WriteConsoleCommand : IUiCommand<IAnalizerRepository, CommandResponse>
     {
         public string Name => "WriteConsole";
 

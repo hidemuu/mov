@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Mov.Bom.Models.Commands
 {
-    internal class WriteConsoleCommand : ICommand<IBomRepository, CommandResponse>
+    internal class WriteConsoleCommand : IUiCommand<IBomRepository, CommandResponse>
     {
         public string Name => "WriteConsole";
 

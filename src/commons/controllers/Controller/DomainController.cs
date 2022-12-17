@@ -15,13 +15,13 @@ namespace Mov.Controllers
 
         private readonly TService service;
 
-        private readonly CommandExecuter<TService, CommandResponse> executer;
+        private readonly UiCommandExecuter<TService, CommandResponse> executer;
 
 
         public DomainController(TService service, string endpoint)
         {
             this.service = service;
-            this.executer = new CommandExecuter<TService, CommandResponse>(service, endpoint);
+            this.executer = new UiCommandExecuter<TService, CommandResponse>(service, endpoint);
         }
 
         public bool Execute()

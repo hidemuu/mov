@@ -8,7 +8,7 @@ namespace Mov.Controllers
     /// コマンド実行クラス
     /// </summary>
     /// <typeparam name="TParameter"></typeparam>
-    public class CommandExecuter<TParameter, TResponse>
+    public class UiCommandExecuter<TParameter, TResponse>
     {
         #region フィールド
 
@@ -20,7 +20,7 @@ namespace Mov.Controllers
         /// <summary>
         /// コマンドハンドラー
         /// </summary>
-        private CommandDictionary<TParameter, TResponse> handler { get; }
+        private UiCommandDictionary<TParameter, TResponse> handler { get; }
 
         #endregion フィールド
 
@@ -30,10 +30,10 @@ namespace Mov.Controllers
         /// コンストラクター
         /// </summary>
         /// <param name="parameter"></param>
-        public CommandExecuter(TParameter parameter, string endpoint)
+        public UiCommandExecuter(TParameter parameter, string endpoint)
         {
             this.parameter = parameter;
-            var factory = new CommandFactory<TParameter, TResponse>();
+            var factory = new UiCommandFactory<TParameter, TResponse>();
             this.handler = factory.Create(endpoint);
         }
 

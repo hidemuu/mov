@@ -8,7 +8,7 @@ namespace Mov.Controllers
     /// コマンドのインターフェース
     /// </summary>
     /// <typeparam name="TService"></typeparam>
-    public interface ICommand<TService, TResponse>
+    public interface IUiCommand<TService, TResponse>
     {
         #region プロパティ
 

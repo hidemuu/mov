@@ -18,7 +18,7 @@ namespace Mov.Designer.Test
         #region フィールド
 
         private readonly IDesignerEngine engine;
-        private readonly Mock<IDesignerParameter> mockParameter;
+        private readonly Mock<IDesignerContext> mockContext;
         private readonly Mock<IDesignerRepository> mockRepository;
         private readonly Mock<IDesignerQuery> mockQuery;
         private readonly Mock<IDesignerCommand> mockCommand;
@@ -30,15 +30,15 @@ namespace Mov.Designer.Test
         public DesignerEngineBuilder()
         {
             //モックオブジェクト生成
-            this.mockParameter = new Mock<IDesignerParameter>();
+            this.mockContext = new Mock<IDesignerContext>();
             this.mockRepository = new Mock<IDesignerRepository>();
             this.mockQuery = new Mock<IDesignerQuery>();
             this.mockCommand = new Mock<IDesignerCommand>();
-            this.mockParameter.Setup(x => x.Repository).Returns(this.mockRepository.Object);
-            this.mockParameter.Setup(x => x.Query).Returns(this.mockQuery.Object);
-            this.mockParameter.Setup(x => x.Command).Returns(this.mockCommand.Object);
+            this.mockContext.Setup(x => x.Repository).Returns(this.mockRepository.Object);
+            this.mockContext.Setup(x => x.Query).Returns(this.mockQuery.Object);
+            this.mockContext.Setup(x => x.Command).Returns(this.mockCommand.Object);
             //インスタンス生成
-            this.engine = new DesignerEngine(this.mockParameter.Object, 0);
+            this.engine = new DesignerEngine(this.mockContext.Object, 0);
         }
 
         #endregion コンストラクター
@@ -55,11 +55,11 @@ namespace Mov.Designer.Test
 
             var mockQueryContent = new Mock<IPersistenceQuery<Content>>();
             mockQueryContent.Setup(x => x.Reader.ReadAll()).Returns(contents);
-            this.mockQuery.Setup(x => x.LayoutContent).Returns(mockQueryContent.Object);
+            this.mockQuery.Setup(x => x.Contents).Returns(mockQueryContent.Object);
 
             var mockCommandContent = new Mock<IPersistenceCommand<Content>>();
             mockCommandContent.Setup(x => x.Saver.Save(new Content()));
-            this.mockCommand.Setup(x => x.Content).Returns(mockCommandContent.Object);
+            this.mockCommand.Setup(x => x.Contents).Returns(mockCommandContent.Object);
 
             return this;
         }

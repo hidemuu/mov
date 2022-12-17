@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Mov.Controllers
 {
-    public class CommandFactory<TParameter, TResponse> : ICommandFactory<TParameter, TResponse>
+    public class UiCommandFactory<TParameter, TResponse> : IUiCommandFactory<TParameter, TResponse>
     {
         
         #region フィールド
@@ -21,16 +21,16 @@ namespace Mov.Controllers
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public CommandFactory()
+        public UiCommandFactory()
         {
             this.assembly = ReflectionHelper.GetTypeAssembly<TParameter>();
         }
 
         #region メソッド
 
-        public CommandDictionary<TParameter, TResponse> Create(string endpoint)
+        public UiCommandDictionary<TParameter, TResponse> Create(string endpoint)
         {
-            var result = new CommandDictionary<TParameter, TResponse>();
+            var result = new UiCommandDictionary<TParameter, TResponse>();
             var types = ReflectionHelper.GetTypesInNamespace(this.assembly, endpoint);
             if (types == null || types.Count() == 0)
             {
@@ -41,7 +41,7 @@ namespace Mov.Controllers
             {
                 foreach (var type in types)
                 {
-                    var instance = (ICommand<TParameter, TResponse>)Activator.CreateInstance(type);
+                    var instance = (IUiCommand<TParameter, TResponse>)Activator.CreateInstance(type);
                     result.Add(instance.Name, instance);
                 }
             }

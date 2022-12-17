@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Mov.Game.Engine.Commands
 {
-    internal class WriteConsoleCommand : ICommand<IGameService, CommandResponse>
+    internal class WriteConsoleCommand : IUiCommand<IGameService, CommandResponse>
     {
         public string Name => GameCommandType.WriteConsole.ToString();
 

@@ -169,7 +169,7 @@ namespace Mov.WpfApp
             var designerEngines = new List<IDesignerEngine>();
             foreach(var name in fileDesignerRepositories.GetRepositoryNames())
             {
-                var parameter = new DesignerParameter(fileDesignerRepositories.GetRepository(name), name);
+                var parameter = new DesignerContext(fileDesignerRepositories.GetRepository(name), name);
                 designerEngines.Add(new DesignerEngine(parameter, domainId));
                 domainId++;
             }

@@ -47,7 +47,7 @@ namespace Mov.Designer.Engine
 
         #region コンストラクター
 
-        public DesignerEngine(IDesignerParameter parameter, int domainId)
+        public DesignerEngine(IDesignerContext parameter, int domainId)
         {
             this.DomainId = domainId;
             this.endpoint = parameter.EndPoint;
@@ -89,7 +89,8 @@ namespace Mov.Designer.Engine
 
         public IEnumerable<Node> GetNodes()
         {
-            return this.repository.Nodes.Get();
+            //return this.repository.Nodes.Get();
+            return this.query.Nodes.Reader.ReadAll();
         }
 
         public Node GetNode(Guid id)

@@ -3,7 +3,7 @@ using System;
 
 namespace Mov.Driver.Models.Commands
 {
-    internal class WriteConsoleCommand : ICommand<IDriverService, CommandResponse>
+    internal class WriteConsoleCommand : IUiCommand<IDriverService, CommandResponse>
     {
         public string Name => DriverCommandType.WriteConsole.ToString();
 

@@ -13,7 +13,7 @@ namespace Mov.Controllers
     /// Key : コマンド名
     /// Value : コマンドのインスタンス
     /// </remarks>
-    public class CommandDictionary<TParameter, TResponse> : Dictionary<string, ICommand<TParameter, TResponse>>
+    public class UiCommandDictionary<TParameter, TResponse> : Dictionary<string, IUiCommand<TParameter, TResponse>>
     {
     }
 }

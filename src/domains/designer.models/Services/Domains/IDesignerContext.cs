@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Designer.Models.Parameters
 {
-    public interface IDesignerParameter
+    public interface IDesignerContext : IDisposable
     {
         #region プロパティ
 

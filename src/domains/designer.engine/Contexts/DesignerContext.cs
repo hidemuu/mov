@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Mov.Designer.Engine
 {
-    public class DesignerParameter : IDesignerParameter
+    public class DesignerContext : IDesignerContext
     {
         #region フィールド
 
@@ -28,7 +28,7 @@ namespace Mov.Designer.Engine
 
         #region コンストラクター
 
-        public DesignerParameter(IDesignerRepository repository, string endpoint)
+        public DesignerContext(IDesignerRepository repository, string endpoint)
         {
             this.EndPoint = endpoint;
             this.Repository = repository;
@@ -37,6 +37,15 @@ namespace Mov.Designer.Engine
         }
 
         #endregion コンストラクター
+
+        #region メソッド
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion メソッド
 
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Mov.Designer.Models.Commands
 {
-    internal class WriteConsoleCommand : ICommand<IDesignerRepository, CommandResponse>
+    internal class WriteConsoleCommand : IUiCommand<IDesignerRepository, CommandResponse>
     {
         public string Name => "WriteConsole";
 

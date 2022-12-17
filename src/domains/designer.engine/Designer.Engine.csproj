@@ -14,8 +14,4 @@
     <ProjectReference Include="..\designer.models\Designer.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Persistences\Transactions\" />
-  </ItemGroup>
-
 </Project>

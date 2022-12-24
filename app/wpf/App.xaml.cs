@@ -60,6 +60,8 @@ using Mov.Designer.Service;
 using Mov.Configurators;
 using Mov.Designer.Models.Repositories;
 using Mov.Designer.Repository.Implements;
+using Mov.WpfApp.Views;
+using Mov.WpfApp.ViewModels;
 
 namespace Mov.WpfApp
 {
@@ -183,6 +185,7 @@ namespace Mov.WpfApp
             //containerRegistry.RegisterInstance<IGameService>(new GraphicGameService(fileGameRepositories.DefaultRepository));
 
             //Viewの登録
+            containerRegistry.RegisterForNavigation<MainView>();
             containerRegistry.RegisterForNavigation<DashboardView>();
             containerRegistry.RegisterForNavigation<ConfiguratorView>();
             containerRegistry.RegisterForNavigation<DesignerView>();
@@ -235,6 +238,7 @@ namespace Mov.WpfApp
             });
 
             ViewModelLocationProvider.Register<MainWindow, MainWindowViewModel>();
+            ViewModelLocationProvider.Register<MainView, MainViewModel>();
             ViewModelLocationProvider.Register<DashboardView, DashboardViewModel>();
             ViewModelLocationProvider.Register<ConfiguratorView, ConfiguratorViewModel>();
             ViewModelLocationProvider.Register<DesignerView, DesignerViewModel>();

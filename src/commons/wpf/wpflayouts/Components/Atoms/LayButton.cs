@@ -1,4 +1,5 @@
 ﻿using Mov.Layouts;
+using Mov.Layouts.Contents.ValueObjects;
 using Mov.WpfControls.Components.Atoms;
 using System;
 using System.Collections.Generic;
@@ -19,14 +20,43 @@ namespace Mov.WpfLayouts.Components.Atoms
             DefaultStyleKeyProperty.OverrideMetadata(typeof(LayButton), new FrameworkPropertyMetadata(typeof(LayButton)));
         }
 
-        public ILayoutContent LayoutContent
+        public ILayoutKey LayoutKey
         {
-            get { return (ILayoutContent)GetValue(LayoutContentProperty); }
-            set { SetValue(LayoutContentProperty, value); }
+            get { return (ILayoutKey)GetValue(LayoutKeyProperty); }
+            set { SetValue(LayoutKeyProperty, value); }
         }
 
-        public static readonly DependencyProperty LayoutContentProperty =
-            DependencyProperty.Register(nameof(LayoutContent), typeof(ILayoutContent), typeof(LayButton), new PropertyMetadata(default));
+        public static readonly DependencyProperty LayoutKeyProperty =
+            DependencyProperty.Register(nameof(LayoutKey), typeof(ILayoutKey), typeof(LayButton), new PropertyMetadata(default));
+
+        public ILayoutParameter LayoutParameter
+        {
+            get { return (ILayoutParameter)GetValue(LayoutParameterProperty); }
+            set { SetValue(LayoutParameterProperty, value); }
+        }
+
+        public static readonly DependencyProperty LayoutParameterProperty =
+            DependencyProperty.Register(nameof(LayoutParameter), typeof(ILayoutParameter), typeof(LayButton), new PropertyMetadata(default));
+
+
+        public ILayoutDesign LayoutDesign
+        {
+            get { return (ILayoutDesign)GetValue(LayoutDesignProperty); }
+            set { SetValue(LayoutDesignProperty, value); }
+        }
+
+        public static readonly DependencyProperty LayoutDesignProperty =
+            DependencyProperty.Register(nameof(LayoutDesign), typeof(ILayoutDesign), typeof(LayButton), new PropertyMetadata(default));
+
+        public ILayoutValue LayoutValue
+        {
+            get { return (ILayoutValue)GetValue(LayoutValueProperty); }
+            set { SetValue(LayoutValueProperty, value); }
+        }
+
+        public static readonly DependencyProperty LayoutValueProperty =
+            DependencyProperty.Register(nameof(LayoutValue), typeof(ILayoutValue), typeof(LayButton), new PropertyMetadata(default));
+
 
     }
 }

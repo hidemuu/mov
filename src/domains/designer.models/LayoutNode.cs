@@ -72,7 +72,7 @@ namespace Mov.Designer.Models
 
         public override string ToString()
         {
-            return base.ToString() + " [ControlType] " + ControlType.Value + " [Macro] " + Macro.Value;
+            return base.ToString() + " [ControlType] " + this.LayoutKey.ControlType.Value + " [Macro] " + this.LayoutValue.Macro.Value;
         }
 
         #endregion メソッド

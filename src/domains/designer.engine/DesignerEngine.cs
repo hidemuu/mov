@@ -70,7 +70,7 @@ namespace Mov.Designer.Engine
             {
                 if (node.NodeType.IsRegion)
                 {
-                    var region = new ShellRegion(node.Code.Value);
+                    var region = new ShellRegion(node.LayoutKey.Code.Value);
                     if (region.IsCenter) CenterNode = node;
                     if (region.IsTop) TopNode = node;
                     if (region.IsBottom) BottomNode = node;

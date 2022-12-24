@@ -1,4 +1,5 @@
 ﻿using Mov.Layouts;
+using Mov.Layouts.Contents.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,17 +15,50 @@ namespace Mov.WpfLayouts.Components.Atoms
         static LayComboBox()
         {
             //デフォルトスタイルのメタデータを設定
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(LayComboBox), new FrameworkPropertyMetadata(typeof(LayComboBox)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(LayComboBox), 
+                new FrameworkPropertyMetadata(typeof(LayComboBox)));
         }
 
-        public ILayoutContent LayoutContent
+        public ILayoutKey LayoutKey
         {
-            get { return (ILayoutContent)GetValue(LayoutContentProperty); }
-            set { SetValue(LayoutContentProperty, value); }
+            get { return (ILayoutKey)GetValue(LayoutKeyProperty); }
+            set { SetValue(LayoutKeyProperty, value); }
         }
 
-        public static readonly DependencyProperty LayoutContentProperty =
-            DependencyProperty.Register(nameof(LayoutContent), typeof(ILayoutContent), typeof(LayComboBox), new PropertyMetadata(default));
+        public static readonly DependencyProperty LayoutKeyProperty =
+            DependencyProperty.Register(nameof(LayoutKey), typeof(ILayoutKey),
+                typeof(LayComboBox), new PropertyMetadata(default));
+
+        public ILayoutParameter LayoutParameter
+        {
+            get { return (ILayoutParameter)GetValue(LayoutParameterProperty); }
+            set { SetValue(LayoutParameterProperty, value); }
+        }
+
+        public static readonly DependencyProperty LayoutParameterProperty =
+            DependencyProperty.Register(nameof(LayoutParameter), typeof(ILayoutParameter),
+                typeof(LayComboBox), new PropertyMetadata(default));
+
+
+        public ILayoutDesign LayoutDesign
+        {
+            get { return (ILayoutDesign)GetValue(LayoutDesignProperty); }
+            set { SetValue(LayoutDesignProperty, value); }
+        }
+
+        public static readonly DependencyProperty LayoutDesignProperty =
+            DependencyProperty.Register(nameof(LayoutDesign), typeof(ILayoutDesign),
+                typeof(LayComboBox), new PropertyMetadata(default));
+
+        public ILayoutValue LayoutValue
+        {
+            get { return (ILayoutValue)GetValue(LayoutValueProperty); }
+            set { SetValue(LayoutValueProperty, value); }
+        }
+
+        public static readonly DependencyProperty LayoutValueProperty =
+            DependencyProperty.Register(nameof(LayoutValue), typeof(ILayoutValue),
+                typeof(LayComboBox), new PropertyMetadata(default));
 
     }
 }

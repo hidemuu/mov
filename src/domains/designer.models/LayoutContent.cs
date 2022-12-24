@@ -14,37 +14,10 @@ namespace Mov.Designer.Models
 
         #region プロパティ
 
-        public ContentCode Code { get; }
-
-        public ContentName Name { get; }
-
-        public ContentControlType ControlType { get; }
-
-        public ContentIcon Icon { get; }
-
-        public ContentIndent Indent { get; }
-
-        public ContentHeight Height { get; }
-
-        public ContentWidth Width { get; }
-
-        public ContentVisibility Visibility { get; }
-
-        public ContentEnable Enable { get; }
-
-        public ContentOrientation Orientation { get; }
-
-        public ContentHorizontalAlignment HorizontalAlignment { get; }
-
-        public ContentVerticalAlignment VerticalAlignment { get; }
-
-        public ContentSchema Schema { get; }
-
-        public ContentValue ContentValue { get; }
-
-        public ContentMacro Macro { get; }
-
-        public ContentParameter Parameter { get; }
+        public ILayoutKey LayoutKey { get; set; }
+        public ILayoutParameter LayoutParameter { get; set; }
+        public ILayoutDesign LayoutDesign { get; set; }
+        public ILayoutValue LayoutValue { get; set; }
 
         #endregion プロパティ
 
@@ -64,22 +37,11 @@ namespace Mov.Designer.Models
         /// <param name="content"></param>
         public LayoutContent(Content content)
         {
-            this.Code = new ContentCode(content.Code);
-            this.Name = new ContentName(content.Name);
-            this.ControlType = new ContentControlType(content.ControlType);
-            this.Icon = new ContentIcon(content.Icon);
-            this.Indent = new ContentIndent(0);
-            this.Height = new ContentHeight(content.Height);
-            this.Width = new ContentWidth(content.Width);
-            this.Visibility = new ContentVisibility(true);
-            this.Enable = new ContentEnable(true);
-            this.Orientation = ContentOrientation.Horizontal;
-            this.HorizontalAlignment = new ContentHorizontalAlignment(content.HorizontalAlignment);
-            this.VerticalAlignment = new ContentVerticalAlignment(content.VerticalAlignment);
-            this.Schema = new ContentSchema(content.Schema);
-            this.ContentValue = new ContentValue(content.DefaultValue);
-            this.Macro = new ContentMacro(content.Macro);
-            this.Parameter = new ContentParameter(content.Parameter);
+            this.LayoutKey = new LayoutContentKey(content);
+            this.LayoutParameter = new LayoutContentParameter(content);
+            this.LayoutDesign = new LayoutContentDesign(content);
+            this.LayoutValue = new LayoutContentValue(content);
+
         }
 
         #endregion コンストラクター
@@ -88,7 +50,7 @@ namespace Mov.Designer.Models
 
         public override string ToString()
         {
-            return "[Code] " + Code.Value + " [Name] " + Name.Value;
+            return "[Code] " + this.LayoutKey.Code.Value + " [Name] " + this.LayoutParameter.Name.Value;
         }
 
         #endregion メソッド

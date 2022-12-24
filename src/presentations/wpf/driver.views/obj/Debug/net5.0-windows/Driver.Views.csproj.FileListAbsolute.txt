@@ -1,7 +1,3 @@
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug\net5.0-windows\Driver.Views.csproj.AssemblyReference.cache
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug\net5.0-windows\DriverView.g.cs
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug\net5.0-windows\Mov.Driver.Views_MarkupCompile.cache
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug\net5.0-windows\Mov.Driver.Views_MarkupCompile.lref
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Assets\Fonts\iconfont.ttf
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Assets\Photos\alter.png
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Assets\Photos\home.png
@@ -47,6 +43,10 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.WpfModels.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.WpfMvvms.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\bin\Debug\net5.0-windows\Mov.WpfViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug\net5.0-windows\Driver.Views.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug\net5.0-windows\DriverView.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug\net5.0-windows\Mov.Driver.Views_MarkupCompile.cache
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug\net5.0-windows\Mov.Driver.Views_MarkupCompile.lref
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug\net5.0-windows\DriverView.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug\net5.0-windows\Mov.Driver.Views.g.resources
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.views\obj\Debug\net5.0-windows\Driver.Views.GeneratedMSBuildEditorConfig.editorconfig

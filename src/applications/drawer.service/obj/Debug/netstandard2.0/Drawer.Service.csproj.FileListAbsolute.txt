@@ -1,7 +1,3 @@
-C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\obj\Debug\netstandard2.0\Drawer.Service.csproj.AssemblyReference.cache
-C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\obj\Debug\netstandard2.0\Drawer.Service.AssemblyInfoInputs.cache
-C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\obj\Debug\netstandard2.0\Drawer.Service.AssemblyInfo.cs
-C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\obj\Debug\netstandard2.0\Drawer.Service.csproj.CoreCompileInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Drawer.Service.deps.json
 C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Drawer.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Drawer.Service.pdb
@@ -21,6 +17,10 @@ C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\ne
 C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Controllers.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Drawer.Models.pdb
 C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Utilities.pdb
+C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\obj\Debug\netstandard2.0\Drawer.Service.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\obj\Debug\netstandard2.0\Drawer.Service.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\obj\Debug\netstandard2.0\Drawer.Service.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\obj\Debug\netstandard2.0\Drawer.Service.csproj.CoreCompileInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\obj\Debug\netstandard2.0\Drawer.Service.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\obj\Debug\netstandard2.0\Mov.Drawer.Service.dll
 C:\Users\nando\Documents\GitHub\mov\src\applications\drawer.service\obj\Debug\netstandard2.0\Mov.Drawer.Service.pdb

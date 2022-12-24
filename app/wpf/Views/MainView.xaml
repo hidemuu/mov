@@ -7,6 +7,8 @@
              xmlns:atoms="clr-namespace:Mov.WpfControls.Components.Atoms;assembly=Mov.WpfControls"
              xmlns:molecules="clr-namespace:Mov.WpfControls.Components.Molecules;assembly=Mov.WpfControls"
              xmlns:organisms="clr-namespace:Mov.WpfControls.Components.Organisms;assembly=Mov.WpfControls" 
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>

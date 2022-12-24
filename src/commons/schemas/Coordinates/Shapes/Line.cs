@@ -5,19 +5,19 @@ using System.Text;
 
 namespace Mov.Schemas.Shapes
 {
-    public sealed class Straight : ValueObjectBase<Straight>
+    public sealed class Line : ValueObjectBase<Line>
     {
         public Point2D Point1 { get; }
 
         public Point2D Point2 { get; }
 
-        public Straight(Point2D point1, Point2D point2)
+        public Line(Point2D point1, Point2D point2)
         {
             this.Point1 = point1;
             this.Point2 = point2;
         }
 
-        protected override bool EqualCore(Straight other)
+        protected override bool EqualCore(Line other)
         {
             return this.Point1.Equals(other.Point1) && this.Point2.Equals(other.Point2);
         }

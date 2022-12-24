@@ -1,11 +1,3 @@
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Game.Views.csproj.AssemblyReference.cache
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Dialogs\GameOverDialog.g.cs
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Dialogs\StageClearDialog.g.cs
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\GameSoftView.g.cs
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\GameTitleView.g.cs
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\GameView.g.cs
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Mov.Game.Views_MarkupCompile.cache
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Mov.Game.Views_MarkupCompile.lref
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Assets\Fonts\iconfont.ttf
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Assets\Photos\alter.png
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Assets\Photos\home.png
@@ -47,6 +39,14 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\n
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.WpfModels.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.WpfMvvms.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.WpfViewModels.pdb
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Game.Views.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Dialogs\GameOverDialog.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Dialogs\StageClearDialog.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\GameSoftView.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\GameTitleView.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\GameView.g.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Mov.Game.Views_MarkupCompile.cache
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Mov.Game.Views_MarkupCompile.lref
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Dialogs\GameOverDialog.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Dialogs\StageClearDialog.baml
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\GameSoftView.baml

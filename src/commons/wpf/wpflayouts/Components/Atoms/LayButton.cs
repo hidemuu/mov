@@ -1,4 +1,5 @@
 ﻿using Mov.Layouts;
+using Mov.WpfControls.Components.Atoms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using System.Windows.Input;
 
 namespace Mov.WpfLayouts.Components.Atoms
 {
-    public class LayButton : Button, ILayControl
+    public class LayButton : MovButton, ILayControl
     {
         static LayButton()
         {

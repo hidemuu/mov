@@ -1,7 +1,3 @@
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\obj\Debug\net5.0-windows\Driver.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\obj\Debug\net5.0-windows\Driver.ViewModels.AssemblyInfoInputs.cache
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\obj\Debug\net5.0-windows\Driver.ViewModels.AssemblyInfo.cs
-C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\obj\Debug\net5.0-windows\Driver.ViewModels.csproj.CoreCompileInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\bin\Debug\net5.0-windows\Assets\Fonts\iconfont.ttf
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\bin\Debug\net5.0-windows\Assets\Photos\alter.png
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\bin\Debug\net5.0-windows\Assets\Photos\home.png
@@ -42,6 +38,10 @@ C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\bin\
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\bin\Debug\net5.0-windows\Mov.WpfModels.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\bin\Debug\net5.0-windows\Mov.WpfMvvms.pdb
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\obj\Debug\net5.0-windows\Driver.ViewModels.csproj.AssemblyReference.cache
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\obj\Debug\net5.0-windows\Driver.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\obj\Debug\net5.0-windows\Driver.ViewModels.AssemblyInfoInputs.cache
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\obj\Debug\net5.0-windows\Driver.ViewModels.AssemblyInfo.cs
+C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\obj\Debug\net5.0-windows\Driver.ViewModels.csproj.CoreCompileInputs.cache
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\obj\Debug\net5.0-windows\Driver.ViewModels.csproj.CopyComplete
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\obj\Debug\net5.0-windows\Mov.Driver.ViewModels.dll
 C:\Users\nando\Documents\GitHub\mov\src\presentations\wpf\driver.viewmodels\obj\Debug\net5.0-windows\ref\Mov.Driver.ViewModels.dll

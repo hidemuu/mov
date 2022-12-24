@@ -1,6 +1,7 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:atom="clr-namespace:Mov.WpfControls.Components.Atoms"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:atom="clr-namespace:Mov.WpfControls.Components.Atoms">
     <Style TargetType="{x:Type atom:MovComboBox}">
         <Setter Property="Template">
             <Setter.Value>

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Sizes
+namespace Mov.Schemas.Units
 {
-    class Height
+    class UnitLength
     {
     }
 }

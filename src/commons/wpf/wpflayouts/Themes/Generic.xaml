@@ -8,25 +8,13 @@
     xmlns:moleculeControl="clr-namespace:Mov.WpfControls.Components.Molecules;assembly=Mov.WpfControls"
     xmlns:organism="clr-namespace:Mov.WpfLayouts.Components.Organisms"
     xmlns:organismControl="clr-namespace:Mov.WpfControls.Components.Organisms;assembly=Mov.WpfControls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Mov.WpfLayouts;component/Themes/Atoms/LayButton.xaml" />
+    </ResourceDictionary.MergedDictionaries>
     <converter:StringToHolizontalAlignmentConverter x:Key="StringToHolizontalAlignmentConverter" />
     <converter:StringToVerticalAlignmentConverter x:Key="StringToVerticalAlignmentConverter" />
 
     <!--  Atoms  -->
-
-    <Style TargetType="{x:Type atom:LayButton}">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate>
-                    <atomControl:MovButton
-                        Width="{Binding LayoutContent.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}"
-                        Height="{Binding LayoutContent.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}"
-                        HorizontalAlignment="{Binding LayoutContent.HorizontalAlignment.Value, Converter={StaticResource StringToHolizontalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}"
-                        VerticalAlignment="{Binding LayoutContent.VerticalAlignment.Value, Converter={StaticResource StringToVerticalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}"
-                        Content="{Binding LayoutContent.Name.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}" />
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
 
     <Style TargetType="{x:Type atom:LayCheckBox}">
         <Setter Property="Template">

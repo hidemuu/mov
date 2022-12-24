@@ -3,21 +3,18 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Shapes
+namespace Mov.Schemas.Coordinates
 {
-    /// <summary>
-    /// 座標
-    /// </summary>
-    public sealed class Coordinate : ValueObjectBase<Coordinate>
+    public sealed class UnitAngle : ValueObjectBase<UnitAngle>
     {
         public decimal Value { get; }
 
-        public Coordinate(decimal value)
+        public UnitAngle(decimal value)
         {
             this.Value = value;
         }
-        
-        protected override bool EqualCore(Coordinate other)
+
+        protected override bool EqualCore(UnitAngle other)
         {
             return this.Value.Equals(other.Value); ;
         }

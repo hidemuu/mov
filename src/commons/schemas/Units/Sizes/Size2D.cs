@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Schemas.Sizes
 {
-    class Depth
+    class Size2D
     {
     }
 }

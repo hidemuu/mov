@@ -7,17 +7,17 @@ namespace Mov.Schemas.Shapes
 {
     public sealed class Point3D : ValueObjectBase<Point3D>
     {
-        public Coordinate X { get; }
+        public UnitCoordinate X { get; }
 
-        public Coordinate Y { get; }
+        public UnitCoordinate Y { get; }
 
-        public Coordinate Z { get; }
+        public UnitCoordinate Z { get; }
 
         public Point3D(decimal x, decimal y, decimal z)
         {
-            this.X = new Coordinate(x);
-            this.Y = new Coordinate(y);
-            this.Z = new Coordinate(z);
+            this.X = new UnitCoordinate(x);
+            this.Y = new UnitCoordinate(y);
+            this.Z = new UnitCoordinate(z);
         }
 
         protected override bool EqualCore(Point3D other)

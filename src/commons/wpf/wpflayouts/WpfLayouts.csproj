@@ -8,9 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Themes\Atoms\" />
     <Folder Include="Themes\Molecules\" />
     <Folder Include="Themes\Organisms\" />
+    <Folder Include="Templates\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
   <ItemGroup>

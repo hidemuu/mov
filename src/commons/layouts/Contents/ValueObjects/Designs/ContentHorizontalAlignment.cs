@@ -7,7 +7,7 @@ namespace Mov.Layouts.ValueObjects
 {
     public sealed class ContentHorizontalAlignment : ValueObjectBase<ContentHorizontalAlignment>
     {
-        #region オブジェクト
+        #region インスタンス
 
         public static readonly ContentHorizontalAlignment Left = new ContentHorizontalAlignment("Left");
 
@@ -17,7 +17,7 @@ namespace Mov.Layouts.ValueObjects
 
         public static readonly ContentHorizontalAlignment Stretch = new ContentHorizontalAlignment("Stretch");
 
-        #endregion オブジェクト
+        #endregion インスタンス
 
         #region プロパティ
 

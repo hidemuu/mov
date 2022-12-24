@@ -7,14 +7,14 @@ namespace Mov.Schemas.Shapes
 {
     public sealed class Point2D : ValueObjectBase<Point2D>
     {
-        public Coordinate X { get; }
+        public UnitCoordinate X { get; }
 
-        public Coordinate Y { get; }
+        public UnitCoordinate Y { get; }
 
         public Point2D(decimal x, decimal y)
         {
-            this.X = new Coordinate(x);
-            this.Y = new Coordinate(y);
+            this.X = new UnitCoordinate(x);
+            this.Y = new UnitCoordinate(y);
 
         }
 

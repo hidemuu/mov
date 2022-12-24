@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Schemas.Shapes
 {
-    public sealed class Point3D : ValueObjectBase<Point3D>
+    public sealed class PointXYZ : ValueObjectBase<PointXYZ>
     {
         public UnitCoordinate X { get; }
 
@@ -13,21 +13,27 @@ namespace Mov.Schemas.Shapes
 
         public UnitCoordinate Z { get; }
 
-        public Point3D(decimal x, decimal y, decimal z)
+        public PointXYZ(decimal x, decimal y, decimal z)
         {
             this.X = new UnitCoordinate(x);
             this.Y = new UnitCoordinate(y);
             this.Z = new UnitCoordinate(z);
         }
 
-        protected override bool EqualCore(Point3D other)
+        protected override bool EqualCore(PointXYZ other)
         {
-            return this.X.Equals(other.X) && this.Y.Equals(other.Y) && this.Z.Equals(other.Z);
+            return 
+                this.X.Equals(other.X) && 
+                this.Y.Equals(other.Y) && 
+                this.Z.Equals(other.Z);
         }
 
         protected override int GetHashCodeCore()
         {
-            return this.X.GetHashCode() ^ this.Y.GetHashCode() ^ this.Z.GetHashCode();
+            return 
+                this.X.GetHashCode() ^ 
+                this.Y.GetHashCode() ^ 
+                this.Z.GetHashCode();
         }
     }
 }

@@ -8,6 +8,7 @@ using Mov.Game.Views;
 using Mov.Scheduler.Views;
 using Mov.UseCase.Views;
 using Mov.WpfApp;
+using Mov.WpfApp.Views;
 using Mov.WpfMvvms;
 using Prism.Regions;
 using Prism.Services.Dialogs;
@@ -43,23 +44,25 @@ namespace Mov.WpfApp
         /// <param name="dialogService"></param>
         public MainWindowViewModel(IRegionManager regionManager, IDialogService dialogService) : base(regionManager, dialogService)
         {
-            Models.Add(new MainWindowModel(0, "Dashboard", "Home", () =>
+            Models.Add(new MainWindowModel(0, "Main", "Home", () =>
+                this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(MainView))));
+            Models.Add(new MainWindowModel(1, "Dashboard", "Home", () =>
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(DashboardView))));
-            Models.Add(new MainWindowModel(1, "Config", "Cog", () =>
+            Models.Add(new MainWindowModel(2, "Config", "Cog", () =>
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(ConfiguratorView))));
-            Models.Add(new MainWindowModel(2, "Designer", "Collage", () => 
+            Models.Add(new MainWindowModel(3, "Designer", "Collage", () => 
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(DesignerView))));
-            Models.Add(new MainWindowModel(3, "Game", "blur", () => 
+            Models.Add(new MainWindowModel(4, "Game", "blur", () => 
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(GameView))));
-            Models.Add(new MainWindowModel(4, "Draw", "Sprout", () =>
+            Models.Add(new MainWindowModel(5, "Draw", "Sprout", () =>
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(DrawerView))));
-            Models.Add(new MainWindowModel(5, "Driver", "Octahedron", () =>
+            Models.Add(new MainWindowModel(6, "Driver", "Octahedron", () =>
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(DriverView))));
-            Models.Add(new MainWindowModel(6, "Bom", "DNS", () =>
+            Models.Add(new MainWindowModel(7, "Bom", "DNS", () =>
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(BomView))));
-            Models.Add(new MainWindowModel(7, "Scheduler", "calendar", () => 
+            Models.Add(new MainWindowModel(8, "Scheduler", "calendar", () => 
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(SchedulerView))));
-            Models.Add(new MainWindowModel(8, "Analizer", "ChartLine", () =>
+            Models.Add(new MainWindowModel(9, "Analizer", "ChartLine", () =>
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(AnalizerView))));
 
             TabChangeCommand.Subscribe(_ => OnChangeTab()).AddTo(Disposables);

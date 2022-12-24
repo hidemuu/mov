@@ -10,8 +10,6 @@
   <ItemGroup>
     <Folder Include="Themes\Molecules\" />
     <Folder Include="Themes\Organisms\" />
-    <Folder Include="Templates\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +18,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Controls\LayoutPartsControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Controls\LayoutPartsControl.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\LayoutNodeTemplate.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Themes\Generic.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>

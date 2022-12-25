@@ -18,12 +18,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Controls\LayoutPartsShell.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\LayoutPartsControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Controls\LayoutPartsShell.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Controls\LayoutPartsControl.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>

@@ -10,9 +10,9 @@ namespace Mov.Designer.Models
     public class NullLayoutContent : ILayoutContent
     {
 
-        public ILayoutKey LayoutKey { get; set; } = new LayoutContentKey();
-        public ILayoutParameter LayoutParameter { get; set; } = new LayoutContentParameter();
-        public ILayoutDesign LayoutDesign { get; set; } = new LayoutContentDesign();
-        public ILayoutValue LayoutValue { get; set; } = new LayoutContentValue();
+        public ILayoutKey LayoutKey { get; set; } = new DesignLayoutContentKey();
+        public ILayoutParameter LayoutParameter { get; set; } = new DesignLayoutContentParameter();
+        public ILayoutDesign LayoutDesign { get; set; } = new DesignLayoutContentDesign();
+        public ILayoutValue LayoutValue { get; set; } = new DesignLayoutContentValue();
     }
 }

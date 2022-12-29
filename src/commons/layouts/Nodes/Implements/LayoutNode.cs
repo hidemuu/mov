@@ -1,16 +1,15 @@
-﻿using Mov.Designer.Models;
-using Mov.Layouts;
+﻿using Mov.Layouts;
+using Mov.Layouts.Contents.ValueObjects;
 using Mov.Layouts.Nodes.ValueObjects;
 using Mov.Layouts.ValueObjects;
-using Reactive.Bindings;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Models
+namespace Mov.Layouts
 {
-    public class LayoutNode : LayoutContent, ILayoutNode
+    public class LayoutNode : LayoutContent
     {
         #region フィールド
 
@@ -36,12 +35,9 @@ namespace Mov.Designer.Models
 
         #region コンストラクター
 
-        /// <summary>
-        /// コンストラクター
-        /// </summary>
-        public LayoutNode() : this(new Node(), new Content())
+        public LayoutNode()
         {
-            
+
         }
 
         /// <summary>
@@ -49,10 +45,11 @@ namespace Mov.Designer.Models
         /// </summary>
         /// <param name="node"></param>
         /// <param name="content"></param>
-        public LayoutNode(Node node, Content content) : base(content)
+        public LayoutNode(string nodeType, bool isExpand, ILayoutKey key, ILayoutParameter parameter, ILayoutDesign design, ILayoutValue value) 
+            : base(key, parameter, design, value)
         {
-            this.NodeType = new NodeType(node.NodeType);
-            this.Expand = new NodeExpand(true);
+            this.NodeType = new NodeType(nodeType);
+            this.Expand = new NodeExpand(isExpand);
         }
 
         #endregion コンストラクター

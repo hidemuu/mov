@@ -1,6 +1,7 @@
 ﻿using Mov.Designer.Models;
 using Mov.Designer.Models.Parameters;
 using Mov.Designer.Models.Persistences;
+using Mov.Layouts;
 using Mov.Layouts.Nodes.ValueObjects;
 using Mov.Layouts.ValueObjects;
 using System;
@@ -22,7 +23,7 @@ namespace Mov.Designer.Engine
 
         private readonly LayoutNodeFactory factory;
 
-        private IEnumerable<LayoutNode> nodes;
+        private IEnumerable<DesignLayoutNode> nodes;
 
         #endregion フィールド
 
@@ -31,15 +32,15 @@ namespace Mov.Designer.Engine
         public int DomainId { get; }
 
         #region UIモデル
-        public LayoutNode CenterNode { get; private set; }
+        public DesignLayoutNode CenterNode { get; private set; }
 
-        public LayoutNode TopNode { get; private set; }
+        public DesignLayoutNode TopNode { get; private set; }
 
-        public LayoutNode BottomNode { get; private set; }
+        public DesignLayoutNode BottomNode { get; private set; }
 
-        public LayoutNode LeftNode { get; private set; }
+        public DesignLayoutNode LeftNode { get; private set; }
 
-        public LayoutNode RightNode { get; private set; }
+        public DesignLayoutNode RightNode { get; private set; }
 
         #endregion UIモデル
 
@@ -170,16 +171,16 @@ namespace Mov.Designer.Engine
 
         #region 内部メソッド
 
-        private IEnumerable<LayoutNode> CreateNodes()
+        private IEnumerable<DesignLayoutNode> CreateNodes()
         {
-            var node = new LayoutNode();
+            var node = new DesignLayoutNode();
             var data = this.repository?.Nodes?.Get();
             if (data == null) return default;
             CreateLayoutNode(node.Children, data);
             return node.Children;
         }
 
-        private void CreateLayoutNode(ICollection<LayoutNode> nodes, IEnumerable<Node> repositoryNodes)
+        private void CreateLayoutNode(ICollection<DesignLayoutNode> nodes, IEnumerable<Node> repositoryNodes)
         {
             foreach (var repositoryNode in repositoryNodes)
             {

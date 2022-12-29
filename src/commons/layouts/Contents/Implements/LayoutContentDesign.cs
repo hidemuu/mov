@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Layouts
 {
-    public class LayoutContentDesignBase : ILayoutDesign
+    public class LayoutContentDesign : ILayoutDesign
     {
         public ContentIndent Indent { get; }
 
@@ -20,8 +20,7 @@ namespace Mov.Layouts
 
         public ContentVerticalAlignment VerticalAlignment { get; }
 
-        
-        public LayoutContentDesignBase(int indent, double height, double width, ContentOrientation orientation, string horizontalAlignment, string verticalAlignment)
+        public LayoutContentDesign(int indent, double height, double width, ContentOrientation orientation, string horizontalAlignment, string verticalAlignment)
         {
             this.Indent = new ContentIndent(indent);
             this.Height = new ContentHeight(height);
@@ -29,6 +28,11 @@ namespace Mov.Layouts
             this.Orientation = orientation;
             this.HorizontalAlignment = new ContentHorizontalAlignment(horizontalAlignment);
             this.VerticalAlignment = new ContentVerticalAlignment(verticalAlignment);
+        }
+
+        public LayoutContentDesign() : this(0, 0, 0, ContentOrientation.Horizontal, "", "")
+        {
+
         }
     }
 }

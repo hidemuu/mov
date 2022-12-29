@@ -1,22 +1,23 @@
-﻿using Mov.Layouts;
-using Mov.Layouts.Contents.ValueObjects;
+﻿using Mov.Designer.Models;
+using Mov.Layouts;
 using Mov.Layouts.Nodes.ValueObjects;
 using Mov.Layouts.ValueObjects;
+using Reactive.Bindings;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts
+namespace Mov.Designer.Models
 {
-    public class LayoutNodeBase : LayoutContentBase
+    public class DesignLayoutNode : DesignLayoutContent, ILayoutNode
     {
         #region フィールド
 
         /// <summary>
         /// 子階層
         /// </summary>
-        private List<LayoutNodeBase> children = new List<LayoutNodeBase>();
+        private List<DesignLayoutNode> children = new List<DesignLayoutNode>();
 
         #endregion フィールド
 
@@ -29,7 +30,7 @@ namespace Mov.Layouts
         /// <summary>
         /// 子階層
         /// </summary>
-        public List<LayoutNodeBase> Children => children;
+        public List<DesignLayoutNode> Children => children;
 
         #endregion プロパティ
 
@@ -38,12 +39,19 @@ namespace Mov.Layouts
         /// <summary>
         /// コンストラクター
         /// </summary>
+        public DesignLayoutNode() : this(new Node(), new Content())
+        {
+            
+        }
+
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
         /// <param name="node"></param>
         /// <param name="content"></param>
-        public LayoutNodeBase(string nodeType, ILayoutKey key, ILayoutParameter parameter, ILayoutDesign design, ILayoutValue value) 
-            : base(key, parameter, design, value)
+        public DesignLayoutNode(Node node, Content content) : base(content)
         {
-            this.NodeType = new NodeType(nodeType);
+            this.NodeType = new NodeType(node.NodeType);
             this.Expand = new NodeExpand(true);
         }
 
@@ -52,12 +60,12 @@ namespace Mov.Layouts
         #region メソッド
 
         
-        public void Add(LayoutNodeBase layout)
+        public void Add(DesignLayoutNode layout)
         {
             children.Add(layout);
         }
 
-        public void AddRange(IEnumerable<LayoutNodeBase> layouts)
+        public void AddRange(IEnumerable<DesignLayoutNode> layouts)
         {
             children.AddRange(layouts);
         }

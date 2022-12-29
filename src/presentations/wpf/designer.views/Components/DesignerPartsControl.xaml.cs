@@ -26,13 +26,13 @@ namespace Mov.Designer.Views
         #region プロパティ
 
         public static readonly DependencyProperty ModelsProperty =
-            DependencyProperty.Register(nameof(Models), typeof(ReactiveCollection<LayoutNode>),
+            DependencyProperty.Register(nameof(Models), typeof(ReactiveCollection<DesignLayoutNode>),
             typeof(DesignerPartsControl),
             new UIPropertyMetadata(null, new PropertyChangedCallback(OnModelsChanged)));
 
-        public ReactiveCollection<LayoutNode> Models
+        public ReactiveCollection<DesignLayoutNode> Models
         {
-            get { return (ReactiveCollection<LayoutNode>)GetValue(ModelsProperty); }
+            get { return (ReactiveCollection<DesignLayoutNode>)GetValue(ModelsProperty); }
             set { SetValue(ModelsProperty, value); }
         }
 

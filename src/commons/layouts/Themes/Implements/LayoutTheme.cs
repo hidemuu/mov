@@ -3,12 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Models.DomainModels
+namespace Mov.Layouts
 {
     public class LayoutTheme : ILayoutTheme
     {
 
-        public LayoutTheme(Theme theme)
+        public LayoutTheme()
         {
 
         }

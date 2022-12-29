@@ -1,13 +1,15 @@
-﻿using Mov.Layouts;
+﻿using Mov.Designer.Models;
+using Mov.Layouts;
 using Mov.Layouts.Contents.ValueObjects;
 using Mov.Layouts.ValueObjects;
+using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts
+namespace Mov.Designer.Models
 {
-    public class LayoutContentBase : ILayoutContent
+    public class DesignLayoutContent : ILayoutContent
     {
 
         #region プロパティ
@@ -21,17 +23,24 @@ namespace Mov.Layouts
 
         #region コンストラクター
 
-        
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
+        public DesignLayoutContent() : this(new Content())
+        {
+            
+        }
+
         /// <summary>
         /// コンストラクター
         /// </summary>
         /// <param name="content"></param>
-        public LayoutContentBase(ILayoutKey key, ILayoutParameter parameter, ILayoutDesign design, ILayoutValue value)
+        public DesignLayoutContent(Content content)
         {
-            this.LayoutKey = key;
-            this.LayoutParameter = parameter;
-            this.LayoutDesign = design;
-            this.LayoutValue = value;
+            this.LayoutKey = new DesignLayoutContentKey(content);
+            this.LayoutParameter = new DesignLayoutContentParameter(content);
+            this.LayoutDesign = new DesignLayoutContentDesign(content);
+            this.LayoutValue = new DesignLayoutContentValue(content);
 
         }
 

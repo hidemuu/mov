@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Models
+namespace Mov.Layouts
 {
     public class LayoutContentParameter : ILayoutParameter
     {
@@ -18,18 +18,19 @@ namespace Mov.Designer.Models
 
         public ContentParameter Parameter { get; }
 
-        public LayoutContentParameter() : this(new Content())
+        
+        public LayoutContentParameter(string name, string icon, bool isVisible, bool isEnable, string parameter)
         {
-
+            this.Name = new ContentName(name);
+            this.Icon = new ContentIcon(icon);
+            this.Visibility = new ContentVisibility(isVisible);
+            this.Enable = new ContentEnable(isEnable);
+            this.Parameter = new ContentParameter(parameter);
         }
 
-        public LayoutContentParameter(Content content)
+        public LayoutContentParameter() : this("", "", true, true, "")
         {
-            this.Name = new ContentName(content.Name);
-            this.Icon = new ContentIcon(content.Icon);
-            this.Visibility = new ContentVisibility(true);
-            this.Enable = new ContentEnable(true);
-            this.Parameter = new ContentParameter(content.Parameter);
+
         }
     }
 }

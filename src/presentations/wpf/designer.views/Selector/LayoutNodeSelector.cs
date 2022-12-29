@@ -37,7 +37,7 @@ namespace Mov.Designer.Views.Selector
         #region メソッド
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
-            if(item is LayoutNode node)
+            if(item is DesignLayoutNode node)
             {
                 if (node.NodeType.IsRegion) return GroupTemplate;
                 if (node.NodeType.IsContent) return ContentTemplate;        

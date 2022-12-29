@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public class LayoutContentDesign : ILayoutDesign
+    public class DesignLayoutContentDesign : ILayoutDesign
     {
         public ContentIndent Indent { get; }
 
@@ -20,12 +20,12 @@ namespace Mov.Designer.Models
 
         public ContentVerticalAlignment VerticalAlignment { get; }
 
-        public LayoutContentDesign() : this(new Content())
+        public DesignLayoutContentDesign() : this(new Content())
         {
 
         }
 
-        public LayoutContentDesign(Content content)
+        public DesignLayoutContentDesign(Content content)
         {
             this.Indent = new ContentIndent(0);
             this.Height = new ContentHeight(content.Height);

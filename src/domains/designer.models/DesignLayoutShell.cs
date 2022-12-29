@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Mov.Designer.Models.DomainModels
 {
-    public class LayoutShell : ILayoutShell
+    public class DesignLayoutShell : ILayoutShell
     {
         public ShellRegion Region { get; }
 
-        public LayoutShell(Shell shell)
+        public DesignLayoutShell(Shell shell)
         {
 
         }

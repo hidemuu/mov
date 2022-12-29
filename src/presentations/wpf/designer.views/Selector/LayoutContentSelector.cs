@@ -16,7 +16,7 @@ namespace Mov.Designer.Views.Selector
 
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
-            if (item is LayoutNode node)
+            if (item is DesignLayoutNode node)
             {
                 FrameworkElementFactory factory;
                 var controlType = node.LayoutKey.ControlType;
@@ -134,7 +134,7 @@ namespace Mov.Designer.Views.Selector
             return false;
         }
 
-        private FrameworkElementFactory GetDefault(LayoutNode node)
+        private FrameworkElementFactory GetDefault(DesignLayoutNode node)
         {
             var defaultFactory = new FrameworkElementFactory(typeof(Label));
             defaultFactory.SetValue(Label.ContentProperty, "【NotFound】" + node.ToString());

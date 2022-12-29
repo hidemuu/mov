@@ -1,4 +1,5 @@
 ﻿using Mov.Designer.Models.Persistences;
+using Mov.Layouts;
 using Mov.Layouts.ValueObjects;
 using System;
 using System.Collections.Generic;
@@ -12,15 +13,15 @@ namespace Mov.Designer.Models
 
         int DomainId { get; }
 
-        LayoutNode CenterNode { get; }
+        DesignLayoutNode CenterNode { get; }
 
-        LayoutNode TopNode { get; }
+        DesignLayoutNode TopNode { get; }
 
-        LayoutNode BottomNode { get; }
+        DesignLayoutNode BottomNode { get; }
 
-        LayoutNode LeftNode { get; }
+        DesignLayoutNode LeftNode { get; }
 
-        LayoutNode RightNode { get; }
+        DesignLayoutNode RightNode { get; }
 
         #endregion プロパティ
 

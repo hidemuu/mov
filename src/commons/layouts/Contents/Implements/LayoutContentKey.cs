@@ -6,17 +6,22 @@ using System.Text;
 
 namespace Mov.Layouts
 {
-    public class LayoutContentKeyBase : ILayoutKey
+    public class LayoutContentKey : ILayoutKey
     {
         public ContentCode Code { get; }
 
         public ContentControlType ControlType { get; }
 
         
-        public LayoutContentKeyBase(string code, string controlType)
+        public LayoutContentKey(string code, string controlType)
         {
             this.Code = new ContentCode(code);
             this.ControlType = new ContentControlType(controlType);
+        }
+
+        public LayoutContentKey() : this("", "")
+        {
+
         }
     }
 }

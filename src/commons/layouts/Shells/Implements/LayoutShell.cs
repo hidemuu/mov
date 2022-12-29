@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Mov.Layouts
 {
-    public class LayoutShellBase : ILayoutShell
+    public class LayoutShell : ILayoutShell
     {
         public ShellRegion Region { get; }
 
-        public LayoutShellBase()
+        public LayoutShell()
         {
 
         }

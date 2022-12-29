@@ -45,7 +45,7 @@ namespace Mov.Designer.Service
 
         #region UIモデル
 
-        public LayoutNode GetNodeModel(ShellRegion region)
+        public DesignLayoutNode GetNodeModel(ShellRegion region)
         {
             if (region.IsCenter) return this.engine.CenterNode;
             if (region.IsTop) return this.engine.TopNode;

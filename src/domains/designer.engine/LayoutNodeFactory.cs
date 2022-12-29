@@ -30,10 +30,14 @@ namespace Mov.Designer.Engine
 
         #region メソッド
 
-        public LayoutNode Create(Node node)
+        public DesignLayoutNode Create(Node node)
         {
             var content = GetContent(node);
-            return new LayoutNode(node, content);
+            var key = new LayoutContentKey(content.Code, content.ControlType);
+            var parameter = new LayoutContentParameter(content.Name, content.Icon, true, true, content.Parameter);
+            var design = new LayoutContentDesign();
+            var value = new LayoutContentValue();
+            return new DesignLayoutNode(node, content);
         }
 
         #endregion メソッド

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public class LayoutContentValue : ILayoutValue
+    public class DesignLayoutContentValue : ILayoutValue
     {
         public ContentSchema Schema { get; }
 
@@ -14,12 +14,12 @@ namespace Mov.Designer.Models
 
         public ContentMacro Macro { get; }
 
-        public LayoutContentValue() : this(new Content())
+        public DesignLayoutContentValue() : this(new Content())
         {
 
         }
 
-        public LayoutContentValue(Content content)
+        public DesignLayoutContentValue(Content content)
         {
             this.Schema = new ContentSchema(content.Schema);
             this.ContentValue = new ContentValue(content.DefaultValue);

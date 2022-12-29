@@ -19,7 +19,7 @@ namespace Mov.Designer.Models
 
         #region UIモデル
 
-        LayoutNode GetNodeModel(ShellRegion region);
+        DesignLayoutNode GetNodeModel(ShellRegion region);
 
         #endregion UIモデル
 

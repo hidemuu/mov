@@ -1,6 +1,7 @@
 ﻿using Mov.Accessors;
 using Mov.Layouts;
 using Mov.Layouts.ValueObjects;
+using Mov.Schemas.Styles;
 using Mov.Utilities.Attributes;
 using System;
 using System.Collections.Generic;
@@ -55,7 +56,7 @@ namespace Mov.Designer.Models
         [LanguageKey("location")]
         [DisplayName("location")]
         [DisplayIndex(12)]
-        public string Location { get; set; } = ShellRegion.Center.Value;
+        public string Location { get; set; } = RegionStyle.Center.Value;
 
         /// <summary>
         /// 背景色

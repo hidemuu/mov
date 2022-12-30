@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Macros
+namespace Mov.Schemas.Resources.Macros
 {
     /// <summary>
     /// 条件式

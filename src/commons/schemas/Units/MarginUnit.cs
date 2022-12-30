@@ -3,30 +3,30 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.ValueObjects
+namespace Mov.Schemas.Units
 {
-    public sealed class ContentCode : ValueObjectBase<ContentCode>
+    public sealed class MarginUnit : ValueObjectBase<MarginUnit>
     {
         #region プロパティ
 
-        public string Value { get; }
+        public int Value { get; }
 
         #endregion プロパティ
 
         #region コンストラクター
 
-        public ContentCode(string code)
+        public MarginUnit(int indent)
         {
-            this.Value = code;
+            this.Value = indent;
         }
 
         #endregion コンストラクター
 
         #region メソッド
 
-        protected override bool EqualCore(ContentCode other)
+        protected override bool EqualCore(MarginUnit other)
         {
-            return this.Value.Equals(other.Value, StringComparison.Ordinal);
+            return this.Value.Equals(other.Value);
         }
 
         protected override int GetHashCodeCore()

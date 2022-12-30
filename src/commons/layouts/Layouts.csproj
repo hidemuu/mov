@@ -10,4 +10,8 @@
     <ProjectReference Include="..\schemas\Schemas.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Shells\ValueObjects\" />
+  </ItemGroup>
+
 </Project>

@@ -2,6 +2,7 @@
 using Mov.Designer.Models.Persistences;
 using Mov.Layouts;
 using Mov.Layouts.ValueObjects;
+using Mov.Schemas.Styles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,7 +46,7 @@ namespace Mov.Designer.Service
 
         #region UIモデル
 
-        public DesignLayoutNode GetNodeModel(ShellRegion region)
+        public DesignLayoutNode GetNodeModel(RegionStyle region)
         {
             if (region.IsCenter) return this.engine.CenterNode;
             if (region.IsTop) return this.engine.TopNode;
@@ -94,7 +95,7 @@ namespace Mov.Designer.Service
             return this.engine.GetShells();
         }
 
-        public Shell GetShell(ShellRegion region)
+        public Shell GetShell(RegionStyle region)
         {
             return this.engine.GetShell(region);
         }

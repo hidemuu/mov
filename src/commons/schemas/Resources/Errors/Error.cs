@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Errors
+namespace Mov.Schemas.Resources.Errors
 {
     public class Error
     {

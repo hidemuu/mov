@@ -1,4 +1,5 @@
 ﻿using Mov.Layouts.ValueObjects;
+using Mov.Schemas.Keys;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Mov.Layouts.Contents.ValueObjects
         /// <summary>
         /// コード
         /// </summary>
-        ContentCode Code { get; }
+        CodeKey Code { get; }
 
         /// <summary>
         /// コントロールタイプ

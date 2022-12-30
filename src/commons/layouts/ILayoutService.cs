@@ -1,4 +1,5 @@
 ﻿using Mov.Layouts.ValueObjects;
+using Mov.Schemas.Styles;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,10 +8,10 @@ namespace Mov.Layouts
 {
     public interface ILayoutService
     {
-        LayoutNode GetRegionNode(ShellRegion region);
+        LayoutNode GetRegionNode(RegionStyle region);
 
         IEnumerable<LayoutShell> GetShells();
 
-        LayoutShell GetRegionShell(ShellRegion region);
+        LayoutShell GetRegionShell(RegionStyle region);
     }
 }

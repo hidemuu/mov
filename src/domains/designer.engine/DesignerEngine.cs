@@ -4,6 +4,7 @@ using Mov.Designer.Models.Persistences;
 using Mov.Layouts;
 using Mov.Layouts.Nodes.ValueObjects;
 using Mov.Layouts.ValueObjects;
+using Mov.Schemas.Styles;
 using System;
 using System.Collections.Generic;
 
@@ -71,7 +72,7 @@ namespace Mov.Designer.Engine
             {
                 if (node.NodeType.IsRegion)
                 {
-                    var region = new ShellRegion(node.LayoutKey.Code.Value);
+                    var region = new RegionStyle(node.LayoutKey.Code.Value);
                     if (region.IsCenter) CenterNode = node;
                     if (region.IsTop) TopNode = node;
                     if (region.IsBottom) BottomNode = node;
@@ -119,7 +120,7 @@ namespace Mov.Designer.Engine
             return this.repository.Shells.Get();
         }
 
-        public Shell GetShell(ShellRegion region)
+        public Shell GetShell(RegionStyle region)
         {
             return this.repository.Shells.Get(region.Value);
         }

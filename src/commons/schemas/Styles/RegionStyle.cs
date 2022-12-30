@@ -3,21 +3,21 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.ValueObjects
+namespace Mov.Schemas.Styles
 {
-    public sealed class ShellRegion : ValueObjectBase<ShellRegion>
+    public sealed class RegionStyle : ValueObjectBase<RegionStyle>
     {
         #region オブジェクト
 
-        public static readonly ShellRegion Center = new ShellRegion("Center");
+        public static readonly RegionStyle Center = new RegionStyle("Center");
 
-        public static readonly ShellRegion Top = new ShellRegion("Top");
+        public static readonly RegionStyle Top = new RegionStyle("Top");
 
-        public static readonly ShellRegion Bottom = new ShellRegion("Bottom");
+        public static readonly RegionStyle Bottom = new RegionStyle("Bottom");
 
-        public static readonly ShellRegion Left = new ShellRegion("Left");
+        public static readonly RegionStyle Left = new RegionStyle("Left");
 
-        public static readonly ShellRegion Right = new ShellRegion("Right");
+        public static readonly RegionStyle Right = new RegionStyle("Right");
 
         #endregion オブジェクト
 
@@ -39,23 +39,23 @@ namespace Mov.Layouts.ValueObjects
 
         #region コンストラクター
 
-        public ShellRegion(string region)
+        public RegionStyle(string region)
         {
-            this.Value = region;
+            Value = region;
         }
 
         #endregion コンストラクター
 
         #region メソッド
 
-        protected override bool EqualCore(ShellRegion other)
+        protected override bool EqualCore(RegionStyle other)
         {
-            return this.Value.Equals(other.Value, StringComparison.Ordinal);
+            return Value.Equals(other.Value, StringComparison.Ordinal);
         }
 
         protected override int GetHashCodeCore()
         {
-            return this.Value.GetHashCode();
+            return Value.GetHashCode();
         }
 
         #endregion メソッド

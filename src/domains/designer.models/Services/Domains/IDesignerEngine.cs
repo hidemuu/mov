@@ -1,6 +1,7 @@
 ﻿using Mov.Designer.Models.Persistences;
 using Mov.Layouts;
 using Mov.Layouts.ValueObjects;
+using Mov.Schemas.Styles;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -45,7 +46,7 @@ namespace Mov.Designer.Models
 
         IEnumerable<Shell> GetShells();
 
-        Shell GetShell(ShellRegion region);
+        Shell GetShell(RegionStyle region);
 
         #endregion クエリ
 

@@ -12,17 +12,17 @@ namespace Mov.Schemas.Styles
 
         public ColorStyle(string value)
         {
-            this.Value = value;
+            Value = value;
         }
 
         protected override bool EqualCore(ColorStyle other)
         {
-            return this.Value.Equals(other.Value); ;
+            return Value.Equals(other.Value, StringComparison.Ordinal); ;
         }
 
         protected override int GetHashCodeCore()
         {
-            return this.Value.GetHashCode();
+            return Value.GetHashCode();
         }
     }
 }

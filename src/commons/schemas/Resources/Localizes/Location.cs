@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Translators
+namespace Mov.Schemas.Resources.Localizes
 {
     public sealed class Location : ValueObjectBase<Location>
     {

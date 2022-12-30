@@ -3,10 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.ValueObjects
+namespace Mov.Schemas.Bodies
 {
-    public sealed class ContentStyle : ValueObjectBase<ContentStyle>
+    public sealed class LayoutSchema : ValueObjectBase<LayoutSchema>
     {
+        public static LayoutSchema Empty = new LayoutSchema("");
+
         #region プロパティ
 
         public string Value { get; }
@@ -15,16 +17,16 @@ namespace Mov.Layouts.ValueObjects
 
         #region コンストラクター
 
-        public ContentStyle(string style)
+        public LayoutSchema(string schema)
         {
-            this.Value = style;
+            this.Value = schema;
         }
 
         #endregion コンストラクター
 
         #region メソッド
 
-        protected override bool EqualCore(ContentStyle other)
+        protected override bool EqualCore(LayoutSchema other)
         {
             return this.Value.Equals(other.Value, StringComparison.Ordinal);
         }

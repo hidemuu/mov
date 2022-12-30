@@ -5,27 +5,27 @@ using System.Text;
 
 namespace Mov.Layouts.Contents.ValueObjects
 {
-    public sealed class ContentControlType : ValueObjectBase<ContentControlType>
+    public sealed class ControlStyle : ValueObjectBase<ControlStyle>
     {
         #region オブジェクト
 
-        public static readonly ContentControlType Label = new ContentControlType("Label");
+        public static readonly ControlStyle Label = new ControlStyle("Label");
 
-        public static readonly ContentControlType Button = new ContentControlType("Button");
+        public static readonly ControlStyle Button = new ControlStyle("Button");
 
-        public static readonly ContentControlType RadioButton = new ContentControlType("RadioButton");
+        public static readonly ControlStyle RadioButton = new ControlStyle("RadioButton");
 
-        public static readonly ContentControlType SpinBox = new ContentControlType("SpinBox");
+        public static readonly ControlStyle SpinBox = new ControlStyle("SpinBox");
 
-        public static readonly ContentControlType TextBox = new ContentControlType("TextBox");
+        public static readonly ControlStyle TextBox = new ControlStyle("TextBox");
 
-        public static readonly ContentControlType ListBox = new ContentControlType("ListBox");
+        public static readonly ControlStyle ListBox = new ControlStyle("ListBox");
         
-        public static readonly ContentControlType ComboBox = new ContentControlType("ComboBox");
+        public static readonly ControlStyle ComboBox = new ControlStyle("ComboBox");
 
-        public static readonly ContentControlType CheckBox = new ContentControlType("CheckBox");
+        public static readonly ControlStyle CheckBox = new ControlStyle("CheckBox");
 
-        public static readonly ContentControlType DatePicker = new ContentControlType("DatePicker");
+        public static readonly ControlStyle DatePicker = new ControlStyle("DatePicker");
 
         #endregion オブジェクト
 
@@ -55,7 +55,7 @@ namespace Mov.Layouts.Contents.ValueObjects
 
         #region コンストラクター
 
-        public ContentControlType(string controlType)
+        public ControlStyle(string controlType)
         {
             this.Value = controlType;
         }
@@ -64,7 +64,7 @@ namespace Mov.Layouts.Contents.ValueObjects
 
         #region メソッド
 
-        protected override bool EqualCore(ContentControlType other)
+        protected override bool EqualCore(ControlStyle other)
         {
             return this.Value.Equals(other.Value);
         }

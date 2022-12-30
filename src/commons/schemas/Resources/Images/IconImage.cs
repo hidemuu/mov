@@ -7,6 +7,8 @@ namespace Mov.Schemas.Resources.Images
 {
     public sealed class IconImage : ValueObjectBase<IconImage>
     {
+        public static IconImage Empty = new IconImage("");
+
         #region プロパティ
 
         public string Value { get; }

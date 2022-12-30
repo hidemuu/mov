@@ -1,4 +1,5 @@
 ﻿using Mov.Layouts;
+using Mov.Layouts.Contents;
 using Mov.Layouts.Contents.ValueObjects;
 using System;
 using System.Collections.Generic;
@@ -18,45 +19,45 @@ namespace Mov.WpfLayouts.Components.Molecules
             DefaultStyleKeyProperty.OverrideMetadata(typeof(LaySpinBox), new FrameworkPropertyMetadata(typeof(LaySpinBox)));
         }
 
-        public ILayoutKey LayoutKey
+        public LayoutKey LayoutKey
         {
-            get { return (ILayoutKey)GetValue(LayoutKeyProperty); }
+            get { return (LayoutKey)GetValue(LayoutKeyProperty); }
             set { SetValue(LayoutKeyProperty, value); }
         }
 
         public static readonly DependencyProperty LayoutKeyProperty =
-            DependencyProperty.Register(nameof(LayoutKey), typeof(ILayoutKey),
+            DependencyProperty.Register(nameof(LayoutKey), typeof(LayoutKey),
                 typeof(LaySpinBox), new PropertyMetadata(default));
 
-        public ILayoutParameter LayoutParameter
+        public LayoutParameter LayoutParameter
         {
-            get { return (ILayoutParameter)GetValue(LayoutParameterProperty); }
+            get { return (LayoutParameter)GetValue(LayoutParameterProperty); }
             set { SetValue(LayoutParameterProperty, value); }
         }
 
         public static readonly DependencyProperty LayoutParameterProperty =
-            DependencyProperty.Register(nameof(LayoutParameter), typeof(ILayoutParameter),
+            DependencyProperty.Register(nameof(LayoutParameter), typeof(LayoutParameter),
                 typeof(LaySpinBox), new PropertyMetadata(default));
 
 
-        public ILayoutDesign LayoutDesign
+        public LayoutDesign LayoutDesign
         {
-            get { return (ILayoutDesign)GetValue(LayoutDesignProperty); }
+            get { return (LayoutDesign)GetValue(LayoutDesignProperty); }
             set { SetValue(LayoutDesignProperty, value); }
         }
 
         public static readonly DependencyProperty LayoutDesignProperty =
-            DependencyProperty.Register(nameof(LayoutDesign), typeof(ILayoutDesign),
+            DependencyProperty.Register(nameof(LayoutDesign), typeof(LayoutDesign),
                 typeof(LaySpinBox), new PropertyMetadata(default));
 
-        public ILayoutValue LayoutValue
+        public LayoutValue LayoutValue
         {
-            get { return (ILayoutValue)GetValue(LayoutValueProperty); }
+            get { return (LayoutValue)GetValue(LayoutValueProperty); }
             set { SetValue(LayoutValueProperty, value); }
         }
 
         public static readonly DependencyProperty LayoutValueProperty =
-            DependencyProperty.Register(nameof(LayoutValue), typeof(ILayoutValue),
+            DependencyProperty.Register(nameof(LayoutValue), typeof(LayoutValue),
                 typeof(LaySpinBox), new PropertyMetadata(default));
 
     }

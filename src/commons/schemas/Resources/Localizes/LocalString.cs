@@ -1,12 +1,15 @@
-﻿using Mov.Utilities.ValueObjects;
+﻿using Mov.Schemas.Resources.Images;
+using Mov.Utilities.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.ValueObjects
+namespace Mov.Schemas.Resources.Localizes
 {
-    public sealed class ContentIcon : ValueObjectBase<ContentIcon>
+    public sealed class LocalString : ValueObjectBase<LocalString>
     {
+        public static LocalString Empty = new LocalString("");
+
         #region プロパティ
 
         public string Value { get; }
@@ -15,16 +18,16 @@ namespace Mov.Layouts.ValueObjects
 
         #region コンストラクター
 
-        public ContentIcon(string url)
+        public LocalString(string info)
         {
-            this.Value = url;
+            this.Value = info;
         }
 
         #endregion コンストラクター
 
         #region メソッド
 
-        protected override bool EqualCore(ContentIcon other)
+        protected override bool EqualCore(LocalString other)
         {
             return this.Value.Equals(other.Value, StringComparison.Ordinal);
         }

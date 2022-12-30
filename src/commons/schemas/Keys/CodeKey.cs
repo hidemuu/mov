@@ -7,6 +7,8 @@ namespace Mov.Schemas.Keys
 {
     public sealed class CodeKey : ValueObjectBase<CodeKey>
     {
+        public static CodeKey Empty = new CodeKey("");
+
         #region プロパティ
 
         public string Value { get; }

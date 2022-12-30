@@ -1,6 +1,6 @@
 ﻿using Mov.Accessors;
 using Mov.Layouts;
-using Mov.Layouts.ValueObjects;
+using Mov.Schemas.Styles;
 using Mov.Utilities.Attributes;
 using System;
 using System.Collections;
@@ -46,7 +46,7 @@ namespace Mov.Designer.Models
         [LanguageKey("orientation")]
         [DisplayName("orientation")]
         [DisplayIndex(11)]
-        public string OrientationType { get; set; } = ContentOrientation.Horizontal.Value;
+        public string OrientationType { get; set; } = OrientationStyle.Horizontal.Value;
         /// <summary>
         /// スタイル
         /// </summary>

@@ -7,15 +7,21 @@ namespace Mov.Layouts.Contents.ValueObjects
 {
     public sealed class VisibilityStyle : ValueObjectBase<VisibilityStyle>
     {
+        public static VisibilityStyle Visible = new VisibilityStyle("Visible");
+
+        public static VisibilityStyle Collapse = new VisibilityStyle("Collapse");
+
+        public static VisibilityStyle Hidden = new VisibilityStyle("Hidden");
+
         #region プロパティ
 
-        public bool Value { get; }
+        public string Value { get; }
 
         #endregion プロパティ
 
         #region コンストラクター
 
-        public VisibilityStyle(bool isVisible)
+        public VisibilityStyle(string isVisible)
         {
             this.Value = isVisible;
         }
@@ -26,7 +32,7 @@ namespace Mov.Layouts.Contents.ValueObjects
 
         protected override bool EqualCore(VisibilityStyle other)
         {
-            return this.Value.Equals(other.Value);
+            return this.Value.Equals(other.Value, StringComparison.Ordinal);
         }
 
         protected override int GetHashCodeCore()

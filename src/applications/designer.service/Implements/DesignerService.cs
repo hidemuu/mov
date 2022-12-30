@@ -1,7 +1,6 @@
 ﻿using Mov.Designer.Models;
 using Mov.Designer.Models.Persistences;
 using Mov.Layouts;
-using Mov.Layouts.ValueObjects;
 using Mov.Schemas.Styles;
 using System;
 using System.Collections.Generic;

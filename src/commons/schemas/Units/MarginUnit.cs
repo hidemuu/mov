@@ -7,6 +7,8 @@ namespace Mov.Schemas.Units
 {
     public sealed class MarginUnit : ValueObjectBase<MarginUnit>
     {
+        public static MarginUnit Default = new MarginUnit(0);
+
         #region プロパティ
 
         public int Value { get; }

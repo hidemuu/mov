@@ -1,4 +1,5 @@
 ﻿using Mov.Layouts;
+using Mov.Layouts.Contents;
 using Mov.Layouts.Contents.ValueObjects;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,12 @@ namespace Mov.WpfLayouts.Components
 {
     public interface ILayControl
     {
-        ILayoutKey LayoutKey { get; set; }
+        LayoutKey LayoutKey { get; set; }
 
-        ILayoutParameter LayoutParameter { get; set; }
+        LayoutParameter LayoutParameter { get; set; }
 
-        ILayoutDesign LayoutDesign { get; set; }
+        LayoutDesign LayoutDesign { get; set; }
 
-        ILayoutValue LayoutValue { get; set; }
+        LayoutValue LayoutValue { get; set; }
     }
 }

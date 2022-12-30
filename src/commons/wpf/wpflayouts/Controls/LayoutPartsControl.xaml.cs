@@ -25,13 +25,13 @@ namespace Mov.WpfLayouts.Controls
         #region プロパティ
 
         public static readonly DependencyProperty ModelsProperty =
-            DependencyProperty.Register(nameof(Models), typeof(ReactiveCollection<ILayoutNode>),
+            DependencyProperty.Register(nameof(Models), typeof(ReactiveCollection<LayoutNode>),
             typeof(LayoutPartsControl),
             new UIPropertyMetadata(null, new PropertyChangedCallback(OnModelsChanged)));
 
-        public ReactiveCollection<ILayoutNode> Models
+        public ReactiveCollection<LayoutNode> Models
         {
-            get { return (ReactiveCollection<ILayoutNode>)GetValue(ModelsProperty); }
+            get { return (ReactiveCollection<LayoutNode>)GetValue(ModelsProperty); }
             set { SetValue(ModelsProperty, value); }
         }
 

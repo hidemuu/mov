@@ -3,7 +3,6 @@ using Mov.Designer.Models.Parameters;
 using Mov.Designer.Models.Persistences;
 using Mov.Layouts;
 using Mov.Layouts.Nodes.ValueObjects;
-using Mov.Layouts.ValueObjects;
 using Mov.Schemas.Styles;
 using System;
 using System.Collections.Generic;

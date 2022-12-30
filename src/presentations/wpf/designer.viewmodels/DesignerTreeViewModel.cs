@@ -3,7 +3,7 @@ using Mov.Designer.Models;
 using Mov.Designer.Service;
 using Mov.Layouts;
 using Mov.Layouts.Nodes.ValueObjects;
-using Mov.Layouts.ValueObjects;
+using Mov.Schemas.Styles;
 using Mov.WpfModels;
 using Mov.WpfMvvms;
 using Prism.Regions;
@@ -205,17 +205,17 @@ namespace Mov.Designer.ViewModels
 
         #region プロパティ
 
-        public ReactivePropertySlim<NodeType> LayoutType { get; } = new ReactivePropertySlim<NodeType>(NodeType.Content);
-        public ReactivePropertySlim<ContentOrientation> OrientationType { get; } = new ReactivePropertySlim<ContentOrientation>(ContentOrientation.Horizontal);
+        public ReactivePropertySlim<NodeStyle> LayoutType { get; } = new ReactivePropertySlim<NodeStyle>(NodeStyle.Content);
+        public ReactivePropertySlim<OrientationStyle> OrientationType { get; } = new ReactivePropertySlim<OrientationStyle>(OrientationStyle.Horizontal);
         public ReactivePropertySlim<string> LayoutStyle { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<string> LayoutParameter { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<bool> IsExpand { get; } = new ReactivePropertySlim<bool>(true);
 
         public List<string> Codes { get; set; } = new List<string>();
 
-        public List<string> NodeTypes { get; set; } = NodeType.GetStrings().ToList();
+        public List<string> NodeTypes { get; set; } = NodeStyle.GetStrings().ToList();
 
-        public List<string> OrientationTypes { get; set; } = ContentOrientation.GetStrings().ToList();
+        public List<string> OrientationTypes { get; set; } = OrientationStyle.GetStrings().ToList();
 
         public List<DesignerTreeModel> Children { get; set; } = new List<DesignerTreeModel>();
 
@@ -232,8 +232,8 @@ namespace Mov.Designer.ViewModels
             Index.Value = node.Index;
             Code.Value = node.Code;
             IsExpand.Value = node.IsExpand;
-            LayoutType.Value = new NodeType(node.NodeType);
-            OrientationType.Value = new ContentOrientation(node.OrientationType);
+            LayoutType.Value = new NodeStyle(node.NodeType);
+            OrientationType.Value = new OrientationStyle(node.OrientationType);
             LayoutStyle.Value = node.Style;
             LayoutParameter.Value = node.Parameter;
             //子階層へ

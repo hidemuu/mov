@@ -35,7 +35,7 @@ namespace Mov.WpfLayouts.Selector
         #region メソッド
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
-            if(item is ILayoutNode node)
+            if(item is LayoutNode node)
             {
                 if (node.NodeType.IsRegion) return GroupTemplate;
                 if (node.NodeType.IsContent) return ContentTemplate;        

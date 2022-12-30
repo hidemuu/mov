@@ -8,6 +8,8 @@ namespace Mov.Schemas.Styles
 {
     public sealed class ColorStyle : ValueObjectBase<ColorStyle>
     {
+        public static ColorStyle Default = new ColorStyle("");
+
         public string Value { get; }
 
         public ColorStyle(string value)

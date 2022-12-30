@@ -1,6 +1,7 @@
 ﻿using Mov.Designer.Models;
 using Mov.Designer.Models.Persistences;
 using Mov.Layouts;
+using Mov.Layouts.Contents;
 using Mov.Layouts.Nodes.ValueObjects;
 using System;
 using System.Collections.Generic;
@@ -33,10 +34,10 @@ namespace Mov.Designer.Engine
         public DesignLayoutNode Create(Node node)
         {
             var content = GetContent(node);
-            var key = new LayoutContentKey(content.Code, content.ControlType);
-            var parameter = new LayoutContentParameter(content.Name, content.Icon, true, true, content.Parameter);
-            var design = new LayoutContentDesign();
-            var value = new LayoutContentValue();
+            var key = new DesignLayoutContentKey(content);
+            var parameter = new DesignLayoutContentParameter(content);
+            var design = new DesignLayoutContentDesign(content);
+            var value = new DesignLayoutContentValue(content);
             return new DesignLayoutNode(node, content);
         }
 

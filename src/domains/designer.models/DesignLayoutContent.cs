@@ -1,7 +1,7 @@
 ﻿using Mov.Designer.Models;
 using Mov.Layouts;
+using Mov.Layouts.Contents;
 using Mov.Layouts.Contents.ValueObjects;
-using Mov.Layouts.ValueObjects;
 using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
@@ -9,15 +9,15 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public class DesignLayoutContent : ILayoutContent
+    public class DesignLayoutContent
     {
 
         #region プロパティ
 
-        public ILayoutKey LayoutKey { get; set; }
-        public ILayoutParameter LayoutParameter { get; set; }
-        public ILayoutDesign LayoutDesign { get; set; }
-        public ILayoutValue LayoutValue { get; set; }
+        public LayoutKey LayoutKey { get; set; }
+        public LayoutParameter LayoutParameter { get; set; }
+        public LayoutDesign LayoutDesign { get; set; }
+        public LayoutValue LayoutValue { get; set; }
 
         #endregion プロパティ
 

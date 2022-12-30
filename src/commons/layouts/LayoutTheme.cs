@@ -4,7 +4,12 @@ using System.Text;
 
 namespace Mov.Layouts
 {
-    public interface ILayoutTheme
+    public class LayoutTheme
     {
+
+        public LayoutTheme()
+        {
+
+        }
     }
 }

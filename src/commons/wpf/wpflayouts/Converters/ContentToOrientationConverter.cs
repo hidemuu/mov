@@ -1,5 +1,5 @@
 ﻿using Mov.Layouts;
-using Mov.Layouts.ValueObjects;
+using Mov.Schemas.Styles;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -21,7 +21,7 @@ namespace Mov.WpfLayouts.Converters
                 return DependencyProperty.UnsetValue;
             }
             var isCanExcute = (string)value;
-            if (isCanExcute == ContentOrientation.Vertical.Value)
+            if (isCanExcute == OrientationStyle.Vertical.Value)
             {
                 return Orientation.Vertical;
             }

@@ -1,5 +1,4 @@
 ﻿using Mov.Layouts;
-using Mov.Layouts.ValueObjects;
 using Mov.Schemas.Styles;
 using Reactive.Bindings;
 using System;
@@ -36,13 +35,13 @@ namespace Mov.WpfLayouts.Controls
         #region センター
 
         public static readonly DependencyProperty ModelsProperty =
-            DependencyProperty.Register(nameof(Models), typeof(ReactiveCollection<ILayoutNode>),
+            DependencyProperty.Register(nameof(Models), typeof(ReactiveCollection<LayoutNode>),
             typeof(LayoutPartsShell),
-            new UIPropertyMetadata(new ReactiveCollection<ILayoutNode>(), new PropertyChangedCallback(OnModelsChanged)));
+            new UIPropertyMetadata(new ReactiveCollection<LayoutNode>(), new PropertyChangedCallback(OnModelsChanged)));
 
-        public ReactiveCollection<ILayoutNode> Models
+        public ReactiveCollection<LayoutNode> Models
         {
-            get { return (ReactiveCollection<ILayoutNode>)GetValue(ModelsProperty); }
+            get { return (ReactiveCollection<LayoutNode>)GetValue(ModelsProperty); }
             set { SetValue(ModelsProperty, value); }
         }
 

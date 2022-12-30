@@ -3,7 +3,7 @@ using Mov.Designer.Models;
 using Mov.Designer.Service;
 using Mov.Layouts;
 using Mov.Layouts.Contents.ValueObjects;
-using Mov.Layouts.ValueObjects;
+using Mov.Schemas.Styles;
 using Mov.WpfModels;
 using Mov.WpfMvvms;
 using Prism.Regions;
@@ -174,9 +174,8 @@ namespace Mov.Designer.ViewModels
         public ReactivePropertySlim<string> Code { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<string> Name { get; } = new ReactivePropertySlim<string>();
         public ReactivePropertySlim<string> Command { get; } = new ReactivePropertySlim<string>();
-        public ReactivePropertySlim<ContentControlType> ControlType { get; } = new ReactivePropertySlim<ContentControlType>();
-        public ReactivePropertySlim<string> ControlStyle { get; } = new ReactivePropertySlim<string>();
-
+        public ReactivePropertySlim<ControlStyle> ControlType { get; } = new ReactivePropertySlim<ControlStyle>();
+        
         public ReactivePropertySlim<double> Width { get; } = new ReactivePropertySlim<double>(150);
         public ReactivePropertySlim<double> Height { get; } = new ReactivePropertySlim<double>(32);
 
@@ -186,11 +185,11 @@ namespace Mov.Designer.ViewModels
 
         public ReactivePropertySlim<string> ToolTip { get; } = new ReactivePropertySlim<string>();
 
-        public List<string> ControlTypes { get; set; } = ContentControlType.GetStrings().ToList();
+        public List<string> ControlTypes { get; set; } = ControlStyle.GetStrings().ToList();
 
-        public List<string> HolizontalAlignments { get; set; } = ContentHorizontalAlignment.GetStrings().ToList();
+        public List<string> HolizontalAlignments { get; set; } = HorizontalAlignmentStyle.GetStrings().ToList();
 
-        public List<string> VerticalAlignments { get; set; } = ContentVerticalAlignment.GetStrings().ToList();
+        public List<string> VerticalAlignments { get; set; } = VerticalAlignmentStyle.GetStrings().ToList();
 
         #endregion プロパティ
 
@@ -216,7 +215,7 @@ namespace Mov.Designer.ViewModels
             Index.Value = item.Index;
             Code.Value = item.Code;
             Name.Value = item.Name;
-            ControlType.Value = new ContentControlType(item.ControlType);
+            ControlType.Value = new ControlStyle(item.ControlType);
             Height.Value = item.Height;
             Width.Value = item.Width;
             HorizontalAlignment.Value = item.HorizontalAlignment;

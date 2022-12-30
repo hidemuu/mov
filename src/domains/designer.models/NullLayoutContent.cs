@@ -1,18 +1,18 @@
 ﻿using Mov.Layouts;
+using Mov.Layouts.Contents;
 using Mov.Layouts.Contents.ValueObjects;
-using Mov.Layouts.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public class NullLayoutContent : ILayoutContent
+    public class NullLayoutContent
     {
 
-        public ILayoutKey LayoutKey { get; set; } = new DesignLayoutContentKey();
-        public ILayoutParameter LayoutParameter { get; set; } = new DesignLayoutContentParameter();
-        public ILayoutDesign LayoutDesign { get; set; } = new DesignLayoutContentDesign();
-        public ILayoutValue LayoutValue { get; set; } = new DesignLayoutContentValue();
+        public LayoutKey LayoutKey { get; set; } = LayoutKey.Default;
+        public LayoutParameter LayoutParameter { get; set; } = LayoutParameter.Empty;
+        public LayoutDesign LayoutDesign { get; set; } = LayoutDesign.Empty;
+        public LayoutValue LayoutValue { get; set; } = LayoutValue.Empty;
     }
 }

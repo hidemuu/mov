@@ -1,7 +1,7 @@
 ﻿using Mov.Accessors;
 using Mov.Layouts;
 using Mov.Layouts.Contents.ValueObjects;
-using Mov.Layouts.ValueObjects;
+using Mov.Schemas.Styles;
 using Mov.Utilities.Attributes;
 using System;
 using System.Collections.Generic;
@@ -65,7 +65,7 @@ namespace Mov.Designer.Models
         [LanguageKey("control_type")]
         [DisplayName("control_type")]
         [DisplayIndex(13)]
-        public string ControlType { get; set; } = ContentControlType.Label.Value;
+        public string ControlType { get; set; } = ControlStyle.Label.Value;
 
         /// <summary>
         /// コントロールのスキーマ
@@ -119,7 +119,7 @@ namespace Mov.Designer.Models
         [LanguageKey("horizontal_alignment")]
         [DisplayName("horizontal_alignment")]
         [DisplayIndex(19)]
-        public string HorizontalAlignment { get; set; } = ContentHorizontalAlignment.Left.Value;
+        public string HorizontalAlignment { get; set; } = HorizontalAlignmentStyle.Left.Value;
 
         /// <summary>
         /// 垂直位置
@@ -128,7 +128,7 @@ namespace Mov.Designer.Models
         [LanguageKey("vertical_alignment")]
         [DisplayName("vertical_alignment")]
         [DisplayIndex(20)]
-        public string VerticalAlignment { get; set; } = ContentVerticalAlignment.Center.Value;
+        public string VerticalAlignment { get; set; } = VerticalAlignmentStyle.Center.Value;
 
         /// <summary>
         /// パラメータ

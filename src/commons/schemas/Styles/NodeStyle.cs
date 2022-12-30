@@ -5,25 +5,25 @@ using System.Text;
 
 namespace Mov.Layouts.Nodes.ValueObjects
 {
-    public sealed class NodeType : ValueObjectBase<NodeType>
+    public sealed class NodeStyle : ValueObjectBase<NodeStyle>
     {
         #region オブジェクト
 
-        public static readonly NodeType Region = new NodeType("Region");
+        public static readonly NodeStyle Region = new NodeStyle("Region");
 
-        public static readonly NodeType Content = new NodeType("Content");
+        public static readonly NodeStyle Content = new NodeStyle("Content");
 
-        public static readonly NodeType Group = new NodeType("Group");
+        public static readonly NodeStyle Group = new NodeStyle("Group");
 
-        public static readonly NodeType Expander = new NodeType("Expander");
+        public static readonly NodeStyle Expander = new NodeStyle("Expander");
 
-        public static readonly NodeType Scroll = new NodeType("Scroll");
+        public static readonly NodeStyle Scroll = new NodeStyle("Scroll");
 
-        public static readonly NodeType Tab = new NodeType("Tab");
+        public static readonly NodeStyle Tab = new NodeStyle("Tab");
 
-        public static readonly NodeType Tree = new NodeType("Tree");
+        public static readonly NodeStyle Tree = new NodeStyle("Tree");
 
-        public static readonly NodeType Table = new NodeType("Table");
+        public static readonly NodeStyle Table = new NodeStyle("Table");
 
         #endregion オブジェクト
 
@@ -51,7 +51,7 @@ namespace Mov.Layouts.Nodes.ValueObjects
 
         #region コンストラクター
 
-        public NodeType(string nodeType)
+        public NodeStyle(string nodeType)
         {
             this.Value = nodeType;
         }
@@ -60,7 +60,7 @@ namespace Mov.Layouts.Nodes.ValueObjects
 
         #region メソッド
 
-        protected override bool EqualCore(NodeType other)
+        protected override bool EqualCore(NodeStyle other)
         {
             return Value.Equals(other.Value, StringComparison.Ordinal);
         }

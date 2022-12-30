@@ -3,30 +3,32 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.ValueObjects
+namespace Mov.Schemas.Parameters
 {
-    public sealed class ContentHeight : ValueObjectBase<ContentHeight>
+    public sealed class Variable : ValueObjectBase<Variable>
     {
+        public static Variable Empty = new Variable("");
+
         #region プロパティ
 
-        public double Value { get; }
+        public string Value { get; }
 
         #endregion プロパティ
 
         #region コンストラクター
 
-        public ContentHeight(double height)
+        public Variable(string parameter)
         {
-            this.Value = height;
+            this.Value = parameter;
         }
 
         #endregion コンストラクター
 
         #region メソッド
 
-        protected override bool EqualCore(ContentHeight other)
+        protected override bool EqualCore(Variable other)
         {
-            return this.Value.Equals(other.Value);
+            return this.Value.Equals(other.Value, StringComparison.Ordinal);
         }
 
         protected override int GetHashCodeCore()

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Designer.Models.DomainModels
 {
-    public class DesignLayoutTheme : ILayoutTheme
+    public class DesignLayoutTheme : LayoutTheme
     {
 
         public DesignLayoutTheme(Theme theme)

@@ -1,7 +1,6 @@
-﻿using Mov.Layouts;
+﻿using Mov.Layouts.Contents;
 using Mov.Layouts.Contents.ValueObjects;
 using Mov.Layouts.Nodes.ValueObjects;
-using Mov.Layouts.ValueObjects;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,7 +8,7 @@ using System.Text;
 
 namespace Mov.Layouts
 {
-    public class LayoutNode : LayoutContent, ILayoutNode
+    public class LayoutNode : LayoutContent
     {
         #region フィールド
 
@@ -22,9 +21,9 @@ namespace Mov.Layouts
 
         #region プロパティ
 
-        public NodeType NodeType { get; }
+        public NodeStyle NodeType { get; }
 
-        public NodeExpand Expand { get; }
+        public EnableStyle Expand { get; }
 
         /// <summary>
         /// 子階層
@@ -45,18 +44,18 @@ namespace Mov.Layouts
         /// </summary>
         /// <param name="node"></param>
         /// <param name="content"></param>
-        public LayoutNode(string nodeType, bool isExpand, ILayoutKey key, ILayoutParameter parameter, ILayoutDesign design, ILayoutValue value) 
+        public LayoutNode(NodeStyle nodeType, EnableStyle isExpand, LayoutKey key, LayoutParameter parameter, LayoutDesign design, LayoutValue value)
             : base(key, parameter, design, value)
         {
-            this.NodeType = new NodeType(nodeType);
-            this.Expand = new NodeExpand(isExpand);
+            NodeType = nodeType;
+            Expand = isExpand;
         }
 
         #endregion コンストラクター
 
         #region メソッド
 
-        
+
         public void Add(LayoutNode layout)
         {
             children.Add(layout);
@@ -69,7 +68,7 @@ namespace Mov.Layouts
 
         public override string ToString()
         {
-            return base.ToString() + " [ControlType] " + this.LayoutKey.ControlType.Value + " [Macro] " + this.LayoutValue.Macro.Value;
+            return base.ToString() + " [ControlType] " + LayoutKey.ControlType.Value + " [Macro] " + LayoutValue.Macro.Value;
         }
 
         #endregion メソッド

@@ -3,7 +3,6 @@ using Mov.Designer.Models;
 using Mov.Designer.Models.Persistences;
 using Mov.Designer.Service;
 using Mov.Layouts;
-using Mov.Layouts.ValueObjects;
 using Mov.Schemas.Styles;
 using Reactive.Bindings;
 using System;

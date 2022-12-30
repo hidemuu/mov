@@ -15,7 +15,7 @@ namespace Mov.WpfLayouts.Selector
 
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
-            if (item is ILayoutNode node)
+            if (item is LayoutNode node)
             {
                 FrameworkElementFactory factory;
                 var controlType = node.LayoutKey.ControlType;
@@ -133,7 +133,7 @@ namespace Mov.WpfLayouts.Selector
             return false;
         }
 
-        private FrameworkElementFactory GetDefault(ILayoutNode node)
+        private FrameworkElementFactory GetDefault(LayoutNode node)
         {
             var defaultFactory = new FrameworkElementFactory(typeof(Label));
             defaultFactory.SetValue(Label.ContentProperty, "【NotFound】" + node.ToString());

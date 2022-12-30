@@ -8,6 +8,8 @@ namespace Mov.Schemas.Units.Sizes
 {
     public sealed class Size2D : ValueObjectBase<Size2D>
     {
+        public static Size2D Default = new Size2D(0, 0);
+
         public LengthUnit Height { get; }
 
         public LengthUnit Width { get; }

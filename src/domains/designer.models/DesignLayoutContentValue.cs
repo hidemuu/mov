@@ -1,29 +1,25 @@
-﻿using Mov.Layouts.Contents.ValueObjects;
-using Mov.Layouts.ValueObjects;
+﻿using Mov.Layouts.Contents;
+using Mov.Layouts.Contents.ValueObjects;
+using Mov.Schemas.Bodies;
+using Mov.Schemas.Parameters;
+using Mov.Schemas.Resources.Macros;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public class DesignLayoutContentValue : ILayoutValue
+    public class DesignLayoutContentValue : LayoutValue
     {
-        public ContentSchema Schema { get; }
-
-        public ContentValue ContentValue { get; }
-
-        public ContentMacro Macro { get; }
-
+        
         public DesignLayoutContentValue() : this(new Content())
         {
 
         }
 
-        public DesignLayoutContentValue(Content content)
+        public DesignLayoutContentValue(Content content) : base(new LayoutSchema(content.Schema), new Variable(content.DefaultValue), new Macro(content.Macro))
         {
-            this.Schema = new ContentSchema(content.Schema);
-            this.ContentValue = new ContentValue(content.DefaultValue);
-            this.Macro = new ContentMacro(content.Macro);
+            
         }
     }
 }

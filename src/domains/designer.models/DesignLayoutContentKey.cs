@@ -1,5 +1,5 @@
-﻿using Mov.Layouts.Contents.ValueObjects;
-using Mov.Layouts.ValueObjects;
+﻿using Mov.Layouts.Contents;
+using Mov.Layouts.Contents.ValueObjects;
 using Mov.Schemas.Keys;
 using System;
 using System.Collections.Generic;
@@ -7,21 +7,15 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public class DesignLayoutContentKey : ILayoutKey
+    public class DesignLayoutContentKey : LayoutKey
     {
-        public CodeKey Code { get; }
-
-        public ContentControlType ControlType { get; }
-
         public DesignLayoutContentKey() : this(new Content())
         {
 
         }
 
-        public DesignLayoutContentKey(Content content)
+        public DesignLayoutContentKey(Content content) : base(new CodeKey(content.Code), new ControlStyle(content.ControlType))
         {
-            this.Code = new CodeKey(content.Code);
-            this.ControlType = new ContentControlType(content.ControlType);
         }
     }
 }

@@ -10,7 +10,7 @@
     <converter:ContentToOrientationConverter x:Key="orientationConverter" />
     <selector:LayoutContentSelector x:Key="layoutContentSelector" />
 
-    <DataTemplate x:Key="ContentTemplate" DataType="{x:Type nodes:ILayoutNode}">
+    <DataTemplate x:Key="ContentTemplate" DataType="{x:Type nodes:LayoutNode}">
         <ContentControl
             Margin="16,0,0,0"
             Content="{Binding}"
@@ -21,7 +21,7 @@
         </ContentControl>
     </DataTemplate>
 
-    <DataTemplate x:Key="GroupTemplate" DataType="{x:Type nodes:ILayoutNode}">
+    <DataTemplate x:Key="GroupTemplate" DataType="{x:Type nodes:LayoutNode}">
         <ItemsControl ItemTemplateSelector="{DynamicResource layoutNodeSelector}" ItemsSource="{Binding Children}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -31,7 +31,7 @@
         </ItemsControl>
     </DataTemplate>
 
-    <DataTemplate x:Key="ExpanderTemplate" DataType="{x:Type nodes:ILayoutNode}">
+    <DataTemplate x:Key="ExpanderTemplate" DataType="{x:Type nodes:LayoutNode}">
         <Expander
             x:Name="ExpanderNode"
             BorderBrush="Gainsboro"
@@ -57,7 +57,7 @@
         </Expander>
     </DataTemplate>
 
-    <DataTemplate x:Key="ScrollbarTemplate" DataType="{x:Type nodes:ILayoutNode}">
+    <DataTemplate x:Key="ScrollbarTemplate" DataType="{x:Type nodes:LayoutNode}">
         <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
             <ItemsControl ItemTemplateSelector="{DynamicResource layoutNodeSelector}" ItemsSource="{Binding Children}">
                 <ItemsControl.ItemsPanel>
@@ -69,7 +69,7 @@
         </ScrollViewer>
     </DataTemplate>
 
-    <DataTemplate x:Key="TabTemplate" DataType="{x:Type nodes:ILayoutNode}">
+    <DataTemplate x:Key="TabTemplate" DataType="{x:Type nodes:LayoutNode}">
         <TabControl>
             <TabItem Header="タブ1">
                 <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -79,19 +79,19 @@
         </TabControl>
     </DataTemplate>
 
-    <DataTemplate x:Key="ViewTemplate" DataType="{x:Type nodes:ILayoutNode}">
+    <DataTemplate x:Key="ViewTemplate" DataType="{x:Type nodes:LayoutNode}">
         <Grid>
             <ContentControl Content="{Binding}" ContentTemplateSelector="{StaticResource contentSelector}" />
         </Grid>
     </DataTemplate>
 
-    <DataTemplate x:Key="TreeTemplate" DataType="{x:Type nodes:ILayoutNode}">
+    <DataTemplate x:Key="TreeTemplate" DataType="{x:Type nodes:LayoutNode}">
         <Grid>
             <TreeView ItemsSource="{Binding Children}" />
         </Grid>
     </DataTemplate>
 
-    <DataTemplate x:Key="TableTemplate" DataType="{x:Type nodes:ILayoutNode}">
+    <DataTemplate x:Key="TableTemplate" DataType="{x:Type nodes:LayoutNode}">
         <Grid>
             <ListView x:Name="listView" ItemsSource="{Binding Children}">
                 <ListView.View>

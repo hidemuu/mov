@@ -1,17 +1,16 @@
 ﻿using Mov.Layouts;
-using Mov.Layouts.ValueObjects;
 using Mov.Schemas.Styles;
+using Mov.Schemas.Units.Sizes;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Mov.Designer.Models.DomainModels
 {
-    public class DesignLayoutShell : ILayoutShell
+    public class DesignLayoutShell : LayoutShell
     {
-        public RegionStyle Region { get; }
 
-        public DesignLayoutShell(Shell shell)
+        public DesignLayoutShell(Shell shell) : base(RegionStyle.Center, ColorStyle.Default, ColorStyle.Default, Size2D.Default)
         {
 
         }

@@ -1,4 +1,4 @@
-﻿using Mov.Layouts.ValueObjects;
+﻿using Mov.Schemas.Styles;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -15,7 +15,7 @@ namespace Mov.WpfLayouts.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (!(value is ContentHorizontalAlignment horizontalAlignment))
+            if (!(value is HorizontalAlignmentStyle horizontalAlignment))
             {
                 return DependencyProperty.UnsetValue;
             }

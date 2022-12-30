@@ -1,35 +1,25 @@
-﻿using Mov.Layouts.Contents.ValueObjects;
-using Mov.Layouts.ValueObjects;
+﻿using Mov.Layouts.Contents;
+using Mov.Layouts.Contents.ValueObjects;
+using Mov.Schemas.Parameters;
+using Mov.Schemas.Resources.Images;
+using Mov.Schemas.Resources.Localizes;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public class DesignLayoutContentParameter : ILayoutParameter
+    public class DesignLayoutContentParameter : LayoutParameter
     {
-        public ContentName Name { get; }
-
-        public ContentIcon Icon { get; }
-
-        public ContentVisibility Visibility { get; }
-
-        public ContentEnable Enable { get; }
-
-        public ContentParameter Parameter { get; }
 
         public DesignLayoutContentParameter() : this(new Content())
         {
 
         }
 
-        public DesignLayoutContentParameter(Content content)
+        public DesignLayoutContentParameter(Content content) : base(new LocalString(content.Name), new IconImage(content.Icon), VisibilityStyle.Visible, EnableStyle.Enable, new Parameter(content.Parameter))
         {
-            this.Name = new ContentName(content.Name);
-            this.Icon = new ContentIcon(content.Icon);
-            this.Visibility = new ContentVisibility(true);
-            this.Enable = new ContentEnable(true);
-            this.Parameter = new ContentParameter(content.Parameter);
+            
         }
     }
 }

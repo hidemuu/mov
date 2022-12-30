@@ -1,13 +1,14 @@
-﻿using Mov.Schemas.Resources.Images;
-using Mov.Utilities.ValueObjects;
+﻿using Mov.Utilities.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Resources.Localizes
+namespace Mov.Schemas.Parameters
 {
-    public sealed class LocalInfo : ValueObjectBase<LocalInfo>
+    public sealed class Parameter : ValueObjectBase<Parameter>
     {
+        public static Parameter Empty = new Parameter("");
+
         #region プロパティ
 
         public string Value { get; }
@@ -16,16 +17,16 @@ namespace Mov.Schemas.Resources.Localizes
 
         #region コンストラクター
 
-        public LocalInfo(string info)
+        public Parameter(string parameter)
         {
-            this.Value = info;
+            this.Value = parameter;
         }
 
         #endregion コンストラクター
 
         #region メソッド
 
-        protected override bool EqualCore(LocalInfo other)
+        protected override bool EqualCore(Parameter other)
         {
             return this.Value.Equals(other.Value, StringComparison.Ordinal);
         }

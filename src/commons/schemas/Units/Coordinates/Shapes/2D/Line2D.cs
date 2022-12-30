@@ -13,13 +13,13 @@ namespace Mov.Schemas.Shapes
 
         public Point2D Point2 { get; }
 
-        public UnitAngle Angle { get; }
+        public AngleUnit Angle { get; }
 
-        public UnitLength Length { get; }
+        public LengthUnit Length { get; }
 
-        public UnitLength LengthX { get; }
+        public LengthUnit LengthX { get; }
 
-        public UnitLength LengthY { get; }
+        public LengthUnit LengthY { get; }
 
         
 

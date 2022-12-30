@@ -3,18 +3,18 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Units
+namespace Mov.Schemas.Coordinates
 {
-    public sealed class UnitWeight : ValueObjectBase<UnitWeight>
+    public sealed class AngleUnit : ValueObjectBase<AngleUnit>
     {
         public decimal Value { get; }
 
-        public UnitWeight(decimal value)
+        public AngleUnit(decimal value)
         {
             this.Value = value;
         }
 
-        protected override bool EqualCore(UnitWeight other)
+        protected override bool EqualCore(AngleUnit other)
         {
             return this.Value.Equals(other.Value); ;
         }

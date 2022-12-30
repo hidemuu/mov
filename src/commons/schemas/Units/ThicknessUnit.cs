@@ -3,21 +3,18 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Shapes
+namespace Mov.Schemas.Units
 {
-    /// <summary>
-    /// 座標
-    /// </summary>
-    public sealed class UnitCoordinate : ValueObjectBase<UnitCoordinate>
+    public sealed class ThicknessUnit : ValueObjectBase<ThicknessUnit>
     {
         public decimal Value { get; }
 
-        public UnitCoordinate(decimal value)
+        public ThicknessUnit(decimal value)
         {
             this.Value = value;
         }
-        
-        protected override bool EqualCore(UnitCoordinate other)
+
+        protected override bool EqualCore(ThicknessUnit other)
         {
             return this.Value.Equals(other.Value); ;
         }

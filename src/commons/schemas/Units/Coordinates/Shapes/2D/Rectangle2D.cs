@@ -15,20 +15,20 @@ namespace Mov.Schemas.Coordinates.Shapes.Layers
 
         public Point2D CenterPoint { get; }
 
-        public UnitLength Width { get; }
+        public LengthUnit Width { get; }
 
-        public UnitLength Height { get; }
+        public LengthUnit Height { get; }
         
         public Rectangle2D(Point2D upperLeft, Point2D lowerRight)
         {
             this.UpperLeftPoint = upperLeft;
             this.LowerRightPoint = lowerRight;
             this.CenterPoint = new Point2D((lowerRight.X.Value + upperLeft.X.Value) / 2, (lowerRight.Y.Value + upperLeft.Y.Value) / 2);
-            this.Width = new UnitLength(lowerRight.X.Value - upperLeft.X.Value);
-            this.Height = new UnitLength(lowerRight.Y.Value - upperLeft.Y.Value);
+            this.Width = new LengthUnit(lowerRight.X.Value - upperLeft.X.Value);
+            this.Height = new LengthUnit(lowerRight.Y.Value - upperLeft.Y.Value);
         }
 
-        public Rectangle2D(Point2D center, UnitLength width, UnitLength height)
+        public Rectangle2D(Point2D center, LengthUnit width, LengthUnit height)
         {
             this.CenterPoint = center;
             this.Width = width;

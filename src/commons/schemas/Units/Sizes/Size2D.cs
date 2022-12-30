@@ -8,14 +8,14 @@ namespace Mov.Schemas.Units.Sizes
 {
     public sealed class Size2D : ValueObjectBase<Size2D>
     {
-        public UnitLength Height { get; }
+        public LengthUnit Height { get; }
 
-        public UnitLength Width { get; }
+        public LengthUnit Width { get; }
 
         public Size2D(decimal width, decimal height)
         {
-            this.Width = new UnitLength(width);
-            this.Height = new UnitLength(height);
+            this.Width = new LengthUnit(width);
+            this.Height = new LengthUnit(height);
 
         }
 

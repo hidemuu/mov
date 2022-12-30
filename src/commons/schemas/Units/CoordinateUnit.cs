@@ -3,18 +3,21 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Units
+namespace Mov.Schemas.Shapes
 {
-    public sealed  class UnitLength : ValueObjectBase<UnitLength>
+    /// <summary>
+    /// 座標
+    /// </summary>
+    public sealed class CoordinateUnit : ValueObjectBase<CoordinateUnit>
     {
         public decimal Value { get; }
 
-        public UnitLength(decimal value)
+        public CoordinateUnit(decimal value)
         {
             this.Value = value;
         }
-
-        protected override bool EqualCore(UnitLength other)
+        
+        protected override bool EqualCore(CoordinateUnit other)
         {
             return this.Value.Equals(other.Value); ;
         }

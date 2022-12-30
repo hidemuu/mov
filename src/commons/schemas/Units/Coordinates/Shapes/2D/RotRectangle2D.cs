@@ -11,14 +11,14 @@ namespace Mov.Schemas.Coordinates.Shapes.Layers
     {
         public Point2D CenterPoint { get; }
 
-        public UnitLength Width { get; }
+        public LengthUnit Width { get; }
 
-        public UnitLength Height { get; }
+        public LengthUnit Height { get; }
 
-        public UnitAngle Angle { get; }
+        public AngleUnit Angle { get; }
 
         
-        public RotRectangle2D(Point2D center, UnitLength width, UnitLength height, UnitAngle angle)
+        public RotRectangle2D(Point2D center, LengthUnit width, LengthUnit height, AngleUnit angle)
         {
             this.CenterPoint = center;
             this.Width = width;

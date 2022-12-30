@@ -12,9 +12,9 @@ namespace Mov.Schemas.Shapes
 
         public Point2D Point2 { get; }
 
-        public UnitAngle Angle { get; }
+        public AngleUnit Angle { get; }
 
-        public Arc2D(Point2D point1, Point2D point2, UnitAngle angle)
+        public Arc2D(Point2D point1, Point2D point2, AngleUnit angle)
         {
             this.Point1 = point1;
             this.Point2 = point2;

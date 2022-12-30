@@ -1,20 +1,21 @@
-﻿using Mov.Utilities.ValueObjects;
+﻿using Mov.Schemas.Units;
+using Mov.Utilities.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Coordinates
+namespace Mov.Schemas.Styles
 {
-    public sealed class UnitAngle : ValueObjectBase<UnitAngle>
+    public sealed class ColorStyle : ValueObjectBase<ColorStyle>
     {
-        public decimal Value { get; }
+        public string Value { get; }
 
-        public UnitAngle(decimal value)
+        public ColorStyle(string value)
         {
             this.Value = value;
         }
 
-        protected override bool EqualCore(UnitAngle other)
+        protected override bool EqualCore(ColorStyle other)
         {
             return this.Value.Equals(other.Value); ;
         }

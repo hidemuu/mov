@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Units\Coordinates\Shapes\1D\" />
+    <Folder Include="Units\Coordinates\Shapes\3D\" />
   </ItemGroup>
 
 </Project>

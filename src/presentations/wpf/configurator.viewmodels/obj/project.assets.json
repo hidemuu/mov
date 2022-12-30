@@ -809,7 +809,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Utilities": "1.0.0"
+          "Mov.Schemas": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Layouts.dll": {}
@@ -829,6 +829,19 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Painters.dll": {}
+        }
+      },
+      "Mov.Schemas/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Utilities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Schemas.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Schemas.dll": {}
         }
       },
       "Mov.Utilities/1.0.0": {
@@ -2015,6 +2028,11 @@
       "type": "project",
       "path": "../../../commons/painters/Painters.csproj",
       "msbuildProject": "../../../commons/painters/Painters.csproj"
+    },
+    "Mov.Schemas/1.0.0": {
+      "type": "project",
+      "path": "../../../commons/schemas/Schemas.csproj",
+      "msbuildProject": "../../../commons/schemas/Schemas.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",

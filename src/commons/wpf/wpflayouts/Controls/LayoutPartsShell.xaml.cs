@@ -83,13 +83,13 @@ namespace Mov.WpfLayouts.Controls
         #region トップ
 
         public static readonly DependencyProperty TopModelsProperty =
-            DependencyProperty.Register(nameof(TopModels), typeof(ReactiveCollection<ILayoutNode>),
+            DependencyProperty.Register(nameof(TopModels), typeof(ReactiveCollection<LayoutNode>),
             typeof(LayoutPartsShell),
-            new UIPropertyMetadata(new ReactiveCollection<ILayoutNode>(), new PropertyChangedCallback(OnModelsChanged)));
+            new UIPropertyMetadata(new ReactiveCollection<LayoutNode>(), new PropertyChangedCallback(OnModelsChanged)));
 
-        public ReactiveCollection<ILayoutNode> TopModels
+        public ReactiveCollection<LayoutNode> TopModels
         {
-            get { return (ReactiveCollection<ILayoutNode>)GetValue(TopModelsProperty); }
+            get { return (ReactiveCollection<LayoutNode>)GetValue(TopModelsProperty); }
             set { SetValue(TopModelsProperty, value); }
         }
 
@@ -142,13 +142,13 @@ namespace Mov.WpfLayouts.Controls
         #region ボトム
 
         public static readonly DependencyProperty BottomModelsProperty =
-            DependencyProperty.Register(nameof(BottomModels), typeof(ReactiveCollection<ILayoutNode>),
+            DependencyProperty.Register(nameof(BottomModels), typeof(ReactiveCollection<LayoutNode>),
             typeof(LayoutPartsShell),
-            new UIPropertyMetadata(new ReactiveCollection<ILayoutNode>(), new PropertyChangedCallback(OnModelsChanged)));
+            new UIPropertyMetadata(new ReactiveCollection<LayoutNode>(), new PropertyChangedCallback(OnModelsChanged)));
 
-        public ReactiveCollection<ILayoutNode> BottomModels
+        public ReactiveCollection<LayoutNode> BottomModels
         {
-            get { return (ReactiveCollection<ILayoutNode>)GetValue(BottomModelsProperty); }
+            get { return (ReactiveCollection<LayoutNode>)GetValue(BottomModelsProperty); }
             set { SetValue(BottomModelsProperty, value); }
         }
 
@@ -201,13 +201,13 @@ namespace Mov.WpfLayouts.Controls
         #region レフト
 
         public static readonly DependencyProperty LeftModelsProperty =
-            DependencyProperty.Register(nameof(LeftModels), typeof(ReactiveCollection<ILayoutNode>),
+            DependencyProperty.Register(nameof(LeftModels), typeof(ReactiveCollection<LayoutNode>),
             typeof(LayoutPartsShell),
-            new UIPropertyMetadata(new ReactiveCollection<ILayoutNode>(), new PropertyChangedCallback(OnModelsChanged)));
+            new UIPropertyMetadata(new ReactiveCollection<LayoutNode>(), new PropertyChangedCallback(OnModelsChanged)));
 
-        public ReactiveCollection<ILayoutNode> LeftModels
+        public ReactiveCollection<LayoutNode> LeftModels
         {
-            get { return (ReactiveCollection<ILayoutNode>)GetValue(LeftModelsProperty); }
+            get { return (ReactiveCollection<LayoutNode>)GetValue(LeftModelsProperty); }
             set { SetValue(LeftModelsProperty, value); }
         }
 
@@ -260,13 +260,13 @@ namespace Mov.WpfLayouts.Controls
         #region ライト
 
         public static readonly DependencyProperty RightModelsProperty =
-            DependencyProperty.Register(nameof(RightModels), typeof(ReactiveCollection<ILayoutNode>),
+            DependencyProperty.Register(nameof(RightModels), typeof(ReactiveCollection<LayoutNode>),
             typeof(LayoutPartsShell),
-            new UIPropertyMetadata(new ReactiveCollection<ILayoutNode>(), new PropertyChangedCallback(OnModelsChanged)));
+            new UIPropertyMetadata(new ReactiveCollection<LayoutNode>(), new PropertyChangedCallback(OnModelsChanged)));
 
-        public ReactiveCollection<ILayoutNode> RightModels
+        public ReactiveCollection<LayoutNode> RightModels
         {
-            get { return (ReactiveCollection<ILayoutNode>)GetValue(RightModelsProperty); }
+            get { return (ReactiveCollection<LayoutNode>)GetValue(RightModelsProperty); }
             set { SetValue(RightModelsProperty, value); }
         }
 
@@ -411,20 +411,20 @@ namespace Mov.WpfLayouts.Controls
                         control.LeftModels.Clear();
                         control.RightModels.Clear();
                         var service = control.Service;
-                        
-                        //control.Models.AddRange(service.GetNodeModel(ShellRegion.Center).Children);
-                        //control.TopModels.AddRange(service.GetNodeModel(ShellRegion.Top).Children);
-                        //control.BottomModels.AddRange(service.GetNodeModel(ShellRegion.Bottom).Children);
-                        //control.LeftModels.AddRange(service.GetNodeModel(ShellRegion.Left).Children);
-                        //control.RightModels.AddRange(service.GetNodeModel(ShellRegion.Right).Children);
 
-                        //var topShell = service.GetShell(ShellRegion.Top);
-                        //var bottomShell = service.GetShell(ShellRegion.Bottom);
-                        //var leftShell = service.GetShell(ShellRegion.Left);
-                        //var rightShell = service.GetShell(ShellRegion.Right);
-                        //var centerShell = service.GetShell(ShellRegion.Center);
+                        control.Models.AddRange(service.GetRegionNode(ShellRegion.Center).Children);
+                        control.TopModels.AddRange(service.GetRegionNode(ShellRegion.Top).Children);
+                        control.BottomModels.AddRange(service.GetRegionNode(ShellRegion.Bottom).Children);
+                        control.LeftModels.AddRange(service.GetRegionNode(ShellRegion.Left).Children);
+                        control.RightModels.AddRange(service.GetRegionNode(ShellRegion.Right).Children);
 
-                        //if(topShell != null)
+                        var topShell = service.GetRegionShell(ShellRegion.Top);
+                        var bottomShell = service.GetRegionShell(ShellRegion.Bottom);
+                        var leftShell = service.GetRegionShell(ShellRegion.Left);
+                        var rightShell = service.GetRegionShell(ShellRegion.Right);
+                        var centerShell = service.GetRegionShell(ShellRegion.Center);
+
+                        //if (topShell != null)
                         //{
                         //    control.TopHeight = topShell.Height;
                         //    control.TopBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(topShell.BackgroundColor);

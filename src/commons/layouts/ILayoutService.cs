@@ -7,8 +7,10 @@ namespace Mov.Layouts
 {
     public interface ILayoutService
     {
-        ILayoutNode GetNodeModel(ShellRegion region);
+        LayoutNode GetRegionNode(ShellRegion region);
 
-        IEnumerable<ILayoutShell> GetShells();
+        IEnumerable<LayoutShell> GetShells();
+
+        LayoutShell GetRegionShell(ShellRegion region);
     }
 }

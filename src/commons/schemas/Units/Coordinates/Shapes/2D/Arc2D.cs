@@ -6,22 +6,22 @@ using System.Text;
 
 namespace Mov.Schemas.Shapes
 {
-    public sealed  class Arc1D : ValueObjectBase<Arc1D>
+    public sealed  class Arc2D : ValueObjectBase<Arc2D>
     {
-        public PointXY Point1 { get; }
+        public Point2D Point1 { get; }
 
-        public PointXY Point2 { get; }
+        public Point2D Point2 { get; }
 
         public UnitAngle Angle { get; }
 
-        public Arc1D(PointXY point1, PointXY point2, UnitAngle angle)
+        public Arc2D(Point2D point1, Point2D point2, UnitAngle angle)
         {
             this.Point1 = point1;
             this.Point2 = point2;
             this.Angle = angle;
         }
 
-        protected override bool EqualCore(Arc1D other)
+        protected override bool EqualCore(Arc2D other)
         {
             return 
                 this.Point1.Equals(other.Point1) && 

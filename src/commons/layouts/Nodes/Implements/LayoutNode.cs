@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Mov.Layouts
 {
-    public class LayoutNode : LayoutContent
+    public class LayoutNode : LayoutContent, ILayoutNode
     {
         #region フィールド
 

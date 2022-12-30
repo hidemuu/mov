@@ -5,35 +5,31 @@ using System.Text;
 
 namespace Mov.Schemas.Shapes
 {
-    public sealed class PointXYZ : ValueObjectBase<PointXYZ>
+    public sealed class Point2D : ValueObjectBase<Point2D>
     {
         public UnitCoordinate X { get; }
 
         public UnitCoordinate Y { get; }
 
-        public UnitCoordinate Z { get; }
-
-        public PointXYZ(decimal x, decimal y, decimal z)
+        public Point2D(decimal x, decimal y)
         {
             this.X = new UnitCoordinate(x);
             this.Y = new UnitCoordinate(y);
-            this.Z = new UnitCoordinate(z);
+
         }
 
-        protected override bool EqualCore(PointXYZ other)
+        protected override bool EqualCore(Point2D other)
         {
             return 
                 this.X.Equals(other.X) && 
-                this.Y.Equals(other.Y) && 
-                this.Z.Equals(other.Z);
+                this.Y.Equals(other.Y);
         }
 
         protected override int GetHashCodeCore()
         {
             return 
                 this.X.GetHashCode() ^ 
-                this.Y.GetHashCode() ^ 
-                this.Z.GetHashCode();
+                this.Y.GetHashCode();
         }
     }
 }

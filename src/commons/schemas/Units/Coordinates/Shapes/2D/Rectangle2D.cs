@@ -9,32 +9,32 @@ namespace Mov.Schemas.Coordinates.Shapes.Layers
 {
     public sealed class Rectangle2D : ValueObjectBase<Rectangle2D>
     {
-        public PointXY UpperLeftPoint { get; }
+        public Point2D UpperLeftPoint { get; }
 
-        public PointXY LowerRightPoint { get; }
+        public Point2D LowerRightPoint { get; }
 
-        public PointXY CenterPoint { get; }
+        public Point2D CenterPoint { get; }
 
         public UnitLength Width { get; }
 
         public UnitLength Height { get; }
         
-        public Rectangle2D(PointXY upperLeft, PointXY lowerRight)
+        public Rectangle2D(Point2D upperLeft, Point2D lowerRight)
         {
             this.UpperLeftPoint = upperLeft;
             this.LowerRightPoint = lowerRight;
-            this.CenterPoint = new PointXY((lowerRight.X.Value + upperLeft.X.Value) / 2, (lowerRight.Y.Value + upperLeft.Y.Value) / 2);
+            this.CenterPoint = new Point2D((lowerRight.X.Value + upperLeft.X.Value) / 2, (lowerRight.Y.Value + upperLeft.Y.Value) / 2);
             this.Width = new UnitLength(lowerRight.X.Value - upperLeft.X.Value);
             this.Height = new UnitLength(lowerRight.Y.Value - upperLeft.Y.Value);
         }
 
-        public Rectangle2D(PointXY center, UnitLength width, UnitLength height)
+        public Rectangle2D(Point2D center, UnitLength width, UnitLength height)
         {
             this.CenterPoint = center;
             this.Width = width;
             this.Height = height;
-            this.UpperLeftPoint = new PointXY(center.X.Value - (width.Value / 2), center.Y.Value + (height.Value / 2));
-            this.LowerRightPoint = new PointXY(center.X.Value + (width.Value / 2), center.Y.Value - (height.Value / 2));
+            this.UpperLeftPoint = new Point2D(center.X.Value - (width.Value / 2), center.Y.Value + (height.Value / 2));
+            this.LowerRightPoint = new Point2D(center.X.Value + (width.Value / 2), center.Y.Value - (height.Value / 2));
         }
 
         protected override bool EqualCore(Rectangle2D other)

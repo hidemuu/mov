@@ -10,4 +10,8 @@
     <ProjectReference Include="..\utilities\Utilities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Units\Coordinates\Shapes\1D\" />
+  </ItemGroup>
+
 </Project>

@@ -7,11 +7,11 @@ using System.Text;
 
 namespace Mov.Schemas.Shapes
 {
-    public sealed class Line1D : ValueObjectBase<Line1D>
+    public sealed class Line2D : ValueObjectBase<Line2D>
     {
-        public PointXY Point1 { get; }
+        public Point2D Point1 { get; }
 
-        public PointXY Point2 { get; }
+        public Point2D Point2 { get; }
 
         public UnitAngle Angle { get; }
 
@@ -23,13 +23,13 @@ namespace Mov.Schemas.Shapes
 
         
 
-        public Line1D(PointXY point1, PointXY point2)
+        public Line2D(Point2D point1, Point2D point2)
         {
             this.Point1 = point1;
             this.Point2 = point2;
         }
 
-        protected override bool EqualCore(Line1D other)
+        protected override bool EqualCore(Line2D other)
         {
             return 
                 this.Point1.Equals(other.Point1) && 

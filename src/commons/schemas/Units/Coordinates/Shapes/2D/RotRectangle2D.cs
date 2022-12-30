@@ -9,7 +9,7 @@ namespace Mov.Schemas.Coordinates.Shapes.Layers
 {
     public sealed class RotRectangle2D : ValueObjectBase<RotRectangle2D>
     {
-        public PointXY CenterPoint { get; }
+        public Point2D CenterPoint { get; }
 
         public UnitLength Width { get; }
 
@@ -18,7 +18,7 @@ namespace Mov.Schemas.Coordinates.Shapes.Layers
         public UnitAngle Angle { get; }
 
         
-        public RotRectangle2D(PointXY center, UnitLength width, UnitLength height, UnitAngle angle)
+        public RotRectangle2D(Point2D center, UnitLength width, UnitLength height, UnitAngle angle)
         {
             this.CenterPoint = center;
             this.Width = width;

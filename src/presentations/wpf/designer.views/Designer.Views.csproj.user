@@ -2,13 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="Components\DesignerPartsControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="DesignerDialogView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Components\DesignerPartsShell.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="DesignerPartsView.xaml.cs">
@@ -31,13 +25,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Components\DesignerPartsControl.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="DesignerDialogView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Components\DesignerPartsShell.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="DesignerPartsView.xaml">
@@ -56,9 +44,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="DesignerView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Templates\LayoutNodeTemplate.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

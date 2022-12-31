@@ -137,8 +137,6 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\desi
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.WpfMvvms.pdb
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\bin\Debug\net5.0-windows\Mov.WpfViewModels.pdb
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Designer.Views.csproj.AssemblyReference.cache
-C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Components\DesignerPartsControl.g.cs
-C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Components\DesignerPartsShell.g.cs
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerDialogView.g.cs
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerPartsView.g.cs
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerShellView.g.cs
@@ -146,11 +144,8 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\desi
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerThemeView.g.cs
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerTreeView.g.cs
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerView.g.cs
-C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Mov.Designer.Views_MarkupCompile.cache
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Mov.Designer.Views_MarkupCompile.lref
-C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Components\DesignerPartsControl.baml
-C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Components\DesignerPartsShell.baml
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerDialogView.baml
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerPartsView.baml
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerShellView.baml
@@ -158,7 +153,6 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\desi
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerThemeView.baml
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerTreeView.baml
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\DesignerView.baml
-C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Templates\LayoutNodeTemplate.baml
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Mov.Designer.Views.g.resources
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Designer.Views.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.views\obj\Debug\net5.0-windows\Designer.Views.AssemblyInfoInputs.cache

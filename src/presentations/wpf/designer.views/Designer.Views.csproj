@@ -13,4 +13,9 @@
     <ProjectReference Include="..\designer.viewmodels\Designer.ViewModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Bebavior\" />
+    <Folder Include="Templates\" />
+  </ItemGroup>
+
 </Project>

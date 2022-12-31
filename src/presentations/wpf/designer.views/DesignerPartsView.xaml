@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:local="clr-namespace:Mov.Designer.Views"
+    xmlns:layouts="clr-namespace:Mov.WpfLayouts.Controls;assembly=Mov.WpfLayouts"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
     xmlns:selector="clr-namespace:Mov.Designer.Views.Selector"
@@ -24,7 +25,7 @@
             <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
         </i:EventTrigger>
     </i:Interaction.Triggers>
-    <local:DesignerPartsShell
+    <layouts:LayoutPartsShell
         IsUpdate="{Binding IsUpdate.Value}"
         RepositoryName="{Binding RepositoryName.Value}"
         Service="{Binding Service.Value}" />

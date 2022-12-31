@@ -8,7 +8,7 @@ namespace Mov.Schemas.Styles
 {
     public sealed class ColorStyle : ValueObjectBase<ColorStyle>
     {
-        public static ColorStyle Default = new ColorStyle("");
+        public static ColorStyle Transrarent = new ColorStyle("Transparent");
 
         public string Value { get; }
 

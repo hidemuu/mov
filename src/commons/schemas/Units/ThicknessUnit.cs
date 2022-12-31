@@ -7,6 +7,8 @@ namespace Mov.Schemas.Units
 {
     public sealed class ThicknessUnit : ValueObjectBase<ThicknessUnit>
     {
+        public static ThicknessUnit Default = new ThicknessUnit(0);
+
         public double Value { get; }
 
         public ThicknessUnit(double value)

@@ -9,7 +9,8 @@ namespace Mov.Layouts
 {
     public class LayoutShell
     {
-        public static LayoutShell Empty = new LayoutShell(RegionStyle.Center, ColorStyle.Default, ColorStyle.Default, Size2D.Default);
+        public static LayoutShell Empty = new LayoutShell(
+            RegionStyle.Center, ColorStyle.Transrarent, ColorStyle.Transrarent, ThicknessUnit.Default, Size2D.Default);
 
         public RegionStyle Region { get; }
 
@@ -21,12 +22,13 @@ namespace Mov.Layouts
 
         public Size2D Size { get; }
 
-        public LayoutShell(RegionStyle region, ColorStyle background, ColorStyle border, Size2D size)
+        public LayoutShell(RegionStyle region, ColorStyle background, ColorStyle border, ThicknessUnit thickness, Size2D size)
         {
-            Region = region;
-            BackgroundColor = background;
-            BorderColor = border;
-            Size = size;
+            this.Region = region;
+            this.BackgroundColor = background;
+            this.BorderColor = border;
+            this.BorderThickness = thickness;
+            this.Size = size;
         }
 
     }

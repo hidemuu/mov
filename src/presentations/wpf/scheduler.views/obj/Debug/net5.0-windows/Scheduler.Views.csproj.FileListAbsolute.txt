@@ -97,3 +97,9 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\sche
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\scheduler.views\obj\Debug\net5.0-windows\refint\Mov.Scheduler.Views.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\scheduler.views\obj\Debug\net5.0-windows\Mov.Scheduler.Views.pdb
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\scheduler.views\obj\Debug\net5.0-windows\ref\Mov.Scheduler.Views.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\scheduler.views\bin\Debug\net5.0-windows\Mov.Layouts.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\scheduler.views\bin\Debug\net5.0-windows\Mov.Schemas.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\scheduler.views\bin\Debug\net5.0-windows\Mov.WpfLayouts.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\scheduler.views\bin\Debug\net5.0-windows\Mov.Layouts.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\scheduler.views\bin\Debug\net5.0-windows\Mov.Schemas.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\scheduler.views\bin\Debug\net5.0-windows\Mov.WpfLayouts.pdb

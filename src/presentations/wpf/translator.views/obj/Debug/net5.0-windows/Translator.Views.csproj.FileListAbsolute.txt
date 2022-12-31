@@ -80,3 +80,9 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\tran
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.views\obj\Debug\net5.0-windows\refint\Mov.Translator.Views.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.views\obj\Debug\net5.0-windows\Mov.Translator.Views.pdb
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.views\obj\Debug\net5.0-windows\ref\Mov.Translator.Views.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.views\bin\Debug\net5.0-windows\Mov.Layouts.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.views\bin\Debug\net5.0-windows\Mov.Schemas.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.views\bin\Debug\net5.0-windows\Mov.WpfLayouts.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.views\bin\Debug\net5.0-windows\Mov.Layouts.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.views\bin\Debug\net5.0-windows\Mov.Schemas.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.views\bin\Debug\net5.0-windows\Mov.WpfLayouts.pdb

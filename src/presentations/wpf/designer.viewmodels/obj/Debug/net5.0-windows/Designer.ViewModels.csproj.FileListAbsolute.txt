@@ -104,3 +104,7 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\desi
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.viewmodels\obj\Debug\net5.0-windows\ref\Mov.Designer.ViewModels.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.viewmodels\bin\Debug\net5.0-windows\Mov.Schemas.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.viewmodels\bin\Debug\net5.0-windows\Mov.Schemas.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.viewmodels\bin\Debug\net5.0-windows\Mov.WpfControls.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.viewmodels\bin\Debug\net5.0-windows\Mov.WpfLayouts.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.viewmodels\bin\Debug\net5.0-windows\Mov.WpfControls.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\designer.viewmodels\bin\Debug\net5.0-windows\Mov.WpfLayouts.pdb

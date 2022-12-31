@@ -14,7 +14,7 @@ namespace Mov.Schemas.Units.Sizes
 
         public LengthUnit Width { get; }
 
-        public Size2D(decimal width, decimal height)
+        public Size2D(double width, double height)
         {
             this.Width = new LengthUnit(width);
             this.Height = new LengthUnit(height);

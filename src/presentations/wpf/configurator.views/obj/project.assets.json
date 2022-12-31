@@ -943,6 +943,23 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "Mov.WpfLayouts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Layouts": "1.0.0",
+          "Mov.WpfControls": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfLayouts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfLayouts.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Mov.WpfModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -966,6 +983,7 @@
         "dependencies": {
           "Mov.Painters": "1.0.0",
           "Mov.WpfDesigns": "1.0.0",
+          "Mov.WpfLayouts": "1.0.0",
           "Mov.WpfModels": "1.0.0",
           "Prism.Unity": "8.1.97",
           "ReactiveProperty.WPF": "8.0.1",
@@ -2176,6 +2194,11 @@
       "type": "project",
       "path": "../../../commons/wpf/wpfdesigns/WpfDesigns.csproj",
       "msbuildProject": "../../../commons/wpf/wpfdesigns/WpfDesigns.csproj"
+    },
+    "Mov.WpfLayouts/1.0.0": {
+      "type": "project",
+      "path": "../../../commons/wpf/wpflayouts/WpfLayouts.csproj",
+      "msbuildProject": "../../../commons/wpf/wpflayouts/WpfLayouts.csproj"
     },
     "Mov.WpfModels/1.0.0": {
       "type": "project",

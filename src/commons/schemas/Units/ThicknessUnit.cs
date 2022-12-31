@@ -7,9 +7,9 @@ namespace Mov.Schemas.Units
 {
     public sealed class ThicknessUnit : ValueObjectBase<ThicknessUnit>
     {
-        public decimal Value { get; }
+        public double Value { get; }
 
-        public ThicknessUnit(decimal value)
+        public ThicknessUnit(double value)
         {
             this.Value = value;
         }

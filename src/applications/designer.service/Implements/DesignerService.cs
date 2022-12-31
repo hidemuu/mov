@@ -1,4 +1,5 @@
 ﻿using Mov.Designer.Models;
+using Mov.Designer.Models.DomainModels;
 using Mov.Designer.Models.Persistences;
 using Mov.Layouts;
 using Mov.Schemas.Styles;
@@ -45,7 +46,7 @@ namespace Mov.Designer.Service
 
         #region UIモデル
 
-        public LayoutNode GetNodeModel(RegionStyle region)
+        public LayoutNode GetRegionNode(RegionStyle region)
         {
             if (region.IsCenter) return this.engine.CenterNode;
             if (region.IsTop) return this.engine.TopNode;
@@ -89,14 +90,17 @@ namespace Mov.Designer.Service
             return this.engine.GetContent(code);
         }
 
-        public IEnumerable<Shell> GetShells()
+        public IEnumerable<LayoutShell> GetShells()
         {
-            return this.engine.GetShells();
+            foreach(var shell in this.engine.GetShells())
+            {
+                yield return new DesignLayoutShell(shell);
+            }
         }
 
-        public Shell GetShell(RegionStyle region)
+        public LayoutShell GetRegionShell(RegionStyle region)
         {
-            return this.engine.GetShell(region);
+            return new DesignLayoutShell(this.engine.GetShell(region));
         }
 
         #endregion クエリ

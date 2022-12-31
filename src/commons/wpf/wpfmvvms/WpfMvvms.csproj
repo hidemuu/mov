@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\painters\Painters.csproj" />
     <ProjectReference Include="..\wpfdesigns\WpfDesigns.csproj" />
+    <ProjectReference Include="..\wpflayouts\WpfLayouts.csproj" />
     <ProjectReference Include="..\wpfmodels\WpfModels.csproj" />
   </ItemGroup>
 

@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:designers="clr-namespace:Mov.Designer.Views;assembly=Mov.Designer.Views"
+    xmlns:layouts="clr-namespace:Mov.WpfLayouts.Controls;assembly=Mov.WpfLayouts"
     xmlns:local="clr-namespace:Mov.UseCase.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
@@ -14,6 +15,6 @@
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
     <Grid>
-        <designers:DesignerPartsShell Service="{Binding DesignerService}" RepositoryName="{Binding RepositoryName}" />
+        <layouts:LayoutPartsShell Service="{Binding DesignerService}" RepositoryName="{Binding RepositoryName}" />
     </Grid>
 </UserControl>

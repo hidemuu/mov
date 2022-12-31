@@ -54,3 +54,13 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\tran
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.viewmodels\obj\Debug\net5.0-windows\refint\Mov.Translator.ViewModels.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.viewmodels\obj\Debug\net5.0-windows\Mov.Translator.ViewModels.pdb
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.viewmodels\obj\Debug\net5.0-windows\ref\Mov.Translator.ViewModels.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.viewmodels\bin\Debug\net5.0-windows\Mov.Layouts.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.viewmodels\bin\Debug\net5.0-windows\Mov.Schemas.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.viewmodels\bin\Debug\net5.0-windows\Mov.Utilities.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.viewmodels\bin\Debug\net5.0-windows\Mov.WpfControls.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.viewmodels\bin\Debug\net5.0-windows\Mov.WpfLayouts.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.viewmodels\bin\Debug\net5.0-windows\Mov.Layouts.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.viewmodels\bin\Debug\net5.0-windows\Mov.Schemas.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.viewmodels\bin\Debug\net5.0-windows\Mov.Utilities.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.viewmodels\bin\Debug\net5.0-windows\Mov.WpfControls.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\translator.viewmodels\bin\Debug\net5.0-windows\Mov.WpfLayouts.pdb

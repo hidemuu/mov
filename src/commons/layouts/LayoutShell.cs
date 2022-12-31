@@ -1,4 +1,5 @@
 ﻿using Mov.Schemas.Styles;
+using Mov.Schemas.Units;
 using Mov.Schemas.Units.Sizes;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace Mov.Layouts
         public ColorStyle BackgroundColor { get; }
 
         public ColorStyle BorderColor { get; }
+
+        public ThicknessUnit BorderThickness { get; }
 
         public Size2D Size { get; }
 

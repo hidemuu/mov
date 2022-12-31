@@ -1,5 +1,6 @@
 ﻿using Mov.Designer.Models;
 using Mov.Designer.Service;
+using Mov.Layouts;
 using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
@@ -26,13 +27,13 @@ namespace Mov.Designer.Views
         #region プロパティ
 
         public static readonly DependencyProperty ModelsProperty =
-            DependencyProperty.Register(nameof(Models), typeof(ReactiveCollection<DesignLayoutNode>),
+            DependencyProperty.Register(nameof(Models), typeof(ReactiveCollection<LayoutNode>),
             typeof(DesignerPartsControl),
             new UIPropertyMetadata(null, new PropertyChangedCallback(OnModelsChanged)));
 
-        public ReactiveCollection<DesignLayoutNode> Models
+        public ReactiveCollection<LayoutNode> Models
         {
-            get { return (ReactiveCollection<DesignLayoutNode>)GetValue(ModelsProperty); }
+            get { return (ReactiveCollection<LayoutNode>)GetValue(ModelsProperty); }
             set { SetValue(ModelsProperty, value); }
         }
 

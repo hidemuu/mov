@@ -427,6 +427,19 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "Mov.Layouts/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Schemas": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Layouts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Layouts.dll": {}
+        }
+      },
       "Mov.Painters/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -438,6 +451,19 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Painters.dll": {}
+        }
+      },
+      "Mov.Schemas/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Utilities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Schemas.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Schemas.dll": {}
         }
       },
       "Mov.Utilities/1.0.0": {
@@ -491,6 +517,23 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "Mov.WpfLayouts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Layouts": "1.0.0",
+          "Mov.WpfControls": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfLayouts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfLayouts.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Mov.WpfModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -514,6 +557,7 @@
         "dependencies": {
           "Mov.Painters": "1.0.0",
           "Mov.WpfDesigns": "1.0.0",
+          "Mov.WpfLayouts": "1.0.0",
           "Mov.WpfModels": "1.0.0",
           "Prism.Unity": "8.1.97",
           "ReactiveProperty.WPF": "8.0.1",
@@ -1259,10 +1303,20 @@
       "path": "../authorizer.viewmodels/Authorizer.ViewModels.csproj",
       "msbuildProject": "../authorizer.viewmodels/Authorizer.ViewModels.csproj"
     },
+    "Mov.Layouts/1.0.0": {
+      "type": "project",
+      "path": "../../../commons/layouts/Layouts.csproj",
+      "msbuildProject": "../../../commons/layouts/Layouts.csproj"
+    },
     "Mov.Painters/1.0.0": {
       "type": "project",
       "path": "../../../commons/painters/Painters.csproj",
       "msbuildProject": "../../../commons/painters/Painters.csproj"
+    },
+    "Mov.Schemas/1.0.0": {
+      "type": "project",
+      "path": "../../../commons/schemas/Schemas.csproj",
+      "msbuildProject": "../../../commons/schemas/Schemas.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",
@@ -1278,6 +1332,11 @@
       "type": "project",
       "path": "../../../commons/wpf/wpfdesigns/WpfDesigns.csproj",
       "msbuildProject": "../../../commons/wpf/wpfdesigns/WpfDesigns.csproj"
+    },
+    "Mov.WpfLayouts/1.0.0": {
+      "type": "project",
+      "path": "../../../commons/wpf/wpflayouts/WpfLayouts.csproj",
+      "msbuildProject": "../../../commons/wpf/wpflayouts/WpfLayouts.csproj"
     },
     "Mov.WpfModels/1.0.0": {
       "type": "project",

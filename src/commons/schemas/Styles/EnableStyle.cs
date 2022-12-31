@@ -15,6 +15,8 @@ namespace Mov.Layouts.Contents.ValueObjects
 
         public bool Value { get; }
 
+        public bool BindableValue { get; set; }
+
         #endregion プロパティ
 
         #region コンストラクター
@@ -22,6 +24,7 @@ namespace Mov.Layouts.Contents.ValueObjects
         public EnableStyle(bool isEnabled)
         {
             this.Value = isEnabled;
+            this.BindableValue = this.Value;
         }
 
         #endregion コンストラクター

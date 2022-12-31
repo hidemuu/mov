@@ -51,6 +51,27 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "LiveCharts.Wpf.NetCore3/0.9.7": {
+        "type": "package",
+        "dependencies": {
+          "System.Data.DataSetExtensions": "4.5.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/LiveCharts.Wpf.dll": {},
+          "lib/netcoreapp3.1/LiveCharts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/LiveCharts.Wpf.dll": {},
+          "lib/netcoreapp3.1/LiveCharts.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "MahApps.Metro/2.4.9": {
         "type": "package",
         "dependencies": {
@@ -563,6 +584,15 @@
           }
         }
       },
+      "System.Data.DataSetExtensions/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Data.DataSetExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Data.DataSetExtensions.dll": {}
+        }
+      },
       "System.Diagnostics.DiagnosticSource/4.7.1": {
         "type": "package",
         "compile": {
@@ -854,6 +884,28 @@
           "bin/placeholder/Mov.Utilities.dll": {}
         }
       },
+      "Mov.WpfControls/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "LiveCharts.Wpf.NetCore3": "0.9.7",
+          "Mov.Utilities": "1.0.0",
+          "Mov.WpfDesigns": "1.0.0",
+          "Mov.WpfModels": "1.0.0",
+          "Prism.Unity": "8.1.97",
+          "ReactiveProperty.WPF": "8.0.1",
+          "gong-wpf-dragdrop": "3.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfControls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfControls.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
       "Mov.WpfDesigns/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -868,6 +920,23 @@
         },
         "runtime": {
           "bin/placeholder/Mov.WpfDesigns.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Mov.WpfLayouts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Mov.Layouts": "1.0.0",
+          "Mov.WpfControls": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.WpfLayouts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.WpfLayouts.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
@@ -896,6 +965,7 @@
         "dependencies": {
           "Mov.Painters": "1.0.0",
           "Mov.WpfDesigns": "1.0.0",
+          "Mov.WpfLayouts": "1.0.0",
           "Mov.WpfModels": "1.0.0",
           "Prism.Unity": "8.1.97",
           "ReactiveProperty.WPF": "8.0.1",
@@ -1007,6 +1077,23 @@
         "lib/netcoreapp3.1/GongSolutions.WPF.DragDrop.dll",
         "lib/netcoreapp3.1/GongSolutions.WPF.DragDrop.pdb",
         "lib/netcoreapp3.1/GongSolutions.WPF.DragDrop.xml"
+      ]
+    },
+    "LiveCharts.Wpf.NetCore3/0.9.7": {
+      "sha512": "d0HkmjLi+HifeXyD+E14aOMPDRmwkkiqPYW4GDbUS8Z1m6eQPGCShcDcbWwP4tBoWzGEkkSsy+XSHvaoW50b0Q==",
+      "type": "package",
+      "path": "livecharts.wpf.netcore3/0.9.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/LiveCharts.Wpf.dll",
+        "lib/net40/LiveCharts.dll",
+        "lib/net40/LiveCharts.xml",
+        "lib/netcoreapp3.1/LiveCharts.Wpf.dll",
+        "lib/netcoreapp3.1/LiveCharts.dll",
+        "lib/netcoreapp3.1/LiveCharts.xml",
+        "livecharts.wpf.netcore3.0.9.7.nupkg.sha512",
+        "livecharts.wpf.netcore3.nuspec"
       ]
     },
     "MahApps.Metro/2.4.9": {
@@ -1741,6 +1828,25 @@
         "version.txt"
       ]
     },
+    "System.Data.DataSetExtensions/4.5.0": {
+      "sha512": "221clPs1445HkTBZPL+K9sDBdJRB8UN8rgjO3ztB0CQ26z//fmJXtlsr6whGatscsKGBrhJl5bwJuKSA8mwFOw==",
+      "type": "package",
+      "path": "system.data.datasetextensions/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net45/_._",
+        "lib/netstandard2.0/System.Data.DataSetExtensions.dll",
+        "ref/net45/_._",
+        "ref/netstandard2.0/System.Data.DataSetExtensions.dll",
+        "system.data.datasetextensions.4.5.0.nupkg.sha512",
+        "system.data.datasetextensions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Diagnostics.DiagnosticSource/4.7.1": {
       "sha512": "j81Lovt90PDAq8kLpaJfJKV/rWdWuEk6jfV+MBkee33vzYLEUsy4gXK8laa9V2nZlLM9VM9yA/OOQxxPEJKAMw==",
       "type": "package",
@@ -2039,10 +2145,20 @@
       "path": "../../../commons/utilities/Utilities.csproj",
       "msbuildProject": "../../../commons/utilities/Utilities.csproj"
     },
+    "Mov.WpfControls/1.0.0": {
+      "type": "project",
+      "path": "../../../commons/wpf/wpfcontrols/WpfControls.csproj",
+      "msbuildProject": "../../../commons/wpf/wpfcontrols/WpfControls.csproj"
+    },
     "Mov.WpfDesigns/1.0.0": {
       "type": "project",
       "path": "../../../commons/wpf/wpfdesigns/WpfDesigns.csproj",
       "msbuildProject": "../../../commons/wpf/wpfdesigns/WpfDesigns.csproj"
+    },
+    "Mov.WpfLayouts/1.0.0": {
+      "type": "project",
+      "path": "../../../commons/wpf/wpflayouts/WpfLayouts.csproj",
+      "msbuildProject": "../../../commons/wpf/wpflayouts/WpfLayouts.csproj"
     },
     "Mov.WpfModels/1.0.0": {
       "type": "project",

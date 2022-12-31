@@ -47,10 +47,10 @@ namespace Mov.Designer.ViewModels
         {
             Items.Clear();
             var properties = Shell.GetProperties();
-            foreach (Shell item in this.service.GetShells())
-            {
-                Items.Add(GetColumnItems(properties.Select(x => x.propertyInfo), item).ToArray());
-            }
+            //foreach (Shell item in this.service.GetShells())
+            //{
+            //    Items.Add(GetColumnItems(properties.Select(x => x.propertyInfo), item).ToArray());
+            //}
             Attributes.Value = GetColumnAttributes(properties.Select(x => x.name)).ToArray();
         }
 

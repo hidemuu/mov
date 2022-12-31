@@ -969,6 +969,7 @@
         "dependencies": {
           "Mov.Painters": "1.0.0",
           "Mov.WpfDesigns": "1.0.0",
+          "Mov.WpfLayouts": "1.0.0",
           "Mov.WpfModels": "1.0.0",
           "Prism.Unity": "8.1.97",
           "ReactiveProperty.WPF": "8.0.1",

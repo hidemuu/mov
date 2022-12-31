@@ -124,3 +124,9 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\game
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\refint\Mov.Game.Views.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\Mov.Game.Views.pdb
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\game.views\obj\Debug\net5.0-windows\ref\Mov.Game.Views.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Layouts.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Schemas.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.WpfLayouts.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Layouts.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.Schemas.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\presentations\wpf\game.views\bin\Debug\net5.0-windows\Mov.WpfLayouts.pdb

@@ -18,7 +18,7 @@ namespace Mov.Designer.Models
         }
 
         public DesignLayoutContentDesign(Content content) 
-            : base(MarginUnit.Default, new Size2D((decimal)content.Width, (decimal)content.Height), OrientationStyle.Horizontal, new HorizontalAlignmentStyle(content.HorizontalAlignment), new VerticalAlignmentStyle(content.VerticalAlignment))
+            : base(MarginUnit.Default, new Size2D(content.Width, content.Height), OrientationStyle.Horizontal, new HorizontalAlignmentStyle(content.HorizontalAlignment), new VerticalAlignmentStyle(content.VerticalAlignment))
         {
             
         }

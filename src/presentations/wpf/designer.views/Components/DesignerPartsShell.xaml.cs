@@ -411,51 +411,51 @@ namespace Mov.Designer.Views
                         control.RightModels.Clear();
                         var service = control.Service;
                         
-                        control.Models.AddRange(service.GetNodeModel(RegionStyle.Center).Children);
-                        control.TopModels.AddRange(service.GetNodeModel(RegionStyle.Top).Children);
-                        control.BottomModels.AddRange(service.GetNodeModel(RegionStyle.Bottom).Children);
-                        control.LeftModels.AddRange(service.GetNodeModel(RegionStyle.Left).Children);
-                        control.RightModels.AddRange(service.GetNodeModel(RegionStyle.Right).Children);
+                        control.Models.AddRange(service.GetRegionNode(RegionStyle.Center).Children);
+                        control.TopModels.AddRange(service.GetRegionNode(RegionStyle.Top).Children);
+                        control.BottomModels.AddRange(service.GetRegionNode(RegionStyle.Bottom).Children);
+                        control.LeftModels.AddRange(service.GetRegionNode(RegionStyle.Left).Children);
+                        control.RightModels.AddRange(service.GetRegionNode(RegionStyle.Right).Children);
 
-                        var topShell = service.GetShell(RegionStyle.Top);
-                        var bottomShell = service.GetShell(RegionStyle.Bottom);
-                        var leftShell = service.GetShell(RegionStyle.Left);
-                        var rightShell = service.GetShell(RegionStyle.Right);
-                        var centerShell = service.GetShell(RegionStyle.Center);
+                        var topShell = service.GetRegionShell(RegionStyle.Top);
+                        var bottomShell = service.GetRegionShell(RegionStyle.Bottom);
+                        var leftShell = service.GetRegionShell(RegionStyle.Left);
+                        var rightShell = service.GetRegionShell(RegionStyle.Right);
+                        var centerShell = service.GetRegionShell(RegionStyle.Center);
 
                         if(topShell != null)
                         {
-                            control.TopHeight = topShell.Height;
-                            control.TopBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(topShell.BackgroundColor);
-                            control.TopBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(topShell.BorderColor);
-                            control.TopBorderThickness = new Thickness(topShell.BorderThickness);
+                            control.TopHeight = topShell.Size.Height.Value;
+                            control.TopBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(topShell.BackgroundColor.Value);
+                            control.TopBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(topShell.BorderColor.Value);
+                            control.TopBorderThickness = new Thickness(topShell.BorderThickness.Value);
                         }
                         if (bottomShell != null)
                         {
-                            control.BottomHeight = bottomShell.Height;
-                            control.BottomBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(bottomShell.BackgroundColor);
-                            control.BottomBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(bottomShell.BorderColor);
-                            control.BottomBorderThickness = new Thickness(bottomShell.BorderThickness);
+                            control.BottomHeight = bottomShell.Size.Height.Value;
+                            control.BottomBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(bottomShell.BackgroundColor.Value);
+                            control.BottomBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(bottomShell.BorderColor.Value);
+                            control.BottomBorderThickness = new Thickness(bottomShell.BorderThickness.Value);
                         }
                         if (leftShell != null)
                         {
-                            control.LeftWidth = leftShell.Width;
-                            control.LeftBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(leftShell.BackgroundColor);
-                            control.LeftBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(leftShell.BorderColor);
-                            control.LeftBorderThickness = new Thickness(leftShell.BorderThickness);
+                            control.LeftWidth = leftShell.Size.Width.Value;
+                            control.LeftBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(leftShell.BackgroundColor.Value);
+                            control.LeftBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(leftShell.BorderColor.Value);
+                            control.LeftBorderThickness = new Thickness(leftShell.BorderThickness.Value);
                         }
                         if (rightShell != null)
                         {
-                            control.RightWidth = rightShell.Width;
-                            control.RightBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(rightShell.BackgroundColor);
-                            control.RightBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(rightShell.BorderColor);
-                            control.RightBorderThickness = new Thickness(rightShell.BorderThickness);
+                            control.RightWidth = rightShell.Size.Width.Value;
+                            control.RightBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(rightShell.BackgroundColor.Value);
+                            control.RightBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(rightShell.BorderColor.Value);
+                            control.RightBorderThickness = new Thickness(rightShell.BorderThickness.Value);
                         }
                         if (centerShell != null)
                         {
-                            control.ModelBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(centerShell.BackgroundColor);
-                            control.ModelBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(centerShell.BorderColor);
-                            control.ModelBorderThickness = new Thickness(centerShell.BorderThickness);
+                            control.ModelBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(centerShell.BackgroundColor.Value);
+                            control.ModelBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(centerShell.BorderColor.Value);
+                            control.ModelBorderThickness = new Thickness(centerShell.BorderThickness.Value);
                         }
                     }
                 }

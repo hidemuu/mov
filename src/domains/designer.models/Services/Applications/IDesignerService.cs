@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public interface IDesignerService
+    public interface IDesignerService : ILayoutService
     {
         #region プロパティ
 
@@ -16,12 +16,6 @@ namespace Mov.Designer.Models
         #region メソッド
 
         void SetEngine(int domainId);
-
-        #region UIモデル
-
-        LayoutNode GetNodeModel(RegionStyle region);
-
-        #endregion UIモデル
 
         #region クエリ
 
@@ -36,10 +30,6 @@ namespace Mov.Designer.Models
         Content GetContent(Guid id);
 
         Content GetContent(string code);
-
-        IEnumerable<Shell> GetShells();
-
-        Shell GetShell(RegionStyle region);
 
         #endregion クエリ
 

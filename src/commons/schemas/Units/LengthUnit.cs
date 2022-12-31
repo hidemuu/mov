@@ -7,9 +7,9 @@ namespace Mov.Schemas.Units
 {
     public sealed  class LengthUnit : ValueObjectBase<LengthUnit>
     {
-        public decimal Value { get; }
+        public double Value { get; }
 
-        public LengthUnit(decimal value)
+        public LengthUnit(double value)
         {
             this.Value = value;
         }

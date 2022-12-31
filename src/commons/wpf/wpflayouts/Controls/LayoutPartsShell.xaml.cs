@@ -326,13 +326,13 @@ namespace Mov.WpfLayouts.Controls
         }
 
         public static readonly DependencyProperty RepositoryNameProperty =
-            DependencyProperty.Register(nameof(RepositoryName), typeof(bool),
+            DependencyProperty.Register(nameof(RepositoryName), typeof(string),
             typeof(LayoutPartsShell),
-            new UIPropertyMetadata(true, new PropertyChangedCallback(OnRepositoryChanged)));
+            new UIPropertyMetadata(string.Empty, new PropertyChangedCallback(OnRepositoryChanged)));
 
-        public bool RepositoryName
+        public string RepositoryName
         {
-            get { return (bool)GetValue(RepositoryNameProperty); }
+            get { return (string)GetValue(RepositoryNameProperty); }
             set { SetValue(RepositoryNameProperty, value); }
         }
 

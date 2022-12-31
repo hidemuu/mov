@@ -5,10 +5,10 @@ using System.Globalization;
 using System.Text;
 using System.Windows.Data;
 
-namespace Mov.WpfControls.Converters
+namespace Mov.WpfModels.Converters
 {
     [ValueConversion(typeof(Enum), typeof(bool))]
-    public class EnumToDisplayTextConverter : IValueConverter
+    public class EnumToIconKeyConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -19,9 +19,9 @@ namespace Mov.WpfControls.Converters
             if (fi == null)
                 return "";
 
-            var attribute = (DisplayTextAttribute)Attribute.GetCustomAttribute(fi, typeof(DisplayTextAttribute));
+            var attribute = (IconKeyAttribute)Attribute.GetCustomAttribute(fi, typeof(IconKeyAttribute));
 
-            return attribute.Text;
+            return attribute.Key;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

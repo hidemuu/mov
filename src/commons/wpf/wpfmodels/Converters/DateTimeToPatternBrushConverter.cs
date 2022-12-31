@@ -8,21 +8,17 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace Mov.WpfControls.Converters
+namespace Mov.WpfModels.Converters
 {
-    /// <summary>
-    /// <see cref="T:DateTime"/>の値から曜日の<see cref="T:Brush"/>リソースへのコンバータークラスです。
-    /// </summary>
-    /// <seealso cref="System.Windows.Data.IValueConverter" />
     [ValueConversion(typeof(DateTime), typeof(Brush))]
-    public class DateTimeToDayOfWeekBrushConverter : IValueConverter
+    public class DateTimeToPatternBrushConverter : IValueConverter
     {
         /// <summary>
         /// 日曜日用のブラシリソース
         /// </summary>
         public static Brush SundayBrush
         {
-            get { return Brushes.Red; }
+            get { return Brushes.PapayaWhip; }
         }
 
         /// <summary>
@@ -30,7 +26,12 @@ namespace Mov.WpfControls.Converters
         /// </summary>
         public static Brush SaturdayBrush
         {
-            get { return Brushes.Blue; }
+            get { return Brushes.LightBlue; }
+        }
+
+        public static Brush NormalBrush
+        {
+            get { return Brushes.Azure; }
         }
 
         /// <summary>値を変換します。</summary>
@@ -54,7 +55,8 @@ namespace Mov.WpfControls.Converters
                 case DayOfWeek.Saturday:
                     return SaturdayBrush;
                 default:
-                    return DependencyProperty.UnsetValue;
+                    return NormalBrush;
+                    //return DependencyProperty.UnsetValue;
             }
         }
 

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Mov.WpfControls.Helpers
+namespace Mov.WpfModels.Helpers
 {
     public static class ShellSwitcher
     {

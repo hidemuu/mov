@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
-namespace Mov.WpfControls.Converters
+namespace Mov.WpfModels.Converters
 {
-    [ValueConversion(typeof(string), typeof(VerticalAlignment))]
-    public class StringToVerticalAlignmentConverter : IValueConverter
+    [ValueConversion(typeof(string), typeof(HorizontalAlignment))]
+    public class StringToHolizontalAlignmentConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -19,18 +19,18 @@ namespace Mov.WpfControls.Converters
                 return DependencyProperty.UnsetValue;
             }
 
-            switch ((string)value)
+            switch ((string)value) 
             {
-                case "Top":
-                    return VerticalAlignment.Top;
-                case "Bottom":
-                    return VerticalAlignment.Bottom;
+                case "Left":
+                    return HorizontalAlignment.Left;
                 case "Center":
-                    return VerticalAlignment.Center;
+                    return HorizontalAlignment.Center;
+                case "Right":
+                    return HorizontalAlignment.Right;
                 case "Stretch":
-                    return VerticalAlignment.Stretch;
+                    return HorizontalAlignment.Stretch;
             }
-            return VerticalAlignment.Stretch;
+            return HorizontalAlignment.Stretch;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

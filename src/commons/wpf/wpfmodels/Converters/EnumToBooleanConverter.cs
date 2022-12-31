@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace Mov.WpfControls.Converters
+namespace Mov.WpfModels.Converters
 {
     [ValueConversion(typeof(Enum), typeof(bool))]
     public class EnumToBooleanConverter : IValueConverter

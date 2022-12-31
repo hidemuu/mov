@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace Mov.WpfControls.Behaviors
+namespace Mov.WpfModels.Behaviors
 {
     /// <summary>
     /// インプットバインディングのビヘイビア

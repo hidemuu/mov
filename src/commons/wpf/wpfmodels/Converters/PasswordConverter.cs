@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace Mov.WpfControls.Converters
+namespace Mov.WpfModels.Converters
 {
     public class PasswordConverter : IMultiValueConverter
     {

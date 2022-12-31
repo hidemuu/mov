@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:atom="clr-namespace:Mov.WpfLayouts.Components.Atoms"
     xmlns:atomControl="clr-namespace:Mov.WpfControls.Components.Atoms;assembly=Mov.WpfControls"
-    xmlns:converter="clr-namespace:Mov.WpfControls.Converters;assembly=Mov.WpfControls">
+    xmlns:converter="clr-namespace:Mov.WpfModels.Converters;assembly=Mov.WpfModels">
     <converter:StringToHolizontalAlignmentConverter x:Key="StringToHolizontalAlignmentConverter" />
     <converter:StringToVerticalAlignmentConverter x:Key="StringToVerticalAlignmentConverter" />
     <Style TargetType="{x:Type atom:LayButton}">

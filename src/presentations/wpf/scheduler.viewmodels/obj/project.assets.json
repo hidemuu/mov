@@ -522,6 +522,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "Mov.Utilities": "1.0.0",
           "ReactiveProperty.WPF": "8.0.1",
           "gong-wpf-dragdrop": "3.0.0"
         },

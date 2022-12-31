@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Interop;
 
-namespace Mov.WpfControls.Helpers
+namespace Mov.WpfModels.Helpers
 {
     public static class WindowHelper
     {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Mov.Designer.Views.Selector
+namespace Mov.WpfModels.Selectors
 {
     public class FileSystemSelector : DataTemplateSelector
     {

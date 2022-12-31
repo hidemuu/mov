@@ -36,7 +36,7 @@
             x:Name="ExpanderNode"
             BorderBrush="Gainsboro"
             BorderThickness="1"
-            IsExpanded="{Binding Expand.Value}">
+            IsExpanded="{Binding Expand.BindableValue}">
             <Expander.Header>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock

@@ -21,8 +21,8 @@
             <Setter.Value>
                 <ControlTemplate>
                     <CheckBox
-                        Width="{Binding LayoutDesign.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayCheckBox}}}"
-                        Height="{Binding LayoutDesign.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayCheckBox}}}"
+                        Width="{Binding LayoutDesign.Size.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayCheckBox}}}"
+                        Height="{Binding LayoutDesign.Size.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayCheckBox}}}"
                         HorizontalAlignment="{Binding LayoutDesign.HorizontalAlignment.Value, Converter={StaticResource StringToHolizontalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayCheckBox}}}"
                         VerticalAlignment="{Binding LayoutDesign.VerticalAlignment.Value, Converter={StaticResource StringToVerticalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayCheckBox}}}"
                         Content="{Binding LayoutParameter.Name.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayCheckBox}}}" />
@@ -36,8 +36,8 @@
             <Setter.Value>
                 <ControlTemplate>
                     <ComboBox
-                        Width="{Binding LayoutDesign.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayComboBox}}}"
-                        Height="{Binding LayoutDesign.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayComboBox}}}"
+                        Width="{Binding LayoutDesign.Size.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayComboBox}}}"
+                        Height="{Binding LayoutDesign.Size.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayComboBox}}}"
                         HorizontalAlignment="{Binding LayoutDesign.HorizontalAlignment.Value, Converter={StaticResource StringToHolizontalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayComboBox}}}"
                         VerticalAlignment="{Binding LayoutDesign.VerticalAlignment.Value, Converter={StaticResource StringToVerticalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayComboBox}}}" />
                 </ControlTemplate>
@@ -50,8 +50,8 @@
             <Setter.Value>
                 <ControlTemplate>
                     <DatePicker
-                        Width="{Binding LayoutDesign.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayDatePicker}}}"
-                        Height="{Binding LayoutDesign.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayDatePicker}}}"
+                        Width="{Binding LayoutDesign.Size.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayDatePicker}}}"
+                        Height="{Binding LayoutDesign.Size.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayDatePicker}}}"
                         HorizontalAlignment="{Binding LayoutDesign.HorizontalAlignment.Value, Converter={StaticResource StringToHolizontalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayDatePicker}}}"
                         VerticalAlignment="{Binding LayoutDesign.VerticalAlignment.Value, Converter={StaticResource StringToVerticalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayDatePicker}}}" />
                 </ControlTemplate>
@@ -64,8 +64,8 @@
             <Setter.Value>
                 <ControlTemplate>
                     <Label
-                        Width="{Binding LayoutDesign.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayLabel}}}"
-                        Height="{Binding LayoutDesign.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayLabel}}}"
+                        Width="{Binding LayoutDesign.Size.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayLabel}}}"
+                        Height="{Binding LayoutDesign.Size.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayLabel}}}"
                         HorizontalAlignment="{Binding LayoutDesign.HorizontalAlignment.Value, Converter={StaticResource StringToHolizontalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayLabel}}}"
                         VerticalAlignment="{Binding LayoutDesign.VerticalAlignment.Value, Converter={StaticResource StringToVerticalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayLabel}}}"
                         Content="{Binding LayoutParameter.Name.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayLabel}}}" />
@@ -79,8 +79,8 @@
             <Setter.Value>
                 <ControlTemplate>
                     <ListBox
-                        Width="{Binding LayoutDesign.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayListBox}}}"
-                        Height="{Binding LayoutDesign.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayListBox}}}"
+                        Width="{Binding LayoutDesign.Size.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayListBox}}}"
+                        Height="{Binding LayoutDesign.Size.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayListBox}}}"
                         HorizontalAlignment="{Binding LayoutDesign.HorizontalAlignment.Value, Converter={StaticResource StringToHolizontalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayListBox}}}"
                         VerticalAlignment="{Binding LayoutDesign.VerticalAlignment.Value, Converter={StaticResource StringToVerticalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayListBox}}}" />
                 </ControlTemplate>
@@ -93,8 +93,8 @@
             <Setter.Value>
                 <ControlTemplate>
                     <RadioButton
-                        Width="{Binding LayoutDesign.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayRadioButton}}}"
-                        Height="{Binding LayoutDesign.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayRadioButton}}}"
+                        Width="{Binding LayoutDesign.Size.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayRadioButton}}}"
+                        Height="{Binding LayoutDesign.Size.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayRadioButton}}}"
                         HorizontalAlignment="{Binding LayoutDesign.HorizontalAlignment.Value, Converter={StaticResource StringToHolizontalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayRadioButton}}}"
                         VerticalAlignment="{Binding LayoutDesign.VerticalAlignment.Value, Converter={StaticResource StringToVerticalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayRadioButton}}}" />
                 </ControlTemplate>
@@ -107,8 +107,8 @@
             <Setter.Value>
                 <ControlTemplate>
                     <TextBox
-                        Width="{Binding LayoutDesign.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayTextBox}}}"
-                        Height="{Binding LayoutDesign.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayTextBox}}}"
+                        Width="{Binding LayoutDesign.Size.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayTextBox}}}"
+                        Height="{Binding LayoutDesign.Size.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayTextBox}}}"
                         HorizontalAlignment="{Binding LayoutDesign.HorizontalAlignment.Value, Converter={StaticResource StringToHolizontalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayTextBox}}}"
                         VerticalAlignment="{Binding LayoutDesign.VerticalAlignment.Value, Converter={StaticResource StringToVerticalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayTextBox}}}" />
                 </ControlTemplate>
@@ -124,8 +124,8 @@
                         <Grid.Style>
                             <Style TargetType="{x:Type Grid}">
                                 <Style.Setters>
-                                    <Setter Property="Width" Value="{Binding LayoutDesign.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type molecule:LaySpinBox}}}" />
-                                    <Setter Property="Height" Value="{Binding LayoutDesign.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type molecule:LaySpinBox}}}" />
+                                    <Setter Property="Width" Value="{Binding LayoutDesign.Size.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type molecule:LaySpinBox}}}" />
+                                    <Setter Property="Height" Value="{Binding LayoutDesign.Size.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type molecule:LaySpinBox}}}" />
                                     <Setter Property="HorizontalAlignment" Value="{Binding LayoutDesign.HorizontalAlignment.Value, Converter={StaticResource StringToHolizontalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type molecule:LaySpinBox}}}" />
                                     <Setter Property="VerticalAlignment" Value="{Binding LayoutDesign.VerticalAlignment.Value, Converter={StaticResource StringToVerticalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type molecule:LaySpinBox}}}" />
                                 </Style.Setters>

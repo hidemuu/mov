@@ -11,8 +11,8 @@
             <Setter.Value>
                 <ControlTemplate>
                     <atomControl:MovButton
-                        Width="{Binding LayoutDesign.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}"
-                        Height="{Binding LayoutDesign.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}"
+                        Width="{Binding LayoutDesign.Size.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}"
+                        Height="{Binding LayoutDesign.Size.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}"
                         HorizontalAlignment="{Binding LayoutDesign.HorizontalAlignment.Value, Converter={StaticResource StringToHolizontalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}"
                         VerticalAlignment="{Binding LayoutDesign.VerticalAlignment.Value, Converter={StaticResource StringToVerticalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}"
                         Content="{Binding LayoutParameter.Name.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}" />

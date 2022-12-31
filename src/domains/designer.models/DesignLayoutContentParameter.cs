@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public class DesignLayoutContentParameter : LayoutParameter
+    public class DesignLayoutContentParameter : LayoutContentParameter
     {
 
         public DesignLayoutContentParameter() : this(new Content())

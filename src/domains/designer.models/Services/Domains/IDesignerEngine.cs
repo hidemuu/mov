@@ -13,15 +13,15 @@ namespace Mov.Designer.Models
 
         int DomainId { get; }
 
-        DesignLayoutNode CenterNode { get; }
+        LayoutNode CenterNode { get; }
 
-        DesignLayoutNode TopNode { get; }
+        LayoutNode TopNode { get; }
 
-        DesignLayoutNode BottomNode { get; }
+        LayoutNode BottomNode { get; }
 
-        DesignLayoutNode LeftNode { get; }
+        LayoutNode LeftNode { get; }
 
-        DesignLayoutNode RightNode { get; }
+        LayoutNode RightNode { get; }
 
         #endregion プロパティ
 

@@ -8,9 +8,9 @@ using System.Text;
 
 namespace Mov.Layouts.Contents
 {
-    public class LayoutDesign
+    public class LayoutContentDesign
     {
-        public static LayoutDesign Empty = new LayoutDesign(MarginUnit.Default, Size2D.Default, OrientationStyle.Horizontal, HorizontalAlignmentStyle.Center, VerticalAlignmentStyle.Center);
+        public static LayoutContentDesign Empty = new LayoutContentDesign(MarginUnit.Default, Size2D.Default, OrientationStyle.Horizontal, HorizontalAlignmentStyle.Center, VerticalAlignmentStyle.Center);
 
         public MarginUnit Indent { get; }
 
@@ -22,7 +22,7 @@ namespace Mov.Layouts.Contents
 
         public VerticalAlignmentStyle VerticalAlignment { get; }
 
-        public LayoutDesign(MarginUnit indent, Size2D size, OrientationStyle orientation, HorizontalAlignmentStyle horizontalAlignment, VerticalAlignmentStyle verticalAlignment)
+        public LayoutContentDesign(MarginUnit indent, Size2D size, OrientationStyle orientation, HorizontalAlignmentStyle horizontalAlignment, VerticalAlignmentStyle verticalAlignment)
         {
             Indent = indent;
             Size = size;

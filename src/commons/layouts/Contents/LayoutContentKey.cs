@@ -6,16 +6,16 @@ using System.Text;
 
 namespace Mov.Layouts.Contents
 {
-    public class LayoutKey
+    public class LayoutContentKey
     {
-        public static LayoutKey Default = new LayoutKey(CodeKey.Empty, ControlStyle.Label);
+        public static LayoutContentKey Default = new LayoutContentKey(CodeKey.Empty, ControlStyle.Label);
 
         public CodeKey Code { get; }
 
         public ControlStyle ControlType { get; }
 
 
-        public LayoutKey(CodeKey code, ControlStyle controlType)
+        public LayoutContentKey(CodeKey code, ControlStyle controlType)
         {
             Code = code;
             ControlType = controlType;

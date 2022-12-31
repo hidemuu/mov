@@ -9,17 +9,8 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public class DesignLayoutContent
+    public class DesignLayoutContent : LayoutContent
     {
-
-        #region プロパティ
-
-        public LayoutKey LayoutKey { get; set; }
-        public LayoutParameter LayoutParameter { get; set; }
-        public LayoutDesign LayoutDesign { get; set; }
-        public LayoutValue LayoutValue { get; set; }
-
-        #endregion プロパティ
 
         #region コンストラクター
 
@@ -35,13 +26,13 @@ namespace Mov.Designer.Models
         /// コンストラクター
         /// </summary>
         /// <param name="content"></param>
-        public DesignLayoutContent(Content content)
+        public DesignLayoutContent(Content content) 
+            : base(new DesignLayoutContentKey(content), 
+                   new DesignLayoutContentParameter(content), 
+                   new DesignLayoutContentDesign(content), 
+                   new DesignLayoutContentValue(content))
         {
-            this.LayoutKey = new DesignLayoutContentKey(content);
-            this.LayoutParameter = new DesignLayoutContentParameter(content);
-            this.LayoutDesign = new DesignLayoutContentDesign(content);
-            this.LayoutValue = new DesignLayoutContentValue(content);
-
+            
         }
 
         #endregion コンストラクター

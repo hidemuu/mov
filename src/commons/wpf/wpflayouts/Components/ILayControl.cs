@@ -11,12 +11,12 @@ namespace Mov.WpfLayouts.Components
 {
     public interface ILayControl
     {
-        LayoutKey LayoutKey { get; set; }
+        LayoutContentKey LayoutKey { get; set; }
 
-        LayoutParameter LayoutParameter { get; set; }
+        LayoutContentParameter LayoutParameter { get; set; }
 
-        LayoutDesign LayoutDesign { get; set; }
+        LayoutContentDesign LayoutDesign { get; set; }
 
-        LayoutValue LayoutValue { get; set; }
+        LayoutContentValue LayoutValue { get; set; }
     }
 }

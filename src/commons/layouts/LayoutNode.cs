@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Mov.Layouts
 {
-    public class LayoutNode : LayoutContent
+    public class LayoutNode
     {
         #region フィールド
 
@@ -24,6 +24,8 @@ namespace Mov.Layouts
         public NodeStyle NodeType { get; }
 
         public EnableStyle Expand { get; }
+
+        public LayoutContent Content { get; }
 
         /// <summary>
         /// 子階層
@@ -44,11 +46,11 @@ namespace Mov.Layouts
         /// </summary>
         /// <param name="node"></param>
         /// <param name="content"></param>
-        public LayoutNode(NodeStyle nodeType, EnableStyle isExpand, LayoutKey key, LayoutParameter parameter, LayoutDesign design, LayoutValue value)
-            : base(key, parameter, design, value)
+        public LayoutNode(NodeStyle nodeType, EnableStyle isExpand, LayoutContent content)
         {
-            NodeType = nodeType;
-            Expand = isExpand;
+            this.NodeType = nodeType;
+            this.Expand = isExpand;
+            this.Content = content;
         }
 
         #endregion コンストラクター
@@ -68,7 +70,7 @@ namespace Mov.Layouts
 
         public override string ToString()
         {
-            return base.ToString() + " [ControlType] " + LayoutKey.ControlType.Value + " [Macro] " + LayoutValue.Macro.Value;
+            return base.ToString() + " [ControlType] " + Content.LayoutKey.ControlType.Value + " [Macro] " + Content.LayoutValue.Macro.Value;
         }
 
         #endregion メソッド

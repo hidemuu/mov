@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public class DesignLayoutContentDesign : LayoutDesign
+    public class DesignLayoutContentDesign : LayoutContentDesign
     {
         
         public DesignLayoutContentDesign() : this(new Content())
@@ -17,7 +17,8 @@ namespace Mov.Designer.Models
 
         }
 
-        public DesignLayoutContentDesign(Content content) : base(MarginUnit.Default, new Size2D((decimal)content.Width, (decimal)content.Height), OrientationStyle.Horizontal, new HorizontalAlignmentStyle(content.HorizontalAlignment), new VerticalAlignmentStyle(content.VerticalAlignment))
+        public DesignLayoutContentDesign(Content content) 
+            : base(MarginUnit.Default, new Size2D((decimal)content.Width, (decimal)content.Height), OrientationStyle.Horizontal, new HorizontalAlignmentStyle(content.HorizontalAlignment), new VerticalAlignmentStyle(content.VerticalAlignment))
         {
             
         }

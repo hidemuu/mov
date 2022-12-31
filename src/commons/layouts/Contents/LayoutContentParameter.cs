@@ -8,9 +8,9 @@ using System.Text;
 
 namespace Mov.Layouts.Contents
 {
-    public class LayoutParameter
+    public class LayoutContentParameter
     {
-        public static LayoutParameter Empty = new LayoutParameter(LocalString.Empty, IconImage.Empty, VisibilityStyle.Visible, EnableStyle.Enable, Parameter.Empty);
+        public static LayoutContentParameter Empty = new LayoutContentParameter(LocalString.Empty, IconImage.Empty, VisibilityStyle.Visible, EnableStyle.Enable, Parameter.Empty);
 
         public LocalString Name { get; }
 
@@ -23,7 +23,7 @@ namespace Mov.Layouts.Contents
         public Parameter Parameter { get; }
 
 
-        public LayoutParameter(LocalString name, IconImage icon, VisibilityStyle visibility, EnableStyle isEnable, Parameter parameter)
+        public LayoutContentParameter(LocalString name, IconImage icon, VisibilityStyle visibility, EnableStyle isEnable, Parameter parameter)
         {
             Name = name;
             Icon = icon;

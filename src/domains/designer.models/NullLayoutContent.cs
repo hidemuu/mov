@@ -10,9 +10,9 @@ namespace Mov.Designer.Models
     public class NullLayoutContent
     {
 
-        public LayoutKey LayoutKey { get; set; } = LayoutKey.Default;
-        public LayoutParameter LayoutParameter { get; set; } = LayoutParameter.Empty;
-        public LayoutDesign LayoutDesign { get; set; } = LayoutDesign.Empty;
-        public LayoutValue LayoutValue { get; set; } = LayoutValue.Empty;
+        public LayoutContentKey LayoutKey { get; set; } = LayoutContentKey.Default;
+        public LayoutContentParameter LayoutParameter { get; set; } = LayoutContentParameter.Empty;
+        public LayoutContentDesign LayoutDesign { get; set; } = LayoutContentDesign.Empty;
+        public LayoutContentValue LayoutValue { get; set; } = LayoutContentValue.Empty;
     }
 }

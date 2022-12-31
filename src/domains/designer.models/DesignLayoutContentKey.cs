@@ -7,14 +7,15 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public class DesignLayoutContentKey : LayoutKey
+    public class DesignLayoutContentKey : LayoutContentKey
     {
         public DesignLayoutContentKey() : this(new Content())
         {
 
         }
 
-        public DesignLayoutContentKey(Content content) : base(new CodeKey(content.Code), new ControlStyle(content.ControlType))
+        public DesignLayoutContentKey(Content content) 
+            : base(new CodeKey(content.Code), new ControlStyle(content.ControlType))
         {
         }
     }

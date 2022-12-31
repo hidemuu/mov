@@ -9,26 +9,24 @@ namespace Mov.Layouts
     public class LayoutContent
     {
 
+        public static LayoutContent Default = new LayoutContent(
+            LayoutContentKey.Default, LayoutContentParameter.Empty, LayoutContentDesign.Empty, LayoutContentValue.Empty);
+
         #region プロパティ
 
-        public LayoutKey LayoutKey { get; set; }
-        public LayoutParameter LayoutParameter { get; set; }
-        public LayoutDesign LayoutDesign { get; set; }
-        public LayoutValue LayoutValue { get; set; }
+        public LayoutContentKey LayoutKey { get; set; }
+        public LayoutContentParameter LayoutParameter { get; set; }
+        public LayoutContentDesign LayoutDesign { get; set; }
+        public LayoutContentValue LayoutValue { get; set; }
 
         #endregion プロパティ
 
         #region コンストラクター
 
-        public LayoutContent()
-        {
-
-        }
-
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public LayoutContent(LayoutKey key, LayoutParameter parameter, LayoutDesign design, LayoutValue value)
+        public LayoutContent(LayoutContentKey key, LayoutContentParameter parameter, LayoutContentDesign design, LayoutContentValue value)
         {
             LayoutKey = key;
             LayoutParameter = parameter;

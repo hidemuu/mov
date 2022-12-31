@@ -1,5 +1,4 @@
-﻿using Mov.Layouts.Contents.ValueObjects;
-using Mov.Schemas.Bodies;
+﻿using Mov.Schemas.Bodies;
 using Mov.Schemas.Parameters;
 using Mov.Schemas.Resources.Macros;
 using System;
@@ -8,9 +7,9 @@ using System.Text;
 
 namespace Mov.Layouts.Contents
 {
-    public class LayoutValue
+    public class LayoutContentValue
     {
-        public static LayoutValue Empty = new LayoutValue(LayoutSchema.Empty, Variable.Empty, Macro.Empty);
+        public static LayoutContentValue Empty = new LayoutContentValue(LayoutSchema.Empty, Variable.Empty, Macro.Empty);
 
         public LayoutSchema Schema { get; }
 
@@ -19,7 +18,7 @@ namespace Mov.Layouts.Contents
         public Macro Macro { get; }
 
 
-        public LayoutValue(LayoutSchema schema, Variable value, Macro macro)
+        public LayoutContentValue(LayoutSchema schema, Variable value, Macro macro)
         {
             Schema = schema;
             ContentValue = value;

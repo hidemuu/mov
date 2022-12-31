@@ -19,45 +19,45 @@ namespace Mov.WpfLayouts.Components.Atoms
             DefaultStyleKeyProperty.OverrideMetadata(typeof(LayListBox), new FrameworkPropertyMetadata(typeof(LayListBox)));
         }
 
-        public LayoutKey LayoutKey
+        public LayoutContentKey LayoutKey
         {
-            get { return (LayoutKey)GetValue(LayoutKeyProperty); }
+            get { return (LayoutContentKey)GetValue(LayoutKeyProperty); }
             set { SetValue(LayoutKeyProperty, value); }
         }
 
         public static readonly DependencyProperty LayoutKeyProperty =
-            DependencyProperty.Register(nameof(LayoutKey), typeof(LayoutKey),
+            DependencyProperty.Register(nameof(LayoutKey), typeof(LayoutContentKey),
                 typeof(LayListBox), new PropertyMetadata(default));
 
-        public LayoutParameter LayoutParameter
+        public LayoutContentParameter LayoutParameter
         {
-            get { return (LayoutParameter)GetValue(LayoutParameterProperty); }
+            get { return (LayoutContentParameter)GetValue(LayoutParameterProperty); }
             set { SetValue(LayoutParameterProperty, value); }
         }
 
         public static readonly DependencyProperty LayoutParameterProperty =
-            DependencyProperty.Register(nameof(LayoutParameter), typeof(LayoutParameter),
+            DependencyProperty.Register(nameof(LayoutParameter), typeof(LayoutContentParameter),
                 typeof(LayListBox), new PropertyMetadata(default));
 
 
-        public LayoutDesign LayoutDesign
+        public LayoutContentDesign LayoutDesign
         {
-            get { return (LayoutDesign)GetValue(LayoutDesignProperty); }
+            get { return (LayoutContentDesign)GetValue(LayoutDesignProperty); }
             set { SetValue(LayoutDesignProperty, value); }
         }
 
         public static readonly DependencyProperty LayoutDesignProperty =
-            DependencyProperty.Register(nameof(LayoutDesign), typeof(LayoutDesign),
+            DependencyProperty.Register(nameof(LayoutDesign), typeof(LayoutContentDesign),
                 typeof(LayListBox), new PropertyMetadata(default));
 
-        public LayoutValue LayoutValue
+        public LayoutContentValue LayoutValue
         {
-            get { return (LayoutValue)GetValue(LayoutValueProperty); }
+            get { return (LayoutContentValue)GetValue(LayoutValueProperty); }
             set { SetValue(LayoutValueProperty, value); }
         }
 
         public static readonly DependencyProperty LayoutValueProperty =
-            DependencyProperty.Register(nameof(LayoutValue), typeof(LayoutValue),
+            DependencyProperty.Register(nameof(LayoutValue), typeof(LayoutContentValue),
                 typeof(LayListBox), new PropertyMetadata(default));
 
     }

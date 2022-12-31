@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net5.0-windows7.0": {
+    "net7.0-windows7.0": {
       "ControlzEx/4.4.0": {
         "type": "package",
         "dependencies": {
@@ -25,12 +25,12 @@
       "CsvHelper/27.2.1": {
         "type": "package",
         "compile": {
-          "lib/net5.0/CsvHelper.dll": {
+          "lib/net6.0/CsvHelper.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net5.0/CsvHelper.dll": {
+          "lib/net6.0/CsvHelper.dll": {
             "related": ".xml"
           }
         }
@@ -38,12 +38,12 @@
       "FluentFTP/39.0.0": {
         "type": "package",
         "compile": {
-          "lib/net5.0/FluentFTP.dll": {
+          "lib/net6.0/FluentFTP.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net5.0/FluentFTP.dll": {
+          "lib/net6.0/FluentFTP.dll": {
             "related": ".xml"
           }
         }
@@ -51,12 +51,12 @@
       "gong-wpf-dragdrop/3.0.0": {
         "type": "package",
         "compile": {
-          "lib/net5.0-windows7.0/GongSolutions.WPF.DragDrop.dll": {
+          "lib/net6.0-windows7.0/GongSolutions.WPF.DragDrop.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net5.0-windows7.0/GongSolutions.WPF.DragDrop.dll": {
+          "lib/net6.0-windows7.0/GongSolutions.WPF.DragDrop.dll": {
             "related": ".pdb;.xml"
           }
         },
@@ -162,12 +162,12 @@
       "MathNet.Numerics/5.0.0": {
         "type": "package",
         "compile": {
-          "lib/net5.0/MathNet.Numerics.dll": {
+          "lib/net6.0/MathNet.Numerics.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net5.0/MathNet.Numerics.dll": {
+          "lib/net6.0/MathNet.Numerics.dll": {
             "related": ".xml"
           }
         }
@@ -418,12 +418,12 @@
       "Microsoft.Win32.SystemEvents/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll": {
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll": {
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
           }
         },
@@ -431,7 +431,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll": {
+          "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -527,12 +527,12 @@
           "System.Reactive": "5.0.0"
         },
         "compile": {
-          "lib/netcoreapp3.1/ReactiveProperty.dll": {
+          "lib/net6.0/ReactiveProperty.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/ReactiveProperty.dll": {
+          "lib/net6.0/ReactiveProperty.dll": {
             "related": ".xml"
           }
         }
@@ -540,12 +540,12 @@
       "ReactiveProperty.Core/8.0.1": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.1/ReactiveProperty.Core.dll": {
+          "lib/net6.0/ReactiveProperty.Core.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/ReactiveProperty.Core.dll": {
+          "lib/net6.0/ReactiveProperty.Core.dll": {
             "related": ".xml"
           }
         }
@@ -558,12 +558,12 @@
           "System.Reactive": "5.0.0"
         },
         "compile": {
-          "lib/netcoreapp3.1/ReactiveProperty.WPF.dll": {
+          "lib/net6.0-windows7.0/ReactiveProperty.WPF.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/ReactiveProperty.WPF.dll": {
+          "lib/net6.0-windows7.0/ReactiveProperty.WPF.dll": {
             "related": ".xml"
           }
         },
@@ -654,12 +654,12 @@
           "Microsoft.Win32.SystemEvents": "6.0.0"
         },
         "compile": {
-          "lib/netcoreapp3.1/System.Drawing.Common.dll": {
+          "lib/net6.0/System.Drawing.Common.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/System.Drawing.Common.dll": {
+          "lib/net6.0/System.Drawing.Common.dll": {
             "related": ".xml"
           }
         },
@@ -667,11 +667,11 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/unix/lib/netcoreapp3.1/System.Drawing.Common.dll": {
+          "runtimes/unix/lib/net6.0/System.Drawing.Common.dll": {
             "assetType": "runtime",
             "rid": "unix"
           },
-          "runtimes/win/lib/netcoreapp3.1/System.Drawing.Common.dll": {
+          "runtimes/win/lib/net6.0/System.Drawing.Common.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -832,7 +832,7 @@
       },
       "Mov.Analizer.ViewModels/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Analizer.Service": "1.0.0",
           "Mov.WpfViewModels": "1.0.0"
@@ -849,7 +849,7 @@
       },
       "Mov.Analizer.Views/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Analizer.ViewModels": "1.0.0",
           "Mov.WpfViews": "1.0.0"
@@ -866,7 +866,7 @@
       },
       "Mov.Authorizer.ViewModels/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.WpfViewModels": "1.0.0"
         },
@@ -882,7 +882,7 @@
       },
       "Mov.Authorizer.Views/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Authorizer.ViewModels": "1.0.0",
           "Mov.WpfViews": "1.0.0"
@@ -967,7 +967,7 @@
       },
       "Mov.Bom.ViewModels/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.WpfViewModels": "1.0.0"
         },
@@ -983,7 +983,7 @@
       },
       "Mov.Bom.Views/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Bom.ViewModels": "1.0.0",
           "Mov.WpfViews": "1.0.0"
@@ -1013,7 +1013,7 @@
       },
       "Mov.Configurator.ViewModels/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Configurators": "1.0.0",
           "Mov.Designer.Service": "1.0.0",
@@ -1031,7 +1031,7 @@
       },
       "Mov.Configurator.Views/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Configurator.ViewModels": "1.0.0",
           "Mov.WpfViews": "1.0.0"
@@ -1145,7 +1145,7 @@
       },
       "Mov.Designer.ViewModels/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Designer.Service": "1.0.0",
           "Mov.WpfViewModels": "1.0.0"
@@ -1162,7 +1162,7 @@
       },
       "Mov.Designer.Views/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Designer.ViewModels": "1.0.0",
           "Mov.WpfLayouts": "1.0.0",
@@ -1235,7 +1235,7 @@
       },
       "Mov.Drawer.ViewModels/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Drawer.Service": "1.0.0",
           "Mov.WpfViewModels": "1.0.0"
@@ -1252,7 +1252,7 @@
       },
       "Mov.Drawer.Views/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Drawer.ViewModels": "1.0.0",
           "Mov.WpfViews": "1.0.0"
@@ -1333,7 +1333,7 @@
       },
       "Mov.Driver.ViewModels/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Driver.Service": "1.0.0",
           "Mov.WpfViewModels": "1.0.0"
@@ -1350,7 +1350,7 @@
       },
       "Mov.Driver.Views/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Driver.ViewModels": "1.0.0",
           "Mov.WpfViews": "1.0.0"
@@ -1441,7 +1441,7 @@
       },
       "Mov.Game.ViewModels/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Game.Service": "1.0.0",
           "Mov.WpfViewModels": "1.0.0"
@@ -1458,7 +1458,7 @@
       },
       "Mov.Game.Views/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Game.ViewModels": "1.0.0",
           "Mov.WpfViews": "1.0.0"
@@ -1501,7 +1501,7 @@
       },
       "Mov.Scheduler.ViewModels/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.WpfViewModels": "1.0.0"
         },
@@ -1517,7 +1517,7 @@
       },
       "Mov.Scheduler.Views/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Scheduler.ViewModels": "1.0.0",
           "Mov.WpfViews": "1.0.0"
@@ -1547,7 +1547,7 @@
       },
       "Mov.Translator.ViewModels/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.WpfViewModels": "1.0.0"
         },
@@ -1563,7 +1563,7 @@
       },
       "Mov.Translator.Views/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Translator.ViewModels": "1.0.0",
           "Mov.WpfViews": "1.0.0"
@@ -1580,7 +1580,7 @@
       },
       "Mov.UseCase.ViewModels/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Analizer.ViewModels": "1.0.0",
           "Mov.Authorizer.ViewModels": "1.0.0",
@@ -1605,7 +1605,7 @@
       },
       "Mov.UseCase.Views/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Analizer.Views": "1.0.0",
           "Mov.Authorizer.Views": "1.0.0",
@@ -1666,7 +1666,7 @@
       },
       "Mov.WpfControls/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "LiveCharts.Wpf.NetCore3": "0.9.7",
           "Mov.Utilities": "1.0.0",
@@ -1688,7 +1688,7 @@
       },
       "Mov.WpfDesigns/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "MahApps.Metro": "2.4.9",
           "MaterialDesignColors": "2.0.3",
@@ -1707,7 +1707,7 @@
       },
       "Mov.WpfLayouts/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Layouts": "1.0.0",
           "Mov.WpfControls": "1.0.0"
@@ -1724,7 +1724,7 @@
       },
       "Mov.WpfModels/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Utilities": "1.0.0",
           "ReactiveProperty.WPF": "8.0.1",
@@ -1742,7 +1742,7 @@
       },
       "Mov.WpfMvvms/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Painters": "1.0.0",
           "Mov.WpfDesigns": "1.0.0",
@@ -1764,7 +1764,7 @@
       },
       "Mov.WpfViewModels/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.WpfMvvms": "1.0.0"
         },
@@ -1780,7 +1780,7 @@
       },
       "Mov.WpfViews/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.WpfControls": "1.0.0",
           "Mov.WpfMvvms": "1.0.0"
@@ -3312,7 +3312,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net5.0-windows7.0": [
+    "net7.0-windows7.0": [
       "Mov.UseCase.Views >= 1.0.0",
       "Mov.UseCases >= 1.0.0",
       "Prism.Unity >= 8.1.97"
@@ -3340,7 +3340,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net5.0-windows"
+        "net7.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -3348,8 +3348,8 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net5.0-windows7.0": {
-          "targetAlias": "net5.0-windows",
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
           "projectReferences": {
             "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\applications\\usecases\\UseCases.csproj": {
               "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\applications\\usecases\\UseCases.csproj"
@@ -3367,8 +3367,8 @@
       }
     },
     "frameworks": {
-      "net5.0-windows7.0": {
-        "targetAlias": "net5.0-windows",
+      "net7.0-windows7.0": {
+        "targetAlias": "net7.0-windows",
         "dependencies": {
           "Prism.Unity": {
             "target": "Package",

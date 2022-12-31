@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net5.0-windows7.0": {
+    "net7.0-windows7.0": {
       "ControlzEx/4.4.0": {
         "type": "package",
         "dependencies": {
@@ -25,12 +25,12 @@
       "gong-wpf-dragdrop/3.0.0": {
         "type": "package",
         "compile": {
-          "lib/net5.0-windows7.0/GongSolutions.WPF.DragDrop.dll": {
+          "lib/net6.0-windows7.0/GongSolutions.WPF.DragDrop.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net5.0-windows7.0/GongSolutions.WPF.DragDrop.dll": {
+          "lib/net6.0-windows7.0/GongSolutions.WPF.DragDrop.dll": {
             "related": ".pdb;.xml"
           }
         },
@@ -136,12 +136,12 @@
       "Microsoft.Win32.SystemEvents/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll": {
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll": {
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
             "related": ".xml"
           }
         },
@@ -149,7 +149,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll": {
+          "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -232,12 +232,12 @@
           "System.Reactive": "5.0.0"
         },
         "compile": {
-          "lib/netcoreapp3.1/ReactiveProperty.dll": {
+          "lib/net6.0/ReactiveProperty.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/ReactiveProperty.dll": {
+          "lib/net6.0/ReactiveProperty.dll": {
             "related": ".xml"
           }
         }
@@ -245,12 +245,12 @@
       "ReactiveProperty.Core/8.0.1": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.1/ReactiveProperty.Core.dll": {
+          "lib/net6.0/ReactiveProperty.Core.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/ReactiveProperty.Core.dll": {
+          "lib/net6.0/ReactiveProperty.Core.dll": {
             "related": ".xml"
           }
         }
@@ -263,12 +263,12 @@
           "System.Reactive": "5.0.0"
         },
         "compile": {
-          "lib/netcoreapp3.1/ReactiveProperty.WPF.dll": {
+          "lib/net6.0-windows7.0/ReactiveProperty.WPF.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/ReactiveProperty.WPF.dll": {
+          "lib/net6.0-windows7.0/ReactiveProperty.WPF.dll": {
             "related": ".xml"
           }
         },
@@ -304,12 +304,12 @@
           "Microsoft.Win32.SystemEvents": "6.0.0"
         },
         "compile": {
-          "lib/netcoreapp3.1/System.Drawing.Common.dll": {
+          "lib/net6.0/System.Drawing.Common.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/System.Drawing.Common.dll": {
+          "lib/net6.0/System.Drawing.Common.dll": {
             "related": ".xml"
           }
         },
@@ -317,11 +317,11 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/unix/lib/netcoreapp3.1/System.Drawing.Common.dll": {
+          "runtimes/unix/lib/net6.0/System.Drawing.Common.dll": {
             "assetType": "runtime",
             "rid": "unix"
           },
-          "runtimes/win/lib/netcoreapp3.1/System.Drawing.Common.dll": {
+          "runtimes/win/lib/net6.0/System.Drawing.Common.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -462,7 +462,7 @@
       },
       "Mov.WpfControls/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "LiveCharts.Wpf.NetCore3": "0.9.7",
           "Mov.Utilities": "1.0.0",
@@ -484,7 +484,7 @@
       },
       "Mov.WpfDesigns/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "MahApps.Metro": "2.4.9",
           "MaterialDesignColors": "2.0.3",
@@ -503,7 +503,7 @@
       },
       "Mov.WpfLayouts/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Layouts": "1.0.0",
           "Mov.WpfControls": "1.0.0"
@@ -520,7 +520,7 @@
       },
       "Mov.WpfModels/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Utilities": "1.0.0",
           "ReactiveProperty.WPF": "8.0.1",
@@ -538,7 +538,7 @@
       },
       "Mov.WpfMvvms/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.Painters": "1.0.0",
           "Mov.WpfDesigns": "1.0.0",
@@ -560,7 +560,7 @@
       },
       "Mov.WpfViewModels/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Mov.WpfMvvms": "1.0.0"
         },
@@ -1318,7 +1318,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net5.0-windows7.0": [
+    "net7.0-windows7.0": [
       "Mov.WpfViewModels >= 1.0.0"
     ]
   },
@@ -1344,7 +1344,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net5.0-windows"
+        "net7.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -1352,8 +1352,8 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net5.0-windows7.0": {
-          "targetAlias": "net5.0-windows",
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
           "projectReferences": {
             "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\wpf\\wpfviewmodels\\WpfViewModels.csproj": {
               "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\wpf\\wpfviewmodels\\WpfViewModels.csproj"
@@ -1368,8 +1368,8 @@
       }
     },
     "frameworks": {
-      "net5.0-windows7.0": {
-        "targetAlias": "net5.0-windows",
+      "net7.0-windows7.0": {
+        "targetAlias": "net7.0-windows",
         "imports": [
           "net461",
           "net462",

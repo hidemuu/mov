@@ -5,11 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.Contents
+namespace Mov.Layouts.Contexts.Contents
 {
-    public class LayoutContentValue
+    public class LayoutContentSchema
     {
-        public static LayoutContentValue Empty = new LayoutContentValue(LayoutSchema.Empty, Variable.Empty, Macro.Empty);
+        public static LayoutContentSchema Empty = new LayoutContentSchema(LayoutSchema.Empty, Variable.Empty, Macro.Empty);
 
         public LayoutSchema Schema { get; }
 
@@ -18,7 +18,7 @@ namespace Mov.Layouts.Contents
         public Macro Macro { get; }
 
 
-        public LayoutContentValue(LayoutSchema schema, Variable value, Macro macro)
+        public LayoutContentSchema(LayoutSchema schema, Variable value, Macro macro)
         {
             Schema = schema;
             ContentValue = value;

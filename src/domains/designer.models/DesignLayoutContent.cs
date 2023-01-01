@@ -1,7 +1,7 @@
 ﻿using Mov.Designer.Models;
-using Mov.Layouts;
 using Mov.Layouts.Contents;
 using Mov.Layouts.Contents.ValueObjects;
+using Mov.Layouts.Contexts;
 using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
@@ -41,7 +41,7 @@ namespace Mov.Designer.Models
 
         public override string ToString()
         {
-            return "[Code] " + this.LayoutKey.Code.Value + " [Name] " + this.LayoutParameter.Name.Value;
+            return "[Code] " + this.Keys.Code.Value + " [Name] " + this.Statuses.Name.Value;
         }
 
         #endregion メソッド

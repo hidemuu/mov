@@ -1,5 +1,5 @@
-﻿using Mov.Layouts.Contents;
-using Mov.Layouts.Contents.ValueObjects;
+﻿using Mov.Layouts.Contents.ValueObjects;
+using Mov.Layouts.Contexts.Contents;
 using Mov.Schemas.Parameters;
 using Mov.Schemas.Resources.Images;
 using Mov.Schemas.Resources.Localizes;
@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public class DesignLayoutContentParameter : LayoutContentParameter
+    public class DesignLayoutContentParameter : LayoutContentStatus
     {
 
         public DesignLayoutContentParameter() : this(new Content())

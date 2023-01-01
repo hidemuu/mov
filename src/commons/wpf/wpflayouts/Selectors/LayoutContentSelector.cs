@@ -1,4 +1,4 @@
-﻿using Mov.Layouts;
+﻿using Mov.Layouts.Contexts;
 using Mov.WpfLayouts.Components;
 using Mov.WpfLayouts.Components.Atoms;
 using Mov.WpfLayouts.Components.Molecules;
@@ -18,94 +18,94 @@ namespace Mov.WpfLayouts.Selector
             if (item is LayoutNode node)
             {
                 FrameworkElementFactory factory;
-                var controlType = node.Content.LayoutKey.ControlType;
+                var controlType = node.Content.Keys.ControlType;
                 if (controlType.IsLabel)
                 {
                     factory = new FrameworkElementFactory(typeof(LayLabel));
-                    factory.SetValue(LayLabel.LayoutKeyProperty, node.Content.LayoutKey);
-                    factory.SetValue(LayLabel.LayoutDesignProperty, node.Content.LayoutDesign);
-                    factory.SetValue(LayLabel.LayoutParameterProperty, node.Content.LayoutParameter);
-                    factory.SetValue(LayLabel.LayoutValueProperty, node.Content.LayoutValue);
+                    factory.SetValue(LayLabel.LayoutKeyProperty, node.Content.Keys);
+                    factory.SetValue(LayLabel.LayoutDesignProperty, node.Content.Designs);
+                    factory.SetValue(LayLabel.LayoutParameterProperty, node.Content.Statuses);
+                    factory.SetValue(LayLabel.LayoutValueProperty, node.Content.Schemas);
                     return new DataTemplate() { VisualTree = factory, };
                 }
                 if (controlType.IsButton)
                 {
                     factory = new FrameworkElementFactory(typeof(LayButton));
-                    factory.SetValue(LayButton.LayoutKeyProperty, node.Content.LayoutKey);
-                    factory.SetValue(LayButton.LayoutDesignProperty, node.Content.LayoutDesign);
-                    factory.SetValue(LayButton.LayoutParameterProperty, node.Content.LayoutParameter);
-                    factory.SetValue(LayButton.LayoutValueProperty, node.Content.LayoutValue);
+                    factory.SetValue(LayButton.LayoutKeyProperty, node.Content.Keys);
+                    factory.SetValue(LayButton.LayoutDesignProperty, node.Content.Designs);
+                    factory.SetValue(LayButton.LayoutParameterProperty, node.Content.Statuses);
+                    factory.SetValue(LayButton.LayoutValueProperty, node.Content.Schemas);
                     return new DataTemplate() { VisualTree = factory, };
                 }
                 if (controlType.IsRadioButton)
                 {
                     factory = new FrameworkElementFactory(typeof(LayRadioButton));
-                    factory.SetValue(LayRadioButton.LayoutKeyProperty, node.Content.LayoutKey);
-                    factory.SetValue(LayRadioButton.LayoutDesignProperty, node.Content.LayoutDesign);
-                    factory.SetValue(LayRadioButton.LayoutParameterProperty, node.Content.LayoutParameter);
-                    factory.SetValue(LayRadioButton.LayoutValueProperty, node.Content.LayoutValue);
+                    factory.SetValue(LayRadioButton.LayoutKeyProperty, node.Content.Keys);
+                    factory.SetValue(LayRadioButton.LayoutDesignProperty, node.Content.Designs);
+                    factory.SetValue(LayRadioButton.LayoutParameterProperty, node.Content.Statuses);
+                    factory.SetValue(LayRadioButton.LayoutValueProperty, node.Content.Schemas);
                     return new DataTemplate() { VisualTree = factory, };
                 }
                 if (controlType.IsTextBox)
                 {
                     factory = new FrameworkElementFactory(typeof(LayTextBox));
-                    factory.SetValue(LayTextBox.LayoutKeyProperty, node.Content.LayoutKey);
-                    factory.SetValue(LayTextBox.LayoutDesignProperty, node.Content.LayoutDesign);
-                    factory.SetValue(LayTextBox.LayoutParameterProperty, node.Content.LayoutParameter);
-                    factory.SetValue(LayTextBox.LayoutValueProperty, node.Content.LayoutValue);
+                    factory.SetValue(LayTextBox.LayoutKeyProperty, node.Content.Keys);
+                    factory.SetValue(LayTextBox.LayoutDesignProperty, node.Content.Designs);
+                    factory.SetValue(LayTextBox.LayoutParameterProperty, node.Content.Statuses);
+                    factory.SetValue(LayTextBox.LayoutValueProperty, node.Content.Schemas);
                     return new DataTemplate() { VisualTree = factory, };
                 }
                 if (controlType.IsComboBox)
                 {
                     factory = new FrameworkElementFactory(typeof(LayComboBox));
-                    factory.SetValue(LayComboBox.LayoutKeyProperty, node.Content.LayoutKey);
-                    factory.SetValue(LayComboBox.LayoutDesignProperty, node.Content.LayoutDesign);
-                    factory.SetValue(LayComboBox.LayoutParameterProperty, node.Content.LayoutParameter);
-                    factory.SetValue(LayComboBox.LayoutValueProperty, node.Content.LayoutValue);
+                    factory.SetValue(LayComboBox.LayoutKeyProperty, node.Content.Keys);
+                    factory.SetValue(LayComboBox.LayoutDesignProperty, node.Content.Designs);
+                    factory.SetValue(LayComboBox.LayoutParameterProperty, node.Content.Statuses);
+                    factory.SetValue(LayComboBox.LayoutValueProperty, node.Content.Schemas);
                     return new DataTemplate() { VisualTree = factory, };
                 }
                 if (controlType.IsSpinBox)
                 {
                     factory = new FrameworkElementFactory(typeof(LaySpinBox));
-                    factory.SetValue(LaySpinBox.LayoutKeyProperty, node.Content.LayoutKey);
-                    factory.SetValue(LaySpinBox.LayoutDesignProperty, node.Content.LayoutDesign);
-                    factory.SetValue(LaySpinBox.LayoutParameterProperty, node.Content.LayoutParameter);
-                    factory.SetValue(LaySpinBox.LayoutValueProperty, node.Content.LayoutValue);
+                    factory.SetValue(LaySpinBox.LayoutKeyProperty, node.Content.Keys);
+                    factory.SetValue(LaySpinBox.LayoutDesignProperty, node.Content.Designs);
+                    factory.SetValue(LaySpinBox.LayoutParameterProperty, node.Content.Statuses);
+                    factory.SetValue(LaySpinBox.LayoutValueProperty, node.Content.Schemas);
                     return new DataTemplate() { VisualTree = factory, };
                 }
                 if (controlType.IsCheckBox)
                 {
                     factory = new FrameworkElementFactory(typeof(LayCheckBox));
-                    factory.SetValue(LayCheckBox.LayoutKeyProperty, node.Content.LayoutKey);
-                    factory.SetValue(LayCheckBox.LayoutDesignProperty, node.Content.LayoutDesign);
-                    factory.SetValue(LayCheckBox.LayoutParameterProperty, node.Content.LayoutParameter);
-                    factory.SetValue(LayCheckBox.LayoutValueProperty, node.Content.LayoutValue);
+                    factory.SetValue(LayCheckBox.LayoutKeyProperty, node.Content.Keys);
+                    factory.SetValue(LayCheckBox.LayoutDesignProperty, node.Content.Designs);
+                    factory.SetValue(LayCheckBox.LayoutParameterProperty, node.Content.Statuses);
+                    factory.SetValue(LayCheckBox.LayoutValueProperty, node.Content.Schemas);
                     return new DataTemplate() { VisualTree = factory, };
                 }
                 if (controlType.IsListBox)
                 {
                     factory = new FrameworkElementFactory(typeof(LayListBox));
-                    factory.SetValue(LayListBox.LayoutKeyProperty, node.Content.LayoutKey);
-                    factory.SetValue(LayListBox.LayoutDesignProperty, node.Content.LayoutDesign);
-                    factory.SetValue(LayListBox.LayoutParameterProperty, node.Content.LayoutParameter);
-                    factory.SetValue(LayListBox.LayoutValueProperty, node.Content.LayoutValue);
+                    factory.SetValue(LayListBox.LayoutKeyProperty, node.Content.Keys);
+                    factory.SetValue(LayListBox.LayoutDesignProperty, node.Content.Designs);
+                    factory.SetValue(LayListBox.LayoutParameterProperty, node.Content.Statuses);
+                    factory.SetValue(LayListBox.LayoutValueProperty, node.Content.Schemas);
                     return new DataTemplate() { VisualTree = factory, };
                 }
                 if (controlType.IsDatePicker)
                 {
                     factory = new FrameworkElementFactory(typeof(LayDatePicker));
-                    factory.SetValue(LayDatePicker.LayoutKeyProperty, node.Content.LayoutKey);
-                    factory.SetValue(LayDatePicker.LayoutDesignProperty, node.Content.LayoutDesign);
-                    factory.SetValue(LayDatePicker.LayoutParameterProperty, node.Content.LayoutParameter);
-                    factory.SetValue(LayDatePicker.LayoutValueProperty, node.Content.LayoutValue);
+                    factory.SetValue(LayDatePicker.LayoutKeyProperty, node.Content.Keys);
+                    factory.SetValue(LayDatePicker.LayoutDesignProperty, node.Content.Designs);
+                    factory.SetValue(LayDatePicker.LayoutParameterProperty, node.Content.Statuses);
+                    factory.SetValue(LayDatePicker.LayoutValueProperty, node.Content.Schemas);
                     return new DataTemplate() { VisualTree = factory, };
                 }
                 
                 //どれにも該当しない場合、
-                if (TryGetType(node.Content.LayoutKey.ControlType.ToString(), out Type type))
+                if (TryGetType(node.Content.Keys.ControlType.ToString(), out Type type))
                 {
                     factory = new FrameworkElementFactory(type);
-                    factory.SetValue(Label.ContentProperty, node.Content.LayoutParameter.Name.Value);
+                    factory.SetValue(Label.ContentProperty, node.Content.Statuses.Name.Value);
                     return new DataTemplate() { VisualTree = factory, };
                 };
 

@@ -1,6 +1,6 @@
 ﻿using Mov.Layouts;
-using Mov.Layouts.Contents;
 using Mov.Layouts.Contents.ValueObjects;
+using Mov.Layouts.Contexts.Contents;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +13,10 @@ namespace Mov.WpfLayouts.Components
     {
         LayoutContentKey LayoutKey { get; set; }
 
-        LayoutContentParameter LayoutParameter { get; set; }
+        LayoutContentStatus LayoutParameter { get; set; }
 
         LayoutContentDesign LayoutDesign { get; set; }
 
-        LayoutContentValue LayoutValue { get; set; }
+        LayoutContentSchema LayoutValue { get; set; }
     }
 }

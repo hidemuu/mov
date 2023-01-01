@@ -1,6 +1,6 @@
 ﻿using Mov.Layouts;
-using Mov.Layouts.Contents;
 using Mov.Layouts.Contents.ValueObjects;
+using Mov.Layouts.Contexts.Contents;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,8 +11,8 @@ namespace Mov.Designer.Models
     {
 
         public LayoutContentKey LayoutKey { get; set; } = LayoutContentKey.Default;
-        public LayoutContentParameter LayoutParameter { get; set; } = LayoutContentParameter.Empty;
+        public LayoutContentStatus LayoutParameter { get; set; } = LayoutContentStatus.Empty;
         public LayoutContentDesign LayoutDesign { get; set; } = LayoutContentDesign.Empty;
-        public LayoutContentValue LayoutValue { get; set; } = LayoutContentValue.Empty;
+        public LayoutContentSchema LayoutValue { get; set; } = LayoutContentSchema.Empty;
     }
 }

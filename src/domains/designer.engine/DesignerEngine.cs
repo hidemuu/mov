@@ -1,7 +1,7 @@
 ﻿using Mov.Designer.Models;
 using Mov.Designer.Models.Parameters;
 using Mov.Designer.Models.Persistences;
-using Mov.Layouts;
+using Mov.Layouts.Contexts;
 using Mov.Layouts.Nodes.ValueObjects;
 using Mov.Schemas.Styles;
 using System;
@@ -71,7 +71,7 @@ namespace Mov.Designer.Engine
             {
                 if (node.NodeType.IsRegion)
                 {
-                    var region = new RegionStyle(node.Content.LayoutKey.Code.Value);
+                    var region = new RegionStyle(node.Content.Keys.Code.Value);
                     if (region.IsCenter) CenterNode = node;
                     if (region.IsTop) TopNode = node;
                     if (region.IsBottom) BottomNode = node;

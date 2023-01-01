@@ -1,5 +1,5 @@
-﻿using Mov.Layouts.Contents;
-using Mov.Layouts.Contents.ValueObjects;
+﻿using Mov.Layouts.Contents.ValueObjects;
+using Mov.Layouts.Contexts.Contents;
 using Mov.Schemas.Styles;
 using Mov.Schemas.Units;
 using Mov.Schemas.Units.Sizes;

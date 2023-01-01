@@ -1,6 +1,6 @@
 ﻿using Mov.Layouts;
-using Mov.Layouts.Contents;
 using Mov.Layouts.Contents.ValueObjects;
+using Mov.Layouts.Contexts.Contents;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,14 +30,14 @@ namespace Mov.WpfLayouts.Components.Atoms
             DependencyProperty.Register(nameof(LayoutKey), typeof(LayoutContentKey),
                 typeof(LayComboBox), new PropertyMetadata(default));
 
-        public LayoutContentParameter LayoutParameter
+        public LayoutContentStatus LayoutParameter
         {
-            get { return (LayoutContentParameter)GetValue(LayoutParameterProperty); }
+            get { return (LayoutContentStatus)GetValue(LayoutParameterProperty); }
             set { SetValue(LayoutParameterProperty, value); }
         }
 
         public static readonly DependencyProperty LayoutParameterProperty =
-            DependencyProperty.Register(nameof(LayoutParameter), typeof(LayoutContentParameter),
+            DependencyProperty.Register(nameof(LayoutParameter), typeof(LayoutContentStatus),
                 typeof(LayComboBox), new PropertyMetadata(default));
 
 
@@ -51,14 +51,14 @@ namespace Mov.WpfLayouts.Components.Atoms
             DependencyProperty.Register(nameof(LayoutDesign), typeof(LayoutContentDesign),
                 typeof(LayComboBox), new PropertyMetadata(default));
 
-        public LayoutContentValue LayoutValue
+        public LayoutContentSchema LayoutValue
         {
-            get { return (LayoutContentValue)GetValue(LayoutValueProperty); }
+            get { return (LayoutContentSchema)GetValue(LayoutValueProperty); }
             set { SetValue(LayoutValueProperty, value); }
         }
 
         public static readonly DependencyProperty LayoutValueProperty =
-            DependencyProperty.Register(nameof(LayoutValue), typeof(LayoutContentValue),
+            DependencyProperty.Register(nameof(LayoutValue), typeof(LayoutContentSchema),
                 typeof(LayComboBox), new PropertyMetadata(default));
 
     }

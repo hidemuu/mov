@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.Contents
+namespace Mov.Layouts.Contexts.Contents
 {
     public class LayoutContentKey
     {

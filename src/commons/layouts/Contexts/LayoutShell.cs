@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts
+namespace Mov.Layouts.Contexts
 {
     public class LayoutShell
     {
@@ -24,11 +24,11 @@ namespace Mov.Layouts
 
         public LayoutShell(RegionStyle region, ColorStyle background, ColorStyle border, ThicknessUnit thickness, Size2D size)
         {
-            this.Region = region;
-            this.BackgroundColor = background;
-            this.BorderColor = border;
-            this.BorderThickness = thickness;
-            this.Size = size;
+            Region = region;
+            BackgroundColor = background;
+            BorderColor = border;
+            BorderThickness = thickness;
+            Size = size;
         }
 
     }

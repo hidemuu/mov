@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts
+namespace Mov.Layouts.Contexts
 {
     public class LayoutNode
     {
@@ -48,9 +48,9 @@ namespace Mov.Layouts
         /// <param name="content"></param>
         public LayoutNode(NodeStyle nodeType, EnableStyle isExpand, LayoutContent content)
         {
-            this.NodeType = nodeType;
-            this.Expand = isExpand;
-            this.Content = content;
+            NodeType = nodeType;
+            Expand = isExpand;
+            Content = content;
         }
 
         #endregion コンストラクター
@@ -70,7 +70,7 @@ namespace Mov.Layouts
 
         public override string ToString()
         {
-            return base.ToString() + " [ControlType] " + Content.LayoutKey.ControlType.Value + " [Macro] " + Content.LayoutValue.Macro.Value;
+            return base.ToString() + " [ControlType] " + Content.Keys.ControlType.Value + " [Macro] " + Content.Schemas.Macro.Value;
         }
 
         #endregion メソッド

@@ -1,6 +1,6 @@
 ﻿using Mov.Layouts;
-using Mov.Layouts.Contents;
 using Mov.Layouts.Contents.ValueObjects;
+using Mov.Layouts.Contexts.Contents;
 using Mov.WpfControls.Components.Atoms;
 using System;
 using System.Collections.Generic;
@@ -30,14 +30,14 @@ namespace Mov.WpfLayouts.Components.Atoms
         public static readonly DependencyProperty LayoutKeyProperty =
             DependencyProperty.Register(nameof(LayoutKey), typeof(LayoutContentKey), typeof(LayButton), new PropertyMetadata(default));
 
-        public LayoutContentParameter LayoutParameter
+        public LayoutContentStatus LayoutParameter
         {
-            get { return (LayoutContentParameter)GetValue(LayoutParameterProperty); }
+            get { return (LayoutContentStatus)GetValue(LayoutParameterProperty); }
             set { SetValue(LayoutParameterProperty, value); }
         }
 
         public static readonly DependencyProperty LayoutParameterProperty =
-            DependencyProperty.Register(nameof(LayoutParameter), typeof(LayoutContentParameter), typeof(LayButton), new PropertyMetadata(default));
+            DependencyProperty.Register(nameof(LayoutParameter), typeof(LayoutContentStatus), typeof(LayButton), new PropertyMetadata(default));
 
 
         public LayoutContentDesign LayoutDesign
@@ -49,14 +49,14 @@ namespace Mov.WpfLayouts.Components.Atoms
         public static readonly DependencyProperty LayoutDesignProperty =
             DependencyProperty.Register(nameof(LayoutDesign), typeof(LayoutContentDesign), typeof(LayButton), new PropertyMetadata(default));
 
-        public LayoutContentValue LayoutValue
+        public LayoutContentSchema LayoutValue
         {
-            get { return (LayoutContentValue)GetValue(LayoutValueProperty); }
+            get { return (LayoutContentSchema)GetValue(LayoutValueProperty); }
             set { SetValue(LayoutValueProperty, value); }
         }
 
         public static readonly DependencyProperty LayoutValueProperty =
-            DependencyProperty.Register(nameof(LayoutValue), typeof(LayoutContentValue), typeof(LayButton), new PropertyMetadata(default));
+            DependencyProperty.Register(nameof(LayoutValue), typeof(LayoutContentSchema), typeof(LayButton), new PropertyMetadata(default));
 
 
     }

@@ -6,11 +6,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.Contents
+namespace Mov.Layouts.Contexts.Contents
 {
-    public class LayoutContentParameter
+    public class LayoutContentStatus
     {
-        public static LayoutContentParameter Empty = new LayoutContentParameter(LocalString.Empty, IconImage.Empty, VisibilityStyle.Visible, EnableStyle.Enable, Parameter.Empty);
+        public static LayoutContentStatus Empty = new LayoutContentStatus(LocalString.Empty, IconImage.Empty, VisibilityStyle.Visible, EnableStyle.Enable, Parameter.Empty);
 
         public LocalString Name { get; }
 
@@ -23,7 +23,7 @@ namespace Mov.Layouts.Contents
         public Parameter Parameter { get; }
 
 
-        public LayoutContentParameter(LocalString name, IconImage icon, VisibilityStyle visibility, EnableStyle isEnable, Parameter parameter)
+        public LayoutContentStatus(LocalString name, IconImage icon, VisibilityStyle visibility, EnableStyle isEnable, Parameter parameter)
         {
             Name = name;
             Icon = icon;

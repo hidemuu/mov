@@ -34,10 +34,6 @@ namespace Mov.Designer.Engine
         public DesignLayoutNode Create(Node node)
         {
             var content = GetContent(node);
-            var key = new DesignLayoutContentKey(content);
-            var parameter = new DesignLayoutContentParameter(content);
-            var design = new DesignLayoutContentDesign(content);
-            var value = new DesignLayoutContentValue(content);
             return new DesignLayoutNode(node, content);
         }
 

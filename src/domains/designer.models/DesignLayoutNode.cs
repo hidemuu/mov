@@ -2,6 +2,7 @@
 using Mov.Layouts.Contents.ValueObjects;
 using Mov.Layouts.Contexts;
 using Mov.Layouts.Nodes.ValueObjects;
+using Mov.Schemas.Keys;
 using Reactive.Bindings;
 using System;
 using System.Collections;
@@ -22,7 +23,7 @@ namespace Mov.Designer.Models
         /// <param name="node"></param>
         /// <param name="content"></param>
         public DesignLayoutNode(Node node, Content content) 
-            : base(new NodeStyle(node.NodeType), new EnableStyle(true), new DesignLayoutContent(content))
+            : base(new CodeKey(node.Code), new NodeStyle(node.NodeType), new EnableStyle(true), new DesignLayoutContent(content))
         {
             
         }

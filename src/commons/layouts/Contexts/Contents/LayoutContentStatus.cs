@@ -10,7 +10,8 @@ namespace Mov.Layouts.Contexts.Contents
 {
     public class LayoutContentStatus
     {
-        public static LayoutContentStatus Empty = new LayoutContentStatus(LocalString.Empty, IconImage.Empty, VisibilityStyle.Visible, EnableStyle.Enable, Parameter.Empty);
+        public static LayoutContentStatus Empty = new LayoutContentStatus(
+            LocalString.Empty, IconImage.Empty, VisibilityStyle.Visible, EnableStyle.Enable, Parameter.Empty);
 
         public LocalString Name { get; }
 

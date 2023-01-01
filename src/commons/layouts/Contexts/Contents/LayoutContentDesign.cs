@@ -10,7 +10,8 @@ namespace Mov.Layouts.Contexts.Contents
 {
     public class LayoutContentDesign
     {
-        public static LayoutContentDesign Empty = new LayoutContentDesign(MarginUnit.Default, Size2D.Default, OrientationStyle.Horizontal, HorizontalAlignmentStyle.Center, VerticalAlignmentStyle.Center);
+        public static LayoutContentDesign Empty = new LayoutContentDesign(
+            MarginUnit.Default, Size2D.Default, OrientationStyle.Horizontal, HorizontalAlignmentStyle.Center, VerticalAlignmentStyle.Center);
 
         public MarginUnit Indent { get; }
 

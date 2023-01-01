@@ -1,6 +1,7 @@
 ﻿using Mov.Layouts.Contents;
 using Mov.Layouts.Contents.ValueObjects;
 using Mov.Layouts.Nodes.ValueObjects;
+using Mov.Schemas.Keys;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,22 +11,25 @@ namespace Mov.Layouts.Contexts
 {
     public class LayoutNode
     {
+        public static LayoutNode Empty = new LayoutNode(CodeKey.Empty, NodeStyle.Content, EnableStyle.Enable, LayoutContent.Default);
+
         #region フィールド
 
-        /// <summary>
-        /// 子階層
-        /// </summary>
         private List<LayoutNode> children = new List<LayoutNode>();
+
+        private LayoutContent content;
 
         #endregion フィールド
 
         #region プロパティ
 
+        public CodeKey Code { get; }
+
         public NodeStyle NodeType { get; }
 
         public EnableStyle Expand { get; }
 
-        public LayoutContent Content { get; }
+        public LayoutContent Content => content;
 
         /// <summary>
         /// 子階層
@@ -36,21 +40,16 @@ namespace Mov.Layouts.Contexts
 
         #region コンストラクター
 
-        public LayoutNode()
-        {
-
-        }
-
         /// <summary>
         /// コンストラクター
         /// </summary>
-        /// <param name="node"></param>
         /// <param name="content"></param>
-        public LayoutNode(NodeStyle nodeType, EnableStyle isExpand, LayoutContent content)
+        public LayoutNode(CodeKey code, NodeStyle nodeStyle, EnableStyle expandStyle, LayoutContent content)
         {
-            NodeType = nodeType;
-            Expand = isExpand;
-            Content = content;
+            this.Code = code;
+            this.NodeType = nodeStyle;
+            this.Expand = expandStyle;
+            this.content = content;
         }
 
         #endregion コンストラクター
@@ -58,14 +57,19 @@ namespace Mov.Layouts.Contexts
         #region メソッド
 
 
-        public void Add(LayoutNode layout)
+        public void Add(LayoutNode node)
         {
-            children.Add(layout);
+            children.Add(node);
         }
 
-        public void AddRange(IEnumerable<LayoutNode> layouts)
+        public void AddRange(IEnumerable<LayoutNode> nodes)
         {
-            children.AddRange(layouts);
+            children.AddRange(nodes);
+        }
+
+        public void SetContent(LayoutContent content)
+        {
+            this.content = content;
         }
 
         public override string ToString()

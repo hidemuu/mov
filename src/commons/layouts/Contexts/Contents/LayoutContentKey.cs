@@ -8,7 +8,8 @@ namespace Mov.Layouts.Contexts.Contents
 {
     public class LayoutContentKey
     {
-        public static LayoutContentKey Default = new LayoutContentKey(CodeKey.Empty, ControlStyle.Label);
+        public static LayoutContentKey Default = new LayoutContentKey(
+            CodeKey.Empty, ControlStyle.Label);
 
         public CodeKey Code { get; }
 

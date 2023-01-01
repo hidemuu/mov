@@ -15,13 +15,23 @@ namespace Mov.Layouts
 
         #endregion プロパティ
 
+        #region メソッド
+
+        void Build();
+
         IEnumerable<LayoutNode> GetNodes();
 
         LayoutNode GetRegionNode(RegionStyle region);
 
+        IEnumerable<LayoutContent> GetContents();
+
         IEnumerable<LayoutShell> GetShells();
 
-        LayoutShell GetShell(RegionStyle region);
+        LayoutShell GetRegionShell(RegionStyle region);
+
+        IEnumerable<LayoutTheme> GetThemes();
+
+        #endregion メソッド
 
     }
 }

@@ -9,7 +9,8 @@ namespace Mov.Layouts.Contexts.Contents
 {
     public class LayoutContentSchema
     {
-        public static LayoutContentSchema Empty = new LayoutContentSchema(LayoutSchema.Empty, Variable.Empty, Macro.Empty);
+        public static LayoutContentSchema Empty = new LayoutContentSchema(
+            LayoutSchema.Empty, Variable.Empty, Macro.Empty);
 
         public LayoutSchema Schema { get; }
 

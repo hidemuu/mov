@@ -14,10 +14,10 @@ namespace Mov.Layouts.Contexts
 
         #region プロパティ
 
-        public LayoutContentKey Keys { get; set; }
-        public LayoutContentStatus Statuses { get; set; }
-        public LayoutContentDesign Designs { get; set; }
-        public LayoutContentSchema Schemas { get; set; }
+        public LayoutContentKey Keys { get; }
+        public LayoutContentStatus Statuses { get; }
+        public LayoutContentDesign Designs { get; }
+        public LayoutContentSchema Schemas { get; }
 
         #endregion プロパティ
 

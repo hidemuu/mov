@@ -1,4 +1,5 @@
 ﻿using Mov.Layouts.Contexts;
+using Mov.Schemas.Keys;
 using Mov.Schemas.Styles;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace Mov.Layouts
     {
         #region プロパティ
 
-        int DomainId { get; }
+        CodeKey DomainId { get; }
 
         #endregion プロパティ
 

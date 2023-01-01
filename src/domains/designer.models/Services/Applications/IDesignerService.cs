@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Designer.Models
 {
-    public interface IDesignerService : ILayoutService
+    public interface IDesignerService : ILayoutFacade
     {
         #region プロパティ
 

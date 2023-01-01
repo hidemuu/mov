@@ -1,4 +1,5 @@
 ﻿using Mov.Layouts.Contexts;
+using Mov.Schemas.Keys;
 using Mov.Schemas.Styles;
 using System;
 using System.Collections.Generic;
@@ -18,16 +19,16 @@ namespace Mov.Layouts.Services
 
         #region プロパティ
 
-        public int DomainId { get; }
+        public CodeKey DomainId { get; }
 
         #endregion プロパティ
 
         #region コンストラクタ
 
-        public LayoutEngine(int domainId, LayoutContext context)
+        public LayoutEngine(LayoutContext context)
         {
-            this.DomainId = domainId;
             this.context = context;
+            this.DomainId = context.Code;
             this.Build();
         }
 

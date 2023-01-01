@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Layouts
 {
-    public interface ILayoutService
+    public interface ILayoutFacade
     {
         LayoutNode GetRegionNode(RegionStyle region);
 

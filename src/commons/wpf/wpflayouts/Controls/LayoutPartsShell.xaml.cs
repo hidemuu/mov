@@ -315,14 +315,14 @@ namespace Mov.WpfLayouts.Controls
         #region サービス
 
         public static readonly DependencyProperty ServiceProperty =
-            DependencyProperty.Register(nameof(Service), typeof(ILayoutService),
+            DependencyProperty.Register(nameof(Service), typeof(ILayoutFacade),
             typeof(LayoutPartsShell),
             new UIPropertyMetadata(null, new PropertyChangedCallback(OnRepositoryChanged)));
 
 
-        public ILayoutService Service
+        public ILayoutFacade Service
         {
-            get { return (ILayoutService)GetValue(ServiceProperty); }
+            get { return (ILayoutFacade)GetValue(ServiceProperty); }
             set { SetValue(ServiceProperty, value); }
         }
 

@@ -15,6 +15,6 @@
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
     <Grid>
-        <layouts:LayoutPartsShell Facade="{Binding LayoutFacade}" RepositoryName="{Binding RepositoryName}" />
+        <layouts:LayoutPartsShell Facade="{Binding LayoutFacade}" IsUpdate="{Binding IsUpdate.Value}" />
     </Grid>
 </UserControl>

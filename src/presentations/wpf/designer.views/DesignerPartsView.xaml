@@ -26,6 +26,5 @@
     </i:Interaction.Triggers>
     <layouts:LayoutPartsShell
         IsUpdate="{Binding IsUpdate.Value}"
-        RepositoryName="{Binding RepositoryName.Value}"
         Facade="{Binding LayoutFacade.Value}" />
 </UserControl>

@@ -25,6 +25,8 @@ namespace Mov.UseCase.ViewModels
 
         public ILayoutFacade LayoutFacade => DesignerService.LayoutFacade;
 
+        public ReactivePropertySlim<bool> IsUpdate { get; private set; } = new ReactivePropertySlim<bool>(false);
+
         public string RepositoryName { get; }
 
         #endregion プロパティ
@@ -39,6 +41,7 @@ namespace Mov.UseCase.ViewModels
             DesignerService = designerService;
 
             RepositoryName = "dashboard";
+            IsUpdate.Value = true;
 
             // 定期更新スレッド
             var timer = new ReactiveTimer(TimeSpan.FromMilliseconds(10), new SynchronizationContextScheduler(SynchronizationContext.Current));

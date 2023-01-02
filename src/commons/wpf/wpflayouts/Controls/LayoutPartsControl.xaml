@@ -18,7 +18,7 @@
     <ItemsControl
         x:Name="Root"
         ItemTemplateSelector="{StaticResource layoutNodeSelector}"
-        ItemsSource="{Binding Models, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsControl}}"
+        ItemsSource="{Binding Nodes, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsControl}}"
         ScrollViewer.CanContentScroll="True">
         <!--  ItemsControlの中身  -->
         <ItemsControl.Template>

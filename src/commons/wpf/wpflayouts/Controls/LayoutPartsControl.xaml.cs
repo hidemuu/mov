@@ -24,15 +24,15 @@ namespace Mov.WpfLayouts.Controls
     {
         #region プロパティ
 
-        public static readonly DependencyProperty ModelsProperty =
-            DependencyProperty.Register(nameof(Models), typeof(ReactiveCollection<LayoutNode>),
+        public static readonly DependencyProperty NodesProperty =
+            DependencyProperty.Register(nameof(Nodes), typeof(ReactiveCollection<LayoutNode>),
             typeof(LayoutPartsControl),
-            new UIPropertyMetadata(null, new PropertyChangedCallback(OnModelsChanged)));
+            new UIPropertyMetadata(null, new PropertyChangedCallback(OnNodesChanged)));
 
-        public ReactiveCollection<LayoutNode> Models
+        public ReactiveCollection<LayoutNode> Nodes
         {
-            get { return (ReactiveCollection<LayoutNode>)GetValue(ModelsProperty); }
-            set { SetValue(ModelsProperty, value); }
+            get { return (ReactiveCollection<LayoutNode>)GetValue(NodesProperty); }
+            set { SetValue(NodesProperty, value); }
         }
 
         
@@ -49,12 +49,12 @@ namespace Mov.WpfLayouts.Controls
 
         #region イベント
 
-        private static void OnModelsChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
+        private static void OnNodesChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
         {
             var control = obj as LayoutPartsControl;
             if (control != null)
             {
-                if (control.Models != null || !control.Models.Any())
+                if (control.Nodes != null || !control.Nodes.Any())
                 {
                     
                 }

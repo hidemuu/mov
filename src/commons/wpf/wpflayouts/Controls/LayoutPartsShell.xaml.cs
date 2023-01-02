@@ -26,6 +26,8 @@ namespace Mov.WpfLayouts.Controls
     public partial class LayoutPartsShell : UserControl
     {
         
+
+
         #region プロパティ
 
         #region センター
@@ -312,29 +314,18 @@ namespace Mov.WpfLayouts.Controls
 
         #endregion ライト
 
-        #region サービス
+        #region ファサード
 
         public static readonly DependencyProperty FacadeProperty =
             DependencyProperty.Register(nameof(Facade), typeof(ILayoutFacade),
             typeof(LayoutPartsShell),
-            new UIPropertyMetadata(null, new PropertyChangedCallback(OnRepositoryChanged)));
+            new UIPropertyMetadata(null, new PropertyChangedCallback(OnFacadeChanged)));
 
 
         public ILayoutFacade Facade
         {
             get { return (ILayoutFacade)GetValue(FacadeProperty); }
             set { SetValue(FacadeProperty, value); }
-        }
-
-        public static readonly DependencyProperty RepositoryNameProperty =
-            DependencyProperty.Register(nameof(RepositoryName), typeof(string),
-            typeof(LayoutPartsShell),
-            new UIPropertyMetadata(string.Empty, new PropertyChangedCallback(OnRepositoryChanged)));
-
-        public string RepositoryName
-        {
-            get { return (string)GetValue(RepositoryNameProperty); }
-            set { SetValue(RepositoryNameProperty, value); }
         }
 
         public static readonly DependencyProperty IsUpdateProperty =
@@ -348,7 +339,7 @@ namespace Mov.WpfLayouts.Controls
             set { SetValue(IsUpdateProperty, value); }
         }
 
-        #endregion サービス
+        #endregion ファサード
 
         #endregion プロパティ
 
@@ -375,7 +366,7 @@ namespace Mov.WpfLayouts.Controls
             }
         }
 
-        private static void OnRepositoryChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
+        private static void OnFacadeChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
         {
             Update(obj);
         }
@@ -384,7 +375,7 @@ namespace Mov.WpfLayouts.Controls
         {
             if (e.NewValue is bool flg)
             {
-                if(flg) Update(obj);
+                Update(obj);
             }
         }
 
@@ -395,67 +386,61 @@ namespace Mov.WpfLayouts.Controls
         private static void Update(DependencyObject obj)
         {
             var control = obj as LayoutPartsShell;
-            if (control != null)
+            if (control == null) return;
+            if (control.Facade == null) return;
+            //if (!control.IsUpdate) return;
+            control.Models.Clear();
+            control.TopModels.Clear();
+            control.BottomModels.Clear();
+            control.LeftModels.Clear();
+            control.RightModels.Clear();
+            var facade = control.Facade;
+
+            control.Models.AddRange(facade.GetRegionNode(RegionStyle.Center).Children);
+            control.TopModels.AddRange(facade.GetRegionNode(RegionStyle.Top).Children);
+            control.BottomModels.AddRange(facade.GetRegionNode(RegionStyle.Bottom).Children);
+            control.LeftModels.AddRange(facade.GetRegionNode(RegionStyle.Left).Children);
+            control.RightModels.AddRange(facade.GetRegionNode(RegionStyle.Right).Children);
+
+            var topShell = facade.GetRegionShell(RegionStyle.Top);
+            var bottomShell = facade.GetRegionShell(RegionStyle.Bottom);
+            var leftShell = facade.GetRegionShell(RegionStyle.Left);
+            var rightShell = facade.GetRegionShell(RegionStyle.Right);
+            var centerShell = facade.GetRegionShell(RegionStyle.Center);
+
+            if (topShell != null)
             {
-                if (control.Facade != null)
-                {
-                    if (control.IsUpdate)
-                    {
-                        control.Models.Clear();
-                        control.TopModels.Clear();
-                        control.BottomModels.Clear();
-                        control.LeftModels.Clear();
-                        control.RightModels.Clear();
-                        var facade = control.Facade;
-
-                        control.Models.AddRange(facade.GetRegionNode(RegionStyle.Center).Children);
-                        control.TopModels.AddRange(facade.GetRegionNode(RegionStyle.Top).Children);
-                        control.BottomModels.AddRange(facade.GetRegionNode(RegionStyle.Bottom).Children);
-                        control.LeftModels.AddRange(facade.GetRegionNode(RegionStyle.Left).Children);
-                        control.RightModels.AddRange(facade.GetRegionNode(RegionStyle.Right).Children);
-
-                        var topShell = facade.GetRegionShell(RegionStyle.Top);
-                        var bottomShell = facade.GetRegionShell(RegionStyle.Bottom);
-                        var leftShell = facade.GetRegionShell(RegionStyle.Left);
-                        var rightShell = facade.GetRegionShell(RegionStyle.Right);
-                        var centerShell = facade.GetRegionShell(RegionStyle.Center);
-
-                        if (topShell != null)
-                        {
-                            control.TopHeight = topShell.Size.Height.Value;
-                            control.TopBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(topShell.BackgroundColor.Value);
-                            control.TopBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(topShell.BorderColor.Value);
-                            control.TopBorderThickness = new Thickness(topShell.BorderThickness.Value);
-                        }
-                        if (bottomShell != null)
-                        {
-                            control.BottomHeight = bottomShell.Size.Height.Value;
-                            control.BottomBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(bottomShell.BackgroundColor.Value);
-                            control.BottomBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(bottomShell.BorderColor.Value);
-                            control.BottomBorderThickness = new Thickness(bottomShell.BorderThickness.Value);
-                        }
-                        if (leftShell != null)
-                        {
-                            control.LeftWidth = leftShell.Size.Width.Value;
-                            control.LeftBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(leftShell.BackgroundColor.Value);
-                            control.LeftBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(leftShell.BorderColor.Value);
-                            control.LeftBorderThickness = new Thickness(leftShell.BorderThickness.Value);
-                        }
-                        if (rightShell != null)
-                        {
-                            control.RightWidth = rightShell.Size.Width.Value;
-                            control.RightBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(rightShell.BackgroundColor.Value);
-                            control.RightBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(rightShell.BorderColor.Value);
-                            control.RightBorderThickness = new Thickness(rightShell.BorderThickness.Value);
-                        }
-                        if (centerShell != null)
-                        {
-                            control.ModelBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(centerShell.BackgroundColor.Value);
-                            control.ModelBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(centerShell.BorderColor.Value);
-                            control.ModelBorderThickness = new Thickness(centerShell.BorderThickness.Value);
-                        }
-                    }
-                }
+                control.TopHeight = topShell.Size.Height.Value;
+                control.TopBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(topShell.BackgroundColor.Value);
+                control.TopBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(topShell.BorderColor.Value);
+                control.TopBorderThickness = new Thickness(topShell.BorderThickness.Value);
+            }
+            if (bottomShell != null)
+            {
+                control.BottomHeight = bottomShell.Size.Height.Value;
+                control.BottomBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(bottomShell.BackgroundColor.Value);
+                control.BottomBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(bottomShell.BorderColor.Value);
+                control.BottomBorderThickness = new Thickness(bottomShell.BorderThickness.Value);
+            }
+            if (leftShell != null)
+            {
+                control.LeftWidth = leftShell.Size.Width.Value;
+                control.LeftBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(leftShell.BackgroundColor.Value);
+                control.LeftBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(leftShell.BorderColor.Value);
+                control.LeftBorderThickness = new Thickness(leftShell.BorderThickness.Value);
+            }
+            if (rightShell != null)
+            {
+                control.RightWidth = rightShell.Size.Width.Value;
+                control.RightBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(rightShell.BackgroundColor.Value);
+                control.RightBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(rightShell.BorderColor.Value);
+                control.RightBorderThickness = new Thickness(rightShell.BorderThickness.Value);
+            }
+            if (centerShell != null)
+            {
+                control.ModelBackground = (SolidColorBrush)new BrushConverter().ConvertFromString(centerShell.BackgroundColor.Value);
+                control.ModelBorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString(centerShell.BorderColor.Value);
+                control.ModelBorderThickness = new Thickness(centerShell.BorderThickness.Value);
             }
         }
 

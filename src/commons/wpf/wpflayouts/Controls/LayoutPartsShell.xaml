@@ -15,32 +15,32 @@
             BorderBrush="{Binding TopBorderBrush, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}"
             BorderThickness="{Binding TopBorderThickness, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}"
             DockPanel.Dock="Top"
-            Models="{Binding TopModels, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}" />
+            Nodes="{Binding TopModels, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}" />
         <local:LayoutPartsControl
             Height="{Binding BottomHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}"
             Background="{Binding BottomBackground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}"
             BorderBrush="{Binding BottomBorderBrush, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}"
             BorderThickness="{Binding BottomBorderThickness, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}"
             DockPanel.Dock="Bottom"
-            Models="{Binding BottomModels, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}" />
+            Nodes="{Binding BottomModels, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}" />
         <local:LayoutPartsControl
             Width="{Binding LeftWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}"
             Background="{Binding LeftBackground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}"
             BorderBrush="{Binding LeftBorderBrush, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}"
             BorderThickness="{Binding LeftBorderThickness, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}"
             DockPanel.Dock="Left"
-            Models="{Binding LeftModels, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}" />
+            Nodes="{Binding LeftModels, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}" />
         <local:LayoutPartsControl
             Width="{Binding RightWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}"
             Background="{Binding RightBackground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}"
             BorderBrush="{Binding RightBorderBrush, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}"
             BorderThickness="{Binding RightBorderThickness, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}"
             DockPanel.Dock="Right"
-            Models="{Binding RightModels, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}" />
+            Nodes="{Binding RightModels, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}" />
         <local:LayoutPartsControl
             Background="{Binding ModelBackground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}"
             BorderBrush="{Binding ModelBorderBrush, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}"
             BorderThickness="{Binding ModelBorderThickness, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}"
-            Models="{Binding Models, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}" />
+            Nodes="{Binding Models, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsShell}}" />
     </DockPanel>
 </UserControl>

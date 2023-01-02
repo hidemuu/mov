@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Models.Persistences
+namespace Mov.Designer.Models.Services
 {
     public interface IDesignerQuery
     {

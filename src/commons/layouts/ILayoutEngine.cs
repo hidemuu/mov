@@ -18,7 +18,7 @@ namespace Mov.Layouts
 
         #region メソッド
 
-        void Build();
+        void Build(ILayoutContext context);
 
         IEnumerable<LayoutNode> GetNodes();
 

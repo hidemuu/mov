@@ -31,6 +31,11 @@ namespace Mov.Accessors.Crud.Persistence.Implement
             this.Deleter = new EntityRepositoryDeleter<TEntity>(repository);
         }
 
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion コンストラクター
     }
 }

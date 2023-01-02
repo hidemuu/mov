@@ -1,5 +1,5 @@
 ﻿using Mov.Analizer.Models;
-using Mov.Designer.Models;
+using Mov.Designer.Models.Services;
 using Mov.Driver.Models;
 using Mov.Game.Models;
 using System;
@@ -11,7 +11,7 @@ namespace Mov.Framework
     public interface IMovService
     {
         IAnalizerService Analizer { get; }
-        IDesignerService Designer { get; }
+        IDesignerFacade Designer { get; }
         IDriverService Driver { get; }
         IGameService Game { get; }
     }

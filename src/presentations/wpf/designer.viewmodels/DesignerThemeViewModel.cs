@@ -1,6 +1,6 @@
 ﻿using MaterialDesignColors;
 using Mov.Accessors.Repository;
-using Mov.Designer.Models;
+using Mov.Designer.Models.Services;
 using Mov.WpfDesigns.Services;
 using Mov.WpfMvvms;
 using Prism.Regions;
@@ -19,7 +19,7 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        private IDesignerService service;
+        private IDesignerFacade service;
 
         #endregion フィールド
 
@@ -46,7 +46,7 @@ namespace Mov.Designer.ViewModels
         public override void OnNavigatedTo(NavigationContext navigationContext)
         {
             base.OnNavigatedTo(navigationContext);
-            this.service = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_SERVICE] as IDesignerService;
+            this.service = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_SERVICE] as IDesignerFacade;
         }
 
         #region メソッド

@@ -10,13 +10,13 @@ namespace Mov.Layouts.Contexts
     {
 
         public static LayoutContent Default = new LayoutContent(
-            LayoutContentKey.Default, LayoutContentStatus.Empty, LayoutContentDesign.Empty, LayoutContentSchema.Empty);
+            LayoutContentKey.Default, LayoutContentStatus.Empty, LayoutContentArrange.Empty, LayoutContentSchema.Empty);
 
         #region プロパティ
 
         public LayoutContentKey Keys { get; }
         public LayoutContentStatus Statuses { get; }
-        public LayoutContentDesign Designs { get; }
+        public LayoutContentArrange Arranges { get; }
         public LayoutContentSchema Schemas { get; }
 
         #endregion プロパティ
@@ -26,11 +26,11 @@ namespace Mov.Layouts.Contexts
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public LayoutContent(LayoutContentKey keys, LayoutContentStatus statuses, LayoutContentDesign designs, LayoutContentSchema schemas)
+        public LayoutContent(LayoutContentKey keys, LayoutContentStatus statuses, LayoutContentArrange arranges, LayoutContentSchema schemas)
         {
             Keys = keys;
             Statuses = statuses;
-            Designs = designs;
+            Arranges = arranges;
             Schemas = schemas;
 
         }

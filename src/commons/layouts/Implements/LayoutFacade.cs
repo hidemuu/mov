@@ -4,33 +4,39 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.Services
+namespace Mov.Layouts.Implements
 {
     public class LayoutFacade : ILayoutFacade
     {
 
         private readonly ILayoutEngine engine;
 
-        public LayoutFacade(LayoutContext context)
+        public LayoutFacade(ILayoutContext context)
         {
-            this.engine = new LayoutEngine(context);
+            engine = new LayoutEngine(context);
+            engine.Build(context);
+        }
+
+        public void Update(ILayoutContext context) 
+        {
+            engine.Build(context);
         }
 
         public LayoutNode GetRegionNode(RegionStyle region)
         {
-            return this.engine.GetRegionNode(region);
+            return engine.GetRegionNode(region);
         }
 
         public IEnumerable<LayoutShell> GetShells()
         {
-            return this.engine.GetShells();
+            return engine.GetShells();
         }
 
         public LayoutShell GetRegionShell(RegionStyle region)
         {
-            return this.engine.GetRegionShell(region);
+            return engine.GetRegionShell(region);
         }
 
-        
+
     }
 }

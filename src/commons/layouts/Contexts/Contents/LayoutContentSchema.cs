@@ -14,16 +14,16 @@ namespace Mov.Layouts.Contexts.Contents
 
         public LayoutSchema Schema { get; }
 
-        public Variable ContentValue { get; }
+        public Variable Variable { get; }
 
         public Macro Macro { get; }
 
 
-        public LayoutContentSchema(LayoutSchema schema, Variable value, Macro macro)
+        public LayoutContentSchema(LayoutSchema schema, Variable variable, Macro macro)
         {
-            Schema = schema;
-            ContentValue = value;
-            Macro = macro;
+            this.Schema = schema;
+            this.Variable = variable;
+            this.Macro = macro;
         }
 
     }

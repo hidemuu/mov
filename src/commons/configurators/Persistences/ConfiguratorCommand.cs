@@ -32,11 +32,16 @@ namespace Mov.Configurators
             this.Deleter = new DbObjectRepositoryDeleter<Config, ConfigCollection>(repository.Configs);
         }
 
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion コンストラクター
 
         #region メソッド
 
-        
+
 
         #endregion メソッド
     }

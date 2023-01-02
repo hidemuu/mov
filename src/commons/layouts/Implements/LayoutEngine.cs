@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 
-namespace Mov.Layouts.Services
+namespace Mov.Layouts.Implements
 {
     public class LayoutEngine : ILayoutEngine
     {
         #region フィールド
 
-        private readonly LayoutContext context;
+        private readonly ILayoutContext context;
 
         #endregion フィールド
 
@@ -25,51 +25,51 @@ namespace Mov.Layouts.Services
 
         #region コンストラクタ
 
-        public LayoutEngine(LayoutContext context)
+        public LayoutEngine(ILayoutContext context)
         {
             this.context = context;
-            this.DomainId = context.Code;
-            this.Build();
+            DomainId = context.DomainId;
+            Build(context);
         }
 
         #endregion コンストラクタ
 
         #region メソッド
 
-        public void Build()
+        public void Build(ILayoutContext context)
         {
-            CreateNode(this.context.Nodes);
+            CreateNode(context.Nodes);
         }
 
         public IEnumerable<LayoutNode> GetNodes()
         {
-            return this.context.Nodes;
+            return context.Nodes;
         }
 
         public LayoutNode GetRegionNode(RegionStyle region)
         {
-            return this.context.Nodes.Where(x => x.NodeType.IsRegion).FirstOrDefault(x => x.Content.Keys.Code.Equals(region.Value));
+            return context.Nodes.Where(x => x.NodeType.IsRegion).FirstOrDefault(x => x.Code.Value.Equals(region.Value));
         }
 
         public IEnumerable<LayoutContent> GetContents()
         {
-            return this.context.Contents;
+            return context.Contents;
         }
 
         public IEnumerable<LayoutShell> GetShells()
         {
-            return this.context.Shells;
+            return context.Shells;
         }
 
 
         public LayoutShell GetRegionShell(RegionStyle region)
         {
-            return this.context.Shells.FirstOrDefault(x => x.Region.Equals(region));
+            return context.Shells.FirstOrDefault(x => x.Region.Equals(region));
         }
 
         public IEnumerable<LayoutTheme> GetThemes()
         {
-            return this.context.Themes;
+            return context.Themes;
         }
 
         #endregion メソッド
@@ -78,9 +78,9 @@ namespace Mov.Layouts.Services
 
         private void CreateNode(IEnumerable<LayoutNode> nodes)
         {
-            foreach(var node in nodes)
+            foreach (var node in nodes)
             {
-                var content = this.context.Contents.FirstOrDefault(x => x.Keys.Code.Equals(node.Code));
+                var content = context.Contents.FirstOrDefault(x => x.Keys.Code.Value.Equals(node.Code.Value));
                 if (content != null) node.SetContent(content);
                 CreateNode(node.Children);
             }

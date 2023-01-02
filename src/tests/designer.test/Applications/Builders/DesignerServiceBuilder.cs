@@ -1,5 +1,5 @@
 ﻿using Moq;
-using Mov.Designer.Models;
+using Mov.Designer.Models.Services;
 using Mov.Designer.Service;
 using System;
 using System.Collections.Generic;
@@ -13,8 +13,7 @@ namespace Mov.Designer.Test.Applications.Builders
     {
         #region フィールド
 
-        private readonly IDesignerService service;
-        private readonly Mock<IDesignerEngine> mockEngine;
+        private readonly IDesignerFacade service;
 
         #endregion フィールド
 
@@ -22,15 +21,14 @@ namespace Mov.Designer.Test.Applications.Builders
 
         public DesignerServiceBuilder()
         {
-            this.mockEngine = new Mock<IDesignerEngine>();
-            this.service = new DesignerService(new IDesignerEngine[] { this.mockEngine.Object });
+            //this.service = new DesignerFacade(new IDesignerEngine[] { this.mockEngine.Object });
         }
 
         #endregion コンストラクター
 
         #region メソッド
 
-        public IDesignerService Build() => this.service;
+        public IDesignerFacade Build() => this.service;
 
         #endregion メソッド
     }

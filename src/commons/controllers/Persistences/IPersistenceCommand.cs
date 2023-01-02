@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Controllers
 {
-    public interface IPersistenceCommand<TEntity>
+    public interface IPersistenceCommand<TEntity> : IDisposable
     {
         ISave<TEntity> Saver { get; }
         

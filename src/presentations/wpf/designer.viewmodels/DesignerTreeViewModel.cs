@@ -1,5 +1,6 @@
 ﻿using Mov.Accessors.Repository;
 using Mov.Designer.Models;
+using Mov.Designer.Models.Services;
 using Mov.Designer.Service;
 using Mov.Layouts;
 using Mov.Layouts.Nodes.ValueObjects;
@@ -25,7 +26,7 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        private IDesignerService service;
+        private IDesignerFacade facade;
 
         private string repositoryName;
 
@@ -91,7 +92,7 @@ namespace Mov.Designer.ViewModels
         public override void OnNavigatedTo(NavigationContext navigationContext)
         {
             base.OnNavigatedTo(navigationContext);
-            this.service = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_SERVICE] as IDesignerService;
+            this.facade = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_SERVICE] as IDesignerFacade;
             this.repositoryName = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_REPOSITORY_NAME] as string;
             BindModels();
             isEdited = false;
@@ -100,7 +101,7 @@ namespace Mov.Designer.ViewModels
         private void OnSaveCommand(string parameter)
         {
             Post();
-            this.service.Write();
+            this.facade.Write();
             MessageBox.Show("保存しました");
         }
 
@@ -108,7 +109,10 @@ namespace Mov.Designer.ViewModels
         {
             var trees = new List<Node>();
             GetLayoutTrees(trees, Models);
-            this.service.PostNodes(trees);
+            foreach(var tree in trees)
+            {
+                this.facade.Command.Nodes.Saver.Save(tree);
+            }
             //var tables = new List<LayoutContent>();
             //GetContentTables(tables, Models);
             //repository.Contents.Posts(tables);
@@ -118,7 +122,7 @@ namespace Mov.Designer.ViewModels
         {
             if(SelectedModel.Value != null && SelectedModel.Value is DesignerTreeModel model)
             {
-                var tree = this.service.GetNode(model.Id.Value);
+                var tree = this.facade.Query.Nodes.Reader.Read(model.Id.Value);
                 if (tree == null) return;
                 //this.repository.Nodes.Put(new LayoutNode(), tree.Id);
                 BindModels();
@@ -130,9 +134,9 @@ namespace Mov.Designer.ViewModels
         {
             if (SelectedModel.Value != null && SelectedModel.Value is DesignerTreeModel model)
             {
-                var tree = this.service.GetNode(model.Id.Value);
+                var tree = this.facade.Query.Nodes.Reader.Read(model.Id.Value);
                 if (tree == null) return;
-                this.service.DeleteNode(tree);
+                this.facade.Command.Nodes.Deleter.Delete(tree);
                 BindModels();
                 isEdited = true;
             }
@@ -145,9 +149,9 @@ namespace Mov.Designer.ViewModels
         private void BindModels()
         {
             Models.Clear();
-            foreach (var tree in this.service.GetNodes())
+            foreach (var tree in this.facade.Query.Nodes.Reader.ReadAll())
             {
-                Models.Add(new DesignerTreeModel(tree, this.service.GetContent(tree.Code), this.service));
+                Models.Add(new DesignerTreeModel(tree, this.facade.Query.Contents.Reader.Read(tree.Id), this.facade));
             }
         }
 
@@ -199,7 +203,7 @@ namespace Mov.Designer.ViewModels
 
         private CompositeDisposable disposables = new CompositeDisposable();
 
-        private IDesignerService service;
+        private IDesignerFacade facade;
 
         #endregion フィールド
 
@@ -223,10 +227,10 @@ namespace Mov.Designer.ViewModels
 
         #region コンストラクター
 
-        public DesignerTreeModel(Node node, Content table, IDesignerService service) : base(table)
+        public DesignerTreeModel(Node node, Content table, IDesignerFacade facade) : base(table)
         {
-            this.service = service;
-            Codes = this.service.GetContents().Select(x => x.Code).Distinct().ToList();
+            this.facade = facade;
+            Codes = this.facade.Query.Contents.Reader.ReadAll().Select(x => x.Code).Distinct().ToList();
             //プロパティ
             Id.Value = node.Id;
             Index.Value = node.Index;
@@ -239,18 +243,18 @@ namespace Mov.Designer.ViewModels
             //子階層へ
             foreach (var child in node.Children)
             {
-                Children.Add(new DesignerTreeModel(child, this.service.GetContent(child.Code), this.service));
+                Children.Add(new DesignerTreeModel(child, this.facade.Query.Contents.Reader.Read(child.Id), this.facade));
             }
-            Code.Subscribe(OnChangeCodeCommand).AddTo(disposables);
+            Id.Subscribe(OnChangeCodeCommand).AddTo(disposables);
         }
 
         #endregion コンストラクター
 
         #region イベント
 
-        private void OnChangeCodeCommand(string code)
+        private void OnChangeCodeCommand(Guid id)
         {
-            var item = this.service.GetContent(code);
+            var item = this.facade.Query.Contents.Reader.Read(id);
             if (item == null) return;
             Update(item);
         }

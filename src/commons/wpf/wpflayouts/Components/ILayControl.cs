@@ -15,7 +15,7 @@ namespace Mov.WpfLayouts.Components
 
         LayoutContentStatus LayoutParameter { get; set; }
 
-        LayoutContentDesign LayoutDesign { get; set; }
+        LayoutContentArrange LayoutDesign { get; set; }
 
         LayoutContentSchema LayoutValue { get; set; }
     }

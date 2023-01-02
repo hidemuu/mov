@@ -1,6 +1,6 @@
 ﻿using Mov.Accessors.Repository;
-using Mov.Designer.Models;
 using Mov.Designer.Models.Repositories;
+using Mov.Designer.Models.Services;
 using Mov.WpfMvvms;
 using Prism.Regions;
 using Prism.Services.Dialogs;
@@ -45,7 +45,7 @@ namespace Mov.Designer.ViewModels
             { PAGE_NAME_THEME, "DesignerThemeView" },
         };
 
-        private readonly IDesignerService service;
+        private readonly IDesignerFacade service;
 
         #endregion フィールド
 
@@ -76,7 +76,7 @@ namespace Mov.Designer.ViewModels
         /// </summary>
         /// <param name="regionManager"></param>
         /// <param name="dialogService"></param>
-        public DesignerViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerService service, IDesignerRepositoryCollection repositories) : base(regionManager, dialogService)
+        public DesignerViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerFacade service, IDesignerRepositoryCollection repositories) : base(regionManager, dialogService)
         {
             this.service = service;
             this.SelectedComboItem.Value = repositories.DefaultRepositoryName;

@@ -40,14 +40,14 @@ namespace Mov.WpfLayouts.Components.Atoms
             DependencyProperty.Register(nameof(LayoutParameter), typeof(LayoutContentStatus), typeof(LayButton), new PropertyMetadata(default));
 
 
-        public LayoutContentDesign LayoutDesign
+        public LayoutContentArrange LayoutDesign
         {
-            get { return (LayoutContentDesign)GetValue(LayoutDesignProperty); }
+            get { return (LayoutContentArrange)GetValue(LayoutDesignProperty); }
             set { SetValue(LayoutDesignProperty, value); }
         }
 
         public static readonly DependencyProperty LayoutDesignProperty =
-            DependencyProperty.Register(nameof(LayoutDesign), typeof(LayoutContentDesign), typeof(LayButton), new PropertyMetadata(default));
+            DependencyProperty.Register(nameof(LayoutDesign), typeof(LayoutContentArrange), typeof(LayButton), new PropertyMetadata(default));
 
         public LayoutContentSchema LayoutValue
         {

@@ -16,5 +16,9 @@ namespace Mov.Designer.Engine.Persistences.Entities
 
         }
 
+        public void Dispose()
+        {
+            
+        }
     }
 }

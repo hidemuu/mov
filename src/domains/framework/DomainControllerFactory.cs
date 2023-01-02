@@ -1,7 +1,7 @@
 ﻿using Mov.Accessors.Repository.Domain;
 using Mov.Analizer.Models;
 using Mov.Controllers;
-using Mov.Designer.Models;
+using Mov.Designer.Models.Services;
 using Mov.Driver.Models;
 using Mov.Game.Models;
 using System;
@@ -28,9 +28,9 @@ namespace Mov.Framework
             try
             {
                 //return new DomainController<TService>(service, this.commandPath);
-                if (service is IDesignerService designerService)
+                if (service is IDesignerFacade designerService)
                 {
-                    return new DomainController<IDesignerService>(designerService, this.commandPath);
+                    return new DomainController<IDesignerFacade>(designerService, this.commandPath);
                 }
                 if (service is IGameService gameService)
                 {

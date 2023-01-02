@@ -23,7 +23,7 @@ namespace Mov.WpfLayouts.Selector
                 {
                     factory = new FrameworkElementFactory(typeof(LayLabel));
                     factory.SetValue(LayLabel.LayoutKeyProperty, node.Content.Keys);
-                    factory.SetValue(LayLabel.LayoutDesignProperty, node.Content.Designs);
+                    factory.SetValue(LayLabel.LayoutDesignProperty, node.Content.Arranges);
                     factory.SetValue(LayLabel.LayoutParameterProperty, node.Content.Statuses);
                     factory.SetValue(LayLabel.LayoutValueProperty, node.Content.Schemas);
                     return new DataTemplate() { VisualTree = factory, };
@@ -32,7 +32,7 @@ namespace Mov.WpfLayouts.Selector
                 {
                     factory = new FrameworkElementFactory(typeof(LayButton));
                     factory.SetValue(LayButton.LayoutKeyProperty, node.Content.Keys);
-                    factory.SetValue(LayButton.LayoutDesignProperty, node.Content.Designs);
+                    factory.SetValue(LayButton.LayoutDesignProperty, node.Content.Arranges);
                     factory.SetValue(LayButton.LayoutParameterProperty, node.Content.Statuses);
                     factory.SetValue(LayButton.LayoutValueProperty, node.Content.Schemas);
                     return new DataTemplate() { VisualTree = factory, };
@@ -41,7 +41,7 @@ namespace Mov.WpfLayouts.Selector
                 {
                     factory = new FrameworkElementFactory(typeof(LayRadioButton));
                     factory.SetValue(LayRadioButton.LayoutKeyProperty, node.Content.Keys);
-                    factory.SetValue(LayRadioButton.LayoutDesignProperty, node.Content.Designs);
+                    factory.SetValue(LayRadioButton.LayoutDesignProperty, node.Content.Arranges);
                     factory.SetValue(LayRadioButton.LayoutParameterProperty, node.Content.Statuses);
                     factory.SetValue(LayRadioButton.LayoutValueProperty, node.Content.Schemas);
                     return new DataTemplate() { VisualTree = factory, };
@@ -50,7 +50,7 @@ namespace Mov.WpfLayouts.Selector
                 {
                     factory = new FrameworkElementFactory(typeof(LayTextBox));
                     factory.SetValue(LayTextBox.LayoutKeyProperty, node.Content.Keys);
-                    factory.SetValue(LayTextBox.LayoutDesignProperty, node.Content.Designs);
+                    factory.SetValue(LayTextBox.LayoutDesignProperty, node.Content.Arranges);
                     factory.SetValue(LayTextBox.LayoutParameterProperty, node.Content.Statuses);
                     factory.SetValue(LayTextBox.LayoutValueProperty, node.Content.Schemas);
                     return new DataTemplate() { VisualTree = factory, };
@@ -59,7 +59,7 @@ namespace Mov.WpfLayouts.Selector
                 {
                     factory = new FrameworkElementFactory(typeof(LayComboBox));
                     factory.SetValue(LayComboBox.LayoutKeyProperty, node.Content.Keys);
-                    factory.SetValue(LayComboBox.LayoutDesignProperty, node.Content.Designs);
+                    factory.SetValue(LayComboBox.LayoutDesignProperty, node.Content.Arranges);
                     factory.SetValue(LayComboBox.LayoutParameterProperty, node.Content.Statuses);
                     factory.SetValue(LayComboBox.LayoutValueProperty, node.Content.Schemas);
                     return new DataTemplate() { VisualTree = factory, };
@@ -68,7 +68,7 @@ namespace Mov.WpfLayouts.Selector
                 {
                     factory = new FrameworkElementFactory(typeof(LaySpinBox));
                     factory.SetValue(LaySpinBox.LayoutKeyProperty, node.Content.Keys);
-                    factory.SetValue(LaySpinBox.LayoutDesignProperty, node.Content.Designs);
+                    factory.SetValue(LaySpinBox.LayoutDesignProperty, node.Content.Arranges);
                     factory.SetValue(LaySpinBox.LayoutParameterProperty, node.Content.Statuses);
                     factory.SetValue(LaySpinBox.LayoutValueProperty, node.Content.Schemas);
                     return new DataTemplate() { VisualTree = factory, };
@@ -77,7 +77,7 @@ namespace Mov.WpfLayouts.Selector
                 {
                     factory = new FrameworkElementFactory(typeof(LayCheckBox));
                     factory.SetValue(LayCheckBox.LayoutKeyProperty, node.Content.Keys);
-                    factory.SetValue(LayCheckBox.LayoutDesignProperty, node.Content.Designs);
+                    factory.SetValue(LayCheckBox.LayoutDesignProperty, node.Content.Arranges);
                     factory.SetValue(LayCheckBox.LayoutParameterProperty, node.Content.Statuses);
                     factory.SetValue(LayCheckBox.LayoutValueProperty, node.Content.Schemas);
                     return new DataTemplate() { VisualTree = factory, };
@@ -86,7 +86,7 @@ namespace Mov.WpfLayouts.Selector
                 {
                     factory = new FrameworkElementFactory(typeof(LayListBox));
                     factory.SetValue(LayListBox.LayoutKeyProperty, node.Content.Keys);
-                    factory.SetValue(LayListBox.LayoutDesignProperty, node.Content.Designs);
+                    factory.SetValue(LayListBox.LayoutDesignProperty, node.Content.Arranges);
                     factory.SetValue(LayListBox.LayoutParameterProperty, node.Content.Statuses);
                     factory.SetValue(LayListBox.LayoutValueProperty, node.Content.Schemas);
                     return new DataTemplate() { VisualTree = factory, };
@@ -95,7 +95,7 @@ namespace Mov.WpfLayouts.Selector
                 {
                     factory = new FrameworkElementFactory(typeof(LayDatePicker));
                     factory.SetValue(LayDatePicker.LayoutKeyProperty, node.Content.Keys);
-                    factory.SetValue(LayDatePicker.LayoutDesignProperty, node.Content.Designs);
+                    factory.SetValue(LayDatePicker.LayoutDesignProperty, node.Content.Arranges);
                     factory.SetValue(LayDatePicker.LayoutParameterProperty, node.Content.Statuses);
                     factory.SetValue(LayDatePicker.LayoutValueProperty, node.Content.Schemas);
                     return new DataTemplate() { VisualTree = factory, };

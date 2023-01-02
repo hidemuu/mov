@@ -8,6 +8,8 @@ namespace Mov.Layouts
 {
     public interface ILayoutFacade
     {
+        void Update(ILayoutContext context);
+
         LayoutNode GetRegionNode(RegionStyle region);
 
         IEnumerable<LayoutShell> GetShells();

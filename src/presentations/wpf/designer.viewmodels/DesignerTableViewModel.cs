@@ -1,5 +1,6 @@
 ﻿using Mov.Accessors.Repository;
 using Mov.Designer.Models;
+using Mov.Designer.Models.Services;
 using Mov.Designer.Service;
 using Mov.Layouts;
 using Mov.Layouts.Contents.ValueObjects;
@@ -24,7 +25,7 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        private IDesignerService service;
+        private IDesignerFacade facade;
 
         private CompositeDisposable modelDisposables = new CompositeDisposable();
 
@@ -77,14 +78,14 @@ namespace Mov.Designer.ViewModels
         public override void OnNavigatedTo(NavigationContext navigationContext)
         {
             base.OnNavigatedTo(navigationContext);
-            this.service = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_SERVICE] as IDesignerService;
+            this.facade = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_SERVICE] as IDesignerFacade;
             CreateModels();
         }
 
         private void OnSaveCommand()
         {
             Post();
-            this.service.Write();
+            this.facade.Write();
             MessageBox.Show("保存しました");
         }
 
@@ -92,14 +93,17 @@ namespace Mov.Designer.ViewModels
         {
             var tables = new List<Content>();
             ConvertModelToContent(tables, Models);
-            this.service.PostContents(tables);
+            foreach(var table in tables)
+            {
+                this.facade.Command.Contents.Saver.Save(table);
+            }
         }
 
         private void OnAddCommand(object parameter)
         {
             if(parameter is DesignerTableModel model)
             {
-                var table = this.service.GetContent(model.Id.Value);
+                var table = this.facade.Query.Contents.Reader.Read(model.Id.Value);
                 if (table == null) return;
                 //this.repository.Contents.Put(new LayoutContent(), table.Id);
                 CreateModels();
@@ -110,9 +114,9 @@ namespace Mov.Designer.ViewModels
         {
             if (parameter is DesignerTableModel model)
             {
-                var table = this.service.GetContent(model.Id.Value);
+                var table = this.facade.Query.Contents.Reader.Read(model.Id.Value);
                 if (table == null) return;
-                this.service.DeleteContent(table);
+                this.facade.Command.Contents.Deleter.Delete(table);
                 CreateModels();
             }
         }
@@ -125,7 +129,7 @@ namespace Mov.Designer.ViewModels
         {
             Models.Clear();
             modelDisposables.Clear();
-            foreach (var table in this.service.GetContents())
+            foreach (var table in this.facade.Query.Contents.Reader.ReadAll())
             {
                 Models.Add(new DesignerTableModel(table));
             }

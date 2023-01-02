@@ -5,13 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts
+namespace Mov.Layouts.Implements
 {
-    public class LayoutContext
+    public class LayoutContext : ILayoutContext
     {
         #region プロパティ
 
-        public CodeKey Code { get; }
+        public CodeKey DomainId { get; }
         public IEnumerable<LayoutNode> Nodes { get; }
         public IEnumerable<LayoutContent> Contents { get; }
         public IEnumerable<LayoutShell> Shells { get; }
@@ -21,16 +21,31 @@ namespace Mov.Layouts
 
         public LayoutContext(
             CodeKey code,
-            IEnumerable<LayoutNode> nodes, 
-            IEnumerable<LayoutContent> contents, 
-            IEnumerable<LayoutShell> shells, 
+            IEnumerable<LayoutNode> nodes,
+            IEnumerable<LayoutContent> contents,
+            IEnumerable<LayoutShell> shells,
             IEnumerable<LayoutTheme> themes)
         {
-            this.Code = code;
-            this.Nodes = nodes;
-            this.Contents = contents;
-            this.Shells = shells;
-            this.Themes = themes;
+            DomainId = code;
+            Nodes = nodes;
+            Contents = contents;
+            Shells = shells;
+            Themes = themes;
+        }
+
+        public void Update()
+        {
+
+        }
+
+        public void Read()
+        {
+            
+        }
+
+        public void Write()
+        {
+            
         }
     }
 }

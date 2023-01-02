@@ -3,8 +3,7 @@ using Mov.Accessors;
 using Mov.Controllers;
 using Mov.Designer.Engine;
 using Mov.Designer.Models;
-using Mov.Designer.Models.Parameters;
-using Mov.Designer.Models.Persistences;
+using Mov.Designer.Models.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +16,6 @@ namespace Mov.Designer.Test
     {
         #region フィールド
 
-        private readonly IDesignerEngine engine;
-        private readonly Mock<IDesignerContext> mockContext;
         private readonly Mock<IDesignerRepository> mockRepository;
         private readonly Mock<IDesignerQuery> mockQuery;
         private readonly Mock<IDesignerCommand> mockCommand;
@@ -30,15 +27,11 @@ namespace Mov.Designer.Test
         public DesignerEngineBuilder()
         {
             //モックオブジェクト生成
-            this.mockContext = new Mock<IDesignerContext>();
             this.mockRepository = new Mock<IDesignerRepository>();
             this.mockQuery = new Mock<IDesignerQuery>();
-            this.mockCommand = new Mock<IDesignerCommand>();
-            this.mockContext.Setup(x => x.Repository).Returns(this.mockRepository.Object);
-            this.mockContext.Setup(x => x.Query).Returns(this.mockQuery.Object);
-            this.mockContext.Setup(x => x.Command).Returns(this.mockCommand.Object);
+            this.mockCommand = new Mock<IDesignerCommand>();;
             //インスタンス生成
-            this.engine = new DesignerEngine(this.mockContext.Object, 0);
+            //this.engine = new DesignerEngine(this.mockContext.Object, 0);
         }
 
         #endregion コンストラクター
@@ -74,7 +67,6 @@ namespace Mov.Designer.Test
             return this;
         }
 
-        public IDesignerEngine Build() => this.engine;
 
         #endregion メソッド
 

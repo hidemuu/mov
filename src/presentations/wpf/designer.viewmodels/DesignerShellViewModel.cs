@@ -1,4 +1,5 @@
 ﻿using Mov.Designer.Models;
+using Mov.Designer.Models.Services;
 using Mov.WpfMvvms;
 using Prism.Regions;
 using Prism.Services.Dialogs;
@@ -17,7 +18,7 @@ namespace Mov.Designer.ViewModels
     {
         #region フィールド
 
-        private IDesignerService service;
+        private IDesignerFacade facade;
 
         #endregion フィールド
 
@@ -34,13 +35,13 @@ namespace Mov.Designer.ViewModels
 
         protected override void Import(NavigationContext navigationContext)
         {
-            this.service = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_SERVICE] as IDesignerService;
-            this.service.Read();
+            this.facade = navigationContext.Parameters[DesignerViewModel.NAVIGATION_PARAM_NAME_SERVICE] as IDesignerFacade;
+            this.facade.Read();
         }
 
         protected override void Export()
         {
-            this.service.Write();
+            this.facade.Write();
         }
 
         protected override void BindItems()
@@ -58,13 +59,16 @@ namespace Mov.Designer.ViewModels
 
         protected override void PostItems()
         {
-            var configs = GetDbObjects(Shell.GetProperties().Select(x => x.propertyInfo)).ToList();
-            this.service.PostShells(configs);
+            var shells = GetDbObjects(Shell.GetProperties().Select(x => x.propertyInfo)).ToList();
+            foreach(var shell in shells)
+            {
+                this.facade.Command.Shells.Saver.Save(shell);
+            }
         }
 
         protected override void PutItem()
         {
-            this.service.PostShell(new Shell());
+            this.facade.Command.Shells.Saver.Save(new Shell());
         }
 
         protected override void DeleteItem()

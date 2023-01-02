@@ -1,6 +1,7 @@
 ﻿using Mov.Accessors.Repository;
-using Mov.Designer.Models;
 using Mov.Designer.Models.Repositories;
+using Mov.Designer.Models.Services;
+using Mov.Layouts;
 using Mov.WpfMvvms;
 using Prism.Regions;
 using Prism.Services.Dialogs;
@@ -20,7 +21,9 @@ namespace Mov.UseCase.ViewModels
     {
         #region プロパティ
 
-        public IDesignerService DesignerService { get; }
+        public IDesignerFacade DesignerService { get; }
+
+        public ILayoutFacade LayoutFacade => DesignerService.LayoutFacade;
 
         public string RepositoryName { get; }
 
@@ -31,7 +34,7 @@ namespace Mov.UseCase.ViewModels
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public DashboardViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerService designerService, IDesignerRepositoryCollection designerRepository) : base(regionManager, dialogService)
+        public DashboardViewModel(IRegionManager regionManager, IDialogService dialogService, IDesignerFacade designerService, IDesignerRepositoryCollection designerRepository) : base(regionManager, dialogService)
         {
             DesignerService = designerService;
 

@@ -54,7 +54,6 @@ using Mov.Analizer.Views;
 using Mov.Analizer.ViewModels;
 using Mov.Game.Engine;
 using Mov.Game.Models.Parameters;
-using Mov.Designer.Models.Parameters;
 using Mov.Designer.Engine;
 using Mov.Designer.Service;
 using Mov.Configurators;
@@ -62,6 +61,8 @@ using Mov.Designer.Models.Repositories;
 using Mov.Designer.Repository.Implements;
 using Mov.WpfApp.Views;
 using Mov.WpfApp.ViewModels;
+using Mov.Layouts;
+using Mov.Designer.Models.Services;
 
 namespace Mov.WpfApp
 {
@@ -168,15 +169,15 @@ namespace Mov.WpfApp
             //サービスの登録
 
             var domainId = 0;
-            var designerEngines = new List<IDesignerEngine>();
+            var designerRepositories = new List<IDesignerRepository>();
             foreach(var name in fileDesignerRepositories.GetRepositoryNames())
             {
-                var parameter = new DesignerContext(fileDesignerRepositories.GetRepository(name), name);
-                designerEngines.Add(new DesignerEngine(parameter, domainId));
+                var context = fileDesignerRepositories.GetRepository(name);
+                designerRepositories.Add(context);
                 domainId++;
             }
 
-            containerRegistry.RegisterInstance<IDesignerService>(new DesignerService(designerEngines));
+            containerRegistry.RegisterInstance<IDesignerFacade>(new DesignerFacade(designerRepositories));
 
             containerRegistry.RegisterInstance<IGameRepository>(fileGameRepositories.GetRepository(""));
             containerRegistry.RegisterInstance<IGameParameter>(Container.Resolve<GameParameter>());

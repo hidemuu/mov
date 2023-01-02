@@ -27,5 +27,5 @@
     <layouts:LayoutPartsShell
         IsUpdate="{Binding IsUpdate.Value}"
         RepositoryName="{Binding RepositoryName.Value}"
-        Service="{Binding Service.Value}" />
+        Facade="{Binding Service.Value}" />
 </UserControl>

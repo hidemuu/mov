@@ -314,16 +314,16 @@ namespace Mov.WpfLayouts.Controls
 
         #region サービス
 
-        public static readonly DependencyProperty ServiceProperty =
-            DependencyProperty.Register(nameof(Service), typeof(ILayoutFacade),
+        public static readonly DependencyProperty FacadeProperty =
+            DependencyProperty.Register(nameof(Facade), typeof(ILayoutFacade),
             typeof(LayoutPartsShell),
             new UIPropertyMetadata(null, new PropertyChangedCallback(OnRepositoryChanged)));
 
 
-        public ILayoutFacade Service
+        public ILayoutFacade Facade
         {
-            get { return (ILayoutFacade)GetValue(ServiceProperty); }
-            set { SetValue(ServiceProperty, value); }
+            get { return (ILayoutFacade)GetValue(FacadeProperty); }
+            set { SetValue(FacadeProperty, value); }
         }
 
         public static readonly DependencyProperty RepositoryNameProperty =
@@ -397,7 +397,7 @@ namespace Mov.WpfLayouts.Controls
             var control = obj as LayoutPartsShell;
             if (control != null)
             {
-                if (control.Service != null)
+                if (control.Facade != null)
                 {
                     if (control.IsUpdate)
                     {
@@ -406,19 +406,19 @@ namespace Mov.WpfLayouts.Controls
                         control.BottomModels.Clear();
                         control.LeftModels.Clear();
                         control.RightModels.Clear();
-                        var service = control.Service;
+                        var facade = control.Facade;
 
-                        control.Models.AddRange(service.GetRegionNode(RegionStyle.Center).Children);
-                        control.TopModels.AddRange(service.GetRegionNode(RegionStyle.Top).Children);
-                        control.BottomModels.AddRange(service.GetRegionNode(RegionStyle.Bottom).Children);
-                        control.LeftModels.AddRange(service.GetRegionNode(RegionStyle.Left).Children);
-                        control.RightModels.AddRange(service.GetRegionNode(RegionStyle.Right).Children);
+                        control.Models.AddRange(facade.GetRegionNode(RegionStyle.Center).Children);
+                        control.TopModels.AddRange(facade.GetRegionNode(RegionStyle.Top).Children);
+                        control.BottomModels.AddRange(facade.GetRegionNode(RegionStyle.Bottom).Children);
+                        control.LeftModels.AddRange(facade.GetRegionNode(RegionStyle.Left).Children);
+                        control.RightModels.AddRange(facade.GetRegionNode(RegionStyle.Right).Children);
 
-                        var topShell = service.GetRegionShell(RegionStyle.Top);
-                        var bottomShell = service.GetRegionShell(RegionStyle.Bottom);
-                        var leftShell = service.GetRegionShell(RegionStyle.Left);
-                        var rightShell = service.GetRegionShell(RegionStyle.Right);
-                        var centerShell = service.GetRegionShell(RegionStyle.Center);
+                        var topShell = facade.GetRegionShell(RegionStyle.Top);
+                        var bottomShell = facade.GetRegionShell(RegionStyle.Bottom);
+                        var leftShell = facade.GetRegionShell(RegionStyle.Left);
+                        var rightShell = facade.GetRegionShell(RegionStyle.Right);
+                        var centerShell = facade.GetRegionShell(RegionStyle.Center);
 
                         if (topShell != null)
                         {

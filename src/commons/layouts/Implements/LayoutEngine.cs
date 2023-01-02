@@ -28,8 +28,8 @@ namespace Mov.Layouts.Implements
         public LayoutEngine(ILayoutContext context)
         {
             this.context = context;
-            DomainId = context.DomainId;
-            Build(context);
+            this.DomainId = context.DomainId;
+            this.Build(context);
         }
 
         #endregion コンストラクタ
@@ -38,7 +38,7 @@ namespace Mov.Layouts.Implements
 
         public void Build(ILayoutContext context)
         {
-            CreateNode(context.Nodes);
+            this.SetNodeContents(context.Nodes);
         }
 
         public IEnumerable<LayoutNode> GetNodes()
@@ -76,13 +76,13 @@ namespace Mov.Layouts.Implements
 
         #region 内部メソッド
 
-        private void CreateNode(IEnumerable<LayoutNode> nodes)
+        private void SetNodeContents(IEnumerable<LayoutNode> nodes)
         {
             foreach (var node in nodes)
             {
                 var content = context.Contents.FirstOrDefault(x => x.Keys.Code.Value.Equals(node.Code.Value));
                 if (content != null) node.SetContent(content);
-                CreateNode(node.Children);
+                SetNodeContents(node.Children);
             }
         }
 

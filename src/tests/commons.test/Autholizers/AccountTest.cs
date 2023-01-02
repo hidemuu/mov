@@ -3,7 +3,7 @@ using Mov.Authorizers;
 using Mov.Authorizers.Accounts;
 using NUnit.Framework;
 
-namespace Mov.Commons.Test
+namespace Mov.Commons.Test.Autholizers
 {
     public class AccountTest
     {

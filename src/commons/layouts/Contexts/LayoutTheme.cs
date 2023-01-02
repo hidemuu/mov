@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Schemas.Styles;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,10 +7,11 @@ namespace Mov.Layouts.Contexts
 {
     public class LayoutTheme
     {
+        ThemeStyle Theme { get; }
 
-        public LayoutTheme()
+        public LayoutTheme(ThemeStyle theme)
         {
-
+            this.Theme = theme;
         }
     }
 }

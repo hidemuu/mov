@@ -90,7 +90,7 @@ namespace Mov.Designer.Models
         {
             foreach (var theme in repository.Themes.Get())
             {
-                yield return new LayoutTheme();
+                yield return new LayoutTheme(ThemeStyle.Light);
             }
         }
 

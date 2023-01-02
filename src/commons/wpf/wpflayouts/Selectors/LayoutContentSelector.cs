@@ -21,12 +21,7 @@ namespace Mov.WpfLayouts.Selector
                 var controlType = node.Content.Keys.ControlType;
                 if (controlType.IsLabel)
                 {
-                    factory = new FrameworkElementFactory(typeof(LayLabel));
-                    factory.SetValue(LayLabel.LayoutKeyProperty, node.Content.Keys);
-                    factory.SetValue(LayLabel.LayoutDesignProperty, node.Content.Arranges);
-                    factory.SetValue(LayLabel.LayoutParameterProperty, node.Content.Statuses);
-                    factory.SetValue(LayLabel.LayoutValueProperty, node.Content.Schemas);
-                    return new DataTemplate() { VisualTree = factory, };
+                    return new DataTemplate() { VisualTree = CreateFactory<LayLabel>(node), };
                 }
                 if (controlType.IsButton)
                 {
@@ -138,6 +133,16 @@ namespace Mov.WpfLayouts.Selector
             var defaultFactory = new FrameworkElementFactory(typeof(Label));
             defaultFactory.SetValue(Label.ContentProperty, "【NotFound】" + node.ToString());
             return defaultFactory;
+        }
+
+        private FrameworkElementFactory CreateFactory<T>(LayoutNode node) where T : FrameworkElement
+        {
+            var factory = new FrameworkElementFactory(typeof(T));
+            factory.SetValue(LayLabel.LayoutKeyProperty, node.Content.Keys);
+            factory.SetValue(LayLabel.LayoutDesignProperty, node.Content.Arranges);
+            factory.SetValue(LayLabel.LayoutParameterProperty, node.Content.Statuses);
+            factory.SetValue(LayLabel.LayoutValueProperty, node.Content.Schemas);
+            return factory;
         }
 
         #endregion 内部メソッド

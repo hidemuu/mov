@@ -375,7 +375,7 @@ namespace Mov.WpfLayouts.Controls
         {
             if (e.NewValue is bool flg)
             {
-                Update(obj);
+                if(flg) Update(obj);
             }
         }
 
@@ -388,7 +388,6 @@ namespace Mov.WpfLayouts.Controls
             var control = obj as LayoutPartsShell;
             if (control == null) return;
             if (control.Facade == null) return;
-            //if (!control.IsUpdate) return;
             control.Models.Clear();
             control.TopModels.Clear();
             control.BottomModels.Clear();

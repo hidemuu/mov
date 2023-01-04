@@ -3,24 +3,23 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Elements.Members
+namespace Mov.Schemas.Elements.Members.Foods
 {
-    public class CarType : ValueObjectBase<CarType>
+    public sealed class Drink : ValueObjectBase<Drink>
     {
 
-        public static CarType Sedan = new CarType("Sedan");
+        public static Drink Coffee = new Drink("Coffee");
 
-        public static CarType Crossover = new CarType("Crossover");
-
+        public static Drink Tea = new Drink("Tea");
 
         public string Value { get; }
 
-        public CarType(string carType)
+        public Drink(string name) 
         {
-            Value = carType;
+
         }
 
-        protected override bool EqualCore(CarType other)
+        protected override bool EqualCore(Drink other)
         {
             throw new NotImplementedException();
         }

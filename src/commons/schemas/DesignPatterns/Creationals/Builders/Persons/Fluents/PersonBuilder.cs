@@ -1,4 +1,5 @@
-﻿using Mov.Schemas.Elements.Members;
+﻿using Mov.Schemas.Elements.Members.Personals;
+using Mov.Schemas.Elements.Units;
 using Mov.Shemas.DesignPatterns.Creationals.Builders;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace Mov.Schemas.DesignPatterns.Creationals.Builders.Persons.Fluents
 
         protected Employment Employment { get; set; }
 
-        protected Money AnnualIncome { get; set; }
+        protected MoneyUnit AnnualIncome { get; set; }
 
         protected DateTime DateOfBirth { get; set; }
 

@@ -1,9 +1,10 @@
 ﻿using Mov.Schemas.DesignPatterns.Creationals.Builders.Persons.Fluents;
+using Mov.Schemas.Elements.Units;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Elements.Members
+namespace Mov.Schemas.Elements.Members.Personals
 {
     public class Person
     {
@@ -13,7 +14,7 @@ namespace Mov.Schemas.Elements.Members
 
         public Employment Employment { get; set; }
 
-        public Money AnnualIncome { get; set; }
+        public MoneyUnit AnnualIncome { get; set; }
 
         public DateTime DateOfBirth { get; set; }
 
@@ -34,12 +35,12 @@ namespace Mov.Schemas.Elements.Members
 
         public void ChangeName(string lastName)
         {
-            this.Name = new Name(this.Name.FirstName, lastName);
+            Name = new Name(Name.FirstName, lastName);
         }
 
         public void ChangePosition(string position)
         {
-            this.Employment = new Employment(this.Employment.CompanyName, position);
+            Employment = new Employment(Employment.CompanyName, position);
         }
 
         public override string ToString()

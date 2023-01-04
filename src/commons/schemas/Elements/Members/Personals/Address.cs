@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Elements.Members
+namespace Mov.Schemas.Elements.Members.Personals
 {
     public sealed class Address
     {
@@ -10,6 +10,6 @@ namespace Mov.Schemas.Elements.Members
 
         public string Postcode { get; set; }
 
-        public string City { get; set;  }
+        public string City { get; set; }
     }
 }

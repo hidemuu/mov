@@ -1,5 +1,5 @@
 ﻿using Mov.Schemas.DesignPatterns.Creationals.Builders.Persons.Fluents;
-using Mov.Schemas.Elements.Members;
+using Mov.Schemas.Elements.Members.Personals;
 using System;
 using System.Collections.Generic;
 using System.Text;

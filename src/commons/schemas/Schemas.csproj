@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="DesignPatterns\Creationals\Factories\Foods\" />
     <Folder Include="Elements\Units\Coordinates\Shapes\3D\" />
     <Folder Include="Implements\Headers\" />
   </ItemGroup>

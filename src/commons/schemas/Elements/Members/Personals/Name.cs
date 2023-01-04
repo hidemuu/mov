@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Elements.Members
+namespace Mov.Schemas.Elements.Members.Personals
 {
     public sealed class Name
     {
@@ -11,7 +11,7 @@ namespace Mov.Schemas.Elements.Members
 
         public string FullName => string.Join(" ", FirstName, LastName);
 
-        public Name(string firstName, string lastName) 
+        public Name(string firstName, string lastName)
         {
             FirstName = firstName;
             LastName = lastName;

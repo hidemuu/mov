@@ -1,4 +1,5 @@
-﻿using Mov.Schemas.Elements.Members;
+﻿using Mov.Schemas.Elements.Members.Personals;
+using Mov.Schemas.Elements.Units;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -26,7 +27,7 @@ namespace Mov.Schemas.DesignPatterns.Creationals.Builders.Persons.Fasets
 
         public PersonJobBuilder Earning(int annualIncome)
         {
-            person.AnnualIncome = new Money(annualIncome);
+            person.AnnualIncome = new MoneyUnit(annualIncome);
             return this;
         }
     }

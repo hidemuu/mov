@@ -11,17 +11,24 @@ namespace Mov.Schemas.Elements.Units.Coordinates
 
         public CoordinateUnit Y { get; }
 
-        public Point2D(CoordinateUnit x, CoordinateUnit y)
+        internal Point2D(CoordinateUnit x, CoordinateUnit y)
         {
             X = x;
             Y = y;
         }
 
-        public static Point2D NewPolarPoint(double rho, double theta)
+        public static class Factory 
         {
-            return new Point2D(new CoordinateUnit(rho * Math.Cos(theta)), new CoordinateUnit(rho * Math.Sin(theta)));
-        }
+            public static Point2D NewCartesianPoint(double x, double y)
+            {
+                return new Point2D(new CoordinateUnit(x), new CoordinateUnit(y));
+            }
 
+            public static Point2D NewPolarPoint(double rho, double theta)
+            {
+                return new Point2D(new CoordinateUnit(rho * Math.Cos(theta)), new CoordinateUnit(rho * Math.Sin(theta)));
+            }
+        }
 
         protected override bool EqualCore(Point2D other)
         {

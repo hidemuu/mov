@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Elements.Members
+namespace Mov.Schemas.Elements.Units
 {
-    public sealed class Money
+    public sealed class MoneyUnit
     {
         public double Value { get; }
 
-        public Money(double value)
+        public MoneyUnit(double value)
         {
-            this.Value = value;
+            Value = value;
         }
     }
 }

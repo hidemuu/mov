@@ -10,9 +10,9 @@ namespace Mov.Schemas.Elements.Units
     /// </summary>
     public sealed class CoordinateUnit : ValueObjectBase<CoordinateUnit>
     {
-        public decimal Value { get; }
+        public double Value { get; }
 
-        public CoordinateUnit(decimal value)
+        public CoordinateUnit(double value)
         {
             Value = value;
         }

@@ -13,7 +13,7 @@ namespace Mov.Schemas.Elements.Units.Coordinates
 
         public CoordinateUnit Z { get; }
 
-        public Point3D(decimal x, decimal y, decimal z)
+        public Point3D(double x, double y, double z)
         {
             X = new CoordinateUnit(x);
             Y = new CoordinateUnit(y);

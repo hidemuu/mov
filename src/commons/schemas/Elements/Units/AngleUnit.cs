@@ -7,9 +7,9 @@ namespace Mov.Schemas.Elements.Units
 {
     public sealed class AngleUnit : ValueObjectBase<AngleUnit>
     {
-        public decimal Value { get; }
+        public double Value { get; }
 
-        public AngleUnit(decimal value)
+        public AngleUnit(double value)
         {
             Value = value;
         }

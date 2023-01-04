@@ -25,7 +25,7 @@ namespace Mov.Schemas.Coordinates.Shapes.Layers
         {
             this.UpperLeftPoint = upperLeft;
             this.LowerRightPoint = lowerRight;
-            this.CenterPoint = new Point2D((lowerRight.X.Value + upperLeft.X.Value) / 2, (lowerRight.Y.Value + upperLeft.Y.Value) / 2);
+            this.CenterPoint = new Point2D(new CoordinateUnit((lowerRight.X.Value + upperLeft.X.Value) / 2), new CoordinateUnit((lowerRight.Y.Value + upperLeft.Y.Value) / 2));
             this.Width = new LengthUnit((double)(lowerRight.X.Value - upperLeft.X.Value));
             this.Height = new LengthUnit((double)(lowerRight.Y.Value - upperLeft.Y.Value));
         }
@@ -35,8 +35,8 @@ namespace Mov.Schemas.Coordinates.Shapes.Layers
             this.CenterPoint = center;
             this.Width = width;
             this.Height = height;
-            this.UpperLeftPoint = new Point2D(center.X.Value - (decimal)(width.Value / 2), center.Y.Value + (decimal)(height.Value / 2));
-            this.LowerRightPoint = new Point2D(center.X.Value + (decimal)(width.Value / 2), center.Y.Value - (decimal)(height.Value / 2));
+            this.UpperLeftPoint = new Point2D(new CoordinateUnit(center.X.Value - (width.Value / 2)), new CoordinateUnit(center.Y.Value + (height.Value / 2)));
+            this.LowerRightPoint = new Point2D(new CoordinateUnit(center.X.Value + (width.Value / 2)), new CoordinateUnit(center.Y.Value - (height.Value / 2)));
         }
 
         protected override bool EqualCore(Rectangle2D other)

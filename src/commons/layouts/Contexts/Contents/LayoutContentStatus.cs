@@ -11,9 +11,9 @@ namespace Mov.Layouts.Contexts.Contents
     public class LayoutContentStatus
     {
         public static LayoutContentStatus Empty = new LayoutContentStatus(
-            LocalString.Empty, IconImage.Empty, VisibilityStyle.Visible, EnableStyle.Enable, Parameter.Empty);
+            Info.Empty, IconImage.Empty, VisibilityStyle.Visible, EnableStyle.Enable, Parameter.Empty);
 
-        public LocalString Name { get; }
+        public Info Name { get; }
 
         public IconImage Icon { get; }
 
@@ -24,7 +24,7 @@ namespace Mov.Layouts.Contexts.Contents
         public Parameter Parameter { get; }
 
 
-        public LayoutContentStatus(LocalString name, IconImage icon, VisibilityStyle visibility, EnableStyle isEnable, Parameter parameter)
+        public LayoutContentStatus(Info name, IconImage icon, VisibilityStyle visibility, EnableStyle isEnable, Parameter parameter)
         {
             Name = name;
             Icon = icon;

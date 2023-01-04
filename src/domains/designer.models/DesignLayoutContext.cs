@@ -71,7 +71,7 @@ namespace Mov.Designer.Models
         {
             return new LayoutContent(
                         new LayoutContentKey(new CodeKey(content.Code), new ControlStyle(content.ControlType)),
-                        new LayoutContentStatus(new LocalString(content.Name), new IconImage(content.Icon), VisibilityStyle.Visible, EnableStyle.Enable, new Parameter(content.Parameter)),
+                        new LayoutContentStatus(new Info(content.Name), new IconImage(content.Icon), VisibilityStyle.Visible, EnableStyle.Enable, new Parameter(content.Parameter)),
                         new LayoutContentArrange(MarginUnit.Default, new Size2D(content.Width, content.Height), OrientationStyle.Horizontal, new HorizontalAlignmentStyle(content.HorizontalAlignment), new VerticalAlignmentStyle(content.VerticalAlignment)),
                         new LayoutContentSchema(new LayoutSchema(content.Schema), new Variable(content.DefaultValue), new Macro(content.Macro)));
         }

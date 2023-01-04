@@ -9,6 +9,12 @@ namespace Mov.Schemas.Elements.Styles
     {
         public static ColorStyle Transrarent = new ColorStyle("Transparent");
 
+        public static ColorStyle Black = new ColorStyle("Brack");
+
+        public static ColorStyle White = new ColorStyle("White");
+
+        public static ColorStyle DarkGray = new ColorStyle("DarkGray");
+
         public string Value { get; }
 
         public ColorStyle(string value)

@@ -10,15 +10,17 @@ namespace Mov.Schemas.Elements.Styles
 
         #region オブジェクト
 
-        public static readonly ThemeStyle Light = new ThemeStyle("Light");
+        public static readonly ThemeStyle Light = new ThemeStyle(ColorStyle.Black, ColorStyle.White);
 
-        public static readonly ThemeStyle Dark = new ThemeStyle("Dark");
+        public static readonly ThemeStyle Dark = new ThemeStyle(ColorStyle.White, ColorStyle.DarkGray);
 
         #endregion オブジェクト
 
         #region プロパティ
 
-        public string Value { get; }
+        public ColorStyle TextColor { get; }
+
+        public ColorStyle BackgroundColor { get; }
 
         public bool IsLight => this == Light;
 
@@ -28,9 +30,10 @@ namespace Mov.Schemas.Elements.Styles
 
         #region コンストラクター
 
-        public ThemeStyle(string color)
+        public ThemeStyle(ColorStyle textColor, ColorStyle backgroundColor)
         {
-            Value = color;
+            this.TextColor = textColor;
+            this.BackgroundColor = backgroundColor;
         }
 
         #endregion コンストラクター
@@ -39,12 +42,12 @@ namespace Mov.Schemas.Elements.Styles
 
         protected override bool EqualCore(ThemeStyle other)
         {
-            return Value.Equals(other.Value, StringComparison.Ordinal);
+            return TextColor.Equals(other.TextColor) && BackgroundColor.Equals(other.BackgroundColor);
         }
 
         protected override int GetHashCodeCore()
         {
-            return Value.GetHashCode();
+            return TextColor.GetHashCode() ^ BackgroundColor.GetHashCode();
         }
 
         #endregion メソッド
@@ -55,8 +58,8 @@ namespace Mov.Schemas.Elements.Styles
         {
             return new string[]
             {
-                Light.Value,
-                Dark.Value,
+                Light.TextColor.Value,
+                Dark.TextColor.Value,
             };
         }
 

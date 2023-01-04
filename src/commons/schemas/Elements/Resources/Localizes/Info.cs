@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Mov.Schemas.Elements.Resources.Localizes
 {
-    public sealed class LocalString : ValueObjectBase<LocalString>
+    public sealed class Info : ValueObjectBase<Info>
     {
-        public static LocalString Empty = new LocalString("");
+        public static Info Empty = new Info("");
 
         #region プロパティ
 
@@ -17,7 +17,7 @@ namespace Mov.Schemas.Elements.Resources.Localizes
 
         #region コンストラクター
 
-        public LocalString(string info)
+        public Info(string info)
         {
             Value = info;
         }
@@ -26,7 +26,7 @@ namespace Mov.Schemas.Elements.Resources.Localizes
 
         #region メソッド
 
-        protected override bool EqualCore(LocalString other)
+        protected override bool EqualCore(Info other)
         {
             return Value.Equals(other.Value, StringComparison.Ordinal);
         }

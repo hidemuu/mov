@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Utilities.ValueObjects
+namespace Mov.Utilities.Objects
 {
     /// <summary>
     /// ValueObjectのベースクラス

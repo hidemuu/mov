@@ -4,7 +4,6 @@ using Mov.Layouts.Contexts.Contents;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Mov.Schemas.Bodies;
 using Mov.Schemas.Elements.Keys;
 using Mov.Schemas.Elements.Units.Sizes;
 using Mov.Schemas.Elements.Units;
@@ -13,6 +12,7 @@ using Mov.Schemas.Elements.Resources.Localizes;
 using Mov.Schemas.Elements.Resources.Images;
 using Mov.Schemas.Elements.Parameters;
 using Mov.Schemas.Elements.Resources.Macros;
+using Mov.Schemas.Implements.Bodies;
 
 namespace Mov.Designer.Models
 {

@@ -1,9 +1,9 @@
-﻿using Mov.Utilities.ValueObjects;
+﻿using Mov.Utilities.Objects;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Bodies
+namespace Mov.Schemas.Implements.Bodies
 {
     public sealed class LayoutSchema : ValueObjectBase<LayoutSchema>
     {
@@ -19,7 +19,7 @@ namespace Mov.Schemas.Bodies
 
         public LayoutSchema(string schema)
         {
-            this.Value = schema;
+            Value = schema;
         }
 
         #endregion コンストラクター
@@ -28,12 +28,12 @@ namespace Mov.Schemas.Bodies
 
         protected override bool EqualCore(LayoutSchema other)
         {
-            return this.Value.Equals(other.Value, StringComparison.Ordinal);
+            return Value.Equals(other.Value, StringComparison.Ordinal);
         }
 
         protected override int GetHashCodeCore()
         {
-            return this.Value.GetHashCode();
+            return Value.GetHashCode();
         }
 
         #endregion メソッド

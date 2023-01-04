@@ -8,11 +8,11 @@ namespace Mov.Utilities.ValueObjects
     /// ValueObjectのベースクラス
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class ValueObjectBase<T> where T : ValueObjectBase<T>
+    public abstract class ValueObjectBase<TSelf> where TSelf : ValueObjectBase<TSelf>
     {
         #region 抽象メソッド
 
-        protected abstract bool EqualCore(T other);
+        protected abstract bool EqualCore(TSelf other);
 
         protected abstract int GetHashCodeCore();
 
@@ -22,7 +22,7 @@ namespace Mov.Utilities.ValueObjects
 
         public override bool Equals(object obj)
         {
-            var vo = obj as T;
+            var vo = obj as TSelf;
             if (vo == null) return false;
             return EqualCore(vo);
         }
@@ -41,12 +41,12 @@ namespace Mov.Utilities.ValueObjects
 
         #region 静的メソッド
 
-        public static bool operator == (ValueObjectBase<T> vo1, ValueObjectBase<T> vo2)
+        public static bool operator == (ValueObjectBase<TSelf> vo1, ValueObjectBase<TSelf> vo2)
         {
             return Equals(vo1, vo2);
         }
 
-        public static bool operator != (ValueObjectBase<T> vo1, ValueObjectBase<T> vo2)
+        public static bool operator != (ValueObjectBase<TSelf> vo1, ValueObjectBase<TSelf> vo2)
         {
             return !Equals(vo1, vo2);
         }

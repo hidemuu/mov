@@ -1,7 +1,7 @@
-﻿using Mov.Layouts.Contents.ValueObjects;
-using Mov.Schemas.Parameters;
-using Mov.Schemas.Resources.Images;
-using Mov.Schemas.Resources.Localizes;
+﻿using Mov.Schemas.Elements.Parameters;
+using Mov.Schemas.Elements.Resources.Images;
+using Mov.Schemas.Elements.Resources.Localizes;
+using Mov.Schemas.Elements.Styles;
 using System;
 using System.Collections.Generic;
 using System.Text;

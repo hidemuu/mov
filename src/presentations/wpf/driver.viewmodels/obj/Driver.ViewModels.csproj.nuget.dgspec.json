@@ -320,8 +320,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\utilities\\Utilities.csproj": {
-                "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\utilities\\Utilities.csproj"
+              "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\schemas\\Schemas.csproj": {
+                "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\schemas\\Schemas.csproj"
               }
             }
           }

@@ -51,3 +51,5 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.se
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\obj\Debug\netstandard2.0\Drawer.Service.csproj.CopyComplete
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\obj\Debug\netstandard2.0\Mov.Drawer.Service.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\obj\Debug\netstandard2.0\Mov.Drawer.Service.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Schemas.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Schemas.pdb

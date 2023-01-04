@@ -1,6 +1,6 @@
 ﻿using Mov.Layouts;
 using Mov.Layouts.Contexts;
-using Mov.Schemas.Styles;
+using Mov.Schemas.Elements.Styles;
 using Reactive.Bindings;
 using System;
 using System.Collections.Generic;

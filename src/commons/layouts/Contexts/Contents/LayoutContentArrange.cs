@@ -1,7 +1,6 @@
-﻿using Mov.Layouts.Contents.ValueObjects;
-using Mov.Schemas.Styles;
-using Mov.Schemas.Units;
-using Mov.Schemas.Units.Sizes;
+﻿using Mov.Schemas.Elements.Styles;
+using Mov.Schemas.Elements.Units;
+using Mov.Schemas.Elements.Units.Sizes;
 using System;
 using System.Collections.Generic;
 using System.Text;

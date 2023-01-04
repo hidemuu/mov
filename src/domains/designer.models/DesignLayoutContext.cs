@@ -1,20 +1,18 @@
 ﻿using Mov.Layouts;
-using Mov.Layouts.Contents.ValueObjects;
 using Mov.Layouts.Contexts;
 using Mov.Layouts.Contexts.Contents;
-using Mov.Layouts.Nodes.ValueObjects;
-using Mov.Schemas.Keys;
-using Mov.Schemas.Parameters;
-using Mov.Schemas.Resources.Images;
-using Mov.Schemas.Resources.Localizes;
-using Mov.Schemas.Styles;
-using Mov.Schemas.Units.Sizes;
-using Mov.Schemas.Units;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Mov.Schemas.Bodies;
-using Mov.Schemas.Resources.Macros;
+using Mov.Schemas.Elements.Keys;
+using Mov.Schemas.Elements.Units.Sizes;
+using Mov.Schemas.Elements.Units;
+using Mov.Schemas.Elements.Styles;
+using Mov.Schemas.Elements.Resources.Localizes;
+using Mov.Schemas.Elements.Resources.Images;
+using Mov.Schemas.Elements.Parameters;
+using Mov.Schemas.Elements.Resources.Macros;
 
 namespace Mov.Designer.Models
 {

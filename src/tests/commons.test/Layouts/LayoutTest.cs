@@ -9,8 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using Mov.Commons.Test.Layouts.Builders;
-using Mov.Schemas.Styles;
 using Mov.Layouts.Contexts;
+using Mov.Schemas.Elements.Styles;
 
 namespace Mov.Commons.Test.Layouts
 {

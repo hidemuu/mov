@@ -949,7 +949,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.Utilities": "1.0.0",
+          "Mov.Schemas": "1.0.0",
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
@@ -957,6 +957,19 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Controllers.dll": {}
+        }
+      },
+      "Mov.Schemas/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Utilities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Schemas.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Schemas.dll": {}
         }
       },
       "Mov.Utilities/1.0.0": {
@@ -3483,6 +3496,11 @@
       "type": "project",
       "path": "../../commons/controllers/Controllers.csproj",
       "msbuildProject": "../../commons/controllers/Controllers.csproj"
+    },
+    "Mov.Schemas/1.0.0": {
+      "type": "project",
+      "path": "../../commons/schemas/Schemas.csproj",
+      "msbuildProject": "../../commons/schemas/Schemas.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",

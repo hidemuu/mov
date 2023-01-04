@@ -1,6 +1,6 @@
 ﻿using Mov.Schemas.Bodies;
-using Mov.Schemas.Parameters;
-using Mov.Schemas.Resources.Macros;
+using Mov.Schemas.Elements.Parameters;
+using Mov.Schemas.Elements.Resources.Macros;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -51,3 +51,5 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\game.serv
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\game.service\obj\Debug\netstandard2.0\Game.Service.csproj.CopyComplete
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\game.service\obj\Debug\netstandard2.0\Mov.Game.Service.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\game.service\obj\Debug\netstandard2.0\Mov.Game.Service.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Schemas.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Schemas.pdb

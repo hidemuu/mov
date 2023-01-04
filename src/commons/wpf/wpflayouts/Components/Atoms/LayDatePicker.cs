@@ -1,5 +1,4 @@
 ﻿using Mov.Layouts;
-using Mov.Layouts.Contents.ValueObjects;
 using Mov.Layouts.Contexts.Contents;
 using System;
 using System.Collections.Generic;

@@ -1,6 +1,6 @@
 ﻿using Mov.Accessors;
 using Mov.Layouts;
-using Mov.Schemas.Styles;
+using Mov.Schemas.Elements.Styles;
 using Mov.Utilities.Attributes;
 using System;
 using System.Collections;

@@ -11,7 +11,7 @@ namespace Mov.Schemas.Elements.Units.Coordinates
 
         public CoordinateUnit Y { get; }
 
-        internal Point2D(CoordinateUnit x, CoordinateUnit y)
+        private Point2D(CoordinateUnit x, CoordinateUnit y)
         {
             X = x;
             Y = y;
@@ -19,6 +19,11 @@ namespace Mov.Schemas.Elements.Units.Coordinates
 
         public static class Factory 
         {
+            public static Point2D New(CoordinateUnit x, CoordinateUnit y)
+            {
+                return new Point2D(x, y);
+            }
+
             public static Point2D NewCartesianPoint(double x, double y)
             {
                 return new Point2D(new CoordinateUnit(x), new CoordinateUnit(y));

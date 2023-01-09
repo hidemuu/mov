@@ -45,7 +45,7 @@ namespace Mov.Schemas.Elements.Units.Coordinates
         protected override int GetHashCodeCore()
         {
             return
-                X.GetHashCode() ^
+                (X.GetHashCode() * 397) ^
                 Y.GetHashCode();
         }
     }

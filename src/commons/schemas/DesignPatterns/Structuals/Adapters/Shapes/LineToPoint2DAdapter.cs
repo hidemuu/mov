@@ -1,19 +1,26 @@
 ﻿using Mov.Schemas.Elements.Units.Coordinates;
 using Mov.Schemas.Shapes;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
+using System.Reflection;
 using System.Text;
 
-namespace Mov.Schemas.DesignPatterns.Structuals.Adapters
+namespace Mov.Schemas.DesignPatterns.Structuals.Adapters.Shapes
 {
-    public class LineToPointAdapter : Collection<Point2D>
+    public class LineToPoint2DAdapter : IEnumerable<Point2D>
     {
         private static int count = 0;
+        private static Dictionary<int, List<Point2D>> cache = new Dictionary<int, List<Point2D>>();
+        private int hash;
 
-        public LineToPointAdapter(Line2D line)
+        public LineToPoint2DAdapter(Line2D line)
         {
+            hash = line.GetHashCode();
+            if (cache.ContainsKey(hash)) return; // we already have it
+
             Console.WriteLine($"{++count}: Generating points for line [{line.Start.X.Value},{line.Start.Y.Value}]-[{line.End.X.Value},{line.End.Y}] (no caching)");
 
             var left = Math.Min(line.Start.X.Value, line.End.X.Value);
@@ -23,20 +30,34 @@ namespace Mov.Schemas.DesignPatterns.Structuals.Adapters
             var dx = right - left;
             var dy = line.End.Y.Value - line.Start.Y.Value;
 
+            List<Point2D> points = new List<Point2D>();
+
             if (dx == 0)
             {
                 for (var y = top; y <= bottom; ++y)
                 {
-                    Add(Point2D.Factory.NewCartesianPoint(left, y));
+                    points.Add(Point2D.Factory.NewCartesianPoint(left, y));
                 }
             }
             else if (dy == 0)
             {
                 for (var x = left; x <= right; ++x)
                 {
-                    Add(Point2D.Factory.NewCartesianPoint(x, top));
+                    points.Add(Point2D.Factory.NewCartesianPoint(x, top));
                 }
             }
+
+            cache.Add(hash, points);
+        }
+
+        public IEnumerator<Point2D> GetEnumerator()
+        {
+            return cache[hash].GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

@@ -403,6 +403,10 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

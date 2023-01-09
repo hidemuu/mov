@@ -38,9 +38,10 @@ namespace Mov.Schemas.Shapes
 
         protected override int GetHashCodeCore()
         {
-            return 
-                this.Start.GetHashCode() ^ 
-                this.End.GetHashCode();
+            unchecked
+            {
+                return ((Start != null ? Start.GetHashCode() : 0) * 397) ^ (End != null ? End.GetHashCode() : 0);
+            }
         }
     }
 }

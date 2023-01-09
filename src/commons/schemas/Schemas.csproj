@@ -11,8 +11,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="DesignPatterns\Structuals\Composites\" />
     <Folder Include="Elements\Units\Coordinates\Shapes\3D\" />
     <Folder Include="Implements\Headers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.5.0" />
   </ItemGroup>
 
 </Project>

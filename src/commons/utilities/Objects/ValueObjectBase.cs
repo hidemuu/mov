@@ -22,6 +22,8 @@ namespace Mov.Utilities.Objects
 
         public override bool Equals(object obj)
         {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
             var vo = obj as TSelf;
             if (vo == null) return false;
             return EqualCore(vo);

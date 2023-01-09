@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Elements.Units.Coordinates.Shapes
+namespace Mov.Schemas.Elements.Members.Characters
 {
-    public interface IShape
+    public interface ICreature
     {
     }
 }

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Elements.Members.Characters
+namespace Mov.Schemas.Elements.Members.Characters.Creatures
 {
-    public interface ICreature
+    public class Organism
     {
     }
 }

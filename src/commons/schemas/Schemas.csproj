@@ -12,8 +12,8 @@
 
   <ItemGroup>
     <Folder Include="DesignPatterns\Structuals\FlyWeights\" />
-    <Folder Include="Elements\Members\Skills\" />
-    <Folder Include="Elements\Units\Coordinates\Shapes\3D\" />
+    <Folder Include="Elements\Skills\" />
+    <Folder Include="Units\Coordinates\Shapes\ThreeDimensions\" />
     <Folder Include="Implements\Headers\" />
   </ItemGroup>
 

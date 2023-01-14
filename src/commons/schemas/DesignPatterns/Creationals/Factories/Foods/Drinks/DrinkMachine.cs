@@ -1,4 +1,4 @@
-﻿using Mov.Schemas.Elements.Members.Foods;
+﻿using Mov.Schemas.Elements.Foods;
 using System;
 using System.Collections.Generic;
 using System.Text;

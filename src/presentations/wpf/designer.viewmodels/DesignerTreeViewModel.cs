@@ -3,7 +3,7 @@ using Mov.Designer.Models;
 using Mov.Designer.Models.Services;
 using Mov.Designer.Service;
 using Mov.Layouts;
-using Mov.Schemas.Elements.Styles;
+using Mov.Schemas.Styles;
 using Mov.WpfModels;
 using Mov.WpfMvvms;
 using Prism.Regions;

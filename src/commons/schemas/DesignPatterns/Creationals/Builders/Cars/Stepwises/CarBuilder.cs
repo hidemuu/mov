@@ -1,5 +1,5 @@
-﻿using Mov.Schemas.Elements.Members.Products;
-using Mov.Schemas.Elements.Units;
+﻿using Mov.Schemas.Elements.Products;
+using Mov.Schemas.Units;
 using Mov.Shemas.DesignPatterns.Creationals.Builders;
 using System;
 using System.Collections.Generic;

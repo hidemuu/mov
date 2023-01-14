@@ -1,6 +1,6 @@
 ﻿using Mov.Calculators;
 using Mov.Game.Models;
-using Mov.Schemas.Elements.Members.Learnings;
+using Mov.Schemas.Elements.Learnings;
 using Mov.Utilities;
 using System;
 using System.Collections.Generic;

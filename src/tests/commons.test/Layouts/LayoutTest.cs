@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using Mov.Commons.Test.Layouts.Builders;
 using Mov.Layouts.Contexts;
-using Mov.Schemas.Elements.Styles;
+using Mov.Schemas.Styles;
 
 namespace Mov.Commons.Test.Layouts
 {

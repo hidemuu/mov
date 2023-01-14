@@ -1,6 +1,6 @@
 ﻿using Mov.Layouts.Contexts;
-using Mov.Schemas.Elements.Keys;
-using Mov.Schemas.Elements.Styles;
+using Mov.Schemas.Resources.Keys;
+using Mov.Schemas.Styles;
 using System;
 using System.Collections.Generic;
 using System.Linq;

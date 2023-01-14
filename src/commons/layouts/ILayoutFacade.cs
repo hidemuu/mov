@@ -1,5 +1,5 @@
 ﻿using Mov.Layouts.Contexts;
-using Mov.Schemas.Elements.Styles;
+using Mov.Schemas.Styles;
 using System;
 using System.Collections.Generic;
 using System.Text;

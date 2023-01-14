@@ -1,4 +1,4 @@
-﻿using Mov.Schemas.Elements.Members.Products;
+﻿using Mov.Schemas.Elements.Products;
 using System;
 using System.Collections.Generic;
 using System.Text;

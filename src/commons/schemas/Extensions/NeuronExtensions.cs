@@ -1,4 +1,4 @@
-﻿using Mov.Schemas.Elements.Members.Learnings;
+﻿using Mov.Schemas.Elements.Learnings;
 using System;
 using System.Collections.Generic;
 using System.Text;

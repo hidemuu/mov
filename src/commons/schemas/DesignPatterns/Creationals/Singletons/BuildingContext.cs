@@ -1,4 +1,4 @@
-﻿using Mov.Schemas.Elements.Members.Structures;
+﻿using Mov.Schemas.Elements.Structures;
 using System;
 using System.Collections.Generic;
 using System.Text;

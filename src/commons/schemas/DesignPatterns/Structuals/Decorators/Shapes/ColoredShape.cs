@@ -1,5 +1,5 @@
 ﻿using Mov.Schemas.DesignPatterns.Structuals.Decorators.Shapes.Policies;
-using Mov.Schemas.Elements.Units.Coordinates.Shapes;
+using Mov.Schemas.Units.Coordinates.Shapes;
 using System;
 using System.Collections.Generic;
 using System.Linq;

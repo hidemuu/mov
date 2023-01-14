@@ -1,5 +1,5 @@
-﻿using Mov.Schemas.Elements.Units.Coordinates;
-using Mov.Schemas.Shapes;
+﻿using Mov.Schemas.Units.Coordinates;
+using Mov.Schemas.Units.Coordinates.Shapes.TwoDimensions;
 using System;
 using System.Collections;
 using System.Collections.Generic;

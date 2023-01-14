@@ -4,15 +4,15 @@ using Mov.Layouts.Contexts.Contents;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Mov.Schemas.Elements.Keys;
-using Mov.Schemas.Elements.Units.Sizes;
-using Mov.Schemas.Elements.Units;
-using Mov.Schemas.Elements.Styles;
-using Mov.Schemas.Elements.Resources.Localizes;
-using Mov.Schemas.Elements.Resources.Images;
-using Mov.Schemas.Elements.Parameters;
-using Mov.Schemas.Elements.Resources.Macros;
 using Mov.Schemas.Implements.Bodies;
+using Mov.Schemas.Resources.Keys;
+using Mov.Schemas.Units.Sizes;
+using Mov.Schemas.Units;
+using Mov.Schemas.Styles;
+using Mov.Schemas.Resources.Localizes;
+using Mov.Schemas.Resources.Images;
+using Mov.Schemas.Parameters;
+using Mov.Schemas.Resources.Macros;
 
 namespace Mov.Designer.Models
 {

@@ -1,4 +1,4 @@
-﻿using Mov.Schemas.Elements.Styles;
+﻿using Mov.Schemas.Styles;
 using Mov.Utilities.Objects;
 using System;
 using System.Collections.Generic;

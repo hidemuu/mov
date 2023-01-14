@@ -1,4 +1,4 @@
-﻿using Mov.Schemas.Elements.Members.Personals;
+﻿using Mov.Schemas.Elements.Personals;
 using Mov.Utilities.Objects;
 using System;
 using System.Collections.Generic;

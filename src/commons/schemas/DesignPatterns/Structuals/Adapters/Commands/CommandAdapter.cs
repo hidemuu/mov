@@ -1,10 +1,10 @@
 ﻿using Autofac.Features.Metadata;
 using Autofac;
-using Mov.Schemas.Elements.Parameters.Commands;
+using Mov.Schemas.Parameters.Commands;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Mov.Schemas.Elements.Parameters;
+using Mov.Schemas.Parameters;
 
 namespace Mov.Schemas.DesignPatterns.Structuals.Adapters.Commands
 {

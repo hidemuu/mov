@@ -1,5 +1,5 @@
 ﻿using Mov.Schemas.DesignPatterns.Structuals.Decorators.Shapes.Policies;
-using Mov.Schemas.Units.Coordinates.Shapes;
+using Mov.Schemas.Units.Shapes;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,6 +17,16 @@ namespace Mov.Schemas.DesignPatterns.Structuals.Decorators.Shapes
             this.shape = shape;
             if (shape is ShapeDecorator sd)
                 types.AddRange(sd.types);
+        }
+
+        public void Draw()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Resize(float factor)
+        {
+            throw new NotImplementedException();
         }
     }
 

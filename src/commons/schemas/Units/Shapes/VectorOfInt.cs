@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Units.Coordinates.Shapes
+namespace Mov.Schemas.Units.Shapes
 {
     public class VectorOfInt<D> : Vector<VectorOfInt<D>, int, D>
         where D : IDimension, new()

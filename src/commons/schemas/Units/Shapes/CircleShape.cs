@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Mov.Schemas.DesignPatterns.Structuals.Bridges.Renderers;
 
-namespace Mov.Schemas.Units.Coordinates.Shapes
+namespace Mov.Schemas.Units.Shapes
 {
     internal class CircleShape : ShapeBase
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using Mov.Schemas.DesignPatterns.Structuals.Bridges.Renderers;
 
-namespace Mov.Schemas.Units.Coordinates.Shapes
+namespace Mov.Schemas.Units.Shapes
 {
-    public abstract class ShapeBase
+    public abstract class ShapeBase : IShape
     {
         protected IRenderer renderer;
 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Text;
 
-namespace Mov.Schemas.Units.Coordinates.Shapes
+namespace Mov.Schemas.Units.Shapes
 {
     public static class Dimensions
     {

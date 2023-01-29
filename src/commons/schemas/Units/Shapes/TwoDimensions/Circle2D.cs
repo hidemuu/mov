@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Units.Coordinates.Shapes
+namespace Mov.Schemas.Units.Shapes.TwoDimensions
 {
-    public interface IShape
+    public class Circle2D
     {
     }
 }

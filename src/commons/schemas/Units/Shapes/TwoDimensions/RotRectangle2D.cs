@@ -1,9 +1,10 @@
-﻿using Mov.Utilities.Objects;
+﻿using Mov.Schemas.Units.Coordinates;
+using Mov.Utilities.Objects;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Units.Coordinates.Shapes.TwoDimensions
+namespace Mov.Schemas.Units.Shapes.TwoDimensions
 {
     public sealed class RotRectangle2D : ValueObjectBase<RotRectangle2D>
     {

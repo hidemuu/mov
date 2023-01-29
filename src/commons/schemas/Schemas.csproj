@@ -13,7 +13,7 @@
   <ItemGroup>
     <Folder Include="DesignPatterns\Structuals\FlyWeights\" />
     <Folder Include="Elements\Skills\" />
-    <Folder Include="Units\Coordinates\Shapes\ThreeDimensions\" />
+    <Folder Include="Units\Shapes\ThreeDimensions\" />
     <Folder Include="Implements\Headers\" />
   </ItemGroup>
 

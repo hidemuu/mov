@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
+using Mov.Schemas.Units.Coordinates;
+using Mov.Schemas.Units.Shapes.TwoDimensions;
 
-namespace Mov.Schemas.Units.Coordinates.Shapes.TwoDimensions.Vectors
+namespace Mov.Schemas.Units.Shapes.TwoDimensions.Vectors
 {
     internal class VectorRectangle2D : Vector2D
     {

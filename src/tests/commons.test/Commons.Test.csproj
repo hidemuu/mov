@@ -20,8 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\commons\authorizers\Authorizers.csproj" />
-    <ProjectReference Include="..\..\commons\layouts\Layouts.csproj" />
+    <ProjectReference Include="..\..\commons\controllers\Controllers.csproj" />
   </ItemGroup>
 
 </Project>

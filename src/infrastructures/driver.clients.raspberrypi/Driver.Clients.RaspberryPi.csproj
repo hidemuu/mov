@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\commons\connectors\Connectors.csproj" />
+    <ProjectReference Include="..\..\commons\accessors\Accessors.csproj" />
     <ProjectReference Include="..\..\domains\driver.clients\Driver.Clients.csproj" />
   </ItemGroup>
 

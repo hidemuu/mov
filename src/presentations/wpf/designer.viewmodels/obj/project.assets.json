@@ -51,6 +51,19 @@
           }
         }
       },
+      "FluentFTP/39.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/FluentFTP.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/FluentFTP.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "gong-wpf-dragdrop/3.0.0": {
         "type": "package",
         "compile": {
@@ -574,6 +587,35 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "SSH.NET/2020.0.2": {
+        "type": "package",
+        "dependencies": {
+          "SshNet.Security.Cryptography": "[1.3.0]"
+        },
+        "compile": {
+          "lib/netstandard2.0/Renci.SshNet.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Renci.SshNet.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SshNet.Security.Cryptography/1.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/SshNet.Security.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/SshNet.Security.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Collections.Immutable/1.7.1": {
         "type": "package",
         "compile": {
@@ -740,51 +782,26 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "CsvHelper": "27.2.1",
+          "FluentFTP": "39.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.17",
-          "Mov.Controllers": "1.0.0",
+          "Mov.Schemas": "1.0.0",
           "Mov.Utilities": "1.0.0",
-          "Newtonsoft.Json": "13.0.1"
+          "Newtonsoft.Json": "13.0.1",
+          "SSH.NET": "2020.0.2"
         },
         "compile": {
           "bin/placeholder/Mov.Accessors.dll": {}
         },
         "runtime": {
           "bin/placeholder/Mov.Accessors.dll": {}
-        }
-      },
-      "Mov.BaseModel/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Accessors": "1.0.0",
-          "Mov.Calculators": "1.0.0",
-          "Mov.Controllers": "1.0.0",
-          "Mov.Utilities": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.BaseModel.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.BaseModel.dll": {}
-        }
-      },
-      "Mov.Calculators/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "MathNet.Numerics": "5.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Calculators.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Calculators.dll": {}
         }
       },
       "Mov.Controllers/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "MathNet.Numerics": "5.0.0",
+          "Mov.Accessors": "1.0.0",
           "Mov.Schemas": "1.0.0",
           "Newtonsoft.Json": "13.0.1"
         },
@@ -813,8 +830,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Mov.BaseModel": "1.0.0",
-          "Mov.Layouts": "1.0.0",
+          "Mov.Controllers": "1.0.0",
           "ReactiveProperty.Core": "8.0.1",
           "System.ComponentModel.Annotations": "5.0.0"
         },
@@ -836,19 +852,6 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Designer.Service.dll": {}
-        }
-      },
-      "Mov.Layouts/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Schemas": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Layouts.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Layouts.dll": {}
         }
       },
       "Mov.Painters/1.0.0": {
@@ -933,7 +936,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Mov.Layouts": "1.0.0",
+          "Mov.Schemas": "1.0.0",
           "Mov.WpfControls": "1.0.0"
         },
         "compile": {
@@ -1072,6 +1075,39 @@
         "lib/netstandard2.0/CsvHelper.xml",
         "lib/netstandard2.1/CsvHelper.dll",
         "lib/netstandard2.1/CsvHelper.xml"
+      ]
+    },
+    "FluentFTP/39.0.0": {
+      "sha512": "1hU6X8ZsKXjB4/ecO+yJPprcLNPVibCDtGHaq0x1EHBMjBwy7oKzjl6equ8Rb0Dt9J2dLc26IboBmO1kZGbHjg==",
+      "type": "package",
+      "path": "fluentftp/39.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "fluentftp.39.0.0.nupkg.sha512",
+        "fluentftp.nuspec",
+        "lib/net20/FluentFTP.dll",
+        "lib/net20/FluentFTP.xml",
+        "lib/net35/FluentFTP.dll",
+        "lib/net35/FluentFTP.xml",
+        "lib/net40/FluentFTP.dll",
+        "lib/net40/FluentFTP.xml",
+        "lib/net45/FluentFTP.dll",
+        "lib/net45/FluentFTP.xml",
+        "lib/net5.0/FluentFTP.dll",
+        "lib/net5.0/FluentFTP.xml",
+        "lib/net6.0/FluentFTP.dll",
+        "lib/net6.0/FluentFTP.xml",
+        "lib/netstandard1.4/FluentFTP.dll",
+        "lib/netstandard1.4/FluentFTP.xml",
+        "lib/netstandard1.6/FluentFTP.dll",
+        "lib/netstandard1.6/FluentFTP.xml",
+        "lib/netstandard2.0/FluentFTP.dll",
+        "lib/netstandard2.0/FluentFTP.xml",
+        "lib/netstandard2.1/FluentFTP.dll",
+        "lib/netstandard2.1/FluentFTP.xml",
+        "logo-nuget.png"
       ]
     },
     "gong-wpf-dragdrop/3.0.0": {
@@ -1738,6 +1774,70 @@
         "reactiveproperty.wpf.nuspec"
       ]
     },
+    "SSH.NET/2020.0.2": {
+      "sha512": "G0dNlTBAM00KZXv1wWVwgg26d9/METcM6qWBpNQwllzQmmbu+Zu+FS1L1X4fFgGdPu3e8k9mmTBu6SwtQ0614g==",
+      "type": "package",
+      "path": "ssh.net/2020.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Renci.SshNet.dll",
+        "lib/net35/Renci.SshNet.xml",
+        "lib/net40/Renci.SshNet.dll",
+        "lib/net40/Renci.SshNet.xml",
+        "lib/netstandard1.3/Renci.SshNet.dll",
+        "lib/netstandard1.3/Renci.SshNet.xml",
+        "lib/netstandard2.0/Renci.SshNet.dll",
+        "lib/netstandard2.0/Renci.SshNet.xml",
+        "lib/sl4/Renci.SshNet.dll",
+        "lib/sl4/Renci.SshNet.xml",
+        "lib/sl5/Renci.SshNet.dll",
+        "lib/sl5/Renci.SshNet.xml",
+        "lib/uap10/Renci.SshNet.dll",
+        "lib/uap10/Renci.SshNet.xml",
+        "lib/wp71/Renci.SshNet.dll",
+        "lib/wp71/Renci.SshNet.xml",
+        "lib/wp8/Renci.SshNet.dll",
+        "lib/wp8/Renci.SshNet.xml",
+        "ssh.net.2020.0.2.nupkg.sha512",
+        "ssh.net.nuspec"
+      ]
+    },
+    "SshNet.Security.Cryptography/1.3.0": {
+      "sha512": "5pBIXRjcSO/amY8WztpmNOhaaCNHY/B6CcYDI7FSTgqSyo/ZUojlLiKcsl+YGbxQuLX439qIkMfP0PHqxqJi/Q==",
+      "type": "package",
+      "path": "sshnet.security.cryptography/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/SshNet.Security.Cryptography.dll",
+        "lib/net20/SshNet.Security.Cryptography.xml",
+        "lib/net40/SshNet.Security.Cryptography.dll",
+        "lib/net40/SshNet.Security.Cryptography.xml",
+        "lib/net45/SshNet.Security.Cryptography.dll",
+        "lib/net45/SshNet.Security.Cryptography.xml",
+        "lib/netstandard1.0/SshNet.Security.Cryptography.dll",
+        "lib/netstandard1.0/SshNet.Security.Cryptography.xml",
+        "lib/netstandard1.3/SshNet.Security.Cryptography.dll",
+        "lib/netstandard1.3/SshNet.Security.Cryptography.xml",
+        "lib/netstandard2.0/SshNet.Security.Cryptography.dll",
+        "lib/netstandard2.0/SshNet.Security.Cryptography.xml",
+        "lib/portable-net45+win8+wpa81/SshNet.Security.Cryptography.dll",
+        "lib/portable-net45+win8+wpa81/SshNet.Security.Cryptography.xml",
+        "lib/sl4/SshNet.Security.Cryptography.dll",
+        "lib/sl4/SshNet.Security.Cryptography.xml",
+        "lib/sl5/SshNet.Security.Cryptography.dll",
+        "lib/sl5/SshNet.Security.Cryptography.xml",
+        "lib/uap10.0/SshNet.Security.Cryptography.dll",
+        "lib/uap10.0/SshNet.Security.Cryptography.xml",
+        "lib/wp71/SshNet.Security.Cryptography.dll",
+        "lib/wp71/SshNet.Security.Cryptography.xml",
+        "lib/wp8/SshNet.Security.Cryptography.dll",
+        "lib/wp8/SshNet.Security.Cryptography.xml",
+        "sshnet.security.cryptography.1.3.0.nupkg.sha512",
+        "sshnet.security.cryptography.nuspec"
+      ]
+    },
     "System.Collections.Immutable/1.7.1": {
       "sha512": "B43Zsz5EfMwyEbnObwRxW5u85fzJma3lrDeGcSAV1qkhSRTNY5uXAByTn9h9ddNdhM+4/YoLc/CI43umjwIl9Q==",
       "type": "package",
@@ -2116,16 +2216,6 @@
       "path": "../../../commons/accessors/Accessors.csproj",
       "msbuildProject": "../../../commons/accessors/Accessors.csproj"
     },
-    "Mov.BaseModel/1.0.0": {
-      "type": "project",
-      "path": "../../../domains/basemodel/BaseModel.csproj",
-      "msbuildProject": "../../../domains/basemodel/BaseModel.csproj"
-    },
-    "Mov.Calculators/1.0.0": {
-      "type": "project",
-      "path": "../../../commons/calculators/Calculators.csproj",
-      "msbuildProject": "../../../commons/calculators/Calculators.csproj"
-    },
     "Mov.Controllers/1.0.0": {
       "type": "project",
       "path": "../../../commons/controllers/Controllers.csproj",
@@ -2145,11 +2235,6 @@
       "type": "project",
       "path": "../../../applications/designer.service/Designer.Service.csproj",
       "msbuildProject": "../../../applications/designer.service/Designer.Service.csproj"
-    },
-    "Mov.Layouts/1.0.0": {
-      "type": "project",
-      "path": "../../../commons/layouts/Layouts.csproj",
-      "msbuildProject": "../../../commons/layouts/Layouts.csproj"
     },
     "Mov.Painters/1.0.0": {
       "type": "project",

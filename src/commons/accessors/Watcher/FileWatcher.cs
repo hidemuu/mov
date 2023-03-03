@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Mov.Accessors
+namespace Mov.Accessors.Watcher
 {
     /// <summary>
     /// ファイル監視クラス
@@ -17,7 +17,7 @@ namespace Mov.Accessors
         /// <param name="path"></param>
         public FileWatcher(string path)
         {
-            var extension = System.IO.Path.GetExtension(path);
+            var extension = Path.GetExtension(path);
             using (var watcher = new FileSystemWatcher(path))
             {
                 watcher.NotifyFilter = NotifyFilters.Attributes

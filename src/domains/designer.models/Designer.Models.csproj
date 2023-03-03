@@ -12,8 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\commons\layouts\Layouts.csproj" />
-    <ProjectReference Include="..\basemodel\BaseModel.csproj" />
+    <ProjectReference Include="..\..\commons\controllers\Controllers.csproj" />
   </ItemGroup>
 
 </Project>

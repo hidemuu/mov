@@ -456,19 +456,6 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "Mov.Layouts/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Schemas": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Layouts.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Layouts.dll": {}
-        }
-      },
       "Mov.Painters/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -551,7 +538,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Mov.Layouts": "1.0.0",
+          "Mov.Schemas": "1.0.0",
           "Mov.WpfControls": "1.0.0"
         },
         "compile": {
@@ -1380,11 +1367,6 @@
       "type": "project",
       "path": "../bom.viewmodels/Bom.ViewModels.csproj",
       "msbuildProject": "../bom.viewmodels/Bom.ViewModels.csproj"
-    },
-    "Mov.Layouts/1.0.0": {
-      "type": "project",
-      "path": "../../../commons/layouts/Layouts.csproj",
-      "msbuildProject": "../../../commons/layouts/Layouts.csproj"
     },
     "Mov.Painters/1.0.0": {
       "type": "project",

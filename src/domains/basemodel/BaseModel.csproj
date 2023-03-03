@@ -7,10 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\commons\accessors\Accessors.csproj" />
-    <ProjectReference Include="..\..\commons\calculators\Calculators.csproj" />
     <ProjectReference Include="..\..\commons\controllers\Controllers.csproj" />
-    <ProjectReference Include="..\..\commons\utilities\Utilities.csproj" />
   </ItemGroup>
 
 </Project>

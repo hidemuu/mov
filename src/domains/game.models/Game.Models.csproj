@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\commons\controllers\Controllers.csproj" />
     <ProjectReference Include="..\..\commons\painters\Painters.csproj" />
-    <ProjectReference Include="..\basemodel\BaseModel.csproj" />
   </ItemGroup>
 
   <ItemGroup>

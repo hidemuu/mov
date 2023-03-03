@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\basemodel\BaseModel.csproj" />
+    <ProjectReference Include="..\..\commons\controllers\Controllers.csproj" />
   </ItemGroup>
 
 </Project>

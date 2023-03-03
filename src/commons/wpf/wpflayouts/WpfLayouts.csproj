@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\layouts\Layouts.csproj" />
+    <ProjectReference Include="..\..\schemas\Schemas.csproj" />
     <ProjectReference Include="..\wpfcontrols\WpfControls.csproj" />
   </ItemGroup>
 

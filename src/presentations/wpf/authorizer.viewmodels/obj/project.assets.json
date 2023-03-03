@@ -482,7 +482,6 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "LiveCharts.Wpf.NetCore3": "0.9.7",
-          "Mov.Utilities": "1.0.0",
           "Mov.WpfDesigns": "1.0.0",
           "Mov.WpfModels": "1.0.0",
           "Prism.Unity": "8.1.97",

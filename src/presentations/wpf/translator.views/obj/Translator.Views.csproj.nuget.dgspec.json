@@ -234,9 +234,6 @@
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\utilities\\Utilities.csproj": {
-                "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\utilities\\Utilities.csproj"
-              },
               "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\wpf\\wpfdesigns\\WpfDesigns.csproj": {
                 "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\wpf\\wpfdesigns\\WpfDesigns.csproj"
               },

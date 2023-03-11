@@ -18,26 +18,6 @@
           }
         }
       },
-      "ControlzEx/4.4.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Xaml.Behaviors.Wpf": "1.1.19",
-          "System.Text.Json": "4.7.2"
-        },
-        "compile": {
-          "lib/netcoreapp3.1/ControlzEx.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/ControlzEx.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
       "CsvHelper/27.2.1": {
         "type": "package",
         "compile": {
@@ -61,117 +41,6 @@
         "runtime": {
           "lib/net6.0/FluentFTP.dll": {
             "related": ".xml"
-          }
-        }
-      },
-      "gong-wpf-dragdrop/3.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0-windows7.0/GongSolutions.WPF.DragDrop.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0-windows7.0/GongSolutions.WPF.DragDrop.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "LiveCharts.Wpf.NetCore3/0.9.7": {
-        "type": "package",
-        "dependencies": {
-          "System.Data.DataSetExtensions": "4.5.0"
-        },
-        "compile": {
-          "lib/netcoreapp3.1/LiveCharts.Wpf.dll": {},
-          "lib/netcoreapp3.1/LiveCharts.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/LiveCharts.Wpf.dll": {},
-          "lib/netcoreapp3.1/LiveCharts.dll": {
-            "related": ".xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "MahApps.Metro/2.4.9": {
-        "type": "package",
-        "dependencies": {
-          "ControlzEx": "[4.4.0, 6.0.0)"
-        },
-        "compile": {
-          "lib/netcoreapp3.1/MahApps.Metro.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/MahApps.Metro.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ],
-        "resource": {
-          "lib/netcoreapp3.1/de/MahApps.Metro.resources.dll": {
-            "locale": "de"
-          }
-        }
-      },
-      "MaterialDesignColors/2.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.1/MaterialDesignColors.dll": {
-            "related": ".pdb"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/MaterialDesignColors.dll": {
-            "related": ".pdb"
-          }
-        }
-      },
-      "MaterialDesignThemes/4.2.1": {
-        "type": "package",
-        "dependencies": {
-          "MaterialDesignColors": "[2.0.3, 3.0.0)"
-        },
-        "compile": {
-          "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "build": {
-          "build/_._": {}
-        }
-      },
-      "MaterialDesignThemes.MahApps/0.1.9": {
-        "type": "package",
-        "dependencies": {
-          "MahApps.Metro": "[2.0.0, 3.0.0)",
-          "MaterialDesignColors": "[2.0.3, 3.0.0)",
-          "MaterialDesignThemes": "[4.2.1, 5.0.0)"
-        },
-        "compile": {
-          "lib/netcoreapp3.1/MaterialDesignThemes.MahApps.dll": {
-            "related": ".pdb"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/MaterialDesignThemes.MahApps.dll": {
-            "related": ".pdb"
           }
         }
       },
@@ -535,24 +404,6 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
-      "ReactiveProperty/8.0.1": {
-        "type": "package",
-        "dependencies": {
-          "ReactiveProperty.Core": "8.0.1",
-          "System.ComponentModel.Annotations": "5.0.0",
-          "System.Reactive": "5.0.0"
-        },
-        "compile": {
-          "lib/net6.0/ReactiveProperty.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/ReactiveProperty.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "ReactiveProperty.Core/8.0.1": {
         "type": "package",
         "compile": {
@@ -565,27 +416,6 @@
             "related": ".xml"
           }
         }
-      },
-      "ReactiveProperty.WPF/8.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Xaml.Behaviors.Wpf": "1.1.31",
-          "ReactiveProperty": "8.0.1",
-          "System.Reactive": "5.0.0"
-        },
-        "compile": {
-          "lib/net6.0-windows7.0/ReactiveProperty.WPF.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0-windows7.0/ReactiveProperty.WPF.dll": {
-            "related": ".xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
       },
       "SSH.NET/2020.0.2": {
         "type": "package",
@@ -642,15 +472,6 @@
           }
         }
       },
-      "System.Data.DataSetExtensions/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Data.DataSetExtensions.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Data.DataSetExtensions.dll": {}
-        }
-      },
       "System.Diagnostics.DiagnosticSource/4.7.1": {
         "type": "package",
         "compile": {
@@ -693,22 +514,6 @@
           }
         }
       },
-      "System.Reactive/5.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net5.0/System.Reactive.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net5.0/System.Reactive.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net5.0/_._": {}
-        }
-      },
       "System.Runtime.CompilerServices.Unsafe/4.5.2": {
         "type": "package",
         "compile": {
@@ -718,19 +523,6 @@
         },
         "runtime": {
           "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Text.Json/4.7.2": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/System.Text.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/System.Text.Json.dll": {
             "related": ".xml"
           }
         }
@@ -848,73 +640,6 @@
           "bin/placeholder/Mov.Analizer.Service.dll": {}
         }
       },
-      "Mov.Analizer.ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Analizer.Service": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Analizer.ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Analizer.ViewModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.Analizer.Views/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Analizer.ViewModels": "1.0.0",
-          "Mov.WpfViews": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Analizer.Views.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Analizer.Views.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.Authorizer.ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.WpfViewModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Authorizer.ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Authorizer.ViewModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.Authorizer.Views/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Authorizer.ViewModels": "1.0.0",
-          "Mov.WpfViews": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Authorizer.Views.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Authorizer.Views.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
       "Mov.Bom.Engine/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -966,73 +691,6 @@
         "runtime": {
           "bin/placeholder/Mov.Bom.Service.dll": {}
         }
-      },
-      "Mov.Bom.ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.WpfViewModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Bom.ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Bom.ViewModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.Bom.Views/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Bom.ViewModels": "1.0.0",
-          "Mov.WpfViews": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Bom.Views.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Bom.Views.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.Configurator.ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Designer.Service": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Configurator.ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Configurator.ViewModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.Configurator.Views/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Configurator.ViewModels": "1.0.0",
-          "Mov.WpfViews": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Configurator.Views.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Configurator.Views.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
       },
       "Mov.Controllers/1.0.0": {
         "type": "project",
@@ -1105,41 +763,6 @@
           "bin/placeholder/Mov.Designer.Service.dll": {}
         }
       },
-      "Mov.Designer.ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Designer.Service": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Designer.ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Designer.ViewModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.Designer.Views/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Designer.ViewModels": "1.0.0",
-          "Mov.WpfLayouts": "1.0.0",
-          "Mov.WpfViews": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Designer.Views.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Designer.Views.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
       "Mov.Drawer.Engine/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1194,40 +817,6 @@
         "runtime": {
           "bin/placeholder/Mov.Drawer.Service.dll": {}
         }
-      },
-      "Mov.Drawer.ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Drawer.Service": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Drawer.ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Drawer.ViewModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.Drawer.Views/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Drawer.ViewModels": "1.0.0",
-          "Mov.WpfViews": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Drawer.Views.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Drawer.Views.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
       },
       "Mov.Driver.Clients/1.0.0": {
         "type": "project",
@@ -1294,40 +883,6 @@
         "runtime": {
           "bin/placeholder/Mov.Driver.Service.dll": {}
         }
-      },
-      "Mov.Driver.ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Driver.Service": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Driver.ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Driver.ViewModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.Driver.Views/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Driver.ViewModels": "1.0.0",
-          "Mov.WpfViews": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Driver.Views.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Driver.Views.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
       },
       "Mov.Framework/1.0.0": {
         "type": "project",
@@ -1402,40 +957,6 @@
           "bin/placeholder/Mov.Game.Service.dll": {}
         }
       },
-      "Mov.Game.ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Game.Service": "1.0.0",
-          "Mov.WpfViewModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Game.ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Game.ViewModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.Game.Views/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Game.ViewModels": "1.0.0",
-          "Mov.WpfViews": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Game.Views.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Game.Views.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
       "Mov.Painters/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1448,39 +969,6 @@
         "runtime": {
           "bin/placeholder/Mov.Painters.dll": {}
         }
-      },
-      "Mov.Scheduler.ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.WpfViewModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Scheduler.ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Scheduler.ViewModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.Scheduler.Views/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Scheduler.ViewModels": "1.0.0",
-          "Mov.WpfViews": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Scheduler.Views.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Scheduler.Views.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
       },
       "Mov.Schemas/1.0.0": {
         "type": "project",
@@ -1495,90 +983,6 @@
         "runtime": {
           "bin/placeholder/Mov.Schemas.dll": {}
         }
-      },
-      "Mov.Translator.ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.WpfViewModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Translator.ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Translator.ViewModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.Translator.Views/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Translator.ViewModels": "1.0.0",
-          "Mov.WpfViews": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Translator.Views.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Translator.Views.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.UseCase.ViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Analizer.ViewModels": "1.0.0",
-          "Mov.Authorizer.ViewModels": "1.0.0",
-          "Mov.Bom.ViewModels": "1.0.0",
-          "Mov.Configurator.ViewModels": "1.0.0",
-          "Mov.Designer.ViewModels": "1.0.0",
-          "Mov.Drawer.ViewModels": "1.0.0",
-          "Mov.Driver.ViewModels": "1.0.0",
-          "Mov.Game.ViewModels": "1.0.0",
-          "Mov.Scheduler.ViewModels": "1.0.0",
-          "Mov.Translator.ViewModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.UseCase.ViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.UseCase.ViewModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.UseCase.Views/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Analizer.Views": "1.0.0",
-          "Mov.Authorizer.Views": "1.0.0",
-          "Mov.Bom.Views": "1.0.0",
-          "Mov.Configurator.Views": "1.0.0",
-          "Mov.Designer.Views": "1.0.0",
-          "Mov.Drawer.Views": "1.0.0",
-          "Mov.Driver.Views": "1.0.0",
-          "Mov.Game.Views": "1.0.0",
-          "Mov.Scheduler.Views": "1.0.0",
-          "Mov.Translator.Views": "1.0.0",
-          "Mov.UseCase.ViewModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.UseCase.Views.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.UseCase.Views.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
       },
       "Mov.UseCases/1.0.0": {
         "type": "project",
@@ -1614,136 +1018,6 @@
         "runtime": {
           "bin/placeholder/Mov.Utilities.dll": {}
         }
-      },
-      "Mov.WpfControls/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "LiveCharts.Wpf.NetCore3": "0.9.7",
-          "Mov.WpfDesigns": "1.0.0",
-          "Mov.WpfModels": "1.0.0",
-          "Prism.Unity": "8.1.97",
-          "ReactiveProperty.WPF": "8.0.1",
-          "gong-wpf-dragdrop": "3.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.WpfControls.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.WpfControls.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.WpfDesigns/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "MahApps.Metro": "2.4.9",
-          "MaterialDesignColors": "2.0.3",
-          "MaterialDesignThemes": "4.2.1",
-          "MaterialDesignThemes.MahApps": "0.1.9"
-        },
-        "compile": {
-          "bin/placeholder/Mov.WpfDesigns.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.WpfDesigns.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.WpfLayouts/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Schemas": "1.0.0",
-          "Mov.WpfControls": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.WpfLayouts.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.WpfLayouts.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.WpfModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Utilities": "1.0.0",
-          "ReactiveProperty.WPF": "8.0.1",
-          "gong-wpf-dragdrop": "3.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.WpfModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.WpfModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.WpfMvvms/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.Painters": "1.0.0",
-          "Mov.WpfDesigns": "1.0.0",
-          "Mov.WpfLayouts": "1.0.0",
-          "Mov.WpfModels": "1.0.0",
-          "Prism.Unity": "8.1.97",
-          "ReactiveProperty.WPF": "8.0.1",
-          "System.Drawing.Common": "6.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.WpfMvvms.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.WpfMvvms.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.WpfViewModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.WpfMvvms": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.WpfViewModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.WpfViewModels.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "Mov.WpfViews/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Mov.WpfControls": "1.0.0",
-          "Mov.WpfMvvms": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.WpfViews.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.WpfViews.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
       }
     }
   },
@@ -1767,30 +1041,6 @@
         "lib/netstandard2.0/Autofac.xml",
         "lib/netstandard2.1/Autofac.dll",
         "lib/netstandard2.1/Autofac.xml"
-      ]
-    },
-    "ControlzEx/4.4.0": {
-      "sha512": "pZ5z4hYWwE4R13UMCVs6vII//nL7hz+Nwn4oJlnsZJRGqJNy6Z9KnJiTZfly6lKFu0pMc1aWBZpx+VqFTQKP1Q==",
-      "type": "package",
-      "path": "controlzex/4.4.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "controlzex.4.4.0.nupkg.sha512",
-        "controlzex.nuspec",
-        "lib/net45/ControlzEx.dll",
-        "lib/net45/ControlzEx.pdb",
-        "lib/net45/ControlzEx.xml",
-        "lib/net462/ControlzEx.dll",
-        "lib/net462/ControlzEx.pdb",
-        "lib/net462/ControlzEx.xml",
-        "lib/netcoreapp3.0/ControlzEx.dll",
-        "lib/netcoreapp3.0/ControlzEx.pdb",
-        "lib/netcoreapp3.0/ControlzEx.xml",
-        "lib/netcoreapp3.1/ControlzEx.dll",
-        "lib/netcoreapp3.1/ControlzEx.pdb",
-        "lib/netcoreapp3.1/ControlzEx.xml",
-        "logo-mini.png"
       ]
     },
     "CsvHelper/27.2.1": {
@@ -1848,159 +1098,6 @@
         "lib/netstandard2.1/FluentFTP.dll",
         "lib/netstandard2.1/FluentFTP.xml",
         "logo-nuget.png"
-      ]
-    },
-    "gong-wpf-dragdrop/3.0.0": {
-      "sha512": "0qXxJ0gEJtDlC7fl19684wMuIfK+aA3Hj3Z1lGUEH/ZhmCnFpy0YNFy7IIyFM3SMr7hWdL3eRnG1oRm/j/Dgog==",
-      "type": "package",
-      "path": "gong-wpf-dragdrop/3.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "GongSolutions.Wpf.DragDrop.png",
-        "LICENSE",
-        "gong-wpf-dragdrop.3.0.0.nupkg.sha512",
-        "gong-wpf-dragdrop.nuspec",
-        "lib/net462/GongSolutions.WPF.DragDrop.dll",
-        "lib/net462/GongSolutions.WPF.DragDrop.pdb",
-        "lib/net462/GongSolutions.WPF.DragDrop.xml",
-        "lib/net47/GongSolutions.WPF.DragDrop.dll",
-        "lib/net47/GongSolutions.WPF.DragDrop.pdb",
-        "lib/net47/GongSolutions.WPF.DragDrop.xml",
-        "lib/net48/GongSolutions.WPF.DragDrop.dll",
-        "lib/net48/GongSolutions.WPF.DragDrop.pdb",
-        "lib/net48/GongSolutions.WPF.DragDrop.xml",
-        "lib/net5.0-windows7.0/GongSolutions.WPF.DragDrop.dll",
-        "lib/net5.0-windows7.0/GongSolutions.WPF.DragDrop.pdb",
-        "lib/net5.0-windows7.0/GongSolutions.WPF.DragDrop.xml",
-        "lib/net6.0-windows7.0/GongSolutions.WPF.DragDrop.dll",
-        "lib/net6.0-windows7.0/GongSolutions.WPF.DragDrop.pdb",
-        "lib/net6.0-windows7.0/GongSolutions.WPF.DragDrop.xml",
-        "lib/netcoreapp3.1/GongSolutions.WPF.DragDrop.dll",
-        "lib/netcoreapp3.1/GongSolutions.WPF.DragDrop.pdb",
-        "lib/netcoreapp3.1/GongSolutions.WPF.DragDrop.xml"
-      ]
-    },
-    "LiveCharts.Wpf.NetCore3/0.9.7": {
-      "sha512": "d0HkmjLi+HifeXyD+E14aOMPDRmwkkiqPYW4GDbUS8Z1m6eQPGCShcDcbWwP4tBoWzGEkkSsy+XSHvaoW50b0Q==",
-      "type": "package",
-      "path": "livecharts.wpf.netcore3/0.9.7",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net40/LiveCharts.Wpf.dll",
-        "lib/net40/LiveCharts.dll",
-        "lib/net40/LiveCharts.xml",
-        "lib/netcoreapp3.1/LiveCharts.Wpf.dll",
-        "lib/netcoreapp3.1/LiveCharts.dll",
-        "lib/netcoreapp3.1/LiveCharts.xml",
-        "livecharts.wpf.netcore3.0.9.7.nupkg.sha512",
-        "livecharts.wpf.netcore3.nuspec"
-      ]
-    },
-    "MahApps.Metro/2.4.9": {
-      "sha512": "eMTkg6TBnCwHzszw7CP+pxsBeB4ZMsJFiTJJoifUVBysRyEenzzR+TKQJuMvvKK6KzvLxwHmJsFhi9o5p4vxhQ==",
-      "type": "package",
-      "path": "mahapps.metro/2.4.9",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net452/MahApps.Metro.dll",
-        "lib/net452/MahApps.Metro.pdb",
-        "lib/net452/MahApps.Metro.xml",
-        "lib/net452/de/MahApps.Metro.resources.dll",
-        "lib/net46/MahApps.Metro.dll",
-        "lib/net46/MahApps.Metro.pdb",
-        "lib/net46/MahApps.Metro.xml",
-        "lib/net46/de/MahApps.Metro.resources.dll",
-        "lib/net47/MahApps.Metro.dll",
-        "lib/net47/MahApps.Metro.pdb",
-        "lib/net47/MahApps.Metro.xml",
-        "lib/net47/de/MahApps.Metro.resources.dll",
-        "lib/netcoreapp3.0/MahApps.Metro.dll",
-        "lib/netcoreapp3.0/MahApps.Metro.pdb",
-        "lib/netcoreapp3.0/MahApps.Metro.xml",
-        "lib/netcoreapp3.0/de/MahApps.Metro.resources.dll",
-        "lib/netcoreapp3.1/MahApps.Metro.dll",
-        "lib/netcoreapp3.1/MahApps.Metro.pdb",
-        "lib/netcoreapp3.1/MahApps.Metro.xml",
-        "lib/netcoreapp3.1/de/MahApps.Metro.resources.dll",
-        "mahapps.metro.2.4.9.nupkg.sha512",
-        "mahapps.metro.logo.png",
-        "mahapps.metro.nuspec",
-        "tools/VisualStudioToolsManifest.xml"
-      ]
-    },
-    "MaterialDesignColors/2.0.3": {
-      "sha512": "Hn5GsMbmYet4WTVRNN01VGkPglWtytJt3oTTzjHjPSDtoF6ZVmfjj6R1EeNER2rlBtSNGuqB4GZmD6cnHL0f1A==",
-      "type": "package",
-      "path": "materialdesigncolors/2.0.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "images/MaterialDesignColors.Icon.png",
-        "lib/net452/MaterialDesignColors.dll",
-        "lib/net452/MaterialDesignColors.pdb",
-        "lib/netcoreapp3.1/MaterialDesignColors.dll",
-        "lib/netcoreapp3.1/MaterialDesignColors.pdb",
-        "materialdesigncolors.2.0.3.nupkg.sha512",
-        "materialdesigncolors.nuspec"
-      ]
-    },
-    "MaterialDesignThemes/4.2.1": {
-      "sha512": "LsvOoXrEtOJib+kvBx3TIUN+zYexQcYiKGYoAXWMvfFTwiaELRWk89wny9sI4lPDqoJtIXVtoxo1oRDsLwy7NQ==",
-      "type": "package",
-      "path": "materialdesignthemes/4.2.1",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/MaterialDesignThemes.targets",
-        "build/Resources/Roboto/Roboto-Black.ttf",
-        "build/Resources/Roboto/Roboto-BlackItalic.ttf",
-        "build/Resources/Roboto/Roboto-Bold.ttf",
-        "build/Resources/Roboto/Roboto-BoldItalic.ttf",
-        "build/Resources/Roboto/Roboto-Italic.ttf",
-        "build/Resources/Roboto/Roboto-Light.ttf",
-        "build/Resources/Roboto/Roboto-LightItalic.ttf",
-        "build/Resources/Roboto/Roboto-Medium.ttf",
-        "build/Resources/Roboto/Roboto-MediumItalic.ttf",
-        "build/Resources/Roboto/Roboto-Regular.ttf",
-        "build/Resources/Roboto/Roboto-Thin.ttf",
-        "build/Resources/Roboto/Roboto-ThinItalic.ttf",
-        "build/Resources/Roboto/RobotoCondensed-Bold.ttf",
-        "build/Resources/Roboto/RobotoCondensed-BoldItalic.ttf",
-        "build/Resources/Roboto/RobotoCondensed-Italic.ttf",
-        "build/Resources/Roboto/RobotoCondensed-Light.ttf",
-        "build/Resources/Roboto/RobotoCondensed-LightItalic.ttf",
-        "build/Resources/Roboto/RobotoCondensed-Regular.ttf",
-        "images/MaterialDesignThemes.Icon.png",
-        "lib/net452/MaterialDesignThemes.Wpf.dll",
-        "lib/net452/MaterialDesignThemes.Wpf.pdb",
-        "lib/net452/MaterialDesignThemes.Wpf.xml",
-        "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.dll",
-        "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.pdb",
-        "lib/netcoreapp3.1/MaterialDesignThemes.Wpf.xml",
-        "materialdesignthemes.4.2.1.nupkg.sha512",
-        "materialdesignthemes.nuspec",
-        "tools/VisualStudioToolsManifest.xml"
-      ]
-    },
-    "MaterialDesignThemes.MahApps/0.1.9": {
-      "sha512": "434F7yyMRPKCI/CmujDQTY7DSSK12YMV0cz7NXiZzmGi+BGIBsPrJxCMHdHM3ydYQovhIMMrQa4yxLzp4fZcvA==",
-      "type": "package",
-      "path": "materialdesignthemes.mahapps/0.1.9",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "images/MaterialDesignThemes.MahApps.Icon.png",
-        "lib/net452/MaterialDesignThemes.MahApps.dll",
-        "lib/net452/MaterialDesignThemes.MahApps.pdb",
-        "lib/netcoreapp3.1/MaterialDesignThemes.MahApps.dll",
-        "lib/netcoreapp3.1/MaterialDesignThemes.MahApps.pdb",
-        "materialdesignthemes.mahapps.0.1.9.nupkg.sha512",
-        "materialdesignthemes.mahapps.nuspec"
       ]
     },
     "MathNet.Numerics/5.0.0": {
@@ -2455,27 +1552,6 @@
         "readme.txt"
       ]
     },
-    "ReactiveProperty/8.0.1": {
-      "sha512": "mXFQWjq8HhgGuZv+524le0gQGg3u5J78gGa0boWILwUKRuEo9JjkiV0ZlL9wFW4ojuMrTgb+JCYFK1QtQ6pdJg==",
-      "type": "package",
-      "path": "reactiveproperty/8.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "ReactivePropertyIcon_100x100.png",
-        "lib/net461/ReactiveProperty.dll",
-        "lib/net461/ReactiveProperty.xml",
-        "lib/net6.0/ReactiveProperty.dll",
-        "lib/net6.0/ReactiveProperty.xml",
-        "lib/netcoreapp3.1/ReactiveProperty.dll",
-        "lib/netcoreapp3.1/ReactiveProperty.xml",
-        "lib/netstandard2.0/ReactiveProperty.dll",
-        "lib/netstandard2.0/ReactiveProperty.xml",
-        "reactiveproperty.8.0.1.nupkg.sha512",
-        "reactiveproperty.nuspec"
-      ]
-    },
     "ReactiveProperty.Core/8.0.1": {
       "sha512": "3AbjsVI+XiK8NCLF5AL5ZDcNhA/LwKbTmiA2IKSsWDTScu3/F8HcwH50lUvDSMqqyk/jiLF9A0pZ1vCGqybhSw==",
       "type": "package",
@@ -2493,25 +1569,6 @@
         "lib/netstandard2.0/ReactiveProperty.Core.xml",
         "reactiveproperty.core.8.0.1.nupkg.sha512",
         "reactiveproperty.core.nuspec"
-      ]
-    },
-    "ReactiveProperty.WPF/8.0.1": {
-      "sha512": "MbHaIBMJJomJRwIgOp1LjwnXNpc7LKtbVSmtZd9xs7ghE9moraWdAucHgFZNw9LpYMAVRVHwRe+C6iJuDo+n2Q==",
-      "type": "package",
-      "path": "reactiveproperty.wpf/8.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "ReactivePropertyIcon_100x100.png",
-        "lib/net461/ReactiveProperty.WPF.dll",
-        "lib/net461/ReactiveProperty.WPF.xml",
-        "lib/net6.0-windows7.0/ReactiveProperty.WPF.dll",
-        "lib/net6.0-windows7.0/ReactiveProperty.WPF.xml",
-        "lib/netcoreapp3.1/ReactiveProperty.WPF.dll",
-        "lib/netcoreapp3.1/ReactiveProperty.WPF.xml",
-        "reactiveproperty.wpf.8.0.1.nupkg.sha512",
-        "reactiveproperty.wpf.nuspec"
       ]
     },
     "SSH.NET/2020.0.2": {
@@ -2694,25 +1751,6 @@
         "version.txt"
       ]
     },
-    "System.Data.DataSetExtensions/4.5.0": {
-      "sha512": "221clPs1445HkTBZPL+K9sDBdJRB8UN8rgjO3ztB0CQ26z//fmJXtlsr6whGatscsKGBrhJl5bwJuKSA8mwFOw==",
-      "type": "package",
-      "path": "system.data.datasetextensions/4.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net45/_._",
-        "lib/netstandard2.0/System.Data.DataSetExtensions.dll",
-        "ref/net45/_._",
-        "ref/netstandard2.0/System.Data.DataSetExtensions.dll",
-        "system.data.datasetextensions.4.5.0.nupkg.sha512",
-        "system.data.datasetextensions.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
     "System.Diagnostics.DiagnosticSource/4.7.1": {
       "sha512": "j81Lovt90PDAq8kLpaJfJKV/rWdWuEk6jfV+MBkee33vzYLEUsy4gXK8laa9V2nZlLM9VM9yA/OOQxxPEJKAMw==",
       "type": "package",
@@ -2778,35 +1816,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Reactive/5.0.0": {
-      "sha512": "erBZjkQHWL9jpasCE/0qKAryzVBJFxGHVBAvgRN1bzM0q2s1S4oYREEEL0Vb+1kA/6BKb5FjUZMp5VXmy+gzkQ==",
-      "type": "package",
-      "path": "system.reactive/5.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/net5.0/_._",
-        "build/netcoreapp3.1/System.Reactive.dll",
-        "build/netcoreapp3.1/System.Reactive.targets",
-        "build/netcoreapp3.1/System.Reactive.xml",
-        "buildTransitive/net5.0/_._",
-        "buildTransitive/netcoreapp3.1/System.Reactive.targets",
-        "lib/net472/System.Reactive.dll",
-        "lib/net472/System.Reactive.xml",
-        "lib/net5.0-windows10.0.19041/System.Reactive.dll",
-        "lib/net5.0-windows10.0.19041/System.Reactive.xml",
-        "lib/net5.0/System.Reactive.dll",
-        "lib/net5.0/System.Reactive.xml",
-        "lib/netcoreapp3.1/_._",
-        "lib/netstandard2.0/System.Reactive.dll",
-        "lib/netstandard2.0/System.Reactive.xml",
-        "lib/uap10.0.16299/System.Reactive.dll",
-        "lib/uap10.0.16299/System.Reactive.pri",
-        "lib/uap10.0.16299/System.Reactive.xml",
-        "system.reactive.5.0.0.nupkg.sha512",
-        "system.reactive.nuspec"
-      ]
-    },
     "System.Runtime.CompilerServices.Unsafe/4.5.2": {
       "sha512": "wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
       "type": "package",
@@ -2828,28 +1837,6 @@
         "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
         "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
         "system.runtime.compilerservices.unsafe.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Text.Json/4.7.2": {
-      "sha512": "TcMd95wcrubm9nHvJEQs70rC0H/8omiSGGpU4FQ/ZA1URIqD4pjmFJh2Mfv1yH1eHgJDWTi2hMDXwTET+zOOyg==",
-      "type": "package",
-      "path": "system.text.json/4.7.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Text.Json.dll",
-        "lib/net461/System.Text.Json.xml",
-        "lib/netcoreapp3.0/System.Text.Json.dll",
-        "lib/netcoreapp3.0/System.Text.Json.xml",
-        "lib/netstandard2.0/System.Text.Json.dll",
-        "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.4.7.2.nupkg.sha512",
-        "system.text.json.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -2976,26 +1963,6 @@
       "path": "../../src/applications/analizer.service/Analizer.Service.csproj",
       "msbuildProject": "../../src/applications/analizer.service/Analizer.Service.csproj"
     },
-    "Mov.Analizer.ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/analizer.viewmodels/Analizer.ViewModels.csproj",
-      "msbuildProject": "../../src/presentations/wpf/analizer.viewmodels/Analizer.ViewModels.csproj"
-    },
-    "Mov.Analizer.Views/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/analizer.views/Analizer.Views.csproj",
-      "msbuildProject": "../../src/presentations/wpf/analizer.views/Analizer.Views.csproj"
-    },
-    "Mov.Authorizer.ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/authorizer.viewmodels/Authorizer.ViewModels.csproj",
-      "msbuildProject": "../../src/presentations/wpf/authorizer.viewmodels/Authorizer.ViewModels.csproj"
-    },
-    "Mov.Authorizer.Views/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/authorizer.views/Authorizer.Views.csproj",
-      "msbuildProject": "../../src/presentations/wpf/authorizer.views/Authorizer.Views.csproj"
-    },
     "Mov.Bom.Engine/1.0.0": {
       "type": "project",
       "path": "../../src/domains/bom.engine/Bom.Engine.csproj",
@@ -3015,26 +1982,6 @@
       "type": "project",
       "path": "../../src/applications/bom.service/Bom.Service.csproj",
       "msbuildProject": "../../src/applications/bom.service/Bom.Service.csproj"
-    },
-    "Mov.Bom.ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/bom.viewmodels/Bom.ViewModels.csproj",
-      "msbuildProject": "../../src/presentations/wpf/bom.viewmodels/Bom.ViewModels.csproj"
-    },
-    "Mov.Bom.Views/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/bom.views/Bom.Views.csproj",
-      "msbuildProject": "../../src/presentations/wpf/bom.views/Bom.Views.csproj"
-    },
-    "Mov.Configurator.ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/configurator.viewmodels/Configurator.ViewModels.csproj",
-      "msbuildProject": "../../src/presentations/wpf/configurator.viewmodels/Configurator.ViewModels.csproj"
-    },
-    "Mov.Configurator.Views/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/configurator.views/Configurator.Views.csproj",
-      "msbuildProject": "../../src/presentations/wpf/configurator.views/Configurator.Views.csproj"
     },
     "Mov.Controllers/1.0.0": {
       "type": "project",
@@ -3061,16 +2008,6 @@
       "path": "../../src/applications/designer.service/Designer.Service.csproj",
       "msbuildProject": "../../src/applications/designer.service/Designer.Service.csproj"
     },
-    "Mov.Designer.ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/designer.viewmodels/Designer.ViewModels.csproj",
-      "msbuildProject": "../../src/presentations/wpf/designer.viewmodels/Designer.ViewModels.csproj"
-    },
-    "Mov.Designer.Views/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/designer.views/Designer.Views.csproj",
-      "msbuildProject": "../../src/presentations/wpf/designer.views/Designer.Views.csproj"
-    },
     "Mov.Drawer.Engine/1.0.0": {
       "type": "project",
       "path": "../../src/domains/drawer.engine/Drawer.Engine.csproj",
@@ -3090,16 +2027,6 @@
       "type": "project",
       "path": "../../src/applications/drawer.service/Drawer.Service.csproj",
       "msbuildProject": "../../src/applications/drawer.service/Drawer.Service.csproj"
-    },
-    "Mov.Drawer.ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/drawer.viewmodels/Drawer.ViewModels.csproj",
-      "msbuildProject": "../../src/presentations/wpf/drawer.viewmodels/Drawer.ViewModels.csproj"
-    },
-    "Mov.Drawer.Views/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/drawer.views/Drawer.Views.csproj",
-      "msbuildProject": "../../src/presentations/wpf/drawer.views/Drawer.Views.csproj"
     },
     "Mov.Driver.Clients/1.0.0": {
       "type": "project",
@@ -3126,16 +2053,6 @@
       "path": "../../src/applications/driver.service/Driver.Service.csproj",
       "msbuildProject": "../../src/applications/driver.service/Driver.Service.csproj"
     },
-    "Mov.Driver.ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/driver.viewmodels/Driver.ViewModels.csproj",
-      "msbuildProject": "../../src/presentations/wpf/driver.viewmodels/Driver.ViewModels.csproj"
-    },
-    "Mov.Driver.Views/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/driver.views/Driver.Views.csproj",
-      "msbuildProject": "../../src/presentations/wpf/driver.views/Driver.Views.csproj"
-    },
     "Mov.Framework/1.0.0": {
       "type": "project",
       "path": "../../src/domains/framework/Framework.csproj",
@@ -3161,55 +2078,15 @@
       "path": "../../src/applications/game.service/Game.Service.csproj",
       "msbuildProject": "../../src/applications/game.service/Game.Service.csproj"
     },
-    "Mov.Game.ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/game.viewmodels/Game.ViewModels.csproj",
-      "msbuildProject": "../../src/presentations/wpf/game.viewmodels/Game.ViewModels.csproj"
-    },
-    "Mov.Game.Views/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/game.views/Game.Views.csproj",
-      "msbuildProject": "../../src/presentations/wpf/game.views/Game.Views.csproj"
-    },
     "Mov.Painters/1.0.0": {
       "type": "project",
       "path": "../../src/commons/painters/Painters.csproj",
       "msbuildProject": "../../src/commons/painters/Painters.csproj"
     },
-    "Mov.Scheduler.ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/scheduler.viewmodels/Scheduler.ViewModels.csproj",
-      "msbuildProject": "../../src/presentations/wpf/scheduler.viewmodels/Scheduler.ViewModels.csproj"
-    },
-    "Mov.Scheduler.Views/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/scheduler.views/Scheduler.Views.csproj",
-      "msbuildProject": "../../src/presentations/wpf/scheduler.views/Scheduler.Views.csproj"
-    },
     "Mov.Schemas/1.0.0": {
       "type": "project",
       "path": "../../src/commons/schemas/Schemas.csproj",
       "msbuildProject": "../../src/commons/schemas/Schemas.csproj"
-    },
-    "Mov.Translator.ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/translator.viewmodels/Translator.ViewModels.csproj",
-      "msbuildProject": "../../src/presentations/wpf/translator.viewmodels/Translator.ViewModels.csproj"
-    },
-    "Mov.Translator.Views/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/translator.views/Translator.Views.csproj",
-      "msbuildProject": "../../src/presentations/wpf/translator.views/Translator.Views.csproj"
-    },
-    "Mov.UseCase.ViewModels/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/usecase.viewmodels/UseCase.ViewModels.csproj",
-      "msbuildProject": "../../src/presentations/wpf/usecase.viewmodels/UseCase.ViewModels.csproj"
-    },
-    "Mov.UseCase.Views/1.0.0": {
-      "type": "project",
-      "path": "../../src/presentations/wpf/usecase.views/UseCase.Views.csproj",
-      "msbuildProject": "../../src/presentations/wpf/usecase.views/UseCase.Views.csproj"
     },
     "Mov.UseCases/1.0.0": {
       "type": "project",
@@ -3220,46 +2097,10 @@
       "type": "project",
       "path": "../../src/commons/utilities/Utilities.csproj",
       "msbuildProject": "../../src/commons/utilities/Utilities.csproj"
-    },
-    "Mov.WpfControls/1.0.0": {
-      "type": "project",
-      "path": "../../src/commons/wpf/wpfcontrols/WpfControls.csproj",
-      "msbuildProject": "../../src/commons/wpf/wpfcontrols/WpfControls.csproj"
-    },
-    "Mov.WpfDesigns/1.0.0": {
-      "type": "project",
-      "path": "../../src/commons/wpf/wpfdesigns/WpfDesigns.csproj",
-      "msbuildProject": "../../src/commons/wpf/wpfdesigns/WpfDesigns.csproj"
-    },
-    "Mov.WpfLayouts/1.0.0": {
-      "type": "project",
-      "path": "../../src/commons/wpf/wpflayouts/WpfLayouts.csproj",
-      "msbuildProject": "../../src/commons/wpf/wpflayouts/WpfLayouts.csproj"
-    },
-    "Mov.WpfModels/1.0.0": {
-      "type": "project",
-      "path": "../../src/commons/wpf/wpfmodels/WpfModels.csproj",
-      "msbuildProject": "../../src/commons/wpf/wpfmodels/WpfModels.csproj"
-    },
-    "Mov.WpfMvvms/1.0.0": {
-      "type": "project",
-      "path": "../../src/commons/wpf/wpfmvvms/WpfMvvms.csproj",
-      "msbuildProject": "../../src/commons/wpf/wpfmvvms/WpfMvvms.csproj"
-    },
-    "Mov.WpfViewModels/1.0.0": {
-      "type": "project",
-      "path": "../../src/commons/wpf/wpfviewmodels/WpfViewModels.csproj",
-      "msbuildProject": "../../src/commons/wpf/wpfviewmodels/WpfViewModels.csproj"
-    },
-    "Mov.WpfViews/1.0.0": {
-      "type": "project",
-      "path": "../../src/commons/wpf/wpfviews/WpfViews.csproj",
-      "msbuildProject": "../../src/commons/wpf/wpfviews/WpfViews.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
-      "Mov.UseCase.Views >= 1.0.0",
       "Mov.UseCases >= 1.0.0",
       "Prism.Unity >= 8.1.97"
     ]
@@ -3299,9 +2140,6 @@
           "projectReferences": {
             "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\applications\\usecases\\UseCases.csproj": {
               "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\applications\\usecases\\UseCases.csproj"
-            },
-            "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\presentations\\wpf\\usecase.views\\UseCase.Views.csproj": {
-              "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\presentations\\wpf\\usecase.views\\UseCase.Views.csproj"
             }
           }
         }

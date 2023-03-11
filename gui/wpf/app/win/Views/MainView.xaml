@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="Mov.WpfApp.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mov.WpfApp.Views"
+             xmlns:atoms="clr-namespace:Mov.WpfControls.Components.Atoms;assembly=Mov.WpfControls"
+             xmlns:molecules="clr-namespace:Mov.WpfControls.Components.Molecules;assembly=Mov.WpfControls"
+             xmlns:organisms="clr-namespace:Mov.WpfControls.Components.Organisms;assembly=Mov.WpfControls" 
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+            
+    </Grid>
+</UserControl>

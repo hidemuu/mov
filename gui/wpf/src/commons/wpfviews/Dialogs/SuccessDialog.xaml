@@ -1,0 +1,49 @@
+﻿<UserControl
+    x:Class="Mov.WpfViews.Dialogs.SuccessDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Mov.WpfViews.Dialogs"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:vm="clr-namespace:Mov.WpfMvvms"
+    Width="350"
+    Height="150"
+    d:DataContext="{d:DesignInstance vm:DialogViewModelBase}"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d">
+    <behaviors:Interaction.Triggers>
+        <behaviors:EventTrigger EventName="Loaded">
+            <behaviors:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>
+    <prism:Dialog.WindowStyle>
+        <Style TargetType="Window">
+            <Setter Property="prism:Dialog.WindowStartupLocation" Value="CenterScreen" />
+            <Setter Property="ShowInTaskbar" Value="False" />
+            <Setter Property="SizeToContent" Value="WidthAndHeight" />
+            <Setter Property="WindowStyle" Value="None" />
+        </Style>
+    </prism:Dialog.WindowStyle>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Image
+            Height="50"
+            Margin="15,-10,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            RenderOptions.BitmapScalingMode="HighQuality"
+            Source="{Binding ImagePath}"
+            UseLayoutRounding="True" />
+        <TextBlock
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            FontFamily="Open Sans"
+            FontSize="15"
+            Text="{Binding Message.Value}" />
+    </Grid>
+</UserControl>

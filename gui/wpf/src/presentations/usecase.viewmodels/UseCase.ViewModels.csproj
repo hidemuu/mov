@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.UseCase.ViewModels</AssemblyName>
+    <RootNamespace>Mov.UseCase.ViewModels</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\analizer.viewmodels\Analizer.ViewModels.csproj" />
+    <ProjectReference Include="..\authorizer.viewmodels\Authorizer.ViewModels.csproj" />
+    <ProjectReference Include="..\bom.viewmodels\Bom.ViewModels.csproj" />
+    <ProjectReference Include="..\configurator.viewmodels\Configurator.ViewModels.csproj" />
+    <ProjectReference Include="..\designer.viewmodels\Designer.ViewModels.csproj" />
+    <ProjectReference Include="..\drawer.viewmodels\Drawer.ViewModels.csproj" />
+    <ProjectReference Include="..\driver.viewmodels\Driver.ViewModels.csproj" />
+    <ProjectReference Include="..\game.viewmodels\Game.ViewModels.csproj" />
+    <ProjectReference Include="..\scheduler.viewmodels\Scheduler.ViewModels.csproj" />
+    <ProjectReference Include="..\translator.viewmodels\Translator.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Accessors">
+      <HintPath>..\..\..\..\..\src\commons\accessors\bin\Debug\netstandard2.0\Mov.Accessors.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Controllers">
+      <HintPath>..\..\..\..\..\src\commons\controllers\bin\Debug\netstandard2.0\Mov.Controllers.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Designer.Models">
+      <HintPath>..\..\..\..\..\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Designer.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Designer.Service">
+      <HintPath>..\..\..\..\..\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Designer.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Schemas">
+      <HintPath>..\..\..\..\..\src\commons\schemas\bin\Debug\netstandard2.0\Mov.Schemas.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

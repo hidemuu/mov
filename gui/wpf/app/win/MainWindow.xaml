@@ -1,0 +1,192 @@
+﻿<metro:MetroWindow
+    x:Class="Mov.WpfApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:Mov.WpfApp"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:wvm="clr-namespace:Mov.WpfMvvms;assembly=Mov.WpfMvvms"
+    Title="Mov"
+    Width="1000"
+    Height="800"
+    d:DataContext="{d:DesignInstance local:MainWindowViewModel}"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    Background="{DynamicResource MaterialDesignPaper}"
+    FontFamily="{materialDesign:MaterialDesignFont}"
+    GlowBrush="{DynamicResource AccentColorBrush}"
+    ResizeMode="CanResizeWithGrip"
+    TextElement.FontSize="11"
+    TextElement.FontWeight="Medium"
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+    TextOptions.TextFormattingMode="Ideal"
+    TextOptions.TextRenderingMode="Auto"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <metro:MetroWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--<ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />-->
+                <!--<ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/ComponentStyles.xaml" />-->
+                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/Controls/NavigationRail.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </metro:MetroWindow.Resources>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
+        <!--  左側ポップアップ  -->
+        <materialDesign:DrawerHost.LeftDrawerContent>
+            <Grid Width="200">
+                <materialDesign:ColorZone
+                    Height="150"
+                    Padding="16"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                    Mode="PrimaryMid">
+                    <Grid>
+                        <Button
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Style="{StaticResource MaterialDesignFloatingActionLightButton}">
+                            <materialDesign:PackIcon
+                                Width="Auto"
+                                Height="Auto"
+                                Kind="AccountCircleOutline" />
+                        </Button>
+                        <TextBlock
+                            Margin="0,0,0,20.96"
+                            VerticalAlignment="Bottom"
+                            FontWeight="Bold"
+                            Text="LeftDrawerContent" />
+                        <TextBlock
+                            Margin="0,0,21,0"
+                            VerticalAlignment="Bottom"
+                            Text="Otukare sama."
+                            TextWrapping="Wrap" />
+                        <materialDesign:PackIcon
+                            Width="Auto"
+                            Height="16"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Kind="ChevronDown" />
+                    </Grid>
+                </materialDesign:ColorZone>
+            </Grid>
+        </materialDesign:DrawerHost.LeftDrawerContent>
+        <!--  フレーム  -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!--  メニューバー  -->
+            <materialDesign:ColorZone
+                Grid.Row="0"
+                Padding="0"
+                materialDesign:ShadowAssist.ShadowDepth="Depth1">
+                <DockPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <ToggleButton
+                            x:Name="MenuToggleButton"
+                            IsChecked="False"
+                            Style="{DynamicResource MaterialDesignHamburgerToggleButton}" />
+                        <TextBlock
+                            Margin="16,0,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            Text="{Binding Title.Value}" />
+                        <ContentControl
+                            x:Name="menuBarRegion"
+                            prism:RegionManager.RegionManager="{Binding RegionManager}"
+                            prism:RegionManager.RegionName="{x:Static wvm:RegionConstants.REGION_NAME_MENUBAR}"
+                            DockPanel.Dock="Top" />
+                    </StackPanel>
+                </DockPanel>
+            </materialDesign:ColorZone>
+            <!--  コンテンツ  -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <!--  タブ  -->
+                <TabControl
+                    Grid.Column="0"
+                    Padding="16"
+                    ItemsSource="{Binding Models}"
+                    SelectedIndex="{Binding TabPage.Value}"
+                    Style="{StaticResource NavigationRailControlStyleKey}">
+                    <TabControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <materialDesign:PackIcon
+                                    Grid.Row="0"
+                                    Width="24"
+                                    Height="24"
+                                    HorizontalAlignment="Center"
+                                    Kind="{Binding IconKey.Value}" />
+                                <TextBlock
+                                    Grid.Row="1"
+                                    Margin="0,4,0,0"
+                                    HorizontalAlignment="Center"
+                                    Style="{StaticResource MaterialDesignCaptionTextBlock}"
+                                    Text="{Binding Title.Value}" />
+                            </Grid>
+                        </DataTemplate>
+                    </TabControl.ItemTemplate>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <prism:InvokeCommandAction Command="{Binding TabChangeCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </TabControl>
+                <!--  リージョン  -->
+                <DockPanel
+                    Grid.Column="1"
+                    Margin="5"
+                    LastChildFill="True">
+                    <ContentControl
+                        x:Name="toolBarRegion"
+                        prism:RegionManager.RegionManager="{Binding RegionManager}"
+                        prism:RegionManager.RegionName="{x:Static wvm:RegionConstants.REGION_NAME_HEADER}"
+                        DockPanel.Dock="Top" />
+                    <ContentControl
+                        x:Name="leftRegion"
+                        MaxWidth="200"
+                        prism:RegionManager.RegionManager="{Binding RegionManager}"
+                        prism:RegionManager.RegionName="{x:Static wvm:RegionConstants.REGION_NAME_LEFT}"
+                        DockPanel.Dock="Left" />
+                    <ContentControl
+                        x:Name="rightRegion"
+                        MaxWidth="200"
+                        prism:RegionManager.RegionManager="{Binding RegionManager}"
+                        prism:RegionManager.RegionName="{x:Static wvm:RegionConstants.REGION_NAME_RIGHT}"
+                        DockPanel.Dock="Right" />
+                    <ContentControl
+                        x:Name="footerRegion"
+                        prism:RegionManager.RegionManager="{Binding RegionManager}"
+                        prism:RegionManager.RegionName="{x:Static wvm:RegionConstants.REGION_NAME_FOOTER}"
+                        DockPanel.Dock="Bottom" />
+                    <ContentControl
+                        x:Name="contentRegion"
+                        MinWidth="400"
+                        prism:RegionManager.RegionManager="{Binding RegionManager}"
+                        prism:RegionManager.RegionName="{x:Static wvm:RegionConstants.REGION_NAME_CENTER}" />
+                </DockPanel>
+            </Grid>
+        </Grid>
+    </materialDesign:DrawerHost>
+
+</metro:MetroWindow>

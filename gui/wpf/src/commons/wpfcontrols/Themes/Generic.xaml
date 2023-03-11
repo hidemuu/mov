@@ -1,0 +1,29 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:atom="clr-namespace:Mov.WpfControls.Components.Atoms"
+    xmlns:converter="clr-namespace:Mov.WpfModels.Converters;assembly=Mov.WpfModels"
+    xmlns:dd="urn:gong-wpf-dragdrop"
+    xmlns:local="clr-namespace:Mov.WpfControls.Components"
+    xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+    xmlns:molecule="clr-namespace:Mov.WpfControls.Components.Molecules"
+    xmlns:organism="clr-namespace:Mov.WpfControls.Components.Organisms">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovButton.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovCartesianChart.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovCheckBox.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovComboBox.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovDatePicker.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovExpander.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovLabel.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovLamp.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovPieChart.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovRadioButton.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Atoms/MovTextBox.xaml" />
+        <ResourceDictionary Source="Mov.WpfControls;component/Themes/Molecules/MovNumericUpDown.xaml" />
+        <!--<ResourceDictionary Source="Mov.WpfControls;component/Themes/Organisms/MovTreeListView.xaml" />-->
+    </ResourceDictionary.MergedDictionaries>
+    <converter:StringToHolizontalAlignmentConverter x:Key="StringToHolizontalAlignmentConverter" />
+    <converter:StringToVerticalAlignmentConverter x:Key="StringToVerticalAlignmentConverter" />
+
+</ResourceDictionary>

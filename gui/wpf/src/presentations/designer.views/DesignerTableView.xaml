@@ -1,0 +1,181 @@
+﻿<UserControl
+    x:Class="Mov.Designer.Views.DesignerTableView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converter="clr-namespace:Mov.WpfModels.Converters;assembly=Mov.WpfModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dd="urn:gong-wpf-dragdrop"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:interactivity="clr-namespace:Reactive.Bindings.Interactivity;assembly=ReactiveProperty"
+    xmlns:local="clr-namespace:Mov.Designer.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:vm="clr-namespace:Mov.Designer.ViewModels;assembly=Mov.Designer.ViewModels"
+    d:DataContext="{d:DesignInstance vm:DesignerTableViewModel}"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--<ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+            <converter:BoolToVisibillityConverter x:Key="boolToVisibilityConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <ListView
+            x:Name="listView"
+            Grid.Row="0"
+            dd:DragDrop.IsDragSource="True"
+            dd:DragDrop.IsDropTarget="True"
+            dd:DragDrop.UseDefaultDragAdorner="True"
+            ItemsSource="{Binding Models}"
+            SelectedItem="{Binding SelectedModel.Value}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="Tag" Value="{Binding DataContext, RelativeSource={RelativeSource AncestorType=ListView}}" />
+                    <Setter Property="ContextMenu">
+                        <Setter.Value>
+                            <ContextMenu DataContext="{Binding PlacementTarget.Tag, RelativeSource={RelativeSource Self}}">
+                                <MenuItem
+                                    Command="{Binding AddCommand}"
+                                    CommandParameter="{Binding PlacementTarget.Content, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+                                    Header="追加" />
+                                <MenuItem
+                                    Command="{Binding DeleteCommand}"
+                                    CommandParameter="{Binding PlacementTarget.Content, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+                                    Header="削除" />
+                            </ContextMenu>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn
+                        x:Name="indexColumn"
+                        Width="{Binding Attribute.Index.Width.Value}"
+                        Header="{Binding Attribute.Index.Header.Value}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
+                                <TextBlock HorizontalAlignment="Stretch" Text="{Binding Index.Value}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn
+                        x:Name="codeColumn"
+                        Width="{Binding Attribute.Code.Width.Value}"
+                        Header="{Binding Attribute.Code.Header.Value}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
+                                <TextBox Width="{Binding Width, ElementName=codeColumn}" Text="{Binding Code.Value, Mode=TwoWay}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn
+                        x:Name="nameColumn"
+                        Width="{Binding Attribute.Name.Width.Value}"
+                        Header="{Binding Attribute.Name.Header.Value}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
+                                <TextBox Width="{Binding Width, ElementName=nameColumn}" Text="{Binding Name.Value, Mode=TwoWay}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn
+                        x:Name="controlTypeColumn"
+                        Width="{Binding Attribute.ControlType.Width.Value}"
+                        Header="{Binding Attribute.ControlType.Header.Value}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
+                                <ComboBox
+                                    Width="{Binding Width, ElementName=controlTypeColumn}"
+                                    ItemsSource="{Binding ControlTypes}"
+                                    SelectedItem="{Binding ControlType.Value.Value, Mode=TwoWay}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn
+                        x:Name="heightColumn"
+                        Width="{Binding Attribute.Height.Width.Value}"
+                        Header="{Binding Attribute.Height.Header.Value}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
+                                <TextBox Width="{Binding Width, ElementName=heightColumn}" Text="{Binding Height.Value, Mode=TwoWay}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn
+                        x:Name="widthColumn"
+                        Width="{Binding Attribute.Width.Width.Value}"
+                        Header="{Binding Attribute.Width.Header.Value}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
+                                <TextBox Width="{Binding Width, ElementName=widthColumn}" Text="{Binding Width.Value, Mode=TwoWay}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn
+                        x:Name="horizontalAlignmentColumn"
+                        Width="{Binding Attribute.HorizontalAlignment.Width.Value}"
+                        Header="{Binding Attribute.HorizontalAlignment.Header.Value}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
+                                <ComboBox
+                                    Width="{Binding Width, ElementName=horizontalAlignmentColumn}"
+                                    ItemsSource="{Binding HolizontalAlignments}"
+                                    SelectedItem="{Binding HorizontalAlignment.Value, Mode=TwoWay}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn
+                        x:Name="verticalAlignmentColumn"
+                        Width="{Binding Attribute.VerticalAlignment.Width.Value}"
+                        Header="{Binding Attribute.VerticalAlignment.Header.Value}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
+                                <ComboBox
+                                    Width="{Binding Width, ElementName=verticalAlignmentColumn}"
+                                    ItemsSource="{Binding VerticalAlignments}"
+                                    SelectedItem="{Binding VerticalAlignment.Value, Mode=TwoWay}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn
+                        x:Name="parameterColumn"
+                        Width="{Binding Attribute.Parameter.Width.Value}"
+                        Header="{Binding Attribute.Parameter.Header.Value}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate DataType="{x:Type vm:DesignerTableModel}">
+                                <TextBox Width="{Binding Width, ElementName=parameterColumn}" Text="{Binding Parameter.Value, Mode=TwoWay}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button
+            Width="64"
+            Height="32"
+            Margin="0,0,8,8"
+            Padding="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Command="{Binding SaveCommand}"
+            Content="Save"
+            Cursor="Hand"
+            Focusable="False"
+            FontSize="20"
+            ToolTip="保存します"
+            ToolTipService.Placement="Right" />
+    </Grid>
+</UserControl>

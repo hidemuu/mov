@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.Driver.ViewModels</AssemblyName>
+    <RootNamespace>Mov.Driver.ViewModels</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\commons\wpfviewmodels\WpfViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Accessors">
+      <HintPath>..\..\..\..\..\src\commons\accessors\bin\Debug\netstandard2.0\Mov.Accessors.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Controllers">
+      <HintPath>..\..\..\..\..\src\commons\controllers\bin\Debug\netstandard2.0\Mov.Controllers.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Driver.Models">
+      <HintPath>..\..\..\..\..\src\domains\driver.models\bin\Debug\netstandard2.0\Mov.Driver.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Driver.Service">
+      <HintPath>..\..\..\..\..\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Driver.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Schemas">
+      <HintPath>..\..\..\..\..\src\commons\schemas\bin\Debug\netstandard2.0\Mov.Schemas.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

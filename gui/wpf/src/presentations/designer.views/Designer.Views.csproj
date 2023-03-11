@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.Designer.Views</AssemblyName>
+    <RootNamespace>Mov.Designer.Views</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\commons\wpfviews\WpfViews.csproj" />
+    <ProjectReference Include="..\designer.viewmodels\Designer.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Bebavior\" />
+    <Folder Include="Converters\" />
+    <Folder Include="Selector\" />
+    <Folder Include="Templates\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Schemas">
+      <HintPath>..\..\..\..\..\src\commons\schemas\bin\Debug\netstandard2.0\Mov.Schemas.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

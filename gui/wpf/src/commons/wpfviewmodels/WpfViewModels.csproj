@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.WpfViewModels</AssemblyName>
+    <RootNamespace>Mov.WpfViewModels</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\wpfmvvms\WpfMvvms.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.Drawer.ViewModels</AssemblyName>
+    <RootNamespace>Mov.Drawer.ViewModels</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\commons\wpfviewmodels\WpfViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Accessors">
+      <HintPath>..\..\..\..\..\src\commons\accessors\bin\Debug\netstandard2.0\Mov.Accessors.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Controllers">
+      <HintPath>..\..\..\..\..\src\commons\controllers\bin\Debug\netstandard2.0\Mov.Controllers.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Drawer.Models">
+      <HintPath>..\..\..\..\..\src\domains\drawer.models\bin\Debug\netstandard2.0\Mov.Drawer.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Drawer.Service">
+      <HintPath>..\..\..\..\..\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Drawer.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Painters">
+      <HintPath>..\..\..\..\..\src\commons\painters\bin\Debug\netstandard2.0\Mov.Painters.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Schemas">
+      <HintPath>..\..\..\..\..\src\commons\schemas\bin\Debug\netstandard2.0\Mov.Schemas.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Utilities">
+      <HintPath>..\..\..\..\..\src\commons\utilities\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

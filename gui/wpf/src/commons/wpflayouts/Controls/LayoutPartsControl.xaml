@@ -1,0 +1,38 @@
+﻿<UserControl
+    x:Class="Mov.WpfLayouts.Controls.LayoutPartsControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Mov.WpfLayouts.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Templates/LayoutNodeTemplate.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <ItemsControl
+        x:Name="Root"
+        ItemTemplateSelector="{StaticResource layoutNodeSelector}"
+        ItemsSource="{Binding Nodes, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:LayoutPartsControl}}"
+        ScrollViewer.CanContentScroll="True">
+        <!--  ItemsControlの中身  -->
+        <ItemsControl.Template>
+            <ControlTemplate TargetType="{x:Type ItemsControl}">
+                <Border Background="Transparent">
+                    <ItemsPresenter Margin="0" />
+                </Border>
+            </ControlTemplate>
+        </ItemsControl.Template>
+        <!--  ItensControlの並べ方  -->
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <VirtualizingStackPanel />
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+    </ItemsControl>
+</UserControl>

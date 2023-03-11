@@ -1,0 +1,79 @@
+﻿<UserControl
+    x:Class="Mov.Configurator.Views.ConfiguratorView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:local="clr-namespace:Mov.Configurator.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:vm="clr-namespace:Mov.Configurator.ViewModels;assembly=Mov.Configurator.ViewModels"
+    xmlns:wpfcontrols="clr-namespace:Mov.WpfControls.Components;assembly=Mov.WpfControls"
+    d:DataContext="{d:DesignInstance vm:ConfiguratorViewModel}"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />
+                <!--<ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/ComponentStyles.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel
+            Grid.Row="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+            <TextBlock
+                Margin="20,0,20,0"
+                FontSize="25"
+                FontWeight="Bold"
+                Foreground="#3F487F"
+                Text="Configurator" />
+            <ComboBox
+                Name="selectCanvas"
+                Width="100"
+                Height="30"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Bottom"
+                ItemsSource="{Binding ComboItems}"
+                SelectedItem="{Binding SelectedComboItem.Value}" />
+        </StackPanel>
+        <StackPanel
+            Grid.Row="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+            <Button
+                Width="80"
+                Margin="2"
+                Command="{Binding ImportCommand}"
+                Content="Import" />
+            <Button
+                Width="80"
+                Margin="2"
+                Command="{Binding ExportCommand}"
+                Content="Export" />
+        </StackPanel>
+        <wpfcontrols:GridListControl
+            Grid.Row="1"
+            AddCommand="{Binding AddCommand}"
+            Attributes="{Binding Attributes.Value}"
+            DeleteCommand="{Binding DeleteCommand}"
+            Items="{Binding Items}"
+            SelectedItem="{Binding SelectedItem}" />
+    </Grid>
+</UserControl>

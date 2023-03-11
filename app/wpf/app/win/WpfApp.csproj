@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\presentations\usecase.views\UseCase.Views.csproj" />
+    <ProjectReference Include="..\..\presentations\usecase.views\UseCase.Views.csproj" />
   </ItemGroup>
 
   <ItemGroup>

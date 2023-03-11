@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <Reference Include="Mov.Schemas">
-      <HintPath>..\..\..\..\..\src\commons\schemas\bin\Debug\netstandard2.0\Mov.Schemas.dll</HintPath>
+      <HintPath>..\..\..\..\src\commons\schemas\bin\Debug\netstandard2.0\Mov.Schemas.dll</HintPath>
     </Reference>
   </ItemGroup>
 

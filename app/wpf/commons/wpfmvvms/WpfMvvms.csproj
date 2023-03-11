@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <Reference Include="Mov.Painters">
-      <HintPath>..\..\..\..\..\src\commons\painters\bin\Debug\netstandard2.0\Mov.Painters.dll</HintPath>
+      <HintPath>..\..\..\..\src\commons\painters\bin\Debug\netstandard2.0\Mov.Painters.dll</HintPath>
     </Reference>
   </ItemGroup>
 

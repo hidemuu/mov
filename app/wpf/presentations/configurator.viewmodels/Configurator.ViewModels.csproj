@@ -13,19 +13,19 @@
 
   <ItemGroup>
     <Reference Include="Mov.Accessors">
-      <HintPath>..\..\..\..\..\src\commons\accessors\bin\Debug\netstandard2.0\Mov.Accessors.dll</HintPath>
+      <HintPath>..\..\..\..\src\commons\accessors\bin\Debug\netstandard2.0\Mov.Accessors.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Controllers">
-      <HintPath>..\..\..\..\..\src\commons\controllers\bin\Debug\netstandard2.0\Mov.Controllers.dll</HintPath>
+      <HintPath>..\..\..\..\src\commons\controllers\bin\Debug\netstandard2.0\Mov.Controllers.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Designer.Service">
-      <HintPath>..\..\..\..\..\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Designer.Service.dll</HintPath>
+      <HintPath>..\..\..\..\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Designer.Service.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Schemas">
-      <HintPath>..\..\..\..\..\src\commons\schemas\bin\Debug\netstandard2.0\Mov.Schemas.dll</HintPath>
+      <HintPath>..\..\..\..\src\commons\schemas\bin\Debug\netstandard2.0\Mov.Schemas.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Utilities">
-      <HintPath>..\..\..\..\..\src\commons\utilities\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
+      <HintPath>..\..\..\..\src\commons\utilities\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
     </Reference>
   </ItemGroup>
 

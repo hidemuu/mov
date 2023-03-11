@@ -13,19 +13,19 @@
 
   <ItemGroup>
     <Reference Include="Mov.Accessors">
-      <HintPath>..\..\..\..\..\src\commons\accessors\bin\Debug\netstandard2.0\Mov.Accessors.dll</HintPath>
+      <HintPath>..\..\..\..\src\commons\accessors\bin\Debug\netstandard2.0\Mov.Accessors.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Controllers">
-      <HintPath>..\..\..\..\..\src\commons\controllers\bin\Debug\netstandard2.0\Mov.Controllers.dll</HintPath>
+      <HintPath>..\..\..\..\src\commons\controllers\bin\Debug\netstandard2.0\Mov.Controllers.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Driver.Models">
-      <HintPath>..\..\..\..\..\src\domains\driver.models\bin\Debug\netstandard2.0\Mov.Driver.Models.dll</HintPath>
+      <HintPath>..\..\..\..\src\domains\driver.models\bin\Debug\netstandard2.0\Mov.Driver.Models.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Driver.Service">
-      <HintPath>..\..\..\..\..\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Driver.Service.dll</HintPath>
+      <HintPath>..\..\..\..\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Driver.Service.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Schemas">
-      <HintPath>..\..\..\..\..\src\commons\schemas\bin\Debug\netstandard2.0\Mov.Schemas.dll</HintPath>
+      <HintPath>..\..\..\..\src\commons\schemas\bin\Debug\netstandard2.0\Mov.Schemas.dll</HintPath>
     </Reference>
   </ItemGroup>
 

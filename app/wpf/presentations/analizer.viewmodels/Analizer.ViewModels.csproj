@@ -13,19 +13,19 @@
 
   <ItemGroup>
     <Reference Include="Mov.Accessors">
-      <HintPath>..\..\..\..\..\src\commons\accessors\bin\Debug\netstandard2.0\Mov.Accessors.dll</HintPath>
+      <HintPath>..\..\..\..\src\commons\accessors\bin\Debug\netstandard2.0\Mov.Accessors.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Analizer.Models">
-      <HintPath>..\..\..\..\..\src\domains\analizer.models\bin\Debug\netstandard2.0\Mov.Analizer.Models.dll</HintPath>
+      <HintPath>..\..\..\..\src\domains\analizer.models\bin\Debug\netstandard2.0\Mov.Analizer.Models.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Analizer.Service">
-      <HintPath>..\..\..\..\..\src\applications\analizer.service\bin\Debug\netstandard2.0\Mov.Analizer.Service.dll</HintPath>
+      <HintPath>..\..\..\..\src\applications\analizer.service\bin\Debug\netstandard2.0\Mov.Analizer.Service.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Controllers">
-      <HintPath>..\..\..\..\..\src\commons\controllers\bin\Debug\netstandard2.0\Mov.Controllers.dll</HintPath>
+      <HintPath>..\..\..\..\src\commons\controllers\bin\Debug\netstandard2.0\Mov.Controllers.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Schemas">
-      <HintPath>..\..\..\..\..\src\commons\schemas\bin\Debug\netstandard2.0\Mov.Schemas.dll</HintPath>
+      <HintPath>..\..\..\..\src\commons\schemas\bin\Debug\netstandard2.0\Mov.Schemas.dll</HintPath>
     </Reference>
   </ItemGroup>
 

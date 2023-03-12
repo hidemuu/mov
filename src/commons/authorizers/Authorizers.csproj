@@ -1,9 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Mov.Authorizers</AssemblyName>
-    <RootNamespace>Mov.Authorizers</RootNamespace>
-  </PropertyGroup>
-
-</Project>

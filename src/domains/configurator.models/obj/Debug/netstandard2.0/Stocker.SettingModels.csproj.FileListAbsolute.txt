@@ -1,9 +1,0 @@
-C:\Users\nando\Documents\GitHub\Stocker\src\domains\Stocker.SettingModels\bin\Debug\netstandard2.0\Stocker.SettingModels.deps.json
-C:\Users\nando\Documents\GitHub\Stocker\src\domains\Stocker.SettingModels\bin\Debug\netstandard2.0\Stocker.SettingModels.dll
-C:\Users\nando\Documents\GitHub\Stocker\src\domains\Stocker.SettingModels\bin\Debug\netstandard2.0\Stocker.SettingModels.pdb
-C:\Users\nando\Documents\GitHub\Stocker\src\domains\Stocker.SettingModels\obj\Debug\netstandard2.0\Stocker.SettingModels.AssemblyInfoInputs.cache
-C:\Users\nando\Documents\GitHub\Stocker\src\domains\Stocker.SettingModels\obj\Debug\netstandard2.0\Stocker.SettingModels.AssemblyInfo.cs
-C:\Users\nando\Documents\GitHub\Stocker\src\domains\Stocker.SettingModels\obj\Debug\netstandard2.0\Stocker.SettingModels.csproj.CoreCompileInputs.cache
-C:\Users\nando\Documents\GitHub\Stocker\src\domains\Stocker.SettingModels\obj\Debug\netstandard2.0\Stocker.SettingModels.dll
-C:\Users\nando\Documents\GitHub\Stocker\src\domains\Stocker.SettingModels\obj\Debug\netstandard2.0\Stocker.SettingModels.pdb
-C:\Users\nando\Documents\GitHub\Stocker\src\domains\Stocker.SettingModels\obj\Debug\netstandard2.0\Stocker.SettingModels.csproj.AssemblyReference.cache

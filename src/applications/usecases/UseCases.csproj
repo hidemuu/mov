@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Actions\**" />
+    <EmbeddedResource Remove="Actions\**" />
+    <None Remove="Actions\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\domains\framework\Framework.csproj" />
     <ProjectReference Include="..\..\infrastructures\analizer.repository\Analizer.Repository.csproj" />
     <ProjectReference Include="..\..\infrastructures\bom.repository\Bom.Repository.csproj" />
@@ -20,10 +26,6 @@
     <ProjectReference Include="..\drawer.service\Drawer.Service.csproj" />
     <ProjectReference Include="..\driver.service\Driver.Service.csproj" />
     <ProjectReference Include="..\game.service\Game.Service.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Actions\" />
   </ItemGroup>
 
 </Project>

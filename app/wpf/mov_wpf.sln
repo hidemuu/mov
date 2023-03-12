@@ -57,7 +57,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UseCase.ViewModels", "prese
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UseCase.Views", "presentations\usecase.views\UseCase.Views.csproj", "{9227EB6E-F9C1-4F87-9C85-6897E6C55F13}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp", "app\win\WpfApp.csproj", "{EC556C26-C408-4460-9F88-764D05869343}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinApp", "app\win\WinApp.csproj", "{EC556C26-C408-4460-9F88-764D05869343}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfControls", "commons\wpfcontrols\WpfControls.csproj", "{2103948B-3CB0-4919-BC05-A245431BFB9D}"
 EndProject

@@ -3,6 +3,7 @@ using Mov.Accessors;
 using Mov.Controllers;
 using Mov.Designer.Engine;
 using Mov.Designer.Models;
+using Mov.Designer.Models.Entities;
 using Mov.Designer.Models.Services;
 using System;
 using System.Collections.Generic;

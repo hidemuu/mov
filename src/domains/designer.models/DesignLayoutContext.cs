@@ -13,6 +13,7 @@ using Mov.Schemas.Resources.Localizes;
 using Mov.Schemas.Resources.Images;
 using Mov.Schemas.Parameters;
 using Mov.Schemas.Resources.Macros;
+using Mov.Designer.Models.Entities;
 
 namespace Mov.Designer.Models
 {

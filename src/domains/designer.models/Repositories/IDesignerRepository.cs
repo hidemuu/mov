@@ -1,5 +1,6 @@
 ﻿using Mov.Accessors;
 using Mov.Accessors.Repository.Domain;
+using Mov.Designer.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;

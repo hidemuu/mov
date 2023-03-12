@@ -9,7 +9,7 @@ using System.Linq;
 using System.Reflection;
 using System.Xml.Serialization;
 
-namespace Mov.Designer.Models
+namespace Mov.Designer.Models.Entities
 {
     /// <summary>
     /// シェル（フレーム）のコレクション

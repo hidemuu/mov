@@ -1,4 +1,5 @@
 ﻿using Mov.Designer.Models;
+using Mov.Designer.Models.Entities;
 using Mov.Designer.Models.Services;
 using Mov.WpfMvvms;
 using Prism.Regions;

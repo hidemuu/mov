@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Designer.Models
+namespace Mov.Designer.Models.Entities
 {
     /// <summary>
     /// テーマのコレクション

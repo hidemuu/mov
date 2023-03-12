@@ -1,6 +1,7 @@
 ﻿using Moq;
 using Mov.Accessors;
 using Mov.Designer.Models;
+using Mov.Designer.Models.Entities;
 using Mov.Designer.Repository;
 using System;
 using System.Collections.Generic;

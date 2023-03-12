@@ -11,7 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Designer.Models
+namespace Mov.Designer.Models.Entities
 {
     /// <summary>
     /// レイアウトノードのコレクション
@@ -55,7 +55,7 @@ namespace Mov.Designer.Models
         [DisplayName("style")]
         [DisplayIndex(12)]
         public string Style { get; set; }
-        
+
         /// <summary>
         /// 展開・非展開
         /// </summary>

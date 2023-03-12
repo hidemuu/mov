@@ -8,11 +8,11 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type atom:MovCartesianChart}">
                     <lvc:CartesianChart
-                        Name="Chart1"
-                        Background="#FF272424"
-                        Foreground="White"
+                        Name="MovChart"
+                        Background="{Binding BackgroundColor, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:MovCartesianChart}}}"
+                        Foreground="{Binding ForegroundColor, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:MovCartesianChart}}}"
                         LegendLocation="Right"
-                        Series="{TemplateBinding Series}">
+                        Series="{Binding Points, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:MovCartesianChart}}}">
                         <lvc:CartesianChart.AxisX>
                             <lvc:Axis
                                 Foreground="LightGray"

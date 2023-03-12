@@ -1,6 +1,7 @@
 ﻿using Mov.Accessors;
 using Mov.Accessors.Repository.Implement;
 using Mov.Designer.Models;
+using Mov.Designer.Models.Entities;
 
 namespace Mov.Designer.Repository
 {

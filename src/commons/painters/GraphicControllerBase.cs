@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Loggers;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -71,6 +72,7 @@ namespace Mov.Painters
         /// <summary>
         /// 描画準備
         /// </summary>
+        //[MethodTimeLog]
         protected abstract void Ready();
 
         /// <summary>

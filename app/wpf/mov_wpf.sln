@@ -71,6 +71,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.ViewModels", "pres
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.Views", "presentations\analizer.views\Analizer.Views.csproj", "{EB490256-36CC-4E0B-A4B5-ECA178DD542A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfWebs", "commons\wpfwebs\WpfWebs.csproj", "{E0AE2C70-66A8-48A2-A62B-AF08BCC05929}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -197,6 +199,10 @@ Global
 		{EB490256-36CC-4E0B-A4B5-ECA178DD542A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB490256-36CC-4E0B-A4B5-ECA178DD542A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB490256-36CC-4E0B-A4B5-ECA178DD542A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0AE2C70-66A8-48A2-A62B-AF08BCC05929}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0AE2C70-66A8-48A2-A62B-AF08BCC05929}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0AE2C70-66A8-48A2-A62B-AF08BCC05929}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0AE2C70-66A8-48A2-A62B-AF08BCC05929}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -232,6 +238,7 @@ Global
 		{C83D9E29-CBDB-46DB-A63A-634DFE9A4865} = {5E6BD378-09EA-4DBD-9A39-FE8B81B45A1C}
 		{F6EBC9C5-E683-4CDB-AF86-A25E7AA0A448} = {77C6E1B9-458D-4438-94CE-C9273855C22D}
 		{EB490256-36CC-4E0B-A4B5-ECA178DD542A} = {77C6E1B9-458D-4438-94CE-C9273855C22D}
+		{E0AE2C70-66A8-48A2-A62B-AF08BCC05929} = {5E6BD378-09EA-4DBD-9A39-FE8B81B45A1C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {57263AFF-18D0-40CB-8167-68CA01A18E8C}

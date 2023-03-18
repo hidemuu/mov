@@ -1,4 +1,5 @@
 ﻿using Mov.Accessors;
+using Mov.Analizer.Models.Apis.Resas;
 using Mov.Analizer.Models.Resas;
 using System;
 using System.Collections.Generic;
@@ -28,9 +29,5 @@ namespace Mov.Analizer.Repository.Resas
         public IEntityRepositoryAsync<ResasResponse<City>> Cities =>
             new RestEntityRepository<ResasResponse<City>>(Path.Combine(this.endpoint, City.URI), this.auth);
 
-        public string GetRelativePath()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

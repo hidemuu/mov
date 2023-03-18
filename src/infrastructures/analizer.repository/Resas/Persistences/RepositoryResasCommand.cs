@@ -1,5 +1,4 @@
-﻿using Mov.Analizer.Models.Persistences;
-using Mov.Analizer.Models.Resas;
+﻿using Mov.Analizer.Models.Apis.Resas;
 using System;
 using System.Collections.Generic;
 using System.Text;

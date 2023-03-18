@@ -1,5 +1,5 @@
 ﻿using Mov.Analizer.Models;
-using Mov.Analizer.Models.Parameters;
+using Mov.Analizer.Models.Apis.Resas;
 using System;
 
 namespace Mov.Analizer.Engine
@@ -8,11 +8,11 @@ namespace Mov.Analizer.Engine
     {
         #region フィールド
 
-        private readonly IResasParameter parameter;
+        private readonly IResasContext parameter;
 
         #endregion フィールド
 
-        public ResasEngine(IResasParameter parameter)
+        public ResasEngine(IResasContext parameter)
         {
             this.parameter = parameter;
         }

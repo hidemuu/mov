@@ -1,13 +1,11 @@
-﻿using Mov.Analizer.Models.Parameters;
-using Mov.Analizer.Models.Persistences;
-using Mov.Analizer.Models.Resas;
+﻿using Mov.Analizer.Models.Apis.Resas;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Mov.Analizer.Repository.Parameters
 {
-    public class ResasParameter : IResasParameter
+    public class ResasParameter : IResasContext
     {
         #region フィールド
 

@@ -11,4 +11,8 @@
     <ProjectReference Include="..\driver.models\Driver.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Calendar\" />
+  </ItemGroup>
+
 </Project>

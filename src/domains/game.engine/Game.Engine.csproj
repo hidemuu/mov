@@ -7,15 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Implements\LandMake\**" />
-    <Compile Remove="Implements\Tactics\**" />
-    <EmbeddedResource Remove="Implements\LandMake\**" />
-    <EmbeddedResource Remove="Implements\Tactics\**" />
-    <None Remove="Implements\LandMake\**" />
-    <None Remove="Implements\Tactics\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\commons\loggers\Loggers.csproj" />
     <ProjectReference Include="..\game.models\Game.Models.csproj" />
   </ItemGroup>

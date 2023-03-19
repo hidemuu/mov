@@ -1,6 +1,5 @@
 ﻿using Mov.Accessors.Repository;
-using Mov.Designer.Models.Repositories;
-using Mov.Designer.Models.Services;
+using Mov.Designer.Models;
 using Mov.Layouts;
 using Mov.WpfMvvms;
 using Prism.Regions;

@@ -11,8 +11,4 @@
     <ProjectReference Include="..\..\commons\painters\Painters.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DomainModels\ValueObjects\" />
-  </ItemGroup>
-
 </Project>

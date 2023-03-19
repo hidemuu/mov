@@ -1,9 +1,9 @@
 ﻿using Mov.Accessors.Repository.Domain;
 using Mov.Analizer.Models;
 using Mov.Controllers;
-using Mov.Designer.Models.Services;
+using Mov.Designer.Models;
 using Mov.Driver.Models;
-using Mov.Game.Models;
+using Mov.Game.Engine;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -32,17 +32,17 @@ namespace Mov.Framework
                 {
                     return new DomainController<IDesignerFacade>(designerService, this.commandPath);
                 }
-                if (service is IGameService gameService)
+                if (service is IGameFacade gameService)
                 {
-                    return new DomainController<IGameService>(gameService, this.commandPath);
+                    return new DomainController<IGameFacade>(gameService, this.commandPath);
                 }
-                if (service is IDriverService driverService)
+                if (service is IDriverFacade driverService)
                 {
-                    return new DomainController<IDriverService>(driverService, this.commandPath);
+                    return new DomainController<IDriverFacade>(driverService, this.commandPath);
                 }
-                if (service is IAnalizerService analizerService)
+                if (service is IAnalizerFacade analizerService)
                 {
-                    return new DomainController<IAnalizerService>(analizerService, this.commandPath);
+                    return new DomainController<IAnalizerFacade>(analizerService, this.commandPath);
                 }
             }
             catch (Exception ex)

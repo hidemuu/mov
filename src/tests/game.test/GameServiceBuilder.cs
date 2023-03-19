@@ -1,6 +1,8 @@
 ﻿using Moq;
+using Mov.Game.Engine;
 using Mov.Game.Models;
 using Mov.Game.Service;
+using Mov.Game.Service.Graphic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +13,7 @@ namespace Mov.Game.Test
 {
     public class GameServiceBuilder
     {
-        private readonly IGameService service;
+        private readonly IGameFacade service;
         private readonly Mock<IFiniteStateMachineGameEngine> mockEngine;
 
         public GameServiceBuilder()
@@ -26,7 +28,7 @@ namespace Mov.Game.Test
             return this;
         }
 
-        public IGameService Build() => service;
+        public IGameFacade Build() => service;
 
     }
 }

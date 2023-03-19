@@ -9,13 +9,13 @@ using System.Text;
 
 namespace Mov.Game.Engine.Commands
 {
-    internal class WriteConsoleCommand : IUiCommand<IGameService, CommandResponse>
+    internal class WriteConsoleCommand : IUiCommand<IGameFacade, CommandResponse>
     {
         public string Name => GameCommandType.WriteConsole.ToString();
 
         public string ShortName => "wc";
 
-        public CommandResponse Invoke(IGameService service, string[] args)
+        public CommandResponse Invoke(IGameFacade service, string[] args)
         {
             Console.WriteLine(service.ToString());
             return CommandResponse.Success;

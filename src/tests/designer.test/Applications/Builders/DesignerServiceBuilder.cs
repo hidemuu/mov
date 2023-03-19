@@ -1,5 +1,5 @@
 ﻿using Moq;
-using Mov.Designer.Models.Services;
+using Mov.Designer.Models;
 using Mov.Designer.Service;
 using System;
 using System.Collections.Generic;

@@ -27,6 +27,9 @@
     <Reference Include="Mov.Controllers">
       <HintPath>..\..\..\..\src\commons\controllers\bin\Debug\netstandard2.0\Mov.Controllers.dll</HintPath>
     </Reference>
+    <Reference Include="Mov.Designer.Engine">
+      <HintPath>..\..\..\..\src\domains\designer.engine\bin\Debug\netstandard2.0\Mov.Designer.Engine.dll</HintPath>
+    </Reference>
     <Reference Include="Mov.Designer.Models">
       <HintPath>..\..\..\..\src\domains\designer.models\bin\Debug\netstandard2.0\Mov.Designer.Models.dll</HintPath>
     </Reference>

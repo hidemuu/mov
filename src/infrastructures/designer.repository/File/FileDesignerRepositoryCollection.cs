@@ -1,6 +1,5 @@
 ﻿using Mov.Accessors.Repository.Implement;
 using Mov.Designer.Models;
-using Mov.Designer.Models.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -13,7 +13,9 @@ using Mov.Framework;
 using Mov.Framework.Controllers;
 using Mov.Game.Models;
 using Mov.Game.Service;
-using Mov.Game.Service.Puzzle;
+using Mov.Game.Service.Consoles;
+using Mov.Game.Service.Graphic;
+using Mov.Loggers.NLogs.Aspects;
 using Mov.UseCases;
 using Mov.UseCases.Controllers;
 using Mov.UseCases.Factories;
@@ -47,6 +49,7 @@ namespace Mov.ConsoleApp
 
         #endregion フィールド
 
+        [LogExecutionTime]
         static void Main(string[] args)
         {
             //二重起動防止
@@ -92,14 +95,12 @@ namespace Mov.ConsoleApp
             //リポジトリ生成
             repository = new FileMovRepository(PathCreator.GetResourcePath());
             //エンジン生成
-            //engine = new MovEngine(0, new MovService(
-            //    new AnalizerService(repository.Analizer),
-            //    new ConfiguratorService(repository.Configurator),
-            //    new DesignerService(repository.Designer),
-            //    new DriverService(repository.Driver),
-            //    new GameService(repository.Game),
-            //    new TranslatorService(repository.Translator)
-            //    ));
+            engine = new MovEngine(0, new MovService(
+                new AnalizerFacade(),
+                new DesignerFacade(new[] { repository.Designer }),
+                new DriverFacade(repository.Driver),
+                new ConsoleGameService()
+                ));
             controller = new MovController(engine);
         }
 

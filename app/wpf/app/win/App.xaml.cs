@@ -29,7 +29,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using Mov.Game.Views.Dialogs;
 using Mov.Game.ViewModels.Dialogs;
-using Mov.Game.Service.Machine;
 using Mov.Drawer.Models;
 using Mov.Drawer.Repository;
 using Mov.Drawer.Views;
@@ -53,16 +52,15 @@ using Mov.Analizer.Models;
 using Mov.Analizer.Views;
 using Mov.Analizer.ViewModels;
 using Mov.Game.Engine;
-using Mov.Game.Models.Parameters;
 using Mov.Designer.Engine;
 using Mov.Designer.Service;
 using Mov.Configurators;
-using Mov.Designer.Models.Repositories;
 using Mov.Designer.Repository.Implements;
 using Mov.WpfApp.Views;
 using Mov.WpfApp.ViewModels;
 using Mov.Layouts;
-using Mov.Designer.Models.Services;
+using Mov.Game.Service.Graphic;
+using Mov.Game.Engine.FiniteStateMachine;
 
 namespace Mov.WpfApp
 {
@@ -180,9 +178,9 @@ namespace Mov.WpfApp
             containerRegistry.RegisterInstance<IDesignerFacade>(new DesignerFacade(designerRepositories));
 
             containerRegistry.RegisterInstance<IGameRepository>(fileGameRepositories.GetRepository(""));
-            containerRegistry.RegisterInstance<IGameParameter>(Container.Resolve<GameParameter>());
+            containerRegistry.RegisterInstance<IGameContext>(Container.Resolve<GameContext>());
             containerRegistry.RegisterInstance<IFiniteStateMachineGameEngine>(Container.Resolve<FiniteStateMachineGameEngine>());
-            containerRegistry.RegisterInstance<IGameService>(Container.Resolve<GraphicGameService>());
+            containerRegistry.RegisterInstance<IGameFacade>(Container.Resolve<GraphicGameService>());
             //containerRegistry.RegisterInstance<IGameService>(new GraphicGameService(fileGameRepositories.DefaultRepository));
 
             //Viewの登録

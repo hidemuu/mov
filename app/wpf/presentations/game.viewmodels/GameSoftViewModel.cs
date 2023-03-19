@@ -1,7 +1,6 @@
 ﻿using Mov.Drawer.Models;
 using Mov.Game.Models;
 using Mov.Game.Service;
-using Mov.Game.Service.Machine;
 using Prism.Mvvm;
 using Prism.Regions;
 using Prism.Services.Dialogs;
@@ -30,7 +29,7 @@ namespace Mov.Game.ViewModels
     {
         #region フィールド
 
-        private readonly IGameService service;
+        private readonly IGameFacade service;
 
         private IGraphicGame game;
 
@@ -58,7 +57,7 @@ namespace Mov.Game.ViewModels
 
         #region コンストラクター
 
-        public GameSoftViewModel(IRegionManager regionManager, IDialogService dialogService, IGameService service) : base(regionManager, dialogService)
+        public GameSoftViewModel(IRegionManager regionManager, IDialogService dialogService, IGameFacade service) : base(regionManager, dialogService)
         {
             KeyUpCommand.Subscribe(() => OnKeyUp()).AddTo(Disposables);
             KeyGestureEnterCommand.Subscribe(() => OnKeyGestureEnter()).AddTo(Disposables);

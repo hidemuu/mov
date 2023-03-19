@@ -97,13 +97,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilities", "commons\utilit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Schemas", "commons\schemas\Schemas.csproj", "{9BF0DE33-DFCD-4EB8-BC8D-0EC2AFEB5591}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calendars", "infrastructures\calendars\Calendars.csproj", "{3D6380AE-8D88-4CF3-8430-8ED476ABF21E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.Calendar", "infrastructures\driver.clients.calendar\Driver.Clients.Calendar.csproj", "{3D6380AE-8D88-4CF3-8430-8ED476ABF21E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loggers", "commons\loggers\Loggers.csproj", "{281C3A71-9140-4AEB-862C-2DB181DC0DA7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controllers", "commons\controllers\Controllers.csproj", "{4E3004ED-5A65-4228-B05C-771E6A297AC9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Painters", "commons\painters\Painters.csproj", "{724DD8C6-A9E3-4AA5-BE06-C3582F8E1F02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Clients.Resas", "infrastructures\driver.clients.resas\Driver.Clients.Resas.csproj", "{C5D3F450-52CB-447D-AF08-A81EFFAE2C9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -291,6 +293,10 @@ Global
 		{724DD8C6-A9E3-4AA5-BE06-C3582F8E1F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{724DD8C6-A9E3-4AA5-BE06-C3582F8E1F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{724DD8C6-A9E3-4AA5-BE06-C3582F8E1F02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5D3F450-52CB-447D-AF08-A81EFFAE2C9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D3F450-52CB-447D-AF08-A81EFFAE2C9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D3F450-52CB-447D-AF08-A81EFFAE2C9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D3F450-52CB-447D-AF08-A81EFFAE2C9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -341,6 +347,7 @@ Global
 		{281C3A71-9140-4AEB-862C-2DB181DC0DA7} = {8CBFA0B4-BE09-414D-97EC-169FB8244143}
 		{4E3004ED-5A65-4228-B05C-771E6A297AC9} = {8CBFA0B4-BE09-414D-97EC-169FB8244143}
 		{724DD8C6-A9E3-4AA5-BE06-C3582F8E1F02} = {8CBFA0B4-BE09-414D-97EC-169FB8244143}
+		{C5D3F450-52CB-447D-AF08-A81EFFAE2C9E} = {12313AF5-0452-4C20-8955-3E8ECDE42301}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD9C3231-BF2C-413C-B738-70985D9981AE}

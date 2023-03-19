@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Mov.Calendars</AssemblyName>
-    <RootNamespace>Mov.Calendars</RootNamespace>
+    <AssemblyName>Mov.Driver.Clients.Calendar</AssemblyName>
+    <RootNamespace>Mov.Driver.Clients.Calendar</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

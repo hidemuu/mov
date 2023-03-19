@@ -1,14 +1,14 @@
 ﻿using Google.Apis.Calendar.v3;
 using Google.Apis.Calendar.v3.Data;
 using Google.Apis.Services;
-using Mov.Calendars.GoogleApi;
+using Mov.Driver.Clients.Calendar.GoogleApi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Calendars.Repository.GoogleApi
+namespace Mov.Driver.Clients.Calendar.Repository.GoogleApi
 {
     public class GoogleApiScheduledEventRepository
     {

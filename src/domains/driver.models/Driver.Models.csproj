@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Sequences\" />
+    <Compile Remove="Sequences\**" />
+    <EmbeddedResource Remove="Sequences\**" />
+    <None Remove="Sequences\**" />
   </ItemGroup>
 
   <ItemGroup>

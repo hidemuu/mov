@@ -10,4 +10,14 @@
     <ProjectReference Include="..\..\commons\controllers\Controllers.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Amr\" />
+    <Folder Include="Cnc\" />
+    <Folder Include="ImageProcessing\" />
+    <Folder Include="Plc\" />
+    <Folder Include="RaspberryPi\" />
+    <Folder Include="Calendar\" />
+    <Folder Include="Resas\" />
+  </ItemGroup>
+
 </Project>

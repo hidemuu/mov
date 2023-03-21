@@ -5,15 +5,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Mov.Schemas.Implements.Bodies;
-using Mov.Schemas.Resources.Keys;
 using Mov.Schemas.Units.Sizes;
 using Mov.Schemas.Units;
-using Mov.Schemas.Styles;
-using Mov.Schemas.Resources.Localizes;
-using Mov.Schemas.Resources.Images;
 using Mov.Schemas.Parameters;
-using Mov.Schemas.Resources.Macros;
 using Mov.Designer.Models.Entities;
+using Mov.Schemas.Parameters.Keys;
+using Mov.Schemas.Parameters.Localizes;
+using Mov.Schemas.Parameters.Macros;
+using Mov.Schemas.Layouts.Styles;
 
 namespace Mov.Designer.Models
 {

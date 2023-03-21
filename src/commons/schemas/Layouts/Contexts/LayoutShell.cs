@@ -1,4 +1,4 @@
-﻿using Mov.Schemas.Styles;
+﻿using Mov.Schemas.Layouts.Styles;
 using Mov.Schemas.Units;
 using Mov.Schemas.Units.Sizes;
 using System;

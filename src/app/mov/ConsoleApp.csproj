@@ -8,7 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MethodBoundaryAspect.Fody" Version="2.0.148" />
+    <PackageReference Include="NLog" Version="5.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\applications\usecases\UseCases.csproj" />
+    <ProjectReference Include="..\..\commons\loggers\Loggers.csproj" />
   </ItemGroup>
 
 </Project>

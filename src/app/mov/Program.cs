@@ -49,7 +49,6 @@ namespace Mov.ConsoleApp
 
         #endregion フィールド
 
-        [LogExecutionTime]
         static void Main(string[] args)
         {
             //二重起動防止
@@ -84,6 +83,7 @@ namespace Mov.ConsoleApp
 
         #region メソッド
 
+        [LogExecutionTime]
         static void Initialize()
         {
             //共通コマンド生成
@@ -97,8 +97,8 @@ namespace Mov.ConsoleApp
             //エンジン生成
             engine = new MovEngine(0, new MovService(
                 new AnalizerFacade(),
-                new DesignerFacade(new[] { repository.Designer }),
-                new DriverFacade(repository.Driver),
+                DesignerFacadeFactory.Create(new[] { repository.Designer }),
+                DriverFacadeFactory.Create(repository.Driver),
                 new ConsoleGameService()
                 ));
             controller = new MovController(engine);
@@ -121,6 +121,11 @@ namespace Mov.ConsoleApp
                     if (!controller.SetDomain(input))
                     {
                         Console.WriteLine("コントローラーの生成に失敗しました");
+                        if (handlers.ContainsKey(input))
+                        {
+                            handlers[input].Invoke(new string[] { });
+                            continue;
+                        }
                         continue;
                     }
                     Console.WriteLine("コントローラーを生成しました");

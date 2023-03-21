@@ -47,13 +47,11 @@ namespace Mov.Designer.Service
 
         #region メソッド
 
-        [LogExecutionTime]
         public void Read()
         {
             this.context.Read();
         }
 
-        [LogExecutionTime]
         public void Write()
         {
             this.context.Write();

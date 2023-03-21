@@ -52,6 +52,12 @@
           }
         }
       },
+      "Fody/6.0.5": {
+        "type": "package",
+        "build": {
+          "build/_._": {}
+        }
+      },
       "MathNet.Numerics/5.0.0": {
         "type": "package",
         "compile": {
@@ -63,6 +69,21 @@
           "lib/netstandard2.0/MathNet.Numerics.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "MethodBoundaryAspect.Fody/2.0.148": {
+        "type": "package",
+        "dependencies": {
+          "Fody": "6.0.5"
+        },
+        "compile": {
+          "lib/netstandard2.0/MethodBoundaryAspect.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MethodBoundaryAspect.dll": {}
+        },
+        "build": {
+          "build/_._": {}
         }
       },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -994,6 +1015,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "MethodBoundaryAspect.Fody": "2.0.148",
           "NLog": "5.0.4"
         },
         "compile": {
@@ -1122,6 +1144,38 @@
         "logo-nuget.png"
       ]
     },
+    "Fody/6.0.5": {
+      "sha512": "xfz4NwIIPs2xtfvpPlXz49cHYPeWBl/bnvlpW6OSpxKFAujAm7vLQ8Ma7aX3GYVjc/czn5+58QNUnDyb4gxiKA==",
+      "type": "package",
+      "path": "fody/6.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/Fody.targets",
+        "fody.6.0.5.nupkg.sha512",
+        "fody.nuspec",
+        "netclassictask/Fody.dll",
+        "netclassictask/FodyCommon.dll",
+        "netclassictask/FodyHelpers.dll",
+        "netclassictask/FodyIsolated.dll",
+        "netclassictask/Mono.Cecil.Pdb.dll",
+        "netclassictask/Mono.Cecil.Pdb.pdb",
+        "netclassictask/Mono.Cecil.Rocks.dll",
+        "netclassictask/Mono.Cecil.Rocks.pdb",
+        "netclassictask/Mono.Cecil.dll",
+        "netclassictask/Mono.Cecil.pdb",
+        "netstandardtask/Fody.dll",
+        "netstandardtask/FodyCommon.dll",
+        "netstandardtask/FodyHelpers.dll",
+        "netstandardtask/FodyIsolated.dll",
+        "netstandardtask/Mono.Cecil.Pdb.dll",
+        "netstandardtask/Mono.Cecil.Pdb.pdb",
+        "netstandardtask/Mono.Cecil.Rocks.dll",
+        "netstandardtask/Mono.Cecil.Rocks.pdb",
+        "netstandardtask/Mono.Cecil.dll",
+        "netstandardtask/Mono.Cecil.pdb"
+      ]
+    },
     "MathNet.Numerics/5.0.0": {
       "sha512": "pg1W2VwaEQMAiTpGK840hZgzavnqjlCMTVSbtVCXVyT+7AX4mc1o89SPv4TBlAjhgCOo9c1Y+jZ5m3ti2YgGgA==",
       "type": "package",
@@ -1142,6 +1196,21 @@
         "lib/netstandard2.0/MathNet.Numerics.xml",
         "mathnet.numerics.5.0.0.nupkg.sha512",
         "mathnet.numerics.nuspec"
+      ]
+    },
+    "MethodBoundaryAspect.Fody/2.0.148": {
+      "sha512": "QFZOs5SRehBbRYmuPvdsgr3PhqkoERO9YT0jxW4JzmWIZmk2nlMz4uokz+HiWtK9n+2e0eAZ0pX7om+yMbserw==",
+      "type": "package",
+      "path": "methodboundaryaspect.fody/2.0.148",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MethodBoundaryAspect.Fody.props",
+        "lib/net462/MethodBoundaryAspect.dll",
+        "lib/netstandard2.0/MethodBoundaryAspect.dll",
+        "methodboundaryaspect.fody.2.0.148.nupkg.sha512",
+        "methodboundaryaspect.fody.nuspec",
+        "weaver/MethodBoundaryAspect.Fody.dll"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {

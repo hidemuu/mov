@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="OpenCV\" />
+    <Compile Remove="OpenCV\**" />
+    <EmbeddedResource Remove="OpenCV\**" />
+    <None Remove="OpenCV\**" />
   </ItemGroup>
 
   <ItemGroup>

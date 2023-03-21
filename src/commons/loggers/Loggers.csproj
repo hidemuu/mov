@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -7,6 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="NLog.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="FodyWeavers.xsd" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MethodBoundaryAspect.Fody" Version="2.0.148" />
     <PackageReference Include="NLog" Version="5.0.4" />
   </ItemGroup>
 

@@ -7,17 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="FodyWeavers.xml" />
     <None Remove="NLog.config" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="FodyWeavers.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="FodyWeavers.xsd" />
+    <Content Include="FodyWeavers.xsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

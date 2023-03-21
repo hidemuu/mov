@@ -15,7 +15,7 @@ using Mov.Game.Models;
 using Mov.Game.Service;
 using Mov.Game.Service.Consoles;
 using Mov.Game.Service.Graphic;
-using Mov.Loggers.NLogs.Aspects;
+using Mov.Loggers.NLogs;
 using Mov.UseCases;
 using Mov.UseCases.Controllers;
 using Mov.UseCases.Factories;

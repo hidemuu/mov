@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Text;
 
-namespace Mov.Loggers.NLogs.Aspects
+namespace Mov.Loggers.NLogs
 {
     public sealed class LogExecutionTimeAttribute : OnMethodBoundaryAspect
     {
@@ -21,7 +21,7 @@ namespace Mov.Loggers.NLogs.Aspects
         public override void OnExit(MethodExecutionArgs arg)
         {
             stopwatch.Stop();
-            AspectLogger.LogExecutionTime(arg.Method, stopwatch);
+            LogContext.Instance.LogExecutionTime(arg.Method, stopwatch);
             Console.WriteLine("Exited method: " + arg.Method.Name);
         }
 

@@ -973,6 +973,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MathNet.Numerics": "5.0.0",
+          "MethodBoundaryAspect.Fody": "2.0.148",
           "Mov.Accessors": "1.0.0",
           "Mov.Schemas": "1.0.0",
           "Newtonsoft.Json": "13.0.1"

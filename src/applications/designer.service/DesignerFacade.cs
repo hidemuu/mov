@@ -3,7 +3,7 @@ using Mov.Designer.Models;
 using Mov.Layouts;
 using Mov.Layouts.Contexts;
 using Mov.Layouts.Implements;
-using Mov.Loggers.NLogs.Aspects;
+using Mov.Loggers.NLogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;

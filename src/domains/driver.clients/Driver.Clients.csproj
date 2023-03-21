@@ -16,7 +16,6 @@
     <Folder Include="ImageProcessing\" />
     <Folder Include="Plc\" />
     <Folder Include="RaspberryPi\" />
-    <Folder Include="Calendar\" />
   </ItemGroup>
 
 </Project>

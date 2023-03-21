@@ -52,3 +52,5 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\game.serv
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Loggers.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\Mov.Loggers.pdb
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\NLog.config
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\FodyWeavers.xml
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\game.service\bin\Debug\netstandard2.0\FodyWeavers.xsd

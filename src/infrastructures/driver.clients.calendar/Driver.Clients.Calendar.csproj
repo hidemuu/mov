@@ -10,4 +10,8 @@
     <PackageReference Include="Google.Apis.Calendar.v3" Version="1.55.0.2500" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\domains\driver.clients\Driver.Clients.csproj" />
+  </ItemGroup>
+
 </Project>

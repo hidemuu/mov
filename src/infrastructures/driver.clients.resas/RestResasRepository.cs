@@ -10,7 +10,7 @@ using System.Text;
 
 namespace Driver.Clients.Resas
 {
-    public class RestResasRepository : IResasClient
+    public class RestResasRepository : IResasRepository
     {
         private const string DEFAULT_END_POINT = "https://opendata.resas-portal.go.jp/api/v1/";
 

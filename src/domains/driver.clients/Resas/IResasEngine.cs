@@ -6,5 +6,8 @@ namespace Mov.Driver.Clients.Resas
 {
     public interface IResasEngine
     {
+        IResasCommand Command { get; }
+
+        IResasQuery Query { get; }
     }
 }

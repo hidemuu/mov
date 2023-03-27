@@ -105,7 +105,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controllers", "commons\cont
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Painters", "commons\painters\Painters.csproj", "{724DD8C6-A9E3-4AA5-BE06-C3582F8E1F02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Clients.Resas", "infrastructures\driver.clients.resas\Driver.Clients.Resas.csproj", "{C5D3F450-52CB-447D-AF08-A81EFFAE2C9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.Resas", "infrastructures\driver.clients.resas\Driver.Clients.Resas.csproj", "{C5D3F450-52CB-447D-AF08-A81EFFAE2C9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configurators", "commons\configurators\Configurators.csproj", "{87854B1D-58FA-45C8-85E3-FC63FEEC2A94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -297,6 +299,10 @@ Global
 		{C5D3F450-52CB-447D-AF08-A81EFFAE2C9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5D3F450-52CB-447D-AF08-A81EFFAE2C9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5D3F450-52CB-447D-AF08-A81EFFAE2C9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87854B1D-58FA-45C8-85E3-FC63FEEC2A94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87854B1D-58FA-45C8-85E3-FC63FEEC2A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87854B1D-58FA-45C8-85E3-FC63FEEC2A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87854B1D-58FA-45C8-85E3-FC63FEEC2A94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -348,6 +354,7 @@ Global
 		{4E3004ED-5A65-4228-B05C-771E6A297AC9} = {8CBFA0B4-BE09-414D-97EC-169FB8244143}
 		{724DD8C6-A9E3-4AA5-BE06-C3582F8E1F02} = {8CBFA0B4-BE09-414D-97EC-169FB8244143}
 		{C5D3F450-52CB-447D-AF08-A81EFFAE2C9E} = {12313AF5-0452-4C20-8955-3E8ECDE42301}
+		{87854B1D-58FA-45C8-85E3-FC63FEEC2A94} = {8CBFA0B4-BE09-414D-97EC-169FB8244143}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD9C3231-BF2C-413C-B738-70985D9981AE}

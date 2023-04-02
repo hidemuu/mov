@@ -1,5 +1,6 @@
 ﻿using Mov.Accessors;
 using Mov.Accessors.Crud.Persistence.Implement;
+using Mov.Configurators.Schemas;
 using Mov.Controllers;
 using System;
 using System.Collections.Generic;

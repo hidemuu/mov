@@ -1,5 +1,6 @@
 ﻿using Mov.Accessors.Repository;
 using Mov.Configurators;
+using Mov.Configurators.Schemas;
 using Mov.Utilities.Attributes;
 using Mov.WpfModels;
 using Mov.WpfMvvms;

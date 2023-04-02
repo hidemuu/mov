@@ -1,6 +1,7 @@
 ﻿using Mov.Accessors;
 using Mov.Accessors.Repository.Domain;
 using Mov.Accessors.Repository.Implement;
+using Mov.Configurators.Schemas;
 using System;
 using System.Collections.Generic;
 using System.Text;

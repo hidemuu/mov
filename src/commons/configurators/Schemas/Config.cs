@@ -9,9 +9,9 @@ using System.Linq;
 using System.Reflection;
 using System.Xml.Serialization;
 
-namespace Mov.Configurators
+namespace Mov.Configurators.Schemas
 {
-   
+
     /// <summary>
     /// 設定
     /// </summary>

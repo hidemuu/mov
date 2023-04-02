@@ -15,6 +15,9 @@
     <Reference Include="Mov.Accessors">
       <HintPath>..\..\..\..\src\commons\accessors\bin\Debug\netstandard2.0\Mov.Accessors.dll</HintPath>
     </Reference>
+    <Reference Include="Mov.Configurators">
+      <HintPath>..\..\..\..\src\commons\configurators\bin\Debug\netstandard2.0\Mov.Configurators.dll</HintPath>
+    </Reference>
     <Reference Include="Mov.Controllers">
       <HintPath>..\..\..\..\src\commons\controllers\bin\Debug\netstandard2.0\Mov.Controllers.dll</HintPath>
     </Reference>

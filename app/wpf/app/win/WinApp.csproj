@@ -35,6 +35,9 @@
     <Reference Include="Mov.Bom.Repository">
       <HintPath>..\..\..\..\src\infrastructures\bom.repository\bin\Debug\netstandard2.0\Mov.Bom.Repository.dll</HintPath>
     </Reference>
+    <Reference Include="Mov.Configurators">
+      <HintPath>..\..\..\..\src\commons\configurators\bin\Debug\netstandard2.0\Mov.Configurators.dll</HintPath>
+    </Reference>
     <Reference Include="Mov.Controllers">
       <HintPath>..\..\..\..\src\commons\controllers\bin\Debug\netstandard2.0\Mov.Controllers.dll</HintPath>
     </Reference>

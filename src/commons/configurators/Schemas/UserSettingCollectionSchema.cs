@@ -5,17 +5,17 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Configurators.Schemas
+namespace Mov.Configurator.Models.Schemas
 {
     /// <summary>
     /// 設定のコレクション
     /// </summary>
     [XmlRoot("configs")]
-    public class ConfigCollection : DbObjectCollection<Config>
+    public class UserSettingCollectionSchema : DbObjectCollection<UserSettingSchema>
     {
         /// <inheritdoc />
         [JsonProperty("configs")]
-        [XmlElement(Type = typeof(Config), ElementName = "config")]
-        public override Config[] Items { get; set; }
+        [XmlElement(Type = typeof(UserSettingSchema), ElementName = "config")]
+        public override UserSettingSchema[] Items { get; set; }
     }
 }

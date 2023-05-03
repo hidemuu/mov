@@ -1,26 +1,27 @@
 ﻿using Mov.Accessors;
 using Mov.Accessors.Repository.Domain;
 using Mov.Accessors.Repository.Implement;
-using Mov.Configurators.Schemas;
+using Mov.Configurator.Models;
+using Mov.Configurator.Models.Schemas;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Configurators
+namespace Configurator.Repository.File
 {
-    public class FileConfiguratorRepository : FileDomainRepositoryBase
+    public class FileConfiguratorRepository : FileDomainRepositoryBase, IConfiguratorRepository
     {
         public override string DomainPath => "configurator";
 
         public FileConfiguratorRepository(string endpoint, string fileDir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8)
             : base(endpoint, fileDir, extension, encoding)
         {
-            Configs = new FileDbObjectRepository<Config, ConfigCollection>(GetPath("config"), encoding);
+            Configs = new FileDbObjectRepository<UserSettingSchema, UserSettingCollectionSchema>(GetPath("config"), encoding);
         }
 
         #region プロパティ
 
-        public IDbObjectRepository<Config, ConfigCollection> Configs { get; }
+        public IDbObjectRepository<UserSettingSchema, UserSettingCollectionSchema> Configs { get; }
 
         #endregion
     }

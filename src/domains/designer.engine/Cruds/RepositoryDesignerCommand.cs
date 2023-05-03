@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Engine
+namespace Mov.Designer.Engine.Persistences
 {
     public class RepositoryDesignerCommand : IDesignerCommand
     {

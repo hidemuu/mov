@@ -1,6 +1,7 @@
-﻿using Mov.Accessors;
+﻿using Configurator.Repository.File;
+using Mov.Accessors;
 using Mov.Accessors.Crud.Persistence.Implement;
-using Mov.Configurators.Schemas;
+using Mov.Configurator.Models.Schemas;
 using Mov.Controllers;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace Mov.Configurators.Services.Persistences
 {
-    public class ConfiguratorCommand : IPersistenceCommand<Config>
+    public class ConfiguratorCommand : IPersistenceCommand<UserSettingSchema>
     {
         #region フィールド
 
@@ -18,9 +19,9 @@ namespace Mov.Configurators.Services.Persistences
 
         #region プロパティ
 
-        public ISave<Config> Saver { get; }
+        public ISave<UserSettingSchema> Saver { get; }
 
-        public IDelete<Config> Deleter { get; }
+        public IDelete<UserSettingSchema> Deleter { get; }
 
         #endregion プロパティ
 
@@ -29,8 +30,8 @@ namespace Mov.Configurators.Services.Persistences
         public ConfiguratorCommand(FileConfiguratorRepository repository)
         {
             this.repository = repository;
-            Saver = new DbObjectRepositorySaver<Config, ConfigCollection>(repository.Configs);
-            Deleter = new DbObjectRepositoryDeleter<Config, ConfigCollection>(repository.Configs);
+            Saver = new DbObjectRepositorySaver<UserSettingSchema, UserSettingCollectionSchema>(repository.Configs);
+            Deleter = new DbObjectRepositoryDeleter<UserSettingSchema, UserSettingCollectionSchema>(repository.Configs);
         }
 
         public void Dispose()

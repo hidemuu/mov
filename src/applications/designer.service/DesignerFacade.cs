@@ -1,4 +1,5 @@
 ﻿using Mov.Designer.Engine;
+using Mov.Designer.Engine.Persistences;
 using Mov.Designer.Models;
 using Mov.Layouts;
 using Mov.Layouts.Contexts;
@@ -38,7 +39,7 @@ namespace Mov.Designer.Service
             var repository = repositories.FirstOrDefault();
             this.Query = new RepositoryDesignerQuery(repository);
             this.Command = new RepositoryDesignerCommand(repository);
-            this.context = new DesignLayoutContext(repository);
+            this.context = new DesignerContext(repository);
             this.LayoutFacade = new LayoutFacade(this.context);
         }
 

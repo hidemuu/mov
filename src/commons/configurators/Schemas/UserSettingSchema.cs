@@ -9,14 +9,14 @@ using System.Linq;
 using System.Reflection;
 using System.Xml.Serialization;
 
-namespace Mov.Configurators.Schemas
+namespace Mov.Configurator.Models.Schemas
 {
 
     /// <summary>
-    /// 設定
+    /// 設定のスキーマ
     /// </summary>
     [XmlRoot("config")]
-    public class Config : DbObject
+    public class UserSettingSchema : DbObject
     {
         #region プロパティ
 
@@ -83,7 +83,7 @@ namespace Mov.Configurators.Schemas
 
         #endregion プロパティ
 
-        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<Config>().OrderBy(x => x.index);
+        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<UserSettingSchema>().OrderBy(x => x.index);
 
     }
 }

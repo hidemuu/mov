@@ -16,7 +16,7 @@ using Mov.Designer.Models.Schemas;
 
 namespace Mov.Designer.Models
 {
-    public class DesignLayoutContext : ILayoutContext
+    public class DesignerContext : ILayoutContext
     {
         private readonly IDesignerRepository repository;
 
@@ -30,7 +30,7 @@ namespace Mov.Designer.Models
 
         public IEnumerable<LayoutTheme> Themes { get; } = new List<LayoutTheme>();
 
-        public DesignLayoutContext(IDesignerRepository repository) 
+        public DesignerContext(IDesignerRepository repository) 
         {
             this.repository = repository;
             this.DomainId = new CodeKey(repository.DomainPath);

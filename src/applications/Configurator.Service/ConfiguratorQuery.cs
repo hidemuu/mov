@@ -1,6 +1,7 @@
-﻿using Mov.Accessors;
+﻿using Configurator.Repository.File;
+using Mov.Accessors;
 using Mov.Accessors.Persistance.Implement;
-using Mov.Configurators.Schemas;
+using Mov.Configurator.Models.Schemas;
 using Mov.Controllers;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Text;
 
 namespace Mov.Configurators.Services.Persistences
 {
-    public class ConfiguratorQuery : IPersistenceQuery<Config>
+    public class ConfiguratorQuery : IPersistenceQuery<UserSettingSchema>
     {
         #region フィールド
 
@@ -19,7 +20,7 @@ namespace Mov.Configurators.Services.Persistences
 
         #region プロパティ
 
-        public IRead<Config> Reader { get; }
+        public IRead<UserSettingSchema> Reader { get; }
 
         #endregion プロパティ
 
@@ -28,7 +29,7 @@ namespace Mov.Configurators.Services.Persistences
         public ConfiguratorQuery(FileConfiguratorRepository repository)
         {
             this.repository = repository;
-            Reader = new DbObjectRepositoryReader<Config, ConfigCollection>(repository.Configs);
+            Reader = new DbObjectRepositoryReader<UserSettingSchema, UserSettingCollectionSchema>(repository.Configs);
         }
 
         #endregion コンストラクター

@@ -3,7 +3,7 @@ using Mov.Accessors;
 using Mov.Controllers;
 using Mov.Designer.Engine;
 using Mov.Designer.Models;
-using Mov.Designer.Models.Entities;
+using Mov.Designer.Models.Schemas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,31 +38,31 @@ namespace Mov.Designer.Test
 
         #region メソッド
 
-        public DesignerEngineBuilder WithContentCalled(List<Content> contents)
+        public DesignerEngineBuilder WithContentCalled(List<ContentSchema> contents)
         {
-            var mockRepositoryContent = new Mock<IDbObjectRepository<Content, ContentCollection>>();
+            var mockRepositoryContent = new Mock<IDbObjectRepository<ContentSchema, ContentCollection>>();
             mockRepositoryContent.Setup(x => x.Get()).Returns(contents);
-            mockRepositoryContent.Setup(x => x.Post(new Content()));
-            mockRepositoryContent.Setup(x => x.Delete(new Content()));
+            mockRepositoryContent.Setup(x => x.Post(new ContentSchema()));
+            mockRepositoryContent.Setup(x => x.Delete(new ContentSchema()));
             this.mockRepository.Setup(x => x.Contents).Returns(mockRepositoryContent.Object);
 
-            var mockQueryContent = new Mock<IPersistenceQuery<Content>>();
+            var mockQueryContent = new Mock<IPersistenceQuery<ContentSchema>>();
             mockQueryContent.Setup(x => x.Reader.ReadAll()).Returns(contents);
             this.mockQuery.Setup(x => x.Contents).Returns(mockQueryContent.Object);
 
-            var mockCommandContent = new Mock<IPersistenceCommand<Content>>();
-            mockCommandContent.Setup(x => x.Saver.Save(new Content()));
+            var mockCommandContent = new Mock<IPersistenceCommand<ContentSchema>>();
+            mockCommandContent.Setup(x => x.Saver.Save(new ContentSchema()));
             this.mockCommand.Setup(x => x.Contents).Returns(mockCommandContent.Object);
 
             return this;
         }
 
-        public DesignerEngineBuilder WithNodeCalled(List<Node> nodes)
+        public DesignerEngineBuilder WithNodeCalled(List<NodeSchema> nodes)
         {
-            var mockNode = new Mock<IDbObjectRepository<Node, NodeCollection>>();
+            var mockNode = new Mock<IDbObjectRepository<NodeSchema, NodeCollection>>();
             mockNode.Setup(x => x.Get()).Returns(nodes);
-            mockNode.Setup(x => x.Post(new Node()));
-            mockNode.Setup(x => x.Delete(new Node()));
+            mockNode.Setup(x => x.Post(new NodeSchema()));
+            mockNode.Setup(x => x.Delete(new NodeSchema()));
             this.mockRepository.Setup(x => x.Nodes).Returns(mockNode.Object);
             return this;
         }

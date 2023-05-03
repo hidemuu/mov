@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Configurators
+namespace Mov.Configurators.Services.Persistences
 {
     public class ConfiguratorCommand : IPersistenceCommand<Config>
     {
@@ -29,8 +29,8 @@ namespace Mov.Configurators
         public ConfiguratorCommand(FileConfiguratorRepository repository)
         {
             this.repository = repository;
-            this.Saver = new DbObjectRepositorySaver<Config, ConfigCollection>(repository.Configs);
-            this.Deleter = new DbObjectRepositoryDeleter<Config, ConfigCollection>(repository.Configs);
+            Saver = new DbObjectRepositorySaver<Config, ConfigCollection>(repository.Configs);
+            Deleter = new DbObjectRepositoryDeleter<Config, ConfigCollection>(repository.Configs);
         }
 
         public void Dispose()

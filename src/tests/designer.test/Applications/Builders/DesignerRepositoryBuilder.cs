@@ -1,7 +1,7 @@
 ﻿using Moq;
 using Mov.Accessors;
 using Mov.Designer.Models;
-using Mov.Designer.Models.Entities;
+using Mov.Designer.Models.Schemas;
 using Mov.Designer.Repository;
 using System;
 using System.Collections.Generic;
@@ -16,7 +16,7 @@ namespace Mov.Designer.Test.Builders
         #region フィールド
 
         private readonly IDesignerRepository repository;
-        private readonly Mock<IDbObjectRepository<Content, ContentCollection>> mockContent;
+        private readonly Mock<IDbObjectRepository<ContentSchema, ContentCollection>> mockContent;
 
         #endregion フィールド
 
@@ -24,7 +24,7 @@ namespace Mov.Designer.Test.Builders
 
         public DesignerRepositoryBuilder()
         {
-            this.mockContent = new Mock<IDbObjectRepository<Content, ContentCollection>>();
+            this.mockContent = new Mock<IDbObjectRepository<ContentSchema, ContentCollection>>();
             this.repository = new FileDesignerRepository("", "", "");
         }
 

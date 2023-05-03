@@ -9,24 +9,24 @@ using System.Linq;
 using System.Reflection;
 using System.Xml.Serialization;
 
-namespace Mov.Designer.Models.Entities
+namespace Mov.Designer.Models.Schemas
 {
     /// <summary>
     /// シェル（フレーム）のコレクション
     /// </summary>
     [XmlRoot("shells")]
-    public class ShellCollection : DbObjectCollection<Shell>
+    public class ShellCollection : DbObjectCollection<ShellSchema>
     {
         /// <inheritdoc />
-        [XmlElement(Type = typeof(Shell), ElementName = "shell")]
-        public override Shell[] Items { get; set; }
+        [XmlElement(Type = typeof(ShellSchema), ElementName = "shell")]
+        public override ShellSchema[] Items { get; set; }
     }
 
     /// <summary>
     /// シェル（フレーム）
     /// </summary>
     [XmlRoot("shell")]
-    public class Shell : DbObject
+    public class ShellSchema : DbObject
     {
         #region プロパティ
 
@@ -88,7 +88,7 @@ namespace Mov.Designer.Models.Entities
 
         #region メソッド
 
-        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<Shell>().OrderBy(x => x.index);
+        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<ShellSchema>().OrderBy(x => x.index);
 
         #endregion メソッド
     }

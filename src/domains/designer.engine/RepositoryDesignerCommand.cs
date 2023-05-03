@@ -2,7 +2,7 @@
 using Mov.Accessors.Crud.Persistence.Implement;
 using Mov.Controllers;
 using Mov.Designer.Models;
-using Mov.Designer.Models.Entities;
+using Mov.Designer.Models.Schemas;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,20 +11,20 @@ namespace Mov.Designer.Engine
 {
     public class RepositoryDesignerCommand : IDesignerCommand
     {
-        public IPersistenceCommand<Content> Contents { get; }
+        public IPersistenceCommand<ContentSchema> Contents { get; }
 
-        public IPersistenceCommand<Node> Nodes { get; }
+        public IPersistenceCommand<NodeSchema> Nodes { get; }
 
-        public IPersistenceCommand<Shell> Shells { get; }
+        public IPersistenceCommand<ShellSchema> Shells { get; }
 
-        public IPersistenceCommand<Theme> Themes { get; }
+        public IPersistenceCommand<ThemeSchema> Themes { get; }
 
         public RepositoryDesignerCommand(IDesignerRepository repository)
         {
-            Nodes = new DbObjectRepositoryCommand<Node, NodeCollection>(repository.Nodes);
-            Contents = new DbObjectRepositoryCommand<Content, ContentCollection>(repository.Contents);
-            Shells = new DbObjectRepositoryCommand<Shell, ShellCollection>(repository.Shells);
-            Themes = new DbObjectRepositoryCommand<Theme, ThemeCollection>(repository.Themes);
+            Nodes = new DbObjectRepositoryCommand<NodeSchema, NodeCollection>(repository.Nodes);
+            Contents = new DbObjectRepositoryCommand<ContentSchema, ContentCollection>(repository.Contents);
+            Shells = new DbObjectRepositoryCommand<ShellSchema, ShellCollection>(repository.Shells);
+            Themes = new DbObjectRepositoryCommand<ThemeSchema, ThemeCollection>(repository.Themes);
         }
 
     }

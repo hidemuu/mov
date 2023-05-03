@@ -9,24 +9,24 @@ using System.Linq;
 using System.Reflection;
 using System.Xml.Serialization;
 
-namespace Mov.Designer.Models.Entities
+namespace Mov.Designer.Models.Schemas
 {
     /// <summary>
     /// コンテンツのコレクション
     /// </summary>
     [XmlRoot("contents")]
-    public class ContentCollection : DbObjectCollection<Content>
+    public class ContentCollection : DbObjectCollection<ContentSchema>
     {
         /// <inheritdoc />
-        [XmlElement(Type = typeof(Content), ElementName = "content")]
-        public override Content[] Items { get; set; }
+        [XmlElement(Type = typeof(ContentSchema), ElementName = "content")]
+        public override ContentSchema[] Items { get; set; }
     }
 
     /// <summary>
     /// コンテンツ
     /// </summary>
     [XmlRoot("content")]
-    public class Content : DbObject
+    public class ContentSchema : DbObject
     {
         #region プロパティ
 
@@ -145,7 +145,7 @@ namespace Mov.Designer.Models.Entities
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public Content()
+        public ContentSchema()
         {
 
         }
@@ -154,7 +154,7 @@ namespace Mov.Designer.Models.Entities
         /// コンストラクター（ディープコピー）
         /// </summary>
         /// <param name="src"></param>
-        public Content(Content src) : base(src)
+        public ContentSchema(ContentSchema src) : base(src)
         {
             Name = src.Name;
             Icon = src.Icon;
@@ -168,7 +168,7 @@ namespace Mov.Designer.Models.Entities
 
         #region メソッド
 
-        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<Content>().OrderBy(x => x.index);
+        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<ContentSchema>().OrderBy(x => x.index);
 
         #endregion メソッド
     }

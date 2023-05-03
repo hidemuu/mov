@@ -1,7 +1,7 @@
 ﻿using Mov.Accessors;
 using Mov.Accessors.Repository.Implement;
 using Mov.Designer.Models;
-using Mov.Designer.Models.Entities;
+using Mov.Designer.Models.Schemas;
 
 namespace Mov.Designer.Repository
 {
@@ -21,23 +21,23 @@ namespace Mov.Designer.Repository
         public FileDesignerRepository(string endpoint, string fileDir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) 
             : base(endpoint, fileDir, extension, encoding)
         {
-            Shells = new FileDbObjectRepository<Shell, ShellCollection>(GetPath("shell"), encoding);
-            Nodes = new FileDbObjectRepository<Node, NodeCollection>(GetPath("node"), encoding);
-            Contents = new FileDbObjectRepository<Content, ContentCollection>(GetPath("content"), encoding);
-            Themes = new FileDbObjectRepository<Theme, ThemeCollection>(GetPath("theme"), encoding);
+            Shells = new FileDbObjectRepository<ShellSchema, ShellCollection>(GetPath("shell"), encoding);
+            Nodes = new FileDbObjectRepository<NodeSchema, NodeCollection>(GetPath("node"), encoding);
+            Contents = new FileDbObjectRepository<ContentSchema, ContentCollection>(GetPath("content"), encoding);
+            Themes = new FileDbObjectRepository<ThemeSchema, ThemeCollection>(GetPath("theme"), encoding);
         }
 
         #endregion コンストラクター
 
         #region プロパティ
 
-        public IDbObjectRepository<Shell, ShellCollection> Shells { get; }
+        public IDbObjectRepository<ShellSchema, ShellCollection> Shells { get; }
 
-        public IDbObjectRepository<Node, NodeCollection> Nodes { get; }
+        public IDbObjectRepository<NodeSchema, NodeCollection> Nodes { get; }
 
-        public IDbObjectRepository<Content, ContentCollection> Contents { get; }
+        public IDbObjectRepository<ContentSchema, ContentCollection> Contents { get; }
 
-        public IDbObjectRepository<Theme, ThemeCollection> Themes { get; }
+        public IDbObjectRepository<ThemeSchema, ThemeCollection> Themes { get; }
 
         #endregion プロパティ
     }

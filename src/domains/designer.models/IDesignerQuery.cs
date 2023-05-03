@@ -1,6 +1,6 @@
 ﻿using Mov.Accessors;
 using Mov.Controllers;
-using Mov.Designer.Models.Entities;
+using Mov.Designer.Models.Schemas;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,12 +9,12 @@ namespace Mov.Designer.Models
 {
     public interface IDesignerQuery
     {
-        IPersistenceQuery<Content> Contents { get; }
+        IPersistenceQuery<ContentSchema> Contents { get; }
 
-        IPersistenceQuery<Node> Nodes { get; }
+        IPersistenceQuery<NodeSchema> Nodes { get; }
 
-        IPersistenceQuery<Shell> Shells { get; }
+        IPersistenceQuery<ShellSchema> Shells { get; }
 
-        IPersistenceQuery<Theme> Themes { get; }
+        IPersistenceQuery<ThemeSchema> Themes { get; }
     }
 }

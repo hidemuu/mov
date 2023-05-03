@@ -13,6 +13,7 @@
   <ItemGroup>
     <Folder Include="Units\Shapes\ThreeDimensions\" />
     <Folder Include="Implements\Headers\" />
+    <Folder Include="Configs\" />
   </ItemGroup>
 
   <ItemGroup>

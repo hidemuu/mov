@@ -9,24 +9,24 @@ using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Designer.Models.Entities
+namespace Mov.Designer.Models.Schemas
 {
     /// <summary>
     /// テーマのコレクション
     /// </summary>
     [XmlRoot("themes")]
-    public class ThemeCollection : DbObjectCollection<Theme>
+    public class ThemeCollection : DbObjectCollection<ThemeSchema>
     {
         /// <inheritdoc />
-        [XmlElement(Type = typeof(Theme), ElementName = "theme")]
-        public override Theme[] Items { get; set; }
+        [XmlElement(Type = typeof(ThemeSchema), ElementName = "theme")]
+        public override ThemeSchema[] Items { get; set; }
     }
 
     /// <summary>
     /// テーマ
     /// </summary>
     [XmlRoot("theme")]
-    public class Theme : DbObject
+    public class ThemeSchema : DbObject
     {
         /// <summary>
         /// 色
@@ -38,7 +38,7 @@ namespace Mov.Designer.Models.Entities
         [DisplayIndex(10)]
         public string Color { get; set; }
 
-        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<Theme>().OrderBy(x => x.index);
+        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<ThemeSchema>().OrderBy(x => x.index);
 
     }
 

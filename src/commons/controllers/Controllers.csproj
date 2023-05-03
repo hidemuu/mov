@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Shields\Implements\" />
+    <Compile Remove="Shields\Implements\**" />
+    <EmbeddedResource Remove="Shields\Implements\**" />
+    <None Remove="Shields\Implements\**" />
   </ItemGroup>
 
   <ItemGroup>

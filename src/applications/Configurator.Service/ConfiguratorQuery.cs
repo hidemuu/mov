@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Mov.Configurators
+namespace Mov.Configurators.Services.Persistences
 {
     public class ConfiguratorQuery : IPersistenceQuery<Config>
     {
@@ -28,14 +28,14 @@ namespace Mov.Configurators
         public ConfiguratorQuery(FileConfiguratorRepository repository)
         {
             this.repository = repository;
-            this.Reader = new DbObjectRepositoryReader<Config, ConfigCollection>(repository.Configs);
+            Reader = new DbObjectRepositoryReader<Config, ConfigCollection>(repository.Configs);
         }
 
         #endregion コンストラクター
 
         #region メソッド
 
-        public override string ToString() => this.repository.Configs.ToString();
+        public override string ToString() => repository.Configs.ToString();
 
         #endregion メソッド
     }

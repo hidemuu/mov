@@ -64,8 +64,3 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\designer.
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\designer.service\obj\Debug\netstandard2.0\Designer.Service.csproj.CopyComplete
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\designer.service\obj\Debug\netstandard2.0\Mov.Designer.Service.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\designer.service\obj\Debug\netstandard2.0\Mov.Designer.Service.pdb
-C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Loggers.dll
-C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Loggers.pdb
-C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\NLog.config
-C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\FodyWeavers.xml
-C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\designer.service\bin\Debug\netstandard2.0\FodyWeavers.xsd

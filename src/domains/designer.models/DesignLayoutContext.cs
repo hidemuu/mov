@@ -8,11 +8,11 @@ using Mov.Schemas.Implements.Bodies;
 using Mov.Schemas.Units.Sizes;
 using Mov.Schemas.Units;
 using Mov.Schemas.Parameters;
-using Mov.Designer.Models.Entities;
 using Mov.Schemas.Parameters.Keys;
 using Mov.Schemas.Parameters.Localizes;
 using Mov.Schemas.Parameters.Macros;
 using Mov.Schemas.Layouts.Styles;
+using Mov.Designer.Models.Schemas;
 
 namespace Mov.Designer.Models
 {
@@ -45,7 +45,7 @@ namespace Mov.Designer.Models
             return GetNode(repository.Nodes.Get(), repository);
         }
 
-        private IEnumerable<LayoutNode> GetNode(IEnumerable<Node> nodes, IDesignerRepository repository)
+        private IEnumerable<LayoutNode> GetNode(IEnumerable<NodeSchema> nodes, IDesignerRepository repository)
         {
             var result = new List<LayoutNode>();
             foreach (var node in nodes)
@@ -67,7 +67,7 @@ namespace Mov.Designer.Models
             }
         }
 
-        private LayoutContent GetContent(Content content)
+        private LayoutContent GetContent(ContentSchema content)
         {
             return new LayoutContent(
                         new LayoutContentKey(new CodeKey(content.Code), new ControlStyle(content.ControlType)),

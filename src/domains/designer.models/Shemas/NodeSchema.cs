@@ -11,24 +11,24 @@ using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Designer.Models.Entities
+namespace Mov.Designer.Models.Schemas
 {
     /// <summary>
     /// レイアウトノードのコレクション
     /// </summary>
     [XmlRoot("nodes")]
-    public class NodeCollection : DbObjectCollection<Node>
+    public class NodeCollection : DbObjectCollection<NodeSchema>
     {
         /// <inheritdoc />
-        [XmlElement(Type = typeof(Node), ElementName = "node")]
-        public override Node[] Items { get; set; }
+        [XmlElement(Type = typeof(NodeSchema), ElementName = "node")]
+        public override NodeSchema[] Items { get; set; }
     }
 
     /// <summary>
     /// レイアウトノード
     /// </summary>
     [XmlRoot("node")]
-    public class Node : DbObjectNode<Node>
+    public class NodeSchema : DbObjectNode<NodeSchema>
     {
         #region プロパティ
         /// <summary>
@@ -100,7 +100,7 @@ namespace Mov.Designer.Models.Entities
         [LanguageKey("children")]
         [DisplayName("children")]
         [DisplayIndex(17)]
-        public override List<Node> Children { get; set; } = new List<Node>();
+        public override List<NodeSchema> Children { get; set; } = new List<NodeSchema>();
 
         #endregion プロパティ
 
@@ -112,7 +112,7 @@ namespace Mov.Designer.Models.Entities
         /// <inheritdoc />
         public override string[] GetHeaderStrings() => new string[] { "Code", "LayoutType" };
 
-        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<Node>().OrderBy(x => x.index);
+        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<NodeSchema>().OrderBy(x => x.index);
 
 
         #endregion メソッド

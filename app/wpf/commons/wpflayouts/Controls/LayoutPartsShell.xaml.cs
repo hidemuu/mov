@@ -25,9 +25,6 @@ namespace Mov.WpfLayouts.Controls
     /// </summary>
     public partial class LayoutPartsShell : UserControl
     {
-        
-
-
         #region プロパティ
 
         #region センター

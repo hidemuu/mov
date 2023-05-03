@@ -8,4 +8,8 @@
     <ProjectReference Include="..\..\commons\configurators\Configurator.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Events\" />
+  </ItemGroup>
+
 </Project>

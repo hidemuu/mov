@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Configurator.Engine.Persistences;
+using Mov.Configurator.Models;
 using Mov.Configurator.Models.Schemas;
 using Mov.Controllers;
 
@@ -8,14 +10,14 @@ namespace Mov.Configurators
 {
     public class ConfiguratorService : IConfiguratorService
     {
-        public IPersistenceCommand<UserSettingSchema> Command { get; }
+        public IConfiguratorCommand Command { get; }
 
-        public IPersistenceQuery<UserSettingSchema> Query { get; }
+        public IConfiguratorQuery Query { get; }
 
-        public ConfiguratorService(IPersistenceCommand<UserSettingSchema> command, IPersistenceQuery<UserSettingSchema> query)
+        public ConfiguratorService(IConfiguratorRepository repository)
         {
-            this.Command = command;
-            this.Query = query;
+            this.Command = new ConfiguratorPersistenceCommand(repository);
+            this.Query = new ConfiguratorPersistenceQuery(repository);
         }
 
         public override string ToString()

@@ -10,13 +10,22 @@ namespace Configurator.Engine.Persistences
 {
     public class ConfiguratorPersistenceCommand : IConfiguratorCommand
     {
+        #region フィールド
+
+        private readonly IPersistenceCommand<UserSettingSchema> _userSetting;
+
+        private readonly IPersistenceCommand<SystemSettingSchema> _systemSetting;
+
+        private readonly IPersistenceCommand<LanguageSchema> _language;
+
+
+        #endregion フィールド
+
         #region プロパティ
 
-        public IPersistenceCommand<UserSettingSchema> UserSetting { get; }
+        public ISave<UserSettingSchema> UserSettingSaver { get; }
 
-        public IPersistenceCommand<SystemSettingSchema> SystemSetting { get; }
-
-        public IPersistenceCommand<LanguageSchema> Language { get; }
+        public IDelete<UserSettingSchema> UserSettingDeleter { get; }
 
         #endregion プロパティ
 
@@ -24,9 +33,18 @@ namespace Configurator.Engine.Persistences
 
         public ConfiguratorPersistenceCommand(IConfiguratorRepository repository)
         {
-            UserSetting = new DbObjectRepositoryCommand<UserSettingSchema, UserSettingCollectionSchema>(repository.UserSettings);
+            _userSetting = new DbObjectRepositoryCommand<UserSettingSchema, UserSettingCollectionSchema>(repository.UserSettings);
         }
 
         #endregion コンストラクター
+
+        #region メソッド
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion メソッド
     }
 }

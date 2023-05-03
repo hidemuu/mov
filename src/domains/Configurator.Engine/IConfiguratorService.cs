@@ -1,4 +1,5 @@
-﻿using Mov.Configurator.Models.Schemas;
+﻿using Mov.Configurator.Models;
+using Mov.Configurator.Models.Schemas;
 using Mov.Controllers;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,8 @@ namespace Mov.Configurators
 {
     public interface IConfiguratorService
     {
-        IPersistenceCommand<UserSettingSchema> Command { get; }
+        IConfiguratorCommand Command { get; }
 
-        IPersistenceQuery<UserSettingSchema> Query { get; }
+        IConfiguratorQuery Query { get; }
     }
 }

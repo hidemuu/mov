@@ -16,13 +16,13 @@ namespace Configurator.Repository.File
         public FileConfiguratorRepository(string endpoint, string fileDir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8)
             : base(endpoint, fileDir, extension, encoding)
         {
-            Configs = new FileDbObjectRepository<UserSettingSchema, UserSettingCollectionSchema>(GetPath("config"), encoding);
+            UserSettings = new FileDbObjectRepository<UserSettingSchema, UserSettingCollectionSchema>(GetPath("config"), encoding);
         }
 
         #region プロパティ
 
-        public IDbObjectRepository<UserSettingSchema, UserSettingCollectionSchema> Configs { get; }
+        public IDbObjectRepository<UserSettingSchema, UserSettingCollectionSchema> UserSettings { get; }
 
-        #endregion
+        #endregion プロパティ
     }
 }

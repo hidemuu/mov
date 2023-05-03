@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Mov.Accessors;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Mov.Configurator.Models.Schemas
 {
-    internal class SystemSettingCollectionSchema
+    public class SystemSettingCollectionSchema : DbObjectCollection<SystemSettingSchema>
     {
+        public override SystemSettingSchema[] Items { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

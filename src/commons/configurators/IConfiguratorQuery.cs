@@ -8,6 +8,6 @@ namespace Mov.Configurator.Models
 {
     public interface IConfiguratorQuery
     {
-        
+        IRead<UserSettingSchema> UserSettingReader { get; }
     }
 }

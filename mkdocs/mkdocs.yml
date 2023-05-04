@@ -6,13 +6,16 @@ docs_dir: 'docs'
 theme: 'material'
 
 nav:
-  - 初期画面: index.md
-  - サードパーティー: third_party_notice.md
+  - Index: index.md
+  - アセンブリ構成: assembly_info.md
+  - 主幹シーケンス: base_sequence.md
   - アセンブリ:
-    - Config: 
-        configurator\configurator.md
-    - Designer:
-      - designer\designer.md
+    - Commons:
+      - Accessor: assemblies\commons\accessor.md
+    - Domains:
+      - Config: assemblies\domains\configurator.md
+      - Designer: assemblies\domains\designer.md
+  - 3rdParty: third_party_notice.md
 
 # Extensions
 markdown_extensions:

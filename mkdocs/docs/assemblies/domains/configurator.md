@@ -1,3 +1,9 @@
+# Configurator
+
+## DomainModel
+
+## BusinnessLogic
+
 ``` mermaid
 sequenceDiagram
   autonumber
@@ -10,3 +16,5 @@ sequenceDiagram
   John->>Bob: How about you?
   Bob-->>John: Jolly good!
 ```
+
+## UseCase

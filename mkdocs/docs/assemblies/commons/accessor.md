@@ -29,7 +29,4 @@ classDiagram
         <<abstract>>
         +Items: T[] where T: DbObject
     }
-
-    DbObjectCollection *..|> DbObject
-
-  ```
+```

@@ -1,6 +1,33 @@
 ```mermaid
 classDiagram
-class AbstractProductA {
+  class Content {
+    +Name: double
+    +Category: double
+    +Icon: RegionType
+    +ControlType: string
+    +Schema: string
+    +DefaultValue: int
+    +GetProperties()
+  }
+  class Node {
+    +Name: double
+    +Category: double
+    +Icon: RegionType
+    +ControlType: string
+    +Schema: string
+    +DefaultValue: int
+    +GetProperties()
+  }
+  class Shell {
+    +Height: double
+    +Width: double
+    +Location: RegionType
+    +BackgroundColor: string
+    +BorderColor: string
+    +BorderThickness: int
+    +GetProperties()
+  }
+  class AbstractProductA {
     <<abstract>>
   }
   AbstractProductA <|-- ConcreteProductA1
@@ -42,4 +69,17 @@ class AbstractProductA {
   ConcreteFactory2 ..> ConcreteProductA2
 
   Client --> AbstractFactory
-  ```
+```
+
+``` mermaid
+sequenceDiagram
+  autonumber
+  Alice->>John: Hello John, how are you?
+  loop Healthcheck
+      John->>John: Fight against hypochondria
+  end
+  Note right of John: Rational thoughts!
+  John-->>Alice: Great!
+  John->>Bob: How about you?
+  Bob-->>John: Jolly good!
+```

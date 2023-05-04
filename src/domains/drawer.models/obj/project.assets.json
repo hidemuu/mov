@@ -978,6 +978,7 @@
           "Mov.Commands": "1.0.0",
           "Mov.Repositories": "1.0.0",
           "Mov.Schemas": "1.0.0",
+          "Mov.Shields": "1.0.0",
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
@@ -1015,6 +1016,19 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Schemas.dll": {}
+        }
+      },
+      "Mov.Shields/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Schemas": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Shields.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Shields.dll": {}
         }
       },
       "Mov.Utilities/1.0.0": {
@@ -3649,6 +3663,11 @@
       "type": "project",
       "path": "../../commons/schemas/Schemas.csproj",
       "msbuildProject": "../../commons/schemas/Schemas.csproj"
+    },
+    "Mov.Shields/1.0.0": {
+      "type": "project",
+      "path": "../../commons/Shields/Shields.csproj",
+      "msbuildProject": "../../commons/Shields/Shields.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",

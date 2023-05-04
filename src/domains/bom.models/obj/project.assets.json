@@ -942,6 +942,19 @@
           "bin/placeholder/Mov.Accessors.dll": {}
         }
       },
+      "Mov.Commands/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Schemas": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Commands.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Commands.dll": {}
+        }
+      },
       "Mov.Controllers/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -949,6 +962,8 @@
           "MathNet.Numerics": "5.0.0",
           "MethodBoundaryAspect.Fody": "2.0.148",
           "Mov.Accessors": "1.0.0",
+          "Mov.Commands": "1.0.0",
+          "Mov.Repositories": "1.0.0",
           "Mov.Schemas": "1.0.0",
           "Newtonsoft.Json": "13.0.1"
         },
@@ -957,6 +972,21 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Controllers.dll": {}
+        }
+      },
+      "Mov.Repositories/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Accessors": "1.0.0",
+          "Mov.Commands": "1.0.0",
+          "Mov.Schemas": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Repositories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Repositories.dll": {}
         }
       },
       "Mov.Schemas/1.0.0": {
@@ -3548,10 +3578,20 @@
       "path": "../../commons/accessors/Accessors.csproj",
       "msbuildProject": "../../commons/accessors/Accessors.csproj"
     },
+    "Mov.Commands/1.0.0": {
+      "type": "project",
+      "path": "../../commons/Commands/Commands.csproj",
+      "msbuildProject": "../../commons/Commands/Commands.csproj"
+    },
     "Mov.Controllers/1.0.0": {
       "type": "project",
       "path": "../../commons/controllers/Controllers.csproj",
       "msbuildProject": "../../commons/controllers/Controllers.csproj"
+    },
+    "Mov.Repositories/1.0.0": {
+      "type": "project",
+      "path": "../../commons/Repositories/Repositories.csproj",
+      "msbuildProject": "../../commons/Repositories/Repositories.csproj"
     },
     "Mov.Schemas/1.0.0": {
       "type": "project",

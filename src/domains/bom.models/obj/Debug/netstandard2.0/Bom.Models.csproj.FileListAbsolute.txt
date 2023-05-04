@@ -37,3 +37,7 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\domains\bom.models\bin
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\domains\bom.models\obj\Debug\netstandard2.0\Bom.Models.csproj.CopyComplete
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\domains\bom.models\obj\Debug\netstandard2.0\Mov.Bom.Models.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\domains\bom.models\obj\Debug\netstandard2.0\Mov.Bom.Models.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\domains\bom.models\bin\Debug\netstandard2.0\Mov.Commands.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\domains\bom.models\bin\Debug\netstandard2.0\Mov.Repositories.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\domains\bom.models\bin\Debug\netstandard2.0\Mov.Commands.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\domains\bom.models\bin\Debug\netstandard2.0\Mov.Repositories.pdb

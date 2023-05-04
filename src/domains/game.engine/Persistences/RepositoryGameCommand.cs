@@ -1,6 +1,6 @@
 ﻿using Mov.Accessors;
 using Mov.Accessors.Crud.Persistence.Implement;
-using Mov.Controllers;
+using Mov.Controllers.Repository.Persistences;
 using Mov.Game.Models;
 using Mov.Game.Models.Entities.Schemas;
 using System;

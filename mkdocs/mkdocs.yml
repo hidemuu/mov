@@ -15,6 +15,7 @@ nav:
     - Accessor: commons\accessor.md
     - Logger: commons\logger.md
     - Repository: commons\repository.md
+    - Command: commons\command.md
     - Controller: commons\controller.md
   - Domains:
     - Config: domains\configurator.md

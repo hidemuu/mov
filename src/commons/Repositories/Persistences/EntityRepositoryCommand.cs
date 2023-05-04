@@ -1,15 +1,17 @@
-﻿using Mov.Controllers;
+﻿using Mov.Accessors.Repository;
+using Mov.Controllers;
+using Mov.Controllers.Repository.Persistences;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Mov.Accessors.Crud.Persistence.Implement
 {
-    public class DbObjectRepositoryCommand<TEntity, TBody> : IPersistenceCommand<TEntity> where TEntity : DbObject
+    public class EntityRepositoryCommand<TEntity> : IPersistenceCommand<TEntity>
     {
         #region フィールド
 
-        private readonly IDbObjectRepository<TEntity, TBody> repository;
+        private readonly IEntityRepository<TEntity> repository;
 
         #endregion フィールド
 
@@ -23,11 +25,11 @@ namespace Mov.Accessors.Crud.Persistence.Implement
 
         #region コンストラクター
 
-        public DbObjectRepositoryCommand(IDbObjectRepository<TEntity, TBody> repository)
+        public EntityRepositoryCommand(IEntityRepository<TEntity> repository)
         {
             this.repository = repository;
-            this.Saver = new DbObjectRepositorySaver<TEntity, TBody>(repository);
-            this.Deleter = new DbObjectRepositoryDeleter<TEntity, TBody>(repository);
+            this.Saver = new EntityRepositorySaver<TEntity>(repository);
+            this.Deleter = new EntityRepositoryDeleter<TEntity>(repository);
         }
 
         public void Dispose()

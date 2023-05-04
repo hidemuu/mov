@@ -51,3 +51,7 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.se
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Driver.Service.csproj.CopyComplete
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Mov.Driver.Service.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Mov.Driver.Service.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Commands.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Repositories.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Commands.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Repositories.pdb

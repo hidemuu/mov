@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Controllers
+namespace Mov.Controllers.Repository.Persistences
 {
     public interface IPersistenceQueryAsync<T>
     {

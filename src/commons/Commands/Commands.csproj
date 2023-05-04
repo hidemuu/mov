@@ -7,8 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\accessors\Accessors.csproj" />
-    <ProjectReference Include="..\Commands\Commands.csproj" />
     <ProjectReference Include="..\schemas\Schemas.csproj" />
   </ItemGroup>
 

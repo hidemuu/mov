@@ -10,7 +10,10 @@ nav:
   - Assembly: assembly_info.md
   - MainSequence: base_sequence.md
   - Commons:
+    - Utility: commons\utility.md
+    - Schema: commons\schema.md
     - Accessor: commons\accessor.md
+    - Controller: commons\controller.md
   - Domains:
     - Config: domains\configurator.md
     - Designer: domains\designer.md  

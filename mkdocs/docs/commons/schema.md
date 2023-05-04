@@ -1,10 +1,18 @@
-# Accessor
+# Schema
 
-## Schema
+## DbObject
 
+### Schema
 
+- DbObject
 
-## Class Diagram
+  | 名称 | 型 | 説明 | 例 |
+  | ---- | ---- | ---- | ---- |
+  | Id | Guid |  |  |
+  | Index | int |  |  |
+  | Code | string |  |  |
+  
+### Class Diagram
 
 ```mermaid
 classDiagram

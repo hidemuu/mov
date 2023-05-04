@@ -9,12 +9,11 @@ nav:
   - Index: index.md
   - アセンブリ構成: assembly_info.md
   - 主幹シーケンス: base_sequence.md
-  - アセンブリ:
-    - Commons:
-      - Accessor: assemblies\commons\accessor.md
-    - Domains:
-      - Config: assemblies\domains\configurator.md
-      - Designer: assemblies\domains\designer.md
+  - Commons:
+    - Accessor: commons\accessor.md
+  - Domains:
+    - Config: domains\configurator.md
+    - Designer: domains\designer.md  
   - 3rdParty: third_party_notice.md
 
 # Extensions

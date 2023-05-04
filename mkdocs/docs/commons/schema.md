@@ -8,10 +8,10 @@
 
   | 名称 | 型 | 説明 | 例 |
   | ---- | ---- | ---- | ---- |
-  | Id | Guid |  |  |
-  | Index | int |  |  |
-  | Code | string |  |  |
-  
+  | Id | Guid | データベースの主キー |  |
+  | Index | int | 並び順のインデックス番号 |  |
+  | Code | string | キーコード |  |
+
 ### Class Diagram
 
 ```mermaid

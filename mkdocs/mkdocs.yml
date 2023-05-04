@@ -13,10 +13,15 @@ nav:
     - Utility: commons\utility.md
     - Schema: commons\schema.md
     - Accessor: commons\accessor.md
+    - Logger: commons\logger.md
+    - Repository: commons\repository.md
     - Controller: commons\controller.md
   - Domains:
     - Config: domains\configurator.md
-    - Designer: domains\designer.md  
+    - Designer: domains\designer.md
+    - Analizer: domains\analizer.md
+    - Driver: domains\driver.md
+    - Game: domains\game.md 
   - 3rdParty: third_party_notice.md
 
 # Extensions

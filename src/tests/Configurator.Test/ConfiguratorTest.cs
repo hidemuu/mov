@@ -1,6 +1,6 @@
-namespace Configurator.Test
+namespace Mov.Configurator.Test
 {
-    public class Tests
+    public class ConfiguratorTest
     {
         [SetUp]
         public void Setup()

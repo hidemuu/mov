@@ -16,6 +16,7 @@ nav:
     - Logger: commons\logger.md
     - Repository: commons\repository.md
     - Command: commons\command.md
+    - Queue: commons\queue.md
     - Shield: commons\shield.md
     - Controller: commons\controller.md
   - Domains:

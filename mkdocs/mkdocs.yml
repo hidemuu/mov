@@ -1,0 +1,26 @@
+# Project information
+site_name: Mov
+
+# Documentation and theme
+docs_dir: 'docs'
+theme: 'material'
+
+nav:
+  - 初期画面: index.md
+  - サードパーティー: third_party_notice.md
+  - アセンブリ:
+    - Config: 
+        configurator\configurator.md
+    - Designer:
+      - designer\designer.md
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: '#'
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format

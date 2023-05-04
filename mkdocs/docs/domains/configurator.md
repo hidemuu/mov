@@ -2,35 +2,38 @@
 
 ## DomainModel
 
-### スキーマ
+### Schema
 
 - UserSetting
 
-  |  名称  |  型  |  説明  |  例  |
+  | 名称 | 型 | 説明 | 例 |
   | ---- | ---- | ---- | ---- |
-  |  Category  |  string  |  |  |
-  |  Name  |  string  |  |  |
+  | Category | string |  |  |
+  | Name | string |  |  |
+  | Value | string |  |  |
+  | Default | string |  |  |
+  | Description | string |  |  |
+  | AccessLv | int |  |  |
 
-### クラス図
+### Class Diagram
 
 ```mermaid
 classDiagram
   class UserSetting {
-    +Name: double
-    +Category: double
-    +Icon: RegionType
-    +ControlType: string
-    +Schema: string
-    +DefaultValue: int
+    +Category: string
+    +Name: string
+    +Value: string
+    +Default: string
+    +Description: string
+    +AccessLv: int
     +GetProperties()
   }
   class SystemSetting {
-    +Name: double
-    +Category: double
-    +Icon: RegionType
-    +ControlType: string
-    +Schema: string
-    +DefaultValue: int
+    +Category: string
+    +Name: string
+    +Value: string
+    +Default: string
+    +Description: string
     +GetProperties()
   }
   class Language {

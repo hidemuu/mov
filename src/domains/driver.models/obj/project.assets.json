@@ -964,7 +964,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Autofac": "6.5.0",
-          "Mov.Utilities": "1.0.0"
+          "Mov.Utilities": "1.0.0",
+          "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
           "bin/placeholder/Mov.Schemas.dll": {}

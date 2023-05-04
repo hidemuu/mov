@@ -1,4 +1,5 @@
-﻿using Mov.Accessors.Repository;
+﻿using Mov.Accessors;
+using Mov.Accessors.Repository;
 using Mov.Accessors.Repository.Entity;
 using System;
 using System.Collections.Generic;
@@ -8,15 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Accessors
+namespace Mov.Controllers.Repository.Entity
 {
     /// <summary>
     /// 任意のエンティティのファイルデータのリポジトリ
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
     /// <typeparam name="TBody"></typeparam>
-    public class FileEntityRepository<TEntity, TBody> 
-        : IEntityRepository<TEntity>, IEntityRepositoryAsync<TEntity>, IFileRepository<TBody> 
+    public class FileEntityRepository<TEntity, TBody>
+        : IEntityRepository<TEntity>, IEntityRepositoryAsync<TEntity>, IFileRepository<TBody>
         where TEntity : IEntityObject
         where TBody : IEntityCollection<TEntity>
     {
@@ -42,13 +43,13 @@ namespace Mov.Accessors
             switch (extension)
             {
                 case SerializeConstants.PATH_EXTENSION_JSON:
-                    this.serializer = new JsonSerializer(fileName, encode);
+                    serializer = new JsonSerializer(fileName, encode);
                     break;
                 case SerializeConstants.PATH_EXTENSION_XML:
-                    this.serializer = new XmlSerializer(fileName, encode);
+                    serializer = new XmlSerializer(fileName, encode);
                     break;
                 case SerializeConstants.PATH_EXTENSION_CSV:
-                    this.serializer = new CsvSerializer(fileName, encode);
+                    serializer = new CsvSerializer(fileName, encode);
                     break;
                 default:
                     Debug.Assert(false, "拡張子が不正です");
@@ -63,14 +64,14 @@ namespace Mov.Accessors
         #region IFileRepository
 
         /// <inheritdoc />
-        public TBody Read() 
-        { 
-            this.body = serializer.Get<TBody>("");
-            return this.body;
+        public TBody Read()
+        {
+            body = serializer.Get<TBody>("");
+            return body;
         }
 
         /// <inheritdoc />
-        public void Write() => serializer.Post<TBody, TBody>("", this.body);
+        public void Write() => serializer.Post<TBody, TBody>("", body);
 
         #endregion IFileRepository
 
@@ -79,8 +80,8 @@ namespace Mov.Accessors
         /// <inheritdoc />
         public IEnumerable<TEntity> Get()
         {
-            if (this.body == null) Read();
-            if (this.body == null) return new List<TEntity>();
+            if (body == null) Read();
+            if (body == null) return new List<TEntity>();
             return body.Items;
         }
 
@@ -161,7 +162,7 @@ namespace Mov.Accessors
             }
             var headerStrings = firstItem.GetHeaderStrings();
             headerLengths = new int[headerStrings.Length];
-            for(var i = 0; i < headerStrings.Length; i++)
+            for (var i = 0; i < headerStrings.Length; i++)
             {
                 headerLengths[i] = headerStrings[i].Length;
             }
@@ -183,7 +184,7 @@ namespace Mov.Accessors
             for (int i = 0; i < headerLengths.Length; i++)
             {
                 //ヘッダー文字を最大長さに調整
-                for(int j = 0; j < headerLengths[i]; j++)
+                for (int j = 0; j < headerLengths[i]; j++)
                 {
                     headerLine += EntityConstants.HEADER_LINE;
                 }

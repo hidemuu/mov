@@ -1,4 +1,5 @@
 ﻿using Mov.Accessors;
+using Mov.Controllers.Repository.Entity;
 using Mov.Driver.Clients;
 using Mov.Driver.Clients.Resas;
 using Mov.Driver.Clients.Resas.Entities;

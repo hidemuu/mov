@@ -7,8 +7,8 @@ theme: 'material'
 
 nav:
   - Index: index.md
-  - アセンブリ構成: assembly_info.md
-  - 主幹シーケンス: base_sequence.md
+  - Assembly: assembly_info.md
+  - MainSequence: base_sequence.md
   - Commons:
     - Accessor: commons\accessor.md
   - Domains:

@@ -10,12 +10,12 @@ namespace Mov.Configurator.Models.Schemas
     /// <summary>
     /// 設定のコレクション
     /// </summary>
-    [XmlRoot("configs")]
+    [XmlRoot("user_settings")]
     public class UserSettingCollectionSchema : DbObjectCollection<UserSettingSchema>
     {
         /// <inheritdoc />
-        [JsonProperty("configs")]
-        [XmlElement(Type = typeof(UserSettingSchema), ElementName = "config")]
+        [JsonProperty("user_settings")]
+        [XmlElement(Type = typeof(UserSettingSchema), ElementName = "user_setting")]
         public override UserSettingSchema[] Items { get; set; }
     }
 }

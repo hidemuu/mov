@@ -1,10 +1,11 @@
-﻿using Mov.Accessors.Serializer;
+﻿using Mov.Accessors;
+using Mov.Accessors.Serializer;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Accessors
+namespace Mov.Controllers.Repository.Entity
 {
     public class RestEntityRepository<TEntity> : IEntityRepositoryAsync<TEntity>
     {
@@ -13,18 +14,18 @@ namespace Mov.Accessors
 
         public RestEntityRepository(string url, string key, string encode = SerializeConstants.ENCODE_NAME_UTF8)
         {
-            this.serializer = new HttpSerializer(url, encode);
+            serializer = new HttpSerializer(url, encode);
             this.key = string.IsNullOrEmpty(key) ? string.Empty : "?apikey=" + key;
         }
 
         public async Task<IEnumerable<TEntity>> GetAsync() =>
-            await this.serializer.GetAsync<IEnumerable<TEntity>>(this.key);
+            await serializer.GetAsync<IEnumerable<TEntity>>(key);
 
         public async Task<TEntity> GetAsync(string param) =>
-           await this.serializer.GetAsync<TEntity>($"/{param}" + this.key);
+           await serializer.GetAsync<TEntity>($"/{param}" + key);
 
         public async Task PostAsync(TEntity item) =>
-            await this.serializer.PostAsync<TEntity, TEntity>(this.key, item);
+            await serializer.PostAsync<TEntity, TEntity>(key, item);
 
         public Task PostAsync(IEnumerable<TEntity> items)
         {

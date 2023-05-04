@@ -15,7 +15,7 @@ namespace Mov.Configurator.Models.Schemas
     /// <summary>
     /// 設定のスキーマ
     /// </summary>
-    [XmlRoot("config")]
+    [XmlRoot("user_setting")]
     public class UserSettingSchema : DbObject
     {
         #region プロパティ

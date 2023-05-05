@@ -17,10 +17,10 @@ namespace Mov.Accessors.Contexts
 
         #region コンストラクター
 
-        public FileContext(string path)
+        public FileContext(string path, string encodeName = AccessConstants.ENCODE_NAME_UTF8)
         {
             this.Endpoint = new FileUnit(path);
-            this.Encoding = Encoding.UTF8;
+            this.Encoding = Encoding.GetEncoding(encodeName);
         }
 
         #endregion コンストラクター

@@ -13,7 +13,7 @@ namespace Mov.Controllers.Repository.Entity
         private readonly HttpSerializer serializer;
         private readonly string key;
 
-        public RestEntityRepository(string url, string key, string encode = SerializeConstants.ENCODE_NAME_UTF8)
+        public RestEntityRepository(string url, string key, string encode = AccessConstants.ENCODE_NAME_UTF8)
         {
             serializer = new HttpSerializer(url, encode);
             this.key = string.IsNullOrEmpty(key) ? string.Empty : "?apikey=" + key;

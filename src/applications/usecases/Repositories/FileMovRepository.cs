@@ -21,10 +21,10 @@ namespace Mov.UseCases.Repositories
         public FileMovRepository(string endpoint)
         {
             var fileRepositoryFactory = new FileDomainRepositoryCollectionFactory(endpoint);
-            this.Designer = fileRepositoryFactory.Create<IDesignerRepository>(SerializeConstants.PATH_XML)?.GetDefaultRepository();
-            this.Game = fileRepositoryFactory.Create<IGameRepository>(SerializeConstants.PATH_JSON)?.GetDefaultRepository();
-            this.Driver = fileRepositoryFactory.Create<IDriverRepository>(SerializeConstants.PATH_JSON)?.GetDefaultRepository();
-            this.Analizer = fileRepositoryFactory.Create<IAnalizerRepository>(SerializeConstants.PATH_JSON)?.GetDefaultRepository();
+            this.Designer = fileRepositoryFactory.Create<IDesignerRepository>(AccessConstants.PATH_XML)?.GetDefaultRepository();
+            this.Game = fileRepositoryFactory.Create<IGameRepository>(AccessConstants.PATH_JSON)?.GetDefaultRepository();
+            this.Driver = fileRepositoryFactory.Create<IDriverRepository>(AccessConstants.PATH_JSON)?.GetDefaultRepository();
+            this.Analizer = fileRepositoryFactory.Create<IAnalizerRepository>(AccessConstants.PATH_JSON)?.GetDefaultRepository();
         }
 
         

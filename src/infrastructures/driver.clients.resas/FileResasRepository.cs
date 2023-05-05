@@ -10,7 +10,7 @@ namespace Driver.Clients.Resas
     {
         public override string DomainPath => "analizer";
 
-        public FileResasRepository(string endpoint, string fileDir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8)
+        public FileResasRepository(string endpoint, string fileDir, string extension, string encoding = AccessConstants.ENCODE_NAME_UTF8)
             : base(endpoint, fileDir, extension, encoding)
         {
 

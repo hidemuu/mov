@@ -36,19 +36,19 @@ namespace Mov.Controllers.Repository.Entity
         /// </summary>
         /// <param name="fileName"></param>
         /// <param name="encode"></param>
-        public FileEntityRepository(string fileName, string encode = SerializeConstants.ENCODE_NAME_UTF8)
+        public FileEntityRepository(string fileName, string encode = AccessConstants.ENCODE_NAME_UTF8)
         {
             var extension = Path.GetExtension(fileName);
             if (string.IsNullOrEmpty(extension)) Debug.Assert(false, "拡張子が含まれていません");
             switch (extension)
             {
-                case SerializeConstants.PATH_EXTENSION_JSON:
+                case AccessConstants.PATH_EXTENSION_JSON:
                     serializer = new JsonSerializer(fileName, encode);
                     break;
-                case SerializeConstants.PATH_EXTENSION_XML:
+                case AccessConstants.PATH_EXTENSION_XML:
                     serializer = new XmlSerializer(fileName, encode);
                     break;
-                case SerializeConstants.PATH_EXTENSION_CSV:
+                case AccessConstants.PATH_EXTENSION_CSV:
                     serializer = new CsvSerializer(fileName, encode);
                     break;
                 default:

@@ -25,7 +25,7 @@ namespace Mov.Accessors.Serializer.Implements
         /// コンストラクター
         /// </summary>
         /// <param name="endpoint"></param>
-        public HttpSerializer(string endpoint, string encoding = SerializeConstants.ENCODE_NAME_UTF8)
+        public HttpSerializer(string endpoint, string encoding = AccessConstants.ENCODE_NAME_UTF8)
         {
             this.endpoint = endpoint;
             this.encoding = Encoding.GetEncoding(encoding);

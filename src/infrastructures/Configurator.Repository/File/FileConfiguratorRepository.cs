@@ -14,7 +14,7 @@ namespace Configurator.Repository.File
     {
         public override string DomainPath => "configurator";
 
-        public FileConfiguratorRepository(string endpoint, string fileDir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8)
+        public FileConfiguratorRepository(string endpoint, string fileDir, string extension, string encoding = AccessConstants.ENCODE_NAME_UTF8)
             : base(endpoint, fileDir, extension, encoding)
         {
             UserSettings = new FileDbObjectRepository<UserSettingSchema, UserSettingCollectionSchema>(GetPath("config"), encoding);

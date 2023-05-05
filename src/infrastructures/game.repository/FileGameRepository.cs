@@ -18,7 +18,7 @@ namespace Mov.Game.Repository
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FileGameRepository(string endpoint, string fileDir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) 
+        public FileGameRepository(string endpoint, string fileDir, string extension, string encoding = AccessConstants.ENCODE_NAME_UTF8) 
             : base(endpoint, fileDir, extension, encoding)
         {
             Landmarks = new FileDbObjectRepository<Landmark, LandmarkCollection>(GetPath("landmark"), encoding);

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Accessors
 {
-    public static class SerializeConstants
+    public static class AccessConstants
     {
         /// <summary>
         /// エンコード名

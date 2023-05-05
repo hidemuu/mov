@@ -21,7 +21,7 @@ namespace Mov.Accessors.Repository.Implement
 
         #region コンストラクター
 
-        public FileDomainRepositoryCollection(string endpoint, string extension, string encode = SerializeConstants.ENCODE_NAME_UTF8)
+        public FileDomainRepositoryCollection(string endpoint, string extension, string encode = AccessConstants.ENCODE_NAME_UTF8)
         {
             Repositories = new Dictionary<string, TRepository>();
             CreateRepository(endpoint, extension, encode);

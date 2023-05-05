@@ -19,7 +19,7 @@ namespace Mov.Driver.Repository
         /// コンストラクター
         /// </summary>
         /// <param name="encoding"></param>
-        public FileDriverRepository(string endpoint, string fileDir, string extension, string encoding = SerializeConstants.ENCODE_NAME_UTF8) 
+        public FileDriverRepository(string endpoint, string fileDir, string extension, string encoding = AccessConstants.ENCODE_NAME_UTF8) 
             : base(endpoint, fileDir, extension, encoding)
         {
             Commands = new FileDbObjectRepository<Command, CommandCollection>(GetPath("command"), encoding);

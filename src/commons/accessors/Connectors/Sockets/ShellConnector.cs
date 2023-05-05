@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Connectors
+namespace Mov.Accessors.Connectors.Sockets
 {
     /// <summary>
     /// シェル接続ロジッククラス
     /// </summary>
-    public static class ShellConnector
-    {     
+    public class ShellConnector : ISocketConnector
+    {
         /// <summary>
         /// プロセス起動
         /// </summary>

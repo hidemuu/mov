@@ -1,6 +1,6 @@
-﻿using Mov.Accessors;
-using Mov.Driver.Clients.Resas.Entities;
+﻿using Mov.Driver.Clients.Resas.Entities;
 using Mov.Driver.Clients.Resas.Entities.Results;
+using Mov.Schemas.EntityObject;
 using System;
 using System.Collections.Generic;
 using System.Text;

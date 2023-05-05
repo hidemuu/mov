@@ -1,5 +1,5 @@
-﻿using Mov.Accessors;
-using Mov.Controllers.Repository.Entity;
+﻿using Mov.Controllers.Repository.Entity;
+using Mov.Schemas.EntityObjects.DbObjects;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

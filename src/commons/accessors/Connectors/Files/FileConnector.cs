@@ -1,42 +1,61 @@
-﻿using System;
+﻿using Mov.Accessors.Connectors;
+using Mov.Schemas.Units;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Mov.Connectors
+namespace Mov.Accessors.Connectors.Files
 {
     /// <summary>
-    /// ファイル接続ロジッククラス
+    /// ファイル接続
     /// </summary>
-    public static class FileConnector
+    public class FileConnector : IFileConnector
     {
+        #region フィールド
+
+        private readonly FileUnit _endpoint;
+
+        #endregion フィールド
+
+        #region コンストラクター
+
+        public FileConnector(string endpoint)
+        {
+            _endpoint = new FileUnit(endpoint);
+            if (!_endpoint.IsDir()) throw new ArgumentException();
+        }
+
+        #endregion コンストラクター
+
+        #region メソッド
+
         /// <summary>
         /// バックアップ処理
         /// </summary>
-        /// <param name="filePath"></param>
+        /// <param name="fileName"></param>
         /// <param name="backupDir"></param>
         /// <param name="backupNameAdd"></param>
         /// <returns></returns>
-        public static bool Backup(string filePath, string backupDir, string backupNameAdd)
+        public bool Backup(string fileName, string backupDir, string backupNameAdd)
         {
+            var file = new FileUnit(fileName);
             //バックアップパス生成
-            var dir = System.IO.Path.GetDirectoryName(filePath);
-            var file = System.IO.Path.GetFileNameWithoutExtension(filePath);
-            var extension = System.IO.Path.GetExtension(filePath);
-            var backupPath = backupDir + @"\" + file + "_" + backupNameAdd + extension;
+            var backupPath = backupDir +
+                @"\" + file.FileName +
+                "_" + backupNameAdd + file.FileExtension;
+
+            var backupFileDir = new FileUnit(backupDir);
 
             //バックアップフォルダ生成（存在しない場合のみ）
-            if (!System.IO.Directory.Exists(backupDir))
-            {
-                System.IO.Directory.CreateDirectory(backupDir);
-            }
+            backupFileDir.CreateDirectory();
 
             //ファイルコピー
             try
             {
                 //第3項にTrueを指定すると、コピー先が存在している時、上書き
                 //上書きするファイルが読み取り専用などで上書きできない場合は、UnauthorizedAccessExceptionが発生
-                System.IO.File.Copy(filePath, backupPath, false);
+                File.Copy(Path.Combine(_endpoint.DirName, file.Path), backupPath, false);
             }
             catch (Exception ex)
             {
@@ -51,13 +70,13 @@ namespace Mov.Connectors
         /// ディレクトリクリア処理
         /// </summary>
         /// <returns></returns>
-        public static bool ClearDir(string deletePath)
+        public bool Clear(string deletePath)
         {
-            System.IO.Directory.Delete(deletePath, true);
+            Directory.Delete(deletePath, true);
             for (int i = 0; i < 50; i++)
             {
 
-                if (System.IO.Directory.Exists(deletePath))
+                if (Directory.Exists(deletePath))
                 {
                     //削除対象が存在する場合
                     System.Threading.Thread.Sleep(100);
@@ -66,7 +85,7 @@ namespace Mov.Connectors
                 {
                     //削除完了した場合
                     System.Threading.Thread.Sleep(1000);
-                    System.IO.Directory.CreateDirectory(deletePath);
+                    Directory.CreateDirectory(deletePath);
                     break;
                 }
             }
@@ -77,30 +96,18 @@ namespace Mov.Connectors
         /// ディレクトリのサイズを取得
         /// </summary>
         /// <returns></returns>
-        public static long GetDirectorySize(DirectoryInfo dirInfo)
+        public long GetSize()
         {
-            long size = 0;
-            //フォルダ内サイズを合計
-            foreach (FileInfo fi in dirInfo.GetFiles())
-            {
-                size += fi.Length;
-            }
-            //サブフォルダサイズ合計
-            foreach (DirectoryInfo di in dirInfo.GetDirectories())
-            {
-                size += GetDirectorySize(di);
-            }
-            return size;
+            DirectoryInfo dirInfo = new DirectoryInfo(_endpoint.DirName);
+            return GetDirectorySize(dirInfo);
         }
 
         /// <summary>
         /// 行数を取得
         /// </summary>
-        /// <param name="filePath">ファイルパス</param>
-        /// <returns></returns>
-        public static int GetLineNum(string filePath)
+        public int GetLineNum(string fileName)
         {
-            var reader = new System.IO.StreamReader(filePath);
+            var reader = new StreamReader(Path.Combine(_endpoint.DirName, fileName));
             var result = 0;
 
             while (reader.Peek() >= 0)
@@ -116,11 +123,11 @@ namespace Mov.Connectors
         /// ファイル削除
         /// </summary>
         /// <returns></returns>
-        public static bool DeleteFile(string filePath)
+        public bool Delete(string filePath)
         {
             try
             {
-                System.IO.File.Delete(filePath);
+                File.Delete(filePath);
             }
             catch
             {
@@ -128,6 +135,29 @@ namespace Mov.Connectors
             }
             return true;
         }
+
+        #endregion メソッド
+
+        #region 内部メソッド
+
+        private long GetDirectorySize(DirectoryInfo dirInfo)
+        {
+            long size = 0;
+            //フォルダ内サイズを合計
+            foreach (FileInfo fi in dirInfo.GetFiles())
+            {
+                size += fi.Length;
+            }
+            //サブフォルダサイズ合計
+            foreach (DirectoryInfo di in dirInfo.GetDirectories())
+            {
+                size += GetDirectorySize(di);
+            }
+            return size;
+        }
+
+
+        #endregion 内部メソッド
 
     }
 }

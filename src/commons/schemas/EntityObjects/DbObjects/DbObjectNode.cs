@@ -1,10 +1,10 @@
-﻿using Mov.Accessors.Repository.Entity;
+﻿using Mov.Schemas.EntityObject;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Accessors
+namespace Mov.Schemas.EntityObjects.DbObjects
 {
     /// <summary>
     /// データベースオブジェクトのノード
@@ -38,7 +38,7 @@ namespace Mov.Accessors
         /// <param name="src">コピー元データ</param>
         public DbObjectNode(DbObjectNode<T> src) : base(src)
         {
-            foreach(var child in Children)
+            foreach (var child in Children)
             {
                 var srcChild = src.Children.FirstOrDefault(x => x.Id == child.Id);
                 if (!(child is DbObjectNode<T> childNode)) continue;

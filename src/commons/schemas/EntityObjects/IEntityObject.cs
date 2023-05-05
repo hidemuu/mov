@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Accessors.Repository.Entity
+namespace Mov.Schemas.EntityObject
 {
     public interface IEntityObject
     {

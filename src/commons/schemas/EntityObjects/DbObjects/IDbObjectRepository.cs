@@ -1,18 +1,17 @@
-﻿using Mov.Accessors;
-using Mov.Accessors.Repository;
+﻿using Mov.Schemas.EntityObject;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Accessors
+namespace Mov.Schemas.EntityObjects.DbObjects
 {
     // <summary>
     /// データベースリポジトリインターフェース
     /// </summary>
-    public interface IDbObjectRepository<TEntity, TBody> 
-        : IEntityRepositoryAsync<TEntity>, IEntityRepository<TEntity>, IFileRepository<TBody> 
-        where TEntity : DbObject 
+    public interface IDbObjectRepository<TEntity, TBody>
+        : IEntityRepositoryAsync<TEntity>, IEntityRepository<TEntity>, IFileRepository<TBody>
+        where TEntity : DbObject
     {
 
         #region GET

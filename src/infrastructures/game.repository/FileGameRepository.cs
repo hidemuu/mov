@@ -2,6 +2,7 @@
 using Mov.Accessors.Repository.Implement;
 using Mov.Game.Models;
 using Mov.Game.Models.Entities.Schemas;
+using Mov.Schemas.EntityObjects.DbObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;

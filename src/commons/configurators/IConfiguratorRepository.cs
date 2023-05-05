@@ -1,5 +1,5 @@
-﻿using Mov.Accessors;
-using Mov.Configurator.Models.Schemas;
+﻿using Mov.Configurator.Models.Schemas;
+using Mov.Schemas.EntityObjects.DbObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;

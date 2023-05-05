@@ -1,5 +1,5 @@
-﻿using Mov.Accessors;
-using Mov.Layouts;
+﻿using Mov.Layouts;
+using Mov.Schemas.EntityObjects.DbObjects;
 using Mov.Schemas.Layouts.Styles;
 using Mov.Utilities.Attributes;
 using System;

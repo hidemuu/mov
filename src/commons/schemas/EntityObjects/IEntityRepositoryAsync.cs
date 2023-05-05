@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Accessors
+namespace Mov.Schemas.EntityObject
 {
     public interface IEntityRepositoryAsync<TEntity>
     {

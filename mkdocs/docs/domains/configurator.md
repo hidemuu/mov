@@ -1,6 +1,8 @@
 # Configurator
 
-## DomainModel
+## Domain Model
+
+---
 
 ### Schema
 
@@ -50,6 +52,8 @@ classDiagram
 
 ## BusinnessLogic
 
+---
+
 ``` mermaid
 sequenceDiagram
   autonumber
@@ -64,3 +68,5 @@ sequenceDiagram
 ```
 
 ## UseCase
+
+---

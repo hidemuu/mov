@@ -1,8 +1,8 @@
 ﻿using Moq;
-using Mov.Accessors;
 using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
 using Mov.Designer.Repository;
+using Mov.Schemas.EntityObjects.DbObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -2,6 +2,7 @@
 using Mov.Accessors.Repository.Implement;
 using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
+using Mov.Schemas.EntityObjects.DbObjects;
 
 namespace Mov.Designer.Repository
 {

@@ -1,9 +1,9 @@
-﻿using Mov.Accessors.Repository.Entity;
+﻿using Mov.Schemas.EntityObject;
 using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Accessors
+namespace Mov.Schemas.EntityObjects.DbObjects
 {
     /// <summary>
     /// データベースオブジェクトのコレクション

@@ -1,6 +1,7 @@
 ﻿using Mov.Accessors.Persistance.Implement;
 using Mov.Controllers;
 using Mov.Controllers.Repository.Persistences;
+using Mov.Schemas.EntityObjects.DbObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;

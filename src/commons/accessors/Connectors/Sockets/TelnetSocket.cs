@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Net;
 using System.Net.Sockets;
 
-namespace Mov.Connectors
+namespace Mov.Accessors.Connectors.Sockets
 {
     /// <summary>
     /// Telnetソケットクラス
@@ -31,7 +31,7 @@ namespace Mov.Connectors
         //ソケット
         private Socket clientSocket = null;
 
-        private static String response = String.Empty;
+        private static string response = string.Empty;
         private int MAX_BUFFER_SIZE = 2048;
 
         public enum SocketAction

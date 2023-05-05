@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Mov.Accessors;
+using Mov.Schemas.EntityObject;
 using System;
 using System.Collections.Generic;
 using System.Linq;

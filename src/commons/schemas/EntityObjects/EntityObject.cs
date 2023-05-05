@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Accessors
+namespace Mov.Schemas.EntityObject
 {
     public class EntityObject<TKey>
     {

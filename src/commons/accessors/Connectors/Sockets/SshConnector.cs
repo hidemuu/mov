@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace Mov.Connectors
+namespace Mov.Accessors.Connectors.Sockets
 {
-    public class SshConnector
+    public class SshConnector : ISocketConnector
     {
         #region フィールド
 
@@ -66,7 +66,7 @@ namespace Mov.Connectors
         public ForwardedPortLocal AddForwardedPortLocal(int localhost, string host, int port)
         {
             var forward = new ForwardedPortLocal((uint)localhost, host, (uint)port);
-            this.client.AddForwardedPort(forward);
+            client.AddForwardedPort(forward);
             forward.Start();
             return forward;
         }
@@ -77,7 +77,7 @@ namespace Mov.Connectors
         /// <returns></returns>
         public bool IsConnected()
         {
-            return this.client.IsConnected;
+            return client.IsConnected;
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Mov.Connectors
         /// <param name="command"></param>
         public void RunCommand(string command)
         {
-            this.client.RunCommand(command);
+            client.RunCommand(command);
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Mov.Connectors
         /// </summary>
         public void Disconnect()
         {
-            this.client.Disconnect();
+            client.Disconnect();
         }
 
         #endregion メソッド
@@ -109,10 +109,10 @@ namespace Mov.Connectors
         private bool Connect(ConnectionInfo connectionInfo)
         {
             this.connectionInfo = connectionInfo;
-            this.client = new SshClient(connectionInfo);
+            client = new SshClient(connectionInfo);
             try
             {
-                this.client.Connect();
+                client.Connect();
                 return true;
             }
             catch (SshAuthenticationException ex)

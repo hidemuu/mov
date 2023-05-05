@@ -4,9 +4,9 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Connectors
+namespace Mov.Accessors.Connectors.Sockets
 {
-    public class SocketConnector
+    public class SocketConnector : ISocketConnector
     {
         public void Connect(string IP, int port)
         {
@@ -33,7 +33,7 @@ namespace Mov.Connectors
                         // 受信データの取得
                         socket.Receive(recBytes, SocketFlags.None);
                         // 受信データを文字列に変換
-                        string recStr = System.Text.Encoding.UTF8.GetString(recBytes).TrimEnd('\0');
+                        string recStr = Encoding.UTF8.GetString(recBytes).TrimEnd('\0');
                         // 受信文字列データを出力
                         if (!string.IsNullOrEmpty(recStr))
                         {
@@ -60,7 +60,7 @@ namespace Mov.Connectors
                 }
 
                 // 入力文字を送信
-                byte[] inputBytes = System.Text.Encoding.UTF8.GetBytes(inputStr);
+                byte[] inputBytes = Encoding.UTF8.GetBytes(inputStr);
                 socket.Send(inputBytes, inputBytes.Length, SocketFlags.None);
                 // 改行コードを送信
                 socket.Send(newLine, newLine.Length, SocketFlags.None);

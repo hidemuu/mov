@@ -1,6 +1,7 @@
 ﻿using Mov.Accessors;
 using Mov.Accessors.Repository.Implement;
 using Mov.Drawer.Models;
+using Mov.Schemas.EntityObjects.DbObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;

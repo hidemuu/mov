@@ -2,6 +2,7 @@
 using Mov.Accessors.Repository.Implement;
 using Mov.Driver.Models;
 using Mov.Driver.Models.Entities.Schemas;
+using Mov.Schemas.EntityObjects.DbObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;

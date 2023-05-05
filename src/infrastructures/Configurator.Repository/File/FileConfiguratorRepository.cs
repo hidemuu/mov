@@ -3,6 +3,7 @@ using Mov.Accessors.Repository.Domain;
 using Mov.Accessors.Repository.Implement;
 using Mov.Configurator.Models;
 using Mov.Configurator.Models.Schemas;
+using Mov.Schemas.EntityObjects.DbObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;

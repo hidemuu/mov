@@ -1,30 +1,6 @@
 ```mermaid
 flowchart BT
     
-    subgraph PresentationLayer
-        subgraph Analizer_Views
-            direction BT
-            Analizer.Views --> Analizer.ViewModels
-        end
-        subgraph Driver_Views
-            direction BT
-            Driver.Views --> Driver.ViewModels
-        end
-        subgraph Designer_Views
-            direction BT
-            Designer.Views --> Designer.ViewModels
-        end
-        subgraph Game_Views
-            direction BT
-            Game.Views --> Game.ViewModels
-        end
-    end
-
-    Analizer_Views --> Analizer_ApplicationService
-    Driver_Views --> Driver_ApplicationService
-    Designer_Views --> Designer_ApplicationService
-    Game_Views --> Game_ApplicationService
-
     subgraph InfrastructureLayer
         subgraph Analizer_Repository
             direction BT

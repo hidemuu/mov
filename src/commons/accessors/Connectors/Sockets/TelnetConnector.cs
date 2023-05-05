@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace Mov.Connectors
+namespace Mov.Accessors.Connectors.Sockets
 {
     /// <summary>
     /// Telnet接続ロジッククラス
     /// </summary>
-    public static class TelnetConnector
+    public class TelnetConnector : ISocketConnector
     {
 
         #region フィールド
@@ -101,7 +101,7 @@ namespace Mov.Connectors
             catch
             {
                 guide = "Fault:Net:connect";
-                System.Console.WriteLine(guide);
+                Console.WriteLine(guide);
                 string inputStr = Console.ReadLine();
             }
             //オープン処理完了
@@ -264,7 +264,7 @@ namespace Mov.Connectors
             }
 
             // 出力
-            if (!string.IsNullOrEmpty(recv)) System.Console.WriteLine(recv);
+            if (!string.IsNullOrEmpty(recv)) Console.WriteLine(recv);
             return recv;
         }
 
@@ -340,7 +340,7 @@ namespace Mov.Connectors
             if (readlineIAC.Length > 0) readline += readlineIAC;
             if (readlineASCII.Length > 0) readline = readline + " " + readlineASCII;
             if (readlineENC.Length > 0) readline = readline + " " + readlineENC;
-            System.Console.WriteLine(readline);
+            Console.WriteLine(readline);
             return readline;
         }
         /// <summary>
@@ -376,7 +376,7 @@ namespace Mov.Connectors
                 Thread.Sleep(100);
             }
             // 出力
-            System.Console.WriteLine(readline);
+            Console.WriteLine(readline);
             return readline;
 
         }
@@ -442,7 +442,7 @@ namespace Mov.Connectors
         /// </summary>
         static void sock_Connect(System.Net.Sockets.Socket client)
         {
-            System.Console.WriteLine("Connect");
+            Console.WriteLine("Connect");
         }
 
         #endregion 内部メソッド

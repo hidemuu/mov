@@ -1,13 +1,14 @@
 ﻿using FluentFTP;
+using Mov.Accessors.Connectors;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Security.Authentication;
 using System.Text;
 
-namespace Mov.Connectors
+namespace Mov.Accessors.Connectors.Files
 {
-    public class FtpConnector
+    public class FtpConnector : IFileConnector
     {
         #region フィールド
 

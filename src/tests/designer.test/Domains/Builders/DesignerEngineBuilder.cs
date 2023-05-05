@@ -1,9 +1,9 @@
 ﻿using Moq;
-using Mov.Accessors;
 using Mov.Controllers.Repository.Persistences;
 using Mov.Designer.Engine;
 using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
+using Mov.Schemas.EntityObjects.DbObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;

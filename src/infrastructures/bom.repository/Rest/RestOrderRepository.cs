@@ -1,11 +1,11 @@
 ﻿using Mov.Bom.Models;
 using Mov.Accessors;
-using Mov.Accessors.Serializer;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Mov.Bom.Models.Entities.Schemas;
+using Mov.Accessors.Serializer.Implements;
 
 namespace Mov.Bom.Repository.Rest
 {

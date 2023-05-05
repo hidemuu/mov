@@ -4,12 +4,12 @@ using System.Data;
 using System.IO;
 using System.Text;
 
-namespace Mov.Connectors
+namespace Mov.Accessors.Connectors.Implements
 {
     /// <summary>
     /// テキストファイル送受信
     /// </summary>
-    public static  class TextConnector
+    public static class TextConnector
     {
         //----- 定数 -------------------------------------
         private const string ENC_NAME = "Shift_JIS";
@@ -22,7 +22,7 @@ namespace Mov.Connectors
         /// </summary>
         public static string[] ReadAllToArray(string filePath, string encName = ENC_NAME)
         {
-            System.Text.Encoding enc = System.Text.Encoding.GetEncoding(encName);
+            Encoding enc = Encoding.GetEncoding(encName);
             string[] lines = File.ReadAllLines(filePath, enc);
             return lines;
         }
@@ -33,7 +33,7 @@ namespace Mov.Connectors
         public static string[] ReadToArray(string filePath, string encName = ENC_NAME)
         {
             string[] lines = new string[] { };
-            System.Text.Encoding enc = System.Text.Encoding.GetEncoding(encName);
+            Encoding enc = Encoding.GetEncoding(encName);
             if (File.Exists(filePath))
             {
                 using (var reader = new StreamReader(filePath, enc))
@@ -66,8 +66,8 @@ namespace Mov.Connectors
         {
             try
             {
-                System.Text.Encoding enc = System.Text.Encoding.GetEncoding(encName);
-                var writer = new System.IO.StreamWriter(filePath, isAdd, enc);    //指定ファイルの読込ストリームを実行
+                Encoding enc = Encoding.GetEncoding(encName);
+                var writer = new StreamWriter(filePath, isAdd, enc);    //指定ファイルの読込ストリームを実行
                 writer.Write(line);
                 writer.Close();
             }
@@ -117,14 +117,14 @@ namespace Mov.Connectors
                                           bool isAdd = true, bool isAddHeader = true)
         {
             //CSVファイルに書き込むときに使うEncoding
-            System.Text.Encoding enc =
-                System.Text.Encoding.GetEncoding(encName);
+            Encoding enc =
+                Encoding.GetEncoding(encName);
 
             try
             {
                 //書き込むファイルを開く
-                System.IO.StreamWriter writer =
-                    new System.IO.StreamWriter(filePath, isAdd, enc);
+                StreamWriter writer =
+                    new StreamWriter(filePath, isAdd, enc);
 
                 int colCount = dt.Columns.Count;
                 int lastColIndex = colCount - 1;
@@ -192,10 +192,10 @@ namespace Mov.Connectors
         {
             //ヘッダー行読み出し
             var header = "";
-            var enc = System.Text.Encoding.GetEncoding(encName);
+            var enc = Encoding.GetEncoding(encName);
             try
             {
-                using (var reader = new System.IO.StreamReader(filePath, enc))
+                using (var reader = new StreamReader(filePath, enc))
                 {
                     header = reader.ReadLine();
                 }
@@ -209,7 +209,7 @@ namespace Mov.Connectors
             //元データ削除
             try
             {
-                System.IO.File.Delete(filePath);
+                File.Delete(filePath);
             }
             catch (Exception ex)
             {
@@ -220,7 +220,7 @@ namespace Mov.Connectors
             //新規生成し、ヘッダー行を付加
             try
             {
-                using (var writer = new System.IO.StreamWriter(filePath, false, enc))
+                using (var writer = new StreamWriter(filePath, false, enc))
                 {
                     writer.WriteLine(header);
                 }
@@ -242,15 +242,15 @@ namespace Mov.Connectors
         {
             var result = "";
             //バックアップパス生成
-            var dir = System.IO.Path.GetDirectoryName(filePath);
-            var file = System.IO.Path.GetFileNameWithoutExtension(filePath);
-            var extension = System.IO.Path.GetExtension(filePath);
+            var dir = Path.GetDirectoryName(filePath);
+            var file = Path.GetFileNameWithoutExtension(filePath);
+            var extension = Path.GetExtension(filePath);
             var backupPath = backupDir + @"\" + file + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + extension;
 
             //バックアップフォルダ生成（存在しない場合のみ）
-            if (!System.IO.Directory.Exists(backupDir))
+            if (!Directory.Exists(backupDir))
             {
-                System.IO.Directory.CreateDirectory(backupDir);
+                Directory.CreateDirectory(backupDir);
             }
 
             //ファイルコピー
@@ -258,7 +258,7 @@ namespace Mov.Connectors
             {
                 //第3項にTrueを指定すると、コピー先が存在している時、上書き
                 //上書きするファイルが読み取り専用などで上書きできない場合は、UnauthorizedAccessExceptionが発生
-                System.IO.File.Copy(filePath, backupPath, false);
+                File.Copy(filePath, backupPath, false);
             }
             catch (Exception ex)
             {

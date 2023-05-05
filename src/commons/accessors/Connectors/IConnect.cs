@@ -4,8 +4,11 @@ using System.Text;
 
 namespace Mov.Accessors.Connectors
 {
-    public interface IFileConnector
+    public interface IConnect
     {
-        void Upload(string fileName);
+        void Connect();
+        void Disconnect();
+
+        bool IsConnected();
     }
 }

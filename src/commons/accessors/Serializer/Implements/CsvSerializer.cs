@@ -5,7 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 
-namespace Mov.Accessors
+namespace Mov.Accessors.Serializer.Implements
 {
     /// <summary>
     /// CSVシリアライザー
@@ -42,12 +42,12 @@ namespace Mov.Accessors
         /// <param name="list"></param>
         public TResponse Post<TRequest, TResponse>(string url, TRequest list)
         {
-            var isExist = File.Exists(this.endpoint);
+            var isExist = File.Exists(endpoint);
 
             var configuration = new CsvConfiguration(CultureInfo.CurrentCulture);
             configuration.HasHeaderRecord = true;
 
-            using (var sw = new StreamWriter(Path.Combine(this.endpoint, url), true, this.encoding))
+            using (var sw = new StreamWriter(Path.Combine(endpoint, url), true, encoding))
             {
                 using (var csv = new CsvWriter(sw, configuration))
                 {
@@ -74,7 +74,7 @@ namespace Mov.Accessors
                 PrepareHeaderForMatch = args => args.Header.ToLower(),
             };
 
-            using (var sr = new StreamReader(Path.Combine(this.endpoint, url), this.encoding))
+            using (var sr = new StreamReader(Path.Combine(endpoint, url), encoding))
             {
                 using (var csv = new CsvReader(sr, configuration))
                 {

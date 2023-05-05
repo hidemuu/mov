@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace Mov.Accessors.Connectors.Sockets
+namespace Mov.Accessors.Connectors.Implements.Sockets
 {
     public class SshConnector : ISocketConnector
     {

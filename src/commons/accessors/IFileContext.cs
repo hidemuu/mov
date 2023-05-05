@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Mov.Schemas.Units;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Mov.Accessors
 {
-    public interface IAccessContext
+    public interface IFileContext
     {
-        string Endpoint { get; }
+        FileUnit Endpoint { get; }
 
         Encoding Encoding { get; }
     }

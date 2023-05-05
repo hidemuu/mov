@@ -2,7 +2,7 @@
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Accessors
+namespace Mov.Accessors.Serializer.Implements
 {
     /// <summary>
     /// XMLシリアライザー
@@ -12,7 +12,7 @@ namespace Mov.Accessors
         #region フィールド
 
         private readonly string endpoint;
-        private  readonly Encoding encoding;
+        private readonly Encoding encoding;
 
         #endregion フィールド
 
@@ -39,7 +39,7 @@ namespace Mov.Accessors
         /// <returns></returns>
         public TResponse Get<TResponse>(string url)
         {
-            using (var stream = new StreamReader(Path.Combine(this.endpoint, url)))
+            using (var stream = new StreamReader(Path.Combine(endpoint, url)))
             {
                 var serializer = new System.Xml.Serialization.XmlSerializer(typeof(TResponse));
                 return (TResponse)serializer.Deserialize(stream);
@@ -52,7 +52,7 @@ namespace Mov.Accessors
         /// <param name="obj"></param>
         public TResponse Post<TRequest, TResponse>(string url, TRequest obj)
         {
-            using (var stream = new StreamWriter(Path.Combine(this.endpoint, url), false, this.encoding))
+            using (var stream = new StreamWriter(Path.Combine(endpoint, url), false, encoding))
             {
                 System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(TRequest));
                 serializer.Serialize(stream, obj);

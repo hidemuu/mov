@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace Mov.Accessors
+namespace Mov.Accessors.Serializer.Implements
 {
     /// <summary>
     /// Jsonファイルのシリアライザー
@@ -59,7 +59,7 @@ namespace Mov.Accessors
 
         private string ReadStream(string url)
         {
-            using (var stream = new StreamReader(Path.Combine(this.endpoint, url), this.encoding))
+            using (var stream = new StreamReader(Path.Combine(endpoint, url), encoding))
             {
                 if (stream != null)
                 {
@@ -76,7 +76,7 @@ namespace Mov.Accessors
         /// <param name="isappend">追記モード（falseなら上書き保存）</param>
         private void WriteStream(string url, string json, bool isappend)
         {
-            using (var stream = new StreamWriter(Path.Combine(this.endpoint, url), isappend, this.encoding))
+            using (var stream = new StreamWriter(Path.Combine(endpoint, url), isappend, encoding))
             {
                 if (stream != null)
                 {

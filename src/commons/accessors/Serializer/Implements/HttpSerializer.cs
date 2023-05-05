@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Accessors.Serializer
+namespace Mov.Accessors.Serializer.Implements
 {
     public class HttpSerializer : ISerializer, ISerializerAsync
     {
@@ -52,7 +52,7 @@ namespace Mov.Accessors.Serializer
         {
             using (var client = BaseClient())
             {
-                var responseTask = client.PostAsync(url, new JsonStringContent(body, this.encoding));
+                var responseTask = client.PostAsync(url, new JsonStringContent(body, encoding));
                 Task.WhenAll(responseTask);
                 return default;
             }
@@ -80,7 +80,7 @@ namespace Mov.Accessors.Serializer
         {
             using (var client = BaseClient())
             {
-                var response = await client.PostAsync(url, new JsonStringContent(body, this.encoding));
+                var response = await client.PostAsync(url, new JsonStringContent(body, encoding));
                 string json = await response.Content.ReadAsStringAsync();
                 TResponse obj = JsonConvert.DeserializeObject<TResponse>(json);
                 return obj;
@@ -106,7 +106,7 @@ namespace Mov.Accessors.Serializer
         /// <summary>
         /// Constructs the base HTTP client, including correct authorization and API version headers.
         /// </summary>
-        private HttpClient BaseClient() => new HttpClient { BaseAddress = new Uri(this.endpoint) };
+        private HttpClient BaseClient() => new HttpClient { BaseAddress = new Uri(endpoint) };
 
         /// <summary>
         /// Helper class for formatting <see cref="StringContent"/> as UTF8 application/json.

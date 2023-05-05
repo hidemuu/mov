@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Accessors.Connectors.Sockets
+namespace Mov.Accessors.Connectors.Implements.Sockets
 {
     /// <summary>
     /// シェル接続ロジッククラス

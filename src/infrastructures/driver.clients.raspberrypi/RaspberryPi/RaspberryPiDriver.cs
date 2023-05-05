@@ -1,4 +1,4 @@
-﻿using Mov.Accessors.Connectors.Sockets;
+﻿using Mov.Accessors.Connectors.Implements.Sockets;
 using System;
 using System.Collections.Generic;
 using System.Text;

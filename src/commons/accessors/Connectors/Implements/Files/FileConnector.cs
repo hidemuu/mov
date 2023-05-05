@@ -1,11 +1,11 @@
-﻿using Mov.Accessors.Connectors;
+﻿using Mov.Accessors.Contexts;
 using Mov.Schemas.Units;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Mov.Accessors.Connectors.Files
+namespace Mov.Accessors.Connectors.Implements.Files
 {
     /// <summary>
     /// ファイル接続
@@ -14,16 +14,16 @@ namespace Mov.Accessors.Connectors.Files
     {
         #region フィールド
 
-        private readonly FileUnit _endpoint;
+        private readonly FileContext _context;
 
         #endregion フィールド
 
         #region コンストラクター
 
-        public FileConnector(string endpoint)
+        public FileConnector(FileContext context)
         {
-            _endpoint = new FileUnit(endpoint);
-            if (!_endpoint.IsDir()) throw new ArgumentException();
+            _context = context;
+            if (!_context.Endpoint.IsDir()) throw new ArgumentException();
         }
 
         #endregion コンストラクター
@@ -55,7 +55,7 @@ namespace Mov.Accessors.Connectors.Files
             {
                 //第3項にTrueを指定すると、コピー先が存在している時、上書き
                 //上書きするファイルが読み取り専用などで上書きできない場合は、UnauthorizedAccessExceptionが発生
-                File.Copy(Path.Combine(_endpoint.DirName, file.Path), backupPath, false);
+                File.Copy(Path.Combine(_context.Endpoint.DirName, file.Path), backupPath, false);
             }
             catch (Exception ex)
             {
@@ -98,7 +98,7 @@ namespace Mov.Accessors.Connectors.Files
         /// <returns></returns>
         public long GetSize()
         {
-            DirectoryInfo dirInfo = new DirectoryInfo(_endpoint.DirName);
+            DirectoryInfo dirInfo = new DirectoryInfo(_context.Endpoint.DirName);
             return GetDirectorySize(dirInfo);
         }
 
@@ -107,7 +107,7 @@ namespace Mov.Accessors.Connectors.Files
         /// </summary>
         public int GetLineNum(string fileName)
         {
-            var reader = new StreamReader(Path.Combine(_endpoint.DirName, fileName));
+            var reader = new StreamReader(Path.Combine(_context.Endpoint.DirName, fileName));
             var result = 0;
 
             while (reader.Peek() >= 0)
@@ -136,6 +136,11 @@ namespace Mov.Accessors.Connectors.Files
             return true;
         }
 
+        public void Upload(string fileName)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion メソッド
 
         #region 内部メソッド
@@ -155,7 +160,6 @@ namespace Mov.Accessors.Connectors.Files
             }
             return size;
         }
-
 
         #endregion 内部メソッド
 

@@ -68,7 +68,7 @@ classDiagram
 ### Schema
 
 ```rb
-FileConnector
+IFileConnector
 ファイルにアクセスして情報取得 / 追加 / 削除を行う
 ```
 
@@ -94,7 +94,28 @@ FtpConnector
 
 ### Class Diagram
 
+```mermaid
+classDiagram
+    class IFileConnector{
+        <<interface>>
+        +Add()
+        +Delete()
+        +Backup()
+        +GetSize()
+    }
+    
+    class FileConnector{
 
+    }
+
+    class FtpConnector{
+
+    }
+
+    FileConnector ..|> IFileConnector
+    FtpConnector ..|> IFileConnector
+
+```
 
 ## Watcher
 

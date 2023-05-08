@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Mov.Accessors
 {
+    /// <summary>
+    /// 接続の共通コンテキスト
+    /// </summary>
     public interface IConnectContext
     {
         IpAddressUnit Host { get; }

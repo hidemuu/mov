@@ -4,7 +4,10 @@ using System.Text;
 
 namespace Mov.Accessors.Connectors
 {
-    public interface IFileConnector
+    /// <summary>
+    /// ファイルアクセス処理
+    /// </summary>
+    public interface IFileAccessor
     {
         void Upload(string fileName);
     }

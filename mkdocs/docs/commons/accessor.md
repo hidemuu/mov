@@ -68,6 +68,17 @@ classDiagram
 ### Schema
 
 ```rb
+IConnect
+接続処理
+```
+
+| 関数名 | 引数 | 返数 | 説明 | 例 |
+| ---- | ---- | ---- | ---- | ---- |
+| Connect | --- | --- | 接続する |  |
+| Disconnect | --- | --- | 切断する |  |
+| IsConnected | --- | --- | 接続判定 |  |
+
+```rb
 IFileConnector
 ファイルにアクセスして情報取得 / 追加 / 削除を行う
 ```
@@ -96,7 +107,15 @@ FtpConnector
 
 ```mermaid
 classDiagram
-    class IFileConnector{
+    
+    class IConnector{
+        <<interface>>
+        +Connect()
+        +Disconnect()
+        +IsConnected()
+    }
+    
+    class IFileAccessor{
         <<interface>>
         +Add()
         +Delete()
@@ -104,6 +123,27 @@ classDiagram
         +GetSize()
     }
     
+    class IConnectContext{
+        +Host : IpAddressUnit
+        +Port : int
+        +UserName : string
+        +Password : string
+        +Timeout : double
+    } 
+
+    class IFileContext{
+        +Endpoint : FileUnit
+        +Encoding : Encoding
+    }
+
+    class FileContext{
+
+    }
+
+    class FtpContext{
+
+    }
+
     class FileConnector{
 
     }
@@ -112,8 +152,16 @@ classDiagram
 
     }
 
-    FileConnector ..|> IFileConnector
-    FtpConnector ..|> IFileConnector
+    IFileContext <|.. FileContext
+    FileContext <.. FileConnector: use
+    FileConnector ..|> IFileAccessor
+    
+    FtpContext <.. FtpConnector: use
+    FtpConnector ..|> IFileAccessor
+    FtpConnector ..|> IConnector
+
+    IFileContext <|.. FtpContext
+    IConnectContext <|.. FtpContext
 
 ```
 

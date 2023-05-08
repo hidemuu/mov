@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Mov.Accessors.Connectors.Implements.Sockets
 {
-    public class SshConnector : ISocketConnector
+    public class SshConnector : ISocketAccessor
     {
         #region フィールド
 

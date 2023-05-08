@@ -7,7 +7,7 @@ namespace Mov.Accessors.Connectors.Implements.Sockets
     /// <summary>
     /// シェル接続ロジッククラス
     /// </summary>
-    public class ShellConnector : ISocketConnector
+    public class ShellConnector : ISocketAccessor
     {
         /// <summary>
         /// プロセス起動

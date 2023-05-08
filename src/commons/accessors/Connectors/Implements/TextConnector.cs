@@ -9,7 +9,7 @@ namespace Mov.Accessors.Connectors.Implements
     /// <summary>
     /// テキストファイル送受信
     /// </summary>
-    public static class TextConnector
+    public class TextConnector
     {
         //----- 定数 -------------------------------------
         private const string ENC_NAME = "Shift_JIS";
@@ -20,7 +20,7 @@ namespace Mov.Accessors.Connectors.Implements
         /// <summary>
         /// 一括でテキストファイルから読出し、配列に格納
         /// </summary>
-        public static string[] ReadAllToArray(string filePath, string encName = ENC_NAME)
+        public string[] ReadAllToArray(string filePath, string encName = ENC_NAME)
         {
             Encoding enc = Encoding.GetEncoding(encName);
             string[] lines = File.ReadAllLines(filePath, enc);
@@ -30,7 +30,7 @@ namespace Mov.Accessors.Connectors.Implements
         /// <summary>
         /// 一行ずつテキストファイルから読出し、配列に格納
         /// </summary>
-        public static string[] ReadToArray(string filePath, string encName = ENC_NAME)
+        public string[] ReadToArray(string filePath, string encName = ENC_NAME)
         {
             string[] lines = new string[] { };
             Encoding enc = Encoding.GetEncoding(encName);
@@ -60,7 +60,7 @@ namespace Mov.Accessors.Connectors.Implements
         /// <param name="delimiter">区切り文字（CSVの場合「,」)</param>
         /// <param name="escape">区切り文字が出力対象データに含まれている場合の変換対象文字</param>
         /// <param name="isAdd">書込モード true：追加 false：上書き</param>
-        public static bool Write(string line, string filePath,
+        public bool Write(string line, string filePath,
                                  string encName = ENC_NAME, string delimiter = DELIMITER, string escape = ESCAPE,
                                  bool isAdd = true)
         {
@@ -88,7 +88,7 @@ namespace Mov.Accessors.Connectors.Implements
         /// <param name="delimiter">区切り文字（CSVの場合「,」)</param>
         /// <param name="escape">区切り文字が出力対象データに含まれている場合の変換対象文字</param>
         /// <param name="isAdd">書込モード true：追加 false：上書き</param>
-        public static bool WriteArray(string[] items, string filePath,
+        public bool WriteArray(string[] items, string filePath,
                                       string encName = ENC_NAME, string delimiter = DELIMITER, string escape = ESCAPE,
                                       bool isAdd = true)
         {
@@ -112,7 +112,7 @@ namespace Mov.Accessors.Connectors.Implements
         /// <param name="delimeter">区切り文字（CSVの場合「,」</param>
         /// <param name="encName"></param>
         /// <param name="isAdd"></param>
-        public static bool WriteDataTable(DataTable dt, string filePath,
+        public bool WriteDataTable(DataTable dt, string filePath,
                                           string encName = ENC_NAME, string delimeter = DELIMITER,
                                           bool isAdd = true, bool isAddHeader = true)
         {
@@ -188,7 +188,7 @@ namespace Mov.Accessors.Connectors.Implements
         /// <param name="filePath"></param>
         /// <param name="encName"></param>
         /// <returns></returns>
-        public static bool MakeDefault(string filePath, string encName = ENC_NAME)
+        public bool MakeDefault(string filePath, string encName = ENC_NAME)
         {
             //ヘッダー行読み出し
             var header = "";
@@ -238,7 +238,7 @@ namespace Mov.Accessors.Connectors.Implements
         /// バックアップフォルダを生成し、対象ファイルをコピー
         /// </summary>
         /// <returns></returns>
-        public static string BackUp(string filePath, string backupDir, string encName = ENC_NAME)
+        public string BackUp(string filePath, string backupDir, string encName = ENC_NAME)
         {
             var result = "";
             //バックアップパス生成
@@ -276,7 +276,7 @@ namespace Mov.Accessors.Connectors.Implements
         /// <summary>
         /// 必要ならば、文字列をダブルクォートで囲む
         /// </summary>
-        private static string EncloseDoubleQuotesIfNeed(string field)
+        private string EncloseDoubleQuotesIfNeed(string field)
         {
             if (NeedEncloseDoubleQuotes(field))
             {
@@ -288,7 +288,7 @@ namespace Mov.Accessors.Connectors.Implements
         /// <summary>
         /// 文字列をダブルクォートで囲む
         /// </summary>
-        private static string EncloseDoubleQuotes(string field)
+        private string EncloseDoubleQuotes(string field)
         {
             if (field.IndexOf('"') > -1)
             {
@@ -301,7 +301,7 @@ namespace Mov.Accessors.Connectors.Implements
         /// <summary>
         /// 文字列をダブルクォートで囲む必要があるか調べる
         /// </summary>
-        private static bool NeedEncloseDoubleQuotes(string field)
+        private bool NeedEncloseDoubleQuotes(string field)
         {
             return field.IndexOf('"') > -1 ||
                 field.IndexOf(',') > -1 ||

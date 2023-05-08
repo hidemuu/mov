@@ -4,11 +4,7 @@ using System.Text;
 
 namespace Mov.Accessors.Connectors
 {
-    public interface IConnect
+    public interface ISocketAccessor
     {
-        void Connect();
-        void Disconnect();
-
-        bool IsConnected();
     }
 }

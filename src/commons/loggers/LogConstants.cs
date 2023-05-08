@@ -15,5 +15,7 @@ namespace Mov.Loggers
         public static string PUNCTUATON_MARK = ":";
 
         public static string SEPALATOR = "|";
+
+        public static string TIME_FORMAT = "yyyy/MM/dd HH:mm:ss.fff";
     }
 }

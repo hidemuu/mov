@@ -17,6 +17,10 @@ namespace Mov.Accessors
 
         public const string PATH_EXTENSION = ".";
 
+        public const string DELIMITER = ",";
+        
+        public const string ESCAPE = "/";
+
         public const string PATH_JSON = "json";
 
         public const string PATH_XML = "xml";

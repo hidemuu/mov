@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Mov.Accessors.Connectors.Implements.Files
 {
-    public class FtpConnector : IFileConnector, IConnect
+    public class FtpConnector : IFileAccessor, IConnector
     {
         #region フィールド
 

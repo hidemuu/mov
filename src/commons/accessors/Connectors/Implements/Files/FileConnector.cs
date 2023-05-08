@@ -1,4 +1,5 @@
 ﻿using Mov.Accessors.Contexts;
+using Mov.Loggers;
 using Mov.Schemas.Units;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace Mov.Accessors.Connectors.Implements.Files
     /// <summary>
     /// ファイル接続
     /// </summary>
-    public class FileConnector : IFileConnector
+    public class FileConnector : IFileAccessor
     {
         #region フィールド
 
@@ -59,7 +60,7 @@ namespace Mov.Accessors.Connectors.Implements.Files
             }
             catch (Exception ex)
             {
-                Console.WriteLine(DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss.fff") + "/" + ex.Message + "/" + ex.Source + "/" + "バックアップ失敗");
+                Console.WriteLine(DateTime.Now.ToString(LogConstants.TIME_FORMAT) + "/" + ex.Message + "/" + ex.Source + "/" + "バックアップ失敗");
                 return false;
             }
 

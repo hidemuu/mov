@@ -1,5 +1,6 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -14,8 +15,7 @@ namespace Mov.Accessors.Serializer.Implements
     {
         #region フィールド
 
-        private readonly string endpoint;
-        private readonly Encoding encoding;
+        private readonly IFileContext _context;
 
         #endregion フィールド
 
@@ -24,11 +24,9 @@ namespace Mov.Accessors.Serializer.Implements
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public CsvSerializer(string endpoint, string encoding = AccessConstants.ENCODE_NAME_UTF8)
+        public CsvSerializer(IFileContext context)
         {
-            this.endpoint = endpoint;
-            if (string.IsNullOrEmpty(Path.GetExtension(endpoint))) this.endpoint += AccessConstants.PATH_EXTENSION_CSV;
-            this.encoding = Encoding.GetEncoding(encoding);
+            _context = context;
         }
 
         #endregion コンストラクター
@@ -42,12 +40,12 @@ namespace Mov.Accessors.Serializer.Implements
         /// <param name="list"></param>
         public TResponse Post<TRequest, TResponse>(string url, TRequest list)
         {
-            var isExist = File.Exists(endpoint);
+            var isExist = File.Exists(_context.Endpoint.Path);
 
             var configuration = new CsvConfiguration(CultureInfo.CurrentCulture);
             configuration.HasHeaderRecord = true;
 
-            using (var sw = new StreamWriter(Path.Combine(endpoint, url), true, encoding))
+            using (var sw = new StreamWriter(Path.Combine(_context.Endpoint.Path, url), true, _context.Encoding))
             {
                 using (var csv = new CsvWriter(sw, configuration))
                 {
@@ -74,7 +72,7 @@ namespace Mov.Accessors.Serializer.Implements
                 PrepareHeaderForMatch = args => args.Header.ToLower(),
             };
 
-            using (var sr = new StreamReader(Path.Combine(endpoint, url), encoding))
+            using (var sr = new StreamReader(Path.Combine(_context.Endpoint.Path, url), _context.Encoding))
             {
                 using (var csv = new CsvReader(sr, configuration))
                 {

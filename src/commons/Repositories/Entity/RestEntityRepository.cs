@@ -1,4 +1,5 @@
 ﻿using Mov.Accessors;
+using Mov.Accessors.Contexts;
 using Mov.Accessors.Serializer.Implements;
 using Mov.Schemas.EntityObject;
 using System;
@@ -15,7 +16,7 @@ namespace Mov.Controllers.Repository.Entity
 
         public RestEntityRepository(string url, string key, string encode = AccessConstants.ENCODE_NAME_UTF8)
         {
-            serializer = new HttpSerializer(url, encode);
+            serializer = new HttpSerializer(new FileContext(url, encode));
             this.key = string.IsNullOrEmpty(key) ? string.Empty : "?apikey=" + key;
         }
 

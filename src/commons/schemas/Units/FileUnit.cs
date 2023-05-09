@@ -7,16 +7,41 @@ using System.Text;
 
 namespace Mov.Schemas.Units
 {
+    /// <summary>
+    /// ファイルのValueObject
+    /// </summary>
     public sealed class FileUnit : ValueObjectBase<FileUnit>
     {
+        #region 定数
+
+        private const string PATH_EXTENSION_JSON = "json";
+
+        private const string PATH_EXTENSION_XML = "xml";
+
+        private const string PATH_EXTENSION_CSV = "csv";
+
+        #endregion 定数
+
         #region プロパティ
 
+        /// <summary>
+        /// フルパス
+        /// </summary>
         public string Path { get; }
 
+        /// <summary>
+        /// ディレクトリ名
+        /// </summary>
         public string DirName => System.IO.Path.GetDirectoryName(Path);
 
+        /// <summary>
+        /// ファイル名
+        /// </summary>
         public string FileName => System.IO.Path.GetFileNameWithoutExtension(Path);
 
+        /// <summary>
+        /// 拡張子
+        /// </summary>
         public string FileExtension => System.IO.Path.GetExtension(Path);
 
 
@@ -40,6 +65,12 @@ namespace Mov.Schemas.Units
         public bool IsFile() => !string.IsNullOrEmpty(FileName);
 
         public bool IsFileName() => Path.Equals(FileName, StringComparison.Ordinal);
+
+        public bool IsCsvFile() => IsFile() && FileExtension.Equals(PATH_EXTENSION_CSV, StringComparison.Ordinal);
+
+        public bool IsXmlFile() => IsFile() && FileExtension.Equals(PATH_EXTENSION_XML, StringComparison.Ordinal);
+
+        public bool IsJsonFile() => IsFile() && FileExtension.Equals(PATH_EXTENSION_JSON, StringComparison.Ordinal);
 
         public bool Exists()
         {

@@ -11,7 +11,7 @@ namespace Mov.Accessors
     public interface IFileContext
     {
         /// <summary>
-        /// ファイルのエンドポイント（フォルダパス）
+        /// ファイルのエンドポイント
         /// </summary>
         FileUnit Endpoint { get; }
 

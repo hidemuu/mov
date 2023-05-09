@@ -1,4 +1,5 @@
-﻿using Mov.Controllers.Repository.Entity;
+﻿using Mov.Accessors.Contexts;
+using Mov.Controllers.Repository.Entity;
 using Mov.Schemas.EntityObjects.DbObjects;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace Mov.Accessors
         /// コンストラクター
         /// </summary>
         public FileDbObjectRepository(string fileName, string encoding) 
-            : base(fileName, encoding)
+            : base(new FileContext(fileName, encoding))
         {
            
         }

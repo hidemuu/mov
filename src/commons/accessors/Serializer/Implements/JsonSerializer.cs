@@ -11,19 +11,16 @@ namespace Mov.Accessors.Serializer.Implements
     {
         #region フィールド
 
-        private readonly string endpoint;
-        private readonly Encoding encoding;
-
+        private readonly IFileContext _context;
+        
         #endregion フィールド
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public JsonSerializer(string endpoint, string encoding = AccessConstants.ENCODE_NAME_UTF8)
+        public JsonSerializer(IFileContext context)
         {
-            this.endpoint = endpoint;
-            if (string.IsNullOrEmpty(Path.GetExtension(endpoint))) this.endpoint += AccessConstants.PATH_EXTENSION_JSON;
-            this.encoding = Encoding.GetEncoding(encoding);
+            _context = context;
         }
 
         #region メソッド
@@ -59,7 +56,7 @@ namespace Mov.Accessors.Serializer.Implements
 
         private string ReadStream(string url)
         {
-            using (var stream = new StreamReader(Path.Combine(endpoint, url), encoding))
+            using (var stream = new StreamReader(Path.Combine(_context.Endpoint.Path, url), _context.Encoding))
             {
                 if (stream != null)
                 {
@@ -76,7 +73,7 @@ namespace Mov.Accessors.Serializer.Implements
         /// <param name="isappend">追記モード（falseなら上書き保存）</param>
         private void WriteStream(string url, string json, bool isappend)
         {
-            using (var stream = new StreamWriter(Path.Combine(endpoint, url), isappend, encoding))
+            using (var stream = new StreamWriter(Path.Combine(_context.Endpoint.Path, url), isappend, _context.Encoding))
             {
                 if (stream != null)
                 {

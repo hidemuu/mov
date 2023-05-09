@@ -15,11 +15,11 @@ namespace Mov.Accessors
         /// </summary>
         private const string ENC_NAME_SHIFT_JIS = "Shift_JIS";
 
-        public const string PATH_EXTENSION = ".";
-
         public const string DELIMITER = ",";
         
         public const string ESCAPE = "/";
+
+        public const string PATH_EXTENSION = ".";
 
         public const string PATH_JSON = "json";
 

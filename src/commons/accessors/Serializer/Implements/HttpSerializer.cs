@@ -13,9 +13,7 @@ namespace Mov.Accessors.Serializer.Implements
         /// <summary>
         /// The Base URL for the API.
         /// /// </summary>
-        private readonly string endpoint;
-
-        private readonly Encoding encoding;
+        private readonly IFileContext _context;
 
         #endregion フィールド
 
@@ -25,10 +23,9 @@ namespace Mov.Accessors.Serializer.Implements
         /// コンストラクター
         /// </summary>
         /// <param name="endpoint"></param>
-        public HttpSerializer(string endpoint, string encoding = AccessConstants.ENCODE_NAME_UTF8)
+        public HttpSerializer(IFileContext context)
         {
-            this.endpoint = endpoint;
-            this.encoding = Encoding.GetEncoding(encoding);
+            _context = context;
         }
 
         #endregion コンストラクター
@@ -52,7 +49,7 @@ namespace Mov.Accessors.Serializer.Implements
         {
             using (var client = BaseClient())
             {
-                var responseTask = client.PostAsync(url, new JsonStringContent(body, encoding));
+                var responseTask = client.PostAsync(url, new JsonStringContent(body, _context.Encoding));
                 Task.WhenAll(responseTask);
                 return default;
             }
@@ -80,7 +77,7 @@ namespace Mov.Accessors.Serializer.Implements
         {
             using (var client = BaseClient())
             {
-                var response = await client.PostAsync(url, new JsonStringContent(body, encoding));
+                var response = await client.PostAsync(url, new JsonStringContent(body, _context.Encoding));
                 string json = await response.Content.ReadAsStringAsync();
                 TResponse obj = JsonConvert.DeserializeObject<TResponse>(json);
                 return obj;
@@ -106,7 +103,7 @@ namespace Mov.Accessors.Serializer.Implements
         /// <summary>
         /// Constructs the base HTTP client, including correct authorization and API version headers.
         /// </summary>
-        private HttpClient BaseClient() => new HttpClient { BaseAddress = new Uri(endpoint) };
+        private HttpClient BaseClient() => new HttpClient { BaseAddress = new Uri(_context.Endpoint.Path) };
 
         /// <summary>
         /// Helper class for formatting <see cref="StringContent"/> as UTF8 application/json.

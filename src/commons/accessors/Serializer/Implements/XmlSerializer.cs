@@ -11,8 +11,7 @@ namespace Mov.Accessors.Serializer.Implements
     {
         #region フィールド
 
-        private readonly string endpoint;
-        private readonly Encoding encoding;
+        private readonly IFileContext _context;
 
         #endregion フィールド
 
@@ -22,11 +21,9 @@ namespace Mov.Accessors.Serializer.Implements
         /// コンストラクタ
         /// </summary>
         /// <param name="path">ファイルパス</param>
-        public XmlSerializer(string endpoint, string encoding = AccessConstants.ENCODE_NAME_UTF8)
+        public XmlSerializer(IFileContext context)
         {
-            this.endpoint = endpoint;
-            if (string.IsNullOrEmpty(Path.GetExtension(endpoint))) this.endpoint += AccessConstants.PATH_EXTENSION_XML;
-            this.encoding = Encoding.GetEncoding(encoding);
+            _context = context;
         }
 
         #endregion コンストラクター
@@ -39,7 +36,7 @@ namespace Mov.Accessors.Serializer.Implements
         /// <returns></returns>
         public TResponse Get<TResponse>(string url)
         {
-            using (var stream = new StreamReader(Path.Combine(endpoint, url)))
+            using (var stream = new StreamReader(Path.Combine(_context.Endpoint.Path, url)))
             {
                 var serializer = new System.Xml.Serialization.XmlSerializer(typeof(TResponse));
                 return (TResponse)serializer.Deserialize(stream);
@@ -52,7 +49,7 @@ namespace Mov.Accessors.Serializer.Implements
         /// <param name="obj"></param>
         public TResponse Post<TRequest, TResponse>(string url, TRequest obj)
         {
-            using (var stream = new StreamWriter(Path.Combine(endpoint, url), false, encoding))
+            using (var stream = new StreamWriter(Path.Combine(_context.Endpoint.Path, url), false, _context.Encoding))
             {
                 System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(TRequest));
                 serializer.Serialize(stream, obj);

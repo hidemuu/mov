@@ -33,11 +33,11 @@ namespace Mov.Accessors.Serializer
             switch (extension)
             {
                 case AccessConstants.PATH_EXTENSION_JSON:
-                    return new JsonSerializer(_context.Endpoint.Path, _context.Encoding.ToString());
+                    return new JsonSerializer(_context);
                 case AccessConstants.PATH_EXTENSION_XML:
-                    return new XmlSerializer(_context.Endpoint.Path, _context.Encoding.ToString());
+                    return new XmlSerializer(_context);
                 case AccessConstants.PATH_EXTENSION_CSV:
-                    return new CsvSerializer(_context.Endpoint.Path, _context.Encoding.ToString());
+                    return new CsvSerializer(_context);
                 default:
                     Debug.Assert(false, "拡張子が不正です");
                     return null;

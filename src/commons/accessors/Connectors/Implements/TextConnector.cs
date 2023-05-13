@@ -11,32 +11,42 @@ namespace Mov.Accessors.Connectors.Implements
     /// </summary>
     public class TextConnector
     {
-        //----- 定数 -------------------------------------
-        private const string ENC_NAME = "Shift_JIS";
-        private const string DELIMITER = ",";
-        private const string ESCAPE = "/";
+        #region フィールド
 
-        //----- ロジック ----------------------------------
+        private readonly IFileContext _context;
+
+        #endregion フィールド
+
+        #region コンストラクター
+
+        public TextConnector(IFileContext context)
+        {
+            _context= context;
+        }
+
+        #endregion コンストラクター 
+
+
+        #region メソッド
+
         /// <summary>
         /// 一括でテキストファイルから読出し、配列に格納
         /// </summary>
-        public string[] ReadAllToArray(string filePath, string encName = ENC_NAME)
+        public string[] ReadAllToArray()
         {
-            Encoding enc = Encoding.GetEncoding(encName);
-            string[] lines = File.ReadAllLines(filePath, enc);
+            string[] lines = File.ReadAllLines(_context.FileUnit.Path, _context.Encoding);
             return lines;
         }
 
         /// <summary>
         /// 一行ずつテキストファイルから読出し、配列に格納
         /// </summary>
-        public string[] ReadToArray(string filePath, string encName = ENC_NAME)
+        public string[] ReadToArray()
         {
             string[] lines = new string[] { };
-            Encoding enc = Encoding.GetEncoding(encName);
-            if (File.Exists(filePath))
+            if (File.Exists(_context.FileUnit.Path))
             {
-                using (var reader = new StreamReader(filePath, enc))
+                using (var reader = new StreamReader(_context.FileUnit.Path, _context.Encoding))
                 {
                     int i = 0;
                     while (!reader.EndOfStream)
@@ -60,14 +70,12 @@ namespace Mov.Accessors.Connectors.Implements
         /// <param name="delimiter">区切り文字（CSVの場合「,」)</param>
         /// <param name="escape">区切り文字が出力対象データに含まれている場合の変換対象文字</param>
         /// <param name="isAdd">書込モード true：追加 false：上書き</param>
-        public bool Write(string line, string filePath,
-                                 string encName = ENC_NAME, string delimiter = DELIMITER, string escape = ESCAPE,
+        public bool Write(string line, string delimiter = AccessConstants.DELIMITER, string escape = AccessConstants.ESCAPE,
                                  bool isAdd = true)
         {
             try
             {
-                Encoding enc = Encoding.GetEncoding(encName);
-                var writer = new StreamWriter(filePath, isAdd, enc);    //指定ファイルの読込ストリームを実行
+                var writer = new StreamWriter(_context.FileUnit.Path, isAdd, _context.Encoding);    //指定ファイルの読込ストリームを実行
                 writer.Write(line);
                 writer.Close();
             }
@@ -88,8 +96,7 @@ namespace Mov.Accessors.Connectors.Implements
         /// <param name="delimiter">区切り文字（CSVの場合「,」)</param>
         /// <param name="escape">区切り文字が出力対象データに含まれている場合の変換対象文字</param>
         /// <param name="isAdd">書込モード true：追加 false：上書き</param>
-        public bool WriteArray(string[] items, string filePath,
-                                      string encName = ENC_NAME, string delimiter = DELIMITER, string escape = ESCAPE,
+        public bool WriteArray(string[] items, string delimiter = AccessConstants.DELIMITER, string escape = AccessConstants.ESCAPE,
                                       bool isAdd = true)
         {
             string line = "";
@@ -100,7 +107,7 @@ namespace Mov.Accessors.Connectors.Implements
             }
             line += Environment.NewLine;    //改行を付加
 
-            return Write(line, filePath, encName, delimiter, escape, isAdd);
+            return Write(line, delimiter, escape, isAdd);
         }
 
         /// <summary>
@@ -112,19 +119,14 @@ namespace Mov.Accessors.Connectors.Implements
         /// <param name="delimeter">区切り文字（CSVの場合「,」</param>
         /// <param name="encName"></param>
         /// <param name="isAdd"></param>
-        public bool WriteDataTable(DataTable dt, string filePath,
-                                          string encName = ENC_NAME, string delimeter = DELIMITER,
+        public bool WriteDataTable(DataTable dt, string delimeter = AccessConstants.DELIMITER,
                                           bool isAdd = true, bool isAddHeader = true)
         {
-            //CSVファイルに書き込むときに使うEncoding
-            Encoding enc =
-                Encoding.GetEncoding(encName);
-
             try
             {
                 //書き込むファイルを開く
                 StreamWriter writer =
-                    new StreamWriter(filePath, isAdd, enc);
+                    new StreamWriter(_context.FileUnit.Path, isAdd, _context.Encoding);
 
                 int colCount = dt.Columns.Count;
                 int lastColIndex = colCount - 1;
@@ -188,14 +190,13 @@ namespace Mov.Accessors.Connectors.Implements
         /// <param name="filePath"></param>
         /// <param name="encName"></param>
         /// <returns></returns>
-        public bool MakeDefault(string filePath, string encName = ENC_NAME)
+        public bool MakeDefault()
         {
             //ヘッダー行読み出し
             var header = "";
-            var enc = Encoding.GetEncoding(encName);
             try
             {
-                using (var reader = new StreamReader(filePath, enc))
+                using (var reader = new StreamReader(_context.FileUnit.Path, _context.Encoding))
                 {
                     header = reader.ReadLine();
                 }
@@ -209,7 +210,7 @@ namespace Mov.Accessors.Connectors.Implements
             //元データ削除
             try
             {
-                File.Delete(filePath);
+                File.Delete(_context.FileUnit.Path);
             }
             catch (Exception ex)
             {
@@ -220,7 +221,7 @@ namespace Mov.Accessors.Connectors.Implements
             //新規生成し、ヘッダー行を付加
             try
             {
-                using (var writer = new StreamWriter(filePath, false, enc))
+                using (var writer = new StreamWriter(_context.FileUnit.Path, false, _context.Encoding))
                 {
                     writer.WriteLine(header);
                 }
@@ -238,13 +239,13 @@ namespace Mov.Accessors.Connectors.Implements
         /// バックアップフォルダを生成し、対象ファイルをコピー
         /// </summary>
         /// <returns></returns>
-        public string BackUp(string filePath, string backupDir, string encName = ENC_NAME)
+        public string BackUp(string backupDir)
         {
             var result = "";
             //バックアップパス生成
-            var dir = Path.GetDirectoryName(filePath);
-            var file = Path.GetFileNameWithoutExtension(filePath);
-            var extension = Path.GetExtension(filePath);
+            var dir = Path.GetDirectoryName(_context.FileUnit.Path);
+            var file = Path.GetFileNameWithoutExtension(_context.FileUnit.Path);
+            var extension = Path.GetExtension(_context.FileUnit.Path);
             var backupPath = backupDir + @"\" + file + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + extension;
 
             //バックアップフォルダ生成（存在しない場合のみ）
@@ -258,7 +259,7 @@ namespace Mov.Accessors.Connectors.Implements
             {
                 //第3項にTrueを指定すると、コピー先が存在している時、上書き
                 //上書きするファイルが読み取り専用などで上書きできない場合は、UnauthorizedAccessExceptionが発生
-                File.Copy(filePath, backupPath, false);
+                File.Copy(_context.FileUnit.Path, backupPath, false);
             }
             catch (Exception ex)
             {
@@ -266,12 +267,14 @@ namespace Mov.Accessors.Connectors.Implements
                 return "";
             }
             //初期化
-            if (MakeDefault(filePath)) { result = backupPath; }
+            if (MakeDefault()) { result = backupPath; }
 
             return result;
         }
 
-        //----- 内部ロジック ----------------------------------------------------------------------------
+        #endregion メソッド
+
+        #region 内部メソッド
 
         /// <summary>
         /// 必要ならば、文字列をダブルクォートで囲む
@@ -312,5 +315,7 @@ namespace Mov.Accessors.Connectors.Implements
                 field.EndsWith(" ") ||
                 field.EndsWith("\t");
         }
+
+        #endregion 内部メソッド
     }
 }

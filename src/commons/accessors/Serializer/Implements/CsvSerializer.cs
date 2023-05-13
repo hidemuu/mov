@@ -40,12 +40,12 @@ namespace Mov.Accessors.Serializer.Implements
         /// <param name="list"></param>
         public TResponse Post<TRequest, TResponse>(string url, TRequest list)
         {
-            var isExist = File.Exists(_context.Endpoint.Path);
+            var isExist = File.Exists(_context.FileUnit.Path);
 
             var configuration = new CsvConfiguration(CultureInfo.CurrentCulture);
             configuration.HasHeaderRecord = true;
 
-            using (var sw = new StreamWriter(Path.Combine(_context.Endpoint.Path, url), true, _context.Encoding))
+            using (var sw = new StreamWriter(Path.Combine(_context.FileUnit.Path, url), true, _context.Encoding))
             {
                 using (var csv = new CsvWriter(sw, configuration))
                 {
@@ -72,7 +72,7 @@ namespace Mov.Accessors.Serializer.Implements
                 PrepareHeaderForMatch = args => args.Header.ToLower(),
             };
 
-            using (var sr = new StreamReader(Path.Combine(_context.Endpoint.Path, url), _context.Encoding))
+            using (var sr = new StreamReader(Path.Combine(_context.FileUnit.Path, url), _context.Encoding))
             {
                 using (var csv = new CsvReader(sr, configuration))
                 {

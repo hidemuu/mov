@@ -19,7 +19,7 @@ namespace Mov.Accessors.Contexts
 
         public double Timeout { get; }
 
-        public FileUnit Endpoint { get; }
+        public FileUnit FileUnit { get; }
 
         public Encoding Encoding { get; }
 
@@ -34,7 +34,7 @@ namespace Mov.Accessors.Contexts
             this.UserName = userName;
             this.Password = password;
             this.Timeout = timeout;
-            this.Endpoint = new FileUnit(endpoint);
+            this.FileUnit = new FileUnit(endpoint);
             this.Encoding = Encoding.UTF8;
         }
 

@@ -71,7 +71,7 @@ namespace Mov.Accessors.Connectors.Implements.Files
                 // 接続
                 Connect();
                 // ファイルのアップロード
-                _client.UploadFile(Path.Combine(_context.Endpoint.DirName, fileName), fileName);
+                _client.UploadFile(Path.Combine(_context.FileUnit.DirName, fileName), fileName);
 
             }
             catch (Exception ex)

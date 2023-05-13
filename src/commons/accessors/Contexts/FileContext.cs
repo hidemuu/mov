@@ -9,7 +9,7 @@ namespace Mov.Accessors.Contexts
     {
         #region プロパティ
 
-        public FileUnit Endpoint { get; }
+        public FileUnit FileUnit { get; }
 
         public Encoding Encoding { get; }
 
@@ -19,7 +19,7 @@ namespace Mov.Accessors.Contexts
 
         public FileContext(string path, string encodeName = AccessConstants.ENCODE_NAME_UTF8)
         {
-            this.Endpoint = new FileUnit(path);
+            this.FileUnit = new FileUnit(path);
             this.Encoding = Encoding.GetEncoding(encodeName);
         }
 

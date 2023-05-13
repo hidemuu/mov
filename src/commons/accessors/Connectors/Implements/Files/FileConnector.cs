@@ -24,7 +24,7 @@ namespace Mov.Accessors.Connectors.Implements.Files
         public FileConnector(FileContext context)
         {
             _context = context;
-            if (!_context.Endpoint.IsDir()) throw new ArgumentException();
+            if (!_context.FileUnit.IsDir()) throw new ArgumentException();
         }
 
         #endregion コンストラクター
@@ -56,7 +56,7 @@ namespace Mov.Accessors.Connectors.Implements.Files
             {
                 //第3項にTrueを指定すると、コピー先が存在している時、上書き
                 //上書きするファイルが読み取り専用などで上書きできない場合は、UnauthorizedAccessExceptionが発生
-                File.Copy(Path.Combine(_context.Endpoint.DirName, file.Path), backupPath, false);
+                File.Copy(Path.Combine(_context.FileUnit.DirName, file.Path), backupPath, false);
             }
             catch (Exception ex)
             {
@@ -99,7 +99,7 @@ namespace Mov.Accessors.Connectors.Implements.Files
         /// <returns></returns>
         public long GetSize()
         {
-            DirectoryInfo dirInfo = new DirectoryInfo(_context.Endpoint.DirName);
+            DirectoryInfo dirInfo = new DirectoryInfo(_context.FileUnit.DirName);
             return GetDirectorySize(dirInfo);
         }
 
@@ -108,7 +108,7 @@ namespace Mov.Accessors.Connectors.Implements.Files
         /// </summary>
         public int GetLineNum(string fileName)
         {
-            var reader = new StreamReader(Path.Combine(_context.Endpoint.DirName, fileName));
+            var reader = new StreamReader(Path.Combine(_context.FileUnit.DirName, fileName));
             var result = 0;
 
             while (reader.Peek() >= 0)

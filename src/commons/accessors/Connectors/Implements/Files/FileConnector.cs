@@ -15,13 +15,13 @@ namespace Mov.Accessors.Connectors.Implements.Files
     {
         #region フィールド
 
-        private readonly FileContext _context;
+        private readonly IFileContext _context;
 
         #endregion フィールド
 
         #region コンストラクター
 
-        public FileConnector(FileContext context)
+        public FileConnector(IFileContext context)
         {
             _context = context;
             if (!_context.FileUnit.IsDir()) throw new ArgumentException();

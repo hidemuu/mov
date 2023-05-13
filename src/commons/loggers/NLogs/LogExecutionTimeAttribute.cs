@@ -21,7 +21,7 @@ namespace Mov.Loggers.NLogs
         public override void OnExit(MethodExecutionArgs arg)
         {
             stopwatch.Stop();
-            LogContext.Instance.LogExecutionTime(arg.Method, stopwatch);
+            NLogContext.Instance.LogExecutionTime(arg.Method, stopwatch);
             Console.WriteLine("Exited method: " + arg.Method.Name);
         }
 

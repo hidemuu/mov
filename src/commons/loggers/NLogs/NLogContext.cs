@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace Mov.Loggers.NLogs
 {
-    public class LogContext
+    public class NLogContext : ILogContext
     {
         #region フィールド
 
@@ -16,14 +16,14 @@ namespace Mov.Loggers.NLogs
 
         #region プロパティ
 
-        private static Lazy<LogContext> instance = new Lazy<LogContext>(() => new LogContext());
-        public static LogContext Instance => instance.Value;
+        private static Lazy<NLogContext> instance = new Lazy<NLogContext>(() => new NLogContext());
+        public static NLogContext Instance => instance.Value;
 
         #endregion プロパティ
 
         #region コンストラクター
 
-        private LogContext()
+        private NLogContext()
         {
             logger = LogManager.GetCurrentClassLogger();
             LogManager.LoadConfiguration("NLog.config");

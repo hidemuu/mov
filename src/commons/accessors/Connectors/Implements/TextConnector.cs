@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Loggers;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
@@ -81,7 +82,7 @@ namespace Mov.Accessors.Connectors.Implements
             }
             catch (Exception ex)
             {
-                Console.WriteLine(DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss.fff") + "/" + ex.Message + "/" + ex.Source + "/" + "書き込み失敗");
+                Console.WriteLine(DateTime.Now.ToString(LogConstants.TIME_FORMAT) + "/" + ex.Message + "/" + ex.Source + "/" + "書き込み失敗");
                 return false;
             }
             return true;

@@ -10,14 +10,29 @@ namespace Mov.Accessors
     /// </summary>
     public interface IConnectContext
     {
+        /// <summary>
+        /// IPアドレス
+        /// </summary>
         IpAddressUnit Host { get; }
 
+        /// <summary>
+        /// ポート番号
+        /// </summary>
         int Port { get; }
 
+        /// <summary>
+        /// ユーザー名
+        /// </summary>
         string UserName { get; }
 
+        /// <summary>
+        /// パスワード
+        /// </summary>
         string Password { get; }
 
+        /// <summary>
+        /// タイムアウト時間[msec]
+        /// </summary>
         double Timeout { get; }
     }
 }

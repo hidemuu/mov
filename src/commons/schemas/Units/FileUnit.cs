@@ -1,6 +1,7 @@
 ﻿using Mov.Utilities.Objects;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
@@ -19,6 +20,8 @@ namespace Mov.Schemas.Units
         private const string PATH_EXTENSION_XML = "xml";
 
         private const string PATH_EXTENSION_CSV = "csv";
+
+        private const string DELIMITER_CSV = ",";
 
         #endregion 定数
 
@@ -85,6 +88,22 @@ namespace Mov.Schemas.Units
             return true;
         }
 
+        public string GetDelimiter()
+        {
+            if(IsCsvFile()) return DELIMITER_CSV;
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// ディレクトリのサイズを取得
+        /// </summary>
+        /// <returns></returns>
+        public long GetSize()
+        {
+            DirectoryInfo dirInfo = new DirectoryInfo(DirName);
+            return GetDirectorySize(dirInfo);
+        }
+
         #endregion メソッド
 
         #region 内部メソッド
@@ -97,6 +116,22 @@ namespace Mov.Schemas.Units
         protected override int GetHashCodeCore()
         {
             return this.Path.GetHashCode();
+        }
+
+        private long GetDirectorySize(DirectoryInfo dirInfo)
+        {
+            long size = 0;
+            //フォルダ内サイズを合計
+            foreach (FileInfo fi in dirInfo.GetFiles())
+            {
+                size += fi.Length;
+            }
+            //サブフォルダサイズ合計
+            foreach (DirectoryInfo di in dirInfo.GetDirectories())
+            {
+                size += GetDirectorySize(di);
+            }
+            return size;
         }
 
         #endregion 内部メソッド

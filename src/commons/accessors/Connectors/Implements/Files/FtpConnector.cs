@@ -13,7 +13,9 @@ namespace Mov.Accessors.Connectors.Implements.Files
     {
         #region フィールド
 
-        private readonly FtpContext _context;
+        private readonly IConnectContext _connectContext;
+
+        private readonly IFileContext _fileContext;
 
         private readonly FtpClient _client;
 
@@ -21,9 +23,10 @@ namespace Mov.Accessors.Connectors.Implements.Files
 
         #region コンストラクター
 
-        public FtpConnector(FtpContext context)
+        public FtpConnector(IConnectContext connectContext, IFileContext fileContext)
         {
-            _context = context;
+            _connectContext= connectContext;
+            _fileContext = fileContext; 
             _client = new FtpClient();
         }
 
@@ -34,10 +37,10 @@ namespace Mov.Accessors.Connectors.Implements.Files
         public void Connect()
         {
             if (_client.IsConnected) return;
-            _client.Host = _context.Host.Value;
-            _client.Port = _context.Port;
+            _client.Host = _connectContext.Host.Value;
+            _client.Port = _connectContext.Port;
             // 資格情報の設定
-            _client.Credentials = new NetworkCredential(_context.UserName, _context.Password);
+            _client.Credentials = new NetworkCredential(_connectContext.UserName, _connectContext.Password);
             // 要求の完了後に接続を閉じる
             _client.SocketKeepAlive = false;
             // Explicit設定
@@ -45,7 +48,7 @@ namespace Mov.Accessors.Connectors.Implements.Files
             // プロトコルはTls
             _client.SslProtocols = SslProtocols.Tls;
             // 接続タイムアウトを5秒に設定
-            _client.ConnectTimeout = (int)_context.Timeout;
+            _client.ConnectTimeout = (int)_connectContext.Timeout;
             // 証明書の内容を確認しない
             _client.ValidateCertificate += new FtpSslValidation(OnValidateCertificate);
         }
@@ -71,7 +74,7 @@ namespace Mov.Accessors.Connectors.Implements.Files
                 // 接続
                 Connect();
                 // ファイルのアップロード
-                _client.UploadFile(Path.Combine(_context.FileUnit.DirName, fileName), fileName);
+                _client.UploadFile(Path.Combine(_fileContext.FileUnit.DirName, fileName), fileName);
 
             }
             catch (Exception ex)

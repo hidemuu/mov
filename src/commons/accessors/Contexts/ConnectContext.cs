@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Accessors.Contexts
 {
-    public class FtpContext : IConnectContext, IFileContext
+    public class ConnectContext : IConnectContext
     {
         #region プロパティ
 
@@ -19,26 +19,19 @@ namespace Mov.Accessors.Contexts
 
         public double Timeout { get; }
 
-        public FileUnit FileUnit { get; }
-
-        public Encoding Encoding { get; }
-
         #endregion プロパティ
 
         #region コンストラクター
 
-        public FtpContext(string ip, int port, string userName, string password, double timeout, string endpoint)
+        public ConnectContext(string ip, int port, string userName, string password, double timeout)
         {
             this.Host = new IpAddressUnit(ip);
             this.Port = port;
             this.UserName = userName;
             this.Password = password;
             this.Timeout = timeout;
-            this.FileUnit = new FileUnit(endpoint);
-            this.Encoding = Encoding.UTF8;
         }
 
         #endregion コンストラクター
-
     }
 }

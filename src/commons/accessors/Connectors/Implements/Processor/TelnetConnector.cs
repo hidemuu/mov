@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace Mov.Accessors.Connectors.Implements.Sockets
+namespace Mov.Accessors.Connectors.Implements.Processor
 {
     /// <summary>
     /// Telnet接続ロジッククラス
     /// </summary>
-    public class TelnetConnector : ISocketAccessor
+    public class TelnetConnector : IProcessor
     {
 
         #region フィールド
@@ -443,6 +443,11 @@ namespace Mov.Accessors.Connectors.Implements.Sockets
         static void sock_Connect(System.Net.Sockets.Socket client)
         {
             Console.WriteLine("Connect");
+        }
+
+        public string Run(string fileName, string args)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion 内部メソッド

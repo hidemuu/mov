@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Accessors.Connectors
+namespace Mov.Accessors
 {
-    public interface ISocketAccessor
+    public interface IProcessContext
     {
     }
 }

@@ -2,21 +2,20 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Accessors.Connectors.Implements.Sockets
+namespace Mov.Accessors.Connectors.Implements.Processor
 {
     /// <summary>
     /// シェル接続ロジッククラス
     /// </summary>
-    public class ShellConnector : ISocketAccessor
+    public class ShellConnector : IProcessor
     {
         /// <summary>
         /// プロセス起動
         /// </summary>
         /// <param name="fileName">コマンドプロンプトの場合「System.Environment.GetEnvironmentVariable("ComSpec")」</param>
         /// <param name="commandLine">データベース最適化の場合「fileName + " /compact"」</param>
-        public static string RunProcess(string fileName, string arg)
+        public string Run(string fileName, string args)
         {
-            string result = "";
             //Processオブジェクトの生成
             var psi = new System.Diagnostics.ProcessStartInfo();
             var p = new System.Diagnostics.Process();
@@ -29,8 +28,9 @@ namespace Mov.Accessors.Connectors.Implements.Sockets
             //ウィンドウ非表示の設定
             psi.CreateNoWindow = true;
             //コマンドを指定（"/c"は実行後閉じるために必要）
-            psi.Arguments = arg; //コマンドパラメータ
+            psi.Arguments = args; //コマンドパラメータ
 
+            string result;
             try
             {
                 //実行
@@ -56,7 +56,7 @@ namespace Mov.Accessors.Connectors.Implements.Sockets
         /// <summary>
         /// VBスクリプト起動
         /// </summary>
-        public static string RunVBScript(string filePath, string argLine)
+        public string RunVBScript(string filePath, string argLine)
         {
             string result = "";
             //argument生成
@@ -69,7 +69,7 @@ namespace Mov.Accessors.Connectors.Implements.Sockets
             {
                 arg = filePath; //コマンドパラメータ
             }
-            result = RunProcess("WScript.exe", arg);
+            result = Run("WScript.exe", arg);
             //出力された結果を表示
             Console.WriteLine(result);
 
@@ -82,10 +82,10 @@ namespace Mov.Accessors.Connectors.Implements.Sockets
         /// <param name="filePath"></param>
         /// <param name="appPath"></param>
         /// <returns></returns>
-        public static bool RunAccessCompact(string filePath,
+        public bool RunAccessCompact(string filePath,
                                             string appPath = @"C:\Program Files\Microsoft Office\Office15\MSACCESS.EXE")
         {
-            var result = RunProcess(appPath, filePath + " /compact");
+            var result = Run(appPath, filePath + " /compact");
             if (result != null) { return true; }
             else { return false; }
         }

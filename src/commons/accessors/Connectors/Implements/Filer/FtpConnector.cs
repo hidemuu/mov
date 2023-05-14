@@ -7,9 +7,9 @@ using System.Net;
 using System.Security.Authentication;
 using System.Text;
 
-namespace Mov.Accessors.Connectors.Implements.Files
+namespace Mov.Accessors.Connectors.Implements.Filer
 {
-    public class FtpConnector : IFileAccessor, IConnector
+    public class FtpConnector : IConnector, IFiler
     {
         #region フィールド
 
@@ -25,14 +25,16 @@ namespace Mov.Accessors.Connectors.Implements.Files
 
         public FtpConnector(IConnectContext connectContext, IFileContext fileContext)
         {
-            _connectContext= connectContext;
-            _fileContext = fileContext; 
+            _connectContext = connectContext;
+            _fileContext = fileContext;
             _client = new FtpClient();
         }
 
         #endregion コンストラクター
 
         #region メソッド
+
+        #region IConnector
 
         public void Connect()
         {
@@ -66,9 +68,13 @@ namespace Mov.Accessors.Connectors.Implements.Files
             _client.Dispose();
         }
 
+        #endregion IConnector
+
+        #region IFiler
+
         public void Upload(string fileName)
         {
-            
+
             try
             {
                 // 接続
@@ -86,6 +92,8 @@ namespace Mov.Accessors.Connectors.Implements.Files
                 Disconnect();
             }
         }
+
+        #endregion IFiler
 
         #endregion メソッド
 

@@ -4,9 +4,9 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Accessors.Connectors.Implements.Sockets
+namespace Mov.Accessors.Connectors.Implements.Processor
 {
-    public class SocketConnector : ISocketAccessor
+    public class SocketConnector : IProcessor
     {
         public void Connect(string IP, int port)
         {
@@ -74,6 +74,11 @@ namespace Mov.Accessors.Connectors.Implements.Sockets
             socket.Disconnect(false);
             socket.Dispose();
 
+        }
+
+        public string Run(string fileName, string args)
+        {
+            throw new NotImplementedException();
         }
     }
 }

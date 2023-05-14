@@ -4,6 +4,9 @@ using System.Net;
 
 namespace Mov.Schemas.Units
 {
+    /// <summary>
+    /// IPアドレスのValueObject
+    /// </summary>
     public sealed class IpAddressUnit : ValueObjectBase<IpAddressUnit>
     {
         #region プロパティ

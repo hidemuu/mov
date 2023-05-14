@@ -7,7 +7,7 @@ namespace Mov.Accessors.Connectors
     /// <summary>
     /// ファイルアクセス処理
     /// </summary>
-    public interface IFileAccessor
+    public interface IFiler
     {
         void Upload(string fileName);
     }

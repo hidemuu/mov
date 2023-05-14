@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace Mov.Accessors.Connectors.Implements.Sockets
+namespace Mov.Accessors.Connectors.Implements.Processor
 {
-    public class SshConnector : ISocketAccessor
+    public class SshConnector : IProcessor
     {
         #region フィールド
 
@@ -134,6 +134,11 @@ namespace Mov.Accessors.Connectors.Implements.Sockets
                 client.RunCommand(command);
                 client.Disconnect();
             }
+        }
+
+        public string Run(string fileName, string args)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion 静的メソッド

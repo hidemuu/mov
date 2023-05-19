@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\commons\controllers\Controllers.csproj" />
-    <ProjectReference Include="..\..\commons\painters\Painters.csproj" />
+    <ProjectReference Include="..\..\commons\painters\Graphicers.csproj" />
   </ItemGroup>
 
 </Project>

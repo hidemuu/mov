@@ -36,10 +36,8 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.se
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Controllers.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Drawer.Engine.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Drawer.Models.dll
-C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Painters.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Schemas.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Utilities.dll
-C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Painters.pdb
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Drawer.Engine.pdb
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Accessors.pdb
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Controllers.pdb
@@ -60,3 +58,5 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.se
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Repositories.pdb
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Shields.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Shields.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Graphicers.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Graphicers.pdb

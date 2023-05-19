@@ -326,12 +326,12 @@
         }
       }
     },
-    "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\painters\\Painters.csproj": {
+    "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\painters\\Graphicers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\painters\\Painters.csproj",
-        "projectName": "Mov.Painters",
-        "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\painters\\Painters.csproj",
+        "projectUniqueName": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\painters\\Graphicers.csproj",
+        "projectName": "Mov.Graphicers",
+        "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\painters\\Graphicers.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\painters\\obj\\",
         "projectStyle": "PackageReference",
@@ -707,8 +707,8 @@
               "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\controllers\\Controllers.csproj": {
                 "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\controllers\\Controllers.csproj"
               },
-              "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\painters\\Painters.csproj": {
-                "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\painters\\Painters.csproj"
+              "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\painters\\Graphicers.csproj": {
+                "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\painters\\Graphicers.csproj"
               }
             }
           }

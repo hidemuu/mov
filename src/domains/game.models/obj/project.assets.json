@@ -1002,6 +1002,20 @@
           "bin/placeholder/Mov.Controllers.dll": {}
         }
       },
+      "Mov.Graphicers/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Loggers": "1.0.0",
+          "System.Drawing.Common": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Graphicers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Graphicers.dll": {}
+        }
+      },
       "Mov.Loggers/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1014,20 +1028,6 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Loggers.dll": {}
-        }
-      },
-      "Mov.Painters/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Loggers": "1.0.0",
-          "System.Drawing.Common": "6.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Painters.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Painters.dll": {}
         }
       },
       "Mov.Repositories/1.0.0": {
@@ -3720,15 +3720,15 @@
       "path": "../../commons/controllers/Controllers.csproj",
       "msbuildProject": "../../commons/controllers/Controllers.csproj"
     },
+    "Mov.Graphicers/1.0.0": {
+      "type": "project",
+      "path": "../../commons/painters/Graphicers.csproj",
+      "msbuildProject": "../../commons/painters/Graphicers.csproj"
+    },
     "Mov.Loggers/1.0.0": {
       "type": "project",
       "path": "../../commons/loggers/Loggers.csproj",
       "msbuildProject": "../../commons/loggers/Loggers.csproj"
-    },
-    "Mov.Painters/1.0.0": {
-      "type": "project",
-      "path": "../../commons/painters/Painters.csproj",
-      "msbuildProject": "../../commons/painters/Painters.csproj"
     },
     "Mov.Repositories/1.0.0": {
       "type": "project",
@@ -3754,7 +3754,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "Mov.Controllers >= 1.0.0",
-      "Mov.Painters >= 1.0.0",
+      "Mov.Graphicers >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -3794,8 +3794,8 @@
             "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\controllers\\Controllers.csproj": {
               "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\controllers\\Controllers.csproj"
             },
-            "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\painters\\Painters.csproj": {
-              "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\painters\\Painters.csproj"
+            "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\painters\\Graphicers.csproj": {
+              "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\painters\\Graphicers.csproj"
             }
           }
         }

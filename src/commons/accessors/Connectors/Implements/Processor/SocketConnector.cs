@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Accessors.Connectors.Implements.Processor
 {
-    public class SocketConnector : IProcessor
+    public class SocketConnector
     {
         public void Connect(string IP, int port)
         {

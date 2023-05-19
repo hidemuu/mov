@@ -7,11 +7,16 @@ namespace Mov.Accessors.Connectors
     public interface IProcessor
     {
         /// <summary>
-        /// 実行
+        /// プロセスを実行する
         /// </summary>
         /// <param name="fileName"></param>
         /// <param name="args"></param>
         /// <returns></returns>
-        string Run(string fileName, string args);
+        string Run(string args);
+
+        /// <summary>
+        /// プロセスを停止する
+        /// </summary>
+        void Stop();
     }
 }

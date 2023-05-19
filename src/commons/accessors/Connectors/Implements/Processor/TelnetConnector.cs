@@ -8,7 +8,7 @@ namespace Mov.Accessors.Connectors.Implements.Processor
     /// <summary>
     /// Telnet接続ロジッククラス
     /// </summary>
-    public class TelnetConnector : IProcessor
+    public class TelnetConnector
     {
 
         #region フィールド

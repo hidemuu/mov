@@ -3,12 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Accessors.Contexts
+namespace Mov.Accessors.Entities
 {
-    /// <inheritdoc cref="IConnectContext" />
-    public class ConnectContext : IConnectContext
+    public sealed class ConnectParameter
     {
-        #region プロパティ
+        #region property
 
         /// <inheritdoc />
         public IpAddressUnit Host { get; }
@@ -25,12 +24,11 @@ namespace Mov.Accessors.Contexts
         /// <inheritdoc />
         public double Timeout { get; }
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
-        /// <inheritdoc cref="IConnectContext" />
-        public ConnectContext(string ip, int port, string userName, string password, double timeout)
+        public ConnectParameter(string ip, int port, string userName, string password, double timeout)
         {
             this.Host = new IpAddressUnit(ip);
             this.Port = port;
@@ -39,6 +37,6 @@ namespace Mov.Accessors.Contexts
             this.Timeout = timeout;
         }
 
-        #endregion コンストラクター
+        #endregion constructor
     }
 }

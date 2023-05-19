@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Mov.Accessors.Entities;
 using Mov.Loggers;
 using Mov.Schemas.Units;
 using System;
@@ -9,24 +10,20 @@ using System.Text;
 namespace Mov.Accessors.Contexts
 {
     /// <inheritdoc/>
-    public class FileContext : IFileContext
+    public class FileAccessContext : IFileAccessContext
     {
         #region プロパティ
 
         /// <inheritdoc/>
-        public FileUnit FileUnit { get; }
-
-        /// <inheritdoc/>
-        public Encoding Encoding { get; }
+        public FileParameter FileParameter { get; }
 
         #endregion プロパティ
 
         #region コンストラクター
 
-        public FileContext(string path, string encodeName = AccessConstants.ENCODE_NAME_UTF8)
+        public FileAccessContext(string path, string encodeName = AccessConstants.ENCODE_NAME_UTF8)
         {
-            this.FileUnit = new FileUnit(path);
-            this.Encoding = Encoding.GetEncoding(encodeName);
+            this.FileParameter = new FileParameter(path, encodeName);
         }
 
         #endregion コンストラクター
@@ -37,9 +34,9 @@ namespace Mov.Accessors.Contexts
         public string[] Read()
         {
             string[] lines = new string[] { };
-            if (File.Exists(FileUnit.Path))
+            if (File.Exists(FileParameter.FileUnit.Path))
             {
-                using (var reader = new StreamReader(FileUnit.Path, Encoding))
+                using (var reader = new StreamReader(FileParameter.FileUnit.Path, FileParameter.Encoding))
                 {
                     int i = 0;
                     while (!reader.EndOfStream)
@@ -58,7 +55,7 @@ namespace Mov.Accessors.Contexts
         {
             try
             {
-                using (var writer = new StreamWriter(FileUnit.Path, isAdd, Encoding))
+                using (var writer = new StreamWriter(FileParameter.FileUnit.Path, isAdd, FileParameter.Encoding))
                 {
                     //指定ファイルの読込ストリームを実行
                     writer.Write(line);
@@ -80,7 +77,7 @@ namespace Mov.Accessors.Contexts
         public bool WriteLine(string[] items, bool isAdd = true)
         {
             string line = "";
-            string delimiter = FileUnit.GetDelimiter();
+            string delimiter = FileParameter.FileUnit.GetDelimiter();
             string escape = AccessConstants.ESCAPE;
             foreach (string item in items)
             {
@@ -104,9 +101,9 @@ namespace Mov.Accessors.Contexts
             try
             {
                 //書き込むファイルを開く
-                using (StreamWriter writer = new StreamWriter(FileUnit.Path, isAdd, Encoding))
+                using (StreamWriter writer = new StreamWriter(FileParameter.FileUnit.Path, isAdd, FileParameter.Encoding))
                 {
-                    string delimiter = FileUnit.GetDelimiter();
+                    string delimiter = FileParameter.FileUnit.GetDelimiter();
                     int colCount = dt.Columns.Count;
                     int lastColIndex = colCount - 1;
 
@@ -167,7 +164,7 @@ namespace Mov.Accessors.Contexts
         {
             var result = "";
             //バックアップパス生成
-            var backupPath = backupDirectory + @"\" + FileUnit.FileName + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + FileUnit.FileExtension;
+            var backupPath = backupDirectory + @"\" + FileParameter.FileUnit.FileName + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + FileParameter.FileUnit.FileExtension;
 
             //バックアップフォルダ生成（存在しない場合のみ）
             if (!Directory.Exists(backupDirectory))
@@ -180,7 +177,7 @@ namespace Mov.Accessors.Contexts
             {
                 //第3項にTrueを指定すると、コピー先が存在している時、上書き
                 //上書きするファイルが読み取り専用などで上書きできない場合は、UnauthorizedAccessExceptionが発生
-                File.Copy(FileUnit.Path, backupPath, false);
+                File.Copy(FileParameter.FileUnit.Path, backupPath, false);
             }
             catch (Exception ex)
             {
@@ -199,8 +196,8 @@ namespace Mov.Accessors.Contexts
         /// <returns></returns>
         public bool Clear()
         {
-            var path = FileUnit.Path;
-            if (FileUnit.IsDir())
+            var path = FileParameter.FileUnit.Path;
+            if (FileParameter.FileUnit.IsDir())
             {
                 Directory.Delete(path, true);
                 for (int i = 0; i < 50; i++)
@@ -240,7 +237,7 @@ namespace Mov.Accessors.Contexts
         /// </summary>
         public int GetLineNum(string fileName)
         {
-            var reader = new StreamReader(Path.Combine(FileUnit.DirName, fileName));
+            var reader = new StreamReader(Path.Combine(FileParameter.FileUnit.DirName, fileName));
             var result = 0;
 
             while (reader.Peek() >= 0)
@@ -267,7 +264,7 @@ namespace Mov.Accessors.Contexts
             var header = "";
             try
             {
-                using (var reader = new StreamReader(FileUnit.Path, Encoding))
+                using (var reader = new StreamReader(FileParameter.FileUnit.Path, FileParameter.Encoding))
                 {
                     header = reader.ReadLine();
                 }
@@ -281,7 +278,7 @@ namespace Mov.Accessors.Contexts
             //元データ削除
             try
             {
-                File.Delete(FileUnit.Path);
+                File.Delete(FileParameter.FileUnit.Path);
             }
             catch (Exception ex)
             {
@@ -292,7 +289,7 @@ namespace Mov.Accessors.Contexts
             //新規生成し、ヘッダー行を付加
             try
             {
-                using (var writer = new StreamWriter(FileUnit.Path, false, Encoding))
+                using (var writer = new StreamWriter(FileParameter.FileUnit.Path, false, FileParameter.Encoding))
                 {
                     writer.WriteLine(header);
                 }

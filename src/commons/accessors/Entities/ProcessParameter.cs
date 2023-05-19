@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Accessors
+namespace Mov.Accessors.Entities
 {
-    public interface IProcessContext
+    public sealed class ProcessParameter
     {
     }
 }

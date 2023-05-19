@@ -9,26 +9,26 @@ namespace Mov.Accessors.Serializer.Implements
     /// </summary>
     public class XmlSerializer : ISerializer
     {
-        #region フィールド
+        #region field
 
-        private readonly IFileContext _context;
+        private readonly IFileAccessContext context;
 
-        #endregion フィールド
+        #endregion field
 
-        #region コンストラクター
+        #region constructor
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
         /// <param name="path">ファイルパス</param>
-        public XmlSerializer(IFileContext context)
+        public XmlSerializer(IFileAccessContext context)
         {
-            _context = context;
+            this.context = context;
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region メソッド
+        #region method
 
         /// <summary>
         /// データをファイルから読み出して指定クラスにデシリアライズ
@@ -36,7 +36,7 @@ namespace Mov.Accessors.Serializer.Implements
         /// <returns></returns>
         public TResponse Get<TResponse>(string url)
         {
-            using (var stream = new StreamReader(Path.Combine(_context.FileUnit.Path, url)))
+            using (var stream = new StreamReader(Path.Combine(this.context.FileParameter.FileUnit.Path, url)))
             {
                 var serializer = new System.Xml.Serialization.XmlSerializer(typeof(TResponse));
                 return (TResponse)serializer.Deserialize(stream);
@@ -49,7 +49,7 @@ namespace Mov.Accessors.Serializer.Implements
         /// <param name="obj"></param>
         public TResponse Post<TRequest, TResponse>(string url, TRequest obj)
         {
-            using (var stream = new StreamWriter(Path.Combine(_context.FileUnit.Path, url), false, _context.Encoding))
+            using (var stream = new StreamWriter(Path.Combine(this.context.FileParameter.FileUnit.Path, url), false, this.context.FileParameter.Encoding))
             {
                 System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(TRequest));
                 serializer.Serialize(stream, obj);
@@ -57,6 +57,6 @@ namespace Mov.Accessors.Serializer.Implements
             }
         }
 
-        #endregion メソッド
+        #endregion method
     }
 }

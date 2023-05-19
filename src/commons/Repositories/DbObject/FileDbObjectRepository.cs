@@ -28,7 +28,7 @@ namespace Mov.Accessors
         /// コンストラクター
         /// </summary>
         public FileDbObjectRepository(string fileName, string encoding) 
-            : base(new FileContext(fileName, encoding))
+            : base(new FileAccessContext(fileName, encoding))
         {
            
         }

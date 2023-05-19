@@ -10,22 +10,22 @@ namespace Mov.Accessors.Serializer
 {
     public class FileSerializerFactory
     {
-        #region フィールド
+        #region field
 
-        private readonly IFileContext _context;
+        private readonly IFileAccessContext context;
 
-        #endregion フィールド
+        #endregion field
 
-        #region コンストラクター
+        #region constructor
 
-        public FileSerializerFactory(IFileContext context) 
+        public FileSerializerFactory(IFileAccessContext context) 
         {
-            _context = context;
+            this.context = context;
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region メソッド
+        #region method
 
         public ISerializer Create(string extension)
         {
@@ -33,17 +33,17 @@ namespace Mov.Accessors.Serializer
             switch (extension)
             {
                 case AccessConstants.PATH_EXTENSION_JSON:
-                    return new JsonSerializer(_context);
+                    return new JsonSerializer(this.context);
                 case AccessConstants.PATH_EXTENSION_XML:
-                    return new XmlSerializer(_context);
+                    return new XmlSerializer(this.context);
                 case AccessConstants.PATH_EXTENSION_CSV:
-                    return new CsvSerializer(_context);
+                    return new CsvSerializer(this.context);
                 default:
                     Debug.Assert(false, "拡張子が不正です");
                     return null;
             }
         }
 
-        #endregion メソッド
+        #endregion method
     }
 }

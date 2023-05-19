@@ -36,9 +36,9 @@ namespace Mov.Controllers.Repository.Entity
         /// </summary>
         /// <param name="fileName"></param>
         /// <param name="encode"></param>
-        public FileEntityRepository(IFileContext context)
+        public FileEntityRepository(IFileAccessContext context)
         {
-            var extension = context.FileUnit.FileExtension;
+            var extension = context.FileParameter.FileUnit.FileExtension;
             if (string.IsNullOrEmpty(extension)) Debug.Assert(false, "拡張子が含まれていません");
             switch (extension)
             {

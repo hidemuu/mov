@@ -8,29 +8,29 @@ namespace Mov.Accessors.Serializer.Implements
 {
     public class HttpSerializer : ISerializer, ISerializerAsync
     {
-        #region フィールド
+        #region field
 
         /// <summary>
         /// The Base URL for the API.
         /// /// </summary>
-        private readonly IFileContext _context;
+        private readonly IFileAccessContext context;
 
-        #endregion フィールド
+        #endregion field
 
-        #region コンストラクター
+        #region constructor
 
         /// <summary>
         /// コンストラクター
         /// </summary>
         /// <param name="endpoint"></param>
-        public HttpSerializer(IFileContext context)
+        public HttpSerializer(IFileAccessContext context)
         {
-            _context = context;
+            this.context = context;
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region メソッド
+        #region method
 
         public TResponse Get<TResponse>(string url)
         {
@@ -49,7 +49,7 @@ namespace Mov.Accessors.Serializer.Implements
         {
             using (var client = BaseClient())
             {
-                var responseTask = client.PostAsync(url, new JsonStringContent(body, _context.Encoding));
+                var responseTask = client.PostAsync(url, new JsonStringContent(body, this.context.FileParameter.Encoding));
                 Task.WhenAll(responseTask);
                 return default;
             }
@@ -77,7 +77,7 @@ namespace Mov.Accessors.Serializer.Implements
         {
             using (var client = BaseClient())
             {
-                var response = await client.PostAsync(url, new JsonStringContent(body, _context.Encoding));
+                var response = await client.PostAsync(url, new JsonStringContent(body, this.context.FileParameter.Encoding));
                 string json = await response.Content.ReadAsStringAsync();
                 TResponse obj = JsonConvert.DeserializeObject<TResponse>(json);
                 return obj;
@@ -96,14 +96,14 @@ namespace Mov.Accessors.Serializer.Implements
             }
         }
 
-        #endregion メソッド
+        #endregion method
 
-        #region 内部メソッド
+        #region private method
 
         /// <summary>
         /// Constructs the base HTTP client, including correct authorization and API version headers.
         /// </summary>
-        private HttpClient BaseClient() => new HttpClient { BaseAddress = new Uri(_context.FileUnit.Path) };
+        private HttpClient BaseClient() => new HttpClient { BaseAddress = new Uri(this.context.FileParameter.FileUnit.Path) };
 
         /// <summary>
         /// Helper class for formatting <see cref="StringContent"/> as UTF8 application/json.
@@ -118,6 +118,6 @@ namespace Mov.Accessors.Serializer.Implements
             { }
         }
 
-        #endregion 内部メソッド
+        #endregion private method
     }
 }

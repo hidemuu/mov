@@ -19,7 +19,7 @@ namespace Mov.Bom.Repository.Rest
 
         public RestOrderRepository(string baseUrl)
         {
-            _http = new HttpSerializer(new FileContext(baseUrl));
+            _http = new HttpSerializer(new FileAccessContext(baseUrl));
         }
 
         public async Task<IEnumerable<Order>> GetAsync() =>

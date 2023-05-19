@@ -19,7 +19,7 @@ namespace Mov.Bom.Repository.Rest
 
         public RestCustomerRepository(string baseUrl)
         {
-            this.serializer = new HttpSerializer(new FileContext(baseUrl));
+            this.serializer = new HttpSerializer(new FileAccessContext(baseUrl));
         }
 
         public async Task<IEnumerable<Customer>> GetAsync() =>

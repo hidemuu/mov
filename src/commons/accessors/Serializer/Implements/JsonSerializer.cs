@@ -9,21 +9,25 @@ namespace Mov.Accessors.Serializer.Implements
     /// </summary>
     public class JsonSerializer : ISerializer
     {
-        #region フィールド
+        #region field
 
-        private readonly IFileContext _context;
-        
-        #endregion フィールド
+        private readonly IFileAccessContext context;
+
+        #endregion field
+
+        #region constructor
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public JsonSerializer(IFileContext context)
+        public JsonSerializer(IFileAccessContext context)
         {
-            _context = context;
+            this.context = context;
         }
 
-        #region メソッド
+        #endregion constructor
+
+        #region method
 
         /// <summary>
         /// データをファイルから読み出して指定クラスにデシリアライズ
@@ -50,13 +54,13 @@ namespace Mov.Accessors.Serializer.Implements
             return default;
         }
 
-        #endregion メソッド
+        #endregion method
 
-        #region 内部メソッド
+        #region private method
 
         private string ReadStream(string url)
         {
-            using (var stream = new StreamReader(Path.Combine(_context.FileUnit.Path, url), _context.Encoding))
+            using (var stream = new StreamReader(Path.Combine(this.context.FileParameter.FileUnit.Path, url), this.context.FileParameter.Encoding))
             {
                 if (stream != null)
                 {
@@ -73,7 +77,7 @@ namespace Mov.Accessors.Serializer.Implements
         /// <param name="isappend">追記モード（falseなら上書き保存）</param>
         private void WriteStream(string url, string json, bool isappend)
         {
-            using (var stream = new StreamWriter(Path.Combine(_context.FileUnit.Path, url), isappend, _context.Encoding))
+            using (var stream = new StreamWriter(Path.Combine(this.context.FileParameter.FileUnit.Path, url), isappend, this.context.FileParameter.Encoding))
             {
                 if (stream != null)
                 {
@@ -82,6 +86,6 @@ namespace Mov.Accessors.Serializer.Implements
             }
         }
 
-        #endregion 内部メソッド
+        #endregion private method
     }
 }

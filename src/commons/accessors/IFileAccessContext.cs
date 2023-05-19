@@ -1,4 +1,5 @@
-﻿using Mov.Schemas.Units;
+﻿using Mov.Accessors.Entities;
+using Mov.Schemas.Units;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -6,25 +7,20 @@ using System.Text;
 namespace Mov.Accessors
 {
     /// <summary>
-    /// ファイルのコンテキスト
+    /// ファイルアクセスの共通コンテキスト
     /// </summary>
-    public interface IFileContext
+    public interface IFileAccessContext
     {
-        #region プロパティ
+        #region property
 
         /// <summary>
-        /// ファイルパス
+        /// ファイルパラメータ
         /// </summary>
-        FileUnit FileUnit { get; }
+        FileParameter FileParameter { get; }
 
-        /// <summary>
-        /// エンコード
-        /// </summary>
-        Encoding Encoding { get; }
+        #endregion property
 
-        #endregion プロパティ
-
-        #region メソッド
+        #region method
 
         /// <summary>
         /// テキストファイルから読出
@@ -51,6 +47,6 @@ namespace Mov.Accessors
         /// <returns></returns>
         bool Clear();
 
-        #endregion メソッド
+        #endregion method
     }
 }

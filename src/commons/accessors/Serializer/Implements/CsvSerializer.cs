@@ -13,25 +13,25 @@ namespace Mov.Accessors.Serializer.Implements
     /// </summary>
     public class CsvSerializer : ISerializer
     {
-        #region フィールド
+        #region field
 
-        private readonly IFileContext _context;
+        private readonly IFileAccessContext context;
 
-        #endregion フィールド
+        #endregion field
 
-        #region コンストラクター
+        #region constructor
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public CsvSerializer(IFileContext context)
+        public CsvSerializer(IFileAccessContext context)
         {
-            _context = context;
+            this.context = context;
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region メソッド
+        #region method
 
         /// <summary>
         /// データをシリアライズしてファイルに書き込み
@@ -40,12 +40,12 @@ namespace Mov.Accessors.Serializer.Implements
         /// <param name="list"></param>
         public TResponse Post<TRequest, TResponse>(string url, TRequest list)
         {
-            var isExist = File.Exists(_context.FileUnit.Path);
+            var isExist = File.Exists(this.context.FileParameter.FileUnit.Path);
 
             var configuration = new CsvConfiguration(CultureInfo.CurrentCulture);
             configuration.HasHeaderRecord = true;
 
-            using (var sw = new StreamWriter(Path.Combine(_context.FileUnit.Path, url), true, _context.Encoding))
+            using (var sw = new StreamWriter(Path.Combine(this.context.FileParameter.FileUnit.Path, url), true, this.context.FileParameter.Encoding))
             {
                 using (var csv = new CsvWriter(sw, configuration))
                 {
@@ -72,7 +72,7 @@ namespace Mov.Accessors.Serializer.Implements
                 PrepareHeaderForMatch = args => args.Header.ToLower(),
             };
 
-            using (var sr = new StreamReader(Path.Combine(_context.FileUnit.Path, url), _context.Encoding))
+            using (var sr = new StreamReader(Path.Combine(this.context.FileParameter.FileUnit.Path, url), this.context.FileParameter.Encoding))
             {
                 using (var csv = new CsvReader(sr, configuration))
                 {
@@ -97,6 +97,6 @@ namespace Mov.Accessors.Serializer.Implements
             }
         }
 
-        #endregion メソッド
+        #endregion method
     }
 }

@@ -1,5 +1,6 @@
 ﻿using FluentFTP;
 using Mov.Accessors.Contexts;
+using Mov.Accessors.Entities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,21 +14,21 @@ namespace Mov.Accessors.Connectors.Implements.Filer
     {
         #region フィールド
 
-        private readonly IConnectContext _connectContext;
+        private readonly ConnectParameter connectParameter;
 
-        private readonly IFileContext _fileContext;
+        private readonly IFileAccessContext fileContext;
 
-        private readonly FtpClient _client;
+        private readonly FtpClient client;
 
         #endregion フィールド
 
         #region コンストラクター
 
-        public FtpConnector(IConnectContext connectContext, IFileContext fileContext)
+        public FtpConnector(ConnectParameter connectParameter, IFileAccessContext fileContext)
         {
-            _connectContext = connectContext;
-            _fileContext = fileContext;
-            _client = new FtpClient();
+            this.connectParameter = connectParameter;
+            this.fileContext = fileContext;
+            this.client = new FtpClient();
         }
 
         #endregion コンストラクター
@@ -38,34 +39,34 @@ namespace Mov.Accessors.Connectors.Implements.Filer
 
         public void Connect()
         {
-            if (_client.IsConnected) return;
-            _client.Host = _connectContext.Host.Value;
-            _client.Port = _connectContext.Port;
+            if (this.client.IsConnected) return;
+            this.client.Host = connectParameter.Host.Value;
+            this.client.Port = connectParameter.Port;
             // 資格情報の設定
-            _client.Credentials = new NetworkCredential(_connectContext.UserName, _connectContext.Password);
+            this.client.Credentials = new NetworkCredential(connectParameter.UserName, connectParameter.Password);
             // 要求の完了後に接続を閉じる
-            _client.SocketKeepAlive = false;
+            this.client.SocketKeepAlive = false;
             // Explicit設定
-            _client.EncryptionMode = FtpEncryptionMode.Explicit;
+            this.client.EncryptionMode = FtpEncryptionMode.Explicit;
             // プロトコルはTls
-            _client.SslProtocols = SslProtocols.Tls;
+            this.client.SslProtocols = SslProtocols.Tls;
             // 接続タイムアウトを5秒に設定
-            _client.ConnectTimeout = (int)_connectContext.Timeout;
+            this.client.ConnectTimeout = (int)connectParameter.Timeout;
             // 証明書の内容を確認しない
-            _client.ValidateCertificate += new FtpSslValidation(OnValidateCertificate);
+            this.client.ValidateCertificate += new FtpSslValidation(OnValidateCertificate);
         }
 
         public bool IsConnected()
         {
-            return _client.IsConnected;
+            return this.client.IsConnected;
         }
 
         public void Disconnect()
         {
             // 切断
-            _client.Disconnect();
+            this.client.Disconnect();
             // 解放
-            _client.Dispose();
+            this.client.Dispose();
         }
 
         #endregion IConnector
@@ -80,7 +81,7 @@ namespace Mov.Accessors.Connectors.Implements.Filer
                 // 接続
                 Connect();
                 // ファイルのアップロード
-                _client.UploadFile(Path.Combine(_fileContext.FileUnit.DirName, fileName), fileName);
+                this.client.UploadFile(Path.Combine(this.fileContext.FileParameter.FileUnit.DirName, fileName), fileName);
 
             }
             catch (Exception ex)

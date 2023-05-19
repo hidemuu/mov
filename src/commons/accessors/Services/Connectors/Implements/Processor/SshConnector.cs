@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace Mov.Accessors.Connectors.Implements.Processor
+namespace Mov.Accessors.Services.Connectors.Implements.Processor
 {
     public class SshConnector
     {

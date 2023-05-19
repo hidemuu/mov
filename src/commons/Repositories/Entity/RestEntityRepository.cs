@@ -1,6 +1,6 @@
 ﻿using Mov.Accessors;
 using Mov.Accessors.Contexts;
-using Mov.Accessors.Serializer.Implements;
+using Mov.Accessors.Services.Serializer.Implements;
 using Mov.Schemas.EntityObject;
 using System;
 using System.Collections.Generic;

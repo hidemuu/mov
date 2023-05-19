@@ -1,16 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Mov.Accessors.Entities;
+﻿using Mov.Accessors.Entities;
 using Mov.Loggers;
-using Mov.Schemas.Units;
 using System;
 using System.Data;
 using System.IO;
-using System.Text;
 
 namespace Mov.Accessors.Contexts
 {
     /// <inheritdoc/>
-    public class FileAccessContext : IFileAccessContext
+    public class FileAccessContext : IAccessContext
     {
         #region プロパティ
 
@@ -202,7 +199,6 @@ namespace Mov.Accessors.Contexts
                 Directory.Delete(path, true);
                 for (int i = 0; i < 50; i++)
                 {
-
                     if (Directory.Exists(path))
                     {
                         //削除対象が存在する場合

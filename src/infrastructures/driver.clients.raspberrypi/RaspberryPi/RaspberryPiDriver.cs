@@ -1,4 +1,4 @@
-﻿using Mov.Accessors.Connectors.Implements.Processor;
+﻿using Mov.Accessors.Services.Connectors.Implements.Processor;
 using System;
 using System.Collections.Generic;
 using System.Text;

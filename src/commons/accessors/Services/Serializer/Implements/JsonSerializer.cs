@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace Mov.Accessors.Serializer.Implements
+namespace Mov.Accessors.Services.Serializer.Implements
 {
     /// <summary>
     /// Jsonファイルのシリアライザー
@@ -11,7 +11,7 @@ namespace Mov.Accessors.Serializer.Implements
     {
         #region field
 
-        private readonly IFileAccessContext context;
+        private readonly IAccessContext context;
 
         #endregion field
 
@@ -20,7 +20,7 @@ namespace Mov.Accessors.Serializer.Implements
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public JsonSerializer(IFileAccessContext context)
+        public JsonSerializer(IAccessContext context)
         {
             this.context = context;
         }
@@ -60,7 +60,7 @@ namespace Mov.Accessors.Serializer.Implements
 
         private string ReadStream(string url)
         {
-            using (var stream = new StreamReader(Path.Combine(this.context.FileParameter.FileUnit.Path, url), this.context.FileParameter.Encoding))
+            using (var stream = new StreamReader(Path.Combine(context.FileParameter.FileUnit.Path, url), context.FileParameter.Encoding))
             {
                 if (stream != null)
                 {
@@ -77,7 +77,7 @@ namespace Mov.Accessors.Serializer.Implements
         /// <param name="isappend">追記モード（falseなら上書き保存）</param>
         private void WriteStream(string url, string json, bool isappend)
         {
-            using (var stream = new StreamWriter(Path.Combine(this.context.FileParameter.FileUnit.Path, url), isappend, this.context.FileParameter.Encoding))
+            using (var stream = new StreamWriter(Path.Combine(context.FileParameter.FileUnit.Path, url), isappend, context.FileParameter.Encoding))
             {
                 if (stream != null)
                 {

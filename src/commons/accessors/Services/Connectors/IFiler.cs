@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Accessors.Connectors
+namespace Mov.Accessors.Services.Connectors
 {
     /// <summary>
     /// ファイルアクセス処理

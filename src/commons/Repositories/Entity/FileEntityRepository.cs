@@ -1,5 +1,6 @@
 ﻿using Mov.Accessors;
-using Mov.Accessors.Serializer.Implements;
+using Mov.Accessors.Services.Serializer;
+using Mov.Accessors.Services.Serializer.Implements;
 using Mov.Schemas.EntityObject;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ namespace Mov.Controllers.Repository.Entity
         /// </summary>
         /// <param name="fileName"></param>
         /// <param name="encode"></param>
-        public FileEntityRepository(IFileAccessContext context)
+        public FileEntityRepository(IAccessContext context)
         {
             var extension = context.FileParameter.FileUnit.FileExtension;
             if (string.IsNullOrEmpty(extension)) Debug.Assert(false, "拡張子が含まれていません");

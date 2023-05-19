@@ -4,7 +4,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Accessors.Connectors.Implements.Processor
+namespace Mov.Accessors.Services.Connectors.Implements.Processor
 {
     public class SocketConnector
     {

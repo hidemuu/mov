@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Accessors
+namespace Mov.Accessors.Services.Serializer
 {
     /// <summary>
     /// シリアライザーのインターフェース

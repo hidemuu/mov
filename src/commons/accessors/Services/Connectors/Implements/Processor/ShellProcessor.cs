@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Accessors.Connectors.Implements.Processor
+namespace Mov.Accessors.Services.Connectors.Implements.Processor
 {
     /// <summary>
     /// シェルプロセスクラス
@@ -37,7 +37,7 @@ namespace Mov.Accessors.Connectors.Implements.Processor
             //Processオブジェクトの生成
             var psi = new System.Diagnostics.ProcessStartInfo();
             //プロセス起動
-            psi.FileName = this.processFileName;    //ファイル実行
+            psi.FileName = processFileName;    //ファイル実行
             //出力を許可する
             psi.RedirectStandardInput = false;
             psi.RedirectStandardOutput = true;      //出力の読み取りを許可
@@ -51,9 +51,9 @@ namespace Mov.Accessors.Connectors.Implements.Processor
             try
             {
                 //実行
-                this.process = System.Diagnostics.Process.Start(psi);
+                process = System.Diagnostics.Process.Start(psi);
                 //出力結果の取得
-                result = this.process.StandardOutput.ReadToEnd();
+                result = process.StandardOutput.ReadToEnd();
 
                 //出力された結果を表示
                 Console.WriteLine(result);
@@ -69,7 +69,7 @@ namespace Mov.Accessors.Connectors.Implements.Processor
 
         public void Stop()
         {
-            this.process.WaitForExit();
+            process.WaitForExit();
         }
 
         #endregion method

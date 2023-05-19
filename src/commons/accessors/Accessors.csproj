@@ -21,9 +21,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Connectors\Implements\Processor\TelnetSocket.cs">
+    <Compile Update="Services\Connectors\Implements\Processor\TelnetSocket.cs">
       <SubType>Component</SubType>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ValueObjects\" />
   </ItemGroup>
 
 </Project>

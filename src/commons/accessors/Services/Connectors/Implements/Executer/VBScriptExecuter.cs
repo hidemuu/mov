@@ -1,9 +1,9 @@
-﻿using Mov.Accessors.Connectors.Implements.Processor;
+﻿using Mov.Accessors.Services.Connectors.Implements.Processor;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Accessors.Connectors.Implements.Executer
+namespace Mov.Accessors.Services.Connectors.Implements.Executer
 {
     public class VBScriptExecuter : IExecuter
     {
@@ -20,7 +20,7 @@ namespace Mov.Accessors.Connectors.Implements.Executer
         public VBScriptExecuter(string filePath)
         {
             this.filePath = filePath;
-            this.processor = new ShellProcessor("WScript.exe");
+            processor = new ShellProcessor("WScript.exe");
         }
 
         #endregion constructor 
@@ -29,9 +29,9 @@ namespace Mov.Accessors.Connectors.Implements.Executer
 
         public void Run(string arg)
         {
-            arg = !string.IsNullOrEmpty(arg) ? (this.filePath + " " + arg) : this.filePath;
-            this.processor.Run(arg);
-            this.processor.Stop();
+            arg = !string.IsNullOrEmpty(arg) ? filePath + " " + arg : filePath;
+            processor.Run(arg);
+            processor.Stop();
         }
 
         #endregion method

@@ -2,7 +2,7 @@
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Accessors.Serializer.Implements
+namespace Mov.Accessors.Services.Serializer.Implements
 {
     /// <summary>
     /// XMLシリアライザー
@@ -11,7 +11,7 @@ namespace Mov.Accessors.Serializer.Implements
     {
         #region field
 
-        private readonly IFileAccessContext context;
+        private readonly IAccessContext context;
 
         #endregion field
 
@@ -21,7 +21,7 @@ namespace Mov.Accessors.Serializer.Implements
         /// コンストラクタ
         /// </summary>
         /// <param name="path">ファイルパス</param>
-        public XmlSerializer(IFileAccessContext context)
+        public XmlSerializer(IAccessContext context)
         {
             this.context = context;
         }
@@ -36,7 +36,7 @@ namespace Mov.Accessors.Serializer.Implements
         /// <returns></returns>
         public TResponse Get<TResponse>(string url)
         {
-            using (var stream = new StreamReader(Path.Combine(this.context.FileParameter.FileUnit.Path, url)))
+            using (var stream = new StreamReader(Path.Combine(context.FileParameter.FileUnit.Path, url)))
             {
                 var serializer = new System.Xml.Serialization.XmlSerializer(typeof(TResponse));
                 return (TResponse)serializer.Deserialize(stream);
@@ -49,7 +49,7 @@ namespace Mov.Accessors.Serializer.Implements
         /// <param name="obj"></param>
         public TResponse Post<TRequest, TResponse>(string url, TRequest obj)
         {
-            using (var stream = new StreamWriter(Path.Combine(this.context.FileParameter.FileUnit.Path, url), false, this.context.FileParameter.Encoding))
+            using (var stream = new StreamWriter(Path.Combine(context.FileParameter.FileUnit.Path, url), false, context.FileParameter.Encoding))
             {
                 System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(TRequest));
                 serializer.Serialize(stream, obj);

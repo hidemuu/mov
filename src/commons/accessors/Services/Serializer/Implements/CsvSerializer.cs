@@ -6,7 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 
-namespace Mov.Accessors.Serializer.Implements
+namespace Mov.Accessors.Services.Serializer.Implements
 {
     /// <summary>
     /// CSVシリアライザー
@@ -15,7 +15,7 @@ namespace Mov.Accessors.Serializer.Implements
     {
         #region field
 
-        private readonly IFileAccessContext context;
+        private readonly IAccessContext context;
 
         #endregion field
 
@@ -24,7 +24,7 @@ namespace Mov.Accessors.Serializer.Implements
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public CsvSerializer(IFileAccessContext context)
+        public CsvSerializer(IAccessContext context)
         {
             this.context = context;
         }
@@ -40,12 +40,12 @@ namespace Mov.Accessors.Serializer.Implements
         /// <param name="list"></param>
         public TResponse Post<TRequest, TResponse>(string url, TRequest list)
         {
-            var isExist = File.Exists(this.context.FileParameter.FileUnit.Path);
+            var isExist = File.Exists(context.FileParameter.FileUnit.Path);
 
             var configuration = new CsvConfiguration(CultureInfo.CurrentCulture);
             configuration.HasHeaderRecord = true;
 
-            using (var sw = new StreamWriter(Path.Combine(this.context.FileParameter.FileUnit.Path, url), true, this.context.FileParameter.Encoding))
+            using (var sw = new StreamWriter(Path.Combine(context.FileParameter.FileUnit.Path, url), true, context.FileParameter.Encoding))
             {
                 using (var csv = new CsvWriter(sw, configuration))
                 {
@@ -72,7 +72,7 @@ namespace Mov.Accessors.Serializer.Implements
                 PrepareHeaderForMatch = args => args.Header.ToLower(),
             };
 
-            using (var sr = new StreamReader(Path.Combine(this.context.FileParameter.FileUnit.Path, url), this.context.FileParameter.Encoding))
+            using (var sr = new StreamReader(Path.Combine(context.FileParameter.FileUnit.Path, url), context.FileParameter.Encoding))
             {
                 using (var csv = new CsvReader(sr, configuration))
                 {

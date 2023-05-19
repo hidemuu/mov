@@ -7,9 +7,9 @@ using System.Text;
 namespace Mov.Accessors
 {
     /// <summary>
-    /// ファイルアクセスの共通コンテキスト
+    /// アクセスの共通コンテキスト
     /// </summary>
-    public interface IFileAccessContext
+    public interface IAccessContext
     {
         #region property
 

@@ -1,6 +1,7 @@
 using Moq;
 using Mov.Authorizers;
-using Mov.Authorizers.Accounts;
+using Mov.Authorizers.Models.Entities;
+using Mov.Authorizers.Services;
 using NUnit.Framework;
 
 namespace Mov.Commons.Test.Autholizers

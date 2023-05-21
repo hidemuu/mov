@@ -1,5 +1,4 @@
-﻿using Mov.Calculators;
-using Mov.Game.Models;
+﻿using Mov.Game.Models;
 using Mov.Painters;
 using Mov.Schemas.Elements.Learnings;
 using Mov.Utilities;

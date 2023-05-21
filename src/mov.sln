@@ -131,6 +131,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorizers", "commons\Auth
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Errors", "commons\Errors\Errors.csproj", "{B11095DD-BC19-4BA2-B9BD-DF0B9BCC11D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Localizers", "commons\Localizers\Localizers.csproj", "{8C2A4C1F-30CC-467E-9C85-E8962B339DA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -369,6 +371,10 @@ Global
 		{B11095DD-BC19-4BA2-B9BD-DF0B9BCC11D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B11095DD-BC19-4BA2-B9BD-DF0B9BCC11D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B11095DD-BC19-4BA2-B9BD-DF0B9BCC11D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C2A4C1F-30CC-467E-9C85-E8962B339DA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C2A4C1F-30CC-467E-9C85-E8962B339DA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C2A4C1F-30CC-467E-9C85-E8962B339DA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C2A4C1F-30CC-467E-9C85-E8962B339DA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -432,6 +438,7 @@ Global
 		{18E500C7-27F5-4D1E-A1BC-DD69426A9D7D} = {8CBFA0B4-BE09-414D-97EC-169FB8244143}
 		{8FD27597-91F2-4DDA-B28C-6BAA5375A6DA} = {8CBFA0B4-BE09-414D-97EC-169FB8244143}
 		{B11095DD-BC19-4BA2-B9BD-DF0B9BCC11D5} = {8CBFA0B4-BE09-414D-97EC-169FB8244143}
+		{8C2A4C1F-30CC-467E-9C85-E8962B339DA8} = {8CBFA0B4-BE09-414D-97EC-169FB8244143}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD9C3231-BF2C-413C-B738-70985D9981AE}

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Authorizers.Accounts
+namespace Mov.Authorizers.Services
 {
     public class AccountService : IAccountService
     {

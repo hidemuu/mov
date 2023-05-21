@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Authorizers
+namespace Mov.Authorizers.Models.Entities
 {
     public class PlatinumRewardCard : IRewardCard
     {
@@ -14,8 +14,8 @@ namespace Mov.Authorizers
         public void CalculatePoints(decimal transactionAmount, decimal accountBalance)
         {
             Point += Math.Max((int)decimal.Ceiling(
-                (accountBalance / BALANCE_COST_PER_POINT) + 
-                (transactionAmount / TRANSACTION_COST_PER_POINT)), 0);
+                accountBalance / BALANCE_COST_PER_POINT +
+                transactionAmount / TRANSACTION_COST_PER_POINT), 0);
         }
     }
 }

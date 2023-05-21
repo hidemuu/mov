@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Authorizers
+namespace Mov.Authorizers.Models
 {
     public interface IRewardCard
     {

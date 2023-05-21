@@ -1,9 +1,6 @@
-﻿using MathNet.Numerics.LinearAlgebra.Double;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
-namespace Mov.Calculators
+namespace Mov.Unitities.Calculators
 {
     /// <summary>
     /// 行列計算
@@ -28,7 +25,6 @@ namespace Mov.Calculators
             }
 
             return result;
-
         }
 
         /// <summary>
@@ -39,7 +35,6 @@ namespace Mov.Calculators
         /// <returns></returns>
         public static double[,] MatrixTimesMatrix(double[,] data1, double[,] data2)
         {
-
             double[,] result = new double[data1.GetLength(0), data2.GetLength(1)];
 
             for (int i = 0; i < data1.GetLength(0); i++)
@@ -54,7 +49,6 @@ namespace Mov.Calculators
             }
 
             return result;
-
         }
 
         /// <summary>
@@ -64,7 +58,6 @@ namespace Mov.Calculators
         /// <returns></returns>
         public static double[,] Inverse(double[,] data)
         {
-
             int n = data.GetLength(0);
             int m = data.GetLength(1);
 
@@ -72,7 +65,6 @@ namespace Mov.Calculators
 
             if (n == m)
             {
-
                 int max;
                 double tmp;
 
@@ -130,9 +122,7 @@ namespace Mov.Calculators
                             }
                         }
                     }
-
                 }
-
 
                 //逆行列が計算できなかった時の措置
                 for (int j = 0; j < n; j++)
@@ -154,7 +144,6 @@ namespace Mov.Calculators
                 Console.WriteLine("Error : It is not a square matrix");
                 return inv;
             }
-
         }
     }
 }

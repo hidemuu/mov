@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Accessors.Entities
+namespace Mov.Accessors.Models.Entities
 {
     public sealed class ConnectParameter
     {
@@ -30,11 +30,11 @@ namespace Mov.Accessors.Entities
 
         public ConnectParameter(string ip, int port, string userName, string password, double timeout)
         {
-            this.Host = new IpAddressUnit(ip);
-            this.Port = port;
-            this.UserName = userName;
-            this.Password = password;
-            this.Timeout = timeout;
+            Host = new IpAddressUnit(ip);
+            Port = port;
+            UserName = userName;
+            Password = password;
+            Timeout = timeout;
         }
 
         #endregion constructor

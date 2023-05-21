@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Authorizers
+namespace Mov.Authorizers.Services
 {
     public class AccountController
     {
@@ -15,7 +15,7 @@ namespace Mov.Authorizers
 
         public void AddTransaction()
         {
-            
+
         }
     }
 }

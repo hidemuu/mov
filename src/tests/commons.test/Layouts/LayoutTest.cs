@@ -1,6 +1,4 @@
 ﻿using Moq;
-using Mov.Authorizers.Accounts;
-using Mov.Authorizers;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;

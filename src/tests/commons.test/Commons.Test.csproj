@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\commons\Authorizers\Authorizers.csproj" />
     <ProjectReference Include="..\..\commons\controllers\Controllers.csproj" />
   </ItemGroup>
 

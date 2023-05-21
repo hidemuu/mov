@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Accessors.ValueObjects
+namespace Mov.Accessors.Models.ValueObjects
 {
     public sealed class Host : ValueObjectBase<Host>
     {

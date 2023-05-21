@@ -1,6 +1,6 @@
 ﻿using FluentFTP;
 using Mov.Accessors.Contexts;
-using Mov.Accessors.Entities;
+using Mov.Accessors.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.IO;

@@ -1,4 +1,4 @@
-﻿using Mov.Accessors.Entities;
+﻿using Mov.Accessors.Models.Entities;
 using Mov.Loggers;
 using System;
 using System.Data;

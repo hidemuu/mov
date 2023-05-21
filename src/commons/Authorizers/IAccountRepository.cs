@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Authorizers.Models.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 

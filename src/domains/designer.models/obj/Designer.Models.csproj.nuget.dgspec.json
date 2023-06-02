@@ -97,12 +97,12 @@
         }
       }
     },
-    "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\Commands\\Commands.csproj": {
+    "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\Commands\\Stores.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\Commands\\Commands.csproj",
-        "projectName": "Mov.Commands",
-        "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\Commands\\Commands.csproj",
+        "projectUniqueName": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\Commands\\Stores.csproj",
+        "projectName": "Mov.Stores",
+        "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\Commands\\Stores.csproj",
         "packagesPath": "C:\\Users\\nando\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\Commands\\obj\\",
         "projectStyle": "PackageReference",
@@ -195,9 +195,6 @@
             "projectReferences": {
               "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\accessors\\Accessors.csproj": {
                 "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\accessors\\Accessors.csproj"
-              },
-              "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\Commands\\Commands.csproj": {
-                "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\Commands\\Commands.csproj"
               },
               "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\Repositories\\Repositories.csproj": {
                 "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\Repositories\\Repositories.csproj"
@@ -358,8 +355,8 @@
               "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\accessors\\Accessors.csproj": {
                 "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\accessors\\Accessors.csproj"
               },
-              "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\Commands\\Commands.csproj": {
-                "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\Commands\\Commands.csproj"
+              "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\Commands\\Stores.csproj": {
+                "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\Commands\\Stores.csproj"
               },
               "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\schemas\\Schemas.csproj": {
                 "projectPath": "C:\\Users\\nando\\OneDrive\\ドキュメント\\GitHub\\mov\\src\\commons\\schemas\\Schemas.csproj"

@@ -52,11 +52,11 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.se
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\NLog.config
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\FodyWeavers.xml
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\FodyWeavers.xsd
-C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Commands.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Repositories.dll
-C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Commands.pdb
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Repositories.pdb
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Shields.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Shields.pdb
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Graphicers.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Graphicers.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Stores.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\drawer.service\bin\Debug\netstandard2.0\Mov.Stores.pdb

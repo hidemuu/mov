@@ -119,7 +119,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "commons\Rep
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurator.Test", "tests\Configurator.Test\Configurator.Test.csproj", "{95839191-89E9-4B22-BF28-0D6424CD2B92}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commands", "commons\Commands\Commands.csproj", "{C9101C1D-4696-4606-A645-7E8291597CA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commands", "commons\Commands\Stores.csproj", "{C9101C1D-4696-4606-A645-7E8291597CA7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shields", "commons\Shields\Shields.csproj", "{FE9284EA-9E63-4284-87C7-41C622329153}"
 EndProject

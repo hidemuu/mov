@@ -969,19 +969,6 @@
           "bin/placeholder/Mov.Accessors.dll": {}
         }
       },
-      "Mov.Commands/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Mov.Schemas": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Mov.Commands.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Mov.Commands.dll": {}
-        }
-      },
       "Mov.Controllers/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -989,7 +976,6 @@
           "MathNet.Numerics": "5.0.0",
           "MethodBoundaryAspect.Fody": "2.0.148",
           "Mov.Accessors": "1.0.0",
-          "Mov.Commands": "1.0.0",
           "Mov.Repositories": "1.0.0",
           "Mov.Schemas": "1.0.0",
           "Mov.Shields": "1.0.0",
@@ -1062,8 +1048,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Mov.Accessors": "1.0.0",
-          "Mov.Commands": "1.0.0",
-          "Mov.Schemas": "1.0.0"
+          "Mov.Schemas": "1.0.0",
+          "Mov.Stores": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Mov.Repositories.dll": {}
@@ -1098,6 +1084,19 @@
         },
         "runtime": {
           "bin/placeholder/Mov.Shields.dll": {}
+        }
+      },
+      "Mov.Stores/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Schemas": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mov.Stores.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mov.Stores.dll": {}
         }
       },
       "Mov.Utilities/1.0.0": {
@@ -3737,11 +3736,6 @@
       "path": "../../commons/accessors/Accessors.csproj",
       "msbuildProject": "../../commons/accessors/Accessors.csproj"
     },
-    "Mov.Commands/1.0.0": {
-      "type": "project",
-      "path": "../../commons/Commands/Commands.csproj",
-      "msbuildProject": "../../commons/Commands/Commands.csproj"
-    },
     "Mov.Controllers/1.0.0": {
       "type": "project",
       "path": "../../commons/controllers/Controllers.csproj",
@@ -3781,6 +3775,11 @@
       "type": "project",
       "path": "../../commons/Shields/Shields.csproj",
       "msbuildProject": "../../commons/Shields/Shields.csproj"
+    },
+    "Mov.Stores/1.0.0": {
+      "type": "project",
+      "path": "../../commons/Commands/Stores.csproj",
+      "msbuildProject": "../../commons/Commands/Stores.csproj"
     },
     "Mov.Utilities/1.0.0": {
       "type": "project",

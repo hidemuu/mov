@@ -51,9 +51,7 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.se
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Driver.Service.csproj.CopyComplete
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Mov.Driver.Service.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\obj\Debug\netstandard2.0\Mov.Driver.Service.pdb
-C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Commands.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Repositories.dll
-C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Commands.pdb
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Repositories.pdb
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Shields.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Shields.pdb
@@ -62,3 +60,5 @@ C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.se
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\FodyWeavers.xsd
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Loggers.dll
 C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Loggers.pdb
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Stores.dll
+C:\Users\nando\OneDrive\ドキュメント\GitHub\mov\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Stores.pdb

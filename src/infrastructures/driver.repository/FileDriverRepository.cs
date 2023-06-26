@@ -1,11 +1,9 @@
-﻿using Mov.Accessors;
-using Mov.Accessors.Repository.Implement;
-using Mov.Driver.Models;
+﻿using Mov.Driver.Models;
 using Mov.Driver.Models.Entities.Schemas;
-using Mov.Schemas.EntityObjects.DbObjects;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Mov.Repositories.Services;
+using Mov.Repositories.Services.Repositories.DbObjects;
+using Mov.Repositories.Services.Repositories.Domains;
+using Mov.Utilities;
 
 namespace Mov.Driver.Repository
 {
@@ -19,7 +17,7 @@ namespace Mov.Driver.Repository
         /// コンストラクター
         /// </summary>
         /// <param name="encoding"></param>
-        public FileDriverRepository(string endpoint, string fileDir, string extension, string encoding = AccessConstants.ENCODE_NAME_UTF8) 
+        public FileDriverRepository(string endpoint, string fileDir, string extension, string encoding = UtilityConstants.ENCODE_NAME_UTF8)
             : base(endpoint, fileDir, extension, encoding)
         {
             Commands = new FileDbObjectRepository<Command, CommandCollection>(GetPath("command"), encoding);
@@ -43,6 +41,6 @@ namespace Mov.Driver.Repository
 
         public IDbObjectRepository<Connect, ConnectCollection> Connects { get; }
 
-        #endregion
+        #endregion プロパティ
     }
 }

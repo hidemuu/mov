@@ -1,8 +1,5 @@
-﻿using Mov.Schemas.EntityObjects.DbObjects;
+﻿using Mov.Repositories.Models.EntityObjects.DbObjects;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace Mov.Driver.Models.Entities.Schemas
@@ -18,6 +15,7 @@ namespace Mov.Driver.Models.Entities.Schemas
         [XmlElement(Type = typeof(Query), ElementName = "query")]
         public override Query[] Items { get; set; }
     }
+
     /// <summary>
     /// クエリ
     /// </summary>

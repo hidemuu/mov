@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -8,6 +8,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\domains\driver.clients\Driver.Clients.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Accessors">
+      <HintPath>..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Accessors.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,5 @@
-﻿using Mov.Schemas.EntityObjects.DbObjects;
+﻿using Mov.Repositories.Models.EntityObjects.DbObjects;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace Mov.Driver.Models.Entities.Schemas
@@ -31,12 +28,14 @@ namespace Mov.Driver.Models.Entities.Schemas
         [JsonProperty("ip_address")]
         [XmlElement("ip_address")]
         public string IpAddress { get; set; } = string.Empty;
+
         /// <summary>
         /// ポート番号
         /// </summary>
         [JsonProperty("port")]
         [XmlElement("port")]
         public int Port { get; set; } = 0;
+
         /// <summary>
         /// パスワード
         /// </summary>

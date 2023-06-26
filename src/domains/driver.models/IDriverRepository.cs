@@ -1,9 +1,5 @@
-﻿using Mov.Accessors.Repository.Domain;
-using Mov.Driver.Models.Entities.Schemas;
-using Mov.Schemas.EntityObjects.DbObjects;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Driver.Models.Entities.Schemas;
+using Mov.Repositories.Services;
 
 namespace Mov.Driver.Models
 {

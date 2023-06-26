@@ -1,13 +1,9 @@
-﻿using Mov.Controllers.Repository.Entity;
-using Mov.Driver.Clients;
-using Mov.Driver.Clients.Resas;
+﻿using Mov.Driver.Clients.Resas;
 using Mov.Driver.Clients.Resas.Entities;
 using Mov.Driver.Clients.Resas.Entities.Results;
-using Mov.Schemas.EntityObject;
-using System;
-using System.Collections.Generic;
+using Mov.Repositories.Services;
+using Mov.Repositories.Services.Repositories.Entities;
 using System.IO;
-using System.Text;
 
 namespace Driver.Clients.Resas
 {
@@ -31,6 +27,5 @@ namespace Driver.Clients.Resas
 
         public IEntityRepositoryAsync<ResasResponse<City>> Cities =>
             new RestEntityRepository<ResasResponse<City>>(Path.Combine(endpoint, City.URI), auth);
-
     }
 }

@@ -1,9 +1,6 @@
-﻿using Mov.Driver.Clients.Resas.Entities.Results;
-using Mov.Driver.Clients.Resas.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Mov.Controllers.Repository.Persistences;
+﻿using Mov.Driver.Clients.Resas.Entities;
+using Mov.Driver.Clients.Resas.Entities.Results;
+using Mov.Repositories.Services.Cruds;
 
 namespace Mov.Driver.Clients.Resas
 {

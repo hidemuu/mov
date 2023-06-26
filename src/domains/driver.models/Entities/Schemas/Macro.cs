@@ -1,10 +1,7 @@
-﻿using Mov.Schemas.EntityObjects.DbObjects;
+﻿using Mov.Repositories.Models.EntityObjects.DbObjects;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace Mov.Driver.Models.Entities.Schemas

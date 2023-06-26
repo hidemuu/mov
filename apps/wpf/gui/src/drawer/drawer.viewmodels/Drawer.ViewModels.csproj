@@ -24,10 +24,10 @@
       <HintPath>..\..\..\..\..\..\frameworks\src\drawer\drawer.service\bin\Debug\netstandard2.0\Mov.Drawer.Service.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Graphicers">
-      <HintPath>..\..\..\..\..\..\frameworks\src\drawer\drawer.service\bin\Debug\netstandard2.0\Mov.Graphicers.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Graphicers.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Repositories">
-      <HintPath>..\..\..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Repositories.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Repositories.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfMvvms">
       <HintPath>..\..\..\..\commons\src\wpfviewmodels\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>

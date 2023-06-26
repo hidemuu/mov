@@ -23,7 +23,7 @@
       <HintPath>..\..\..\..\..\..\frameworks\src\configurator\Configurator.Service\bin\Debug\netstandard2.0\Mov.Configurator.Service.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Repositories">
-      <HintPath>..\..\..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Repositories.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Repositories.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfModels">
       <HintPath>..\..\..\..\commons\src\wpfviewmodels\bin\Debug\net7.0-windows\Mov.WpfModels.dll</HintPath>

@@ -24,7 +24,7 @@
       <HintPath>..\..\..\..\..\..\frameworks\src\designer\designer.service\bin\Debug\netstandard2.0\Mov.Designer.Models.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Layouts">
-      <HintPath>..\..\..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Layouts.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Layouts.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfMvvms">
       <HintPath>..\..\..\..\commons\src\wpfviewmodels\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>

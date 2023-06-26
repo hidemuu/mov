@@ -19,7 +19,7 @@
       <HintPath>..\..\..\..\..\..\frameworks\src\driver\driver.service\bin\Debug\netstandard2.0\Mov.Driver.Service.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Repositories">
-      <HintPath>..\..\..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Repositories.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Repositories.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfMvvms">
       <HintPath>..\..\..\..\commons\src\wpfviewmodels\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>

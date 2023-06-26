@@ -24,7 +24,7 @@
 
   <ItemGroup>
     <Reference Include="Mov.Layouts">
-      <HintPath>..\..\..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Layouts.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Layouts.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfControls">
       <HintPath>..\..\..\..\commons\src\wpfviews\bin\Debug\net7.0-windows\Mov.WpfControls.dll</HintPath>

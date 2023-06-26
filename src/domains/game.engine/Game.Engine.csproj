@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\commons\loggers\Loggers.csproj" />
     <ProjectReference Include="..\game.models\Game.Models.csproj" />
   </ItemGroup>
 

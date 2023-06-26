@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\commons\loggers\Loggers.csproj" />
     <ProjectReference Include="..\analizer.engine\Analizer.Engine.csproj" />
     <ProjectReference Include="..\bom.engine\Bom.Engine.csproj" />
     <ProjectReference Include="..\designer.engine\Designer.Engine.csproj" />

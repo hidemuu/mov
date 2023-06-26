@@ -11,8 +11,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\commons\painters\Graphicers.csproj" />
     <ProjectReference Include="..\..\domains\drawer.engine\Drawer.Engine.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Graphicers">
+      <HintPath>..\..\..\commons\graphicers\bin\Debug\netstandard2.0\Mov.Graphicers.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

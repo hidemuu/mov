@@ -6,9 +6,4 @@
     <RootNamespace>Mov.Game.Models</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\commons\controllers\Controllers.csproj" />
-    <ProjectReference Include="..\..\commons\painters\Graphicers.csproj" />
-  </ItemGroup>
-
 </Project>

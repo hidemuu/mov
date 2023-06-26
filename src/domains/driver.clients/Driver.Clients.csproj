@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\commons\controllers\Controllers.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Amr\" />
     <Folder Include="Cnc\" />
     <Folder Include="ImageProcessing\" />

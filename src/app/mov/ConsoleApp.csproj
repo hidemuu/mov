@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\applications\usecases\UseCases.csproj" />
-    <ProjectReference Include="..\..\commons\loggers\Loggers.csproj" />
   </ItemGroup>
 
 </Project>

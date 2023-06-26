@@ -6,8 +6,4 @@
     <RootNamespace>Mov.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\controllers\Controllers.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -20,4 +20,9 @@
     <PackageReference Include="coverlet.collector" Version="3.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\authorizers\Authorizers.csproj" />
+    <ProjectReference Include="..\schemas\Schemas.csproj" />
+  </ItemGroup>
+
 </Project>

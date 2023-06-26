@@ -12,8 +12,4 @@
     <None Remove="Sequences\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\commons\controllers\Controllers.csproj" />
-  </ItemGroup>
-
 </Project>

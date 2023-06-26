@@ -1,24 +1,12 @@
-﻿using Mov.Accessors.Repository;
-using Mov.Drawer.Models;
-using Mov.Drawer.Service;
+﻿using Mov.Drawer.Models;
 using Mov.Drawer.Service.Canvas;
-using Mov.Painters;
-using Prism.Mvvm;
+using Mov.Graphicers.Services;
+using Mov.Repositories.Services;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using System.Reactive.Concurrency;
-using System.Reactive.Disposables;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media.Imaging;
 
 namespace Mov.Drawer.ViewModels
 {
@@ -27,13 +15,13 @@ namespace Mov.Drawer.ViewModels
         #region フィールド
 
         private CanvasServiceFactory serviceFactory;
-        
+
         #endregion フィールド
 
         #region プロパティ
 
         public override DrawModel Model { get; } = new DrawModel();
-        
+
         protected override GraphicControllerBase Service { get; set; }
 
         public ReactiveCollection<string> Canvases { get; } = new ReactiveCollection<string>();
@@ -110,9 +98,6 @@ namespace Mov.Drawer.ViewModels
             Service.RefleshTime = RefleshRate.Value;
         }
 
-
         #endregion イベントハンドラ
-
-
     }
 }

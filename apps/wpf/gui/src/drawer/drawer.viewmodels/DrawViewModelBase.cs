@@ -1,22 +1,15 @@
-﻿using Mov.Accessors.Repository;
-using Mov.Drawer.Models;
-using Mov.Drawer.Service;
-using Mov.Painters;
+﻿using Mov.Drawer.Models;
+using Mov.Graphicers.Services;
+using Mov.Repositories.Services;
 using Mov.WpfMvvms;
-using Prism.Mvvm;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Reactive.Concurrency;
-using System.Reactive.Disposables;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
@@ -64,12 +57,10 @@ namespace Mov.Drawer.ViewModels
         /// <inheritdoc/>
         protected virtual void Update()
         {
-
         }
 
         protected virtual void Next()
         {
-
         }
 
         protected void Start()

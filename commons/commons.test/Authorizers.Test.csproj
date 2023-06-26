@@ -22,7 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\authorizers\Authorizers.csproj" />
-    <ProjectReference Include="..\schemas\Schemas.csproj" />
+    <ProjectReference Include="..\schemas\Elements.csproj" />
   </ItemGroup>
 
 </Project>

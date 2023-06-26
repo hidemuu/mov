@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
 using Mov.Commons.Test.Layouts.Builders;
-using Mov.Layouts.Contexts;
-using Mov.Schemas.Layouts.Styles;
+using Mov.Layouts.Models.Styles;
+using Mov.Layouts.Models.Entities;
 
 namespace Mov.Commons.Test.Layouts
 {

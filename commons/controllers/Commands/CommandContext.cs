@@ -1,5 +1,5 @@
 ﻿using Mov.Controllers.Commands;
-using Mov.Schemas.Elements.Structures;
+using Mov.Schemas.Structures;
 using System;
 using System.Collections.Generic;
 using System.Text;

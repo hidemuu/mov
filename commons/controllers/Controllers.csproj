@@ -15,7 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\accessors\Accessors.csproj" />
     <ProjectReference Include="..\Repositories\Repositories.csproj" />
-    <ProjectReference Include="..\schemas\Schemas.csproj" />
+    <ProjectReference Include="..\schemas\Elements.csproj" />
     <ProjectReference Include="..\Shields\Shields.csproj" />
   </ItemGroup>
 

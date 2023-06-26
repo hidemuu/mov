@@ -12,6 +12,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\loggers\Loggers.csproj" />
+    <ProjectReference Include="..\utilities\Utilities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Contexts\" />
   </ItemGroup>
 
 </Project>

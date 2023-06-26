@@ -2,24 +2,29 @@
 using Mov.Layouts;
 using Mov.Layouts.Models.Entities;
 using Mov.Layouts.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mov.Commons.Test.Layouts.Builders
 {
     internal class LayoutEngineBuilder
     {
+        #region field
+
         private readonly ILayoutEngine engine;
         private readonly Mock<ILayoutContext> mockContext;
+
+        #endregion field
+
+        #region constructor
 
         internal LayoutEngineBuilder()
         {
             this.mockContext = new Mock<ILayoutContext>();
             this.engine = new LayoutEngine(mockContext.Object);
         }
+
+        #endregion constructor
+
+        #region method
 
         public LayoutEngineBuilder WithNodeCalled(IEnumerable<LayoutNode> nodes)
         {
@@ -47,5 +52,6 @@ namespace Mov.Commons.Test.Layouts.Builders
 
         public ILayoutEngine Build() => this.engine;
 
+        #endregion method
     }
 }

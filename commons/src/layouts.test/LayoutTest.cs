@@ -1,26 +1,25 @@
-﻿using NUnit.Framework;
-using System.Collections.Generic;
-using System.Linq;
-using System.Diagnostics;
-using Mov.Commons.Test.Layouts.Builders;
-using Mov.Layouts.Models.Styles;
+﻿using Mov.Commons.Test.Layouts.Builders;
 using Mov.Layouts.Models.Entities;
+using Mov.Layouts.Models.Styles;
+using System.Diagnostics;
 
 namespace Mov.Commons.Test.Layouts
 {
     public class LayoutTest
     {
-        #region 定数
+        #region constant
 
         private const string TEST_NAME = "LayoutTest";
 
-        #endregion 定数
+        #endregion constant
 
-        #region フィールド
+        #region field
 
         private LayoutEngineBuilder builder;
 
-        #endregion フィールド
+        #endregion field
+
+        #region setup
 
         [OneTimeSetUp]
         public void ClassInitialize()
@@ -32,7 +31,6 @@ namespace Mov.Commons.Test.Layouts
         [SetUp]
         public void Setup()
         {
-
             Trace.WriteLine(string.Join(' ', TEST_NAME, "TestInitialize"));
         }
 
@@ -47,6 +45,10 @@ namespace Mov.Commons.Test.Layouts
         {
             Trace.WriteLine(string.Join(' ', TEST_NAME, "ClassCleanup"));
         }
+
+        #endregion setup
+
+        #region test
 
         [Test]
         public void GetCenterRegionNode()
@@ -63,5 +65,6 @@ namespace Mov.Commons.Test.Layouts
             //Assert.AreEqual(0, node.Children.Count);
         }
 
+        #endregion test
     }
 }

@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Localizers\Localizers.csproj" />
     <ProjectReference Include="..\utilities\Utilities.csproj" />
   </ItemGroup>
 

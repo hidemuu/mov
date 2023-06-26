@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -17,7 +17,6 @@
   <ItemGroup>
     <ProjectReference Include="..\loggers\Loggers.csproj" />
     <ProjectReference Include="..\schemas\Schemas.csproj" />
-    <ProjectReference Include="..\utilities\Utilities.csproj" />
   </ItemGroup>
 
   <ItemGroup>

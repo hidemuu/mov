@@ -119,19 +119,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "commons\Rep
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurator.Test", "tests\Configurator.Test\Configurator.Test.csproj", "{95839191-89E9-4B22-BF28-0D6424CD2B92}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commands", "commons\Commands\Stores.csproj", "{C9101C1D-4696-4606-A645-7E8291597CA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stores", "commons\Commands\Stores.csproj", "{C9101C1D-4696-4606-A645-7E8291597CA7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shields", "commons\Shields\Shields.csproj", "{FE9284EA-9E63-4284-87C7-41C622329153}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Queues", "commons\Queues\Queues.csproj", "{5BCA855C-1F80-43EB-BEBC-46BB04A3337A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Robots", "commons\Queues\Robots.csproj", "{5BCA855C-1F80-43EB-BEBC-46BB04A3337A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Layouts", "commons\Layouts\Layouts.csproj", "{18E500C7-27F5-4D1E-A1BC-DD69426A9D7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Layouts", "commons\Layouts\Layouts.csproj", "{18E500C7-27F5-4D1E-A1BC-DD69426A9D7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorizers", "commons\Authorizers\Authorizers.csproj", "{8FD27597-91F2-4DDA-B28C-6BAA5375A6DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authorizers", "commons\Authorizers\Authorizers.csproj", "{8FD27597-91F2-4DDA-B28C-6BAA5375A6DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Errors", "commons\Errors\Errors.csproj", "{B11095DD-BC19-4BA2-B9BD-DF0B9BCC11D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Errors", "commons\Errors\Errors.csproj", "{B11095DD-BC19-4BA2-B9BD-DF0B9BCC11D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Localizers", "commons\Localizers\Localizers.csproj", "{8C2A4C1F-30CC-467E-9C85-E8962B339DA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Localizers", "commons\Localizers\Localizers.csproj", "{8C2A4C1F-30CC-467E-9C85-E8962B339DA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

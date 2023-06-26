@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\utilities\Utilities.csproj" />
+    <Folder Include="Models\ValueObjects\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\ValueObjects\" />
+    <ProjectReference Include="..\utilities\Utilities.csproj" />
   </ItemGroup>
 
 </Project>

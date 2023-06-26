@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Controllers.Job
+namespace Mov.Errors
 {
     /// <summary>
     /// エラー１点分の情報
@@ -72,9 +72,14 @@ namespace Mov.Controllers.Job
         /// </summary>
         public string Info { get; set; } = "";
         /// <summary>
-        /// 発生ステーションコード
+        /// 解除可否
         /// </summary>
-        public string RestoreInfo { get; set; } = "";
+        public bool Clearable { get; set; } = true;
+
+        /// <summary>
+        /// 内容説明
+        /// </summary>
+        public string Description { get; set; } = string.Empty;
         /// <summary>
         /// 登録日時
         /// </summary>

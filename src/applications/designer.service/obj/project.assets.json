@@ -949,6 +949,19 @@
           }
         }
       },
+      "Localizers/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Mov.Utilities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Localizers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Localizers.dll": {}
+        }
+      },
       "Mov.Accessors/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -958,7 +971,6 @@
           "Microsoft.EntityFrameworkCore": "3.1.17",
           "Mov.Loggers": "1.0.0",
           "Mov.Schemas": "1.0.0",
-          "Mov.Utilities": "1.0.0",
           "Newtonsoft.Json": "13.0.1",
           "SSH.NET": "2020.0.2"
         },
@@ -1051,6 +1063,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Autofac": "6.5.0",
+          "Localizers": "1.0.0",
           "Mov.Utilities": "1.0.0",
           "Newtonsoft.Json": "13.0.1"
         },
@@ -3700,6 +3713,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Localizers/1.0.0": {
+      "type": "project",
+      "path": "../../commons/Localizers/Localizers.csproj",
+      "msbuildProject": "../../commons/Localizers/Localizers.csproj"
     },
     "Mov.Accessors/1.0.0": {
       "type": "project",

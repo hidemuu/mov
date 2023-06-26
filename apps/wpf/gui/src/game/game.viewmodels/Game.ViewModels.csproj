@@ -29,7 +29,7 @@
       <HintPath>..\..\..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfMvvms">
-      <HintPath>..\..\..\..\commons\wpfviewmodels\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>
+      <HintPath>..\..\..\..\commons\src\wpfviewmodels\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>
     </Reference>
   </ItemGroup>
 

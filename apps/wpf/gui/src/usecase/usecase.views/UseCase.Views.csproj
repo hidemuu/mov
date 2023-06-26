@@ -19,10 +19,10 @@
 
   <ItemGroup>
     <Reference Include="Mov.Layouts">
-      <HintPath>..\..\..\..\commons\wpfmvvms\bin\Debug\net7.0-windows\Mov.Layouts.dll</HintPath>
+      <HintPath>..\..\..\..\commons\src\wpfviews\bin\Debug\net7.0-windows\Mov.Layouts.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfLayouts">
-      <HintPath>..\..\..\..\commons\wpfmvvms\bin\Debug\net7.0-windows\Mov.WpfLayouts.dll</HintPath>
+      <HintPath>..\..\..\..\commons\src\wpfviews\bin\Debug\net7.0-windows\Mov.WpfLayouts.dll</HintPath>
     </Reference>
   </ItemGroup>
 

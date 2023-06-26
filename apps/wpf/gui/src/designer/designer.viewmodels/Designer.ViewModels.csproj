@@ -36,13 +36,13 @@
       <HintPath>..\..\..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfDesigns">
-      <HintPath>..\..\..\..\commons\wpfmvvms\bin\Debug\net7.0-windows\Mov.WpfDesigns.dll</HintPath>
+      <HintPath>..\..\..\..\commons\src\wpfviews\bin\Debug\net7.0-windows\Mov.WpfDesigns.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfModels">
-      <HintPath>..\..\..\..\commons\wpfviewmodels\bin\Debug\net7.0-windows\Mov.WpfModels.dll</HintPath>
+      <HintPath>..\..\..\..\commons\src\wpfviewmodels\bin\Debug\net7.0-windows\Mov.WpfModels.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfMvvms">
-      <HintPath>..\..\..\..\commons\wpfviewmodels\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>
+      <HintPath>..\..\..\..\commons\src\wpfviewmodels\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>
     </Reference>
   </ItemGroup>
 

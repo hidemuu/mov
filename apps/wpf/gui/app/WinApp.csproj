@@ -141,10 +141,10 @@
       <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfControls">
-      <HintPath>..\..\commons\wpfmvvms\bin\Debug\net7.0-windows\Mov.WpfControls.dll</HintPath>
+      <HintPath>..\..\commons\src\wpfviews\bin\Debug\net7.0-windows\Mov.WpfControls.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfMvvms">
-      <HintPath>..\..\commons\wpfmvvms\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>
+      <HintPath>..\..\commons\src\wpfviews\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>
     </Reference>
   </ItemGroup>
 

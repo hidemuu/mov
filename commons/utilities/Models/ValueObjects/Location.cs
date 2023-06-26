@@ -1,9 +1,8 @@
-﻿using Mov.Utilities.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Localizers.Models
+namespace Mov.Utilities.Models.ValueObjects
 {
     public sealed class Location : ValueObjectBase<Location>
     {

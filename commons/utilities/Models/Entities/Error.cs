@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Errors
+namespace Mov.Utilities.Models.Entities
 {
     /// <summary>
     /// エラー１点分の情報

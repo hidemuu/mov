@@ -1,4 +1,4 @@
-﻿using Mov.Utilities.Models.Entities;
+﻿using Mov.Utilities.Models.ValueObjects;
 
 namespace Mov.Shields
 {

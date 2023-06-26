@@ -1,9 +1,6 @@
-﻿using Mov.Utilities.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
-namespace Mov.Localizers.Models
+namespace Mov.Utilities.Models.ValueObjects
 {
     public sealed class Info : ValueObjectBase<Info>
     {

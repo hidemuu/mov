@@ -9,8 +9,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj" />
-    <ProjectReference Include="..\Learnings\Learnings.csproj" />
-    <ProjectReference Include="..\Schedulers\Schedulers.csproj" />
   </ItemGroup>
 
 </Project>

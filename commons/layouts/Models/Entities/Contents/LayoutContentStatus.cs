@@ -1,5 +1,4 @@
 ﻿using Mov.Layouts.Models.Styles;
-using Mov.Localizers.Models;
 using Mov.Utilities.Models.ValueObjects;
 using Mov.Utilities.Models.ValueObjects.Styles;
 

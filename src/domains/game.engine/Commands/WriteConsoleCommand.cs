@@ -1,8 +1,6 @@
-﻿using Mov.Accessors.Repository;
-using Mov.Accessors.Repository.Domain;
-using Mov.Controllers;
-using Mov.Game.Models;
-using Mov.Utilities;
+﻿using Mov.Game.Models;
+using Mov.Utilities.Models.ValueObjects.Commands;
+using Mov.Utilities.Templates;
 using System;
 using System.Collections.Generic;
 using System.Text;

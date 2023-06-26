@@ -1,9 +1,7 @@
 ﻿using Mov.Game.Models;
-using Mov.Schemas.Elements.Learnings;
+using Mov.Learnings.Models;
 using Mov.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Game.Service.Consoles
 {
@@ -12,7 +10,7 @@ namespace Mov.Game.Service.Consoles
     /// </summary>
     public class QueensGame : ITrackingGame, IConsoleGame
     {
-        #region フィールド 
+        #region フィールド
 
         /// <summary>
         /// クイーン数
@@ -31,7 +29,6 @@ namespace Mov.Game.Service.Consoles
         /// </summary>
         public QueensGame()
         {
-
         }
 
         #region メソッド
@@ -55,7 +52,6 @@ namespace Mov.Game.Service.Consoles
 
         public void Print()
         {
-
         }
 
         #endregion メソッド
@@ -89,6 +85,5 @@ namespace Mov.Game.Service.Consoles
         }
 
         #endregion 内部メソッド
-
     }
 }

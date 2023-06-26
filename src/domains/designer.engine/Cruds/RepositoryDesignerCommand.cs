@@ -1,11 +1,6 @@
-﻿using Mov.Accessors;
-using Mov.Accessors.Crud.Persistence.Implement;
-using Mov.Controllers.Repository.Persistences;
-using Mov.Designer.Models;
+﻿using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Mov.Repositories.Services.Cruds;
 
 namespace Mov.Designer.Engine.Persistences
 {
@@ -26,6 +21,5 @@ namespace Mov.Designer.Engine.Persistences
             Shells = new DbObjectRepositoryCommand<ShellSchema, ShellCollection>(repository.Shells);
             Themes = new DbObjectRepositoryCommand<ThemeSchema, ThemeCollection>(repository.Themes);
         }
-
     }
 }

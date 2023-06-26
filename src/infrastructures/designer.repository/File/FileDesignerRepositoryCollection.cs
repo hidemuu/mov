@@ -1,8 +1,5 @@
-﻿using Mov.Accessors.Repository.Implement;
-using Mov.Designer.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Designer.Models;
+using Mov.Repositories.Services.Repositories.Domains;
 
 namespace Mov.Designer.Repository.Implements
 {
@@ -11,7 +8,6 @@ namespace Mov.Designer.Repository.Implements
     {
         public FileDesignerRepositoryCollection(string endpoint, string extension) : base(endpoint, extension)
         {
-
         }
     }
 }

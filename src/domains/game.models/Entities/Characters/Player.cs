@@ -1,8 +1,5 @@
 ﻿using Mov.Utilities;
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 
 namespace Mov.Game.Models.Entities.Characters
 {
@@ -17,6 +14,7 @@ namespace Mov.Game.Models.Entities.Characters
         /// 前回移動量X
         /// </summary>
         private int lastDx = -1;
+
         /// <summary>
         /// 前回移動量Y
         /// </summary>
@@ -24,7 +22,7 @@ namespace Mov.Game.Models.Entities.Characters
 
         private bool isCollision = false;
 
-        #endregion
+        #endregion フィールド
 
         #region プロパティ
 
@@ -33,8 +31,7 @@ namespace Mov.Game.Models.Entities.Characters
         public override int Life { get; protected set; } = 1;
         protected override Brush BodyBrush { get; set; } = new SolidBrush(Color.CornflowerBlue);
 
-
-        #endregion
+        #endregion プロパティ
 
         #region コンストラクター
 
@@ -111,7 +108,6 @@ namespace Mov.Game.Models.Entities.Characters
         /// </summary>
         private bool IsMiddlePosition => X % Engine.UnitWidth != 0 || Y % Engine.UnitHeight != 0;
 
-        #endregion
-
+        #endregion メソッド
     }
 }

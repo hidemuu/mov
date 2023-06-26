@@ -1,8 +1,6 @@
-﻿using Mov.Layouts;
-using Mov.Schemas.EntityObjects.DbObjects;
-using Mov.Schemas.Layouts.Styles;
+﻿using Mov.Layouts.Models.Styles;
+using Mov.Repositories.Models.EntityObjects.DbObjects;
 using Mov.Utilities.Attributes;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;

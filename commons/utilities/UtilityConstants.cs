@@ -12,6 +12,15 @@ namespace Mov.Utilities
         public const string NewLine = @"\r\n";
 
         /// <summary>
+        /// エンコード名
+        /// </summary>
+        public const string ENCODE_NAME_UTF8 = "utf-8";
+        /// <summary>
+        /// エンコード名
+        /// </summary>
+        private const string ENC_NAME_SHIFT_JIS = "Shift_JIS";
+
+        /// <summary>
         /// キー指定無
         /// </summary>
         public const int KEY_CODE_NONE = 0;

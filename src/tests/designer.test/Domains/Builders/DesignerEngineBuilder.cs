@@ -1,14 +1,9 @@
 ﻿using Moq;
-using Mov.Controllers.Repository.Persistences;
-using Mov.Designer.Engine;
 using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
-using Mov.Schemas.EntityObjects.DbObjects;
-using System;
+using Mov.Repositories.Services;
+using Mov.Repositories.Services.Cruds;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mov.Designer.Test
 {
@@ -29,7 +24,7 @@ namespace Mov.Designer.Test
             //モックオブジェクト生成
             this.mockRepository = new Mock<IDesignerRepository>();
             this.mockQuery = new Mock<IDesignerQuery>();
-            this.mockCommand = new Mock<IDesignerCommand>();;
+            this.mockCommand = new Mock<IDesignerCommand>(); ;
             //インスタンス生成
             //this.engine = new DesignerEngine(this.mockContext.Object, 0);
         }
@@ -67,14 +62,6 @@ namespace Mov.Designer.Test
             return this;
         }
 
-
         #endregion メソッド
-
-        #region 内部メソッド
-
-        
-
-        #endregion 内部メソッド
-
     }
 }

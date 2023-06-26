@@ -1,12 +1,10 @@
-﻿using Mov.Schemas.EntityObjects.DbObjects;
+﻿using Mov.Repositories.Models.EntityObjects.DbObjects;
 using Mov.Utilities.Attributes;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace Mov.Designer.Models.Schemas
@@ -39,7 +37,5 @@ namespace Mov.Designer.Models.Schemas
         public string Color { get; set; }
 
         public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<ThemeSchema>().OrderBy(x => x.index);
-
     }
-
 }

@@ -1,11 +1,6 @@
-﻿using Mov.Accessors;
-using Mov.Accessors.Crud.Persistence.Implement;
-using Mov.Controllers.Repository.Persistences;
-using Mov.Game.Models;
+﻿using Mov.Game.Models;
 using Mov.Game.Models.Entities.Schemas;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Mov.Repositories.Services.Cruds;
 
 namespace Mov.Game.Engine.Persistences
 {
@@ -25,6 +20,5 @@ namespace Mov.Game.Engine.Persistences
         }
 
         #endregion コンストラクター
-
     }
 }

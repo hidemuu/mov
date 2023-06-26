@@ -1,9 +1,6 @@
 ﻿using Mov.Game.Models;
-using Mov.Schemas.Elements.Learnings;
-using Mov.Utilities;
+using Mov.Learnings.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Game.Service.Consoles
 {
@@ -18,10 +15,12 @@ namespace Mov.Game.Service.Consoles
         /// チェス盤サイズ
         /// </summary>
         private int n;
+
         /// <summary>
         /// n×nチェス盤 ２次元配列
         /// </summary>
         private int[,] bd;
+
         /// <summary>
         /// ナイトの移動パターン生成
         /// </summary>
@@ -93,6 +92,5 @@ namespace Mov.Game.Service.Consoles
         }
 
         #endregion 内部メソッド
-
     }
 }

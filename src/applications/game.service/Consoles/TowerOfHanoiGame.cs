@@ -1,13 +1,8 @@
 ﻿using Mov.Game.Models;
-using Mov.Painters;
-using Mov.Schemas.Elements.Learnings;
-using Mov.Utilities;
+using Mov.Graphicers.Services;
+using Mov.Learnings.Models;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Mov.Game.Service.Consoles
 {
@@ -22,10 +17,12 @@ namespace Mov.Game.Service.Consoles
         /// 塔
         /// </summary>
         private readonly ConsCell[] tower;
+
         /// <summary>
         /// 円盤数
         /// </summary>
         private readonly int n;
+
         /// <summary>
         /// 円盤
         /// </summary>
@@ -149,7 +146,6 @@ namespace Mov.Game.Service.Consoles
         /// </summary>
         private class Saucer
         {
-
             #region フィールド
 
             private int idx;
@@ -160,7 +156,7 @@ namespace Mov.Game.Service.Consoles
             private int height;
             private double formWidth;
             private double formHeight;
-            Pen pen = new Pen(Color.FromArgb(255, 0, 0, 0));
+            private Pen pen = new Pen(Color.FromArgb(255, 0, 0, 0));
 
             #endregion フィールド
 
@@ -203,10 +199,8 @@ namespace Mov.Game.Service.Consoles
             }
 
             #endregion メソッド
-
         }
 
         #endregion 内部クラス
-
     }
 }

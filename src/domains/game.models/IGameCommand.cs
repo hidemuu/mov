@@ -1,6 +1,5 @@
-﻿using Mov.Accessors;
-using Mov.Controllers.Repository.Persistences;
-using Mov.Game.Models.Entities.Schemas;
+﻿using Mov.Game.Models.Entities.Schemas;
+using Mov.Repositories.Services.Cruds;
 using System;
 using System.Collections.Generic;
 using System.Text;

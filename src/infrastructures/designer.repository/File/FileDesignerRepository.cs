@@ -1,8 +1,9 @@
-﻿using Mov.Accessors;
-using Mov.Accessors.Repository.Implement;
-using Mov.Designer.Models;
+﻿using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
-using Mov.Schemas.EntityObjects.DbObjects;
+using Mov.Repositories.Services;
+using Mov.Repositories.Services.Repositories.DbObjects;
+using Mov.Repositories.Services.Repositories.Domains;
+using Mov.Utilities;
 
 namespace Mov.Designer.Repository
 {
@@ -19,7 +20,7 @@ namespace Mov.Designer.Repository
         /// コンストラクター
         /// </summary>
         /// <param name="encoding"></param>
-        public FileDesignerRepository(string endpoint, string fileDir, string extension, string encoding = AccessConstants.ENCODE_NAME_UTF8) 
+        public FileDesignerRepository(string endpoint, string fileDir, string extension, string encoding = UtilityConstants.ENCODE_NAME_UTF8)
             : base(endpoint, fileDir, extension, encoding)
         {
             Shells = new FileDbObjectRepository<ShellSchema, ShellCollection>(GetPath("shell"), encoding);

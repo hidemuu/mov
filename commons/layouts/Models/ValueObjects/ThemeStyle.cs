@@ -1,4 +1,5 @@
 ﻿using Mov.Utilities.Models;
+using Mov.Utilities.Models.ValueObjects.Styles;
 using System;
 using System.Collections.Generic;
 using System.Text;

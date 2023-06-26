@@ -1,6 +1,7 @@
 ﻿using Mov.Layouts.Models.Styles;
 using Mov.Localizers.Models;
 using Mov.Utilities.Models.ValueObjects;
+using Mov.Utilities.Models.ValueObjects.Styles;
 
 namespace Mov.Layouts.Models.Entities.Contents
 {

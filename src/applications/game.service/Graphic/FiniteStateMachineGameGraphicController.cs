@@ -1,11 +1,6 @@
-﻿using Mov.Game.Engine;
-using Mov.Game.Models;
+﻿using Mov.Game.Models;
 using Mov.Game.Models.Entities;
-using Mov.Painters;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Mov.Graphicers.Services;
 
 namespace Mov.Game.Service.Graphic
 {

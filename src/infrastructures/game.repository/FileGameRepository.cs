@@ -1,11 +1,9 @@
-﻿using Mov.Accessors;
-using Mov.Accessors.Repository.Implement;
-using Mov.Game.Models;
+﻿using Mov.Game.Models;
 using Mov.Game.Models.Entities.Schemas;
-using Mov.Schemas.EntityObjects.DbObjects;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Mov.Repositories.Services;
+using Mov.Repositories.Services.Repositories.DbObjects;
+using Mov.Repositories.Services.Repositories.Domains;
+using Mov.Utilities;
 
 namespace Mov.Game.Repository
 {
@@ -18,7 +16,7 @@ namespace Mov.Game.Repository
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FileGameRepository(string endpoint, string fileDir, string extension, string encoding = AccessConstants.ENCODE_NAME_UTF8) 
+        public FileGameRepository(string endpoint, string fileDir, string extension, string encoding = UtilityConstants.ENCODE_NAME_UTF8)
             : base(endpoint, fileDir, extension, encoding)
         {
             Landmarks = new FileDbObjectRepository<Landmark, LandmarkCollection>(GetPath("landmark"), encoding);

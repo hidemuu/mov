@@ -1,13 +1,9 @@
-﻿using Mov.Designer.Engine;
-using Mov.Designer.Engine.Persistences;
+﻿using Mov.Designer.Engine.Persistences;
 using Mov.Designer.Models;
 using Mov.Layouts;
-using Mov.Layouts.Contexts;
-using Mov.Layouts.Implements;
-using System;
+using Mov.Layouts.Services.Facades;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Mov.Designer.Service
 {
@@ -57,7 +53,6 @@ namespace Mov.Designer.Service
             this.context.Write();
         }
 
-        
         #endregion メソッド
     }
 }

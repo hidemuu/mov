@@ -1,9 +1,8 @@
-﻿using Mov.Utilities.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.Models.Styles
+namespace Mov.Utilities.Models.ValueObjects.Styles
 {
     public sealed class IconImage : ValueObjectBase<IconImage>
     {

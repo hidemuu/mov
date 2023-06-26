@@ -1,7 +1,4 @@
 ﻿using Mov.Layouts;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Designer.Models
 {
@@ -24,6 +21,5 @@ namespace Mov.Designer.Models
         void Write();
 
         #endregion メソッド
-
     }
 }

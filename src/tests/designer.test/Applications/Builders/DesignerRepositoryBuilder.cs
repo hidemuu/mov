@@ -2,12 +2,7 @@
 using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
 using Mov.Designer.Repository;
-using Mov.Schemas.EntityObjects.DbObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Mov.Repositories.Services;
 
 namespace Mov.Designer.Test.Builders
 {

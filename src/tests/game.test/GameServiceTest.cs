@@ -1,7 +1,3 @@
-using Moq;
-using Mov.Game.Models;
-using Mov.Game.Service;
-using Mov.Utilities.Exceptions;
 using NUnit.Framework;
 using System.Diagnostics;
 

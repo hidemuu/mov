@@ -1,9 +1,5 @@
-﻿using Mov.Accessors;
-using Mov.Controllers.Repository.Persistences;
-using Mov.Designer.Models.Schemas;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Designer.Models.Schemas;
+using Mov.Repositories.Services.Cruds;
 
 namespace Mov.Designer.Models
 {

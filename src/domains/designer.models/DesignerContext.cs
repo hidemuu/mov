@@ -1,18 +1,16 @@
-﻿using Mov.Layouts;
-using Mov.Layouts.Contexts;
-using Mov.Layouts.Contexts.Contents;
-using System;
+﻿using Mov.Designer.Models.Schemas;
+using Mov.Layouts;
+using Mov.Layouts.Models;
+using Mov.Layouts.Models.Entities;
+using Mov.Layouts.Models.Entities.Contents;
+using Mov.Layouts.Models.Styles;
+using Mov.Localizers.Models;
+using Mov.Utilities.Models.ValueObjects;
+using Mov.Utilities.Models.ValueObjects.Keys;
+using Mov.Utilities.Models.ValueObjects.Styles;
+using Mov.Utilities.Models.ValueObjects.Units;
+using Mov.Utilities.Models.ValueObjects.Units.Sizes;
 using System.Collections.Generic;
-using System.Text;
-using Mov.Schemas.Implements.Bodies;
-using Mov.Schemas.Units.Sizes;
-using Mov.Schemas.Units;
-using Mov.Schemas.Parameters;
-using Mov.Schemas.Parameters.Keys;
-using Mov.Schemas.Parameters.Localizes;
-using Mov.Schemas.Parameters.Macros;
-using Mov.Schemas.Layouts.Styles;
-using Mov.Designer.Models.Schemas;
 
 namespace Mov.Designer.Models
 {
@@ -30,7 +28,7 @@ namespace Mov.Designer.Models
 
         public IEnumerable<LayoutTheme> Themes { get; } = new List<LayoutTheme>();
 
-        public DesignerContext(IDesignerRepository repository) 
+        public DesignerContext(IDesignerRepository repository)
         {
             this.repository = repository;
             this.DomainId = new CodeKey(repository.DomainPath);
@@ -59,9 +57,9 @@ namespace Mov.Designer.Models
             return result;
         }
 
-        private IEnumerable<LayoutContent> GetContents(IDesignerRepository repository) 
+        private IEnumerable<LayoutContent> GetContents(IDesignerRepository repository)
         {
-            foreach(var content in repository.Contents.Get())
+            foreach (var content in repository.Contents.Get())
             {
                 yield return GetContent(content);
             }
@@ -108,7 +106,6 @@ namespace Mov.Designer.Models
 
         public void Update()
         {
-            
         }
     }
 }

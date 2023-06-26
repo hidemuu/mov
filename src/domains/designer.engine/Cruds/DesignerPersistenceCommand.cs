@@ -1,8 +1,5 @@
-﻿using Mov.Controllers;
-using Mov.Controllers.Repository.Persistences;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Repositories.Services.Cruds;
+using Mov.Utilities.Templates.Crud;
 
 namespace Mov.Designer.Engine.Entities
 {
@@ -14,12 +11,10 @@ namespace Mov.Designer.Engine.Entities
 
         public DesignerPersistenceCommand()
         {
-
         }
 
         public void Dispose()
         {
-
         }
     }
 }

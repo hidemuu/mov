@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.Services.Commands
+namespace Mov.Utilities.Templates
 {
     /// <summary>
     /// コマンドのインターフェース

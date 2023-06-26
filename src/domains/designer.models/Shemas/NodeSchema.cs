@@ -1,14 +1,10 @@
-﻿using Mov.Layouts;
-using Mov.Schemas.EntityObjects.DbObjects;
-using Mov.Schemas.Layouts.Styles;
+﻿using Mov.Layouts.Models.Styles;
+using Mov.Repositories.Models.EntityObjects.DbObjects;
 using Mov.Utilities.Attributes;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace Mov.Designer.Models.Schemas
@@ -31,6 +27,7 @@ namespace Mov.Designer.Models.Schemas
     public class NodeSchema : DbObjectNode<NodeSchema>
     {
         #region プロパティ
+
         /// <summary>
         /// ノード種別
         /// </summary>
@@ -39,6 +36,7 @@ namespace Mov.Designer.Models.Schemas
         [DisplayName("node_type")]
         [DisplayIndex(10)]
         public string NodeType { get; set; } = "Content";
+
         /// <summary>
         /// 表示方向
         /// </summary>
@@ -47,6 +45,7 @@ namespace Mov.Designer.Models.Schemas
         [DisplayName("orientation")]
         [DisplayIndex(11)]
         public string OrientationType { get; set; } = OrientationStyle.Horizontal.Value;
+
         /// <summary>
         /// スタイル
         /// </summary>
@@ -114,9 +113,6 @@ namespace Mov.Designer.Models.Schemas
 
         public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<NodeSchema>().OrderBy(x => x.index);
 
-
         #endregion メソッド
-
-
     }
 }

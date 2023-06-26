@@ -29,13 +29,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stores", "stores\Stores.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilities", "utilities\Utilities.csproj", "{AD854D36-46D1-4A80-BFDE-4324DA74DC95}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authorizers.Test", "commons.test\Authorizers.Test.csproj", "{CB88BF72-1685-44B9-9F12-E8C849BCD196}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authorizers.Test", "authorizers.test\Authorizers.Test.csproj", "{CB88BF72-1685-44B9-9F12-E8C849BCD196}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Layouts.Test", "Layouts.Test\Layouts.Test.csproj", "{F2660E77-5E8F-4058-9BF8-50ECA3AB29A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Layouts.Test", "layouts.test\Layouts.Test.csproj", "{F2660E77-5E8F-4058-9BF8-50ECA3AB29A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learnings", "Learnings\Learnings.csproj", "{4AE0E32C-CC1B-4870-8C3A-2CC6A7FED8D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learnings", "learnings\Learnings.csproj", "{4AE0E32C-CC1B-4870-8C3A-2CC6A7FED8D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schedulers", "Schedulers\Schedulers.csproj", "{5B1CAD83-6968-42F8-8B33-D1A363CB7143}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schedulers", "schedulers\Schedulers.csproj", "{5B1CAD83-6968-42F8-8B33-D1A363CB7143}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{C473869C-111D-4DBC-968A-0BB81150E71F}"
 EndProject

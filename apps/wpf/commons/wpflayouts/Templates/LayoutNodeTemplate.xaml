@@ -1,0 +1,125 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:behavior="clr-namespace:Mov.WpfLayouts.Behaviors"
+    xmlns:converter="clr-namespace:Mov.WpfLayouts.Converters"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:nodes="clr-namespace:Mov.Layouts.Models.Entities;assembly=Mov.Layouts"
+    xmlns:selector="clr-namespace:Mov.WpfLayouts.Selector">
+    <ResourceDictionary.MergedDictionaries />
+    <converter:ContentToOrientationConverter x:Key="orientationConverter" />
+    <selector:LayoutContentSelector x:Key="layoutContentSelector" />
+
+    <DataTemplate x:Key="ContentTemplate" DataType="{x:Type nodes:LayoutNode}">
+        <ContentControl
+            Margin="16,0,0,0"
+            Content="{Binding}"
+            ContentTemplateSelector="{StaticResource layoutContentSelector}">
+            <i:Interaction.Behaviors>
+                <behavior:LayoutContentBehavior />
+            </i:Interaction.Behaviors>
+        </ContentControl>
+    </DataTemplate>
+
+    <DataTemplate x:Key="GroupTemplate" DataType="{x:Type nodes:LayoutNode}">
+        <ItemsControl ItemTemplateSelector="{DynamicResource layoutNodeSelector}" ItemsSource="{Binding Children}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel Orientation="{Binding Orientation.Value, Converter={StaticResource orientationConverter}}" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ExpanderTemplate" DataType="{x:Type nodes:LayoutNode}">
+        <Expander
+            x:Name="ExpanderNode"
+            BorderBrush="Gainsboro"
+            BorderThickness="1"
+            IsExpanded="{Binding Expand.BindableValue}">
+            <Expander.Header>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Width="{Binding ElementName=ExpanderNode, Path=ActualWidth}"
+                        Margin="0"
+                        Padding="0"
+                        FlowDirection="LeftToRight"
+                        Text="{Binding Name.Value}" />
+                </StackPanel>
+            </Expander.Header>
+            <ItemsControl ItemTemplateSelector="{DynamicResource layoutNodeSelector}" ItemsSource="{Binding Children}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Margin="16,0,0,0" Orientation="{Binding Orientation.Value, Converter={StaticResource orientationConverter}}" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </Expander>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ScrollbarTemplate" DataType="{x:Type nodes:LayoutNode}">
+        <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemTemplateSelector="{DynamicResource layoutNodeSelector}" ItemsSource="{Binding Children}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Orientation="{Binding Orientation.Value, Converter={StaticResource orientationConverter}}" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </ScrollViewer>
+    </DataTemplate>
+
+    <DataTemplate x:Key="TabTemplate" DataType="{x:Type nodes:LayoutNode}">
+        <TabControl>
+            <TabItem Header="タブ1">
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <ItemsControl ItemTemplateSelector="{DynamicResource layoutNodeSelector}" ItemsSource="{Binding Children}" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ViewTemplate" DataType="{x:Type nodes:LayoutNode}">
+        <Grid>
+            <ContentControl Content="{Binding}" ContentTemplateSelector="{StaticResource contentSelector}" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="TreeTemplate" DataType="{x:Type nodes:LayoutNode}">
+        <Grid>
+            <TreeView ItemsSource="{Binding Children}" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="TableTemplate" DataType="{x:Type nodes:LayoutNode}">
+        <Grid>
+            <ListView x:Name="listView" ItemsSource="{Binding Children}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn
+                            x:Name="indexColumn"
+                            Width="100"
+                            Header="Index">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock HorizontalAlignment="Stretch" Text="{Binding Code.Value}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+    </DataTemplate>
+
+    <selector:LayoutNodeSelector
+        x:Key="layoutNodeSelector"
+        ContentTemplate="{StaticResource ContentTemplate}"
+        ExpanderTemplate="{StaticResource ExpanderTemplate}"
+        GroupTemplate="{StaticResource GroupTemplate}"
+        ScrollbarTemplate="{StaticResource ScrollbarTemplate}"
+        TabTemplate="{StaticResource TabTemplate}"
+        TableTemplate="{StaticResource TableTemplate}"
+        TreeTemplate="{StaticResource TreeTemplate}"
+        ViewTemplate="{StaticResource ViewTemplate}" />
+</ResourceDictionary>

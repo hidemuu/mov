@@ -1,0 +1,23 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:atom="clr-namespace:Mov.WpfLayouts.Components.Atoms"
+    xmlns:atomControl="clr-namespace:Mov.WpfControls.Components.Atoms;assembly=Mov.WpfControls"
+    xmlns:converter="clr-namespace:Mov.WpfModels.Converters;assembly=Mov.WpfModels">
+    <converter:StringToHolizontalAlignmentConverter x:Key="StringToHolizontalAlignmentConverter" />
+    <converter:StringToVerticalAlignmentConverter x:Key="StringToVerticalAlignmentConverter" />
+    <Style TargetType="{x:Type atom:LayButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <atomControl:MovButton
+                        Width="{Binding LayoutDesign.Size.Width.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}"
+                        Height="{Binding LayoutDesign.Size.Height.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}"
+                        HorizontalAlignment="{Binding LayoutDesign.HorizontalAlignment.Value, Converter={StaticResource StringToHolizontalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}"
+                        VerticalAlignment="{Binding LayoutDesign.VerticalAlignment.Value, Converter={StaticResource StringToVerticalAlignmentConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}"
+                        Content="{Binding LayoutParameter.Name.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type atom:LayButton}}}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

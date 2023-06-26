@@ -1,0 +1,21 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro">
+    <!--  プログレスリング  -->
+    <Style x:Key="pgr-normal" TargetType="{x:Type Mah:ProgressRing}">
+        <Setter Property="Foreground" Value="#33adff" />
+        <Setter Property="IsActive" Value="False" />
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="100" />
+        <Setter Property="Panel.ZIndex" Value="100" />
+    </Style>
+    <!--  プログレスオーバーレイ  -->
+    <Style x:Key="rec-overlay" TargetType="{x:Type Rectangle}">
+        <Setter Property="Fill" Value="#000000" />
+        <Setter Property="Opacity" Value="0.2" />
+        <Setter Property="Panel.ZIndex" Value="1000" />
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="Visibility" Value="Collapsed" />
+    </Style>
+</ResourceDictionary>

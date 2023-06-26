@@ -1,0 +1,150 @@
+﻿<UserControl
+    x:Class="Mov.WpfControls.Components.GridListControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converter="clr-namespace:Mov.WpfModels.Converters;assembly=Mov.WpfModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dd="urn:gong-wpf-dragdrop"
+    xmlns:local="clr-namespace:Mov.WpfControls.Components"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:molecule="clr-namespace:Mov.WpfControls.Components.Molecules"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Mov.WpfDesigns;component/Styles/BaseStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <ListView
+            x:Name="listView"
+            Grid.Row="0"
+            dd:DragDrop.IsDragSource="True"
+            dd:DragDrop.IsDropTarget="True"
+            dd:DragDrop.UseDefaultDragAdorner="True"
+            ItemsSource="{Binding Items, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}"
+            SelectedItem="{Binding SelectedItem.Value, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}, Mode=TwoWay}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="Tag" Value="{Binding DataContext, RelativeSource={RelativeSource AncestorType=ListView}}" />
+                    <Setter Property="ContextMenu">
+                        <Setter.Value>
+                            <ContextMenu DataContext="{Binding PlacementTarget.Tag, RelativeSource={RelativeSource Self}}">
+                                <MenuItem
+                                    Command="{Binding AddCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}"
+                                    CommandParameter="{Binding PlacementTarget.Content, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+                                    Header="追加" />
+                                <MenuItem
+                                    Command="{Binding DeleteCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}"
+                                    CommandParameter="{Binding PlacementTarget.Content, RelativeSource={RelativeSource AncestorType=ContextMenu}}"
+                                    Header="削除" />
+                            </ContextMenu>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <molecule:MovGridViewColumn Attribute="{Binding Attributes[0], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:MovGridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <molecule:MovGridViewColumnItem Item="{Binding [0]}" />
+                            </DataTemplate>
+                        </molecule:MovGridViewColumn.CellTemplate>
+                    </molecule:MovGridViewColumn>
+                    <molecule:MovGridViewColumn Attribute="{Binding Attributes[1], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:MovGridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <molecule:MovGridViewColumnItem Item="{Binding [1]}" />
+                            </DataTemplate>
+                        </molecule:MovGridViewColumn.CellTemplate>
+                    </molecule:MovGridViewColumn>
+                    <molecule:MovGridViewColumn Attribute="{Binding Attributes[2], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:MovGridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <molecule:MovGridViewColumnItem Item="{Binding [2]}" />
+                            </DataTemplate>
+                        </molecule:MovGridViewColumn.CellTemplate>
+                    </molecule:MovGridViewColumn>
+                    <molecule:MovGridViewColumn Attribute="{Binding Attributes[3], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:MovGridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <molecule:MovGridViewColumnItem Item="{Binding [3]}" />
+                            </DataTemplate>
+                        </molecule:MovGridViewColumn.CellTemplate>
+                    </molecule:MovGridViewColumn>
+                    <molecule:MovGridViewColumn Attribute="{Binding Attributes[4], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:MovGridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <molecule:MovGridViewColumnItem Item="{Binding [4]}" />
+                            </DataTemplate>
+                        </molecule:MovGridViewColumn.CellTemplate>
+                    </molecule:MovGridViewColumn>
+                    <molecule:MovGridViewColumn Attribute="{Binding Attributes[5], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:MovGridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <molecule:MovGridViewColumnItem Item="{Binding [5]}" />
+                            </DataTemplate>
+                        </molecule:MovGridViewColumn.CellTemplate>
+                    </molecule:MovGridViewColumn>
+                    <molecule:MovGridViewColumn Attribute="{Binding Attributes[6], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:MovGridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <molecule:MovGridViewColumnItem Item="{Binding [6]}" />
+                            </DataTemplate>
+                        </molecule:MovGridViewColumn.CellTemplate>
+                    </molecule:MovGridViewColumn>
+                    <molecule:MovGridViewColumn Attribute="{Binding Attributes[7], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:MovGridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <molecule:MovGridViewColumnItem Item="{Binding [7]}" />
+                            </DataTemplate>
+                        </molecule:MovGridViewColumn.CellTemplate>
+                    </molecule:MovGridViewColumn>
+                    <molecule:MovGridViewColumn Attribute="{Binding Attributes[8], RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}">
+                        <molecule:MovGridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <molecule:MovGridViewColumnItem Item="{Binding [8]}" />
+                            </DataTemplate>
+                        </molecule:MovGridViewColumn.CellTemplate>
+                    </molecule:MovGridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button
+            Width="32"
+            Height="32"
+            Margin="0,0,40,8"
+            Padding="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Command="{Binding DeleteCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}"
+            Content="-"
+            Cursor="Hand"
+            Focusable="False"
+            FontSize="20"
+            ToolTip="削除します"
+            ToolTipService.Placement="Right" />
+        <Button
+            Width="32"
+            Height="32"
+            Margin="0,0,8,8"
+            Padding="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Command="{Binding AddCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:GridListControl}}"
+            Content="+"
+            Cursor="Hand"
+            Focusable="False"
+            FontSize="20"
+            ToolTip="追加します"
+            ToolTipService.Placement="Right" />
+    </Grid>
+</UserControl>

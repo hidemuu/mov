@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.Analizer.ViewModels</AssemblyName>
+    <RootNamespace>Mov.Analizer.ViewModels</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Prism.Unity" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Analizer.Models">
+      <HintPath>..\..\..\..\..\..\frameworks\src\analizer\analizer.service\bin\Debug\netstandard2.0\Mov.Analizer.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Analizer.Service">
+      <HintPath>..\..\..\..\..\..\frameworks\src\analizer\analizer.service\bin\Debug\netstandard2.0\Mov.Analizer.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Repositories">
+      <HintPath>..\..\..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Repositories.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.WpfMvvms">
+      <HintPath>..\..\..\..\commons\wpfviewmodels\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

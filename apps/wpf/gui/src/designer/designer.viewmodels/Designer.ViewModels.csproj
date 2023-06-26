@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.Designer.ViewModels</AssemblyName>
+    <RootNamespace>Mov.Designer.ViewModels</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="2.0.3" />
+    <PackageReference Include="Prism.Core" Version="8.1.97" />
+    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+    <PackageReference Include="ReactiveProperty.WPF" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Designer.Engine">
+      <HintPath>..\..\..\..\..\..\frameworks\src\designer\designer.service\bin\Debug\netstandard2.0\Mov.Designer.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Designer.Models">
+      <HintPath>..\..\..\..\..\..\frameworks\src\designer\designer.service\bin\Debug\netstandard2.0\Mov.Designer.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Designer.Service">
+      <HintPath>..\..\..\..\..\..\frameworks\src\designer\designer.service\bin\Debug\netstandard2.0\Mov.Designer.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Layouts">
+      <HintPath>..\..\..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Layouts.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Repositories">
+      <HintPath>..\..\..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Repositories.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Utilities">
+      <HintPath>..\..\..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.WpfDesigns">
+      <HintPath>..\..\..\..\commons\wpfmvvms\bin\Debug\net7.0-windows\Mov.WpfDesigns.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.WpfModels">
+      <HintPath>..\..\..\..\commons\wpfviewmodels\bin\Debug\net7.0-windows\Mov.WpfModels.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.WpfMvvms">
+      <HintPath>..\..\..\..\commons\wpfviewmodels\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

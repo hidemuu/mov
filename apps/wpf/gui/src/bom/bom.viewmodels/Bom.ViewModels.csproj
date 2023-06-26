@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.Bom.ViewModels</AssemblyName>
+    <RootNamespace>Mov.Bom.ViewModels</RootNamespace>
+  </PropertyGroup>
+
+</Project>

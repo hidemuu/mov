@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.Designer.Views</AssemblyName>
+    <RootNamespace>Mov.Designer.Views</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\designer.viewmodels\Designer.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Bebavior\" />
+    <Folder Include="Converters\" />
+    <Folder Include="Selector\" />
+    <Folder Include="Templates\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="gong-wpf-dragdrop" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Layouts">
+      <HintPath>..\..\..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Layouts.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.WpfControls">
+      <HintPath>..\..\..\..\commons\wpfviews\bin\Debug\net7.0-windows\Mov.WpfControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.WpfLayouts">
+      <HintPath>..\..\..\..\commons\wpfviews\bin\Debug\net7.0-windows\Mov.WpfLayouts.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.WpfModels">
+      <HintPath>..\..\..\..\commons\wpfviews\bin\Debug\net7.0-windows\Mov.WpfModels.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.WpfMvvms">
+      <HintPath>..\..\..\..\commons\wpfviewmodels\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

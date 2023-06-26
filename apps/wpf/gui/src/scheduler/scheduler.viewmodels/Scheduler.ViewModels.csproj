@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.Scheduler.ViewModels</AssemblyName>
+    <RootNamespace>Mov.Scheduler.ViewModels</RootNamespace>
+  </PropertyGroup>
+
+</Project>

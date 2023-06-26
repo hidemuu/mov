@@ -1,10 +1,9 @@
-﻿using Mov.Controllers.Commands;
-using Mov.Schemas.Structures;
+﻿using Mov.Schemas.Structures;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Controllers.Commands
+namespace Mov.Controllers.Contexts
 {
     public class CommandContext : IDisposable
     {

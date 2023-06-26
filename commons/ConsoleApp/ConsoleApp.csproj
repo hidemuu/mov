@@ -21,7 +21,6 @@
     <ProjectReference Include="..\Schedulers\Schedulers.csproj" />
     <ProjectReference Include="..\schemas\Elements.csproj" />
     <ProjectReference Include="..\shields\Shields.csproj" />
-    <ProjectReference Include="..\stores\Stores.csproj" />
     <ProjectReference Include="..\utilities\Utilities.csproj" />
   </ItemGroup>
 

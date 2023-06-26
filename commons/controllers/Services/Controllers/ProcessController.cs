@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Controllers.Controller
+namespace Mov.Controllers.Services.Controllers
 {
     public class ProcessController
     {

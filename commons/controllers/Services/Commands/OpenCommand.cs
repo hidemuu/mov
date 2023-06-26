@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Mov.Controllers.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Controllers.Commands.Implements
+namespace Mov.Controllers.Services.Commands
 {
     [RegisterCommand]
-    public class SaveCommand : ICommand
+    public class OpenCommand : ICommand
     {
         public string Name => throw new NotImplementedException();
 
@@ -13,7 +14,7 @@ namespace Mov.Controllers.Commands.Implements
 
         public void Execute()
         {
-            Console.WriteLine("Saving current file");
+            Console.WriteLine("Opening a file");
         }
     }
 }

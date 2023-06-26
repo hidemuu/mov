@@ -8,23 +8,28 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="Mov.Accessors">
-      <HintPath>..\..\..\..\src\commons\accessors\bin\Debug\netstandard2.0\Mov.Accessors.dll</HintPath>
+    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+    <PackageReference Include="ReactiveProperty.WPF" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Configurator.Models">
+      <HintPath>..\..\..\..\..\..\frameworks\src\configurator\Configurator.Service\bin\Debug\netstandard2.0\Mov.Configurator.Models.dll</HintPath>
     </Reference>
-    <Reference Include="Mov.Configurators">
-      <HintPath>..\..\..\..\src\commons\configurators\bin\Debug\netstandard2.0\Mov.Configurators.dll</HintPath>
+    <Reference Include="Mov.Configurator.Repository">
+      <HintPath>..\..\..\..\..\..\frameworks\src\configurator\Configurator.Service\bin\Debug\netstandard2.0\Mov.Configurator.Repository.dll</HintPath>
     </Reference>
-    <Reference Include="Mov.Controllers">
-      <HintPath>..\..\..\..\src\commons\controllers\bin\Debug\netstandard2.0\Mov.Controllers.dll</HintPath>
+    <Reference Include="Mov.Configurator.Service">
+      <HintPath>..\..\..\..\..\..\frameworks\src\configurator\Configurator.Service\bin\Debug\netstandard2.0\Mov.Configurator.Service.dll</HintPath>
     </Reference>
-    <Reference Include="Mov.Designer.Service">
-      <HintPath>..\..\..\..\src\applications\designer.service\bin\Debug\netstandard2.0\Mov.Designer.Service.dll</HintPath>
+    <Reference Include="Mov.Repositories">
+      <HintPath>..\..\..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Repositories.dll</HintPath>
     </Reference>
-    <Reference Include="Mov.Schemas">
-      <HintPath>..\..\..\..\src\commons\schemas\bin\Debug\netstandard2.0\Mov.Schemas.dll</HintPath>
+    <Reference Include="Mov.WpfModels">
+      <HintPath>..\..\..\..\commons\wpfviewmodels\bin\Debug\net7.0-windows\Mov.WpfModels.dll</HintPath>
     </Reference>
-    <Reference Include="Mov.Utilities">
-      <HintPath>..\..\..\..\src\commons\utilities\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
+    <Reference Include="Mov.WpfMvvms">
+      <HintPath>..\..\..\..\commons\wpfviewmodels\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>
     </Reference>
   </ItemGroup>
 

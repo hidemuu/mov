@@ -1,13 +1,8 @@
-﻿using Mov.Accessors.Repository;
-using Mov.Driver.Models;
+﻿using Mov.Driver.Models;
+using Mov.Repositories.Services;
 using Mov.WpfMvvms;
 using Prism.Regions;
 using Prism.Services.Dialogs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mov.Driver.ViewModels
 {
@@ -18,12 +13,6 @@ namespace Mov.Driver.ViewModels
         private readonly IDomainRepositoryCollection<IDriverRepository> driverDatabase;
 
         #endregion フィールド
-
-        #region プロパティ
-
-        
-
-        #endregion プロパティ
 
         #region コンストラクター
 

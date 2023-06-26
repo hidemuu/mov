@@ -1,7 +1,6 @@
-﻿using Mov.Accessors.Repository;
-using Mov.Configurators;
-using Mov.Configurators.Schemas;
-using Mov.Utilities.Attributes;
+﻿using Configurator.Repository.File;
+using Mov.Configurator.Models;
+using Mov.Repositories.Services;
 using Mov.WpfModels;
 using Mov.WpfMvvms;
 using Prism.Regions;
@@ -10,7 +9,6 @@ using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 
@@ -93,7 +91,6 @@ namespace Mov.Configurator.ViewModels
         /// </summary>
         protected override void OnLoaded()
         {
-
         }
 
         /// <summary>
@@ -112,13 +109,13 @@ namespace Mov.Configurator.ViewModels
 
         private void Import()
         {
-            repository.Configs.Read();
+            repository.UserSettings.Read();
         }
 
         private void Export()
         {
             PostItems();
-            repository.Configs.Write();
+            repository.UserSettings.Write();
         }
 
         private void Add(object parameter)
@@ -126,7 +123,7 @@ namespace Mov.Configurator.ViewModels
             switch (this.currentComboItem)
             {
                 case DATA_NAME_USER_SETTINGS:
-                    repository.Configs.Put(new Config());
+                    repository.UserSettings.Put(new UserSetting());
                     BindConfigs();
                     break;
             }
@@ -138,7 +135,7 @@ namespace Mov.Configurator.ViewModels
             switch (this.currentComboItem)
             {
                 case DATA_NAME_USER_SETTINGS:
-                    repository.Configs.Delete((Guid)selectedItem[0].GetValue());
+                    repository.UserSettings.Delete((Guid)selectedItem[0].GetValue());
                     BindConfigs();
                     break;
             }
@@ -161,20 +158,17 @@ namespace Mov.Configurator.ViewModels
         private void BindConfigs()
         {
             Items.Clear();
-            var properties = Config.GetProperties();
-            foreach (Config item in this.repository?.Configs?.Get())
+            var properties = UserSetting.GetProperties();
+            foreach (UserSetting item in this.repository?.UserSettings?.Get())
             {
-                Items.Add(GetColumnItems<Config>(properties.Select(x => x.propertyInfo), item).ToArray());
+                Items.Add(GetColumnItems<UserSetting>(properties.Select(x => x.propertyInfo), item).ToArray());
             }
-            Attributes.Value = GetColumnAttributes<Config>(properties.Select(x => x.name)).ToArray();
+            Attributes.Value = GetColumnAttributes<UserSetting>(properties.Select(x => x.name)).ToArray();
         }
-
-       
-
 
         private IEnumerable<ColumnItem> GetColumnItems<T>(IEnumerable<PropertyInfo> propertyInfos, T item)
         {
-            foreach(var propertyInfo in propertyInfos)
+            foreach (var propertyInfo in propertyInfos)
             {
                 yield return new ColumnItem(propertyInfo.Name, propertyInfo.GetValue(item));
             }
@@ -182,7 +176,7 @@ namespace Mov.Configurator.ViewModels
 
         private IEnumerable<ColumnAttribute> GetColumnAttributes<T>(IEnumerable<string> names)
         {
-            foreach(var name in names)
+            foreach (var name in names)
             {
                 yield return new ColumnAttribute(name);
             }
@@ -200,19 +194,17 @@ namespace Mov.Configurator.ViewModels
 
         private void PostConfigs()
         {
-            var configs = GetDbObjects<Config>(Config.GetProperties().Select(x => x.propertyInfo)).ToList();
-            this.repository?.Configs.Posts(configs);
+            var configs = GetDbObjects<UserSetting>(UserSetting.GetProperties().Select(x => x.propertyInfo)).ToList();
+            this.repository?.UserSettings.Posts(configs);
         }
-
-       
 
         private IEnumerable<T> GetDbObjects<T>(IEnumerable<PropertyInfo> propertyInfos)
         {
-            foreach(var item in Items)
+            foreach (var item in Items)
             {
                 var dbObject = (T)Activator.CreateInstance(typeof(T));
                 int i = 0;
-                foreach(var propertyInfo in propertyInfos)
+                foreach (var propertyInfo in propertyInfos)
                 {
                     var value = item[i].GetValue();
                     propertyInfo.SetValue(dbObject, value);

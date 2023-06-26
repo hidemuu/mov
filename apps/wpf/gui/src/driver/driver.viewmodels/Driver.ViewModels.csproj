@@ -8,20 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="Mov.Accessors">
-      <HintPath>..\..\..\..\src\commons\accessors\bin\Debug\netstandard2.0\Mov.Accessors.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Controllers">
-      <HintPath>..\..\..\..\src\commons\controllers\bin\Debug\netstandard2.0\Mov.Controllers.dll</HintPath>
-    </Reference>
+    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Mov.Driver.Models">
-      <HintPath>..\..\..\..\src\domains\driver.models\bin\Debug\netstandard2.0\Mov.Driver.Models.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\frameworks\src\driver\driver.service\bin\Debug\netstandard2.0\Mov.Driver.Models.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Driver.Service">
-      <HintPath>..\..\..\..\src\applications\driver.service\bin\Debug\netstandard2.0\Mov.Driver.Service.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\frameworks\src\driver\driver.service\bin\Debug\netstandard2.0\Mov.Driver.Service.dll</HintPath>
     </Reference>
-    <Reference Include="Mov.Schemas">
-      <HintPath>..\..\..\..\src\commons\schemas\bin\Debug\netstandard2.0\Mov.Schemas.dll</HintPath>
+    <Reference Include="Mov.Repositories">
+      <HintPath>..\..\..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Repositories.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.WpfMvvms">
+      <HintPath>..\..\..\..\commons\wpfviewmodels\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>
     </Reference>
   </ItemGroup>
 

@@ -1,11 +1,9 @@
 ﻿using Mov.Analizer.Views;
-using Mov.Bom.Views;
 using Mov.Configurator.Views;
 using Mov.Designer.Views;
 using Mov.Drawer.Views;
 using Mov.Driver.Views;
 using Mov.Game.Views;
-using Mov.Scheduler.Views;
 using Mov.UseCase.Views;
 using Mov.WpfApp;
 using Mov.WpfApp.Views;
@@ -46,7 +44,7 @@ namespace Mov.WpfApp
         {
             Models.Add(new MainWindowModel(0, "Main", "Home", () =>
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(MainView))));
-            Models.Add(new MainWindowModel(1, "Dashboard", "Home", () =>
+            Models.Add(new MainWindowModel(1, "Dashboard", "DNS", () =>
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(DashboardView))));
             Models.Add(new MainWindowModel(2, "Config", "Cog", () =>
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(ConfiguratorView))));
@@ -58,11 +56,9 @@ namespace Mov.WpfApp
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(DrawerView))));
             Models.Add(new MainWindowModel(6, "Driver", "Octahedron", () =>
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(DriverView))));
-            Models.Add(new MainWindowModel(7, "Bom", "DNS", () =>
-                this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(BomView))));
-            Models.Add(new MainWindowModel(8, "Scheduler", "calendar", () => 
-                this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(SchedulerView))));
-            Models.Add(new MainWindowModel(9, "Analizer", "ChartLine", () =>
+            //Models.Add(new MainWindowModel(8, "Scheduler", "calendar", () => 
+            //    this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(SchedulerView))));
+            Models.Add(new MainWindowModel(7, "Analizer", "ChartLine", () =>
                 this.RegionManager.RequestNavigate(RegionConstants.REGION_NAME_CENTER, nameof(AnalizerView))));
 
             TabChangeCommand.Subscribe(_ => OnChangeTab()).AddTo(Disposables);

@@ -1,66 +1,47 @@
-﻿using Mov.Configurator.ViewModels;
+﻿using Configurator.Repository.File;
+using Mov.Accessors;
+using Mov.Analizer.Models;
+using Mov.Analizer.ViewModels;
+using Mov.Analizer.Views;
+using Mov.Configurator.ViewModels;
 using Mov.Configurator.Views;
 using Mov.Designer.Models;
-using Mov.Designer.Repository;
+using Mov.Designer.Repository.Implements;
+using Mov.Designer.Service;
 using Mov.Designer.ViewModels;
 using Mov.Designer.Views;
+using Mov.Drawer.Models;
+using Mov.Drawer.ViewModels;
+using Mov.Drawer.Views;
+using Mov.Driver.Models;
+using Mov.Driver.ViewModels;
+using Mov.Driver.Views;
+using Mov.Framework;
+using Mov.Game.Engine;
+using Mov.Game.Engine.FiniteStateMachine;
 using Mov.Game.Models;
 using Mov.Game.Repository;
-using Mov.Game.Service;
+using Mov.Game.Service.Graphic;
 using Mov.Game.ViewModels;
+using Mov.Game.ViewModels.Dialogs;
 using Mov.Game.Views;
-using Mov.Scheduler.ViewModels;
-using Mov.Scheduler.Views;
-using Mov.Utilities;
+using Mov.Game.Views.Dialogs;
+using Mov.UseCase.ViewModels;
+using Mov.UseCase.Views;
+using Mov.UseCases.Factories;
+using Mov.WpfApp.ViewModels;
+using Mov.WpfApp.Views;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Mvvm;
 using Prism.Regions;
+using Prism.Services.Dialogs;
 using Prism.Unity;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
-using Mov.Game.Views.Dialogs;
-using Mov.Game.ViewModels.Dialogs;
-using Mov.Drawer.Models;
-using Mov.Drawer.Repository;
-using Mov.Drawer.Views;
-using Mov.Drawer.ViewModels;
-using Mov.Driver.Views;
-using Mov.Bom.Views;
-using Mov.Driver.ViewModels;
-using Mov.Bom.ViewModels;
-using Mov.Driver.Models;
-using Mov.Driver.Repository;
-using Mov.Accessors.Repository;
-using Mov.Accessors.Repository.Implement;
-using Mov.UseCases.Factories;
-using Mov.Accessors;
-using Mov.UseCases;
-using Mov.Framework;
-using Mov.WpfViews;
-using Mov.UseCase.Views;
-using Mov.UseCase.ViewModels;
-using Mov.Analizer.Models;
-using Mov.Analizer.Views;
-using Mov.Analizer.ViewModels;
-using Mov.Game.Engine;
-using Mov.Designer.Engine;
-using Mov.Designer.Service;
-using Mov.Configurators;
-using Mov.Designer.Repository.Implements;
-using Mov.WpfApp.Views;
-using Mov.WpfApp.ViewModels;
-using Mov.Layouts;
-using Mov.Game.Service.Graphic;
-using Mov.Game.Engine.FiniteStateMachine;
 
 namespace Mov.WpfApp
 {
@@ -121,7 +102,6 @@ namespace Mov.WpfApp
             base.InitializeShell(shell);
         }
 
-
         /// <summary>
         /// コンテナ登録
         /// </summary>
@@ -131,31 +111,31 @@ namespace Mov.WpfApp
             //DIコンテナ GetContainerでUnityのコンテナに直接アクセス可能
             var container = containerRegistry.GetContainer();
 
-            //リポジトリの登録  
+            //リポジトリの登録
             var resourcePath = PathCreator.GetResourcePath();
             var fileRepositoriesFactory = new FileDomainRepositoryCollectionFactory(resourcePath);
-            
+
             var fileConfigulatorRepositories = fileRepositoriesFactory
-                .Create<FileConfiguratorRepository>(SerializeConstants.PATH_JSON);
+                .Create<FileConfiguratorRepository>(AccessConstants.PATH_JSON);
             containerRegistry.RegisterInstance(fileConfigulatorRepositories);
 
             var fileGameRepositories = fileRepositoriesFactory
-                .Create<IGameRepository>(SerializeConstants.PATH_JSON);
+                .Create<IGameRepository>(AccessConstants.PATH_JSON);
             containerRegistry.RegisterInstance(fileGameRepositories);
 
             var fileDrawerRepositories = fileRepositoriesFactory
-                .Create<IDrawerRepository>(SerializeConstants.PATH_JSON);
+                .Create<IDrawerRepository>(AccessConstants.PATH_JSON);
             containerRegistry.RegisterInstance(fileDrawerRepositories);
 
             var fileDriverRepositories = fileRepositoriesFactory
-                .Create<IDriverRepository>(SerializeConstants.PATH_JSON);
+                .Create<IDriverRepository>(AccessConstants.PATH_JSON);
             containerRegistry.RegisterInstance(fileDriverRepositories);
 
             var fileAnalizerRepositories = fileRepositoriesFactory
-                .Create<IAnalizerRepository>(SerializeConstants.PATH_JSON);
+                .Create<IAnalizerRepository>(AccessConstants.PATH_JSON);
             containerRegistry.RegisterInstance(fileAnalizerRepositories);
 
-            var fileDesignerRepositories = new FileDesignerRepositoryCollection(resourcePath, SerializeConstants.PATH_XML);
+            var fileDesignerRepositories = new FileDesignerRepositoryCollection(resourcePath, AccessConstants.PATH_XML);
             containerRegistry.RegisterInstance<IDesignerRepositoryCollection>(fileDesignerRepositories);
 
             //インターフェースとクラスを紐付けて登録
@@ -168,7 +148,7 @@ namespace Mov.WpfApp
 
             var domainId = 0;
             var designerRepositories = new List<IDesignerRepository>();
-            foreach(var name in fileDesignerRepositories.GetRepositoryNames())
+            foreach (var name in fileDesignerRepositories.GetRepositoryNames())
             {
                 var context = fileDesignerRepositories.GetRepository(name);
                 designerRepositories.Add(context);
@@ -193,13 +173,11 @@ namespace Mov.WpfApp
             containerRegistry.RegisterForNavigation<DesignerShellView>();
             containerRegistry.RegisterForNavigation<DesignerPartsView>();
             containerRegistry.RegisterForNavigation<DesignerThemeView>();
-            containerRegistry.RegisterForNavigation<SchedulerView>();
             containerRegistry.RegisterForNavigation<GameView>();
             containerRegistry.RegisterForNavigation<GameTitleView>();
             containerRegistry.RegisterForNavigation<GameSoftView>();
             containerRegistry.RegisterForNavigation<DrawerView>();
             containerRegistry.RegisterForNavigation<DriverView>();
-            containerRegistry.RegisterForNavigation<BomView>();
             containerRegistry.RegisterForNavigation<AnalizerView>();
 
             //Dialogの登録
@@ -209,7 +187,6 @@ namespace Mov.WpfApp
             containerRegistry.RegisterDialog<GameOverDialog, GameOverDialogViewModel>();
             containerRegistry.RegisterDialog<StageClearDialog, StageClearDialogViewModel>();
             containerRegistry.RegisterDialogWindow<DialogWindow>();
-
         }
 
         protected override void ConfigureRegionAdapterMappings(RegionAdapterMappings regionAdapterMappings)
@@ -246,13 +223,11 @@ namespace Mov.WpfApp
             ViewModelLocationProvider.Register<DesignerShellView, DesignerShellViewModel>();
             ViewModelLocationProvider.Register<DesignerPartsView, DesignerPartsViewModel>();
             ViewModelLocationProvider.Register<DesignerThemeView, DesignerThemeViewModel>();
-            ViewModelLocationProvider.Register<SchedulerView, SchedulerViewModel>();
             ViewModelLocationProvider.Register<GameView, GameViewModel>();
             ViewModelLocationProvider.Register<GameSoftView, GameSoftViewModel>();
             ViewModelLocationProvider.Register<GameTitleView, GameTitleViewModel>();
             ViewModelLocationProvider.Register<DrawerView, DrawerViewModel>();
             ViewModelLocationProvider.Register<DriverView, DriverViewModel>();
-            ViewModelLocationProvider.Register<BomView, BomViewModel>();
             ViewModelLocationProvider.Register<AnalizerView, AnalizerViewModel>();
         }
 

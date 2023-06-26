@@ -2,10 +2,6 @@
 using Prism.Services.Dialogs;
 using Reactive.Bindings;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mov.Game.ViewModels.Dialogs
 {
@@ -14,6 +10,7 @@ namespace Mov.Game.ViewModels.Dialogs
         #region プロパティ
 
         private string _title = "Notification";
+
         public string Title
         {
             get { return _title; }
@@ -21,6 +18,7 @@ namespace Mov.Game.ViewModels.Dialogs
         }
 
         private string _message;
+
         public string Message
         {
             get { return _message; }
@@ -54,12 +52,11 @@ namespace Mov.Game.ViewModels.Dialogs
 
         #region イベントハンドラ
 
-        void OnLoadedDialogCommand()
+        private void OnLoadedDialogCommand()
         {
-
         }
 
-        void OnCloseDialogCommand(string parameter)
+        private void OnCloseDialogCommand(string parameter)
         {
             ButtonResult result = ButtonResult.None;
 

@@ -1,27 +1,12 @@
-﻿using Mov.Drawer.Models;
+﻿using Mov.Game.Engine;
 using Mov.Game.Models;
-using Mov.Game.Service;
-using Prism.Mvvm;
+using Mov.Graphicers.Services;
+using Mov.Utilities;
+using Mov.WpfMvvms;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Reactive.Concurrency;
-using System.Reactive.Disposables;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media.Imaging;
-using Mov.Painters;
-using Mov.Accessors.Repository;
-using Mov.Game.Engine;
-using Mov.WpfMvvms;
-using Mov.Utilities;
 
 namespace Mov.Game.ViewModels
 {
@@ -36,8 +21,9 @@ namespace Mov.Game.ViewModels
         #endregion フィールド
 
         #region プロパティ
+
         public GameSoftModel Model { get; } = new GameSoftModel();
-        
+
         protected override GraphicControllerBase Controller { get; set; }
 
         #endregion プロパティ
@@ -137,12 +123,10 @@ namespace Mov.Game.ViewModels
 
         private void OnKeyGestureEnter()
         {
-
         }
 
         private void OnKeyGestureEscape()
         {
-
         }
 
         private void OnKeyGestureUp()
@@ -171,6 +155,5 @@ namespace Mov.Game.ViewModels
         }
 
         #endregion イベントハンドラ
-
     }
 }

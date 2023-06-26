@@ -1,27 +1,17 @@
-﻿using Mov.Game.Models;
-using Mov.Game.Service;
-using Mov.WpfMvvms;
-using Prism.Mvvm;
+﻿using Mov.WpfMvvms;
 using Prism.Regions;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Reactive.Disposables;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mov.Game.ViewModels
 {
     public class GameTitleViewModel : ViewModelBase
     {
-        #region フィールド
-
-        #endregion フィールド
-
         #region プロパティ
+
         public IRegionManager RegionManager { get; }
 
         public ReactiveCollection<string> Softs { get; } = new ReactiveCollection<string>();
@@ -66,12 +56,10 @@ namespace Mov.Game.ViewModels
 
         private void OnSoftSelectChanged(string soft)
         {
-
         }
 
         private void OnLevelSelectChanged(int lv)
         {
-
         }
 
         #endregion イベントハンドラ

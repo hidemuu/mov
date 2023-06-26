@@ -20,6 +20,9 @@
     <Reference Include="Mov.Designer.Models">
       <HintPath>..\..\..\..\..\..\frameworks\src\designer\designer.service\bin\Debug\netstandard2.0\Mov.Designer.Models.dll</HintPath>
     </Reference>
+    <Reference Include="Mov.Designer.Repository">
+      <HintPath>..\..\..\..\..\..\frameworks\src\designer\designer.repository\bin\Debug\netstandard2.0\Mov.Designer.Repository.dll</HintPath>
+    </Reference>
     <Reference Include="Mov.Designer.Service">
       <HintPath>..\..\..\..\..\..\frameworks\src\designer\designer.service\bin\Debug\netstandard2.0\Mov.Designer.Service.dll</HintPath>
     </Reference>

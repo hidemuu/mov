@@ -8,22 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\analizer.views\Analizer.Views.csproj" />
-    <ProjectReference Include="..\authorizer.views\Authorizer.Views.csproj" />
-    <ProjectReference Include="..\bom.views\Bom.Views.csproj" />
-    <ProjectReference Include="..\configurator.views\Configurator.Views.csproj" />
-    <ProjectReference Include="..\designer.views\Designer.Views.csproj" />
-    <ProjectReference Include="..\drawer.views\Drawer.Views.csproj" />
-    <ProjectReference Include="..\driver.views\Driver.Views.csproj" />
-    <ProjectReference Include="..\game.views\Game.Views.csproj" />
-    <ProjectReference Include="..\scheduler.views\Scheduler.Views.csproj" />
-    <ProjectReference Include="..\translator.views\Translator.Views.csproj" />
+    <ProjectReference Include="..\..\analizer\analizer.views\Analizer.Views.csproj" />
+    <ProjectReference Include="..\..\configurator\configurator.views\Configurator.Views.csproj" />
+    <ProjectReference Include="..\..\designer\designer.views\Designer.Views.csproj" />
+    <ProjectReference Include="..\..\drawer\drawer.views\Drawer.Views.csproj" />
+    <ProjectReference Include="..\..\driver\driver.views\Driver.Views.csproj" />
+    <ProjectReference Include="..\..\game\game.views\Game.Views.csproj" />
     <ProjectReference Include="..\usecase.viewmodels\UseCase.ViewModels.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Mov.Schemas">
-      <HintPath>..\..\..\..\src\commons\schemas\bin\Debug\netstandard2.0\Mov.Schemas.dll</HintPath>
+    <Reference Include="Mov.Layouts">
+      <HintPath>..\..\..\..\commons\wpfmvvms\bin\Debug\net7.0-windows\Mov.Layouts.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.WpfLayouts">
+      <HintPath>..\..\..\..\commons\wpfmvvms\bin\Debug\net7.0-windows\Mov.WpfLayouts.dll</HintPath>
     </Reference>
   </ItemGroup>
 

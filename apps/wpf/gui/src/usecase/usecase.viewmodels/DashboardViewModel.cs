@@ -1,5 +1,4 @@
-﻿using Mov.Accessors.Repository;
-using Mov.Designer.Models;
+﻿using Mov.Designer.Models;
 using Mov.Layouts;
 using Mov.WpfMvvms;
 using Prism.Regions;
@@ -7,12 +6,8 @@ using Prism.Services.Dialogs;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reactive.Concurrency;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Mov.UseCase.ViewModels
 {
@@ -46,7 +41,6 @@ namespace Mov.UseCase.ViewModels
             var timer = new ReactiveTimer(TimeSpan.FromMilliseconds(10), new SynchronizationContextScheduler(SynchronizationContext.Current));
             timer.Subscribe(_ =>
             {
-
             });
             timer.AddTo(Disposables);
             timer.Start();

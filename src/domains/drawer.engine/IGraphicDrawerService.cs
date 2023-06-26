@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Text;
+﻿using System.Drawing;
 
 namespace Mov.Drawer.Engine
 {
@@ -13,6 +10,7 @@ namespace Mov.Drawer.Engine
         /// 画面幅
         /// </summary>
         int FrameWidth { get; }
+
         /// <summary>
         /// 画面高さ
         /// </summary>

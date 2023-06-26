@@ -1,4 +1,4 @@
-﻿using Mov.Schemas.EntityObjects.DbObjects;
+﻿using Mov.Repositories.Models.EntityObjects.DbObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;

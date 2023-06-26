@@ -1,10 +1,8 @@
-﻿using Mov.Accessors;
-using Mov.Accessors.Repository.Implement;
-using Mov.Drawer.Models;
-using Mov.Schemas.EntityObjects.DbObjects;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Drawer.Models;
+using Mov.Repositories.Services;
+using Mov.Repositories.Services.Repositories.DbObjects;
+using Mov.Repositories.Services.Repositories.Domains;
+using Mov.Utilities;
 
 namespace Mov.Drawer.Repository
 {
@@ -17,7 +15,7 @@ namespace Mov.Drawer.Repository
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FileDrawerRepository(string endpoint,  string fileDir, string extension, string encoding = AccessConstants.ENCODE_NAME_UTF8) 
+        public FileDrawerRepository(string endpoint, string fileDir, string extension, string encoding = UtilityConstants.ENCODE_NAME_UTF8)
             : base(endpoint, fileDir, extension, encoding)
         {
             DrawItems = new FileDbObjectRepository<DrawItem, DrawItemCollection>(GetPath("draw_item"), encoding);

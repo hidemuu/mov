@@ -1,10 +1,5 @@
-﻿using Mov.Accessors.Repository;
-using Mov.Accessors.Repository.Domain;
-using Mov.Controllers;
-using Mov.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Utilities.Models.ValueObjects.Commands;
+using Mov.Utilities.Templates;
 
 namespace Mov.Bom.Models.Commands
 {

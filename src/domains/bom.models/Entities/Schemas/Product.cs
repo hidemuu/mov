@@ -1,7 +1,4 @@
-﻿using Mov.Schemas.EntityObjects.DbObjects;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Repositories.Models.EntityObjects.DbObjects;
 
 namespace Mov.Bom.Models.Entities.Schemas
 {
@@ -10,7 +7,6 @@ namespace Mov.Bom.Models.Entities.Schemas
     /// </summary>
     public class Product : DbObject
     {
-
         /// <summary>
         /// カテゴリー
         /// </summary>

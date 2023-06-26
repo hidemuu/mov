@@ -1,8 +1,6 @@
-﻿using Mov.Schemas.EntityObjects.DbObjects;
+﻿using Mov.Repositories.Models.EntityObjects.DbObjects;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Bom.Models.Entities.Schemas
 {
@@ -33,7 +31,7 @@ namespace Mov.Bom.Models.Entities.Schemas
         public Product Product { get; set; }
 
         /// <summary>
-        /// Gets or sets the quantity of product. 
+        /// Gets or sets the quantity of product.
         /// </summary>
         public int Quantity { get; set; } = 1;
     }

@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <Reference Include="Mov.Graphicers">
-      <HintPath>..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Graphicers.dll</HintPath>
+      <HintPath>..\..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Graphicers.dll</HintPath>
     </Reference>
   </ItemGroup>
 

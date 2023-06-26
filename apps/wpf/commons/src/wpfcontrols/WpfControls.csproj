@@ -20,6 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Mov.Utilities">
+      <HintPath>..\..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Update="Themes\Organisms\MovTreeListView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
@@ -28,12 +34,6 @@
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Mov.Utilities">
-      <HintPath>..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

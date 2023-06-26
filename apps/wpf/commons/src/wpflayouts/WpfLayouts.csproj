@@ -18,13 +18,13 @@
 
   <ItemGroup>
     <Reference Include="Mov.Layouts">
-      <HintPath>..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Layouts.dll</HintPath>
+      <HintPath>..\..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Layouts.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Localizers">
-      <HintPath>..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Localizers.dll</HintPath>
+      <HintPath>..\..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Localizers.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Utilities">
-      <HintPath>..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
+      <HintPath>..\..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
     </Reference>
   </ItemGroup>
 

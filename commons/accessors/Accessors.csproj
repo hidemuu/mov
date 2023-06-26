@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\loggers\Loggers.csproj" />
-    <ProjectReference Include="..\schemas\Elements.csproj" />
+    <ProjectReference Include="..\utilities\Utilities.csproj" />
   </ItemGroup>
 
   <ItemGroup>

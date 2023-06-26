@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\schemas\Elements.csproj" />
+    <ProjectReference Include="..\localizers\Localizers.csproj" />
     <ProjectReference Include="..\utilities\Utilities.csproj" />
   </ItemGroup>
 

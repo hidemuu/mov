@@ -1,4 +1,4 @@
-﻿using Mov.Accessors.Repository.Domain;
+﻿using Mov.Repositories.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -1,11 +1,8 @@
-﻿using Mov.Accessors.Crud.Persistence.Implement;
-using Mov.Configurator.Models;
-using Mov.Configurator.Models.Schemas;
-using Mov.Controllers;
-using Mov.Controllers.Repository.Persistences;
+﻿using Mov.Configurator.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Mov.Utilities.Templates.Crud;
 
 namespace Configurator.Engine.Persistences
 {

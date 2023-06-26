@@ -8,20 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\accessors\Accessors.csproj" />
-    <ProjectReference Include="..\authorizers\Authorizers.csproj" />
-    <ProjectReference Include="..\controllers\Controllers.csproj" />
-    <ProjectReference Include="..\errors\Errors.csproj" />
-    <ProjectReference Include="..\graphicers\Graphicers.csproj" />
-    <ProjectReference Include="..\layouts\Layouts.csproj" />
+    <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\Learnings\Learnings.csproj" />
-    <ProjectReference Include="..\localizers\Localizers.csproj" />
-    <ProjectReference Include="..\loggers\Loggers.csproj" />
-    <ProjectReference Include="..\repositories\Repositories.csproj" />
     <ProjectReference Include="..\Schedulers\Schedulers.csproj" />
-    <ProjectReference Include="..\schemas\Elements.csproj" />
-    <ProjectReference Include="..\shields\Shields.csproj" />
-    <ProjectReference Include="..\utilities\Utilities.csproj" />
   </ItemGroup>
 
 </Project>

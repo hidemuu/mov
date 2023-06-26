@@ -1,9 +1,8 @@
-﻿using Mov.Schemas.Layouts.Styles;
-using Mov.Schemas.Units.Coordinates;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using Mov.Utilities.Models.ValueObjects.Units.Coordinates;
 
 namespace Mov.Analizer.Models.Entities.Charts
 {

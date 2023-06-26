@@ -10,8 +10,8 @@
     <Reference Include="Mov.Repositories">
       <HintPath>..\..\..\commons\repositories\bin\Debug\netstandard2.0\Mov.Repositories.dll</HintPath>
     </Reference>
-    <Reference Include="Mov.Schemas">
-      <HintPath>..\..\..\commons\repositories\bin\Debug\netstandard2.0\Mov.Schemas.dll</HintPath>
+    <Reference Include="Mov.Utilities">
+      <HintPath>..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
     </Reference>
   </ItemGroup>
 

@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>Mov.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\accessors\Accessors.csproj" />
+    <ProjectReference Include="..\authorizers\Authorizers.csproj" />
+    <ProjectReference Include="..\controllers\Controllers.csproj" />
+    <ProjectReference Include="..\elements\Elements.csproj" />
+    <ProjectReference Include="..\errors\Errors.csproj" />
+    <ProjectReference Include="..\graphicers\Graphicers.csproj" />
+    <ProjectReference Include="..\layouts\Layouts.csproj" />
+    <ProjectReference Include="..\learnings\Learnings.csproj" />
+    <ProjectReference Include="..\localizers\Localizers.csproj" />
+    <ProjectReference Include="..\loggers\Loggers.csproj" />
+    <ProjectReference Include="..\repositories\Repositories.csproj" />
+    <ProjectReference Include="..\schedulers\Schedulers.csproj" />
+    <ProjectReference Include="..\shields\Shields.csproj" />
+    <ProjectReference Include="..\utilities\Utilities.csproj" />
+  </ItemGroup>
+
+</Project>

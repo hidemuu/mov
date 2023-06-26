@@ -1,7 +1,5 @@
-﻿using Mov.Accessors.Repository;
-using Mov.Game.Engine;
+﻿using Mov.Game.Engine;
 using Mov.Game.Models;
-using Mov.Painters;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\accessors\Accessors.csproj" />
-    <ProjectReference Include="..\schemas\Elements.csproj" />
+    <ProjectReference Include="..\utilities\Utilities.csproj" />
   </ItemGroup>
 
   <ItemGroup>

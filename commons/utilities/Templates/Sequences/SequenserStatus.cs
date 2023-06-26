@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Controllers.Sequencer
+namespace Mov.Utilities.Templates.Sequences
 {
     public class SequenserStatus
     {
@@ -15,7 +15,7 @@ namespace Mov.Controllers.Sequencer
         /// シーケンサ名称
         /// </summary>
         public string Name { get; set; }
-       
+
         /// <summary>
         /// シーケンス番号
         /// </summary>

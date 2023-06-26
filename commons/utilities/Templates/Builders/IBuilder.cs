@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas
+namespace Mov.Utilities.Templates.Builders
 {
     public interface IBuilder<T>
     {

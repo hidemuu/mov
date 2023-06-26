@@ -1,10 +1,6 @@
-﻿using Mov.Schemas.Elements;
-using Mov.Utilities.Objects.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Utilities.Models.Entities;
 
-namespace Mov.Controllers.Shields
+namespace Mov.Shields
 {
     public interface IScanner
     {

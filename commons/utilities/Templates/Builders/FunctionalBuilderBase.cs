@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Mov.Schemas
+namespace Mov.Utilities.Templates.Builders
 {
     public abstract class FunctionalBuilderBase<TSubject, TSelf> : IBuilder<TSubject>
         where TSubject : new()

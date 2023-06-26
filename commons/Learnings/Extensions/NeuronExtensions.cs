@@ -1,9 +1,9 @@
-﻿using Mov.Schemas.Elements.Learnings;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Mov.Learnings.Models;
 
-namespace Mov.Schemas.Extensions
+namespace Mov.Learnings.Extensions
 {
     public static class NeuronExtensions
     {

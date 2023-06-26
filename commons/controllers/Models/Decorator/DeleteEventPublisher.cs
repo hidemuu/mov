@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Mov.Utilities.Templates.Crud;
+using Mov.Utilities.Templates.Events;
+using Mov.Utilities.Templates.Events.Implements;
 
 namespace Mov.Controllers.Models.Decorator
 {

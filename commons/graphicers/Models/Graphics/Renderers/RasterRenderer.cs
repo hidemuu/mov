@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Mov.Graphicers;
 
-namespace Mov.Schemas.DesignPatterns.Structuals.Bridges.Renderers
+namespace Mov.Graphicers.Models.Graphics.Renderers
 {
     public class RasterRenderer : IRenderer
     {

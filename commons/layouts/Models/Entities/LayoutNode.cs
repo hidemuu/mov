@@ -1,5 +1,5 @@
 ﻿using Mov.Layouts.Models.Styles;
-using Mov.Schemas.Parameters.Keys;
+using Mov.Utilities.Models.ValueObjects.Keys;
 using System;
 using System.Collections;
 using System.Collections.Generic;

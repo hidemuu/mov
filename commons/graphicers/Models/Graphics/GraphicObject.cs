@@ -1,11 +1,10 @@
-﻿using Mov.Graphicers;
-using Mov.Graphicers.Models.Shapes;
-using Mov.Utilities.Objects;
+﻿using Mov.Graphicers.Models.Shapes;
+using Mov.Utilities.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Graphics
+namespace Mov.Graphicers.Models.Graphics
 {
     public class GraphicObject : ValueObjectBase<GraphicObject>
     {
@@ -33,8 +32,8 @@ namespace Mov.Schemas.Graphics
 
         public GraphicObject(IShape shape, string color, IRenderer renderer)
         {
-            this.Shape = shape;
-            this.Color = color;
+            Shape = shape;
+            Color = color;
             this.renderer = renderer;
         }
 
@@ -56,12 +55,12 @@ namespace Mov.Schemas.Graphics
 
         protected override bool EqualCore(GraphicObject other)
         {
-            return this.Name.Equals(other.Name) && this.Color.Equals(other.Color);
+            return Name.Equals(other.Name) && Color.Equals(other.Color);
         }
 
         protected override int GetHashCodeCore()
         {
-            return this.Name.GetHashCode() ^ this.Color.GetHashCode();
+            return Name.GetHashCode() ^ Color.GetHashCode();
         }
 
 

@@ -1,13 +1,13 @@
 ﻿using Mov.Layouts.Models.Entities;
 using Mov.Layouts.Models.Styles;
-using Mov.Schemas.Parameters.Keys;
+using Mov.Utilities.Models.ValueObjects.Keys;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 
-namespace Mov.Layouts.Implements
+namespace Mov.Layouts.Services
 {
     public class LayoutEngine : ILayoutEngine
     {
@@ -28,8 +28,8 @@ namespace Mov.Layouts.Implements
         public LayoutEngine(ILayoutContext context)
         {
             this.context = context;
-            this.DomainId = context.DomainId;
-            this.Build(context);
+            DomainId = context.DomainId;
+            Build(context);
         }
 
         #endregion コンストラクタ
@@ -38,7 +38,7 @@ namespace Mov.Layouts.Implements
 
         public void Build(ILayoutContext context)
         {
-            this.SetNodeContents(context.Nodes);
+            SetNodeContents(context.Nodes);
         }
 
         public IEnumerable<LayoutNode> GetNodes()

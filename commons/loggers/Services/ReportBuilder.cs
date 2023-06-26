@@ -1,10 +1,10 @@
 ﻿using Autofac;
 
-namespace Mov.Schemas.DesignPatterns.Structuals.Decorators.Reports
+namespace Mov.Loggers.Services
 {
     public class ReportBuilder
     {
-        public ReportBuilder() 
+        public ReportBuilder()
         {
             var b = new ContainerBuilder();
             b.RegisterType<ReportingService>().Named<IReportingService>("reporting");

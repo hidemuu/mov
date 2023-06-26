@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Mov.Controllers
+namespace Mov.Utilities.Templates.Processors
 {
     public abstract class TextFileProcessor
     {

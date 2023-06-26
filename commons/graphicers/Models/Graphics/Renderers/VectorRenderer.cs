@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.DesignPatterns.Structuals.Bridges.Renderers
+namespace Mov.Graphicers.Models.Graphics.Renderers
 {
     internal class VectorRenderer
     {

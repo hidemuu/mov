@@ -10,10 +10,10 @@ namespace Mov.Loggers.Extensions
     {
         public static string GetExecutionTimeFormat(this MethodBase method, Stopwatch stopwatch)
         {
-            return string.Join(LogConstants.SEPALATOR, 
-                $"{LogConstants.METHOD}{LogConstants.PUNCTUATON_MARK}{method.Name}", 
+            return string.Join(LogConstants.SEPALATOR,
+                $"{LogConstants.METHOD}{LogConstants.PUNCTUATON_MARK}{method.Name}",
                 $"{LogConstants.EXECUTION_TIME}{LogConstants.PUNCTUATON_MARK}{stopwatch.ElapsedMilliseconds}{LogConstants.MILLI_SECOND}");
-                
+
         }
     }
 }

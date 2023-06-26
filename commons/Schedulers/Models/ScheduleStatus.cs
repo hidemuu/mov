@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Schedulers.Models
+namespace Mov.Schedulers.Models
 {
     public enum ScheduleStatus
     {

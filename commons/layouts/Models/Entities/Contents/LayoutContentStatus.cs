@@ -1,9 +1,6 @@
 ﻿using Mov.Layouts.Models.Styles;
-using Mov.Schemas.Parameters;
-using Mov.Schemas.Parameters.Localizes;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Mov.Localizers.Models;
+using Mov.Utilities.Models.ValueObjects;
 
 namespace Mov.Layouts.Models.Entities.Contents
 {
@@ -22,7 +19,6 @@ namespace Mov.Layouts.Models.Entities.Contents
 
         public Parameter Parameter { get; }
 
-
         public LayoutContentStatus(Info name, IconImage icon, VisibilityStyle visibility, EnableStyle isEnable, Parameter parameter)
         {
             Name = name;
@@ -31,6 +27,5 @@ namespace Mov.Layouts.Models.Entities.Contents
             Enable = isEnable;
             Parameter = parameter;
         }
-
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Controllers
+namespace Mov.Utilities.Templates.Events.Implements
 {
     public class SavedEvent<T> : IEvent
     {

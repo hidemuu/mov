@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Personals
+namespace Mov.Elements.Personals
 {
     public sealed class Name
     {

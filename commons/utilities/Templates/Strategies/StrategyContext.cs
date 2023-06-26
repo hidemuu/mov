@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Mov.Controllers.Templates.Strategy
+namespace Mov.Utilities.Templates.Strategies
 {
     public class StrategyContext
     {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Mov.Utilities.Helpers;
 
 namespace Mov.Utilities.Templates.Specifications
 {

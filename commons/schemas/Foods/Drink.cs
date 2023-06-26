@@ -1,9 +1,9 @@
-﻿using Mov.Utilities.Objects;
+﻿using Mov.Utilities.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Foods
+namespace Mov.Elements.Foods
 {
     public sealed class Drink : ValueObjectBase<Drink>
     {

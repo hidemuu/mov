@@ -1,6 +1,6 @@
 ﻿using Mov.Layouts.Models.Styles;
-using Mov.Schemas.Units;
-using Mov.Schemas.Units.Sizes;
+using Mov.Utilities.Models.ValueObjects.Units;
+using Mov.Utilities.Models.ValueObjects.Units.Sizes;
 using System;
 using System.Collections.Generic;
 using System.Text;

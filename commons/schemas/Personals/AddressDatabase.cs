@@ -1,10 +1,10 @@
-﻿using Mov.Utilities.Objects;
+﻿using Mov.Utilities.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace Mov.Schemas.Personals
+namespace Mov.Elements.Personals
 {
     public class AddressDatabase : IDatabase<Address, Guid>
     {

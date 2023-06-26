@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Controllers.Sequencer
+namespace Mov.Utilities.Templates.Sequences
 {
     public enum SequenceResponseCode
     {

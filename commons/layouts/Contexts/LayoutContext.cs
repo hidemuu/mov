@@ -1,5 +1,5 @@
 ﻿using Mov.Layouts.Models.Entities;
-using Mov.Schemas.Parameters.Keys;
+using Mov.Utilities.Models.ValueObjects.Keys;
 using System.Collections.Generic;
 
 namespace Mov.Layouts.Contexts

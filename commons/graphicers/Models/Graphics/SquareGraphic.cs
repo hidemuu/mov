@@ -1,10 +1,9 @@
-﻿using Mov.Graphicers;
-using Mov.Graphicers.Models.Shapes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Mov.Graphicers.Models.Shapes;
 
-namespace Mov.Schemas.Graphics
+namespace Mov.Graphicers.Models.Graphics
 {
     public class SquareGraphic : GraphicObject
     {

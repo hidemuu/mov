@@ -1,6 +1,4 @@
-﻿using Mov.Schemas.Implements.Bodies;
-using Mov.Schemas.Parameters;
-using Mov.Schemas.Parameters.Macros;
+﻿using Mov.Utilities.Models.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;

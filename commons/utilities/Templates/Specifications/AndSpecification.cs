@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Mov.Utilities.Helpers;
 
 namespace Mov.Utilities.Templates.Specifications
 {

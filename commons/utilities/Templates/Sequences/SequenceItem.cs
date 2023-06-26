@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Controllers.Sequencer
+namespace Mov.Utilities.Templates.Sequences
 {
     /// <summary>
     /// シーケンス制御コード

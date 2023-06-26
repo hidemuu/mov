@@ -1,9 +1,6 @@
-﻿using Mov.Schemas.Elements;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Utilities.Models.Entities;
 
-namespace Mov.Schemas
+namespace Mov.Utilities.Templates.Builders
 {
     public class HtmlBuilder
     {
@@ -39,6 +36,6 @@ namespace Mov.Schemas
             root = new HtmlElement { Name = rootName };
         }
 
-        HtmlElement root = new HtmlElement();
+        private HtmlElement root = new HtmlElement();
     }
 }

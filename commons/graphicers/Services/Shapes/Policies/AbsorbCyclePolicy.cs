@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.DesignPatterns.Structuals.Decorators.Shapes.Policies
+namespace Mov.Graphicers.Services.Shapes.Policies
 {
     public class AbsorbCyclePolicy : ShapeDecoratorCyclePolicy
     {

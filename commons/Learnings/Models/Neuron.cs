@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Schemas.Elements.Learnings
+namespace Mov.Learnings.Models
 {
     public class Neuron : IEnumerable<Neuron>
     {

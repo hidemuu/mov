@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Analizer.Repository</AssemblyName>
+    <RootNamespace>Mov.Analizer.Repository</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\analizer.models\Analizer.Models.csproj" />
+  </ItemGroup>
+
+</Project>

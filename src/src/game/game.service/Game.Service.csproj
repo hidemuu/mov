@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Game.Service</AssemblyName>
+    <RootNamespace>Mov.Game.Service</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\game.engine\Game.Engine.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Graphicers">
+      <HintPath>..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Graphicers.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Learnings">
+      <HintPath>..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Learnings.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Utilities">
+      <HintPath>..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

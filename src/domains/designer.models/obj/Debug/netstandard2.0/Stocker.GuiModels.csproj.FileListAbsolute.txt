@@ -1,9 +1,0 @@
-C:\Users\nando\Documents\GitHub\Stocker\src\domains\Stocker.UiModels\bin\Debug\netstandard2.0\Stocker.GuiModels.deps.json
-C:\Users\nando\Documents\GitHub\Stocker\src\domains\Stocker.UiModels\bin\Debug\netstandard2.0\Stocker.GuiModels.dll
-C:\Users\nando\Documents\GitHub\Stocker\src\domains\Stocker.UiModels\bin\Debug\netstandard2.0\Stocker.GuiModels.pdb
-C:\Users\nando\Documents\GitHub\Stocker\src\domains\Stocker.UiModels\obj\Debug\netstandard2.0\Stocker.GuiModels.csproj.AssemblyReference.cache
-C:\Users\nando\Documents\GitHub\Stocker\src\domains\Stocker.UiModels\obj\Debug\netstandard2.0\Stocker.GuiModels.AssemblyInfoInputs.cache
-C:\Users\nando\Documents\GitHub\Stocker\src\domains\Stocker.UiModels\obj\Debug\netstandard2.0\Stocker.GuiModels.AssemblyInfo.cs
-C:\Users\nando\Documents\GitHub\Stocker\src\domains\Stocker.UiModels\obj\Debug\netstandard2.0\Stocker.GuiModels.csproj.CoreCompileInputs.cache
-C:\Users\nando\Documents\GitHub\Stocker\src\domains\Stocker.UiModels\obj\Debug\netstandard2.0\Stocker.GuiModels.dll
-C:\Users\nando\Documents\GitHub\Stocker\src\domains\Stocker.UiModels\obj\Debug\netstandard2.0\Stocker.GuiModels.pdb

@@ -9,83 +9,83 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "app\mov\Conso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspApi", "app\asp_api\AspApi.csproj", "{EFD68378-1B97-4FF4-A5A4-987274FC164A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Models", "domains\designer.models\Designer.Models.csproj", "{91059EAE-ACBE-447D-B163-62B927F696DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Models", "src\designer\designer.models\Designer.Models.csproj", "{91059EAE-ACBE-447D-B163-62B927F696DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Engine", "domains\designer.engine\Designer.Engine.csproj", "{58795326-B5A7-4BE2-91A2-EC409CCD3057}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Engine", "src\designer\designer.engine\Designer.Engine.csproj", "{58795326-B5A7-4BE2-91A2-EC409CCD3057}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Models", "domains\game.models\Game.Models.csproj", "{9DB59F57-98ED-4D5D-92E8-1BFACE2AE80C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Models", "src\game\game.models\Game.Models.csproj", "{9DB59F57-98ED-4D5D-92E8-1BFACE2AE80C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Engine", "domains\game.engine\Game.Engine.csproj", "{232D5ED0-27AB-4349-8EA9-EC379ECE8CFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Engine", "src\game\game.engine\Game.Engine.csproj", "{232D5ED0-27AB-4349-8EA9-EC379ECE8CFF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Models", "domains\driver.models\Driver.Models.csproj", "{6053982A-A697-45D4-9501-D16183E0BB37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Models", "src\driver\driver.models\Driver.Models.csproj", "{6053982A-A697-45D4-9501-D16183E0BB37}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Engine", "domains\driver.engine\Driver.Engine.csproj", "{8676BF73-F91C-4CF4-A183-37F4CE5953D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Engine", "src\driver\driver.engine\Driver.Engine.csproj", "{8676BF73-F91C-4CF4-A183-37F4CE5953D7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients", "domains\driver.clients\Driver.Clients.csproj", "{53D3658B-D945-414C-9219-C9289934BC9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients", "src\driver\driver.clients\Driver.Clients.csproj", "{53D3658B-D945-414C-9219-C9289934BC9D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bom.Models", "domains\bom.models\Bom.Models.csproj", "{25779A6A-4EED-4787-AE4D-134EF3CA2FD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bom.Models", "src\bom\bom.models\Bom.Models.csproj", "{25779A6A-4EED-4787-AE4D-134EF3CA2FD0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bom.Engine", "domains\bom.engine\Bom.Engine.csproj", "{25C4D4E0-EC41-40D5-B581-A25486A622F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bom.Engine", "src\bom\bom.engine\Bom.Engine.csproj", "{25C4D4E0-EC41-40D5-B581-A25486A622F7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawer.Models", "domains\drawer.models\Drawer.Models.csproj", "{26A953C6-D56C-4218-A809-2699844E0422}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawer.Models", "src\drawer\drawer.models\Drawer.Models.csproj", "{26A953C6-D56C-4218-A809-2699844E0422}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawer.Engine", "domains\drawer.engine\Drawer.Engine.csproj", "{5D53431F-1403-4840-856B-AE7089846E70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawer.Engine", "src\drawer\drawer.engine\Drawer.Engine.csproj", "{5D53431F-1403-4840-856B-AE7089846E70}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.Models", "domains\analizer.models\Analizer.Models.csproj", "{3671A314-6667-473B-9917-4D4C6063376D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.Models", "src\analizer\analizer.models\Analizer.Models.csproj", "{3671A314-6667-473B-9917-4D4C6063376D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.Engine", "domains\analizer.engine\Analizer.Engine.csproj", "{7EBA9536-ABB6-49D1-A3E7-EB82224D8EF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.Engine", "src\analizer\analizer.engine\Analizer.Engine.csproj", "{7EBA9536-ABB6-49D1-A3E7-EB82224D8EF0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework", "domains\framework\Framework.csproj", "{C637E2B8-DD0A-4F5A-B5DF-587031A8699A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework", "src\framework\Framework.csproj", "{C637E2B8-DD0A-4F5A-B5DF-587031A8699A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Repository", "infrastructures\designer.repository\Designer.Repository.csproj", "{73F399A6-F877-496B-AECA-5A9E33F5F21F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Repository", "src\designer\designer.repository\Designer.Repository.csproj", "{73F399A6-F877-496B-AECA-5A9E33F5F21F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Repository", "infrastructures\game.repository\Game.Repository.csproj", "{9926ED80-094A-41DA-AE91-0BEC04F72E87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Repository", "src\game\game.repository\Game.Repository.csproj", "{9926ED80-094A-41DA-AE91-0BEC04F72E87}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Repository", "infrastructures\driver.repository\Driver.Repository.csproj", "{1B745B07-EBEF-41A4-A8E2-1555D878D690}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Repository", "src\driver\driver.repository\Driver.Repository.csproj", "{1B745B07-EBEF-41A4-A8E2-1555D878D690}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bom.Repository", "infrastructures\bom.repository\Bom.Repository.csproj", "{3F3F67E7-0CBE-4686-9808-6510CF23B8ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bom.Repository", "src\bom\bom.repository\Bom.Repository.csproj", "{3F3F67E7-0CBE-4686-9808-6510CF23B8ED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawer.Repository", "infrastructures\drawer.repository\Drawer.Repository.csproj", "{911DEF97-B6FA-4B6A-BA26-A22A7ABFFC6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawer.Repository", "src\drawer\drawer.repository\Drawer.Repository.csproj", "{911DEF97-B6FA-4B6A-BA26-A22A7ABFFC6C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.Repository", "infrastructures\analizer.repository\Analizer.Repository.csproj", "{184C9D6D-6884-48E6-81F6-D33B0F87F0A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.Repository", "src\analizer\analizer.repository\Analizer.Repository.csproj", "{184C9D6D-6884-48E6-81F6-D33B0F87F0A1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.Plc", "infrastructures\driver.clients.plc\Driver.Clients.Plc.csproj", "{B40F6174-9208-4D9D-866B-7226AEEAB52D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.Plc", "src\driver\driver.clients.plc\Driver.Clients.Plc.csproj", "{B40F6174-9208-4D9D-866B-7226AEEAB52D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.Cnc", "infrastructures\driver.clients.cnc\Driver.Clients.Cnc.csproj", "{2A832F93-AD3C-42BC-BD31-EC231C176419}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.Cnc", "src\driver\driver.clients.cnc\Driver.Clients.Cnc.csproj", "{2A832F93-AD3C-42BC-BD31-EC231C176419}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.Amr", "infrastructures\driver.clients.amr\Driver.Clients.Amr.csproj", "{65DB4BC6-C700-490F-9172-413056142D7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.Amr", "src\driver\driver.clients.amr\Driver.Clients.Amr.csproj", "{65DB4BC6-C700-490F-9172-413056142D7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.RaspberryPi", "infrastructures\driver.clients.raspberrypi\Driver.Clients.RaspberryPi.csproj", "{3F7F06D7-B652-42E7-97D6-BEFB39B1D42E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.RaspberryPi", "src\driver\driver.clients.raspberrypi\Driver.Clients.RaspberryPi.csproj", "{3F7F06D7-B652-42E7-97D6-BEFB39B1D42E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.ImageProcessing", "infrastructures\driver.clients.imageprocessing\Driver.Clients.ImageProcessing.csproj", "{D85CC665-3CB2-4935-9006-6B065B740E59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.ImageProcessing", "src\driver\driver.clients.imageprocessing\Driver.Clients.ImageProcessing.csproj", "{D85CC665-3CB2-4935-9006-6B065B740E59}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Service", "applications\designer.service\Designer.Service.csproj", "{2ADDCF6E-C5C3-430B-A249-87B6E07B1FCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Service", "src\designer\designer.service\Designer.Service.csproj", "{2ADDCF6E-C5C3-430B-A249-87B6E07B1FCB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Service", "applications\game.service\Game.Service.csproj", "{5A0599D7-DE6F-474C-9BF8-2844A82D0446}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Service", "src\game\game.service\Game.Service.csproj", "{5A0599D7-DE6F-474C-9BF8-2844A82D0446}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Service", "applications\driver.service\Driver.Service.csproj", "{C47F2C6B-2A03-4280-91FE-6B3A201DDBC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Service", "src\driver\driver.service\Driver.Service.csproj", "{C47F2C6B-2A03-4280-91FE-6B3A201DDBC2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawer.Service", "applications\drawer.service\Drawer.Service.csproj", "{0D9A9388-9A1C-4EC6-8536-FD7B4250301B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawer.Service", "src\drawer\drawer.service\Drawer.Service.csproj", "{0D9A9388-9A1C-4EC6-8536-FD7B4250301B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.Service", "applications\analizer.service\Analizer.Service.csproj", "{835D34DB-8E3C-414A-9ACF-199CA2EAAAE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.Service", "src\analizer\analizer.service\Analizer.Service.csproj", "{835D34DB-8E3C-414A-9ACF-199CA2EAAAE2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bom.Service", "applications\bom.service\Bom.Service.csproj", "{3F701F2E-49E0-4ABE-9351-022A0FCA1D72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bom.Service", "src\bom\bom.service\Bom.Service.csproj", "{3F701F2E-49E0-4ABE-9351-022A0FCA1D72}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UseCases", "applications\usecases\UseCases.csproj", "{E65958B3-D9D5-49A8-8723-3D525AE21522}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UseCases", "src\usecases\UseCases.csproj", "{E65958B3-D9D5-49A8-8723-3D525AE21522}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Test", "tests\designer.test\Designer.Test.csproj", "{13F22A58-0498-4CC3-85EC-F63E7AE2C897}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Test", "src\designer\designer.test\Designer.Test.csproj", "{13F22A58-0498-4CC3-85EC-F63E7AE2C897}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Test", "tests\game.test\Game.Test.csproj", "{353CD44C-5079-4747-B13D-8A9B9036F37F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Test", "src\game\game.test\Game.Test.csproj", "{353CD44C-5079-4747-B13D-8A9B9036F37F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.Calendar", "infrastructures\driver.clients.calendar\Driver.Clients.Calendar.csproj", "{3D6380AE-8D88-4CF3-8430-8ED476ABF21E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.Calendar", "src\driver\driver.clients.calendar\Driver.Clients.Calendar.csproj", "{3D6380AE-8D88-4CF3-8430-8ED476ABF21E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.Resas", "infrastructures\driver.clients.resas\Driver.Clients.Resas.csproj", "{C5D3F450-52CB-447D-AF08-A81EFFAE2C9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Clients.Resas", "src\driver\driver.clients.resas\Driver.Clients.Resas.csproj", "{C5D3F450-52CB-447D-AF08-A81EFFAE2C9E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurator.Engine", "domains\Configurator.Engine\Configurator.Engine.csproj", "{FF339B86-3606-4AB0-A9D0-F4FD0C890241}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurator.Engine", "src\configurator\Configurator.Engine\Configurator.Engine.csproj", "{FF339B86-3606-4AB0-A9D0-F4FD0C890241}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurator.Repository", "infrastructures\Configurator.Repository\Configurator.Repository.csproj", "{32A95948-B5EB-4043-B691-7F31966E198C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurator.Repository", "src\configurator\Configurator.Repository\Configurator.Repository.csproj", "{32A95948-B5EB-4043-B691-7F31966E198C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurator.Service", "applications\Configurator.Service\Configurator.Service.csproj", "{9124475E-B8CD-4C1F-860F-7F0AD8E0C626}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurator.Service", "src\configurator\Configurator.Service\Configurator.Service.csproj", "{9124475E-B8CD-4C1F-860F-7F0AD8E0C626}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "analizer", "analizer", "{B59EDB0E-C176-48BD-9F36-9A107A3E56CA}"
 EndProject
@@ -103,7 +103,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "driver", "driver", "{A0BA59
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "game", "game", "{30805ED3-7708-4116-B501-864AEF327753}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurator.Models", "domains\configurator.models\Configurator.Models.csproj", "{F6559D74-BA8D-44B5-8379-624E1C41C81F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurator.Models", "src\configurator\configurator.models\Configurator.Models.csproj", "{F6559D74-BA8D-44B5-8379-624E1C41C81F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

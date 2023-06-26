@@ -1,13 +1,11 @@
-﻿using Mov.Accessors.Repository.Domain;
-using Mov.Analizer.Models;
-using Mov.Controllers;
+﻿using Mov.Analizer.Models;
+using Mov.Controllers.Services.Controllers;
 using Mov.Designer.Models;
 using Mov.Driver.Models;
 using Mov.Game.Engine;
+using Mov.Utilities.Templates;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
 
 namespace Mov.Framework
 {
@@ -50,9 +48,6 @@ namespace Mov.Framework
                 Debug.Assert(false, "サービスが見つかりません" + Environment.NewLine + ex.Message);
             }
             return null;
-            
-
         }
-
     }
 }

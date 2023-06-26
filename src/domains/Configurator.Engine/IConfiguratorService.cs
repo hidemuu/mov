@@ -1,9 +1,4 @@
-﻿using Mov.Configurator.Models;
-using Mov.Configurator.Models.Schemas;
-using Mov.Controllers;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Configurator.Models.Persistences;
 
 namespace Mov.Configurators
 {

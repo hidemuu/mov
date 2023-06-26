@@ -1,28 +1,29 @@
-﻿using Mov.Layouts.Services.Commands;
+﻿using Mov.Controllers.Services.Commands;
 using Mov.Utilities;
+using Mov.Utilities.Models.ValueObjects.Commands;
 using Mov.Utilities.Templates;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 
-namespace Mov.Layouts.Services
+namespace Mov.Controllers.Services.Controllers
 {
     /// <summary>
     /// ドメイン単位のコントローラー
     /// </summary>
-    public class DomainController<TService, TResponse> : IController
+    public class DomainController<TService> : IController
     {
 
         private readonly TService service;
 
-        private readonly UiCommandExecuter<TService, TResponse> executer;
+        private readonly UiCommandExecuter<TService, CommandResponse> executer;
 
 
         public DomainController(TService service, string endpoint)
         {
             this.service = service;
-            executer = new UiCommandExecuter<TService, TResponse>(service, endpoint);
+            executer = new UiCommandExecuter<TService, CommandResponse>(service, endpoint);
         }
 
         public bool Execute()

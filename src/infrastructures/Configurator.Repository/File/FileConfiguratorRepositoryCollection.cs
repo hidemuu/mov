@@ -1,17 +1,12 @@
-﻿using Mov.Accessors.Repository.Implement;
-using Mov.Configurator.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Repositories.Services.Repositories.Domains;
 
 namespace Configurator.Repository.File
 {
     public class FileConfiguratorRepositoryCollection
-        : FileDomainRepositoryCollection<FileConfiguratorRepository, FileConfiguratorRepository>, IConfiguratorRepositoryCollection
+        : FileDomainRepositoryCollection<FileConfiguratorRepository, FileConfiguratorRepository>
     {
         public FileConfiguratorRepositoryCollection(string endpoint, string extension) : base(endpoint, extension)
         {
-
         }
     }
 }

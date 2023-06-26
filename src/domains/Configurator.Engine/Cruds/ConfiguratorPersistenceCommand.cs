@@ -1,8 +1,8 @@
 ﻿using Mov.Configurator.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Mov.Configurator.Models.Persistences;
+using Mov.Repositories.Services.Cruds;
 using Mov.Utilities.Templates.Crud;
+using System;
 
 namespace Configurator.Engine.Persistences
 {
@@ -10,20 +10,17 @@ namespace Configurator.Engine.Persistences
     {
         #region フィールド
 
-        private readonly IPersistenceCommand<UserSettingSchema> _userSetting;
-
-        private readonly IPersistenceCommand<SystemSettingSchema> _systemSetting;
-
-        private readonly IPersistenceCommand<LanguageSchema> _language;
-
+        private readonly IPersistenceCommand<UserSetting> _userSetting;
 
         #endregion フィールド
 
         #region プロパティ
 
-        public ISave<UserSettingSchema> UserSettingSaver { get; }
+        public ISave<UserSetting> UserSettingSaver { get; }
 
-        public IDelete<UserSettingSchema> UserSettingDeleter { get; }
+        public IDelete<UserSetting> UserSettingDeleter { get; }
+
+        public IPersistenceCommand<UserSetting> UserSetting => throw new NotImplementedException();
 
         #endregion プロパティ
 
@@ -31,7 +28,7 @@ namespace Configurator.Engine.Persistences
 
         public ConfiguratorPersistenceCommand(IConfiguratorRepository repository)
         {
-            _userSetting = new DbObjectRepositoryCommand<UserSettingSchema, UserSettingCollectionSchema>(repository.UserSettings);
+            _userSetting = new DbObjectRepositoryCommand<UserSetting, UserSettingCollection>(repository.UserSettings);
         }
 
         #endregion コンストラクター

@@ -1,8 +1,4 @@
-﻿using Mov.Accessors;
-using Mov.Accessors.Repository.Domain;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Repositories.Services;
 
 namespace Mov.Configurator.Models
 {
@@ -10,8 +6,5 @@ namespace Mov.Configurator.Models
     {
         IDbObjectRepository<UserSetting, UserSettingCollection> UserSettings { get; }
 
-        IDbObjectRepository<Error, ErrorCollection> Errors { get; }
-
-        IDbObjectRepository<Schema, SchemaCollection> Schemas { get; }
     }
 }

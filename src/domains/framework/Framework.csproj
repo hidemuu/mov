@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -13,6 +13,15 @@
     <ProjectReference Include="..\drawer.engine\Drawer.Engine.csproj" />
     <ProjectReference Include="..\driver.engine\Driver.Engine.csproj" />
     <ProjectReference Include="..\game.engine\Game.Engine.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Controllers">
+      <HintPath>..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Controllers.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Utilities">
+      <HintPath>..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

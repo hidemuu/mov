@@ -7,7 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace Mov.Layouts.Services.Commands
+namespace Mov.Controllers.Services.Commands
 {
     public class UiCommandFactory<TParameter, TResponse> : IUiCommandFactory<TParameter, TResponse>
     {

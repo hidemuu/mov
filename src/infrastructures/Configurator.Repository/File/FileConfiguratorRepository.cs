@@ -1,12 +1,8 @@
-﻿using Mov.Accessors;
-using Mov.Accessors.Repository.Domain;
-using Mov.Accessors.Repository.Implement;
-using Mov.Configurator.Models;
-using Mov.Configurator.Models.Schemas;
-using Mov.Schemas.EntityObjects.DbObjects;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Configurator.Models;
+using Mov.Repositories.Services;
+using Mov.Repositories.Services.Repositories.DbObjects;
+using Mov.Repositories.Services.Repositories.Domains;
+using Mov.Utilities;
 
 namespace Configurator.Repository.File
 {
@@ -14,15 +10,15 @@ namespace Configurator.Repository.File
     {
         public override string DomainPath => "configurator";
 
-        public FileConfiguratorRepository(string endpoint, string fileDir, string extension, string encoding = AccessConstants.ENCODE_NAME_UTF8)
+        public FileConfiguratorRepository(string endpoint, string fileDir, string extension, string encoding = UtilityConstants.ENCODE_NAME_UTF8)
             : base(endpoint, fileDir, extension, encoding)
         {
-            UserSettings = new FileDbObjectRepository<UserSettingSchema, UserSettingCollectionSchema>(GetPath("config"), encoding);
+            UserSettings = new FileDbObjectRepository<UserSetting, UserSettingCollection>(GetPath("config"), encoding);
         }
 
         #region プロパティ
 
-        public IDbObjectRepository<UserSettingSchema, UserSettingCollectionSchema> UserSettings { get; }
+        public IDbObjectRepository<UserSetting, UserSettingCollection> UserSettings { get; }
 
         #endregion プロパティ
     }

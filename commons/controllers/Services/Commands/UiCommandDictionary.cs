@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Mov.Utilities.Templates;
 
-namespace Mov.Layouts.Services.Commands
+namespace Mov.Controllers.Services.Commands
 {
     /// <summary>
     /// 登録コマンドのディクショナリ

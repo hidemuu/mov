@@ -1,55 +1,39 @@
-﻿using Mov.Accessors;
-using Mov.Accessors.Repository;
-using Mov.Accessors.Repository.Domain;
-using Mov.Analizer.Models;
-using Mov.Analizer.Service;
-using Mov.Controllers;
-using Mov.Designer.Models;
-using Mov.Designer.Repository;
+﻿using Mov.Analizer.Service;
 using Mov.Designer.Service;
-using Mov.Driver.Models;
 using Mov.Driver.Service;
 using Mov.Framework;
 using Mov.Framework.Controllers;
-using Mov.Game.Models;
-using Mov.Game.Service;
 using Mov.Game.Service.Consoles;
-using Mov.Game.Service.Graphic;
-using Mov.Loggers.NLogs;
-using Mov.UseCases;
+using Mov.Loggers.Attributes;
 using Mov.UseCases.Controllers;
-using Mov.UseCases.Factories;
 using Mov.UseCases.Repositories;
 using Mov.UseCases.Services;
-using Mov.Utilities;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading;
 
 namespace Mov.ConsoleApp
 {
-    class Program
+    internal class Program
     {
-
         #region フィールド
 
-        static Mutex mutex = new Mutex(false, FrameworkConstants.APP_NAME + "_ConsoleApp");
+        private static Mutex mutex = new Mutex(false, FrameworkConstants.APP_NAME + "_ConsoleApp");
 
-        static bool running = true;
+        private static bool running = true;
 
-        static IMovRepository repository;
-        static IMovEngine engine;
-        static IMovController controller;
+        private static IMovRepository repository;
+        private static IMovEngine engine;
+        private static IMovController controller;
 
-        static IDictionary<string, CommandHandler> handlers;
+        private static IDictionary<string, CommandHandler> handlers;
 
-        delegate void CommandHandler(IEnumerable<string> parameters);
+        private delegate void CommandHandler(IEnumerable<string> parameters);
 
         #endregion フィールド
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             //二重起動防止
             if (!mutex.WaitOne(0, false))
@@ -78,13 +62,12 @@ namespace Mov.ConsoleApp
                 mutex.ReleaseMutex();
                 mutex.Close();
             }
-
         }
 
         #region メソッド
 
         [LogExecutionTime]
-        static void Initialize()
+        private static void Initialize()
         {
             //共通コマンド生成
             handlers = new Dictionary<string, CommandHandler>()
@@ -104,9 +87,8 @@ namespace Mov.ConsoleApp
             controller = new MovController(engine);
         }
 
-        static void Run()
+        private static void Run()
         {
-           
             while (running)
             {
                 //コントローラー生成
@@ -160,7 +142,7 @@ namespace Mov.ConsoleApp
             }
         }
 
-        static bool TryGetCommandParameter(string input, out string command, out string[] parameters)
+        private static bool TryGetCommandParameter(string input, out string command, out string[] parameters)
         {
             var tokens = input.Split(' ');
             if (tokens.Length < 1)
@@ -187,7 +169,7 @@ namespace Mov.ConsoleApp
         private static void Help(IEnumerable<string> parameters)
         {
             Console.WriteLine("----- コマンドリスト ------");
-            foreach(var key in handlers.Keys)
+            foreach (var key in handlers.Keys)
             {
                 Console.WriteLine(key);
             }

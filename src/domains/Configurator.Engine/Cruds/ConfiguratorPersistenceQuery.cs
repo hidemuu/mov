@@ -1,11 +1,8 @@
-﻿using Mov.Accessors.Crud.Persistence.Implement;
-using Mov.Configurator.Models;
-using Mov.Configurator.Models.Schemas;
-using Mov.Controllers;
-using Mov.Controllers.Repository.Persistences;
+﻿using Mov.Configurator.Models;
+using Mov.Configurator.Models.Persistences;
+using Mov.Repositories.Services.Cruds;
+using Mov.Utilities.Templates.Crud;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Configurator.Engine.Persistences
 {
@@ -13,17 +10,16 @@ namespace Configurator.Engine.Persistences
     {
         #region フィールド
 
-        private readonly IPersistenceQuery<UserSettingSchema> _userSetting;
+        private readonly IPersistenceQuery<UserSetting> _userSetting;
 
-        private readonly IPersistenceQuery<SystemSettingSchema> _systemSetting;
-
-        private readonly IPersistenceQuery<LanguageSchema> _language;
 
         #endregion フィールド
 
         #region プロパティ
 
-        public IRead<UserSettingSchema> UserSettingReader { get; }
+        public IRead<UserSetting> UserSettingReader { get; }
+
+        public IPersistenceQuery<UserSetting> UserSetting => throw new NotImplementedException();
 
         #endregion プロパティ
 
@@ -31,7 +27,7 @@ namespace Configurator.Engine.Persistences
 
         public ConfiguratorPersistenceQuery(IConfiguratorRepository repository)
         {
-            _userSetting = new DbObjectRepositoryQuery<UserSettingSchema, UserSettingCollectionSchema>(repository.UserSettings);
+            _userSetting = new DbObjectRepositoryQuery<UserSetting, UserSettingCollection>(repository.UserSettings);
         }
 
         #endregion コンストラクター

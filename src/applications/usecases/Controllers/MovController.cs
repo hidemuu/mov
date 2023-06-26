@@ -1,5 +1,5 @@
-﻿using Mov.Controllers;
-using Mov.Framework;
+﻿using Mov.Framework;
+using Mov.Utilities.Templates;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -119,6 +119,5 @@ namespace Mov.UseCases.Controllers
         }
 
         #endregion 内部メソッド
-
     }
 }

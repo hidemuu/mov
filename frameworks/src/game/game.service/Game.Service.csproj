@@ -16,13 +16,13 @@
 
   <ItemGroup>
     <Reference Include="Mov.Graphicers">
-      <HintPath>..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Graphicers.dll</HintPath>
+      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Graphicers.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Learnings">
-      <HintPath>..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Learnings.dll</HintPath>
+      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Learnings.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Utilities">
-      <HintPath>..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
+      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
     </Reference>
   </ItemGroup>
 

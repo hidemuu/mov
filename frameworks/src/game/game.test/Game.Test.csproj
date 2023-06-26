@@ -25,7 +25,7 @@
 
   <ItemGroup>
     <Reference Include="Mov.Utilities">
-      <HintPath>..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
+      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
     </Reference>
   </ItemGroup>
 

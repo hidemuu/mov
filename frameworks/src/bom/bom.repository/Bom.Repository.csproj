@@ -16,10 +16,10 @@
 
   <ItemGroup>
     <Reference Include="Mov.Accessors">
-      <HintPath>..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Accessors.dll</HintPath>
+      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Accessors.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Repositories">
-      <HintPath>..\..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Repositories.dll</HintPath>
+      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Repositories.dll</HintPath>
     </Reference>
   </ItemGroup>
 

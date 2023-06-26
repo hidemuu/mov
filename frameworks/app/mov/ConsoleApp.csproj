@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <Reference Include="Mov.Loggers">
-      <HintPath>..\..\..\commons\Core\bin\Debug\netstandard2.0\Mov.Loggers.dll</HintPath>
+      <HintPath>..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Loggers.dll</HintPath>
     </Reference>
   </ItemGroup>
 

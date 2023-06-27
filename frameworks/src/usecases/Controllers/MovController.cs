@@ -23,7 +23,6 @@ namespace Mov.UseCases.Controllers
             this.engine = engine;
             var factory = new DomainControllerFactory("Commands");
             domainControllers.Add(DomainType.Game, factory.Create(this.engine.Service.Game));
-            domainControllers.Add(DomainType.Driver, factory.Create(this.engine.Service.Driver));
         }
 
         #endregion コンストラクター

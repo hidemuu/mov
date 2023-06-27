@@ -12,7 +12,6 @@
     <ProjectReference Include="..\configurator\Configurator.Engine\Configurator.Engine.csproj" />
     <ProjectReference Include="..\designer\designer.engine\Designer.Engine.csproj" />
     <ProjectReference Include="..\drawer\drawer.engine\Drawer.Engine.csproj" />
-    <ProjectReference Include="..\driver\driver.engine\Driver.Engine.csproj" />
     <ProjectReference Include="..\game\game.engine\Game.Engine.csproj" />
   </ItemGroup>
 

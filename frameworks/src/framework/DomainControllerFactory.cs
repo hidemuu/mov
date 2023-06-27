@@ -1,7 +1,6 @@
 ﻿using Mov.Analizer.Models;
 using Mov.Controllers.Services.Controllers;
 using Mov.Designer.Models;
-using Mov.Driver.Models;
 using Mov.Game.Engine;
 using Mov.Utilities.Templates;
 using System;
@@ -33,10 +32,6 @@ namespace Mov.Framework
                 if (service is IGameFacade gameService)
                 {
                     return new DomainController<IGameFacade>(gameService, this.commandPath);
-                }
-                if (service is IDriverFacade driverService)
-                {
-                    return new DomainController<IDriverFacade>(driverService, this.commandPath);
                 }
                 if (service is IAnalizerFacade analizerService)
                 {

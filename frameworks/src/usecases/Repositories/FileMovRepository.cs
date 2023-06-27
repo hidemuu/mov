@@ -1,13 +1,9 @@
-﻿using Mov.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Accessors;
 using Mov.Analizer.Models;
 using Mov.Designer.Models;
-using Mov.Driver.Models;
+using Mov.Framework;
 using Mov.Game.Models;
 using Mov.UseCases.Factories;
-using Mov.Accessors;
 
 namespace Mov.UseCases.Repositories
 {
@@ -15,7 +11,6 @@ namespace Mov.UseCases.Repositories
     {
         public IAnalizerRepository Analizer { get; }
         public IDesignerRepository Designer { get; }
-        public IDriverRepository Driver { get; }
         public IGameRepository Game { get; }
 
         public FileMovRepository(string endpoint)
@@ -23,10 +18,7 @@ namespace Mov.UseCases.Repositories
             var fileRepositoryFactory = new FileDomainRepositoryCollectionFactory(endpoint);
             this.Designer = fileRepositoryFactory.Create<IDesignerRepository>(AccessConstants.PATH_XML)?.GetDefaultRepository();
             this.Game = fileRepositoryFactory.Create<IGameRepository>(AccessConstants.PATH_JSON)?.GetDefaultRepository();
-            this.Driver = fileRepositoryFactory.Create<IDriverRepository>(AccessConstants.PATH_JSON)?.GetDefaultRepository();
             this.Analizer = fileRepositoryFactory.Create<IAnalizerRepository>(AccessConstants.PATH_JSON)?.GetDefaultRepository();
         }
-
-        
     }
 }

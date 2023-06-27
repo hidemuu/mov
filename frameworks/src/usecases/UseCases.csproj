@@ -22,8 +22,6 @@
     <ProjectReference Include="..\designer\designer.service\Designer.Service.csproj" />
     <ProjectReference Include="..\drawer\drawer.repository\Drawer.Repository.csproj" />
     <ProjectReference Include="..\drawer\drawer.service\Drawer.Service.csproj" />
-    <ProjectReference Include="..\driver\driver.repository\Driver.Repository.csproj" />
-    <ProjectReference Include="..\driver\driver.service\Driver.Service.csproj" />
     <ProjectReference Include="..\framework\Framework.csproj" />
     <ProjectReference Include="..\game\game.repository\Game.Repository.csproj" />
     <ProjectReference Include="..\game\game.service\Game.Service.csproj" />

@@ -1,6 +1,5 @@
 ﻿using Mov.Analizer.Service;
 using Mov.Designer.Service;
-using Mov.Driver.Service;
 using Mov.Framework;
 using Mov.Framework.Controllers;
 using Mov.Game.Service.Consoles;
@@ -81,7 +80,6 @@ namespace Mov.ConsoleApp
             engine = new MovEngine(0, new MovService(
                 new AnalizerFacade(),
                 DesignerFacadeFactory.Create(new[] { repository.Designer }),
-                DriverFacadeFactory.Create(repository.Driver),
                 new ConsoleGameService()
                 ));
             controller = new MovController(engine);

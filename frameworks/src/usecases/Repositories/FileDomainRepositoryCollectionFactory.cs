@@ -2,8 +2,6 @@
 using Mov.Designer.Repository;
 using Mov.Drawer.Models;
 using Mov.Drawer.Repository;
-using Mov.Driver.Models;
-using Mov.Driver.Repository;
 using Mov.Game.Models;
 using Mov.Game.Repository;
 using Mov.Repositories.Services;
@@ -31,11 +29,6 @@ namespace Mov.UseCases.Factories
             if (repositoryType == typeof(IDrawerRepository))
             {
                 return new FileDomainRepositoryCollection<TRepository, FileDrawerRepository>(
-                    this.resourcePath, fileType);
-            }
-            if (repositoryType == typeof(IDriverRepository))
-            {
-                return new FileDomainRepositoryCollection<TRepository, FileDriverRepository>(
                     this.resourcePath, fileType);
             }
             if (repositoryType == typeof(IGameRepository))

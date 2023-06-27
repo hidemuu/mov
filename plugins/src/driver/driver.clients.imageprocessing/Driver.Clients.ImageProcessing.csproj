@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Driver.Clients.ImageProcessing</AssemblyName>
+    <RootNamespace>Mov.Driver.Clients.ImageProcessing</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="OpenCV\**" />
+    <EmbeddedResource Remove="OpenCV\**" />
+    <None Remove="OpenCV\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\driver.clients\Driver.Clients.csproj" />
+  </ItemGroup>
+
+</Project>

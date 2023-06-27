@@ -1,12 +1,4 @@
-﻿using Mov.Analizer.Models;
-using Mov.Designer.Models;
-using Mov.Driver.Models;
-using Mov.Game.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Framework
+﻿namespace Mov.Framework
 {
     public interface IMovEngine
     {

@@ -13,10 +13,10 @@
 
   <ItemGroup>
     <Reference Include="Mov.Driver.Models">
-      <HintPath>..\..\..\..\..\..\frameworks\src\driver\driver.service\bin\Debug\netstandard2.0\Mov.Driver.Models.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\plugins\src\Suite\bin\Debug\netstandard2.0\Mov.Driver.Models.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Driver.Service">
-      <HintPath>..\..\..\..\..\..\frameworks\src\driver\driver.service\bin\Debug\netstandard2.0\Mov.Driver.Service.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\plugins\src\Suite\bin\Debug\netstandard2.0\Mov.Driver.Service.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Repositories">
       <HintPath>..\..\..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Repositories.dll</HintPath>

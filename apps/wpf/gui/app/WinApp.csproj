@@ -90,19 +90,19 @@
       <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Drawer.Service.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Driver.Clients">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Driver.Clients.dll</HintPath>
+      <HintPath>..\..\..\..\plugins\src\Suite\bin\Debug\netstandard2.0\Mov.Driver.Clients.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Driver.Engine">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Driver.Engine.dll</HintPath>
+      <HintPath>..\..\..\..\plugins\src\Suite\bin\Debug\netstandard2.0\Mov.Driver.Engine.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Driver.Models">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Driver.Models.dll</HintPath>
+      <HintPath>..\..\..\..\plugins\src\Suite\bin\Debug\netstandard2.0\Mov.Driver.Models.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Driver.Repository">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Driver.Repository.dll</HintPath>
+      <HintPath>..\..\..\..\plugins\src\Suite\bin\Debug\netstandard2.0\Mov.Driver.Repository.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Driver.Service">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Driver.Service.dll</HintPath>
+      <HintPath>..\..\..\..\plugins\src\Suite\bin\Debug\netstandard2.0\Mov.Driver.Service.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Elements">
       <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Elements.dll</HintPath>

@@ -1,9 +1,10 @@
-﻿using Mov.Layouts.Models.ValueObjects.Contents;
-using Mov.Layouts.Models.ValueObjects.Nodes;
+﻿using Mov.Layouts.Models.Contents.Entities;
+using Mov.Layouts.Models.Contents.ValueObjects;
+using Mov.Layouts.Models.Nodes.ValueObjects;
 using Mov.Utilities.Models.ValueObjects.Keys;
 using System.Collections.Generic;
 
-namespace Mov.Layouts.Models.Entities
+namespace Mov.Layouts.Models.Nodes.Entities
 {
     public class LayoutNode
     {
@@ -40,9 +41,9 @@ namespace Mov.Layouts.Models.Entities
         /// <param name="content"></param>
         public LayoutNode(CodeKey code, NodeStyle nodeStyle, EnableStyle expandStyle, LayoutContent content)
         {
-            this.Code = code;
-            this.NodeType = nodeStyle;
-            this.Expand = expandStyle;
+            Code = code;
+            NodeType = nodeStyle;
+            Expand = expandStyle;
             this.content = content;
         }
 
@@ -54,12 +55,12 @@ namespace Mov.Layouts.Models.Entities
 
         public void Add(LayoutNode node)
         {
-            this.children.Add(node);
+            children.Add(node);
         }
 
         public void AddRange(IEnumerable<LayoutNode> nodes)
         {
-            this.children.AddRange(nodes);
+            children.AddRange(nodes);
         }
 
         public void SetContent(LayoutContent content)

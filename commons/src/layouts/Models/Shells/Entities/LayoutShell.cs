@@ -1,12 +1,9 @@
-﻿using Mov.Layouts.Models.ValueObjects.Shells;
+﻿using Mov.Layouts.Models.Shells.ValueObjects;
 using Mov.Utilities.Models.ValueObjects.Styles;
 using Mov.Utilities.Models.ValueObjects.Units;
 using Mov.Utilities.Models.ValueObjects.Units.Sizes;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Layouts.Models.Entities
+namespace Mov.Layouts.Models.Shells.Entities
 {
     public class LayoutShell
     {
@@ -31,6 +28,5 @@ namespace Mov.Layouts.Models.Entities
             BorderThickness = thickness;
             Size = size;
         }
-
     }
 }

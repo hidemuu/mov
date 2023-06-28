@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.Models.ValueObjects.Shells
+namespace Mov.Layouts.Models.Shells.ValueObjects
 {
     public sealed class RegionStyle : ValueObjectBase<RegionStyle>
     {

@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.Models.ValueObjects.Themes
+namespace Mov.Layouts.Models.Themes.ValueObjects
 {
     public sealed class ThemeStyle : ValueObjectBase<ThemeStyle>
     {

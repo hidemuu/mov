@@ -1,6 +1,6 @@
 ﻿using Mov.Commons.Test.Layouts.Builders;
-using Mov.Layouts.Models.Entities;
-using Mov.Layouts.Models.ValueObjects.Shells;
+using Mov.Layouts.Models.Nodes.Entities;
+using Mov.Layouts.Models.Shells.ValueObjects;
 using System.Diagnostics;
 
 namespace Mov.Commons.Test.Layouts

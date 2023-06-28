@@ -1,12 +1,12 @@
-﻿using Mov.Layouts.Models.ValueObjects.Contents;
+﻿using Mov.Layouts.Models.Contents.ValueObjects;
 using Mov.Utilities.Models.ValueObjects;
 using Mov.Utilities.Models.ValueObjects.Styles;
 
-namespace Mov.Layouts.Models.Entities.Contents
+namespace Mov.Layouts.Models.Contents.Entities
 {
     public class LayoutContentStatus
     {
-        
+
         #region property
 
         public Info Name { get; }
@@ -32,7 +32,7 @@ namespace Mov.Layouts.Models.Entities.Contents
             Parameter = parameter;
         }
 
-        public static LayoutContentStatus Empty => 
+        public static LayoutContentStatus Empty =>
             new LayoutContentStatus(Info.Empty, IconImage.Empty, VisibilityStyle.Visible, EnableStyle.Enable, Parameter.Empty);
 
         #endregion constructor

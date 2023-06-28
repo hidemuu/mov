@@ -1,10 +1,10 @@
-﻿using Mov.Layouts.Models.ValueObjects.Contents;
+﻿using Mov.Layouts.Models.Contents.ValueObjects;
 using Mov.Utilities.Models.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.Models.Entities.Contents
+namespace Mov.Layouts.Models.Contents.Entities
 {
     public class LayoutContentValue
     {
@@ -27,7 +27,7 @@ namespace Mov.Layouts.Models.Entities.Contents
             Macro = macro;
         }
 
-        public static LayoutContentValue Empty => 
+        public static LayoutContentValue Empty =>
             new LayoutContentValue(LayoutValue.Empty, Variable.Empty, Macro.Empty);
 
         #endregion constructor

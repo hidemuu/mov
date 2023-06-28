@@ -1,9 +1,8 @@
-﻿using Mov.Layouts.Models.Entities.Contents;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.Models.Entities
+namespace Mov.Layouts.Models.Contents.Entities
 {
     public class LayoutContent
     {
@@ -29,7 +28,7 @@ namespace Mov.Layouts.Models.Entities
             Schemas = schemas;
         }
 
-        public static LayoutContent Empty => 
+        public static LayoutContent Empty =>
             new LayoutContent(LayoutContentKey.Default, LayoutContentStatus.Empty, LayoutContentArrange.Empty, LayoutContentValue.Empty);
 
         #endregion constructor

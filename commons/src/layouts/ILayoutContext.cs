@@ -8,7 +8,7 @@ namespace Mov.Layouts
 {
     public interface ILayoutContext
     {
-        #region プロパティ
+        #region property
 
         CodeKey DomainId { get; }
         IEnumerable<LayoutNode> Nodes { get; }
@@ -16,9 +16,9 @@ namespace Mov.Layouts
         IEnumerable<LayoutShell> Shells { get; }
         IEnumerable<LayoutTheme> Themes { get; }
 
-        #endregion プロパティ
+        #endregion property
 
-        #region メソッド
+        #region method
 
         void Read();
 
@@ -26,7 +26,7 @@ namespace Mov.Layouts
 
         void Update();
 
-        #endregion メソッド
+        #endregion method
 
     }
 }

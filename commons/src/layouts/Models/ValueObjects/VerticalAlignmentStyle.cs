@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 
-namespace Mov.Layouts.Models.Styles
+namespace Mov.Layouts.Models.ValueObjects
 {
     public sealed class VerticalAlignmentStyle : ValueObjectBase<VerticalAlignmentStyle>
     {

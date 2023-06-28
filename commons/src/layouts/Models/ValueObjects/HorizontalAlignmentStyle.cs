@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.Models.Styles
+namespace Mov.Layouts.Models.ValueObjects
 {
     public sealed class HorizontalAlignmentStyle : ValueObjectBase<HorizontalAlignmentStyle>
     {

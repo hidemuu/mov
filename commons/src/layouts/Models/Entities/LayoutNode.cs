@@ -1,25 +1,20 @@
-﻿using Mov.Layouts.Models.Styles;
+﻿using Mov.Layouts.Models.ValueObjects;
 using Mov.Utilities.Models.ValueObjects.Keys;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Layouts.Models.Entities
 {
     public class LayoutNode
     {
-        public static LayoutNode Empty = new LayoutNode(CodeKey.Empty, NodeStyle.Content, EnableStyle.Enable, LayoutContent.Default);
-
-        #region フィールド
+        #region field
 
         private List<LayoutNode> children = new List<LayoutNode>();
 
         private LayoutContent content;
 
-        #endregion フィールド
+        #endregion field
 
-        #region プロパティ
+        #region property
 
         public CodeKey Code { get; }
 
@@ -34,9 +29,9 @@ namespace Mov.Layouts.Models.Entities
         /// </summary>
         public List<LayoutNode> Children => children;
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
         /// <summary>
         /// コンストラクター
@@ -44,25 +39,26 @@ namespace Mov.Layouts.Models.Entities
         /// <param name="content"></param>
         public LayoutNode(CodeKey code, NodeStyle nodeStyle, EnableStyle expandStyle, LayoutContent content)
         {
-            Code = code;
-            NodeType = nodeStyle;
-            Expand = expandStyle;
+            this.Code = code;
+            this.NodeType = nodeStyle;
+            this.Expand = expandStyle;
             this.content = content;
         }
 
-        #endregion コンストラクター
+        public static LayoutNode Empty => new LayoutNode(CodeKey.Empty, NodeStyle.Content, EnableStyle.Enable, LayoutContent.Default);
 
-        #region メソッド
+        #endregion constructor
 
+        #region method
 
         public void Add(LayoutNode node)
         {
-            children.Add(node);
+            this.children.Add(node);
         }
 
         public void AddRange(IEnumerable<LayoutNode> nodes)
         {
-            children.AddRange(nodes);
+            this.children.AddRange(nodes);
         }
 
         public void SetContent(LayoutContent content)
@@ -75,10 +71,6 @@ namespace Mov.Layouts.Models.Entities
             return base.ToString() + " [ControlType] " + Content.Keys.ControlType.Value + " [Macro] " + Content.Schemas.Macro.Value;
         }
 
-        #endregion メソッド
-
-        #region 内部メソッド
-
-        #endregion 内部メソッド
+        #endregion method
     }
 }

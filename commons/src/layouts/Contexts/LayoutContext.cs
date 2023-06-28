@@ -6,7 +6,7 @@ namespace Mov.Layouts.Contexts
 {
     public class LayoutContext : ILayoutContext
     {
-        #region プロパティ
+        #region property
 
         public CodeKey DomainId { get; }
         public IEnumerable<LayoutNode> Nodes { get; }
@@ -14,7 +14,9 @@ namespace Mov.Layouts.Contexts
         public IEnumerable<LayoutShell> Shells { get; }
         public IEnumerable<LayoutTheme> Themes { get; }
 
-        #endregion プロパティ
+        #endregion property
+
+        #region constructor
 
         public LayoutContext(
             CodeKey code,
@@ -30,6 +32,10 @@ namespace Mov.Layouts.Contexts
             Themes = themes;
         }
 
+        #endregion constructor
+
+        #region method
+
         public void Update()
         {
 
@@ -44,5 +50,7 @@ namespace Mov.Layouts.Contexts
         {
 
         }
+
+        #endregion method
     }
 }

@@ -7,43 +7,41 @@ namespace Mov.Layouts.Models.Entities
 {
     public class LayoutContent
     {
-
-        public static LayoutContent Default = new LayoutContent(
-            LayoutContentKey.Default, LayoutContentStatus.Empty, LayoutContentArrange.Empty, LayoutContentSchema.Empty);
-
-        #region プロパティ
+        #region property
 
         public LayoutContentKey Keys { get; }
         public LayoutContentStatus Statuses { get; }
         public LayoutContentArrange Arranges { get; }
-        public LayoutContentSchema Schemas { get; }
+        public LayoutContentValue Schemas { get; }
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public LayoutContent(LayoutContentKey keys, LayoutContentStatus statuses, LayoutContentArrange arranges, LayoutContentSchema schemas)
+        public LayoutContent(LayoutContentKey keys, LayoutContentStatus statuses, LayoutContentArrange arranges, LayoutContentValue schemas)
         {
             Keys = keys;
             Statuses = statuses;
             Arranges = arranges;
             Schemas = schemas;
-
         }
 
-        #endregion コンストラクター
+        public static LayoutContent Default => 
+            new LayoutContent(LayoutContentKey.Default, LayoutContentStatus.Empty, LayoutContentArrange.Empty, LayoutContentValue.Empty);
 
-        #region メソッド
+        #endregion constructor
+
+        #region method
 
         public override string ToString()
         {
             return "[Code] " + Keys.Code.Value + " [Name] " + Statuses.Name.Value;
         }
 
-        #endregion メソッド
+        #endregion method
 
     }
 }

@@ -11,6 +11,6 @@ namespace Mov.Layouts.Models.Entities
         public LayoutContentKey LayoutKey { get; } = LayoutContentKey.Default;
         public LayoutContentStatus LayoutParameter { get; } = LayoutContentStatus.Empty;
         public LayoutContentArrange LayoutDesign { get; } = LayoutContentArrange.Empty;
-        public LayoutContentSchema LayoutValue { get; } = LayoutContentSchema.Empty;
+        public LayoutContentValue LayoutValue { get; } = LayoutContentValue.Empty;
     }
 }

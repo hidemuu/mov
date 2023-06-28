@@ -1,37 +1,14 @@
 ﻿using Mov.Utilities.Models;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Layouts.Models.ValueObjects
+namespace Mov.Layouts.Models.ValueObjects.Contents
 {
+    /// <summary>UIコントロールの型を表すValueObject</summary>
     public sealed class ControlStyle : ValueObjectBase<ControlStyle>
     {
-        #region オブジェクト
+        #region property
 
-        public static readonly ControlStyle Label = new ControlStyle("Label");
-
-        public static readonly ControlStyle Button = new ControlStyle("Button");
-
-        public static readonly ControlStyle RadioButton = new ControlStyle("RadioButton");
-
-        public static readonly ControlStyle SpinBox = new ControlStyle("SpinBox");
-
-        public static readonly ControlStyle TextBox = new ControlStyle("TextBox");
-
-        public static readonly ControlStyle ListBox = new ControlStyle("ListBox");
-
-        public static readonly ControlStyle ComboBox = new ControlStyle("ComboBox");
-
-        public static readonly ControlStyle CheckBox = new ControlStyle("CheckBox");
-
-        public static readonly ControlStyle DatePicker = new ControlStyle("DatePicker");
-
-        #endregion オブジェクト
-
-        #region プロパティ
-
-        public string Value { get; set; }
+        public string Value { get; }
 
         public bool IsLabel => this == Label;
 
@@ -51,18 +28,36 @@ namespace Mov.Layouts.Models.ValueObjects
 
         public bool IsDatePicker => this == DatePicker;
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
         public ControlStyle(string controlType)
         {
             Value = controlType;
         }
 
-        #endregion コンストラクター
+        public static readonly ControlStyle Label = new ControlStyle("Label");
 
-        #region メソッド
+        public static readonly ControlStyle Button = new ControlStyle("Button");
+
+        public static readonly ControlStyle RadioButton = new ControlStyle("RadioButton");
+
+        public static readonly ControlStyle SpinBox = new ControlStyle("SpinBox");
+
+        public static readonly ControlStyle TextBox = new ControlStyle("TextBox");
+
+        public static readonly ControlStyle ListBox = new ControlStyle("ListBox");
+
+        public static readonly ControlStyle ComboBox = new ControlStyle("ComboBox");
+
+        public static readonly ControlStyle CheckBox = new ControlStyle("CheckBox");
+
+        public static readonly ControlStyle DatePicker = new ControlStyle("DatePicker");
+
+        #endregion constructor
+
+        #region protected method
 
         protected override bool EqualCore(ControlStyle other)
         {
@@ -74,9 +69,9 @@ namespace Mov.Layouts.Models.ValueObjects
             return Value.GetHashCode();
         }
 
-        #endregion メソッド
+        #endregion protected method
 
-        #region 静的メソッド
+        #region static method
 
         public static IEnumerable<string> GetStrings()
         {
@@ -92,9 +87,8 @@ namespace Mov.Layouts.Models.ValueObjects
                 CheckBox.Value,
                 DatePicker.Value,
             };
-
         }
 
-        #endregion 静的メソッド
+        #endregion static method
     }
 }

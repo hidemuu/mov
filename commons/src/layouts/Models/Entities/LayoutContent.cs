@@ -29,7 +29,7 @@ namespace Mov.Layouts.Models.Entities
             Schemas = schemas;
         }
 
-        public static LayoutContent Default => 
+        public static LayoutContent Empty => 
             new LayoutContent(LayoutContentKey.Default, LayoutContentStatus.Empty, LayoutContentArrange.Empty, LayoutContentValue.Empty);
 
         #endregion constructor

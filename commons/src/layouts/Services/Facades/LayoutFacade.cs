@@ -1,5 +1,5 @@
 ﻿using Mov.Layouts.Models.Entities;
-using Mov.Layouts.Models.ValueObjects;
+using Mov.Layouts.Models.ValueObjects.Shells;
 using System;
 using System.Collections.Generic;
 using System.Text;

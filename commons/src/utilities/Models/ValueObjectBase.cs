@@ -10,15 +10,15 @@ namespace Mov.Utilities.Models
     /// <typeparam name="T"></typeparam>
     public abstract class ValueObjectBase<TSelf> where TSelf : ValueObjectBase<TSelf>
     {
-        #region 抽象メソッド
+        #region abstruct method
 
         protected abstract bool EqualCore(TSelf other);
 
         protected abstract int GetHashCodeCore();
 
-        #endregion 抽象メソッド
+        #endregion abstruct method
 
-        #region メソッド
+        #region method
 
         public override bool Equals(object obj)
         {
@@ -39,9 +39,9 @@ namespace Mov.Utilities.Models
             return base.ToString();
         }
 
-        #endregion メソッド
+        #endregion method
 
-        #region 静的メソッド
+        #region static method
 
         public static bool operator ==(ValueObjectBase<TSelf> vo1, ValueObjectBase<TSelf> vo2)
         {
@@ -53,7 +53,7 @@ namespace Mov.Utilities.Models
             return !Equals(vo1, vo2);
         }
 
-        #endregion 静的メソッド
+        #endregion static method
 
     }
 }

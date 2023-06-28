@@ -3,23 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.Models.ValueObjects
+namespace Mov.Layouts.Models.ValueObjects.Contents
 {
     public sealed class HorizontalAlignmentStyle : ValueObjectBase<HorizontalAlignmentStyle>
     {
-        #region インスタンス
-
-        public static readonly HorizontalAlignmentStyle Left = new HorizontalAlignmentStyle("Left");
-
-        public static readonly HorizontalAlignmentStyle Right = new HorizontalAlignmentStyle("Right");
-
-        public static readonly HorizontalAlignmentStyle Center = new HorizontalAlignmentStyle("Center");
-
-        public static readonly HorizontalAlignmentStyle Stretch = new HorizontalAlignmentStyle("Stretch");
-
-        #endregion インスタンス
-
-        #region プロパティ
+        #region property
 
         public string Value { get; }
 
@@ -32,18 +20,26 @@ namespace Mov.Layouts.Models.ValueObjects
         public bool IsStretch => this == Stretch;
 
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
         public HorizontalAlignmentStyle(string alignment)
         {
             Value = alignment;
         }
 
-        #endregion コンストラクター
+        public static readonly HorizontalAlignmentStyle Left = new HorizontalAlignmentStyle("Left");
 
-        #region メソッド
+        public static readonly HorizontalAlignmentStyle Right = new HorizontalAlignmentStyle("Right");
+
+        public static readonly HorizontalAlignmentStyle Center = new HorizontalAlignmentStyle("Center");
+
+        public static readonly HorizontalAlignmentStyle Stretch = new HorizontalAlignmentStyle("Stretch");
+
+        #endregion constructor
+
+        #region protected method
 
         protected override bool EqualCore(HorizontalAlignmentStyle other)
         {
@@ -55,9 +51,9 @@ namespace Mov.Layouts.Models.ValueObjects
             return Value.GetHashCode();
         }
 
-        #endregion メソッド
+        #endregion protected method
 
-        #region 静的メソッド
+        #region static method
 
         public static IEnumerable<string> GetStrings()
         {
@@ -70,6 +66,6 @@ namespace Mov.Layouts.Models.ValueObjects
             };
         }
 
-        #endregion 静的メソッド
+        #endregion static method
     }
 }

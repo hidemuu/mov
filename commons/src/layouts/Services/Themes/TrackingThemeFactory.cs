@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Mov.Layouts.Models.ValueObjects;
+using Mov.Layouts.Models.ValueObjects.Themes;
 
 namespace Mov.Layouts.Services.Themes
 {

@@ -1,25 +1,18 @@
 ﻿using Mov.Utilities.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Layouts.Models.ValueObjects
+namespace Mov.Layouts.Models.ValueObjects.Contents
 {
     public sealed class EnableStyle : ValueObjectBase<EnableStyle>
     {
-        public static EnableStyle Enable = new EnableStyle(true);
-
-        public static EnableStyle Disable = new EnableStyle(false);
-
-        #region プロパティ
+        #region property
 
         public bool Value { get; }
 
         public bool BindableValue { get; set; }
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
         public EnableStyle(bool isEnabled)
         {
@@ -27,9 +20,13 @@ namespace Mov.Layouts.Models.ValueObjects
             BindableValue = Value;
         }
 
-        #endregion コンストラクター
+        public static EnableStyle Enable = new EnableStyle(true);
 
-        #region メソッド
+        public static EnableStyle Disable = new EnableStyle(false);
+
+        #endregion constructor
+
+        #region protected method
 
         protected override bool EqualCore(EnableStyle other)
         {
@@ -41,6 +38,6 @@ namespace Mov.Layouts.Models.ValueObjects
             return Value.GetHashCode();
         }
 
-        #endregion メソッド
+        #endregion protected method
     }
 }

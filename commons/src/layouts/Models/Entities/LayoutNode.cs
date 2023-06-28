@@ -1,4 +1,5 @@
-﻿using Mov.Layouts.Models.ValueObjects;
+﻿using Mov.Layouts.Models.ValueObjects.Contents;
+using Mov.Layouts.Models.ValueObjects.Nodes;
 using Mov.Utilities.Models.ValueObjects.Keys;
 using System.Collections.Generic;
 
@@ -45,7 +46,7 @@ namespace Mov.Layouts.Models.Entities
             this.content = content;
         }
 
-        public static LayoutNode Empty => new LayoutNode(CodeKey.Empty, NodeStyle.Content, EnableStyle.Enable, LayoutContent.Default);
+        public static LayoutNode Empty => new LayoutNode(CodeKey.Empty, NodeStyle.Content, EnableStyle.Enable, LayoutContent.Empty);
 
         #endregion constructor
 

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Layouts.Models.ValueObjects
+namespace Mov.Layouts.Models.ValueObjects.Contents
 {
     public sealed class VisibilityStyle : ValueObjectBase<VisibilityStyle>
     {

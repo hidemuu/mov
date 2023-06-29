@@ -1,9 +1,6 @@
-﻿using Mov.Authorizers.Models.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Core.Authorizers.Models.Entities;
 
-namespace Mov.Authorizers
+namespace Mov.Core.Authorizers
 {
     public interface IAccountRepository
     {

@@ -1,9 +1,6 @@
-﻿using Mov.Utilities.Models.ValueObjects.Units;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Core.Models.ValueObjects.Units;
 
-namespace Mov.Accessors.Models.Entities
+namespace Mov.Core.Accessors.Models.Entities
 {
     public sealed class ConnectParameter
     {

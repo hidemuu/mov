@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System.IO;
 
-namespace Mov.Repositories.Services.Repositories.Domains
+namespace Mov.Core.Repositories.Services.Repositories.Domains
 {
     public abstract class FileDomainRepositoryBase : IDomainRepository
     {

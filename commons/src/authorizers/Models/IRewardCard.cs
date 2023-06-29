@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Authorizers.Models
+﻿namespace Mov.Core.Authorizers.Models
 {
     public interface IRewardCard
     {

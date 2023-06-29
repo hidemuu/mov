@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Graphicers
+﻿namespace Mov.Core.Graphicers
 {
     public interface IRenderer
     {

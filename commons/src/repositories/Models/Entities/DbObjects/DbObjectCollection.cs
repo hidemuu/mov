@@ -2,7 +2,7 @@
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Repositories.Models.EntityObjects.DbObjects
+namespace Mov.Core.Repositories.Models.Entities.DbObjects
 {
     /// <summary>
     /// データベースオブジェクトのコレクション

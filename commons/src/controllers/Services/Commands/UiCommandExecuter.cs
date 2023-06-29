@@ -1,8 +1,7 @@
-﻿using Mov.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace Mov.Controllers.Services.Commands
+namespace Mov.Core.Controllers.Services.Commands
 {
     /// <summary>
     /// コマンド実行クラス

@@ -1,10 +1,7 @@
-﻿using Mov.Utilities.Models.Entities;
+﻿using Mov.Core.Models.Entities;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Controllers.Models
+namespace Mov.Core.Controllers.Models
 {
     public class StoreItem : QueueObject
     {

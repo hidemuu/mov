@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Mov.Accessors.Services.Watcher
+namespace Mov.Core.Accessors.Services.Watcher
 {
     /// <summary>
     /// ファイル監視クラス

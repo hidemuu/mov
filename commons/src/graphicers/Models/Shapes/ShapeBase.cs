@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Graphicers.Models.Shapes
+﻿namespace Mov.Core.Graphicers.Models.Shapes
 {
     public abstract class ShapeBase : IShape
     {

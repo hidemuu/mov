@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Elements.Personals.Fluents
+﻿namespace Mov.Core.Elements.Personals.Fluents
 {
     public class PersonInfoBuilder<TSelf> : PersonBuilder
         where TSelf : PersonInfoBuilder<TSelf>

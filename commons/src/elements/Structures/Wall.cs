@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Text;
+﻿using System.Drawing;
 
-namespace Mov.Elements.Structures
+namespace Mov.Core.Elements.Structures
 {
     public class Wall
     {

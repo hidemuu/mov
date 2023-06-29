@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 
-namespace Mov.Graphicers.Services
+namespace Mov.Core.Graphicers.Services
 {
     public class GraphicEngine
     {

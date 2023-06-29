@@ -1,11 +1,9 @@
-﻿using Mov.Graphicers.Models.Shapes;
-using Mov.Graphicers.Services.Shapes.Policies;
-using System;
-using System.Collections.Generic;
+﻿using Mov.Core.Graphicers.Models.Shapes;
+using Mov.Core.Graphicers.Services.Shapes.Policies;
 using System.Linq;
 using System.Text;
 
-namespace Mov.Graphicers.Services.Shapes
+namespace Mov.Core.Graphicers.Services.Shapes
 {
     public class ColoredShape
     : ShapeDecorator<ColoredShape, AbsorbCyclePolicy>

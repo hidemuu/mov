@@ -1,10 +1,8 @@
-﻿using Mov.Utilities.Models;
-using Mov.Utilities.Models.ValueObjects.Units;
+﻿using Mov.Core.Models;
+using Mov.Core.Models.ValueObjects.Units;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Elements.Products
+namespace Mov.Core.Elements.Products
 {
     public class Car : ValueObjectBase<Car>
     {

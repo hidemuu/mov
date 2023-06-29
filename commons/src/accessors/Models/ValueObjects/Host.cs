@@ -1,9 +1,7 @@
-﻿using Mov.Utilities.Models;
+﻿using Mov.Core.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Accessors.Models.ValueObjects
+namespace Mov.Core.Accessors.Models.ValueObjects
 {
     public sealed class Host : ValueObjectBase<Host>
     {

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Mov.Controllers.Services.Commands;
+﻿using Mov.Core.Controllers.Services.Commands;
 
-namespace Mov.Controllers
+namespace Mov.Core.Controllers
 {
     public interface IUiCommandFactory<TParameter, TResponse>
     {

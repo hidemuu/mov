@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Utilities.Attributes
+namespace Mov.Core.Attributes
 {
-    [System.AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
+    [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public sealed class LanguageKeyAttribute : Attribute
     {
         public LanguageKeyAttribute(string key)

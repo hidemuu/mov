@@ -1,8 +1,8 @@
-﻿using Mov.Utilities.Templates.Crud;
-using Mov.Utilities.Templates.Events;
-using Mov.Utilities.Templates.Events.Implements;
+﻿using Mov.Core.Templates.Crud;
+using Mov.Core.Templates.Events;
+using Mov.Core.Templates.Events.Implements;
 
-namespace Mov.Controllers.Models.Decorator
+namespace Mov.Core.Controllers.Models.Decorator
 {
     public class ModificationEventPublisher<T> : IDelete<T>, ISave<T>
     {

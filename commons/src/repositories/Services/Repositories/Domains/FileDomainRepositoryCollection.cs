@@ -1,10 +1,9 @@
-﻿using Mov.Accessors;
+﻿using Mov.Core.Accessors;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
-namespace Mov.Repositories.Services.Repositories.Domains
+namespace Mov.Core.Repositories.Services.Repositories.Domains
 {
     public class FileDomainRepositoryCollection<TRepository, TInstance>
         : IDomainRepositoryCollection<TRepository>

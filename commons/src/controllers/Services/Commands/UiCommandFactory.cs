@@ -1,13 +1,11 @@
-﻿using Mov.Utilities.Helper;
-using Mov.Utilities.Templates;
+﻿using Mov.Core.Helpers;
+using Mov.Core.Templates;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 
-namespace Mov.Controllers.Services.Commands
+namespace Mov.Core.Controllers.Services.Commands
 {
     public class UiCommandFactory<TParameter, TResponse> : IUiCommandFactory<TParameter, TResponse>
     {

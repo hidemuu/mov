@@ -1,9 +1,8 @@
-﻿using Mov.Utilities.Models;
+﻿using Mov.Core.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Layouts.Models.Shells.ValueObjects
+namespace Mov.Core.Layouts.Models.Shells.ValueObjects
 {
     public sealed class RegionStyle : ValueObjectBase<RegionStyle>
     {

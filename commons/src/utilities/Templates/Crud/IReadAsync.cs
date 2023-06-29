@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Utilities.Templates.Crud
+namespace Mov.Core.Templates.Crud
 {
     public interface IReadAsync<TEntity>
     {

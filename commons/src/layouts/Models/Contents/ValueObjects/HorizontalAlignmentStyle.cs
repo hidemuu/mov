@@ -1,9 +1,8 @@
-﻿using Mov.Utilities.Models;
+﻿using Mov.Core.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Layouts.Models.Contents.ValueObjects
+namespace Mov.Core.Layouts.Models.Contents.ValueObjects
 {
     public sealed class HorizontalAlignmentStyle : ValueObjectBase<HorizontalAlignmentStyle>
     {

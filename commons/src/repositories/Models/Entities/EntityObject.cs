@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Repositories.Models.EntityObjects
+﻿namespace Mov.Core.Repositories.Models.Entities
 {
     public class EntityObject<TKey>
     {

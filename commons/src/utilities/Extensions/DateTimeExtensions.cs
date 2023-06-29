@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Utilities.Extensions
+namespace Mov.Core.Extensions
 {
     public static class DateTimeExtensions
     {

@@ -1,9 +1,8 @@
-﻿using Mov.Utilities.Models;
+﻿using Mov.Core.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Layouts.Models.Nodes.ValueObjects
+namespace Mov.Core.Layouts.Models.Nodes.ValueObjects
 {
     public sealed class NodeStyle : ValueObjectBase<NodeStyle>
     {

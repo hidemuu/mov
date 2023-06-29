@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Loggers.Services
+﻿namespace Mov.Core.Loggers.Services
 {
     public interface IReportingService
     {

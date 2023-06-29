@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace Mov.Controllers.Services.Controllers
+namespace Mov.Core.Controllers.Services.Controllers
 {
     /// <summary>
     /// 上位アプリケーションからの指令を格納

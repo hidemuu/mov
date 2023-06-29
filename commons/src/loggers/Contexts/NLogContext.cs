@@ -1,10 +1,10 @@
-﻿using Mov.Loggers.Extensions;
+﻿using Mov.Core.Loggers.Extensions;
 using NLog;
 using System;
 using System.Diagnostics;
 using System.Reflection;
 
-namespace Mov.Loggers.Contexts
+namespace Mov.Core.Loggers.Contexts
 {
     public class NLogContext : ILogContext
     {

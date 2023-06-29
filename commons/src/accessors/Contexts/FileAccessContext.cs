@@ -1,10 +1,10 @@
-﻿using Mov.Accessors.Models.Entities;
-using Mov.Loggers;
+﻿using Mov.Core.Accessors.Models.Entities;
+using Mov.Core.Loggers;
 using System;
 using System.Data;
 using System.IO;
 
-namespace Mov.Accessors.Contexts
+namespace Mov.Core.Accessors.Contexts
 {
     /// <inheritdoc/>
     public class FileAccessContext : IAccessContext
@@ -20,7 +20,7 @@ namespace Mov.Accessors.Contexts
 
         public FileAccessContext(string path, string encodeName = AccessConstants.ENCODE_NAME_UTF8)
         {
-            this.FileParameter = new FileParameter(path, encodeName);
+            FileParameter = new FileParameter(path, encodeName);
         }
 
         #endregion コンストラクター

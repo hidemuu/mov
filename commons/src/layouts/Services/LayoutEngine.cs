@@ -1,16 +1,13 @@
-﻿using Mov.Layouts.Models.Contents.Entities;
-using Mov.Layouts.Models.Nodes.Entities;
-using Mov.Layouts.Models.Shells.Entities;
-using Mov.Layouts.Models.Shells.ValueObjects;
-using Mov.Layouts.Models.Themes.Entities;
-using Mov.Utilities.Models.ValueObjects.Keys;
-using System;
+﻿using Mov.Core.Layouts.Models.Contents.Entities;
+using Mov.Core.Layouts.Models.Nodes.Entities;
+using Mov.Core.Layouts.Models.Shells.Entities;
+using Mov.Core.Layouts.Models.Shells.ValueObjects;
+using Mov.Core.Layouts.Models.Themes.Entities;
+using Mov.Core.Models.ValueObjects.Keys;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Xml.Linq;
 
-namespace Mov.Layouts.Services
+namespace Mov.Core.Layouts.Services
 {
     public class LayoutEngine : ILayoutEngine
     {

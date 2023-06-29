@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
+﻿using System.Collections.ObjectModel;
 
-namespace Mov.Learnings.Models
+namespace Mov.Core.Learnings.Models
 {
     public class NeuronLayer : Collection<Neuron>
     {

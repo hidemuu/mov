@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System.IO;
 
-namespace Mov.Utilities.Templates.Processors
+namespace Mov.Core.Templates.Processors
 {
     public abstract class TextFileProcessor
     {

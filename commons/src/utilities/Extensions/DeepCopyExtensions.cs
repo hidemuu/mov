@@ -1,12 +1,9 @@
-﻿using Mov.Utilities.Models;
-using System;
-using System.Collections.Generic;
+﻿using Mov.Core.Models;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Utilities.Extensions
+namespace Mov.Core.Extensions
 {
     public static class DeepCopyExtensions
     {

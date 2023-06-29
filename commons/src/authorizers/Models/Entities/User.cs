@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Schemas.Elements.Auths
+﻿namespace Mov.Core.Authorizers.Models.Entities
 {
     public class User
     {

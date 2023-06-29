@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Utilities.Templates.Events.Implements
+﻿namespace Mov.Core.Templates.Events.Implements
 {
     public class DeletedEvent<T> : IEvent
     {

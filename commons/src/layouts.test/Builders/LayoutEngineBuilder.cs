@@ -1,12 +1,11 @@
 ﻿using Moq;
-using Mov.Layouts;
-using Mov.Layouts.Models.Contents.Entities;
-using Mov.Layouts.Models.Nodes.Entities;
-using Mov.Layouts.Models.Shells.Entities;
-using Mov.Layouts.Models.Themes.Entities;
-using Mov.Layouts.Services;
+using Mov.Core.Layouts.Models.Contents.Entities;
+using Mov.Core.Layouts.Models.Nodes.Entities;
+using Mov.Core.Layouts.Models.Shells.Entities;
+using Mov.Core.Layouts.Models.Themes.Entities;
+using Mov.Core.Layouts.Services;
 
-namespace Mov.Commons.Test.Layouts.Builders
+namespace Mov.Core.Layouts.Test.Builders
 {
     internal class LayoutEngineBuilder
     {
@@ -21,8 +20,8 @@ namespace Mov.Commons.Test.Layouts.Builders
 
         internal LayoutEngineBuilder()
         {
-            this.mockContext = new Mock<ILayoutContext>();
-            this.engine = new LayoutEngine(mockContext.Object);
+            mockContext = new Mock<ILayoutContext>();
+            engine = new LayoutEngine(mockContext.Object);
         }
 
         #endregion constructor
@@ -31,29 +30,29 @@ namespace Mov.Commons.Test.Layouts.Builders
 
         public LayoutEngineBuilder WithNodeCalled(IEnumerable<LayoutNode> nodes)
         {
-            this.mockContext.Setup(x => x.Nodes).Returns(nodes);
+            mockContext.Setup(x => x.Nodes).Returns(nodes);
             return this;
         }
 
         public LayoutEngineBuilder WithContentCalled(IEnumerable<LayoutContent> contents)
         {
-            this.mockContext.Setup(x => x.Contents).Returns(contents);
+            mockContext.Setup(x => x.Contents).Returns(contents);
             return this;
         }
 
         public LayoutEngineBuilder WithShellCalled(IEnumerable<LayoutShell> shells)
         {
-            this.mockContext.Setup(x => x.Shells).Returns(shells);
+            mockContext.Setup(x => x.Shells).Returns(shells);
             return this;
         }
 
         public LayoutEngineBuilder WithThemeCalled(IEnumerable<LayoutTheme> themes)
         {
-            this.mockContext.Setup(x => x.Themes).Returns(themes);
+            mockContext.Setup(x => x.Themes).Returns(themes);
             return this;
         }
 
-        public ILayoutEngine Build() => this.engine;
+        public ILayoutEngine Build() => engine;
 
         #endregion method
     }

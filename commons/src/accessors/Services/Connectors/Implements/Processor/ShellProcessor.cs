@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Accessors.Services.Connectors.Implements.Processor
+namespace Mov.Core.Accessors.Services.Connectors.Implements.Processor
 {
     /// <summary>
     /// シェルプロセスクラス

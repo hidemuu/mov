@@ -1,10 +1,7 @@
-﻿using Mov.Layouts.Models.Contents.ValueObjects;
-using Mov.Utilities.Models.ValueObjects;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Core.Layouts.Models.Contents.ValueObjects;
+using Mov.Core.Models.ValueObjects;
 
-namespace Mov.Layouts.Models.Contents.Entities
+namespace Mov.Core.Layouts.Models.Contents.Entities
 {
     public class LayoutContentValue
     {

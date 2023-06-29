@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Mov.Utilities.Models.Entities
+namespace Mov.Core.Models.Entities
 {
     public class Journal<T>
     {

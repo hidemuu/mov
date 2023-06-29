@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Learnings.Models
+namespace Mov.Core.Learnings.Models
 {
     public class Neuron : IEnumerable<Neuron>
     {

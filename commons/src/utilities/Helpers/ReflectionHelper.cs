@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 
-namespace Mov.Utilities.Helper
+namespace Mov.Core.Helpers
 {
     /// <summary>
     /// リフレクション処理のヘルパークラス
@@ -48,7 +47,7 @@ namespace Mov.Utilities.Helper
                 return
                   types.Where(t => string.Equals(t.Namespace, name_space, StringComparison.Ordinal));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.Assert(false, ex.Message);
             }

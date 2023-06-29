@@ -1,8 +1,6 @@
 ﻿using System.IO;
-using System.Text;
-using System.Xml.Serialization;
 
-namespace Mov.Accessors.Services.Serializer.Implements
+namespace Mov.Core.Accessors.Services.Serializer.Implements
 {
     /// <summary>
     /// XMLシリアライザー

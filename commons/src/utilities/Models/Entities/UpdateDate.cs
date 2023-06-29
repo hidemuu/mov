@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Utilities.Models.Entities
+namespace Mov.Core.Models.Entities
 {
     /// <summary>
     /// 更新記録

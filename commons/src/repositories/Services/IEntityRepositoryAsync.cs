@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Mov.Repositories.Services
+namespace Mov.Core.Repositories.Services
 {
     public interface IEntityRepositoryAsync<TEntity>
     {

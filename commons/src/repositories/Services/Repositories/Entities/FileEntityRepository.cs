@@ -1,16 +1,15 @@
-﻿using Mov.Accessors;
-using Mov.Accessors.Services.Serializer;
-using Mov.Accessors.Services.Serializer.Implements;
-using Mov.Repositories.Models;
+﻿using Mov.Core.Accessors;
+using Mov.Core.Accessors.Services.Serializer;
+using Mov.Core.Accessors.Services.Serializer.Implements;
+using Mov.Core.Repositories.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Repositories.Services.Repositories.Entities
+namespace Mov.Core.Repositories.Services.Repositories.Entities
 {
     /// <summary>
     /// 任意のエンティティのファイルデータのリポジトリ

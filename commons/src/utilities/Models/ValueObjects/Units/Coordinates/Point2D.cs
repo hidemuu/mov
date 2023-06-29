@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Mov.Utilities.Models;
 
-namespace Mov.Utilities.Models.ValueObjects.Units.Coordinates
+namespace Mov.Core.Models.ValueObjects.Units.Coordinates
 {
     public sealed class Point2D : ValueObjectBase<Point2D>
     {

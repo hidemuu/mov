@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 
-namespace Mov.Utilities.Converter
+namespace Mov.Core.Converters
 {
     public static class ByteConverter
     {
@@ -13,7 +11,7 @@ namespace Mov.Utilities.Converter
         /// <returns>変換結果文字列</returns>
         public static string ToString(byte[] buffer)
         {
-            string msg = System.Text.Encoding.ASCII.GetString(buffer, 0, buffer.Length);
+            string msg = Encoding.ASCII.GetString(buffer, 0, buffer.Length);
             return msg;
         }
     }

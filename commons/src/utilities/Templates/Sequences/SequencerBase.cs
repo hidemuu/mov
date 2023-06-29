@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Utilities.Templates.Sequences
+namespace Mov.Core.Templates.Sequences
 {
     /// <summary>
     /// シーケンス制御基底クラス

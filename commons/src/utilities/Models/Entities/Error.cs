@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Utilities.Models.Entities
+namespace Mov.Core.Models.Entities
 {
     /// <summary>
     /// エラー１点分の情報

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Mov.Utilities.Helpers;
-
-namespace Mov.Utilities.Templates.Specifications
+﻿namespace Mov.Core.Templates.Specifications
 {
     public abstract class CompositeSpecification<T> : ISpecification<T>
     {

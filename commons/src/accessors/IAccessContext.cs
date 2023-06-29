@@ -1,6 +1,6 @@
-﻿using Mov.Accessors.Models.Entities;
+﻿using Mov.Core.Accessors.Models.Entities;
 
-namespace Mov.Accessors
+namespace Mov.Core.Accessors
 {
     /// <summary>
     /// アクセスの共通コンテキスト

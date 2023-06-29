@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Elements.Structures
+namespace Mov.Core.Elements.Structures
 {
     public sealed class BuildingContext : IDisposable
     {

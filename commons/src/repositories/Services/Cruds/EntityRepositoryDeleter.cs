@@ -1,9 +1,7 @@
-﻿using Mov.Utilities.Templates.Crud;
+﻿using Mov.Core.Templates.Crud;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Repositories.Services.Cruds
+namespace Mov.Core.Repositories.Services.Cruds
 {
     public class EntityRepositoryDeleter<TEntity> : IDelete<TEntity>
     {

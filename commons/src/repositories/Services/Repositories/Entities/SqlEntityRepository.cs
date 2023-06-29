@@ -1,12 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Mov.Repositories.Models.EntityObjects;
-using System;
+using Mov.Core.Repositories.Models.Entities;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Repositories.Services.Repositories.Entities
+namespace Mov.Core.Repositories.Services.Repositories.Entities
 {
     public class SqlEntityRepository<TEntity, TKey> : IEntityRepositoryAsync<TEntity> where TEntity : EntityObject<TKey>
     {

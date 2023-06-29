@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Utilities.Converter
+namespace Mov.Core.Converters
 {
     public static class DateTimeConverter
     {
@@ -39,7 +37,7 @@ namespace Mov.Utilities.Converter
             int buf = date.Hour * 60 + date.Minute;
             int over = 0;
             if (date.Day > startDate.Day) over = 1;
-            int result = buf - (over * 24) * 60;  //日跨ぎ処理
+            int result = buf - over * 24 * 60;  //日跨ぎ処理
             if (result < 0) { result = buf; }   //結果がマイナスなら日跨ぎ無視
             return result;
         }
@@ -53,7 +51,7 @@ namespace Mov.Utilities.Converter
         public static int ConvertHourToMinute(int hour, int minute, int over)
         {
             int buf = hour * 60 + minute;
-            int result = buf - (over * 24) * 60;  //日跨ぎ処理
+            int result = buf - over * 24 * 60;  //日跨ぎ処理
             if (result < 0) { result = buf; }   //結果がマイナスなら日跨ぎ無視
             return result;
         }
@@ -92,10 +90,10 @@ namespace Mov.Utilities.Converter
             string result = "";
             int bufMinute = minute;
             //日跨ぎ分処理
-            if (over > 0) { bufMinute -= (over * 24) * 60; }
+            if (over > 0) { bufMinute -= over * 24 * 60; }
             //時,分換算
             int h = bufMinute / 60;
-            int m = bufMinute - (h * 60);
+            int m = bufMinute - h * 60;
             //文字列生成
             string hStr = h.ToString();
             string mStr = m.ToString();

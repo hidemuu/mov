@@ -1,10 +1,8 @@
-﻿using Mov.Utilities.Models.Entities;
+﻿using Mov.Core.Models.Entities;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Shields.Models.Entities.Job
+namespace Mov.Core.Shields.Models.Entities.Job
 {
     /// <summary>
     /// ジョブ情報

@@ -1,8 +1,8 @@
-﻿using Mov.Layouts.Models.Contents.ValueObjects;
-using Mov.Utilities.Models.ValueObjects;
-using Mov.Utilities.Models.ValueObjects.Styles;
+﻿using Mov.Core.Layouts.Models.Contents.ValueObjects;
+using Mov.Core.Models.ValueObjects;
+using Mov.Core.Models.ValueObjects.Styles;
 
-namespace Mov.Layouts.Models.Contents.Entities
+namespace Mov.Core.Layouts.Models.Contents.Entities
 {
     public class LayoutContentStatus
     {

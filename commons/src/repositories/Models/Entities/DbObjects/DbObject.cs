@@ -1,4 +1,4 @@
-﻿using Mov.Utilities.Attributes;
+﻿using Mov.Core.Attributes;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Repositories.Models.EntityObjects.DbObjects
+namespace Mov.Core.Repositories.Models.Entities.DbObjects
 {
     /// <summary>
     /// データベースの基本オブジェクト

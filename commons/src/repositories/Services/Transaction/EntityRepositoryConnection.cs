@@ -1,9 +1,6 @@
-﻿using Mov.Utilities.Templates.Transactions;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Core.Templates.Transactions;
 
-namespace Mov.Repositories.Services.Transaction
+namespace Mov.Core.Repositories.Services.Transaction
 {
     public class EntityRepositoryConnection<TEntity> : IConnection
     {

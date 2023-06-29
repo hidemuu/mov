@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Utilities.Templates.Sequences
+namespace Mov.Core.Templates.Sequences
 {
     /// <summary>
     /// シーケンス制御コード

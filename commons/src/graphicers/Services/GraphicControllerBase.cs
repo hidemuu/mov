@@ -1,12 +1,8 @@
-﻿using Mov.Loggers;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Drawing;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Graphicers.Services
+namespace Mov.Core.Graphicers.Services
 {
     public abstract class GraphicControllerBase
     {

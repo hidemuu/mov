@@ -1,12 +1,11 @@
-﻿using Mov.Accessors;
-using Mov.Accessors.Contexts;
-using Mov.Accessors.Services.Serializer.Implements;
+﻿using Mov.Core.Accessors;
+using Mov.Core.Accessors.Contexts;
+using Mov.Core.Accessors.Services.Serializer.Implements;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Repositories.Services.Repositories.Entities
+namespace Mov.Core.Repositories.Services.Repositories.Entities
 {
     public class RestEntityRepository<TEntity> : IEntityRepositoryAsync<TEntity>
     {

@@ -1,7 +1,7 @@
-﻿using Mov.Repositories.Services.Cruds;
-using Mov.Utilities.Templates.Transactions;
+﻿using Mov.Core.Repositories.Services.Cruds;
+using Mov.Core.Templates.Transactions;
 
-namespace Mov.Repositories.Services.Transaction
+namespace Mov.Core.Repositories.Services.Transaction
 {
     public class PersistenceTransaction<TEntity> : ITransaction
     {

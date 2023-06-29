@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Repositories
+﻿namespace Mov.Core.Repositories
 {
     /// <summary>
     /// リポジトリの定数

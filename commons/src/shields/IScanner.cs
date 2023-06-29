@@ -1,6 +1,6 @@
-﻿using Mov.Utilities.Models.ValueObjects;
+﻿using Mov.Core.Models.ValueObjects;
 
-namespace Mov.Shields
+namespace Mov.Core.Shields
 {
     public interface IScanner
     {

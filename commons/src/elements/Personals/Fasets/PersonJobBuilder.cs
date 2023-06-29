@@ -1,6 +1,6 @@
-﻿using Mov.Utilities.Models.ValueObjects.Units;
+﻿using Mov.Core.Models.ValueObjects.Units;
 
-namespace Mov.Elements.Personals.Fasets
+namespace Mov.Core.Elements.Personals.Fasets
 {
     public class PersonJobBuilder : PersonBuilder
     {

@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Net;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using Mov.Utilities.Models;
 
-namespace Mov.Utilities.Models.ValueObjects.Units
+namespace Mov.Core.Models.ValueObjects.Units
 {
     /// <summary>
     /// ファイルのValueObject

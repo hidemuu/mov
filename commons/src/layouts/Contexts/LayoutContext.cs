@@ -1,11 +1,11 @@
-﻿using Mov.Layouts.Models.Contents.Entities;
-using Mov.Layouts.Models.Nodes.Entities;
-using Mov.Layouts.Models.Shells.Entities;
-using Mov.Layouts.Models.Themes.Entities;
-using Mov.Utilities.Models.ValueObjects.Keys;
+﻿using Mov.Core.Layouts.Models.Contents.Entities;
+using Mov.Core.Layouts.Models.Nodes.Entities;
+using Mov.Core.Layouts.Models.Shells.Entities;
+using Mov.Core.Layouts.Models.Themes.Entities;
+using Mov.Core.Models.ValueObjects.Keys;
 using System.Collections.Generic;
 
-namespace Mov.Layouts.Contexts
+namespace Mov.Core.Layouts.Contexts
 {
     public class LayoutContext : ILayoutContext
     {

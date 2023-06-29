@@ -1,10 +1,8 @@
-﻿using Mov.Utilities.Models.ValueObjects.Units;
-using Mov.Utilities.Templates.Builders;
+﻿using Mov.Core.Models.ValueObjects.Units;
+using Mov.Core.Templates.Builders;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Elements.Personals.Fluents
+namespace Mov.Core.Elements.Personals.Fluents
 {
     public abstract class PersonBuilder : IBuilder<Person>
     {

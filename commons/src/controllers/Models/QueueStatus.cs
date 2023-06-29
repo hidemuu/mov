@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Controllers.Queue
+﻿namespace Mov.Core.Controllers.Models
 {
     /// <summary>
     /// オーダーステータスキーコード

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Elements.Products.Builders
+﻿namespace Mov.Core.Elements.Products.Builders
 {
     public interface ISpecifyCarType
     {

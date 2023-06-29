@@ -1,11 +1,8 @@
-﻿using Mov.Layouts.Models.Contents.ValueObjects;
-using Mov.Utilities.Models.ValueObjects.Units;
-using Mov.Utilities.Models.ValueObjects.Units.Sizes;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Core.Layouts.Models.Contents.ValueObjects;
+using Mov.Core.Models.ValueObjects.Units;
+using Mov.Core.Models.ValueObjects.Units.Sizes;
 
-namespace Mov.Layouts.Models.Contents.Entities
+namespace Mov.Core.Layouts.Models.Contents.Entities
 {
     public class LayoutContentArrange
     {

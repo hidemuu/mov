@@ -1,13 +1,9 @@
-﻿using Mov.Controllers.Services.Commands;
-using Mov.Utilities;
-using Mov.Utilities.Models.ValueObjects.Commands;
-using Mov.Utilities.Templates;
-using System;
+﻿using Mov.Core.Controllers.Services.Commands;
+using Mov.Core.Models.ValueObjects.Commands;
+using Mov.Core.Templates;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
 
-namespace Mov.Controllers.Services.Controllers
+namespace Mov.Core.Controllers.Services.Controllers
 {
     /// <summary>
     /// ドメイン単位のコントローラー

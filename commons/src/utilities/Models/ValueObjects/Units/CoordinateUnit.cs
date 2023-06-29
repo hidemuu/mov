@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Mov.Utilities.Models;
-
-namespace Mov.Utilities.Models.ValueObjects.Units
+﻿namespace Mov.Core.Models.ValueObjects.Units
 {
     /// <summary>
     /// 座標

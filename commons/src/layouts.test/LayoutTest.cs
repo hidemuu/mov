@@ -1,9 +1,9 @@
-﻿using Mov.Commons.Test.Layouts.Builders;
-using Mov.Layouts.Models.Nodes.Entities;
-using Mov.Layouts.Models.Shells.ValueObjects;
+﻿using Mov.Core.Layouts.Models.Nodes.Entities;
+using Mov.Core.Layouts.Models.Shells.ValueObjects;
+using Mov.Core.Layouts.Test.Builders;
 using System.Diagnostics;
 
-namespace Mov.Commons.Test.Layouts
+namespace Mov.Core.Layouts.Test
 {
     public class LayoutTest
     {
@@ -24,7 +24,7 @@ namespace Mov.Commons.Test.Layouts
         [OneTimeSetUp]
         public void ClassInitialize()
         {
-            this.builder = new LayoutEngineBuilder();
+            builder = new LayoutEngineBuilder();
             Trace.WriteLine(string.Join(' ', TEST_NAME, "ClassInitialize"));
         }
 
@@ -54,7 +54,7 @@ namespace Mov.Commons.Test.Layouts
         public void GetCenterRegionNode()
         {
             //Arrange
-            var sut = this.builder
+            var sut = builder
                 .WithNodeCalled(new List<LayoutNode> { LayoutNode.Empty })
                 .Build();
 

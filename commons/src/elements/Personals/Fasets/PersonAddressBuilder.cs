@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Elements.Personals.Fasets
+﻿namespace Mov.Core.Elements.Personals.Fasets
 {
     public class PersonAddressBuilder : PersonBuilder
     {

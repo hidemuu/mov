@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Mov.Repositories.Services.Cruds
+namespace Mov.Core.Repositories.Services.Cruds
 {
     public interface IPersistenceCommandAsync<T>
     {

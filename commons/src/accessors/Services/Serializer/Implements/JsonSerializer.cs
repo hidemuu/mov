@@ -1,8 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.IO;
-using System.Text;
 
-namespace Mov.Accessors.Services.Serializer.Implements
+namespace Mov.Core.Accessors.Services.Serializer.Implements
 {
     /// <summary>
     /// Jsonファイルのシリアライザー

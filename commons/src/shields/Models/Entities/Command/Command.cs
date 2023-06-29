@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Shields.Models.Entities.Command
+﻿namespace Mov.Core.Shields.Models.Entities.Command
 {
     public class Command
     {

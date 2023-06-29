@@ -1,6 +1,6 @@
-﻿using Mov.Utilities.Models.Entities;
+﻿using Mov.Core.Models.Entities;
 
-namespace Mov.Utilities.Templates.Builders
+namespace Mov.Core.Templates.Builders
 {
     public class HtmlBuilder
     {

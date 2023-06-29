@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace Mov.Accessors.Services.Connectors.Implements.Processor
+namespace Mov.Core.Accessors.Services.Connectors.Implements.Processor
 {
     /// <summary>
     /// Telnet接続ロジッククラス

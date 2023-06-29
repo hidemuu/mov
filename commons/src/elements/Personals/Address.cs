@@ -1,9 +1,7 @@
-﻿using Mov.Utilities.Models;
+﻿using Mov.Core.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Elements.Personals
+namespace Mov.Core.Elements.Personals
 {
     [Serializable]
     public sealed class Address : ValueObjectBase<Address>

@@ -1,10 +1,8 @@
-﻿using System;
+﻿using Mov.Core.Repositories.Models.Entities.DbObjects;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using Mov.Repositories.Models.EntityObjects.DbObjects;
 
-namespace Mov.Repositories.Services
+namespace Mov.Core.Repositories.Services
 {
     // <summary>
     /// データベースリポジトリインターフェース

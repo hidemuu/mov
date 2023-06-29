@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System.IO;
 
-namespace Mov.Shields
+namespace Mov.Core.Shields
 {
     public interface IMeasurable
     {

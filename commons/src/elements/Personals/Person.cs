@@ -1,9 +1,7 @@
-﻿using Mov.Utilities.Models.ValueObjects.Units;
+﻿using Mov.Core.Models.ValueObjects.Units;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Elements.Personals
+namespace Mov.Core.Elements.Personals
 {
     public class Person
     {

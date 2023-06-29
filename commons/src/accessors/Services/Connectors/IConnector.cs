@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Accessors.Services.Connectors
+﻿namespace Mov.Core.Accessors.Services.Connectors
 {
     /// <summary>
     /// 接続処理のインターフェース

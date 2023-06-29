@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Utilities.Models.ValueObjects
+namespace Mov.Core.Models.ValueObjects
 {
     public sealed class Info : ValueObjectBase<Info>
     {

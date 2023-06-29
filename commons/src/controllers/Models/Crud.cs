@@ -1,9 +1,8 @@
-﻿using System;
+﻿using Mov.Core.Templates.Crud;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using Mov.Utilities.Templates.Crud;
 
-namespace Mov.Controllers.Models
+namespace Mov.Core.Controllers.Models
 {
     public class Crud<T> : IRead<T>, ISave<T>, IDelete<T>
     {

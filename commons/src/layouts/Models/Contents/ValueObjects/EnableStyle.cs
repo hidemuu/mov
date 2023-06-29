@@ -1,6 +1,6 @@
-﻿using Mov.Utilities.Models;
+﻿using Mov.Core.Models;
 
-namespace Mov.Layouts.Models.Contents.ValueObjects
+namespace Mov.Core.Layouts.Models.Contents.ValueObjects
 {
     public sealed class EnableStyle : ValueObjectBase<EnableStyle>
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Utilities
+namespace Mov.Core.Helpers
 {
     /// <summary>
     /// 検索処理のヘルパークラス

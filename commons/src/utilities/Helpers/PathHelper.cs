@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
+﻿using System.Reflection;
 
-namespace Mov.Utilities
+namespace Mov.Core.Helpers
 {
     /// <summary>
     /// パス処理のヘルパークラス
@@ -58,9 +55,9 @@ namespace Mov.Utilities
         /// </returns>
         public static string[] GetFilesMostDeep(string rootPath, string pattern)
         {
-            System.Collections.Specialized.StringCollection stringCollection = (
+            System.Collections.Specialized.StringCollection stringCollection =
                 new System.Collections.Specialized.StringCollection()
-            );
+            ;
 
             // このディレクトリ内のすべてのファイルを検索する
             foreach (string filePath in System.IO.Directory.GetFiles(rootPath, pattern))

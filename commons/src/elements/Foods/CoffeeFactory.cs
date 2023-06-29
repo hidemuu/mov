@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Elements.Foods
+namespace Mov.Core.Elements.Foods
 {
     internal class CoffeeFactory : IDrinkFactory
     {

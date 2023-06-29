@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Mov.Utilities.Models;
 
-namespace Mov.Utilities.Models.ValueObjects.Keys
+namespace Mov.Core.Models.ValueObjects.Keys
 {
     public sealed class CodeKey : ValueObjectBase<CodeKey>
     {

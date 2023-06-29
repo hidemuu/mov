@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Shields.Models.Entities.Counter
+﻿namespace Mov.Core.Shields.Models.Entities.Counter
 {
     /// <summary>
     /// 時刻カウンタ

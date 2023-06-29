@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Mov.Utilities.Templates.Crud;
+﻿using Mov.Core.Templates.Crud;
+using System;
 
-namespace Mov.Controllers.Models.Decorator
+namespace Mov.Core.Controllers.Models.Decorator
 {
     public class DeleteConfirmation<T> : IDelete<T>
     {

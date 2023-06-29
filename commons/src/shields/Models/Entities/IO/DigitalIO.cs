@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Mov.Shields.Models.Entities.IO
+namespace Mov.Core.Shields.Models.Entities.IO
 {
     /// <summary>
     /// デジタルI/O　１点分の情報

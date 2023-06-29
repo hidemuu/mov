@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Authorizers
+namespace Mov.Core.Authorizers
 {
     public interface IAuthorized
     {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Elements.Products
+﻿namespace Mov.Core.Elements.Products
 {
     public class Product
     {

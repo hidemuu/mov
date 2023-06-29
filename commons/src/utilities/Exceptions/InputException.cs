@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Utilities.Exceptions
+namespace Mov.Core.Exceptions
 {
     public sealed class InputException : Exception
     {

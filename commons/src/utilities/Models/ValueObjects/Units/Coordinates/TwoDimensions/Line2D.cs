@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Mov.Utilities.Models;
-
-namespace Mov.Utilities.Models.ValueObjects.Units.Coordinates.TwoDimensions
+﻿namespace Mov.Core.Models.ValueObjects.Units.Coordinates.TwoDimensions
 {
     public sealed class Line2D : ValueObjectBase<Line2D>
     {

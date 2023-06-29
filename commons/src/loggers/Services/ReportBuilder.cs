@@ -1,6 +1,6 @@
 ﻿using Autofac;
 
-namespace Mov.Loggers.Services
+namespace Mov.Core.Loggers.Services
 {
     public class ReportBuilder
     {

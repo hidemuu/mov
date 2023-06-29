@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Mov.Utilities.Models;
-
-namespace Mov.Utilities.Models.ValueObjects.Units.Sizes
+﻿namespace Mov.Core.Models.ValueObjects.Units.Sizes
 {
     public sealed class Size2D : ValueObjectBase<Size2D>
     {

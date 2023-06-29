@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Mov.Controllers.Contexts
+namespace Mov.Core.Controllers.Contexts
 {
     public class CommandContext : IDisposable
     {

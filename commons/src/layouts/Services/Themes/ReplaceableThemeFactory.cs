@@ -1,10 +1,9 @@
-﻿using Mov.Layouts.Models.Themes.ValueObjects;
-using Mov.Utilities.Models;
+﻿using Mov.Core.Layouts.Models.Themes.ValueObjects;
+using Mov.Core.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Layouts.Services.Themes
+namespace Mov.Core.Layouts.Services.Themes
 {
     public class ReplaceableThemeFactory
     {

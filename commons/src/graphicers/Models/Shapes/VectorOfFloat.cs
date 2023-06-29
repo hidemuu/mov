@@ -1,9 +1,6 @@
-﻿using Mov.Utilities.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Core.Models;
 
-namespace Mov.Graphicers.Models.Shapes
+namespace Mov.Core.Graphicers.Models.Shapes
 {
     public class VectorOfFloat<TSelf, D>
     : Vector<TSelf, float, D>

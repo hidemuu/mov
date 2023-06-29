@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Authorizers.Models.Entities
+﻿namespace Mov.Core.Authorizers.Models.Entities
 {
     public class Account
     {

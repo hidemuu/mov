@@ -1,14 +1,11 @@
 ﻿using FluentFTP;
-using Mov.Accessors.Contexts;
-using Mov.Accessors.Models.Entities;
+using Mov.Core.Accessors.Models.Entities;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Security.Authentication;
-using System.Text;
 
-namespace Mov.Accessors.Services.Connectors.Implements.Filer
+namespace Mov.Core.Accessors.Services.Connectors.Implements.Filer
 {
     public class FtpConnector : IConnector, IFiler
     {

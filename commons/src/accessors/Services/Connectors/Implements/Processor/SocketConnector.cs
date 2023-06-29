@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Accessors.Services.Connectors.Implements.Processor
+namespace Mov.Core.Accessors.Services.Connectors.Implements.Processor
 {
     public class SocketConnector
     {

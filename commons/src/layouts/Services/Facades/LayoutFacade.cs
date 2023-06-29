@@ -1,11 +1,9 @@
-﻿using Mov.Layouts.Models.Nodes.Entities;
-using Mov.Layouts.Models.Shells.Entities;
-using Mov.Layouts.Models.Shells.ValueObjects;
-using System;
+﻿using Mov.Core.Layouts.Models.Nodes.Entities;
+using Mov.Core.Layouts.Models.Shells.Entities;
+using Mov.Core.Layouts.Models.Shells.ValueObjects;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Layouts.Services.Facades
+namespace Mov.Core.Layouts.Services.Facades
 {
     public class LayoutFacade : ILayoutFacade
     {

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
-namespace Mov.Accessors.Services.Serializer
+namespace Mov.Core.Accessors.Services.Serializer
 {
     /// <summary>
     /// シリアライザーのインターフェース

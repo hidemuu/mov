@@ -1,10 +1,10 @@
-﻿using Mov.Graphicers.Models.Shapes;
-using Mov.Utilities.Models;
+﻿using Mov.Core.Graphicers.Models.Shapes;
+using Mov.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Graphicers.Models.Graphics
+namespace Mov.Core.Graphicers.Models.Graphics
 {
     public class GraphicObject : ValueObjectBase<GraphicObject>
     {

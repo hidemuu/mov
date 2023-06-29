@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Mov.Core.Layouts.Models.Themes.ValueObjects;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using Mov.Layouts.Models.Themes.ValueObjects;
 
-namespace Mov.Layouts.Services.Themes
+namespace Mov.Core.Layouts.Services.Themes
 {
     public class TrackingThemeFactory
     {

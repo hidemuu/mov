@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Utilities.Models.ValueObjects.Commands
+﻿namespace Mov.Core.Models.ValueObjects.Commands
 {
     public enum CommandResponse
     {

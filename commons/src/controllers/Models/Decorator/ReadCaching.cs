@@ -1,9 +1,8 @@
-﻿using System;
+﻿using Mov.Core.Templates.Crud;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using Mov.Utilities.Templates.Crud;
 
-namespace Mov.Controllers.Models.Decorator
+namespace Mov.Core.Controllers.Models.Decorator
 {
     public class ReadCaching<T> : IRead<T>
     {

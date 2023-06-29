@@ -1,11 +1,9 @@
 ﻿using Renci.SshNet;
 using Renci.SshNet.Common;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
 
-namespace Mov.Accessors.Services.Connectors.Implements.Processor
+namespace Mov.Core.Accessors.Services.Connectors.Implements.Processor
 {
     public class SshConnector
     {

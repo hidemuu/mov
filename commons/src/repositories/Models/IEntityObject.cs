@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Repositories.Models
+﻿namespace Mov.Core.Repositories.Models
 {
     public interface IEntityObject
     {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Utilities.Templates.Sequences
+﻿namespace Mov.Core.Templates.Sequences
 {
     public enum SequenceResponseCode
     {

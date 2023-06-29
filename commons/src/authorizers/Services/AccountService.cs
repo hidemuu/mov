@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Authorizers.Services
+﻿namespace Mov.Core.Authorizers.Services
 {
     public class AccountService : IAccountService
     {

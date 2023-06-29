@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Elements.Personals
+﻿namespace Mov.Core.Elements.Personals
 {
     public sealed class Name
     {

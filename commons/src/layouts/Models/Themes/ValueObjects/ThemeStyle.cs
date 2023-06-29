@@ -1,10 +1,8 @@
-﻿using Mov.Utilities.Models;
-using Mov.Utilities.Models.ValueObjects.Styles;
-using System;
+﻿using Mov.Core.Models;
+using Mov.Core.Models.ValueObjects.Styles;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Layouts.Models.Themes.ValueObjects
+namespace Mov.Core.Layouts.Models.Themes.ValueObjects
 {
     public sealed class ThemeStyle : ValueObjectBase<ThemeStyle>
     {

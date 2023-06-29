@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Utilities.Helper
+namespace Mov.Core.Extensions
 {
     /// <summary>
     /// float型の拡張処理

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Mov.Authorizers.Models.Entities
+﻿namespace Mov.Core.Authorizers.Models.Entities
 {
     public class Auth
     {

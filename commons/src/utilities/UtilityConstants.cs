@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Utilities
+﻿namespace Mov.Core
 {
     public static class UtilityConstants
     {

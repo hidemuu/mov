@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Repositories.Services
+﻿namespace Mov.Core.Repositories.Services
 {
     public interface IDomainRepository
     {

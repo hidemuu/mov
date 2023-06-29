@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace Mov.Utilities.Templates.Strategies
+namespace Mov.Core.Templates.Strategies
 {
     public class StrategyContext
     {

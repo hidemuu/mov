@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Net;
-using Mov.Utilities.Models;
 
-namespace Mov.Utilities.Models.ValueObjects.Units
+namespace Mov.Core.Models.ValueObjects.Units
 {
     /// <summary>
     /// IPアドレスのValueObject

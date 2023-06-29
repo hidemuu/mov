@@ -1,10 +1,6 @@
-﻿using Mov.Utilities.Models;
-using System;
-using System.Collections.Generic;
-using System.Numerics;
-using System.Text;
+﻿using Mov.Core.Models;
 
-namespace Mov.Graphicers.Models.Shapes
+namespace Mov.Core.Graphicers.Models.Shapes
 {
     public static class Dimensions
     {

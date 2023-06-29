@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Accessors
+﻿namespace Mov.Core.Accessors
 {
     public static class AccessConstants
     {
@@ -16,7 +12,7 @@ namespace Mov.Accessors
         private const string ENC_NAME_SHIFT_JIS = "Shift_JIS";
 
         public const string DELIMITER = ",";
-        
+
         public const string ESCAPE = "/";
 
         public const string PATH_EXTENSION = ".";

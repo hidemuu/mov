@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Layouts.Models.Contents.Entities
+﻿namespace Mov.Core.Layouts.Models.Contents.Entities
 {
     public class LayoutContent
     {

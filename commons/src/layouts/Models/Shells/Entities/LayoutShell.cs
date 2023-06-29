@@ -1,9 +1,9 @@
-﻿using Mov.Layouts.Models.Shells.ValueObjects;
-using Mov.Utilities.Models.ValueObjects.Styles;
-using Mov.Utilities.Models.ValueObjects.Units;
-using Mov.Utilities.Models.ValueObjects.Units.Sizes;
+﻿using Mov.Core.Layouts.Models.Shells.ValueObjects;
+using Mov.Core.Models.ValueObjects.Styles;
+using Mov.Core.Models.ValueObjects.Units;
+using Mov.Core.Models.ValueObjects.Units.Sizes;
 
-namespace Mov.Layouts.Models.Shells.Entities
+namespace Mov.Core.Layouts.Models.Shells.Entities
 {
     public class LayoutShell
     {

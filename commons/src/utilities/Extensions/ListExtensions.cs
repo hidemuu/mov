@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace Mov.Utilities.Converter
+namespace Mov.Core.Extensions
 {
     /// <summary>
     /// List型の拡張処理

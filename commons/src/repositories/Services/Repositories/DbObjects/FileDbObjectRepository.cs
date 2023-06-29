@@ -1,15 +1,12 @@
-﻿using Mov.Accessors.Contexts;
-using Mov.Repositories.Models.EntityObjects.DbObjects;
-using Mov.Repositories.Services.Repositories.Entities;
+﻿using Mov.Core.Accessors.Contexts;
+using Mov.Core.Repositories.Models.Entities.DbObjects;
+using Mov.Core.Repositories.Services.Repositories.Entities;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace Mov.Repositories.Services.Repositories.DbObjects
+namespace Mov.Core.Repositories.Services.Repositories.DbObjects
 {
     /// <summary>
     /// データベースリポジトリ基本クラス

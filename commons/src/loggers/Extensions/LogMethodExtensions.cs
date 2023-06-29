@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Reflection;
-using System.Text;
 
-namespace Mov.Loggers.Extensions
+namespace Mov.Core.Loggers.Extensions
 {
     public static class LogMethodExtensions
     {

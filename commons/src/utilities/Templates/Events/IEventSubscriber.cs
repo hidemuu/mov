@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Utilities.Templates.Events
+﻿namespace Mov.Core.Templates.Events
 {
     public interface IEventSubscriber
     {

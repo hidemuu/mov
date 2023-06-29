@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Utilities.Models
+﻿namespace Mov.Core.Models
 {
     internal interface IVectorObject
     {

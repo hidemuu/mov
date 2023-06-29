@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Core.Templates.Crud;
+using System;
 using System.Threading;
-using Mov.Controllers.Models;
-using Mov.Utilities.Templates.Crud;
 
-namespace Mov.Controllers.Models.Decorator
+namespace Mov.Core.Controllers.Models.Decorator
 {
     public class SaveAuditing<T> : ISave<T>
     {

@@ -1,9 +1,6 @@
-﻿using Mov.Accessors.Services.Connectors.Implements.Processor;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Core.Accessors.Services.Connectors.Implements.Processor;
 
-namespace Mov.Accessors.Services.Connectors.Implements.Executer
+namespace Mov.Core.Accessors.Services.Connectors.Implements.Executer
 {
     public class VBScriptExecuter : IExecuter
     {

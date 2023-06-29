@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Unitities.Calculators
+namespace Mov.Core.Calculators
 {
     /// <summary>
     /// 行列計算
@@ -72,7 +72,7 @@ namespace Mov.Unitities.Calculators
                 {
                     for (int i = 0; i < n; i++)
                     {
-                        inv[j, i] = (i == j) ? 1 : 0;
+                        inv[j, i] = i == j ? 1 : 0;
                     }
                 }
 

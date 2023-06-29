@@ -1,12 +1,9 @@
 ﻿using MethodBoundaryAspect.Fody.Attributes;
-using Mov.Loggers.Contexts;
+using Mov.Core.Loggers.Contexts;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Reflection;
-using System.Text;
 
-namespace Mov.Loggers.Attributes
+namespace Mov.Core.Loggers.Attributes
 {
     public sealed class LogExecutionTimeAttribute : OnMethodBoundaryAspect
     {

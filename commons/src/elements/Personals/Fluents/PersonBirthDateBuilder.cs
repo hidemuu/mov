@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Elements.Personals.Fluents
+namespace Mov.Core.Elements.Personals.Fluents
 {
     public class PersonBirthDateBuilder<TSelf> : PersonJobBuilder<PersonBirthDateBuilder<TSelf>>
         where TSelf : PersonBirthDateBuilder<TSelf>

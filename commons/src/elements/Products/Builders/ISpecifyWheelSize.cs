@@ -1,10 +1,7 @@
-﻿using Mov.Utilities.Models.ValueObjects.Units;
-using Mov.Utilities.Templates.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Core.Models.ValueObjects.Units;
+using Mov.Core.Templates.Builders;
 
-namespace Mov.Elements.Products.Builders
+namespace Mov.Core.Elements.Products.Builders
 {
     public interface ISpecifyWheelSize
     {

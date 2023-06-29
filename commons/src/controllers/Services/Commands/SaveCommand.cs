@@ -1,9 +1,7 @@
-﻿using Mov.Controllers.Attributes;
+﻿using Mov.Core.Controllers.Attributes;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Controllers.Services.Commands
+namespace Mov.Core.Controllers.Services.Commands
 {
     [RegisterCommand]
     public class SaveCommand : ICommand

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Elements.Characters
+namespace Mov.Core.Elements.Characters
 {
     internal class Dragon : IBird, ILizard
     {

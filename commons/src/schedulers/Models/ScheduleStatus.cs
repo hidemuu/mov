@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Schedulers.Models
+﻿namespace Mov.Core.Schedulers.Models
 {
     public enum ScheduleStatus
     {

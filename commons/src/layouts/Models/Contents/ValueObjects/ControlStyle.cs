@@ -1,7 +1,7 @@
-﻿using Mov.Utilities.Models;
+﻿using Mov.Core.Models;
 using System.Collections.Generic;
 
-namespace Mov.Layouts.Models.Contents.ValueObjects
+namespace Mov.Core.Layouts.Models.Contents.ValueObjects
 {
     /// <summary>UIコントロールの型を表すValueObject</summary>
     public sealed class ControlStyle : ValueObjectBase<ControlStyle>

@@ -1,10 +1,7 @@
-﻿using Mov.Repositories.Models.EntityObjects.DbObjects;
-using Mov.Utilities.Templates.Crud;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Core.Repositories.Models.Entities.DbObjects;
+using Mov.Core.Templates.Crud;
 
-namespace Mov.Repositories.Services.Cruds
+namespace Mov.Core.Repositories.Services.Cruds
 {
     public class DbObjectRepositoryDeleter<TEntity, TBody> : IDelete<TEntity> where TEntity : DbObject
     {

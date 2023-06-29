@@ -1,10 +1,9 @@
 using Moq;
-using Mov.Authorizers;
-using Mov.Authorizers.Models.Entities;
-using Mov.Authorizers.Services;
+using Mov.Core.Authorizers.Models.Entities;
+using Mov.Core.Authorizers.Services;
 using NUnit.Framework;
 
-namespace Mov.Commons.Test
+namespace Mov.Core.Authorizers.Test
 {
     public class AccountTest
     {

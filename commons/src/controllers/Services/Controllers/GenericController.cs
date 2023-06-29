@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Mov.Utilities.Templates.Crud;
+﻿using Mov.Core.Templates.Crud;
+using System;
 
-namespace Mov.Controllers.Services.Controllers
+namespace Mov.Core.Controllers.Services.Controllers
 {
     public class GenericController<T>
     {

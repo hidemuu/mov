@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Mov.Utilities.Helpers;
+﻿using System.Linq;
 
-namespace Mov.Utilities.Templates.Specifications
+namespace Mov.Core.Templates.Specifications
 {
     public class AndSpecification<T> : CompositeSpecification<T>
     {

@@ -1,12 +1,9 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Text;
 
-namespace Mov.Accessors.Services.Serializer.Implements
+namespace Mov.Core.Accessors.Services.Serializer.Implements
 {
     /// <summary>
     /// CSVシリアライザー

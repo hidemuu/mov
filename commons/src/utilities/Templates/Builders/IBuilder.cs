@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Utilities.Templates.Builders
+﻿namespace Mov.Core.Templates.Builders
 {
     public interface IBuilder<T>
     {

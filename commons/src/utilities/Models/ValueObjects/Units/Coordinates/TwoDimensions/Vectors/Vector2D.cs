@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
+﻿using System.Collections.ObjectModel;
 
-namespace Mov.Utilities.Models.ValueObjects.Units.Coordinates.TwoDimensions.Vectors
+namespace Mov.Core.Models.ValueObjects.Units.Coordinates.TwoDimensions.Vectors
 {
     public class Vector2D : Collection<Line2D>
     {

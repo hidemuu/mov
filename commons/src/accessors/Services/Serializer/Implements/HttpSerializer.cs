@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Accessors.Services.Serializer.Implements
+namespace Mov.Core.Accessors.Services.Serializer.Implements
 {
     public class HttpSerializer : ISerializer, ISerializerAsync
     {

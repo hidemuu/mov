@@ -1,12 +1,7 @@
-﻿using Mov.Accessors.Services.Serializer.Implements;
-using System;
-using System.Collections.Generic;
+﻿using Mov.Core.Accessors.Services.Serializer.Implements;
 using System.Diagnostics;
-using System.IO;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
 
-namespace Mov.Accessors.Services.Serializer
+namespace Mov.Core.Accessors.Services.Serializer
 {
     public class FileSerializerFactory
     {

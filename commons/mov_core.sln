@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elements", "src\elements\El
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shields", "src\shields\Shields.csproj", "{16E8D2E5-A098-479C-839D-529B8DC3475F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilities", "src\utilities\Utilities.csproj", "{AD854D36-46D1-4A80-BFDE-4324DA74DC95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "src\utilities\Core.csproj", "{AD854D36-46D1-4A80-BFDE-4324DA74DC95}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authorizers.Test", "src\authorizers.test\Authorizers.Test.csproj", "{CB88BF72-1685-44B9-9F12-E8C849BCD196}"
 EndProject
@@ -37,7 +37,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6C3B2F28-713
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "app\ConsoleApp\ConsoleApp.csproj", "{1A12931B-4151-486E-A6EF-75EA40208E2E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "src\core\Core.csproj", "{C9CB943E-B163-4AB4-85A8-A72C03FF1A0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib", "src\core\Lib.csproj", "{C9CB943E-B163-4AB4-85A8-A72C03FF1A0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

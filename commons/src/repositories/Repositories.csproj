@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Mov.$(MSBuildProjectName)</AssemblyName>
-    <RootNamespace>Mov.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <AssemblyName>Mov.Core.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>Mov.Core.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\accessors\Accessors.csproj" />
-    <ProjectReference Include="..\utilities\Utilities.csproj" />
+    <ProjectReference Include="..\utilities\Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

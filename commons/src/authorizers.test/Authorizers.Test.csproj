@@ -5,9 +5,9 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyName>Mov.Commons.Test</AssemblyName>
+    <AssemblyName>Mov.Core.$(MSBuildProjectName)</AssemblyName>
 
-    <RootNamespace>Mov.Commons.Test</RootNamespace>
+    <RootNamespace>Mov.Core.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

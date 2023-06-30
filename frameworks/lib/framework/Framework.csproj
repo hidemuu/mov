@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\analizer\analizer.engine\Analizer.Engine.csproj" />
-    <ProjectReference Include="..\bom\bom.engine\Bom.Engine.csproj" />
-    <ProjectReference Include="..\configurator\Configurator.Engine\Configurator.Engine.csproj" />
-    <ProjectReference Include="..\designer\designer.engine\Designer.Engine.csproj" />
-    <ProjectReference Include="..\drawer\drawer.engine\Drawer.Engine.csproj" />
-    <ProjectReference Include="..\game\game.engine\Game.Engine.csproj" />
+    <ProjectReference Include="..\..\src\analizer\analizer.engine\Analizer.Engine.csproj" />
+    <ProjectReference Include="..\..\src\bom\bom.engine\Bom.Engine.csproj" />
+    <ProjectReference Include="..\..\src\configurator\Configurator.Engine\Configurator.Engine.csproj" />
+    <ProjectReference Include="..\..\src\designer\designer.engine\Designer.Engine.csproj" />
+    <ProjectReference Include="..\..\src\drawer\drawer.engine\Drawer.Engine.csproj" />
+    <ProjectReference Include="..\..\src\game\game.engine\Game.Engine.csproj" />
   </ItemGroup>
 
   <ItemGroup>

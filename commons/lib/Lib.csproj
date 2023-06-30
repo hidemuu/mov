@@ -9,13 +9,13 @@
   <ItemGroup>
     <ProjectReference Include="..\src\core\Core.csproj" />
     <ProjectReference Include="..\src\io\accessors\Accessors.csproj" />
+    <ProjectReference Include="..\src\io\loggers\Loggers.csproj" />
+    <ProjectReference Include="..\src\io\repositories\Repositories.csproj" />
     <ProjectReference Include="..\src\model\elements\Elements.csproj" />
     <ProjectReference Include="..\src\model\shields\Shields.csproj" />
     <ProjectReference Include="..\src\service\authorizers\Authorizers.csproj" />
     <ProjectReference Include="..\src\service\controllers\Controllers.csproj" />
     <ProjectReference Include="..\src\service\learnings\Learnings.csproj" />
-    <ProjectReference Include="..\src\service\loggers\Loggers.csproj" />
-    <ProjectReference Include="..\src\service\repositories\Repositories.csproj" />
     <ProjectReference Include="..\src\service\schedulers\Schedulers.csproj" />
     <ProjectReference Include="..\src\ui\graphicers\Graphicers.csproj" />
     <ProjectReference Include="..\src\ui\layouts\Layouts.csproj" />

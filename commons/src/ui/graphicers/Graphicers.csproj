@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\core\Core.csproj" />
-    <ProjectReference Include="..\..\service\loggers\Loggers.csproj" />
+    <ProjectReference Include="..\..\io\loggers\Loggers.csproj" />
   </ItemGroup>
 
   <ItemGroup>

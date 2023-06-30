@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graphicers", "src\ui\graphi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Layouts", "src\ui\layouts\Layouts.csproj", "{19CE38C4-53F3-4E2C-8A0D-921781D325A2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loggers", "src\service\loggers\Loggers.csproj", "{4EB4DE8B-C4D6-436B-BCF3-785423068BE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loggers", "src\io\loggers\Loggers.csproj", "{4EB4DE8B-C4D6-436B-BCF3-785423068BE0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "src\service\repositories\Repositories.csproj", "{4759DBD1-1C3E-4260-9485-DDB1360CE10B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "src\io\repositories\Repositories.csproj", "{4759DBD1-1C3E-4260-9485-DDB1360CE10B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Elements", "src\model\elements\Elements.csproj", "{A4F4AC71-197C-4BDA-902B-EF8A3DE377D6}"
 EndProject

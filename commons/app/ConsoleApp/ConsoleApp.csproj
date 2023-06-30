@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\core\Lib.csproj" />
+    <ProjectReference Include="..\..\lib\Lib.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.UseCases</AssemblyName>
+    <RootNamespace>Mov.UseCases</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Actions\**" />
+    <EmbeddedResource Remove="Actions\**" />
+    <None Remove="Actions\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\analizer\analizer.repository\Analizer.Repository.csproj" />
+    <ProjectReference Include="..\..\src\analizer\analizer.service\Analizer.Service.csproj" />
+    <ProjectReference Include="..\..\src\bom\bom.repository\Bom.Repository.csproj" />
+    <ProjectReference Include="..\..\src\bom\bom.service\Bom.Service.csproj" />
+    <ProjectReference Include="..\..\src\configurator\Configurator.Repository\Configurator.Repository.csproj" />
+    <ProjectReference Include="..\..\src\configurator\Configurator.Service\Configurator.Service.csproj" />
+    <ProjectReference Include="..\..\src\designer\designer.repository\Designer.Repository.csproj" />
+    <ProjectReference Include="..\..\src\designer\designer.service\Designer.Service.csproj" />
+    <ProjectReference Include="..\..\src\drawer\drawer.repository\Drawer.Repository.csproj" />
+    <ProjectReference Include="..\..\src\drawer\drawer.service\Drawer.Service.csproj" />
+    <ProjectReference Include="..\..\src\game\game.repository\Game.Repository.csproj" />
+    <ProjectReference Include="..\..\src\game\game.service\Game.Service.csproj" />
+    <ProjectReference Include="..\framework\Framework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Accessors">
+      <HintPath>..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Accessors.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Repositories">
+      <HintPath>..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Repositories.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Utilities">
+      <HintPath>..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

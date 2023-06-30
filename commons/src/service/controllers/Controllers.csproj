@@ -13,9 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\accessors\Accessors.csproj" />
+    <ProjectReference Include="..\..\io\accessors\Accessors.csproj" />
+    <ProjectReference Include="..\..\model\shields\Shields.csproj" />
     <ProjectReference Include="..\Repositories\Repositories.csproj" />
-    <ProjectReference Include="..\Shields\Shields.csproj" />
   </ItemGroup>
 
 </Project>

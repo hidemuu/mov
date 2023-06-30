@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\loggers\Loggers.csproj" />
-    <ProjectReference Include="..\utilities\Core.csproj" />
+    <ProjectReference Include="..\..\core\Core.csproj" />
+    <ProjectReference Include="..\..\service\loggers\Loggers.csproj" />
   </ItemGroup>
 
   <ItemGroup>

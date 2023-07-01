@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Controllers.Services.Commands;
-using Mov.Core.Models.ValueObjects.Commands;
+using Mov.Core.Models.Commands;
 using Mov.Core.Templates.Controllers;
 using System.Collections.Generic;
 

@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.Entities;
+﻿using Mov.Core.Models;
 
 namespace Mov.Core.Templates.Builders
 {

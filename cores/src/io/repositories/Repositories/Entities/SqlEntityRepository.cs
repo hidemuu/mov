@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Mov.Core.Models.Entities.DbObjects;
+using Mov.Core.Contexts.DbObjects.Entities;
 using Mov.Core.Templates.Repositories;
 using System.Collections.Generic;
 using System.Linq;

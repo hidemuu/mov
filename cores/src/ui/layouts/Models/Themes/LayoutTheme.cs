@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.ValueObjects.Layouts;
+﻿using Mov.Core.Contexts.Layouts.ValueObjects;
 
 namespace Mov.Core.Layouts.Models.Themes
 {

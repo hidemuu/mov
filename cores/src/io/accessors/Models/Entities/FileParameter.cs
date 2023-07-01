@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.ValueObjects.Units;
+﻿using Mov.Core.Models.Units;
 using System.Text;
 
 namespace Mov.Core.Accessors.Models.Entities

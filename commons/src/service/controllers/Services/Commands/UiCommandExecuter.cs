@@ -74,9 +74,9 @@ namespace Mov.Core.Controllers.Services.Commands
             var help = string.Empty;
             foreach (var commandHelp in GetCommandHelps())
             {
-                help += commandHelp.Item1 + " : " + commandHelp.Item2 + UtilityConstants.NewLine;
+                help += commandHelp.Item1 + " : " + commandHelp.Item2 + CoreConstants.NewLine;
             }
-            help = help.TrimEnd(UtilityConstants.NewLine.ToCharArray());
+            help = help.TrimEnd(CoreConstants.NewLine.ToCharArray());
             return help;
         }
 

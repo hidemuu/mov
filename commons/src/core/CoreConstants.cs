@@ -1,6 +1,6 @@
 ﻿namespace Mov.Core
 {
-    public static class UtilityConstants
+    public static class CoreConstants
     {
         /// <summary>
         /// 改行コード

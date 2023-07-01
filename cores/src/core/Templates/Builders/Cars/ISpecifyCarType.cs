@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Models.Entities.Products;
 
-namespace Mov.Core.Models.Builders
+namespace Mov.Core.Templates.Builders.Cars
 {
     public interface ISpecifyCarType
     {

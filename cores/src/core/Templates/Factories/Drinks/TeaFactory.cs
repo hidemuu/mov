@@ -1,7 +1,7 @@
 ﻿using Mov.Core.Models.Entities.Foods;
 using System;
 
-namespace Mov.Core.Models.Factories
+namespace Mov.Core.Templates.Factories.Drinks
 {
     internal class TeaFactory : IDrinkFactory
     {

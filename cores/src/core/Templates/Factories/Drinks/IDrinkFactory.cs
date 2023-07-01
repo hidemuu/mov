@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Models.Entities.Foods;
 
-namespace Mov.Core.Models.Factories
+namespace Mov.Core.Templates.Factories.Drinks
 {
     public interface IDrinkFactory
     {

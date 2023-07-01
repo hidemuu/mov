@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Models.Builders.Fluents
+namespace Mov.Core.Templates.Builders.Persons.Fluents
 {
     public class PersonBirthDateBuilder<TSelf> : PersonJobBuilder<PersonBirthDateBuilder<TSelf>>
         where TSelf : PersonBirthDateBuilder<TSelf>

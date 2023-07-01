@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Models.Entities.Personals;
 
-namespace Mov.Core.Models.Builders.Fluents
+namespace Mov.Core.Templates.Builders.Persons.Fluents
 {
     public class PersonInfoBuilder<TSelf> : PersonBuilder
         where TSelf : PersonInfoBuilder<TSelf>

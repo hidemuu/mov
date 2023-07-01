@@ -1,7 +1,6 @@
 ﻿using Mov.Core.Models.Entities.Personals;
-using Mov.Core.Templates.Builders;
 
-namespace Mov.Core.Models.Builders.Functionals
+namespace Mov.Core.Templates.Builders.Persons.Functionals
 {
     public sealed class PersonBuilder : FunctionalBuilderBase<Person, PersonBuilder>
     {

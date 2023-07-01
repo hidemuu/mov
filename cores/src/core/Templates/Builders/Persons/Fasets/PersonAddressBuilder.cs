@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Models.Entities.Personals;
 
-namespace Mov.Core.Models.Builders.Fasets
+namespace Mov.Core.Templates.Builders.Persons.Fasets
 {
     public class PersonAddressBuilder : PersonBuilder
     {

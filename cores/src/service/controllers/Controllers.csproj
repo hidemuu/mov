@@ -15,7 +15,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\io\accessors\Accessors.csproj" />
     <ProjectReference Include="..\..\io\repositories\Repositories.csproj" />
-    <ProjectReference Include="..\..\model\shields\Shields.csproj" />
   </ItemGroup>
 
 </Project>

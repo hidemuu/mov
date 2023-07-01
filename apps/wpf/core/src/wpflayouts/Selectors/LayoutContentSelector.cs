@@ -5,7 +5,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Mov.WpfLayouts.Selector
+namespace Mov.WpfLayouts.Selectors
 {
     public class LayoutContentSelector : DataTemplateSelector
     {
@@ -98,7 +98,7 @@ namespace Mov.WpfLayouts.Selector
                 if (TryGetType(node.Content.Keys.ControlType.ToString(), out Type type))
                 {
                     factory = new FrameworkElementFactory(type);
-                    factory.SetValue(Label.ContentProperty, node.Content.Statuses.Name.Value);
+                    factory.SetValue(ContentControl.ContentProperty, node.Content.Statuses.Name.Value);
                     return new DataTemplate() { VisualTree = factory, };
                 };
 
@@ -128,7 +128,7 @@ namespace Mov.WpfLayouts.Selector
         private FrameworkElementFactory GetDefault(LayoutNode node)
         {
             var defaultFactory = new FrameworkElementFactory(typeof(Label));
-            defaultFactory.SetValue(Label.ContentProperty, "【NotFound】" + node.ToString());
+            defaultFactory.SetValue(ContentControl.ContentProperty, "【NotFound】" + node.ToString());
             return defaultFactory;
         }
 

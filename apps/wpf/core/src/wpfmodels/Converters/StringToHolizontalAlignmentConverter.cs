@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
@@ -19,7 +15,7 @@ namespace Mov.WpfModels.Converters
                 return DependencyProperty.UnsetValue;
             }
 
-            switch ((string)value) 
+            switch ((string)value)
             {
                 case "Left":
                     return HorizontalAlignment.Left;

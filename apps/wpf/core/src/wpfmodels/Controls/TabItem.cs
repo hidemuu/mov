@@ -1,11 +1,7 @@
 ﻿using Reactive.Bindings;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Mov.WpfModels
+namespace Mov.WpfModels.Controls
 {
     public class TabItem
     {

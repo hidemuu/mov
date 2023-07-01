@@ -1,12 +1,8 @@
 ﻿using Prism.Regions;
 using Prism.Services.Dialogs;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Mov.WpfMvvms
+namespace Mov.WpfMvvms.Dialogs
 {
     public abstract class DialogRegionViewModelBase : RegionViewModelBase, IDialogAware
     {
@@ -42,7 +38,7 @@ namespace Mov.WpfMvvms
 
         public void RequestCloseInvoke(IDialogResult dialogResult)
         {
-            this.RequestClose?.Invoke(dialogResult);
+            RequestClose?.Invoke(dialogResult);
         }
 
         /// <summary>

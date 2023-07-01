@@ -1,13 +1,7 @@
 ﻿using GongSolutions.Wpf.DragDrop;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 
-namespace Mov.WpfModels
+namespace Mov.WpfModels.Controls
 {
     public class DropTargetHandler<T> : IDropTarget where T : DragDropModel
     {

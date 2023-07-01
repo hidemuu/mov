@@ -10,7 +10,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
-namespace Mov.WpfMvvms
+namespace Mov.WpfMvvms.Renders
 {
     public abstract class GraphicViewModelBase : RegionViewModelBase
     {
@@ -43,7 +43,7 @@ namespace Mov.WpfMvvms
 
         protected override void Dispose(bool disposing)
         {
-            this.Controller.End();
+            Controller.End();
             base.Dispose(disposing);
         }
 
@@ -63,8 +63,8 @@ namespace Mov.WpfMvvms
             Timer.AddTo(Disposables);
             Timer.Start();
 
-            this.Controller.Initialize();
-            this.Controller.Run();
+            Controller.Initialize();
+            Controller.Run();
         }
 
         protected void Stop()
@@ -79,8 +79,8 @@ namespace Mov.WpfMvvms
 
         protected override void OnLoaded()
         {
-            this.bitmap = new Bitmap(this.Controller.FrameWidth, this.Controller.FrameHeight);
-            this.graphics = Graphics.FromImage(bitmap);
+            bitmap = new Bitmap(Controller.FrameWidth, Controller.FrameHeight);
+            graphics = Graphics.FromImage(bitmap);
             Start();
         }
 
@@ -91,8 +91,8 @@ namespace Mov.WpfMvvms
 
         private void OnTimer()
         {
-            this.Controller.Draw(this.graphics);
-            var hbitmap = this.bitmap.GetHbitmap();
+            Controller.Draw(graphics);
+            var hbitmap = bitmap.GetHbitmap();
             //モデル生成
             ImageSource.Value = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hbitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
             Update();

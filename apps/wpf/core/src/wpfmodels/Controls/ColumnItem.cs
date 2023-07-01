@@ -1,10 +1,7 @@
 ﻿using Reactive.Bindings;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Controls;
 
-namespace Mov.WpfModels
+namespace Mov.WpfModels.Controls
 {
     /// <summary>
     /// 列のアイテム
@@ -55,12 +52,12 @@ namespace Mov.WpfModels
 
         public void SetValue(object value)
         {
-            if(Type == typeof(Guid))
+            if (Type == typeof(Guid))
             {
                 Value.Value = Guid.Parse(value.ToString());
                 return;
             }
-            if(Type.BaseType == typeof(Enum))
+            if (Type.BaseType == typeof(Enum))
             {
                 Value.Value = Enum.Parse(Type, value.ToString());
                 return;

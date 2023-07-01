@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 using System.Windows;
 using System.Windows.Data;
 
@@ -12,8 +10,8 @@ namespace Mov.WpfModels.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if(string.IsNullOrEmpty(value?.ToString())
-                || ( parameter != null && parameter?.ToString() == value?.ToString() ) )
+            if (string.IsNullOrEmpty(value?.ToString())
+                || (parameter != null && parameter?.ToString() == value?.ToString()))
             {
                 return Visibility.Collapsed;
             }

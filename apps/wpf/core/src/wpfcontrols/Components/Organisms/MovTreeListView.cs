@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace Mov.WpfControls.Components
+namespace Mov.WpfControls.Components.Organisms
 {
     /// <summary>
     /// ツリー型のリストビューコントロール
@@ -38,8 +38,8 @@ namespace Mov.WpfControls.Components
         /// </summary>
         public object BindableSelectedItem
         {
-            get { return (object)this.GetValue(BindableSelectedItemProperty); }
-            set { this.SetValue(BindableSelectedItemProperty, value); }
+            get { return GetValue(BindableSelectedItemProperty); }
+            set { SetValue(BindableSelectedItemProperty, value); }
         }
 
         public static readonly DependencyProperty BindableSelectedItemProperty =
@@ -71,7 +71,7 @@ namespace Mov.WpfControls.Components
         public MovTreeListView()
         {
             Columns = new GridViewColumnCollection();
-            this.SelectedItemChanged += this.OnSelectedItemChanged;
+            SelectedItemChanged += OnSelectedItemChanged;
         }
 
         #endregion コンストラクター
@@ -80,12 +80,12 @@ namespace Mov.WpfControls.Components
 
         protected virtual void OnSelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
-            if (this.SelectedItem == null)
+            if (SelectedItem == null)
             {
                 return;
             }
 
-            this.SetValue(BindableSelectedItemProperty, this.SelectedItem);
+            SetValue(BindableSelectedItemProperty, SelectedItem);
         }
 
         #endregion イベント

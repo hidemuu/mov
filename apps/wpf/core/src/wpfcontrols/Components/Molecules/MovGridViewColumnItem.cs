@@ -1,12 +1,4 @@
-﻿using Mov.WpfModels;
-using Reactive.Bindings;
-using Reactive.Bindings.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reactive.Disposables;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Mov.WpfModels.Controls;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -72,7 +64,7 @@ namespace Mov.WpfControls.Components.Molecules
         /// <param name="e"></param>
         private void OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            if(sender is MovGridViewColumnItem item && item != null)
+            if (sender is MovGridViewColumnItem item && item != null)
             {
                 Item.SetValue(item.Text);
             }

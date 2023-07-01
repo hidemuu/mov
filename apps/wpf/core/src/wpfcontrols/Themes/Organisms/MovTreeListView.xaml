@@ -4,7 +4,7 @@
     xmlns:atom="clr-namespace:Mov.WpfControls.Components.Atoms"
     xmlns:converter="clr-namespace:Mov.WpfControls.Converters"
     xmlns:dd="urn:gong-wpf-dragdrop"
-    xmlns:local="clr-namespace:Mov.WpfControls.Components">
+    xmlns:local="clr-namespace:Mov.WpfControls.Components.Organisms">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="MovTreeListViewTemplate.xaml" />
     </ResourceDictionary.MergedDictionaries>

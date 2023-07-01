@@ -2,7 +2,7 @@
 using Prism.Services.Dialogs;
 
 namespace Mov.WpfMvvms
-{ 
+{
     /// <summary>
     /// リージョンビューモデル基盤クラス
     /// </summary>

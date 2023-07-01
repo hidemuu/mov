@@ -1,9 +1,8 @@
 ﻿using Prism.Services.Dialogs;
 using Reactive.Bindings;
 using System;
-using System.Threading.Tasks;
 
-namespace Mov.WpfMvvms
+namespace Mov.WpfMvvms.Dialogs
 {
     /// <summary>
     /// ダイアログビューモデル基盤クラス
@@ -11,10 +10,10 @@ namespace Mov.WpfMvvms
     public abstract class DialogViewModelBase : ViewModelBase, IDialogAware
     {
         #region プロパティ
-         
+
         /// <summary>
-         /// タイトル
-         /// </summary>
+        /// タイトル
+        /// </summary>
         public abstract string Title { get; }
 
         public ReactivePropertySlim<string> Message { get; } = new ReactivePropertySlim<string>();

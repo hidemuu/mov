@@ -1,4 +1,4 @@
-﻿namespace Mov.WpfMacros.Behaviors
+﻿namespace Mov.WpfModels.Behaviors
 {
     public class MacroBehavior
     {

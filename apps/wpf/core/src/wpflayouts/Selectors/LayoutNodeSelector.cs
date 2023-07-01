@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Mov.WpfLayouts.Selector
+namespace Mov.WpfLayouts.Selectors
 {
     public class LayoutNodeSelector : DataTemplateSelector
     {

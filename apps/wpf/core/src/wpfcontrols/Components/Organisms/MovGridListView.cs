@@ -1,15 +1,10 @@
 ﻿using Mov.WpfControls.Components.Molecules;
-using Mov.WpfModels;
+using Mov.WpfModels.Controls;
 using Reactive.Bindings;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Mov.WpfControls.Components
+namespace Mov.WpfControls.Components.Organisms
 {
     /// <summary>
     /// グリッド型のリストビュー
@@ -69,7 +64,7 @@ namespace Mov.WpfControls.Components
             SelectedItem = SelectedColumnItem;
             var gridView = new GridView();
             //列
-            for(var columnCount = 0; columnCount < ColumnAttributes.Length; columnCount++)
+            for (var columnCount = 0; columnCount < ColumnAttributes.Length; columnCount++)
             {
                 var column = new MovGridViewColumn();
                 column.Attribute = ColumnAttributes[columnCount];

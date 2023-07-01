@@ -1,9 +1,4 @@
-﻿using Mov.WpfModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Mov.WpfModels.Controls;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -11,7 +6,7 @@ namespace Mov.WpfControls.Components.Molecules
 {
     public class MovGridViewColumn : GridViewColumn
     {
-        
+
         #region プロパティ
 
         public static readonly DependencyProperty AttributeProperty =
@@ -51,7 +46,7 @@ namespace Mov.WpfControls.Components.Molecules
             var control = obj as MovGridViewColumn;
             if (control != null)
             {
-                if(control.Attribute != null)
+                if (control.Attribute != null)
                 {
                     control.Width = control.Attribute.Width.Value;
                     control.Header = control.Attribute.Header.Value;

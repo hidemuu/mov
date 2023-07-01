@@ -1,12 +1,10 @@
-﻿using Mov.WpfMvvms;
+﻿using Mov.WpfMvvms.Tabs;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
-using System;
 using System.Linq;
 using System.Reactive.Disposables;
-using System.Windows.Controls;
 
-namespace Mov.WpfViewModels
+namespace Mov.WpfViewModels.Tabs
 {
     public class MenuTabViewModel
     {

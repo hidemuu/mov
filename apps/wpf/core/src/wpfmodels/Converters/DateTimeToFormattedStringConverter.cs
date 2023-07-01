@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 using System.Windows.Data;
 
 namespace Mov.WpfModels.Converters
@@ -15,7 +13,7 @@ namespace Mov.WpfModels.Converters
             var dateTime = value as DateTime?;
             var format = parameter?.ToString() ?? "yyyy/MM/dd HH:mm";
 
-            if(dateTime.HasValue)
+            if (dateTime.HasValue)
             {
                 return dateTime.Value.ToString(format);
             }

@@ -5,7 +5,7 @@
     xmlns:converter="clr-namespace:Mov.WpfLayouts.Converters"
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:nodes="clr-namespace:Mov.Core.Layouts.Models.Nodes;assembly=Mov.Core.Layouts"
-    xmlns:selector="clr-namespace:Mov.WpfLayouts.Selector">
+    xmlns:selector="clr-namespace:Mov.WpfLayouts.Selectors">
     <ResourceDictionary.MergedDictionaries />
     <converter:ContentToOrientationConverter x:Key="orientationConverter" />
     <selector:LayoutContentSelector x:Key="layoutContentSelector" />

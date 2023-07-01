@@ -1,16 +1,13 @@
-﻿using Mov.WpfModels;
+﻿using Mov.WpfModels.Controls;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Mov.WpfMvvms
+namespace Mov.WpfMvvms.Lists
 {
     public abstract class GridListViewModelBase<T> : RegionViewModelBase
     {
@@ -90,7 +87,7 @@ namespace Mov.WpfMvvms
 
         protected abstract void DeleteItem();
 
-        
+
         protected IEnumerable<ColumnItem> GetColumnItems(IEnumerable<PropertyInfo> propertyInfos, T item)
         {
             foreach (var propertyInfo in propertyInfos)
@@ -107,7 +104,7 @@ namespace Mov.WpfMvvms
             }
         }
 
-        
+
         protected IEnumerable<T> GetDbObjects(IEnumerable<PropertyInfo> propertyInfos)
         {
             foreach (var item in Items)

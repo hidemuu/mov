@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Mov.Core.Models.Entities
+namespace Mov.Core.Models.Entities.Queues
 {
     public class Persistence<T>
     {

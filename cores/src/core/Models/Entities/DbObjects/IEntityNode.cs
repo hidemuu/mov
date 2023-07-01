@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Mov.Core.Models.Entities
+namespace Mov.Core.Models.Entities.DbObjects
 {
     public interface IEntityNode<TEntity> : IEntityObject where TEntity : IEntityObject
     {

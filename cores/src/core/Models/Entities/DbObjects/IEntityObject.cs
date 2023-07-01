@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.Entities
+﻿namespace Mov.Core.Models.Entities.DbObjects
 {
     public interface IEntityObject
     {

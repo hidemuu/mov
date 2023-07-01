@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.Entities;
+﻿using Mov.Core.Models.ValueObjects.Manufactures.Status;
 using Newtonsoft.Json;
 
 namespace Mov.Core.Models.ValueObjects.Manufactures.Robot

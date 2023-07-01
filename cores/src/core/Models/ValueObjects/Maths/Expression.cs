@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.Entities
+﻿namespace Mov.Core.Models.ValueObjects.Maths
 {
     /// <summary>
     /// 条件式

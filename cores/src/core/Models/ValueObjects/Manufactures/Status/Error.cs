@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Models.Entities
+namespace Mov.Core.Models.ValueObjects.Manufactures.Status
 {
     /// <summary>
     /// エラー１点分の情報

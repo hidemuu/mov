@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Mov.Core.Models.Entities
+namespace Mov.Core.Models.ValueObjects.Manufactures.Status
 {
     /// <summary>
     /// 更新記録

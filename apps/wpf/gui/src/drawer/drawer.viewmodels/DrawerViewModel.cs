@@ -1,12 +1,13 @@
 ﻿using Mov.Drawer.Models;
 using Mov.Drawer.Service.Canvas;
-using Mov.Graphicers.Services;
-using Mov.Repositories.Services;
+using Mov.Core.Graphicers;
+using Mov.Core.Templates.Repositories;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using Reactive.Bindings;
 using Reactive.Bindings.Extensions;
 using System.Linq;
+using Mov.Drawer.Models.Entities;
 
 namespace Mov.Drawer.ViewModels
 {

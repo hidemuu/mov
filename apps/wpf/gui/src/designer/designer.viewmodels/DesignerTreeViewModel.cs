@@ -1,7 +1,7 @@
-﻿using Mov.Designer.Models;
+﻿using Mov.Core.Models.ValueObjects.Layouts;
+using Mov.Designer.Engine;
 using Mov.Designer.Models.Schemas;
-using Mov.Layouts.Models.Styles;
-using Mov.WpfModels;
+using Mov.WpfModels.Controls;
 using Mov.WpfMvvms;
 using Prism.Regions;
 using Prism.Services.Dialogs;
@@ -219,7 +219,7 @@ namespace Mov.Designer.ViewModels
 
         #region コンストラクター
 
-        public DesignerTreeModel(NodeSchema node,ContentSchema table, IDesignerFacade facade) : base(table)
+        public DesignerTreeModel(NodeSchema node, ContentSchema table, IDesignerFacade facade) : base(table)
         {
             this.facade = facade;
             Codes = this.facade.Query.Contents.Reader.ReadAll().Select(x => x.Code).Distinct().ToList();

@@ -1,8 +1,8 @@
 ﻿using Mov.Analizer.Models;
-using Mov.Repositories.Services;
 using Mov.WpfMvvms;
 using Prism.Regions;
 using Prism.Services.Dialogs;
+using Mov.Core.Templates.Repositories;
 
 namespace Mov.Analizer.ViewModels
 {

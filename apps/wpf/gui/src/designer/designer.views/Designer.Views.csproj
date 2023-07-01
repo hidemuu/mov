@@ -23,20 +23,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Mov.Layouts">
-      <HintPath>..\..\..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Layouts.dll</HintPath>
+    <Reference Include="Mov.Core.Layouts">
+      <HintPath>..\..\..\..\core\lib\bin\Debug\net7.0-windows\Mov.Core.Layouts.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfControls">
-      <HintPath>..\..\..\..\commons\src\wpfviews\bin\Debug\net7.0-windows\Mov.WpfControls.dll</HintPath>
+      <HintPath>..\..\..\..\core\lib\bin\Debug\net7.0-windows\Mov.WpfControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.WpfDesigns">
+      <HintPath>..\..\..\..\core\lib\bin\Debug\net7.0-windows\Mov.WpfDesigns.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfLayouts">
-      <HintPath>..\..\..\..\commons\src\wpfviews\bin\Debug\net7.0-windows\Mov.WpfLayouts.dll</HintPath>
+      <HintPath>..\..\..\..\core\lib\bin\Debug\net7.0-windows\Mov.WpfLayouts.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfModels">
-      <HintPath>..\..\..\..\commons\src\wpfviews\bin\Debug\net7.0-windows\Mov.WpfModels.dll</HintPath>
+      <HintPath>..\..\..\..\core\lib\bin\Debug\net7.0-windows\Mov.WpfModels.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfMvvms">
-      <HintPath>..\..\..\..\commons\src\wpfviews\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>
+      <HintPath>..\..\..\..\core\lib\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>
     </Reference>
   </ItemGroup>
 

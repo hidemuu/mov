@@ -1,8 +1,8 @@
-﻿using Mov.Game.Engine;
+﻿using Mov.Core;
+using Mov.Core.Graphicers;
+using Mov.Game.Engine;
 using Mov.Game.Models;
-using Mov.Graphicers.Services;
-using Mov.Utilities;
-using Mov.WpfMvvms;
+using Mov.WpfMvvms.Renders;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using Reactive.Bindings;
@@ -55,7 +55,7 @@ namespace Mov.Game.ViewModels
             KeyGestureRightCommand.Subscribe(() => OnKeyGestureRight()).AddTo(Disposables);
             this.service = service;
             this.game = service.CreateGraphicGame();
-            Controller = this.game.GraphicController;
+            Controller = (GraphicControllerBase)this.game.GraphicController;
         }
 
         #endregion コンストラクター
@@ -118,7 +118,7 @@ namespace Mov.Game.ViewModels
 
         private void OnKeyUp()
         {
-            this.game.SetKeyCode(UtilityConstants.KEY_CODE_NONE);
+            this.game.SetKeyCode(CoreConstants.KEY_CODE_NONE);
         }
 
         private void OnKeyGestureEnter()
@@ -131,27 +131,27 @@ namespace Mov.Game.ViewModels
 
         private void OnKeyGestureUp()
         {
-            this.game.SetKeyCode(UtilityConstants.KEY_CODE_UP);
+            this.game.SetKeyCode(CoreConstants.KEY_CODE_UP);
         }
 
         private void OnKeyGestureUpAndShift()
         {
-            this.game.SetKeyCode(UtilityConstants.KEY_CODE_UP);
+            this.game.SetKeyCode(CoreConstants.KEY_CODE_UP);
         }
 
         private void OnKeyGestureDown()
         {
-            this.game.SetKeyCode(UtilityConstants.KEY_CODE_DOWN);
+            this.game.SetKeyCode(CoreConstants.KEY_CODE_DOWN);
         }
 
         private void OnKeyGestureLeft()
         {
-            this.game.SetKeyCode(UtilityConstants.KEY_CODE_LEFT);
+            this.game.SetKeyCode(CoreConstants.KEY_CODE_LEFT);
         }
 
         private void OnKeyGestureRight()
         {
-            this.game.SetKeyCode(UtilityConstants.KEY_CODE_RIGHT);
+            this.game.SetKeyCode(CoreConstants.KEY_CODE_RIGHT);
         }
 
         #endregion イベントハンドラ

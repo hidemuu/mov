@@ -18,11 +18,11 @@
     <Reference Include="Mov.Analizer.Service">
       <HintPath>..\..\..\..\..\..\frameworks\src\analizer\analizer.service\bin\Debug\netstandard2.0\Mov.Analizer.Service.dll</HintPath>
     </Reference>
-    <Reference Include="Mov.Repositories">
-      <HintPath>..\..\..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Repositories.dll</HintPath>
+    <Reference Include="Mov.Core">
+      <HintPath>..\..\..\..\core\lib\bin\Debug\net7.0-windows\Mov.Core.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfMvvms">
-      <HintPath>..\..\..\..\commons\src\wpfviewmodels\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>
+      <HintPath>..\..\..\..\core\lib\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>
     </Reference>
   </ItemGroup>
 

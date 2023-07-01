@@ -1,6 +1,6 @@
-﻿using Mov.Drawer.Models;
-using Mov.Graphicers.Services;
-using Mov.Repositories.Services;
+﻿using Mov.Core.Graphicers;
+using Mov.Core.Templates.Repositories;
+using Mov.Drawer.Models;
 using Mov.WpfMvvms;
 using Prism.Regions;
 using Prism.Services.Dialogs;

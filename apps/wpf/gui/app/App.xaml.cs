@@ -1,34 +1,33 @@
-﻿using Configurator.Repository.File;
-using Mov.Accessors;
-using Mov.Analizer.Models;
+﻿using Mov.Analizer.Models;
 using Mov.Analizer.ViewModels;
 using Mov.Analizer.Views;
+using Mov.Configurator.Repository.File;
 using Mov.Configurator.ViewModels;
 using Mov.Configurator.Views;
+using Mov.Core.Accessors;
+using Mov.Designer.Engine;
 using Mov.Designer.Models;
-using Mov.Designer.Repository.Implements;
+using Mov.Designer.Repository.File;
 using Mov.Designer.Service;
 using Mov.Designer.ViewModels;
 using Mov.Designer.Views;
 using Mov.Drawer.Models;
 using Mov.Drawer.ViewModels;
 using Mov.Drawer.Views;
-using Mov.Driver.Models;
 using Mov.Driver.ViewModels;
 using Mov.Driver.Views;
-using Mov.Framework;
+using Mov.Framework.Creators;
 using Mov.Game.Engine;
 using Mov.Game.Engine.FiniteStateMachine;
 using Mov.Game.Models;
-using Mov.Game.Repository;
 using Mov.Game.Service.Graphic;
 using Mov.Game.ViewModels;
 using Mov.Game.ViewModels.Dialogs;
 using Mov.Game.Views;
 using Mov.Game.Views.Dialogs;
+using Mov.UseCase.Repositories;
 using Mov.UseCase.ViewModels;
 using Mov.UseCase.Views;
-using Mov.UseCases.Factories;
 using Mov.WpfApp.ViewModels;
 using Mov.WpfApp.Views;
 using Prism.Ioc;
@@ -127,9 +126,9 @@ namespace Mov.WpfApp
                 .Create<IDrawerRepository>(AccessConstants.PATH_JSON);
             containerRegistry.RegisterInstance(fileDrawerRepositories);
 
-            var fileDriverRepositories = fileRepositoriesFactory
-                .Create<IDriverRepository>(AccessConstants.PATH_JSON);
-            containerRegistry.RegisterInstance(fileDriverRepositories);
+            //var fileDriverRepositories = fileRepositoriesFactory
+            //    .Create<IDriverRepository>(AccessConstants.PATH_JSON);
+            //containerRegistry.RegisterInstance(fileDriverRepositories);
 
             var fileAnalizerRepositories = fileRepositoriesFactory
                 .Create<IAnalizerRepository>(AccessConstants.PATH_JSON);

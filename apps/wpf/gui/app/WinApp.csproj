@@ -21,143 +21,131 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Mov.Accessors">
-      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Accessors.dll</HintPath>
-    </Reference>
     <Reference Include="Mov.Analizer.Engine">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Analizer.Engine.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Analizer.Engine.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Analizer.Models">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Analizer.Models.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Analizer.Models.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Analizer.Repository">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Analizer.Repository.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Analizer.Repository.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Analizer.Service">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Analizer.Service.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Authorizers">
-      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Authorizers.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Analizer.Service.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Bom.Engine">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Bom.Engine.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Bom.Engine.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Bom.Models">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Bom.Models.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Bom.Models.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Bom.Repository">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Bom.Repository.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Bom.Repository.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Bom.Service">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Bom.Service.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Bom.Service.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Configurator.Engine">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Configurator.Engine.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Configurator.Engine.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Configurator.Models">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Configurator.Models.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Configurator.Models.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Configurator.Repository">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Configurator.Repository.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Configurator.Repository.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Configurator.Service">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Configurator.Service.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Configurator.Service.dll</HintPath>
     </Reference>
-    <Reference Include="Mov.Controllers">
-      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Controllers.dll</HintPath>
+    <Reference Include="Mov.Core">
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Accessors">
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Core.Accessors.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Controllers">
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Core.Controllers.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Graphicers">
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Core.Graphicers.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Layouts">
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Core.Layouts.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Learnings">
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Core.Learnings.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Loggers">
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Core.Loggers.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Repositories">
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Core.Repositories.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Designer.Engine">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Designer.Engine.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Designer.Engine.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Designer.Models">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Designer.Models.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Designer.Models.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Designer.Repository">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Designer.Repository.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Designer.Repository.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Designer.Service">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Designer.Service.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Designer.Service.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Drawer.Engine">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Drawer.Engine.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Drawer.Engine.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Drawer.Models">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Drawer.Models.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Drawer.Models.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Drawer.Repository">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Drawer.Repository.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Drawer.Repository.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Drawer.Service">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Drawer.Service.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Driver.Clients">
-      <HintPath>..\..\..\..\plugins\src\Suite\bin\Debug\netstandard2.0\Mov.Driver.Clients.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Driver.Engine">
-      <HintPath>..\..\..\..\plugins\src\Suite\bin\Debug\netstandard2.0\Mov.Driver.Engine.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Driver.Models">
-      <HintPath>..\..\..\..\plugins\src\Suite\bin\Debug\netstandard2.0\Mov.Driver.Models.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Driver.Repository">
-      <HintPath>..\..\..\..\plugins\src\Suite\bin\Debug\netstandard2.0\Mov.Driver.Repository.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Driver.Service">
-      <HintPath>..\..\..\..\plugins\src\Suite\bin\Debug\netstandard2.0\Mov.Driver.Service.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Elements">
-      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Elements.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Drawer.Service.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Framework">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Framework.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Framework.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Game.Engine">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Game.Engine.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Game.Engine.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Game.Models">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Game.Models.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Game.Models.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Game.Repository">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Game.Repository.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Game.Repository.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Game.Service">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.Game.Service.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Game.Service.dll</HintPath>
     </Reference>
-    <Reference Include="Mov.Graphicers">
-      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Graphicers.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Layouts">
-      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Layouts.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Learnings">
-      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Learnings.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Loggers">
-      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Loggers.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Repositories">
-      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Repositories.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Schedulers">
-      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Schedulers.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Shields">
-      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Shields.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.UseCases">
-      <HintPath>..\..\..\..\frameworks\src\usecases\bin\Debug\netstandard2.0\Mov.UseCases.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Utilities">
-      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
+    <Reference Include="Mov.UseCase">
+      <HintPath>..\..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.UseCase.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfControls">
-      <HintPath>..\..\commons\src\wpfviews\bin\Debug\net7.0-windows\Mov.WpfControls.dll</HintPath>
+      <HintPath>..\..\core\lib\bin\Debug\net7.0-windows\Mov.WpfControls.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfDesigns">
-      <HintPath>..\..\commons\src\wpfmvvms\bin\Debug\net7.0-windows\Mov.WpfDesigns.dll</HintPath>
+      <HintPath>..\..\core\lib\bin\Debug\net7.0-windows\Mov.WpfDesigns.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.WpfLayouts">
+      <HintPath>..\..\core\lib\bin\Debug\net7.0-windows\Mov.WpfLayouts.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.WpfModels">
+      <HintPath>..\..\core\lib\bin\Debug\net7.0-windows\Mov.WpfModels.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfMvvms">
-      <HintPath>..\..\commons\src\wpfviews\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>
+      <HintPath>..\..\core\lib\bin\Debug\net7.0-windows\Mov.WpfMvvms.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.WpfViewModels">
+      <HintPath>..\..\core\lib\bin\Debug\net7.0-windows\Mov.WpfViewModels.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.WpfViews">
+      <HintPath>..\..\core\lib\bin\Debug\net7.0-windows\Mov.WpfViews.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.WpfWebs">
+      <HintPath>..\..\core\lib\bin\Debug\net7.0-windows\Mov.WpfWebs.dll</HintPath>
     </Reference>
   </ItemGroup>
 

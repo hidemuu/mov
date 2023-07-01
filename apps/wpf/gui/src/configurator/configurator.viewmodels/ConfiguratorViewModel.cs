@@ -1,7 +1,7 @@
-﻿using Configurator.Repository.File;
-using Mov.Configurator.Models;
-using Mov.Repositories.Services;
-using Mov.WpfModels;
+﻿using Mov.Configurator.Models.Entities;
+using Mov.Configurator.Repository.File;
+using Mov.Core.Templates.Repositories;
+using Mov.WpfModels.Controls;
 using Mov.WpfMvvms;
 using Prism.Regions;
 using Prism.Services.Dialogs;

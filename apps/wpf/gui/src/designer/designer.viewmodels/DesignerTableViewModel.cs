@@ -1,7 +1,7 @@
-﻿using Mov.Designer.Models;
+﻿using Mov.Core.Models.ValueObjects.Layouts;
+using Mov.Designer.Engine;
 using Mov.Designer.Models.Schemas;
-using Mov.Layouts.Models.Styles;
-using Mov.WpfModels;
+using Mov.WpfModels.Controls;
 using Mov.WpfMvvms;
 using Prism.Regions;
 using Prism.Services.Dialogs;
@@ -187,8 +187,6 @@ namespace Mov.Designer.ViewModels
         public List<string> VerticalAlignments { get; set; } = VerticalAlignmentStyle.GetStrings().ToList();
 
         #endregion プロパティ
-
-
 
         #region コンストラクター
 

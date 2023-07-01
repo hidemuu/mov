@@ -17,13 +17,13 @@
 
   <ItemGroup>
     <Reference Include="Mov.WpfControls">
-      <HintPath>..\..\..\..\commons\src\wpfviews\bin\Debug\net7.0-windows\Mov.WpfControls.dll</HintPath>
+      <HintPath>..\..\..\..\core\lib\bin\Debug\net7.0-windows\Mov.WpfControls.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfDesigns">
-      <HintPath>..\..\..\..\commons\src\wpfviews\bin\Debug\net7.0-windows\Mov.WpfDesigns.dll</HintPath>
+      <HintPath>..\..\..\..\core\lib\bin\Debug\net7.0-windows\Mov.WpfDesigns.dll</HintPath>
     </Reference>
     <Reference Include="Mov.WpfModels">
-      <HintPath>..\..\..\..\commons\src\wpfviews\bin\Debug\net7.0-windows\Mov.WpfModels.dll</HintPath>
+      <HintPath>..\..\..\..\core\lib\bin\Debug\net7.0-windows\Mov.WpfModels.dll</HintPath>
     </Reference>
   </ItemGroup>
 

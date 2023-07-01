@@ -1,6 +1,8 @@
-﻿using Mov.Designer.Models;
+﻿using Mov.Designer.Engine;
+using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
 using Mov.WpfMvvms;
+using Mov.WpfMvvms.Lists;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using System.Linq;

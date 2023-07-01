@@ -55,13 +55,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaspberryPi.Models", "src\r
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resas.Models", "src\resas\resas.models\Resas.Models.csproj", "{D3A0D854-BFFD-4B2C-9A3C-9DDD7DFCDF68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resas.Repository", "src\resas\Resas.Repository\Resas.Repository.csproj", "{66ACA1C4-D842-462C-9548-40ED77A3EA02}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resas.Repository", "src\resas\resas.repository\Resas.Repository.csproj", "{66ACA1C4-D842-462C-9548-40ED77A3EA02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resas.Engine", "src\resas\Resas.Engine\Resas.Engine.csproj", "{76627D69-BA08-4FEB-B792-B9CAE77429C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resas.Engine", "src\resas\resas.engine\Resas.Engine.csproj", "{76627D69-BA08-4FEB-B792-B9CAE77429C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amr.Engine", "src\amr\Amr.Engine\Amr.Engine.csproj", "{7AF0BDBB-E955-4E44-8FEE-89E7946128DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amr.Engine", "src\amr\amr.engine\Amr.Engine.csproj", "{7AF0BDBB-E955-4E44-8FEE-89E7946128DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amr.Respsitory", "src\amr\Amr.Respsitory\Amr.Respsitory.csproj", "{E1A205B1-555A-41CF-908F-1E72E20A5174}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amr.Respsitory", "src\amr\amr.respsitory\Amr.Respsitory.csproj", "{E1A205B1-555A-41CF-908F-1E72E20A5174}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

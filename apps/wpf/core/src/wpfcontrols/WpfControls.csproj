@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.WpfControls</AssemblyName>
+    <RootNamespace>Mov.WpfControls</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="gong-wpf-dragdrop" Version="3.0.0" />
+    <PackageReference Include="LiveCharts.Wpf.NetCore3" Version="0.9.7" />
+    <PackageReference Include="Prism.Unity" Version="8.1.97" />
+    <PackageReference Include="ReactiveProperty.WPF" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\wpfdesigns\WpfDesigns.csproj" />
+    <ProjectReference Include="..\wpfmodels\WpfModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Core">
+      <HintPath>..\..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Themes\Organisms\MovTreeListView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Organisms\MovTreeListViewTemplate.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

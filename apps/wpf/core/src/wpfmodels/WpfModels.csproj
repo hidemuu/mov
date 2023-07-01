@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Mov.WpfModels</AssemblyName>
+    <RootNamespace>Mov.WpfModels</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="gong-wpf-dragdrop" Version="3.0.0" />
+    <PackageReference Include="ReactiveProperty.WPF" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Core">
+      <HintPath>..\..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

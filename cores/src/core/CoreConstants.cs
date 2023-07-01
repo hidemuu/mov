@@ -19,6 +19,15 @@
 
         #endregion string code
 
+        #region hash code
+
+        /// <summary>
+        /// 素数
+        /// </summary>
+        public const int HASH_PRIME_NUMBER = 397;
+
+        #endregion hash code
+
         #region keyboard code
 
         /// <summary>

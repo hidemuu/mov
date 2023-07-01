@@ -37,6 +37,25 @@
 
         #endregion method
 
+        #region protected method
+
+        protected int CreateHashCode(params int[] hashCodes)
+        {
+            var result = 0;
+            for(int i = 0; i < hashCodes.Length; i++)
+            {
+                if (i == 0) 
+                {
+                    result = hashCodes[i];
+                    continue;
+                }
+                result = (result * CoreConstants.HASH_PRIME_NUMBER) ^ hashCodes[i];
+            }
+            return result;
+        }
+
+        #endregion protected method
+
         #region static method
 
         public static bool operator ==(ValueObjectBase<TSelf> vo1, ValueObjectBase<TSelf> vo2)

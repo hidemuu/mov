@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Mov.Core.Models.Entities.Job
+namespace Mov.Core.Models.Entities.Manufactures.Job
 {
     public class JobSegment : QueueObject
     {

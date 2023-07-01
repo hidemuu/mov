@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace Mov.Core.Models.Entities.Job
+namespace Mov.Core.Models.Entities.Manufactures.Job
 {
     /// <summary>
     /// ジョブ情報

@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.Entities.Command
+﻿namespace Mov.Core.Models.ValueObjects.Commands
 {
     public enum CommandStatus
     {

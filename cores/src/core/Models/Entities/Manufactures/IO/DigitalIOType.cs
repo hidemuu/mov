@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.Entities.IO
+﻿namespace Mov.Core.Models.Entities.Manufactures.IO
 {
     public enum DigitalIOType
     {

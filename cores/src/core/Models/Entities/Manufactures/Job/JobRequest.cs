@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace Mov.Core.Models.Entities.Payload
+namespace Mov.Core.Models.Entities.Manufactures.Job
 {
-    public class Dropoff : QueueObject
+    public class JobRequest : QueueObject
     {
         /// <summary>
         /// ジョブ割当用ID
@@ -15,15 +15,20 @@ namespace Mov.Core.Models.Entities.Payload
         [JsonProperty("goal")]
         public string Goal { get; set; }
         /// <summary>
+        /// 初期設定優先順位
+        /// </summary>
+        [JsonProperty("defaultPriority")]
+        public bool DefaultPriority { get; set; }
+        /// <summary>
         /// 優先度
         /// </summary>
         [JsonProperty("priority")]
         public int Priority { get; set; }
         /// <summary>
-        /// ジョブを実行するAMR名称
+        /// セグメントタイプ
         /// </summary>
-        [JsonProperty("robot")]
-        public string Robot { get; set; }
+        [JsonProperty("segmentType")]
+        public string SegmentType { get; set; }
         /// <summary>
         /// 割当られたジョブID
         /// </summary>

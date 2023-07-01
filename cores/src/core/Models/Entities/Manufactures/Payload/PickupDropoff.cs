@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Mov.Core.Models.Entities.Payload
+namespace Mov.Core.Models.Entities.Manufactures.Payload
 {
     public class PickupDropoff : QueueObject
     {

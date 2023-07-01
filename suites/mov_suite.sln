@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mov_suite", "app\mov_suite\mov_suite.csproj", "{90974CCB-51BD-4DF6-99E9-4AA6B05DA3D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "app\mov_suite\ConsoleApp.csproj", "{90974CCB-51BD-4DF6-99E9-4AA6B05DA3D2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{E99D1E62-E2EB-4DD0-BB83-76DCCCB328A0}"
 EndProject
@@ -35,7 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Repository", "src\dr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Driver.Service", "src\driver\driver.service\Driver.Service.csproj", "{C9244D23-39FC-494F-8791-6F0F9C90805B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib", "src\Suite\Lib.csproj", "{2202CBDA-5973-4D48-BAEB-6B33DC60E2A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib", "lib\Lib.csproj", "{2202CBDA-5973-4D48-BAEB-6B33DC60E2A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

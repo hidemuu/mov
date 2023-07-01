@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.Entities.Foods;
+﻿using Mov.Core.Models.ValueObjects.Foods;
 
 namespace Mov.Core.Templates.Factories.Drinks
 {

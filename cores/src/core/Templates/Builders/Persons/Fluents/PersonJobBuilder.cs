@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.Entities.Personals;
+﻿using Mov.Core.Models.ValueObjects.Personals;
 
 namespace Mov.Core.Templates.Builders.Persons.Fluents
 {

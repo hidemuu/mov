@@ -1,5 +1,4 @@
-﻿using Mov.Core.Contexts;
-using System.Drawing;
+﻿using System.Drawing;
 
 namespace Mov.Core.Models.Entities.Structures
 {

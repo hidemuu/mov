@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Core.Models.ValueObjects.Personals;
+using System;
 using System.Threading;
 
 namespace Mov.Core.Models.Entities.Personals

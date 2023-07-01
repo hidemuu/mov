@@ -1,4 +1,5 @@
-﻿using Mov.Core.Models.ValueObjects.Units;
+﻿using Mov.Core.Models.ValueObjects.Personals;
+using Mov.Core.Models.ValueObjects.Units;
 using System;
 
 namespace Mov.Core.Models.Entities.Personals

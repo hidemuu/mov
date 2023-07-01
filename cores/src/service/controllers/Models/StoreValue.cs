@@ -1,4 +1,5 @@
 ﻿using Mov.Core.Models.Entities;
+using Mov.Core.Models.ValueObjects;
 using Newtonsoft.Json;
 
 namespace Mov.Core.Controllers.Models

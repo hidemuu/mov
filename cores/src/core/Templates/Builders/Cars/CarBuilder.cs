@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.Entities.Products;
+﻿using Mov.Core.Models.ValueObjects.Manufactures.Products;
 using Mov.Core.Models.ValueObjects.Units;
 using System;
 

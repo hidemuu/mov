@@ -1,10 +1,9 @@
-﻿using Mov.Core.Layouts.Models.Contents.Entities;
-using Mov.Core.Layouts.Models.Contents.ValueObjects;
-using Mov.Core.Layouts.Models.Nodes.ValueObjects;
+﻿using Mov.Core.Layouts.Models.Contents;
 using Mov.Core.Models.ValueObjects.Keys;
+using Mov.Core.Models.ValueObjects.Layouts;
 using System.Collections.Generic;
 
-namespace Mov.Core.Layouts.Models.Nodes.Entities
+namespace Mov.Core.Layouts.Models.Nodes
 {
     public class LayoutNode
     {

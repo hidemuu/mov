@@ -1,8 +1,8 @@
 ﻿using Moq;
-using Mov.Core.Layouts.Models.Contents.Entities;
-using Mov.Core.Layouts.Models.Nodes.Entities;
-using Mov.Core.Layouts.Models.Shells.Entities;
-using Mov.Core.Layouts.Models.Themes.Entities;
+using Mov.Core.Layouts.Models.Contents;
+using Mov.Core.Layouts.Models.Nodes;
+using Mov.Core.Layouts.Models.Shells;
+using Mov.Core.Layouts.Models.Themes;
 using Mov.Core.Layouts.Services;
 
 namespace Mov.Core.Layouts.Test.Builders

@@ -1,22 +1,19 @@
-﻿using Mov.Core.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace Mov.Core.Layouts.Models.Shells.ValueObjects
+namespace Mov.Core.Models.ValueObjects.Layouts
 {
-    public sealed class RegionStyle : ValueObjectBase<RegionStyle>
+    public sealed class VerticalAlignmentStyle : ValueObjectBase<VerticalAlignmentStyle>
     {
         #region オブジェクト
 
-        public static readonly RegionStyle Center = new RegionStyle("Center");
+        public static readonly VerticalAlignmentStyle Top = new VerticalAlignmentStyle("Top");
 
-        public static readonly RegionStyle Top = new RegionStyle("Top");
+        public static readonly VerticalAlignmentStyle Bottom = new VerticalAlignmentStyle("Bottom");
 
-        public static readonly RegionStyle Bottom = new RegionStyle("Bottom");
+        public static readonly VerticalAlignmentStyle Center = new VerticalAlignmentStyle("Center");
 
-        public static readonly RegionStyle Left = new RegionStyle("Left");
-
-        public static readonly RegionStyle Right = new RegionStyle("Right");
+        public static readonly VerticalAlignmentStyle Stretch = new VerticalAlignmentStyle("Stretch");
 
         #endregion オブジェクト
 
@@ -24,30 +21,28 @@ namespace Mov.Core.Layouts.Models.Shells.ValueObjects
 
         public string Value { get; }
 
-        public bool IsCenter => this == Center;
-
         public bool IsTop => this == Top;
 
         public bool IsBottom => this == Bottom;
 
-        public bool IsLeft => this == Left;
+        public bool IsCenter => this == Center;
 
-        public bool IsRight => this == Right;
+        public bool IsStretch => this == Stretch;
 
         #endregion プロパティ
 
         #region コンストラクター
 
-        public RegionStyle(string region)
+        public VerticalAlignmentStyle(string alignment)
         {
-            Value = region;
+            Value = alignment;
         }
 
         #endregion コンストラクター
 
         #region メソッド
 
-        protected override bool EqualCore(RegionStyle other)
+        protected override bool EqualCore(VerticalAlignmentStyle other)
         {
             return Value.Equals(other.Value, StringComparison.Ordinal);
         }
@@ -65,11 +60,10 @@ namespace Mov.Core.Layouts.Models.Shells.ValueObjects
         {
             return new string[]
             {
-                Center.Value,
                 Top.Value,
                 Bottom.Value,
-                Left.Value,
-                Right.Value,
+                Center.Value,
+                Stretch.Value,
             };
         }
 

@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Layouts.Models.Contents.Entities
+﻿namespace Mov.Core.Layouts.Models.Contents
 {
     public class LayoutContent
     {

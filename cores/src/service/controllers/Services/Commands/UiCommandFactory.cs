@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Helpers;
-using Mov.Core.Templates.Commands;
+using Mov.Core.Templates.Controllers;
 using System;
 using System.Diagnostics;
 using System.Linq;

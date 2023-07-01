@@ -1,7 +1,6 @@
-﻿using Mov.Core.Models;
-using System;
+﻿using System;
 
-namespace Mov.Core.Layouts.Models.Contents.ValueObjects
+namespace Mov.Core.Models.ValueObjects.Layouts
 {
     public sealed class LayoutValue : ValueObjectBase<LayoutValue>
     {

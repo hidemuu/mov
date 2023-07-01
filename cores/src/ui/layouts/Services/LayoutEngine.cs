@@ -1,9 +1,9 @@
-﻿using Mov.Core.Layouts.Models.Contents.Entities;
-using Mov.Core.Layouts.Models.Nodes.Entities;
-using Mov.Core.Layouts.Models.Shells.Entities;
-using Mov.Core.Layouts.Models.Shells.ValueObjects;
-using Mov.Core.Layouts.Models.Themes.Entities;
+﻿using Mov.Core.Layouts.Models.Contents;
+using Mov.Core.Layouts.Models.Nodes;
+using Mov.Core.Layouts.Models.Shells;
+using Mov.Core.Layouts.Models.Themes;
 using Mov.Core.Models.ValueObjects.Keys;
+using Mov.Core.Models.ValueObjects.Layouts;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -60,7 +60,6 @@ namespace Mov.Core.Layouts.Services
         {
             return context.Shells;
         }
-
 
         public LayoutShell GetRegionShell(RegionStyle region)
         {

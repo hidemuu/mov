@@ -1,6 +1,6 @@
-﻿using Mov.Core.Layouts.Models.Themes.ValueObjects;
+﻿using Mov.Core.Models.ValueObjects.Layouts;
 
-namespace Mov.Core.Layouts.Models.Themes.Entities
+namespace Mov.Core.Layouts.Models.Themes
 {
     public class LayoutTheme
     {

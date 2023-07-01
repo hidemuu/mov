@@ -1,7 +1,7 @@
-﻿using Mov.Core.Layouts.Models.Contents.ValueObjects;
-using Mov.Core.Models.ValueObjects.Keys;
+﻿using Mov.Core.Models.ValueObjects.Keys;
+using Mov.Core.Models.ValueObjects.Layouts;
 
-namespace Mov.Core.Layouts.Models.Contents.Entities
+namespace Mov.Core.Layouts.Models.Contents
 {
     public class LayoutContentKey
     {

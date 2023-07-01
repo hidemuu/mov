@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.ValueObjects.Styles;
+﻿using Mov.Core.Models.ValueObjects.Layouts.Styles;
 using System.Collections.Generic;
 
 namespace Mov.Core.Models.ValueObjects.Layouts

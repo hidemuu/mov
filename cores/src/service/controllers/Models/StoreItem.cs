@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Models.ValueObjects;
-using Mov.Core.Models.ValueObjects.Manufactures.Status;
+using Mov.Core.Models.ValueObjects.Job.Status;
 using Newtonsoft.Json;
 
 namespace Mov.Core.Controllers.Models

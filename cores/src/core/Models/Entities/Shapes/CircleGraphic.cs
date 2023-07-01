@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.ValueObjects;
+﻿using Mov.Core.Models.ValueObjects.Shapes;
 using Mov.Core.Templates.Controllers;
 
 namespace Mov.Core.Models.Entities.Shapes

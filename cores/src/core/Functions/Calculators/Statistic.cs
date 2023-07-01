@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Calculators
+﻿namespace Mov.Core.Functions.Calculators
 {
     /// <summary>
     /// 統計

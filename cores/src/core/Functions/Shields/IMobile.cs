@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Shields
+﻿namespace Mov.Core.Functions.Shields
 {
     public interface IMobile
     {

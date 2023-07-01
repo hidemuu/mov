@@ -1,14 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Mov.Core.Models.Contexts
+namespace Mov.Core.Contexts
 {
     public sealed class BuildingContext : IDisposable
     {
-        public int WallHeight = 0;
-        public int WallThickness = 300; // etc.
-        private static Stack<BuildingContext> stack
-          = new Stack<BuildingContext>();
+        #region field
+
+        private static Stack<BuildingContext> stack = new Stack<BuildingContext>();
+
+        #endregion field
+
+        #region property
+
+        public int WallHeight { get; } = 0;
+        public int WallThickness { get; } = 300;
+
+        #endregion property
+
+        #region constructor
 
         static BuildingContext()
         {
@@ -18,11 +28,15 @@ namespace Mov.Core.Models.Contexts
 
         public BuildingContext(int wallHeight)
         {
-            WallHeight = wallHeight;
+            this.WallHeight = wallHeight;
             stack.Push(this);
         }
 
         public static BuildingContext Current => stack.Peek();
+
+        #endregion constructor
+
+        #region method
 
         public void Dispose()
         {
@@ -30,5 +44,7 @@ namespace Mov.Core.Models.Contexts
             if (stack.Count > 1)
                 stack.Pop();
         }
+
+        #endregion method
     }
 }

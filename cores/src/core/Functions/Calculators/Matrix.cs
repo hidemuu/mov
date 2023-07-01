@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Calculators
+namespace Mov.Core.Functions.Calculators
 {
     /// <summary>
     /// 行列計算

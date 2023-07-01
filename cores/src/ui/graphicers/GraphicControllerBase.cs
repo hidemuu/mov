@@ -1,10 +1,11 @@
-﻿using System.Diagnostics;
+﻿using Mov.Core.Templates.Controllers;
+using System.Diagnostics;
 using System.Drawing;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Graphicers.Services
+namespace Mov.Core.Graphicers
 {
-    public abstract class GraphicControllerBase
+    public abstract class GraphicControllerBase : IGraphicController
     {
         #region フィールド
 

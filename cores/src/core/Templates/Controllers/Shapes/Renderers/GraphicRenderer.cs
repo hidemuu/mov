@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Graphicers.Models.Graphics.Renderers
+namespace Mov.Core.Templates.Controllers.Shapes.Renderers
 {
     public class GraphicRenderer : IRenderer
     {

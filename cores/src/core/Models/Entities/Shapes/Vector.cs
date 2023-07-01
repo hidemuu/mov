@@ -1,7 +1,6 @@
-﻿using Mov.Core.Models;
-using System;
+﻿using System;
 
-namespace Mov.Core.Graphicers.Models.Shapes
+namespace Mov.Core.Models.Entities.Shapes
 {
     public class Vector<TSelf, T, D>
     where D : IDimension, new()

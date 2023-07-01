@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace Mov.Core.Graphicers.Services
+namespace Mov.Core.Graphicers
 {
     public class GraphicEngine
     {

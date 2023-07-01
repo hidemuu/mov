@@ -1,6 +1,4 @@
-﻿using Mov.Core.Models;
-
-namespace Mov.Core.Graphicers.Models.Shapes
+﻿namespace Mov.Core.Models.Entities.Shapes
 {
     public class VectorOfInt<D> : Vector<VectorOfInt<D>, int, D>
         where D : IDimension, new()

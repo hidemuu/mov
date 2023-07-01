@@ -15,8 +15,4 @@
     <ProjectReference Include="..\..\io\loggers\Loggers.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Contexts\" />
-  </ItemGroup>
-
 </Project>

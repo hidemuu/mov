@@ -1,10 +1,9 @@
-﻿using Mov.Core.Graphicers.Models.Shapes;
-using Mov.Core.Models;
+﻿using Mov.Core.Templates.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Core.Graphicers.Models.Graphics
+namespace Mov.Core.Models.Entities.Shapes
 {
     public class GraphicObject : ValueObjectBase<GraphicObject>
     {
@@ -25,7 +24,6 @@ namespace Mov.Core.Graphicers.Models.Graphics
         private Lazy<List<GraphicObject>> children = new Lazy<List<GraphicObject>>();
         public List<GraphicObject> Children => children.Value;
 
-
         #endregion プロパティ
 
         #region コンストラクタ
@@ -36,7 +34,6 @@ namespace Mov.Core.Graphicers.Models.Graphics
             Color = color;
             this.renderer = renderer;
         }
-
 
         #endregion コンストラクタ
 
@@ -63,7 +60,6 @@ namespace Mov.Core.Graphicers.Models.Graphics
             return Name.GetHashCode() ^ Color.GetHashCode();
         }
 
-
         private void Print(StringBuilder sb, int depth)
         {
             sb.Append(new string('*', depth))
@@ -74,6 +70,5 @@ namespace Mov.Core.Graphicers.Models.Graphics
         }
 
         #endregion 内部メソッド
-
     }
 }

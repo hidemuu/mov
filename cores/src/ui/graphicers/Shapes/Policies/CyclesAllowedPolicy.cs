@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Mov.Core.Graphicers.Services.Shapes.Policies
+namespace Mov.Core.Graphicers.Shapes.Policies
 {
-    public class AbsorbCyclePolicy : ShapeDecoratorCyclePolicy
+    public class CyclesAllowedPolicy : ShapeDecoratorCyclePolicy
     {
         public override bool TypeAdditionAllowed(Type type, IList<Type> allTypes)
         {
@@ -12,7 +12,7 @@ namespace Mov.Core.Graphicers.Services.Shapes.Policies
 
         public override bool ApplicationAllowed(Type type, IList<Type> allTypes)
         {
-            return !allTypes.Contains(type);
+            return true;
         }
     }
 }

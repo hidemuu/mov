@@ -1,9 +1,9 @@
-﻿using Mov.Core.Graphicers.Models.Shapes;
-using Mov.Core.Graphicers.Services.Shapes.Policies;
+﻿using Mov.Core.Graphicers.Shapes.Policies;
+using Mov.Core.Models.Entities.Shapes;
 using System;
 using System.Collections.Generic;
 
-namespace Mov.Core.Graphicers.Services.Shapes
+namespace Mov.Core.Graphicers.Shapes
 {
 
     public abstract class ShapeDecorator : IShape

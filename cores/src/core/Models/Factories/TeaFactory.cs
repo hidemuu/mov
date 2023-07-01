@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Mov.Core.Models.Entities.Foods;
+using System;
 
-namespace Mov.Core.Models.Entities.Foods
+namespace Mov.Core.Models.Factories
 {
     internal class TeaFactory : IDrinkFactory
     {

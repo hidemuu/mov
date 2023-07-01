@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Core.Models.Factories;
+using System;
 using System.Collections.Generic;
 
 namespace Mov.Core.Models.Entities.Foods

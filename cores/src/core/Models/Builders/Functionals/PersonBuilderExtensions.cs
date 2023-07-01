@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.Entities.Personals.Functionals
+﻿namespace Mov.Core.Models.Builders.Functionals
 {
     public static class PersonBuilderExtensions
     {

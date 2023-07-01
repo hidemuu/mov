@@ -1,4 +1,6 @@
-﻿namespace Mov.Core.Models.Entities.Personals.Fluents
+﻿using Mov.Core.Models.Entities.Personals;
+
+namespace Mov.Core.Models.Builders.Fluents
 {
     public class PersonJobBuilder<TSelf> : PersonInfoBuilder<PersonJobBuilder<TSelf>>
         where TSelf : PersonJobBuilder<TSelf>

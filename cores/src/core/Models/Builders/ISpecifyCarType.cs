@@ -1,4 +1,6 @@
-﻿namespace Mov.Core.Models.Entities.Products.Builders
+﻿using Mov.Core.Models.Entities.Products;
+
+namespace Mov.Core.Models.Builders
 {
     public interface ISpecifyCarType
     {

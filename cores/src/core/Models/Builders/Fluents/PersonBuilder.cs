@@ -1,8 +1,9 @@
-﻿using Mov.Core.Models.ValueObjects.Units;
+﻿using Mov.Core.Models.Entities.Personals;
+using Mov.Core.Models.ValueObjects.Units;
 using Mov.Core.Templates.Builders;
 using System;
 
-namespace Mov.Core.Models.Entities.Personals.Fluents
+namespace Mov.Core.Models.Builders.Fluents
 {
     public abstract class PersonBuilder : IBuilder<Person>
     {

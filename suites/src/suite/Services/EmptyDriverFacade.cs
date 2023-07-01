@@ -1,10 +1,8 @@
 ﻿using Mov.Driver.Models;
 using Mov.Suite.Driver.Engine;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Driver.Service
+namespace Mov.Suite.Services
 {
     internal class EmptyDriverFacade : IDriverFacade
     {

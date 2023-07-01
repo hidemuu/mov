@@ -1,22 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Suite.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>Mov.Suite.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\driver\driver.clients.amr\Driver.Clients.Amr.csproj" />
-    <ProjectReference Include="..\driver\driver.clients.calendar\Driver.Clients.Calendar.csproj" />
-    <ProjectReference Include="..\driver\driver.clients.cnc\Driver.Clients.Cnc.csproj" />
-    <ProjectReference Include="..\driver\driver.clients.imageprocessing\Driver.Clients.ImageProcessing.csproj" />
-    <ProjectReference Include="..\driver\driver.clients.plc\Driver.Clients.Plc.csproj" />
-    <ProjectReference Include="..\driver\driver.clients.raspberrypi\Driver.Clients.RaspberryPi.csproj" />
-    <ProjectReference Include="..\driver\driver.clients.resas\Driver.Clients.Resas.csproj" />
-    <ProjectReference Include="..\driver\driver.clients\Driver.Clients.csproj" />
-    <ProjectReference Include="..\driver\driver.engine\Driver.Engine.csproj" />
-    <ProjectReference Include="..\driver\driver.models\Driver.Models.csproj" />
-    <ProjectReference Include="..\driver\driver.repository\Driver.Repository.csproj" />
-    <ProjectReference Include="..\driver\driver.service\Driver.Service.csproj" />
+    <ProjectReference Include="..\src\amr\amr.client\Amr.Client.csproj" />
+    <ProjectReference Include="..\src\calendar\calendar.client\Calendar.Client.csproj" />
+    <ProjectReference Include="..\src\cnc\cnc.client\Cnc.Client.csproj" />
+    <ProjectReference Include="..\src\image_processing\imageprocessing.client\ImageProcessing.Client.csproj" />
+    <ProjectReference Include="..\src\plc\plc.client\Plc.Client.csproj" />
+    <ProjectReference Include="..\src\raspberry_pi\raspberrypi.client\RaspberryPi.Client.csproj" />
+    <ProjectReference Include="..\src\resas\resas.client\Resas.Client.csproj" />
   </ItemGroup>
 
 </Project>

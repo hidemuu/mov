@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Mov.Core.Models.ValueObjects
+namespace Mov.Core.Models.ValueObjects.Units
 {
-    public sealed class Variable : ValueObjectBase<Variable>
+    public sealed class Parameter : ValueObjectBase<Parameter>
     {
-        public static Variable Empty = new Variable("");
+        public static Parameter Empty = new Parameter("");
 
         #region プロパティ
 
@@ -14,7 +14,7 @@ namespace Mov.Core.Models.ValueObjects
 
         #region コンストラクター
 
-        public Variable(string parameter)
+        public Parameter(string parameter)
         {
             Value = parameter;
         }
@@ -23,7 +23,7 @@ namespace Mov.Core.Models.ValueObjects
 
         #region メソッド
 
-        protected override bool EqualCore(Variable other)
+        protected override bool EqualCore(Parameter other)
         {
             return Value.Equals(other.Value, StringComparison.Ordinal);
         }

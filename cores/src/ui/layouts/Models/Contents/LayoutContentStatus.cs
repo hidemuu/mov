@@ -1,6 +1,6 @@
-﻿using Mov.Core.Models.ValueObjects;
-using Mov.Core.Models.ValueObjects.Layouts;
+﻿using Mov.Core.Models.ValueObjects.Layouts;
 using Mov.Core.Models.ValueObjects.Styles;
+using Mov.Core.Models.ValueObjects.Units;
 
 namespace Mov.Core.Layouts.Models.Contents
 {

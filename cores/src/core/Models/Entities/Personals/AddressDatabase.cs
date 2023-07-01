@@ -1,4 +1,5 @@
 ﻿using Mov.Core.Models.ValueObjects.Personals;
+using Mov.Core.Templates;
 using System;
 using System.Threading;
 

@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models
+﻿namespace Mov.Core.Models.ValueObjects.Shapes
 {
     internal interface IVectorObject
     {

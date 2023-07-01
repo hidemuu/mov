@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models
+﻿namespace Mov.Core.Templates
 {
     public interface IDatabase<TEntity, TKey>
     {

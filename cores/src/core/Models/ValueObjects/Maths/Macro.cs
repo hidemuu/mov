@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Models.ValueObjects
+namespace Mov.Core.Models.ValueObjects.Maths
 {
     public sealed class Macro : ValueObjectBase<Macro>
     {

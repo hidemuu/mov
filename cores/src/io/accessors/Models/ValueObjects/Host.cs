@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models;
+﻿using Mov.Core.Models.ValueObjects;
 using System;
 
 namespace Mov.Core.Accessors.Models.ValueObjects

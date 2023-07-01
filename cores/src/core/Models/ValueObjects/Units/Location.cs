@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.ValueObjects
+﻿namespace Mov.Core.Models.ValueObjects.Units
 {
     public sealed class Location : ValueObjectBase<Location>
     {

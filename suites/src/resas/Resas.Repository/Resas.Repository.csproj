@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Suite.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>Mov.Suite.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\resas.models\Resas.Models.csproj" />
+  </ItemGroup>
+
+</Project>

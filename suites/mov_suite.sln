@@ -43,17 +43,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cnc", "cnc", "{9B80FD08-521
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "raspberry_pi", "raspberry_pi", "{77D4CFD9-5026-4E94-858D-C03C124E0D3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amr.Models", "src\amr\amr.models\Amr.Models.csproj", "{ADDCB7DF-01D5-4119-ABD4-01FF286D095E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amr.Models", "src\amr\amr.models\Amr.Models.csproj", "{ADDCB7DF-01D5-4119-ABD4-01FF286D095E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Models", "src\calendar\calendar.models\Calendar.Models.csproj", "{72B917EC-FE50-425E-BA35-00BE4DB543C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calendar.Models", "src\calendar\calendar.models\Calendar.Models.csproj", "{72B917EC-FE50-425E-BA35-00BE4DB543C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cnc.Models", "src\cnc\cnc.models\Cnc.Models.csproj", "{38A25879-D8BB-4B24-B47F-32424B825434}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cnc.Models", "src\cnc\cnc.models\Cnc.Models.csproj", "{38A25879-D8BB-4B24-B47F-32424B825434}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageProcessing.Models", "src\image_processing\imageProcessing.models\ImageProcessing.Models.csproj", "{5A150A62-1191-48EF-8847-7A6B8196CD15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageProcessing.Models", "src\image_processing\imageProcessing.models\ImageProcessing.Models.csproj", "{5A150A62-1191-48EF-8847-7A6B8196CD15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaspberryPi.Models", "src\raspberry_pi\raspberrypi.models\RaspberryPi.Models.csproj", "{3F03F393-B38A-42AF-8944-A19C8D9F4AE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaspberryPi.Models", "src\raspberry_pi\raspberrypi.models\RaspberryPi.Models.csproj", "{3F03F393-B38A-42AF-8944-A19C8D9F4AE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resas.Models", "src\resas\resas.models\Resas.Models.csproj", "{D3A0D854-BFFD-4B2C-9A3C-9DDD7DFCDF68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resas.Models", "src\resas\resas.models\Resas.Models.csproj", "{D3A0D854-BFFD-4B2C-9A3C-9DDD7DFCDF68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resas.Repository", "src\resas\Resas.Repository\Resas.Repository.csproj", "{66ACA1C4-D842-462C-9548-40ED77A3EA02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resas.Engine", "src\resas\Resas.Engine\Resas.Engine.csproj", "{76627D69-BA08-4FEB-B792-B9CAE77429C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amr.Engine", "src\amr\Amr.Engine\Amr.Engine.csproj", "{7AF0BDBB-E955-4E44-8FEE-89E7946128DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amr.Respsitory", "src\amr\Amr.Respsitory\Amr.Respsitory.csproj", "{E1A205B1-555A-41CF-908F-1E72E20A5174}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,6 +137,22 @@ Global
 		{D3A0D854-BFFD-4B2C-9A3C-9DDD7DFCDF68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3A0D854-BFFD-4B2C-9A3C-9DDD7DFCDF68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3A0D854-BFFD-4B2C-9A3C-9DDD7DFCDF68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66ACA1C4-D842-462C-9548-40ED77A3EA02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66ACA1C4-D842-462C-9548-40ED77A3EA02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66ACA1C4-D842-462C-9548-40ED77A3EA02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66ACA1C4-D842-462C-9548-40ED77A3EA02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76627D69-BA08-4FEB-B792-B9CAE77429C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76627D69-BA08-4FEB-B792-B9CAE77429C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76627D69-BA08-4FEB-B792-B9CAE77429C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76627D69-BA08-4FEB-B792-B9CAE77429C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF0BDBB-E955-4E44-8FEE-89E7946128DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF0BDBB-E955-4E44-8FEE-89E7946128DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF0BDBB-E955-4E44-8FEE-89E7946128DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF0BDBB-E955-4E44-8FEE-89E7946128DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1A205B1-555A-41CF-908F-1E72E20A5174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1A205B1-555A-41CF-908F-1E72E20A5174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1A205B1-555A-41CF-908F-1E72E20A5174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1A205B1-555A-41CF-908F-1E72E20A5174}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -157,6 +181,10 @@ Global
 		{5A150A62-1191-48EF-8847-7A6B8196CD15} = {7977850A-D1E2-4715-9B2F-7DADF3E2EA9C}
 		{3F03F393-B38A-42AF-8944-A19C8D9F4AE2} = {77D4CFD9-5026-4E94-858D-C03C124E0D3B}
 		{D3A0D854-BFFD-4B2C-9A3C-9DDD7DFCDF68} = {C3FFDE82-2130-4EB6-9B14-3174F9C4615D}
+		{66ACA1C4-D842-462C-9548-40ED77A3EA02} = {C3FFDE82-2130-4EB6-9B14-3174F9C4615D}
+		{76627D69-BA08-4FEB-B792-B9CAE77429C3} = {C3FFDE82-2130-4EB6-9B14-3174F9C4615D}
+		{7AF0BDBB-E955-4E44-8FEE-89E7946128DC} = {F640311B-C229-4121-8C46-23DE6AC18E6A}
+		{E1A205B1-555A-41CF-908F-1E72E20A5174} = {F640311B-C229-4121-8C46-23DE6AC18E6A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DA11007-6005-4C72-A93A-35FB982B6921}

@@ -1,7 +1,7 @@
-﻿using Mov.Core.Models.Entities.Shapes;
-using Mov.Core.Models.ValueObjects;
+﻿using Mov.Core.Models.ValueObjects;
+using Mov.Core.Templates.Controllers;
 
-namespace Mov.Core.Templates.Controllers.Shapes
+namespace Mov.Core.Models.Entities.Shapes
 {
     public class SquareGraphic : GraphicObject
     {

@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Models.ValueObjects.Personals;
 
-namespace Mov.Core.Templates.Builders.Persons.Fluents
+namespace Mov.Core.Models.Entities.Personals.Builders.Fluents
 {
     public class PersonJobBuilder<TSelf> : PersonInfoBuilder<PersonJobBuilder<TSelf>>
         where TSelf : PersonJobBuilder<TSelf>

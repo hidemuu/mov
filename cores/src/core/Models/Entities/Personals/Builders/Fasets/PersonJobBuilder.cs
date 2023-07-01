@@ -1,8 +1,7 @@
-﻿using Mov.Core.Models.Entities.Personals;
-using Mov.Core.Models.ValueObjects.Personals;
+﻿using Mov.Core.Models.ValueObjects.Personals;
 using Mov.Core.Models.ValueObjects.Units;
 
-namespace Mov.Core.Templates.Builders.Persons.Fasets
+namespace Mov.Core.Models.Entities.Personals.Builders.Fasets
 {
     public class PersonJobBuilder : PersonBuilder
     {

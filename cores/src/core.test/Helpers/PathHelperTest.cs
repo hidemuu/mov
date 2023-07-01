@@ -1,6 +1,6 @@
-namespace Core.Test
+namespace Mov.Core.Test.Helpers
 {
-    public class Tests
+    public class PathHelperTest
     {
         [SetUp]
         public void Setup()

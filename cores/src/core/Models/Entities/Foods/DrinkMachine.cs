@@ -1,5 +1,5 @@
-﻿using Mov.Core.Models.ValueObjects.Foods;
-using Mov.Core.Templates.Factories.Drinks;
+﻿using Mov.Core.Models.Entities.Foods.Factories;
+using Mov.Core.Models.ValueObjects.Foods;
 using System;
 using System.Collections.Generic;
 

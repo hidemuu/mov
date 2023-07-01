@@ -1,4 +1,6 @@
-﻿namespace Mov.Core.Templates.Builders.Persons.Functionals
+﻿using Mov.Core.Models.Entities.Personals.Builders.Functionals;
+
+namespace Mov.Core.Models.Entities.Personals.Persons.Functionals
 {
     public static class PersonBuilderExtensions
     {

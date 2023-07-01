@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Mov.Bom.Repository</AssemblyName>
-    <RootNamespace>Mov.Bom.Repository</RootNamespace>
+    <AssemblyName>Mov.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>Mov.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

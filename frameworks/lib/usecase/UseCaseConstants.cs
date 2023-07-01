@@ -1,4 +1,4 @@
-﻿namespace Mov.UseCases
+﻿namespace Mov.UseCase
 {
     public static class UseCaseConstants
     {

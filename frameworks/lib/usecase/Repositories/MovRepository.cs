@@ -3,7 +3,7 @@ using Mov.Designer.Models;
 using Mov.Framework;
 using Mov.Game.Models;
 
-namespace Mov.UseCases.Repositories
+namespace Mov.UseCase.Repositories
 {
     public class MovRepository : IMovRepository
     {
@@ -15,9 +15,9 @@ namespace Mov.UseCases.Repositories
             IDesignerRepository designer,
             IGameRepository game)
         {
-            this.Analizer = analizer;
-            this.Designer = designer;
-            this.Game = game;
+            Analizer = analizer;
+            Designer = designer;
+            Game = game;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Mov.Configurator.Models.Persistences;
 
-namespace Mov.Configurators
+namespace Mov.Configurator.Engine
 {
     public interface IConfiguratorService
     {

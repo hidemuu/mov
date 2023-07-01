@@ -1,4 +1,4 @@
-﻿using Mov.Designer.Test.Builders;
+﻿using Mov.Designer.Test.Applications.Builders;
 
 namespace Mov.Designer.Test.Applications
 {

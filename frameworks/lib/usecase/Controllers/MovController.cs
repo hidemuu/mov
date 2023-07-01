@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.UseCases.Controllers
+namespace Mov.UseCase.Controllers
 {
     public class MovController : IMovController
     {
@@ -33,7 +33,7 @@ namespace Mov.UseCases.Controllers
         {
             if (TryGetDomainType(domainTypeString, out DomainType domainType))
             {
-                this.currentDomain = domainType;
+                currentDomain = domainType;
                 return true;
             }
             return false;
@@ -41,7 +41,7 @@ namespace Mov.UseCases.Controllers
 
         public bool ExecuteDomainCommand(string command, string[] args)
         {
-            return ExecuteCommand(this.currentDomain, command, args);
+            return ExecuteCommand(currentDomain, command, args);
         }
 
         public bool ExecuteCommand(DomainType domainType, string command, string[] args)
@@ -60,7 +60,7 @@ namespace Mov.UseCases.Controllers
 
         public bool ExistsDomainCommand(string command)
         {
-            return ExistsCommand(this.currentDomain, command);
+            return ExistsCommand(currentDomain, command);
         }
 
         public bool ExistsCommand(DomainType domainType, string command)
@@ -79,7 +79,7 @@ namespace Mov.UseCases.Controllers
 
         public string GetDomainCommandHelp()
         {
-            return GetCommandHelp(this.currentDomain);
+            return GetCommandHelp(currentDomain);
         }
 
         public string GetCommandHelp(DomainType domainType)

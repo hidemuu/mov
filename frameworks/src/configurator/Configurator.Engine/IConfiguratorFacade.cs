@@ -1,4 +1,4 @@
-﻿namespace Configurator.Engine
+﻿namespace Mov.Configurator.Engine
 {
     public interface IConfiguratorFacade
     {

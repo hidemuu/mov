@@ -1,10 +1,11 @@
-﻿using Mov.Configurator.Models;
+﻿using Mov.Configurator.Models.Entities;
 using Mov.Configurator.Models.Persistences;
+using Mov.Configurator.Models.Repositories;
 using Mov.Core.Repositories.Cruds;
 using Mov.Core.Templates.Crud;
 using System;
 
-namespace Configurator.Engine.Persistences
+namespace Mov.Configurator.Engine.Cruds
 {
     public class ConfiguratorPersistenceCommand : IConfiguratorCommand
     {

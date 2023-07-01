@@ -1,7 +1,7 @@
 ﻿using Mov.Core.Helpers;
 using System.IO;
 
-namespace Mov.Framework
+namespace Mov.Framework.Creators
 {
     public static class PathCreator
     {

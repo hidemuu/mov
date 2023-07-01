@@ -1,5 +1,5 @@
-﻿using Mov.Analizer.Models;
-using Mov.Designer.Models;
+﻿using Mov.Analizer.Engine;
+using Mov.Designer.Engine;
 using Mov.Game.Engine;
 
 namespace Mov.Framework

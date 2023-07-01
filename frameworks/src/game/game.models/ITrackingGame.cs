@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Game.Models
+﻿namespace Mov.Game.Models
 {
     public interface ITrackingGame
     {

@@ -1,6 +1,5 @@
 ﻿using Mov.Core.Models.ValueObjects.Commands;
 using Mov.Core.Templates.Controllers;
-using Mov.Game.Models;
 using System;
 
 namespace Mov.Game.Engine.Commands

@@ -1,4 +1,4 @@
-﻿namespace Mov.Framework.Controllers
+﻿namespace Mov.Framework.Engines
 {
     public class MovEngine : IMovEngine
     {
@@ -7,8 +7,8 @@
 
         public MovEngine(int domainId, IMovService service)
         {
-            this.DomainId = domainId;
-            this.Service = service;
+            DomainId = domainId;
+            Service = service;
         }
     }
 }

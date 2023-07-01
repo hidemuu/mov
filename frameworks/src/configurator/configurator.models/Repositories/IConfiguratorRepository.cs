@@ -1,6 +1,7 @@
-﻿using Mov.Core.Templates.Repositories;
+﻿using Mov.Configurator.Models.Entities;
+using Mov.Core.Templates.Repositories;
 
-namespace Mov.Configurator.Models
+namespace Mov.Configurator.Models.Repositories
 {
     public interface IConfiguratorRepository : IDomainRepository
     {

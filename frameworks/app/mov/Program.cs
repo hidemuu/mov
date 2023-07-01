@@ -2,11 +2,12 @@
 using Mov.Core.Loggers.Attributes;
 using Mov.Designer.Service;
 using Mov.Framework;
-using Mov.Framework.Controllers;
+using Mov.Framework.Creators;
+using Mov.Framework.Engines;
 using Mov.Game.Service.Consoles;
-using Mov.UseCases.Controllers;
-using Mov.UseCases.Repositories;
-using Mov.UseCases.Services;
+using Mov.UseCase.Controllers;
+using Mov.UseCase.Repositories;
+using Mov.UseCase.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;

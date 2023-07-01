@@ -8,7 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Xml.Serialization;
 
-namespace Mov.Configurator.Models
+namespace Mov.Configurator.Models.Entities
 {
     /// <summary>
     /// 設定のコレクション

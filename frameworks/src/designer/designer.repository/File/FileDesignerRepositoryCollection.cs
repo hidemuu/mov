@@ -1,7 +1,7 @@
 ﻿using Mov.Core.Repositories.Repositories.Domains;
 using Mov.Designer.Models;
 
-namespace Mov.Designer.Repository.Implements
+namespace Mov.Designer.Repository.File
 {
     public class FileDesignerRepositoryCollection
         : FileDomainRepositoryCollection<IDesignerRepository, FileDesignerRepository>, IDesignerRepositoryCollection

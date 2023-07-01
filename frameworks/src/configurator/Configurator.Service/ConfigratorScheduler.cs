@@ -1,7 +1,6 @@
-﻿using Configurator.Engine;
-using Mov.Configurators;
+﻿using Mov.Configurator.Engine;
 
-namespace Configurator.Service
+namespace Mov.Configurator.Service
 {
     public class ConfigratorScheduler : IConfiguratorScheduler
     {

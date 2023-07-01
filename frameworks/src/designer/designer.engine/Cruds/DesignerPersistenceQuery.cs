@@ -1,4 +1,4 @@
-﻿namespace Mov.Designer.Engine.Entities
+﻿namespace Mov.Designer.Engine.Cruds
 {
     internal class DesignerPersistenceQuery
     {

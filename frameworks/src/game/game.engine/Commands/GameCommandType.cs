@@ -1,4 +1,4 @@
-﻿namespace Mov.Game.Models
+﻿namespace Mov.Game.Engine.Commands
 {
     public enum GameCommandType
     {

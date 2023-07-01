@@ -1,5 +1,4 @@
-﻿using Mov.Core.Graphicers;
-using Mov.Core.Templates.Controllers;
+﻿using Mov.Core.Templates.Controllers;
 using Mov.Game.Models;
 
 namespace Mov.Game.Service.Graphic

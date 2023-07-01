@@ -2,9 +2,9 @@
 using Mov.Core.Templates.Repositories;
 using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
-using Mov.Designer.Repository;
+using Mov.Designer.Repository.File;
 
-namespace Mov.Designer.Test.Builders
+namespace Mov.Designer.Test.Applications.Builders
 {
     public class DesignerRepositoryBuilder
     {
@@ -19,15 +19,15 @@ namespace Mov.Designer.Test.Builders
 
         public DesignerRepositoryBuilder()
         {
-            this.mockContent = new Mock<IDbObjectRepository<ContentSchema, ContentCollection>>();
-            this.repository = new FileDesignerRepository("", "", "");
+            mockContent = new Mock<IDbObjectRepository<ContentSchema, ContentCollection>>();
+            repository = new FileDesignerRepository("", "", "");
         }
 
         #endregion コンストラクター
 
         #region メソッド
 
-        public IDesignerRepository Build() => this.repository;
+        public IDesignerRepository Build() => repository;
 
         #endregion メソッド
     }

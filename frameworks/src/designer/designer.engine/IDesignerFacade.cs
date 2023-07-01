@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Layouts;
+using Mov.Designer.Models;
 
-namespace Mov.Designer.Models
+namespace Mov.Designer.Engine
 {
     public interface IDesignerFacade
     {

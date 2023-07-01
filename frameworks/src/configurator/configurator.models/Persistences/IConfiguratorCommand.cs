@@ -1,4 +1,5 @@
-﻿using Mov.Core.Templates.Crud;
+﻿using Mov.Configurator.Models.Entities;
+using Mov.Core.Templates.Crud;
 
 namespace Mov.Configurator.Models.Persistences
 {

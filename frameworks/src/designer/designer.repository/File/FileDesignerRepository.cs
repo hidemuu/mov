@@ -5,7 +5,7 @@ using Mov.Core.Templates.Repositories;
 using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
 
-namespace Mov.Designer.Repository
+namespace Mov.Designer.Repository.File
 {
     /// <summary>
     /// デザイナーのリポジトリ

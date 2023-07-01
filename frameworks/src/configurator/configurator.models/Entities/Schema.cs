@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
 
-namespace Mov.Configurator.Models
+namespace Mov.Configurator.Models.Entities
 {
     /// <summary>
     /// スキーマのコレクション

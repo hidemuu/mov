@@ -1,7 +1,7 @@
 ﻿using Mov.Game.Engine.Persistences;
 using Mov.Game.Models;
 
-namespace Mov.Game.Repository
+namespace Mov.Game.Engine
 {
     public class GameContext : IGameContext
     {
@@ -13,9 +13,9 @@ namespace Mov.Game.Repository
 
         public GameContext(IGameRepository repository)
         {
-            this.Repository = repository;
-            this.Command = new RepositoryGameCommand(repository);
-            this.Query = new RepositoryGameQuery(repository);
+            Repository = repository;
+            Command = new RepositoryGameCommand(repository);
+            Query = new RepositoryGameQuery(repository);
         }
     }
 }

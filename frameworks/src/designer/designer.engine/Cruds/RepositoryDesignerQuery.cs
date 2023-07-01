@@ -3,7 +3,7 @@ using Mov.Core.Templates.Crud;
 using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
 
-namespace Mov.Designer.Engine.Persistences
+namespace Mov.Designer.Engine.Cruds
 {
     public class RepositoryDesignerQuery : IDesignerQuery
     {

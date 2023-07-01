@@ -1,7 +1,8 @@
+using Mov.Designer.Test.Domains.Builders;
 using NUnit.Framework;
 using System.Diagnostics;
 
-namespace Mov.Designer.Test
+namespace Mov.Designer.Test.Domains
 {
     public class DesignertEngineTest
     {
@@ -20,7 +21,7 @@ namespace Mov.Designer.Test
         [OneTimeSetUp]
         public void ClassInitialize()
         {
-            this.builder = new DesignerEngineBuilder();
+            builder = new DesignerEngineBuilder();
             Trace.WriteLine(string.Join(' ', TEST_NAME, "ClassInitialize"));
         }
 

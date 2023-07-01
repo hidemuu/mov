@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Mov.Configurators
+namespace Mov.Configurator.Repository
 {
     public class ConfiguratorDbContext : DbContext
     {

@@ -1,6 +1,6 @@
-﻿using Configurator.Engine;
+﻿using Mov.Configurator.Engine;
 
-namespace Configurator.Service
+namespace Mov.Configurator.Service
 {
     public class ConfiguratorFacade : IConfiguratorFacade
     {

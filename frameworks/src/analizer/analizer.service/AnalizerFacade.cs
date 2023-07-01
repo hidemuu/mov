@@ -1,4 +1,4 @@
-﻿using Mov.Analizer.Models;
+﻿using Mov.Analizer.Engine;
 
 namespace Mov.Analizer.Service
 {

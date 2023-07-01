@@ -1,7 +1,8 @@
-﻿using Mov.Core.Models.ValueObjects.Commands;
+﻿using Mov.Bom.Models;
+using Mov.Core.Models.ValueObjects.Commands;
 using Mov.Core.Templates.Controllers;
 
-namespace Mov.Bom.Models.Commands
+namespace Mov.Bom.Engine.Commands
 {
     internal class WriteConsoleCommand : IUiCommand<IBomRepository, CommandResponse>
     {

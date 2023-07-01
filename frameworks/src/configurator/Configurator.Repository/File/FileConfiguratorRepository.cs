@@ -1,10 +1,11 @@
-﻿using Mov.Configurator.Models;
+﻿using Mov.Configurator.Models.Entities;
+using Mov.Configurator.Models.Repositories;
 using Mov.Core;
 using Mov.Core.Repositories.Repositories.DbObjects;
 using Mov.Core.Repositories.Repositories.Domains;
 using Mov.Core.Templates.Repositories;
 
-namespace Configurator.Repository.File
+namespace Mov.Configurator.Repository.File
 {
     public class FileConfiguratorRepository : FileDomainRepositoryBase, IConfiguratorRepository
     {

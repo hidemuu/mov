@@ -1,9 +1,9 @@
-﻿using Mov.Analizer.Models;
-using Mov.Designer.Models;
+﻿using Mov.Analizer.Engine;
+using Mov.Designer.Engine;
 using Mov.Framework;
 using Mov.Game.Engine;
 
-namespace Mov.UseCases.Services
+namespace Mov.UseCase.Services
 {
     public class MovService : IMovService
     {
@@ -16,9 +16,9 @@ namespace Mov.UseCases.Services
             IDesignerFacade designerService,
             IGameFacade gameService)
         {
-            this.Analizer = analizerService;
-            this.Designer = designerService;
-            this.Game = gameService;
+            Analizer = analizerService;
+            Designer = designerService;
+            Game = gameService;
         }
     }
 }

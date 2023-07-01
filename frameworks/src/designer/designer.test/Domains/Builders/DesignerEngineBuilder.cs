@@ -5,7 +5,7 @@ using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
 using System.Collections.Generic;
 
-namespace Mov.Designer.Test
+namespace Mov.Designer.Test.Domains.Builders
 {
     public class DesignerEngineBuilder
     {
@@ -22,9 +22,9 @@ namespace Mov.Designer.Test
         public DesignerEngineBuilder()
         {
             //モックオブジェクト生成
-            this.mockRepository = new Mock<IDesignerRepository>();
-            this.mockQuery = new Mock<IDesignerQuery>();
-            this.mockCommand = new Mock<IDesignerCommand>(); ;
+            mockRepository = new Mock<IDesignerRepository>();
+            mockQuery = new Mock<IDesignerQuery>();
+            mockCommand = new Mock<IDesignerCommand>(); ;
             //インスタンス生成
             //this.engine = new DesignerEngine(this.mockContext.Object, 0);
         }
@@ -39,15 +39,15 @@ namespace Mov.Designer.Test
             mockRepositoryContent.Setup(x => x.Get()).Returns(contents);
             mockRepositoryContent.Setup(x => x.Post(new ContentSchema()));
             mockRepositoryContent.Setup(x => x.Delete(new ContentSchema()));
-            this.mockRepository.Setup(x => x.Contents).Returns(mockRepositoryContent.Object);
+            mockRepository.Setup(x => x.Contents).Returns(mockRepositoryContent.Object);
 
             var mockQueryContent = new Mock<IPersistenceQuery<ContentSchema>>();
             mockQueryContent.Setup(x => x.Reader.ReadAll()).Returns(contents);
-            this.mockQuery.Setup(x => x.Contents).Returns(mockQueryContent.Object);
+            mockQuery.Setup(x => x.Contents).Returns(mockQueryContent.Object);
 
             var mockCommandContent = new Mock<IPersistenceCommand<ContentSchema>>();
             mockCommandContent.Setup(x => x.Saver.Save(new ContentSchema()));
-            this.mockCommand.Setup(x => x.Contents).Returns(mockCommandContent.Object);
+            mockCommand.Setup(x => x.Contents).Returns(mockCommandContent.Object);
 
             return this;
         }
@@ -58,7 +58,7 @@ namespace Mov.Designer.Test
             mockNode.Setup(x => x.Get()).Returns(nodes);
             mockNode.Setup(x => x.Post(new NodeSchema()));
             mockNode.Setup(x => x.Delete(new NodeSchema()));
-            this.mockRepository.Setup(x => x.Nodes).Returns(mockNode.Object);
+            mockRepository.Setup(x => x.Nodes).Returns(mockNode.Object);
             return this;
         }
 

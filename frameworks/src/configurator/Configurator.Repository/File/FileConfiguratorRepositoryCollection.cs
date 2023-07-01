@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Repositories.Repositories.Domains;
 
-namespace Configurator.Repository.File
+namespace Mov.Configurator.Repository.File
 {
     public class FileConfiguratorRepositoryCollection
         : FileDomainRepositoryCollection<FileConfiguratorRepository, FileConfiguratorRepository>

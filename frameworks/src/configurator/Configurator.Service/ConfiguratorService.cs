@@ -1,8 +1,10 @@
-﻿using Configurator.Engine.Persistences;
+﻿using Mov.Configurator.Engine;
+using Mov.Configurator.Engine.Cruds;
 using Mov.Configurator.Models;
 using Mov.Configurator.Models.Persistences;
+using Mov.Configurator.Models.Repositories;
 
-namespace Mov.Configurators
+namespace Mov.Configurator.Service
 {
     public class ConfiguratorService : IConfiguratorService
     {
@@ -12,13 +14,13 @@ namespace Mov.Configurators
 
         public ConfiguratorService(IConfiguratorRepository repository)
         {
-            this.Command = new ConfiguratorPersistenceCommand(repository);
-            this.Query = new ConfiguratorPersistenceQuery(repository);
+            Command = new ConfiguratorPersistenceCommand(repository);
+            Query = new ConfiguratorPersistenceQuery(repository);
         }
 
         public override string ToString()
         {
-            return this.Query.ToString();
+            return Query.ToString();
         }
     }
 }

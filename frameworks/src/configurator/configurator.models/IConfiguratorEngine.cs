@@ -1,4 +1,6 @@
-﻿namespace Mov.Configurator.Models
+﻿using Mov.Configurator.Models.Entities;
+
+namespace Mov.Configurator.Models
 {
     public interface IConfiguratorEngine
     {

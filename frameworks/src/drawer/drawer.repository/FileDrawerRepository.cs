@@ -3,6 +3,7 @@ using Mov.Core.Repositories.Repositories.DbObjects;
 using Mov.Core.Repositories.Repositories.Domains;
 using Mov.Core.Templates.Repositories;
 using Mov.Drawer.Models;
+using Mov.Drawer.Models.Entities;
 
 namespace Mov.Drawer.Repository
 {

@@ -1,7 +1,7 @@
 ﻿using Mov.Core.Models.Entities.DbObjects;
 using Newtonsoft.Json;
 
-namespace Mov.Drawer.Models
+namespace Mov.Drawer.Models.Entities
 {
     public class DrawItemCollection : DbObjectCollection<DrawItem>
     {

@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Templates.Crud;
 
-namespace Mov.Designer.Engine.Entities
+namespace Mov.Designer.Engine.Cruds
 {
     public class DesignerPersistenceCommand<TEntity> : IPersistenceCommand<TEntity>
     {

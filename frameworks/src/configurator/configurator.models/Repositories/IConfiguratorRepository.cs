@@ -1,4 +1,4 @@
-﻿using Mov.Core.Repositories.Services;
+﻿using Mov.Core.Templates.Repositories;
 
 namespace Mov.Configurator.Models
 {

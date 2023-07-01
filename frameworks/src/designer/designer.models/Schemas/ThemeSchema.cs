@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Attributes;
-using Mov.Core.Repositories.Models.Entities.DbObjects;
+using Mov.Core.Models.Entities.DbObjects;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -1,4 +1,4 @@
-﻿using Mov.Core.Repositories.Models.Entities.DbObjects;
+﻿using Mov.Core.Models.Entities.DbObjects;
 using Newtonsoft.Json;
 
 namespace Mov.Drawer.Models

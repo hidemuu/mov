@@ -1,6 +1,4 @@
-﻿using Mov.Core.Templates.Crud;
-
-namespace Mov.Core.Repositories.Cruds
+﻿namespace Mov.Core.Templates.Crud
 {
     public interface IPersistenceQuery<TEntity>
     {

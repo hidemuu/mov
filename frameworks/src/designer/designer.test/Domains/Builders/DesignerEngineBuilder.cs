@@ -1,6 +1,6 @@
 ﻿using Moq;
-using Mov.Core.Repositories.Services;
-using Mov.Core.Repositories.Services.Cruds;
+using Mov.Core.Templates.Crud;
+using Mov.Core.Templates.Repositories;
 using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
 using System.Collections.Generic;

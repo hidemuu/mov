@@ -1,4 +1,4 @@
-﻿using Mov.Core.Repositories.Services;
+﻿using Mov.Core.Templates.Repositories;
 using Mov.Game.Models.Entities.Schemas;
 
 namespace Mov.Game.Models

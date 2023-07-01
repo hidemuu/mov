@@ -1,6 +1,6 @@
 ﻿using Mov.Configurator.Models;
 using Mov.Configurator.Models.Persistences;
-using Mov.Core.Repositories.Services.Cruds;
+using Mov.Core.Repositories.Cruds;
 using Mov.Core.Templates.Crud;
 using System;
 

@@ -1,7 +1,6 @@
-﻿using Mov.Core.Templates.Crud;
-using System;
+﻿using System;
 
-namespace Mov.Core.Repositories.Cruds
+namespace Mov.Core.Templates.Crud
 {
     public interface IPersistenceCommand<TEntity> : IDisposable
     {

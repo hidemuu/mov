@@ -17,10 +17,10 @@
 
   <ItemGroup>
     <Reference Include="Mov.Core">
-      <HintPath>..\..\..\commons\lib\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
+      <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Core.Controllers">
-      <HintPath>..\..\..\commons\lib\bin\Debug\netstandard2.0\Mov.Core.Controllers.dll</HintPath>
+      <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Controllers.dll</HintPath>
     </Reference>
   </ItemGroup>
 

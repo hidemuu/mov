@@ -1,4 +1,4 @@
-﻿using Mov.Core.Repositories.Services.Cruds;
+﻿using Mov.Core.Templates.Crud;
 using Mov.Game.Models.Entities.Schemas;
 
 namespace Mov.Game.Models

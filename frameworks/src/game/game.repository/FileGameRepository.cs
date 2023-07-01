@@ -1,7 +1,7 @@
 ﻿using Mov.Core;
-using Mov.Core.Repositories.Services;
-using Mov.Core.Repositories.Services.Repositories.DbObjects;
-using Mov.Core.Repositories.Services.Repositories.Domains;
+using Mov.Core.Repositories.Repositories.DbObjects;
+using Mov.Core.Repositories.Repositories.Domains;
+using Mov.Core.Templates.Repositories;
 using Mov.Game.Models;
 using Mov.Game.Models.Entities.Schemas;
 

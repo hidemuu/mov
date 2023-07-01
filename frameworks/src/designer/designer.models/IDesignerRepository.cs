@@ -1,4 +1,4 @@
-﻿using Mov.Core.Repositories.Services;
+﻿using Mov.Core.Templates.Repositories;
 using Mov.Designer.Models.Schemas;
 
 namespace Mov.Designer.Models

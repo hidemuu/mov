@@ -1,5 +1,5 @@
-﻿using Mov.Core.Repositories.Services;
-using Mov.Core.Repositories.Services.Repositories.Domains;
+﻿using Mov.Core.Repositories.Repositories.Domains;
+using Mov.Core.Templates.Repositories;
 using Mov.Designer.Models;
 using Mov.Designer.Repository;
 using Mov.Drawer.Models;

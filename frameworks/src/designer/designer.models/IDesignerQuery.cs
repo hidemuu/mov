@@ -1,4 +1,4 @@
-﻿using Mov.Core.Repositories.Services.Cruds;
+﻿using Mov.Core.Templates.Crud;
 using Mov.Designer.Models.Schemas;
 
 namespace Mov.Designer.Models

@@ -1,4 +1,4 @@
-﻿using Mov.Core.Repositories.Cruds;
+﻿using Mov.Core.Templates.Crud;
 using Mov.Core.Templates.Transactions;
 
 namespace Mov.Core.Repositories.Transaction

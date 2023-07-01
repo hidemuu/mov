@@ -1,4 +1,4 @@
-﻿using Mov.Core.Repositories.Services.Repositories.Domains;
+﻿using Mov.Core.Repositories.Repositories.Domains;
 using Mov.Designer.Models;
 
 namespace Mov.Designer.Repository.Implements

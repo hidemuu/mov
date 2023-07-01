@@ -1,5 +1,4 @@
-﻿using Mov.Core.Repositories.Services.Cruds;
-using Mov.Core.Templates.Crud;
+﻿using Mov.Core.Templates.Crud;
 
 namespace Mov.Designer.Engine.Entities
 {

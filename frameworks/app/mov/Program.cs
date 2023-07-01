@@ -1,9 +1,9 @@
 ﻿using Mov.Analizer.Service;
+using Mov.Core.Loggers.Attributes;
 using Mov.Designer.Service;
 using Mov.Framework;
 using Mov.Framework.Controllers;
 using Mov.Game.Service.Consoles;
-using Mov.Loggers.Attributes;
 using Mov.UseCases.Controllers;
 using Mov.UseCases.Repositories;
 using Mov.UseCases.Services;

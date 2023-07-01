@@ -1,5 +1,5 @@
-﻿using Mov.Designer.Models.Schemas;
-using Mov.Repositories.Services.Cruds;
+﻿using Mov.Core.Repositories.Services.Cruds;
+using Mov.Designer.Models.Schemas;
 
 namespace Mov.Designer.Models
 {

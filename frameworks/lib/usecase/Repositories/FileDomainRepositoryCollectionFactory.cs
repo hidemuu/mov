@@ -1,11 +1,11 @@
-﻿using Mov.Designer.Models;
+﻿using Mov.Core.Repositories.Services;
+using Mov.Core.Repositories.Services.Repositories.Domains;
+using Mov.Designer.Models;
 using Mov.Designer.Repository;
 using Mov.Drawer.Models;
 using Mov.Drawer.Repository;
 using Mov.Game.Models;
 using Mov.Game.Repository;
-using Mov.Repositories.Services;
-using Mov.Repositories.Services.Repositories.Domains;
 
 namespace Mov.UseCases.Factories
 {

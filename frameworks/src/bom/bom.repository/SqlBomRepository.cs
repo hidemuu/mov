@@ -1,8 +1,5 @@
-﻿using Mov.Bom.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.EntityFrameworkCore;
+using Mov.Bom.Models;
 using Mov.Bom.Repository.Sql;
 
 namespace Mov.Bom.Repository

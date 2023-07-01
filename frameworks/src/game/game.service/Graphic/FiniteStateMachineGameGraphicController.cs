@@ -1,6 +1,6 @@
-﻿using Mov.Game.Models;
+﻿using Mov.Core.Graphicers.Services;
+using Mov.Game.Models;
 using Mov.Game.Models.Entities;
-using Mov.Graphicers.Services;
 
 namespace Mov.Game.Service.Graphic
 {

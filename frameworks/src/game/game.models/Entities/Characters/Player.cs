@@ -1,4 +1,4 @@
-﻿using Mov.Utilities;
+﻿using Mov.Core;
 using System.Drawing;
 
 namespace Mov.Game.Models.Entities.Characters
@@ -65,10 +65,10 @@ namespace Mov.Game.Models.Entities.Characters
             //押されているキーに対する処理
             switch (Engine.KeyCode)
             {
-                case UtilityConstants.KEY_CODE_LEFT: dx = -1; break;
-                case UtilityConstants.KEY_CODE_RIGHT: dx = 1; break;
-                case UtilityConstants.KEY_CODE_UP: dy = -1; break;
-                case UtilityConstants.KEY_CODE_DOWN: dy = 1; break;
+                case CoreConstants.KEY_CODE_LEFT: dx = -1; break;
+                case CoreConstants.KEY_CODE_RIGHT: dx = 1; break;
+                case CoreConstants.KEY_CODE_UP: dy = -1; break;
+                case CoreConstants.KEY_CODE_DOWN: dy = 1; break;
                 default: return false;
             }
 

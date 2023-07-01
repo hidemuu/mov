@@ -1,26 +1,17 @@
 ﻿using Mov.Game.Engine;
 using Mov.Game.Models;
 using Mov.Game.Models.Entities.Schemas;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Mov.Game.Service.Graphic
 {
     public class GraphicGameService : IGameFacade
     {
-
         #region フィールド
 
         private readonly IFiniteStateMachineGameEngine finiteStateMachineGameEngine;
 
         #endregion フィールド
-
-        #region プロパティ
-
-
-        #endregion プロパティ
 
         /// <summary>
         /// コンストラクター
@@ -32,7 +23,6 @@ namespace Mov.Game.Service.Graphic
 
         public void Run()
         {
-
         }
 
         public IGraphicGame CreateGraphicGame()

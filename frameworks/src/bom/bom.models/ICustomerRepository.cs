@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Mov.Bom.Models.Entities.Schemas;
+using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using Mov.Bom.Models.Entities.Schemas;
 
 namespace Mov.Bom.Models
 {
@@ -12,22 +11,22 @@ namespace Mov.Bom.Models
     public interface ICustomerRepository
     {
         /// <summary>
-        /// Returns all customers. 
+        /// Returns all customers.
         /// </summary>
         Task<IEnumerable<Customer>> GetAsync();
 
         /// <summary>
-        /// Returns all customers with a data field matching the start of the given string. 
+        /// Returns all customers with a data field matching the start of the given string.
         /// </summary>
         Task<IEnumerable<Customer>> GetAsync(string search);
 
         /// <summary>
-        /// Returns the customer with the given id. 
+        /// Returns the customer with the given id.
         /// </summary>
         Task<Customer> GetAsync(Guid id);
 
         /// <summary>
-        /// Adds a new customer if the customer does not exist, updates the 
+        /// Adds a new customer if the customer does not exist, updates the
         /// existing customer otherwise.
         /// </summary>
         Task<Customer> UpsertAsync(Customer customer);

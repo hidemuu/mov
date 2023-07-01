@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Game.Models.Entities
+﻿namespace Mov.Game.Models.Entities
 {
     /// <summary>
     /// 位置クラス
@@ -14,7 +10,7 @@ namespace Mov.Game.Models.Entities
         public int Row { get; private set; }
         public int Col { get; private set; }
 
-        #endregion
+        #endregion プロパティ
 
         /// <summary>
         /// コンストラクタ
@@ -39,6 +35,6 @@ namespace Mov.Game.Models.Entities
             return Row == p.Row && Col == p.Col;
         }
 
-        #endregion
+        #endregion メソッド
     }
 }

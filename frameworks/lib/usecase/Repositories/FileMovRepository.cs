@@ -1,5 +1,5 @@
-﻿using Mov.Accessors;
-using Mov.Analizer.Models;
+﻿using Mov.Analizer.Models;
+using Mov.Core.Accessors;
 using Mov.Designer.Models;
 using Mov.Framework;
 using Mov.Game.Models;

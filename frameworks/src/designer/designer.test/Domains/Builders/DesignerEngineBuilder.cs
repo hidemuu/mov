@@ -1,8 +1,8 @@
 ﻿using Moq;
+using Mov.Core.Repositories.Services;
+using Mov.Core.Repositories.Services.Cruds;
 using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
-using Mov.Repositories.Services;
-using Mov.Repositories.Services.Cruds;
 using System.Collections.Generic;
 
 namespace Mov.Designer.Test

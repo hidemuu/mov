@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Mov.Designer.Models
 {
@@ -21,6 +19,5 @@ namespace Mov.Designer.Models
         IDesignerRepository GetRepository(string repositoryName);
 
         #endregion メソッド
-
     }
 }

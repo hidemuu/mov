@@ -51,7 +51,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.Service", "src\ana
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bom.Service", "src\bom\bom.service\Bom.Service.csproj", "{3F701F2E-49E0-4ABE-9351-022A0FCA1D72}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UseCases", "lib\usecases\UseCases.csproj", "{E65958B3-D9D5-49A8-8723-3D525AE21522}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UseCase", "lib\usecase\UseCase.csproj", "{E65958B3-D9D5-49A8-8723-3D525AE21522}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Test", "src\designer\designer.test\Designer.Test.csproj", "{13F22A58-0498-4CC3-85EC-F63E7AE2C897}"
 EndProject

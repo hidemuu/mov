@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Mov.Bom.Models.Entities.Schemas;
+using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using Mov.Bom.Models.Entities.Schemas;
 
 namespace Mov.Bom.Models
 {
@@ -12,7 +11,7 @@ namespace Mov.Bom.Models
     public interface IOrderRepository
     {
         /// <summary>
-        /// Returns all orders. 
+        /// Returns all orders.
         /// </summary>
         Task<IEnumerable<Order>> GetAsync();
 
@@ -22,17 +21,17 @@ namespace Mov.Bom.Models
         Task<Order> GetAsync(Guid orderId);
 
         /// <summary>
-        /// Returns all order with a data field matching the start of the given string. 
+        /// Returns all order with a data field matching the start of the given string.
         /// </summary>
         Task<IEnumerable<Order>> GetAsync(string search);
 
         /// <summary>
-        /// Returns all the given customer's orders. 
+        /// Returns all the given customer's orders.
         /// </summary>
         Task<IEnumerable<Order>> GetForCustomerAsync(Guid customerId);
 
         /// <summary>
-        /// Adds a new order if the order does not exist, updates the 
+        /// Adds a new order if the order does not exist, updates the
         /// existing order otherwise.
         /// </summary>
         Task<Order> UpsertAsync(Order order);
@@ -41,6 +40,5 @@ namespace Mov.Bom.Models
         /// Deletes an order.
         /// </summary>
         Task DeleteAsync(Guid orderId);
-
     }
 }

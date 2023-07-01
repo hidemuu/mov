@@ -1,6 +1,6 @@
-﻿using Mov.Designer.Models;
+﻿using Mov.Core.Repositories.Services.Cruds;
+using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
-using Mov.Repositories.Services.Cruds;
 
 namespace Mov.Designer.Engine.Persistences
 {

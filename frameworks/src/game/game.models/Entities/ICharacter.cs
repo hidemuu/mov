@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Text;
+﻿using System.Drawing;
 
 namespace Mov.Game.Models.Entities
 {
@@ -69,6 +66,5 @@ namespace Mov.Game.Models.Entities
         void AddLife(int count);
 
         #endregion メソッド
-
     }
 }

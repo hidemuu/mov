@@ -1,16 +1,15 @@
-﻿using Mov.Bom.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Mov.Bom.Models;
+using Mov.Bom.Models.Entities.Schemas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Mov.Bom.Models.Entities.Schemas;
 
 namespace Mov.Bom.Repository.Sql
 {
     /// <summary>
-    /// Contains methods for interacting with the orders backend using 
+    /// Contains methods for interacting with the orders backend using
     /// SQL via Entity Framework Core 2.0.
     /// </summary>
     public class SqlOrderRepository : IOrderRepository

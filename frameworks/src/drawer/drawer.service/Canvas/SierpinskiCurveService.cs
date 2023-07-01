@@ -1,14 +1,10 @@
 ﻿using Mov.Drawer.Models;
-using Mov.Drawer.Service;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Drawer.Service.Canvas
 {
     public class SierpinskiCurveService : CanvasServiceBase
     {
-        
         #region コンストラクター
 
         public SierpinskiCurveService(IDrawerRepository repository) : base(repository)
@@ -26,7 +22,6 @@ namespace Mov.Drawer.Service.Canvas
 
         protected override void Ready()
         {
-
         }
 
         protected override void DrawScreen()

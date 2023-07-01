@@ -1,8 +1,5 @@
-﻿using Mov.Game.Models.Entities;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Mov.Game.Models.Entities.Characters
 {
@@ -11,7 +8,6 @@ namespace Mov.Game.Models.Entities.Characters
     /// </summary>
     public class Breadcrumbs
     {
-
         #region フィールド
 
         private int len;
@@ -21,13 +17,13 @@ namespace Mov.Game.Models.Entities.Characters
         private int[,] dirOffset = { { 1, 0 }, { 0, 1 }, { -1, 0 }, { 0, -1 } };
         private int[] tryPlan = { 0, 1, 3, 2 };
 
-        #endregion
+        #endregion フィールド
 
         #region プロパティ
 
         public Bread[] breads;
 
-        #endregion
+        #endregion プロパティ
 
         /// <summary>
         /// コンストラクタ
@@ -102,7 +98,6 @@ namespace Mov.Game.Models.Entities.Characters
             }
         }
 
-        #endregion
-
+        #endregion メソッド
     }
 }

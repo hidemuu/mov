@@ -1,8 +1,6 @@
 ﻿using Mov.Game.Models.Entities;
 using Mov.Game.Models.Entities.Schemas;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Game.Models
 {
@@ -17,14 +15,17 @@ namespace Mov.Game.Models
         /// ゲームオーバー判定
         /// </summary>
         bool IsGameOver { get; set; }
+
         /// <summary>
         /// ステージクリア判定
         /// </summary>
         bool IsStageClear { get; set; }
+
         /// <summary>
         /// スコア
         /// </summary>
         int Score { get; set; }
+
         /// <summary>
         /// レベル
         /// </summary>
@@ -34,6 +35,7 @@ namespace Mov.Game.Models
         /// 画面幅
         /// </summary>
         int MapWidth { get; }
+
         /// <summary>
         /// 画面高さ
         /// </summary>
@@ -43,27 +45,31 @@ namespace Mov.Game.Models
         /// ユニット幅
         /// </summary>
         int UnitWidth { get; }
+
         /// <summary>
         /// ユニット高さ
         /// </summary>
         int UnitHeight { get; }
+
         /// <summary>
         /// 入力キーコード
         /// </summary>
         int KeyCode { get; set; }
+
         /// <summary>
         /// キャラクタ配列
         /// </summary>
         List<ICharacter> Characters { get; }
+
         /// <summary>
         /// 敵キャラ配列
         /// </summary>
         List<ICharacter> Aliens { get; }
+
         /// <summary>
         /// マップ情報
         /// </summary>
         int[,] Map { get; }
-
 
         #endregion プロパティ
 

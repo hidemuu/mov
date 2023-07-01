@@ -1,14 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Mov.Bom.Models.Entities.Schemas;
 
 namespace Mov.Bom.Repository
 {
     public class BomDbContext : DbContext
     {
-        public BomDbContext() { }
+        public BomDbContext()
+        { }
+
         /// <summary>
         /// Creates a new Contoso DbContext.
         /// </summary>
@@ -37,7 +36,6 @@ namespace Mov.Bom.Repository
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
         }
     }
 }

@@ -1,5 +1,5 @@
-﻿using Mov.Drawer.Models;
-using Mov.Graphicers.Services;
+﻿using Mov.Core.Graphicers.Services;
+using Mov.Drawer.Models;
 using System;
 using System.Diagnostics;
 

@@ -1,5 +1,4 @@
 ﻿using Mov.Game.Models.Entities.Schemas;
-using System;
 
 namespace Mov.Game.Models.Entities
 {
@@ -8,7 +7,6 @@ namespace Mov.Game.Models.Entities
     /// </summary>
     public class Map2D
     {
-
         #region フィールド
 
         private static string mark = Landmark.ROAD + Landmark.WALL + Landmark.PALYER + Landmark.ALIEN + Landmark.TREASURE;
@@ -35,6 +33,7 @@ namespace Mov.Game.Models.Entities
             }
             return map;
         }
+
         #endregion メソッド
     }
 }

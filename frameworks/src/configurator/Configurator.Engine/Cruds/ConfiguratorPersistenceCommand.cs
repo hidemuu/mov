@@ -1,7 +1,7 @@
 ﻿using Mov.Configurator.Models;
 using Mov.Configurator.Models.Persistences;
-using Mov.Repositories.Services.Cruds;
-using Mov.Utilities.Templates.Crud;
+using Mov.Core.Repositories.Services.Cruds;
+using Mov.Core.Templates.Crud;
 using System;
 
 namespace Configurator.Engine.Persistences

@@ -1,8 +1,5 @@
-﻿using Mov.Repositories.Models.EntityObjects.DbObjects;
+﻿using Mov.Core.Repositories.Models.Entities.DbObjects;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Game.Models.Entities.Schemas
 {
@@ -20,18 +17,22 @@ namespace Mov.Game.Models.Entities.Schemas
         /// 道
         /// </summary>
         public const string ROAD = "＿";
+
         /// <summary>
         /// 壁
         /// </summary>
         public const string WALL = "＃";
+
         /// <summary>
         /// プレイヤー
         /// </summary>
         public const string PALYER = "◯";
+
         /// <summary>
         /// NPC
         /// </summary>
         public const string ALIEN = "＠";
+
         /// <summary>
         /// 宝
         /// </summary>
@@ -61,6 +62,7 @@ namespace Mov.Game.Models.Entities.Schemas
         /// 行サイズ
         /// </summary>
         public int GetRow() => MarkRows.Length;
+
         /// <summary>
         /// 列サイズ
         /// </summary>

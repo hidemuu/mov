@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Game.Models.Entities.Characters
+﻿namespace Mov.Game.Models.Entities.Characters
 {
     public class BreadPlayer : Player
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private Breadcrumbs breadcrumbs;
 
@@ -27,6 +23,5 @@ namespace Mov.Game.Models.Entities.Characters
             if (Reached) breadcrumbs.Drop(Row, Col);
             return result;
         }
-
     }
 }

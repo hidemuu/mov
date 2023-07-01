@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Text;
+﻿using System.Drawing;
 
 namespace Mov.Game.Models.Entities.Characters
 {
@@ -36,6 +33,7 @@ namespace Mov.Game.Models.Entities.Characters
         {
             return false;
         }
+
         public override bool IsDamage()
         {
             return false;

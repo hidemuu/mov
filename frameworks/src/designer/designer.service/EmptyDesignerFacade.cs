@@ -1,8 +1,6 @@
-﻿using Mov.Designer.Models;
-using Mov.Layouts;
+﻿using Mov.Core.Layouts;
+using Mov.Designer.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Designer.Service
 {

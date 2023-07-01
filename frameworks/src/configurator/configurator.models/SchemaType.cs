@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Configurator.Models
+﻿namespace Mov.Configurator.Models
 {
     /// <summary>
     /// スキーマ種別

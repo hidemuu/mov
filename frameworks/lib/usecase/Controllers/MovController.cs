@@ -1,5 +1,5 @@
-﻿using Mov.Framework;
-using Mov.Utilities.Templates;
+﻿using Mov.Core.Templates;
+using Mov.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;

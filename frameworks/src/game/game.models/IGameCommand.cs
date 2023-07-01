@@ -1,8 +1,5 @@
-﻿using Mov.Game.Models.Entities.Schemas;
-using Mov.Repositories.Services.Cruds;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Core.Repositories.Services.Cruds;
+using Mov.Game.Models.Entities.Schemas;
 
 namespace Mov.Game.Models
 {

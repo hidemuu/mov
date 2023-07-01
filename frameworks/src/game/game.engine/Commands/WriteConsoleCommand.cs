@@ -1,9 +1,7 @@
-﻿using Mov.Game.Models;
-using Mov.Utilities.Models.ValueObjects.Commands;
-using Mov.Utilities.Templates;
+﻿using Mov.Core.Models.ValueObjects.Commands;
+using Mov.Core.Templates;
+using Mov.Game.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Game.Engine.Commands
 {

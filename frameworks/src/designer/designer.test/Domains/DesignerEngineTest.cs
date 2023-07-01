@@ -1,8 +1,5 @@
-using Mov.Designer.Models;
 using NUnit.Framework;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 
 namespace Mov.Designer.Test
 {
@@ -30,7 +27,6 @@ namespace Mov.Designer.Test
         [SetUp]
         public void Setup()
         {
-
             Trace.WriteLine(string.Join(' ', TEST_NAME, "TestInitialize"));
         }
 
@@ -60,7 +56,7 @@ namespace Mov.Designer.Test
 
             ////Act
             //var contents = sut.GetContents();
-           
+
             ////Assert
             ////Assert.Pass();
             //Assert.AreEqual(0, contents.Count(), "");

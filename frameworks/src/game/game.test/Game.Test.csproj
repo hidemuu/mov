@@ -24,8 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Mov.Utilities">
-      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
+    <Reference Include="Mov.Core">
+      <HintPath>..\..\..\..\commons\lib\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
 

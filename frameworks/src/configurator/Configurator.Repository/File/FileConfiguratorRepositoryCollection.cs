@@ -1,4 +1,4 @@
-﻿using Mov.Repositories.Services.Repositories.Domains;
+﻿using Mov.Core.Repositories.Services.Repositories.Domains;
 
 namespace Configurator.Repository.File
 {

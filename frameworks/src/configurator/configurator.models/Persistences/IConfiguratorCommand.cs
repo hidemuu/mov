@@ -1,4 +1,4 @@
-﻿using Mov.Repositories.Services.Cruds;
+﻿using Mov.Core.Repositories.Services.Cruds;
 
 namespace Mov.Configurator.Models.Persistences
 {

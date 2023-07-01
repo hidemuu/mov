@@ -1,5 +1,5 @@
-﻿using Mov.Designer.Models.Schemas;
-using Mov.Repositories.Services;
+﻿using Mov.Core.Repositories.Services;
+using Mov.Designer.Models.Schemas;
 
 namespace Mov.Designer.Models
 {

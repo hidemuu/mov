@@ -1,8 +1,5 @@
 ﻿using Mov.Game.Engine.Persistences;
 using Mov.Game.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Game.Repository
 {
@@ -20,7 +17,5 @@ namespace Mov.Game.Repository
             this.Command = new RepositoryGameCommand(repository);
             this.Query = new RepositoryGameQuery(repository);
         }
-
-        
     }
 }

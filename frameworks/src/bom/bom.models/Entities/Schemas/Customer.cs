@@ -1,7 +1,5 @@
-﻿using Mov.Repositories.Models.EntityObjects.DbObjects;
+﻿using Mov.Core.Repositories.Models.Entities.DbObjects;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Bom.Models.Entities.Schemas
 {
@@ -36,7 +34,7 @@ namespace Mov.Bom.Models.Entities.Schemas
         public string Phone { get; set; }
 
         /// <summary>
-        /// Gets or sets the customer's address. 
+        /// Gets or sets the customer's address.
         /// </summary>
         public string Address { get; set; }
 

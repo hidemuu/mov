@@ -1,4 +1,4 @@
-﻿using Mov.Repositories.Models.EntityObjects.DbObjects;
+﻿using Mov.Core.Repositories.Models.Entities.DbObjects;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.ComponentModel;

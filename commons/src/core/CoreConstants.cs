@@ -2,11 +2,12 @@
 {
     public static class CoreConstants
     {
+        #region string code
+
         /// <summary>
         /// 改行コード
         /// </summary>
         public const string NewLine = @"\r\n";
-
         /// <summary>
         /// エンコード名
         /// </summary>
@@ -15,6 +16,10 @@
         /// エンコード名
         /// </summary>
         private const string ENC_NAME_SHIFT_JIS = "Shift_JIS";
+
+        #endregion string code
+
+        #region keyboard code
 
         /// <summary>
         /// キー指定無
@@ -36,5 +41,7 @@
         /// 下キー
         /// </summary>
         public const int KEY_CODE_DOWN = 40;
+
+        #endregion keyboard code
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Mov.Analizer.Models;
+﻿using Mov.Analizer.Models;
 using Mov.Designer.Models;
 using Mov.Framework;
 using Mov.Game.Engine;

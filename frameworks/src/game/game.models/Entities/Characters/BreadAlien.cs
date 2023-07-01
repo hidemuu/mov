@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Game.Models.Entities.Characters
+﻿namespace Mov.Game.Models.Entities.Characters
 {
     public class BreadAlien : Alien
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         private Breadcrumbs breadcrumbs;
 
@@ -24,7 +20,6 @@ namespace Mov.Game.Models.Entities.Characters
         public override void NextMove()
         {
             NextMoveBread();
-
         }
 
         public void NextMoveBread()

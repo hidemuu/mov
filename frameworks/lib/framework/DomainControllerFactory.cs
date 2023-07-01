@@ -1,8 +1,8 @@
 ﻿using Mov.Analizer.Models;
-using Mov.Controllers.Services.Controllers;
+using Mov.Core.Controllers.Services.Controllers;
+using Mov.Core.Templates;
 using Mov.Designer.Models;
 using Mov.Game.Engine;
-using Mov.Utilities.Templates;
 using System;
 using System.Diagnostics;
 

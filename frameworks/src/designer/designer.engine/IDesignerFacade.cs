@@ -1,4 +1,4 @@
-﻿using Mov.Layouts;
+﻿using Mov.Core.Layouts;
 
 namespace Mov.Designer.Models
 {

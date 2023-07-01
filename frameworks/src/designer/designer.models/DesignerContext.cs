@@ -1,14 +1,18 @@
-﻿using Mov.Designer.Models.Schemas;
-using Mov.Layouts;
-using Mov.Layouts.Models;
-using Mov.Layouts.Models.Entities;
-using Mov.Layouts.Models.Entities.Contents;
-using Mov.Layouts.Models.Styles;
-using Mov.Utilities.Models.ValueObjects;
-using Mov.Utilities.Models.ValueObjects.Keys;
-using Mov.Utilities.Models.ValueObjects.Styles;
-using Mov.Utilities.Models.ValueObjects.Units;
-using Mov.Utilities.Models.ValueObjects.Units.Sizes;
+﻿using Mov.Core.Layouts;
+using Mov.Core.Layouts.Models.Contents.Entities;
+using Mov.Core.Layouts.Models.Contents.ValueObjects;
+using Mov.Core.Layouts.Models.Nodes.Entities;
+using Mov.Core.Layouts.Models.Nodes.ValueObjects;
+using Mov.Core.Layouts.Models.Shells.Entities;
+using Mov.Core.Layouts.Models.Shells.ValueObjects;
+using Mov.Core.Layouts.Models.Themes.Entities;
+using Mov.Core.Layouts.Models.Themes.ValueObjects;
+using Mov.Core.Models.ValueObjects;
+using Mov.Core.Models.ValueObjects.Keys;
+using Mov.Core.Models.ValueObjects.Styles;
+using Mov.Core.Models.ValueObjects.Units;
+using Mov.Core.Models.ValueObjects.Units.Sizes;
+using Mov.Designer.Models.Schemas;
 using System.Collections.Generic;
 
 namespace Mov.Designer.Models
@@ -70,7 +74,7 @@ namespace Mov.Designer.Models
                         new LayoutContentKey(new CodeKey(content.Code), new ControlStyle(content.ControlType)),
                         new LayoutContentStatus(new Info(content.Name), new IconImage(content.Icon), VisibilityStyle.Visible, EnableStyle.Enable, new Parameter(content.Parameter)),
                         new LayoutContentArrange(MarginUnit.Default, new Size2D(content.Width, content.Height), OrientationStyle.Horizontal, new HorizontalAlignmentStyle(content.HorizontalAlignment), new VerticalAlignmentStyle(content.VerticalAlignment)),
-                        new LayoutContentSchema(new LayoutSchema(content.Schema), new Variable(content.DefaultValue), new Macro(content.Macro)));
+                        new LayoutContentValue(new LayoutValue(content.Schema), new Variable(content.DefaultValue), new Macro(content.Macro)));
         }
 
         private IEnumerable<LayoutShell> GetShells(IDesignerRepository repository)

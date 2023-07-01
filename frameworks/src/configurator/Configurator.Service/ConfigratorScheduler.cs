@@ -1,8 +1,5 @@
 ﻿using Configurator.Engine;
 using Mov.Configurators;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Configurator.Service
 {
@@ -16,7 +13,7 @@ namespace Configurator.Service
 
         #region コンストラクター
 
-        public ConfigratorScheduler(IConfiguratorService service) 
+        public ConfigratorScheduler(IConfiguratorService service)
         {
             _service = service;
         }

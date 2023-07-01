@@ -1,22 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 
 namespace Mov.Game.Models.Entities.Characters
 {
     public class Alien : FiniteStateMachineCharacterBase
     {
         #region フィールド
+
         /// <summary>
         /// 乱数
         /// </summary>
         protected static Random rnd = new Random();
+
         protected int nextDirection = 0;
         protected int[,] dirOffset = { { 1, 0 }, { 0, 1 }, { -1, 0 }, { 0, -1 } };
 
         private int[] tryPlan = { 1, 3, 2 };
-        #endregion
+
+        #endregion フィールド
 
         #region プロパティ
 
@@ -25,7 +26,7 @@ namespace Mov.Game.Models.Entities.Characters
         public override int Life { get; protected set; } = 1;
         protected override Brush BodyBrush { get; set; } = new SolidBrush(Color.IndianRed);
 
-        #endregion
+        #endregion プロパティ
 
         /// <summary>
         /// コンストラクタ
@@ -36,10 +37,12 @@ namespace Mov.Game.Models.Entities.Characters
         }
 
         #region メソッド
+
         public override void Draw(Graphics graphics)
         {
             graphics.FillRectangle(BodyBrush, X + 2, Y + 2, Engine.UnitWidth - 4, Engine.UnitHeight - 4);
         }
+
         /// <summary>
         /// 移動先を設定
         /// </summary>
@@ -47,6 +50,7 @@ namespace Mov.Game.Models.Entities.Characters
         {
             NextMoveRandom();
         }
+
         /// <summary>
         /// ランダムな方向転換による移動
         /// </summary>
@@ -75,7 +79,6 @@ namespace Mov.Game.Models.Entities.Characters
             }
         }
 
-
         public override bool Move()
         {
             NextMove();
@@ -87,7 +90,7 @@ namespace Mov.Game.Models.Entities.Characters
         {
             return false;
         }
-        #endregion
 
+        #endregion メソッド
     }
 }

@@ -1,6 +1,6 @@
-﻿using Mov.Game.Models;
-using Mov.Learnings.Models;
-using Mov.Utilities;
+﻿using Mov.Core.Helpers;
+using Mov.Core.Learnings.Models;
+using Mov.Game.Models;
 using System;
 
 namespace Mov.Game.Service.Consoles

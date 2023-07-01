@@ -1,8 +1,8 @@
-﻿using Mov.Game.Models;
+﻿using Mov.Core;
+using Mov.Game.Models;
 using Mov.Game.Models.Entities;
 using Mov.Game.Models.Entities.Characters;
 using Mov.Game.Models.Entities.Schemas;
-using Mov.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,6 @@ namespace Mov.Game.Engine.FiniteStateMachine
     /// </summary>
     public class FiniteStateMachineGameEngine : IFiniteStateMachineGameEngine
     {
-
         #region フィールド
 
         public readonly IGameContext parameter;
@@ -23,6 +22,7 @@ namespace Mov.Game.Engine.FiniteStateMachine
         /// 追跡パンくず
         /// </summary>
         private Breadcrumbs breadcrumbs;
+
         /// <summary>
         /// パンくず追跡使用
         /// </summary>
@@ -36,14 +36,17 @@ namespace Mov.Game.Engine.FiniteStateMachine
         /// ゲームオーバー判定
         /// </summary>
         public bool IsGameOver { get; set; }
+
         /// <summary>
         /// ステージクリア判定
         /// </summary>
         public bool IsStageClear { get; set; }
+
         /// <summary>
         /// スコア
         /// </summary>
         public int Score { get; set; }
+
         /// <summary>
         /// レベル
         /// </summary>
@@ -53,30 +56,37 @@ namespace Mov.Game.Engine.FiniteStateMachine
         /// マップ幅
         /// </summary>
         public int MapWidth { get; }
+
         /// <summary>
         /// マップ高さ
         /// </summary>
         public int MapHeight { get; }
+
         /// <summary>
         /// ユニット幅
         /// </summary>
         public int UnitWidth { get; private set; } = 40;
+
         /// <summary>
         /// ユニット高さ
         /// </summary>
         public int UnitHeight { get; private set; } = 40;
+
         /// <summary>
         /// 入力キーコード
         /// </summary>
-        public int KeyCode { get; set; } = UtilityConstants.KEY_CODE_NONE;
+        public int KeyCode { get; set; } = CoreConstants.KEY_CODE_NONE;
+
         /// <summary>
         /// キャラクタ配列
         /// </summary>
         public List<ICharacter> Characters { get; private set; }
+
         /// <summary>
         /// 敵キャラ配列
         /// </summary>
         public List<ICharacter> Aliens { get; private set; }
+
         /// <summary>
         /// マップ情報
         /// </summary>
@@ -113,7 +123,7 @@ namespace Mov.Game.Engine.FiniteStateMachine
             breadcrumbs = new Breadcrumbs(15, this, landMark.GetRow(), landMark.GetCol());
             Characters.Clear();
             Aliens.Clear();
-            KeyCode = UtilityConstants.KEY_CODE_NONE;
+            KeyCode = CoreConstants.KEY_CODE_NONE;
             AddCharacters(Characters, Map);
             AddCharacters(Characters, breadcrumbs.breads);
             SortCharacters(new int[] { (int)CharacterType.WALL, (int)CharacterType.BREAD, (int)CharacterType.ALIEN, (int)CharacterType.PLAYER, (int)CharacterType.TREASURE });
@@ -167,6 +177,7 @@ namespace Mov.Game.Engine.FiniteStateMachine
                 }
             }
         }
+
         /// <summary>
         /// キャラクターを追加
         /// </summary>
@@ -179,6 +190,7 @@ namespace Mov.Game.Engine.FiniteStateMachine
                 characters.Add(target);
             }
         }
+
         /// <summary>
         /// キャラクターを追加
         /// </summary>
@@ -188,6 +200,7 @@ namespace Mov.Game.Engine.FiniteStateMachine
         {
             characters.Add(character);
         }
+
         /// <summary>
         /// キャラクターを生成
         /// </summary>
@@ -206,9 +219,11 @@ namespace Mov.Game.Engine.FiniteStateMachine
                     else return new Alien(this);
                 case (int)CharacterType.TREASURE:
                     return new Treasure(this);
+
                 default: return null;
             }
         }
+
         /// <summary>
         /// 壁判定
         /// </summary>

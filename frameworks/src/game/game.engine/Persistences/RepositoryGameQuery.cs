@@ -1,6 +1,6 @@
-﻿using Mov.Game.Models;
+﻿using Mov.Core.Repositories.Services.Cruds;
+using Mov.Game.Models;
 using Mov.Game.Models.Entities.Schemas;
-using Mov.Repositories.Services.Cruds;
 
 namespace Mov.Game.Engine.Persistences
 {

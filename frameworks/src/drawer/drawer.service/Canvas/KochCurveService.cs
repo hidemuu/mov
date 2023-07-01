@@ -1,9 +1,5 @@
 ﻿using Mov.Drawer.Models;
-using Mov.Drawer.Service;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Text;
 
 namespace Mov.Drawer.Service.Canvas
 {
@@ -26,7 +22,6 @@ namespace Mov.Drawer.Service.Canvas
 
         protected override void Ready()
         {
-
         }
 
         protected override void DrawScreen()
@@ -44,7 +39,7 @@ namespace Mov.Drawer.Service.Canvas
         /// </summary>
         private void Draw(int n, double len, double angle)
         {
-            if(n == 1)
+            if (n == 1)
             {
                 //n=1なら線を一本書く（長さと角度で）
                 DrawEngine.Forward(len, angle, ScreenGraphics);
@@ -63,6 +58,5 @@ namespace Mov.Drawer.Service.Canvas
         }
 
         #endregion 内部メソッド
-
     }
 }

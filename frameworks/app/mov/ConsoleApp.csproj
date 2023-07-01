@@ -13,12 +13,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\usecases\UseCases.csproj" />
+    <ProjectReference Include="..\..\lib\usecase\UseCase.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Mov.Loggers">
-      <HintPath>..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Loggers.dll</HintPath>
+    <Reference Include="Mov.Core.Loggers">
+      <HintPath>..\..\..\commons\lib\bin\Debug\netstandard2.0\Mov.Core.Loggers.dll</HintPath>
     </Reference>
   </ItemGroup>
 

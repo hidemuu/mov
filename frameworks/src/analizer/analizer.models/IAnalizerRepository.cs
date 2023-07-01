@@ -1,7 +1,4 @@
-﻿using Mov.Repositories.Services;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Core.Repositories.Services;
 
 namespace Mov.Analizer.Models
 {

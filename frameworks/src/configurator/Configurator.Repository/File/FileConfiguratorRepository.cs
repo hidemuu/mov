@@ -1,8 +1,8 @@
 ﻿using Mov.Configurator.Models;
-using Mov.Repositories.Services;
-using Mov.Repositories.Services.Repositories.DbObjects;
-using Mov.Repositories.Services.Repositories.Domains;
-using Mov.Utilities;
+using Mov.Core;
+using Mov.Core.Repositories.Services;
+using Mov.Core.Repositories.Services.Repositories.DbObjects;
+using Mov.Core.Repositories.Services.Repositories.Domains;
 
 namespace Configurator.Repository.File
 {
@@ -10,7 +10,7 @@ namespace Configurator.Repository.File
     {
         public override string DomainPath => "configurator";
 
-        public FileConfiguratorRepository(string endpoint, string fileDir, string extension, string encoding = UtilityConstants.ENCODE_NAME_UTF8)
+        public FileConfiguratorRepository(string endpoint, string fileDir, string extension, string encoding = CoreConstants.ENCODE_NAME_UTF8)
             : base(endpoint, fileDir, extension, encoding)
         {
             UserSettings = new FileDbObjectRepository<UserSetting, UserSettingCollection>(GetPath("config"), encoding);

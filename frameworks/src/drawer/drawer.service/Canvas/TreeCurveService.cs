@@ -1,9 +1,6 @@
 ﻿using Mov.Drawer.Models;
-using Mov.Drawer.Service;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 
 namespace Mov.Drawer.Service.Canvas
 {
@@ -22,7 +19,6 @@ namespace Mov.Drawer.Service.Canvas
 
         public TreeCurveService(IDrawerRepository repository) : base(repository)
         {
-            
         }
 
         #endregion コンストラクター
@@ -36,7 +32,6 @@ namespace Mov.Drawer.Service.Canvas
 
         protected override void Ready()
         {
-
         }
 
         protected override void DrawScreen()

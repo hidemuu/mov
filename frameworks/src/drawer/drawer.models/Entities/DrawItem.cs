@@ -1,8 +1,5 @@
-﻿using Mov.Repositories.Models.EntityObjects.DbObjects;
+﻿using Mov.Core.Repositories.Models.Entities.DbObjects;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Drawer.Models
 {
@@ -16,12 +13,14 @@ namespace Mov.Drawer.Models
     {
         [JsonProperty("category")]
         public string Category { get; set; }
+
         [JsonProperty("width")]
         public int Width { get; set; } = 600;
+
         [JsonProperty("height")]
         public int Height { get; set; } = 600;
+
         [JsonProperty("reflesh_rate")]
         public double RefleshRate { get; set; } = 10;
-
     }
 }

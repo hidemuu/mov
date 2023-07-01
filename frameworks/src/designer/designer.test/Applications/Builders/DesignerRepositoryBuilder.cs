@@ -1,8 +1,8 @@
 ﻿using Moq;
+using Mov.Core.Repositories.Services;
 using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
 using Mov.Designer.Repository;
-using Mov.Repositories.Services;
 
 namespace Mov.Designer.Test.Builders
 {

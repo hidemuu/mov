@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="Mov.Repositories">
-      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Repositories.dll</HintPath>
+    <Reference Include="Mov.Core">
+      <HintPath>..\..\..\..\commons\lib\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Mov.Utilities">
-      <HintPath>..\..\..\..\commons\src\core\bin\Debug\netstandard2.0\Mov.Utilities.dll</HintPath>
+    <Reference Include="Mov.Core.Repositories">
+      <HintPath>..\..\..\..\commons\lib\bin\Debug\netstandard2.0\Mov.Core.Repositories.dll</HintPath>
     </Reference>
   </ItemGroup>
 

@@ -1,17 +1,15 @@
 ﻿using Mov.Bom.Models;
-using Mov.Accessors;
+using Mov.Bom.Models.Entities.Schemas;
+using Mov.Core.Accessors.Contexts;
+using Mov.Core.Accessors.Services.Serializer.Implements;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using Mov.Bom.Models.Entities.Schemas;
-using Mov.Accessors.Contexts;
-using Mov.Accessors.Services.Serializer.Implements;
 
 namespace Mov.Bom.Repository.Rest
 {
     /// <summary>
-    /// Contains methods for interacting with the products backend using REST. 
+    /// Contains methods for interacting with the products backend using REST.
     /// </summary>
     public class RestProductRepository : IProductRepository
     {

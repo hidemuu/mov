@@ -1,13 +1,5 @@
-﻿using Mov.Game.Engine;
+﻿using Mov.Core.Graphicers.Services;
 using Mov.Game.Models;
-using Mov.Graphicers.Services;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mov.Game.Service.Graphic
 {
@@ -36,14 +28,17 @@ namespace Mov.Game.Service.Graphic
         /// ゲームオーバー判定
         /// </summary>
         public bool IsGameOver { get; set; }
+
         /// <summary>
         /// ステージクリア判定
         /// </summary>
         public bool IsStageClear { get; set; }
+
         /// <summary>
         /// スコア
         /// </summary>
         public int Score { get; set; }
+
         /// <summary>
         /// レベル
         /// </summary>
@@ -54,8 +49,7 @@ namespace Mov.Game.Service.Graphic
         /// </summary>
         public int TotalScore { get; private set; } = 0;
 
-
-        #endregion フィールド
+        #endregion プロパティ
 
         #region コンストラクター
 
@@ -87,7 +81,6 @@ namespace Mov.Game.Service.Graphic
 
         public void Next()
         {
-
             engine.Level++;
             TotalScore += engine.Score;
             engine.Score = 0;
@@ -111,6 +104,5 @@ namespace Mov.Game.Service.Graphic
         }
 
         #endregion メソッド
-
     }
 }

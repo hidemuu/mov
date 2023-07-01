@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Text;
+﻿using System.Drawing;
 
 namespace Mov.Game.Models.Entities.Characters
 {
     public class Bread : FiniteStateMachineCharacterBase
     {
-
         #region プロパティ
 
         public override CharacterType Type { get; protected set; } = CharacterType.BREAD;
@@ -15,7 +11,7 @@ namespace Mov.Game.Models.Entities.Characters
         public override int Life { get; protected set; } = 1;
         protected override Brush BodyBrush { get; set; } = new SolidBrush(Color.CornflowerBlue);
 
-        #endregion
+        #endregion プロパティ
 
         /// <summary>
         /// コンストラクタ
@@ -26,15 +22,16 @@ namespace Mov.Game.Models.Entities.Characters
             SetPosition(-100, -100);
         }
 
-
         public override void Draw(Graphics graphics)
         {
             graphics.FillRectangle(BodyBrush, X - 2, Y - 2, 4, 4);
         }
+
         public override bool Move()
         {
             return false;
         }
+
         public override bool IsDamage()
         {
             return false;

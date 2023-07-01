@@ -1,6 +1,6 @@
-﻿using Mov.Game.Models;
-using Mov.Graphicers.Services;
-using Mov.Learnings.Models;
+﻿using Mov.Core.Graphicers.Services;
+using Mov.Core.Learnings.Models;
+using Mov.Game.Models;
 using System;
 using System.Drawing;
 

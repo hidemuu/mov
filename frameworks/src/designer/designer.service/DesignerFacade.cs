@@ -1,7 +1,7 @@
-﻿using Mov.Designer.Engine.Persistences;
+﻿using Mov.Core.Layouts;
+using Mov.Core.Layouts.Services.Facades;
+using Mov.Designer.Engine.Persistences;
 using Mov.Designer.Models;
-using Mov.Layouts;
-using Mov.Layouts.Services.Facades;
 using System.Collections.Generic;
 using System.Linq;
 

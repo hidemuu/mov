@@ -1,4 +1,4 @@
-﻿using Mov.Repositories.Services;
+﻿using Mov.Core.Repositories.Services;
 
 namespace Mov.Drawer.Models
 {

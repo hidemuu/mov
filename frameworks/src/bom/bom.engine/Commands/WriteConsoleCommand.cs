@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Models.ValueObjects.Commands;
-using Mov.Core.Templates.Commands;
+using Mov.Core.Templates.Controllers;
 
 namespace Mov.Bom.Models.Commands
 {

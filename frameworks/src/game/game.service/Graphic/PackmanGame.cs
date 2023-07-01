@@ -1,4 +1,5 @@
-﻿using Mov.Core.Graphicers.Services;
+﻿using Mov.Core.Graphicers;
+using Mov.Core.Templates.Controllers;
 using Mov.Game.Models;
 
 namespace Mov.Game.Service.Graphic
@@ -22,7 +23,7 @@ namespace Mov.Game.Service.Graphic
         /// <summary>
         /// グラフィックコントローラー
         /// </summary>
-        public GraphicControllerBase GraphicController { get; }
+        public IGraphicController GraphicController { get; }
 
         /// <summary>
         /// ゲームオーバー判定

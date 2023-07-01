@@ -1,4 +1,4 @@
-﻿using Mov.Core.Graphicers.Services;
+﻿using Mov.Core.Graphicers;
 using Mov.Game.Models;
 using Mov.Game.Models.Entities;
 

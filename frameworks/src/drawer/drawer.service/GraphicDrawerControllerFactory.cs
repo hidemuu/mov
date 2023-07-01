@@ -1,4 +1,4 @@
-﻿using Mov.Core.Graphicers.Services;
+﻿using Mov.Core.Templates.Controllers;
 using Mov.Drawer.Models;
 using System;
 using System.Diagnostics;
@@ -32,7 +32,7 @@ namespace Mov.Drawer.Service
 
         #region メソッド
 
-        public GraphicControllerBase Create(string code)
+        public IGraphicController Create(string code)
         {
             Type type = Type.GetType(baseName + "." + code + BASE_TYPE_NAME);
             if (type == null)
@@ -40,7 +40,7 @@ namespace Mov.Drawer.Service
                 Debug.Assert(false, type.FullName);
                 return null;
             };
-            return (GraphicControllerBase)Activator.CreateInstance(type, this.repository);
+            return (IGraphicController)Activator.CreateInstance(type, this.repository);
         }
 
         #endregion メソッド

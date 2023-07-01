@@ -1,4 +1,4 @@
-﻿using Mov.Core.Graphicers.Services;
+﻿using Mov.Core.Templates.Controllers;
 
 namespace Mov.Game.Models
 {
@@ -6,7 +6,7 @@ namespace Mov.Game.Models
     {
         #region プロパティ
 
-        GraphicControllerBase GraphicController { get; }
+        IGraphicController GraphicController { get; }
 
         /// <summary>
         /// ゲームオーバー判定

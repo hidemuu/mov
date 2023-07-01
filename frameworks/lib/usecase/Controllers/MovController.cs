@@ -1,4 +1,4 @@
-﻿using Mov.Core.Templates.Commands;
+﻿using Mov.Core.Templates.Controllers;
 using Mov.Framework;
 using System;
 using System.Collections.Generic;

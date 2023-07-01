@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Amr.Engine
+﻿namespace Mov.Suite.Amr.Engine
 {
     public class Class1
     {

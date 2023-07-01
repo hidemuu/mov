@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Driver.Amr.Omron
+namespace Mov.Suite.Amr.Client.Omron
 {
     public class ArclEventArgs : EventArgs
     {

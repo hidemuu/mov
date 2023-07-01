@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Suite.Driver.Engine.Amr
+﻿namespace Mov.Suite.Amr.Models
 {
     public interface IAmrEngine
     {

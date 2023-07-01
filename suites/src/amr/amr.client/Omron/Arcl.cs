@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Suite.Amr.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Sockets;
@@ -6,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Mov.Driver.Amr.Omron
+namespace Mov.Suite.Amr.Client.Omron
 {
     public class Arcl : IAmrClient
     {
@@ -431,7 +432,7 @@ namespace Mov.Driver.Amr.Omron
             {
                 if (s.IndexOf("Goal: ", StringComparison.Ordinal) >= 0)
                 {
-                    string goal = s.Replace("Goal: ", String.Empty);
+                    string goal = s.Replace("Goal: ", string.Empty);
                     goal = goal.Trim('\n', '\r');
                     goals.Add(goal);
                 }
@@ -1077,7 +1078,7 @@ namespace Mov.Driver.Amr.Omron
         /// <returns></returns>
         public byte[] StringToBytes(string msg)
         {
-            var buffer = System.Text.Encoding.ASCII.GetBytes(msg);
+            var buffer = Encoding.ASCII.GetBytes(msg);
             return buffer;
         }
 
@@ -1089,7 +1090,7 @@ namespace Mov.Driver.Amr.Omron
         public void StringToBytes(string msg, ref byte[] buffer)
         {
             Bzero(buffer);
-            buffer = System.Text.Encoding.ASCII.GetBytes(msg);
+            buffer = Encoding.ASCII.GetBytes(msg);
         }
 
         /// <summary>
@@ -1099,7 +1100,7 @@ namespace Mov.Driver.Amr.Omron
         /// <returns>変換結果文字列</returns>
         public string BytesToString(byte[] buffer)
         {
-            string msg = System.Text.Encoding.ASCII.GetString(buffer, 0, buffer.Length);
+            string msg = Encoding.ASCII.GetString(buffer, 0, buffer.Length);
             return msg;
         }
         #endregion

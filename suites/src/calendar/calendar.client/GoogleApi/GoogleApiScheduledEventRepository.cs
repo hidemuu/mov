@@ -1,14 +1,13 @@
 ﻿using Google.Apis.Calendar.v3;
 using Google.Apis.Calendar.v3.Data;
 using Google.Apis.Services;
-using Mov.Driver.Clients.Calendar.GoogleApi;
+using Mov.Suite.Calendar.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Driver.Clients.Calendar.Repository.GoogleApi
+namespace Mov.Suite.Calendar.Client.GoogleApi
 {
     public class GoogleApiScheduledEventRepository
     {
@@ -16,7 +15,7 @@ namespace Mov.Driver.Clients.Calendar.Repository.GoogleApi
         {
             // アクセストークン取得
             var credential = await CredentialProvider.GetUserCredentialAsync();
-            if(credential == null)
+            if (credential == null)
                 return new Schedule[0];
 
             // Create Google Calendar API service.
@@ -49,7 +48,7 @@ namespace Mov.Driver.Clients.Calendar.Repository.GoogleApi
 
                 // 指定された種別以外は無視する
                 var kind = eventItem.GetScheduleKind() ?? "";
-                if (targetKinds.Any() 
+                if (targetKinds.Any()
                         && targetKinds.Contains(kind) == false)
                     continue;
 
@@ -75,7 +74,7 @@ namespace Mov.Driver.Clients.Calendar.Repository.GoogleApi
 
             return list.ToArray();
         }
-        
+
     }
 
     public static class GoogleEventExtensions

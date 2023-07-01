@@ -1,9 +1,6 @@
-﻿using Mov.Driver.Clients.Resas;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Suite.Resas.Models;
 
-namespace Mov.Suite.Driver.Engine.Resas
+namespace Mov.Suite.Resas.Engine
 {
     public class ResasContext : IResasContext
     {

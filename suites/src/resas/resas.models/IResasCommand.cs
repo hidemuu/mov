@@ -1,8 +1,8 @@
 ﻿using Mov.Core.Templates.Crud;
-using Mov.Driver.Clients.Resas.Entities;
-using Mov.Driver.Clients.Resas.Entities.Results;
+using Mov.Suite.Resas.Models.Schemas;
+using Mov.Suite.Resas.Models.Schemas.Results;
 
-namespace Mov.Driver.Clients.Resas
+namespace Mov.Suite.Resas.Models
 {
     public interface IResasCommand
     {

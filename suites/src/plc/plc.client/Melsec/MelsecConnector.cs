@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Driver.Plc.Melsec
+namespace Mov.Suite.Plc.Client.Melsec
 {
     public class MelsecConnector
     {
@@ -47,7 +45,7 @@ namespace Mov.Driver.Plc.Melsec
 
                 //Open関数処理の実行
                 iReturnCode = 0;
-                
+
                 //Openが成功した場合、イベントハンドラを生成する。
 
                 if (iReturnCode == 0)
@@ -157,7 +155,7 @@ namespace Mov.Driver.Plc.Melsec
         public int ReadDevice(string deviceName, int dataSize, out short[] result)
         {
             int iReturnCode;				//コントロールのメソッドの戻り値
-            String szDeviceName = "";		//デバイス名文字列
+            string szDeviceName = "";		//デバイス名文字列
             int iNumberOfData = dataSize;			//データサイズ
             short[] arrDeviceValue;		    //デバイス値格納用配列
             int iNumber;					//ループ用カウンタ
@@ -246,7 +244,7 @@ namespace Mov.Driver.Plc.Melsec
         public (int returnCode, short[] result) ReadDeviceTuple(string deviceName, int dataSize)
         {
             int iReturnCode;				//コントロールのメソッドの戻り値
-            String szDeviceName = "";		//デバイス名文字列
+            string szDeviceName = "";		//デバイス名文字列
             int iNumberOfData = dataSize;			//データサイズ
             short[] arrDeviceValue;		    //デバイス値格納用配列
             int iNumber;					//ループ用カウンタ
@@ -397,7 +395,7 @@ namespace Mov.Driver.Plc.Melsec
         public int ReadDeviceBlock(string[] deviceNames, int dataSize, out short[] result)
         {
             int iReturnCode;				//コントロールのメソッドの戻り値
-            String szDeviceName = "";		//デバイス名文字列
+            string szDeviceName = "";		//デバイス名文字列
             int iNumberOfData = 0;			//データサイズ
             short[] arrDeviceValue;		    //デバイス値格納用配列
             int iNumber;					//ループ用カウンタ
@@ -410,7 +408,7 @@ namespace Mov.Driver.Plc.Melsec
 
             //  連結された単一の文字列を作成。
 
-            szDeviceName = String.Join("\n", deviceNames);
+            szDeviceName = string.Join("\n", deviceNames);
 
             //デバイス値用の領域を割り当て
             arrDeviceValue = new short[dataSize];
@@ -481,7 +479,7 @@ namespace Mov.Driver.Plc.Melsec
         public (int returnCode, short[] result) ReadDeviceBlockTuple(string[] deviceNames, int dataSize)
         {
             int iReturnCode;				//コントロールのメソッドの戻り値
-            String szDeviceName = "";		//デバイス名文字列
+            string szDeviceName = "";		//デバイス名文字列
             int iNumberOfData = 0;			//データサイズ
             short[] arrDeviceValue;		    //デバイス値格納用配列
             int iNumber;					//ループ用カウンタ
@@ -495,7 +493,7 @@ namespace Mov.Driver.Plc.Melsec
 
             //  連結された単一の文字列を作成。
 
-            szDeviceName = String.Join("\n", deviceNames);
+            szDeviceName = string.Join("\n", deviceNames);
 
             //デバイス値用の領域を割り当て
             arrDeviceValue = new short[dataSize];
@@ -568,7 +566,7 @@ namespace Mov.Driver.Plc.Melsec
         public int WriteDeviceBlock(string[] deviceNames, int dataSize, short[] deviceDataes)
         {
             int iReturnCode;				//コントロールのメソッドの戻り値
-            String szDeviceName = "";		//デバイス名文字列
+            string szDeviceName = "";		//デバイス名文字列
             //int iNumberOfData = 0;			//データサイズ
             short[] arrDeviceValue;		        //デバイス値格納用配列
             int iNumber;					//ループ用カウンタ
@@ -580,7 +578,7 @@ namespace Mov.Driver.Plc.Melsec
 
             //  連結された単一の文字列を作成。
 
-            szDeviceName = String.Join("\n", deviceNames);
+            szDeviceName = string.Join("\n", deviceNames);
 
             //Short型配列のサイズ取得
 
@@ -650,7 +648,7 @@ namespace Mov.Driver.Plc.Melsec
         public int EntryDeviceStatus(string[] deviceNames, int dataSize, int monitorCycle, int[] deviceData)
         {
             int iReturnCode;				//コントロールのメソッドの戻り値
-            String szDeviceName = "";		//デバイス名文字列
+            string szDeviceName = "";		//デバイス名文字列
             int iNumberOfData = dataSize;			//データサイズ
             int iMonitorCycle = monitorCycle;			//モニタ・サイクル
             int[] arrDeviceValue = deviceData;		        //デバイス値格納用配列
@@ -661,7 +659,7 @@ namespace Mov.Driver.Plc.Melsec
 
             //  連結された単一の文字列を作成。
 
-            szDeviceName = String.Join("\n", deviceNames);
+            szDeviceName = string.Join("\n", deviceNames);
 
 
             //デバイス値の取得チェック(成功時は取得されている)
@@ -754,7 +752,7 @@ namespace Mov.Driver.Plc.Melsec
 
 
 
-        
+
 
 
         //----- 内部ロジック ----------------

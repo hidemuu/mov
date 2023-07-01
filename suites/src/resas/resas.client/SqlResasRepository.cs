@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Driver.Clients.Resas
+﻿namespace Mov.Suite.Resas.Client
 {
     public class SqlResasRepository
     {

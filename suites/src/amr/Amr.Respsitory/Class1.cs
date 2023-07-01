@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Amr.Respsitory
+﻿namespace Mov.Suite.Amr.Respsitory
 {
     public class Class1
     {

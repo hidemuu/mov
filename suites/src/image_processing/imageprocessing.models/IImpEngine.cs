@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Suite.Driver.Engine.ImageProcessing
+﻿namespace Mov.Suite.ImageProcessing.Models
 {
     public interface IImpEngine
     {

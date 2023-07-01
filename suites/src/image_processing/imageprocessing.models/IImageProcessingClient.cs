@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Mov.Driver.Imp
+﻿namespace Mov.Suite.ImageProcessing.Models
 {
     public interface IImageProcessingClient
     {

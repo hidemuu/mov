@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Driver.Amr.Omron
+namespace Mov.Suite.Amr.Client.Omron
 {
     //----- キーコード --------------
     /// <summary>
@@ -431,7 +430,7 @@ namespace Mov.Driver.Amr.Omron
         public static ArclCommandIndexs GetCmndIndex(string arclCommand)
         {
             ArclCommandIndexs index = ArclCommandIndexs.NONE;
-            foreach (var item in ArclItem.CmndDic)
+            foreach (var item in CmndDic)
             {
                 if (item.Value == arclCommand) { index = item.Key; break; }
             }
@@ -448,7 +447,7 @@ namespace Mov.Driver.Amr.Omron
             var index = GetCmndIndex(arclCommand);
             if (index == ArclCommandIndexs.NONE) { return ""; }
 
-            var result = GetCmndDicValue(ArclItem.ResDic, index);
+            var result = GetCmndDicValue(ResDic, index);
             if (result == C_NOT_EXIST) { return ""; }
             return result;
         }
@@ -465,7 +464,7 @@ namespace Mov.Driver.Amr.Omron
             var index = GetCmndIndex(arclCommand);
             if (index == ArclCommandIndexs.NONE) { return false; }
 
-            var result = GetCmndDicValue(ArclItem.ParamDic, index);
+            var result = GetCmndDicValue(ParamDic, index);
             //キーが存在しない場合
             if (result == C_NOT_EXIST) { return false; }
             //キーが存在するが、Valueがnullの場合
@@ -485,7 +484,7 @@ namespace Mov.Driver.Amr.Omron
             var index = GetCmndIndex(arclCommand);
             if (index == ArclCommandIndexs.NONE) { return false; }
 
-            var result = GetCmndDicValue(ArclItem.UseDic, index);
+            var result = GetCmndDicValue(UseDic, index);
             //キーが存在しない場合
             if (result == C_NOT_EXIST) { return false; }
             //Valueが「ANY」の場合、全対象コマンド
@@ -505,7 +504,7 @@ namespace Mov.Driver.Amr.Omron
             var index = GetCmndIndex(arclCommand);
             if (index == ArclCommandIndexs.NONE) { return ""; }
 
-            var result = GetCmndDicValue(ArclItem.GuideDic, index);
+            var result = GetCmndDicValue(GuideDic, index);
             if (result == C_NOT_EXIST) { return ""; }
             return result;
         }
@@ -517,7 +516,7 @@ namespace Mov.Driver.Amr.Omron
         public static string GetCmndAllInfo(string target)
         {
             var result = "コマンド名,    ガイド,    パラメータ" + Environment.NewLine;
-            foreach (var item in ArclItem.CmndDic)
+            foreach (var item in CmndDic)
             {
                 GetCmndParameter(item.Value, out string prGuide);
                 if (GetCmndUse(item.Value, target))

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Resas.Repository
+﻿namespace Mov.Suite.Resas.Repository
 {
     public class Class1
     {

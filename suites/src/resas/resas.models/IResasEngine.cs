@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Driver.Clients.Resas
+﻿namespace Mov.Suite.Resas.Models
 {
     public interface IResasEngine
     {

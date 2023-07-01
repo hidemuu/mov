@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Driver.Cnc
+﻿namespace Mov.Suite.Cnc.Models
 {
     public interface ICncClient
     {

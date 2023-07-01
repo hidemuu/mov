@@ -1,11 +1,11 @@
 ﻿using Mov.Core.Repositories.Repositories.Entities;
 using Mov.Core.Templates.Repositories;
-using Mov.Driver.Clients.Resas;
-using Mov.Driver.Clients.Resas.Entities;
-using Mov.Driver.Clients.Resas.Entities.Results;
+using Mov.Suite.Resas.Models;
+using Mov.Suite.Resas.Models.Schemas;
+using Mov.Suite.Resas.Models.Schemas.Results;
 using System.IO;
 
-namespace Driver.Clients.Resas
+namespace Mov.Suite.Resas.Client
 {
     public class RestResasRepository : IResasRepository
     {

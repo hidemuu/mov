@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Accessors.Services.Connectors.Implements.Processor;
+using Mov.Suite.RaspberryPi.Models;
 
-namespace Mov.Driver.Os.RaspberryPi
+namespace Mov.Suite.RaspberryPi.Client.RaspberryPi
 {
     public class RaspberryPiDriver : IRaspberryPiClient
     {
@@ -14,7 +15,7 @@ namespace Mov.Driver.Os.RaspberryPi
 
         public RaspberryPiDriver()
         {
-            this.connector = new SshConnector();
+            connector = new SshConnector();
         }
 
         #endregion コンストラクター
@@ -23,7 +24,7 @@ namespace Mov.Driver.Os.RaspberryPi
 
         public bool Connect(string host, int port, string username, string password)
         {
-            return this.connector.Connect(host, port, username, password);
+            return connector.Connect(host, port, username, password);
         }
 
         #endregion メソッド

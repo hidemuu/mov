@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Driver.Clients.Calendar
+namespace Mov.Suite.Calendar.Models
 {
     public class Schedule
     {

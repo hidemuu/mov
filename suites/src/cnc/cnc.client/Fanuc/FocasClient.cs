@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Mov.Suite.Cnc.Models;
+using System;
 using System.Runtime.InteropServices;
-using System.Text;
 
-namespace Mov.Driver.Cnc.Fanuc
+namespace Mov.Suite.Cnc.Client.Fanuc
 {
     public class FocasClient : ICncClient
     {
@@ -18,8 +17,8 @@ namespace Mov.Driver.Cnc.Fanuc
         public const short MAX_AXIS = 4;
 #endif
 
-        public const short ALL_AXES = (-1);
-        public const short ALL_SPINDLES = (-1);
+        public const short ALL_AXES = -1;
+        public const short ALL_SPINDLES = -1;
         public const short EW_OK = (short)focas_ret.EW_OK;
 
         /* Error Codes */
@@ -29,20 +28,20 @@ namespace Mov.Driver.Cnc.Fanuc
         /// </summary>
         public enum focas_ret
         {
-            EW_PROTOCOL = (-17),           /* protocol error */
-            EW_SOCKET = (-16),           /* Windows socket error */
-            EW_NODLL = (-15),           /* DLL not exist error */
-            EW_BUS = (-11),           /* bus error */
-            EW_SYSTEM2 = (-10),           /* system error */
-            EW_HSSB = (-9),           /* hssb communication error */
-            EW_HANDLE = (-8),           /* Windows library handle error */
-            EW_VERSION = (-7),           /* CNC/PMC version missmatch */
-            EW_UNEXP = (-6),           /* abnormal error */
-            EW_SYSTEM = (-5),           /* system error */
-            EW_PARITY = (-4),           /* shared RAM parity error */
-            EW_MMCSYS = (-3),           /* emm386 or mmcsys install error */
-            EW_RESET = (-2),           /* reset or stop occured error */
-            EW_BUSY = (-1),           /* busy error */
+            EW_PROTOCOL = -17,           /* protocol error */
+            EW_SOCKET = -16,           /* Windows socket error */
+            EW_NODLL = -15,           /* DLL not exist error */
+            EW_BUS = -11,           /* bus error */
+            EW_SYSTEM2 = -10,           /* system error */
+            EW_HSSB = -9,           /* hssb communication error */
+            EW_HANDLE = -8,           /* Windows library handle error */
+            EW_VERSION = -7,           /* CNC/PMC version missmatch */
+            EW_UNEXP = -6,           /* abnormal error */
+            EW_SYSTEM = -5,           /* system error */
+            EW_PARITY = -4,           /* shared RAM parity error */
+            EW_MMCSYS = -3,           /* emm386 or mmcsys install error */
+            EW_RESET = -2,           /* reset or stop occured error */
+            EW_BUSY = -1,           /* busy error */
             EW_OK = 0,           /* no problem */
             EW_FUNC = 1,           /* command prepare error */
             EW_NOPMC = 1,           /* pmc not exist */
@@ -67,11 +66,11 @@ namespace Mov.Driver.Cnc.Fanuc
             /*
                 Result codes of DNC operation
             */
-            DNC_NORMAL = (-1),           /* normal completed */
-            DNC_CANCEL = (-32768),           /* DNC operation was canceled by CNC */
-            DNC_OPENERR = (-514),           /* file open error */
-            DNC_NOFILE = (-516),           /* file not found */
-            DNC_READERR = (-517)              /* read error */
+            DNC_NORMAL = -1,           /* normal completed */
+            DNC_CANCEL = -32768,           /* DNC operation was canceled by CNC */
+            DNC_OPENERR = -514,           /* file open error */
+            DNC_NOFILE = -516,           /* file not found */
+            DNC_READERR = -517              /* read error */
         };
         #endregion
 
@@ -8596,9 +8595,9 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* read various axis data */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdaxisdata")]
-        public static extern short cnc_rdaxisdata(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] Object b, short c, ref short d, [Out, MarshalAs(UnmanagedType.LPStruct)] ODBAXDT e);
+        public static extern short cnc_rdaxisdata(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] object b, short c, ref short d, [Out, MarshalAs(UnmanagedType.LPStruct)] ODBAXDT e);
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdaxisdata")]
-        public static extern short cnc_rdaxisdata(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] Object b, short c, ref short d, byte[] e);
+        public static extern short cnc_rdaxisdata(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] object b, short c, ref short d, byte[] e);
         #endregion
         /*----------------------*/
         /* CNC: Program related */
@@ -8610,11 +8609,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* download NC program */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_download")]
-        public static extern short cnc_download(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, short b);
+        public static extern short cnc_download(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, short b);
 
         /* download NC program(conditional) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_cdownload")]
-        public static extern short cnc_cdownload(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, short b);
+        public static extern short cnc_cdownload(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, short b);
 
         /* end of downloading NC program */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dwnend")]
@@ -8622,7 +8621,7 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* end of downloading NC program 2 */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dwnend2")]
-        public static extern short cnc_dwnend2(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_dwnend2(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /// <summary>
         /// ロジックDLLインポート：NCプログラムダウンロード開始
@@ -8637,7 +8636,7 @@ namespace Mov.Driver.Cnc.Fanuc
         /* start downloading NC program 3 special */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dwnstart3_f")]
         public static extern short cnc_dwnstart3_f(ushort FlibHndl,
-            short a, [In, MarshalAs(UnmanagedType.AsAny)] Object b, [In, MarshalAs(UnmanagedType.AsAny)] Object c);
+            short a, [In, MarshalAs(UnmanagedType.AsAny)] object b, [In, MarshalAs(UnmanagedType.AsAny)] object c);
 
         /// <summary>
         /// ロジックDLLインポート：NCプログラムダウンロード実行
@@ -8648,7 +8647,7 @@ namespace Mov.Driver.Cnc.Fanuc
         /// <param name="b">プログラム文字列</param>
         /// <returns>Focasレスポンス</returns>
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_download3")]
-        public static extern short cnc_download3(ushort FlibHndl, ref int a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_download3(ushort FlibHndl, ref int a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /// <summary>
         /// ロジックDLLインポート：NCプログラムダウンロード完了
@@ -8661,11 +8660,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* start downloading NC program 4 */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dwnstart4")]
-        public static extern short cnc_dwnstart4(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_dwnstart4(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* download NC program 4 */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_download4")]
-        public static extern short cnc_download4(ushort FlibHndl, ref int a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_download4(ushort FlibHndl, ref int a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* end of downloading NC program 4 */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dwnend4")]
@@ -8677,11 +8676,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* verify NC program */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_verify")]
-        public static extern short cnc_verify(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, short b);
+        public static extern short cnc_verify(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, short b);
 
         /* verify NC program(conditional) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_cverify")]
-        public static extern short cnc_cverify(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, short b);
+        public static extern short cnc_cverify(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, short b);
 
         /* end of verification */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_vrfend")]
@@ -8689,11 +8688,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* start verification of NC program */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_vrfstart4")]
-        public static extern short cnc_vrfstart4(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_vrfstart4(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* verify NC program */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_verify4")]
-        public static extern short cnc_verify4(ushort FlibHndl, ref int a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_verify4(ushort FlibHndl, ref int a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* end of verification */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_vrfend4")]
@@ -8705,11 +8704,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* download DNC program */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dnc")]
-        public static extern short cnc_dnc(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, ushort b);
+        public static extern short cnc_dnc(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, ushort b);
 
         /* download DNC program(conditional) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_cdnc")]
-        public static extern short cnc_cdnc(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, ushort b);
+        public static extern short cnc_cdnc(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, ushort b);
 
         /* end of downloading DNC program */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dncend")]
@@ -8717,11 +8716,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* start downloading DNC program 2 */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dncstart2")]
-        public static extern short cnc_dncstart2(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_dncstart2(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* download DNC program 2 */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dnc2")]
-        public static extern short cnc_dnc2(ushort FlibHndl, ref int a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_dnc2(ushort FlibHndl, ref int a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* end of downloading DNC program 2 */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dncend2")]
@@ -8759,11 +8758,11 @@ namespace Mov.Driver.Cnc.Fanuc
         /* start uploading NC program special 3 */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_upstart3_f")]
         public static extern short cnc_upstart3_f(ushort FlibHndl,
-            short a, [In, MarshalAs(UnmanagedType.AsAny)] Object b, [In, MarshalAs(UnmanagedType.AsAny)] Object c);
+            short a, [In, MarshalAs(UnmanagedType.AsAny)] object b, [In, MarshalAs(UnmanagedType.AsAny)] object c);
 
         /* upload NC program 3 */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_upload3")]
-        public static extern short cnc_upload3(ushort FlibHndl, ref int a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_upload3(ushort FlibHndl, ref int a, [Out, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* end of uploading NC program 3 */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_upend3")]
@@ -8771,11 +8770,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* start uploading NC program 4 */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_upstart4")]
-        public static extern short cnc_upstart4(ushort FlibHndl, short a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_upstart4(ushort FlibHndl, short a, [Out, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* upload NC program 4 */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_upload4")]
-        public static extern short cnc_upload4(ushort FlibHndl, ref int a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_upload4(ushort FlibHndl, ref int a, [Out, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* end of uploading NC program 4 */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_upend4")]
@@ -8873,15 +8872,15 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* read program under execution */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdexecprog")]
-        public static extern short cnc_rdexecprog(ushort FlibHndl, ref ushort a, out short b, [Out, MarshalAs(UnmanagedType.AsAny)] Object c);
+        public static extern short cnc_rdexecprog(ushort FlibHndl, ref ushort a, out short b, [Out, MarshalAs(UnmanagedType.AsAny)] object c);
 
         /* read program for MDI operation */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdmdiprog")]
-        public static extern short cnc_rdmdiprog(ushort FlibHndl, ref short a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_rdmdiprog(ushort FlibHndl, ref short a, [Out, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* write program for MDI operation */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrmdiprog")]
-        public static extern short cnc_wrmdiprog(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_wrmdiprog(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* read execution pointer for MDI operation */
 #if (!ONO8D)
@@ -8931,16 +8930,16 @@ namespace Mov.Driver.Cnc.Fanuc
         /* line edit (read program) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdprogline")]
         public static extern short cnc_rdprogline(ushort FlibHndl,
-            int a, uint b, [Out, MarshalAs(UnmanagedType.AsAny)] Object c, ref uint d, ref uint e);
+            int a, uint b, [Out, MarshalAs(UnmanagedType.AsAny)] object c, ref uint d, ref uint e);
 
         /* line edit (read program) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdprogline2")]
         public static extern short cnc_rdprogline2(ushort FlibHndl,
-            int a, uint b, [Out, MarshalAs(UnmanagedType.AsAny)] Object c, ref uint d, ref uint e);
+            int a, uint b, [Out, MarshalAs(UnmanagedType.AsAny)] object c, ref uint d, ref uint e);
 
         /* line edit (write program) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrprogline")]
-        public static extern short cnc_wrprogline(ushort FlibHndl, int a, uint b, [In, MarshalAs(UnmanagedType.AsAny)] Object c, uint d);
+        public static extern short cnc_wrprogline(ushort FlibHndl, int a, uint b, [In, MarshalAs(UnmanagedType.AsAny)] object c, uint d);
 
         /* line edit (delete line in program) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_delprogline")]
@@ -8949,7 +8948,7 @@ namespace Mov.Driver.Cnc.Fanuc
         /* line edit (search string) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_searchword")]
         public static extern short cnc_searchword(ushort FlibHndl,
-            int a, uint b, short c, short d, uint e, [In, MarshalAs(UnmanagedType.AsAny)] Object f);
+            int a, uint b, short c, short d, uint e, [In, MarshalAs(UnmanagedType.AsAny)] object f);
 
         /* line edit (search string) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_searchresult")]
@@ -8958,7 +8957,7 @@ namespace Mov.Driver.Cnc.Fanuc
         /* line edit (read program by file name) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdpdf_line")]
         public static extern short cnc_rdpdf_line(ushort FlibHndl,
-            [In, MarshalAs(UnmanagedType.AsAny)] Object a, uint b, [Out, MarshalAs(UnmanagedType.AsAny)] Object c, ref uint d, ref uint e);
+            [In, MarshalAs(UnmanagedType.AsAny)] object a, uint b, [Out, MarshalAs(UnmanagedType.AsAny)] object c, ref uint d, ref uint e);
 
         /* program lock */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_setpglock")]
@@ -8974,51 +8973,51 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* create file or directory */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_pdf_add")]
-        public static extern short cnc_pdf_add(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_pdf_add(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* condense program file */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_pdf_cond")]
-        public static extern short cnc_pdf_cond(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_pdf_cond(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* change attribute of program file and directory */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrpdf_attr")]
-        public static extern short cnc_wrpdf_attr(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, [Out, MarshalAs(UnmanagedType.LPStruct)] IDBPDFTDIR b);
+        public static extern short cnc_wrpdf_attr(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, [Out, MarshalAs(UnmanagedType.LPStruct)] IDBPDFTDIR b);
 
         /* copy program file */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_pdf_copy")]
-        public static extern short cnc_pdf_copy(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_pdf_copy(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* delete file or directory */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_pdf_del")]
-        public static extern short cnc_pdf_del(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_pdf_del(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* line edit (write program by file name) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrpdf_line")]
-        public static extern short cnc_wrpdf_line(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, uint b, [In, MarshalAs(UnmanagedType.AsAny)] Object c, uint d);
+        public static extern short cnc_wrpdf_line(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, uint b, [In, MarshalAs(UnmanagedType.AsAny)] object c, uint d);
 
         /* line edit (delete line by file name) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_pdf_delline")]
-        public static extern short cnc_pdf_delline(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, uint b, uint c);
+        public static extern short cnc_pdf_delline(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, uint b, uint c);
 
         /* move program file */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_pdf_move")]
-        public static extern short cnc_pdf_move(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_pdf_move(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* read current program and its pointer */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_pdf_rdactpt")]
-        public static extern short cnc_pdf_rdactpt(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] Object a, out int b);
+        public static extern short cnc_pdf_rdactpt(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] object a, out int b);
 
         /* read selected file name */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_pdf_rdmain")]
-        public static extern short cnc_pdf_rdmain(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_pdf_rdmain(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* rename file or directory */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_pdf_rename")]
-        public static extern short cnc_pdf_rename(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_pdf_rename(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* line edit (search string) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_pdf_searchword")]
-        public static extern short cnc_pdf_searchword(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, uint b, uint c, uint d, uint e, [In, MarshalAs(UnmanagedType.AsAny)] Object f);
+        public static extern short cnc_pdf_searchword(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, uint b, uint c, uint d, uint e, [In, MarshalAs(UnmanagedType.AsAny)] object f);
 
         /* line edit (search string) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_pdf_searchresult")]
@@ -9026,27 +9025,27 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* select program file */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_pdf_slctmain")]
-        public static extern short cnc_pdf_slctmain(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_pdf_slctmain(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* set current program and its pointer */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_pdf_wractpt")]
-        public static extern short cnc_pdf_wractpt(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, short b, ref int c);
+        public static extern short cnc_pdf_wractpt(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, short b, ref int c);
 
         /* read program drive information */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdpdf_inf")]
-        public static extern short cnc_rdpdf_inf(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, short b, [Out, MarshalAs(UnmanagedType.AsAny)] Object c);
+        public static extern short cnc_rdpdf_inf(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, short b, [Out, MarshalAs(UnmanagedType.AsAny)] object c);
 
         /* read program drive directory */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdpdf_drive")]
-        public static extern short cnc_rdpdf_drive(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_rdpdf_drive(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* read current directory */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdpdf_curdir")]
-        public static extern short cnc_rdpdf_curdir(ushort FlibHndl, short a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_rdpdf_curdir(ushort FlibHndl, short a, [Out, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* set current directory */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrpdf_curdir")]
-        public static extern short cnc_wrpdf_curdir(ushort FlibHndl, short a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_wrpdf_curdir(ushort FlibHndl, short a, [Out, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* read directory (sub directories) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdpdf_subdir")]
@@ -9055,11 +9054,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* read directory (all files) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdpdf_alldir")]
-        public static extern short cnc_rdpdf_alldir(ushort FlibHndl, ref short a, [In, MarshalAs(UnmanagedType.AsAny)] Object b, [Out, MarshalAs(UnmanagedType.AsAny)] Object c);
+        public static extern short cnc_rdpdf_alldir(ushort FlibHndl, ref short a, [In, MarshalAs(UnmanagedType.AsAny)] object b, [Out, MarshalAs(UnmanagedType.AsAny)] object c);
 
         /* read file count in directory */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdpdf_subdirn")]
-        public static extern short cnc_rdpdf_subdirn(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, [Out, MarshalAs(UnmanagedType.LPStruct)] ODBPDFNFIL b);
+        public static extern short cnc_rdpdf_subdirn(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, [Out, MarshalAs(UnmanagedType.LPStruct)] ODBPDFNFIL b);
         #endregion
 
         /*---------------------------*/
@@ -9180,7 +9179,7 @@ namespace Mov.Driver.Cnc.Fanuc
         /* read parameter(area specified) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdparar")]
         public static extern short cnc_rdparar(ushort FlibHndl,
-            ref short a, short b, ref short c, ref short d, [Out, MarshalAs(UnmanagedType.AsAny)] Object e);
+            ref short a, short b, ref short c, ref short d, [Out, MarshalAs(UnmanagedType.AsAny)] object e);
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdparar")]
         public static extern short cnc_rdparar(ushort FlibHndl, ref short a, short b, ref short c, ref short d, byte[] e);
         //  [DllImport("FWLIB32.dll", EntryPoint="cnc_rdparar")]
@@ -9198,7 +9197,7 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* write parameter(area specified) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrparas")]
-        public static extern short cnc_wrparas(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_wrparas(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrparas")]
         public static extern short cnc_wrparas(ushort FlibHndl, short a, byte[] b);
 
@@ -9236,11 +9235,11 @@ namespace Mov.Driver.Cnc.Fanuc
         /* read setting data(area specified) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdsetr")]
         public static extern short cnc_rdsetr(ushort FlibHndl,
-            ref short a, short b, ref short c, ref short d, [Out, MarshalAs(UnmanagedType.AsAny)] Object e);
+            ref short a, short b, ref short c, ref short d, [Out, MarshalAs(UnmanagedType.AsAny)] object e);
 
         /* write setting data(area specified) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrsets")]
-        public static extern short cnc_wrsets(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_wrsets(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* read parameters */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdparam_ext")]
@@ -9322,11 +9321,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* read custom macro variables(IEEE double version) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdmacror2")]
-        public static extern short cnc_rdmacror2(ushort FlibHndl, int a, ref int b, [Out, MarshalAs(UnmanagedType.AsAny)] Object c);
+        public static extern short cnc_rdmacror2(ushort FlibHndl, int a, ref int b, [Out, MarshalAs(UnmanagedType.AsAny)] object c);
 
         /* write custom macro variables(IEEE double version) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrmacror2")]
-        public static extern short cnc_wrmacror2(ushort FlibHndl, int a, ref int b, [In, MarshalAs(UnmanagedType.AsAny)] Object c);
+        public static extern short cnc_wrmacror2(ushort FlibHndl, int a, ref int b, [In, MarshalAs(UnmanagedType.AsAny)] object c);
 
         /* read P code macro variable */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdpmacro")]
@@ -9351,11 +9350,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* read P code macro variables(IEEE double version) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdpmacror2")]
-        public static extern short cnc_rdpmacror2(ushort FlibHndl, uint a, ref uint b, ushort c, [Out, MarshalAs(UnmanagedType.AsAny)] Object d);
+        public static extern short cnc_rdpmacror2(ushort FlibHndl, uint a, ref uint b, ushort c, [Out, MarshalAs(UnmanagedType.AsAny)] object d);
 
         /* write P code macro variables(IEEE double version) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrpmacror2")]
-        public static extern short cnc_wrpmacror2(ushort FlibHndl, uint a, ref uint b, ushort c, [In, MarshalAs(UnmanagedType.AsAny)] Object d);
+        public static extern short cnc_wrpmacror2(ushort FlibHndl, uint a, ref uint b, ushort c, [In, MarshalAs(UnmanagedType.AsAny)] object d);
 
         /* read tool offset information */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdtofsinfo")]
@@ -9678,7 +9677,7 @@ namespace Mov.Driver.Cnc.Fanuc
         /* read operation history data */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdophistry2")]
         public static extern short cnc_rdophistry2(ushort FlibHndl,
-            ushort a, ref ushort b, ref ushort c, [Out, MarshalAs(UnmanagedType.AsAny)] Object d);
+            ushort a, ref ushort b, ref ushort c, [Out, MarshalAs(UnmanagedType.AsAny)] object d);
 
         /* read operation history data F30i*/
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdophistry4")]
@@ -9887,7 +9886,7 @@ namespace Mov.Driver.Cnc.Fanuc
         /* read diagnosis data(area specified) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_diagnosr")]
         public static extern short cnc_diagnosr(ushort FlibHndl,
-            ref short a, short b, ref short c, ref short d, [Out, MarshalAs(UnmanagedType.AsAny)] Object e);
+            ref short a, short b, ref short c, ref short d, [Out, MarshalAs(UnmanagedType.AsAny)] object e);
         //  [DllImport("FWLIB32.dll", EntryPoint="cnc_diagnosr")]
         //  public static extern short cnc_diagnosr( ushort FlibHndl,
         //      ref short a, short b, ref short c, ref short d, [Out,MarshalAs(UnmanagedType.LPStruct)] ODBDGN e );
@@ -9932,11 +9931,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* get library option */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_getlibopt")]
-        public static extern short cnc_getlibopt(ushort FlibHndl, int a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b, ref int c);
+        public static extern short cnc_getlibopt(ushort FlibHndl, int a, [Out, MarshalAs(UnmanagedType.AsAny)] object b, ref int c);
 
         /* set library option */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_setlibopt")]
-        public static extern short cnc_setlibopt(ushort FlibHndl, int a, [In, MarshalAs(UnmanagedType.AsAny)] Object b, int c);
+        public static extern short cnc_setlibopt(ushort FlibHndl, int a, [In, MarshalAs(UnmanagedType.AsAny)] object b, int c);
 
         /* get custom macro type */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_getmactype")]
@@ -10036,7 +10035,7 @@ namespace Mov.Driver.Cnc.Fanuc
         /* get maximum valid figures and number of decimal places */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_getfigure")]
         public static extern short cnc_getfigure(ushort FlibHndl,
-            short a, out short b, [Out, MarshalAs(UnmanagedType.AsAny)] Object c, [Out, MarshalAs(UnmanagedType.AsAny)] Object d);
+            short a, out short b, [Out, MarshalAs(UnmanagedType.AsAny)] object c, [Out, MarshalAs(UnmanagedType.AsAny)] object d);
 
         /* read F-ROM information on CNC  */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdfrominfo")]
@@ -10044,11 +10043,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* start of reading F-ROM data from CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_fromsvstart")]
-        public static extern short cnc_fromsvstart(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] Object b, int c);
+        public static extern short cnc_fromsvstart(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] object b, int c);
 
         /* read F-ROM data from CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_fromsave")]
-        public static extern short cnc_fromsave(ushort FlibHndl, out short a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b, ref int c);
+        public static extern short cnc_fromsave(ushort FlibHndl, out short a, [Out, MarshalAs(UnmanagedType.AsAny)] object b, ref int c);
 
         /* end of reading F-ROM data from CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_fromsvend")]
@@ -10060,7 +10059,7 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* write F-ROM data to CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_fromload")]
-        public static extern short cnc_fromload(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, ref int b);
+        public static extern short cnc_fromload(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, ref int b);
 
         /* end of writing F-ROM data to CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_fromldend")]
@@ -10068,7 +10067,7 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* delete F-ROM data on CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_fromdelete")]
-        public static extern short cnc_fromdelete(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] Object b, int c);
+        public static extern short cnc_fromdelete(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] object b, int c);
 
         /* read S-RAM information on CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdsraminfo")]
@@ -10076,11 +10075,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* start of reading S-RAM data from CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_srambkstart")]
-        public static extern short cnc_srambkstart(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, int b);
+        public static extern short cnc_srambkstart(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, int b);
 
         /* read S-RAM data from CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_srambackup")]
-        public static extern short cnc_srambackup(ushort FlibHndl, out short a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b, ref int c);
+        public static extern short cnc_srambackup(ushort FlibHndl, out short a, [Out, MarshalAs(UnmanagedType.AsAny)] object b, ref int c);
 
         /* end of reading S-RAM data from CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_srambkend")]
@@ -10093,11 +10092,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* start of reading F-ROM data from CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_fromgetstart")]
-        public static extern short cnc_fromgetstart(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_fromgetstart(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* read F-ROM data from CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_fromget")]
-        public static extern short cnc_fromget(ushort FlibHndl, out short a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b, ref int c);
+        public static extern short cnc_fromget(ushort FlibHndl, out short a, [Out, MarshalAs(UnmanagedType.AsAny)] object b, ref int c);
 
         /* end of reading F-ROM data from CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_fromgetend")]
@@ -10109,7 +10108,7 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* write F-ROM data to CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_fromput")]
-        public static extern short cnc_fromput(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, ref int b);
+        public static extern short cnc_fromput(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, ref int b);
 
         /* end of writing F-ROM data to CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_fromputend")]
@@ -10117,7 +10116,7 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* delete F-ROM data on CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_fromremove")]
-        public static extern short cnc_fromremove(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_fromremove(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* read S-RAM information on CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_getsraminfo")]
@@ -10125,19 +10124,19 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* start of reading S-RAM data from CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_sramgetstart")]
-        public static extern short cnc_sramgetstart(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_sramgetstart(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* start of reading S-RAM data from CNC (2) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_sramgetstart2")]
-        public static extern short cnc_sramgetstart2(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_sramgetstart2(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* read S-RAM data from CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_sramget")]
-        public static extern short cnc_sramget(ushort FlibHndl, out short a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b, ref int c);
+        public static extern short cnc_sramget(ushort FlibHndl, out short a, [Out, MarshalAs(UnmanagedType.AsAny)] object b, ref int c);
 
         /* read S-RAM data from CNC (2) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_sramget2")]
-        public static extern short cnc_sramget2(ushort FlibHndl, out short a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b, ref int c);
+        public static extern short cnc_sramget2(ushort FlibHndl, out short a, [Out, MarshalAs(UnmanagedType.AsAny)] object b, ref int c);
 
         /* end of reading S-RAM data from CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_sramgetend")]
@@ -10166,12 +10165,12 @@ namespace Mov.Driver.Cnc.Fanuc
         /* transfer a file from host computer to CNC by FTP */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dtsvftpget")]
         public static extern short cnc_dtsvftpget(ushort FlibHndl,
-            [In, MarshalAs(UnmanagedType.AsAny)] Object a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+            [In, MarshalAs(UnmanagedType.AsAny)] object a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* transfer a file from CNC to host computer by FTP */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dtsvftpput")]
         public static extern short cnc_dtsvftpput(ushort FlibHndl,
-            [In, MarshalAs(UnmanagedType.AsAny)] Object a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+            [In, MarshalAs(UnmanagedType.AsAny)] object a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* get transfer status for FTP */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dtsvftpstat")]
@@ -10180,19 +10179,19 @@ namespace Mov.Driver.Cnc.Fanuc
         /* read file directory in Data Server */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dtsvrdpgdir")]
         public static extern short cnc_dtsvrdpgdir(ushort FlibHndl,
-            [In, MarshalAs(UnmanagedType.AsAny)] Object a, short b, [Out, MarshalAs(UnmanagedType.LPStruct)] ODBDSDIR c);
+            [In, MarshalAs(UnmanagedType.AsAny)] object a, short b, [Out, MarshalAs(UnmanagedType.LPStruct)] ODBDSDIR c);
 
         /* delete files in Data Server */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dtsvdelete")]
-        public static extern short cnc_dtsvdelete(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_dtsvdelete(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* down load from CNC (transfer a file from CNC to MMC) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dtsvdownload")]
-        public static extern short cnc_dtsvdownload(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_dtsvdownload(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* up load to CNC (transfer a file from MMC to CNC) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dtsvupload")]
-        public static extern short cnc_dtsvupload(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_dtsvupload(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* close upload/download between Data Server and CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dtsvcnclupdn")]
@@ -10204,11 +10203,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* get file name for DNC operation in Data Server */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dtsvgetdncpg")]
-        public static extern short cnc_dtsvgetdncpg(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_dtsvgetdncpg(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* set program number of DNC oparation to CNC */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dtsvsetdncpg")]
-        public static extern short cnc_dtsvsetdncpg(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_dtsvsetdncpg(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* read setting data for Data Server */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dtsvrdset")]
@@ -10232,7 +10231,7 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* get interface area in Data Server */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dtsvrdcram")]
-        public static extern short cnc_dtsvrdcram(ushort FlibHndl, int a, ref int b, [Out, MarshalAs(UnmanagedType.AsAny)] Object c);
+        public static extern short cnc_dtsvrdcram(ushort FlibHndl, int a, ref int b, [Out, MarshalAs(UnmanagedType.AsAny)] object c);
 
         /* read maintenance information for Data Server */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dtsvmntinfo")]
@@ -10248,17 +10247,17 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* read error message for Data Server */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dtsvrderrmsg")]
-        public static extern short cnc_dtsvrderrmsg(ushort FlibHndl, short a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_dtsvrderrmsg(ushort FlibHndl, short a, [Out, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* transfar file from Pc to Data Server */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dtsvwrfile")]
         public static extern short cnc_dtsvwrfile(ushort FlibHndl,
-            [In, MarshalAs(UnmanagedType.AsAny)] Object a, [In, MarshalAs(UnmanagedType.AsAny)] Object b, short c);
+            [In, MarshalAs(UnmanagedType.AsAny)] object a, [In, MarshalAs(UnmanagedType.AsAny)] object b, short c);
 
         /* transfar file from Data Server to Pc */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dtsvrdfile")]
         public static extern short cnc_dtsvrdfile(ushort FlibHndl,
-            [In, MarshalAs(UnmanagedType.AsAny)] Object a, [In, MarshalAs(UnmanagedType.AsAny)] Object b, short c);
+            [In, MarshalAs(UnmanagedType.AsAny)] object a, [In, MarshalAs(UnmanagedType.AsAny)] object b, short c);
 
         /* read the loop gain for each axis */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdloopgain")]
@@ -10298,7 +10297,7 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* read the spindle alarm */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdspdlalm")]
-        public static extern short cnc_rdspdlalm(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_rdspdlalm(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* read the control input signal */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdctrldi")]
@@ -10315,12 +10314,12 @@ namespace Mov.Driver.Cnc.Fanuc
         /* read data from FANUC BUS */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdfbusmem")]
         public static extern short cnc_rdfbusmem(ushort FlibHndl,
-            short a, short b, int c, int d, [Out, MarshalAs(UnmanagedType.AsAny)] Object e);
+            short a, short b, int c, int d, [Out, MarshalAs(UnmanagedType.AsAny)] object e);
 
         /* write data to FANUC BUS */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrfbusmem")]
         public static extern short cnc_wrfbusmem(ushort FlibHndl,
-            short a, short b, int c, int d, [In, MarshalAs(UnmanagedType.AsAny)] Object e);
+            short a, short b, int c, int d, [In, MarshalAs(UnmanagedType.AsAny)] object e);
 
         /* read the parameter of wave diagnosis */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdwaveprm")]
@@ -10391,7 +10390,7 @@ namespace Mov.Driver.Cnc.Fanuc
         /* read of data for PMC signal batch save */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdsavsigdata")]
         public static extern short cnc_rdsavsigdata(ushort FlibHndl,
-            short a, short b, [Out, MarshalAs(UnmanagedType.AsAny)] Object c, ref short d);
+            short a, short b, [Out, MarshalAs(UnmanagedType.AsAny)] object c, ref short d);
 
         /* read M-code group data */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdmgrpdata")]
@@ -10454,11 +10453,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* read DNC file name for DNC1, DNC2, OSI-Ethernet */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rddncfname")]
-        public static extern short cnc_rddncfname(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_rddncfname(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* write DNC file name for DNC1, DNC2, OSI-Ethernet */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrdncfname")]
-        public static extern short cnc_wrdncfname(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_wrdncfname(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* read communication parameter for DNC1, DNC2, OSI-Ethernet */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdcomparam")]
@@ -10470,23 +10469,23 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* read log message for DNC2 */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdcomlogmsg")]
-        public static extern short cnc_rdcomlogmsg(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_rdcomlogmsg(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* read operator message for DNC1, DNC2 */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdcomopemsg")]
-        public static extern short cnc_rdcomopemsg(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_rdcomopemsg(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* read recieve message for OSI-Ethernet */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdrcvmsg")]
-        public static extern short cnc_rdrcvmsg(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_rdrcvmsg(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* read send message for OSI-Ethernet */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdsndmsg")]
-        public static extern short cnc_rdsndmsg(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_rdsndmsg(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* send message for OSI-Ethernet */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_sendmessage")]
-        public static extern short cnc_sendmessage(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_sendmessage(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* clear message buffer for OSI-Ethernet */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_clrmsgbuff")]
@@ -10588,7 +10587,7 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* read CNC module configuration information 2 */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdmdlconfig2")]
-        public static extern short cnc_rdmdlconfig2(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_rdmdlconfig2(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* read processing condition file (processing data) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdpscdproc")]
@@ -11019,11 +11018,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* read SRAM variable area for C language executor */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdcexesram")]
-        public static extern short cnc_rdcexesram(ushort FlibHndl, int a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b, ref int c);
+        public static extern short cnc_rdcexesram(ushort FlibHndl, int a, [Out, MarshalAs(UnmanagedType.AsAny)] object b, ref int c);
 
         /* write SRAM variable area for C language executor */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrcexesram")]
-        public static extern short cnc_wrcexesram(ushort FlibHndl, int a, [In, MarshalAs(UnmanagedType.AsAny)] Object b, ref int c);
+        public static extern short cnc_wrcexesram(ushort FlibHndl, int a, [In, MarshalAs(UnmanagedType.AsAny)] object b, ref int c);
 
         /* read maximum size and linear address of SRAM variable area for C language executor */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_cexesraminfo")]
@@ -11040,7 +11039,7 @@ namespace Mov.Driver.Cnc.Fanuc
         /* converts from FANUC code to Shift JIS code */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_ftosjis")]
         public static extern short cnc_ftosjis(ushort FlibHndl,
-            [In, MarshalAs(UnmanagedType.AsAny)] Object a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b);
+            [In, MarshalAs(UnmanagedType.AsAny)] object a, [Out, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* Set the unsolicited message parameters */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrunsolicprm")]
@@ -11096,7 +11095,7 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* Display of optional message */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_dispoptmsg")]
-        public static extern short cnc_dispoptmsg(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_dispoptmsg(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* Reading of answer for optional message display */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_optmsgans")]
@@ -11162,11 +11161,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* Read operation data from data buffer for SERCOS I/F */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_srcsrdopdata")]
-        public static extern short cnc_srcsrdopdata(ushort FlibHndl, int a, ref int b, [Out, MarshalAs(UnmanagedType.AsAny)] Object c);
+        public static extern short cnc_srcsrdopdata(ushort FlibHndl, int a, ref int b, [Out, MarshalAs(UnmanagedType.AsAny)] object c);
 
         /* Write operation data to data buffer for SERCOS I/F */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_srcswropdata")]
-        public static extern short cnc_srcswropdata(ushort FlibHndl, int a, int b, [In, MarshalAs(UnmanagedType.AsAny)] Object c);
+        public static extern short cnc_srcswropdata(ushort FlibHndl, int a, int b, [In, MarshalAs(UnmanagedType.AsAny)] object c);
 
         /* Free reservation of service channel for SERCOS I/F */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_srcsfreechnl")]
@@ -11203,7 +11202,7 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* Read graphic command data */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdgrphcmd")]
-        public static extern short cnc_rdgrphcmd(ushort FlibHndl, ref short a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_rdgrphcmd(ushort FlibHndl, ref short a, [Out, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* Update graphic command read pointer */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrgrphcmdptr")]
@@ -11245,12 +11244,12 @@ namespace Mov.Driver.Cnc.Fanuc
         /* Servo learning data read from I/F buffer */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_svdtrddata")]
         public static extern short cnc_svdtrddata(ushort FlibHndl,
-            out short a, ref int b, [Out, MarshalAs(UnmanagedType.AsAny)] Object c);
+            out short a, ref int b, [Out, MarshalAs(UnmanagedType.AsAny)] object c);
 
         /* Servo learning data write to I/F buffer */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_svdtwrdata")]
         public static extern short cnc_svdtwrdata(ushort FlibHndl,
-            out short a, ref int b, [In, MarshalAs(UnmanagedType.AsAny)] Object c);
+            out short a, ref int b, [In, MarshalAs(UnmanagedType.AsAny)] object c);
         #endregion
 
         /*----------------------------*/
@@ -11267,7 +11266,7 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* Servo Guide (Sampling start) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_sdstartsmpl")]
-        public static extern short cnc_sdstartsmpl(ushort FlibHndl, short a, int b, [Out, MarshalAs(UnmanagedType.AsAny)] Object c);
+        public static extern short cnc_sdstartsmpl(ushort FlibHndl, short a, int b, [Out, MarshalAs(UnmanagedType.AsAny)] object c);
 
         /* Servo Guide (Sampling cancel) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_sdcancelsmpl")]
@@ -11284,7 +11283,7 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* Servo Guide (read 1 shot data) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_sdread1shot")]
-        public static extern short cnc_sdread1shot(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_sdread1shot(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* Servo feedback data (Channel data set) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_sfbsetchnl")]
@@ -11323,7 +11322,7 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* Start NC display (2) */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_startnccmd2")]
-        public static extern short cnc_startnccmd2(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short cnc_startnccmd2(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* Stop NC display */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_stopnccmd")]
@@ -11348,11 +11347,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* Read data from remote diagnostics I/F */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdrmtdgn")]
-        public static extern short cnc_rdrmtdgn(ushort FlibHndl, out int a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_rdrmtdgn(ushort FlibHndl, out int a, [Out, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* Write data to remote diagnostics I/F */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrrmtdgn")]
-        public static extern short cnc_wrrmtdgn(ushort FlibHndl, ref int a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_wrrmtdgn(ushort FlibHndl, ref int a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* Set CommStatus of remote diagnostics I/F area */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrcommstatus")]
@@ -11401,7 +11400,7 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* Teaching data read */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rddgdat")]
-        public static extern short cnc_rddgdat(ushort FlibHndl, ref short a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short cnc_rddgdat(ushort FlibHndl, ref short a, [Out, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* Teaching data read pointer write */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrdgdatptr")]
@@ -11418,7 +11417,7 @@ namespace Mov.Driver.Cnc.Fanuc
         #region DLL：C-EXE SRAMファイル機能
         /* open C-EXE SRAM file */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_opencexefile")]
-        public static extern short cnc_opencexefile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, short b, short c);
+        public static extern short cnc_opencexefile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, short b, short c);
 
         /* close C-EXE SRAM file */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_closecexefile")]
@@ -11426,16 +11425,16 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* read C-EXE SRAM file */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_rdcexefile")]
-        public static extern short cnc_rdcexefile(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] Object a, ref uint b);
+        public static extern short cnc_rdcexefile(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] object a, ref uint b);
 
         /* write C-EXE SRAM file */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_wrcexefile")]
-        public static extern short cnc_wrcexefile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, ref uint b);
+        public static extern short cnc_wrcexefile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, ref uint b);
 
         /* read C-EXE SRAM disk directory */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_cexedirectory")]
         public static extern short cnc_cexedirectory(ushort FlibHndl,
-            [In, MarshalAs(UnmanagedType.AsAny)] Object a, ref ushort b, ushort c, [Out, MarshalAs(UnmanagedType.LPStruct)] CFILEINFO d);
+            [In, MarshalAs(UnmanagedType.AsAny)] object a, ref ushort b, ushort c, [Out, MarshalAs(UnmanagedType.LPStruct)] CFILEINFO d);
         #endregion
 
         /*-----*/
@@ -11444,19 +11443,19 @@ namespace Mov.Driver.Cnc.Fanuc
         #region DLL：PMC
         /* read message from PMC to MMC */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_rdmsg")]
-        public static extern short pmc_rdmsg(ushort FlibHndl, ref short a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short pmc_rdmsg(ushort FlibHndl, ref short a, [Out, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* write message from MMC to PMC */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_wrmsg")]
-        public static extern short pmc_wrmsg(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short pmc_wrmsg(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* read message from PMC to MMC(conditional) */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_crdmsg")]
-        public static extern short pmc_crdmsg(ushort FlibHndl, ref short a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short pmc_crdmsg(ushort FlibHndl, ref short a, [Out, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* write message from MMC to PMC(conditional) */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_cwrmsg")]
-        public static extern short pmc_cwrmsg(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short pmc_cwrmsg(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* read PMC data(area specified) */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_rdpmcrng")]
@@ -11483,19 +11482,19 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* read data from extended backup memory */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_rdkpm")]
-        public static extern short pmc_rdkpm(ushort FlibHndl, uint a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b, ushort c);
+        public static extern short pmc_rdkpm(ushort FlibHndl, uint a, [Out, MarshalAs(UnmanagedType.AsAny)] object b, ushort c);
 
         /* write data to extended backup memory */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_wrkpm")]
-        public static extern short pmc_wrkpm(ushort FlibHndl, uint a, [In, MarshalAs(UnmanagedType.AsAny)] Object b, ushort c);
+        public static extern short pmc_wrkpm(ushort FlibHndl, uint a, [In, MarshalAs(UnmanagedType.AsAny)] object b, ushort c);
 
         /* read data from extended backup memory 2 */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_rdkpm2")]
-        public static extern short pmc_rdkpm2(ushort FlibHndl, uint a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b, uint c);
+        public static extern short pmc_rdkpm2(ushort FlibHndl, uint a, [Out, MarshalAs(UnmanagedType.AsAny)] object b, uint c);
 
         /* write data to extended backup memory 2 */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_wrkpm2")]
-        public static extern short pmc_wrkpm2(ushort FlibHndl, uint a, [In, MarshalAs(UnmanagedType.AsAny)] Object b, uint c);
+        public static extern short pmc_wrkpm2(ushort FlibHndl, uint a, [In, MarshalAs(UnmanagedType.AsAny)] object b, uint c);
 
         /* read maximum size of extended backup memory */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_kpmsiz")]
@@ -11534,22 +11533,22 @@ namespace Mov.Driver.Cnc.Fanuc
         /* read PMC memory data */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_rdpmcmem")]
         public static extern short pmc_rdpmcmem(ushort FlibHndl,
-            short a, int b, int c, [Out, MarshalAs(UnmanagedType.AsAny)] Object d);
+            short a, int b, int c, [Out, MarshalAs(UnmanagedType.AsAny)] object d);
 
         /* write PMC memory data */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_wrpmcmem")]
         public static extern short pmc_wrpmcmem(ushort FlibHndl,
-            short a, int b, int c, [In, MarshalAs(UnmanagedType.AsAny)] Object d);
+            short a, int b, int c, [In, MarshalAs(UnmanagedType.AsAny)] object d);
 
         /* read PMC-SE memory data */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_rdpmcsemem")]
         public static extern short pmc_rdpmcsemem(ushort FlibHndl,
-            short a, int b, int c, [Out, MarshalAs(UnmanagedType.AsAny)] Object d);
+            short a, int b, int c, [Out, MarshalAs(UnmanagedType.AsAny)] object d);
 
         /* write PMC-SE memory data */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_wrpmcsemem")]
         public static extern short pmc_wrpmcsemem(ushort FlibHndl,
-            short a, int b, int c, [In, MarshalAs(UnmanagedType.AsAny)] Object d);
+            short a, int b, int c, [In, MarshalAs(UnmanagedType.AsAny)] object d);
 
         /* read pmc title data */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_rdpmctitle")]
@@ -11561,7 +11560,7 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* read PMC parameter */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_rdpmcparam")]
-        public static extern short pmc_rdpmcparam(ushort FlibHndl, ref int a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short pmc_rdpmcparam(ushort FlibHndl, ref int a, [Out, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* read PMC parameter end */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_rdprmend")]
@@ -11573,7 +11572,7 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* write PMC parameter */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_wrpmcparam")]
-        public static extern short pmc_wrpmcparam(ushort FlibHndl, ref int a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short pmc_wrpmcparam(ushort FlibHndl, ref int a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* write PMC parameter end */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_wrprmend")]
@@ -11586,7 +11585,7 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* write PMC I/O link assigned data */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_wriolinkdat")]
-        public static extern short pmc_wriolinkdat(ushort FlibHndl, uint a, [In, MarshalAs(UnmanagedType.AsAny)] Object b, uint c);
+        public static extern short pmc_wriolinkdat(ushort FlibHndl, uint a, [In, MarshalAs(UnmanagedType.AsAny)] object b, uint c);
 
         /* read PMC address information */
         [DllImport("FWLIB32.dll", EntryPoint = "pmc_rdpmcaddr")]
@@ -11752,27 +11751,27 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* read the file list of the Data Server's HDD */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_rdhdddir")]
-        public static extern short ds_rdhdddir(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, int b, out short c, [Out, MarshalAs(UnmanagedType.LPStruct)] ODBHDDDIR d);
+        public static extern short ds_rdhdddir(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, int b, out short c, [Out, MarshalAs(UnmanagedType.LPStruct)] ODBHDDDIR d);
 
         /* delete the file of the Data Serve's HDD */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_delhddfile")]
-        public static extern short ds_delhddfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short ds_delhddfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* copy the file of the Data Server's HDD */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_copyhddfile")]
-        public static extern short ds_copyhddfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short ds_copyhddfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* change the file name of the Data Server's HDD */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_renhddfile")]
-        public static extern short ds_renhddfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short ds_renhddfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* execute the PUT command of the FTP */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_puthddfile")]
-        public static extern short ds_puthddfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short ds_puthddfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* execute the MPUT command of the FTP */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_mputhddfile")]
-        public static extern short ds_mputhddfile(ushort hLib, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short ds_mputhddfile(ushort hLib, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* read information of the host */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_rdhostinfo")]
@@ -11788,15 +11787,15 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* delete the file of the host */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_delhostfile")]
-        public static extern short ds_delhostfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, int b);
+        public static extern short ds_delhostfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, int b);
 
         /* execute the GET command of the FTP */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_gethostfile")]
-        public static extern short ds_gethostfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short ds_gethostfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* execute the MGET command of the FTP */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_mgethostfile")]
-        public static extern short ds_mgethostfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short ds_mgethostfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* read the execution result */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_rdresult")]
@@ -11808,11 +11807,11 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* read the file from the Data Server */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_rdncfile")]
-        public static extern short ds_rdncfile(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short ds_rdncfile(ushort FlibHndl, short a, [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* read the file from the Data Server 2 */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_rdncfile2")]
-        public static extern short ds_rdncfile2(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short ds_rdncfile2(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* write the file to the Data Server */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_wrncfile")]
@@ -11820,19 +11819,19 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* read the file name for the DNC operation in the Data Server's HDD */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_rddnchddfile")]
-        public static extern short ds_rddnchddfile(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short ds_rddnchddfile(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* write the file name for the DNC operation in the Data Server's HDD */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_wrdnchddfile")]
-        public static extern short ds_wrdnchddfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short ds_wrdnchddfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* read the file name for the DNC operation in the host */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_rddnchostfile")]
-        public static extern short ds_rddnchostfile(ushort FlibHndl, out short a, [Out, MarshalAs(UnmanagedType.AsAny)] Object b);
+        public static extern short ds_rddnchostfile(ushort FlibHndl, out short a, [Out, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* write the file name for the DNC operation in the host */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_wrdnchostfile")]
-        public static extern short ds_wrdnchostfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short ds_wrdnchostfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* read the connecting host number */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_rdhostno")]
@@ -11852,31 +11851,31 @@ namespace Mov.Driver.Cnc.Fanuc
 
         /* create the directory in the Data Server's HDD */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_makehdddir")]
-        public static extern short ds_makehdddir(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short ds_makehdddir(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* delete directory in the Data Server's HDD */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_delhdddir")]
-        public static extern short ds_delhdddir(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short ds_delhdddir(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* change the current directory */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_chghdddir")]
-        public static extern short ds_chghdddir(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short ds_chghdddir(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* execute the PUT command according to the list file */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_lputhddfile")]
-        public static extern short ds_lputhddfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short ds_lputhddfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* delete files according to the list file */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_ldelhddfile")]
-        public static extern short ds_ldelhddfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short ds_ldelhddfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* execute the GET command according to the list file */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_lgethostfile")]
-        public static extern short ds_lgethostfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short ds_lgethostfile(ushort FlibHndl, [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* read the directory for M198 operation */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_rdm198hdddir")]
-        public static extern short ds_rdm198hdddir(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] Object a);
+        public static extern short ds_rdm198hdddir(ushort FlibHndl, [Out, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* write the directory for M198 operation */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_wrm198hdddir")]
@@ -11897,7 +11896,7 @@ namespace Mov.Driver.Cnc.Fanuc
         /* search string in data server program */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_searchword")]
         public static extern short ds_searchword(ushort FlibHndl,
-                                  [In, MarshalAs(UnmanagedType.AsAny)] Object a);
+                                  [In, MarshalAs(UnmanagedType.AsAny)] object a);
 
         /* read the searching result */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_searchresult")]
@@ -11906,14 +11905,14 @@ namespace Mov.Driver.Cnc.Fanuc
         /* read file in the Data Server's HDD */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_rdfile")]
         public static extern short ds_rdfile(ushort FlibHndl,
-                                         [In, MarshalAs(UnmanagedType.AsAny)] Object a,
-                                         [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+                                         [In, MarshalAs(UnmanagedType.AsAny)] object a,
+                                         [In, MarshalAs(UnmanagedType.AsAny)] object b);
 
         /* write file in the Data Server's HDD */
         [DllImport("FWLIB32.dll", EntryPoint = "ds_wrfile")]
         public static extern short ds_wrfile(ushort FlibHndl,
-                                         [In, MarshalAs(UnmanagedType.AsAny)] Object a,
-                                         [In, MarshalAs(UnmanagedType.AsAny)] Object b);
+                                         [In, MarshalAs(UnmanagedType.AsAny)] object a,
+                                         [In, MarshalAs(UnmanagedType.AsAny)] object b);
         #endregion
         /*--------------------------*/
         /* HSSB multiple connection */
@@ -11950,12 +11949,12 @@ namespace Mov.Driver.Cnc.Fanuc
         /// <param name="FlibHndl">ライブラリハンドルポインタ</param>
         /// <returns>Focasレスポンス</returns>
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_allclibhndl3")]
-        public static extern short cnc_allclibhndl3([In, MarshalAs(UnmanagedType.AsAny)] Object ip,
+        public static extern short cnc_allclibhndl3([In, MarshalAs(UnmanagedType.AsAny)] object ip,
             ushort port, int timeout, out ushort FlibHndl);
 
         /* allocate library handle 4 */
         [DllImport("FWLIB32.dll", EntryPoint = "cnc_allclibhndl4")]
-        public static extern short cnc_allclibhndl4([In, MarshalAs(UnmanagedType.AsAny)] Object ip,
+        public static extern short cnc_allclibhndl4([In, MarshalAs(UnmanagedType.AsAny)] object ip,
             ushort port, int timeout, uint id, out ushort FlibHndl);
 
         /* set timeout for socket */

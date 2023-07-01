@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Suite.Plc.Models;
 using System.Threading.Tasks;
 
-namespace Mov.Driver.Plc.Melsec
+namespace Mov.Suite.Plc.Client.Melsec
 {
     public enum PLCHandler
     {

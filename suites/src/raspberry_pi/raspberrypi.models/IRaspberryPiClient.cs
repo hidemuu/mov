@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Driver.Os
+﻿namespace Mov.Suite.RaspberryPi.Models
 {
     public interface IRaspberryPiClient
     {

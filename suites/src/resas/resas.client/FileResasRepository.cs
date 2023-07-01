@@ -1,7 +1,7 @@
 ﻿using Mov.Core;
 using Mov.Core.Repositories.Repositories.Domains;
 
-namespace Driver.Clients.Resas
+namespace Mov.Suite.Resas.Client
 {
     public class FileResasRepository : FileDomainRepositoryBase
     {

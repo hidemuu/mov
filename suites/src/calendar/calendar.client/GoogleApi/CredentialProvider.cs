@@ -2,14 +2,12 @@
 using Google.Apis.Calendar.v3;
 using Google.Apis.Util.Store;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Mov.Driver.Clients.Calendar.GoogleApi
+namespace Mov.Suite.Calendar.Client.GoogleApi
 {
     // ここからAPIを有効化し、credentialsファイルを取得する
     // https://console.developers.google.com/apis
@@ -18,7 +16,7 @@ namespace Mov.Driver.Clients.Calendar.GoogleApi
     {
         // とりあえずスコープは固定
         private static readonly string[] scopes = { CalendarService.Scope.CalendarReadonly };
-        
+
         private static readonly string tokenDirectory = "token.json";
         private static readonly string credentialFileName = "credentials.json";
 

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Suite.Driver.Engine.RaspberryPi
+﻿namespace Mov.Suite.RaspberryPi.Models
 {
     public interface IRaspberryPiEngine
     {

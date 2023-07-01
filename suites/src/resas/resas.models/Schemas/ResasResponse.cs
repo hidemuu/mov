@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace Mov.Driver.Clients.Resas.Entities
+namespace Mov.Suite.Resas.Models.Schemas
 {
     public class ResasResponse<TResult> where TResult : IResasResult
     {

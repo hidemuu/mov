@@ -1,9 +1,4 @@
-﻿using Mov.Driver.Clients.Resas;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Suite.Driver.Engine.Resas
+﻿namespace Mov.Suite.Resas.Models
 {
     public interface IResasService
     {

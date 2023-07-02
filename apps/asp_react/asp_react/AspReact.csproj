@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -133,7 +133,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\commons\" />
+    <Folder Include="ClientApp\src\commons\%40types\" />
+    <Folder Include="ClientApp\src\commons\constants\" />
+    <Folder Include="ClientApp\src\commons\functions\" />
+    <Folder Include="ClientApp\src\commons\styles\" />
+    <Folder Include="ClientApp\src\components\atoms\" />
+    <Folder Include="ClientApp\src\components\molecules\" />
+    <Folder Include="ClientApp\src\components\organisms\" />
     <Folder Include="ClientApp\src\pages\" />
     <Folder Include="ClientApp\src\templates\" />
   </ItemGroup>

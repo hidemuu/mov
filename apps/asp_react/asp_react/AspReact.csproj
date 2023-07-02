@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -27,14 +27,27 @@
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="%2a%2a\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="%2a%2a\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="%2a%2a\**" />
+    <EmbeddedResource Remove="%2a%2a\**" />
+    <TypeScriptCompile Remove="%2a%2a\**" />
+    <TypeScriptCompile Remove="ClientApp\node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="ClientApp\src\commons\%40types\model.d.tsx" />
     <None Remove="ClientApp\src\commons\@types\model.d.ts" />
     <None Remove="ClientApp\src\commons\functions\fatchData.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Remove="ClientApp\src\index.tsx" />
   </ItemGroup>
 
   <ItemGroup>
@@ -140,16 +153,6 @@
     <Reference Include="Mov.UseCase">
       <HintPath>..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.UseCase.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ClientApp\src\commons\constants\" />
-    <Folder Include="ClientApp\src\commons\assets\" />
-    <Folder Include="ClientApp\src\components\atoms\" />
-    <Folder Include="ClientApp\src\components\molecules\" />
-    <Folder Include="ClientApp\src\components\organisms\" />
-    <Folder Include="ClientApp\src\pages\" />
-    <Folder Include="ClientApp\src\templates\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

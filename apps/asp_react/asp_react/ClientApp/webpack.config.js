@@ -4,8 +4,7 @@ const outputPath = path.resolve(__dirname, 'public');
 module.exports = {
     devtool: 'source-map',
     context: path.join(__dirname, "src"),
-    entry: './index.jsx',
-    //entry: './index.tsx',
+    entry: './index.tsx',
     mode: 'development',
     output: {
         path: outputPath,

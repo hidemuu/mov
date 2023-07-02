@@ -1,6 +1,5 @@
 ﻿using Mov.Configurator.Engine;
 using Mov.Configurator.Engine.Cruds;
-using Mov.Configurator.Models;
 using Mov.Configurator.Models.Persistences;
 using Mov.Configurator.Models.Repositories;
 

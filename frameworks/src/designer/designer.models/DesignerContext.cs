@@ -1,14 +1,13 @@
-﻿using Mov.Core.Layouts;
+﻿using Mov.Core.Contexts.Layouts.ValueObjects;
+using Mov.Core.Layouts;
 using Mov.Core.Layouts.Models.Contents;
 using Mov.Core.Layouts.Models.Nodes;
 using Mov.Core.Layouts.Models.Shells;
 using Mov.Core.Layouts.Models.Themes;
-using Mov.Core.Models.ValueObjects;
-using Mov.Core.Models.ValueObjects.Keys;
-using Mov.Core.Models.ValueObjects.Layouts;
-using Mov.Core.Models.ValueObjects.Styles;
-using Mov.Core.Models.ValueObjects.Units;
-using Mov.Core.Models.ValueObjects.Units.Sizes;
+using Mov.Core.Models.Keys;
+using Mov.Core.Models.Maths;
+using Mov.Core.Models.Units;
+using Mov.Core.Models.Units.Sizes;
 using Mov.Designer.Models.Schemas;
 using System.Collections.Generic;
 

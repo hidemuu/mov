@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Attributes;
-using Mov.Core.Models.Entities.DbObjects;
-using Mov.Core.Models.ValueObjects.Layouts;
+using Mov.Core.Contexts.DbObjects.Entities;
+using Mov.Core.Contexts.Layouts.ValueObjects;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;

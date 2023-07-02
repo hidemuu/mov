@@ -160,7 +160,6 @@
     <Folder Include="ClientApp\src\components\atoms\" />
     <Folder Include="ClientApp\src\components\molecules\" />
     <Folder Include="ClientApp\src\components\organisms\" />
-    <Folder Include="ClientApp\src\pages\" />
     <Folder Include="ClientApp\src\templates\" />
   </ItemGroup>
 

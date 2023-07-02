@@ -1,4 +1,4 @@
-namespace asp_react
+namespace Mov.AspReact
 {
     public class WeatherForecast
     {

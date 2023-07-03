@@ -1,4 +1,4 @@
-import { Counter } from "./pages/Counter";
+import Counter from "./pages/Counter";
 import { FetchData } from "./pages/FetchData";
 import { Home } from "./pages/Home";
 

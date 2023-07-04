@@ -163,7 +163,8 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\src\components\molecules\" />
-    <Folder Include="ClientApp\src\components\organisms\" />
+    <Folder Include="ClientApp\src\components\organisms\presentational\" />
+    <Folder Include="ClientApp\src\components\organisms\container\" />
     <Folder Include="ClientApp\src\templates\" />
   </ItemGroup>
 

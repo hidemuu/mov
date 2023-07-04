@@ -59,6 +59,7 @@ Mov
 - Visual Studio Codeから実行
   - $ dotnet run (.csprojファイルのディレクトリで)
   - $ npm run wstart
+  - $ npm run storybook
 
 #### 環境設定
 

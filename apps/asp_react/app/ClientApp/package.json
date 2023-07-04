@@ -30,10 +30,19 @@
     "workbox-streams": "^6.5.4"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.25",
+    "@storybook/addon-interactions": "^7.0.25",
+    "@storybook/addon-links": "^7.0.25",
+    "@storybook/blocks": "^7.0.25",
+    "@storybook/preset-create-react-app": "^7.0.25",
+    "@storybook/react": "^7.0.25",
+    "@storybook/react-webpack5": "^7.0.25",
+    "@storybook/testing-library": "^0.0.14-next.2",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.0",
     "@types/react-router-dom": "5.3.3",
     "ajv": "^8.11.0",
+    "babel-plugin-named-exports-order": "^0.0.2",
     "cross-env": "^7.0.3",
     "eslint": "^8.22.0",
     "eslint-config-react-app": "^7.0.1",
@@ -41,9 +50,13 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-storybook": "^0.6.12",
     "nan": "^2.16.0",
+    "prop-types": "^15.8.1",
+    "storybook": "^7.0.25",
     "ts-loader": "^9.2.6",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "webpack": "^5.88.1"
   },
   "overrides": {
     "autoprefixer": "10.4.5"
@@ -58,11 +71,14 @@
     "build": "react-scripts build",
     "test": "cross-env CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint ./src/"
+    "lint": "eslint ./src/",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "eslintConfig": {
     "extends": [
-      "react-app"
+      "react-app",
+      "plugin:storybook/recommended"
     ]
   },
   "browserslist": {

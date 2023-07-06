@@ -45,6 +45,7 @@
     <None Remove="ClientApp\src\commons\@types\model.d.ts" />
     <None Remove="ClientApp\src\commons\functions\fatchData.ts" />
     <None Remove="ClientApp\src\components\atoms\Button\index.tsx" />
+    <None Remove="ClientApp\src\components\atoms\StyledButton\index.tsx" />
   </ItemGroup>
 
   <ItemGroup>

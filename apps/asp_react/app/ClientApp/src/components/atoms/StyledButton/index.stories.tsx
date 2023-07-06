@@ -16,7 +16,7 @@ export const Primary = (props: any) => {
 
 export const Success = (props: any) => {
     return (
-        <StyledButton {...props} variant="primary">
+        <StyledButton {...props} variant="success">
             Success
         </StyledButton>
     )

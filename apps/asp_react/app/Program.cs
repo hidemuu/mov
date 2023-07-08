@@ -9,7 +9,9 @@ namespace Mov.AspReact
 
         public static void Main(string[] args)
         {
-            Run(args);
+            var app = Build(WebApplication.CreateBuilder(args));
+            Setup(app);
+            app.Run();
             //CreateHostBuilder(args).Build().Run();
         }
 
@@ -17,10 +19,8 @@ namespace Mov.AspReact
 
         #region private method
 
-        private static void Run(string[] args)
+        private static WebApplication Build(WebApplicationBuilder builder)
         {
-            var builder = WebApplication.CreateBuilder(args);
-
             // Add services to the container.
             var services = builder.Services;
             services.AddControllersWithViews();
@@ -33,8 +33,11 @@ namespace Mov.AspReact
             {
                 configuration.RootPath = "ClientApp/build";
             });
+            return builder.Build();
+        }
 
-            var app = builder.Build();
+        private static void Setup(WebApplication app)
+        {
             var env = app.Environment;
 
             // Configure the HTTP request pipeline.
@@ -71,8 +74,6 @@ namespace Mov.AspReact
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
             });
-
-            app.Run();
         }
 
         private static IHostBuilder CreateHostBuilder(string[] args) =>

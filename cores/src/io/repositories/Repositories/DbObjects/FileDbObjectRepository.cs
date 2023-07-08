@@ -25,7 +25,7 @@ namespace Mov.Core.Repositories.Repositories.DbObjects
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FileDbObjectRepository(string fileName, string encoding)
+        public FileDbObjectRepository(string fileName, string encoding = CoreConstants.ENCODE_NAME_UTF8)
             : base(new FileAccessContext(fileName, encoding))
         {
 

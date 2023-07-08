@@ -106,7 +106,6 @@ namespace Mov.UseCase.Controllers
             stringBuilder.AppendLine(DomainType.Design.ToString().ToLower() + " : " + "デザイン");
             stringBuilder.AppendLine(DomainType.Driver.ToString().ToLower() + " : " + "ドライバー");
             stringBuilder.AppendLine(DomainType.Game.ToString().ToLower() + " : " + "ゲーム");
-            stringBuilder.Append(DomainType.Translate.ToString().ToLower() + " : " + "翻訳");
             return stringBuilder.ToString();
         }
 
@@ -116,7 +115,8 @@ namespace Mov.UseCase.Controllers
 
         private bool TryGetDomainType(string domainTypeString, out DomainType domainType)
         {
-            return Enum.TryParse(domainTypeString, true, out domainType);
+            domainType = new DomainType(domainTypeString);
+            return !domainType.IsEmpty();
         }
 
         #endregion private method

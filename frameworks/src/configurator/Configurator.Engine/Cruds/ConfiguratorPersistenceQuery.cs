@@ -11,15 +11,15 @@ namespace Mov.Configurator.Engine.Cruds
     {
         #region フィールド
 
-        private readonly IPersistenceQuery<UserSetting> _userSetting;
+        private readonly IPersistenceQuery<UserSettingSchema> _userSetting;
 
         #endregion フィールド
 
         #region プロパティ
 
-        public IRead<UserSetting> UserSettingReader { get; }
+        public IRead<UserSettingSchema> UserSettingReader { get; }
 
-        public IPersistenceQuery<UserSetting> UserSetting => throw new NotImplementedException();
+        public IPersistenceQuery<UserSettingSchema> UserSetting => throw new NotImplementedException();
 
         #endregion プロパティ
 
@@ -27,7 +27,7 @@ namespace Mov.Configurator.Engine.Cruds
 
         public ConfiguratorPersistenceQuery(IConfiguratorRepository repository)
         {
-            _userSetting = new DbObjectRepositoryQuery<UserSetting, UserSettingCollection>(repository.UserSettings);
+            _userSetting = new DbObjectRepositoryQuery<UserSettingSchema, UserSettingSchemaCollection>(repository.UserSettings);
         }
 
         #endregion コンストラクター

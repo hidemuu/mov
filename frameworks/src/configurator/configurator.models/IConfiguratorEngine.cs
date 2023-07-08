@@ -4,10 +4,10 @@ namespace Mov.Configurator.Models
 {
     public interface IConfiguratorEngine
     {
-        Error GetError(string param);
+        ErrorSchema GetError(string param);
 
-        Schema GetSchema(string param);
+        ParameterSchema GetSchema(string param);
 
-        UserSetting GetUserSetting(string param);
+        UserSettingSchema GetUserSetting(string param);
     }
 }

@@ -5,6 +5,6 @@ namespace Mov.Configurator.Models.Repositories
 {
     public interface IConfiguratorRepository : IDomainRepository
     {
-        IDbObjectRepository<UserSetting, UserSettingCollection> UserSettings { get; }
+        IDbObjectRepository<UserSettingSchema, UserSettingSchemaCollection> UserSettings { get; }
     }
 }

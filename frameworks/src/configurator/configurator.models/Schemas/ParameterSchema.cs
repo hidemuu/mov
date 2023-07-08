@@ -10,20 +10,20 @@ namespace Mov.Configurator.Models.Entities
     /// <summary>
     /// スキーマのコレクション
     /// </summary>
-    [XmlRoot("schemas")]
-    public class SchemaCollection : DbObjectCollection<Schema>
+    [XmlRoot("parameters")]
+    public class ParameterSchemaCollection : DbObjectCollection<ParameterSchema>
     {
         /// <inheritdoc />
-        [JsonProperty("schemas")]
-        [XmlElement(Type = typeof(Schema), ElementName = "schema")]
-        public override Schema[] Items { get; set; }
+        [JsonProperty("parameters")]
+        [XmlElement(Type = typeof(ParameterSchema), ElementName = "parameter")]
+        public override ParameterSchema[] Items { get; set; }
     }
 
     /// <summary>
     /// スキーマ
     /// </summary>
-    [XmlRoot("schema")]
-    public class Schema : DbObject
+    [XmlRoot("parameter")]
+    public class ParameterSchema : DbObject
     {
         /// <summary>
         /// 名称

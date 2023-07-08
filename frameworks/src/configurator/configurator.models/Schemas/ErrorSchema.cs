@@ -9,19 +9,19 @@ namespace Mov.Configurator.Models.Entities
     /// エラーのコレクション
     /// </summary>
     [XmlRoot("errors")]
-    public class ErrorCollection : DbObjectCollection<Error>
+    public class ErrorCollection : DbObjectCollection<ErrorSchema>
     {
         /// <inheritdoc />
         [JsonProperty("errors")]
-        [XmlElement(Type = typeof(Error), ElementName = "error")]
-        public override Error[] Items { get; set; }
+        [XmlElement(Type = typeof(ErrorSchema), ElementName = "error")]
+        public override ErrorSchema[] Items { get; set; }
     }
 
     /// <summary>
     /// エラー
     /// </summary>
     [XmlRoot("error")]
-    public class Error : DbObject
+    public class ErrorSchema : DbObject
     {
         /// <summary>
         /// 名称

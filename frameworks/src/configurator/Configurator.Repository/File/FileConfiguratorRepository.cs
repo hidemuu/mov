@@ -14,12 +14,12 @@ namespace Mov.Configurator.Repository.File
         public FileConfiguratorRepository(string endpoint, string fileDir, string extension, string encoding = CoreConstants.ENCODE_NAME_UTF8)
             : base(endpoint, fileDir, extension, encoding)
         {
-            UserSettings = new FileDbObjectRepository<UserSetting, UserSettingCollection>(GetPath("config"), encoding);
+            UserSettings = new FileDbObjectRepository<UserSettingSchema, UserSettingSchemaCollection>(GetPath("config"), encoding);
         }
 
         #region プロパティ
 
-        public IDbObjectRepository<UserSetting, UserSettingCollection> UserSettings { get; }
+        public IDbObjectRepository<UserSettingSchema, UserSettingSchemaCollection> UserSettings { get; }
 
         #endregion プロパティ
     }

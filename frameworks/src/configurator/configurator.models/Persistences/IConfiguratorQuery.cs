@@ -5,6 +5,6 @@ namespace Mov.Configurator.Models.Persistences
 {
     public interface IConfiguratorQuery
     {
-        IPersistenceQuery<UserSetting> UserSetting { get; }
+        IPersistenceQuery<UserSettingSchema> UserSetting { get; }
     }
 }

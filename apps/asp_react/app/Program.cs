@@ -2,7 +2,19 @@ namespace Mov.AspReact
 {
     public class Program
     {
+        #region main method
+
         public static void Main(string[] args)
+        {
+            RunDefault(args);
+            //CreateHostBuilder(args).Build().Run();
+        }
+
+        #endregion main method
+
+        #region private method
+
+        private static void RunDefault(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -31,8 +43,16 @@ namespace Mov.AspReact
             app.MapFallbackToFile("index.html");
 
             app.Run();
-
         }
+
+        private static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
+
+        #endregion private method
     }
 }
 

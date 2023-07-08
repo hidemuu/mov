@@ -5,13 +5,23 @@ namespace Mov.AspReact
 {
     public class Startup
     {
+
+        #region property
+        public IConfiguration Configuration { get; }
+
+        #endregion property
+
+        #region constructor
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
 
         }
 
-        public IConfiguration Configuration { get; }
+        #endregion constructor
+
+        #region method
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -24,10 +34,10 @@ namespace Mov.AspReact
             });
 
             // In production, the React files will be served from this directory
-            //services.AddSpaStaticFiles(configuration =>
-            //{
-            //    configuration.RootPath = "ClientApp/build";
-            //});
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "ClientApp/build";
+            });
 
             //var db = new ApiDbContext(new DbContextOptionsBuilder<ApiDbContext>()
             //    .UseSqlite(Urls.SqlLocalConnectionStringForSqlite).Options);
@@ -57,7 +67,7 @@ namespace Mov.AspReact
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            //app.UseSpaStaticFiles();
+            app.UseSpaStaticFiles();
 
             app.UseRouting();
 
@@ -68,14 +78,16 @@ namespace Mov.AspReact
                     pattern: "{controller}/{action=Index}/{id?}");
             });
 
-            //app.UseSpa(spa =>
-            //{
-            //    spa.Options.SourcePath = "ClientApp";
-            //    if (env.IsDevelopment())
-            //    {
-            //        spa.UseReactDevelopmentServer(npmScript: "start");
-            //    }
-            //});
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "ClientApp";
+                if (env.IsDevelopment())
+                {
+                    spa.UseProxyToSpaDevelopmentServer("start");
+                }
+            });
         }
+
+        #endregion method
     }
 }

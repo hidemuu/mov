@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Mov.Framework.Repositories;
+using Mov.Framework.Contexts;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.UseCase.Repositories
+namespace Mov.UseCase.Contexts
 {
     public class SqliteMovDbContext : MovDbContext
     {

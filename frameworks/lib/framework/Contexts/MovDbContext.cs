@@ -1,15 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Mov.Game.Models.Schemas;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Framework.Repositories
+namespace Mov.Framework.Contexts
 {
     public class MovDbContext : DbContext
     {
         #region property
 
-        //public DbSet<Infection> Infections { get; set; }
+        public DbSet<LandmarkSchema> Landmarks { get; set; }
 
         #endregion property
 

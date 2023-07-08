@@ -10,6 +10,10 @@ namespace Mov.UseCase
         /// </summary>
         public static readonly string RootPath = PathCreator.GetSolutionPath();
         /// <summary>
+        /// リソースパス（絶対パス）
+        /// </summary>
+        public static readonly string ResourcePath = PathCreator.GetResourcePath();
+        /// <summary>
         /// アプリケーションAPI用ローカルデータベースコネクション文字列
         /// </summary>
         public static readonly string SqlLocalConnectionStringForSqlite = @"Data Source=" + RootPath + @"assets\api\db.sqlite";

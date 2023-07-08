@@ -7,7 +7,6 @@ namespace Mov.UseCase.Contexts
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //var connectionString = new SqliteConnectionStringBuilder { DataSource = Constants.RootPath + @"\assets\covid\" + @"covid.db" }.ToString();
             optionsBuilder.UseInMemoryDatabase(UseCaseConstants.ResourcePath);
 
         }

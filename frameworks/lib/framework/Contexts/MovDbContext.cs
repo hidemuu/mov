@@ -1,8 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Mov.Game.Models.Schemas;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Framework.Contexts
 {
@@ -16,11 +13,11 @@ namespace Mov.Framework.Contexts
 
         #region constructor
 
-        public MovDbContext() { }
+        public MovDbContext()
+        { }
 
         public MovDbContext(DbContextOptions<MovDbContext> options) : base(options)
         {
-
         }
 
         #endregion constructor
@@ -29,7 +26,6 @@ namespace Mov.Framework.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
         }
 
         #endregion event

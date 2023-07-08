@@ -6,8 +6,8 @@ namespace Mov.AspReact
 
         public static void Main(string[] args)
         {
-            RunDefault(args);
-            //CreateHostBuilder(args).Build().Run();
+            //RunDefault(args);
+            CreateHostBuilder(args).Build().Run();
         }
 
         #endregion main method

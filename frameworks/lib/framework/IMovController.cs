@@ -1,4 +1,6 @@
-﻿namespace Mov.Framework
+﻿using Mov.Framework.Models;
+
+namespace Mov.Framework
 {
     public interface IMovController
     {

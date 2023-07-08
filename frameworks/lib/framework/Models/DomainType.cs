@@ -1,4 +1,4 @@
-﻿namespace Mov.Framework
+﻿namespace Mov.Framework.Models
 {
     public enum DomainType
     {

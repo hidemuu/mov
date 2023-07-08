@@ -83,7 +83,7 @@ namespace Mov.ConsoleApp
                 DesignerFacadeFactory.Create(new[] { repository.Designer }),
                 new ConsoleGameService()
                 ));
-            controller = new MovController(engine);
+            controller = new ConsoleAppController(engine);
         }
 
         private static void Run()

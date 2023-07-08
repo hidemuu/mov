@@ -1,33 +1,34 @@
 ﻿using Mov.Core.Templates.Controllers;
 using Mov.Framework;
+using Mov.Framework.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Mov.UseCase.Controllers
 {
-    public class MovController : IMovController
+    public class ConsoleAppController : IMovController
     {
-        #region フィールド
+        #region field
 
         private readonly IMovEngine engine;
         private readonly IDictionary<DomainType, IController> domainControllers = new Dictionary<DomainType, IController>();
         private DomainType currentDomain;
 
-        #endregion フィールド
+        #endregion field
 
-        #region コンストラクター
+        #region constructor
 
-        public MovController(IMovEngine engine)
+        public ConsoleAppController(IMovEngine engine)
         {
             this.engine = engine;
             var factory = new DomainControllerFactory("Commands");
             domainControllers.Add(DomainType.Game, factory.Create(this.engine.Service.Game));
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region メソッド
+        #region method
 
         public bool SetDomain(string domainTypeString)
         {
@@ -108,15 +109,15 @@ namespace Mov.UseCase.Controllers
             return stringBuilder.ToString();
         }
 
-        #endregion メソッド
+        #endregion method
 
-        #region 内部メソッド
+        #region private method
 
         private bool TryGetDomainType(string domainTypeString, out DomainType domainType)
         {
             return Enum.TryParse(domainTypeString, true, out domainType);
         }
 
-        #endregion 内部メソッド
+        #endregion private method
     }
 }

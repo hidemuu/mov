@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Framework.Repositories
 {
-    public class MovApiDbContext : DbContext
+    public class MovDbContext : DbContext
     {
         #region property
 
@@ -15,9 +15,9 @@ namespace Mov.Framework.Repositories
 
         #region constructor
 
-        public MovApiDbContext() { }
+        public MovDbContext() { }
 
-        public MovApiDbContext(DbContextOptions<MovApiDbContext> options) : base(options)
+        public MovDbContext(DbContextOptions<MovDbContext> options) : base(options)
         {
 
         }

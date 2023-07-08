@@ -6,7 +6,7 @@ using Mov.Game.Engine;
 using System;
 using System.Diagnostics;
 
-namespace Mov.Framework
+namespace Mov.Framework.Services
 {
     /// <summary>
     /// ドメインコントローラー生成
@@ -27,15 +27,15 @@ namespace Mov.Framework
                 //return new DomainController<TService>(service, this.commandPath);
                 if (service is IDesignerFacade designerService)
                 {
-                    return new DomainController<IDesignerFacade>(designerService, this.commandPath);
+                    return new DomainController<IDesignerFacade>(designerService, commandPath);
                 }
                 if (service is IGameFacade gameService)
                 {
-                    return new DomainController<IGameFacade>(gameService, this.commandPath);
+                    return new DomainController<IGameFacade>(gameService, commandPath);
                 }
                 if (service is IAnalizerFacade analizerService)
                 {
-                    return new DomainController<IAnalizerFacade>(analizerService, this.commandPath);
+                    return new DomainController<IAnalizerFacade>(analizerService, commandPath);
                 }
             }
             catch (Exception ex)

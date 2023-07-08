@@ -11,6 +11,7 @@
     <ProjectReference Include="..\src\io\accessors\Accessors.csproj" />
     <ProjectReference Include="..\src\io\loggers\Loggers.csproj" />
     <ProjectReference Include="..\src\io\repositories\Repositories.csproj" />
+    <ProjectReference Include="..\src\io\translators\Translators.csproj" />
     <ProjectReference Include="..\src\service\authorizers\Authorizers.csproj" />
     <ProjectReference Include="..\src\service\controllers\Controllers.csproj" />
     <ProjectReference Include="..\src\service\learnings\Learnings.csproj" />

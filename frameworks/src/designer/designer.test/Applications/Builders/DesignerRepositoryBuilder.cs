@@ -11,7 +11,7 @@ namespace Mov.Designer.Test.Applications.Builders
         #region フィールド
 
         private readonly IDesignerRepository repository;
-        private readonly Mock<IDbObjectRepository<ContentSchema, ContentCollection>> mockContent;
+        private readonly Mock<IDbObjectRepository<ContentSchema, ContentSchemaCollection>> mockContent;
 
         #endregion フィールド
 
@@ -19,7 +19,7 @@ namespace Mov.Designer.Test.Applications.Builders
 
         public DesignerRepositoryBuilder()
         {
-            mockContent = new Mock<IDbObjectRepository<ContentSchema, ContentCollection>>();
+            mockContent = new Mock<IDbObjectRepository<ContentSchema, ContentSchemaCollection>>();
             repository = new FileDesignerRepository("", "", "");
         }
 

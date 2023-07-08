@@ -1,15 +1,15 @@
 ﻿using Mov.Core.Contexts.DbObjects.Entities;
 using Newtonsoft.Json;
 
-namespace Mov.Game.Models.Entities.Schemas
+namespace Mov.Game.Models.Schemas
 {
-    public class LandmarkCollection : DbObjectCollection<Landmark>
+    public class LandmarkSchemaCollection : DbObjectCollection<LandmarkSchema>
     {
         [JsonProperty("landmarks")]
-        public override Landmark[] Items { get; set; }
+        public override LandmarkSchema[] Items { get; set; }
     }
 
-    public sealed class Landmark : DbObject
+    public sealed class LandmarkSchema : DbObject
     {
         #region 定数
 

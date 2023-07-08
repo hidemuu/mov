@@ -10,17 +10,31 @@ namespace Mov.AspApi.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
+        #region constant
+
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        #endregion constant
+
+        #region field
+
+        private readonly ILogger<WeatherForecastController> logger;
+
+        #endregion field
+
+        #region constructor
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
-            _logger = logger;
+            this.logger = logger;
         }
+
+        #endregion constructor
+
+        #region method
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
@@ -34,5 +48,7 @@ namespace Mov.AspApi.Controllers
             })
             .ToArray();
         }
+
+        #endregion method
     }
 }

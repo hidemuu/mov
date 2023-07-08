@@ -1,6 +1,6 @@
 ﻿using Mov.Game.Engine;
 using Mov.Game.Models;
-using Mov.Game.Models.Entities.Schemas;
+using Mov.Game.Models.Schemas;
 using System.Collections.Generic;
 
 namespace Mov.Game.Service.Graphic
@@ -44,7 +44,7 @@ namespace Mov.Game.Service.Graphic
             return finiteStateMachineGameEngine.GetLevels();
         }
 
-        public Landmark GetLandmark()
+        public LandmarkSchema GetLandmark()
         {
             return finiteStateMachineGameEngine.GetLandmark();
         }

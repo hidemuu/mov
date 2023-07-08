@@ -17,10 +17,10 @@ namespace Mov.Designer.Engine.Cruds
 
         public RepositoryDesignerQuery(IDesignerRepository repository)
         {
-            Nodes = new DbObjectRepositoryQuery<NodeSchema, NodeCollection>(repository.Nodes);
-            Contents = new DbObjectRepositoryQuery<ContentSchema, ContentCollection>(repository.Contents);
-            Shells = new DbObjectRepositoryQuery<ShellSchema, ShellCollection>(repository.Shells);
-            Themes = new DbObjectRepositoryQuery<ThemeSchema, ThemeCollection>(repository.Themes);
+            Nodes = new DbObjectRepositoryQuery<NodeSchema, NodeSchemaCollection>(repository.Nodes);
+            Contents = new DbObjectRepositoryQuery<ContentSchema, ContentSchemaCollection>(repository.Contents);
+            Shells = new DbObjectRepositoryQuery<ShellSchema, ShellSchemaCollection>(repository.Shells);
+            Themes = new DbObjectRepositoryQuery<ThemeSchema, ThemeSchemaCollection>(repository.Themes);
         }
     }
 }

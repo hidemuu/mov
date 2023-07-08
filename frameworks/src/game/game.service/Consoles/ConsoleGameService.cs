@@ -1,6 +1,6 @@
 ﻿using Mov.Game.Engine;
 using Mov.Game.Models;
-using Mov.Game.Models.Entities.Schemas;
+using Mov.Game.Models.Schemas;
 using System;
 using System.Collections.Generic;
 
@@ -13,7 +13,7 @@ namespace Mov.Game.Service.Consoles
             throw new NotImplementedException();
         }
 
-        public Landmark GetLandmark()
+        public LandmarkSchema GetLandmark()
         {
             throw new NotImplementedException();
         }

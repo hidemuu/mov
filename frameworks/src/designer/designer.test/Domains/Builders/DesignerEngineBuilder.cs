@@ -35,7 +35,7 @@ namespace Mov.Designer.Test.Domains.Builders
 
         public DesignerEngineBuilder WithContentCalled(List<ContentSchema> contents)
         {
-            var mockRepositoryContent = new Mock<IDbObjectRepository<ContentSchema, ContentCollection>>();
+            var mockRepositoryContent = new Mock<IDbObjectRepository<ContentSchema, ContentSchemaCollection>>();
             mockRepositoryContent.Setup(x => x.Get()).Returns(contents);
             mockRepositoryContent.Setup(x => x.Post(new ContentSchema()));
             mockRepositoryContent.Setup(x => x.Delete(new ContentSchema()));
@@ -54,7 +54,7 @@ namespace Mov.Designer.Test.Domains.Builders
 
         public DesignerEngineBuilder WithNodeCalled(List<NodeSchema> nodes)
         {
-            var mockNode = new Mock<IDbObjectRepository<NodeSchema, NodeCollection>>();
+            var mockNode = new Mock<IDbObjectRepository<NodeSchema, NodeSchemaCollection>>();
             mockNode.Setup(x => x.Get()).Returns(nodes);
             mockNode.Setup(x => x.Post(new NodeSchema()));
             mockNode.Setup(x => x.Delete(new NodeSchema()));

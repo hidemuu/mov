@@ -23,23 +23,23 @@ namespace Mov.Designer.Repository.File
         public FileDesignerRepository(string endpoint, string fileDir, string extension, string encoding = CoreConstants.ENCODE_NAME_UTF8)
             : base(endpoint, fileDir, extension, encoding)
         {
-            Shells = new FileDbObjectRepository<ShellSchema, ShellCollection>(GetPath("shell"), encoding);
-            Nodes = new FileDbObjectRepository<NodeSchema, NodeCollection>(GetPath("node"), encoding);
-            Contents = new FileDbObjectRepository<ContentSchema, ContentCollection>(GetPath("content"), encoding);
-            Themes = new FileDbObjectRepository<ThemeSchema, ThemeCollection>(GetPath("theme"), encoding);
+            Shells = new FileDbObjectRepository<ShellSchema, ShellSchemaCollection>(GetPath("shell"), encoding);
+            Nodes = new FileDbObjectRepository<NodeSchema, NodeSchemaCollection>(GetPath("node"), encoding);
+            Contents = new FileDbObjectRepository<ContentSchema, ContentSchemaCollection>(GetPath("content"), encoding);
+            Themes = new FileDbObjectRepository<ThemeSchema, ThemeSchemaCollection>(GetPath("theme"), encoding);
         }
 
         #endregion コンストラクター
 
         #region プロパティ
 
-        public IDbObjectRepository<ShellSchema, ShellCollection> Shells { get; }
+        public IDbObjectRepository<ShellSchema, ShellSchemaCollection> Shells { get; }
 
-        public IDbObjectRepository<NodeSchema, NodeCollection> Nodes { get; }
+        public IDbObjectRepository<NodeSchema, NodeSchemaCollection> Nodes { get; }
 
-        public IDbObjectRepository<ContentSchema, ContentCollection> Contents { get; }
+        public IDbObjectRepository<ContentSchema, ContentSchemaCollection> Contents { get; }
 
-        public IDbObjectRepository<ThemeSchema, ThemeCollection> Themes { get; }
+        public IDbObjectRepository<ThemeSchema, ThemeSchemaCollection> Themes { get; }
 
         #endregion プロパティ
     }

@@ -13,7 +13,7 @@ namespace Mov.Designer.Models.Schemas
     /// コンテンツのコレクション
     /// </summary>
     [XmlRoot("contents")]
-    public class ContentCollection : DbObjectCollection<ContentSchema>
+    public class ContentSchemaCollection : DbObjectCollection<ContentSchema>
     {
         /// <inheritdoc />
         [XmlElement(Type = typeof(ContentSchema), ElementName = "content")]

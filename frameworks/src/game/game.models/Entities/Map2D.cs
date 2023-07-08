@@ -1,4 +1,4 @@
-﻿using Mov.Game.Models.Entities.Schemas;
+﻿using Mov.Game.Models.Schemas;
 
 namespace Mov.Game.Models.Entities
 {
@@ -9,7 +9,7 @@ namespace Mov.Game.Models.Entities
     {
         #region フィールド
 
-        private static string mark = Landmark.ROAD + Landmark.WALL + Landmark.PALYER + Landmark.ALIEN + Landmark.TREASURE;
+        private static string mark = LandmarkSchema.ROAD + LandmarkSchema.WALL + LandmarkSchema.PALYER + LandmarkSchema.ALIEN + LandmarkSchema.TREASURE;
 
         #endregion フィールド
 
@@ -19,7 +19,7 @@ namespace Mov.Game.Models.Entities
         /// マップ構築
         /// </summary>
         /// <returns></returns>
-        public static int[,] MakeMap(Landmark landMark)
+        public static int[,] MakeMap(LandmarkSchema landMark)
         {
             var row = landMark.GetRow();
             var col = landMark.GetCol();

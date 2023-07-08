@@ -1,5 +1,5 @@
 ﻿using Mov.Game.Models.Entities;
-using Mov.Game.Models.Entities.Schemas;
+using Mov.Game.Models.Schemas;
 using System.Collections.Generic;
 
 namespace Mov.Game.Models
@@ -111,7 +111,7 @@ namespace Mov.Game.Models
 
         IEnumerable<int> GetLevels();
 
-        Landmark GetLandmark();
+        LandmarkSchema GetLandmark();
 
         #endregion メソッド
     }

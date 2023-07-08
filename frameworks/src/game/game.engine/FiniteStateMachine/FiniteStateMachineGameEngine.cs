@@ -2,7 +2,7 @@
 using Mov.Game.Models;
 using Mov.Game.Models.Entities;
 using Mov.Game.Models.Entities.Characters;
-using Mov.Game.Models.Entities.Schemas;
+using Mov.Game.Models.Schemas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -292,7 +292,7 @@ namespace Mov.Game.Engine.FiniteStateMachine
             return parameter.Repository.Landmarks.Get().Select(x => x.Lv);
         }
 
-        public Landmark GetLandmark()
+        public LandmarkSchema GetLandmark()
         {
             return parameter.Repository.Landmarks.Get().FirstOrDefault(x => x.Lv == Level);
         }

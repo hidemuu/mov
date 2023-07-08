@@ -17,24 +17,23 @@ namespace Mov.ConsoleApp
 {
     internal class Program
     {
-        #region フィールド
-
-        private static Mutex mutex = new Mutex(false, FrameworkConstants.APP_NAME + "_ConsoleApp");
+        #region field
 
         private static bool running = true;
 
-        private static IMovRepository repository;
-        private static IMovEngine engine;
         private static IMovController controller;
 
         private static IDictionary<string, CommandHandler> handlers;
 
         private delegate void CommandHandler(IEnumerable<string> parameters);
 
-        #endregion フィールド
+        #endregion field
+
+        #region main method
 
         private static void Main(string[] args)
         {
+            var mutex = new Mutex(false, FrameworkConstants.APP_NAME + "_ConsoleApp");
             //二重起動防止
             if (!mutex.WaitOne(0, false))
             {
@@ -64,7 +63,9 @@ namespace Mov.ConsoleApp
             }
         }
 
-        #region メソッド
+        #endregion main method
+
+        #region private method
 
         [LogExecutionTime]
         private static void Initialize()
@@ -76,9 +77,9 @@ namespace Mov.ConsoleApp
                 {"help", Help }
             };
             //リポジトリ生成
-            repository = new FileMovRepository(PathCreator.GetResourcePath());
+            var repository = new FileMovRepository(PathCreator.GetResourcePath());
             //エンジン生成
-            engine = new MovEngine(0, new MovService(
+            var engine = new MovEngine(0, new MovService(
                 new AnalizerFacade(),
                 DesignerFacadeFactory.Create(new[] { repository.Designer }),
                 new ConsoleGameService()
@@ -156,9 +157,9 @@ namespace Mov.ConsoleApp
             return true;
         }
 
-        #endregion メソッド
+        #endregion private method
 
-        #region コマンドハンドラ
+        #region command handler
 
         private static void EndProgram(IEnumerable<string> parameters)
         {
@@ -176,6 +177,6 @@ namespace Mov.ConsoleApp
             Console.WriteLine("----- end ------");
         }
 
-        #endregion コマンドハンドラ
+        #endregion command handler
     }
 }

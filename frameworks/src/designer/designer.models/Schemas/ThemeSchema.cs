@@ -13,7 +13,7 @@ namespace Mov.Designer.Models.Schemas
     /// テーマのコレクション
     /// </summary>
     [XmlRoot("themes")]
-    public class ThemeCollection : DbObjectCollection<ThemeSchema>
+    public class ThemeSchemaCollection : DbObjectCollection<ThemeSchema>
     {
         /// <inheritdoc />
         [XmlElement(Type = typeof(ThemeSchema), ElementName = "theme")]

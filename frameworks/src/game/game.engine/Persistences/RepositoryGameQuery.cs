@@ -1,7 +1,7 @@
 ﻿using Mov.Core.Repositories.Cruds;
 using Mov.Core.Templates.Crud;
 using Mov.Game.Models;
-using Mov.Game.Models.Entities.Schemas;
+using Mov.Game.Models.Schemas;
 
 namespace Mov.Game.Engine.Persistences
 {
@@ -9,7 +9,7 @@ namespace Mov.Game.Engine.Persistences
     {
         #region プロパティ
 
-        public IPersistenceQuery<Landmark> Landmark { get; }
+        public IPersistenceQuery<LandmarkSchema> Landmark { get; }
 
         #endregion プロパティ
 
@@ -17,7 +17,7 @@ namespace Mov.Game.Engine.Persistences
 
         public RepositoryGameQuery(IGameRepository repository)
         {
-            Landmark = new DbObjectRepositoryQuery<Landmark, LandmarkCollection>(repository.Landmarks);
+            Landmark = new DbObjectRepositoryQuery<LandmarkSchema, LandmarkSchemaCollection>(repository.Landmarks);
         }
 
         #endregion コンストラクター

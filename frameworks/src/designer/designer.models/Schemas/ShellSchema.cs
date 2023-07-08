@@ -13,7 +13,7 @@ namespace Mov.Designer.Models.Schemas
     /// シェル（フレーム）のコレクション
     /// </summary>
     [XmlRoot("shells")]
-    public class ShellCollection : DbObjectCollection<ShellSchema>
+    public class ShellSchemaCollection : DbObjectCollection<ShellSchema>
     {
         /// <inheritdoc />
         [XmlElement(Type = typeof(ShellSchema), ElementName = "shell")]

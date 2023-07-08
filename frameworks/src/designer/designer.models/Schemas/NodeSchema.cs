@@ -13,7 +13,7 @@ namespace Mov.Designer.Models.Schemas
     /// レイアウトノードのコレクション
     /// </summary>
     [XmlRoot("nodes")]
-    public class NodeCollection : DbObjectCollection<NodeSchema>
+    public class NodeSchemaCollection : DbObjectCollection<NodeSchema>
     {
         /// <inheritdoc />
         [XmlElement(Type = typeof(NodeSchema), ElementName = "node")]

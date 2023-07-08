@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.32" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\src\analizer\analizer.engine\Analizer.Engine.csproj" />
     <ProjectReference Include="..\..\src\bom\bom.engine\Bom.Engine.csproj" />
     <ProjectReference Include="..\..\src\configurator\Configurator.Engine\Configurator.Engine.csproj" />

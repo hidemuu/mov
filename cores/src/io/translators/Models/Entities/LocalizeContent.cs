@@ -12,6 +12,8 @@ namespace Mov.Core.Translators.Models.Entities
 
         public Identifier Id { get; }
 
+        public IdentifierIndex Index { get; }
+
         public LocalizeInfo EN { get; }
 
         public LocalizeInfo JP { get; }
@@ -20,14 +22,15 @@ namespace Mov.Core.Translators.Models.Entities
 
         #region constructor
 
-        public LocalizeContent(Identifier identifier, LocalizeInfo en, LocalizeInfo jp)
+        public LocalizeContent(Identifier identifier, IdentifierIndex index, LocalizeInfo en, LocalizeInfo jp)
         {
             this.Id = identifier;
+            this.Index = index;
             this.EN = en;
             this.JP = jp;
         }
 
-        public static readonly LocalizeContent Empty = new LocalizeContent(Identifier.Empty, LocalizeInfo.Empty, LocalizeInfo.Empty);
+        public static readonly LocalizeContent Empty = new LocalizeContent(Identifier.Empty, IdentifierIndex.Empty, LocalizeInfo.Empty, LocalizeInfo.Empty);
 
         #endregion constructor
     }

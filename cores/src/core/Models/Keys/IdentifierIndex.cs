@@ -19,6 +19,8 @@ namespace Mov.Core.Models.Keys
             this.Value = index;
         }
 
+        public static readonly IdentifierIndex Empty = new IdentifierIndex(0);
+
         #endregion constructor
 
         #region protected method

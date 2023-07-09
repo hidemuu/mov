@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Contexts.Personals;
 using Mov.Core.Contexts.Personals.ValueObjects;
 using Mov.Core.Contexts.Structures;
+using Mov.Core.Extensions;
 using Mov.Core.Models.Keys;
 using Mov.Core.Models.Units;
 using Mov.Core.Templates;
@@ -8,6 +9,8 @@ using Mov.Core.Translators.Models.Entities;
 using Mov.Core.Translators.Models.ValueObjects;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 
@@ -24,7 +27,7 @@ namespace Mov.Core.Translators.Contexts
 
         public IdentifierIndex Id { get; }
 
-        public IEnumerable<LocalizeContent> Contents { get; } = new HashSet<LocalizeContent>();
+        public ICollection<LocalizeContent> Contents { get; } = new HashSet<LocalizeContent>();
 
         #endregion property
 
@@ -33,6 +36,16 @@ namespace Mov.Core.Translators.Contexts
         public TranslatorDatabase(ITranslatorRepository repository)
         {
             Id = new IdentifierIndex(Thread.CurrentThread.ManagedThreadId);
+            var translates = repository.Translates.Get();
+            foreach(var translate in translates )
+            {
+                Contents.Add(
+                    new LocalizeContent(
+                        new Identifier(translate.Id),
+                        new IdentifierIndex(translate.Index),
+                        new LocalizeInfo(Location.EN, new Info(translate.EN)),
+                        new LocalizeInfo(Location.JP, new Info(translate.JP))));
+            }
         }
 
         #endregion constructor
@@ -41,22 +54,31 @@ namespace Mov.Core.Translators.Contexts
 
         public LocalizeContent Get(Identifier key)
         {
-            throw new NotImplementedException();
+            return Contents.FirstOrDefault(x => x.Id.Equals(key));
         }
 
         public void Delete(Identifier key)
         {
-            throw new NotImplementedException();
+            var content = Get(key);
+            if (content == null) return;
+            Contents.Remove(content);
         }
 
         public void Put(LocalizeContent value)
         {
-            throw new NotImplementedException();
+            var content = Get(value.Id);
+            if (content == null) return;
+            Delete(value.Id);
+            Contents.Add(content);
         }
 
         public void Post(LocalizeContent value)
         {
-            throw new NotImplementedException();
+            var content = Get(value.Id);
+            if (content == null) 
+                Contents.Add(value);
+            else 
+                Put(content);
         }
 
         #endregion method

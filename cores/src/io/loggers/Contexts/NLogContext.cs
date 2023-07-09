@@ -8,20 +8,13 @@ namespace Mov.Core.Loggers.Contexts
 {
     public class NLogContext : ILogContext
     {
-        #region フィールド
+        #region field
 
         private readonly ILogger logger;
 
-        #endregion フィールド
+        #endregion field
 
-        #region プロパティ
-
-        private static Lazy<NLogContext> instance = new Lazy<NLogContext>(() => new NLogContext());
-        public static NLogContext Instance => instance.Value;
-
-        #endregion プロパティ
-
-        #region コンストラクター
+        #region constructor
 
         private NLogContext()
         {
@@ -29,9 +22,12 @@ namespace Mov.Core.Loggers.Contexts
             LogManager.LoadConfiguration("NLog.config");
         }
 
-        #endregion コンストラクター
+        private static Lazy<NLogContext> instance = new Lazy<NLogContext>(() => new NLogContext());
+        public static NLogContext Instance => instance.Value;
 
-        #region メソッド
+        #endregion constructor
+
+        #region method
 
         public void LogExecutionTime(MethodBase method, Stopwatch stopwatch)
         {
@@ -39,6 +35,6 @@ namespace Mov.Core.Loggers.Contexts
             logger.Trace(message);
         }
 
-        #endregion メソッド
+        #endregion method
     }
 }

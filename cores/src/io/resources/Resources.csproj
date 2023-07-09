@@ -10,7 +10,7 @@
     <Folder Include="Contexts\" />
     <Folder Include="Models\" />
     <Folder Include="Repositories\" />
-    <Folder Include="Schemas\" />
+    <Folder Include="Repositories\Schemas\" />
     <Folder Include="Services\" />
   </ItemGroup>
 

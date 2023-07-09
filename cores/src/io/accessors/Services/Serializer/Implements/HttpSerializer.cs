@@ -13,7 +13,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <summary>
         /// The Base URL for the API.
         /// /// </summary>
-        private readonly IAccessContext context;
+        private readonly IAccessService context;
 
         #endregion field
 
@@ -23,7 +23,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// コンストラクター
         /// </summary>
         /// <param name="endpoint"></param>
-        public HttpSerializer(IAccessContext context)
+        public HttpSerializer(IAccessService context)
         {
             this.context = context;
         }

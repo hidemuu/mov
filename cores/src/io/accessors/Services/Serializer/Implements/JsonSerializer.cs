@@ -10,7 +10,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
     {
         #region field
 
-        private readonly IAccessContext context;
+        private readonly IAccessService context;
 
         #endregion field
 
@@ -19,7 +19,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public JsonSerializer(IAccessContext context)
+        public JsonSerializer(IAccessService context)
         {
             this.context = context;
         }

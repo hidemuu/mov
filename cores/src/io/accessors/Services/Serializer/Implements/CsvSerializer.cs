@@ -12,7 +12,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
     {
         #region field
 
-        private readonly IAccessContext context;
+        private readonly IAccessService context;
 
         #endregion field
 
@@ -21,7 +21,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public CsvSerializer(IAccessContext context)
+        public CsvSerializer(IAccessService context)
         {
             this.context = context;
         }

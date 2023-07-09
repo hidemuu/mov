@@ -4,28 +4,28 @@ using System;
 using System.Data;
 using System.IO;
 
-namespace Mov.Core.Accessors.Contexts
+namespace Mov.Core.Accessors.Services
 {
     /// <inheritdoc/>
-    public class FileAccessContext : IAccessContext
+    public class FileAccessService : IAccessService
     {
-        #region プロパティ
+        #region property
 
         /// <inheritdoc/>
         public FileParameter FileParameter { get; }
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
-        public FileAccessContext(string path, string encodeName = AccessConstants.ENCODE_NAME_UTF8)
+        public FileAccessService(string path, string encodeName = CoreConstants.ENCODE_NAME_UTF8)
         {
             FileParameter = new FileParameter(path, encodeName);
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region メソッド
+        #region method
 
         /// <inheritdoc/>
         public string[] Read()
@@ -246,9 +246,9 @@ namespace Mov.Core.Accessors.Contexts
             return result;
         }
 
-        #endregion メソッド
+        #endregion method
 
-        #region 内部メソッド
+        #region private method
 
         /// <summary>
         /// データのヘッダー以外を削除し初期化する
@@ -338,6 +338,6 @@ namespace Mov.Core.Accessors.Contexts
                 field.EndsWith("\t");
         }
 
-        #endregion 内部メソッド
+        #endregion private method
     }
 }

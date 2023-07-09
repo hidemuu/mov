@@ -7,13 +7,13 @@ namespace Mov.Core.Accessors.Services.Serializer
     {
         #region field
 
-        private readonly IAccessContext context;
+        private readonly IAccessService context;
 
         #endregion field
 
         #region constructor
 
-        public FileSerializerFactory(IAccessContext context)
+        public FileSerializerFactory(IAccessService context)
         {
             this.context = context;
         }

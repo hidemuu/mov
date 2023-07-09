@@ -3,9 +3,9 @@
 namespace Mov.Core.Accessors
 {
     /// <summary>
-    /// アクセスの共通コンテキスト
+    /// アクセスの共通サービス
     /// </summary>
-    public interface IAccessContext
+    public interface IAccessService
     {
         #region property
 

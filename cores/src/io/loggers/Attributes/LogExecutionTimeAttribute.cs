@@ -7,8 +7,13 @@ namespace Mov.Core.Loggers.Attributes
 {
     public sealed class LogExecutionTimeAttribute : OnMethodBoundaryAspect
     {
+        #region field
 
         private Stopwatch stopwatch = new Stopwatch();
+
+        #endregion field
+
+        #region event
 
         public override void OnEntry(MethodExecutionArgs arg)
         {
@@ -28,5 +33,6 @@ namespace Mov.Core.Loggers.Attributes
             Console.WriteLine("Exception: " + arg.Exception.Message);
         }
 
+        #endregion event
     }
 }

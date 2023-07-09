@@ -9,7 +9,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
     {
         #region field
 
-        private readonly IAccessContext context;
+        private readonly IAccessService context;
 
         #endregion field
 
@@ -19,7 +19,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// コンストラクタ
         /// </summary>
         /// <param name="path">ファイルパス</param>
-        public XmlSerializer(IAccessContext context)
+        public XmlSerializer(IAccessService context)
         {
             this.context = context;
         }

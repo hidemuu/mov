@@ -6,14 +6,14 @@ namespace Mov.Core.Layouts.Models.Contents
     public class LayoutContentKey
     {
         public static LayoutContentKey Default = new LayoutContentKey(
-            CodeKey.Empty, ControlStyle.Label);
+            IdentifierCode.Empty, ControlStyle.Label);
 
-        public CodeKey Code { get; }
+        public IdentifierCode Code { get; }
 
         public ControlStyle ControlType { get; }
 
 
-        public LayoutContentKey(CodeKey code, ControlStyle controlType)
+        public LayoutContentKey(IdentifierCode code, ControlStyle controlType)
         {
             Code = code;
             ControlType = controlType;

@@ -11,7 +11,7 @@ namespace Mov.Core.Layouts.Contexts
     {
         #region property
 
-        public CodeKey DomainId { get; }
+        public IdentifierCode DomainId { get; }
         public IEnumerable<LayoutNode> Nodes { get; }
         public IEnumerable<LayoutContent> Contents { get; }
         public IEnumerable<LayoutShell> Shells { get; }
@@ -22,7 +22,7 @@ namespace Mov.Core.Layouts.Contexts
         #region constructor
 
         public LayoutContext(
-            CodeKey code,
+            IdentifierCode code,
             IEnumerable<LayoutNode> nodes,
             IEnumerable<LayoutContent> contents,
             IEnumerable<LayoutShell> shells,

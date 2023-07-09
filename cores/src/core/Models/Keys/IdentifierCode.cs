@@ -2,9 +2,9 @@
 
 namespace Mov.Core.Models.Keys
 {
-    public sealed class CodeKey : ValueObjectBase<CodeKey>
+    public sealed class IdentifierCode : ValueObjectBase<IdentifierCode>
     {
-        public static CodeKey Empty = new CodeKey("");
+        public static IdentifierCode Empty = new IdentifierCode("");
 
         #region プロパティ
 
@@ -14,7 +14,7 @@ namespace Mov.Core.Models.Keys
 
         #region コンストラクター
 
-        public CodeKey(string code)
+        public IdentifierCode(string code)
         {
             Value = code;
         }
@@ -23,7 +23,7 @@ namespace Mov.Core.Models.Keys
 
         #region メソッド
 
-        protected override bool EqualCore(CodeKey other)
+        protected override bool EqualCore(IdentifierCode other)
         {
             return Value.Equals(other.Value, StringComparison.Ordinal);
         }

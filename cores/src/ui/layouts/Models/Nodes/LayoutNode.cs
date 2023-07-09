@@ -17,7 +17,7 @@ namespace Mov.Core.Layouts.Models.Nodes
 
         #region property
 
-        public CodeKey Code { get; }
+        public IdentifierCode Code { get; }
 
         public NodeStyle NodeType { get; }
 
@@ -38,7 +38,7 @@ namespace Mov.Core.Layouts.Models.Nodes
         /// コンストラクター
         /// </summary>
         /// <param name="content"></param>
-        public LayoutNode(CodeKey code, NodeStyle nodeStyle, EnableStyle expandStyle, LayoutContent content)
+        public LayoutNode(IdentifierCode code, NodeStyle nodeStyle, EnableStyle expandStyle, LayoutContent content)
         {
             Code = code;
             NodeType = nodeStyle;
@@ -46,7 +46,7 @@ namespace Mov.Core.Layouts.Models.Nodes
             this.content = content;
         }
 
-        public static LayoutNode Empty => new LayoutNode(CodeKey.Empty, NodeStyle.Content, EnableStyle.Enable, LayoutContent.Empty);
+        public static LayoutNode Empty => new LayoutNode(IdentifierCode.Empty, NodeStyle.Content, EnableStyle.Enable, LayoutContent.Empty);
 
         #endregion constructor
 

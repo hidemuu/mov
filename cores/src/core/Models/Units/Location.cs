@@ -2,49 +2,55 @@
 {
     public sealed class Location : ValueObjectBase<Location>
     {
-        #region フィールド
-
-        public static readonly Location JP = new Location(0);
-
-        public static readonly Location EN = new Location(1);
-
-        public static readonly Location CN = new Location(2);
-
-        #endregion フィールド
-
-        #region プロパティ
+        #region property
 
         public int Value { get; }
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
         public Location(int value)
         {
             Value = value;
         }
 
-        #endregion コンストラクター
+        public static readonly Location Empty = new Location(-1);
 
-        #region メソッド
+        public static readonly Location EN = new Location(0);
+
+        public static readonly Location JP = new Location(1);
+
+        public static readonly Location CN = new Location(2);
+
+        #endregion constructor
+
+        #region method
+
+        public bool IsNan => !IsEN && !IsJP && !IsCN; 
+
+        public bool IsEmpty => this.Equals(Empty);
+
+        public bool IsEN => this.Equals(EN);
+
+        public bool IsJP => this.Equals(JP);
+
+        public bool IsCN => this.Equals(CN);
+
+        #endregion method
+
+        #region protected method
 
         protected override bool EqualCore(Location other)
         {
-            return IsJP && IsEN && IsCN;
+            return this.Value.Equals(other.Value);
         }
 
         protected override int GetHashCodeCore()
         {
-            return Value.GetHashCode();
+            return this.Value.GetHashCode();
         }
 
-        public bool IsJP => this == JP;
-
-        public bool IsEN => this == EN;
-
-        public bool IsCN => this == CN;
-
-        #endregion メソッド
+        #endregion protected method
     }
 }

@@ -4,24 +4,31 @@ namespace Mov.Core.Models.Units
 {
     public sealed class Info : ValueObjectBase<Info>
     {
-        public static Info Empty = new Info("");
-
-        #region プロパティ
+        
+        #region property
 
         public string Value { get; }
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
         public Info(string info)
         {
             Value = info;
         }
 
-        #endregion コンストラクター
+        public static Info Empty = new Info(string.Empty);
 
-        #region メソッド
+        #endregion constructor
+
+        #region method
+
+        public bool IsEmpty => this.Equals(Empty);
+
+        #endregion method
+
+        #region protected method
 
         protected override bool EqualCore(Info other)
         {
@@ -33,6 +40,6 @@ namespace Mov.Core.Models.Units
             return Value.GetHashCode();
         }
 
-        #endregion メソッド
+        #endregion protected method
     }
 }

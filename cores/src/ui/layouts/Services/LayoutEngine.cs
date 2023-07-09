@@ -19,7 +19,7 @@ namespace Mov.Core.Layouts.Services
 
         #region プロパティ
 
-        public CodeKey DomainId { get; }
+        public IdentifierCode DomainId { get; }
 
         #endregion プロパティ
 

@@ -11,7 +11,7 @@ namespace Mov.Core.Layouts
     {
         #region property
 
-        CodeKey DomainId { get; }
+        IdentifierCode DomainId { get; }
         IEnumerable<LayoutNode> Nodes { get; }
         IEnumerable<LayoutContent> Contents { get; }
         IEnumerable<LayoutShell> Shells { get; }

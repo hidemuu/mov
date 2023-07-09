@@ -1,9 +1,8 @@
 ﻿using Mov.Core.Models.Keys;
 using Mov.Core.Models.Units;
 using Mov.Core.Templates;
+using Mov.Core.Translators.Models;
 using Mov.Core.Translators.Models.Entities;
-using Mov.Core.Translators.Repositories;
-using System;
 
 namespace Mov.Core.Translators.Services
 {

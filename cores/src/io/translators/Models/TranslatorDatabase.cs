@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
-namespace Mov.Core.Translators.Services
+namespace Mov.Core.Translators.Models
 {
     internal sealed class TranslatorDatabase : IDatabase<LocalizeContent, IdentifierCode>
     {

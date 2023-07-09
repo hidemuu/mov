@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Repositories.Repositories.DbObjects;
 using Mov.Core.Templates.Repositories;
-using Mov.Core.Translators.Schemas;
+using Mov.Core.Translators.Repositories.Schemas;
 using System;
 using System.Collections.Generic;
 using System.IO;

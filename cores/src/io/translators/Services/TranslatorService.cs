@@ -3,14 +3,15 @@ using Mov.Core.Models.Units;
 using Mov.Core.Templates;
 using Mov.Core.Translators.Models.Entities;
 using Mov.Core.Translators.Repositories;
+using System;
 
 namespace Mov.Core.Translators.Services
 {
-    public class TranslatorService
+    public sealed class TranslatorService : ITranslatorService
     {
         #region field
 
-        private readonly IDatabase<LocalizeContent, IdentifierCode> database;
+        private IDatabase<LocalizeContent, IdentifierCode> database;
 
         #endregion field
 
@@ -29,6 +30,11 @@ namespace Mov.Core.Translators.Services
         {
             var content = this.database.Get(code);
             return content.Get(location).Description.Value;
+        }
+
+        public void Dispose()
+        {
+            this.database = null;
         }
 
         #endregion method

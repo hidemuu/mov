@@ -1,4 +1,5 @@
 ﻿using Mov.Core.Contexts.Personals.ValueObjects;
+using Mov.Core.Models.Keys;
 using Mov.Core.Templates;
 using System;
 using System.Threading;
@@ -11,7 +12,7 @@ namespace Mov.Core.Contexts.Personals
 
         private static ThreadLocal<AddressDatabase> threadInstance = new ThreadLocal<AddressDatabase>(() => new AddressDatabase());
 
-        public int Id { get; }
+        public IdentifierIndex Id { get; }
 
         public static AddressDatabase Instance => instance.Value;
 
@@ -19,7 +20,7 @@ namespace Mov.Core.Contexts.Personals
 
         private AddressDatabase()
         {
-            Id = Thread.CurrentThread.ManagedThreadId;
+            Id = new IdentifierIndex(Thread.CurrentThread.ManagedThreadId);
         }
 
         public Address Get(Guid id)

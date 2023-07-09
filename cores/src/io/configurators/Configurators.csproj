@@ -6,4 +6,15 @@
     <RootNamespace>Mov.Core.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\repositories\Repositories.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Contexts\" />
+    <Folder Include="Models\" />
+    <Folder Include="Repositories\Schemas\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>

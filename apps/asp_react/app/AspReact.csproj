@@ -94,23 +94,14 @@
     <Reference Include="Mov.Bom.Service">
       <HintPath>..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Bom.Service.dll</HintPath>
     </Reference>
-    <Reference Include="Mov.Configurator.Engine">
-      <HintPath>..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Configurator.Engine.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Configurator.Models">
-      <HintPath>..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Configurator.Models.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Configurator.Repository">
-      <HintPath>..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Configurator.Repository.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Configurator.Service">
-      <HintPath>..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Configurator.Service.dll</HintPath>
-    </Reference>
     <Reference Include="Mov.Core">
       <HintPath>..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Core.Accessors">
       <HintPath>..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Core.Accessors.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Configurators">
+      <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Configurators.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Core.Controllers">
       <HintPath>..\..\..\frameworks\lib\usecase\bin\Debug\netstandard2.0\Mov.Core.Controllers.dll</HintPath>

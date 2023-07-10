@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\src\core\Core.csproj" />
     <ProjectReference Include="..\src\io\accessors\Accessors.csproj" />
+    <ProjectReference Include="..\src\io\configurators\Configurators.csproj" />
     <ProjectReference Include="..\src\io\errors\Errors.csproj" />
     <ProjectReference Include="..\src\io\loggers\Loggers.csproj" />
     <ProjectReference Include="..\src\io\repositories\Repositories.csproj" />

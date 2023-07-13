@@ -24,8 +24,6 @@
     <ProjectReference Include="..\..\src\analizer\analizer.service\Analizer.Service.csproj" />
     <ProjectReference Include="..\..\src\bom\bom.repository\Bom.Repository.csproj" />
     <ProjectReference Include="..\..\src\bom\bom.service\Bom.Service.csproj" />
-    <ProjectReference Include="..\..\src\configurator\Configurator.Repository\Configurator.Repository.csproj" />
-    <ProjectReference Include="..\..\src\configurator\Configurator.Service\Configurator.Service.csproj" />
     <ProjectReference Include="..\..\src\designer\designer.repository\Designer.Repository.csproj" />
     <ProjectReference Include="..\..\src\designer\designer.service\Designer.Service.csproj" />
     <ProjectReference Include="..\..\src\drawer\drawer.repository\Drawer.Repository.csproj" />
@@ -42,8 +40,14 @@
     <Reference Include="Mov.Core.Accessors">
       <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Accessors.dll</HintPath>
     </Reference>
+    <Reference Include="Mov.Core.Configurators">
+      <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Configurators.dll</HintPath>
+    </Reference>
     <Reference Include="Mov.Core.Repositories">
       <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Repositories.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Translators">
+      <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Translators.dll</HintPath>
     </Reference>
   </ItemGroup>
 

@@ -1,10 +1,23 @@
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.OpenApi.Models;
+using Mov.Core.Accessors;
+using Mov.Core.Configurators;
+using Mov.Core.Configurators.Repositories;
+using Mov.Framework;
+using Mov.Framework.Creators;
+using Mov.UseCase.Controllers;
+using System.Runtime.CompilerServices;
 
 namespace Mov.AspReact 
 {
     public class Program
     {
+        #region field
+
+        private readonly static IWebAppController controller = new WebAppController();
+
+        #endregion field
+
         #region main method
 
         public static void Main(string[] args)
@@ -33,6 +46,12 @@ namespace Mov.AspReact
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            //var db = new ApiDbContext(new DbContextOptionsBuilder<ApiDbContext>()
+            //    .UseSqlite(Urls.SqlLocalConnectionStringForSqlite).Options);
+            services.AddScoped<IConfiguratorRepository, FileConfiguratorRepository>(_ => new FileConfiguratorRepository(PathCreator.GetResourcePath(), "", AccessConstants.PATH_EXTENSION_JSON));
+            services.AddMvc();
+
             return builder.Build();
         }
 

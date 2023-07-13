@@ -2,7 +2,7 @@
 
 namespace Mov.Framework
 {
-    public interface IMovController
+    public interface IConsoleAppController
     {
         bool SetDomain(string domainTypeString);
 

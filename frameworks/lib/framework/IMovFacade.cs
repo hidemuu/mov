@@ -4,7 +4,7 @@ using Mov.Game.Engine;
 
 namespace Mov.Framework
 {
-    public interface IMovService
+    public interface IMovFacade
     {
         IAnalizerFacade Analizer { get; }
         IDesignerFacade Designer { get; }

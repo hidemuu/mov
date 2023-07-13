@@ -21,7 +21,7 @@ namespace Mov.ConsoleApp
 
         private static bool running = true;
 
-        private static IMovController controller;
+        private static IConsoleAppController controller;
 
         private static IDictionary<string, CommandHandler> handlers;
 
@@ -79,7 +79,7 @@ namespace Mov.ConsoleApp
             //リポジトリ生成
             var repository = new FileMovRepository(PathCreator.GetResourcePath());
             //エンジン生成
-            var engine = new MovEngine(0, new MovService(
+            var engine = new MovEngine(0, new MovFacade(
                 new AnalizerFacade(),
                 DesignerFacadeFactory.Create(new[] { repository.Designer }),
                 new ConsoleGameService()

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Mov.UseCase.Controllers
 {
-    public class ConsoleAppController : IMovController
+    public class ConsoleAppController : IConsoleAppController
     {
         #region field
 

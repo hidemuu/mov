@@ -5,7 +5,7 @@ namespace Mov.Core.Repositories.Repositories.Domains
 {
     public abstract class FileDomainRepositoryBase : IDomainRepository
     {
-        #region フィールド
+        #region field
 
         protected readonly string endpoint;
 
@@ -18,15 +18,15 @@ namespace Mov.Core.Repositories.Repositories.Domains
 
         protected readonly string encoding;
 
-        #endregion フィールド
+        #endregion field
 
-        #region プロパティ
+        #region property
 
         public abstract string DomainPath { get; }
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
         /// <summary>
         /// コンストラクター
@@ -40,9 +40,9 @@ namespace Mov.Core.Repositories.Repositories.Domains
             this.encoding = encoding;
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region メソッド
+        #region method
 
         /// <summary>
         /// 相対パスを取得
@@ -57,6 +57,6 @@ namespace Mov.Core.Repositories.Repositories.Domains
         /// <returns></returns>
         protected string GetPath(string fileName) => Path.Combine(GetRelativePath(), fileDir, fileName) + "." + extension;
 
-        #endregion メソッド
+        #endregion method
     }
 }

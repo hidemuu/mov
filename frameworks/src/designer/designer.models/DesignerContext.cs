@@ -17,7 +17,7 @@ namespace Mov.Designer.Models
     {
         private readonly IDesignerRepository repository;
 
-        public CodeKey DomainId { get; }
+        public IdentifierCode DomainId { get; }
 
         public IEnumerable<LayoutNode> Nodes { get; } = new List<LayoutNode>();
 
@@ -30,7 +30,7 @@ namespace Mov.Designer.Models
         public DesignerContext(IDesignerRepository repository)
         {
             this.repository = repository;
-            this.DomainId = new CodeKey(repository.DomainPath);
+            this.DomainId = new IdentifierCode(repository.DomainPath);
             this.Nodes = GetNodes(repository);
             this.Contents = GetContents(repository);
             this.Shells = GetShells(repository);
@@ -48,7 +48,7 @@ namespace Mov.Designer.Models
             foreach (var node in nodes)
             {
                 var parent = new LayoutNode(
-                    new CodeKey(node.Code), new NodeStyle(node.NodeType), new EnableStyle(true),
+                    new IdentifierCode(node.Code), new NodeStyle(node.NodeType), new EnableStyle(true),
                     GetContent(repository.Contents.Get(node.Code)));
                 parent.AddRange(GetNode(node.Children, repository));
                 result.Add(parent);
@@ -67,7 +67,7 @@ namespace Mov.Designer.Models
         private LayoutContent GetContent(ContentSchema content)
         {
             return new LayoutContent(
-                        new LayoutContentKey(new CodeKey(content.Code), new ControlStyle(content.ControlType)),
+                        new LayoutContentKey(new IdentifierCode(content.Code), new ControlStyle(content.ControlType)),
                         new LayoutContentStatus(new Info(content.Name), new IconImage(content.Icon), VisibilityStyle.Visible, EnableStyle.Enable, new Parameter(content.Parameter)),
                         new LayoutContentArrange(MarginUnit.Default, new Size2D(content.Width, content.Height), OrientationStyle.Horizontal, new HorizontalAlignmentStyle(content.HorizontalAlignment), new VerticalAlignmentStyle(content.VerticalAlignment)),
                         new LayoutContentValue(new LayoutValue(content.Schema), new Variable(content.DefaultValue), new Macro(content.Macro)));

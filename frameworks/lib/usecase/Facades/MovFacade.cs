@@ -5,13 +5,13 @@ using Mov.Game.Engine;
 
 namespace Mov.UseCase.Services
 {
-    public class MovService : IMovService
+    public class MovFacade : IMovFacade
     {
         public IAnalizerFacade Analizer { get; }
         public IDesignerFacade Designer { get; }
         public IGameFacade Game { get; }
 
-        public MovService(
+        public MovFacade(
             IAnalizerFacade analizerService,
             IDesignerFacade designerService,
             IGameFacade gameService)

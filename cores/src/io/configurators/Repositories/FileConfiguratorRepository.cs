@@ -10,7 +10,16 @@ namespace Mov.Core.Configurators.Repositories
 {
     public class FileConfiguratorRepository : FileDomainRepositoryBase, IConfiguratorRepository
     {
+
+        #region property
+
         public override string DomainPath => "configurator";
+
+        public IDbObjectRepository<ConfigSchema, ConfigSchemaCollection> Configs { get; }
+
+        #endregion property
+
+        #region constructor
 
         public FileConfiguratorRepository(string endpoint, string fileDir, string extension, string encoding = CoreConstants.ENCODE_NAME_UTF8)
             : base(endpoint, fileDir, extension, encoding)
@@ -18,10 +27,7 @@ namespace Mov.Core.Configurators.Repositories
             Configs = new FileDbObjectRepository<ConfigSchema, ConfigSchemaCollection>(GetPath("config"), encoding);
         }
 
-        #region プロパティ
+        #endregion constructor
 
-        public IDbObjectRepository<ConfigSchema, ConfigSchemaCollection> Configs { get; }
-
-        #endregion プロパティ
     }
 }

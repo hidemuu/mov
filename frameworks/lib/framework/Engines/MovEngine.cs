@@ -3,9 +3,9 @@
     public class MovEngine : IMovEngine
     {
         public int DomainId { get; }
-        public IMovService Service { get; }
+        public IMovFacade Service { get; }
 
-        public MovEngine(int domainId, IMovService service)
+        public MovEngine(int domainId, IMovFacade service)
         {
             DomainId = domainId;
             Service = service;

@@ -6,7 +6,7 @@
 
         int DomainId { get; }
 
-        IMovService Service { get; }
+        IMovFacade Service { get; }
 
         #endregion プロパティ
     }

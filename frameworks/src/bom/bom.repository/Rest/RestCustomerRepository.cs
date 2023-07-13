@@ -1,6 +1,6 @@
 ﻿using Mov.Bom.Models;
 using Mov.Bom.Models.Entities.Schemas;
-using Mov.Core.Accessors.Contexts;
+using Mov.Core.Accessors.Services;
 using Mov.Core.Accessors.Services.Serializer.Implements;
 using System;
 using System.Collections.Generic;
@@ -17,7 +17,7 @@ namespace Mov.Bom.Repository.Rest
 
         public RestCustomerRepository(string baseUrl)
         {
-            this.serializer = new HttpSerializer(new FileAccessContext(baseUrl));
+            this.serializer = new HttpSerializer(new FileAccessService(baseUrl));
         }
 
         public async Task<IEnumerable<Customer>> GetAsync() =>

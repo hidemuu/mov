@@ -32,7 +32,7 @@ namespace Mov.AspReact.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok((await this.repository.Configs.GetAsync()));
+            return Ok(await this.repository.Configs.GetAsync());
         }
 
         /// <summary>
@@ -48,12 +48,12 @@ namespace Mov.AspReact.Controllers
         /// <summary>
         /// Deletes an order.
         /// </summary>
-        //[HttpDelete("{date}")]
-        //public async Task<IActionResult> Delete(LandmarkSchema item)
-        //{
-        //    await this.repository.Landmarks.DeleteAsync(item.Date);
-        //    return Ok();
-        //}
+        [HttpDelete]
+        public async Task<IActionResult> Delete(ConfigSchema item)
+        {
+            //await this.repository.Configs.DeleteAsync(item);
+            return Ok();
+        }
 
         #endregion method
     }

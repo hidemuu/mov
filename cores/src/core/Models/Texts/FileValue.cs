@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Mov.Core.Models.Units
+namespace Mov.Core.Models.Texts
 {
     /// <summary>
     /// ファイルのValueObject

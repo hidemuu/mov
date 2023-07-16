@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Core.Models.Units
+namespace Mov.Core.Models.Texts
 {
     public sealed class EncodingValue : ValueObjectBase<EncodingValue>
     {
         #region property
 
-        public int Value { get; }
+        public Encoding Value { get; }
 
         #endregion property
 
         #region constructor
 
-        public EncodingValue()
+        public EncodingValue(Encoding encoding)
         {
-
+            Value = encoding;
         }
 
         #endregion constructor
@@ -25,12 +25,12 @@ namespace Mov.Core.Models.Units
 
         protected override bool EqualCore(EncodingValue other)
         {
-            throw new NotImplementedException();
+            return Value.Equals(other.Value);
         }
 
         protected override int GetHashCodeCore()
         {
-            throw new NotImplementedException();
+            return Value.GetHashCode();
         }
 
         #endregion method

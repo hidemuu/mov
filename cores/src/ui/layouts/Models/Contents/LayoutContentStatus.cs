@@ -1,4 +1,5 @@
 ﻿using Mov.Core.Contexts.Layouts.ValueObjects;
+using Mov.Core.Models.Texts;
 using Mov.Core.Models.Units;
 
 namespace Mov.Core.Layouts.Models.Contents

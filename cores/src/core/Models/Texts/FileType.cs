@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Core.Models.Units
+namespace Mov.Core.Models.Texts
 {
     public sealed class FileType : ValueObjectBase<FileType>
     {
@@ -26,7 +26,7 @@ namespace Mov.Core.Models.Units
 
         public FileType(string name)
         {
-            this.Value = name;
+            Value = name;
         }
 
         public static FileType Json = new FileType(JSON);
@@ -40,24 +40,24 @@ namespace Mov.Core.Models.Units
 
         #region method
 
-        public bool IsEmpty() => string.IsNullOrEmpty(this.Value);
+        public bool IsEmpty() => string.IsNullOrEmpty(Value);
 
         public bool InNan() => !IsJson() && !IsXml() && !IsCsv();
 
-        public bool IsJson() => this.Equals(Json);
+        public bool IsJson() => Equals(Json);
 
-        public bool IsXml() => this.Equals(Xml);
+        public bool IsXml() => Equals(Xml);
 
-        public bool IsCsv() => this.Equals(Csv);
+        public bool IsCsv() => Equals(Csv);
 
         protected override bool EqualCore(FileType other)
         {
-            return this.Value.Equals(other.Value, StringComparison.Ordinal);
+            return Value.Equals(other.Value, StringComparison.Ordinal);
         }
 
         protected override int GetHashCodeCore()
         {
-            return this.Value.GetHashCode();
+            return Value.GetHashCode();
         }
 
         #endregion method

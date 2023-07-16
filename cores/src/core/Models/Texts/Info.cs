@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Mov.Core.Models.Units
+namespace Mov.Core.Models.Texts
 {
     public sealed class Info : ValueObjectBase<Info>
     {
-        
+
         #region property
 
         public string Value { get; }
@@ -24,7 +24,7 @@ namespace Mov.Core.Models.Units
 
         #region method
 
-        public bool IsEmpty => this.Equals(Empty);
+        public bool IsEmpty => Equals(Empty);
 
         #endregion method
 

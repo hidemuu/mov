@@ -16,6 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\analizer\analizer.models\Analizer.Models.csproj" />
+    <ProjectReference Include="..\..\src\bom\bom.models\Bom.Models.csproj" />
+    <ProjectReference Include="..\..\src\designer\designer.models\Designer.Models.csproj" />
     <ProjectReference Include="..\..\src\game\game.models\Game.Models.csproj" />
   </ItemGroup>
 

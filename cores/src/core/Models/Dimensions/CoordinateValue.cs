@@ -1,15 +1,18 @@
-﻿namespace Mov.Core.Models.Shapes
+﻿namespace Mov.Core.Models.Dimensions
 {
-    public sealed class AngleValue : ValueObjectBase<AngleValue>
+    /// <summary>
+    /// 座標
+    /// </summary>
+    public sealed class CoordinateValue : ValueObjectBase<CoordinateValue>
     {
         public double Value { get; }
 
-        public AngleValue(double value)
+        public CoordinateValue(double value)
         {
             Value = value;
         }
 
-        protected override bool EqualCore(AngleValue other)
+        protected override bool EqualCore(CoordinateValue other)
         {
             return Value.Equals(other.Value); ;
         }

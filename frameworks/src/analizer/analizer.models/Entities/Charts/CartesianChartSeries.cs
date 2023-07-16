@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.Shapes.Coordinates;
+﻿using Mov.Core.Models.Dimensions.Coordinates;
 using System.Collections;
 using System.Collections.Generic;
 

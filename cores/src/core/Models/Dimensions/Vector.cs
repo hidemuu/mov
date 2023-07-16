@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Models.Shapes
+namespace Mov.Core.Models.Dimensions
 {
     public class Vector<TSelf, T, D>
     where D : IDimension, new()

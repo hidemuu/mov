@@ -1,6 +1,4 @@
-﻿using Mov.Core.Models.Shapes.Coordinates.TwoDimensions;
-
-namespace Mov.Core.Models.Shapes.Coordinates.TwoDimensions.Vectors
+﻿namespace Mov.Core.Models.Dimensions.Coordinates.TwoDimensions.Vectors
 {
     internal class VectorRectangle2D : Vector2D
     {

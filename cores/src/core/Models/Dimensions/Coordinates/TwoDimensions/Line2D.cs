@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Models.Physics;
 
-namespace Mov.Core.Models.Shapes.Coordinates.TwoDimensions
+namespace Mov.Core.Models.Dimensions.Coordinates.TwoDimensions
 {
     public sealed class Line2D : ValueObjectBase<Line2D>
     {

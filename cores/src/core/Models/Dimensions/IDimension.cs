@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.Shapes
+﻿namespace Mov.Core.Models.Dimensions
 {
     public interface IDimension
     {

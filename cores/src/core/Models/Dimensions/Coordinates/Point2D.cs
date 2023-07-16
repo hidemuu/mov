@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Models.Shapes.Coordinates
+namespace Mov.Core.Models.Dimensions.Coordinates
 {
     public sealed class Point2D : ValueObjectBase<Point2D>
     {

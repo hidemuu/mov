@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Models.Physics;
+using Mov.Core.Models.Shapes;
 
-namespace Mov.Core.Models.Shapes.Coordinates.TwoDimensions
+namespace Mov.Core.Models.Dimensions.Coordinates.TwoDimensions
 {
     public sealed class Rectangle2D : ValueObjectBase<Rectangle2D>
     {

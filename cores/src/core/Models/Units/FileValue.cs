@@ -8,19 +8,13 @@ namespace Mov.Core.Models.Units
     /// </summary>
     public sealed class FileValue : ValueObjectBase<FileValue>
     {
-        #region 定数
-
-        private const string PATH_EXTENSION_JSON = "json";
-
-        private const string PATH_EXTENSION_XML = "xml";
-
-        private const string PATH_EXTENSION_CSV = "csv";
+        #region constrant
 
         private const string DELIMITER_CSV = ",";
 
-        #endregion 定数
+        #endregion constant
 
-        #region プロパティ
+        #region property
 
         /// <summary>
         /// フルパス
@@ -40,21 +34,21 @@ namespace Mov.Core.Models.Units
         /// <summary>
         /// 拡張子
         /// </summary>
-        public string FileExtension => System.IO.Path.GetExtension(Path);
+        public FileType FileType => new FileType(System.IO.Path.GetExtension(Path));
 
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
         public FileValue(string path)
         {
             Path = path;
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region メソッド
+        #region method
 
         public bool IsEmpty() => string.IsNullOrEmpty(Path);
 
@@ -64,11 +58,11 @@ namespace Mov.Core.Models.Units
 
         public bool IsFileName() => Path.Equals(FileName, StringComparison.Ordinal);
 
-        public bool IsCsvFile() => IsFile() && FileExtension.Equals(PATH_EXTENSION_CSV, StringComparison.Ordinal);
+        public bool IsCsvFile() => IsFile() && FileType.IsCsv();
 
-        public bool IsXmlFile() => IsFile() && FileExtension.Equals(PATH_EXTENSION_XML, StringComparison.Ordinal);
+        public bool IsXmlFile() => IsFile() && FileType.IsXml();
 
-        public bool IsJsonFile() => IsFile() && FileExtension.Equals(PATH_EXTENSION_JSON, StringComparison.Ordinal);
+        public bool IsJsonFile() => IsFile() && FileType.IsJson();
 
         public bool Exists()
         {
@@ -99,9 +93,9 @@ namespace Mov.Core.Models.Units
             return GetDirectorySize(dirInfo);
         }
 
-        #endregion メソッド
+        #endregion method
 
-        #region 内部メソッド
+        #region protected method
 
         protected override bool EqualCore(FileValue other)
         {
@@ -129,7 +123,7 @@ namespace Mov.Core.Models.Units
             return size;
         }
 
-        #endregion 内部メソッド
+        #endregion protected method
 
     }
 }

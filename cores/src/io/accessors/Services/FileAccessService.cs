@@ -161,7 +161,7 @@ namespace Mov.Core.Accessors.Services
         {
             var result = "";
             //バックアップパス生成
-            var backupPath = backupDirectory + @"\" + FileParameter.FileUnit.FileName + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + FileParameter.FileUnit.FileExtension;
+            var backupPath = backupDirectory + @"\" + FileParameter.FileUnit.FileName + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + FileParameter.FileUnit.FileType;
 
             //バックアップフォルダ生成（存在しない場合のみ）
             if (!Directory.Exists(backupDirectory))

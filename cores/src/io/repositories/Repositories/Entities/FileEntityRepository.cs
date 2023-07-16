@@ -39,22 +39,25 @@ namespace Mov.Core.Repositories.Repositories.Entities
         /// <param name="encode"></param>
         public FileEntityRepository(IAccessService context)
         {
-            var extension = context.FileParameter.FileUnit.FileExtension;
-            if (string.IsNullOrEmpty(extension)) Debug.Assert(false, "拡張子が含まれていません");
-            switch (extension)
+            var type = context.FileParameter.FileUnit.FileType;
+            if (type.InNan()) { 
+                Debug.Assert(false, "拡張子が含まれていません");
+            }
+            else if (type.IsJson())
             {
-                case AccessConstants.PATH_EXTENSION_JSON:
-                    serializer = new JsonSerializer(context);
-                    break;
-                case AccessConstants.PATH_EXTENSION_XML:
-                    serializer = new XmlSerializer(context);
-                    break;
-                case AccessConstants.PATH_EXTENSION_CSV:
-                    serializer = new CsvSerializer(context);
-                    break;
-                default:
-                    Debug.Assert(false, "拡張子が不正です");
-                    break;
+                serializer = new JsonSerializer(context);
+            }
+            else if (type.IsJson())
+            {
+                serializer = new XmlSerializer(context);
+            }
+            else if (type.IsCsv())
+            {
+                serializer = new CsvSerializer(context);
+            }
+            else
+            {
+                Debug.Assert(false, "拡張子が不正です");
             }
         }
 

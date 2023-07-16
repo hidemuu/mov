@@ -3,7 +3,7 @@ using Mov.Core.Models.Personals.Entities;
 using Mov.Core.Templates.Builders;
 using System;
 
-namespace Mov.Core.Models.Personals.Builders.Fluents
+namespace Mov.Core.Models.Personals.Builders
 {
     public abstract class PersonBuilder : IBuilder<Person>
     {

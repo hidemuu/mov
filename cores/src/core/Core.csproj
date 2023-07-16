@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Contexts\Products\Car\ValueObjects\" />
+    <Folder Include="Models\Structures\ValueObjects\" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
-﻿using Mov.Core.Contexts.Shapes;
-using Mov.Core.Graphicers.Shapes.Policies;
+﻿using Mov.Core.Graphicers.Shapes.Policies;
+using Mov.Core.Models.Shapes;
 using System;
 using System.Collections.Generic;
 

@@ -1,7 +1,7 @@
 ﻿using Mov.Core.Models.DbObjects.Entities;
 using System;
 
-namespace Mov.Bom.Models.Entities.Schemas
+namespace Mov.Bom.Models.Schemas
 {
     /// <summary>
     /// Represents a customer.

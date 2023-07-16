@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Models.DbObjects.Entities;
 
-namespace Mov.Bom.Models.Entities.Schemas
+namespace Mov.Bom.Models.Schemas
 {
     /// <summary>
     /// Represents a product.

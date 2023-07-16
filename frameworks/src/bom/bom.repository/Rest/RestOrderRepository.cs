@@ -1,5 +1,5 @@
 ﻿using Mov.Bom.Models;
-using Mov.Bom.Models.Entities.Schemas;
+using Mov.Bom.Models.Schemas;
 using Mov.Core.Accessors.Services;
 using Mov.Core.Accessors.Services.Serializer.Implements;
 using System;

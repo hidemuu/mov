@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using System;
 
-namespace Mov.Bom.Models.Entities.Schemas
+namespace Mov.Bom.Models.Schemas
 {
     /// <summary>
     /// Represents a line item (product + quantity) on an order.

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Mov.Bom.Models.Entities.Schemas
+namespace Mov.Bom.Models.Schemas
 {
     /// <summary>
     /// Represents a customer order.

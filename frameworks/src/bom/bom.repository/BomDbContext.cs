@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Mov.Bom.Models.Entities.Schemas;
+using Mov.Bom.Models.Schemas;
 
 namespace Mov.Bom.Repository
 {

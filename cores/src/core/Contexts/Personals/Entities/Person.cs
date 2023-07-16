@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Contexts.Personals.ValueObjects;
-using Mov.Core.Models.Units;
+using Mov.Core.Models.Worlds;
 using System;
 
 namespace Mov.Core.Contexts.Personals.Entities

@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Contexts.Layouts.ValueObjects;
-using Mov.Core.Models.Units;
+using Mov.Core.Models.Styles;
 using Mov.Core.Models.Units.Sizes;
 
 namespace Mov.Core.Layouts.Models.Shells

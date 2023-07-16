@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.Units
+﻿namespace Mov.Core.Models.Worlds
 {
     public sealed class Money
     {

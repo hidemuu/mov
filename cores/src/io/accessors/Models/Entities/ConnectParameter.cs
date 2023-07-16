@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.Units;
+﻿using Mov.Core.Models.Networks;
 
 namespace Mov.Core.Accessors.Models.Entities
 {

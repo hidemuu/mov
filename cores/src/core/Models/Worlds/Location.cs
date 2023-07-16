@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.Units
+﻿namespace Mov.Core.Models.Worlds
 {
     public sealed class Location : ValueObjectBase<Location>
     {
@@ -27,15 +27,15 @@
 
         #region method
 
-        public bool IsNan => !IsEN && !IsJP && !IsCN; 
+        public bool IsNan => !IsEN && !IsJP && !IsCN;
 
-        public bool IsEmpty => this.Equals(Empty);
+        public bool IsEmpty => Equals(Empty);
 
-        public bool IsEN => this.Equals(EN);
+        public bool IsEN => Equals(EN);
 
-        public bool IsJP => this.Equals(JP);
+        public bool IsJP => Equals(JP);
 
-        public bool IsCN => this.Equals(CN);
+        public bool IsCN => Equals(CN);
 
         #endregion method
 
@@ -43,12 +43,12 @@
 
         protected override bool EqualCore(Location other)
         {
-            return this.Value.Equals(other.Value);
+            return Value.Equals(other.Value);
         }
 
         protected override int GetHashCodeCore()
         {
-            return this.Value.GetHashCode();
+            return Value.GetHashCode();
         }
 
         #endregion protected method

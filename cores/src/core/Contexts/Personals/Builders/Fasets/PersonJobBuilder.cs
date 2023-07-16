@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Contexts.Personals.Entities;
 using Mov.Core.Contexts.Personals.ValueObjects;
 using Mov.Core.Models.Units;
+using Mov.Core.Models.Worlds;
 
 namespace Mov.Core.Contexts.Personals.Builders.Fasets
 {

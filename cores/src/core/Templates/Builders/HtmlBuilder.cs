@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models;
+﻿using Mov.Core.Models.Networks;
 
 namespace Mov.Core.Templates.Builders
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Core.Models
+namespace Mov.Core.Models.Networks
 {
     public class HtmlElement
     {

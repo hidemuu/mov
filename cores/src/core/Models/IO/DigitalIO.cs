@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace Mov.Core.Models.Units.IO
+namespace Mov.Core.Models.IO
 {
     /// <summary>
     /// デジタルI/O　１点分の情報

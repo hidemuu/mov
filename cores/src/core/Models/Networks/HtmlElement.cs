@@ -4,22 +4,37 @@ using System.Text;
 
 namespace Mov.Core.Models.Networks
 {
-    public class HtmlElement
+    public sealed class HtmlElement : ValueObjectBase<HtmlElement>
     {
-        public string Name, Text;
-        public List<HtmlElement> Elements = new List<HtmlElement>();
+        #region constant
+
         private const int indentSize = 2;
 
-        public HtmlElement()
-        {
+        #endregion constant
 
-        }
+        #region property
+
+        public string Name { get; }
+
+        public string Text { get; }
+
+        public List<HtmlElement> Elements { get; } = new List<HtmlElement>();
+
+        #endregion property
+
+        #region constructor
 
         public HtmlElement(string name, string text)
         {
             Name = name ?? throw new ArgumentNullException(paramName: nameof(name));
             Text = text ?? throw new ArgumentNullException(paramName: nameof(text));
         }
+
+        public static HtmlElement Empty = new HtmlElement(string.Empty, string.Empty);
+
+        #endregion constructor
+
+        #region method
 
         private string ToStringImpl(int indent)
         {
@@ -44,6 +59,18 @@ namespace Mov.Core.Models.Networks
         {
             return ToStringImpl(0);
         }
+
+        protected override bool EqualCore(HtmlElement other)
+        {
+            return this.Name.Equals(other.Name, StringComparison.Ordinal) && this.Text.Equals(other.Text, StringComparison.Ordinal);
+        }
+
+        protected override int GetHashCodeCore()
+        {
+            return CreateHashCode(this.Name.GetHashCode(), this.Text.GetHashCode());
+        }
+
+        #endregion property
     }
 
 

@@ -69,7 +69,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "game", "game", "{30805ED3-7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{1ADB4F38-9501-4EEB-BC96-A67D2BAFD490}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "app\Api\Api.csproj", "{7E92519D-83EA-483F-BE8A-5CB0B4A91927}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "app\api\Api.csproj", "{7E92519D-83EA-483F-BE8A-5CB0B4A91927}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

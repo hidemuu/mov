@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace Mov.AspApi.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -27,6 +30,10 @@ namespace Mov.AspApi.Controllers
 
         #region constructor
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="logger"></param>
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             this.logger = logger;
@@ -36,6 +43,10 @@ namespace Mov.AspApi.Controllers
 
         #region method
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {

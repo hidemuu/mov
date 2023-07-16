@@ -6,6 +6,9 @@ using System.Collections.Generic;
 
 namespace Mov.AspApi.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ConfigController : ControllerBase
@@ -18,6 +21,10 @@ namespace Mov.AspApi.Controllers
 
         #region constructor
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="repository"></param>
         public ConfigController(IConfiguratorRepository repository)
         {
             this.repository = repository;
@@ -46,9 +53,6 @@ namespace Mov.AspApi.Controllers
             return Ok();
         }
 
-        /// <summary>
-        /// Deletes an order.
-        /// </summary>
         //[HttpDelete]
         //public async Task<IActionResult> Delete(ConfigSchema item)
         //{

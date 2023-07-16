@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Mov.AspApi.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class TranslateController : ControllerBase
@@ -21,6 +24,10 @@ namespace Mov.AspApi.Controllers
 
         #region constructor
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="repository"></param>
         public TranslateController(ITranslatorRepository repository)
         {
             this.repository = repository;
@@ -49,9 +56,6 @@ namespace Mov.AspApi.Controllers
             return Ok();
         }
 
-        /// <summary>
-        /// Deletes an order.
-        /// </summary>
         //[HttpDelete]
         //public async Task<IActionResult> Delete(ConfigSchema item)
         //{

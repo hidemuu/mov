@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Mov.AspApi.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class LandmarkController : ControllerBase
@@ -20,6 +23,10 @@ namespace Mov.AspApi.Controllers
 
         #region constructor
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="repository"></param>
         public LandmarkController(IGameRepository repository)
         {
             this.repository = repository;
@@ -49,9 +56,6 @@ namespace Mov.AspApi.Controllers
             return Ok();
         }
 
-        /// <summary>
-        /// Deletes an order.
-        /// </summary>
         //[HttpDelete("{date}")]
         //public async Task<IActionResult> Delete(LandmarkSchema item)
         //{

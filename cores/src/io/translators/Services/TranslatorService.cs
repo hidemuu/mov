@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Models.Keys;
-using Mov.Core.Models.Worlds;
+using Mov.Core.Models.Locations;
 using Mov.Core.Templates;
 using Mov.Core.Translators.Models;
 using Mov.Core.Translators.Models.Entities;
@@ -25,7 +25,7 @@ namespace Mov.Core.Translators.Services
 
         #region method
 
-        public string Get(IdentifierCode code, Location location)
+        public string Get(IdentifierCode code, Language location)
         {
             var content = this.database.Get(code);
             return content.Get(location).Description.Value;

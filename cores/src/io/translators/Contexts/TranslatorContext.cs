@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Models.Keys;
-using Mov.Core.Models.Worlds;
+using Mov.Core.Models.Locations;
 using Mov.Core.Translators.Repositories;
 using Mov.Core.Translators.Services;
 using System;
@@ -43,7 +43,7 @@ namespace Mov.Core.Translators.Contexts
             instance = new TranslatorContext(endpoint);
         }
 
-        public string Get(string code, Location location)
+        public string Get(string code, Language location)
         {
             return this.service.Get(new IdentifierCode(code), location);
         }

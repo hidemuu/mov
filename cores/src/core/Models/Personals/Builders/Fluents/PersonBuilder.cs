@@ -1,5 +1,5 @@
-﻿using Mov.Core.Models.Personals.Entities;
-using Mov.Core.Models.Worlds;
+﻿using Mov.Core.Models.Locations;
+using Mov.Core.Models.Personals.Entities;
 using Mov.Core.Templates.Builders;
 using System;
 

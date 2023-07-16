@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Models.Keys;
-using Mov.Core.Models.Worlds;
+using Mov.Core.Models.Locations;
 using Mov.Core.Translators.Models.ValueObjects;
 using System;
 using System.Collections.Generic;
@@ -38,7 +38,7 @@ namespace Mov.Core.Translators.Models.Entities
 
         #region method
 
-        public LocalizeInfo Get(Location location)
+        public LocalizeInfo Get(Language location)
         {
             return Infos.FirstOrDefault(x => x.Location.Equals(location));
         }

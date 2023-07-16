@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.Worlds;
+﻿using Mov.Core.Models.Locations;
 using System;
 
 namespace Mov.Core.Models.Personals.Entities

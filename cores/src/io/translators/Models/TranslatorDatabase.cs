@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Models.Keys;
 using Mov.Core.Models.Texts;
-using Mov.Core.Models.Worlds;
+using Mov.Core.Models.Locations;
 using Mov.Core.Templates;
 using Mov.Core.Translators.Models.Entities;
 using Mov.Core.Translators.Models.ValueObjects;
@@ -33,7 +33,7 @@ namespace Mov.Core.Translators.Models
                         new Identifier(translate.Id),
                         new IdentifierIndex(translate.Index),
                         new IdentifierCode(translate.Code),
-                        new[] { new LocalizeInfo(Location.EN, new Info(translate.EN)), new LocalizeInfo(Location.JP, new Info(translate.JP)) }
+                        new[] { new LocalizeInfo(Language.EN, new Info(translate.EN)), new LocalizeInfo(Language.JP, new Info(translate.JP)) }
                         )
                     );
             }

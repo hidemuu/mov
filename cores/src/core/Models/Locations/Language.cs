@@ -1,6 +1,6 @@
-﻿namespace Mov.Core.Models.Worlds
+﻿namespace Mov.Core.Models.Locations
 {
-    public sealed class Location : ValueObjectBase<Location>
+    public sealed class Language : ValueObjectBase<Language>
     {
         #region property
 
@@ -10,18 +10,18 @@
 
         #region constructor
 
-        public Location(int value)
+        public Language(int value)
         {
             Value = value;
         }
 
-        public static readonly Location Empty = new Location(-1);
+        public static readonly Language Empty = new Language(-1);
 
-        public static readonly Location EN = new Location(0);
+        public static readonly Language EN = new Language(0);
 
-        public static readonly Location JP = new Location(1);
+        public static readonly Language JP = new Language(1);
 
-        public static readonly Location CN = new Location(2);
+        public static readonly Language CN = new Language(2);
 
         #endregion constructor
 
@@ -41,7 +41,7 @@
 
         #region protected method
 
-        protected override bool EqualCore(Location other)
+        protected override bool EqualCore(Language other)
         {
             return Value.Equals(other.Value);
         }

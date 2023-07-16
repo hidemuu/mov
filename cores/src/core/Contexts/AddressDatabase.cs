@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Models.Keys;
-using Mov.Core.Models.Personals;
+using Mov.Core.Models.Locations;
 using Mov.Core.Templates;
 using System;
 using System.Threading;

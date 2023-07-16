@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Models.Keys;
-using Mov.Core.Models.Worlds;
+using Mov.Core.Models.Locations;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +13,7 @@ namespace Mov.Core.Translators.Services
             
         }
 
-        public string Get(IdentifierCode code, Location location)
+        public string Get(IdentifierCode code, Language location)
         {
             return string.Empty;
         }

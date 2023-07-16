@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Models;
 using Mov.Core.Models.Texts;
-using Mov.Core.Models.Worlds;
+using Mov.Core.Models.Locations;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,7 +11,7 @@ namespace Mov.Core.Translators.Models.ValueObjects
     {
         #region property
 
-        public Location Location { get; } = Location.Empty;
+        public Language Location { get; } = Language.Empty;
 
         public Info Description { get; } = Info.Empty;
 
@@ -19,13 +19,13 @@ namespace Mov.Core.Translators.Models.ValueObjects
 
         #region constructor
 
-        public LocalizeInfo(Location location, Info description)
+        public LocalizeInfo(Language location, Info description)
         {
             Location = location;
             Description = description;
         }
 
-        public readonly static LocalizeInfo Empty = new LocalizeInfo(Location.Empty, Info.Empty);
+        public readonly static LocalizeInfo Empty = new LocalizeInfo(Language.Empty, Info.Empty);
 
         #endregion constructor
 

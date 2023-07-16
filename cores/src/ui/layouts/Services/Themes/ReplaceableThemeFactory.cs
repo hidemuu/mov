@@ -1,5 +1,5 @@
-﻿using Mov.Core.Contexts.Layouts.ValueObjects;
-using Mov.Core.Models;
+﻿using Mov.Core.Models;
+using Mov.Core.Models.Styles;
 using System;
 using System.Collections.Generic;
 

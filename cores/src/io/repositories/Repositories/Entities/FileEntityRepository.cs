@@ -1,7 +1,7 @@
 ﻿using Mov.Core.Accessors;
 using Mov.Core.Accessors.Services.Serializer;
 using Mov.Core.Accessors.Services.Serializer.Implements;
-using Mov.Core.Contexts.DbObjects;
+using Mov.Core.Models.DbObjects;
 using Mov.Core.Templates.Repositories;
 using System;
 using System.Collections.Generic;

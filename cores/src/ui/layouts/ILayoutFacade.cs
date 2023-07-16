@@ -1,6 +1,6 @@
-﻿using Mov.Core.Contexts.Layouts.ValueObjects;
-using Mov.Core.Layouts.Models.Nodes;
+﻿using Mov.Core.Layouts.Models.Nodes;
 using Mov.Core.Layouts.Models.Shells;
+using Mov.Core.Models.Styles;
 using System.Collections.Generic;
 
 namespace Mov.Core.Layouts

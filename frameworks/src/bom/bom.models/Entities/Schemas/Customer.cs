@@ -1,4 +1,4 @@
-﻿using Mov.Core.Contexts.DbObjects.Entities;
+﻿using Mov.Core.Models.DbObjects.Entities;
 using System;
 
 namespace Mov.Bom.Models.Entities.Schemas

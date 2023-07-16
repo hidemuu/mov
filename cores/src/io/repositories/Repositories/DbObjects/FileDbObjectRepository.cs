@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Accessors.Services;
-using Mov.Core.Contexts.DbObjects.Entities;
+using Mov.Core.Models.DbObjects.Entities;
 using Mov.Core.Repositories.Repositories.Entities;
 using Mov.Core.Templates.Repositories;
 using System;

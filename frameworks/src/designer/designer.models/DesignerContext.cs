@@ -1,5 +1,4 @@
-﻿using Mov.Core.Contexts.Layouts.ValueObjects;
-using Mov.Core.Layouts;
+﻿using Mov.Core.Layouts;
 using Mov.Core.Layouts.Models.Contents;
 using Mov.Core.Layouts.Models.Nodes;
 using Mov.Core.Layouts.Models.Shells;

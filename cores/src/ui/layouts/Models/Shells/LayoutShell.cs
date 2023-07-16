@@ -1,5 +1,4 @@
-﻿using Mov.Core.Contexts.Layouts.ValueObjects;
-using Mov.Core.Models.Physics.Sizes;
+﻿using Mov.Core.Models.Physics.Sizes;
 using Mov.Core.Models.Styles;
 
 namespace Mov.Core.Layouts.Models.Shells

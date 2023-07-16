@@ -1,5 +1,4 @@
 ﻿using Mov.Core.Attributes;
-using Mov.Core.Contexts.DbObjects.Entities;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -9,6 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
 using System.Linq;
+using Mov.Core.Models.DbObjects.Entities;
 
 namespace Mov.Core.Configurators.Repositories.Schemas
 {

@@ -5,6 +5,6 @@ namespace Mov.Core.Contexts.Products.Car
 {
     public interface ISpecifyWheelSize
     {
-        IBuilder<Car> WithWheels(LengthUnit size);
+        IBuilder<Car> WithWheels(LengthValue size);
     }
 }

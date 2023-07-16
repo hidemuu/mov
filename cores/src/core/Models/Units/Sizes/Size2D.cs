@@ -4,16 +4,16 @@
     {
         public static Size2D Default = new Size2D(0, 0);
 
-        public LengthUnit Height { get; }
+        public LengthValue Height { get; }
 
-        public LengthUnit Width { get; }
+        public LengthValue Width { get; }
 
         public double Area => Width.Value * Height.Value;
 
         public Size2D(double width, double height)
         {
-            Width = new LengthUnit(width);
-            Height = new LengthUnit(height);
+            Width = new LengthValue(width);
+            Height = new LengthValue(height);
 
         }
 

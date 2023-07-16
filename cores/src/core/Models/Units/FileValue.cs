@@ -6,7 +6,7 @@ namespace Mov.Core.Models.Units
     /// <summary>
     /// ファイルのValueObject
     /// </summary>
-    public sealed class FileUnit : ValueObjectBase<FileUnit>
+    public sealed class FileValue : ValueObjectBase<FileValue>
     {
         #region 定数
 
@@ -47,7 +47,7 @@ namespace Mov.Core.Models.Units
 
         #region コンストラクター
 
-        public FileUnit(string path)
+        public FileValue(string path)
         {
             Path = path;
         }
@@ -103,7 +103,7 @@ namespace Mov.Core.Models.Units
 
         #region 内部メソッド
 
-        protected override bool EqualCore(FileUnit other)
+        protected override bool EqualCore(FileValue other)
         {
             return Path.Equals(other.Path, StringComparison.Ordinal);
         }

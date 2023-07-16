@@ -8,9 +8,9 @@
 
         public Point2D CenterPoint { get; }
 
-        public LengthUnit Width { get; }
+        public LengthValue Width { get; }
 
-        public LengthUnit Height { get; }
+        public LengthValue Height { get; }
 
 
 
@@ -18,18 +18,18 @@
         {
             UpperLeftPoint = upperLeft;
             LowerRightPoint = lowerRight;
-            CenterPoint = Point2D.Factory.New(new CoordinateUnit((lowerRight.X.Value + upperLeft.X.Value) / 2), new CoordinateUnit((lowerRight.Y.Value + upperLeft.Y.Value) / 2));
-            Width = new LengthUnit((double)(lowerRight.X.Value - upperLeft.X.Value));
-            Height = new LengthUnit((double)(lowerRight.Y.Value - upperLeft.Y.Value));
+            CenterPoint = Point2D.Factory.New(new CoordinateValue((lowerRight.X.Value + upperLeft.X.Value) / 2), new CoordinateValue((lowerRight.Y.Value + upperLeft.Y.Value) / 2));
+            Width = new LengthValue((double)(lowerRight.X.Value - upperLeft.X.Value));
+            Height = new LengthValue((double)(lowerRight.Y.Value - upperLeft.Y.Value));
         }
 
-        public Rectangle2D(Point2D center, LengthUnit width, LengthUnit height)
+        public Rectangle2D(Point2D center, LengthValue width, LengthValue height)
         {
             CenterPoint = center;
             Width = width;
             Height = height;
-            UpperLeftPoint = Point2D.Factory.New(new CoordinateUnit(center.X.Value - width.Value / 2), new CoordinateUnit(center.Y.Value + height.Value / 2));
-            LowerRightPoint = Point2D.Factory.New(new CoordinateUnit(center.X.Value + width.Value / 2), new CoordinateUnit(center.Y.Value - height.Value / 2));
+            UpperLeftPoint = Point2D.Factory.New(new CoordinateValue(center.X.Value - width.Value / 2), new CoordinateValue(center.Y.Value + height.Value / 2));
+            LowerRightPoint = Point2D.Factory.New(new CoordinateValue(center.X.Value + width.Value / 2), new CoordinateValue(center.Y.Value - height.Value / 2));
         }
 
         protected override bool EqualCore(Rectangle2D other)

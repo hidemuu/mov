@@ -1,8 +1,8 @@
 ﻿namespace Mov.Core.Models.Units
 {
-    public sealed class MarginUnit : ValueObjectBase<MarginUnit>
+    public sealed class MarginValue : ValueObjectBase<MarginValue>
     {
-        public static MarginUnit Default = new MarginUnit(0);
+        public static MarginValue Default = new MarginValue(0);
 
         #region プロパティ
 
@@ -12,7 +12,7 @@
 
         #region コンストラクター
 
-        public MarginUnit(int indent)
+        public MarginValue(int indent)
         {
             Value = indent;
         }
@@ -21,7 +21,7 @@
 
         #region メソッド
 
-        protected override bool EqualCore(MarginUnit other)
+        protected override bool EqualCore(MarginValue other)
         {
             return Value.Equals(other.Value);
         }

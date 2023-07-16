@@ -1,15 +1,17 @@
 ﻿namespace Mov.Core.Models.Units
 {
-    public sealed class AngleUnit : ValueObjectBase<AngleUnit>
+    public sealed class ThicknessValue : ValueObjectBase<ThicknessValue>
     {
+        public static ThicknessValue Default = new ThicknessValue(0);
+
         public double Value { get; }
 
-        public AngleUnit(double value)
+        public ThicknessValue(double value)
         {
             Value = value;
         }
 
-        protected override bool EqualCore(AngleUnit other)
+        protected override bool EqualCore(ThicknessValue other)
         {
             return Value.Equals(other.Value); ;
         }

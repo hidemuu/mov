@@ -2,17 +2,17 @@
 {
     public sealed class Point3D : ValueObjectBase<Point3D>
     {
-        public CoordinateUnit X { get; }
+        public CoordinateValue X { get; }
 
-        public CoordinateUnit Y { get; }
+        public CoordinateValue Y { get; }
 
-        public CoordinateUnit Z { get; }
+        public CoordinateValue Z { get; }
 
         public Point3D(double x, double y, double z)
         {
-            X = new CoordinateUnit(x);
-            Y = new CoordinateUnit(y);
-            Z = new CoordinateUnit(z);
+            X = new CoordinateValue(x);
+            Y = new CoordinateValue(y);
+            Z = new CoordinateValue(z);
         }
 
         protected override bool EqualCore(Point3D other)

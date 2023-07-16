@@ -69,7 +69,7 @@ namespace Mov.Designer.Models
             return new LayoutContent(
                         new LayoutContentKey(new IdentifierCode(content.Code), new ControlStyle(content.ControlType)),
                         new LayoutContentStatus(new Info(content.Name), new IconImage(content.Icon), VisibilityStyle.Visible, EnableStyle.Enable, new Parameter(content.Parameter)),
-                        new LayoutContentArrange(MarginUnit.Default, new Size2D(content.Width, content.Height), OrientationStyle.Horizontal, new HorizontalAlignmentStyle(content.HorizontalAlignment), new VerticalAlignmentStyle(content.VerticalAlignment)),
+                        new LayoutContentArrange(MarginValue.Default, new Size2D(content.Width, content.Height), OrientationStyle.Horizontal, new HorizontalAlignmentStyle(content.HorizontalAlignment), new VerticalAlignmentStyle(content.VerticalAlignment)),
                         new LayoutContentValue(new LayoutValue(content.Schema), new Variable(content.DefaultValue), new Macro(content.Macro)));
         }
 
@@ -77,7 +77,7 @@ namespace Mov.Designer.Models
         {
             foreach (var shell in repository.Shells.Get())
             {
-                yield return new LayoutShell(RegionStyle.Center, ColorStyle.Transrarent, ColorStyle.Transrarent, ThicknessUnit.Default, Size2D.Default);
+                yield return new LayoutShell(RegionStyle.Center, ColorStyle.Transrarent, ColorStyle.Transrarent, ThicknessValue.Default, Size2D.Default);
             }
         }
 

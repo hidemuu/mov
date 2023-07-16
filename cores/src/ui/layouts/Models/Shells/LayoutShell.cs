@@ -7,7 +7,7 @@ namespace Mov.Core.Layouts.Models.Shells
     public class LayoutShell
     {
         public static LayoutShell Empty = new LayoutShell(
-            RegionStyle.Center, ColorStyle.Transrarent, ColorStyle.Transrarent, ThicknessUnit.Default, Size2D.Default);
+            RegionStyle.Center, ColorStyle.Transrarent, ColorStyle.Transrarent, ThicknessValue.Default, Size2D.Default);
 
         public RegionStyle Region { get; }
 
@@ -15,11 +15,11 @@ namespace Mov.Core.Layouts.Models.Shells
 
         public ColorStyle BorderColor { get; }
 
-        public ThicknessUnit BorderThickness { get; }
+        public ThicknessValue BorderThickness { get; }
 
         public Size2D Size { get; }
 
-        public LayoutShell(RegionStyle region, ColorStyle background, ColorStyle border, ThicknessUnit thickness, Size2D size)
+        public LayoutShell(RegionStyle region, ColorStyle background, ColorStyle border, ThicknessValue thickness, Size2D size)
         {
             Region = region;
             BackgroundColor = background;

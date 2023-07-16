@@ -12,7 +12,7 @@ namespace Mov.Core.Contexts.Personals.Builders.Fluents
 
         protected Employment Employment { get; set; }
 
-        protected MoneyUnit AnnualIncome { get; set; }
+        protected Money AnnualIncome { get; set; }
 
         protected DateTime DateOfBirth { get; set; }
 

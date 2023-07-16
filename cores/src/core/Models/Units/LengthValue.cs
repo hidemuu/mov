@@ -1,17 +1,17 @@
 ﻿namespace Mov.Core.Models.Units
 {
-    public sealed class ThicknessUnit : ValueObjectBase<ThicknessUnit>
+    public sealed class LengthValue : ValueObjectBase<LengthValue>
     {
-        public static ThicknessUnit Default = new ThicknessUnit(0);
+        public static LengthValue Default = new LengthValue(0);
 
         public double Value { get; }
 
-        public ThicknessUnit(double value)
+        public LengthValue(double value)
         {
             Value = value;
         }
 
-        protected override bool EqualCore(ThicknessUnit other)
+        protected override bool EqualCore(LengthValue other)
         {
             return Value.Equals(other.Value); ;
         }

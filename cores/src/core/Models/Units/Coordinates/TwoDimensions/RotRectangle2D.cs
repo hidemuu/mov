@@ -4,14 +4,14 @@
     {
         public Point2D CenterPoint { get; }
 
-        public LengthUnit Width { get; }
+        public LengthValue Width { get; }
 
-        public LengthUnit Height { get; }
+        public LengthValue Height { get; }
 
-        public AngleUnit Angle { get; }
+        public AngleValue Angle { get; }
 
 
-        public RotRectangle2D(Point2D center, LengthUnit width, LengthUnit height, AngleUnit angle)
+        public RotRectangle2D(Point2D center, LengthValue width, LengthValue height, AngleValue angle)
         {
             CenterPoint = center;
             Width = width;

@@ -1,18 +1,15 @@
 ﻿namespace Mov.Core.Models.Units
 {
-    /// <summary>
-    /// 座標
-    /// </summary>
-    public sealed class CoordinateUnit : ValueObjectBase<CoordinateUnit>
+    public sealed class WeightValue : ValueObjectBase<WeightValue>
     {
-        public double Value { get; }
+        public decimal Value { get; }
 
-        public CoordinateUnit(double value)
+        public WeightValue(decimal value)
         {
             Value = value;
         }
 
-        protected override bool EqualCore(CoordinateUnit other)
+        protected override bool EqualCore(WeightValue other)
         {
             return Value.Equals(other.Value); ;
         }

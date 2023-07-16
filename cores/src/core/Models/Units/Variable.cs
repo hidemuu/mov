@@ -6,22 +6,22 @@ namespace Mov.Core.Models.Units
     {
         public static Variable Empty = new Variable("");
 
-        #region プロパティ
+        #region property
 
         public string Value { get; }
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
         public Variable(string parameter)
         {
             Value = parameter;
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region メソッド
+        #region method
 
         protected override bool EqualCore(Variable other)
         {
@@ -33,6 +33,6 @@ namespace Mov.Core.Models.Units
             return Value.GetHashCode();
         }
 
-        #endregion メソッド
+        #endregion method
     }
 }

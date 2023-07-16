@@ -4,11 +4,11 @@ namespace Mov.Core.Models.Units.Coordinates
 {
     public sealed class Point2D : ValueObjectBase<Point2D>
     {
-        public CoordinateUnit X { get; }
+        public CoordinateValue X { get; }
 
-        public CoordinateUnit Y { get; }
+        public CoordinateValue Y { get; }
 
-        private Point2D(CoordinateUnit x, CoordinateUnit y)
+        private Point2D(CoordinateValue x, CoordinateValue y)
         {
             X = x;
             Y = y;
@@ -16,19 +16,19 @@ namespace Mov.Core.Models.Units.Coordinates
 
         public static class Factory
         {
-            public static Point2D New(CoordinateUnit x, CoordinateUnit y)
+            public static Point2D New(CoordinateValue x, CoordinateValue y)
             {
                 return new Point2D(x, y);
             }
 
             public static Point2D NewCartesianPoint(double x, double y)
             {
-                return new Point2D(new CoordinateUnit(x), new CoordinateUnit(y));
+                return new Point2D(new CoordinateValue(x), new CoordinateValue(y));
             }
 
             public static Point2D NewPolarPoint(double rho, double theta)
             {
-                return new Point2D(new CoordinateUnit(rho * Math.Cos(theta)), new CoordinateUnit(rho * Math.Sin(theta)));
+                return new Point2D(new CoordinateValue(rho * Math.Cos(theta)), new CoordinateValue(rho * Math.Sin(theta)));
             }
         }
 

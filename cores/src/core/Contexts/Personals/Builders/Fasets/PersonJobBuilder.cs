@@ -25,7 +25,7 @@ namespace Mov.Core.Contexts.Personals.Builders.Fasets
 
         public PersonJobBuilder Earning(int annualIncome)
         {
-            person.AnnualIncome = new MoneyUnit(annualIncome);
+            person.AnnualIncome = new Money(annualIncome);
             return this;
         }
     }

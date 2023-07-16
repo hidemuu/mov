@@ -10,7 +10,7 @@ namespace Mov.Core.Accessors.Models.Entities
         /// <summary>
         /// ファイルパス
         /// </summary>
-        public FileUnit FileUnit { get; }
+        public FileValue FileUnit { get; }
 
         /// <summary>
         /// エンコード
@@ -23,7 +23,7 @@ namespace Mov.Core.Accessors.Models.Entities
 
         public FileParameter(string path, string encodeName = AccessConstants.ENCODE_NAME_UTF8)
         {
-            FileUnit = new FileUnit(path);
+            FileUnit = new FileValue(path);
             Encoding = Encoding.GetEncoding(encodeName);
         }
 

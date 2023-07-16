@@ -6,9 +6,9 @@
 
         public Point2D Point2 { get; }
 
-        public AngleUnit Angle { get; }
+        public AngleValue Angle { get; }
 
-        public Arc2D(Point2D point1, Point2D point2, AngleUnit angle)
+        public Arc2D(Point2D point1, Point2D point2, AngleValue angle)
         {
             Point1 = point1;
             Point2 = point2;

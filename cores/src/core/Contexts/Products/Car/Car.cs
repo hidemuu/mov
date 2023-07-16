@@ -9,9 +9,9 @@ namespace Mov.Core.Contexts.Products.Car
 
         public CarType CarType { get; }
 
-        public LengthUnit WheelSize { get; }
+        public LengthValue WheelSize { get; }
 
-        public Car(CarType carType, LengthUnit wheelSize)
+        public Car(CarType carType, LengthValue wheelSize)
         {
             CarType = carType;
             WheelSize = wheelSize;

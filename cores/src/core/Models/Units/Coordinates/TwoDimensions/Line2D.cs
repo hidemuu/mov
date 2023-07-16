@@ -6,13 +6,13 @@
 
         public Point2D End { get; }
 
-        public AngleUnit Angle { get; }
+        public AngleValue Angle { get; }
 
-        public LengthUnit Length { get; }
+        public LengthValue Length { get; }
 
-        public LengthUnit LengthX { get; }
+        public LengthValue LengthX { get; }
 
-        public LengthUnit LengthY { get; }
+        public LengthValue LengthY { get; }
 
 
 

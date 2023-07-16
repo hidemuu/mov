@@ -17,7 +17,7 @@ namespace Mov.Core.Contexts.Products.Car.Builders
         IBuilder<Car>
         {
             private CarType carType = CarType.Sedan;
-            private LengthUnit wheelSize = LengthUnit.Default;
+            private LengthValue wheelSize = LengthValue.Default;
 
             public ISpecifyWheelSize OfType(CarType type)
             {
@@ -25,7 +25,7 @@ namespace Mov.Core.Contexts.Products.Car.Builders
                 return this;
             }
 
-            public IBuilder<Car> WithWheels(LengthUnit size)
+            public IBuilder<Car> WithWheels(LengthValue size)
             {
                 if (carType.Equals(CarType.Sedan))
                 {

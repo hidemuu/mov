@@ -1,10 +1,10 @@
 ﻿namespace Mov.Core.Models.Units
 {
-    public sealed class MoneyUnit
+    public sealed class Money
     {
         public double Value { get; }
 
-        public MoneyUnit(double value)
+        public Money(double value)
         {
             Value = value;
         }

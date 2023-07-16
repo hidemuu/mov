@@ -6,7 +6,7 @@ namespace Mov.Core.Models.Units
     /// <summary>
     /// IPアドレスのValueObject
     /// </summary>
-    public sealed class IpAddressUnit : ValueObjectBase<IpAddressUnit>
+    public sealed class IpAddressValue : ValueObjectBase<IpAddressValue>
     {
         #region プロパティ
 
@@ -18,7 +18,7 @@ namespace Mov.Core.Models.Units
 
         #region コンストラクター
 
-        public IpAddressUnit(string ip)
+        public IpAddressValue(string ip)
         {
             Value = ip;
             if (!IPAddress.TryParse(ip, out IPAddress ipAddress))
@@ -39,7 +39,7 @@ namespace Mov.Core.Models.Units
 
         #region 内部メソッド
 
-        protected override bool EqualCore(IpAddressUnit other)
+        protected override bool EqualCore(IpAddressValue other)
         {
             return Value.Equals(other.Value, StringComparison.Ordinal);
         }

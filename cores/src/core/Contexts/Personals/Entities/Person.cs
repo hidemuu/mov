@@ -12,7 +12,7 @@ namespace Mov.Core.Contexts.Personals.Entities
 
         public Employment Employment { get; set; }
 
-        public MoneyUnit AnnualIncome { get; set; }
+        public Money AnnualIncome { get; set; }
 
         public DateTime DateOfBirth { get; set; }
 

@@ -7,7 +7,7 @@ namespace Mov.Core.Accessors.Models.Entities
         #region property
 
         /// <inheritdoc />
-        public IpAddressUnit Host { get; }
+        public IpAddressValue Host { get; }
 
         /// <inheritdoc />
         public int Port { get; }
@@ -27,7 +27,7 @@ namespace Mov.Core.Accessors.Models.Entities
 
         public ConnectParameter(string ip, int port, string userName, string password, double timeout)
         {
-            Host = new IpAddressUnit(ip);
+            Host = new IpAddressValue(ip);
             Port = port;
             UserName = userName;
             Password = password;

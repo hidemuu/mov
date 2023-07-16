@@ -12,10 +12,10 @@ service.AddEndpointsApiExplorer();
 service.AddSwaggerGen(option =>
 {
     // XMLファイルのパスを取得
-    //var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    //var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     // XMLファイルをドキュメントコメントとして登録
-    //option.IncludeXmlComments(xmlPath);
+    option.IncludeXmlComments(xmlPath);
     option.SwaggerDoc("mov", new OpenApiInfo { Title = "Mov", Version = "v1" });
 });
 

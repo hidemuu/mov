@@ -59,8 +59,9 @@ namespace Mov.AspApi
 
             services.AddSwaggerGen(c =>
             {
-                var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
                 //c.SwaggerDoc("v1", new OpenApiInfo { Title = "Mov.Api", Version = "v1" });
             });
         }
@@ -78,9 +79,17 @@ namespace Mov.AspApi
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHsts();
+            }
 
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Mov.Api v1"));
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Mov.Api v1");
+                //c.RoutePrefix = string.Empty;
+            });
 
             app.UseHttpsRedirection();
 
@@ -91,6 +100,10 @@ namespace Mov.AspApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                //endpoints.MapGet("/testGet", () => "This is a GET");
+                //endpoints.MapPost("/testPost", () => "This is a POST");
+                //endpoints.MapPut("/testPut", () => "This is a PUT");
+                //endpoints.MapDelete("/testDelete", () => "This is a DELETE");
             });
         }
 

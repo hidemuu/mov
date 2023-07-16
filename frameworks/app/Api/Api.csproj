@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\game\game.models\Game.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Core">
+      <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Configurators">
+      <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Configurators.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Translators">
+      <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Translators.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

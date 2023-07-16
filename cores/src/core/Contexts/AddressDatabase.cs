@@ -25,7 +25,7 @@ namespace Mov.Core.Contexts
 
         public Address Get(Guid id)
         {
-            return new Address();
+            return Address.Empty;
         }
 
         public void Post(Address address)

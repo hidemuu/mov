@@ -5,25 +5,49 @@ namespace Mov.Core.Models.Locations
     [Serializable]
     public sealed class Address : ValueObjectBase<Address>
     {
-        public string StreetAddress { get; set; }
+        #region property
 
-        public string Postcode { get; set; }
+        public string StreetAddress { get; }
 
-        public string City { get; set; }
+        public string Postcode { get; }
+
+        public string City { get; }
+
+        #endregion property
+
+        #region constructor
+
+        public Address(string streetAddress, string postCode, string city)
+        {
+            this.StreetAddress = streetAddress;
+            this.Postcode = postCode;
+            this.City = city;
+        }
+
+        public static Address Empty = new Address(string.Empty, string.Empty, string.Empty);
+
+        #endregion constructor
+
+        #region method
 
         public override string ToString()
         {
-            return $"{nameof(StreetAddress)}: {StreetAddress}, {nameof(Postcode)}: {Postcode}";
+            return $"{nameof(this.StreetAddress)}: {this.StreetAddress}, {nameof(this.Postcode)}: {this.Postcode}";
         }
 
         protected override bool EqualCore(Address other)
         {
-            throw new NotImplementedException();
+            return 
+                this.StreetAddress.Equals(other.StreetAddress, StringComparison.Ordinal) && 
+                this.Postcode.Equals(other.Postcode, StringComparison.Ordinal) &&
+                this.City.Equals(other.City, StringComparison.Ordinal);
         }
 
         protected override int GetHashCodeCore()
         {
-            throw new NotImplementedException();
+            return CreateHashCode(this.StreetAddress.GetHashCode(), this.Postcode.GetHashCode(), this.City.GetHashCode());
         }
+
+        #endregion method
     }
 }

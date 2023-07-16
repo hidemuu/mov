@@ -21,8 +21,8 @@ namespace Mov.Core.Configurators.Repositories
 
         #region constructor
 
-        public FileConfiguratorRepository(string endpoint, string fileDir, string extension, string encoding = CoreConstants.ENCODE_NAME_UTF8)
-            : base(endpoint, fileDir, extension, encoding)
+        public FileConfiguratorRepository(string endpoint, string extension, string encoding = CoreConstants.ENCODE_NAME_UTF8)
+            : base(endpoint, extension, encoding)
         {
             Configs = new FileDbObjectRepository<ConfigSchema, ConfigSchemaCollection>(GetPath("config"), encoding);
         }

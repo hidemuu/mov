@@ -7,16 +7,14 @@ namespace Mov.Core.Repositories.Repositories.Domains
     {
         #region field
 
-        protected readonly string endpoint;
-
-        protected readonly string fileDir;
+        protected string Endpoint { get; }
 
         /// <summary>
         /// 拡張子
         /// </summary>
-        protected readonly string extension;
+        protected string Extension { get; }
 
-        protected readonly string encoding;
+        protected string Encoding { get; }
 
         #endregion field
 
@@ -32,12 +30,11 @@ namespace Mov.Core.Repositories.Repositories.Domains
         /// コンストラクター
         /// </summary>
         /// <param name="extension"></param>
-        public FileDomainRepositoryBase(string endpoint, string fileDir, string extension, string encoding)
+        public FileDomainRepositoryBase(string endpoint, string extension, string encoding)
         {
-            this.endpoint = endpoint;
-            this.fileDir = fileDir;
-            this.extension = extension;
-            this.encoding = encoding;
+            this.Endpoint = endpoint;
+            this.Extension = extension;
+            this.Encoding = encoding;
         }
 
         #endregion constructor
@@ -48,14 +45,14 @@ namespace Mov.Core.Repositories.Repositories.Domains
         /// 相対パスを取得
         /// </summary>
         /// <returns></returns>
-        public string GetRelativePath() => Path.Combine(endpoint, DomainPath);
+        public string GetRelativePath() => Path.Combine(Endpoint, DomainPath);
 
         /// <summary>
         /// フルパスを取得
         /// </summary>
         /// <param name="fileName">ファイル名</param>
         /// <returns></returns>
-        protected string GetPath(string fileName) => Path.Combine(GetRelativePath(), fileDir, fileName) + "." + extension;
+        protected string GetPath(string fileName) => Path.Combine(GetRelativePath(), fileName) + "." + Extension;
 
         #endregion method
     }

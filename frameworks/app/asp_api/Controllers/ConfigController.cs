@@ -1,26 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Mov.Game.Models;
-using Mov.Game.Models.Schemas;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+using Mov.Core.Configurators.Repositories.Schemas;
+using Mov.Core.Configurators;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Mov.AspApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LandmarkController : ControllerBase
+    public class ConfigController : ControllerBase
     {
         #region field
 
-        private readonly IGameRepository repository;
+        private readonly IConfiguratorRepository repository;
 
         #endregion field
 
         #region constructor
 
-        public LandmarkController(IGameRepository repository)
+        public ConfigController(IConfiguratorRepository repository)
         {
             this.repository = repository;
         }
@@ -33,29 +31,28 @@ namespace Mov.AspApi.Controllers
         /// Gets all items.
         /// </summary>
         [HttpGet]
-        public async Task<IEnumerable<LandmarkSchema>> Get()
+        public async Task<IEnumerable<ConfigSchema>> Get()
         {
-            return await this.repository.Landmarks.GetAsync();
+            return await this.repository.Configs.GetAsync();
         }
 
-        
         /// <summary>
         /// Creates a new item or updates an existing one.
         /// </summary>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] LandmarkSchema item)
+        public async Task<IActionResult> Post([FromBody] ConfigSchema item)
         {
-            await this.repository.Landmarks.PostAsync(item);
+            await this.repository.Configs.PostAsync(item);
             return Ok();
         }
 
         /// <summary>
         /// Deletes an order.
         /// </summary>
-        //[HttpDelete("{date}")]
-        //public async Task<IActionResult> Delete(LandmarkSchema item)
+        //[HttpDelete]
+        //public async Task<IActionResult> Delete(ConfigSchema item)
         //{
-        //    await this.repository.Landmarks.DeleteAsync(item.Date);
+        //    //await this.repository.Configs.DeleteAsync(item);
         //    return Ok();
         //}
 

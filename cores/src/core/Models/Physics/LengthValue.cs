@@ -1,15 +1,17 @@
-﻿namespace Mov.Core.Models.Units
+﻿namespace Mov.Core.Models.Physics
 {
-    public sealed class AngleValue : ValueObjectBase<AngleValue>
+    public sealed class LengthValue : ValueObjectBase<LengthValue>
     {
+        public static LengthValue Default = new LengthValue(0);
+
         public double Value { get; }
 
-        public AngleValue(double value)
+        public LengthValue(double value)
         {
             Value = value;
         }
 
-        protected override bool EqualCore(AngleValue other)
+        protected override bool EqualCore(LengthValue other)
         {
             return Value.Equals(other.Value); ;
         }

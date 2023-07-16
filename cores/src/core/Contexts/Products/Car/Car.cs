@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Models;
-using Mov.Core.Models.Units;
+using Mov.Core.Models.Physics;
 using System;
 
 namespace Mov.Core.Contexts.Products.Car

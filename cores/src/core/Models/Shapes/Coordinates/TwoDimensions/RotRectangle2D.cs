@@ -1,4 +1,6 @@
-﻿namespace Mov.Core.Models.Units.Coordinates.TwoDimensions
+﻿using Mov.Core.Models.Physics;
+
+namespace Mov.Core.Models.Shapes.Coordinates.TwoDimensions
 {
     public sealed class RotRectangle2D : ValueObjectBase<RotRectangle2D>
     {

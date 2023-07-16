@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.Units.Coordinates.TwoDimensions
+﻿namespace Mov.Core.Models.Shapes.Coordinates.TwoDimensions
 {
     public sealed class Arc2D : ValueObjectBase<Arc2D>
     {

@@ -1,17 +1,15 @@
-﻿namespace Mov.Core.Models.Units
+﻿namespace Mov.Core.Models.Shapes
 {
-    public sealed class LengthValue : ValueObjectBase<LengthValue>
+    public sealed class AngleValue : ValueObjectBase<AngleValue>
     {
-        public static LengthValue Default = new LengthValue(0);
-
         public double Value { get; }
 
-        public LengthValue(double value)
+        public AngleValue(double value)
         {
             Value = value;
         }
 
-        protected override bool EqualCore(LengthValue other)
+        protected override bool EqualCore(AngleValue other)
         {
             return Value.Equals(other.Value); ;
         }

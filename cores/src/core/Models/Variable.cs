@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Models.Units
+namespace Mov.Core.Models
 {
     public sealed class Variable : ValueObjectBase<Variable>
     {

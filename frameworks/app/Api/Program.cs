@@ -16,7 +16,7 @@ service.AddSwaggerGen(option =>
     //var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     // XMLファイルをドキュメントコメントとして登録
     //option.IncludeXmlComments(xmlPath);
-    //option.SwaggerDoc("mov", new OpenApiInfo { Title = "Mov", Version = "v1" });
+    option.SwaggerDoc("mov", new OpenApiInfo { Title = "Mov", Version = "v1" });
 });
 
 var app = builder.Build();
@@ -30,7 +30,7 @@ if (app.Environment.IsDevelopment())
 app.UseSwagger();
 app.UseSwaggerUI(option =>
 {
-    //option.SwaggerEndpoint("/swagger/mov/swagger.json", "Mov APIs sandbox.");
+    option.SwaggerEndpoint("/swagger/mov/swagger.json", "Mov APIs sandbox.");
 });
 
 app.UseHttpsRedirection();

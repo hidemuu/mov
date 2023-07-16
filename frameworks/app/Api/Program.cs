@@ -24,12 +24,14 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(option =>
-    {
-        //option.SwaggerEndpoint("/swagger/mov/swagger.json", "Mov APIs sandbox.");
-    });
+    
 }
+
+app.UseSwagger();
+app.UseSwaggerUI(option =>
+{
+    //option.SwaggerEndpoint("/swagger/mov/swagger.json", "Mov APIs sandbox.");
+});
 
 app.UseHttpsRedirection();
 

@@ -6,6 +6,12 @@
     /// <typeparam name="T"></typeparam>
     public abstract class ValueObjectBase<TSelf> where TSelf : ValueObjectBase<TSelf>
     {
+        #region constant
+
+        private const int HASH_PRIME_NUMBER = 397;
+
+        #endregion constant
+
         #region abstruct method
 
         protected abstract bool EqualCore(TSelf other);
@@ -49,7 +55,7 @@
                     result = hashCodes[i];
                     continue;
                 }
-                result = result * CoreConstants.HASH_PRIME_NUMBER ^ hashCodes[i];
+                result = result * HASH_PRIME_NUMBER ^ hashCodes[i];
             }
             return result;
         }

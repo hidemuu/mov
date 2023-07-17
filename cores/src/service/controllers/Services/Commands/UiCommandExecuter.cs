@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Core.Models.Codes;
+using System;
 using System.Collections.Generic;
 
 namespace Mov.Core.Controllers.Services.Commands
@@ -74,9 +75,9 @@ namespace Mov.Core.Controllers.Services.Commands
             var help = string.Empty;
             foreach (var commandHelp in GetCommandHelps())
             {
-                help += commandHelp.Item1 + " : " + commandHelp.Item2 + CoreConstants.NewLine;
+                help += commandHelp.Item1 + " : " + commandHelp.Item2 + NewLineCode.CRLF.Value;
             }
-            help = help.TrimEnd(CoreConstants.NewLine.ToCharArray());
+            help = help.TrimEnd(NewLineCode.CRLF.Value.ToCharArray());
             return help;
         }
 

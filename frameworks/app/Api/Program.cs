@@ -6,15 +6,21 @@ using System.Reflection;
 using Mov.Framework.Creators;
 using Mov.Core;
 using Mov.Core.Models.Texts;
+using Mov.Designer.Models;
+using Mov.Designer.Repository.File;
+using Mov.Bom.Models;
+using Mov.Bom.Repository;
+using Mov.Core.Translators;
+using Mov.Core.Translators.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var service = builder.Services;
-service.AddControllers();
+var services = builder.Services;
+services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-service.AddEndpointsApiExplorer();
-service.AddSwaggerGen(option =>
+services.AddEndpointsApiExplorer();
+services.AddSwaggerGen(option =>
 {
     // XMLファイルのパスを取得
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -25,8 +31,10 @@ service.AddSwaggerGen(option =>
 });
 
 var resourcePath = PathCreator.GetResourcePath();
-service.AddScoped<IConfiguratorRepository, FileConfiguratorRepository>(_ => new FileConfiguratorRepository(resourcePath, FileType.Json, EncodingValue.UTF8));
-service.AddMvc();
+services.AddScoped<IConfiguratorRepository, FileConfiguratorRepository>(_ => new FileConfiguratorRepository(resourcePath, FileType.Json, EncodingValue.UTF8));
+services.AddScoped<ITranslatorRepository, FileTranslatorRepository>(_ => new FileTranslatorRepository(resourcePath));
+services.AddScoped<IDesignerRepository, FileDesignerRepository>(_ => new FileDesignerRepository(resourcePath, FileType.Xml, EncodingValue.UTF8));
+services.AddMvc();
 
 var app = builder.Build();
 

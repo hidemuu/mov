@@ -10,7 +10,7 @@ namespace Mov.Core.Models.Texts
 
         private const string ENCODE_NAME_UTF8 = "utf-8";
         
-        private const string ENCODE_NAME_SHIFT_JIS = "Shift_JIS";
+        private const string ENCODE_NAME_SHIFT_JIS = "SHIFT⁠-⁠JIS";
 
         #endregion constant
 

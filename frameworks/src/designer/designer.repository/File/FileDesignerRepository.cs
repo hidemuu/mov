@@ -21,8 +21,8 @@ namespace Mov.Designer.Repository.File
         /// コンストラクター
         /// </summary>
         /// <param name="encoding"></param>
-        public FileDesignerRepository(string endpoint, FileType extension, EncodingValue encoding)
-            : base(endpoint, extension, encoding)
+        public FileDesignerRepository(string endpoint, FileType fileType, EncodingValue encoding)
+            : base(endpoint, fileType, encoding)
         {
             Shells = new FileDbObjectRepository<ShellSchema, ShellSchemaCollection>(GetPath("shell"), encoding);
             Nodes = new FileDbObjectRepository<NodeSchema, NodeSchemaCollection>(GetPath("node"), encoding);

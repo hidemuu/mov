@@ -7,6 +7,6 @@
         /// </summary>
         string DomainPath { get; }
 
-        string GetRelativePath();
+        string RelativePath { get; }
     }
 }

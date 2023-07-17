@@ -52,7 +52,7 @@ namespace Mov.Core.Repositories.Repositories.Domains
         private void CreateRepository(string endpoint, string extension, string encode)
         {
             var defaultRepository = (TRepository)Activator.CreateInstance(typeof(TInstance), endpoint, "", extension, encode);
-            var directories = GetDirectories(defaultRepository.GetRelativePath());
+            var directories = GetDirectories(defaultRepository.RelativePath);
             Repositories.Add("", defaultRepository);
             foreach (var directory in directories)
             {

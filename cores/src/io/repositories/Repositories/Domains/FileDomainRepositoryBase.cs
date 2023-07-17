@@ -20,6 +20,8 @@ namespace Mov.Core.Repositories.Repositories.Domains
 
         public abstract string DomainPath { get; }
 
+        public string RelativePath => Path.Combine(this.Endpoint, this.DomainPath);
+
         #endregion property
 
         #region constructor
@@ -40,17 +42,11 @@ namespace Mov.Core.Repositories.Repositories.Domains
         #region method
 
         /// <summary>
-        /// 相対パスを取得
-        /// </summary>
-        /// <returns></returns>
-        public string GetRelativePath() => Path.Combine(Endpoint, DomainPath);
-
-        /// <summary>
         /// フルパスを取得
         /// </summary>
         /// <param name="fileName">ファイル名</param>
         /// <returns></returns>
-        protected string GetPath(string fileName) => Path.Combine(GetRelativePath(), fileName) + "." + this.FileType.Value;
+        protected string GetPath(string fileName) => Path.Combine(this.RelativePath, fileName) + "." + this.FileType.Value;
 
         #endregion method
     }

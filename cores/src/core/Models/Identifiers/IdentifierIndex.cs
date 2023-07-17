@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Core.Models.Keys
+namespace Mov.Core.Models.Identifiers
 {
     public sealed class IdentifierIndex : ValueObjectBase<IdentifierIndex>
     {
@@ -16,7 +16,7 @@ namespace Mov.Core.Models.Keys
 
         public IdentifierIndex(int index)
         {
-            this.Value = index;
+            Value = index;
         }
 
         public static readonly IdentifierIndex Empty = new IdentifierIndex(0);
@@ -27,7 +27,7 @@ namespace Mov.Core.Models.Keys
 
         protected override bool EqualCore(IdentifierIndex other)
         {
-            return this.Value.Equals(other.Value);
+            return Value.Equals(other.Value);
         }
 
         protected override int GetHashCodeCore()

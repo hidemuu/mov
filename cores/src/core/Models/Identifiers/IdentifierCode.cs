@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Models.Keys
+namespace Mov.Core.Models.Identifiers
 {
     public sealed class IdentifierCode : ValueObjectBase<IdentifierCode>
     {

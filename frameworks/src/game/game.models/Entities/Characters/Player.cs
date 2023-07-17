@@ -1,4 +1,5 @@
 ﻿using Mov.Core;
+using Mov.Core.Models.Codes;
 using System.Drawing;
 
 namespace Mov.Game.Models.Entities.Characters
@@ -63,14 +64,11 @@ namespace Mov.Game.Models.Entities.Characters
             var dy = 0;
 
             //押されているキーに対する処理
-            switch (Engine.KeyCode)
-            {
-                case CoreConstants.KEY_CODE_LEFT: dx = -1; break;
-                case CoreConstants.KEY_CODE_RIGHT: dx = 1; break;
-                case CoreConstants.KEY_CODE_UP: dy = -1; break;
-                case CoreConstants.KEY_CODE_DOWN: dy = 1; break;
-                default: return false;
-            }
+            if (this.Engine.KeyCode.Equals(KeyboardCode.Left.Value)) dx = -1;
+            else if (this.Engine.KeyCode.Equals(KeyboardCode.Right.Value)) dx = 1;
+            else if (this.Engine.KeyCode.Equals(KeyboardCode.Up.Value)) dy = -1;
+            else if (this.Engine.KeyCode.Equals(KeyboardCode.Down.Value)) dy = 1;
+            else return false;
 
             if (IsMiddlePosition)
             {

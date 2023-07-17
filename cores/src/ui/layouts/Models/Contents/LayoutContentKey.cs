@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.Keys;
+﻿using Mov.Core.Models.Identifiers;
 using Mov.Core.Models.Styles;
 
 namespace Mov.Core.Layouts.Models.Contents

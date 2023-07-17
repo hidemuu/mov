@@ -10,7 +10,7 @@ namespace Mov.Core.Models.Texts
 
         private const string ENCODE_NAME_UTF8 = "utf-8";
         
-        private const string ENC_NAME_SHIFT_JIS = "Shift_JIS";
+        private const string ENCODE_NAME_SHIFT_JIS = "Shift_JIS";
 
         #endregion constant
 
@@ -27,11 +27,11 @@ namespace Mov.Core.Models.Texts
             Value = encoding;
         }
 
-        public static EncodingValue Empty = new EncodingValue(Encoding.Default);
+        public static EncodingValue Empty = new EncodingValue(Encoding.UTF8);
 
-        public static EncodingValue UTF8 = new EncodingValue(Encoding.UTF8);
+        public static EncodingValue UTF8 = new EncodingValue(Encoding.GetEncoding(ENCODE_NAME_UTF8));
 
-        public static EncodingValue ShiftJis = new EncodingValue(Encoding.GetEncoding(ENC_NAME_SHIFT_JIS));
+        public static EncodingValue ShiftJis = new EncodingValue(Encoding.GetEncoding(ENCODE_NAME_SHIFT_JIS));
 
         #endregion constructor
 

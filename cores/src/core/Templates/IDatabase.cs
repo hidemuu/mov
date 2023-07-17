@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.Keys;
+﻿using Mov.Core.Models.Identifiers;
 
 namespace Mov.Core.Templates
 {

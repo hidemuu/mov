@@ -1,4 +1,5 @@
 ﻿using Mov.Core;
+using Mov.Core.Models.Codes;
 using Mov.Game.Models;
 using Mov.Game.Models.Entities;
 using Mov.Game.Models.Entities.Characters;
@@ -75,7 +76,7 @@ namespace Mov.Game.Engine.FiniteStateMachine
         /// <summary>
         /// 入力キーコード
         /// </summary>
-        public int KeyCode { get; set; } = CoreConstants.KEY_CODE_NONE;
+        public int KeyCode { get; set; } = KeyboardCode.None.Value;
 
         /// <summary>
         /// キャラクタ配列
@@ -123,7 +124,7 @@ namespace Mov.Game.Engine.FiniteStateMachine
             breadcrumbs = new Breadcrumbs(15, this, landMark.GetRow(), landMark.GetCol());
             Characters.Clear();
             Aliens.Clear();
-            KeyCode = CoreConstants.KEY_CODE_NONE;
+            KeyCode = KeyboardCode.None.Value;
             AddCharacters(Characters, Map);
             AddCharacters(Characters, breadcrumbs.breads);
             SortCharacters(new int[] { (int)CharacterType.WALL, (int)CharacterType.BREAD, (int)CharacterType.ALIEN, (int)CharacterType.PLAYER, (int)CharacterType.TREASURE });

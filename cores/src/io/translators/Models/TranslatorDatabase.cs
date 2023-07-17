@@ -1,5 +1,4 @@
-﻿using Mov.Core.Models.Keys;
-using Mov.Core.Models.Texts;
+﻿using Mov.Core.Models.Texts;
 using Mov.Core.Models.Locations;
 using Mov.Core.Templates;
 using Mov.Core.Translators.Models.Entities;
@@ -7,6 +6,7 @@ using Mov.Core.Translators.Models.ValueObjects;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using Mov.Core.Models.Identifiers;
 
 namespace Mov.Core.Translators.Models
 {

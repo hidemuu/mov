@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Models.Keys
+namespace Mov.Core.Models.Identifiers
 {
     public sealed class Identifier : ValueObjectBase<Identifier>
     {
@@ -23,7 +23,7 @@ namespace Mov.Core.Models.Keys
 
         #region method
 
-        public bool IsEmpty() => this.Equals(Empty);
+        public bool IsEmpty() => Equals(Empty);
 
         #endregion method
 

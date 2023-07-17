@@ -49,7 +49,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         {
             using (var client = BaseClient())
             {
-                var responseTask = client.PostAsync(url, new JsonStringContent(body, context.FileParameter.Encoding));
+                var responseTask = client.PostAsync(url, new JsonStringContent(body, context.FileParameter.Encoding.Value));
                 Task.WhenAll(responseTask);
                 return default;
             }
@@ -77,7 +77,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         {
             using (var client = BaseClient())
             {
-                var response = await client.PostAsync(url, new JsonStringContent(body, context.FileParameter.Encoding));
+                var response = await client.PostAsync(url, new JsonStringContent(body, context.FileParameter.Encoding.Value));
                 string json = await response.Content.ReadAsStringAsync();
                 TResponse obj = JsonConvert.DeserializeObject<TResponse>(json);
                 return obj;

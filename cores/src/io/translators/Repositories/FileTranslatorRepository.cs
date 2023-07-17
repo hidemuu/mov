@@ -1,4 +1,5 @@
-﻿using Mov.Core.Repositories.Repositories.DbObjects;
+﻿using Mov.Core.Models.Texts;
+using Mov.Core.Repositories.Repositories.DbObjects;
 using Mov.Core.Templates.Repositories;
 using Mov.Core.Translators.Repositories.Schemas;
 using System;
@@ -26,7 +27,7 @@ namespace Mov.Core.Translators.Repositories
 
         public FileTranslatorRepository(string endpoint)
         {
-            Translates = new FileDbObjectRepository<TranslateSchema, TranslateSchemaCollection>(Path.Combine(endpoint, FILE_NAME_TRANSLATE));
+            Translates = new FileDbObjectRepository<TranslateSchema, TranslateSchemaCollection>(Path.Combine(endpoint, FILE_NAME_TRANSLATE), EncodingValue.UTF8);
         }
 
         #endregion constructor

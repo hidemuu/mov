@@ -42,7 +42,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
             var configuration = new CsvConfiguration(CultureInfo.CurrentCulture);
             configuration.HasHeaderRecord = true;
 
-            using (var sw = new StreamWriter(Path.Combine(context.FileParameter.FileUnit.Path, url), true, context.FileParameter.Encoding))
+            using (var sw = new StreamWriter(Path.Combine(context.FileParameter.FileUnit.Path, url), true, context.FileParameter.Encoding.Value))
             {
                 using (var csv = new CsvWriter(sw, configuration))
                 {
@@ -69,7 +69,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
                 PrepareHeaderForMatch = args => args.Header.ToLower(),
             };
 
-            using (var sr = new StreamReader(Path.Combine(context.FileParameter.FileUnit.Path, url), context.FileParameter.Encoding))
+            using (var sr = new StreamReader(Path.Combine(context.FileParameter.FileUnit.Path, url), context.FileParameter.Encoding.Value))
             {
                 using (var csv = new CsvReader(sr, configuration))
                 {

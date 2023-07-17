@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace Mov.Api.Controllers
 {
     /// <summary>
-    /// 
+    /// controller for configuration
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
@@ -22,7 +22,7 @@ namespace Mov.Api.Controllers
         #region constructor
 
         /// <summary>
-        /// 
+        /// controller for configuration
         /// </summary>
         /// <param name="repository"></param>
         public ConfigController(IConfiguratorRepository repository)

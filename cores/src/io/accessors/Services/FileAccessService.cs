@@ -1,5 +1,6 @@
 ﻿using Mov.Core.Accessors.Models.Entities;
 using Mov.Core.Loggers;
+using Mov.Core.Models.Texts;
 using System;
 using System.Data;
 using System.IO;
@@ -18,7 +19,7 @@ namespace Mov.Core.Accessors.Services
 
         #region constructor
 
-        public FileAccessService(string path, string encodeName = CoreConstants.ENCODE_NAME_UTF8)
+        public FileAccessService(string path, EncodingValue encodeName)
         {
             FileParameter = new FileParameter(path, encodeName);
         }
@@ -33,7 +34,7 @@ namespace Mov.Core.Accessors.Services
             string[] lines = new string[] { };
             if (File.Exists(FileParameter.FileUnit.Path))
             {
-                using (var reader = new StreamReader(FileParameter.FileUnit.Path, FileParameter.Encoding))
+                using (var reader = new StreamReader(FileParameter.FileUnit.Path, FileParameter.Encoding.Value))
                 {
                     int i = 0;
                     while (!reader.EndOfStream)
@@ -52,7 +53,7 @@ namespace Mov.Core.Accessors.Services
         {
             try
             {
-                using (var writer = new StreamWriter(FileParameter.FileUnit.Path, isAdd, FileParameter.Encoding))
+                using (var writer = new StreamWriter(FileParameter.FileUnit.Path, isAdd, FileParameter.Encoding.Value))
                 {
                     //指定ファイルの読込ストリームを実行
                     writer.Write(line);
@@ -98,7 +99,7 @@ namespace Mov.Core.Accessors.Services
             try
             {
                 //書き込むファイルを開く
-                using (StreamWriter writer = new StreamWriter(FileParameter.FileUnit.Path, isAdd, FileParameter.Encoding))
+                using (StreamWriter writer = new StreamWriter(FileParameter.FileUnit.Path, isAdd, FileParameter.Encoding.Value))
                 {
                     string delimiter = FileParameter.FileUnit.GetDelimiter();
                     int colCount = dt.Columns.Count;
@@ -260,7 +261,7 @@ namespace Mov.Core.Accessors.Services
             var header = "";
             try
             {
-                using (var reader = new StreamReader(FileParameter.FileUnit.Path, FileParameter.Encoding))
+                using (var reader = new StreamReader(FileParameter.FileUnit.Path, FileParameter.Encoding.Value))
                 {
                     header = reader.ReadLine();
                 }
@@ -285,7 +286,7 @@ namespace Mov.Core.Accessors.Services
             //新規生成し、ヘッダー行を付加
             try
             {
-                using (var writer = new StreamWriter(FileParameter.FileUnit.Path, false, FileParameter.Encoding))
+                using (var writer = new StreamWriter(FileParameter.FileUnit.Path, false, FileParameter.Encoding.Value))
                 {
                     writer.WriteLine(header);
                 }

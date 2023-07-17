@@ -59,7 +59,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
 
         private string ReadStream(string url)
         {
-            using (var stream = new StreamReader(Path.Combine(context.FileParameter.FileUnit.Path, url), context.FileParameter.Encoding))
+            using (var stream = new StreamReader(Path.Combine(context.FileParameter.FileUnit.Path, url), context.FileParameter.Encoding.Value))
             {
                 if (stream != null)
                 {
@@ -76,7 +76,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <param name="isappend">追記モード（falseなら上書き保存）</param>
         private void WriteStream(string url, string json, bool isappend)
         {
-            using (var stream = new StreamWriter(Path.Combine(context.FileParameter.FileUnit.Path, url), isappend, context.FileParameter.Encoding))
+            using (var stream = new StreamWriter(Path.Combine(context.FileParameter.FileUnit.Path, url), isappend, context.FileParameter.Encoding.Value))
             {
                 if (stream != null)
                 {

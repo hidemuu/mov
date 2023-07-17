@@ -1,6 +1,11 @@
 using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.OpenApi.Models;
+using Mov.Core.Configurators.Repositories;
+using Mov.Core.Configurators;
 using System.Reflection;
+using Mov.Framework.Creators;
+using Mov.Core;
+using Mov.Core.Models.Texts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +23,10 @@ service.AddSwaggerGen(option =>
     option.IncludeXmlComments(xmlPath);
     option.SwaggerDoc("mov", new OpenApiInfo { Title = "Mov", Version = "v1" });
 });
+
+var resourcePath = PathCreator.GetResourcePath();
+service.AddScoped<IConfiguratorRepository, FileConfiguratorRepository>(_ => new FileConfiguratorRepository(resourcePath, FileType.Json, EncodingValue.UTF8));
+service.AddMvc();
 
 var app = builder.Build();
 

@@ -1,4 +1,5 @@
 ﻿using Mov.Core;
+using Mov.Core.Models.Texts;
 using Mov.Core.Repositories.Repositories.DbObjects;
 using Mov.Core.Repositories.Repositories.Domains;
 using Mov.Core.Templates.Repositories;
@@ -20,7 +21,7 @@ namespace Mov.Designer.Repository.File
         /// コンストラクター
         /// </summary>
         /// <param name="encoding"></param>
-        public FileDesignerRepository(string endpoint, string extension, string encoding = CoreConstants.ENCODE_NAME_UTF8)
+        public FileDesignerRepository(string endpoint, FileType extension, EncodingValue encoding)
             : base(endpoint, extension, encoding)
         {
             Shells = new FileDbObjectRepository<ShellSchema, ShellSchemaCollection>(GetPath("shell"), encoding);

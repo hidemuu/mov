@@ -1,4 +1,5 @@
 ﻿using Mov.Core;
+using Mov.Core.Models.Texts;
 using Mov.Core.Repositories.Repositories.DbObjects;
 using Mov.Core.Repositories.Repositories.Domains;
 using Mov.Core.Templates.Repositories;
@@ -16,7 +17,7 @@ namespace Mov.Game.Repository
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FileGameRepository(string endpoint, string extension, string encoding = CoreConstants.ENCODE_NAME_UTF8)
+        public FileGameRepository(string endpoint, FileType extension, EncodingValue encoding)
             : base(endpoint, extension, encoding)
         {
             Landmarks = new FileDbObjectRepository<LandmarkSchema, LandmarkSchemaCollection>(GetPath("landmark"), encoding);

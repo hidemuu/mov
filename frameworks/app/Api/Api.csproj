@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\lib\framework\Framework.csproj" />
     <ProjectReference Include="..\..\src\analizer\analizer.models\Analizer.Models.csproj" />
     <ProjectReference Include="..\..\src\bom\bom.models\Bom.Models.csproj" />
     <ProjectReference Include="..\..\src\designer\designer.models\Designer.Models.csproj" />
@@ -28,6 +29,9 @@
     </Reference>
     <Reference Include="Mov.Core.Configurators">
       <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Configurators.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Repositories">
+      <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Repositories.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Core.Translators">
       <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Translators.dll</HintPath>

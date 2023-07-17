@@ -15,16 +15,16 @@ namespace Mov.Core.Accessors.Models.Entities
         /// <summary>
         /// エンコード
         /// </summary>
-        public Encoding Encoding { get; }
+        public EncodingValue Encoding { get; }
 
         #endregion property
 
         #region constructor
 
-        public FileParameter(string path, string encodeName = AccessConstants.ENCODE_NAME_UTF8)
+        public FileParameter(string path, EncodingValue encodeName)
         {
             FileUnit = new FileValue(path);
-            Encoding = Encoding.GetEncoding(encodeName);
+            Encoding = encodeName;
         }
 
         #endregion constructor

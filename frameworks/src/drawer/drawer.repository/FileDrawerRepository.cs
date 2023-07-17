@@ -1,4 +1,5 @@
 ﻿using Mov.Core;
+using Mov.Core.Models.Texts;
 using Mov.Core.Repositories.Repositories.DbObjects;
 using Mov.Core.Repositories.Repositories.Domains;
 using Mov.Core.Templates.Repositories;
@@ -16,7 +17,7 @@ namespace Mov.Drawer.Repository
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FileDrawerRepository(string endpoint, string extension, string encoding = CoreConstants.ENCODE_NAME_UTF8)
+        public FileDrawerRepository(string endpoint, FileType extension, EncodingValue encoding)
             : base(endpoint, extension, encoding)
         {
             DrawItems = new FileDbObjectRepository<DrawItem, DrawItemCollection>(GetPath("draw_item"), encoding);

@@ -6,6 +6,14 @@ namespace Mov.Core.Models.Texts
 {
     public sealed class EncodingValue : ValueObjectBase<EncodingValue>
     {
+        #region constant
+
+        private const string ENCODE_NAME_UTF8 = "utf-8";
+        
+        private const string ENC_NAME_SHIFT_JIS = "Shift_JIS";
+
+        #endregion constant
+
         #region property
 
         public Encoding Value { get; }
@@ -18,6 +26,12 @@ namespace Mov.Core.Models.Texts
         {
             Value = encoding;
         }
+
+        public static EncodingValue Empty = new EncodingValue(Encoding.Default);
+
+        public static EncodingValue UTF8 = new EncodingValue(Encoding.UTF8);
+
+        public static EncodingValue ShiftJis = new EncodingValue(Encoding.GetEncoding(ENC_NAME_SHIFT_JIS));
 
         #endregion constructor
 

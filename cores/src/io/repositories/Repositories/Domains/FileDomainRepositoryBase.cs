@@ -1,4 +1,5 @@
-﻿using Mov.Core.Templates.Repositories;
+﻿using Mov.Core.Models.Texts;
+using Mov.Core.Templates.Repositories;
 using System.IO;
 
 namespace Mov.Core.Repositories.Repositories.Domains
@@ -9,12 +10,9 @@ namespace Mov.Core.Repositories.Repositories.Domains
 
         protected string Endpoint { get; }
 
-        /// <summary>
-        /// 拡張子
-        /// </summary>
-        protected string Extension { get; }
+        protected FileType FileType { get; }
 
-        protected string Encoding { get; }
+        protected EncodingValue Encoding { get; }
 
         #endregion field
 
@@ -30,10 +28,10 @@ namespace Mov.Core.Repositories.Repositories.Domains
         /// コンストラクター
         /// </summary>
         /// <param name="extension"></param>
-        public FileDomainRepositoryBase(string endpoint, string extension, string encoding)
+        public FileDomainRepositoryBase(string endpoint, FileType fileType, EncodingValue encoding)
         {
             this.Endpoint = endpoint;
-            this.Extension = extension;
+            this.FileType = fileType;
             this.Encoding = encoding;
         }
 
@@ -52,7 +50,7 @@ namespace Mov.Core.Repositories.Repositories.Domains
         /// </summary>
         /// <param name="fileName">ファイル名</param>
         /// <returns></returns>
-        protected string GetPath(string fileName) => Path.Combine(GetRelativePath(), fileName) + "." + Extension;
+        protected string GetPath(string fileName) => Path.Combine(GetRelativePath(), fileName) + "." + this.FileType.Value;
 
         #endregion method
     }

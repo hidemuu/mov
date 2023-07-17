@@ -29,6 +29,8 @@ namespace Mov.Core.Models.Texts
             Value = name;
         }
 
+        public static FileType Empty = new FileType(string.Empty);
+
         public static FileType Json = new FileType(JSON);
 
         public static FileType Xml = new FileType(XML);

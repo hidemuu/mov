@@ -1,4 +1,5 @@
 ﻿using Mov.Core.Configurators.Repositories.Schemas;
+using Mov.Core.Models.Texts;
 using Mov.Core.Repositories.Repositories.DbObjects;
 using Mov.Core.Repositories.Repositories.Domains;
 using Mov.Core.Templates.Repositories;
@@ -21,8 +22,8 @@ namespace Mov.Core.Configurators.Repositories
 
         #region constructor
 
-        public FileConfiguratorRepository(string endpoint, string extension, string encoding = CoreConstants.ENCODE_NAME_UTF8)
-            : base(endpoint, extension, encoding)
+        public FileConfiguratorRepository(string endpoint, FileType fileType, EncodingValue encoding)
+            : base(endpoint, fileType, encoding)
         {
             Configs = new FileDbObjectRepository<ConfigSchema, ConfigSchemaCollection>(GetPath("config"), encoding);
         }

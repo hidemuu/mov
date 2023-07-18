@@ -75,6 +75,19 @@ namespace Mov.Core.Test.Models.Texts
             Assert.That(!isNan, Is.EqualTo(true));
         }
 
+        [Test]
+        public void FileValue_Create()
+        {
+            //Arrange
+            var sut = new FileValue("test");
+
+            //Act
+
+            //Assert
+            Assert.That(sut.IsDir(), Is.EqualTo(true));
+
+        }
+
         #endregion test
     }
 }

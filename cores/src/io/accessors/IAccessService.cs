@@ -1,4 +1,5 @@
 ﻿using Mov.Core.Models.Texts;
+using System.IO;
 
 namespace Mov.Core.Accessors
 {
@@ -47,6 +48,16 @@ namespace Mov.Core.Accessors
         /// </summary>
         /// <returns></returns>
         bool Clear();
+
+        /// <summary>
+        /// ストリームリーダーを生成
+        /// </summary>
+        StreamReader CreateStreamReader(string addPath = "");
+
+        /// <summary>
+        /// ストリームライターを生成
+        /// </summary>
+        StreamWriter CreateStreamWriter(bool isAdd, string addPath = "");
 
         #endregion method
     }

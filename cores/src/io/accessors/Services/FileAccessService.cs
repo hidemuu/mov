@@ -3,6 +3,7 @@ using Mov.Core.Models.Texts;
 using System;
 using System.Data;
 using System.IO;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace Mov.Core.Accessors.Services
 {
@@ -248,6 +249,16 @@ namespace Mov.Core.Accessors.Services
             reader.Close();
 
             return result;
+        }
+
+        public StreamReader CreateStreamReader(string addPath = "")
+        {
+            return new StreamReader(Path.Combine(this.FileValue.Path, addPath), this.Encoding.Value);
+        }
+
+        public StreamWriter CreateStreamWriter(bool isAdd, string addPath = "")
+        {
+            return new StreamWriter(Path.Combine(this.FileValue.Path, addPath), isAdd, this.Encoding.Value);
         }
 
         #endregion method

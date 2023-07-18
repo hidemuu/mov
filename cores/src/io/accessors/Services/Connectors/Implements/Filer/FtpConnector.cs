@@ -1,5 +1,5 @@
 ﻿using FluentFTP;
-using Mov.Core.Accessors.Models.Entities;
+using Mov.Core.Models.Networks;
 using System;
 using System.IO;
 using System.Net;
@@ -11,7 +11,7 @@ namespace Mov.Core.Accessors.Services.Connectors.Implements.Filer
     {
         #region フィールド
 
-        private readonly ConnectParameter connectParameter;
+        private readonly ConnectValue connect;
 
         private readonly IAccessService fileContext;
 
@@ -21,9 +21,9 @@ namespace Mov.Core.Accessors.Services.Connectors.Implements.Filer
 
         #region コンストラクター
 
-        public FtpConnector(ConnectParameter connectParameter, IAccessService fileContext)
+        public FtpConnector(ConnectValue connect, IAccessService fileContext)
         {
-            this.connectParameter = connectParameter;
+            this.connect = connect;
             this.fileContext = fileContext;
             client = new FtpClient();
         }
@@ -37,10 +37,10 @@ namespace Mov.Core.Accessors.Services.Connectors.Implements.Filer
         public void Connect()
         {
             if (client.IsConnected) return;
-            client.Host = connectParameter.Host.Value;
-            client.Port = connectParameter.Port;
+            client.Host = connect.Host.Value;
+            client.Port = connect.Port;
             // 資格情報の設定
-            client.Credentials = new NetworkCredential(connectParameter.UserName, connectParameter.Password);
+            client.Credentials = new NetworkCredential(connect.UserName, connect.Password);
             // 要求の完了後に接続を閉じる
             client.SocketKeepAlive = false;
             // Explicit設定
@@ -48,7 +48,7 @@ namespace Mov.Core.Accessors.Services.Connectors.Implements.Filer
             // プロトコルはTls
             client.SslProtocols = SslProtocols.Tls;
             // 接続タイムアウトを5秒に設定
-            client.ConnectTimeout = (int)connectParameter.Timeout;
+            client.ConnectTimeout = (int)connect.Timeout;
             // 証明書の内容を確認しない
             client.ValidateCertificate += new FtpSslValidation(OnValidateCertificate);
         }

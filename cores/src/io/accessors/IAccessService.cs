@@ -1,5 +1,4 @@
-﻿using Mov.Core.Accessors.Models.Entities;
-using Mov.Core.Models.Texts;
+﻿using Mov.Core.Models.Texts;
 
 namespace Mov.Core.Accessors
 {

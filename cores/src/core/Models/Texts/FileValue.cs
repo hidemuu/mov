@@ -107,6 +107,10 @@ namespace Mov.Core.Models.Texts
             return Path.GetHashCode();
         }
 
+        #endregion protected method
+
+        #region private method
+
         private long GetDirectorySize(DirectoryInfo dirInfo)
         {
             long size = 0;
@@ -123,7 +127,6 @@ namespace Mov.Core.Models.Texts
             return size;
         }
 
-        #endregion protected method
-
+        #endregion private method
     }
 }

@@ -31,7 +31,7 @@ namespace Mov.Core.Models.Texts
 
         public static EncodingValue UTF8 = new EncodingValue(Encoding.GetEncoding(ENCODE_NAME_UTF8));
 
-        public static EncodingValue ShiftJis = new EncodingValue(Encoding.GetEncoding(ENCODE_NAME_SHIFT_JIS));
+        //public static EncodingValue ShiftJis = new EncodingValue(Encoding.GetEncoding(ENCODE_NAME_SHIFT_JIS));
 
         #endregion constructor
 

@@ -60,6 +60,21 @@ namespace Mov.Core.Test.Models.Texts
             //Assert.AreEqual(0, node.Children.Count);
         }
 
+        [Test]
+        public void FileType_Initialized_XML()
+        {
+            //Arrange
+            var sut = FileType.Xml;
+
+            //Act
+            var isXml = sut.IsXml();
+            var isNan = sut.IsNan();
+
+            //Assert
+            Assert.That(isXml, Is.EqualTo(true));
+            Assert.That(!isNan, Is.EqualTo(true));
+        }
+
         #endregion test
     }
 }

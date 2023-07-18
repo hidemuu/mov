@@ -1,4 +1,5 @@
 ﻿using Mov.Core.Accessors.Models.Entities;
+using Mov.Core.Models.Texts;
 
 namespace Mov.Core.Accessors
 {
@@ -10,9 +11,14 @@ namespace Mov.Core.Accessors
         #region property
 
         /// <summary>
-        /// ファイルパラメータ
+        /// ファイルパス
         /// </summary>
-        FileParameter FileParameter { get; }
+        FileValue FileValue { get; }
+
+        /// <summary>
+        /// エンコード
+        /// </summary>
+        EncodingValue Encoding { get; }
 
         #endregion property
 

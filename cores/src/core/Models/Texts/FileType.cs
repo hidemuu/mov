@@ -44,13 +44,13 @@ namespace Mov.Core.Models.Texts
 
         public bool IsEmpty() => string.IsNullOrEmpty(Value);
 
-        public bool InNan() => !IsJson() && !IsXml() && !IsCsv();
+        public bool IsNan() => !IsJson() && !IsXml() && !IsCsv();
 
-        public bool IsJson() => Equals(Json);
+        public bool IsJson() => this.Equals(Json);
 
-        public bool IsXml() => Equals(Xml);
+        public bool IsXml() => this.Equals(Xml);
 
-        public bool IsCsv() => Equals(Csv);
+        public bool IsCsv() => this.Equals(Csv);
 
         protected override bool EqualCore(FileType other)
         {

@@ -39,8 +39,8 @@ namespace Mov.Core.Repositories.Repositories.Entities
         /// <param name="encode"></param>
         public FileEntityRepository(IAccessService context)
         {
-            var type = context.FileParameter.FileUnit.FileType;
-            if (type.InNan()) { 
+            var type = context.FileValue.FileType;
+            if (type.IsNan()) { 
                 Debug.Assert(false, "拡張子が含まれていません");
             }
             else if (type.IsJson())

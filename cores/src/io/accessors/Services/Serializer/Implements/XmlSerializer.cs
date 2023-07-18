@@ -34,7 +34,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <returns></returns>
         public TResponse Get<TResponse>(string url)
         {
-            using (var stream = new StreamReader(Path.Combine(context.FileParameter.FileUnit.Path, url)))
+            using (var stream = new StreamReader(Path.Combine(context.FileValue.Path, url)))
             {
                 var serializer = new System.Xml.Serialization.XmlSerializer(typeof(TResponse));
                 return (TResponse)serializer.Deserialize(stream);
@@ -47,7 +47,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <param name="obj"></param>
         public TResponse Post<TRequest, TResponse>(string url, TRequest obj)
         {
-            using (var stream = new StreamWriter(Path.Combine(context.FileParameter.FileUnit.Path, url), false, context.FileParameter.Encoding.Value))
+            using (var stream = new StreamWriter(Path.Combine(context.FileValue.Path, url), false, context.Encoding.Value))
             {
                 System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(TRequest));
                 serializer.Serialize(stream, obj);

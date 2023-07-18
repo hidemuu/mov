@@ -49,7 +49,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         {
             using (var client = BaseClient())
             {
-                var responseTask = client.PostAsync(url, new JsonStringContent(body, context.FileParameter.Encoding.Value));
+                var responseTask = client.PostAsync(url, new JsonStringContent(body, context.Encoding.Value));
                 Task.WhenAll(responseTask);
                 return default;
             }
@@ -77,7 +77,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         {
             using (var client = BaseClient())
             {
-                var response = await client.PostAsync(url, new JsonStringContent(body, context.FileParameter.Encoding.Value));
+                var response = await client.PostAsync(url, new JsonStringContent(body, context.Encoding.Value));
                 string json = await response.Content.ReadAsStringAsync();
                 TResponse obj = JsonConvert.DeserializeObject<TResponse>(json);
                 return obj;
@@ -103,7 +103,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <summary>
         /// Constructs the base HTTP client, including correct authorization and API version headers.
         /// </summary>
-        private HttpClient BaseClient() => new HttpClient { BaseAddress = new Uri(context.FileParameter.FileUnit.Path) };
+        private HttpClient BaseClient() => new HttpClient { BaseAddress = new Uri(context.FileValue.Path) };
 
         /// <summary>
         /// Helper class for formatting <see cref="StringContent"/> as UTF8 application/json.

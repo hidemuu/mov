@@ -53,7 +53,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Schemas", "src\io\schemas\S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurators", "src\io\configurators\Configurators.csproj", "{F7A3E8E3-CEBF-464F-9C41-604D5ABE3D8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories.Test", "src\io\Repositories.Test\Repositories.Test.csproj", "{19A5C4CC-9C0D-4648-AE01-6CFD89657C11}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories.Test", "src\io\repositories.test\Repositories.Test.csproj", "{19A5C4CC-9C0D-4648-AE01-6CFD89657C11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

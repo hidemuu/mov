@@ -65,7 +65,7 @@ namespace Mov.Core.Test.Models.Texts
         public void FileType_Initialized_XML()
         {
             //Arrange Act
-            var sut = new FileType("xml");
+            var sut = new FileType(".xml");
 
             //Assert
             Assert.That(sut.IsXml(), Is.EqualTo(true));

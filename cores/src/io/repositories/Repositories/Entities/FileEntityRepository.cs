@@ -37,23 +37,23 @@ namespace Mov.Core.Repositories.Repositories.Entities
         /// </summary>
         /// <param name="fileName"></param>
         /// <param name="encode"></param>
-        public FileEntityRepository(IAccessService context)
+        public FileEntityRepository(IAccessService service)
         {
-            var type = context.FileValue.FileType;
+            var type = service.FileValue.FileType;
             if (type.IsNan()) { 
                 Debug.Assert(false, "拡張子が含まれていません");
             }
             else if (type.IsJson())
             {
-                serializer = new JsonSerializer(context);
+                serializer = new JsonSerializer(service);
             }
-            else if (type.IsJson())
+            else if (type.IsXml())
             {
-                serializer = new XmlSerializer(context);
+                serializer = new XmlSerializer(service);
             }
             else if (type.IsCsv())
             {
-                serializer = new CsvSerializer(context);
+                serializer = new CsvSerializer(service);
             }
             else
             {

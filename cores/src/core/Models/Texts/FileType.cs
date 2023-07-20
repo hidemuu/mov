@@ -26,6 +26,7 @@ namespace Mov.Core.Models.Texts
 
         public FileType(string name)
         {
+            name = name.TrimStart('.');
             Value = name;
         }
 

@@ -9,7 +9,6 @@ using Mov.Core.Models.Maths;
 using Mov.Core.Models.Physics.Sizes;
 using Mov.Core.Models.Styles;
 using Mov.Core.Models.Texts;
-using Mov.Core.Models.Shapes;
 using Mov.Designer.Models.Schemas;
 using System.Collections.Generic;
 

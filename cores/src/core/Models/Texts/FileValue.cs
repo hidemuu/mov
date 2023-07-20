@@ -22,11 +22,6 @@ namespace Mov.Core.Models.Texts
         public string Path { get; }
 
         /// <summary>
-        /// ディレクトリ名
-        /// </summary>
-        public string DirName => System.IO.Path.GetDirectoryName(Path);
-
-        /// <summary>
         /// ファイル名
         /// </summary>
         public string FileName => System.IO.Path.GetFileNameWithoutExtension(Path);
@@ -35,6 +30,11 @@ namespace Mov.Core.Models.Texts
         /// 拡張子
         /// </summary>
         public FileType FileType => new FileType(System.IO.Path.GetExtension(Path));
+
+        /// <summary>
+        /// ディレクトリ名
+        /// </summary>
+        public string DirName => FileType.IsEmpty() ? FileName : System.IO.Path.GetDirectoryName(Path);
 
 
         #endregion property
@@ -52,9 +52,9 @@ namespace Mov.Core.Models.Texts
 
         public bool IsEmpty() => string.IsNullOrEmpty(Path);
 
-        public bool IsDir() => !string.IsNullOrEmpty(DirName);
+        public bool IsDir() => !string.IsNullOrEmpty(DirName) && FileType.IsEmpty();
 
-        public bool IsFile() => !string.IsNullOrEmpty(FileName);
+        public bool IsFile() => !string.IsNullOrEmpty(FileName) && !FileType.IsNan();
 
         public bool IsFileName() => Path.Equals(FileName, StringComparison.Ordinal);
 

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Core.Test.Models.Texts
 {
+    [TestFixture]
     public class TextModelTest
     {
         #region constant
@@ -48,7 +49,7 @@ namespace Mov.Core.Test.Models.Texts
         #region test
 
         [Test]
-        public void Encode_Initialized()
+        public void EncodingValue_CreateEmpty_IsEmpty()
         {
             //Arrange
             var sut = EncodingValue.Empty;
@@ -63,29 +64,23 @@ namespace Mov.Core.Test.Models.Texts
         [Test]
         public void FileType_Initialized_XML()
         {
-            //Arrange
-            var sut = FileType.Xml;
-
-            //Act
-            var isXml = sut.IsXml();
-            var isNan = sut.IsNan();
+            //Arrange Act
+            var sut = new FileType("xml");
 
             //Assert
-            Assert.That(isXml, Is.EqualTo(true));
-            Assert.That(!isNan, Is.EqualTo(true));
+            Assert.That(sut.IsXml(), Is.EqualTo(true));
+            Assert.That(!sut.IsNan(), Is.EqualTo(true));
         }
 
         [Test]
-        public void FileValue_Create()
+        public void FileValue_CreateDir_IsDir()
         {
-            //Arrange
-            var sut = new FileValue("test");
-
-            //Act
+            //Arrange Act
+            var sut = new FileValue(@"test/test1");
 
             //Assert
             Assert.That(sut.IsDir(), Is.EqualTo(true));
-
+            Assert.That(sut.DirName, Is.EqualTo("test1"));
         }
 
         #endregion test

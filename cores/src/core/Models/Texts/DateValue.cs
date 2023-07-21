@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mov.Core.Models.Texts
 {
-    public sealed class DateInfo : ValueObjectBase<DateInfo>
+    public sealed class DateValue : ValueObjectBase<DateValue>
     {
         #region constant
 
@@ -20,7 +20,7 @@ namespace Mov.Core.Models.Texts
 
         #region constructor
 
-        public DateInfo(DateTime dateTime)
+        public DateValue(DateTime dateTime)
         {
             this.DateTime = dateTime;
         }
@@ -29,7 +29,7 @@ namespace Mov.Core.Models.Texts
 
         #region method
 
-        protected override bool EqualCore(DateInfo other)
+        protected override bool EqualCore(DateValue other)
         {
             return DateTime.Equals(other.DateTime);
         }

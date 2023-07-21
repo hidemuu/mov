@@ -4,6 +4,26 @@ namespace Mov.Core.Models.Texts
 {
     public sealed class Document : ValueObjectBase<Document>
     {
+        #region constant
+
+        /// <summary>
+        /// スペース
+        /// </summary>
+        private const string SPACE = " ";
+        /// <summary>
+        /// デリミタ
+        /// </summary>
+        private const char DELIMITER = ',';
+        /// <summary>
+        /// エスケープ文字
+        /// </summary>
+        private const string ESCAPE = "/";
+        /// <summary>
+        /// ヘッダー線文字
+        /// </summary>
+        private const char HEADER_LINE = '-';
+
+        #endregion constant
 
         #region property
 
@@ -19,6 +39,8 @@ namespace Mov.Core.Models.Texts
         }
 
         public static Document Empty = new Document(string.Empty);
+
+        public static Document HeaderLine = new Document(HEADER_LINE.ToString());
 
         #endregion constructor
 

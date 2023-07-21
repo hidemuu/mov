@@ -2,6 +2,7 @@
 using Mov.Core.Accessors.Services.Serializer;
 using Mov.Core.Accessors.Services.Serializer.Implements;
 using Mov.Core.Models.DbObjects;
+using Mov.Core.Models.Texts;
 using Mov.Core.Templates.Repositories;
 using System;
 using System.Collections.Generic;
@@ -190,7 +191,7 @@ namespace Mov.Core.Repositories.Repositories.Entities
                 //ヘッダー文字を最大長さに調整
                 for (int j = 0; j < headerLengths[i]; j++)
                 {
-                    headerLine += RepositoryConstants.HEADER_LINE;
+                    headerLine += Document.HeaderLine;
                 }
                 stringBuilder.Append(headerStrings[i].PadRight(headerLengths[i]));
             }

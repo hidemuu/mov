@@ -14,6 +14,8 @@ namespace Mov.Core.Models.Texts
 
         private const string CSV = "csv";
 
+        private const string DB = "db";
+
         #endregion constant
 
         #region property
@@ -38,6 +40,7 @@ namespace Mov.Core.Models.Texts
 
         public static FileType Csv = new FileType(CSV);
 
+        public static FileType Db = new FileType(DB);
 
         #endregion constructor
 
@@ -45,13 +48,15 @@ namespace Mov.Core.Models.Texts
 
         public bool IsEmpty() => string.IsNullOrEmpty(Value);
 
-        public bool IsNan() => !IsJson() && !IsXml() && !IsCsv();
+        public bool IsNan() => !IsJson() && !IsXml() && !IsCsv() && !IsDb();
 
         public bool IsJson() => this.Equals(Json);
 
         public bool IsXml() => this.Equals(Xml);
 
         public bool IsCsv() => this.Equals(Csv);
+
+        public bool IsDb() => this.Equals(Db);
 
         protected override bool EqualCore(FileType other)
         {

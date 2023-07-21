@@ -13,19 +13,19 @@ namespace Mov.Core.Translators.Models.ValueObjects
 
         public Language Location { get; } = Language.Empty;
 
-        public Info Description { get; } = Info.Empty;
+        public Document Description { get; } = Document.Empty;
 
         #endregion property
 
         #region constructor
 
-        public LocalizeInfo(Language location, Info description)
+        public LocalizeInfo(Language location, Document description)
         {
             Location = location;
             Description = description;
         }
 
-        public readonly static LocalizeInfo Empty = new LocalizeInfo(Language.Empty, Info.Empty);
+        public readonly static LocalizeInfo Empty = new LocalizeInfo(Language.Empty, Document.Empty);
 
         #endregion constructor
 

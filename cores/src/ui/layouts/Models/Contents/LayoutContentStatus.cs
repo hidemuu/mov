@@ -9,7 +9,7 @@ namespace Mov.Core.Layouts.Models.Contents
 
         #region property
 
-        public Info Name { get; }
+        public Document Name { get; }
 
         public IconImage Icon { get; }
 
@@ -23,7 +23,7 @@ namespace Mov.Core.Layouts.Models.Contents
 
         #region constructor
 
-        public LayoutContentStatus(Info name, IconImage icon, VisibilityStyle visibility, EnableStyle isEnable, Parameter parameter)
+        public LayoutContentStatus(Document name, IconImage icon, VisibilityStyle visibility, EnableStyle isEnable, Parameter parameter)
         {
             Name = name;
             Icon = icon;
@@ -33,7 +33,7 @@ namespace Mov.Core.Layouts.Models.Contents
         }
 
         public static LayoutContentStatus Empty =>
-            new LayoutContentStatus(Info.Empty, IconImage.Empty, VisibilityStyle.Visible, EnableStyle.Enable, Parameter.Empty);
+            new LayoutContentStatus(Document.Empty, IconImage.Empty, VisibilityStyle.Visible, EnableStyle.Enable, Parameter.Empty);
 
         #endregion constructor
     }

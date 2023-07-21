@@ -33,7 +33,7 @@ namespace Mov.Core.Translators.Models
                         new Identifier(translate.Id),
                         new IdentifierIndex(translate.Index),
                         new IdentifierCode(translate.Code),
-                        new[] { new LocalizeInfo(Language.EN, new Info(translate.EN)), new LocalizeInfo(Language.JP, new Info(translate.JP)) }
+                        new[] { new LocalizeInfo(Language.EN, new Document(translate.EN)), new LocalizeInfo(Language.JP, new Document(translate.JP)) }
                         )
                     );
             }

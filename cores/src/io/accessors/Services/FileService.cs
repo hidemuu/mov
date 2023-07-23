@@ -63,7 +63,7 @@ namespace Mov.Core.Accessors.Services
 
         public string Read(string url)
         {
-            using (var stream = new StreamReader(Path.Combine(this.FileValue.Path, url), this.Encoding.Value))
+            using (var stream = CreateStreamReader(url))
             {
                 if (stream != null)
                 {
@@ -93,19 +93,26 @@ namespace Mov.Core.Accessors.Services
             return lines;
         }
 
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="isappend">追記モード（falseなら上書き保存）</param>
+
+        public StreamReader CreateStreamReader(string url)
+        {
+            return new StreamReader(Path.Combine(this.FileValue.Path, url), this.Encoding.Value);
+        }
+
         public void Write(string url, string writeString, bool isappend)
         {
-            using (var stream = new StreamWriter(Path.Combine(this.FileValue.Path, url), isappend, this.Encoding.Value))
+            using (var stream = CreateStreamWriter(url, isappend))
             {
                 if (stream != null)
                 {
                     stream.Write(writeString);
                 }
             }
+        }
+
+        public StreamWriter CreateStreamWriter(string url, bool isAppend)
+        {
+            return new StreamWriter(Path.Combine(this.FileValue.Path, url), isAppend, this.Encoding.Value);
         }
 
         /// <summary>

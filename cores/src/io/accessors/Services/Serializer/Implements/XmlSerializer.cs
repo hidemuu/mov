@@ -36,7 +36,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         public TResponse Get<TResponse>(string url)
         {
             var xmlSettings = new XmlReaderSettings() { CheckCharacters = false };
-            using (var streamReader = new StreamReader(Path.Combine(service.FileValue.Path, url)))
+            using (var streamReader = this.service.CreateStreamReader(url))
             using (var xmlReader = XmlReader.Create(streamReader, xmlSettings))
             {
                 var serializer = new System.Xml.Serialization.XmlSerializer(typeof(TResponse));
@@ -50,7 +50,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <param name="obj"></param>
         public TResponse Post<TRequest, TResponse>(string url, TRequest obj)
         {
-            using (var stream = new StreamWriter(Path.Combine(service.FileValue.Path, url), false, service.Encoding.Value))
+            using (var stream = this.service.CreateStreamWriter(url, false))
             {
                 System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(TRequest));
                 serializer.Serialize(stream, obj);

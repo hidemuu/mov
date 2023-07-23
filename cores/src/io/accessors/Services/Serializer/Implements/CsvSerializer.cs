@@ -12,7 +12,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
     {
         #region field
 
-        private readonly IFileService context;
+        private readonly IFileService service;
 
         #endregion field
 
@@ -21,9 +21,9 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public CsvSerializer(IFileService context)
+        public CsvSerializer(IFileService service)
         {
-            this.context = context;
+            this.service = service;
         }
 
         #endregion constructor
@@ -37,12 +37,12 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <param name="list"></param>
         public TResponse Post<TRequest, TResponse>(string url, TRequest list)
         {
-            var isExist = File.Exists(context.FileValue.Path);
+            var isExist = File.Exists(service.FileValue.Path);
 
             var configuration = new CsvConfiguration(CultureInfo.CurrentCulture);
             configuration.HasHeaderRecord = true;
 
-            using (var sw = new StreamWriter(Path.Combine(context.FileValue.Path, url), true, context.Encoding.Value))
+            using (var sw = this.service.CreateStreamWriter(url, true))
             {
                 using (var csv = new CsvWriter(sw, configuration))
                 {
@@ -69,7 +69,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
                 PrepareHeaderForMatch = args => args.Header.ToLower(),
             };
 
-            using (var sr = new StreamReader(Path.Combine(context.FileValue.Path, url), context.Encoding.Value))
+            using (var sr = this.service.CreateStreamReader(url))
             {
                 using (var csv = new CsvReader(sr, configuration))
                 {

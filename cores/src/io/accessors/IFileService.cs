@@ -73,6 +73,21 @@ namespace Mov.Core.Accessors
         /// <returns></returns>
         bool Clear();
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        StreamReader CreateStreamReader(string url);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="isAppend"></param>
+        /// <returns></returns>
+        StreamWriter CreateStreamWriter(string url, bool isAppend);
+
         #endregion method
     }
 }

@@ -10,7 +10,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
     {
         #region field
 
-        private readonly IFileService service;
+        private readonly IAccessService service;
 
         #endregion field
 
@@ -20,7 +20,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// コンストラクタ
         /// </summary>
         /// <param name="path">ファイルパス</param>
-        public XmlSerializer(IFileService service)
+        public XmlSerializer(IAccessService service)
         {
             this.service = service;
         }

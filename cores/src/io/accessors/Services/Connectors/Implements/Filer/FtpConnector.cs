@@ -13,7 +13,7 @@ namespace Mov.Core.Accessors.Services.Connectors.Implements.Filer
 
         private readonly ConnectValue connect;
 
-        private readonly IFileService fileContext;
+        private readonly IAccessService service;
 
         private readonly FtpClient client;
 
@@ -21,10 +21,10 @@ namespace Mov.Core.Accessors.Services.Connectors.Implements.Filer
 
         #region コンストラクター
 
-        public FtpConnector(ConnectValue connect, IFileService fileContext)
+        public FtpConnector(ConnectValue connect, IAccessService service)
         {
             this.connect = connect;
-            this.fileContext = fileContext;
+            this.service = service;
             client = new FtpClient();
         }
 
@@ -78,7 +78,7 @@ namespace Mov.Core.Accessors.Services.Connectors.Implements.Filer
                 // 接続
                 Connect();
                 // ファイルのアップロード
-                client.UploadFile(System.IO.Path.Combine(fileContext.FileValue.DirName, fileName), fileName);
+                client.UploadFile(Path.Combine(service.PathValue.Value, fileName), fileName);
 
             }
             catch (Exception ex)

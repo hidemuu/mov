@@ -1,4 +1,5 @@
 ﻿using Mov.Core.Accessors.Services.Serializer;
+using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
 using System.IO;
 
@@ -7,14 +8,14 @@ namespace Mov.Core.Accessors
     /// <summary>
     /// アクセスの共通サービス
     /// </summary>
-    public interface IFileService
+    public interface IAccessService
     {
         #region property
 
         /// <summary>
         /// ファイルパス
         /// </summary>
-        FileValue FileValue { get; }
+        PathValue PathValue { get; }
 
         /// <summary>
         /// エンコード

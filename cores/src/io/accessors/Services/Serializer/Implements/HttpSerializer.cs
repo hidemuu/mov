@@ -13,7 +13,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <summary>
         /// The Base URL for the API.
         /// /// </summary>
-        private readonly IFileService service;
+        private readonly IAccessService service;
 
         #endregion field
 
@@ -23,7 +23,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// コンストラクター
         /// </summary>
         /// <param name="endpoint"></param>
-        public HttpSerializer(IFileService service)
+        public HttpSerializer(IAccessService service)
         {
             this.service = service;
         }
@@ -103,7 +103,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <summary>
         /// Constructs the base HTTP client, including correct authorization and API version headers.
         /// </summary>
-        private HttpClient BaseClient() => new HttpClient { BaseAddress = new Uri(this.service.FileValue.Path.Value) };
+        private HttpClient BaseClient() => new HttpClient { BaseAddress = new Uri(this.service.PathValue.Value) };
 
         /// <summary>
         /// Helper class for formatting <see cref="StringContent"/> as UTF8 application/json.

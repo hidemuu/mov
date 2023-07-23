@@ -1,4 +1,5 @@
-﻿using Mov.Core.Models.Styles;
+﻿using Mov.Core.Models.Connections;
+using Mov.Core.Models.Styles;
 using Mov.Core.Models.Texts;
 using System;
 using System.Collections.Generic;
@@ -76,7 +77,7 @@ namespace Mov.Core.Test.Models.Texts
         public void FileValue_CreateDir_IsDir()
         {
             //Arrange Act
-            var sut = new FileValue(@"test/test1");
+            var sut = new FileValue(new PathValue(@"test/test1"));
 
             //Assert
             Assert.That(sut.IsDir(), Is.EqualTo(true));

@@ -12,7 +12,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
     {
         #region field
 
-        private readonly IFileService service;
+        private readonly IAccessService service;
 
         #endregion field
 
@@ -21,7 +21,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public CsvSerializer(IFileService service)
+        public CsvSerializer(IAccessService service)
         {
             this.service = service;
         }
@@ -37,7 +37,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <param name="list"></param>
         public TResponse Post<TRequest, TResponse>(string url, TRequest list)
         {
-            var isExist = File.Exists(service.FileValue.Path.Value);
+            var isExist = File.Exists(service.PathValue.Value);
 
             var configuration = new CsvConfiguration(CultureInfo.CurrentCulture);
             configuration.HasHeaderRecord = true;

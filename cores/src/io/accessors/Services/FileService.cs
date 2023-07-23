@@ -77,9 +77,9 @@ namespace Mov.Core.Accessors.Services
         public string[] ReadLines()
         {
             string[] lines = new string[] { };
-            if (File.Exists(this.FileValue.Path))
+            if (File.Exists(this.FileValue.Path.Value))
             {
-                using (var reader = new StreamReader(this.FileValue.Path, this.Encoding.Value))
+                using (var reader = new StreamReader(this.FileValue.Path.Value, this.Encoding.Value))
                 {
                     int i = 0;
                     while (!reader.EndOfStream)
@@ -96,7 +96,7 @@ namespace Mov.Core.Accessors.Services
 
         public StreamReader CreateStreamReader(string url)
         {
-            return new StreamReader(Path.Combine(this.FileValue.Path, url), this.Encoding.Value);
+            return new StreamReader(Path.Combine(this.FileValue.Path.Value, url), this.Encoding.Value);
         }
 
         public void Write(string url, string writeString, bool isappend)
@@ -112,7 +112,7 @@ namespace Mov.Core.Accessors.Services
 
         public StreamWriter CreateStreamWriter(string url, bool isAppend)
         {
-            return new StreamWriter(Path.Combine(this.FileValue.Path, url), isAppend, this.Encoding.Value);
+            return new StreamWriter(Path.Combine(this.FileValue.Path.Value, url), isAppend, this.Encoding.Value);
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Mov.Core.Accessors.Services
             try
             {
                 //書き込むファイルを開く
-                using (StreamWriter writer = new StreamWriter(this.FileValue.Path, isAdd, this.Encoding.Value))
+                using (StreamWriter writer = new StreamWriter(this.FileValue.Path.Value, isAdd, this.Encoding.Value))
                 {
                     string delimiter = this.FileValue.GetDelimiter();
                     int colCount = dt.Columns.Count;
@@ -189,7 +189,7 @@ namespace Mov.Core.Accessors.Services
         {
             try
             {
-                using (var writer = new StreamWriter(this.FileValue.Path, isAdd, this.Encoding.Value))
+                using (var writer = new StreamWriter(this.FileValue.Path.Value, isAdd, this.Encoding.Value))
                 {
                     //指定ファイルの読込ストリームを実行
                     writer.Write(line);
@@ -244,7 +244,7 @@ namespace Mov.Core.Accessors.Services
             {
                 //第3項にTrueを指定すると、コピー先が存在している時、上書き
                 //上書きするファイルが読み取り専用などで上書きできない場合は、UnauthorizedAccessExceptionが発生
-                File.Copy(this.FileValue.Path, backupPath, false);
+                File.Copy(this.FileValue.Path.Value, backupPath, false);
             }
             catch (Exception ex)
             {
@@ -263,7 +263,7 @@ namespace Mov.Core.Accessors.Services
         /// <returns></returns>
         public bool Clear()
         {
-            var path = this.FileValue.Path;
+            var path = this.FileValue.Path.Value;
             if (this.FileValue.IsDir())
             {
                 Directory.Delete(path, true);
@@ -330,7 +330,7 @@ namespace Mov.Core.Accessors.Services
             var header = "";
             try
             {
-                using (var reader = new StreamReader(this.FileValue.Path, this.Encoding.Value))
+                using (var reader = new StreamReader(this.FileValue.Path.Value, this.Encoding.Value))
                 {
                     header = reader.ReadLine();
                 }
@@ -344,7 +344,7 @@ namespace Mov.Core.Accessors.Services
             //元データ削除
             try
             {
-                File.Delete(this.FileValue.Path);
+                File.Delete(this.FileValue.Path.Value);
             }
             catch (Exception ex)
             {
@@ -355,7 +355,7 @@ namespace Mov.Core.Accessors.Services
             //新規生成し、ヘッダー行を付加
             try
             {
-                using (var writer = new StreamWriter(this.FileValue.Path, false, this.Encoding.Value))
+                using (var writer = new StreamWriter(this.FileValue.Path.Value, false, this.Encoding.Value))
                 {
                     writer.WriteLine(header);
                 }

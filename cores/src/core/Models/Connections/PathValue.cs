@@ -6,8 +6,6 @@ namespace Mov.Core.Models.Connections
     {
         #region constant
 
-        private const string EXTENSION = ".";
-
         private const string RESOURCE_NAME = "resources";
 
         #endregion constant

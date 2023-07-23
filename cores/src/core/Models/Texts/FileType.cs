@@ -16,6 +16,8 @@ namespace Mov.Core.Models.Texts
 
         private const string DB = "db";
 
+        private const char EXTENSION = '.';
+
         #endregion constant
 
         #region property
@@ -28,7 +30,7 @@ namespace Mov.Core.Models.Texts
 
         public FileType(string name)
         {
-            name = name.TrimStart('.');
+            name = name.TrimStart(EXTENSION);
             Value = name;
         }
 

@@ -103,7 +103,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <summary>
         /// Constructs the base HTTP client, including correct authorization and API version headers.
         /// </summary>
-        private HttpClient BaseClient() => new HttpClient { BaseAddress = new Uri(this.service.FileValue.Path) };
+        private HttpClient BaseClient() => new HttpClient { BaseAddress = new Uri(this.service.FileValue.Path.Value) };
 
         /// <summary>
         /// Helper class for formatting <see cref="StringContent"/> as UTF8 application/json.

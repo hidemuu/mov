@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Core.Models.Connections;
+using System;
 using System.IO;
 
 namespace Mov.Core.Models.Texts
@@ -21,22 +22,22 @@ namespace Mov.Core.Models.Texts
         /// <summary>
         /// フルパス
         /// </summary>
-        public string Path { get; }
+        public PathValue Path { get; }
 
         /// <summary>
         /// ファイル名
         /// </summary>
-        public string FileName => System.IO.Path.GetFileNameWithoutExtension(Path);
+        public string FileName => System.IO.Path.GetFileNameWithoutExtension(Path.Value);
 
         /// <summary>
         /// 拡張子
         /// </summary>
-        public FileType FileType => new FileType(System.IO.Path.GetExtension(Path));
+        public FileType FileType => new FileType(System.IO.Path.GetExtension(Path.Value));
 
         /// <summary>
         /// ディレクトリ名
         /// </summary>
-        public string DirName => FileType.IsEmpty() ? FileName : System.IO.Path.GetDirectoryName(Path);
+        public string DirName => FileType.IsEmpty() ? FileName : System.IO.Path.GetDirectoryName(Path.Value);
 
 
         #endregion property
@@ -45,20 +46,20 @@ namespace Mov.Core.Models.Texts
 
         public FileValue(string path)
         {
-            Path = path;
+            Path = new PathValue(path);
         }
 
         #endregion constructor
 
         #region method
 
-        public bool IsEmpty() => string.IsNullOrEmpty(Path);
+        public bool IsEmpty() => string.IsNullOrEmpty(Path.Value);
 
         public bool IsDir() => !string.IsNullOrEmpty(DirName) && FileType.IsEmpty();
 
         public bool IsFile() => !string.IsNullOrEmpty(FileName) && !FileType.IsNan();
 
-        public bool IsFileName() => Path.Equals(FileName, StringComparison.Ordinal);
+        public bool IsFileName() => Path.Value.Equals(FileName, StringComparison.Ordinal);
 
         public bool IsCsvFile() => IsFile() && FileType.IsCsv();
 
@@ -68,8 +69,8 @@ namespace Mov.Core.Models.Texts
 
         public bool Exists()
         {
-            return IsDir() ? Directory.Exists(Path) :
-                IsFile() ? File.Exists(Path) : false;
+            return IsDir() ? Directory.Exists(Path.Value) :
+                IsFile() ? File.Exists(Path.Value) : false;
         }
 
         public bool CreateDirectory()
@@ -106,7 +107,7 @@ namespace Mov.Core.Models.Texts
 
         protected override bool EqualCore(FileValue other)
         {
-            return Path.Equals(other.Path, StringComparison.Ordinal);
+            return Path.Equals(other.Path);
         }
 
         protected override int GetHashCodeCore()

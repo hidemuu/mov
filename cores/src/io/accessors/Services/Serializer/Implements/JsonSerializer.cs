@@ -35,7 +35,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         public TResponse Get<TResponse>(string url)
         {
             //Json文字列の取得
-            string jsonString = ReadStream(url);
+            string jsonString = this.service.Read(url);
             //指定オブジェクトにデシリアライズ
             return JsonConvert.DeserializeObject<TResponse>(jsonString);
         }
@@ -49,42 +49,11 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         {
             //Jsonデータにシリアライズ
             var json = JsonConvert.SerializeObject(obj);
-            WriteStream(url, json, false);
+            this.service.Write(url, json, false);
             return default;
         }
 
         #endregion method
 
-        #region private method
-
-        private string ReadStream(string url)
-        {
-            using (var stream = new StreamReader(Path.Combine(service.FileValue.Path, url), service.Encoding.Value))
-            {
-                if (stream != null)
-                {
-                    return stream.ReadToEnd();
-                }
-            }
-            return "";
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        /// <param name="json"></param>
-        /// <param name="isappend">追記モード（falseなら上書き保存）</param>
-        private void WriteStream(string url, string json, bool isappend)
-        {
-            using (var stream = new StreamWriter(Path.Combine(service.FileValue.Path, url), isappend, service.Encoding.Value))
-            {
-                if (stream != null)
-                {
-                    stream.Write(json);
-                }
-            }
-        }
-
-        #endregion private method
     }
 }

@@ -1,4 +1,5 @@
-﻿using Mov.Core.Models.Texts;
+﻿using Mov.Core.Accessors.Services.Serializer;
+using Mov.Core.Models.Texts;
 using System.IO;
 
 namespace Mov.Core.Accessors
@@ -30,9 +31,27 @@ namespace Mov.Core.Accessors
         bool Exists();
 
         /// <summary>
+        /// シリアライザー生成
+        /// </summary>
+        /// <returns></returns>
+        ISerializer CreateSerializer();
+
+        /// <summary>
+        /// 読み出し
+        /// </summary>
+        /// <returns></returns>
+        string Read(string url);
+
+        /// <summary>
         /// テキストファイルから読出
         /// </summary>
-        string[] Read();
+        string[] ReadLines();
+
+        /// <summary>
+        /// 書き込み
+        /// </summary>
+        /// <param name="isappend">追記モード（falseなら上書き保存）</param>
+        void Write(string url, string writeString, bool isappend);
 
         /// <summary>
         /// 一行分テキストファイルに書き込み
@@ -53,16 +72,6 @@ namespace Mov.Core.Accessors
         /// </summary>
         /// <returns></returns>
         bool Clear();
-
-        /// <summary>
-        /// ストリームリーダーを生成
-        /// </summary>
-        StreamReader CreateStreamReader(string addPath = "");
-
-        /// <summary>
-        /// ストリームライターを生成
-        /// </summary>
-        StreamWriter CreateStreamWriter(bool isAdd, string addPath = "");
 
         #endregion method
     }

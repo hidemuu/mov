@@ -6,7 +6,6 @@ using System;
 using System.Data;
 using System.Diagnostics;
 using System.IO;
-using System.Runtime.InteropServices.ComTypes;
 
 namespace Mov.Core.Accessors.Services
 {
@@ -62,8 +61,20 @@ namespace Mov.Core.Accessors.Services
             }
         }
 
+        public string Read(string url)
+        {
+            using (var stream = new StreamReader(Path.Combine(this.FileValue.Path, url), this.Encoding.Value))
+            {
+                if (stream != null)
+                {
+                    return stream.ReadToEnd();
+                }
+            }
+            return "";
+        }
+
         /// <inheritdoc/>
-        public string[] Read()
+        public string[] ReadLines()
         {
             string[] lines = new string[] { };
             if (File.Exists(this.FileValue.Path))
@@ -82,44 +93,19 @@ namespace Mov.Core.Accessors.Services
             return lines;
         }
 
-        /// <inheritdoc/>
-        public bool WriteLine(string line, bool isAdd = true)
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="isappend">追記モード（falseなら上書き保存）</param>
+        public void Write(string url, string writeString, bool isappend)
         {
-            try
+            using (var stream = new StreamWriter(Path.Combine(this.FileValue.Path, url), isappend, this.Encoding.Value))
             {
-                using (var writer = new StreamWriter(this.FileValue.Path, isAdd, this.Encoding.Value))
+                if (stream != null)
                 {
-                    //指定ファイルの読込ストリームを実行
-                    writer.Write(line);
+                    stream.Write(writeString);
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(DateTime.Now.ToString(LogConstants.TIME_FORMAT) + "/" + ex.Message + "/" + ex.Source + "/" + "書き込み失敗");
-                return false;
-            }
-            return true;
-        }
-
-        /// <summary>
-        /// 配列データで区切り、一行分テキストファイルに書き込み
-        /// </summary>
-        /// <param name="items">データ配列</param>
-        /// <param name="isAdd">書込モード true：追加 false：上書き</param>
-        public bool WriteLine(string[] items, bool isAdd = true)
-        {
-            string line = "";
-            string delimiter = this.FileValue.GetDelimiter();
-            string escape = this.FileValue.GetEscape();
-            foreach (string item in items)
-            {
-                string query = item.Replace(Environment.NewLine, escape).Replace("\r", escape).Replace("\n", escape);   //改行と区切り文字を変換
-                if (string.IsNullOrEmpty(delimiter)) query.Replace(delimiter, escape);
-                line += query + delimiter;
-            }
-            line += Environment.NewLine;    //改行を付加
-
-            return WriteLine(line, isAdd);
         }
 
         /// <summary>
@@ -190,6 +176,48 @@ namespace Mov.Core.Accessors.Services
 
             return true;
         }
+
+        /// <inheritdoc/>
+        public bool WriteLine(string line, bool isAdd = true)
+        {
+            try
+            {
+                using (var writer = new StreamWriter(this.FileValue.Path, isAdd, this.Encoding.Value))
+                {
+                    //指定ファイルの読込ストリームを実行
+                    writer.Write(line);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(DateTime.Now.ToString(LogConstants.TIME_FORMAT) + "/" + ex.Message + "/" + ex.Source + "/" + "書き込み失敗");
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// 配列データで区切り、一行分テキストファイルに書き込み
+        /// </summary>
+        /// <param name="items">データ配列</param>
+        /// <param name="isAdd">書込モード true：追加 false：上書き</param>
+        public bool WriteLine(string[] items, bool isAdd = true)
+        {
+            string line = "";
+            string delimiter = this.FileValue.GetDelimiter();
+            string escape = this.FileValue.GetEscape();
+            foreach (string item in items)
+            {
+                string query = item.Replace(Environment.NewLine, escape).Replace("\r", escape).Replace("\n", escape);   //改行と区切り文字を変換
+                if (string.IsNullOrEmpty(delimiter)) query.Replace(delimiter, escape);
+                line += query + delimiter;
+            }
+            line += Environment.NewLine;    //改行を付加
+
+            return WriteLine(line, isAdd);
+        }
+
+        
 
         /// <inheritdoc/>
         public string BackUp(string backupDirectory)
@@ -279,16 +307,6 @@ namespace Mov.Core.Accessors.Services
             reader.Close();
 
             return result;
-        }
-
-        public StreamReader CreateStreamReader(string addPath = "")
-        {
-            return new StreamReader(Path.Combine(this.FileValue.Path, addPath), this.Encoding.Value);
-        }
-
-        public StreamWriter CreateStreamWriter(bool isAdd, string addPath = "")
-        {
-            return new StreamWriter(Path.Combine(this.FileValue.Path, addPath), isAdd, this.Encoding.Value);
         }
 
         #endregion method

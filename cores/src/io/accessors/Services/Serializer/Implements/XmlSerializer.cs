@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Xml;
 
 namespace Mov.Core.Accessors.Services.Serializer.Implements
 {
@@ -34,10 +35,12 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <returns></returns>
         public TResponse Get<TResponse>(string url)
         {
-            using (var stream = new StreamReader(Path.Combine(service.FileValue.Path, url)))
+            var xmlSettings = new XmlReaderSettings() { CheckCharacters = false };
+            using (var streamReader = new StreamReader(Path.Combine(service.FileValue.Path, url)))
+            using (var xmlReader = XmlReader.Create(streamReader, xmlSettings))
             {
                 var serializer = new System.Xml.Serialization.XmlSerializer(typeof(TResponse));
-                return (TResponse)serializer.Deserialize(stream);
+                return (TResponse)serializer.Deserialize(xmlReader);
             }
         }
 

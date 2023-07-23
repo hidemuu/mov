@@ -34,8 +34,8 @@ namespace Mov.Core.Accessors.Services
         public FileAccessService(string path, EncodingValue encoding)
         {
             this.PathValue = new PathValue(path);
-            this.fileValue = new FileValue(this.PathValue);
             this.Encoding = encoding;
+            this.fileValue = new FileValue(this.PathValue);
         }
 
         #endregion constructor

@@ -1,4 +1,6 @@
-﻿namespace Mov.Core.Models.Networks.Builders
+﻿using Mov.Core.Models.Connections;
+
+namespace Mov.Core.Models.Networks.Builders
 {
     public class HtmlBuilder
     {

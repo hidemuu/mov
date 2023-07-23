@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Core.Models.Networks
+namespace Mov.Core.Models.Connections
 {
     public sealed class HtmlElement : ValueObjectBase<HtmlElement>
     {
@@ -62,12 +62,12 @@ namespace Mov.Core.Models.Networks
 
         protected override bool EqualCore(HtmlElement other)
         {
-            return this.Name.Equals(other.Name, StringComparison.Ordinal) && this.Text.Equals(other.Text, StringComparison.Ordinal);
+            return Name.Equals(other.Name, StringComparison.Ordinal) && Text.Equals(other.Text, StringComparison.Ordinal);
         }
 
         protected override int GetHashCodeCore()
         {
-            return CreateHashCode(this.Name.GetHashCode(), this.Text.GetHashCode());
+            return CreateHashCode(Name.GetHashCode(), Text.GetHashCode());
         }
 
         #endregion property

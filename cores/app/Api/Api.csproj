@@ -13,4 +13,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\core\Core.csproj" />
+    <ProjectReference Include="..\..\src\io\accessors\Accessors.csproj" />
+    <ProjectReference Include="..\..\src\io\configurators\Configurators.csproj" />
+    <ProjectReference Include="..\..\src\io\repositories\Repositories.csproj" />
+    <ProjectReference Include="..\..\src\io\translators\Translators.csproj" />
+  </ItemGroup>
+
 </Project>

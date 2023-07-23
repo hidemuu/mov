@@ -1,5 +1,5 @@
 ﻿using FluentFTP;
-using Mov.Core.Models.Networks;
+using Mov.Core.Models.Connections;
 using System;
 using System.IO;
 using System.Net;
@@ -78,7 +78,7 @@ namespace Mov.Core.Accessors.Services.Connectors.Implements.Filer
                 // 接続
                 Connect();
                 // ファイルのアップロード
-                client.UploadFile(Path.Combine(fileContext.FileValue.DirName, fileName), fileName);
+                client.UploadFile(System.IO.Path.Combine(fileContext.FileValue.DirName, fileName), fileName);
 
             }
             catch (Exception ex)

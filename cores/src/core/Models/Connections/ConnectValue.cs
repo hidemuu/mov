@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Core.Models.Networks
+namespace Mov.Core.Models.Connections
 {
     public sealed class ConnectValue : ValueObjectBase<ConnectValue>
     {
@@ -29,11 +29,11 @@ namespace Mov.Core.Models.Networks
 
         public ConnectValue(string ip, int port, string userName, string password, double timeout)
         {
-            this.Host = new IpAddressValue(ip);
-            this.Port = port;
-            this.UserName = userName;
-            this.Password = password;
-            this.Timeout = timeout;
+            Host = new IpAddressValue(ip);
+            Port = port;
+            UserName = userName;
+            Password = password;
+            Timeout = timeout;
         }
 
         #endregion constructor
@@ -42,12 +42,12 @@ namespace Mov.Core.Models.Networks
 
         protected override bool EqualCore(ConnectValue other)
         {
-            return this.Host.Equals(other.Host);
+            return Host.Equals(other.Host);
         }
 
         protected override int GetHashCodeCore()
         {
-            return this.Host.GetHashCode();
+            return Host.GetHashCode();
         }
 
         #endregion method

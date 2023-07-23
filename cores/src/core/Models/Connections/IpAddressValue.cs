@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace Mov.Core.Models.Networks
+namespace Mov.Core.Models.Connections
 {
     /// <summary>
     /// IPアドレスのValueObject

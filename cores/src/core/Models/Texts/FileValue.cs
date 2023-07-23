@@ -10,6 +10,8 @@ namespace Mov.Core.Models.Texts
     {
         #region constrant
 
+        private const string ESCAPE = "/";
+
         private const string DELIMITER_CSV = ",";
 
         #endregion constant
@@ -81,6 +83,11 @@ namespace Mov.Core.Models.Texts
         {
             if (IsCsvFile()) return DELIMITER_CSV;
             return string.Empty;
+        }
+
+        public string GetEscape()
+        {
+            return ESCAPE;
         }
 
         /// <summary>

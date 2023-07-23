@@ -25,17 +25,17 @@ namespace Mov.UseCase.Repositories
             if (repositoryType == typeof(IDesignerRepository))
             {
                 return new FileDomainRepositoryCollection<TRepository, FileDesignerRepository>(
-                    resourcePath, fileType);
+                    resourcePath, fileType, EncodingValue.UTF8);
             }
             if (repositoryType == typeof(IDrawerRepository))
             {
                 return new FileDomainRepositoryCollection<TRepository, FileDrawerRepository>(
-                    resourcePath, fileType);
+                    resourcePath, fileType, EncodingValue.UTF8);
             }
             if (repositoryType == typeof(IGameRepository))
             {
                 return new FileDomainRepositoryCollection<TRepository, FileGameRepository>(
-                    resourcePath, fileType);
+                    resourcePath, fileType, EncodingValue.UTF8);
             }
             return null;
         }

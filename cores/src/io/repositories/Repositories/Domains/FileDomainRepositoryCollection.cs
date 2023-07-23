@@ -22,7 +22,7 @@ namespace Mov.Core.Repositories.Repositories.Domains
 
         #region コンストラクター
 
-        public FileDomainRepositoryCollection(string endpoint, FileType fileType, string encode = AccessConstants.ENCODE_NAME_UTF8)
+        public FileDomainRepositoryCollection(string endpoint, FileType fileType, EncodingValue encode)
         {
             Repositories = new Dictionary<string, TRepository>();
             CreateRepository(endpoint, fileType, encode);
@@ -50,7 +50,7 @@ namespace Mov.Core.Repositories.Repositories.Domains
 
         #region 内部メソッド
 
-        private void CreateRepository(string endpoint, FileType fileType, string encode)
+        private void CreateRepository(string endpoint, FileType fileType, EncodingValue encode)
         {
             var defaultRepository = (TRepository)Activator.CreateInstance(typeof(TInstance), endpoint, "", fileType, encode);
             var directories = GetDirectories(defaultRepository.RelativePath);

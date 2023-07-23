@@ -110,7 +110,7 @@ namespace Mov.Core.Accessors.Services
         {
             string line = "";
             string delimiter = this.FileValue.GetDelimiter();
-            string escape = AccessConstants.ESCAPE;
+            string escape = this.FileValue.GetEscape();
             foreach (string item in items)
             {
                 string query = item.Replace(Environment.NewLine, escape).Replace("\r", escape).Replace("\n", escape);   //改行と区切り文字を変換

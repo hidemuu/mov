@@ -1,4 +1,5 @@
 ﻿using Mov.Core.Accessors;
+using Mov.Core.Models.Texts;
 using Mov.Core.Templates.Repositories;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace Mov.Core.Repositories.Repositories.Domains
 
         #region コンストラクター
 
-        public FileDomainRepositoryCollection(string endpoint, string extension, string encode = AccessConstants.ENCODE_NAME_UTF8)
+        public FileDomainRepositoryCollection(string endpoint, FileType fileType, string encode = AccessConstants.ENCODE_NAME_UTF8)
         {
             Repositories = new Dictionary<string, TRepository>();
-            CreateRepository(endpoint, extension, encode);
+            CreateRepository(endpoint, fileType, encode);
         }
 
         #endregion コンストラクター
@@ -49,14 +50,14 @@ namespace Mov.Core.Repositories.Repositories.Domains
 
         #region 内部メソッド
 
-        private void CreateRepository(string endpoint, string extension, string encode)
+        private void CreateRepository(string endpoint, FileType fileType, string encode)
         {
-            var defaultRepository = (TRepository)Activator.CreateInstance(typeof(TInstance), endpoint, "", extension, encode);
+            var defaultRepository = (TRepository)Activator.CreateInstance(typeof(TInstance), endpoint, "", fileType, encode);
             var directories = GetDirectories(defaultRepository.RelativePath);
             Repositories.Add("", defaultRepository);
             foreach (var directory in directories)
             {
-                Repositories.Add(directory.Name, (TRepository)Activator.CreateInstance(typeof(TInstance), endpoint, directory.Name, extension, encode));
+                Repositories.Add(directory.Name, (TRepository)Activator.CreateInstance(typeof(TInstance), endpoint, directory.Name, fileType, encode));
             }
         }
 

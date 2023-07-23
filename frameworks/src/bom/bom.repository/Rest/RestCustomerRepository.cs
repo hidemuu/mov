@@ -18,7 +18,7 @@ namespace Mov.Bom.Repository.Rest
 
         public RestCustomerRepository(string baseUrl)
         {
-            this.serializer = new HttpSerializer(new FileAccessService(baseUrl, EncodingValue.UTF8));
+            this.serializer = new HttpSerializer(new FileService(baseUrl, EncodingValue.UTF8));
         }
 
         public async Task<IEnumerable<Customer>> GetAsync() =>

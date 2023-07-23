@@ -22,9 +22,9 @@ namespace Mov.UseCase.Repositories
         public FileMovRepository(string endpoint)
         {
             var fileRepositoryFactory = new FileDomainRepositoryCollectionFactory(endpoint);
-            Designer = fileRepositoryFactory.Create<IDesignerRepository>(AccessConstants.PATH_XML)?.GetDefaultRepository();
-            Game = fileRepositoryFactory.Create<IGameRepository>(AccessConstants.PATH_JSON)?.GetDefaultRepository();
-            Analizer = fileRepositoryFactory.Create<IAnalizerRepository>(AccessConstants.PATH_JSON)?.GetDefaultRepository();
+            Designer = fileRepositoryFactory.Create<IDesignerRepository>(FileType.Xml)?.GetDefaultRepository();
+            Game = fileRepositoryFactory.Create<IGameRepository>(FileType.Json)?.GetDefaultRepository();
+            Analizer = fileRepositoryFactory.Create<IAnalizerRepository>(FileType.Json)?.GetDefaultRepository();
             Configurator = new FileConfiguratorRepository(endpoint, FileType.Json, EncodingValue.UTF8);
             Translator = new FileTranslatorRepository(endpoint);
         }

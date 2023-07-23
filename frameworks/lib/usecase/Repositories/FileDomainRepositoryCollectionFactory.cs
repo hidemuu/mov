@@ -1,4 +1,5 @@
-﻿using Mov.Core.Repositories.Repositories.Domains;
+﻿using Mov.Core.Models.Texts;
+using Mov.Core.Repositories.Repositories.Domains;
 using Mov.Core.Templates.Repositories;
 using Mov.Designer.Models;
 using Mov.Designer.Repository.File;
@@ -18,7 +19,7 @@ namespace Mov.UseCase.Repositories
             this.resourcePath = resourcePath;
         }
 
-        public IDomainRepositoryCollection<TRepository> Create<TRepository>(string fileType) where TRepository : IDomainRepository
+        public IDomainRepositoryCollection<TRepository> Create<TRepository>(FileType fileType) where TRepository : IDomainRepository
         {
             var repositoryType = typeof(TRepository);
             if (repositoryType == typeof(IDesignerRepository))

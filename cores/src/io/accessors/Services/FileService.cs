@@ -1,7 +1,10 @@
-﻿using Mov.Core.Loggers;
+﻿using Mov.Core.Accessors.Services.Serializer.Implements;
+using Mov.Core.Accessors.Services.Serializer;
+using Mov.Core.Loggers;
 using Mov.Core.Models.Texts;
 using System;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices.ComTypes;
 
@@ -36,6 +39,27 @@ namespace Mov.Core.Accessors.Services
         public bool Exists()
         {
             return this.FileValue.Exists();
+        }
+
+        public ISerializer CreateSerializer()
+        {
+            if (this.FileValue.FileType.IsJson())
+            {
+                return new JsonSerializer(this);
+            }
+            else if (this.FileValue.FileType.IsXml())
+            {
+                return new XmlSerializer(this);
+            }
+            else if (this.FileValue.FileType.IsCsv())
+            {
+                return new CsvSerializer(this);
+            }
+            else
+            {
+                Debug.Assert(false, "拡張子が不正です");
+                return null;
+            }
         }
 
         /// <inheritdoc/>

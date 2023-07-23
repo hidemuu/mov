@@ -8,7 +8,7 @@ using System.Runtime.InteropServices.ComTypes;
 namespace Mov.Core.Accessors.Services
 {
     /// <inheritdoc/>
-    public class FileAccessService : IAccessService
+    public class FileService : IFileService
     {
         #region property
 
@@ -22,7 +22,7 @@ namespace Mov.Core.Accessors.Services
 
         #region constructor
 
-        public FileAccessService(string path, EncodingValue encoding)
+        public FileService(string path, EncodingValue encoding)
         {
             this.FileValue = new FileValue(path);
             this.Encoding = encoding;
@@ -31,6 +31,12 @@ namespace Mov.Core.Accessors.Services
         #endregion constructor
 
         #region method
+
+        /// <inheritdoc/>
+        public bool Exists()
+        {
+            return this.FileValue.Exists();
+        }
 
         /// <inheritdoc/>
         public string[] Read()

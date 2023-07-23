@@ -27,7 +27,7 @@ namespace Mov.Core.Repositories.Repositories.DbObjects
         /// コンストラクター
         /// </summary>
         public FileDbObjectRepository(string fileName, EncodingValue encoding)
-            : base(new FileAccessService(fileName, encoding))
+            : base(new FileService(fileName, encoding))
         {
 
         }

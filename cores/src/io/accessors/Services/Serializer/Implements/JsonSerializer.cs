@@ -10,7 +10,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
     {
         #region field
 
-        private readonly IAccessService context;
+        private readonly IFileService service;
 
         #endregion field
 
@@ -19,9 +19,9 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public JsonSerializer(IAccessService context)
+        public JsonSerializer(IFileService service)
         {
-            this.context = context;
+            this.service = service;
         }
 
         #endregion constructor
@@ -59,7 +59,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
 
         private string ReadStream(string url)
         {
-            using (var stream = new StreamReader(Path.Combine(context.FileValue.Path, url), context.Encoding.Value))
+            using (var stream = new StreamReader(Path.Combine(service.FileValue.Path, url), service.Encoding.Value))
             {
                 if (stream != null)
                 {
@@ -76,7 +76,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <param name="isappend">追記モード（falseなら上書き保存）</param>
         private void WriteStream(string url, string json, bool isappend)
         {
-            using (var stream = new StreamWriter(Path.Combine(context.FileValue.Path, url), isappend, context.Encoding.Value))
+            using (var stream = new StreamWriter(Path.Combine(service.FileValue.Path, url), isappend, service.Encoding.Value))
             {
                 if (stream != null)
                 {

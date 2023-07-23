@@ -13,7 +13,7 @@ namespace Mov.Core.Accessors.Services.Connectors.Implements.Filer
 
         private readonly ConnectValue connect;
 
-        private readonly IAccessService fileContext;
+        private readonly IFileService fileContext;
 
         private readonly FtpClient client;
 
@@ -21,7 +21,7 @@ namespace Mov.Core.Accessors.Services.Connectors.Implements.Filer
 
         #region コンストラクター
 
-        public FtpConnector(ConnectValue connect, IAccessService fileContext)
+        public FtpConnector(ConnectValue connect, IFileService fileContext)
         {
             this.connect = connect;
             this.fileContext = fileContext;

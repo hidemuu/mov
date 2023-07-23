@@ -16,7 +16,7 @@ namespace Mov.Core.Repositories.Repositories.Entities
 
         public RestEntityRepository(string url, string key, EncodingValue encode)
         {
-            serializer = new HttpSerializer(new FileAccessService(url, encode));
+            serializer = new HttpSerializer(new FileService(url, encode));
             this.key = string.IsNullOrEmpty(key) ? string.Empty : "?apikey=" + key;
         }
 

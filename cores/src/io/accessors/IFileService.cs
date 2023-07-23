@@ -6,7 +6,7 @@ namespace Mov.Core.Accessors
     /// <summary>
     /// アクセスの共通サービス
     /// </summary>
-    public interface IAccessService
+    public interface IFileService
     {
         #region property
 
@@ -23,6 +23,11 @@ namespace Mov.Core.Accessors
         #endregion property
 
         #region method
+
+        /// <summary>
+        /// 存在チェック
+        /// </summary>
+        bool Exists();
 
         /// <summary>
         /// テキストファイルから読出

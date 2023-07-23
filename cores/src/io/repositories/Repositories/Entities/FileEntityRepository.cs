@@ -38,7 +38,7 @@ namespace Mov.Core.Repositories.Repositories.Entities
         /// </summary>
         /// <param name="fileName"></param>
         /// <param name="encode"></param>
-        public FileEntityRepository(IAccessService service)
+        public FileEntityRepository(IFileService service)
         {
             var type = service.FileValue.FileType;
             if (type.IsNan()) { 

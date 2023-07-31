@@ -23,6 +23,8 @@ namespace Mov.Core.Models.Connections
             this.Value = path;
         }
 
+        public static PathValue Empty = new PathValue(string.Empty);
+
         public static class Factory
         {
             public static PathValue CreateSolutionPath(string solutionName)

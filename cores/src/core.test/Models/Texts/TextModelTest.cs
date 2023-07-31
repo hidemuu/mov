@@ -65,7 +65,7 @@ namespace Mov.Core.Test.Models.Texts
         [Test]
         public void FileType_Initialized_XML()
         {
-            //Arrange Act
+            //Arrange & Act
             var sut = new FileType(".xml");
 
             //Assert
@@ -76,7 +76,7 @@ namespace Mov.Core.Test.Models.Texts
         [Test]
         public void FileValue_CreateDir_IsDir()
         {
-            //Arrange Act
+            //Arrange & Act
             var sut = new FileValue(new PathValue(@"test/test1"));
 
             //Assert

@@ -23,14 +23,22 @@ namespace Mov.Core.Models.Connections
             this.Value = path;
         }
 
-        public static PathValue SolutionPath(string solutionName)
+        public static class Factory
         {
-            return new PathValue(PathHelper.GetCurrentRootPath(solutionName));
-        }
+            public static PathValue CreateSolutionPath(string solutionName)
+            {
+                return new PathValue(PathHelper.GetCurrentRootPath(solutionName));
+            }
 
-        public static PathValue ResourcePath(string solutionName)
-        {
-            return new PathValue(System.IO.Path.Combine(PathHelper.GetCurrentRootPath(solutionName), RESOURCE_NAME));
+            public static PathValue CreateResourcePath(string solutionName)
+            {
+                return new PathValue(System.IO.Path.Combine(PathHelper.GetCurrentRootPath(solutionName), RESOURCE_NAME));
+            }
+
+            public static PathValue CreateAssemblyPath()
+            {
+                return new PathValue(PathHelper.GetAssemblyRootPath());
+            }
         }
 
         #endregion constructor

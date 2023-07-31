@@ -31,9 +31,9 @@ namespace Mov.Core.Accessors.Services
 
         #region constructor
 
-        public FileAccessService(string path, EncodingValue encoding)
+        public FileAccessService(PathValue pathValue, EncodingValue encoding)
         {
-            this.PathValue = new PathValue(path);
+            this.PathValue = pathValue;
             this.Encoding = encoding;
             this.fileValue = new FileValue(this.PathValue);
         }

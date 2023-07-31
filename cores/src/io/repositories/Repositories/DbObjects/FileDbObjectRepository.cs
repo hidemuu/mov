@@ -1,4 +1,5 @@
 ﻿using Mov.Core.Accessors.Services;
+using Mov.Core.Models.Connections;
 using Mov.Core.Models.DbObjects.Entities;
 using Mov.Core.Models.Texts;
 using Mov.Core.Repositories.Repositories.Entities;
@@ -27,7 +28,7 @@ namespace Mov.Core.Repositories.Repositories.DbObjects
         /// コンストラクター
         /// </summary>
         public FileDbObjectRepository(string fileName, EncodingValue encoding)
-            : base(new FileAccessService(fileName, encoding))
+            : base(new FileAccessService(new PathValue(fileName), encoding))
         {
 
         }

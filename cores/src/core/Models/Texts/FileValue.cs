@@ -27,17 +27,17 @@ namespace Mov.Core.Models.Texts
         /// <summary>
         /// ファイル名
         /// </summary>
-        public string FileName => System.IO.Path.GetFileNameWithoutExtension(Path.Value);
+        public string FileName => this.Path.FileName;
 
         /// <summary>
         /// 拡張子
         /// </summary>
-        public FileType FileType => new FileType(System.IO.Path.GetExtension(Path.Value));
+        public FileType FileType => new FileType(this.Path.Extension);
 
         /// <summary>
         /// ディレクトリ名
         /// </summary>
-        public string DirName => FileType.IsEmpty() ? FileName : System.IO.Path.GetDirectoryName(Path.Value);
+        public string DirName => FileType.IsEmpty() ? this.FileName : this.Path.DirPath;
 
 
         #endregion property
@@ -53,13 +53,13 @@ namespace Mov.Core.Models.Texts
 
         #region method
 
-        public bool IsEmpty() => string.IsNullOrEmpty(Path.Value);
+        public bool IsEmpty() => this.Path.IsEmpty();
 
-        public bool IsDir() => !string.IsNullOrEmpty(DirName) && FileType.IsEmpty();
+        public bool IsDir() => this.Path.IsDir() && FileType.IsEmpty();
 
-        public bool IsFile() => !string.IsNullOrEmpty(FileName) && !FileType.IsNan();
+        public bool IsFile() => this.Path.IsFile() && !FileType.IsNan();
 
-        public bool IsFileName() => Path.Value.Equals(FileName, StringComparison.Ordinal);
+        public bool IsFileName() => this.Path.IsFileName();
 
         public bool IsCsvFile() => IsFile() && FileType.IsCsv();
 

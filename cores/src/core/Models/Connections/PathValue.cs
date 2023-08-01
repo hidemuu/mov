@@ -1,4 +1,7 @@
 ﻿using Mov.Core.Helpers;
+using Mov.Core.Models.Texts;
+using System;
+using System.IO;
 
 namespace Mov.Core.Models.Connections
 {
@@ -12,7 +15,25 @@ namespace Mov.Core.Models.Connections
 
         #region property
 
+        /// <summary>
+        /// パス文字列
+        /// </summary>
         public string Value { get; }
+
+        /// <summary>
+        /// ファイル名
+        /// </summary>
+        public string FileName => Path.GetFileNameWithoutExtension(this.Value);
+
+        /// <summary>
+        /// 拡張子
+        /// </summary>
+        public string Extension => Path.GetExtension(this.Value);
+
+        /// <summary>
+        /// ディレクトリパス
+        /// </summary>
+        public string DirPath => Path.GetDirectoryName(this.Value);
 
         #endregion property
 
@@ -34,7 +55,7 @@ namespace Mov.Core.Models.Connections
 
             public static PathValue CreateResourcePath(string solutionName)
             {
-                return new PathValue(System.IO.Path.Combine(PathHelper.GetCurrentRootPath(solutionName), RESOURCE_NAME));
+                return new PathValue(Path.Combine(PathHelper.GetCurrentRootPath(solutionName), PathValue.RESOURCE_NAME));
             }
 
             public static PathValue CreateAssemblyPath()
@@ -47,9 +68,20 @@ namespace Mov.Core.Models.Connections
 
         #region method
 
+        public bool IsEmpty() => string.IsNullOrEmpty(this.Value);
+
+        public bool IsRooted() => Path.IsPathRooted(this.Value);
+
+        public bool IsFile() => !string.IsNullOrEmpty(this.FileName);
+
+        public bool IsFileName() => this.Value.Equals(this.FileName, StringComparison.Ordinal);
+
+        public bool IsDir() => IsRooted() && !IsFile();
+
+
         protected override bool EqualCore(PathValue other)
         {
-            return this.Value.Equals(other.Value);
+            return this.Value.Equals(other.Value, StringComparison.Ordinal);
         }
 
         protected override int GetHashCodeCore()

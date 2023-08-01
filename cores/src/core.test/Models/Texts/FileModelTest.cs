@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace Mov.Core.Test.Models.Texts
 {
     [TestFixture]
-    public class TextModelTest
+    public class FileModelTest
     {
         #region constant
 

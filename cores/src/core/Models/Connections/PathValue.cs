@@ -2,6 +2,7 @@
 using Mov.Core.Models.Texts;
 using System;
 using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace Mov.Core.Models.Connections
 {
@@ -92,6 +93,11 @@ namespace Mov.Core.Models.Connections
         public bool IsFileName() => this.Value.Equals(this.FileName, StringComparison.Ordinal);
 
         public bool IsDir() => IsRooted() && !IsFile();
+
+        public string Combine(string path)
+        {
+            return Path.Combine(this.Value, path);
+        }
 
 
         protected override bool EqualCore(PathValue other)

@@ -15,7 +15,7 @@ namespace Mov.Core.Accessors
         /// <summary>
         /// ファイルパス
         /// </summary>
-        PathValue PathValue { get; }
+        PathValue Path { get; }
 
         /// <summary>
         /// エンコード

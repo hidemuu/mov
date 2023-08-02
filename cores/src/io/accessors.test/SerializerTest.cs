@@ -15,7 +15,7 @@ namespace Accessors.Test
         [Test]
         public void JsonSerializer_DeserializeTest_GetContent()
         {
-            var sut = new FileAccessService(PathValue.Factory.CreateResourcePath("mov"), EncodingValue.UTF8);
+            var sut = new FileAccessService(PathValue.Factory.CreateResourcePath(), EncodingValue.UTF8);
             var serizlizer = sut.CreateSerializer();
             Assert.Pass();
         }

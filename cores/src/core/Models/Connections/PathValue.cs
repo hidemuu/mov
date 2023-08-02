@@ -63,14 +63,19 @@ namespace Mov.Core.Models.Connections
                 return new PathValue(PathHelper.GetCurrentRootPath(solutionName));
             }
 
-            public static PathValue CreateResourcePath(string solutionName)
-            {
-                return new PathValue(Path.Combine(PathHelper.GetCurrentRootPath(solutionName), PathValue.RESOURCE_NAME));
-            }
-
             public static PathValue CreateAssemblyPath()
             {
                 return new PathValue(PathHelper.GetAssemblyRootPath());
+            }
+
+            public static PathValue CreateResourcePath()
+            {
+                return new PathValue(Path.Combine(PathHelper.GetAssemblyRootPath(), PathValue.RESOURCE_NAME));
+            }
+
+            public static PathValue CreateResourcePath(string solutionName)
+            {
+                return new PathValue(Path.Combine(PathHelper.GetCurrentRootPath(solutionName), PathValue.RESOURCE_NAME));
             }
         }
 

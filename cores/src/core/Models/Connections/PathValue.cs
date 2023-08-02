@@ -31,9 +31,14 @@ namespace Mov.Core.Models.Connections
         public string Extension => Path.GetExtension(this.Value);
 
         /// <summary>
+        /// ドライブパス
+        /// </summary>
+        public string DrivePath => Directory.GetDirectoryRoot(this.Value);
+
+        /// <summary>
         /// ディレクトリパス
         /// </summary>
-        public string DirPath => IsDir() ? this.Value : Path.GetDirectoryName(this.Value);
+        public string DirPath => IsDir() ? this.Value : Directory.GetParent(this.Value).FullName;
 
         /// <summary>
         /// ディレクトリ名

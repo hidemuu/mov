@@ -25,7 +25,7 @@ namespace Mov.Core.Test.Models.Connections
         public void CreateSolution_SolutionRoot_ReturnEndpointPath()
         {
             //Arrange & Act
-            var sut = PathValue.Factory.CreateSolutionPath("mov");
+            var sut = PathValue.Factory.CreateSolutionRootPath("mov");
 
             //Assert
             Assert.That(sut.IsDir());
@@ -38,7 +38,7 @@ namespace Mov.Core.Test.Models.Connections
         public void CreateResource_SolutionRoot_ReturnEndpointPath()
         {
             //Arrange & Act
-            var sut = PathValue.Factory.CreateResourcePath("mov");
+            var sut = PathValue.Factory.CreateResourceRootPath("mov");
 
             //Assert
             Assert.That(sut.IsDir());
@@ -51,7 +51,7 @@ namespace Mov.Core.Test.Models.Connections
         public void CreateAssembly_SolutionRoot_ReturnEndpointPath()
         {
             //Arrange & Act
-            var sut = PathValue.Factory.CreateAssemblyPath();
+            var sut = PathValue.Factory.CreateAssemblyRootPath();
 
             //Assert
             Assert.That(sut.IsDir());

@@ -13,16 +13,11 @@ namespace Mov.Core.Accessors.Services
     /// <inheritdoc/>
     public class FileAccessService : IAccessService
     {
-        #region field
-
-        #endregion field
 
         #region property
 
-        private FileValue File { get; }
-
         /// <inheritdoc/>
-        public PathValue Path { get; }
+        public FileValue File { get; }
 
         /// <inheritdoc/>
         public EncodingValue Encoding { get; }
@@ -33,9 +28,8 @@ namespace Mov.Core.Accessors.Services
 
         public FileAccessService(PathValue path, EncodingValue encoding)
         {
-            this.Path = path;
             this.Encoding = encoding;
-            this.File = new FileValue(this.Path);
+            this.File = new FileValue(path);
         }
 
         #endregion constructor
@@ -87,7 +81,7 @@ namespace Mov.Core.Accessors.Services
             string[] lines = new string[] { };
             if (File.Exists())
             {
-                using (var reader = new StreamReader(this.Path.Value, this.Encoding.Value))
+                using (var reader = new StreamReader(this.File.Path.Value, this.Encoding.Value))
                 {
                     int i = 0;
                     while (!reader.EndOfStream)
@@ -104,7 +98,7 @@ namespace Mov.Core.Accessors.Services
 
         public StreamReader CreateStreamReader(string url)
         {
-            return new StreamReader(this.Path.Combine(url), this.Encoding.Value);
+            return new StreamReader(this.File.Path.Combine(url), this.Encoding.Value);
         }
 
         public void Write(string url, string writeString, bool isappend)
@@ -120,7 +114,7 @@ namespace Mov.Core.Accessors.Services
 
         public StreamWriter CreateStreamWriter(string url, bool isAppend)
         {
-            return new StreamWriter(this.Path.Combine(url), isAppend, this.Encoding.Value);
+            return new StreamWriter(this.File.Path.Combine(url), isAppend, this.Encoding.Value);
         }
 
         /// <summary>
@@ -134,7 +128,7 @@ namespace Mov.Core.Accessors.Services
             try
             {
                 //書き込むファイルを開く
-                using (StreamWriter writer = new StreamWriter(this.Path.Value, isAdd, this.Encoding.Value))
+                using (StreamWriter writer = new StreamWriter(this.File.Path.Value, isAdd, this.Encoding.Value))
                 {
                     string delimiter = this.File.GetDelimiter();
                     int colCount = dt.Columns.Count;
@@ -197,7 +191,7 @@ namespace Mov.Core.Accessors.Services
         {
             try
             {
-                using (var writer = new StreamWriter(this.Path.Value, isAdd, this.Encoding.Value))
+                using (var writer = new StreamWriter(this.File.Path.Value, isAdd, this.Encoding.Value))
                 {
                     //指定ファイルの読込ストリームを実行
                     writer.Write(line);
@@ -271,7 +265,7 @@ namespace Mov.Core.Accessors.Services
         /// <returns></returns>
         public bool Clear()
         {
-            var path = this.Path.Value;
+            var path = this.File.Path.Value;
             if (this.File.Path.IsDir())
             {
                 Directory.Delete(path, true);
@@ -311,7 +305,7 @@ namespace Mov.Core.Accessors.Services
         /// </summary>
         public int GetLineNum(string fileName)
         {
-            var reader = new StreamReader(this.Path.Combine(fileName));
+            var reader = new StreamReader(this.File.Path.Combine(fileName));
             var result = 0;
 
             while (reader.Peek() >= 0)
@@ -338,7 +332,7 @@ namespace Mov.Core.Accessors.Services
             var header = "";
             try
             {
-                using (var reader = new StreamReader(this.Path.Value, this.Encoding.Value))
+                using (var reader = new StreamReader(this.File.Path.Value, this.Encoding.Value))
                 {
                     header = reader.ReadLine();
                 }
@@ -363,7 +357,7 @@ namespace Mov.Core.Accessors.Services
             //新規生成し、ヘッダー行を付加
             try
             {
-                using (var writer = new StreamWriter(this.Path.Value, false, this.Encoding.Value))
+                using (var writer = new StreamWriter(this.File.Path.Value, false, this.Encoding.Value))
                 {
                     writer.WriteLine(header);
                 }

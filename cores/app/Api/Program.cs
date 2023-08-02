@@ -24,7 +24,7 @@ services.AddSwaggerGen(option =>
     option.SwaggerDoc("mov_core", new OpenApiInfo { Title = "Mov Core", Version = "v1" });
 });
 
-var resourcePath = PathValue.Factory.CreateResourcePath("mov");
+var resourcePath = PathValue.Factory.CreateResourceRootPath("mov");
 services.AddScoped<IConfiguratorRepository, FileConfiguratorRepository>(_ => new FileConfiguratorRepository(resourcePath.Value, FileType.Json, EncodingValue.UTF8));
 services.AddScoped<ITranslatorRepository, FileTranslatorRepository>(_ => new FileTranslatorRepository(resourcePath.Value));
 services.AddMvc();

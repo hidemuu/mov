@@ -59,24 +59,34 @@ namespace Mov.Core.Models.Connections
 
         public static class Factory
         {
-            public static PathValue CreateSolutionPath(string solutionName)
+            public static PathValue CreateSolutionRootPath(string solutionName)
             {
                 return new PathValue(PathHelper.GetCurrentRootPath(solutionName));
             }
 
-            public static PathValue CreateAssemblyPath()
+            public static PathValue CreateAssemblyRootPath()
             {
                 return new PathValue(PathHelper.GetAssemblyRootPath());
             }
 
-            public static PathValue CreateResourcePath()
+            public static PathValue CreateResourceRootPath()
             {
                 return new PathValue(Path.Combine(PathHelper.GetAssemblyRootPath(), PathValue.RESOURCE_NAME));
             }
 
-            public static PathValue CreateResourcePath(string solutionName)
+            public static PathValue CreateResourcePath(string fileName)
+            {
+                return new PathValue(Path.Combine(PathHelper.GetAssemblyRootPath(), PathValue.RESOURCE_NAME, fileName));
+            }
+
+            public static PathValue CreateResourceRootPath(string solutionName)
             {
                 return new PathValue(Path.Combine(PathHelper.GetCurrentRootPath(solutionName), PathValue.RESOURCE_NAME));
+            }
+
+            public static PathValue CreateResourcePath(string solutionName, string fileName)
+            {
+                return new PathValue(Path.Combine(PathHelper.GetCurrentRootPath(solutionName), PathValue.RESOURCE_NAME, fileName));
             }
         }
 

@@ -33,5 +33,30 @@ namespace Mov.Core.Test.Models.Connections
             Assert.That(sut.IsRooted());
             Assert.That(sut.DirPath.Contains("mov"));
         }
+
+        [Test]
+        public void CreateResource_SolutionRoot_ReturnEndpointPath()
+        {
+            //Arrange & Act
+            var sut = PathValue.Factory.CreateResourcePath("mov");
+
+            //Assert
+            Assert.That(sut.IsDir());
+            Assert.That(!sut.IsEmpty());
+            Assert.That(sut.IsRooted());
+            Assert.That(sut.DirPath.Contains("resource"));
+        }
+
+        [Test]
+        public void CreateAssembly_SolutionRoot_ReturnEndpointPath()
+        {
+            //Arrange & Act
+            var sut = PathValue.Factory.CreateAssemblyPath();
+
+            //Assert
+            Assert.That(sut.IsDir());
+            Assert.That(!sut.IsEmpty());
+            Assert.That(sut.IsRooted());
+        }
     }
 }

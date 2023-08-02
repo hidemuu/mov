@@ -33,7 +33,12 @@ namespace Mov.Core.Models.Connections
         /// <summary>
         /// ディレクトリパス
         /// </summary>
-        public string DirPath => Path.GetDirectoryName(this.Value);
+        public string DirPath => IsDir() ? this.Value : Path.GetDirectoryName(this.Value);
+
+        /// <summary>
+        /// ディレクトリ名
+        /// </summary>
+        public string DirName => Directory.GetParent(this.Value).Name;
 
         #endregion property
 
@@ -72,7 +77,7 @@ namespace Mov.Core.Models.Connections
 
         public bool IsRooted() => Path.IsPathRooted(this.Value);
 
-        public bool IsFile() => !string.IsNullOrEmpty(this.FileName);
+        public bool IsFile() => !string.IsNullOrEmpty(this.FileName) && !string.IsNullOrEmpty(this.Extension);
 
         public bool IsFileName() => this.Value.Equals(this.FileName, StringComparison.Ordinal);
 

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace Mov.Core.Test.Models.Texts
 {
     [TestFixture]
-    public class FileModelTest
+    public class FileValueTest
     {
         #region constant
 
@@ -80,7 +80,6 @@ namespace Mov.Core.Test.Models.Texts
             var sut = new FileValue(new PathValue(@"test/test1"));
 
             //Assert
-            Assert.That(sut.IsDir(), Is.EqualTo(true));
             Assert.That(sut.DirName, Is.EqualTo("test1"));
         }
 

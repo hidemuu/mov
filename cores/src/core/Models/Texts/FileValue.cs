@@ -55,22 +55,16 @@ namespace Mov.Core.Models.Texts
 
         public bool IsEmpty() => this.Path.IsEmpty();
 
-        public bool IsDir() => this.Path.IsDir() && FileType.IsEmpty();
+        public bool IsCsvFile() => this.Path.IsFile() && FileType.IsCsv();
 
-        public bool IsFile() => this.Path.IsFile() && !FileType.IsNan();
+        public bool IsXmlFile() => this.Path.IsFile() && FileType.IsXml();
 
-        public bool IsFileName() => this.Path.IsFileName();
-
-        public bool IsCsvFile() => IsFile() && FileType.IsCsv();
-
-        public bool IsXmlFile() => IsFile() && FileType.IsXml();
-
-        public bool IsJsonFile() => IsFile() && FileType.IsJson();
+        public bool IsJsonFile() => this.Path.IsFile() && FileType.IsJson();
 
         public bool Exists()
         {
-            return IsDir() ? Directory.Exists(Path.Value) :
-                IsFile() ? File.Exists(Path.Value) : false;
+            return this.Path.IsDir() ? Directory.Exists(Path.Value) :
+                this.Path.IsFile() ? File.Exists(Path.Value) : false;
         }
 
         public bool CreateDirectory()

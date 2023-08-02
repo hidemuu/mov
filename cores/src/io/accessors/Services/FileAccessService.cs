@@ -272,7 +272,7 @@ namespace Mov.Core.Accessors.Services
         public bool Clear()
         {
             var path = this.PathValue.Value;
-            if (this.fileValue.IsDir())
+            if (this.fileValue.Path.IsDir())
             {
                 Directory.Delete(path, true);
                 for (int i = 0; i < 50; i++)

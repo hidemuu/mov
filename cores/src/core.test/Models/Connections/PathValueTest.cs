@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Mov.Core.Test.Models.Connections
 {
     [TestFixture]
-    public class PathModelTest
+    public class PathValueTest
     {
         [Test]
         public void CreateEmpty_IsEmpty_ReturnEmptyPath()

@@ -55,11 +55,11 @@ namespace Mov.Core.Models.Texts
 
         public bool IsEmpty() => this.Path.IsEmpty();
 
-        public bool IsCsvFile() => this.Path.IsFile() && this.Type.IsCsv();
+        public bool IsCsv() => this.Path.IsFile() && this.Type.IsCsv();
 
-        public bool IsXmlFile() => this.Path.IsFile() && this.Type.IsXml();
+        public bool IsXml() => this.Path.IsFile() && this.Type.IsXml();
 
-        public bool IsJsonFile() => this.Path.IsFile() && this.Type.IsJson();
+        public bool IsJson() => this.Path.IsFile() && this.Type.IsJson();
 
         public bool Exists()
         {
@@ -112,7 +112,7 @@ namespace Mov.Core.Models.Texts
 
         public string GetDelimiter()
         {
-            if (IsCsvFile()) return DELIMITER_CSV;
+            if (IsCsv()) return DELIMITER_CSV;
             return string.Empty;
         }
 

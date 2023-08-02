@@ -15,11 +15,11 @@ namespace Mov.Core.Accessors.Services
     {
         #region field
 
-        private FileValue fileValue;
-
         #endregion field
 
         #region property
+
+        private FileValue File { get; }
 
         /// <inheritdoc/>
         public PathValue Path { get; }
@@ -35,7 +35,7 @@ namespace Mov.Core.Accessors.Services
         {
             this.Path = path;
             this.Encoding = encoding;
-            this.fileValue = new FileValue(this.Path);
+            this.File = new FileValue(this.Path);
         }
 
         #endregion constructor
@@ -45,20 +45,20 @@ namespace Mov.Core.Accessors.Services
         /// <inheritdoc/>
         public bool Exists()
         {
-            return this.fileValue.Exists();
+            return this.File.Exists();
         }
 
         public ISerializer CreateSerializer()
         {
-            if (this.fileValue.FileType.IsJson())
+            if (this.File.Type.IsJson())
             {
                 return new JsonSerializer(this);
             }
-            else if (this.fileValue.FileType.IsXml())
+            else if (this.File.Type.IsXml())
             {
                 return new XmlSerializer(this);
             }
-            else if (this.fileValue.FileType.IsCsv())
+            else if (this.File.Type.IsCsv())
             {
                 return new CsvSerializer(this);
             }
@@ -85,7 +85,7 @@ namespace Mov.Core.Accessors.Services
         public string[] ReadLines()
         {
             string[] lines = new string[] { };
-            if (File.Exists(this.Path.Value))
+            if (File.Exists())
             {
                 using (var reader = new StreamReader(this.Path.Value, this.Encoding.Value))
                 {
@@ -136,7 +136,7 @@ namespace Mov.Core.Accessors.Services
                 //書き込むファイルを開く
                 using (StreamWriter writer = new StreamWriter(this.Path.Value, isAdd, this.Encoding.Value))
                 {
-                    string delimiter = this.fileValue.GetDelimiter();
+                    string delimiter = this.File.GetDelimiter();
                     int colCount = dt.Columns.Count;
                     int lastColIndex = colCount - 1;
 
@@ -219,8 +219,8 @@ namespace Mov.Core.Accessors.Services
         public bool WriteLine(string[] items, bool isAdd = true)
         {
             string line = "";
-            string delimiter = this.fileValue.GetDelimiter();
-            string escape = this.fileValue.GetEscape();
+            string delimiter = this.File.GetDelimiter();
+            string escape = this.File.GetEscape();
             foreach (string item in items)
             {
                 string query = item.Replace(Environment.NewLine, escape).Replace("\r", escape).Replace("\n", escape);   //改行と区切り文字を変換
@@ -239,7 +239,7 @@ namespace Mov.Core.Accessors.Services
         {
             var result = "";
             //バックアップパス生成
-            var backupPath = backupDirectory + @"\" + this.fileValue.FileName + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + this.fileValue.FileType;
+            var backupPath = backupDirectory + @"\" + this.File.FileName + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + this.File.Type;
 
             //バックアップフォルダ生成（存在しない場合のみ）
             if (!Directory.Exists(backupDirectory))
@@ -252,7 +252,7 @@ namespace Mov.Core.Accessors.Services
             {
                 //第3項にTrueを指定すると、コピー先が存在している時、上書き
                 //上書きするファイルが読み取り専用などで上書きできない場合は、UnauthorizedAccessExceptionが発生
-                File.Copy(this.Path.Value, backupPath, false);
+                this.File.Copy(backupPath);
             }
             catch (Exception ex)
             {
@@ -272,7 +272,7 @@ namespace Mov.Core.Accessors.Services
         public bool Clear()
         {
             var path = this.Path.Value;
-            if (this.fileValue.Path.IsDir())
+            if (this.File.Path.IsDir())
             {
                 Directory.Delete(path, true);
                 for (int i = 0; i < 50; i++)
@@ -296,7 +296,7 @@ namespace Mov.Core.Accessors.Services
             {
                 try
                 {
-                    File.Delete(path);
+                    this.File.Delete();
                 }
                 catch
                 {
@@ -352,7 +352,7 @@ namespace Mov.Core.Accessors.Services
             //元データ削除
             try
             {
-                File.Delete(this.Path.Value);
+                this.File.Delete();
             }
             catch (Exception ex)
             {

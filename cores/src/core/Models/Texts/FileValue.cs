@@ -32,12 +32,12 @@ namespace Mov.Core.Models.Texts
         /// <summary>
         /// 拡張子
         /// </summary>
-        public FileType FileType => new FileType(this.Path.Extension);
+        public FileType Type => new FileType(this.Path.Extension);
 
         /// <summary>
         /// ディレクトリ名
         /// </summary>
-        public string DirName => FileType.IsEmpty() ? this.FileName : this.Path.DirPath;
+        public string DirName => this.Type.IsEmpty() ? this.FileName : this.Path.DirPath;
 
 
         #endregion property
@@ -55,16 +55,52 @@ namespace Mov.Core.Models.Texts
 
         public bool IsEmpty() => this.Path.IsEmpty();
 
-        public bool IsCsvFile() => this.Path.IsFile() && FileType.IsCsv();
+        public bool IsCsvFile() => this.Path.IsFile() && this.Type.IsCsv();
 
-        public bool IsXmlFile() => this.Path.IsFile() && FileType.IsXml();
+        public bool IsXmlFile() => this.Path.IsFile() && this.Type.IsXml();
 
-        public bool IsJsonFile() => this.Path.IsFile() && FileType.IsJson();
+        public bool IsJsonFile() => this.Path.IsFile() && this.Type.IsJson();
 
         public bool Exists()
         {
             return this.Path.IsDir() ? Directory.Exists(Path.Value) :
                 this.Path.IsFile() ? File.Exists(Path.Value) : false;
+        }
+
+        public void Copy(string distPath)
+        {
+            try
+            {
+                File.Copy(this.Path.Value, distPath, false);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public void CopyOverWrite(string distPath)
+        {
+            try
+            {
+                File.Copy(this.Path.Value, distPath, true);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public void Delete()
+        {
+            try
+            {
+                File.Delete(this.Path.Value);
+            }
+            catch(Exception ex) 
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public bool CreateDirectory()

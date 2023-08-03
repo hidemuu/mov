@@ -55,12 +55,6 @@ namespace Mov.Core.Models.Texts
 
         public bool IsEmpty() => this.Path.IsEmpty();
 
-        public bool IsCsv() => this.Path.IsFile() && this.Type.IsCsv();
-
-        public bool IsXml() => this.Path.IsFile() && this.Type.IsXml();
-
-        public bool IsJson() => this.Path.IsFile() && this.Type.IsJson();
-
         public bool Exists()
         {
             return this.Path.IsDir() ? Directory.Exists(Path.Value) :
@@ -112,7 +106,7 @@ namespace Mov.Core.Models.Texts
 
         public string GetDelimiter()
         {
-            if (IsCsv()) return DELIMITER_CSV;
+            if (this.Type.IsCsv()) return DELIMITER_CSV;
             return string.Empty;
         }
 

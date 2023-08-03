@@ -18,7 +18,7 @@ namespace Accessors.Test
         {
             var sut = new FileAccessService(PathValue.Factory.CreateResourcePath("test.json"), EncodingValue.UTF8);
             var serizlizer = sut.CreateSerializer();
-            Assert.That(sut.File.IsJson());
+            Assert.That(sut.File.Type.IsJson());
             Assert.That(serizlizer is JsonSerializer);
         }
     }

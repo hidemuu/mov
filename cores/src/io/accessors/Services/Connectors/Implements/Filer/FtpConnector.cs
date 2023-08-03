@@ -79,7 +79,7 @@ namespace Mov.Core.Accessors.Services.Connectors.Implements.Filer
                 // 接続
                 Connect();
                 // ファイルのアップロード
-                client.UploadFile(Path.Combine(service.File.Path.Value, fileName), fileName);
+                client.UploadFile(Path.Combine(service.Path.Value, fileName), fileName);
 
             }
             catch (Exception ex)

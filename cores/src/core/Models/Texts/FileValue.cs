@@ -44,9 +44,9 @@ namespace Mov.Core.Models.Texts
 
         #region constructor
 
-        public FileValue(PathValue path)
+        public FileValue(string path)
         {
-            Path = path;
+            Path = new PathValue(path);
         }
 
         #endregion constructor

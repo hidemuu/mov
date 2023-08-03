@@ -13,9 +13,9 @@ namespace Mov.Core.Accessors.Services.Clients
         #region property
 
         /// <summary>
-        /// ファイルデータ
+        /// パス
         /// </summary>
-        FileValue File { get; }
+        PathValue Path { get; }
 
         /// <summary>
         /// エンコード

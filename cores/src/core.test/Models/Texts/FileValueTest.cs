@@ -77,7 +77,7 @@ namespace Mov.Core.Test.Models.Texts
         public void FileValue_CreateDir_IsDir()
         {
             //Arrange & Act
-            var sut = new FileValue(new PathValue(@"test/test1"));
+            var sut = new FileValue(new PathValue(@"test/test1").Value);
 
             //Assert
             Assert.That(sut.DirName, Is.EqualTo("test1"));

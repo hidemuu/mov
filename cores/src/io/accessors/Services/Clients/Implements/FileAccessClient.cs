@@ -16,7 +16,7 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
         #region property
 
         /// <inheritdoc/>
-        public FileValue File { get; }
+        public PathValue Path { get; }
 
         /// <inheritdoc/>
         public EncodingValue Encoding { get; }
@@ -27,8 +27,8 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
 
         public FileAccessClient(PathValue path, EncodingValue encoding)
         {
-            Encoding = encoding;
-            File = new FileValue(path);
+            this.Path = path;
+            this.Encoding = encoding;
         }
 
         #endregion constructor
@@ -50,10 +50,11 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
         /// <inheritdoc/>
         public string[] ReadLines()
         {
+            var file = new FileValue(this.Path.Value);
             string[] lines = new string[] { };
-            if (File.Exists())
+            if (file.Exists())
             {
-                using (var reader = new StreamReader(File.Path.Value, Encoding.Value))
+                using (var reader = new StreamReader(file.Path.Value, this.Encoding.Value))
                 {
                     int i = 0;
                     while (!reader.EndOfStream)
@@ -70,7 +71,7 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
 
         public StreamReader CreateStreamReader(string url)
         {
-            return new StreamReader(File.Path.Combine(url), Encoding.Value);
+            return new StreamReader(this.Path.Combine(url), Encoding.Value);
         }
 
         public void Write(string url, string writeString, bool isappend)
@@ -86,7 +87,7 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
 
         public StreamWriter CreateStreamWriter(string url, bool isAppend)
         {
-            return new StreamWriter(File.Path.Combine(url), isAppend, Encoding.Value);
+            return new StreamWriter(this.Path.Combine(url), isAppend, Encoding.Value);
         }
 
         /// <summary>
@@ -100,9 +101,10 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
             try
             {
                 //書き込むファイルを開く
-                using (StreamWriter writer = new StreamWriter(File.Path.Value, isAdd, Encoding.Value))
+                var file = new FileValue(this.Path.Value);
+                using (StreamWriter writer = new StreamWriter(this.Path.Value, isAdd, Encoding.Value))
                 {
-                    string delimiter = File.GetDelimiter();
+                    string delimiter = file.GetDelimiter();
                     int colCount = dt.Columns.Count;
                     int lastColIndex = colCount - 1;
 
@@ -163,7 +165,7 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
         {
             try
             {
-                using (var writer = new StreamWriter(File.Path.Value, isAdd, Encoding.Value))
+                using (var writer = new StreamWriter(this.Path.Value, isAdd, this.Encoding.Value))
                 {
                     //指定ファイルの読込ストリームを実行
                     writer.Write(line);
@@ -184,9 +186,10 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
         /// <param name="isAdd">書込モード true：追加 false：上書き</param>
         public bool WriteLine(string[] items, bool isAdd = true)
         {
+            var file = new FileValue(this.Path.Value);
             string line = "";
-            string delimiter = File.GetDelimiter();
-            string escape = File.GetEscape();
+            string delimiter = file.GetDelimiter();
+            string escape = file.GetEscape();
             foreach (string item in items)
             {
                 string query = item.Replace(Environment.NewLine, escape).Replace("\r", escape).Replace("\n", escape);   //改行と区切り文字を変換
@@ -203,9 +206,10 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
         /// <inheritdoc/>
         public string BackUp(string backupDirectory)
         {
+            var file = new FileValue(this.Path.Value);
             var result = "";
             //バックアップパス生成
-            var backupPath = backupDirectory + @"\" + File.FileName + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + File.Type;
+            var backupPath = backupDirectory + @"\" + file.FileName + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + file.Type;
 
             //バックアップフォルダ生成（存在しない場合のみ）
             if (!Directory.Exists(backupDirectory))
@@ -218,7 +222,7 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
             {
                 //第3項にTrueを指定すると、コピー先が存在している時、上書き
                 //上書きするファイルが読み取り専用などで上書きできない場合は、UnauthorizedAccessExceptionが発生
-                File.Copy(backupPath);
+                file.Copy(backupPath);
             }
             catch (Exception ex)
             {
@@ -237,8 +241,9 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
         /// <returns></returns>
         public bool Clear()
         {
-            var path = File.Path.Value;
-            if (File.Path.IsDir())
+            var file = new FileValue(this.Path.Value);
+            var path = this.Path.Value;
+            if (file.Path.IsDir())
             {
                 Directory.Delete(path, true);
                 for (int i = 0; i < 50; i++)
@@ -262,7 +267,7 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
             {
                 try
                 {
-                    File.Delete();
+                    file.Delete();
                 }
                 catch
                 {
@@ -277,7 +282,7 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
         /// </summary>
         public int GetLineNum(string fileName)
         {
-            var reader = new StreamReader(File.Path.Combine(fileName));
+            var reader = new StreamReader(this.Path.Combine(fileName));
             var result = 0;
 
             while (reader.Peek() >= 0)
@@ -301,10 +306,11 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
         private bool CreateDefault()
         {
             //ヘッダー行読み出し
+            var file = new FileValue(this.Path.Value);
             var header = "";
             try
             {
-                using (var reader = new StreamReader(File.Path.Value, Encoding.Value))
+                using (var reader = new StreamReader(this.Path.Value, Encoding.Value))
                 {
                     header = reader.ReadLine();
                 }
@@ -318,7 +324,7 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
             //元データ削除
             try
             {
-                File.Delete();
+                file.Delete();
             }
             catch (Exception ex)
             {
@@ -329,7 +335,7 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
             //新規生成し、ヘッダー行を付加
             try
             {
-                using (var writer = new StreamWriter(File.Path.Value, false, Encoding.Value))
+                using (var writer = new StreamWriter(this.Path.Value, false, Encoding.Value))
                 {
                     writer.WriteLine(header);
                 }

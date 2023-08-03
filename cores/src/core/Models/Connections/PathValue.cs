@@ -106,9 +106,8 @@ namespace Mov.Core.Models.Connections
 
         public string Combine(string path)
         {
-            return Path.Combine(this.Value, path);
+            return Path.IsPathRooted(path) ? path : Path.Combine(this.Value, path);
         }
-
 
         protected override bool EqualCore(PathValue other)
         {

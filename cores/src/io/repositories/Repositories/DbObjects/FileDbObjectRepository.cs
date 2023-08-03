@@ -1,4 +1,6 @@
-﻿using Mov.Core.Accessors.Services;
+﻿using Mov.Core.Accessors.Models;
+using Mov.Core.Accessors.Services;
+using Mov.Core.Accessors.Services.Serializer;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.DbObjects.Entities;
 using Mov.Core.Models.Texts;
@@ -27,8 +29,8 @@ namespace Mov.Core.Repositories.Repositories.DbObjects
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FileDbObjectRepository(string fileName, EncodingValue encoding)
-            : base(new FileAccessService(new PathValue(fileName), encoding))
+        public FileDbObjectRepository(string fileName, EncodingValue encoding, FileType fileType)
+            : base(new SerializerFactory(new PathValue(fileName), encoding).Create(AccessType.Create(fileType)))
         {
 
         }

@@ -1,5 +1,9 @@
 ﻿using System.IO;
 using System.Xml;
+using Mov.Core.Accessors.Services.Clients;
+using Mov.Core.Accessors.Services.Clients.Implements;
+using Mov.Core.Models.Connections;
+using Mov.Core.Models.Texts;
 
 namespace Mov.Core.Accessors.Services.Serializer.Implements
 {
@@ -10,9 +14,17 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
     {
         #region field
 
-        private readonly IAccessService service;
+        private readonly IAccessClient client;
 
         #endregion field
+
+        #region property
+
+        public PathValue Endpoint { get; }
+
+        public EncodingValue Encoding { get; }
+
+        #endregion property
 
         #region constructor
 
@@ -20,9 +32,11 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// コンストラクタ
         /// </summary>
         /// <param name="path">ファイルパス</param>
-        public XmlSerializer(IAccessService service)
+        public XmlSerializer(PathValue endpoint, EncodingValue encoding)
         {
-            this.service = service;
+            this.Endpoint = endpoint;
+            this.Encoding = encoding;
+            this.client = new FileAccessClient(endpoint, encoding);
         }
 
         #endregion constructor
@@ -36,7 +50,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         public TResponse Get<TResponse>(string url)
         {
             var xmlSettings = new XmlReaderSettings() { CheckCharacters = false };
-            using (var streamReader = this.service.CreateStreamReader(url))
+            using (var streamReader = this.client.CreateStreamReader(url))
             using (var xmlReader = XmlReader.Create(streamReader, xmlSettings))
             {
                 var serializer = new System.Xml.Serialization.XmlSerializer(typeof(TResponse));
@@ -50,7 +64,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <param name="obj"></param>
         public TResponse Post<TRequest, TResponse>(string url, TRequest obj)
         {
-            using (var stream = this.service.CreateStreamWriter(url, false))
+            using (var stream = this.client.CreateStreamWriter(url, false))
             {
                 System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(TRequest));
                 serializer.Serialize(stream, obj);

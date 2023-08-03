@@ -1,4 +1,5 @@
 ﻿using FluentFTP;
+using Mov.Core.Accessors.Services.Clients;
 using Mov.Core.Models.Connections;
 using System;
 using System.IO;
@@ -13,7 +14,7 @@ namespace Mov.Core.Accessors.Services.Connectors.Implements.Filer
 
         private readonly ConnectValue connect;
 
-        private readonly IAccessService service;
+        private readonly IAccessClient service;
 
         private readonly FtpClient client;
 
@@ -21,7 +22,7 @@ namespace Mov.Core.Accessors.Services.Connectors.Implements.Filer
 
         #region コンストラクター
 
-        public FtpConnector(ConnectValue connect, IAccessService service)
+        public FtpConnector(ConnectValue connect, IAccessClient service)
         {
             this.connect = connect;
             this.service = service;

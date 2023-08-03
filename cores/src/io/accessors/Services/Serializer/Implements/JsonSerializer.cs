@@ -1,4 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using Mov.Core.Accessors.Services.Clients;
+using Mov.Core.Accessors.Services.Clients.Implements;
+using Mov.Core.Models.Connections;
+using Mov.Core.Models.Texts;
+using Newtonsoft.Json;
 using System.IO;
 
 namespace Mov.Core.Accessors.Services.Serializer.Implements
@@ -10,18 +14,28 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
     {
         #region field
 
-        private readonly IAccessService service;
+        private readonly IAccessClient client;
 
         #endregion field
+
+        #region property
+
+        public PathValue Endpoint { get; }
+
+        public EncodingValue Encoding { get; }
+
+        #endregion property
 
         #region constructor
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public JsonSerializer(IAccessService service)
+        public JsonSerializer(PathValue endpoint, EncodingValue encoding)
         {
-            this.service = service;
+            this.Endpoint = endpoint;
+            this.Encoding = encoding;
+            this.client = new FileAccessClient(endpoint, encoding);
         }
 
         #endregion constructor
@@ -35,7 +49,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         public TResponse Get<TResponse>(string url)
         {
             //Json文字列の取得
-            string jsonString = this.service.Read(url);
+            string jsonString = this.client.Read(url);
             //指定オブジェクトにデシリアライズ
             return JsonConvert.DeserializeObject<TResponse>(jsonString);
         }
@@ -49,7 +63,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         {
             //Jsonデータにシリアライズ
             var json = JsonConvert.SerializeObject(obj);
-            this.service.Write(url, json, false);
+            this.client.Write(url, json, false);
             return default;
         }
 

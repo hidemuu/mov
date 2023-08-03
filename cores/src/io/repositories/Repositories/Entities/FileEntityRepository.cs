@@ -38,9 +38,9 @@ namespace Mov.Core.Repositories.Repositories.Entities
         /// </summary>
         /// <param name="fileName"></param>
         /// <param name="encode"></param>
-        public FileEntityRepository(IAccessService service)
+        public FileEntityRepository(ISerializer serializer)
         {
-            this.serializer = service.CreateSerializer();
+            this.serializer = serializer;
         }
 
         #endregion コンストラクター

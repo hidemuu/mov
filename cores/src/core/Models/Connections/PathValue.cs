@@ -52,7 +52,7 @@ namespace Mov.Core.Models.Connections
 
         public PathValue(string path) 
         {
-            this.Value = Path.IsPathRooted(path) ? path : Path.Combine(PathHelper.GetAssemblyRootPath(), path);
+            this.Value = string.IsNullOrEmpty(path) ? path : Path.IsPathRooted(path) ? path : Path.Combine(PathHelper.GetAssemblyRootPath(), path);
         }
 
         public static PathValue Empty = new PathValue(string.Empty);

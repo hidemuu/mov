@@ -1,5 +1,9 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
+using Mov.Core.Accessors.Services.Clients;
+using Mov.Core.Accessors.Services.Clients.Implements;
+using Mov.Core.Models.Connections;
+using Mov.Core.Models.Texts;
 using System.Globalization;
 using System.IO;
 
@@ -12,18 +16,28 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
     {
         #region field
 
-        private readonly IAccessService service;
+        private readonly IAccessClient client;
 
         #endregion field
+
+        #region property
+
+        public PathValue Endpoint { get; }
+
+        public EncodingValue Encoding { get; }
+
+        #endregion property
 
         #region constructor
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public CsvSerializer(IAccessService service)
+        public CsvSerializer(PathValue endpoint, EncodingValue encoding)
         {
-            this.service = service;
+            this.Endpoint = endpoint;
+            this.Encoding = encoding;
+            this.client = new FileAccessClient(endpoint, encoding);
         }
 
         #endregion constructor
@@ -37,12 +51,10 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <param name="list"></param>
         public TResponse Post<TRequest, TResponse>(string url, TRequest list)
         {
-            var isExist = File.Exists(service.File.Path.Value);
-
             var configuration = new CsvConfiguration(CultureInfo.CurrentCulture);
             configuration.HasHeaderRecord = true;
 
-            using (var sw = this.service.CreateStreamWriter(url, true))
+            using (var sw = this.client.CreateStreamWriter(url, true))
             {
                 using (var csv = new CsvWriter(sw, configuration))
                 {
@@ -69,7 +81,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
                 PrepareHeaderForMatch = args => args.Header.ToLower(),
             };
 
-            using (var sr = this.service.CreateStreamReader(url))
+            using (var sr = this.client.CreateStreamReader(url))
             {
                 using (var csv = new CsvReader(sr, configuration))
                 {

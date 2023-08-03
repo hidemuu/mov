@@ -27,7 +27,7 @@ namespace Mov.Core.Translators.Repositories
 
         public FileTranslatorRepository(string endpoint)
         {
-            Translates = new FileDbObjectRepository<TranslateSchema, TranslateSchemaCollection>(Path.Combine(endpoint, FILE_NAME_TRANSLATE), EncodingValue.UTF8);
+            Translates = new FileDbObjectRepository<TranslateSchema, TranslateSchemaCollection>(Path.Combine(endpoint, FILE_NAME_TRANSLATE), EncodingValue.UTF8, FileType.Json);
         }
 
         #endregion constructor

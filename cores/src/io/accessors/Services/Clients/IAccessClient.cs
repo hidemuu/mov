@@ -3,12 +3,12 @@ using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
 using System.IO;
 
-namespace Mov.Core.Accessors
+namespace Mov.Core.Accessors.Services.Clients
 {
     /// <summary>
     /// アクセスの共通サービス
     /// </summary>
-    public interface IAccessService
+    public interface IAccessClient
     {
         #region property
 
@@ -25,17 +25,6 @@ namespace Mov.Core.Accessors
         #endregion property
 
         #region method
-
-        /// <summary>
-        /// 存在チェック
-        /// </summary>
-        bool Exists();
-
-        /// <summary>
-        /// シリアライザー生成
-        /// </summary>
-        /// <returns></returns>
-        ISerializer CreateSerializer();
 
         /// <summary>
         /// 読み出し

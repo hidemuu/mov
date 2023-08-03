@@ -1,4 +1,5 @@
 using Mov.Core.Accessors.Services;
+using Mov.Core.Accessors.Services.Clients.Implements;
 using Mov.Core.Accessors.Services.Serializer.Implements;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
@@ -16,10 +17,9 @@ namespace Accessors.Test
         [Test]
         public void JsonSerializer_DeserializeTest_GetContent()
         {
-            var sut = new FileAccessService(PathValue.Factory.CreateResourcePath("test.json"), EncodingValue.UTF8);
-            var serizlizer = sut.CreateSerializer();
+            var sut = new FileAccessClient(PathValue.Factory.CreateResourcePath("test.json"), EncodingValue.UTF8);
             Assert.That(sut.File.Type.IsJson());
-            Assert.That(serizlizer is JsonSerializer);
+            Assert.That(sut.File.Exists());
         }
     }
 }

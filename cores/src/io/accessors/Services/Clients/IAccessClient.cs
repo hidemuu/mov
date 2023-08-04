@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Accessors.Services.Serializer;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
+using System;
 using System.IO;
 
 namespace Mov.Core.Accessors.Services.Clients
@@ -8,7 +9,7 @@ namespace Mov.Core.Accessors.Services.Clients
     /// <summary>
     /// アクセスの共通サービス
     /// </summary>
-    public interface IAccessClient
+    public interface IAccessClient : IDisposable
     {
         #region property
 

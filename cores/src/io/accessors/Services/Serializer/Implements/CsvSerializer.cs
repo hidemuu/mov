@@ -5,7 +5,6 @@ using Mov.Core.Accessors.Services.Clients.Implements;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
 using System.Globalization;
-using System.IO;
 
 namespace Mov.Core.Accessors.Services.Serializer.Implements
 {

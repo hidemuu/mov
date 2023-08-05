@@ -118,11 +118,28 @@ namespace Mov.Core.Models.Texts
         /// <summary>
         /// ディレクトリのサイズを取得
         /// </summary>
-        /// <returns></returns>
-        public long GetSize()
+        public long GeDirectorytSize()
         {
             DirectoryInfo dirInfo = new DirectoryInfo(DirName);
             return GetDirectorySize(dirInfo);
+        }
+
+        /// <summary>
+        /// 行数を取得
+        /// </summary>
+        public int GetLineNum(string fileName)
+        {
+            var reader = new StreamReader(this.Path.Combine(fileName));
+            var result = 0;
+
+            while (reader.Peek() >= 0)
+            {
+                reader.ReadLine();
+                result++;
+            }
+            reader.Close();
+
+            return result;
         }
 
         #endregion method
@@ -157,6 +174,46 @@ namespace Mov.Core.Models.Texts
                 size += GetDirectorySize(di);
             }
             return size;
+        }
+
+        /// <summary>
+        /// 必要ならば、文字列をダブルクォートで囲む
+        /// </summary>
+        private string EncloseDoubleQuotesIfNeed(string field)
+        {
+            if (NeedEncloseDoubleQuotes(field))
+            {
+                return EncloseDoubleQuotes(field);
+            }
+            return field;
+        }
+
+        /// <summary>
+        /// 文字列をダブルクォートで囲む
+        /// </summary>
+        private string EncloseDoubleQuotes(string field)
+        {
+            if (field.IndexOf('"') > -1)
+            {
+                //"を""とする
+                field = field.Replace("\"", "\"\"");
+            }
+            return "\"" + field + "\"";
+        }
+
+        /// <summary>
+        /// 文字列をダブルクォートで囲む必要があるか調べる
+        /// </summary>
+        private bool NeedEncloseDoubleQuotes(string field)
+        {
+            return field.IndexOf('"') > -1 ||
+                field.IndexOf(',') > -1 ||
+                field.IndexOf('\r') > -1 ||
+                field.IndexOf('\n') > -1 ||
+                field.StartsWith(" ") ||
+                field.StartsWith("\t") ||
+                field.EndsWith(" ") ||
+                field.EndsWith("\t");
         }
 
         #endregion private method

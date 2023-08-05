@@ -52,19 +52,6 @@ namespace Mov.Core.Accessors.Services.Clients
         bool WriteLine(string line, bool isAdd = true);
 
         /// <summary>
-        /// バックアップ処理
-        /// バックアップフォルダを生成し、対象ファイルをコピー
-        /// </summary>
-        /// <returns></returns>
-        string BackUp(string backupDirectory);
-
-        /// <summary>
-        /// クリア処理
-        /// </summary>
-        /// <returns></returns>
-        bool Clear();
-
-        /// <summary>
         /// 
         /// </summary>
         /// <param name="url"></param>

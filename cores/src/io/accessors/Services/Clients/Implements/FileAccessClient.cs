@@ -55,28 +55,6 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
             return "";
         }
 
-        /// <inheritdoc/>
-        public string[] ReadLines()
-        {
-            var file = new FileValue(this.Path.Value);
-            string[] lines = new string[] { };
-            if (file.Exists())
-            {
-                using (var reader = new StreamReader(file.Path.Value, this.Encoding.Value))
-                {
-                    int i = 0;
-                    while (!reader.EndOfStream)
-                    {
-                        var line = reader.ReadLine();
-                        lines[i] = line;
-                        i++;
-                    }
-                }
-            }
-            return lines;
-        }
-
-
         public StreamReader CreateStreamReader(string url)
         {
             return new StreamReader(this.Path.Combine(url), Encoding.Value);
@@ -96,25 +74,6 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
         public StreamWriter CreateStreamWriter(string url, bool isAppend)
         {
             return new StreamWriter(this.Path.Combine(url), isAppend, Encoding.Value);
-        }
-
-        /// <inheritdoc/>
-        public bool WriteLine(string line, bool isAdd = true)
-        {
-            try
-            {
-                using (var writer = new StreamWriter(this.Path.Value, isAdd, this.Encoding.Value))
-                {
-                    //指定ファイルの読込ストリームを実行
-                    writer.Write(line);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(DateTime.Now.ToString(LogConstants.TIME_FORMAT) + "/" + ex.Message + "/" + ex.Source + "/" + "書き込み失敗");
-                return false;
-            }
-            return true;
         }
 
         #endregion method

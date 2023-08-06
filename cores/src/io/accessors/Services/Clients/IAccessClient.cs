@@ -34,22 +34,10 @@ namespace Mov.Core.Accessors.Services.Clients
         string Read(string url);
 
         /// <summary>
-        /// テキストファイルから読出
-        /// </summary>
-        string[] ReadLines();
-
-        /// <summary>
         /// 書き込み
         /// </summary>
         /// <param name="isappend">追記モード（falseなら上書き保存）</param>
         void Write(string url, string writeString, bool isappend);
-
-        /// <summary>
-        /// 一行分テキストファイルに書き込み
-        /// </summary>
-        /// <param name="line">書き込み文字列</param>
-        /// <param name="isAdd">書込モード true：追加 false：上書き</param>
-        bool WriteLine(string line, bool isAdd = true);
 
         /// <summary>
         /// 

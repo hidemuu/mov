@@ -19,8 +19,8 @@ namespace Mov.Core.Repositories.Implements.Entities
     /// <typeparam name="TBody"></typeparam>
     public class FileEntityRepository<TEntity, TBody>
         : IEntityRepository<TEntity>, IEntityRepositoryAsync<TEntity>, IFileRepository<TBody>
-        where TEntity : IEntityObject
-        where TBody : IEntityCollection<TEntity>
+        where TEntity : IDbObject
+        where TBody : IDbObjectCollection<TEntity>
     {
         #region フィールド
 

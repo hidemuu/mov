@@ -9,7 +9,7 @@ namespace Mov.Core.Repositories.Models.Entities
     /// データベースオブジェクトのノード
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class DbObjectNode<T> : DbObject, IEntityNode<T> where T : DbObject
+    public class DbObjectNode<T> : DbObject, IDbObjectNode<T> where T : DbObject
     {
         #region プロパティ
 

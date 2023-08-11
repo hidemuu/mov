@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace Mov.Core.Repositories.Models
 {
-    public interface IDbObjectCollection<T>
+    public interface IDbObjectCollection<TEntity> where TEntity : IDbObject
     {
+        /// <summary>
+        /// コレクション
+        /// </summary>
         [XmlIgnore]
-        T[] Items { get; set; }
+        TEntity[] Items { get; set; }
     }
 }

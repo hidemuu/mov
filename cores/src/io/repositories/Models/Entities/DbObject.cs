@@ -12,7 +12,7 @@ namespace Mov.Core.Repositories.Models.Entities
     /// <summary>
     /// データベースの基本オブジェクト
     /// </summary>
-    public class DbObject : IEntityObject
+    public class DbObject : IDbObject
     {
         #region プロパティ
 

@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 namespace Mov.Core.Repositories.Models
 {
-    public interface IEntityNode<TEntity> : IEntityObject where TEntity : IEntityObject
+    public interface IDbObjectNode<TEntity> : IDbObject where TEntity : IDbObject
     {
         /// <summary>
         /// 子階層

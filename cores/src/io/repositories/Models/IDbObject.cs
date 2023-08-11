@@ -1,6 +1,6 @@
 ﻿namespace Mov.Core.Repositories.Models
 {
-    public interface IEntityObject
+    public interface IDbObject
     {
         #region メソッド
 

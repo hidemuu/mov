@@ -45,4 +45,12 @@
   - mkdocs build
   - mkdocs serve
   
+- git
+  https://qiita.com/fuwamaki/items/3ed021163e50beab7154
+  $ git rm -r --cached . //ファイル全体キャッシュ削除
+  $ git rm -r --cached [ファイル名]  //ファイル指定してキャッシュ削除
 
+- マイグレーション方法
+  https://zenn.dev/kmd_htsh0226/articles/2f49f0978a12cc2d1d5a
+  Add-Migration InitialCreate
+  Update-Database

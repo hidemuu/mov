@@ -3,7 +3,6 @@ using Mov.Core.Accessors.Services.Serializer;
 using Mov.Core.Accessors.Services.Serializer.Implements;
 using Mov.Core.Models.DbObjects;
 using Mov.Core.Models.Texts;
-using Mov.Core.Templates.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Repositories.Repositories.Entities
+namespace Mov.Core.Repositories.Implements.Entities
 {
     /// <summary>
     /// 任意のエンティティのファイルデータのリポジトリ

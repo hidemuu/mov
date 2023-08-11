@@ -3,12 +3,11 @@ using Mov.Core.Accessors.Services;
 using Mov.Core.Accessors.Services.Serializer.Implements;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
-using Mov.Core.Templates.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Repositories.Repositories.Entities
+namespace Mov.Core.Repositories.Implements.Entities
 {
     public class RestEntityRepository<TEntity> : IEntityRepositoryAsync<TEntity>
     {

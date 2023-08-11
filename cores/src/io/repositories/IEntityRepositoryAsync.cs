@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Templates.Repositories
+namespace Mov.Core.Repositories
 {
     public interface IEntityRepositoryAsync<TEntity>
     {

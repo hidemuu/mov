@@ -1,8 +1,8 @@
 ﻿using Mov.Core.Configurators.Repositories.Schemas;
 using Mov.Core.Models.Texts;
-using Mov.Core.Repositories.Repositories.DbObjects;
-using Mov.Core.Repositories.Repositories.Domains;
-using Mov.Core.Templates.Repositories;
+using Mov.Core.Repositories;
+using Mov.Core.Repositories.Implements.Domains;
+using Mov.Core.Repositories.Implements.DbObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;

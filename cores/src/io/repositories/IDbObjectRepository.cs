@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Mov.Core.Templates.Repositories
+namespace Mov.Core.Repositories
 {
     // <summary>
     /// データベースリポジトリインターフェース

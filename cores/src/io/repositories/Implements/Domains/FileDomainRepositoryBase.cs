@@ -1,8 +1,7 @@
 ﻿using Mov.Core.Models.Texts;
-using Mov.Core.Templates.Repositories;
 using System.IO;
 
-namespace Mov.Core.Repositories.Repositories.Domains
+namespace Mov.Core.Repositories.Implements.Domains
 {
     public abstract class FileDomainRepositoryBase : IDomainRepository
     {
@@ -20,7 +19,7 @@ namespace Mov.Core.Repositories.Repositories.Domains
 
         public abstract string DomainPath { get; }
 
-        public string RelativePath => Path.Combine(this.Endpoint, this.DomainPath);
+        public string RelativePath => Path.Combine(Endpoint, DomainPath);
 
         #endregion property
 
@@ -32,9 +31,9 @@ namespace Mov.Core.Repositories.Repositories.Domains
         /// <param name="extension"></param>
         public FileDomainRepositoryBase(string endpoint, FileType fileType, EncodingValue encoding)
         {
-            this.Endpoint = endpoint;
-            this.FileType = fileType;
-            this.Encoding = encoding;
+            Endpoint = endpoint;
+            FileType = fileType;
+            Encoding = encoding;
         }
 
         #endregion constructor
@@ -46,7 +45,7 @@ namespace Mov.Core.Repositories.Repositories.Domains
         /// </summary>
         /// <param name="fileName">ファイル名</param>
         /// <returns></returns>
-        protected string GetPath(string fileName) => Path.Combine(this.RelativePath, fileName) + "." + this.FileType.Value;
+        protected string GetPath(string fileName) => Path.Combine(RelativePath, fileName) + "." + FileType.Value;
 
         #endregion method
     }

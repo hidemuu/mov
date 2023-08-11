@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Mov.Core.Templates.Repositories
+namespace Mov.Core.Repositories
 {
     public interface IDomainRepositoryCollection<TRepository>
     {

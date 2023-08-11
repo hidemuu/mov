@@ -1,6 +1,5 @@
 ﻿using Mov.Core.Models.DbObjects.Entities;
 using Mov.Core.Templates.Crud;
-using Mov.Core.Templates.Repositories;
 using System;
 using System.Collections.Generic;
 

@@ -1,6 +1,7 @@
 namespace Repositories.Test
 {
-    public class Tests
+    [TestFixture]
+    public class RepositoryTest
     {
         [SetUp]
         public void Setup()

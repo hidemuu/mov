@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Templates.Repositories
+﻿namespace Mov.Core.Repositories
 {
     public interface IFileRepository<TBody>
     {

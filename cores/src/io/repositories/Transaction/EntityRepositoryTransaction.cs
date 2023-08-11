@@ -1,5 +1,4 @@
-﻿using Mov.Core.Templates.Repositories;
-using Mov.Core.Templates.Transactions;
+﻿using Mov.Core.Templates.Transactions;
 using System;
 
 namespace Mov.Core.Repositories.Transaction

@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Models.Texts;
-using Mov.Core.Repositories.Repositories.Domains;
+using Mov.Core.Repositories.Implements.Domains;
 
 namespace Mov.Core.Configurators.Repositories
 {

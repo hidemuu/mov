@@ -1,5 +1,4 @@
 ﻿using Mov.Core.Templates.Crud;
-using Mov.Core.Templates.Repositories;
 
 namespace Mov.Core.Repositories.Cruds
 {

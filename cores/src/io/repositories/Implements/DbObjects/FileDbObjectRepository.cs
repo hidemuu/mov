@@ -4,14 +4,13 @@ using Mov.Core.Accessors.Services.Serializer;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.DbObjects.Entities;
 using Mov.Core.Models.Texts;
-using Mov.Core.Repositories.Repositories.Entities;
-using Mov.Core.Templates.Repositories;
+using Mov.Core.Repositories.Implements.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Mov.Core.Repositories.Repositories.DbObjects
+namespace Mov.Core.Repositories.Implements.DbObjects
 {
     /// <summary>
     /// データベースリポジトリ基本クラス

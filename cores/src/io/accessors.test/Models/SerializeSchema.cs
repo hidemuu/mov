@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using CsvHelper.Configuration.Attributes;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,18 +7,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace Mov.Core.Accessors.Test
+namespace Mov.Core.Accessors.Test.Models
 {
     [JsonObject]
-    [XmlRoot("object")]
-    public class SerializeObject
+    [XmlRoot("test")]
+    public class SerializeSchema
     {
         [JsonProperty("id")]
         [XmlElement("id")]
+        [Name("id")]
         public int Id { get; set; } = 0;
 
         [JsonProperty("content")]
         [XmlElement("content")]
+        [Name("content")]
         public string Content { get; set; } = string.Empty;
     }
 }

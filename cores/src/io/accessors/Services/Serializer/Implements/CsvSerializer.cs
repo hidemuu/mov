@@ -100,7 +100,8 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
                     //    records.Add(record);
                     //}
 
-                    return csv.GetRecord<T>();
+                    var records = csv.GetRecord<T>();
+                    return records;
                 }
             }
         }

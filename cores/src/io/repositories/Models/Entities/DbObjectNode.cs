@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Core.Models.DbObjects.Entities
+namespace Mov.Core.Repositories.Models.Entities
 {
     /// <summary>
     /// データベースオブジェクトのノード

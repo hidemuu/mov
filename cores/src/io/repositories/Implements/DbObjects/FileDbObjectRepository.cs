@@ -2,9 +2,9 @@
 using Mov.Core.Accessors.Services;
 using Mov.Core.Accessors.Services.Serializer;
 using Mov.Core.Models.Connections;
-using Mov.Core.Models.DbObjects.Entities;
 using Mov.Core.Models.Texts;
 using Mov.Core.Repositories.Implements.Entities;
+using Mov.Core.Repositories.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

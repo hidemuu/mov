@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.DbObjects
+﻿namespace Mov.Core.Repositories.Models
 {
     public interface IEntityObject
     {

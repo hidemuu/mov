@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
 using System.Linq;
-using Mov.Core.Models.DbObjects.Entities;
+using Mov.Core.Repositories.Models.Entities;
 
 namespace Mov.Core.Configurators.Repositories.Schemas
 {

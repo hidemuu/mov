@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace Mov.Core.Models.DbObjects
+namespace Mov.Core.Repositories.Models
 {
     public interface IEntityCollection<TEntity> where TEntity : IEntityObject
     {

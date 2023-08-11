@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.DbObjects.Entities
+﻿namespace Mov.Core.Repositories.Models.Entities
 {
     public class EntityObject<TKey>
     {

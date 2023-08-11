@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.DbObjects.Entities;
+﻿using Mov.Core.Repositories.Models.Entities;
 using Mov.Core.Templates.Crud;
 using System;
 using System.Collections.Generic;

@@ -17,7 +17,7 @@ namespace Mov.Core.Configurators.Repositories.Schemas
     /// 設定
     /// </summary>
     [XmlRoot("config")]
-    public class ConfigSchema : DbObject<Guid>
+    public class ConfigSchema : DbObjectBase<Guid>
     {
         #region プロパティ
 

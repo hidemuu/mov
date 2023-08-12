@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 
 namespace Mov.Core.Repositories.Models.Entities
 {
-    public class DbObject<TKey> : IDbObject<TKey>
+    public abstract class DbObjectBase<TKey> : IDbObject<TKey>
     {
         #region property
 

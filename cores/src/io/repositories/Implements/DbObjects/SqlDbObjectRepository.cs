@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Mov.Core.Repositories.Implements.DbObjects
 {
     public class SqlDbObjectRepository<TEntity, TKey> : IDbObjectRepository<TEntity, TKey> 
-        where TEntity : DbObject<TKey>
+        where TEntity : DbObjectBase<TKey>
     {
         private readonly DbContext db;
         private readonly DbSet<TEntity> ts;

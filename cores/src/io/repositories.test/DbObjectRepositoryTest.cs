@@ -23,7 +23,8 @@ namespace Mov.Core.Repositories.Test
         public void GetAsync()
         {
             // Arrange
-            var serializer = this.serializerBuilder.Build();
+            var serializer = this.serializerBuilder
+                .Build();
 
             // Act
             var sut = new FileDbObjectRepository<SerializeSchema, int>(serializer);

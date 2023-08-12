@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Core.Accessors.Services.Serializer.Implements
 {
-    public class HttpSerializer : ISerializer, ISerializerAsync
+    public class HttpSerializer : ISerializer
     {
         #region field
 

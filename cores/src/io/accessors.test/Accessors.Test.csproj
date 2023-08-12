@@ -16,9 +16,13 @@
     <None Remove="resources\test.csv" />
     <None Remove="resources\test.json" />
     <None Remove="resources\test.xml" />
+    <None Remove="resources\test_collection.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="resources\test_collection.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="resources\test.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

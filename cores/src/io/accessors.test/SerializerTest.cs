@@ -20,8 +20,11 @@ namespace Accessors.Test
         [Test]
         public void JsonSerializer_DeserializeTest_GetContent()
         {
+            // Arrange & Act
             var sut = new SerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Json);
             var obj = sut.Get<SerializeSchemaCollection>("test.json");
+            
+            // Assert
             Assert.That(obj != null);
             Assert.That(obj.Schemas[0].Id.Equals(1));
             Assert.That(obj.Schemas[0].Content.Equals("test"));
@@ -32,8 +35,11 @@ namespace Accessors.Test
         [Test]
         public void XmlSerializer_DeserializeTest_GetContent()
         {
+            // Arrange & act
             var sut = new SerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Xml);
             var obj = sut.Get<SerializeSchemaCollection>("test.xml");
+            
+            // Assert
             Assert.That(obj != null);
             Assert.That(obj.Schemas[0].Id.Equals(1));
             Assert.That(obj.Schemas[0].Content.Equals("test"));
@@ -44,8 +50,11 @@ namespace Accessors.Test
         [Test]
         public void CsvSerializer_DeserializeTest_GetContent()
         {
+            // Arrange & Act
             var sut = new SerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Csv);
             var obj = sut.Get<SerializeSchemaCollection>("test.csv");
+            
+            // Assert
             Assert.That(obj != null);
             Assert.That(obj.Schemas[0].Id.Equals(1));
             Assert.That(obj.Schemas[0].Content.Equals("test"));

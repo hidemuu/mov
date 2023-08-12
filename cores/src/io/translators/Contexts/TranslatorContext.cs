@@ -43,9 +43,9 @@ namespace Mov.Core.Translators.Contexts
             instance = new TranslatorContext(endpoint);
         }
 
-        public string Get(string code, Language location)
+        public string Get(int index, Language location)
         {
-            return this.service.Get(new IdentifierCode(code), location);
+            return this.service.Get(new IdentifierIndex(index), location);
         }
 
         public void Dispose()

@@ -1,20 +1,15 @@
 ﻿using Mov.Core.Attributes;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reflection;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace Mov.Core.Repositories.Models.Entities
 {
-    /// <summary>
-    /// データベースの基本オブジェクト
-    /// </summary>
-    public class DbObject : IDbObject
+    public class DbObject<TKey> : IDbObject<TKey>
     {
-        #region プロパティ
+        #region property
 
         /// <summary>
         /// ID
@@ -24,97 +19,11 @@ namespace Mov.Core.Repositories.Models.Entities
         [LanguageKey("id")]
         [DisplayName("id")]
         [DisplayIndex(0)]
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public virtual TKey Id { get; set; }
 
-        /// <summary>
-        /// インデックス番号
-        /// </summary>
-        [JsonProperty("index")]
-        [XmlElement("index")]
-        [LanguageKey("index")]
-        [DisplayName("index")]
-        [DisplayIndex(1)]
-        public int Index { get; set; } = 0;
+        #endregion property
 
-        /// <summary>
-        /// コード
-        /// </summary>
-        [JsonProperty("code")]
-        [XmlElement("code")]
-        [LanguageKey("code")]
-        [DisplayName("code")]
-        [DisplayIndex(2)]
-        public string Code { get; set; } = string.Empty;
-
-        #endregion プロパティ
-
-        #region コンストラクター
-
-        /// <summary>
-        /// コンストラクター
-        /// </summary>
-        public DbObject()
-        {
-        }
-
-        /// <summary>
-        /// コンストラクター
-        /// </summary>
-        /// <param name="src"></param>
-        public DbObject(DbObject src)
-        {
-            Id = src.Id;
-            Index = src.Index;
-            Code = src.Code;
-        }
-
-        #endregion コンストラクター
-
-        #region メソッド
-
-        public virtual string[] GetContentStrings() => new string[] { Code };
-
-        public virtual string[] GetHeaderStrings() => new string[] { "Code" };
-
-        /// <summary>
-        ///ヘッダー文字列取得
-        /// </summary>
-        /// <returns></returns>
-        public string ToHeaderString() => GetString(GetHeaderStrings(), 10);
-
-        /// <summary>
-        ///コンテンツ文字列取得
-        /// </summary>
-        /// <returns></returns>
-        public string ToContentString() => GetString(GetContentStrings(), 10);
-
-        #endregion メソッド
-
-        #region オーバーライドメソッド
-
-        /// <inheritdoc />
-        public override string ToString() => GetString(GetContentStrings());
-
-        #endregion オーバーライドメソッド
-
-        #region 継承メソッド
-
-        /// <summary>
-        /// 文字列生成ロジック
-        /// </summary>
-        /// <param name="strings"></param>
-        /// <param name="padding"></param>
-        /// <returns></returns>
-        protected static string GetString(string[] strings, int padding = 0)
-        {
-            var stringBuilder = new StringBuilder();
-            foreach (var str in strings)
-            {
-                if (string.IsNullOrEmpty(str)) continue;
-                stringBuilder.Append((str + " ").PadRight(padding));
-            }
-            return stringBuilder.ToString();
-        }
+        #region method
 
         /// <summary>
         /// プロパティを取得
@@ -131,6 +40,6 @@ namespace Mov.Core.Repositories.Models.Entities
             }
         }
 
-        #endregion 継承メソッド
+        #endregion method
     }
 }

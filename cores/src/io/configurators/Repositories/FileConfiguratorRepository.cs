@@ -2,10 +2,13 @@
 using Mov.Core.Models.Texts;
 using Mov.Core.Repositories;
 using Mov.Core.Repositories.Implements.Domains;
-using Mov.Core.Repositories.Implements.DbObjects;
+using Mov.Core.Repositories.Implements.DbTables;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using Mov.Core.Repositories.Implements.DbObjects;
+using Mov.Core.Accessors.Models;
+using Mov.Core.Accessors.Services.Serializer;
+using Mov.Core.Models.Connections;
+using System.IO;
 
 namespace Mov.Core.Configurators.Repositories
 {
@@ -16,7 +19,7 @@ namespace Mov.Core.Configurators.Repositories
 
         public override string DomainPath => "configurator";
 
-        public IDbObjectRepository<ConfigSchema, ConfigSchemaCollection> Configs { get; }
+        public IDbObjectRepository<ConfigSchema, Guid> Configs { get; }
 
         #endregion property
 
@@ -25,7 +28,8 @@ namespace Mov.Core.Configurators.Repositories
         public FileConfiguratorRepository(string endpoint, FileType fileType, EncodingValue encoding)
             : base(endpoint, fileType, encoding)
         {
-            Configs = new FileDbObjectRepository<ConfigSchema, ConfigSchemaCollection>(GetPath("config"), encoding, fileType);
+            var serializer = new SerializerFactory(new PathValue(GetPath("config")), encoding).Create(AccessType.Create(fileType));
+            Configs = new FileDbObjectRepository<ConfigSchema, Guid>(serializer);
         }
 
         #endregion constructor

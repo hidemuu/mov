@@ -1,26 +1,25 @@
-﻿namespace Mov.Core.Repositories.Models
+﻿using Mov.Core.Attributes;
+using Newtonsoft.Json;
+using System.ComponentModel;
+using System.Xml.Serialization;
+
+namespace Mov.Core.Repositories.Models
 {
-    public interface IDbObject
+    public interface IDbObject<TKey>
     {
-        #region メソッド
-
-        string[] GetContentStrings();
-
-        string[] GetHeaderStrings();
+        #region property
 
         /// <summary>
-        ///ヘッダー文字列取得
+        /// ID
         /// </summary>
-        /// <returns></returns>
-        string ToHeaderString();
+        [JsonProperty("id")]
+        [XmlElement("id")]
+        [LanguageKey("id")]
+        [DisplayName("id")]
+        [DisplayIndex(0)]
+        TKey Id { get; set; }
 
-        /// <summary>
-        ///コンテンツ文字列取得
-        /// </summary>
-        /// <returns></returns>
-        string ToContentString();
-
-        #endregion メソッド
+        #endregion property
 
     }
 }

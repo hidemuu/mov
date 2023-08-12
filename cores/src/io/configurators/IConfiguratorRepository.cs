@@ -8,6 +8,6 @@ namespace Mov.Core.Configurators
 {
     public interface IConfiguratorRepository : IDomainRepository
     {
-        IDbObjectRepository<ConfigSchema, ConfigSchemaCollection> Configs { get; }
+        IDbObjectRepository<ConfigSchema, Guid> Configs { get; }
     }
 }

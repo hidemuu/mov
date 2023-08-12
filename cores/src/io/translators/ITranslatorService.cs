@@ -10,7 +10,7 @@ namespace Mov.Core.Translators
     {
         #region method
 
-        string Get(IdentifierCode code, Language location);
+        string Get(IdentifierIndex index, Language location);
 
         #endregion method
     }

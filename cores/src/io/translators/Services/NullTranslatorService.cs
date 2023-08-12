@@ -13,7 +13,7 @@ namespace Mov.Core.Translators.Services
             
         }
 
-        public string Get(IdentifierCode code, Language location)
+        public string Get(IdentifierIndex index, Language location)
         {
             return string.Empty;
         }

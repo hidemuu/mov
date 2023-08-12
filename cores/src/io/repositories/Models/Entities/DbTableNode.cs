@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
@@ -9,7 +10,7 @@ namespace Mov.Core.Repositories.Models.Entities
     /// データベースオブジェクトのノード
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class DbObjectNode<T> : DbObject, IDbObjectNode<T> where T : DbObject
+    public class DbTableNode<T> : DbTable, IDbObjectNode<Guid, T> where T : DbTable
     {
         #region プロパティ
 
@@ -26,7 +27,7 @@ namespace Mov.Core.Repositories.Models.Entities
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public DbObjectNode()
+        public DbTableNode()
         {
 
         }
@@ -35,14 +36,14 @@ namespace Mov.Core.Repositories.Models.Entities
         /// コンストラクター（ディープコピー）
         /// </summary>
         /// <param name="src">コピー元データ</param>
-        public DbObjectNode(DbObjectNode<T> src) : base(src)
+        public DbTableNode(DbTableNode<T> src) : base(src)
         {
             foreach (var child in Children)
             {
                 var srcChild = src.Children.FirstOrDefault(x => x.Id == child.Id);
-                if (!(child is DbObjectNode<T> childNode)) continue;
-                if (!(srcChild is DbObjectNode<T> srcChildNode)) continue;
-                childNode = new DbObjectNode<T>(srcChildNode);
+                if (!(child is DbTableNode<T> childNode)) continue;
+                if (!(srcChild is DbTableNode<T> srcChildNode)) continue;
+                childNode = new DbTableNode<T>(srcChildNode);
             }
         }
 
@@ -71,7 +72,7 @@ namespace Mov.Core.Repositories.Models.Entities
                     stringBuilder.Append("  ");
                 }
                 stringBuilder.AppendLine(item.ToContentString());
-                if (item is DbObjectNode<T> node)
+                if (item is DbTableNode<T> node)
                 {
                     GetStringTables(node.Children, stringBuilder, hierarchy + 1);
                 }

@@ -11,7 +11,7 @@ namespace Mov.Core.Configurators.Repositories.Schemas
     /// 設定のコレクション
     /// </summary>
     [XmlRoot("configs")]
-    public class ConfigSchemaCollection : DbObjectCollection<ConfigSchema>
+    public class ConfigSchemaCollection : DbTableCollection<ConfigSchema, Guid>
     {
         /// <inheritdoc />
         [JsonProperty("configs")]

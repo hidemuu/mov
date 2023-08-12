@@ -9,6 +9,7 @@ using System.Text;
 using System.Xml.Serialization;
 using System.Linq;
 using Mov.Core.Repositories.Models.Entities;
+using Mov.Core.Repositories.Models;
 
 namespace Mov.Core.Configurators.Repositories.Schemas
 {
@@ -16,7 +17,7 @@ namespace Mov.Core.Configurators.Repositories.Schemas
     /// 設定
     /// </summary>
     [XmlRoot("config")]
-    public class ConfigSchema : DbObject
+    public class ConfigSchema : DbObject<Guid>
     {
         #region プロパティ
 
@@ -84,12 +85,6 @@ namespace Mov.Core.Configurators.Repositories.Schemas
         #endregion プロパティ
 
         #region メソッド
-
-        /// <inheritdoc />
-        public override string[] GetContentStrings() => new string[] { Code, Category, Name, Value, Description };
-
-        /// <inheritdoc />
-        public override string[] GetHeaderStrings() => new string[] { "Code", "Category", "Name", "Value", "Description" };
 
         public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<ConfigSchema>().OrderBy(x => x.index);
 

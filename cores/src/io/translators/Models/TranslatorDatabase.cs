@@ -7,10 +7,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using Mov.Core.Models.Identifiers;
+using System.Threading.Tasks;
 
 namespace Mov.Core.Translators.Models
 {
-    internal sealed class TranslatorDatabase : IDatabase<LocalizeContent, IdentifierCode>
+    internal sealed class TranslatorDatabase : IDatabase<LocalizeContent, IdentifierIndex>
     {
         #region property
 
@@ -25,14 +26,12 @@ namespace Mov.Core.Translators.Models
         public TranslatorDatabase(ITranslatorRepository repository)
         {
             Id = new IdentifierIndex(Thread.CurrentThread.ManagedThreadId);
-            var translates = repository.Translates.Get();
+            var translates = Task.WhenAll(repository.Translates.GetAsync()).Result[0];
             foreach (var translate in translates)
             {
                 Contents.Add(
                     new LocalizeContent(
-                        new Identifier(translate.Id),
-                        new IdentifierIndex(translate.Index),
-                        new IdentifierCode(translate.Code),
+                        new IdentifierIndex(translate.Id),
                         new[] { new LocalizeInfo(Language.EN, new Document(translate.EN)), new LocalizeInfo(Language.JP, new Document(translate.JP)) }
                         )
                     );
@@ -43,12 +42,12 @@ namespace Mov.Core.Translators.Models
 
         #region method
 
-        public LocalizeContent Get(IdentifierCode key)
+        public LocalizeContent Get(IdentifierIndex key)
         {
-            return Contents.FirstOrDefault(x => x.Code.Equals(key));
+            return Contents.FirstOrDefault(x => x.Index.Equals(key));
         }
 
-        public void Delete(IdentifierCode key)
+        public void Delete(IdentifierIndex key)
         {
             var content = Get(key);
             if (content == null) return;
@@ -57,15 +56,15 @@ namespace Mov.Core.Translators.Models
 
         public void Put(LocalizeContent value)
         {
-            var content = Get(value.Code);
+            var content = Get(value.Index);
             if (content == null) return;
-            Delete(value.Code);
+            Delete(value.Index);
             Contents.Add(content);
         }
 
         public void Post(LocalizeContent value)
         {
-            var content = Get(value.Code);
+            var content = Get(value.Index);
             if (content == null)
                 Contents.Add(value);
             else

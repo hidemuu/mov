@@ -12,7 +12,7 @@ namespace Mov.Core.Errors.Repositories.Schemas
     /// エラー
     /// </summary>
     [XmlRoot("error")]
-    public class ErrorSchema : DbObject
+    public class ErrorSchema : DbTable
     {
         /// <summary>
         /// 名称

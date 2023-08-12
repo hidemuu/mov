@@ -8,7 +8,7 @@ namespace Mov.Core.Repositories.Models.Entities
     /// データベースオブジェクトのコレクション
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class DbObjectCollection<T> : IDbObjectCollection<T> where T : DbObject
+    public abstract class DbTableCollection<T, Guid> : IDbObjectCollection<T, Guid> where T : IDbObject<Guid>
     {
         #region プロパティ
 

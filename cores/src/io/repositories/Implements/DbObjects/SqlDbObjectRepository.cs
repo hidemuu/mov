@@ -1,17 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Mov.Core.Repositories.Models;
 using Mov.Core.Repositories.Models.Entities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Repositories.Implements.Entities
+namespace Mov.Core.Repositories.Implements.DbObjects
 {
-    public class SqlEntityRepository<TEntity, TKey> : IEntityRepositoryAsync<TEntity> where TEntity : EntityObject<TKey>
+    public class SqlDbObjectRepository<TEntity, TKey> : IDbObjectRepository<TEntity, TKey> 
+        where TEntity : DbObject<TKey>
     {
         private readonly DbContext db;
         private readonly DbSet<TEntity> ts;
 
-        public SqlEntityRepository(DbContext db, DbSet<TEntity> ts)
+        public SqlDbObjectRepository(DbContext db, DbSet<TEntity> ts)
         {
             this.db = db;
             this.ts = ts;

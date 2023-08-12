@@ -1,10 +1,13 @@
-﻿using Mov.Core.Models.Texts;
+﻿using Mov.Core.Accessors.Models;
+using Mov.Core.Accessors.Services.Serializer;
+using Mov.Core.Models.Connections;
+using Mov.Core.Models.Texts;
 using Mov.Core.Repositories;
 using Mov.Core.Repositories.Implements.DbObjects;
+using Mov.Core.Repositories.Implements.DbTables;
 using Mov.Core.Translators.Repositories.Schemas;
-using System;
-using System.Collections.Generic;
 using System.IO;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 
 namespace Mov.Core.Translators.Repositories
@@ -19,7 +22,7 @@ namespace Mov.Core.Translators.Repositories
 
         #region property
 
-        public IDbObjectRepository<TranslateSchema, TranslateSchemaCollection> Translates { get; }
+        public IDbObjectRepository<TranslateSchema, int> Translates { get; }
 
         #endregion property
 
@@ -27,7 +30,8 @@ namespace Mov.Core.Translators.Repositories
 
         public FileTranslatorRepository(string endpoint)
         {
-            Translates = new FileDbObjectRepository<TranslateSchema, TranslateSchemaCollection>(Path.Combine(endpoint, FILE_NAME_TRANSLATE), EncodingValue.UTF8, FileType.Json);
+            var serializer = new SerializerFactory(new PathValue(Path.Combine(endpoint, FILE_NAME_TRANSLATE)), EncodingValue.UTF8).Create(AccessType.Create(FileType.Json));
+            Translates = new FileDbObjectRepository<TranslateSchema, int>(serializer);
         }
 
         #endregion constructor

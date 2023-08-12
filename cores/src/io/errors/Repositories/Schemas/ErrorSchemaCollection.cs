@@ -11,7 +11,7 @@ namespace Mov.Core.Errors.Repositories.Schemas
     /// エラーのコレクション
     /// </summary>
     [XmlRoot("errors")]
-    public class ErrorSchemaCollection : DbObjectCollection<ErrorSchema>
+    public class ErrorSchemaCollection : DbTableCollection<ErrorSchema, Guid>
     {
         /// <inheritdoc />
         [JsonProperty("errors")]

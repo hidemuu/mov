@@ -10,7 +10,7 @@ namespace Mov.Core.Translators.Services
     {
         #region field
 
-        private IDatabase<LocalizeContent, IdentifierCode> database;
+        private IDatabase<LocalizeContent, IdentifierIndex> database;
 
         #endregion field
 
@@ -25,9 +25,9 @@ namespace Mov.Core.Translators.Services
 
         #region method
 
-        public string Get(IdentifierCode code, Language location)
+        public string Get(IdentifierIndex index, Language location)
         {
-            var content = this.database.Get(code);
+            var content = this.database.Get(index);
             return content.Get(location).Description.Value;
         }
 

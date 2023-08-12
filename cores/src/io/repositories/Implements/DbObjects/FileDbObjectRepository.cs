@@ -43,32 +43,28 @@ namespace Mov.Core.Repositories.Implements.DbObjects
 
         #region method
 
-      
-
-        #region IEntityRepository
-
         /// <inheritdoc />
         public async Task<IEnumerable<TEntity>> GetAsync()
         {
-            return await Task.Run(() => serializer.Get<IEnumerable<TEntity>>(""));
+            return await Task.Run(() => this.serializer.Read<IEnumerable<TEntity>>(""));
         }
 
         /// <inheritdoc />
         public async Task<TEntity> GetAsync(string param)
         {
-            return await Task.Run(() => serializer.Get<TEntity>(param));
+            return await Task.Run(() => this.serializer.Read<TEntity>(param));
         }
 
         /// <inheritdoc />
         public async Task PostAsync(TEntity item)
         {
-            await Task.Run(() => serializer.Post<TEntity, TEntity>("", item));
+            await Task.Run(() => this.serializer.Write<TEntity, TEntity>("", item));
         }
 
         /// <inheritdoc />
         public async Task PostAsync(IEnumerable<TEntity> items)
         {
-            await Task.Run(() => serializer.Post<IEnumerable<TEntity>, IEnumerable<TEntity>>("", items));
+            await Task.Run(() => this.serializer.Write<IEnumerable<TEntity>, IEnumerable<TEntity>>("", items));
 
         }
 
@@ -77,8 +73,6 @@ namespace Mov.Core.Repositories.Implements.DbObjects
         {
             throw new NotImplementedException();
         }
-
-        #endregion IEntityRepository
 
         #endregion method
 

@@ -2,7 +2,8 @@
 
 namespace Mov.Core.Repositories
 {
-    public interface IDomainRepositoryCollection<TRepository>
+    public interface IDomainRepositoryCollection<TRepository> 
+        where TRepository : IDomainRepository
     {
         #region プロパティ
 

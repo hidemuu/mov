@@ -20,7 +20,7 @@ namespace Mov.Core.Repositories.Test.Builders
 
         public RepositorySerializerBuilder() 
         {
-            mockSerializer = new Mock<ISerializer>();
+            this.mockSerializer = new Mock<ISerializer>();
         }
 
         #endregion constructor
@@ -29,7 +29,15 @@ namespace Mov.Core.Repositories.Test.Builders
 
         public ISerializer Build()
         {
-            return mockSerializer.Object;
+            return this.mockSerializer.Object;
+        }
+
+        public RepositorySerializerBuilder WithGetCalled<TResponse>(TResponse response)
+        {
+            this.mockSerializer
+                .Setup(x => x.Read<TResponse>(It.IsAny<string>()))
+                .Returns(response);
+            return this;
         }
 
         #endregion method

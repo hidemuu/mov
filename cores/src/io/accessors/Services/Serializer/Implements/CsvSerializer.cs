@@ -48,7 +48,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="list"></param>
-        public TResponse Post<TRequest, TResponse>(string url, TRequest list)
+        public TResponse Write<TRequest, TResponse>(string url, TRequest list)
         {
             var configuration = new CsvConfiguration(CultureInfo.CurrentCulture);
             configuration.HasHeaderRecord = true;
@@ -72,7 +72,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public T Get<T>(string url)
+        public T Read<T>(string url)
         {
             var configuration = new CsvConfiguration(CultureInfo.InvariantCulture)
             {

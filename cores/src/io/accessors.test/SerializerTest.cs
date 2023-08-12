@@ -22,7 +22,7 @@ namespace Accessors.Test
         {
             // Arrange & Act
             var sut = new SerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Json);
-            var obj = sut.Get<SerializeSchemaCollection>("test.json");
+            var obj = sut.Read<SerializeSchemaCollection>("test.json");
             
             // Assert
             Assert.That(obj != null);
@@ -37,7 +37,7 @@ namespace Accessors.Test
         {
             // Arrange & act
             var sut = new SerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Xml);
-            var obj = sut.Get<SerializeSchemaCollection>("test.xml");
+            var obj = sut.Read<SerializeSchemaCollection>("test.xml");
             
             // Assert
             Assert.That(obj != null);
@@ -52,7 +52,7 @@ namespace Accessors.Test
         {
             // Arrange & Act
             var sut = new SerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Csv);
-            var obj = sut.Get<SerializeSchemaCollection>("test.csv");
+            var obj = sut.Read<SerializeSchemaCollection>("test.csv");
             
             // Assert
             Assert.That(obj != null);

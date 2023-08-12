@@ -11,11 +11,14 @@ namespace Mov.Core.Accessors.Services.Serializer
     {
         #region property
 
+        /// <summary>
+        /// The Base URL for the API.
+        /// </summary>
         PathValue Endpoint { get; }
 
         /// <summary>
-        /// The Base URL for the API.
-        /// /// </summary>
+        /// Encoding
+        /// </summary>
         EncodingValue Encoding { get; }
 
         #endregion property
@@ -27,13 +30,13 @@ namespace Mov.Core.Accessors.Services.Serializer
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        TResponse Get<TResponse>(string url);
+        TResponse Read<TResponse>(string url);
         /// <summary>
         /// 書き込み
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="obj"></param>
-        TResponse Post<TRequest, TResponse>(string url, TRequest obj);
+        TResponse Write<TRequest, TResponse>(string url, TRequest obj);
 
         #endregion method
     }

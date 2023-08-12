@@ -47,7 +47,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// データをファイルから読み出して指定クラスにデシリアライズ
         /// </summary>
         /// <returns></returns>
-        public TResponse Get<TResponse>(string url)
+        public TResponse Read<TResponse>(string url)
         {
             var xmlSettings = new XmlReaderSettings() { CheckCharacters = false };
             using (var streamReader = this.client.CreateStreamReader(url))
@@ -62,7 +62,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// シリアライズしてファイルに書き込み
         /// </summary>
         /// <param name="obj"></param>
-        public TResponse Post<TRequest, TResponse>(string url, TRequest obj)
+        public TResponse Write<TRequest, TResponse>(string url, TRequest obj)
         {
             using (var stream = this.client.CreateStreamWriter(url, false))
             {

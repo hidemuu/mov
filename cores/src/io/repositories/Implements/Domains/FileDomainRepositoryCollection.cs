@@ -6,8 +6,7 @@ using System.IO;
 
 namespace Mov.Core.Repositories.Implements.Domains
 {
-    public class FileDomainRepositoryCollection<TRepository, TInstance>
-        : IDomainRepositoryCollection<TRepository>
+    public class FileDomainRepositoryCollection<TRepository, TInstance> : IDomainRepositoryCollection<TRepository>
         where TRepository : IDomainRepository
         where TInstance : FileDomainRepositoryBase
     {

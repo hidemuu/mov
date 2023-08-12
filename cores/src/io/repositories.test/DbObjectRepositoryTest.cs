@@ -24,6 +24,7 @@ namespace Mov.Core.Repositories.Test
         {
             // Arrange
             var serializer = this.serializerBuilder
+                .WithGetCalled(new SerializeSchema() { })
                 .Build();
 
             // Act

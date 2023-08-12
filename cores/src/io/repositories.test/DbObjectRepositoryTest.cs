@@ -21,7 +21,7 @@ namespace Mov.Core.Repositories.Test
         }
 
         [Test]
-        public void GetAsync()
+        public void GetAsync_ReadSerializeSchema_ReturnAll()
         {
             // Arrange
             IEnumerable<SerializeSchema> schemas = new[]
@@ -38,7 +38,7 @@ namespace Mov.Core.Repositories.Test
                     },
                 };
             var serializer = this.serializerBuilder
-                .WithGetCalled(schemas)
+                .WithReadCalled(schemas)
                 .Build();
 
             // Act
@@ -49,6 +49,36 @@ namespace Mov.Core.Repositories.Test
             Assert.That(items.Length == 2);
             Assert.That(items[0].Id.Equals(1));
             Assert.That(items[1].Id.Equals(2));
+        }
+
+        [Test]
+        public void GetAsync_ReadSerializeSchema_Return()
+        {
+            // Arrange
+            IEnumerable<SerializeSchema> schemas = new[]
+                {
+                    new SerializeSchema()
+                    {
+                        Id = 1,
+                        Content = "test",
+                    },
+                    new SerializeSchema()
+                    {
+                        Id = 2,
+                        Content = "test2",
+                    },
+                };
+            var serializer = this.serializerBuilder
+                .WithReadCalled(schemas)
+                .Build();
+
+            // Act
+            var sut = new FileDbObjectRepository<SerializeSchema, int>(serializer);
+            var item = Task.WhenAll(sut.GetAsync(2)).Result[0];
+
+            // Assert
+            Assert.That(item.Id.Equals(2));
+            Assert.That(item.Content.Equals("test2"));
         }
     }
 }

@@ -11,12 +11,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
 {
     public class HttpSerializer : ISerializer
     {
-        #region field
-
-
-
-        #endregion field
-
+        
         #region property
 
         public PathValue Endpoint { get; }

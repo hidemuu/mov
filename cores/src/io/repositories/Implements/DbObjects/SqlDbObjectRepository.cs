@@ -27,11 +27,11 @@ namespace Mov.Core.Repositories.Implements.DbObjects
                 .ToListAsync();
         }
 
-        public async Task<TEntity> GetAsync(string param)
+        public async Task<TEntity> GetAsync(TKey key)
         {
             return await ts
                 .AsNoTracking()
-                .FirstOrDefaultAsync(x => x.Id.ToString() == param);
+                .FirstOrDefaultAsync(x => x.Id.Equals(key));
         }
 
         public async Task PostAsync(TEntity item)

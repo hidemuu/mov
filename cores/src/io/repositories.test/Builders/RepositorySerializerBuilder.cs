@@ -36,7 +36,11 @@ namespace Mov.Core.Repositories.Test.Builders
         {
             this.mockSerializer
                 .Setup(x => x.Read<TResponse>(It.IsAny<string>()))
-                .Returns(response);
+                .Returns(response)
+                .Callback(() => 
+                {
+                    Console.WriteLine("");
+                });
             return this;
         }
 

@@ -50,9 +50,10 @@ namespace Mov.Core.Repositories.Implements.DbObjects
         }
 
         /// <inheritdoc />
-        public async Task<TEntity> GetAsync(string param)
+        public async Task<TEntity> GetAsync(TKey key)
         {
-            return await Task.Run(() => this.serializer.Read<TEntity>(param));
+            var items = await GetAsync();
+            return items.FirstOrDefault(x => x.Id.Equals(key));
         }
 
         /// <inheritdoc />

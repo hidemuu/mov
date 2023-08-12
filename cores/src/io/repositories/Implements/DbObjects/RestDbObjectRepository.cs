@@ -25,7 +25,7 @@ namespace Mov.Core.Repositories.Implements.DbObjects
         public async Task<IEnumerable<TEntity>> GetAsync() =>
             await serializer.GetAsync<IEnumerable<TEntity>>(key);
 
-        public async Task<TEntity> GetAsync(string param) =>
+        public async Task<TEntity> GetAsync(TKey param) =>
            await serializer.GetAsync<TEntity>($"/{param}" + key);
 
         public async Task PostAsync(TEntity item) =>

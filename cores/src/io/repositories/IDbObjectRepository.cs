@@ -9,7 +9,7 @@ namespace Mov.Core.Repositories
     {
         Task<IEnumerable<TEntity>> GetAsync();
 
-        Task<TEntity> GetAsync(string param);
+        Task<TEntity> GetAsync(TKey key);
 
         Task PostAsync(TEntity item);
     }

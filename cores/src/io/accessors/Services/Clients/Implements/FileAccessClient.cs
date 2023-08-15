@@ -1,8 +1,11 @@
 ﻿using Mov.Core.Accessors.Services.Serializer;
+using Mov.Core.Accessors.Services.Serializer.Implements;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace Mov.Core.Accessors.Services.Clients.Implements
@@ -47,19 +50,28 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
 
         #region method
 
-        public string Read(string url)
+        public TEntity Read<TEntity>(string url)
         {
-            using (var stream = GetStreamReader(url))
+            if(this.serializer is JsonSerializer jsonSerializer)
             {
-                if (stream != null)
-                {
-                    return stream.ReadToEnd();
-                }
+                //var text = string.Empty;
+                //using (var stream = GetStreamReader(url))
+                //{
+                //    if (stream != null)
+                //    {
+                //        text = stream.ReadToEnd();
+                //    }
+                //}
+                //return jsonSerializer.Deserialize<TEntity, TEntity>(url);
             }
-            return "";
+            else if(this.serializer is CsvSerializer csvSerializer)
+            {
+                return csvSerializer.Deserialize<TEntity, IEnumerable<TEntity>>(url).FirstOrDefault();
+            }
+            return this.serializer.Deserialize<TEntity, TEntity>(url);
         }
 
-        public void Write(string url, string writeString, bool isappend)
+        public void Write<TEntity>(string url, string writeString, bool isappend)
         {
             using (var stream = GetStreamWriter(url, isappend))
             {
@@ -72,13 +84,13 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
 
         public StreamReader GetStreamReader(string url)
         {
-            return new StreamReader(this.Path.Combine(url), Encoding.Value);
+            return new StreamReader(this.Path.Combine(url), this.Encoding.Value);
         }
 
 
         public StreamWriter GetStreamWriter(string url, bool isAppend)
         {
-            return new StreamWriter(this.Path.Combine(url), isAppend, Encoding.Value);
+            return new StreamWriter(this.Path.Combine(url), isAppend, this.Encoding.Value);
         }
 
         #endregion method

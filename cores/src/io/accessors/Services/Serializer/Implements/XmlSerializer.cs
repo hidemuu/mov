@@ -12,11 +12,6 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
     /// </summary>
     public class XmlSerializer : ISerializer
     {
-        #region field
-
-        private readonly FileAccessClient client;
-
-        #endregion field
 
         #region property
 
@@ -36,7 +31,6 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         {
             this.Endpoint = endpoint;
             this.Encoding = encoding;
-            this.client = new FileAccessClient(endpoint, encoding, this);
         }
 
         #endregion constructor
@@ -50,7 +44,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         public TResponse Deserialize<TRequest, TResponse>(string url)
         {
             var xmlSettings = new XmlReaderSettings() { CheckCharacters = false };
-            using (var streamReader = this.client.GetStreamReader(url))
+            using (var streamReader = new StreamReader(this.Endpoint.Combine(url), this.Encoding.Value))
             using (var xmlReader = XmlReader.Create(streamReader, xmlSettings))
             {
                 var serializer = new System.Xml.Serialization.XmlSerializer(typeof(TResponse));
@@ -64,10 +58,10 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <param name="obj"></param>
         public TResponse Serialize<TRequest, TResponse>(string url, TRequest obj)
         {
-            using (var stream = this.client.GetStreamWriter(url, false))
+            using (var streamWriter = new StreamWriter(this.Endpoint.Combine(url), false, this.Encoding.Value))
             {
                 System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(TRequest));
-                serializer.Serialize(stream, obj);
+                serializer.Serialize(streamWriter, obj);
                 return default;
             }
         }

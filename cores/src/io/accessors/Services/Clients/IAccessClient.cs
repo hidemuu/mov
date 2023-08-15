@@ -31,13 +31,13 @@ namespace Mov.Core.Accessors.Services.Clients
         /// 読み出し
         /// </summary>
         /// <returns></returns>
-        string Read(string url);
+        TEntity Read<TEntity>(string url);
 
         /// <summary>
         /// 書き込み
         /// </summary>
         /// <param name="isappend">追記モード（falseなら上書き保存）</param>
-        void Write(string url, string writeString, bool isappend);
+        void Write<TEntity>(string url, string writeString, bool isappend);
 
         #endregion method
     }

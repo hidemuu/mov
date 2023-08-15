@@ -4,6 +4,7 @@ using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
 using Newtonsoft.Json;
 using System.IO;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace Mov.Core.Accessors.Services.Serializer.Implements
 {
@@ -12,12 +13,6 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
     /// </summary>
     public class JsonSerializer : ISerializer
     {
-        #region field
-
-        private readonly IAccessClient client;
-
-        #endregion field
-
         #region property
 
         public PathValue Endpoint { get; }
@@ -35,7 +30,6 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         {
             this.Endpoint = endpoint;
             this.Encoding = encoding;
-            this.client = new FileAccessClient(endpoint, encoding, this);
         }
 
         #endregion constructor
@@ -49,7 +43,14 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         public TResponse Deserialize<TRequest, TResponse>(string url)
         {
             //Json文字列の取得
-            string jsonString = this.client.Read(url);
+            string jsonString = string.Empty;
+            using (var streamReader = new StreamReader(this.Endpoint.Combine(url), this.Encoding.Value))
+            {
+                if (streamReader != null)
+                {
+                    jsonString = streamReader.ReadToEnd();
+                }
+            }
             //指定オブジェクトにデシリアライズ
             return JsonConvert.DeserializeObject<TResponse>(jsonString);
         }
@@ -63,7 +64,13 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         {
             //Jsonデータにシリアライズ
             var json = JsonConvert.SerializeObject(obj);
-            this.client.Write(url, json, false);
+            using (var streamWriter = new StreamWriter(this.Endpoint.Combine(url), false, this.Encoding.Value))
+            {
+                if (streamWriter != null)
+                {
+                    streamWriter.Write(json);
+                }
+            }
             return default;
         }
 

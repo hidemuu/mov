@@ -46,12 +46,12 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
 
         #region method
 
-        public string Read(string url)
+        public TEntity Read<TEntity>(string url)
         {
             throw new NotImplementedException();
         }
 
-        public void Write(string url, string writeString, bool isappend)
+        public void Write<TEntity>(string url, string writeString, bool isappend)
         {
             throw new NotImplementedException();
         }

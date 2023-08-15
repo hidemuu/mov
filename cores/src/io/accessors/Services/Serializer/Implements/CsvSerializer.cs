@@ -16,11 +16,6 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
     /// </summary>
     public class CsvSerializer : ISerializer
     {
-        #region field
-
-        private readonly FileAccessClient client;
-
-        #endregion field
 
         #region property
 
@@ -39,7 +34,6 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         {
             this.Endpoint = endpoint;
             this.Encoding = encoding;
-            this.client = new FileAccessClient(endpoint, encoding, this);
         }
 
         #endregion constructor
@@ -56,9 +50,9 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
             var configuration = new CsvConfiguration(CultureInfo.CurrentCulture);
             configuration.HasHeaderRecord = true;
 
-            using (var sw = this.client.GetStreamWriter(url, true))
+            using (var streamWriter = new StreamWriter(this.Endpoint.Combine(url), true, this.Encoding.Value))
             {
-                using (var csv = new CsvWriter(sw, configuration))
+                using (var csv = new CsvWriter(streamWriter, configuration))
                 {
                     //csv.Context.RegisterClassMap<M>();
                     // 区切り文字をタブとかに変えることも可能
@@ -83,7 +77,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
                 PrepareHeaderForMatch = args => args.Header.ToLower(),
             };
 
-            using (var streamReader = this.client.GetStreamReader(url))
+            using (var streamReader = new StreamReader(this.Endpoint.Combine(url), this.Encoding.Value))
             {
                 using (var csvReader = new CsvReader(streamReader, configuration))
                 {

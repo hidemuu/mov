@@ -38,7 +38,7 @@ namespace Mov.Core.Repositories.Test
                     },
                 };
             var serializer = this.serializerBuilder
-                .WithReadCalled(schemas)
+                .WithReadCalled<SerializeSchema, IEnumerable<SerializeSchema>>(schemas)
                 .Build();
 
             // Act
@@ -69,7 +69,7 @@ namespace Mov.Core.Repositories.Test
                     },
                 };
             var serializer = this.serializerBuilder
-                .WithReadCalled(schemas)
+                .WithReadCalled<SerializeSchema, IEnumerable<SerializeSchema>>(schemas)
                 .Build();
 
             // Act

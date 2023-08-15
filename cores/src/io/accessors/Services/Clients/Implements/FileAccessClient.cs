@@ -1,12 +1,9 @@
-﻿using Mov.Core.Accessors.Services.Serializer.Implements;
-using Mov.Core.Accessors.Services.Serializer;
-using Mov.Core.Loggers;
+﻿using Mov.Core.Accessors.Services.Serializer;
+using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
 using System;
-using System.Data;
-using System.Diagnostics;
 using System.IO;
-using Mov.Core.Models.Connections;
+using System.Text;
 
 namespace Mov.Core.Accessors.Services.Clients.Implements
 {
@@ -16,6 +13,8 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
         #region field
 
         private bool disposedValue;
+
+        private ISerializer serializer;
 
         #endregion field
 
@@ -31,10 +30,11 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
 
         #region constructor
 
-        public FileAccessClient(PathValue path, EncodingValue encoding)
+        public FileAccessClient(PathValue path, EncodingValue encoding, ISerializer serializer)
         {
             this.Path = path;
             this.Encoding = encoding;
+            this.serializer = serializer;
         }
 
         ~FileAccessClient()
@@ -49,7 +49,7 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
 
         public string Read(string url)
         {
-            using (var stream = CreateStreamReader(url))
+            using (var stream = GetStreamReader(url))
             {
                 if (stream != null)
                 {
@@ -59,14 +59,9 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
             return "";
         }
 
-        public StreamReader CreateStreamReader(string url)
-        {
-            return new StreamReader(this.Path.Combine(url), Encoding.Value);
-        }
-
         public void Write(string url, string writeString, bool isappend)
         {
-            using (var stream = CreateStreamWriter(url, isappend))
+            using (var stream = GetStreamWriter(url, isappend))
             {
                 if (stream != null)
                 {
@@ -75,7 +70,13 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
             }
         }
 
-        public StreamWriter CreateStreamWriter(string url, bool isAppend)
+        public StreamReader GetStreamReader(string url)
+        {
+            return new StreamReader(this.Path.Combine(url), Encoding.Value);
+        }
+
+
+        public StreamWriter GetStreamWriter(string url, bool isAppend)
         {
             return new StreamWriter(this.Path.Combine(url), isAppend, Encoding.Value);
         }
@@ -105,7 +106,6 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
         }
-
 
         #endregion private method
     }

@@ -36,7 +36,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         {
             this.Endpoint = endpoint;
             this.Encoding = encoding;
-            this.client = new FileAccessClient(endpoint, encoding);
+            this.client = new FileAccessClient(endpoint, encoding, this);
         }
 
         #endregion constructor
@@ -50,7 +50,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         public TResponse Deserialize<TRequest, TResponse>(string url)
         {
             var xmlSettings = new XmlReaderSettings() { CheckCharacters = false };
-            using (var streamReader = this.client.CreateStreamReader(url))
+            using (var streamReader = this.client.GetStreamReader(url))
             using (var xmlReader = XmlReader.Create(streamReader, xmlSettings))
             {
                 var serializer = new System.Xml.Serialization.XmlSerializer(typeof(TResponse));
@@ -64,7 +64,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <param name="obj"></param>
         public TResponse Serialize<TRequest, TResponse>(string url, TRequest obj)
         {
-            using (var stream = this.client.CreateStreamWriter(url, false))
+            using (var stream = this.client.GetStreamWriter(url, false))
             {
                 System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(TRequest));
                 serializer.Serialize(stream, obj);

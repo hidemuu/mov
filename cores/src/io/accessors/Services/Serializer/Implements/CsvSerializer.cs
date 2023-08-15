@@ -39,7 +39,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         {
             this.Endpoint = endpoint;
             this.Encoding = encoding;
-            this.client = new FileAccessClient(endpoint, encoding);
+            this.client = new FileAccessClient(endpoint, encoding, this);
         }
 
         #endregion constructor
@@ -56,7 +56,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
             var configuration = new CsvConfiguration(CultureInfo.CurrentCulture);
             configuration.HasHeaderRecord = true;
 
-            using (var sw = this.client.CreateStreamWriter(url, true))
+            using (var sw = this.client.GetStreamWriter(url, true))
             {
                 using (var csv = new CsvWriter(sw, configuration))
                 {
@@ -83,7 +83,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
                 PrepareHeaderForMatch = args => args.Header.ToLower(),
             };
 
-            using (var streamReader = this.client.CreateStreamReader(url))
+            using (var streamReader = this.client.GetStreamReader(url))
             {
                 using (var csvReader = new CsvReader(streamReader, configuration))
                 {

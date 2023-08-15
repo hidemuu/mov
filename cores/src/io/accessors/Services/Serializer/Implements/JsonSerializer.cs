@@ -35,7 +35,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         {
             this.Endpoint = endpoint;
             this.Encoding = encoding;
-            this.client = new FileAccessClient(endpoint, encoding);
+            this.client = new FileAccessClient(endpoint, encoding, this);
         }
 
         #endregion constructor

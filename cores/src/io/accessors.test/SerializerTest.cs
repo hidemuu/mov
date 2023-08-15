@@ -19,7 +19,7 @@ namespace Accessors.Test
         {
             // Arrange & Act
             var sut = new SerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Json);
-            var obj = sut.Read<SerializeSchema, SerializeSchemaCollection>("test_collection.json");
+            var obj = sut.Deserialize<SerializeSchema, SerializeSchemaCollection>("test_collection.json");
 
             // Assert
             Assert.That(obj != null);
@@ -34,7 +34,7 @@ namespace Accessors.Test
         {
             // Arrange & Act
             var sut = new SerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Json);
-            var obj = sut.Read<SerializeSchema, IEnumerable<SerializeSchema>>("test.json").ToArray();
+            var obj = sut.Deserialize<SerializeSchema, IEnumerable<SerializeSchema>>("test.json").ToArray();
 
             // Assert
             Assert.That(obj != null);
@@ -49,7 +49,7 @@ namespace Accessors.Test
         {
             // Arrange & act
             var sut = new SerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Xml);
-            var obj = sut.Read<SerializeSchema, SerializeSchemaCollection>("test.xml");
+            var obj = sut.Deserialize<SerializeSchema, SerializeSchemaCollection>("test.xml");
 
             // Assert
             Assert.That(obj != null);
@@ -64,7 +64,7 @@ namespace Accessors.Test
         {
             // Arrange & Act
             var sut = new SerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Csv);
-            var obj = sut.Read<SerializeSchema, IEnumerable<SerializeSchema>>("test.csv");
+            var obj = sut.Deserialize<SerializeSchema, IEnumerable<SerializeSchema>>("test.csv");
             var response = obj.ToList();
 
             // Assert

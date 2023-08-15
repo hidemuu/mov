@@ -38,7 +38,7 @@ namespace Mov.Core.Repositories.Implements.DbObjects
         /// <inheritdoc />
         public async Task<IEnumerable<TEntity>> GetAsync()
         {
-            return await Task.Run(() => this.serializer.Read<TEntity, IEnumerable<TEntity>>(""));
+            return await Task.Run(() => this.serializer.Deserialize<TEntity, IEnumerable<TEntity>>(""));
         }
 
         /// <inheritdoc />
@@ -51,13 +51,13 @@ namespace Mov.Core.Repositories.Implements.DbObjects
         /// <inheritdoc />
         public async Task PostAsync(TEntity item)
         {
-            await Task.Run(() => this.serializer.Write<TEntity, TEntity>("", item));
+            await Task.Run(() => this.serializer.Serialize<TEntity, TEntity>("", item));
         }
 
         /// <inheritdoc />
         public async Task PostAsync(IEnumerable<TEntity> items)
         {
-            await Task.Run(() => this.serializer.Write<IEnumerable<TEntity>, IEnumerable<TEntity>>("", items));
+            await Task.Run(() => this.serializer.Serialize<IEnumerable<TEntity>, IEnumerable<TEntity>>("", items));
         }
 
         /// <inheritdoc />

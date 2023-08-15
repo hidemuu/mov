@@ -50,6 +50,10 @@ namespace Mov.Core.Accessors.Models
 
         public bool IsHttp() => this.Equals(Http);
 
+        public bool IsFile() => IsJson() || IsXml() || IsCsv();
+
+        public bool IsWeb() => IsHttp();
+
         protected override bool EqualCore(AccessType other)
         {
             return this.Value.Equals(other.Value, StringComparison.Ordinal);

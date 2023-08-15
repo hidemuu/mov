@@ -11,7 +11,7 @@ using Mov.Core.Models.Connections;
 namespace Mov.Core.Accessors.Services.Clients.Implements
 {
     /// <inheritdoc/>
-    public class FileAccessClient : IAccessClient, IDisposable
+    public class FileAccessClient : IAccessClient
     {
         #region field
 

@@ -26,17 +26,17 @@ namespace Mov.Core.Accessors.Services.Serializer
         #region method
 
         /// <summary>
-        /// 読み出し
+        /// deserialize
         /// </summary>
         /// <typeparam name="TRequest"></typeparam>
         /// <returns></returns>
-        TResponse Read<TRequest, TResponse>(string url);
+        TResponse Deserialize<TRequest, TResponse>(string url);
         /// <summary>
-        /// 書き込み
+        /// serialize
         /// </summary>
         /// <typeparam name="TRequest"></typeparam>
         /// <param name="obj"></param>
-        TResponse Write<TRequest, TResponse>(string url, TRequest obj);
+        TResponse Serialize<TRequest, TResponse>(string url, TRequest obj);
 
         #endregion method
     }

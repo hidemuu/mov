@@ -5,7 +5,7 @@ using System.Net.Http;
 
 namespace Mov.Core.Accessors.Services.Clients.Implements
 {
-    public class WebAccessClient : IAccessClient, IDisposable
+    public class WebAccessClient : IAccessClient
     {
         #region field
 

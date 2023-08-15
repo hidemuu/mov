@@ -46,7 +46,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// データをファイルから読み出して指定クラスにデシリアライズ
         /// </summary>
         /// <returns></returns>
-        public TResponse Read<TRequest, TResponse>(string url)
+        public TResponse Deserialize<TRequest, TResponse>(string url)
         {
             //Json文字列の取得
             string jsonString = this.client.Read(url);
@@ -59,7 +59,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="obj"></param>
-        public TResponse Write<TRequest, TResponse>(string url, TRequest obj)
+        public TResponse Serialize<TRequest, TResponse>(string url, TRequest obj)
         {
             //Jsonデータにシリアライズ
             var json = JsonConvert.SerializeObject(obj);

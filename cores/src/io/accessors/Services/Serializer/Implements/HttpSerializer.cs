@@ -36,7 +36,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
 
         #region method
 
-        public TResponse Read<TRequest, TResponse>(string url)
+        public TResponse Deserialize<TRequest, TResponse>(string url)
         {
             using (var client = BaseClient())
             {
@@ -49,7 +49,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
             }
         }
 
-        public TResponse Write<TRequest, TResponse>(string url, TRequest body)
+        public TResponse Serialize<TRequest, TResponse>(string url, TRequest body)
         {
             using (var client = BaseClient())
             {

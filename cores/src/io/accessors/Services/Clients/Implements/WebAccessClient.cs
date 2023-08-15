@@ -1,7 +1,9 @@
 ﻿using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Mov.Core.Accessors.Services.Clients.Implements
 {
@@ -46,15 +48,16 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
 
         #region method
 
-        public TEntity Read<TEntity>(string url)
+        public Task<IEnumerable<TEntity>> GetAsync<TEntity>(string url)
         {
             throw new NotImplementedException();
         }
 
-        public void Write<TEntity>(string url, string writeString, bool isappend)
+        public Task PostAsync<TEntity>(string url, TEntity item)
         {
             throw new NotImplementedException();
         }
+
 
         #endregion method
 

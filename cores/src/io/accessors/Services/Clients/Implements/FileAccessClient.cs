@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Mov.Core.Accessors.Services.Clients.Implements
 {
@@ -50,36 +51,14 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
 
         #region method
 
-        public TEntity Read<TEntity>(string url)
+        public async Task<IEnumerable<TEntity>> GetAsync<TEntity>(string url)
         {
-            if(this.serializer is JsonSerializer jsonSerializer)
-            {
-                //var text = string.Empty;
-                //using (var stream = GetStreamReader(url))
-                //{
-                //    if (stream != null)
-                //    {
-                //        text = stream.ReadToEnd();
-                //    }
-                //}
-                //return jsonSerializer.Deserialize<TEntity, TEntity>(url);
-            }
-            else if(this.serializer is CsvSerializer csvSerializer)
-            {
-                return csvSerializer.Deserialize<TEntity, IEnumerable<TEntity>>(url).FirstOrDefault();
-            }
-            return this.serializer.Deserialize<TEntity, TEntity>(url);
+            return await Task.Run(() => this.serializer.Deserialize<TEntity, IEnumerable<TEntity>>(url));
         }
 
-        public void Write<TEntity>(string url, string writeString, bool isappend)
+        public async Task PostAsync<TEntity>(string url, TEntity item)
         {
-            using (var stream = GetStreamWriter(url, isappend))
-            {
-                if (stream != null)
-                {
-                    stream.Write(writeString);
-                }
-            }
+            await Task.Run(() => this.serializer.Serialize<TEntity, TEntity>(url, item));
         }
 
         public StreamReader GetStreamReader(string url)

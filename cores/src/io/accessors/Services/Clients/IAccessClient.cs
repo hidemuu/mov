@@ -2,7 +2,9 @@
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace Mov.Core.Accessors.Services.Clients
 {
@@ -31,13 +33,12 @@ namespace Mov.Core.Accessors.Services.Clients
         /// 読み出し
         /// </summary>
         /// <returns></returns>
-        TEntity Read<TEntity>(string url);
+        Task<IEnumerable<TEntity>> GetAsync<TEntity>(string url);
 
         /// <summary>
         /// 書き込み
         /// </summary>
-        /// <param name="isappend">追記モード（falseなら上書き保存）</param>
-        void Write<TEntity>(string url, string writeString, bool isappend);
+        Task PostAsync<TEntity>(string url, TEntity item);
 
         #endregion method
     }

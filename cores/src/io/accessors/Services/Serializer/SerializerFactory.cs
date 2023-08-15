@@ -31,6 +31,10 @@ namespace Mov.Core.Accessors.Services.Serializer
         {
         }
 
+        public SerializerFactory(string path) : this(new PathValue(path)) 
+        {
+        }
+
         #endregion constructor
 
         #region method

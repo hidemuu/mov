@@ -28,13 +28,13 @@ namespace Mov.Core.Accessors.Services.Serializer
         /// <summary>
         /// 読み出し
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TRequest"></typeparam>
         /// <returns></returns>
         TResponse Read<TRequest, TResponse>(string url);
         /// <summary>
         /// 書き込み
         /// </summary>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="TRequest"></typeparam>
         /// <param name="obj"></param>
         TResponse Write<TRequest, TResponse>(string url, TRequest obj);
 

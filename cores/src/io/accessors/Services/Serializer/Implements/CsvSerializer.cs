@@ -18,7 +18,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
     {
         #region field
 
-        private readonly IAccessClient client;
+        private readonly FileAccessClient client;
 
         #endregion field
 
@@ -83,26 +83,10 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
                 PrepareHeaderForMatch = args => args.Header.ToLower(),
             };
 
-            using (var streamReader = new StreamReader(this.client.Path.Combine(url), this.client.Encoding.Value))
+            using (var streamReader = this.client.CreateStreamReader(url))
             {
                 using (var csvReader = new CsvReader(streamReader, configuration))
                 {
-                    //var records = new List<T>();
-
-                    //csv.Context.RegisterClassMap<M>();
-                    //records = csv.GetRecords<T>();
-
-                    //読み込み開始準備を行います
-                    //csvReader.Read();
-                    //ヘッダを読み込みます
-                    //csvReader.ReadHeader();
-                    //行毎に読み込みと処理を行います
-                    //while (csv.Read())
-                    //{
-                    //    var record = csv.GetRecord<T>();
-                    //    records.Add(record);
-                    //}
-
                     var records = csvReader.GetRecords<TRequest>().ToList();
                     if(records is TResponse responces)
                     {

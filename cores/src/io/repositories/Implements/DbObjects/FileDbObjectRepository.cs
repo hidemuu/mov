@@ -1,16 +1,8 @@
-﻿using Mov.Core.Accessors;
-using Mov.Core.Accessors.Models;
-using Mov.Core.Accessors.Services.Serializer;
-using Mov.Core.Accessors.Services.Serializer.Implements;
-using Mov.Core.Models.Connections;
-using Mov.Core.Models.Texts;
+﻿using Mov.Core.Accessors.Services.Serializer;
 using Mov.Core.Repositories.Models;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Mov.Core.Repositories.Implements.DbObjects
@@ -66,7 +58,6 @@ namespace Mov.Core.Repositories.Implements.DbObjects
         public async Task PostAsync(IEnumerable<TEntity> items)
         {
             await Task.Run(() => this.serializer.Write<IEnumerable<TEntity>, IEnumerable<TEntity>>("", items));
-
         }
 
         /// <inheritdoc />
@@ -76,6 +67,5 @@ namespace Mov.Core.Repositories.Implements.DbObjects
         }
 
         #endregion method
-
     }
 }

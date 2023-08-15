@@ -39,21 +39,6 @@ namespace Mov.Core.Accessors.Services.Clients
         /// <param name="isappend">追記モード（falseなら上書き保存）</param>
         void Write(string url, string writeString, bool isappend);
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="url"></param>
-        /// <returns></returns>
-        StreamReader CreateStreamReader(string url);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="url"></param>
-        /// <param name="isAppend"></param>
-        /// <returns></returns>
-        StreamWriter CreateStreamWriter(string url, bool isAppend);
-
         #endregion method
     }
 }

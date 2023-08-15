@@ -109,6 +109,9 @@ namespace Mov.Core.Models.Connections
             return Path.IsPathRooted(path) ? path : Path.Combine(this.Value, path);
         }
 
+        public Uri GetUri() => new Uri(this.Value);
+        
+
         protected override bool EqualCore(PathValue other)
         {
             return this.Value.Equals(other.Value, StringComparison.Ordinal);

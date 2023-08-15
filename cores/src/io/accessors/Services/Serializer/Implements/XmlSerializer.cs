@@ -14,7 +14,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
     {
         #region field
 
-        private readonly IAccessClient client;
+        private readonly FileAccessClient client;
 
         #endregion field
 

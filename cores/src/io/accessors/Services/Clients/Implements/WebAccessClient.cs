@@ -36,6 +36,12 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
             this.Encoding = encoding;
         }
 
+        ~WebAccessClient()
+        {
+            // このコードを変更しないでください。クリーンアップ コードを 'Dispose(bool disposing)' メソッドに記述します
+            Dispose(disposing: false);
+        }
+
         #endregion constructor
 
         #region method
@@ -68,13 +74,6 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
                 disposedValue = true;
             }
         }
-
-        // // TODO: 'Dispose(bool disposing)' にアンマネージド リソースを解放するコードが含まれる場合にのみ、ファイナライザーをオーバーライドします
-        // ~FileAccessClient()
-        // {
-        //     // このコードを変更しないでください。クリーンアップ コードを 'Dispose(bool disposing)' メソッドに記述します
-        //     Dispose(disposing: false);
-        // }
 
         public void Dispose()
         {

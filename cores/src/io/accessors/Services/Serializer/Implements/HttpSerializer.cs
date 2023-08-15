@@ -36,7 +36,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
 
         #region method
 
-        public TResponse Read<TResponse>(string url)
+        public TResponse Read<TRequest, TResponse>(string url)
         {
             using (var client = BaseClient())
             {

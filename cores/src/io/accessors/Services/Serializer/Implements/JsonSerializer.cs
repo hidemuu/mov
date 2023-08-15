@@ -46,7 +46,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// データをファイルから読み出して指定クラスにデシリアライズ
         /// </summary>
         /// <returns></returns>
-        public TResponse Read<TResponse>(string url)
+        public TResponse Read<TRequest, TResponse>(string url)
         {
             //Json文字列の取得
             string jsonString = this.client.Read(url);

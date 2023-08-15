@@ -47,7 +47,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// データをファイルから読み出して指定クラスにデシリアライズ
         /// </summary>
         /// <returns></returns>
-        public TResponse Read<TResponse>(string url)
+        public TResponse Read<TRequest, TResponse>(string url)
         {
             var xmlSettings = new XmlReaderSettings() { CheckCharacters = false };
             using (var streamReader = this.client.CreateStreamReader(url))

@@ -30,7 +30,7 @@ namespace Mov.Core.Accessors.Services.Serializer
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        TResponse Read<TResponse>(string url);
+        TResponse Read<TRequest, TResponse>(string url);
         /// <summary>
         /// 書き込み
         /// </summary>

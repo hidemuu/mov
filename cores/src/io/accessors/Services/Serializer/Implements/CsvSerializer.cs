@@ -4,7 +4,10 @@ using Mov.Core.Accessors.Services.Clients;
 using Mov.Core.Accessors.Services.Clients.Implements;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
+using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
+using System.Linq;
 
 namespace Mov.Core.Accessors.Services.Serializer.Implements
 {
@@ -72,7 +75,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public T Read<T>(string url)
+        public TResponse Read<TRequest, TResponse>(string url)
         {
             var configuration = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
@@ -80,9 +83,9 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
                 PrepareHeaderForMatch = args => args.Header.ToLower(),
             };
 
-            using (var sr = this.client.CreateStreamReader(url))
+            using (var streamReader = new StreamReader(this.client.Path.Combine(url), this.client.Encoding.Value))
             {
-                using (var csv = new CsvReader(sr, configuration))
+                using (var csvReader = new CsvReader(streamReader, configuration))
                 {
                     //var records = new List<T>();
 
@@ -90,9 +93,9 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
                     //records = csv.GetRecords<T>();
 
                     //読み込み開始準備を行います
-                    csv.Read();
+                    //csvReader.Read();
                     //ヘッダを読み込みます
-                    csv.ReadHeader();
+                    //csvReader.ReadHeader();
                     //行毎に読み込みと処理を行います
                     //while (csv.Read())
                     //{
@@ -100,8 +103,12 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
                     //    records.Add(record);
                     //}
 
-                    var records = csv.GetRecord<T>();
-                    return records;
+                    var records = csvReader.GetRecords<TRequest>().ToList();
+                    if(records is TResponse responces)
+                    {
+                        return responces;
+                    }
+                    return default;
                 }
             }
         }

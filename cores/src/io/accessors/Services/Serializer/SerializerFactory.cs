@@ -11,15 +11,29 @@ namespace Mov.Core.Accessors.Services.Serializer
 {
     public class SerializerFactory
     {
+        #region field
+
         private PathValue endpoint;
 
         private EncodingValue encoding;
+
+        #endregion field
+
+        #region constructor
 
         public SerializerFactory(PathValue endpoint, EncodingValue encoding) 
         {
             this.endpoint = endpoint;
             this.encoding = encoding;
         }
+
+        public SerializerFactory(PathValue endpoint) : this(endpoint, EncodingValue.UTF8) 
+        {
+        }
+
+        #endregion constructor
+
+        #region method
 
         public ISerializer Create(AccessType accessType)
         {
@@ -41,5 +55,7 @@ namespace Mov.Core.Accessors.Services.Serializer
                 return null;
             }
         }
+
+        #endregion method
     }
 }

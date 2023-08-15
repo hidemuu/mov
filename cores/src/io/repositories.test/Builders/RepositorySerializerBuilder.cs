@@ -35,7 +35,7 @@ namespace Mov.Core.Repositories.Test.Builders
         public RepositorySerializerBuilder WithReadCalled<TResponse>(TResponse response)
         {
             this.mockSerializer
-                .Setup(x => x.Read<TResponse>(It.IsAny<string>()))
+                .Setup(x => x.Read<TResponse, TResponse>(It.IsAny<string>()))
                 .Returns(response)
                 .Callback(() => 
                 {

@@ -46,7 +46,7 @@ namespace Mov.Core.Repositories.Implements.DbObjects
         /// <inheritdoc />
         public async Task<IEnumerable<TEntity>> GetAsync()
         {
-            return await Task.Run(() => this.serializer.Read<IEnumerable<TEntity>>(""));
+            return await Task.Run(() => this.serializer.Read<TEntity, IEnumerable<TEntity>>(""));
         }
 
         /// <inheritdoc />

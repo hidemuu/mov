@@ -4,7 +4,7 @@ using Mov.Core.Accessors.Test.Models;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
 
-namespace Accessors.Test
+namespace Mov.Core.Accessors.Test
 {
     [TestFixture]
     public class SerializerTest

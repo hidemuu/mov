@@ -1,4 +1,10 @@
-﻿using System;
+﻿using Mov.Core.Accessors.Models;
+using Mov.Core.Accessors.Services.Clients;
+using Mov.Core.Accessors.Services.Serializer;
+using Mov.Core.Accessors.Test.Models;
+using Mov.Core.Models.Connections;
+using Mov.Core.Models.Texts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +18,23 @@ namespace Mov.Core.Accessors.Test
         [SetUp]
         public void Setup()
         {
+        }
+
+        [Test]
+        public void GetAsync_JsonFile_ReturnSchema()
+        {
+            // Arrange
+            var sut = new AccessClientFactory(PathValue.Factory.CreateResourceRootPath()).Create(AccessType.Json);
+
+            // Act
+            var results = Task.WhenAll(sut.GetAsync<SerializeSchema>("test.json")).Result[0].ToArray();
+
+            // Assert
+            Assert.That(results != null);
+            Assert.That(results[0].Id.Equals(1));
+            Assert.That(results[0].Content.Equals("test"));
+            Assert.That(results[1].Id.Equals(2));
+            Assert.That(results[1].Content.Equals("test2"));
         }
     }
 }

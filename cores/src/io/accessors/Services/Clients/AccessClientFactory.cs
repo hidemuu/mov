@@ -1,4 +1,5 @@
 ﻿using Mov.Core.Accessors.Models;
+using Mov.Core.Accessors.Services.Clients.Implements;
 using Mov.Core.Accessors.Services.Serializer;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
@@ -26,6 +27,10 @@ namespace Mov.Core.Accessors.Services.Clients
             this.encoding = encoding;
         }
 
+        public AccessClientFactory(PathValue endpoint) : this(endpoint, EncodingValue.UTF8)
+        {
+        }
+
         #endregion constructor
 
         #region method
@@ -33,6 +38,10 @@ namespace Mov.Core.Accessors.Services.Clients
         public IAccessClient Create(AccessType accessType)
         {
             var serializer = new SerializerFactory(this.endpoint, this.encoding).Create(accessType);
+            if (accessType.IsFile())
+            {
+                return new FileAccessClient(this.endpoint, this.encoding, serializer);
+            }
             return null;
         }
 

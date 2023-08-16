@@ -53,6 +53,10 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
 
         public async Task<IEnumerable<TEntity>> GetAsync<TEntity>(string url)
         {
+            if(this.serializer is XmlSerializer xmlSerializer)
+            {
+                return new[] { await Task.Run(() => this.serializer.Deserialize<TEntity, TEntity>(url)) };
+            }
             return await Task.Run(() => this.serializer.Deserialize<TEntity, IEnumerable<TEntity>>(url));
         }
 

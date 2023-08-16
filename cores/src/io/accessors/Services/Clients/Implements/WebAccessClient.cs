@@ -1,8 +1,10 @@
 ﻿using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Mov.Core.Accessors.Services.Clients.Implements
@@ -12,11 +14,6 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
         #region field
 
         private bool disposedValue;
-
-        /// <summary>
-        /// Constructs the base HTTP client, including correct authorization and API version headers.
-        /// </summary>
-        private HttpClient baseClient => new HttpClient { BaseAddress = this.Path.GetUri() };
 
         #endregion field
 
@@ -48,20 +45,68 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
 
         #region method
 
-        public Task<IEnumerable<TEntity>> GetAsync<TEntity>(string url)
+        /// <summary>
+        /// Makes an HTTP GET request to the given controller and returns the deserialized response content.
+        /// </summary>
+        public async Task<IEnumerable<TEntity>> GetAsync<TEntity>(string url)
         {
-            throw new NotImplementedException();
+            using (var client = BaseClient())
+            {
+                var response = await client.GetAsync(url);
+                string json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<IEnumerable<TEntity>>(json);
+            }
         }
 
-        public Task PostAsync<TEntity>(string url, TEntity item)
+        /// <summary>
+        /// Makes an HTTP POST request to the given controller with the given object as the body.
+        /// Returns the deserialized response content.
+        /// </summary>
+        public async Task PostAsync<TEntity>(string url, TEntity body)
         {
-            throw new NotImplementedException();
+            using (var client = BaseClient())
+            {
+                var response = await client.PostAsync(url, new JsonStringContent(body, this.Encoding.Value));
+                //string json = await response.Content.ReadAsStringAsync();
+                //TResponse obj = JsonConvert.DeserializeObject<TResponse>(json);
+                //return obj;
+            }
         }
 
+        /// <summary>
+        /// Makes an HTTP DELETE request to the given controller and includes all the given
+        /// object's properties as URL parameters. Returns the deserialized response content.
+        /// </summary>
+        public async Task DeleteAsync(string url, string key)
+        {
+            using (var client = BaseClient())
+            {
+                var response = await client.DeleteAsync($"{url}/{key}");
+            }
+        }
 
         #endregion method
 
         #region private method
+
+        /// <summary>
+        /// Constructs the base HTTP client, including correct authorization and API version headers.
+        /// </summary>
+        private HttpClient BaseClient() => new HttpClient { BaseAddress = this.Path.GetUri() };
+
+
+        /// <summary>
+        /// Helper class for formatting <see cref="StringContent"/> as UTF8 application/json.
+        /// </summary>
+        private class JsonStringContent : StringContent
+        {
+            /// <summary>
+            /// Creates <see cref="StringContent"/> formatted as UTF8 application/json.
+            /// </summary>
+            public JsonStringContent(object obj, Encoding encoding)
+                : base(JsonConvert.SerializeObject(obj), encoding, "application/json")
+            { }
+        }
 
         protected virtual void Dispose(bool disposing)
         {
@@ -86,5 +131,6 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
         }
 
         #endregion private method
+
     }
 }

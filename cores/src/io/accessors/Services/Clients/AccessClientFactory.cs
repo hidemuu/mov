@@ -42,6 +42,10 @@ namespace Mov.Core.Accessors.Services.Clients
             {
                 return new FileAccessClient(serializer);
             }
+            else if (accessType.IsWeb())
+            {
+                return new WebAccessClient(this.endpoint, this.encoding);
+            }
             return null;
         }
 

@@ -11,7 +11,7 @@ using System.Linq;
 using Mov.Core.Repositories.Models.Entities;
 using Mov.Core.Repositories.Models;
 
-namespace Mov.Core.Configurators.Repositories.Schemas
+namespace Mov.Core.Configurators.Models.Schemas
 {
     /// <summary>
     /// 設定
@@ -19,7 +19,7 @@ namespace Mov.Core.Configurators.Repositories.Schemas
     [XmlRoot("config")]
     public class ConfigSchema : DbObjectBase<Guid>
     {
-        #region プロパティ
+        #region peoperty
 
         /// <summary>
         /// カテゴリー
@@ -82,12 +82,12 @@ namespace Mov.Core.Configurators.Repositories.Schemas
         [DisplayIndex(15)]
         public int AccessLv { get; set; } = 0;
 
-        #endregion プロパティ
+        #endregion property
 
-        #region メソッド
+        #region method
 
         public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<ConfigSchema>().OrderBy(x => x.index);
 
-        #endregion メソッド
+        #endregion method
     }
 }

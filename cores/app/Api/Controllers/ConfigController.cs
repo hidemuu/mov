@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Mov.Core.Configurators.Repositories.Schemas;
 using Mov.Core.Configurators;
+using Mov.Core.Configurators.Models.Schemas;
 
 namespace Mov.Core.Api.Controllers
 {

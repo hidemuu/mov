@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Core.Configurators.Repositories.Schemas
+namespace Mov.Core.Configurators.Models.Schemas
 {
     /// <summary>
     /// 設定のコレクション

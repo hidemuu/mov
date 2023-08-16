@@ -34,11 +34,12 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
 
         #region constructor
 
-        public FileAccessClient(PathValue path, EncodingValue encoding, ISerializer serializer)
+        public FileAccessClient(ISerializer serializer)
         {
-            this.Path = path;
-            this.Encoding = encoding;
             this.serializer = serializer;
+            this.Path = serializer.Endpoint;
+            this.Encoding = serializer.Encoding;
+            
         }
 
         ~FileAccessClient()

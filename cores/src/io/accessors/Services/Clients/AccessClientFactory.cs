@@ -40,7 +40,7 @@ namespace Mov.Core.Accessors.Services.Clients
             var serializer = new SerializerFactory(this.endpoint, this.encoding).Create(accessType);
             if (accessType.IsFile())
             {
-                return new FileAccessClient(this.endpoint, this.encoding, serializer);
+                return new FileAccessClient(serializer);
             }
             return null;
         }

@@ -1,4 +1,6 @@
-﻿using Mov.Core.Accessors.Services.Serializer;
+﻿using Mov.Core.Accessors.Services.Clients;
+using Mov.Core.Accessors.Services.Clients.Implements;
+using Mov.Core.Accessors.Services.Serializer;
 using Mov.Core.Repositories.Models;
 using System;
 using System.Collections.Generic;
@@ -11,13 +13,13 @@ namespace Mov.Core.Repositories.Implements.DbObjects
     /// 任意のエンティティのファイルデータのリポジトリ
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
-    /// <typeparam name="TBody"></typeparam>
+    /// <typeparam name="TKey"></typeparam>
     public class FileDbObjectRepository<TEntity, TKey> : IDbObjectRepository<TEntity, TKey>
         where TEntity : IDbObject<TKey>
     {
         #region field
 
-        protected readonly ISerializer serializer;
+        protected readonly IAccessClient client;
 
         #endregion field
 
@@ -28,7 +30,7 @@ namespace Mov.Core.Repositories.Implements.DbObjects
         /// </summary>
         public FileDbObjectRepository(ISerializer serializer)
         {
-            this.serializer = serializer;
+            this.client = new FileAccessClient(serializer);
         }
 
         #endregion constructor
@@ -38,7 +40,7 @@ namespace Mov.Core.Repositories.Implements.DbObjects
         /// <inheritdoc />
         public async Task<IEnumerable<TEntity>> GetAsync()
         {
-            return await Task.Run(() => this.serializer.Deserialize<TEntity, IEnumerable<TEntity>>(""));
+            return await this.client.GetAsync<TEntity>("");
         }
 
         /// <inheritdoc />
@@ -51,13 +53,13 @@ namespace Mov.Core.Repositories.Implements.DbObjects
         /// <inheritdoc />
         public async Task PostAsync(TEntity item)
         {
-            await Task.Run(() => this.serializer.Serialize<TEntity, TEntity>("", item));
+            await this.client.PostAsync("", item);
         }
 
         /// <inheritdoc />
         public async Task PostAsync(IEnumerable<TEntity> items)
         {
-            await Task.Run(() => this.serializer.Serialize<IEnumerable<TEntity>, IEnumerable<TEntity>>("", items));
+            await this.client.PostAsync("", items);
         }
 
         /// <inheritdoc />

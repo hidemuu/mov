@@ -2,6 +2,7 @@
 using CsvHelper.Configuration;
 using Mov.Core.Accessors.Services.Clients;
 using Mov.Core.Accessors.Services.Clients.Implements;
+using Mov.Core.Accessors.Services.Serializer.FIles;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
     /// <summary>
     /// CSVシリアライザー
     /// </summary>
-    public class CsvSerializer : ISerializer
+    public class CsvSerializer : IFileSerializer
     {
 
         #region property
@@ -32,8 +33,8 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// </summary>
         public CsvSerializer(PathValue endpoint, EncodingValue encoding)
         {
-            this.Endpoint = endpoint;
-            this.Encoding = encoding;
+            Endpoint = endpoint;
+            Encoding = encoding;
         }
 
         #endregion constructor
@@ -50,7 +51,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
             var configuration = new CsvConfiguration(CultureInfo.CurrentCulture);
             configuration.HasHeaderRecord = true;
 
-            using (var streamWriter = new StreamWriter(this.Endpoint.Combine(url), true, this.Encoding.Value))
+            using (var streamWriter = new StreamWriter(Endpoint.Combine(url), true, Encoding.Value))
             {
                 using (var csv = new CsvWriter(streamWriter, configuration))
                 {
@@ -77,12 +78,12 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
                 PrepareHeaderForMatch = args => args.Header.ToLower(),
             };
 
-            using (var streamReader = new StreamReader(this.Endpoint.Combine(url), this.Encoding.Value))
+            using (var streamReader = new StreamReader(Endpoint.Combine(url), Encoding.Value))
             {
                 using (var csvReader = new CsvReader(streamReader, configuration))
                 {
                     var records = csvReader.GetRecords<TRequest>().ToList();
-                    if(records is TResponse responces)
+                    if (records is TResponse responces)
                     {
                         return responces;
                     }

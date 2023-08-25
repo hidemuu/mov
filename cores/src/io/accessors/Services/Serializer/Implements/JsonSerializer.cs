@@ -1,5 +1,6 @@
 ﻿using Mov.Core.Accessors.Services.Clients;
 using Mov.Core.Accessors.Services.Clients.Implements;
+using Mov.Core.Accessors.Services.Serializer.FIles;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
 using Newtonsoft.Json;
@@ -11,7 +12,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
     /// <summary>
     /// Jsonファイルのシリアライザー
     /// </summary>
-    public class JsonSerializer : ISerializer
+    public class JsonSerializer : IFileSerializer
     {
         #region property
 
@@ -28,8 +29,8 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// </summary>
         public JsonSerializer(PathValue endpoint, EncodingValue encoding)
         {
-            this.Endpoint = endpoint;
-            this.Encoding = encoding;
+            Endpoint = endpoint;
+            Encoding = encoding;
         }
 
         #endregion constructor
@@ -44,7 +45,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         {
             //Json文字列の取得
             string jsonString = string.Empty;
-            using (var streamReader = new StreamReader(this.Endpoint.Combine(url), this.Encoding.Value))
+            using (var streamReader = new StreamReader(Endpoint.Combine(url), Encoding.Value))
             {
                 if (streamReader != null)
                 {
@@ -64,7 +65,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         {
             //Jsonデータにシリアライズ
             var json = JsonConvert.SerializeObject(obj);
-            using (var streamWriter = new StreamWriter(this.Endpoint.Combine(url), false, this.Encoding.Value))
+            using (var streamWriter = new StreamWriter(Endpoint.Combine(url), false, Encoding.Value))
             {
                 if (streamWriter != null)
                 {

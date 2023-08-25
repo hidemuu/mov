@@ -6,19 +6,25 @@ using NUnit.Framework.Constraints;
 namespace Mov.Core.Repositories.Test
 {
     [TestFixture]
-    public class DbObjectRepositoryTest
+    public class FileDbObjectRepositoryTest
     {
         #region field
 
-        private RepositorySerializerBuilder serializerBuilder;
+        private FileRepositorySerializerBuilder serializerBuilder;
 
         #endregion field
+
+        #region setup
 
         [SetUp]
         public void Setup()
         {
-            this.serializerBuilder = new RepositorySerializerBuilder();
+            this.serializerBuilder = new FileRepositorySerializerBuilder();
         }
+
+        #endregion setup
+
+        #region test
 
         [Test]
         public void GetAsync_ReadSerializeSchema_ReturnAll()
@@ -46,9 +52,11 @@ namespace Mov.Core.Repositories.Test
             var items = Task.WhenAll(sut.GetAsync()).Result[0].ToArray();
 
             // Assert
-            Assert.That(items.Length == 2);
-            Assert.That(items[0].Id.Equals(1));
-            Assert.That(items[1].Id.Equals(2));
+            Assert.That(items.Length, Is.EqualTo(2));
+            Assert.That(items[0].Id, Is.EqualTo(1));
+            Assert.That(items[0].Content, Is.EqualTo("test"));
+            Assert.That(items[1].Id, Is.EqualTo(2));
+            Assert.That(items[1].Content, Is.EqualTo("test2"));
         }
 
         [Test]
@@ -80,5 +88,7 @@ namespace Mov.Core.Repositories.Test
             Assert.That(item.Id.Equals(2));
             Assert.That(item.Content.Equals("test2"));
         }
+
+        #endregion test
     }
 }

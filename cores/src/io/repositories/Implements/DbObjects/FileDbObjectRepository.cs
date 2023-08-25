@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Accessors.Services.Clients;
 using Mov.Core.Accessors.Services.Clients.Implements;
-using Mov.Core.Accessors.Services.Serializer;
+using Mov.Core.Accessors.Services.Serializer.FIles;
 using Mov.Core.Repositories.Models;
 using System;
 using System.Collections.Generic;
@@ -19,7 +19,7 @@ namespace Mov.Core.Repositories.Implements.DbObjects
     {
         #region field
 
-        protected readonly IAccessClient client;
+        protected readonly IClient client;
 
         #endregion field
 
@@ -28,9 +28,9 @@ namespace Mov.Core.Repositories.Implements.DbObjects
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FileDbObjectRepository(ISerializer serializer)
+        public FileDbObjectRepository(IFileSerializer serializer)
         {
-            this.client = new FileAccessClient(serializer);
+            this.client = new FileClient(serializer);
         }
 
         #endregion constructor

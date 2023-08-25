@@ -1,5 +1,6 @@
 ﻿using Mov.Core.Accessors.Models;
 using Mov.Core.Accessors.Services.Serializer;
+using Mov.Core.Accessors.Services.Serializer.FIles;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
 using Mov.Core.Repositories;
@@ -30,7 +31,7 @@ namespace Mov.Core.Translators.Repositories
 
         public FileTranslatorRepository(string endpoint)
         {
-            var serializer = new SerializerFactory(new PathValue(Path.Combine(endpoint, FILE_NAME_TRANSLATE)), EncodingValue.UTF8).Create(AccessType.Create(FileType.Json));
+            var serializer = new FileSerializerFactory(new PathValue(Path.Combine(endpoint, FILE_NAME_TRANSLATE)), EncodingValue.UTF8).Create(AccessType.Create(FileType.Json));
             Translates = new FileDbObjectRepository<TranslateSchema, int>(serializer);
         }
 

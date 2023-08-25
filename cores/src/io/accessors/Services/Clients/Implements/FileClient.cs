@@ -1,4 +1,5 @@
 ﻿using Mov.Core.Accessors.Services.Serializer;
+using Mov.Core.Accessors.Services.Serializer.FIles;
 using Mov.Core.Accessors.Services.Serializer.Implements;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
@@ -12,13 +13,13 @@ using System.Threading.Tasks;
 namespace Mov.Core.Accessors.Services.Clients.Implements
 {
     /// <inheritdoc/>
-    public class FileAccessClient : IAccessClient
+    public class FileClient : IClient
     {
         #region field
 
         private bool disposedValue;
 
-        private ISerializer serializer;
+        private IFileSerializer serializer;
 
         #endregion field
 
@@ -34,7 +35,7 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
 
         #region constructor
 
-        public FileAccessClient(ISerializer serializer)
+        public FileClient(IFileSerializer serializer)
         {
             this.serializer = serializer;
             this.Path = serializer.Endpoint;
@@ -42,7 +43,7 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
             
         }
 
-        ~FileAccessClient()
+        ~FileClient()
         {
             // このコードを変更しないでください。クリーンアップ コードを 'Dispose(bool disposing)' メソッドに記述します
             Dispose(disposing: false);
@@ -65,6 +66,12 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
         {
             await Task.Run(() => this.serializer.Serialize<TEntity, TEntity>(url, item));
         }
+
+        public Task DeleteAsync<TEntity>(string url, TEntity item)
+        {
+            throw new NotImplementedException();
+        }
+
 
         public StreamReader GetStreamReader(string url)
         {

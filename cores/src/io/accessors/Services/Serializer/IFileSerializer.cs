@@ -2,12 +2,12 @@
 using Mov.Core.Models.Texts;
 using System.Text;
 
-namespace Mov.Core.Accessors.Services.Serializer
+namespace Mov.Core.Accessors.Services.Serializer.FIles
 {
     /// <summary>
     /// シリアライザーのインターフェース
     /// </summary>
-    public interface ISerializer
+    public interface IFileSerializer
     {
         #region property
 

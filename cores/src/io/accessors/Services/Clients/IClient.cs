@@ -11,7 +11,7 @@ namespace Mov.Core.Accessors.Services.Clients
     /// <summary>
     /// アクセスの共通サービス
     /// </summary>
-    public interface IAccessClient : IDisposable
+    public interface IClient : IDisposable
     {
         #region property
 
@@ -30,15 +30,20 @@ namespace Mov.Core.Accessors.Services.Clients
         #region method
 
         /// <summary>
-        /// 読み出し
+        /// Get
         /// </summary>
         /// <returns></returns>
         Task<IEnumerable<TEntity>> GetAsync<TEntity>(string url);
 
         /// <summary>
-        /// 書き込み
+        /// Post
         /// </summary>
         Task PostAsync<TEntity>(string url, TEntity item);
+
+        /// <summary>
+        /// Delete
+        /// </summary>
+        Task DeleteAsync<TEntity>(string url, TEntity item);
 
         #endregion method
     }

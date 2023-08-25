@@ -1,5 +1,6 @@
 using Mov.Core.Accessors.Models;
 using Mov.Core.Accessors.Services.Serializer;
+using Mov.Core.Accessors.Services.Serializer.FIles;
 using Mov.Core.Accessors.Test.Models;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
@@ -18,7 +19,7 @@ namespace Mov.Core.Accessors.Test
         public void JsonSerializer_DeserializeCollection_ReturnSchema()
         {
             // Arrange & Act
-            var sut = new SerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Json);
+            var sut = new FileSerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Json);
             var obj = sut.Deserialize<SerializeSchema, SerializeSchemaCollection>("test_collection.json");
 
             // Assert
@@ -33,7 +34,7 @@ namespace Mov.Core.Accessors.Test
         public void JsonSerializer_Deserialize_ReturnSchema()
         {
             // Arrange & Act
-            var sut = new SerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Json);
+            var sut = new FileSerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Json);
             var obj = sut.Deserialize<SerializeSchema, IEnumerable<SerializeSchema>>("test.json").ToArray();
 
             // Assert
@@ -48,7 +49,7 @@ namespace Mov.Core.Accessors.Test
         public void XmlSerializer_DeserializeCollection_ReturnSchema()
         {
             // Arrange & act
-            var sut = new SerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Xml);
+            var sut = new FileSerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Xml);
             var obj = sut.Deserialize<SerializeSchema, SerializeSchemaCollection>("test.xml");
 
             // Assert
@@ -63,7 +64,7 @@ namespace Mov.Core.Accessors.Test
         public void CsvSerializer_DeserializeTest_GetSchema()
         {
             // Arrange & Act
-            var sut = new SerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Csv);
+            var sut = new FileSerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Csv);
             var obj = sut.Deserialize<SerializeSchema, IEnumerable<SerializeSchema>>("test.csv");
             var response = obj.ToList();
 

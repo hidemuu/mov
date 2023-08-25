@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Core.Accessors.Services.Clients.Implements
 {
-    public class WebAccessClient : IAccessClient
+    public class WebClient : IClient
     {
         #region field
 
@@ -29,13 +29,13 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
 
         #region constructor
 
-        public WebAccessClient(PathValue path, EncodingValue encoding)
+        public WebClient(PathValue path, EncodingValue encoding)
         {
             this.Path = path;
             this.Encoding = encoding;
         }
 
-        ~WebAccessClient()
+        ~WebClient()
         {
             // このコードを変更しないでください。クリーンアップ コードを 'Dispose(bool disposing)' メソッドに記述します
             Dispose(disposing: false);
@@ -83,6 +83,11 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
             {
                 var response = await client.DeleteAsync($"{url}/{key}");
             }
+        }
+
+        public Task DeleteAsync<TEntity>(string url, TEntity item)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion method

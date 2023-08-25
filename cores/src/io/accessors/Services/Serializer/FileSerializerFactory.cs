@@ -2,14 +2,11 @@
 using Mov.Core.Accessors.Services.Serializer.Implements;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
 
-namespace Mov.Core.Accessors.Services.Serializer
+namespace Mov.Core.Accessors.Services.Serializer.FIles
 {
-    public class SerializerFactory
+    public class FileSerializerFactory
     {
         #region field
 
@@ -21,17 +18,17 @@ namespace Mov.Core.Accessors.Services.Serializer
 
         #region constructor
 
-        public SerializerFactory(PathValue endpoint, EncodingValue encoding) 
+        public FileSerializerFactory(PathValue endpoint, EncodingValue encoding)
         {
             this.endpoint = endpoint;
             this.encoding = encoding;
         }
 
-        public SerializerFactory(PathValue endpoint) : this(endpoint, EncodingValue.UTF8) 
+        public FileSerializerFactory(PathValue endpoint) : this(endpoint, EncodingValue.UTF8)
         {
         }
 
-        public SerializerFactory(string path) : this(new PathValue(path)) 
+        public FileSerializerFactory(string path) : this(new PathValue(path))
         {
         }
 
@@ -39,19 +36,19 @@ namespace Mov.Core.Accessors.Services.Serializer
 
         #region method
 
-        public ISerializer Create(AccessType accessType)
+        public IFileSerializer Create(AccessType accessType)
         {
             if (accessType.IsJson())
             {
-                return new JsonSerializer(this.endpoint, this.encoding);
+                return new JsonSerializer(endpoint, encoding);
             }
             else if (accessType.IsXml())
             {
-                return new XmlSerializer(this.endpoint, this.encoding);
+                return new XmlSerializer(endpoint, encoding);
             }
             else if (accessType.IsCsv())
             {
-                return new CsvSerializer(this.endpoint, this.encoding);
+                return new CsvSerializer(endpoint, encoding);
             }
             else
             {

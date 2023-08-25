@@ -10,6 +10,8 @@ using Mov.Core.Models.Connections;
 using System.IO;
 using Mov.Core.Configurators.Models.Schemas;
 using Mov.Core.Accessors.Services.Serializer.FIles;
+using Mov.Core.Accessors.Services.Clients;
+using Mov.Core.Accessors.Services.Clients.Implements;
 
 namespace Mov.Core.Configurators.Repositories
 {
@@ -26,8 +28,8 @@ namespace Mov.Core.Configurators.Repositories
 
         public FileConfiguratorRepository(string endpoint, FileType fileType, EncodingValue encoding)
         {
-            var serializer = new FileSerializerFactory(new PathValue(Path.Combine(endpoint, "configurator")), encoding).Create(AccessType.Create(fileType));
-            Configs = new FileDbObjectRepository<ConfigSchema, Guid>(serializer);
+            var client = new FileClient(new PathValue(Path.Combine(endpoint, "configurator")), encoding, AccessType.Create(fileType));
+            Configs = new FileDbObjectRepository<ConfigSchema, Guid>(client);
         }
 
         #endregion constructor

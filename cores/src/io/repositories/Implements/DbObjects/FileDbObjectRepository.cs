@@ -28,9 +28,9 @@ namespace Mov.Core.Repositories.Implements.DbObjects
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FileDbObjectRepository(IFileSerializer serializer)
+        public FileDbObjectRepository(IClient client)
         {
-            this.client = new FileClient(serializer);
+            this.client = client;
         }
 
         #endregion constructor

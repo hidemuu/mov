@@ -1,4 +1,5 @@
-﻿using Mov.Core.Accessors.Services.Serializer;
+﻿using Mov.Core.Accessors.Models;
+using Mov.Core.Accessors.Services.Serializer;
 using Mov.Core.Accessors.Services.Serializer.FIles;
 using Mov.Core.Accessors.Services.Serializer.Implements;
 using Mov.Core.Models.Connections;
@@ -39,8 +40,17 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
         {
             this.serializer = serializer;
             this.Path = serializer.Endpoint;
-            this.Encoding = serializer.Encoding;
-            
+            this.Encoding = serializer.Encoding; 
+        }
+
+        public FileClient(PathValue endpoint, EncodingValue encoding, AccessType accessType) 
+            : this(new FileSerializerFactory(endpoint, encoding).Create(accessType))
+        {
+        }
+
+        public FileClient(PathValue endpoint, AccessType accessType) 
+            :this(endpoint, EncodingValue.UTF8, accessType)
+        {
         }
 
         ~FileClient()

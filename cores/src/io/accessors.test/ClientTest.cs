@@ -1,5 +1,6 @@
 ﻿using Mov.Core.Accessors.Models;
 using Mov.Core.Accessors.Services.Clients;
+using Mov.Core.Accessors.Services.Clients.Implements;
 using Mov.Core.Accessors.Services.Serializer;
 using Mov.Core.Accessors.Test.Models;
 using Mov.Core.Models.Connections;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 namespace Mov.Core.Accessors.Test
 {
     [TestFixture]
-    public class AccessClientTest
+    public class ClientTest
     {
         [SetUp]
         public void Setup()
@@ -24,8 +25,7 @@ namespace Mov.Core.Accessors.Test
         public void GetAsync_JsonFile_ReturnSchema()
         {
             // Arrange
-            var sut = new ClientFactory(PathValue.Factory.CreateResourceRootPath()).Create(AccessType.Json);
-
+            var sut = new FileClient(PathValue.Factory.CreateResourceRootPath(), AccessType.Json);
             // Act
             var results = Task.WhenAll(sut.GetAsync<SerializeSchema>("test.json")).Result[0].ToArray();
 
@@ -41,7 +41,7 @@ namespace Mov.Core.Accessors.Test
         public void GetAsync_XmlFile_ReturnSchema()
         {
             // Arrange
-            var sut = new ClientFactory(PathValue.Factory.CreateResourceRootPath()).Create(AccessType.Xml);
+            var sut = new FileClient(PathValue.Factory.CreateResourceRootPath(), AccessType.Xml);
 
             // Act
             var results = Task.WhenAll(sut.GetAsync<SerializeSchemaCollection>("test.xml")).Result[0].ToArray();
@@ -58,7 +58,7 @@ namespace Mov.Core.Accessors.Test
         public void GetAsync_CsvFile_ReturnSchema()
         {
             // Arrange
-            var sut = new ClientFactory(PathValue.Factory.CreateResourceRootPath()).Create(AccessType.Csv);
+            var sut = new FileClient(PathValue.Factory.CreateResourceRootPath(), AccessType.Csv);
 
             // Act
             var results = Task.WhenAll(sut.GetAsync<SerializeSchema>("test.csv")).Result[0].ToArray();

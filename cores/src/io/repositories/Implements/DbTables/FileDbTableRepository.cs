@@ -1,5 +1,7 @@
 ﻿using Mov.Core.Accessors.Models;
 using Mov.Core.Accessors.Services;
+using Mov.Core.Accessors.Services.Clients;
+using Mov.Core.Accessors.Services.Clients.Implements;
 using Mov.Core.Accessors.Services.Serializer;
 using Mov.Core.Accessors.Services.Serializer.FIles;
 using Mov.Core.Models.Connections;
@@ -33,7 +35,7 @@ namespace Mov.Core.Repositories.Implements.DbTables
         /// コンストラクター
         /// </summary>
         public FileDbTableRepository(string fileName, EncodingValue encoding, FileType fileType)
-            : base(new FileSerializerFactory(new PathValue(fileName), encoding).Create(AccessType.Create(fileType)))
+            : base(new FileClient(new PathValue(fileName), encoding, AccessType.Create(fileType)))
         {
 
         }

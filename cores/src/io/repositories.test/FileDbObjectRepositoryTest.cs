@@ -1,3 +1,4 @@
+using Mov.Core.Accessors.Services.Clients.Implements;
 using Mov.Core.Repositories.Implements.DbObjects;
 using Mov.Core.Repositories.Test.Builders;
 using Mov.Core.Repositories.Test.Models;
@@ -48,7 +49,7 @@ namespace Mov.Core.Repositories.Test
                 .Build();
 
             // Act
-            var sut = new FileDbObjectRepository<SerializeSchema, int>(serializer);
+            var sut = new FileDbObjectRepository<SerializeSchema, int>(new FileClient(serializer));
             var items = Task.WhenAll(sut.GetAsync()).Result[0].ToArray();
 
             // Assert
@@ -81,7 +82,7 @@ namespace Mov.Core.Repositories.Test
                 .Build();
 
             // Act
-            var sut = new FileDbObjectRepository<SerializeSchema, int>(serializer);
+            var sut = new FileDbObjectRepository<SerializeSchema, int>(new FileClient(serializer));
             var item = Task.WhenAll(sut.GetAsync(2)).Result[0];
 
             // Assert

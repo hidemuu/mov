@@ -1,4 +1,6 @@
 ﻿using Mov.Core.Accessors.Models;
+using Mov.Core.Accessors.Services.Clients;
+using Mov.Core.Accessors.Services.Clients.Implements;
 using Mov.Core.Accessors.Services.Serializer;
 using Mov.Core.Accessors.Services.Serializer.FIles;
 using Mov.Core.Models.Connections;
@@ -31,8 +33,8 @@ namespace Mov.Core.Translators.Repositories
 
         public FileTranslatorRepository(string endpoint)
         {
-            var serializer = new FileSerializerFactory(new PathValue(Path.Combine(endpoint, FILE_NAME_TRANSLATE)), EncodingValue.UTF8).Create(AccessType.Create(FileType.Json));
-            Translates = new FileDbObjectRepository<TranslateSchema, int>(serializer);
+            var client = new FileClient(new PathValue(Path.Combine(endpoint, FILE_NAME_TRANSLATE)), AccessType.Create(FileType.Json));
+            Translates = new FileDbObjectRepository<TranslateSchema, int>(client);
         }
 
         #endregion constructor

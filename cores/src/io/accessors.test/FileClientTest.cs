@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Mov.Core.Accessors.Test
 {
     [TestFixture]
-    public class ClientTest
+    public class FileClientTest
     {
         [SetUp]
         public void Setup()

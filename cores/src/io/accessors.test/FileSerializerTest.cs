@@ -8,7 +8,7 @@ using Mov.Core.Models.Texts;
 namespace Mov.Core.Accessors.Test
 {
     [TestFixture]
-    public class SerializerTest
+    public class FileSerializerTest
     {
         [SetUp]
         public void Setup()

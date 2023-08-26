@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Core.Repositories.Test.Builders
 {
-    public class FileRepositorySerializerBuilder
+    internal class RepositorySerializerBuilder
     {
         #region field
 
@@ -19,7 +19,7 @@ namespace Mov.Core.Repositories.Test.Builders
 
         #region constructor
 
-        public FileRepositorySerializerBuilder() 
+        public RepositorySerializerBuilder() 
         {
             this.mockSerializer = new Mock<IFileSerializer>();
         }
@@ -33,7 +33,7 @@ namespace Mov.Core.Repositories.Test.Builders
             return this.mockSerializer.Object;
         }
 
-        public FileRepositorySerializerBuilder WithReadCalled<TRequest, TResponse>(TResponse response)
+        public RepositorySerializerBuilder WithReadCalled<TRequest, TResponse>(TResponse response)
         {
             this.mockSerializer
                 .Setup(x => x.Deserialize<TRequest, TResponse>(It.IsAny<string>()))

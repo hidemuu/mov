@@ -15,7 +15,7 @@ namespace Mov.Core.Repositories.Test
     {
         #region field
 
-        private FileRepositorySerializerBuilder serializerBuilder;
+        private RepositoryClientBuilder clientBuilder;
 
         #endregion field
 
@@ -24,7 +24,7 @@ namespace Mov.Core.Repositories.Test
         [SetUp]
         public void Setup()
         {
-            this.serializerBuilder = new FileRepositorySerializerBuilder();
+            this.clientBuilder = new RepositoryClientBuilder();
         }
 
         #endregion setup
@@ -48,12 +48,12 @@ namespace Mov.Core.Repositories.Test
                         Content = "test2",
                     },
                 };
-            var serializer = this.serializerBuilder
-                .WithReadCalled<SerializeSchema, IEnumerable<SerializeSchema>>(schemas)
+            var client = this.clientBuilder
+                .WithReadCalled<SerializeSchema>(schemas)
                 .Build();
 
             // Act
-            var sut = new RestDbObjectRepository<SerializeSchema, int>("", "", EncodingValue.UTF8);
+            var sut = new RestDbObjectRepository<SerializeSchema, int>(client, "");
             var items = Task.WhenAll(sut.GetAsync()).Result[0].ToArray();
 
             // Assert

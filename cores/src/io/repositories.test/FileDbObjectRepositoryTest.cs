@@ -12,7 +12,7 @@ namespace Mov.Core.Repositories.Test
     {
         #region field
 
-        private FileRepositorySerializerBuilder serializerBuilder;
+        private RepositorySerializerBuilder serializerBuilder;
 
         #endregion field
 
@@ -21,7 +21,7 @@ namespace Mov.Core.Repositories.Test
         [SetUp]
         public void Setup()
         {
-            this.serializerBuilder = new FileRepositorySerializerBuilder();
+            this.serializerBuilder = new RepositorySerializerBuilder();
         }
 
         #endregion setup

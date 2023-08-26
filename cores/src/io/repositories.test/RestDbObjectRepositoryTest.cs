@@ -49,7 +49,7 @@ namespace Mov.Core.Repositories.Test
                     },
                 };
             var client = this.clientBuilder
-                .WithReadCalled<SerializeSchema>(schemas)
+                .WithGetAsyncCalled<SerializeSchema>(schemas)
                 .Build();
 
             // Act

@@ -29,9 +29,9 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
 
         #region constructor
 
-        public WebClient(PathValue path, EncodingValue encoding)
+        public WebClient(PathValue endpoint, EncodingValue encoding)
         {
-            this.Endpoint = path;
+            this.Endpoint = endpoint;
             this.Encoding = encoding;
         }
 

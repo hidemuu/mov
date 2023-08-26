@@ -19,7 +19,7 @@ namespace Mov.Core.Repositories.Implements.DbObjects
     {
         #region field
 
-        protected readonly IClient client;
+        private readonly IClient client;
 
         #endregion field
 

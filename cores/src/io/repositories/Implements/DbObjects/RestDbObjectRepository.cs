@@ -32,10 +32,15 @@ namespace Mov.Core.Repositories.Implements.DbObjects
 
         #region constructor
 
-        public RestDbObjectRepository(string url, string key, EncodingValue encode)
+        public RestDbObjectRepository(IClient client, string key)
         {
-            this.client = new WebClient(new PathValue(url), encode);
+            this.client = client;
             this.key = string.IsNullOrEmpty(key) ? string.Empty : API_KEY + key;
+        }
+
+        public RestDbObjectRepository(string url, string key, EncodingValue encode) 
+            : this(new WebClient(new PathValue(url), encode), key)
+        {
         }
 
         #endregion constructor

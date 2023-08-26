@@ -20,7 +20,7 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
         #region property
 
         /// <inheritdoc/>
-        public PathValue Path { get; }
+        public PathValue Endpoint { get; }
 
         /// <inheritdoc/>
         public EncodingValue Encoding { get; }
@@ -31,7 +31,7 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
 
         public WebClient(PathValue path, EncodingValue encoding)
         {
-            this.Path = path;
+            this.Endpoint = path;
             this.Encoding = encoding;
         }
 
@@ -97,7 +97,7 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
         /// <summary>
         /// Constructs the base HTTP client, including correct authorization and API version headers.
         /// </summary>
-        private HttpClient BaseClient() => new HttpClient { BaseAddress = this.Path.GetUri() };
+        private HttpClient BaseClient() => new HttpClient { BaseAddress = this.Endpoint.GetUri() };
 
 
         /// <summary>

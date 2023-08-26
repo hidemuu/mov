@@ -16,8 +16,6 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
     {
         #region property
 
-        public PathValue Endpoint { get; }
-
         public EncodingValue Encoding { get; }
 
         #endregion property
@@ -27,10 +25,9 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public JsonSerializer(PathValue endpoint, EncodingValue encoding)
+        public JsonSerializer(EncodingValue encoding)
         {
-            Endpoint = endpoint;
-            Encoding = encoding;
+            this.Encoding = encoding;
         }
 
         #endregion constructor
@@ -45,7 +42,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         {
             //Json文字列の取得
             string jsonString = string.Empty;
-            using (var streamReader = new StreamReader(Endpoint.Combine(url), Encoding.Value))
+            using (var streamReader = new StreamReader(url, this.Encoding.Value))
             {
                 if (streamReader != null)
                 {
@@ -65,7 +62,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         {
             //Jsonデータにシリアライズ
             var json = JsonConvert.SerializeObject(obj);
-            using (var streamWriter = new StreamWriter(Endpoint.Combine(url), false, Encoding.Value))
+            using (var streamWriter = new StreamWriter(url, false, this.Encoding.Value))
             {
                 if (streamWriter != null)
                 {

@@ -9,9 +9,7 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
 {
     public class SqlClient : IClient
     {
-        public PathValue Path => throw new NotImplementedException();
-
-        public EncodingValue Encoding => throw new NotImplementedException();
+        public PathValue Endpoint => throw new NotImplementedException();
 
         public Task DeleteAsync<TEntity>(string url, TEntity item)
         {

@@ -20,8 +20,6 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
 
         #region property
 
-        public PathValue Endpoint { get; }
-
         public EncodingValue Encoding { get; }
 
         #endregion property
@@ -31,10 +29,9 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public CsvSerializer(PathValue endpoint, EncodingValue encoding)
+        public CsvSerializer(EncodingValue encoding)
         {
-            Endpoint = endpoint;
-            Encoding = encoding;
+            this.Encoding = encoding;
         }
 
         #endregion constructor
@@ -51,7 +48,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
             var configuration = new CsvConfiguration(CultureInfo.CurrentCulture);
             configuration.HasHeaderRecord = true;
 
-            using (var streamWriter = new StreamWriter(Endpoint.Combine(url), true, Encoding.Value))
+            using (var streamWriter = new StreamWriter(url, true, this.Encoding.Value))
             {
                 using (var csv = new CsvWriter(streamWriter, configuration))
                 {
@@ -78,7 +75,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
                 PrepareHeaderForMatch = args => args.Header.ToLower(),
             };
 
-            using (var streamReader = new StreamReader(Endpoint.Combine(url), Encoding.Value))
+            using (var streamReader = new StreamReader(url, this.Encoding.Value))
             {
                 using (var csvReader = new CsvReader(streamReader, configuration))
                 {

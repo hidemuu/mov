@@ -19,8 +19,8 @@ namespace Mov.Core.Accessors.Test
         public void JsonSerializer_DeserializeCollection_ReturnSchema()
         {
             // Arrange & Act
-            var sut = new FileSerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Json);
-            var obj = sut.Deserialize<SerializeSchema, SerializeSchemaCollection>("test_collection.json");
+            var sut = new FileSerializerFactory(EncodingValue.UTF8).Create(AccessType.Json);
+            var obj = sut.Deserialize<SerializeSchema, SerializeSchemaCollection>(PathValue.Factory.CreateResourcePath("test_collection.json").Value);
 
             // Assert
             Assert.That(obj != null);
@@ -34,8 +34,8 @@ namespace Mov.Core.Accessors.Test
         public void JsonSerializer_Deserialize_ReturnSchema()
         {
             // Arrange & Act
-            var sut = new FileSerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Json);
-            var obj = sut.Deserialize<SerializeSchema, IEnumerable<SerializeSchema>>("test.json").ToArray();
+            var sut = new FileSerializerFactory(EncodingValue.UTF8).Create(AccessType.Json);
+            var obj = sut.Deserialize<SerializeSchema, IEnumerable<SerializeSchema>>(PathValue.Factory.CreateResourcePath("test.json").Value).ToArray();
 
             // Assert
             Assert.That(obj != null);
@@ -49,8 +49,8 @@ namespace Mov.Core.Accessors.Test
         public void XmlSerializer_DeserializeCollection_ReturnSchema()
         {
             // Arrange & act
-            var sut = new FileSerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Xml);
-            var obj = sut.Deserialize<SerializeSchema, SerializeSchemaCollection>("test.xml");
+            var sut = new FileSerializerFactory(EncodingValue.UTF8).Create(AccessType.Xml);
+            var obj = sut.Deserialize<SerializeSchema, SerializeSchemaCollection>(PathValue.Factory.CreateResourcePath("test.xml").Value);
 
             // Assert
             Assert.That(obj != null);
@@ -64,8 +64,8 @@ namespace Mov.Core.Accessors.Test
         public void CsvSerializer_DeserializeTest_GetSchema()
         {
             // Arrange & Act
-            var sut = new FileSerializerFactory(PathValue.Factory.CreateResourceRootPath(), EncodingValue.UTF8).Create(AccessType.Csv);
-            var obj = sut.Deserialize<SerializeSchema, IEnumerable<SerializeSchema>>("test.csv");
+            var sut = new FileSerializerFactory(EncodingValue.UTF8).Create(AccessType.Csv);
+            var obj = sut.Deserialize<SerializeSchema, IEnumerable<SerializeSchema>>(PathValue.Factory.CreateResourcePath("test.csv").Value);
             var response = obj.ToList();
 
             // Assert

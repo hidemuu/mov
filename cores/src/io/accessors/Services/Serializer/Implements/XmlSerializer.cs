@@ -16,8 +16,6 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
 
         #region property
 
-        public PathValue Endpoint { get; }
-
         public EncodingValue Encoding { get; }
 
         #endregion property
@@ -28,10 +26,9 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// コンストラクタ
         /// </summary>
         /// <param name="path">ファイルパス</param>
-        public XmlSerializer(PathValue endpoint, EncodingValue encoding)
+        public XmlSerializer(EncodingValue encoding)
         {
-            Endpoint = endpoint;
-            Encoding = encoding;
+            this.Encoding = encoding;
         }
 
         #endregion constructor
@@ -45,7 +42,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         public TResponse Deserialize<TRequest, TResponse>(string url)
         {
             var xmlSettings = new XmlReaderSettings() { CheckCharacters = false };
-            using (var streamReader = new StreamReader(Endpoint.Combine(url), Encoding.Value))
+            using (var streamReader = new StreamReader(url, this.Encoding.Value))
             using (var xmlReader = XmlReader.Create(streamReader, xmlSettings))
             {
                 var serializer = new System.Xml.Serialization.XmlSerializer(typeof(TResponse));
@@ -59,7 +56,7 @@ namespace Mov.Core.Accessors.Services.Serializer.Implements
         /// <param name="obj"></param>
         public TResponse Serialize<TRequest, TResponse>(string url, TRequest obj)
         {
-            using (var streamWriter = new StreamWriter(Endpoint.Combine(url), false, Encoding.Value))
+            using (var streamWriter = new StreamWriter(url, false, this.Encoding.Value))
             {
                 System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(TRequest));
                 serializer.Serialize(streamWriter, obj);

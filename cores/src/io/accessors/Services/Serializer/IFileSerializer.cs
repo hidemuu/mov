@@ -12,11 +12,6 @@ namespace Mov.Core.Accessors.Services.Serializer.FIles
         #region property
 
         /// <summary>
-        /// The Base URL for the API.
-        /// </summary>
-        PathValue Endpoint { get; }
-
-        /// <summary>
         /// Encoding
         /// </summary>
         EncodingValue Encoding { get; }

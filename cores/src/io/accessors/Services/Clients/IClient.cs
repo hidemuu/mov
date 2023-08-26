@@ -18,12 +18,7 @@ namespace Mov.Core.Accessors.Services.Clients
         /// <summary>
         /// パス
         /// </summary>
-        PathValue Path { get; }
-
-        /// <summary>
-        /// エンコード
-        /// </summary>
-        EncodingValue Encoding { get; }
+        PathValue Endpoint { get; }
 
         #endregion property
 

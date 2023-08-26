@@ -10,25 +10,18 @@ namespace Mov.Core.Accessors.Services.Serializer.FIles
     {
         #region field
 
-        private PathValue endpoint;
-
         private EncodingValue encoding;
 
         #endregion field
 
         #region constructor
 
-        public FileSerializerFactory(PathValue endpoint, EncodingValue encoding)
+        public FileSerializerFactory(EncodingValue encoding)
         {
-            this.endpoint = endpoint;
             this.encoding = encoding;
         }
 
-        public FileSerializerFactory(PathValue endpoint) : this(endpoint, EncodingValue.UTF8)
-        {
-        }
-
-        public FileSerializerFactory(string path) : this(new PathValue(path))
+        public FileSerializerFactory() : this(EncodingValue.UTF8)
         {
         }
 
@@ -40,15 +33,15 @@ namespace Mov.Core.Accessors.Services.Serializer.FIles
         {
             if (accessType.IsJson())
             {
-                return new JsonSerializer(endpoint, encoding);
+                return new JsonSerializer(encoding);
             }
             else if (accessType.IsXml())
             {
-                return new XmlSerializer(endpoint, encoding);
+                return new XmlSerializer(encoding);
             }
             else if (accessType.IsCsv())
             {
-                return new CsvSerializer(endpoint, encoding);
+                return new CsvSerializer(encoding);
             }
             else
             {

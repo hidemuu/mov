@@ -27,24 +27,20 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
         #region property
 
         /// <inheritdoc/>
-        public PathValue Path { get; }
-
-        /// <inheritdoc/>
-        public EncodingValue Encoding { get; }
+        public PathValue Endpoint { get; }
 
         #endregion property
 
         #region constructor
 
-        public FileClient(IFileSerializer serializer)
+        public FileClient(PathValue endpoint, IFileSerializer serializer)
         {
+            this.Endpoint = endpoint;
             this.serializer = serializer;
-            this.Path = serializer.Endpoint;
-            this.Encoding = serializer.Encoding; 
         }
 
         public FileClient(PathValue endpoint, EncodingValue encoding, AccessType accessType) 
-            : this(new FileSerializerFactory(endpoint, encoding).Create(accessType))
+            : this(endpoint, new FileSerializerFactory(encoding).Create(accessType))
         {
         }
 
@@ -67,31 +63,19 @@ namespace Mov.Core.Accessors.Services.Clients.Implements
         {
             if(this.serializer is XmlSerializer xmlSerializer)
             {
-                return new[] { await Task.Run(() => this.serializer.Deserialize<TEntity, TEntity>(url)) };
+                return new[] { await Task.Run(() => this.serializer.Deserialize<TEntity, TEntity>(this.Endpoint.Combine(url))) };
             }
-            return await Task.Run(() => this.serializer.Deserialize<TEntity, IEnumerable<TEntity>>(url));
+            return await Task.Run(() => this.serializer.Deserialize<TEntity, IEnumerable<TEntity>>(this.Endpoint.Combine(url)));
         }
 
         public async Task PostAsync<TEntity>(string url, TEntity item)
         {
-            await Task.Run(() => this.serializer.Serialize<TEntity, TEntity>(url, item));
+            await Task.Run(() => this.serializer.Serialize<TEntity, TEntity>(this.Endpoint.Combine(url), item));
         }
 
         public Task DeleteAsync<TEntity>(string url, TEntity item)
         {
             throw new NotImplementedException();
-        }
-
-
-        public StreamReader GetStreamReader(string url)
-        {
-            return new StreamReader(this.Path.Combine(url), this.Encoding.Value);
-        }
-
-
-        public StreamWriter GetStreamWriter(string url, bool isAppend)
-        {
-            return new StreamWriter(this.Path.Combine(url), isAppend, this.Encoding.Value);
         }
 
         #endregion method

@@ -1,8 +1,6 @@
-﻿using Mov.Core.Models;
-using Mov.Core.Models.Jobs;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace Mov.Core.Models.Products.Robot
+namespace Mov.Core.Robots.Models.Queues.Robot
 {
     public class RobotFault : QueueObject
     {

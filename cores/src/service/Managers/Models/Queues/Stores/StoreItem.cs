@@ -1,8 +1,6 @@
-﻿using Mov.Core.Models;
-using Mov.Core.Models.Jobs;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace Mov.Core.Controllers.Models
+namespace Mov.Core.Robots.Models.Queues.Stores
 {
     public class StoreItem : QueueObject
     {

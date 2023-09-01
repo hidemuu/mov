@@ -1,7 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using Mov.Core.Models;
+using Newtonsoft.Json;
 using System;
 
-namespace Mov.Core.Models.Jobs
+namespace Mov.Core.Robots.Models.Queues.Jobs
 {
     /// <summary>
     /// ジョブ情報

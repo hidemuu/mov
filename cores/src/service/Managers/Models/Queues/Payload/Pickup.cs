@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Mov.Core.Robots.Models.Queues;
+using Newtonsoft.Json;
 
-namespace Mov.Core.Models.Jobs.Payload
+namespace Mov.Core.Robots.Models.Queues.Payload
 {
-    public class Dropoff : QueueObject
+    public class Pickup : QueueObject
     {
         /// <summary>
         /// ジョブ割当用ID
@@ -19,11 +20,6 @@ namespace Mov.Core.Models.Jobs.Payload
         /// </summary>
         [JsonProperty("priority")]
         public int Priority { get; set; }
-        /// <summary>
-        /// ジョブを実行するAMR名称
-        /// </summary>
-        [JsonProperty("robot")]
-        public string Robot { get; set; }
         /// <summary>
         /// 割当られたジョブID
         /// </summary>

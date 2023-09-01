@@ -1,7 +1,6 @@
-﻿using Mov.Core.Models;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace Mov.Core.Models.Products.Robot
+namespace Mov.Core.Robots.Models.Queues.Robot
 {
     public class Robot : QueueObject
     {

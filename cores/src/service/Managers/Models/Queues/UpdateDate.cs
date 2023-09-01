@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Mov.Core.Models.Jobs
+namespace Mov.Core.Robots.Models.Queues
 {
     /// <summary>
     /// 更新記録

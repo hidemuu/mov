@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Mov.Core.Models
+namespace Mov.Core.Robots.Models.Queues
 {
     public class QueueObject
     {

@@ -61,7 +61,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurators.Test", "src\i
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Translators.Test", "src\io\translators.test\Translators.Test.csproj", "{01AE926C-A186-40FF-BEA3-75CFA0FF5471}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Managers", "src\service\Managers\Managers.csproj", "{D9F082B5-C7CA-4227-BA08-080B49E4A3D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Robots", "src\service\Managers\Robots.csproj", "{D9F082B5-C7CA-4227-BA08-080B49E4A3D6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loggers.Test", "src\io\Loggers.Test\Loggers.Test.csproj", "{3CC106C0-F126-4AD5-A1CE-82AF1A5946F7}"
 EndProject

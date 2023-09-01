@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Controllers.Models
+﻿namespace Mov.Core.Robots.Models.Queues
 {
     /// <summary>
     /// オーダーステータスキーコード

@@ -1,6 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using Mov.Core.Robots.Models.Queues;
+using Newtonsoft.Json;
 
-namespace Mov.Core.Models.Jobs.Payload
+namespace Mov.Core.Robots.Models.Queues.Payload
 {
     public class PickupDropoff : QueueObject
     {

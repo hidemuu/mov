@@ -1,6 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using Mov.Core.Robots.Models.Queues;
+using Newtonsoft.Json;
 
-namespace Mov.Core.Models.Jobs
+namespace Mov.Core.Robots.Models.Queues.Jobs
 {
     public class JobSegment : QueueObject
     {

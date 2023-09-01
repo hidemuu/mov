@@ -1,7 +1,6 @@
-﻿using Mov.Core.Templates.Controllers;
-using System;
+﻿using System;
 
-namespace Mov.Core.Models.Shapes.Renderers
+namespace Mov.Core.Graphicers.Services.Renderers.Implements
 {
     public class RasterRenderer : IRenderer
     {

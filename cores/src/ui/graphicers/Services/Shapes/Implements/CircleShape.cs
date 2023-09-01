@@ -1,7 +1,6 @@
-﻿using Mov.Core.Models.Shapes;
-using Mov.Core.Templates.Controllers;
+﻿using Mov.Core.Graphicers.Services.Renderers;
 
-namespace Mov.Core.Models.Shapes.Entities
+namespace Mov.Core.Graphicers.Services.Shapes.Implements
 {
     internal class CircleShape : ShapeBase
     {

@@ -1,5 +1,4 @@
 ﻿using Mov.Core.Models.Physics;
-using Mov.Core.Models.Shapes;
 
 namespace Mov.Core.Models.Dimensions.Coordinates.TwoDimensions
 {

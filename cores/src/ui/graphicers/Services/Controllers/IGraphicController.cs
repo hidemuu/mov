@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace Mov.Core.Templates.Controllers
+namespace Mov.Core.Graphicers.Services.Controllers
 {
     public interface IGraphicController
     {

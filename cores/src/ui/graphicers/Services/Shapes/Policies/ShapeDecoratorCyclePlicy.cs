@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Mov.Core.Graphicers.Shapes.Policies
+namespace Mov.Core.Graphicers.Services.Shapes.Policies
 {
     public abstract class ShapeDecoratorCyclePolicy
     {

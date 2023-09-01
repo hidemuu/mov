@@ -1,10 +1,11 @@
-﻿using Mov.Core.Models;
-using Mov.Core.Templates.Controllers;
+﻿using Mov.Core.Graphicers.Services.Renderers;
+using Mov.Core.Graphicers.Services.Shapes;
+using Mov.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Core.Models.Shapes
+namespace Mov.Core.Graphicers.Models.ValueObjects
 {
     public class GraphicObject : ValueObjectBase<GraphicObject>
     {

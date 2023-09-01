@@ -1,9 +1,8 @@
-﻿using Mov.Core.Templates.Controllers;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Drawing;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Graphicers
+namespace Mov.Core.Graphicers.Services.Controllers
 {
     public abstract class GraphicControllerBase : IGraphicController
     {

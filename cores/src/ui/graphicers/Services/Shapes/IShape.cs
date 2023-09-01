@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.Shapes
+﻿namespace Mov.Core.Graphicers.Services.Shapes
 {
     public interface IShape
     {

@@ -9,13 +9,7 @@
   <ItemGroup>
     <Folder Include="Contexts\" />
     <Folder Include="Models\" />
-    <Folder Include="Repositories\" />
-    <Folder Include="Repositories\Schemas\" />
     <Folder Include="Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\repositories\Repositories.csproj" />
   </ItemGroup>
 
 </Project>

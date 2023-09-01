@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Templates.Controllers
+﻿namespace Mov.Core.Graphicers.Services.Renderers
 {
     public interface IRenderer
     {

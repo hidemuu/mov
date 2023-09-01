@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Templates.Transactions
+namespace Mov.Core.Controllers.Services.Transaction
 {
     /// <summary>トランザクションスコープ</summary>
     public interface ITransaction : IDisposable

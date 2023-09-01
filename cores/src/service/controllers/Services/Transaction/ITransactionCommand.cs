@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Templates.Transactions
+﻿namespace Mov.Core.Controllers.Services.Transaction
 {
     public interface ITransactionCommand
     {

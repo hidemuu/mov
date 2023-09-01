@@ -1,20 +1,16 @@
 ﻿using Mov.Core.Accessors.Models;
-using Mov.Core.Accessors.Services;
-using Mov.Core.Accessors.Services.Clients;
 using Mov.Core.Accessors.Services.Clients.Implements;
-using Mov.Core.Accessors.Services.Serializer;
-using Mov.Core.Accessors.Services.Serializer.FIles;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
-using Mov.Core.Repositories.Implements.DbObjects;
 using Mov.Core.Repositories.Models.Entities;
+using Mov.Core.Repositories.Services.DbObjects.Implements;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Repositories.Implements.DbTables
+namespace Mov.Core.Repositories.Services.DbTables.Implements
 {
     /// <summary>
     /// データベースリポジトリ基本クラス
@@ -37,11 +33,9 @@ namespace Mov.Core.Repositories.Implements.DbTables
         public FileDbTableRepository(string fileName, EncodingValue encoding, FileType fileType)
             : base(new FileClient(new PathValue(fileName), encoding, AccessType.Create(fileType)))
         {
-
         }
 
         #region メソッド
-
 
         #region GET
 
@@ -57,13 +51,12 @@ namespace Mov.Core.Repositories.Implements.DbTables
             return Get(task.Result, id);
         }
 
-
         /// <summary>
         /// データ取得
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public TEntity Get(int index) 
+        public TEntity Get(int index)
         {
             var task = GetAsync();
             Task.WaitAll(task);
@@ -75,7 +68,7 @@ namespace Mov.Core.Repositories.Implements.DbTables
         /// </summary>
         /// <param name="code"></param>
         /// <returns></returns>
-        public TEntity Get(string code) 
+        public TEntity Get(string code)
         {
             var task = GetAsync();
             Task.WaitAll(task);
@@ -407,6 +400,5 @@ namespace Mov.Core.Repositories.Implements.DbTables
         }
 
         #endregion 内部メソッド
-
     }
 }

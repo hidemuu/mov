@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Repositories
+﻿namespace Mov.Core.Repositories.Services.Domains
 {
     public interface IDomainRepository
     {

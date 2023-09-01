@@ -2,7 +2,7 @@
 using Mov.Core.Templates.Transactions;
 using System;
 
-namespace Mov.Core.Repositories.Transaction
+namespace Mov.Core.Controllers.Services.Transaction
 {
     public class PersistenceTransactionCommand<TEntity> : ITransactionCommand
     {

@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Mov.Core.Repositories.Implements.Domains
+namespace Mov.Core.Repositories.Services.Domains.Implements
 {
     public class FileDomainRepositoryCollection<TRepository, TInstance> : IDomainRepositoryCollection<TRepository>
         where TRepository : IDomainRepository

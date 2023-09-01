@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Mov.Core.Repositories
+namespace Mov.Core.Repositories.Services.DbTables
 {
     // <summary>
     /// データベースリポジトリインターフェース

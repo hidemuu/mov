@@ -1,6 +1,6 @@
 using Mov.Core.Accessors.Services.Clients.Implements;
 using Mov.Core.Models.Connections;
-using Mov.Core.Repositories.Implements.DbObjects;
+using Mov.Core.Repositories.Services.DbObjects.Implements;
 using Mov.Core.Repositories.Test.Builders;
 using Mov.Core.Repositories.Test.Models;
 using NUnit.Framework.Constraints;

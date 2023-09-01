@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Repositories.Implements.DbObjects
+namespace Mov.Core.Repositories.Services.DbObjects.Implements
 {
     /// <summary>
     /// 任意のエンティティのファイルデータのリポジトリ
@@ -40,7 +40,7 @@ namespace Mov.Core.Repositories.Implements.DbObjects
         /// <inheritdoc />
         public async Task<IEnumerable<TEntity>> GetAsync()
         {
-            return await this.client.GetAsync<TEntity>("");
+            return await client.GetAsync<TEntity>("");
         }
 
         /// <inheritdoc />
@@ -53,13 +53,13 @@ namespace Mov.Core.Repositories.Implements.DbObjects
         /// <inheritdoc />
         public async Task PostAsync(TEntity item)
         {
-            await this.client.PostAsync("", item);
+            await client.PostAsync("", item);
         }
 
         /// <inheritdoc />
         public async Task PostAsync(IEnumerable<TEntity> items)
         {
-            await this.client.PostAsync("", items);
+            await client.PostAsync("", items);
         }
 
         /// <inheritdoc />

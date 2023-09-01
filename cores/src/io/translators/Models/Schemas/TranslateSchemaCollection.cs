@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Core.Translators.Repositories.Schemas
+namespace Mov.Core.Translators.Models.Schemas
 {
     public sealed class TranslateSchemaCollection : IDbObjectCollection<TranslateSchema, int>
     {

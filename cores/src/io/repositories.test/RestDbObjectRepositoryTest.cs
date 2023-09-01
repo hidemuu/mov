@@ -1,12 +1,6 @@
-﻿using Mov.Core.Models.Texts;
-using Mov.Core.Repositories.Implements.DbObjects;
+﻿using Mov.Core.Repositories.Services.DbObjects.Implements;
 using Mov.Core.Repositories.Test.Builders;
 using Mov.Core.Repositories.Test.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mov.Core.Repositories.Test
 {

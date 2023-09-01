@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Repositories.Implements.DbObjects
+namespace Mov.Core.Repositories.Services.DbObjects.Implements
 {
-    public class SqlDbObjectRepository<TEntity, TKey> : IDbObjectRepository<TEntity, TKey> 
+    public class SqlDbObjectRepository<TEntity, TKey> : IDbObjectRepository<TEntity, TKey>
         where TEntity : DbObjectBase<TKey>
     {
         private readonly DbContext db;

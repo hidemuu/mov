@@ -1,5 +1,5 @@
-﻿using Mov.Core.Repositories;
-using Mov.Core.Translators.Repositories.Schemas;
+﻿using Mov.Core.Repositories.Services.DbObjects;
+using Mov.Core.Translators.Models.Schemas;
 
 namespace Mov.Core.Translators
 {

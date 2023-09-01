@@ -1,17 +1,11 @@
 ﻿using Mov.Core.Accessors.Models;
-using Mov.Core.Accessors.Services.Clients;
 using Mov.Core.Accessors.Services.Clients.Implements;
-using Mov.Core.Accessors.Services.Serializer;
-using Mov.Core.Accessors.Services.Serializer.FIles;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
-using Mov.Core.Repositories;
-using Mov.Core.Repositories.Implements.DbObjects;
-using Mov.Core.Repositories.Implements.DbTables;
-using Mov.Core.Translators.Repositories.Schemas;
+using Mov.Core.Repositories.Services.DbObjects;
+using Mov.Core.Repositories.Services.DbObjects.Implements;
+using Mov.Core.Translators.Models.Schemas;
 using System.IO;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
 
 namespace Mov.Core.Translators.Repositories
 {

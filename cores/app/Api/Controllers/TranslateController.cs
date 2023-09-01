@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Mov.Core.Configurators.Models.Schemas;
 using Mov.Core.Configurators;
-using Mov.Core.Translators.Repositories.Schemas;
 using Mov.Core.Translators;
+using Mov.Core.Translators.Models.Schemas;
 
 namespace Mov.Core.Api.Controllers
 {

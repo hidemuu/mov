@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Repositories
+namespace Mov.Core.Repositories.Services.DbObjects
 {
     public interface IDbObjectRepository<TEntity, TKey> where TEntity : IDbObject<TKey>
     {

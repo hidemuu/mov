@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Repositories.Transaction
+﻿namespace Mov.Core.Controllers.Services.Transaction
 {
     public class PersistenceConnection
     {

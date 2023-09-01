@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Core.Translators.Repositories.Schemas
+namespace Mov.Core.Translators.Models.Schemas
 {
     public sealed class TranslateSchema : IDbObject<int>
     {
@@ -17,6 +17,6 @@ namespace Mov.Core.Translators.Repositories.Schemas
 
         [JsonProperty("en")]
         public string EN { get; set; }
-        
+
     }
 }

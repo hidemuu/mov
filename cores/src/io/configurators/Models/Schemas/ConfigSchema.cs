@@ -1,15 +1,13 @@
 ﻿using Mov.Core.Attributes;
+using Mov.Core.Repositories.Models.Entities;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
-using System.Reflection;
-using System.Text;
-using System.Xml.Serialization;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using Mov.Core.Repositories.Models.Entities;
-using Mov.Core.Repositories.Models;
+using System.Reflection;
+using System.Xml.Serialization;
 
 namespace Mov.Core.Configurators.Models.Schemas
 {
@@ -82,7 +80,7 @@ namespace Mov.Core.Configurators.Models.Schemas
         [DisplayIndex(15)]
         public int AccessLv { get; set; } = 0;
 
-        #endregion property
+        #endregion peoperty
 
         #region method
 

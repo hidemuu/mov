@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace Mov.Core.Repositories
+namespace Mov.Core.Repositories.Services.Domains
 {
-    public interface IDomainRepositoryCollection<TRepository> 
+    public interface IDomainRepositoryCollection<TRepository>
         where TRepository : IDomainRepository
     {
         #region プロパティ

@@ -1,23 +1,17 @@
-﻿using Mov.Core.Models.Texts;
-using Mov.Core.Repositories;
-using Mov.Core.Repositories.Implements.Domains;
-using Mov.Core.Repositories.Implements.DbTables;
-using System;
-using Mov.Core.Repositories.Implements.DbObjects;
-using Mov.Core.Accessors.Models;
-using Mov.Core.Accessors.Services.Serializer;
-using Mov.Core.Models.Connections;
-using System.IO;
-using Mov.Core.Configurators.Models.Schemas;
-using Mov.Core.Accessors.Services.Serializer.FIles;
-using Mov.Core.Accessors.Services.Clients;
+﻿using Mov.Core.Accessors.Models;
 using Mov.Core.Accessors.Services.Clients.Implements;
+using Mov.Core.Configurators.Models.Schemas;
+using Mov.Core.Models.Connections;
+using Mov.Core.Models.Texts;
+using Mov.Core.Repositories.Services.DbObjects;
+using Mov.Core.Repositories.Services.DbObjects.Implements;
+using System;
+using System.IO;
 
 namespace Mov.Core.Configurators.Repositories
 {
     public class FileConfiguratorRepository : IConfiguratorRepository
     {
-
         #region property
 
         public IDbObjectRepository<ConfigSchema, Guid> Configs { get; }
@@ -33,6 +27,5 @@ namespace Mov.Core.Configurators.Repositories
         }
 
         #endregion constructor
-
     }
 }

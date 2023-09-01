@@ -1,7 +1,7 @@
 ﻿using Mov.Core.Models.Texts;
 using System.IO;
 
-namespace Mov.Core.Repositories.Implements.Domains
+namespace Mov.Core.Repositories.Services.Domains.Implements
 {
     public abstract class FileDomainRepositoryBase : IDomainRepository
     {

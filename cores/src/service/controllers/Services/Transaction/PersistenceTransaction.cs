@@ -1,7 +1,7 @@
 ﻿using Mov.Core.Templates.Crud;
 using Mov.Core.Templates.Transactions;
 
-namespace Mov.Core.Repositories.Transaction
+namespace Mov.Core.Controllers.Services.Transaction
 {
     public class PersistenceTransaction<TEntity> : ITransaction
     {

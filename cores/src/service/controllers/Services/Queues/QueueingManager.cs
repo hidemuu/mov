@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Mov.Core.Controllers.Services.Controllers
+namespace Mov.Core.Controllers.Services.Queues
 {
     /// <summary>
     /// 上位アプリケーションからの指令を格納

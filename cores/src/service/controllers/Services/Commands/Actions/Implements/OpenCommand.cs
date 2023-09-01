@@ -1,10 +1,10 @@
 ﻿using Mov.Core.Controllers.Attributes;
 using System;
 
-namespace Mov.Core.Controllers.Services.Commands
+namespace Mov.Core.Controllers.Services.Commands.Actions.Implements
 {
     [RegisterCommand]
-    public class OpenCommand : ICommand
+    public class OpenCommand : IActionCommand
     {
         public string Name => throw new NotImplementedException();
 

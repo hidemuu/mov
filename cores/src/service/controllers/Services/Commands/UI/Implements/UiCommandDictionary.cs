@@ -1,7 +1,6 @@
-﻿using Mov.Core.Templates.Controllers;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Mov.Core.Controllers.Services.Commands
+namespace Mov.Core.Controllers.Services.Commands.UI.Implements
 {
     /// <summary>
     /// 登録コマンドのディクショナリ

@@ -1,5 +1,6 @@
 ﻿using MethodBoundaryAspect.Fody.Attributes;
 using Mov.Core.Controllers.Contexts;
+using Mov.Core.Controllers.Services.Commands.Actions;
 using System;
 
 namespace Mov.Core.Controllers.Attributes
@@ -8,7 +9,7 @@ namespace Mov.Core.Controllers.Attributes
     {
         public override void OnEntry(MethodExecutionArgs arg)
         {
-            new CommandContext((ICommand)arg.Instance);
+            new CommandContext((IActionCommand)arg.Instance);
             Console.WriteLine("Entered method: " + arg.Method.Name);
         }
     }

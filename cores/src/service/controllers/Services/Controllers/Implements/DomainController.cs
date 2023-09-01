@@ -1,9 +1,8 @@
-﻿using Mov.Core.Controllers.Services.Commands;
+﻿using Mov.Core.Controllers.Services.Commands.UI.Implements;
 using Mov.Core.Models.Commands;
-using Mov.Core.Templates.Controllers;
 using System.Collections.Generic;
 
-namespace Mov.Core.Controllers.Services.Controllers
+namespace Mov.Core.Controllers.Services.Controllers.Implements
 {
     /// <summary>
     /// ドメイン単位のコントローラー

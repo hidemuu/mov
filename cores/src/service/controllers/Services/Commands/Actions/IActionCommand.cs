@@ -1,6 +1,6 @@
-﻿namespace Mov.Core.Controllers
+﻿namespace Mov.Core.Controllers.Services.Commands.Actions
 {
-    public interface ICommand
+    public interface IActionCommand
     {
         #region プロパティ
 

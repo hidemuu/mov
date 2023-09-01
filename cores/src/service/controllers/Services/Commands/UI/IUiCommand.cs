@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Templates.Controllers
+﻿namespace Mov.Core.Controllers.Services.Commands.UI
 {
     /// <summary>
     /// コマンドのインターフェース

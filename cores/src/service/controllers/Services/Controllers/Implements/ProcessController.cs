@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Controllers.Services.Controllers
+namespace Mov.Core.Controllers.Services.Controllers.Implements
 {
     public class ProcessController
     {

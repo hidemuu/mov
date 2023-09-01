@@ -1,11 +1,10 @@
 ﻿using Mov.Core.Helpers;
-using Mov.Core.Templates.Controllers;
 using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 
-namespace Mov.Core.Controllers.Services.Commands
+namespace Mov.Core.Controllers.Services.Commands.UI.Implements
 {
     public class UiCommandFactory<TParameter, TResponse> : IUiCommandFactory<TParameter, TResponse>
     {

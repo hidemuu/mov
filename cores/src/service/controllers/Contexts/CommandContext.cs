@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using Mov.Core.Controllers.Services.Commands.Actions;
 
 namespace Mov.Core.Controllers.Contexts
 {
     public class CommandContext : IDisposable
     {
-        public ICommand Command;
+        public IActionCommand Command;
 
         private static Stack<CommandContext> stack = new Stack<CommandContext>();
 
-        public CommandContext(ICommand command)
+        public CommandContext(IActionCommand command)
         {
             Command = command;
             stack.Push(this);

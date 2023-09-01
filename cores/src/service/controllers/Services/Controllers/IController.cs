@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Mov.Core.Templates.Controllers
+namespace Mov.Core.Controllers.Services.Controllers
 {
     /// <summary>
     /// コントローラーのインターフェース

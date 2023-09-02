@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Reflection;
 using System.Xml.Serialization;
 
-namespace Mov.Core.Repositories.Entities
+namespace Mov.Core.Repositories
 {
     public abstract class DbObjectBase<TKey> : IDbObject<TKey>
     {

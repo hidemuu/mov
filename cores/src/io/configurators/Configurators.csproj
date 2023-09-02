@@ -10,8 +10,4 @@
     <ProjectReference Include="..\repositories\Repositories.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\ValueObjects\" />
-  </ItemGroup>
-
 </Project>

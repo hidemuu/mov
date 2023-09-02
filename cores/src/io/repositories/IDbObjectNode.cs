@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace Mov.Core.Repositories.Models
+namespace Mov.Core.Repositories
 {
     public interface IDbObjectNode<TKey, TEntity> : IDbObject<TKey> where TEntity : IDbObject<TKey>
     {

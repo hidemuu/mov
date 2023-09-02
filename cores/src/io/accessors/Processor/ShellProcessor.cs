@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Accessors.Connectors.Processor
+namespace Mov.Core.Accessors.Processor
 {
     /// <summary>
     /// シェルプロセスクラス

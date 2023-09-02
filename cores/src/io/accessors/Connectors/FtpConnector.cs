@@ -1,12 +1,11 @@
 ﻿using FluentFTP;
-using Mov.Core.Accessors.Clients;
 using Mov.Core.Models.Connections;
 using System;
 using System.IO;
 using System.Net;
 using System.Security.Authentication;
 
-namespace Mov.Core.Accessors.Connectors.Filer
+namespace Mov.Core.Accessors.Connectors
 {
     public class FtpConnector : IConnector, IFiler
     {
@@ -73,14 +72,12 @@ namespace Mov.Core.Accessors.Connectors.Filer
 
         public void Upload(string fileName)
         {
-
             try
             {
                 // 接続
                 Connect();
                 // ファイルのアップロード
                 client.UploadFile(Path.Combine(service.Endpoint.Value, fileName), fileName);
-
             }
             catch (Exception ex)
             {

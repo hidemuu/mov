@@ -1,12 +1,9 @@
-﻿using Mov.Core.Repositories.Models.Entities;
+﻿using Mov.Core.Repositories.Entities;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Core.Errors.Repositories.Schemas
+namespace Mov.Core.Errors.Schemas
 {
     /// <summary>
     /// エラー

@@ -1,9 +1,5 @@
-﻿using Mov.Core.Repositories.Models;
-using Mov.Core.Repositories.Models.Entities;
+﻿using Mov.Core.Repositories;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Core.Translators.Models.Schemas
 {

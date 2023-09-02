@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System.ComponentModel;
 using System.Xml.Serialization;
 
-namespace Mov.Core.Repositories.Models
+namespace Mov.Core.Repositories
 {
     public interface IDbObject<TKey>
     {

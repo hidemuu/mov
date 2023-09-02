@@ -1,6 +1,4 @@
-﻿using Mov.Core.Accessors.Connectors.Processor;
-
-namespace Mov.Core.Accessors.Connectors.Executer
+﻿namespace Mov.Core.Accessors.Processor
 {
     public class VBScriptExecuter : IExecuter
     {
@@ -20,7 +18,9 @@ namespace Mov.Core.Accessors.Connectors.Executer
             processor = new ShellProcessor("WScript.exe");
         }
 
-        #endregion constructor 
+        #endregion constructor
+
+
 
         #region method
 

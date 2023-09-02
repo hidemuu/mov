@@ -1,5 +1,4 @@
 ﻿using Mov.Core.Accessors;
-using Mov.Core.Repositories.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

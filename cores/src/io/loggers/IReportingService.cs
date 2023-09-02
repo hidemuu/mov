@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Loggers.Services
+﻿namespace Mov.Core.Loggers
 {
     public interface IReportingService
     {

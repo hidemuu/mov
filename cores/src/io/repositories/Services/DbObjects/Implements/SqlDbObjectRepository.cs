@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Mov.Core.Repositories.Models;
-using Mov.Core.Repositories.Models.Entities;
+using Mov.Core.Repositories.Entities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

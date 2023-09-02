@@ -3,7 +3,7 @@ using Renci.SshNet.Common;
 using System;
 using System.Diagnostics;
 
-namespace Mov.Core.Accessors.Connectors.Processor
+namespace Mov.Core.Accessors.Connectors
 {
     public class SshConnector
     {

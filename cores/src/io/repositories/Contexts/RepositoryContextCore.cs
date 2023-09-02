@@ -5,14 +5,14 @@ using System.Text;
 
 namespace Mov.Core.Repositories.Contexts
 {
-    public class MovDbContextCore : DbContext
+    public class RepositoryContextCore : DbContext
     {
         #region constructor
 
-        public MovDbContextCore()
+        public RepositoryContextCore()
         { }
 
-        public MovDbContextCore(DbContextOptions<MovDbContextCore> options) : base(options)
+        public RepositoryContextCore(DbContextOptions<RepositoryContextCore> options) : base(options)
         {
         }
 

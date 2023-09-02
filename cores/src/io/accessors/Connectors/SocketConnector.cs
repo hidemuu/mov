@@ -3,7 +3,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Accessors.Connectors.Processor
+namespace Mov.Core.Accessors.Connectors
 {
     public class SocketConnector
     {

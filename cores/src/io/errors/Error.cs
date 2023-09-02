@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Models.Jobs
+namespace Mov.Core.Errors
 {
     /// <summary>
     /// エラー１点分の情報

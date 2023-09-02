@@ -2,7 +2,7 @@
 using System.Text;
 using System.Threading;
 
-namespace Mov.Core.Accessors.Connectors.Processor
+namespace Mov.Core.Accessors.Connectors
 {
     /// <summary>
     /// Telnet接続ロジッククラス

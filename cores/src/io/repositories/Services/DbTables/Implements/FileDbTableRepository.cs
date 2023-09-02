@@ -2,7 +2,7 @@
 using Mov.Core.Accessors.Clients;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
-using Mov.Core.Repositories.Models.Entities;
+using Mov.Core.Repositories.Entities;
 using Mov.Core.Repositories.Services.DbObjects.Implements;
 using System;
 using System.Collections.Generic;

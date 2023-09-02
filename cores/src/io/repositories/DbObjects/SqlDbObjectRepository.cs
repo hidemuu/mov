@@ -1,16 +1,23 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Mov.Core.Accessors;
 using Mov.Core.Repositories.Entities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Repositories.Services.DbObjects.Implements
+namespace Mov.Core.Repositories.DbObjects
 {
     public class SqlDbObjectRepository<TEntity, TKey> : IDbObjectRepository<TEntity, TKey>
         where TEntity : DbObjectBase<TKey>
     {
         private readonly DbContext db;
         private readonly DbSet<TEntity> ts;
+
+        #region property
+
+        public string Endpoint => "";
+
+        #endregion property
 
         public SqlDbObjectRepository(DbContext db, DbSet<TEntity> ts)
         {

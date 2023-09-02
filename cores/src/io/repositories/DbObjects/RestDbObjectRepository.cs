@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Repositories.Services.DbObjects.Implements
+namespace Mov.Core.Repositories.DbObjects
 {
     public class RestDbObjectRepository<TEntity, TKey> : IDbObjectRepository<TEntity, TKey>
         where TEntity : IDbObject<TKey>
@@ -20,18 +20,24 @@ namespace Mov.Core.Repositories.Services.DbObjects.Implements
 
         #region field
 
-        private readonly IClient client;
+        private readonly IClient _client;
 
-        private readonly string key;
+        private readonly string _key;
 
         #endregion field
+
+        #region property
+
+        public string Endpoint => _client.Endpoint.Value;
+
+        #endregion property
 
         #region constructor
 
         public RestDbObjectRepository(IClient client, string key)
         {
-            this.client = client;
-            this.key = string.IsNullOrEmpty(key) ? string.Empty : API_KEY + key;
+            this._client = client;
+            this._key = string.IsNullOrEmpty(key) ? string.Empty : API_KEY + key;
         }
 
         public RestDbObjectRepository(string url, string key, EncodingValue encode)
@@ -44,17 +50,17 @@ namespace Mov.Core.Repositories.Services.DbObjects.Implements
         #region method
 
         public async Task<IEnumerable<TEntity>> GetAsync() =>
-            await client.GetAsync<TEntity>(key);
+            await _client.GetAsync<TEntity>(_key);
 
         public async Task<TEntity> GetAsync(TKey param)
         {
-            var items = await client.GetAsync<TEntity>($"/{param}" + key);
+            var items = await _client.GetAsync<TEntity>($"/{param}" + _key);
             return items.FirstOrDefault(x => x.Id.Equals(param));
         }
 
 
         public async Task PostAsync(TEntity item) =>
-            await client.PostAsync(key, item);
+            await _client.PostAsync(_key, item);
 
         public Task PostAsync(IEnumerable<TEntity> items)
         {

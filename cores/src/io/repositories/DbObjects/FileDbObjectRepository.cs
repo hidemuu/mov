@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Repositories.Services.DbObjects.Implements
+namespace Mov.Core.Repositories.DbObjects
 {
     /// <summary>
     /// 任意のエンティティのファイルデータのリポジトリ
@@ -16,9 +16,15 @@ namespace Mov.Core.Repositories.Services.DbObjects.Implements
     {
         #region field
 
-        private readonly IClient client;
+        private readonly IClient _client;
 
         #endregion field
+
+        #region property
+
+        public string Endpoint => _client.Endpoint.Value;
+
+        #endregion property
 
         #region constructor
 
@@ -27,7 +33,7 @@ namespace Mov.Core.Repositories.Services.DbObjects.Implements
         /// </summary>
         public FileDbObjectRepository(IClient client)
         {
-            this.client = client;
+            this._client = client;
         }
 
         #endregion constructor
@@ -37,7 +43,7 @@ namespace Mov.Core.Repositories.Services.DbObjects.Implements
         /// <inheritdoc />
         public async Task<IEnumerable<TEntity>> GetAsync()
         {
-            return await client.GetAsync<TEntity>("");
+            return await _client.GetAsync<TEntity>("");
         }
 
         /// <inheritdoc />
@@ -50,13 +56,13 @@ namespace Mov.Core.Repositories.Services.DbObjects.Implements
         /// <inheritdoc />
         public async Task PostAsync(TEntity item)
         {
-            await client.PostAsync("", item);
+            await _client.PostAsync("", item);
         }
 
         /// <inheritdoc />
         public async Task PostAsync(IEnumerable<TEntity> items)
         {
-            await client.PostAsync("", items);
+            await _client.PostAsync("", items);
         }
 
         /// <inheritdoc />

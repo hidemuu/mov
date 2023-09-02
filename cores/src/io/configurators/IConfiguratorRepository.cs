@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Configurators.Models.Schemas;
-using Mov.Core.Repositories.Services.DbObjects;
+using Mov.Core.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;

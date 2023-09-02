@@ -3,8 +3,8 @@ using Mov.Core.Accessors.Clients;
 using Mov.Core.Configurators.Models.Schemas;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
-using Mov.Core.Repositories.Services.DbObjects;
-using Mov.Core.Repositories.Services.DbObjects.Implements;
+using Mov.Core.Repositories;
+using Mov.Core.Repositories.DbObjects;
 using System;
 using System.IO;
 

@@ -1,6 +1,5 @@
 ﻿using Moq;
-using Mov.Core.Accessors.Services.Clients;
-using Mov.Core.Accessors.Services.Serializer.FIles;
+using Mov.Core.Accessors;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Services\Connectors\Implements\Processor\TelnetSocket.cs">
+    <Compile Update="Connectors\Processor\TelnetSocket.cs">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>

@@ -11,11 +11,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\analizer\analizer.engine\Analizer.Engine.csproj" />
-    <ProjectReference Include="..\..\src\bom\bom.engine\Bom.Engine.csproj" />
-    <ProjectReference Include="..\..\src\designer\designer.engine\Designer.Engine.csproj" />
-    <ProjectReference Include="..\..\src\drawer\drawer.engine\Drawer.Engine.csproj" />
-    <ProjectReference Include="..\..\src\game\game.engine\Game.Engine.csproj" />
+    <ProjectReference Include="..\..\src\analizer\analizer.engine\Analizer.Service.csproj" />
+    <ProjectReference Include="..\..\src\bom\bom.engine\Bom.Service.csproj" />
+    <ProjectReference Include="..\..\src\designer\designer.engine\Designer.Service.csproj" />
+    <ProjectReference Include="..\..\src\drawer\drawer.engine\Drawer.Service.csproj" />
+    <ProjectReference Include="..\..\src\game\game.engine\Game.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>

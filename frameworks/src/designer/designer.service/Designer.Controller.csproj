@@ -14,8 +14,8 @@
     <Reference Include="Mov.Core">
       <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Mov.Core.Accessors">
-      <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Accessors.dll</HintPath>
+    <Reference Include="Mov.Core.Layouts">
+      <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Layouts.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Core.Repositories">
       <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Repositories.dll</HintPath>

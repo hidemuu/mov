@@ -9,23 +9,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "app\mov\Conso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Models", "src\designer\designer.models\Designer.Models.csproj", "{91059EAE-ACBE-447D-B163-62B927F696DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Engine", "src\designer\designer.engine\Designer.Engine.csproj", "{58795326-B5A7-4BE2-91A2-EC409CCD3057}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Service", "src\designer\designer.engine\Designer.Service.csproj", "{58795326-B5A7-4BE2-91A2-EC409CCD3057}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Models", "src\game\game.models\Game.Models.csproj", "{9DB59F57-98ED-4D5D-92E8-1BFACE2AE80C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Engine", "src\game\game.engine\Game.Engine.csproj", "{232D5ED0-27AB-4349-8EA9-EC379ECE8CFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Service", "src\game\game.engine\Game.Service.csproj", "{232D5ED0-27AB-4349-8EA9-EC379ECE8CFF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bom.Models", "src\bom\bom.models\Bom.Models.csproj", "{25779A6A-4EED-4787-AE4D-134EF3CA2FD0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bom.Engine", "src\bom\bom.engine\Bom.Engine.csproj", "{25C4D4E0-EC41-40D5-B581-A25486A622F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bom.Service", "src\bom\bom.engine\Bom.Service.csproj", "{25C4D4E0-EC41-40D5-B581-A25486A622F7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawer.Models", "src\drawer\drawer.models\Drawer.Models.csproj", "{26A953C6-D56C-4218-A809-2699844E0422}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawer.Engine", "src\drawer\drawer.engine\Drawer.Engine.csproj", "{5D53431F-1403-4840-856B-AE7089846E70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawer.Service", "src\drawer\drawer.engine\Drawer.Service.csproj", "{5D53431F-1403-4840-856B-AE7089846E70}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.Models", "src\analizer\analizer.models\Analizer.Models.csproj", "{3671A314-6667-473B-9917-4D4C6063376D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.Engine", "src\analizer\analizer.engine\Analizer.Engine.csproj", "{7EBA9536-ABB6-49D1-A3E7-EB82224D8EF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.Service", "src\analizer\analizer.engine\Analizer.Service.csproj", "{7EBA9536-ABB6-49D1-A3E7-EB82224D8EF0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework", "lib\framework\Framework.csproj", "{C637E2B8-DD0A-4F5A-B5DF-587031A8699A}"
 EndProject
@@ -39,15 +39,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawer.Repository", "src\dr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.Repository", "src\analizer\analizer.repository\Analizer.Repository.csproj", "{184C9D6D-6884-48E6-81F6-D33B0F87F0A1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Service", "src\designer\designer.service\Designer.Service.csproj", "{2ADDCF6E-C5C3-430B-A249-87B6E07B1FCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Designer.Controller", "src\designer\designer.service\Designer.Controller.csproj", "{2ADDCF6E-C5C3-430B-A249-87B6E07B1FCB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Service", "src\game\game.service\Game.Service.csproj", "{5A0599D7-DE6F-474C-9BF8-2844A82D0446}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Controller", "src\game\game.service\Game.Controller.csproj", "{5A0599D7-DE6F-474C-9BF8-2844A82D0446}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawer.Service", "src\drawer\drawer.service\Drawer.Service.csproj", "{0D9A9388-9A1C-4EC6-8536-FD7B4250301B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drawer.Controller", "src\drawer\drawer.service\Drawer.Controller.csproj", "{0D9A9388-9A1C-4EC6-8536-FD7B4250301B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.Service", "src\analizer\analizer.service\Analizer.Service.csproj", "{835D34DB-8E3C-414A-9ACF-199CA2EAAAE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analizer.Controller", "src\analizer\analizer.service\Analizer.Controller.csproj", "{835D34DB-8E3C-414A-9ACF-199CA2EAAAE2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bom.Service", "src\bom\bom.service\Bom.Service.csproj", "{3F701F2E-49E0-4ABE-9351-022A0FCA1D72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bom.Controller", "src\bom\bom.service\Bom.Controller.csproj", "{3F701F2E-49E0-4ABE-9351-022A0FCA1D72}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UseCase", "lib\usecase\UseCase.csproj", "{E65958B3-D9D5-49A8-8723-3D525AE21522}"
 EndProject
@@ -69,7 +69,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "game", "game", "{30805ED3-7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{1ADB4F38-9501-4EEB-BC96-A67D2BAFD490}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "app\api\Api.csproj", "{7E92519D-83EA-483F-BE8A-5CB0B4A91927}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "app\api\Api.csproj", "{7E92519D-83EA-483F-BE8A-5CB0B4A91927}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

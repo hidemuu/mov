@@ -1,8 +1,5 @@
 ﻿using Mov.Core.Accessors;
-using Mov.Core.Accessors.Services;
-using Mov.Core.Accessors.Services.Clients;
-using Mov.Core.Accessors.Services.Clients.Implements;
-using Mov.Core.Accessors.Services.Serializer.Implements;
+using Mov.Core.Accessors.Clients;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;
 using Mov.Core.Repositories.Models;

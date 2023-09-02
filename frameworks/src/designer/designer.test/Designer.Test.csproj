@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\designer.repository\Designer.Repository.csproj" />
-    <ProjectReference Include="..\designer.service\Designer.Service.csproj" />
+    <ProjectReference Include="..\designer.service\Designer.Controller.csproj" />
   </ItemGroup>
 
   <ItemGroup>

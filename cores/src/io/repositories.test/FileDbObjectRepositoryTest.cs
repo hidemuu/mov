@@ -1,9 +1,8 @@
-using Mov.Core.Accessors.Services.Clients.Implements;
+using Mov.Core.Accessors.Clients;
 using Mov.Core.Models.Connections;
 using Mov.Core.Repositories.Services.DbObjects.Implements;
 using Mov.Core.Repositories.Test.Builders;
 using Mov.Core.Repositories.Test.Models;
-using NUnit.Framework.Constraints;
 
 namespace Mov.Core.Repositories.Test
 {

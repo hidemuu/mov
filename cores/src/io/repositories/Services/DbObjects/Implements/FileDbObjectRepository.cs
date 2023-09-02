@@ -1,6 +1,4 @@
-﻿using Mov.Core.Accessors.Services.Clients;
-using Mov.Core.Accessors.Services.Clients.Implements;
-using Mov.Core.Accessors.Services.Serializer.FIles;
+﻿using Mov.Core.Accessors;
 using Mov.Core.Repositories.Models;
 using System;
 using System.Collections.Generic;

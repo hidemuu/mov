@@ -21,15 +21,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\analizer\analizer.repository\Analizer.Repository.csproj" />
-    <ProjectReference Include="..\..\src\analizer\analizer.service\Analizer.Service.csproj" />
+    <ProjectReference Include="..\..\src\analizer\analizer.service\Analizer.Controller.csproj" />
     <ProjectReference Include="..\..\src\bom\bom.repository\Bom.Repository.csproj" />
-    <ProjectReference Include="..\..\src\bom\bom.service\Bom.Service.csproj" />
+    <ProjectReference Include="..\..\src\bom\bom.service\Bom.Controller.csproj" />
     <ProjectReference Include="..\..\src\designer\designer.repository\Designer.Repository.csproj" />
-    <ProjectReference Include="..\..\src\designer\designer.service\Designer.Service.csproj" />
+    <ProjectReference Include="..\..\src\designer\designer.service\Designer.Controller.csproj" />
     <ProjectReference Include="..\..\src\drawer\drawer.repository\Drawer.Repository.csproj" />
-    <ProjectReference Include="..\..\src\drawer\drawer.service\Drawer.Service.csproj" />
+    <ProjectReference Include="..\..\src\drawer\drawer.service\Drawer.Controller.csproj" />
     <ProjectReference Include="..\..\src\game\game.repository\Game.Repository.csproj" />
-    <ProjectReference Include="..\..\src\game\game.service\Game.Service.csproj" />
+    <ProjectReference Include="..\..\src\game\game.service\Game.Controller.csproj" />
     <ProjectReference Include="..\framework\Framework.csproj" />
   </ItemGroup>
 

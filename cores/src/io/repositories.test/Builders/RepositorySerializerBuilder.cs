@@ -1,11 +1,5 @@
 ﻿using Moq;
-using Mov.Core.Accessors.Services.Serializer;
-using Mov.Core.Accessors.Services.Serializer.FIles;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Mov.Core.Accessors;
 
 namespace Mov.Core.Repositories.Test.Builders
 {
@@ -19,7 +13,7 @@ namespace Mov.Core.Repositories.Test.Builders
 
         #region constructor
 
-        public RepositorySerializerBuilder() 
+        public RepositorySerializerBuilder()
         {
             this.mockSerializer = new Mock<IFileSerializer>();
         }
@@ -38,7 +32,7 @@ namespace Mov.Core.Repositories.Test.Builders
             this.mockSerializer
                 .Setup(x => x.Deserialize<TRequest, TResponse>(It.IsAny<string>()))
                 .Returns(response)
-                .Callback(() => 
+                .Callback(() =>
                 {
                     Console.WriteLine("");
                 });

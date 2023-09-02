@@ -16,7 +16,7 @@
     <ProjectReference Include="..\src\io\resources\Resources.csproj" />
     <ProjectReference Include="..\src\io\translators\Translators.csproj" />
     <ProjectReference Include="..\src\service\authorizers\Authorizers.csproj" />
-    <ProjectReference Include="..\src\service\controllers\Controllers.csproj" />
+    <ProjectReference Include="..\src\service\controllers\Functions.csproj" />
     <ProjectReference Include="..\src\service\learnings\Learnings.csproj" />
     <ProjectReference Include="..\src\service\schedulers\Schedulers.csproj" />
     <ProjectReference Include="..\src\ui\graphicers\Graphicers.csproj" />

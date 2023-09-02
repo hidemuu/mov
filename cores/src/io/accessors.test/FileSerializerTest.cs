@@ -1,6 +1,3 @@
-using Mov.Core.Accessors.Models;
-using Mov.Core.Accessors.Services.Serializer;
-using Mov.Core.Accessors.Services.Serializer.FIles;
 using Mov.Core.Accessors.Test.Models;
 using Mov.Core.Models.Connections;
 using Mov.Core.Models.Texts;

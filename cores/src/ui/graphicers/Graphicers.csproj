@@ -13,7 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\core\Core.csproj" />
     <ProjectReference Include="..\..\io\loggers\Loggers.csproj" />
-    <ProjectReference Include="..\..\service\controllers\Controllers.csproj" />
+    <ProjectReference Include="..\..\service\controllers\Functions.csproj" />
   </ItemGroup>
 
 </Project>

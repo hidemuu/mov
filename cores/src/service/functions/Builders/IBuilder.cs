@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Templates.Builders
+﻿namespace Mov.Core.Functions.Builders
 {
     public interface IBuilder<T>
     {

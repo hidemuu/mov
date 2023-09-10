@@ -1,6 +1,6 @@
-﻿using Mov.Core.Models.Identifiers;
+﻿using Mov.Core.Functions;
+using Mov.Core.Models.Identifiers;
 using Mov.Core.Models.Locations;
-using Mov.Core.Templates;
 using System;
 using System.Threading;
 

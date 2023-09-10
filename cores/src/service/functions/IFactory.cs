@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Templates
+﻿namespace Mov.Core.Functions
 {
     public interface IFactory<TInstance>
     {

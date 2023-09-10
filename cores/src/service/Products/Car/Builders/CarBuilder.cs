@@ -1,5 +1,5 @@
-﻿using Mov.Core.Models.Physics;
-using Mov.Core.Templates.Builders;
+﻿using Mov.Core.Functions.Builders;
+using Mov.Core.Models.Physics;
 using System;
 
 namespace Mov.Core.Models.Products.Car.Builders

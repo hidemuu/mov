@@ -1,4 +1,5 @@
-﻿using Mov.Core.Models.Identifiers;
+﻿using Mov.Core.Functions;
+using Mov.Core.Models.Identifiers;
 using Mov.Core.Models.Locations;
 using Mov.Core.Templates;
 using Mov.Core.Translators.Models;

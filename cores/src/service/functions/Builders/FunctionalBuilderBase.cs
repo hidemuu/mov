@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Mov.Core.Templates.Builders
+namespace Mov.Core.Functions.Builders
 {
     public abstract class FunctionalBuilderBase<TSubject, TSelf> : IBuilder<TSubject>
         where TSubject : new()

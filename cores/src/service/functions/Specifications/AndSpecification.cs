@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Mov.Core.Templates.Specifications
+namespace Mov.Core.Functions.Specifications
 {
     public class AndSpecification<T> : CompositeSpecification<T>
     {

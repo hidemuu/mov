@@ -9,6 +9,7 @@ using System.Threading;
 using Mov.Core.Models.Identifiers;
 using System.Threading.Tasks;
 using Mov.Core.Models;
+using Mov.Core.Functions;
 
 namespace Mov.Core.Translators.Models
 {

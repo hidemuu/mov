@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Templates.Specifications
+﻿namespace Mov.Core.Functions.Specifications
 {
     public abstract class CompositeSpecification<T> : ISpecification<T>
     {

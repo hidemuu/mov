@@ -1,6 +1,6 @@
-﻿using Mov.Core.Models.Locations;
+﻿using Mov.Core.Functions.Builders;
+using Mov.Core.Models.Locations;
 using Mov.Core.Models.Personals.Entities;
-using Mov.Core.Templates.Builders;
 using System;
 
 namespace Mov.Core.Models.Personals.Builders

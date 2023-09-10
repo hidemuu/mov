@@ -38,7 +38,7 @@ namespace Mov.Core.Functions.Commands.UI
             {
                 foreach (var type in types)
                 {
-                    var instance = (IUiCommand<TParameter, TResponse>)Activator.CreateInstance(type);
+                    var instance = (IUiCommand)Activator.CreateInstance(type);
                     result.Add(instance.Name, instance);
                 }
             }

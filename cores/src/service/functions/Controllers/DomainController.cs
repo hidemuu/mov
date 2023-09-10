@@ -28,7 +28,7 @@ namespace Mov.Core.Functions.Controllers
 
         public bool ExecuteCommand(string command, string[] args)
         {
-            var response = executer.Invoke(command, args);
+            executer.Invoke(command, args);
             return true;
         }
 

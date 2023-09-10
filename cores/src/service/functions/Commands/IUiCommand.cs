@@ -1,10 +1,10 @@
-﻿namespace Mov.Core.Functions
+﻿namespace Mov.Core.Functions.Commands
 {
     /// <summary>
     /// コマンドのインターフェース
     /// </summary>
     /// <typeparam name="TService"></typeparam>
-    public interface IUiCommand<TService, TResponse>
+    public interface IUiCommand
     {
         #region プロパティ
 
@@ -28,7 +28,7 @@
         /// <param name="service">処理実装サービス</param>
         /// <param name="args">パラメータ</param>
         /// <returns></returns>
-        TResponse Invoke(TService service, string[] args);
+        void Invoke(string[] args);
 
         /// <summary>
         /// 説明

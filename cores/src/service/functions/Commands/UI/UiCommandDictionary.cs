@@ -11,7 +11,7 @@ namespace Mov.Core.Functions.Commands.UI
     /// Key : コマンド名
     /// Value : コマンドのインスタンス
     /// </remarks>
-    public class UiCommandDictionary<TParameter, TResponse> : Dictionary<string, IUiCommand<TParameter, TResponse>>
+    public class UiCommandDictionary<TParameter, TResponse> : Dictionary<string, IUiCommand>
     {
     }
 }

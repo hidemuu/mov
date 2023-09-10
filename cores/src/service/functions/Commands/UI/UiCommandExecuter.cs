@@ -46,9 +46,9 @@ namespace Mov.Core.Functions.Commands.UI
         /// </summary>
         /// <param name="command"></param>
         /// <returns></returns>
-        public TResponse Invoke(string command, string[] args)
+        public void Invoke(string command, string[] args)
         {
-            return handler[command].Invoke(parameter, args);
+            handler[command].Invoke(args);
         }
 
         /// <summary>

@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Mov.Core.Functions.Shields
+namespace Mov.Core.Shields
 {
     public interface IMeasurable
     {

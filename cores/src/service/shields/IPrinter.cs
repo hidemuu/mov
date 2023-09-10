@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Models.Texts;
 
-namespace Mov.Core.Functions.Shields
+namespace Mov.Core.Shields
 {
     public interface IPrinter
     {

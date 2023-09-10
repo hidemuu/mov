@@ -23,6 +23,17 @@ namespace Mov.Core.Repositories
 
         #endregion property
 
+        #region constructor
+
+        public DbObjectBase() { }
+
+        public DbObjectBase(IDbObject<TKey> src)
+        {
+            Id = src.Id;
+        }
+
+        #endregion constructor
+
         #region method
 
         /// <summary>

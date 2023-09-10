@@ -1,8 +1,10 @@
-﻿using Mov.Core.Templates.Repositories;
+﻿using Mov.Analizer.Models.Schemas;
+using Mov.Core.Repositories;
+using System;
 
 namespace Mov.Analizer.Models
 {
-    public interface IAnalizerRepository : IDomainRepository
+    public interface IAnalizerRepository : IDbObjectRepository<StatisticSchema, Guid>
     {
     }
 }

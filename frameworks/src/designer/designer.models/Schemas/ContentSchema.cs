@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Attributes;
-using Mov.Core.Models.DbObjects.Entities;
 using Mov.Core.Models.Styles;
+using Mov.Core.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,18 +14,18 @@ namespace Mov.Designer.Models.Schemas
     /// コンテンツのコレクション
     /// </summary>
     [XmlRoot("contents")]
-    public class ContentSchemaCollection : DbObjectCollection<ContentSchema>
+    public class ContentSchemaCollection : IDbObjectCollection<ContentSchema, Guid>
     {
         /// <inheritdoc />
         [XmlElement(Type = typeof(ContentSchema), ElementName = "content")]
-        public override ContentSchema[] Items { get; set; }
+        public ContentSchema[] Items { get; set; }
     }
 
     /// <summary>
     /// コンテンツ
     /// </summary>
     [XmlRoot("content")]
-    public class ContentSchema : DbObject
+    public class ContentSchema : DbObjectBase<Guid>
     {
         #region プロパティ
 

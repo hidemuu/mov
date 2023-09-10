@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Learnings.Models
+﻿namespace Mov.Core.Maths
 {
     /// <summary>
     /// 条件式

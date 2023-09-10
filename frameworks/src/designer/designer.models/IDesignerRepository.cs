@@ -1,9 +1,9 @@
-﻿using Mov.Core.Templates.Repositories;
+﻿using Mov.Core.Repositories;
 using Mov.Designer.Models.Schemas;
 
 namespace Mov.Designer.Models
 {
-    public interface IDesignerRepository : IDomainRepository
+    public interface IDesignerRepository : IDbObjectRepository
     {
         IDbObjectRepository<ContentSchema, ContentSchemaCollection> Contents { get; }
         IDbObjectRepository<NodeSchema, NodeSchemaCollection> Nodes { get; }

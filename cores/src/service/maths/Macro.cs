@@ -1,7 +1,7 @@
-﻿using System;
-using Mov.Core.Models;
+﻿using Mov.Core.Models;
+using System;
 
-namespace Mov.Core.Learnings.Models
+namespace Mov.Core.Maths
 {
     public sealed class Macro : ValueObjectBase<Macro>
     {

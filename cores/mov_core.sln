@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accessors", "src\io\accesso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authorizers", "src\service\authorizers\Authorizers.csproj", "{DB23A5ED-C270-46A5-9DFF-EC8F5E6C60EA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Functions", "src\service\controllers\Functions.csproj", "{09F2A233-FCC7-45AA-AF7B-D5B601F54F38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Functions", "src\service\functions\Functions.csproj", "{09F2A233-FCC7-45AA-AF7B-D5B601F54F38}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graphicers", "src\ui\graphicers\Graphicers.csproj", "{44BB7CC6-C3C7-4BD9-8603-F6C3C7E04957}"
 EndProject
@@ -61,13 +61,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurators.Test", "src\i
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Translators.Test", "src\io\translators.test\Translators.Test.csproj", "{01AE926C-A186-40FF-BEA3-75CFA0FF5471}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Robots", "src\service\Managers\Robots.csproj", "{D9F082B5-C7CA-4227-BA08-080B49E4A3D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Robots", "src\service\robots\Robots.csproj", "{D9F082B5-C7CA-4227-BA08-080B49E4A3D6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loggers.Test", "src\io\Loggers.Test\Loggers.Test.csproj", "{3CC106C0-F126-4AD5-A1CE-82AF1A5946F7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Errors.Test", "src\io\Errors.Test\Errors.Test.csproj", "{283E9B72-6972-4BA1-870E-E131AA9A64CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Functions.Test", "src\service\Controllers.Test\Functions.Test.csproj", "{0C754453-7EAB-4BB3-B48B-521681B289BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Functions.Test", "src\service\functions.test\Functions.Test.csproj", "{0C754453-7EAB-4BB3-B48B-521681B289BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maths", "src\service\maths\Maths.csproj", "{EA302F8A-89ED-4CA0-B46B-DE64B5770DE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -187,6 +189,10 @@ Global
 		{0C754453-7EAB-4BB3-B48B-521681B289BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C754453-7EAB-4BB3-B48B-521681B289BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C754453-7EAB-4BB3-B48B-521681B289BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA302F8A-89ED-4CA0-B46B-DE64B5770DE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA302F8A-89ED-4CA0-B46B-DE64B5770DE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA302F8A-89ED-4CA0-B46B-DE64B5770DE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA302F8A-89ED-4CA0-B46B-DE64B5770DE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -222,6 +228,7 @@ Global
 		{3CC106C0-F126-4AD5-A1CE-82AF1A5946F7} = {577A5743-EC91-4754-A4F2-3549E18DC3E2}
 		{283E9B72-6972-4BA1-870E-E131AA9A64CA} = {577A5743-EC91-4754-A4F2-3549E18DC3E2}
 		{0C754453-7EAB-4BB3-B48B-521681B289BA} = {665B38D0-566F-467A-BD52-F67561D180EE}
+		{EA302F8A-89ED-4CA0-B46B-DE64B5770DE0} = {665B38D0-566F-467A-BD52-F67561D180EE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B0560964-0200-47A2-967F-96CD638A381A}

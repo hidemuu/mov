@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\analizer.engine\Analizer.Service.csproj" />
+    <ProjectReference Include="..\analizer.service\Analizer.Service.csproj" />
   </ItemGroup>
 
 </Project>

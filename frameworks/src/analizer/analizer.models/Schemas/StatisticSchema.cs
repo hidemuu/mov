@@ -1,6 +1,9 @@
-﻿namespace Mov.Analizer.Models.Schemas
+﻿using Mov.Core.Repositories;
+using System;
+
+namespace Mov.Analizer.Models.Schemas
 {
-    public class StatisticSchema
+    public class StatisticSchema : DbObjectBase<Guid>
     {
     }
 }

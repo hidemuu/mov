@@ -6,4 +6,8 @@
     <RootNamespace>Mov.Core.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\core\Core.csproj" />
+  </ItemGroup>
+
 </Project>

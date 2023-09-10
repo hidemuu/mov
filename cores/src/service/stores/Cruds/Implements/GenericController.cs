@@ -1,7 +1,7 @@
 ﻿using Mov.Core.Stores.Cruds;
 using System;
 
-namespace Mov.Core.Functions.Controllers
+namespace Mov.Core.Stores.Cruds.Implements
 {
     public class GenericController<T>
     {

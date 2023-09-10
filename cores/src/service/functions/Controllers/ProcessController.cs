@@ -4,7 +4,7 @@ namespace Mov.Core.Functions.Controllers
 {
     public class ProcessController
     {
-        static System.Diagnostics.Process serviceProcess;
+        private System.Diagnostics.Process _process;
 
         /// <summary>
         /// サービス起動
@@ -12,17 +12,17 @@ namespace Mov.Core.Functions.Controllers
         /// <returns></returns>
         private bool Start()
         {
-            serviceProcess = new System.Diagnostics.Process();
-            serviceProcess.StartInfo.FileName = @"C:\Program Files\IIS Express\iisexpress.exe";
-            serviceProcess.StartInfo.CreateNoWindow = false;   //コンソールウインドウ非表示
-            serviceProcess.StartInfo.UseShellExecute = true;   //シェル使用
-            serviceProcess.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Minimized;    //ウインドウサイズ
+            _process = new System.Diagnostics.Process();
+            _process.StartInfo.FileName = @"C:\Program Files\IIS Express\iisexpress.exe";
+            _process.StartInfo.CreateNoWindow = false;   //コンソールウインドウ非表示
+            _process.StartInfo.UseShellExecute = true;   //シェル使用
+            _process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Minimized;    //ウインドウサイズ
             //serviceProcess.SynchronizingObject = this;
-            serviceProcess.Exited += new EventHandler(serviceProcess_Exited);    //イベントハンドラ追加
-            serviceProcess.EnableRaisingEvents = true;  //終了時にExitedイベント生成
+            _process.Exited += new EventHandler(serviceProcess_Exited);    //イベントハンドラ追加
+            _process.EnableRaisingEvents = true;  //終了時にExitedイベント生成
 
             //起動する
-            serviceProcess.Start();
+            _process.Start();
             return true;
         }
 

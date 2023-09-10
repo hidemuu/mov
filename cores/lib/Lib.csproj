@@ -7,17 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\src\controller\authorizers\Authorizers.csproj" />
+    <ProjectReference Include="..\src\controller\configurators\Configurators.csproj" />
+    <ProjectReference Include="..\src\controller\translators\Translators.csproj" />
     <ProjectReference Include="..\src\core\Core.csproj" />
     <ProjectReference Include="..\src\io\accessors\Accessors.csproj" />
-    <ProjectReference Include="..\src\io\configurators\Configurators.csproj" />
     <ProjectReference Include="..\src\io\errors\Errors.csproj" />
     <ProjectReference Include="..\src\io\loggers\Loggers.csproj" />
     <ProjectReference Include="..\src\io\repositories\Repositories.csproj" />
     <ProjectReference Include="..\src\io\resources\Resources.csproj" />
-    <ProjectReference Include="..\src\io\translators\Translators.csproj" />
-    <ProjectReference Include="..\src\service\authorizers\Authorizers.csproj" />
+    <ProjectReference Include="..\src\service\characters\Characters.csproj" />
     <ProjectReference Include="..\src\service\learnings\Learnings.csproj" />
+    <ProjectReference Include="..\src\service\locations\Locations.csproj" />
+    <ProjectReference Include="..\src\service\products\Products.csproj" />
+    <ProjectReference Include="..\src\service\robots\Robots.csproj" />
     <ProjectReference Include="..\src\service\schedulers\Schedulers.csproj" />
+    <ProjectReference Include="..\src\service\shields\Shields.csproj" />
+    <ProjectReference Include="..\src\service\stores\Stores.csproj" />
     <ProjectReference Include="..\src\ui\graphicers\Graphicers.csproj" />
     <ProjectReference Include="..\src\ui\layouts\Layouts.csproj" />
   </ItemGroup>

@@ -15,11 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\controller\configurators\Configurators.csproj" />
+    <ProjectReference Include="..\..\src\controller\translators\Translators.csproj" />
     <ProjectReference Include="..\..\src\core\Core.csproj" />
     <ProjectReference Include="..\..\src\io\accessors\Accessors.csproj" />
-    <ProjectReference Include="..\..\src\io\configurators\Configurators.csproj" />
     <ProjectReference Include="..\..\src\io\repositories\Repositories.csproj" />
-    <ProjectReference Include="..\..\src\io\translators\Translators.csproj" />
   </ItemGroup>
 
 </Project>

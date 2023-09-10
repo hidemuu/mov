@@ -1,5 +1,4 @@
 ﻿using Mov.Core.Models.Connections;
-using Mov.Core.Models.Styles;
 using Mov.Core.Models.Texts;
 using System;
 using System.Collections.Generic;

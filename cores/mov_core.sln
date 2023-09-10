@@ -55,7 +55,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories.Test", "src\io
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "app\Api\Api.csproj", "{9CFA2A9D-C853-4FA6-80C6-D87EB77B7047}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accessors.Test", "src\io\Accessors.Test\Accessors.Test.csproj", "{8E0359DA-AA1C-4639-BC8A-EBDA968599F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accessors.Test", "src\io\accessors.Test\Accessors.Test.csproj", "{8E0359DA-AA1C-4639-BC8A-EBDA968599F8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurators.Test", "src\io\configurators.test\Configurators.Test.csproj", "{563B3773-82E2-417C-A5A7-50A01966CA29}"
 EndProject
@@ -63,9 +63,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Translators.Test", "src\io\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Robots", "src\service\robots\Robots.csproj", "{D9F082B5-C7CA-4227-BA08-080B49E4A3D6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loggers.Test", "src\io\Loggers.Test\Loggers.Test.csproj", "{3CC106C0-F126-4AD5-A1CE-82AF1A5946F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loggers.Test", "src\io\loggers.test\Loggers.Test.csproj", "{3CC106C0-F126-4AD5-A1CE-82AF1A5946F7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Errors.Test", "src\io\Errors.Test\Errors.Test.csproj", "{283E9B72-6972-4BA1-870E-E131AA9A64CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Errors.Test", "src\io\errors.test\Errors.Test.csproj", "{283E9B72-6972-4BA1-870E-E131AA9A64CA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Functions.Test", "src\service\functions.test\Functions.Test.csproj", "{0C754453-7EAB-4BB3-B48B-521681B289BA}"
 EndProject
@@ -75,13 +75,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shields", "src\service\shie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stores", "src\service\stores\Stores.csproj", "{9ABE35AC-C084-4974-9757-B7EC84D2CF56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Products", "src\service\Products\Products.csproj", "{4AC8CB18-9E06-4A91-B18A-019A13822C79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Products", "src\service\products\Products.csproj", "{4AC8CB18-9E06-4A91-B18A-019A13822C79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Characters", "src\service\Characters\Characters.csproj", "{22A595B5-D15C-4A7C-ACF0-77A0D9996CC0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Characters", "src\service\characters\Characters.csproj", "{22A595B5-D15C-4A7C-ACF0-77A0D9996CC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Valuables", "src\service\Valuables\Valuables.csproj", "{CBD3BC9A-1DC5-4FE8-A722-71064FB37312}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Valuables", "src\service\valuables\Valuables.csproj", "{CBD3BC9A-1DC5-4FE8-A722-71064FB37312}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locations", "src\service\Locations\Locations.csproj", "{4745E176-904A-4BBB-91C4-39D441DD1A31}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locations", "src\service\locations\Locations.csproj", "{4745E176-904A-4BBB-91C4-39D441DD1A31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

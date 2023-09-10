@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Core.Models.Codes
+namespace Mov.Core.Models
 {
     public sealed class NewLineCode : ValueObjectBase<NewLineCode>
     {
@@ -24,9 +24,9 @@ namespace Mov.Core.Models.Codes
 
         #region constructor
 
-        public NewLineCode(string code) 
+        public NewLineCode(string code)
         {
-            this.Value = code;
+            Value = code;
         }
 
         public static NewLineCode CR = new NewLineCode(CODE_CR);
@@ -41,12 +41,12 @@ namespace Mov.Core.Models.Codes
 
         protected override bool EqualCore(NewLineCode other)
         {
-            return this.Value.Equals(other.Value, StringComparison.Ordinal);
+            return Value.Equals(other.Value, StringComparison.Ordinal);
         }
 
         protected override int GetHashCodeCore()
         {
-            return this.Value.GetHashCode();
+            return Value.GetHashCode();
         }
 
         #endregion method

@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.Texts;
+﻿using Mov.Core.Models;
 
 namespace Mov.Core.Shields
 {

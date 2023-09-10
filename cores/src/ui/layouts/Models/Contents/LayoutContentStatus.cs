@@ -1,6 +1,5 @@
 ﻿using Mov.Core.Models;
 using Mov.Core.Models.Styles;
-using Mov.Core.Models.Texts;
 
 namespace Mov.Core.Layouts.Models.Contents
 {

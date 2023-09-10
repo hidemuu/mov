@@ -1,5 +1,4 @@
 ﻿using Mov.Core.Models;
-using Mov.Core.Models.Texts;
 using Mov.Core.Models.Locations;
 using System;
 using System.Collections.Generic;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Core.Models.Texts
+namespace Mov.Core.Models
 {
     public sealed class DateValue : ValueObjectBase<DateValue>
     {
@@ -22,7 +22,7 @@ namespace Mov.Core.Models.Texts
 
         public DateValue(DateTime dateTime)
         {
-            this.DateTime = dateTime;
+            DateTime = dateTime;
         }
 
         #endregion constructor

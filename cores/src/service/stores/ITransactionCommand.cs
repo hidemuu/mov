@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Functions
+﻿namespace Mov.Core.Stores
 {
     public interface ITransactionCommand
     {

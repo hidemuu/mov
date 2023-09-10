@@ -1,7 +1,7 @@
-﻿using Mov.Core.Templates.Crud;
+﻿using Mov.Core.Stores.Cruds;
 using System;
 
-namespace Mov.Core.Functions.Transaction
+namespace Mov.Core.Stores.Transaction
 {
     public class PersistenceTransactionCommand<TEntity> : ITransactionCommand
     {

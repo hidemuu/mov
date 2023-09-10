@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Templates.Crud
+namespace Mov.Core.Stores.Cruds
 {
     public interface IPersistenceCommandAsync<T>
     {

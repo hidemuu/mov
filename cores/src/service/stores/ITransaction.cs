@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Functions
+namespace Mov.Core.Stores
 {
     /// <summary>トランザクションスコープ</summary>
     public interface ITransaction : IDisposable

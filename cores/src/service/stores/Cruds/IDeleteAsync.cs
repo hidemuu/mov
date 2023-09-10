@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Mov.Core.Templates.Crud
+namespace Mov.Core.Stores.Cruds
 {
     public interface IDeleteAsync<TEntity>
     {

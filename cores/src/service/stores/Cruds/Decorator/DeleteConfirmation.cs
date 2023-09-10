@@ -1,4 +1,4 @@
-﻿using Mov.Core.Templates.Crud;
+﻿using Mov.Core.Stores.Cruds;
 using System;
 
 namespace Mov.Core.Functions.Cruds.Decorator

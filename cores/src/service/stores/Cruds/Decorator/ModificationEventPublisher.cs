@@ -1,4 +1,4 @@
-﻿using Mov.Core.Templates.Crud;
+﻿using Mov.Core.Stores.Cruds;
 using Mov.Core.Templates.Events;
 using Mov.Core.Templates.Events.Implements;
 

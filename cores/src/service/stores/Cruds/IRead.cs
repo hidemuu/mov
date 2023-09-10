@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Mov.Core.Templates.Crud
+namespace Mov.Core.Stores.Cruds
 {
     public interface IRead<TEntity>
     {

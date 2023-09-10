@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Templates.Crud
+﻿namespace Mov.Core.Stores.Cruds
 {
     public interface IDelete<TEntity>
     {

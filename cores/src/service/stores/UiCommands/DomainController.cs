@@ -1,5 +1,5 @@
-﻿using Mov.Core.Functions.Commands.UI;
-using Mov.Core.Models.Commands;
+﻿using Mov.Core.Functions.Commands;
+using Mov.Core.Functions.Commands.UI;
 using System.Collections.Generic;
 
 namespace Mov.Core.Functions.Controllers
@@ -12,13 +12,13 @@ namespace Mov.Core.Functions.Controllers
 
         private readonly TService service;
 
-        private readonly UiCommandExecuter<TService, CommandResponse> executer;
+        private readonly UiCommandExecuter<TService, UiCommandResponse> executer;
 
 
         public DomainController(TService service, string endpoint)
         {
             this.service = service;
-            executer = new UiCommandExecuter<TService, CommandResponse>(service, endpoint);
+            executer = new UiCommandExecuter<TService, UiCommandResponse>(service, endpoint);
         }
 
         public bool Execute()

@@ -1,13 +1,14 @@
 ﻿using Mov.Core.Functions.Commands;
 using Mov.Core.Functions.Commands.UI;
+using Mov.Core.Functions.Controllers;
 using System.Collections.Generic;
 
-namespace Mov.Core.Functions.Controllers
+namespace Mov.Core.Stores.UiCommands.Implements
 {
     /// <summary>
     /// ドメイン単位のコントローラー
     /// </summary>
-    public class DomainController<TService> : IController
+    public class UiCommandController<TService> : IController
     {
 
         private readonly TService service;
@@ -15,7 +16,7 @@ namespace Mov.Core.Functions.Controllers
         private readonly UiCommandExecuter<TService, UiCommandResponse> executer;
 
 
-        public DomainController(TService service, string endpoint)
+        public UiCommandController(TService service, string endpoint)
         {
             this.service = service;
             executer = new UiCommandExecuter<TService, UiCommandResponse>(service, endpoint);

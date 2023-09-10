@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Accessors.Clients;
+using Mov.Core.Accessors.Models;
 using Mov.Core.Accessors.Test.Models;
-using Mov.Core.Models.Connections;
 
 namespace Mov.Core.Accessors.Test
 {

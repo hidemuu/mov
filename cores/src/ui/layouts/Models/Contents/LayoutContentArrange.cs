@@ -1,5 +1,5 @@
-﻿using Mov.Core.Models.Physics.Sizes;
-using Mov.Core.Models.Styles;
+﻿using Mov.Core.Layouts.Models.Styles;
+using Mov.Core.Maths.Sizes;
 
 namespace Mov.Core.Layouts.Models.Contents
 {

@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Mov.Core.Models;
+using System;
 
-namespace Mov.Core.Models.Locations
+namespace Mov.Core.Locations
 {
     [Serializable]
     public sealed class Address : ValueObjectBase<Address>
@@ -19,9 +20,9 @@ namespace Mov.Core.Models.Locations
 
         public Address(string streetAddress, string postCode, string city)
         {
-            this.StreetAddress = streetAddress;
-            this.Postcode = postCode;
-            this.City = city;
+            StreetAddress = streetAddress;
+            Postcode = postCode;
+            City = city;
         }
 
         public static Address Empty = new Address(string.Empty, string.Empty, string.Empty);
@@ -32,20 +33,20 @@ namespace Mov.Core.Models.Locations
 
         public override string ToString()
         {
-            return $"{nameof(this.StreetAddress)}: {this.StreetAddress}, {nameof(this.Postcode)}: {this.Postcode}";
+            return $"{nameof(StreetAddress)}: {StreetAddress}, {nameof(Postcode)}: {Postcode}";
         }
 
         protected override bool EqualCore(Address other)
         {
-            return 
-                this.StreetAddress.Equals(other.StreetAddress, StringComparison.Ordinal) && 
-                this.Postcode.Equals(other.Postcode, StringComparison.Ordinal) &&
-                this.City.Equals(other.City, StringComparison.Ordinal);
+            return
+                StreetAddress.Equals(other.StreetAddress, StringComparison.Ordinal) &&
+                Postcode.Equals(other.Postcode, StringComparison.Ordinal) &&
+                City.Equals(other.City, StringComparison.Ordinal);
         }
 
         protected override int GetHashCodeCore()
         {
-            return CreateHashCode(this.StreetAddress.GetHashCode(), this.Postcode.GetHashCode(), this.City.GetHashCode());
+            return CreateHashCode(StreetAddress.GetHashCode(), Postcode.GetHashCode(), City.GetHashCode());
         }
 
         #endregion method

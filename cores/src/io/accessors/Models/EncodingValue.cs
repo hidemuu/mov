@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Mov.Core.Models;
 using System.Text;
 
-namespace Mov.Core.Models.Texts
+namespace Mov.Core.Accessors.Models
 {
     public sealed class EncodingValue : ValueObjectBase<EncodingValue>
     {
         #region constant
 
         private const string ENCODE_NAME_UTF8 = "utf-8";
-        
+
         private const string ENCODE_NAME_SHIFT_JIS = "SHIFT⁠-⁠JIS";
 
         #endregion constant

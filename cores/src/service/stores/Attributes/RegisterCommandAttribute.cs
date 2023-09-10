@@ -1,9 +1,9 @@
 ﻿using MethodBoundaryAspect.Fody.Attributes;
-using Mov.Core.Functions.Commands;
-using Mov.Core.Functions.Commands.Contexts;
+using Mov.Core.Stores.UiCommands;
+using Mov.Core.Stores.UiCommands.Contexts;
 using System;
 
-namespace Mov.Core.Controllers.Attributes
+namespace Mov.Core.Stores.Attributes
 {
     public sealed class RegisterCommandAttribute : OnMethodBoundaryAspect
     {

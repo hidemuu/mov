@@ -1,9 +1,7 @@
 ﻿using Mov.Core.Accessors;
-using Mov.Core.Models.Texts;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace Mov.Core.Repositories.DbObjects
 {

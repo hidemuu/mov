@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Models;
 
-namespace Mov.Core.Models.Personals
+namespace Mov.Core.Characters.Personals
 {
     public sealed class Name : ValueObjectBase<Name>
     {

@@ -1,11 +1,10 @@
 using Microsoft.OpenApi.Models;
-using Mov.Core.Configurators.Repositories;
+using Mov.Core.Accessors.Models;
 using Mov.Core.Configurators;
-using Mov.Core.Models.Texts;
-using Mov.Core.Translators.Repositories;
+using Mov.Core.Configurators.Repositories;
 using Mov.Core.Translators;
+using Mov.Core.Translators.Repositories;
 using System.Reflection;
-using Mov.Core.Models.Connections;
 
 var builder = WebApplication.CreateBuilder(args);
 

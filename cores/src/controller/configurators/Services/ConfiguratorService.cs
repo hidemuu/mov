@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Core.Configurators.Services
+﻿namespace Mov.Core.Configurators.Services
 {
     public class ConfiguratorService : IConfiguratorService
     {
@@ -14,7 +10,7 @@ namespace Mov.Core.Configurators.Services
 
         #region constructor
 
-        public ConfiguratorService(IConfiguratorRepository repository) 
+        public ConfiguratorService(IConfiguratorRepository repository)
         {
             this.repository = repository;
         }

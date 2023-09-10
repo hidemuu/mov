@@ -1,7 +1,6 @@
 ﻿using Mov.Core.Accessors;
 using Mov.Core.Accessors.Clients;
-using Mov.Core.Models.Connections;
-using Mov.Core.Models.Texts;
+using Mov.Core.Accessors.Models;
 using Mov.Core.Repositories;
 using Mov.Core.Repositories.DbObjects;
 using Mov.Core.Translators.Models.Schemas;

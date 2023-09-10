@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Core.Models;
 
-namespace Mov.Core.Models.Codes
+namespace Mov.Core.Layouts.Models
 {
     public sealed class KeyboardCode : ValueObjectBase<KeyboardCode>
     {
@@ -39,9 +37,9 @@ namespace Mov.Core.Models.Codes
 
         #region constructor
 
-        public KeyboardCode(int code) 
+        public KeyboardCode(int code)
         {
-            this.Value = code;
+            Value = code;
         }
 
         public static KeyboardCode None = new KeyboardCode(CODE_NONE);
@@ -60,12 +58,12 @@ namespace Mov.Core.Models.Codes
 
         protected override bool EqualCore(KeyboardCode other)
         {
-            return this.Value.Equals(other.Value);
+            return Value.Equals(other.Value);
         }
 
         protected override int GetHashCodeCore()
         {
-            return this.Value.GetHashCode();
+            return Value.GetHashCode();
         }
 
         #endregion method

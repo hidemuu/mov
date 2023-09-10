@@ -1,7 +1,7 @@
 ﻿using Mov.Core.Models;
 using System;
 
-namespace Mov.Core.Models.Foods
+namespace Mov.Core.Products.Foods
 {
     public sealed class Drink : ValueObjectBase<Drink>
     {

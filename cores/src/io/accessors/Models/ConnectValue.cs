@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Core.Models;
 
-namespace Mov.Core.Models.Connections
+namespace Mov.Core.Accessors.Models
 {
     public sealed class ConnectValue : ValueObjectBase<ConnectValue>
     {

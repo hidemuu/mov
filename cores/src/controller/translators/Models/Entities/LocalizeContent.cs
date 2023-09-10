@@ -1,10 +1,8 @@
-﻿using Mov.Core.Models.Identifiers;
-using Mov.Core.Models.Locations;
+﻿using Mov.Core.Locations;
+using Mov.Core.Models.Identifiers;
 using Mov.Core.Translators.Models.ValueObjects;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Mov.Core.Translators.Models.Entities
 {

@@ -1,6 +1,6 @@
-﻿using Mov.Core.Models.Physics;
+﻿using Mov.Core.Models;
 
-namespace Mov.Core.Models.Physics.Sizes
+namespace Mov.Core.Maths.Sizes
 {
     public sealed class Size2D : ValueObjectBase<Size2D>
     {

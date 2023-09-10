@@ -1,7 +1,7 @@
 ﻿using Mov.Core.Models;
 using System;
 
-namespace Mov.Core.Models.Products.Car
+namespace Mov.Core.Products.Car
 {
     public class CarType : ValueObjectBase<CarType>
     {

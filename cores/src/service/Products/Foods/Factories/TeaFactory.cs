@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Models.Foods.Factories
+namespace Mov.Core.Products.Foods.Factories
 {
     internal class TeaFactory : IDrinkFactory
     {

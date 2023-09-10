@@ -1,8 +1,6 @@
-﻿using Mov.Core.Models.Identifiers;
-using Mov.Core.Models.Locations;
+﻿using Mov.Core.Locations;
+using Mov.Core.Models.Identifiers;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Core.Translators
 {

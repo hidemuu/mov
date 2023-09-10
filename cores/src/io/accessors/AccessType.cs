@@ -1,8 +1,6 @@
-﻿using Mov.Core.Models;
-using Mov.Core.Models.Texts;
+﻿using Mov.Core.Accessors.Models;
+using Mov.Core.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Core.Accessors
 {

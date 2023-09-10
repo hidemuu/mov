@@ -1,5 +1,4 @@
-﻿using Mov.Core.Models;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 
 namespace Mov.Core.Robots.Models.Queues.Jobs

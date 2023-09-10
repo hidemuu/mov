@@ -1,9 +1,9 @@
-﻿using Mov.Core.Functions.Builders;
-using Mov.Core.Models.Locations;
-using Mov.Core.Models.Personals.Entities;
+﻿using Mov.Core.Characters.Personals.Entities;
+using Mov.Core.Functions.Builders;
+using Mov.Core.Valuables;
 using System;
 
-namespace Mov.Core.Models.Personals.Builders
+namespace Mov.Core.Characters.Personals.Builders
 {
     public abstract class PersonBuilder : IBuilder<Person>
     {

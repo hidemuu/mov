@@ -1,8 +1,6 @@
-﻿using Mov.Core.Accessors.Clients;
-using Mov.Core.Models.Texts;
+﻿using Mov.Core.Accessors.Models;
 using Newtonsoft.Json;
 using System.IO;
-using System.Runtime.InteropServices.ComTypes;
 
 namespace Mov.Core.Accessors.Serializer
 {

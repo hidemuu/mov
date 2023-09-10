@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Mov.Core.Contexts
+namespace Mov.Core.Products
 {
     public sealed class BuildingContext : IDisposable
     {

@@ -1,7 +1,7 @@
 ﻿using Mov.Core.Functions.Builders;
-using Mov.Core.Models.Physics;
+using Mov.Core.Maths;
 
-namespace Mov.Core.Models.Products.Car
+namespace Mov.Core.Products.Car
 {
     public interface ISpecifyWheelSize
     {

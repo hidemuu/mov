@@ -1,10 +1,9 @@
 ﻿using Mov.Core.Functions;
 using Mov.Core.Models.Identifiers;
-using Mov.Core.Models.Locations;
 using System;
 using System.Threading;
 
-namespace Mov.Core.Contexts
+namespace Mov.Core.Locations
 {
     public class AddressDatabase : IDatabase<Address, Guid>
     {

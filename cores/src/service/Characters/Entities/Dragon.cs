@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Models.Characters.Entities
+namespace Mov.Core.Characters.Entities
 {
     internal class Dragon : IBird, ILizard
     {

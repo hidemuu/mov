@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Mov.Core.Functions.Commands;
 
-namespace Mov.Core.Functions.Commands.Contexts
+namespace Mov.Core.Stores.UiCommands.Contexts
 {
     public class UiCommandContext : IDisposable
     {

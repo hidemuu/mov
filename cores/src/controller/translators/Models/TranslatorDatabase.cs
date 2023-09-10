@@ -1,15 +1,13 @@
-﻿using Mov.Core.Models.Texts;
-using Mov.Core.Models.Locations;
-using Mov.Core.Templates;
+﻿using Mov.Core.Functions;
+using Mov.Core.Locations;
+using Mov.Core.Models;
+using Mov.Core.Models.Identifiers;
 using Mov.Core.Translators.Models.Entities;
 using Mov.Core.Translators.Models.ValueObjects;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using Mov.Core.Models.Identifiers;
 using System.Threading.Tasks;
-using Mov.Core.Models;
-using Mov.Core.Functions;
 
 namespace Mov.Core.Translators.Models
 {

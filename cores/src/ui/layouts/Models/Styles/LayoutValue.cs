@@ -1,7 +1,7 @@
 ﻿using Mov.Core.Models;
 using System;
 
-namespace Mov.Core.Models.Styles
+namespace Mov.Core.Layouts.Models.Styles
 {
     public sealed class LayoutValue : ValueObjectBase<LayoutValue>
     {

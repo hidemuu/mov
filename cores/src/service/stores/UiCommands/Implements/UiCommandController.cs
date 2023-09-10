@@ -1,7 +1,4 @@
-﻿using Mov.Core.Functions.Commands;
-using Mov.Core.Functions.Commands.UI;
-using Mov.Core.Functions.Controllers;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Mov.Core.Stores.UiCommands.Implements
 {

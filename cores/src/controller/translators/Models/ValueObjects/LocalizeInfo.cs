@@ -1,8 +1,5 @@
-﻿using Mov.Core.Models;
-using Mov.Core.Models.Locations;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Core.Locations;
+using Mov.Core.Models;
 
 namespace Mov.Core.Translators.Models.ValueObjects
 {

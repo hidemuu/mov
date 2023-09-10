@@ -1,10 +1,9 @@
 ﻿using Mov.Core.Helpers;
-using Mov.Core.Models.Texts;
+using Mov.Core.Models;
 using System;
 using System.IO;
-using System.Runtime.CompilerServices;
 
-namespace Mov.Core.Models.Connections
+namespace Mov.Core.Accessors.Models
 {
     public sealed class PathValue : ValueObjectBase<PathValue>
     {
@@ -24,35 +23,35 @@ namespace Mov.Core.Models.Connections
         /// <summary>
         /// ファイル名
         /// </summary>
-        public string FileName => Path.GetFileNameWithoutExtension(this.Value);
+        public string FileName => Path.GetFileNameWithoutExtension(Value);
 
         /// <summary>
         /// 拡張子
         /// </summary>
-        public string Extension => Path.GetExtension(this.Value);
+        public string Extension => Path.GetExtension(Value);
 
         /// <summary>
         /// ドライブパス
         /// </summary>
-        public string DrivePath => Directory.GetDirectoryRoot(this.Value);
+        public string DrivePath => Directory.GetDirectoryRoot(Value);
 
         /// <summary>
         /// ディレクトリパス
         /// </summary>
-        public string DirPath => IsDir() ? this.Value : Directory.GetParent(this.Value).FullName;
+        public string DirPath => IsDir() ? Value : Directory.GetParent(Value).FullName;
 
         /// <summary>
         /// ディレクトリ名
         /// </summary>
-        public string DirName => Directory.GetParent(this.Value).Name;
+        public string DirName => Directory.GetParent(Value).Name;
 
         #endregion property
 
         #region constructor
 
-        public PathValue(string path) 
+        public PathValue(string path)
         {
-            this.Value = string.IsNullOrEmpty(path) ? path : Path.IsPathRooted(path) ? path : Path.Combine(PathHelper.GetAssemblyRootPath(), path);
+            Value = string.IsNullOrEmpty(path) ? path : Path.IsPathRooted(path) ? path : Path.Combine(PathHelper.GetAssemblyRootPath(), path);
         }
 
         public static PathValue Empty = new PathValue(string.Empty);
@@ -71,22 +70,22 @@ namespace Mov.Core.Models.Connections
 
             public static PathValue CreateResourceRootPath()
             {
-                return new PathValue(Path.Combine(PathHelper.GetAssemblyRootPath(), PathValue.RESOURCE_NAME));
+                return new PathValue(Path.Combine(PathHelper.GetAssemblyRootPath(), RESOURCE_NAME));
             }
 
             public static PathValue CreateResourcePath(string fileName)
             {
-                return new PathValue(Path.Combine(PathHelper.GetAssemblyRootPath(), PathValue.RESOURCE_NAME, fileName));
+                return new PathValue(Path.Combine(PathHelper.GetAssemblyRootPath(), RESOURCE_NAME, fileName));
             }
 
             public static PathValue CreateResourceRootPath(string solutionName)
             {
-                return new PathValue(Path.Combine(PathHelper.GetCurrentRootPath(solutionName), PathValue.RESOURCE_NAME));
+                return new PathValue(Path.Combine(PathHelper.GetCurrentRootPath(solutionName), RESOURCE_NAME));
             }
 
             public static PathValue CreateResourcePath(string solutionName, string fileName)
             {
-                return new PathValue(Path.Combine(PathHelper.GetCurrentRootPath(solutionName), PathValue.RESOURCE_NAME, fileName));
+                return new PathValue(Path.Combine(PathHelper.GetCurrentRootPath(solutionName), RESOURCE_NAME, fileName));
             }
         }
 
@@ -94,27 +93,27 @@ namespace Mov.Core.Models.Connections
 
         #region method
 
-        public bool IsEmpty() => string.IsNullOrEmpty(this.Value);
+        public bool IsEmpty() => string.IsNullOrEmpty(Value);
 
-        public bool IsRooted() => Path.IsPathRooted(this.Value);
+        public bool IsRooted() => Path.IsPathRooted(Value);
 
-        public bool IsFile() => !string.IsNullOrEmpty(this.FileName) && !string.IsNullOrEmpty(this.Extension);
+        public bool IsFile() => !string.IsNullOrEmpty(FileName) && !string.IsNullOrEmpty(Extension);
 
-        public bool IsFileName() => this.Value.Equals(this.FileName, StringComparison.Ordinal);
+        public bool IsFileName() => Value.Equals(FileName, StringComparison.Ordinal);
 
         public bool IsDir() => IsRooted() && !IsFile();
 
         public string Combine(string path)
         {
-            return Path.IsPathRooted(path) ? path : Path.Combine(this.Value, path);
+            return Path.IsPathRooted(path) ? path : Path.Combine(Value, path);
         }
 
-        public Uri GetUri() => new Uri(this.Value);
-        
+        public Uri GetUri() => new Uri(Value);
+
 
         protected override bool EqualCore(PathValue other)
         {
-            return this.Value.Equals(other.Value, StringComparison.Ordinal);
+            return Value.Equals(other.Value, StringComparison.Ordinal);
         }
 
         protected override int GetHashCodeCore()

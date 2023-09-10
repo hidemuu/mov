@@ -1,9 +1,9 @@
-﻿using Mov.Core.Models.Dimensions.Coordinates.TwoDimensions;
+﻿using Mov.Core.Maths.Dimensions.Coordinates.TwoDimensions;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Mov.Core.Models.Dimensions.Coordinates
+namespace Mov.Core.Maths.Dimensions.Coordinates
 {
     public class LineToPoint2DAdapter : IEnumerable<Point2D>
     {

@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Core.Models;
+using System;
 
-namespace Mov.Core.Models.Texts
+namespace Mov.Core.Accessors.Models
 {
     public sealed class FileType : ValueObjectBase<FileType>
     {
@@ -52,13 +51,13 @@ namespace Mov.Core.Models.Texts
 
         public bool IsNan() => !IsJson() && !IsXml() && !IsCsv() && !IsDb();
 
-        public bool IsJson() => this.Equals(Json);
+        public bool IsJson() => Equals(Json);
 
-        public bool IsXml() => this.Equals(Xml);
+        public bool IsXml() => Equals(Xml);
 
-        public bool IsCsv() => this.Equals(Csv);
+        public bool IsCsv() => Equals(Csv);
 
-        public bool IsDb() => this.Equals(Db);
+        public bool IsDb() => Equals(Db);
 
         protected override bool EqualCore(FileType other)
         {

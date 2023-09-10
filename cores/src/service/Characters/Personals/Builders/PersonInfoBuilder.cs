@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.Personals.Builders
+﻿namespace Mov.Core.Characters.Personals.Builders
 {
     public class PersonInfoBuilder<TSelf> : PersonBuilder
         where TSelf : PersonInfoBuilder<TSelf>

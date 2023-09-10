@@ -1,7 +1,6 @@
-﻿using Mov.Core.Stores.Cruds;
-using System;
+﻿using System;
 
-namespace Mov.Core.Functions.Cruds.Decorator
+namespace Mov.Core.Stores.Cruds.Decorator
 {
     public class DeleteConfirmation<T> : IDelete<T>
     {

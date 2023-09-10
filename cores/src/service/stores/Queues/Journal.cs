@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Mov.Core.Functions.Queues
+namespace Mov.Core.Stores.Queues
 {
     public class Journal<T>
     {

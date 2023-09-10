@@ -1,4 +1,6 @@
-﻿namespace Mov.Core.Models.Dimensions
+﻿using Mov.Core.Models;
+
+namespace Mov.Core.Maths.Dimensions
 {
     /// <summary>
     /// 座標

@@ -1,4 +1,6 @@
-﻿namespace Mov.Core.Models.Styles
+﻿using Mov.Core.Models;
+
+namespace Mov.Core.Layouts.Models.Styles
 {
     public sealed class MarginValue : ValueObjectBase<MarginValue>
     {

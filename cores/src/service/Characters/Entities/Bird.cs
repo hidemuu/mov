@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.Characters.Entities
+﻿namespace Mov.Core.Characters.Entities
 {
     internal class Bird : IBird
     {

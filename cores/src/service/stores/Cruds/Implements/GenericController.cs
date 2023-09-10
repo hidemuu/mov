@@ -1,5 +1,4 @@
-﻿using Mov.Core.Stores.Cruds;
-using System;
+﻿using System;
 
 namespace Mov.Core.Stores.Cruds.Implements
 {

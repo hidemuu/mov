@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.Characters
+﻿namespace Mov.Core.Characters
 {
     public interface ICreature
     {

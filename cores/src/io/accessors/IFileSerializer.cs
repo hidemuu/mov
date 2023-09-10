@@ -1,6 +1,4 @@
-﻿using Mov.Core.Models.Connections;
-using Mov.Core.Models.Texts;
-using System.Text;
+﻿using Mov.Core.Accessors.Models;
 
 namespace Mov.Core.Accessors
 {

@@ -1,8 +1,7 @@
-﻿using Mov.Core.Stores.Cruds;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace Mov.Core.Functions.Cruds.Decorator
+namespace Mov.Core.Stores.Cruds.Decorator
 {
     public class ReadCaching<T> : IRead<T>
     {

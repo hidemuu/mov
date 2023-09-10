@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Mov.Core.Functions.Queues
+namespace Mov.Core.Stores.Queues
 {
     /// <summary>
     /// 上位アプリケーションからの指令を格納

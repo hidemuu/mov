@@ -1,8 +1,8 @@
-﻿using Mov.Core.Models.Foods.Factories;
+﻿using Mov.Core.Products.Foods.Factories;
 using System;
 using System.Collections.Generic;
 
-namespace Mov.Core.Models.Foods.Entities
+namespace Mov.Core.Products.Foods.Entities
 {
     public class DrinkMachine
     {

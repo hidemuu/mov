@@ -1,4 +1,4 @@
-namespace Loggers.Test
+namespace Mov.Core.Loggers.Test
 {
     public class Tests
     {

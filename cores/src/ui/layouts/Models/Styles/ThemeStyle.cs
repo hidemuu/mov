@@ -1,7 +1,7 @@
 ﻿using Mov.Core.Models;
 using System.Collections.Generic;
 
-namespace Mov.Core.Models.Styles
+namespace Mov.Core.Layouts.Models.Styles
 {
     public sealed class ThemeStyle : ValueObjectBase<ThemeStyle>
     {

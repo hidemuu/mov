@@ -1,8 +1,6 @@
 ﻿using Mov.Core.Repositories.Entities;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace Mov.Core.Configurators.Models.Schemas

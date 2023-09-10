@@ -1,4 +1,4 @@
-namespace Errors.Test
+namespace Mov.Core.Errors.Test
 {
     public class Tests
     {

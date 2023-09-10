@@ -1,4 +1,4 @@
-namespace Configurators.Test
+namespace Mov.Core.Configurators.Test
 {
     public class Tests
     {

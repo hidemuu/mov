@@ -1,9 +1,8 @@
-﻿using Mov.Core.Stores.Cruds;
-using Mov.Core.Stores.Cruds.Implements;
+﻿using Mov.Core.Stores.Cruds.Implements;
 using System;
 using System.Threading;
 
-namespace Mov.Core.Functions.Cruds.Decorator
+namespace Mov.Core.Stores.Cruds.Decorator
 {
     public class SaveAuditing<T> : ISave<T>
     {

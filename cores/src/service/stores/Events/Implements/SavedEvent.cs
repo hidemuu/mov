@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Templates.Events.Implements
+﻿namespace Mov.Core.Stores.Events.Implements
 {
     public class SavedEvent<T> : IEvent
     {

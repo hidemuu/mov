@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Templates.Sequences
+﻿namespace Mov.Core.Functions.Sequences
 {
     public enum SequenceResponseCode
     {

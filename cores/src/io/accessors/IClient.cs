@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.Connections;
+﻿using Mov.Core.Accessors.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

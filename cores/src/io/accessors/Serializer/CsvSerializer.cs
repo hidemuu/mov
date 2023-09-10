@@ -1,6 +1,6 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
-using Mov.Core.Models.Texts;
+using Mov.Core.Accessors.Models;
 using System.Globalization;
 using System.IO;
 using System.Linq;

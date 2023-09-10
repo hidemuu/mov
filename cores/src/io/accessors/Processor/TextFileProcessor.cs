@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Mov.Core.Templates.Processors
+namespace Mov.Core.Accessors.Processor
 {
     public abstract class TextFileProcessor
     {

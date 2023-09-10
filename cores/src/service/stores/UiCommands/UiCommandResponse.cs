@@ -1,9 +1,6 @@
 ﻿using Mov.Core.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Core.Functions.Commands
+namespace Mov.Core.Stores.UiCommands
 {
     public sealed class UiCommandResponse : ValueObjectBase<UiCommandResponse>
     {
@@ -25,9 +22,9 @@ namespace Mov.Core.Functions.Commands
 
         #region constructor
 
-        public UiCommandResponse(int value) 
+        public UiCommandResponse(int value)
         {
-            this.Value = value;
+            Value = value;
         }
 
         public static UiCommandResponse NONE = new UiCommandResponse(RESPONSE_CODE_NONE);
@@ -42,12 +39,12 @@ namespace Mov.Core.Functions.Commands
 
         protected override bool EqualCore(UiCommandResponse other)
         {
-            return this.Value.Equals(other.Value);
+            return Value.Equals(other.Value);
         }
 
         protected override int GetHashCodeCore()
         {
-            return this.Value.GetHashCode();
+            return Value.GetHashCode();
         }
 
         #endregion method

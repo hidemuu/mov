@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.Products.Car
+﻿namespace Mov.Core.Products.Car
 {
     public interface ISpecifyCarType
     {

@@ -1,6 +1,6 @@
-﻿using Mov.Core.Models.Physics;
+﻿using Mov.Core.Models;
 
-namespace Mov.Core.Models.Dimensions.Coordinates.TwoDimensions
+namespace Mov.Core.Maths.Dimensions.Coordinates.TwoDimensions
 {
     public sealed class Arc2D : ValueObjectBase<Arc2D>
     {

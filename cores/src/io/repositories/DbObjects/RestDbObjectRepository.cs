@@ -1,7 +1,6 @@
 ﻿using Mov.Core.Accessors;
 using Mov.Core.Accessors.Clients;
-using Mov.Core.Models.Connections;
-using Mov.Core.Models.Texts;
+using Mov.Core.Accessors.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Templates.Strategies
+﻿namespace Mov.Core.Functions.Strategies
 {
     /// <summary>クラスの振る舞いを切り替える</summary>
     public interface IStrategy

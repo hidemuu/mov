@@ -1,8 +1,8 @@
-﻿using Mov.Core.Models;
-using Mov.Core.Models.Physics;
+﻿using Mov.Core.Maths;
+using Mov.Core.Models;
 using System;
 
-namespace Mov.Core.Models.Products.Car
+namespace Mov.Core.Products.Car
 {
     public class Car : ValueObjectBase<Car>
     {

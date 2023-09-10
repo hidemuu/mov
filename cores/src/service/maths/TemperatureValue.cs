@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.Physics
+﻿namespace Mov.Core.Maths
 {
     internal class TemperatureValue
     {

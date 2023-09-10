@@ -1,5 +1,4 @@
-﻿using Mov.Core.Robots.Models.Queues;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Mov.Core.Robots.Models.Queues.Payload
 {

@@ -1,7 +1,6 @@
 ﻿using Mov.Core.Functions;
+using Mov.Core.Locations;
 using Mov.Core.Models.Identifiers;
-using Mov.Core.Models.Locations;
-using Mov.Core.Templates;
 using Mov.Core.Translators.Models;
 using Mov.Core.Translators.Models.Entities;
 

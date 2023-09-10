@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Mov.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Core.Models.Connections
+namespace Mov.Core.Accessors.Models
 {
     public sealed class HtmlElement : ValueObjectBase<HtmlElement>
     {

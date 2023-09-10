@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Mov.Core.Functions.Queues
+namespace Mov.Core.Stores.Queues
 {
     public class Persistence<T>
     {

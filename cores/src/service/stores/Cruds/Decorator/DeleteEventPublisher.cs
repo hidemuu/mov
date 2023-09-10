@@ -1,8 +1,7 @@
-﻿using Mov.Core.Stores.Cruds;
-using Mov.Core.Templates.Events;
-using Mov.Core.Templates.Events.Implements;
+﻿using Mov.Core.Stores.Events;
+using Mov.Core.Stores.Events.Implements;
 
-namespace Mov.Core.Functions.Cruds.Decorator
+namespace Mov.Core.Stores.Cruds.Decorator
 {
     public class DeleteEventPublisher<T> : IDelete<T>
     {

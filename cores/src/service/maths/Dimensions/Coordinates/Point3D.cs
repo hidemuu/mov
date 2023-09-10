@@ -1,4 +1,6 @@
-﻿namespace Mov.Core.Models.Dimensions.Coordinates
+﻿using Mov.Core.Models;
+
+namespace Mov.Core.Maths.Dimensions.Coordinates
 {
     public sealed class Point3D : ValueObjectBase<Point3D>
     {

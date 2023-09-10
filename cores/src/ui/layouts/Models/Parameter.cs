@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Mov.Core.Models;
+using System;
 
-namespace Mov.Core.Models
+namespace Mov.Core.Layouts.Models
 {
     public sealed class Parameter : ValueObjectBase<Parameter>
     {

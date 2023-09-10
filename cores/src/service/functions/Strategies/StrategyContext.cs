@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Mov.Core.Templates.Strategies
+namespace Mov.Core.Functions.Strategies
 {
     public class StrategyContext
     {

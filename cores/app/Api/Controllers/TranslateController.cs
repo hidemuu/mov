@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Mov.Core.Configurators.Models.Schemas;
-using Mov.Core.Configurators;
+﻿using Microsoft.AspNetCore.Mvc;
 using Mov.Core.Translators;
 using Mov.Core.Translators.Models.Schemas;
 

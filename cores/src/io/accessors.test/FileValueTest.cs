@@ -1,13 +1,7 @@
-﻿using Mov.Core.Models.Connections;
-using Mov.Core.Models.Texts;
-using System;
-using System.Collections.Generic;
+﻿using Mov.Core.Accessors.Models;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Mov.Core.Test.Models.Texts
+namespace Mov.Core.Accessors.Test
 {
     [TestFixture]
     public class FileValueTest

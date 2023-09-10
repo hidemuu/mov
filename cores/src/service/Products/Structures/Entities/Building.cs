@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Core.Models.Structures.Entities
+namespace Mov.Core.Products.Structures.Entities
 {
     public class Building
     {

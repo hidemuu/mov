@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.Foods.Factories
+﻿namespace Mov.Core.Products.Foods.Factories
 {
     public interface IDrinkFactory
     {

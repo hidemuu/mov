@@ -1,10 +1,8 @@
-﻿using Mov.Core.Models.Identifiers;
-using Mov.Core.Models.Locations;
+﻿using Mov.Core.Locations;
+using Mov.Core.Models.Identifiers;
 using Mov.Core.Translators.Repositories;
 using Mov.Core.Translators.Services;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Core.Translators.Contexts
 {
@@ -33,7 +31,7 @@ namespace Mov.Core.Translators.Contexts
         private static TranslatorContext instance = new TranslatorContext(string.Empty);
 
         public static TranslatorContext Current => instance;
-        
+
         #endregion constructor
 
         #region method

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Mov.Core.Functions.Commands.UI
+namespace Mov.Core.Stores.UiCommands.Implements
 {
     /// <summary>
     /// コマンド実行クラス

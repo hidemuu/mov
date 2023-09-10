@@ -1,7 +1,8 @@
-﻿using Mov.Core.Models.Locations;
+﻿using Mov.Core.Locations;
+using Mov.Core.Valuables;
 using System;
 
-namespace Mov.Core.Models.Personals.Entities
+namespace Mov.Core.Characters.Personals.Entities
 {
     public class Person
     {

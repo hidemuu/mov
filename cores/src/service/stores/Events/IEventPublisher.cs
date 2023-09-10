@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Templates.Events
+﻿namespace Mov.Core.Stores.Events
 {
     public interface IEventPublisher
     {

@@ -1,11 +1,7 @@
-﻿using Mov.Core.Accessors.Serializer;
-using Mov.Core.Models.Connections;
-using Mov.Core.Models.Texts;
+﻿using Mov.Core.Accessors.Models;
+using Mov.Core.Accessors.Serializer;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Mov.Core.Accessors.Clients

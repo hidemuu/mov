@@ -1,4 +1,6 @@
-﻿namespace Mov.Core.Models.Physics
+﻿using Mov.Core.Models;
+
+namespace Mov.Core.Maths
 {
     public sealed class AngleValue : ValueObjectBase<AngleValue>
     {

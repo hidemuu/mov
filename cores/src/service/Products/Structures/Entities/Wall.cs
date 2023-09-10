@@ -1,7 +1,6 @@
 ﻿using System.Drawing;
-using Mov.Core.Contexts;
 
-namespace Mov.Core.Models.Structures.Entities
+namespace Mov.Core.Products.Structures.Entities
 {
     public class Wall
     {

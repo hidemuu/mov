@@ -1,12 +1,6 @@
-﻿using Mov.Core.Models.Connections;
-using Mov.Core.Models.Texts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Mov.Core.Accessors.Models;
 
-namespace Mov.Core.Test.Models.Connections
+namespace Mov.Core.Accessors.Test
 {
     [TestFixture]
     public class PathValueTest
@@ -18,7 +12,7 @@ namespace Mov.Core.Test.Models.Connections
             var sut = PathValue.Empty;
 
             //Assert
-            Assert.That(sut.IsEmpty());            
+            Assert.That(sut.IsEmpty());
         }
 
         [Test]

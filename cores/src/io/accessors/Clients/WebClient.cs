@@ -1,5 +1,4 @@
-﻿using Mov.Core.Models.Connections;
-using Mov.Core.Models.Texts;
+﻿using Mov.Core.Accessors.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

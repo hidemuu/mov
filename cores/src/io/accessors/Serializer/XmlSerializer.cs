@@ -1,6 +1,6 @@
-﻿using System.IO;
+﻿using Mov.Core.Accessors.Models;
+using System.IO;
 using System.Xml;
-using Mov.Core.Models.Texts;
 
 namespace Mov.Core.Accessors.Serializer
 {

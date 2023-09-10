@@ -1,4 +1,6 @@
-﻿namespace Mov.Core.Models.Locations
+﻿using Mov.Core.Models;
+
+namespace Mov.Core.Locations
 {
     public sealed class Language : ValueObjectBase<Language>
     {

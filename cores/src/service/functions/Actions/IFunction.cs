@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Templates.Actions
+﻿namespace Mov.Core.Functions.Actions
 {
     /// <summary>
     /// ファンクションのインターフェース

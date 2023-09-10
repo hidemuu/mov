@@ -1,5 +1,5 @@
-﻿using Mov.Core.Accessors.Serializer;
-using Mov.Core.Models.Texts;
+﻿using Mov.Core.Accessors.Models;
+using Mov.Core.Accessors.Serializer;
 using System.Diagnostics;
 
 namespace Mov.Core.Accessors

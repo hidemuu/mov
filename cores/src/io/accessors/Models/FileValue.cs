@@ -1,8 +1,8 @@
-﻿using Mov.Core.Models.Connections;
+﻿using Mov.Core.Models;
 using System;
 using System.IO;
 
-namespace Mov.Core.Models.Texts
+namespace Mov.Core.Accessors.Models
 {
     /// <summary>
     /// ファイルのValueObject
@@ -27,17 +27,17 @@ namespace Mov.Core.Models.Texts
         /// <summary>
         /// ファイル名
         /// </summary>
-        public string FileName => this.Path.FileName;
+        public string FileName => Path.FileName;
 
         /// <summary>
         /// 拡張子
         /// </summary>
-        public FileType Type => new FileType(this.Path.Extension);
+        public FileType Type => new FileType(Path.Extension);
 
         /// <summary>
         /// ディレクトリ名
         /// </summary>
-        public string DirName => this.Type.IsEmpty() ? this.FileName : this.Path.DirPath;
+        public string DirName => Type.IsEmpty() ? FileName : Path.DirPath;
 
 
         #endregion property
@@ -53,21 +53,21 @@ namespace Mov.Core.Models.Texts
 
         #region method
 
-        public bool IsEmpty() => this.Path.IsEmpty();
+        public bool IsEmpty() => Path.IsEmpty();
 
         public bool Exists()
         {
-            return this.Path.IsDir() ? Directory.Exists(Path.Value) :
-                this.Path.IsFile() ? File.Exists(Path.Value) : false;
+            return Path.IsDir() ? Directory.Exists(Path.Value) :
+                Path.IsFile() ? File.Exists(Path.Value) : false;
         }
 
         public void Copy(string distPath)
         {
             try
             {
-                File.Copy(this.Path.Value, distPath, false);
+                File.Copy(Path.Value, distPath, false);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -77,7 +77,7 @@ namespace Mov.Core.Models.Texts
         {
             try
             {
-                File.Copy(this.Path.Value, distPath, true);
+                File.Copy(Path.Value, distPath, true);
             }
             catch (Exception ex)
             {
@@ -89,9 +89,9 @@ namespace Mov.Core.Models.Texts
         {
             try
             {
-                File.Delete(this.Path.Value);
+                File.Delete(Path.Value);
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -106,7 +106,7 @@ namespace Mov.Core.Models.Texts
 
         public string GetDelimiter()
         {
-            if (this.Type.IsCsv()) return DELIMITER_CSV;
+            if (Type.IsCsv()) return DELIMITER_CSV;
             return string.Empty;
         }
 
@@ -129,7 +129,7 @@ namespace Mov.Core.Models.Texts
         /// </summary>
         public int GetLineNum(string fileName)
         {
-            var reader = new StreamReader(this.Path.Combine(fileName));
+            var reader = new StreamReader(Path.Combine(fileName));
             var result = 0;
 
             while (reader.Peek() >= 0)

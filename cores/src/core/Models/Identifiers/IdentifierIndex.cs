@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Core.Models.Identifiers
+﻿namespace Mov.Core.Models.Identifiers
 {
     public sealed class IdentifierIndex : ValueObjectBase<IdentifierIndex>
     {

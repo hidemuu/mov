@@ -1,4 +1,4 @@
-namespace Translators.Test
+namespace Mov.Core.Translators.Test
 {
     public class Tests
     {

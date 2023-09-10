@@ -1,4 +1,4 @@
-namespace Mov.Core.Controllers.Test
+namespace Mov.Core.Functions.Test
 {
     public class Tests
     {

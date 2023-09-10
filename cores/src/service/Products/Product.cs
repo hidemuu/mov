@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.Products
+﻿namespace Mov.Core.Products
 {
     public class Product
     {

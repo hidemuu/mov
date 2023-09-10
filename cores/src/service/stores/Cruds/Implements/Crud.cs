@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Mov.Core.Functions.Cruds
+namespace Mov.Core.Stores.Cruds.Implements
 {
     public class Crud<T> : IRead<T>, ISave<T>, IDelete<T>
     {

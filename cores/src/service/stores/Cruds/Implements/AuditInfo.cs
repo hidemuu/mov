@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Functions.Cruds
+namespace Mov.Core.Stores.Cruds.Implements
 {
     public class AuditInfo
     {

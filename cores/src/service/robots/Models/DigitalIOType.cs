@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Models.IO
+﻿namespace Mov.Core.Robots.Models
 {
     public enum DigitalIOType
     {

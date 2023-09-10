@@ -25,7 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Functions\" />
+    <Folder Include="Models\Connections\" />
+    <Folder Include="Models\Texts\" />
   </ItemGroup>
 
 </Project>

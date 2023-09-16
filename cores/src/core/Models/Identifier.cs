@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Mov.Core.Models
+﻿namespace Mov.Core.Models
 {
     public sealed class Identifier<T> : ValueObjectBase<Identifier<T>>
     {

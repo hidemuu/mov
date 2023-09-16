@@ -1,9 +1,8 @@
-﻿using Mov.Core.Sequencers.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Functions.Sequences
+namespace Mov.Core.Sequencers.Models
 {
     /// <summary>
     /// シーケンス制御基底クラス

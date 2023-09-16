@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Functions.Controllers
+namespace Mov.Core.Sequencers.Controllers
 {
     public class ProcessController
     {

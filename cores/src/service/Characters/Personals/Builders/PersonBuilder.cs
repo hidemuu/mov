@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Characters.Personals.Entities;
-using Mov.Core.Functions.Builders;
+using Mov.Core.DesignPatterns.Builders;
 using Mov.Core.Valuables;
 using System;
 

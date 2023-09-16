@@ -1,4 +1,4 @@
-﻿using Mov.Core.Functions;
+﻿using Mov.Core.DesignPatterns;
 using Mov.Core.Models.Identifiers;
 using System;
 using System.Threading;

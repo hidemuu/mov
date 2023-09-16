@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Functions.Actions
+﻿namespace Mov.Core.DesignPatterns.Actions
 {
     /// <summary>
     /// アクションのインターフェース（戻り値なし）

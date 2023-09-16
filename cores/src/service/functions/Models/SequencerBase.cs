@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Mov.Core.Sequencers.Models;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 

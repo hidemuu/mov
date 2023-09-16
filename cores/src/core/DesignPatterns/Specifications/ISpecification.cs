@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Functions.Specifications
+﻿namespace Mov.Core.DesignPatterns.Specifications
 {
     public interface ISpecification<T>
     {

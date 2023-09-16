@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Functions.Sequences
+﻿namespace Mov.Core.Sequencers.Models
 {
     public class SequenserStatus
     {

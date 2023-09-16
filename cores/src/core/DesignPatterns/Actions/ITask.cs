@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Functions.Actions
+﻿namespace Mov.Core.DesignPatterns.Actions
 {
     public interface ITask
     {

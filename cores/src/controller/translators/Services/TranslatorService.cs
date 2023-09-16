@@ -1,4 +1,4 @@
-﻿using Mov.Core.Functions;
+﻿using Mov.Core.DesignPatterns;
 using Mov.Core.Locations;
 using Mov.Core.Models.Identifiers;
 using Mov.Core.Translators.Models;

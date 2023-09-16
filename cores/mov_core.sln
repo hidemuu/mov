@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accessors", "src\io\accesso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authorizers", "src\controller\authorizers\Authorizers.csproj", "{DB23A5ED-C270-46A5-9DFF-EC8F5E6C60EA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Functions", "src\service\functions\Functions.csproj", "{09F2A233-FCC7-45AA-AF7B-D5B601F54F38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sequencers", "src\service\functions\Sequencers.csproj", "{09F2A233-FCC7-45AA-AF7B-D5B601F54F38}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graphicers", "src\ui\graphicers\Graphicers.csproj", "{44BB7CC6-C3C7-4BD9-8603-F6C3C7E04957}"
 EndProject

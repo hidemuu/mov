@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Models.Identifiers;
 
-namespace Mov.Core.Functions
+namespace Mov.Core.DesignPatterns
 {
     public interface IDatabase<TEntity, TKey>
     {

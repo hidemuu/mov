@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Functions.Sequences
+namespace Mov.Core.Sequencers.Models
 {
     /// <summary>
     /// シーケンス制御コード

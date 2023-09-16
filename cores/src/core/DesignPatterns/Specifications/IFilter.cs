@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Mov.Core.Functions.Specifications
+namespace Mov.Core.DesignPatterns.Specifications
 {
     public interface IFilter<T>
     {

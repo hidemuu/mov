@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Functions.Builders
+﻿namespace Mov.Core.DesignPatterns.Builders
 {
     public interface IBuilder<T>
     {

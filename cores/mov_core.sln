@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accessors", "src\io\accesso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authorizers", "src\controller\authorizers\Authorizers.csproj", "{DB23A5ED-C270-46A5-9DFF-EC8F5E6C60EA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sequencers", "src\service\functions\Sequencers.csproj", "{09F2A233-FCC7-45AA-AF7B-D5B601F54F38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sequencers", "src\service\sequencers\Sequencers.csproj", "{09F2A233-FCC7-45AA-AF7B-D5B601F54F38}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graphicers", "src\ui\graphicers\Graphicers.csproj", "{44BB7CC6-C3C7-4BD9-8603-F6C3C7E04957}"
 EndProject
@@ -65,7 +65,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loggers.Test", "src\io\logg
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Errors.Test", "src\io\errors.test\Errors.Test.csproj", "{283E9B72-6972-4BA1-870E-E131AA9A64CA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sequencers.Test", "src\service\functions.test\Sequencers.Test.csproj", "{0C754453-7EAB-4BB3-B48B-521681B289BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sequencers.Test", "src\service\sequencers.test\Sequencers.Test.csproj", "{0C754453-7EAB-4BB3-B48B-521681B289BA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maths", "src\service\maths\Maths.csproj", "{EA302F8A-89ED-4CA0-B46B-DE64B5770DE0}"
 EndProject
@@ -83,7 +83,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Locations", "src\service\lo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "controller", "controller", "{00B36BBF-EC3A-4821-8762-4C5039D2C3C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Styles", "src\service\Styles\Styles.csproj", "{EFF9CF02-6127-48A8-B256-C20A53633137}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Styles", "src\service\styles\Styles.csproj", "{EFF9CF02-6127-48A8-B256-C20A53633137}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Stores
+﻿namespace Mov.Core.Transactions
 {
     public interface IConnection
     {

@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Locations;
-using Mov.Core.Models.Identifiers;
+using Mov.Core.Models;
 using Mov.Core.Translators.Repositories;
 using Mov.Core.Translators.Services;
 using System;
@@ -43,7 +43,7 @@ namespace Mov.Core.Translators.Contexts
 
         public string Get(int index, Language location)
         {
-            return this.service.Get(new IdentifierIndex(index), location);
+            return this.service.Get(new Identifier<int>(index), location);
         }
 
         public void Dispose()

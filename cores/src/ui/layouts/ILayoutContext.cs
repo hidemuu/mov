@@ -2,7 +2,7 @@
 using Mov.Core.Layouts.Models.Nodes;
 using Mov.Core.Layouts.Models.Shells;
 using Mov.Core.Layouts.Models.Themes;
-using Mov.Core.Models.Identifiers;
+using Mov.Core.Models;
 using System.Collections.Generic;
 
 namespace Mov.Core.Layouts
@@ -11,7 +11,7 @@ namespace Mov.Core.Layouts
     {
         #region property
 
-        IdentifierCode DomainId { get; }
+        Identifier<string> DomainId { get; }
         IEnumerable<LayoutNode> Nodes { get; }
         IEnumerable<LayoutContent> Contents { get; }
         IEnumerable<LayoutShell> Shells { get; }

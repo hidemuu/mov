@@ -1,5 +1,5 @@
 ﻿using Mov.Core.DesignPatterns;
-using Mov.Core.Models.Identifiers;
+using Mov.Core.Models;
 using System;
 using System.Threading;
 
@@ -11,7 +11,7 @@ namespace Mov.Core.Locations
 
         private static ThreadLocal<AddressDatabase> threadInstance = new ThreadLocal<AddressDatabase>(() => new AddressDatabase());
 
-        public IdentifierIndex Id { get; }
+        public Identifier<int> Id { get; }
 
         public static AddressDatabase Instance => instance.Value;
 
@@ -19,7 +19,7 @@ namespace Mov.Core.Locations
 
         private AddressDatabase()
         {
-            Id = new IdentifierIndex(Thread.CurrentThread.ManagedThreadId);
+            Id = new Identifier<int>(Thread.CurrentThread.ManagedThreadId);
         }
 
         public Address Get(Guid id)

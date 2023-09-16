@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Locations;
-using Mov.Core.Models.Identifiers;
+using Mov.Core.Models;
 
 namespace Mov.Core.Translators.Services
 {
@@ -10,7 +10,7 @@ namespace Mov.Core.Translators.Services
 
         }
 
-        public string Get(IdentifierIndex index, Language location)
+        public string Get(Identifier<int> index, Language location)
         {
             return string.Empty;
         }

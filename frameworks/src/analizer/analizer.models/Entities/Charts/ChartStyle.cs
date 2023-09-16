@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.Styles;
+﻿using Mov.Core.Styles.Models;
 
 namespace Mov.Analizer.Models.Entities.Charts
 {

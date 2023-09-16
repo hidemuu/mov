@@ -1,7 +1,6 @@
 ﻿using Mov.Core.DesignPatterns;
 using Mov.Core.Locations;
 using Mov.Core.Models;
-using Mov.Core.Models.Identifiers;
 using Mov.Core.Translators.Models.Entities;
 using Mov.Core.Translators.Models.ValueObjects;
 using System.Collections.Generic;
@@ -11,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace Mov.Core.Translators.Models
 {
-    internal sealed class TranslatorDatabase : IDatabase<LocalizeContent, IdentifierIndex>
+    internal sealed class TranslatorDatabase : IDatabase<LocalizeContent, Identifier<int>>
     {
         #region property
 
-        public IdentifierIndex Id { get; }
+        public Identifier<int> Id { get; }
 
         public ICollection<LocalizeContent> Contents { get; } = new HashSet<LocalizeContent>();
 
@@ -25,13 +24,13 @@ namespace Mov.Core.Translators.Models
 
         public TranslatorDatabase(ITranslatorRepository repository)
         {
-            Id = new IdentifierIndex(Thread.CurrentThread.ManagedThreadId);
+            Id = new Identifier<int>(Thread.CurrentThread.ManagedThreadId);
             var translates = Task.WhenAll(repository.Translates.GetAsync()).Result[0];
             foreach (var translate in translates)
             {
                 Contents.Add(
                     new LocalizeContent(
-                        new IdentifierIndex(translate.Id),
+                        new Identifier<int>(translate.Id),
                         new[] { new LocalizeInfo(Language.EN, new Document(translate.EN)), new LocalizeInfo(Language.JP, new Document(translate.JP)) }
                         )
                     );
@@ -42,12 +41,12 @@ namespace Mov.Core.Translators.Models
 
         #region method
 
-        public LocalizeContent Get(IdentifierIndex key)
+        public LocalizeContent Get(Identifier<int> key)
         {
             return Contents.FirstOrDefault(x => x.Index.Equals(key));
         }
 
-        public void Delete(IdentifierIndex key)
+        public void Delete(Identifier<int> key)
         {
             var content = Get(key);
             if (content == null) return;

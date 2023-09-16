@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.Identifiers;
+﻿using Mov.Core.Models;
 
 namespace Mov.Core.DesignPatterns
 {
@@ -6,7 +6,7 @@ namespace Mov.Core.DesignPatterns
     {
         #region property
 
-        IdentifierIndex Id { get; }
+        Identifier<int> Id { get; }
 
         #endregion property
 

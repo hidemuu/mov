@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Locations;
-using Mov.Core.Models.Identifiers;
+using Mov.Core.Models;
 using Mov.Core.Translators.Models.ValueObjects;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace Mov.Core.Translators.Models.Entities
     {
         #region property
 
-        public IdentifierIndex Index { get; }
+        public Identifier<int> Index { get; }
 
         public IEnumerable<LocalizeInfo> Infos { get; } = new HashSet<LocalizeInfo>();
 
@@ -18,13 +18,13 @@ namespace Mov.Core.Translators.Models.Entities
 
         #region constructor
 
-        public LocalizeContent(IdentifierIndex index, IEnumerable<LocalizeInfo> infos)
+        public LocalizeContent(Identifier<int> index, IEnumerable<LocalizeInfo> infos)
         {
             this.Index = index;
             this.Infos = infos;
         }
 
-        public static readonly LocalizeContent Empty = new LocalizeContent(IdentifierIndex.Empty, new[] { LocalizeInfo.Empty });
+        public static readonly LocalizeContent Empty = new LocalizeContent(Identifier<int>.Empty, new[] { LocalizeInfo.Empty });
 
         #endregion constructor
 

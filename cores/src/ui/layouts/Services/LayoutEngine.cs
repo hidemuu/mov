@@ -2,7 +2,7 @@
 using Mov.Core.Layouts.Models.Nodes;
 using Mov.Core.Layouts.Models.Shells;
 using Mov.Core.Layouts.Models.Themes;
-using Mov.Core.Models.Identifiers;
+using Mov.Core.Models;
 using Mov.Core.Styles.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +19,7 @@ namespace Mov.Core.Layouts.Services
 
         #region プロパティ
 
-        public IdentifierCode DomainId { get; }
+        public Identifier<string> DomainId { get; }
 
         #endregion プロパティ
 

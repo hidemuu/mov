@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.DbObjects.Entities;
+﻿using Mov.Core.Repositories;
 using System;
 
 namespace Mov.Bom.Models.Schemas
@@ -6,7 +6,7 @@ namespace Mov.Bom.Models.Schemas
     /// <summary>
     /// Represents a customer.
     /// </summary>
-    public class Customer : DbObject, IEquatable<Customer>
+    public class Customer : DbObjectBase<Guid>, IEquatable<Customer>
     {
         /// <summary>
         /// Gets or sets the customer's first name.

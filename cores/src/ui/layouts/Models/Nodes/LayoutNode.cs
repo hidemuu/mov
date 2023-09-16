@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Layouts.Models.Contents;
-using Mov.Core.Models.Identifiers;
+using Mov.Core.Models;
 using Mov.Core.Styles.Models;
 using System.Collections.Generic;
 
@@ -17,7 +17,7 @@ namespace Mov.Core.Layouts.Models.Nodes
 
         #region property
 
-        public IdentifierCode Code { get; }
+        public Identifier<string> Code { get; }
 
         public NodeStyle NodeType { get; }
 
@@ -38,7 +38,7 @@ namespace Mov.Core.Layouts.Models.Nodes
         /// コンストラクター
         /// </summary>
         /// <param name="content"></param>
-        public LayoutNode(IdentifierCode code, NodeStyle nodeStyle, EnableStyle expandStyle, LayoutContent content)
+        public LayoutNode(Identifier<string> code, NodeStyle nodeStyle, EnableStyle expandStyle, LayoutContent content)
         {
             Code = code;
             NodeType = nodeStyle;
@@ -46,7 +46,7 @@ namespace Mov.Core.Layouts.Models.Nodes
             this.content = content;
         }
 
-        public static LayoutNode Empty => new LayoutNode(IdentifierCode.Empty, NodeStyle.Content, EnableStyle.Enable, LayoutContent.Empty);
+        public static LayoutNode Empty => new LayoutNode(Identifier<string>.Empty, NodeStyle.Content, EnableStyle.Enable, LayoutContent.Empty);
 
         #endregion constructor
 

@@ -1,23 +1,23 @@
 ﻿using System;
 
-namespace Mov.Core.Models.Identifiers
+namespace Mov.Core.Models
 {
-    public sealed class Identifier : ValueObjectBase<Identifier>
+    public sealed class Identifier<T> : ValueObjectBase<Identifier<T>>
     {
         #region property
 
-        public Guid Value { get; }
+        public T Value { get; }
 
         #endregion property
 
         #region constructor
 
-        public Identifier(Guid id)
+        public Identifier(T id)
         {
             Value = id;
         }
 
-        public static readonly Identifier Empty = new Identifier(Guid.Empty);
+        public static readonly Identifier<T> Empty = new Identifier<T>(default);
 
         #endregion constructor
 
@@ -29,7 +29,7 @@ namespace Mov.Core.Models.Identifiers
 
         #region protected method
 
-        protected override bool EqualCore(Identifier other)
+        protected override bool EqualCore(Identifier<T> other)
         {
             return Value.Equals(other.Value);
         }

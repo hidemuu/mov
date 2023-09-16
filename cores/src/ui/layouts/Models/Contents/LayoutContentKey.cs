@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.Identifiers;
+﻿using Mov.Core.Models;
 using Mov.Core.Styles.Models;
 
 namespace Mov.Core.Layouts.Models.Contents
@@ -6,14 +6,14 @@ namespace Mov.Core.Layouts.Models.Contents
     public class LayoutContentKey
     {
         public static LayoutContentKey Default = new LayoutContentKey(
-            IdentifierCode.Empty, ControlStyle.Label);
+            Identifier<string>.Empty, ControlStyle.Label);
 
-        public IdentifierCode Code { get; }
+        public Identifier<string> Code { get; }
 
         public ControlStyle ControlType { get; }
 
 
-        public LayoutContentKey(IdentifierCode code, ControlStyle controlType)
+        public LayoutContentKey(Identifier<string> code, ControlStyle controlType)
         {
             Code = code;
             ControlType = controlType;

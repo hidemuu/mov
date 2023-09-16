@@ -1,6 +1,6 @@
 ﻿using Mov.Core.DesignPatterns;
 using Mov.Core.Locations;
-using Mov.Core.Models.Identifiers;
+using Mov.Core.Models;
 using Mov.Core.Translators.Models;
 using Mov.Core.Translators.Models.Entities;
 
@@ -10,7 +10,7 @@ namespace Mov.Core.Translators.Services
     {
         #region field
 
-        private IDatabase<LocalizeContent, IdentifierIndex> database;
+        private IDatabase<LocalizeContent, Identifier<int>> database;
 
         #endregion field
 
@@ -25,7 +25,7 @@ namespace Mov.Core.Translators.Services
 
         #region method
 
-        public string Get(IdentifierIndex index, Language location)
+        public string Get(Identifier<int> index, Language location)
         {
             var content = this.database.Get(index);
             return content.Get(location).Description.Value;

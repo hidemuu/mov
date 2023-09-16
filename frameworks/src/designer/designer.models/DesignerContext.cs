@@ -1,9 +1,14 @@
 ﻿using Mov.Core.Layouts;
+using Mov.Core.Layouts.Models;
 using Mov.Core.Layouts.Models.Contents;
 using Mov.Core.Layouts.Models.Nodes;
 using Mov.Core.Layouts.Models.Shells;
 using Mov.Core.Layouts.Models.Themes;
+using Mov.Core.Maths;
+using Mov.Core.Maths.Sizes;
 using Mov.Core.Models;
+using Mov.Core.Styles.Models;
+using Mov.Core.Valuables;
 using Mov.Designer.Models.Schemas;
 using System.Collections.Generic;
 
@@ -44,7 +49,7 @@ namespace Mov.Designer.Models
             foreach (var node in nodes)
             {
                 var parent = new LayoutNode(
-                    new IdentifierCode(node.Code), new NodeStyle(node.NodeType), new EnableStyle(true),
+                    new Identifier<string>(node.Code), new NodeStyle(node.NodeType), new EnableStyle(true),
                     GetContent(repository.Contents.Get(node.Code)));
                 parent.AddRange(GetNode(node.Children, repository));
                 result.Add(parent);
@@ -63,7 +68,7 @@ namespace Mov.Designer.Models
         private LayoutContent GetContent(ContentSchema content)
         {
             return new LayoutContent(
-                        new LayoutContentKey(new IdentifierCode(content.Code), new ControlStyle(content.ControlType)),
+                        new LayoutContentKey(new Identifier<string>(content.Code), new ControlStyle(content.ControlType)),
                         new LayoutContentStatus(new Document(content.Name), new IconImage(content.Icon), VisibilityStyle.Visible, EnableStyle.Enable, new Parameter(content.Parameter)),
                         new LayoutContentArrange(MarginValue.Default, new Size2D(content.Width, content.Height), OrientationStyle.Horizontal, new HorizontalAlignmentStyle(content.HorizontalAlignment), new VerticalAlignmentStyle(content.VerticalAlignment)),
                         new LayoutContentValue(new LayoutValue(content.Schema), new Variable(content.DefaultValue), new Macro(content.Macro)));

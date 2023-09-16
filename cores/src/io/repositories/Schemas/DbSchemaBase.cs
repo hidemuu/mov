@@ -5,9 +5,9 @@ using System.ComponentModel;
 using System.Reflection;
 using System.Xml.Serialization;
 
-namespace Mov.Core.Repositories
+namespace Mov.Core.Repositories.Schemas
 {
-    public abstract class DbObjectBase<TKey> : IDbObject<TKey>
+    public abstract class DbSchemaBase<TKey> : IDbSchema<TKey>
     {
         #region property
 
@@ -25,9 +25,9 @@ namespace Mov.Core.Repositories
 
         #region constructor
 
-        public DbObjectBase() { }
+        public DbSchemaBase() { }
 
-        public DbObjectBase(IDbObject<TKey> src)
+        public DbSchemaBase(IDbSchema<TKey> src)
         {
             Id = src.Id;
         }

@@ -2,7 +2,7 @@
 
 namespace Mov.Core.Repositories
 {
-    public interface IDbObjectCollection<TEntity, TKey> where TEntity : IDbObject<TKey>
+    public interface IDbCollectionSchema<TEntity, TKey> where TEntity : IDbSchema<TKey>
     {
         /// <summary>
         /// コレクション

@@ -2,14 +2,14 @@
 
 namespace Mov.Core.Repositories.Contexts
 {
-    public class RepositoryContextCore : DbContext
+    public class DbRepositoryContextCore : DbContext
     {
         #region constructor
 
-        public RepositoryContextCore()
+        public DbRepositoryContextCore()
         { }
 
-        public RepositoryContextCore(DbContextOptions<RepositoryContextCore> options) : base(options)
+        public DbRepositoryContextCore(DbContextOptions<DbRepositoryContextCore> options) : base(options)
         {
         }
 

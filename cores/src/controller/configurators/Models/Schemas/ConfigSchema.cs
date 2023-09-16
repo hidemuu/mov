@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Attributes;
-using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -15,7 +15,7 @@ namespace Mov.Core.Configurators.Models.Schemas
     /// 設定
     /// </summary>
     [XmlRoot("config")]
-    public class ConfigSchema : DbObjectBase<Guid>
+    public class ConfigSchema : DbSchemaBase<Guid>
     {
         #region peoperty
 

@@ -1,6 +1,6 @@
 ﻿namespace Mov.Core.Repositories.Test.Models
 {
-    public class SerializeSchema : IDbObject<int>
+    public class SerializeSchema : IDbSchema<int>
     {
         public int Id { get; set; } = 0;
 

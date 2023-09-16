@@ -12,7 +12,7 @@ namespace Mov.Core.Repositories.Entities
     /// <summary>
     /// データベースの基本オブジェクト
     /// </summary>
-    public class DbTable : IDbObject<Guid>
+    public class DbTable : IDbSchema<Guid>
     {
         #region プロパティ
 

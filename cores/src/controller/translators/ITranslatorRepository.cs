@@ -5,6 +5,6 @@ namespace Mov.Core.Translators
 {
     public interface ITranslatorRepository
     {
-        IDbObjectRepository<TranslateSchema, int> Translates { get; }
+        IDbRepository<TranslateSchema, int> Translates { get; }
     }
 }

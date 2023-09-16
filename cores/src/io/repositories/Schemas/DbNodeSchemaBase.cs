@@ -1,15 +1,13 @@
-﻿using Mov.Core.Repositories.Entities;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Core.Repositories
+namespace Mov.Core.Repositories.Schemas
 {
-    public abstract class DbObjectNodeBase<TEntity, TKey> : DbObjectBase<TKey>, IDbObjectNode<TEntity, TKey> where TEntity : IDbObject<TKey>
+    public abstract class DbNodeSchemaBase<TEntity, TKey> : DbSchemaBase<TKey>, IDbNodeSchema<TEntity, TKey> where TEntity : IDbSchema<TKey>
     {
         #region property
 
-        public List<TEntity> Children { get; set; }
+        public virtual List<TEntity> Children { get; set; }
 
         #endregion proeprty
 
@@ -26,7 +24,7 @@ namespace Mov.Core.Repositories
         #endregion method
 
         #region inner method
-        
+
         private void GetStringTables(List<TEntity> items, StringBuilder stringBuilder, int hierarchy)
         {
             foreach (var item in items)
@@ -36,7 +34,7 @@ namespace Mov.Core.Repositories
                     stringBuilder.Append("  ");
                 }
                 stringBuilder.AppendLine(item.Id.ToString());
-                if (item is DbObjectNodeBase<TEntity, TKey> node)
+                if (item is DbNodeSchemaBase<TEntity, TKey> node)
                 {
                     GetStringTables(node.Children, stringBuilder, hierarchy + 1);
                 }

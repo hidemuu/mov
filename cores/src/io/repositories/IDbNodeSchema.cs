@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 namespace Mov.Core.Repositories
 {
-    public interface IDbObjectNode<TEntity, TKey> : IDbObject<TKey> where TEntity : IDbObject<TKey>
+    public interface IDbNodeSchema<TEntity, TKey> : IDbSchema<TKey> where TEntity : IDbSchema<TKey>
     {
         #region property
 
@@ -15,10 +15,5 @@ namespace Mov.Core.Repositories
 
         #endregion property
 
-        #region method
-
-        string ToNodeString();
-
-        #endregion method
     }
 }

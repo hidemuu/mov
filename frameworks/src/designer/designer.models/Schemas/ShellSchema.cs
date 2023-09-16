@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Attributes;
-using Mov.Core.Models.DbObjects.Entities;
-using Mov.Core.Models.Styles;
+using Mov.Core.Repositories;
+using Mov.Core.Styles.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,18 +14,18 @@ namespace Mov.Designer.Models.Schemas
     /// シェル（フレーム）のコレクション
     /// </summary>
     [XmlRoot("shells")]
-    public class ShellSchemaCollection : DbObjectCollection<ShellSchema>
+    public class ShellSchemaCollection : IDbObjectCollection<ShellSchema, Guid>
     {
         /// <inheritdoc />
         [XmlElement(Type = typeof(ShellSchema), ElementName = "shell")]
-        public override ShellSchema[] Items { get; set; }
+        public ShellSchema[] Items { get; set; }
     }
 
     /// <summary>
     /// シェル（フレーム）
     /// </summary>
     [XmlRoot("shell")]
-    public class ShellSchema : DbObject
+    public class ShellSchema : DbObjectBase<Guid>
     {
         #region プロパティ
 

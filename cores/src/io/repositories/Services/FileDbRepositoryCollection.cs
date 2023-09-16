@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Mov.Core.Repositories.DbObjects
+namespace Mov.Core.Repositories.Services
 {
-    public class FileDbObjectRepositoryCollection<TRepository, TEntity, TKey, TInstance>
-        : IDbObjectRepositoryCollection<TRepository, TEntity, TKey>
-        where TRepository : IDbObjectRepository<TEntity, TKey>
-        where TEntity : IDbObject<TKey>
-        where TInstance : FileDbObjectRepository<TEntity, TKey>
+    public class FileDbRepositoryCollection<TRepository, TEntity, TKey, TInstance>
+        : IDbRepositoryCollection<TRepository, TEntity, TKey>
+        where TRepository : IDbRepository<TEntity, TKey>
+        where TEntity : IDbSchema<TKey>
+        where TInstance : FileDbRepository<TEntity, TKey>
     {
         #region field
 
@@ -19,7 +19,7 @@ namespace Mov.Core.Repositories.DbObjects
 
         #region constructor
 
-        public FileDbObjectRepositoryCollection(IClient client)
+        public FileDbRepositoryCollection(IClient client)
         {
             _repositories = new Dictionary<string, TRepository>();
         }
@@ -33,7 +33,7 @@ namespace Mov.Core.Repositories.DbObjects
 
         #region method
 
-        TRepository IDbObjectRepositoryCollection<TRepository, TEntity, TKey>.GetRepository(string key)
+        TRepository IDbRepositoryCollection<TRepository, TEntity, TKey>.GetRepository(string key)
         {
             if (string.IsNullOrEmpty(key)) return _repositories[""];
             if (!_repositories.TryGetValue(key, out TRepository repository)) return default;

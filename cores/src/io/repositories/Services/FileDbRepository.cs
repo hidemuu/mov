@@ -4,15 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Repositories.DbObjects
+namespace Mov.Core.Repositories.Services
 {
     /// <summary>
     /// 任意のエンティティのファイルデータのリポジトリ
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
     /// <typeparam name="TKey"></typeparam>
-    public class FileDbObjectRepository<TEntity, TKey> : IDbObjectRepository<TEntity, TKey>
-        where TEntity : IDbObject<TKey>
+    public class FileDbRepository<TEntity, TKey> : IDbRepository<TEntity, TKey>
+        where TEntity : IDbSchema<TKey>
     {
         #region field
 
@@ -31,9 +31,9 @@ namespace Mov.Core.Repositories.DbObjects
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FileDbObjectRepository(IClient client)
+        public FileDbRepository(IClient client)
         {
-            this._client = client;
+            _client = client;
         }
 
         #endregion constructor

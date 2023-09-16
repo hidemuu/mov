@@ -6,10 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Repositories.DbObjects
+namespace Mov.Core.Repositories.Services
 {
-    public class RestDbObjectRepository<TEntity, TKey> : IDbObjectRepository<TEntity, TKey>
-        where TEntity : IDbObject<TKey>
+    public class RestDbRepository<TEntity, TKey> : IDbRepository<TEntity, TKey>
+        where TEntity : IDbSchema<TKey>
     {
         #region constant
 
@@ -33,13 +33,13 @@ namespace Mov.Core.Repositories.DbObjects
 
         #region constructor
 
-        public RestDbObjectRepository(IClient client, string key)
+        public RestDbRepository(IClient client, string key)
         {
-            this._client = client;
-            this._key = string.IsNullOrEmpty(key) ? string.Empty : API_KEY + key;
+            _client = client;
+            _key = string.IsNullOrEmpty(key) ? string.Empty : API_KEY + key;
         }
 
-        public RestDbObjectRepository(string url, string key, EncodingValue encode)
+        public RestDbRepository(string url, string key, EncodingValue encode)
             : this(new WebClient(new PathValue(url), encode), key)
         {
         }

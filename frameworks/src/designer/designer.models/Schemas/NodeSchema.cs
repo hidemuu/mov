@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Attributes;
-using Mov.Core.Models.DbObjects.Entities;
-using Mov.Core.Models.Styles;
+using Mov.Core.Repositories;
+using Mov.Core.Styles.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,18 +14,18 @@ namespace Mov.Designer.Models.Schemas
     /// レイアウトノードのコレクション
     /// </summary>
     [XmlRoot("nodes")]
-    public class NodeSchemaCollection : DbObjectCollection<NodeSchema>
+    public class NodeSchemaCollection : IDbObjectCollection<NodeSchema, Guid>
     {
         /// <inheritdoc />
         [XmlElement(Type = typeof(NodeSchema), ElementName = "node")]
-        public override NodeSchema[] Items { get; set; }
+        public NodeSchema[] Items { get; set; }
     }
 
     /// <summary>
     /// レイアウトノード
     /// </summary>
     [XmlRoot("node")]
-    public class NodeSchema : DbObjectNode<NodeSchema>
+    public class NodeSchema : DbObjectNodeBase<NodeSchema, Guid>
     {
         #region プロパティ
 
@@ -104,12 +105,6 @@ namespace Mov.Designer.Models.Schemas
         #endregion プロパティ
 
         #region メソッド
-
-        /// <inheritdoc />
-        public override string[] GetContentStrings() => new string[] { Code, NodeType.ToString() };
-
-        /// <inheritdoc />
-        public override string[] GetHeaderStrings() => new string[] { "Code", "LayoutType" };
 
         public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<NodeSchema>().OrderBy(x => x.index);
 

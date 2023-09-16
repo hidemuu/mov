@@ -2,25 +2,18 @@
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Core.Repositories.Entities
+namespace Mov.Core.Repositories.Schemas
 {
-    /// <summary>
-    /// データベースオブジェクトのコレクション
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public abstract class DbTableCollection<T, Guid> : IDbCollectionSchema<T, Guid> where T : IDbSchema<Guid>
+    public abstract class DbSchemaCollectionBase<TEntity, TKey> : IDbCollectionSchema<TEntity, TKey> where TEntity : IDbSchema<TKey>
     {
-        #region プロパティ
+        #region property
 
-        /// <summary>
-        /// コレクション
-        /// </summary>
         [XmlIgnore]
-        public abstract T[] Items { get; set; }
+        public TEntity[] Items { get; set; }
 
-        #endregion プロパティ
+        #endregion property
 
-        #region メソッド
+        #region method
 
         /// <summary>
         /// 文字列生成
@@ -33,9 +26,9 @@ namespace Mov.Core.Repositories.Entities
             return stringBuilder.ToString();
         }
 
-        #endregion メソッド
+        #endregion method
 
-        #region 内部メソッド
+        #region inner method
 
         /// <summary>
         /// 文字列生成
@@ -43,7 +36,7 @@ namespace Mov.Core.Repositories.Entities
         /// <param name="items"></param>
         /// <param name="stringBuilder"></param>
         /// <param name="hierarchy"></param>
-        private void GetStrings(IEnumerable<T> items, StringBuilder stringBuilder, int hierarchy)
+        private void GetStrings(IEnumerable<TEntity> items, StringBuilder stringBuilder, int hierarchy)
         {
             foreach (var item in items)
             {
@@ -55,6 +48,6 @@ namespace Mov.Core.Repositories.Entities
             }
         }
 
-        #endregion 内部メソッド
+        #endregion inner method
     }
 }

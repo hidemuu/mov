@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Core.Repositories
 {
-    public interface IDbObjectRepository<TEntity, TKey> where TEntity : IDbObject<TKey>
+    public interface IDbRepository<TEntity, TKey> where TEntity : IDbSchema<TKey>
     {
         #region property
 

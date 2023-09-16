@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Stores.Cruds
+namespace Mov.Core.Stores.Models
 {
     public class AuditInfo
     {

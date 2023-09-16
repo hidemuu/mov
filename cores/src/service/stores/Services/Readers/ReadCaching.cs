@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Mov.Core.Stores.Cruds.Decorator
+namespace Mov.Core.Stores.Services.Readers
 {
     public class ReadCaching<TEntity, TKey> : IRead<TEntity, TKey>
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Stores.Cruds.Decorator
+namespace Mov.Core.Stores.Services.Deleters
 {
     public class DeleteConfirmation<TEntity, TKey> : IDelete<TEntity, TKey>
     {

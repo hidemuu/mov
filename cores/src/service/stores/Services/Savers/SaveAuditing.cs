@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Mov.Core.Stores.Models;
+using System;
 using System.Threading;
 
-namespace Mov.Core.Stores.Cruds.Decorator
+namespace Mov.Core.Stores.Services.Savers
 {
     public class SaveAuditing<T> : ISave<T>
     {

@@ -1,6 +1,4 @@
-﻿using Mov.Core.Stores.Events;
-
-namespace Mov.Core.Stores.Cruds.Decorator
+﻿namespace Mov.Core.Stores.Services.Deleters
 {
     public class DeleteEventPublisher<TEntity, TKey> : IDelete<TEntity, TKey>
     {

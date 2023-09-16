@@ -1,6 +1,7 @@
-﻿using Mov.Core.Stores.Events;
+﻿using Mov.Core.Stores.Services.Deleters;
+using Mov.Core.Stores.Services.Savers;
 
-namespace Mov.Core.Stores.Cruds.Decorator
+namespace Mov.Core.Stores.Services
 {
     public class ModificationEventPublisher<TEntity, TKey> : IDelete<TEntity, TKey>, ISave<TEntity>
     {

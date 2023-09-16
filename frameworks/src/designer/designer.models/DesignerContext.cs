@@ -4,7 +4,6 @@ using Mov.Core.Layouts.Models.Nodes;
 using Mov.Core.Layouts.Models.Shells;
 using Mov.Core.Layouts.Models.Themes;
 using Mov.Core.Models;
-using Mov.Core.Models.Identifiers;
 using Mov.Designer.Models.Schemas;
 using System.Collections.Generic;
 
@@ -14,7 +13,7 @@ namespace Mov.Designer.Models
     {
         private readonly IDesignerRepository repository;
 
-        public IdentifierCode DomainId { get; }
+        public Identifier<string> DomainId { get; }
 
         public IEnumerable<LayoutNode> Nodes { get; } = new List<LayoutNode>();
 
@@ -27,7 +26,7 @@ namespace Mov.Designer.Models
         public DesignerContext(IDesignerRepository repository)
         {
             this.repository = repository;
-            this.DomainId = new IdentifierCode(repository.DomainPath);
+            this.DomainId = new Identifier<string>(repository.DomainPath);
             this.Nodes = GetNodes(repository);
             this.Contents = GetContents(repository);
             this.Shells = GetShells(repository);

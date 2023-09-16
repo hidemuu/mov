@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Attributes;
-using Mov.Core.Models.Styles;
 using Mov.Core.Repositories;
+using Mov.Core.Styles.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

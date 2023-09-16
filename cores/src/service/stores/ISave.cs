@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Stores.Cruds
+﻿namespace Mov.Core.Stores
 {
     public interface ISave<TEntity>
     {

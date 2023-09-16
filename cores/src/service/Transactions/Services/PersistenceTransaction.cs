@@ -1,4 +1,4 @@
-﻿using Mov.Core.Stores.Cruds;
+﻿using Mov.Core.Stores;
 
 namespace Mov.Core.Transactions.Services
 {

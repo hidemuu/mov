@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Stores.Events.Implements
+﻿namespace Mov.Core.Stores.Events
 {
     public class DeletedEvent<T> : IEvent
     {

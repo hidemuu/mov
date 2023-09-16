@@ -1,5 +1,4 @@
 ﻿using Mov.Core.Stores.Events;
-using Mov.Core.Stores.Events.Implements;
 
 namespace Mov.Core.Stores.Cruds.Decorator
 {

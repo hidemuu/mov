@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Stores.Cruds
+namespace Mov.Core.Stores
 {
     public interface IReadAsync<TEntity>
     {

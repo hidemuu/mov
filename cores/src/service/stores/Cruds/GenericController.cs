@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Core.Stores.Cruds.Implements
+namespace Mov.Core.Stores.Cruds
 {
     public class GenericController<T>
     {

@@ -5,8 +5,9 @@ using Mov.Core.Repositories.Services;
 using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
 using System;
+using System.IO;
 
-namespace Mov.Designer.Repository.File
+namespace Mov.Designer.Repository
 {
     /// <summary>
     /// デザイナーのリポジトリ
@@ -23,10 +24,10 @@ namespace Mov.Designer.Repository.File
         /// <param name="encoding"></param>
         public FileDesignerRepository(string endpoint, FileType fileType, EncodingValue encoding)
         {
-            Shells = new FileDbRepository<ShellSchema, Guid>(GetPath("shell"), encoding);
-            Nodes = new FileDbRepository<NodeSchema, Guid>(GetPath("node"), encoding);
-            Contents = new FileDbRepository<ContentSchema, Guid>(GetPath("content"), encoding);
-            Themes = new FileDbRepository<ThemeSchema, Guid>(GetPath("theme"), encoding);
+            Shells = new FileDbRepository<ShellSchema, Guid>(Path.Combine(endpoint, "shell"), fileType, encoding);
+            Nodes = new FileDbRepository<NodeSchema, Guid>(Path.Combine(endpoint, "node"), fileType, encoding);
+            Contents = new FileDbRepository<ContentSchema, Guid>(Path.Combine(endpoint, "content"), fileType, encoding);
+            Themes = new FileDbRepository<ThemeSchema, Guid>(Path.Combine(endpoint, "theme"), fileType, encoding);
         }
 
         #endregion コンストラクター

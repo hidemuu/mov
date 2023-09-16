@@ -20,9 +20,9 @@ namespace Mov.Designer.Service
 
         public ILayoutFacade LayoutFacade { get; }
 
-        public IDesignerCommand Command { get; }
+        public IDesignerStoreCommand Command { get; }
 
-        public IDesignerQuery Query { get; }
+        public IDesignerStoreQuery Query { get; }
 
         #endregion プロパティ
 

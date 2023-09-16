@@ -2,16 +2,16 @@
 
 namespace Mov.Core.Stores.Cruds.Decorator
 {
-    public class DeleteConfirmation<T> : IDelete<T>
+    public class DeleteConfirmation<TEntity, TKey> : IDelete<TEntity, TKey>
     {
-        private readonly IDelete<T> decorated;
+        private readonly IDelete<TEntity, TKey> decorated;
 
-        public DeleteConfirmation(IDelete<T> decorated)
+        public DeleteConfirmation(IDelete<TEntity, TKey> decorated)
         {
             this.decorated = decorated;
         }
 
-        public void Delete(T entity)
+        public void Delete(TEntity entity)
         {
             Console.WriteLine("削除しますか？ [Y/N]");
             var keyInfo = Console.ReadKey();

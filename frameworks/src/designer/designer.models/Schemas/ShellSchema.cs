@@ -19,6 +19,18 @@ namespace Mov.Designer.Models.Schemas
     {
         #region プロパティ
 
+        [XmlElement("index")]
+        [LanguageKey("index")]
+        [DisplayName("index")]
+        [DisplayIndex(5)]
+        public int Index { get; set; }
+
+        [XmlElement("code")]
+        [LanguageKey("code")]
+        [DisplayName("code")]
+        [DisplayIndex(6)]
+        public string Code { get; set; }
+
         /// <summary>
         /// 高さ
         /// </summary>

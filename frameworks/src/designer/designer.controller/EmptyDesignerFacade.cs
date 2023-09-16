@@ -7,9 +7,9 @@ namespace Mov.Designer.Service
 {
     public class EmptyDesignerFacade : IDesignerFacade
     {
-        public IDesignerCommand Command => throw new NotImplementedException();
+        public IDesignerStoreCommand Command => throw new NotImplementedException();
 
-        public IDesignerQuery Query => throw new NotImplementedException();
+        public IDesignerStoreQuery Query => throw new NotImplementedException();
 
         public ILayoutFacade LayoutFacade => throw new NotImplementedException();
 

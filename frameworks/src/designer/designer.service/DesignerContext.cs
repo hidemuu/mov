@@ -11,6 +11,8 @@ using Mov.Core.Styles.Models;
 using Mov.Core.Valuables;
 using Mov.Designer.Models.Schemas;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Mov.Designer.Models
 {
@@ -40,7 +42,9 @@ namespace Mov.Designer.Models
 
         private IEnumerable<LayoutNode> GetNodes(IDesignerRepository repository)
         {
-            return GetNode(repository.Nodes.GetAsync(), repository);
+            var task = repository.Nodes.GetAsync();
+            Task.WhenAll(task);
+            return GetNode(task.Result, repository);
         }
 
         private IEnumerable<LayoutNode> GetNode(IEnumerable<NodeSchema> nodes, IDesignerRepository repository)
@@ -48,9 +52,11 @@ namespace Mov.Designer.Models
             var result = new List<LayoutNode>();
             foreach (var node in nodes)
             {
+                var task = repository.Contents.GetAsync(node.Id);
+                Task.WhenAll(task);
                 var parent = new LayoutNode(
                     new Identifier<string>(node.Code), new NodeStyle(node.NodeType), new EnableStyle(true),
-                    GetContent(repository.Contents.Get(node.Code)));
+                    GetContent(task.Result));
                 parent.AddRange(GetNode(node.Children, repository));
                 result.Add(parent);
             }
@@ -59,7 +65,9 @@ namespace Mov.Designer.Models
 
         private IEnumerable<LayoutContent> GetContents(IDesignerRepository repository)
         {
-            foreach (var content in repository.Contents.Get())
+            var task = repository.Contents.GetAsync();
+            Task.WhenAll(task);
+            foreach (var content in task.Result)
             {
                 yield return GetContent(content);
             }

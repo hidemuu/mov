@@ -1,6 +1,4 @@
 ﻿using Moq;
-using Mov.Core.Templates.Crud;
-using Mov.Core.Templates.Repositories;
 using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
 using System.Collections.Generic;
@@ -12,8 +10,8 @@ namespace Mov.Designer.Test.Domains.Builders
         #region フィールド
 
         private readonly Mock<IDesignerRepository> mockRepository;
-        private readonly Mock<IDesignerQuery> mockQuery;
-        private readonly Mock<IDesignerCommand> mockCommand;
+        private readonly Mock<IDesignerStoreQuery> mockQuery;
+        private readonly Mock<IDesignerStoreCommand> mockCommand;
 
         #endregion フィールド
 
@@ -23,8 +21,8 @@ namespace Mov.Designer.Test.Domains.Builders
         {
             //モックオブジェクト生成
             mockRepository = new Mock<IDesignerRepository>();
-            mockQuery = new Mock<IDesignerQuery>();
-            mockCommand = new Mock<IDesignerCommand>(); ;
+            mockQuery = new Mock<IDesignerStoreQuery>();
+            mockCommand = new Mock<IDesignerStoreCommand>(); ;
             //インスタンス生成
             //this.engine = new DesignerEngine(this.mockContext.Object, 0);
         }

@@ -2,21 +2,21 @@
 
 namespace Mov.Core.Stores.Cruds.Decorator
 {
-    public class DeleteEventPublisher<T> : IDelete<T>
+    public class DeleteEventPublisher<TEntity, TKey> : IDelete<TEntity, TKey>
     {
-        private readonly IDelete<T> decoratedDelete;
+        private readonly IDelete<TEntity, TKey> decoratedDelete;
         private readonly IEventPublisher eventPublisher;
 
-        public DeleteEventPublisher(IDelete<T> decoratedDelete, IEventPublisher eventPublisher)
+        public DeleteEventPublisher(IDelete<TEntity, TKey> decoratedDelete, IEventPublisher eventPublisher)
         {
             this.decoratedDelete = decoratedDelete; ;
             this.eventPublisher = eventPublisher;
         }
 
-        public void Delete(T entity)
+        public void Delete(TEntity entity)
         {
             decoratedDelete.Delete(entity);
-            var entityDeleted = new DeletedEvent<T>(entity);
+            var entityDeleted = new DeletedEvent<TEntity>(entity);
             eventPublisher.Publish(entityDeleted);
         }
     }

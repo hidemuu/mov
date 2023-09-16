@@ -1,8 +1,8 @@
 ﻿namespace Mov.Core.Stores
 {
-    public interface IStoreQuery<TEntity>
+    public interface IStoreQuery<TEntity, TKey>
     {
-        IRead<TEntity> Reader { get; }
+        IRead<TEntity, TKey> Reader { get; }
 
 
     }

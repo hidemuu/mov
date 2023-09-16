@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Mov.Core.Stores
 {
-    public interface IRead<TEntity>
+    public interface IRead<TEntity, TKey>
     {
         IEnumerable<TEntity> ReadAll();
-        TEntity Read(Guid id);
+        TEntity Read(TKey id);
 
     }
 }

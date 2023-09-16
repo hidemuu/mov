@@ -3,21 +3,21 @@ using System.Collections.Generic;
 
 namespace Mov.Core.Stores.Cruds.Decorator
 {
-    public class ReadCaching<T> : IRead<T>
+    public class ReadCaching<TEntity, TKey> : IRead<TEntity, TKey>
     {
 
-        private readonly IRead<T> decorated;
+        private readonly IRead<TEntity, TKey> decorated;
 
-        private Dictionary<Guid, T> cachedEntities = new Dictionary<Guid, T>();
+        private Dictionary<TKey, TEntity> cachedEntities = new Dictionary<TKey, TEntity>();
 
-        private IEnumerable<T> allCachedEntities;
+        private IEnumerable<TEntity> allCachedEntities;
 
-        public ReadCaching(IRead<T> decorated)
+        public ReadCaching(IRead<TEntity, TKey> decorated)
         {
             this.decorated = decorated;
         }
 
-        public T Read(Guid id)
+        public TEntity Read(TKey id)
         {
             var foundEntity = cachedEntities[id];
             if (foundEntity == null)
@@ -31,7 +31,7 @@ namespace Mov.Core.Stores.Cruds.Decorator
             return foundEntity;
         }
 
-        public IEnumerable<T> ReadAll()
+        public IEnumerable<TEntity> ReadAll()
         {
             if (allCachedEntities == null)
             {

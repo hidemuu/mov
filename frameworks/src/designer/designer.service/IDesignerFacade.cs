@@ -7,9 +7,9 @@ namespace Mov.Designer.Engine
     {
         #region プロパティ
 
-        IDesignerCommand Command { get; }
+        IDesignerStoreCommand Command { get; }
 
-        IDesignerQuery Query { get; }
+        IDesignerStoreQuery Query { get; }
 
         ILayoutFacade LayoutFacade { get; }
 

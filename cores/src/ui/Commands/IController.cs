@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Mov.Core.Stores
+namespace Mov.Core.Commands
 {
     /// <summary>
     /// コントローラーのインターフェース

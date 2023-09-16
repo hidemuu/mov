@@ -1,5 +1,6 @@
 ﻿using Mov.Core.Attributes;
 using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas;
 using Mov.Core.Styles.Models;
 using System;
 using System.Collections.Generic;
@@ -11,21 +12,10 @@ using System.Xml.Serialization;
 namespace Mov.Designer.Models.Schemas
 {
     /// <summary>
-    /// シェル（フレーム）のコレクション
-    /// </summary>
-    [XmlRoot("shells")]
-    public class ShellSchemaCollection : IDbObjectCollection<ShellSchema, Guid>
-    {
-        /// <inheritdoc />
-        [XmlElement(Type = typeof(ShellSchema), ElementName = "shell")]
-        public ShellSchema[] Items { get; set; }
-    }
-
-    /// <summary>
     /// シェル（フレーム）
     /// </summary>
     [XmlRoot("shell")]
-    public class ShellSchema : DbObjectBase<Guid>
+    public class ShellSchema : DbSchemaBase<Guid>
     {
         #region プロパティ
 

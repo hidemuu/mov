@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Stores.UiCommands
+﻿namespace Mov.Core.Commands
 {
     /// <summary>
     /// コマンドのインターフェース

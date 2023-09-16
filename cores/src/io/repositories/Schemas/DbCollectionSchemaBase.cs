@@ -4,12 +4,12 @@ using System.Xml.Serialization;
 
 namespace Mov.Core.Repositories.Schemas
 {
-    public abstract class DbSchemaCollectionBase<TEntity, TKey> : IDbCollectionSchema<TEntity, TKey> where TEntity : IDbSchema<TKey>
+    public abstract class DbCollectionSchemaBase<TEntity, TKey> : IDbCollectionSchema<TEntity, TKey> where TEntity : IDbSchema<TKey>
     {
         #region property
 
         [XmlIgnore]
-        public TEntity[] Items { get; set; }
+        public virtual TEntity[] Items { get; set; }
 
         #endregion property
 

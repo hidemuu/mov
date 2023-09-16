@@ -6,9 +6,9 @@ namespace Mov.Designer.Models
 {
     public interface IDesignerRepository
     {
-        IDbObjectRepository<ContentSchema, Guid> Contents { get; }
-        IDbObjectRepository<NodeSchema, Guid> Nodes { get; }
-        IDbObjectRepository<ShellSchema, Guid> Shells { get; }
-        IDbObjectRepository<ThemeSchema, Guid> Themes { get; }
+        IDbRepository<ContentSchema, Guid> Contents { get; }
+        IDbRepository<NodeSchema, Guid> Nodes { get; }
+        IDbRepository<ShellSchema, Guid> Shells { get; }
+        IDbRepository<ThemeSchema, Guid> Themes { get; }
     }
 }

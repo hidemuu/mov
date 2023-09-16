@@ -1,6 +1,6 @@
-﻿using Mov.Core.Stores.UiCommands.Implements;
+﻿using Mov.Core.Commands.Implements;
 
-namespace Mov.Core.Stores.UiCommands
+namespace Mov.Core.Commands
 {
     public interface IUiCommandFactory<TParameter, TResponse>
     {

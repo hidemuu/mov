@@ -1,5 +1,5 @@
 ﻿using Mov.Core.Attributes;
-using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas;
 using Mov.Core.Styles.Models;
 using System;
 using System.Collections.Generic;
@@ -11,21 +11,10 @@ using System.Xml.Serialization;
 namespace Mov.Designer.Models.Schemas
 {
     /// <summary>
-    /// コンテンツのコレクション
-    /// </summary>
-    [XmlRoot("contents")]
-    public class ContentSchemaCollection : IDbObjectCollection<ContentSchema, Guid>
-    {
-        /// <inheritdoc />
-        [XmlElement(Type = typeof(ContentSchema), ElementName = "content")]
-        public ContentSchema[] Items { get; set; }
-    }
-
-    /// <summary>
     /// コンテンツ
     /// </summary>
     [XmlRoot("content")]
-    public class ContentSchema : DbObjectBase<Guid>
+    public class ContentSchema : DbSchemaBase<Guid>
     {
         #region プロパティ
 

@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Attributes;
-using Mov.Core.Models.DbObjects.Entities;
+using Mov.Core.Repositories.Schemas;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -10,21 +11,10 @@ using System.Xml.Serialization;
 namespace Mov.Designer.Models.Schemas
 {
     /// <summary>
-    /// テーマのコレクション
-    /// </summary>
-    [XmlRoot("themes")]
-    public class ThemeSchemaCollection : DbObjectCollection<ThemeSchema>
-    {
-        /// <inheritdoc />
-        [XmlElement(Type = typeof(ThemeSchema), ElementName = "theme")]
-        public override ThemeSchema[] Items { get; set; }
-    }
-
-    /// <summary>
     /// テーマ
     /// </summary>
     [XmlRoot("theme")]
-    public class ThemeSchema : DbObject
+    public class ThemeSchema : DbSchemaBase<Guid>
     {
         /// <summary>
         /// 色

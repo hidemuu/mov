@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Models;
 
-namespace Mov.Core.Stores.UiCommands
+namespace Mov.Core.Commands
 {
     public sealed class UiCommandResponse : ValueObjectBase<UiCommandResponse>
     {

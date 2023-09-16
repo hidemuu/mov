@@ -1,5 +1,4 @@
-﻿using Mov.Core.Templates.Crud;
-using Mov.Designer.Models.Schemas;
+﻿using Mov.Designer.Models.Schemas;
 
 namespace Mov.Designer.Models
 {

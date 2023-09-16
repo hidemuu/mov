@@ -1,8 +1,7 @@
-﻿using Mov.Core.Accessors.Models;
-using Mov.Core.Models;
+﻿using Mov.Core.Models;
 using System;
 
-namespace Mov.Core.Accessors
+namespace Mov.Core.Accessors.Models
 {
     public sealed class AccessType : ValueObjectBase<AccessType>
     {

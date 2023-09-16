@@ -1,5 +1,4 @@
-﻿using Mov.Core.Accessors;
-using Mov.Core.Accessors.Clients;
+﻿using Mov.Core.Accessors.Clients;
 using Mov.Core.Accessors.Models;
 using Mov.Core.Configurators.Models.Schemas;
 using Mov.Core.Repositories;

@@ -8,9 +8,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\core\Core.csproj" />
-    <ProjectReference Include="..\..\service\Maths\Maths.csproj" />
-    <ProjectReference Include="..\..\service\Styles\Styles.csproj" />
-    <ProjectReference Include="..\..\service\Valuables\Valuables.csproj" />
+    <ProjectReference Include="..\..\model\maths\Maths.csproj" />
+    <ProjectReference Include="..\..\model\styles\Styles.csproj" />
+    <ProjectReference Include="..\..\model\valuables\Valuables.csproj" />
   </ItemGroup>
 
 </Project>

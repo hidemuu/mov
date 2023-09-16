@@ -16,18 +16,16 @@
     <ProjectReference Include="..\src\io\loggers\Loggers.csproj" />
     <ProjectReference Include="..\src\io\repositories\Repositories.csproj" />
     <ProjectReference Include="..\src\io\resources\Resources.csproj" />
-    <ProjectReference Include="..\src\service\characters\Characters.csproj" />
+    <ProjectReference Include="..\src\model\characters\Characters.csproj" />
+    <ProjectReference Include="..\src\model\products\Products.csproj" />
+    <ProjectReference Include="..\src\model\robots\Robots.csproj" />
+    <ProjectReference Include="..\src\model\shields\Shields.csproj" />
     <ProjectReference Include="..\src\service\learnings\Learnings.csproj" />
-    <ProjectReference Include="..\src\service\locations\Locations.csproj" />
-    <ProjectReference Include="..\src\service\maths\Maths.csproj" />
-    <ProjectReference Include="..\src\service\products\Products.csproj" />
-    <ProjectReference Include="..\src\service\robots\Robots.csproj" />
     <ProjectReference Include="..\src\service\schedulers\Schedulers.csproj" />
     <ProjectReference Include="..\src\service\sequencers\Sequencers.csproj" />
-    <ProjectReference Include="..\src\service\shields\Shields.csproj" />
     <ProjectReference Include="..\src\service\stores\Stores.csproj" />
-    <ProjectReference Include="..\src\service\styles\Styles.csproj" />
-    <ProjectReference Include="..\src\service\valuables\Valuables.csproj" />
+    <ProjectReference Include="..\src\service\transactions\Transactions.csproj" />
+    <ProjectReference Include="..\src\ui\Commands\Commands.csproj" />
     <ProjectReference Include="..\src\ui\graphicers\Graphicers.csproj" />
     <ProjectReference Include="..\src\ui\layouts\Layouts.csproj" />
   </ItemGroup>

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Structures\ValueObjects\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\core\Core.csproj" />
-    <ProjectReference Include="..\functions\Sequencers.csproj" />
+    <ProjectReference Include="..\maths\Maths.csproj" />
   </ItemGroup>
 
 </Project>

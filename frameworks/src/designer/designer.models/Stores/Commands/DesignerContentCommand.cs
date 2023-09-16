@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Models.Stores
+namespace Mov.Designer.Models.Stores.Commands
 {
     public class DesignerContentCommand : IStoreCommand<DesignerContent, Guid>
     {
@@ -16,8 +16,8 @@ namespace Mov.Designer.Models.Stores
 
         public DesignerContentCommand(IDesignerRepository repository)
         {
-            var repositorySaver = new DbRepositorySaver<ContentSchema, Guid>(repository.Contents);
-            
+            Saver = new DesignerContentSaver(repository);
+            Deleter= new DesignerContentDeleter(repository);
         }
 
         public void Dispose()

@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Models.Stores
+namespace Mov.Designer.Models.Stores.Queries
 {
     public class DesignerContentReader : IRead<DesignerContent, Guid>
     {

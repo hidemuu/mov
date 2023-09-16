@@ -7,14 +7,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mov.Designer.Models.Stores
+namespace Mov.Designer.Models.Stores.Commands
 {
-    public class DesignerContentDeleter : IDelete<DesignerContent, Guid>
+    internal class DesignerContentDeleter : IDelete<DesignerContent, Guid>
     {
         private readonly IDelete<ContentSchema, Guid> _repositoryDeleter;
 
-
-        public DesignerContentDeleter(IDesignerRepository repository) 
+        public DesignerContentDeleter(IDesignerRepository repository)
         {
             _repositoryDeleter = new DbRepositoryDeleter<ContentSchema, Guid>(repository.Contents);
         }

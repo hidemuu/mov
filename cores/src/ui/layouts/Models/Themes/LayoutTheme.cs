@@ -1,4 +1,4 @@
-﻿using Mov.Core.Layouts.Models.Styles;
+﻿using Mov.Core.Styles.Models;
 
 namespace Mov.Core.Layouts.Models.Themes
 {

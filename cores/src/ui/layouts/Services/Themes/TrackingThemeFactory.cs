@@ -1,4 +1,4 @@
-﻿using Mov.Core.Layouts.Models.Styles;
+﻿using Mov.Core.Styles.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;

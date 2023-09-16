@@ -1,7 +1,7 @@
 ﻿using Mov.Core.Models;
 using System;
 
-namespace Mov.Core.Layouts.Models.Styles
+namespace Mov.Core.Styles.Models
 {
     public sealed class ColorStyle : ValueObjectBase<ColorStyle>
     {

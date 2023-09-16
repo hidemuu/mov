@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Layouts.Models.Nodes;
-using Mov.Core.Layouts.Models.Styles;
 using Mov.Core.Layouts.Test.Builders;
+using Mov.Core.Styles.Models;
 using System.Diagnostics;
 
 namespace Mov.Core.Layouts.Test

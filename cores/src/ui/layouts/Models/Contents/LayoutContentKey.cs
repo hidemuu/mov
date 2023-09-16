@@ -1,5 +1,5 @@
-﻿using Mov.Core.Layouts.Models.Styles;
-using Mov.Core.Models.Identifiers;
+﻿using Mov.Core.Models.Identifiers;
+using Mov.Core.Styles.Models;
 
 namespace Mov.Core.Layouts.Models.Contents
 {

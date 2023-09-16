@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Mov.Core.Layouts.Models.Styles
+namespace Mov.Core.Styles.Models
 {
     public sealed class OrientationStyle : ValueObjectBase<OrientationStyle>
     {

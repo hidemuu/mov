@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\game.engine\Game.Service.csproj" />
+    <ProjectReference Include="..\game.service\Game.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>

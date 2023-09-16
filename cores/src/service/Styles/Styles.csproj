@@ -8,9 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\core\Core.csproj" />
-    <ProjectReference Include="..\..\service\Maths\Maths.csproj" />
-    <ProjectReference Include="..\..\service\Styles\Styles.csproj" />
-    <ProjectReference Include="..\..\service\Valuables\Valuables.csproj" />
   </ItemGroup>
 
 </Project>

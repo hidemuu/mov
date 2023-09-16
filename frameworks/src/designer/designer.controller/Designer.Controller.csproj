@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\designer.engine\Designer.Service.csproj" />
     <ProjectReference Include="..\designer.service\Designer.Service.csproj" />
   </ItemGroup>
 

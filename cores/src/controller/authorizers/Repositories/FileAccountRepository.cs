@@ -1,7 +1,5 @@
 ﻿using Mov.Core.Authorizers.Models.Entities;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Core.Authorizers.Repositories
 {
@@ -9,7 +7,7 @@ namespace Mov.Core.Authorizers.Repositories
     {
         #region constructor
 
-        public FileAccountRepository() 
+        public FileAccountRepository()
         {
         }
 

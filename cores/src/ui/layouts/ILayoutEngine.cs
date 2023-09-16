@@ -1,9 +1,9 @@
 ﻿using Mov.Core.Layouts.Models.Contents;
 using Mov.Core.Layouts.Models.Nodes;
 using Mov.Core.Layouts.Models.Shells;
-using Mov.Core.Layouts.Models.Styles;
 using Mov.Core.Layouts.Models.Themes;
 using Mov.Core.Models.Identifiers;
+using Mov.Core.Styles.Models;
 using System.Collections.Generic;
 
 namespace Mov.Core.Layouts

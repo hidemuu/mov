@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 
-namespace Mov.Core.Commands.Implements
+namespace Mov.Core.Commands.Services
 {
     public class UiCommandFactory<TParameter, TResponse> : IUiCommandFactory<TParameter, TResponse>
     {

@@ -5,7 +5,7 @@ namespace Mov.Core.Commands
     /// <summary>
     /// コントローラーのインターフェース
     /// </summary>
-    public interface IController
+    public interface IUiController
     {
         /// <summary>
         /// 実行

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Mov.Core.Commands.Implements
+namespace Mov.Core.Commands.Services
 {
     /// <summary>
     /// コマンド実行クラス

@@ -1,4 +1,4 @@
-﻿using Mov.Core.Commands.Implements;
+﻿using Mov.Core.Commands.Services;
 
 namespace Mov.Core.Commands
 {

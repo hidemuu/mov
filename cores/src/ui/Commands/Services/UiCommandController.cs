@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 
-namespace Mov.Core.Commands.Implements
+namespace Mov.Core.Commands.Services
 {
     /// <summary>
     /// ドメイン単位のコントローラー
     /// </summary>
-    public class UiCommandController<TService> : IController
+    public class UiCommandController<TService> : IUiController
     {
 
         private readonly TService service;

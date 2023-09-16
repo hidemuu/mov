@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Mov.Core.Commands.Implements
+namespace Mov.Core.Commands.Services
 {
     /// <summary>
     /// 登録コマンドのディクショナリ

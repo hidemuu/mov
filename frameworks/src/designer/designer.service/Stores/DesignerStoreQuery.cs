@@ -1,6 +1,6 @@
 ﻿namespace Mov.Designer.Engine.Cruds
 {
-    internal class DesignerPersistenceQuery
+    public class DesignerStoreQuery
     {
     }
 }

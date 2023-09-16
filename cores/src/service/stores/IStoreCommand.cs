@@ -2,7 +2,7 @@
 
 namespace Mov.Core.Stores
 {
-    public interface IPersistenceCommand<TEntity> : IDisposable
+    public interface IStoreCommand<TEntity> : IDisposable
     {
         ISave<TEntity> Saver { get; }
 

@@ -31,7 +31,7 @@ namespace Mov.Designer.Models
         public DesignerContext(IDesignerRepository repository)
         {
             this.repository = repository;
-            this.DomainId = new Identifier<string>(repository.DomainPath);
+            this.DomainId = new Identifier<string>(repository.Endpoint);
             this.Nodes = GetNodes(repository);
             this.Contents = GetContents(repository);
             this.Shells = GetShells(repository);
@@ -40,7 +40,7 @@ namespace Mov.Designer.Models
 
         private IEnumerable<LayoutNode> GetNodes(IDesignerRepository repository)
         {
-            return GetNode(repository.Nodes.Get(), repository);
+            return GetNode(repository.Nodes.GetAsync(), repository);
         }
 
         private IEnumerable<LayoutNode> GetNode(IEnumerable<NodeSchema> nodes, IDesignerRepository repository)

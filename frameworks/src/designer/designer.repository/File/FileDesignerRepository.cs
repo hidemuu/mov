@@ -1,19 +1,19 @@
 ﻿using Mov.Core;
-using Mov.Core.Models.Texts;
-using Mov.Core.Repositories.Repositories.DbObjects;
-using Mov.Core.Repositories.Repositories.Domains;
-using Mov.Core.Templates.Repositories;
+using Mov.Core.Accessors.Models;
+using Mov.Core.Repositories;
+using Mov.Core.Repositories.Services;
 using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
+using System;
 
 namespace Mov.Designer.Repository.File
 {
     /// <summary>
     /// デザイナーのリポジトリ
     /// </summary>
-    public class FileDesignerRepository : FileDomainRepositoryBase, IDesignerRepository
+    public class FileDesignerRepository : IDesignerRepository
     {
-        public override string DomainPath => "designer";
+        public string Endpoint => "designer";
 
         #region コンストラクター
 
@@ -22,25 +22,24 @@ namespace Mov.Designer.Repository.File
         /// </summary>
         /// <param name="encoding"></param>
         public FileDesignerRepository(string endpoint, FileType fileType, EncodingValue encoding)
-            : base(endpoint, fileType, encoding)
         {
-            Shells = new FileDbObjectRepository<ShellSchema, ShellSchemaCollection>(GetPath("shell"), encoding);
-            Nodes = new FileDbObjectRepository<NodeSchema, NodeSchemaCollection>(GetPath("node"), encoding);
-            Contents = new FileDbObjectRepository<ContentSchema, ContentSchemaCollection>(GetPath("content"), encoding);
-            Themes = new FileDbObjectRepository<ThemeSchema, ThemeSchemaCollection>(GetPath("theme"), encoding);
+            Shells = new FileDbRepository<ShellSchema, Guid>(GetPath("shell"), encoding);
+            Nodes = new FileDbRepository<NodeSchema, Guid>(GetPath("node"), encoding);
+            Contents = new FileDbRepository<ContentSchema, Guid>(GetPath("content"), encoding);
+            Themes = new FileDbRepository<ThemeSchema, Guid>(GetPath("theme"), encoding);
         }
 
         #endregion コンストラクター
 
         #region プロパティ
 
-        public IDbObjectRepository<ShellSchema, ShellSchemaCollection> Shells { get; }
+        public IDbRepository<ShellSchema, Guid> Shells { get; }
 
-        public IDbObjectRepository<NodeSchema, NodeSchemaCollection> Nodes { get; }
+        public IDbRepository<NodeSchema, Guid> Nodes { get; }
 
-        public IDbObjectRepository<ContentSchema, ContentSchemaCollection> Contents { get; }
+        public IDbRepository<ContentSchema, Guid> Contents { get; }
 
-        public IDbObjectRepository<ThemeSchema, ThemeSchemaCollection> Themes { get; }
+        public IDbRepository<ThemeSchema, Guid> Themes { get; }
 
         #endregion プロパティ
     }

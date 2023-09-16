@@ -6,7 +6,7 @@ namespace Mov.Core.Transactions.Services
     {
         #region フィールド
 
-        private readonly IPersistenceCommand<TEntity> persistence;
+        private readonly IStoreCommand<TEntity> persistence;
 
         private bool isBegan = false;
 
@@ -20,7 +20,7 @@ namespace Mov.Core.Transactions.Services
 
         #region コンストラクター
 
-        public PersistenceTransaction(IPersistenceCommand<TEntity> persistence)
+        public PersistenceTransaction(IStoreCommand<TEntity> persistence)
         {
             this.persistence = persistence;
         }

@@ -1,15 +1,16 @@
-﻿using Mov.Designer.Models.Schemas;
+﻿using Mov.Core.Stores;
+using Mov.Designer.Models.Schemas;
 
 namespace Mov.Designer.Models
 {
     public interface IDesignerCommand
     {
-        IPersistenceCommand<ContentSchema> Contents { get; }
+        IStoreCommand<ContentSchema> Contents { get; }
 
-        IPersistenceCommand<NodeSchema> Nodes { get; }
+        IStoreCommand<NodeSchema> Nodes { get; }
 
-        IPersistenceCommand<ShellSchema> Shells { get; }
+        IStoreCommand<ShellSchema> Shells { get; }
 
-        IPersistenceCommand<ThemeSchema> Themes { get; }
+        IStoreCommand<ThemeSchema> Themes { get; }
     }
 }

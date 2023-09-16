@@ -1,6 +1,6 @@
 ﻿namespace Mov.Core.Stores
 {
-    public interface IPersistenceQuery<TEntity>
+    public interface IStoreQuery<TEntity>
     {
         IRead<TEntity> Reader { get; }
 

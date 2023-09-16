@@ -1,6 +1,9 @@
 ﻿using Mov.Core.Accessors;
+using Mov.Core.Accessors.Clients;
+using Mov.Core.Accessors.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -34,6 +37,11 @@ namespace Mov.Core.Repositories.Services
         public FileDbRepository(IClient client)
         {
             _client = client;
+        }
+
+        public FileDbRepository(string endpoint, FileType fileType, EncodingValue encoding)
+        {
+            _client = new FileClient(new PathValue(endpoint), encoding, AccessType.Create(fileType));
         }
 
         #endregion constructor

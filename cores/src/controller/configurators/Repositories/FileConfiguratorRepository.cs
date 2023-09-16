@@ -20,8 +20,7 @@ namespace Mov.Core.Configurators.Repositories
 
         public FileConfiguratorRepository(string endpoint, FileType fileType, EncodingValue encoding)
         {
-            var client = new FileClient(new PathValue(Path.Combine(endpoint, "configurator")), encoding, AccessType.Create(fileType));
-            Configs = new FileDbRepository<ConfigSchema, Guid>(client);
+            Configs = new FileDbRepository<ConfigSchema, Guid>(Path.Combine(endpoint, "configurator"), fileType, encoding);
         }
 
         #endregion constructor

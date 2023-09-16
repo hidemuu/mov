@@ -1,15 +1,16 @@
-﻿using Mov.Designer.Models.Schemas;
+﻿using Mov.Core.Stores;
+using Mov.Designer.Models.Schemas;
 
 namespace Mov.Designer.Models
 {
     public interface IDesignerQuery
     {
-        IPersistenceQuery<ContentSchema> Contents { get; }
+        IStoreQuery<ContentSchema> Contents { get; }
 
-        IPersistenceQuery<NodeSchema> Nodes { get; }
+        IStoreQuery<NodeSchema> Nodes { get; }
 
-        IPersistenceQuery<ShellSchema> Shells { get; }
+        IStoreQuery<ShellSchema> Shells { get; }
 
-        IPersistenceQuery<ThemeSchema> Themes { get; }
+        IStoreQuery<ThemeSchema> Themes { get; }
     }
 }

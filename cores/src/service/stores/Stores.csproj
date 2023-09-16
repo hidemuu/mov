@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Readers\Events\" />
+    <Folder Include="Services\Queries\Readers\Events\" />
   </ItemGroup>
 
 </Project>

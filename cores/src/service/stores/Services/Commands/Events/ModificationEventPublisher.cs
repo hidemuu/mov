@@ -1,7 +1,7 @@
-﻿using Mov.Core.Stores.Services.Deleters.Events;
-using Mov.Core.Stores.Services.Savers.Events;
+﻿using Mov.Core.Stores.Services.Commands.Deleters.Events;
+using Mov.Core.Stores.Services.Commands.Savers.Events;
 
-namespace Mov.Core.Stores.Services
+namespace Mov.Core.Stores.Services.Commands.Events
 {
     public class ModificationEventPublisher<TEntity, TKey> : IDelete<TEntity, TKey>, ISave<TEntity>
     {

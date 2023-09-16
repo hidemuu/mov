@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Stores.Services.Deleters.Events
+﻿namespace Mov.Core.Stores.Services.Commands.Deleters.Events
 {
     public class DeleteEventPublisher<TEntity, TKey> : IDelete<TEntity, TKey>
     {

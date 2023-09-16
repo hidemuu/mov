@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Mov.Core.Stores.Services.Readers.Decorators
+namespace Mov.Core.Stores.Services.Queries.Readers.Decorators
 {
     public class ReadCaching<TEntity, TKey> : IRead<TEntity, TKey>
     {

@@ -21,7 +21,6 @@
     <ProjectReference Include="..\src\model\robots\Robots.csproj" />
     <ProjectReference Include="..\src\model\shields\Shields.csproj" />
     <ProjectReference Include="..\src\service\learnings\Learnings.csproj" />
-    <ProjectReference Include="..\src\service\schedulers\Schedulers.csproj" />
     <ProjectReference Include="..\src\service\sequencers\Sequencers.csproj" />
     <ProjectReference Include="..\src\service\stores\Stores.csproj" />
     <ProjectReference Include="..\src\service\transactions\Transactions.csproj" />

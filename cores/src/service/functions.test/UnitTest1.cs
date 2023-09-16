@@ -1,4 +1,4 @@
-namespace Mov.Core.Functions.Test
+namespace Mov.Core.Sequencers.Test
 {
     public class Tests
     {

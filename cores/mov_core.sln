@@ -65,7 +65,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loggers.Test", "src\io\logg
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Errors.Test", "src\io\errors.test\Errors.Test.csproj", "{283E9B72-6972-4BA1-870E-E131AA9A64CA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Functions.Test", "src\service\functions.test\Functions.Test.csproj", "{0C754453-7EAB-4BB3-B48B-521681B289BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sequencers.Test", "src\service\functions.test\Sequencers.Test.csproj", "{0C754453-7EAB-4BB3-B48B-521681B289BA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Maths", "src\service\maths\Maths.csproj", "{EA302F8A-89ED-4CA0-B46B-DE64B5770DE0}"
 EndProject

@@ -2,7 +2,7 @@
 using System;
 using System.Threading;
 
-namespace Mov.Core.Stores.Services.Savers
+namespace Mov.Core.Stores.Services.Savers.Decorators
 {
     public class SaveAuditing<T> : ISave<T>
     {

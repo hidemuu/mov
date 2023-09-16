@@ -1,5 +1,5 @@
-﻿using Mov.Core.Stores.Services.Deleters;
-using Mov.Core.Stores.Services.Savers;
+﻿using Mov.Core.Stores.Services.Deleters.Events;
+using Mov.Core.Stores.Services.Savers.Events;
 
 namespace Mov.Core.Stores.Services
 {

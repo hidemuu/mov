@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Stores.Services.Savers
+﻿namespace Mov.Core.Stores.Services.Savers.Events
 {
     public class SavedEvent<TEntity> : IEvent
     {

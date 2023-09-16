@@ -12,6 +12,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\core\Core.csproj" />
+    <ProjectReference Include="..\..\io\repositories\Repositories.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\Readers\Events\" />
   </ItemGroup>
 
 </Project>

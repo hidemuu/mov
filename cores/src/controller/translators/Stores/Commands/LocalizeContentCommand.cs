@@ -1,0 +1,35 @@
+﻿using Mov.Core.Stores;
+using Mov.Core.Translators.Models.Entities;
+using System;
+
+namespace Mov.Core.Translators.Stores.Commands
+{
+    internal class LocalizeContentCommand : IStoreCommand<LocalizeContent, int>
+    {
+        #region property
+
+        public ISave<LocalizeContent> Saver { get; }
+
+        public IDelete<LocalizeContent, int> Deleter { get; }
+
+        #endregion property
+
+        #region constructor
+
+        public LocalizeContentCommand(ITranslatorRepository repository)
+        {
+
+        }
+
+        #endregion constructor
+
+        #region method
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion method
+    }
+}

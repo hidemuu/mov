@@ -5,8 +5,6 @@ namespace Mov.Core.Valuables
 {
     public sealed class Variable : ValueObjectBase<Variable>
     {
-        public static Variable Empty = new Variable("");
-
         #region property
 
         public string Value { get; }
@@ -20,9 +18,11 @@ namespace Mov.Core.Valuables
             Value = parameter;
         }
 
+        public static Variable Empty = new Variable("");
+
         #endregion constructor
 
-        #region method
+        #region inner method
 
         protected override bool EqualCore(Variable other)
         {
@@ -34,6 +34,6 @@ namespace Mov.Core.Valuables
             return Value.GetHashCode();
         }
 
-        #endregion method
+        #endregion inner method
     }
 }

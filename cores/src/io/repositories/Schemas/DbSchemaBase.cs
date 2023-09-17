@@ -36,6 +36,15 @@ namespace Mov.Core.Repositories.Schemas
 
         #region method
 
+        public override string ToString()
+        {
+            return Id.ToString();
+        }
+
+        #endregion method
+
+        #region inner method
+
         /// <summary>
         /// プロパティを取得
         /// </summary>
@@ -51,6 +60,6 @@ namespace Mov.Core.Repositories.Schemas
             }
         }
 
-        #endregion method
+        #endregion inner method
     }
 }

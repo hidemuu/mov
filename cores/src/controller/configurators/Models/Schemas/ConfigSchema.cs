@@ -20,6 +20,24 @@ namespace Mov.Core.Configurators.Models.Schemas
         #region peoperty
 
         /// <summary>
+        /// Index
+        /// </summary>
+        [XmlElement("index")]
+        [LanguageKey("index")]
+        [DisplayName("index")]
+        [DisplayIndex(5)]
+        public int Index { get; set; }
+
+        /// <summary>
+        /// Code
+        /// </summary>
+        [XmlElement("code")]
+        [LanguageKey("code")]
+        [DisplayName("code")]
+        [DisplayIndex(6)]
+        public string Code { get; set; }
+
+        /// <summary>
         /// カテゴリー
         /// </summary>
         [JsonProperty("category")]
@@ -83,6 +101,11 @@ namespace Mov.Core.Configurators.Models.Schemas
         #endregion peoperty
 
         #region method
+
+        public override string ToString()
+        {
+            return $"{base.ToString()} {Index} {Code} {Name} {Value}";
+        }
 
         public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<ConfigSchema>().OrderBy(x => x.index);
 

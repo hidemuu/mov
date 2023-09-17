@@ -2,6 +2,7 @@
 using Mov.Core.Stores;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Mov.Core.Configurators.Stores.Queries
 {
@@ -24,14 +25,21 @@ namespace Mov.Core.Configurators.Stores.Queries
 
         #region method
 
-        public UserSetting Read(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
         public IEnumerable<UserSetting> ReadAll()
         {
-            throw new NotImplementedException();
+            var configs = Task.WhenAll(_repository.Configs.GetAsync()).Result[0];
+            var result = new List<UserSetting>();
+            foreach(var config in configs)
+            {
+                result.Add(new UserSetting(config));
+            }
+            return result;
+        }
+
+        public UserSetting Read(Guid id)
+        {
+            var config = Task.WhenAll(_repository.Configs.GetAsync(id)).Result[0];
+            return new UserSetting(config);
         }
 
         #endregion method

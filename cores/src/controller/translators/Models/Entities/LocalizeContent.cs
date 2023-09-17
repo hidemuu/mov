@@ -1,4 +1,4 @@
-﻿using Mov.Core.Locations;
+﻿using Mov.Core.Locations.Models;
 using Mov.Core.Models;
 using Mov.Core.Translators.Models.ValueObjects;
 using System.Collections.Generic;

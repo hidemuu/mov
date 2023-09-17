@@ -1,4 +1,4 @@
-﻿using Mov.Core.Locations;
+﻿using Mov.Core.Locations.Models;
 using Mov.Core.Models;
 
 namespace Mov.Core.Translators.Services

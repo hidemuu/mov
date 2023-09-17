@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Models;
 
-namespace Mov.Core.Locations
+namespace Mov.Core.Locations.Models
 {
     public sealed class Language : ValueObjectBase<Language>
     {

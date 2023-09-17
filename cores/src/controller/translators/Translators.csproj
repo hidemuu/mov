@@ -8,7 +8,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\io\repositories\Repositories.csproj" />
+    <ProjectReference Include="..\..\model\documents\Documents.csproj" />
     <ProjectReference Include="..\..\model\locations\Locations.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Stores\" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Mov.Core.Models;
+using System;
 
-namespace Mov.Core.Models
+namespace Mov.Core.Documents.Models
 {
     public sealed class Document : ValueObjectBase<Document>
     {
@@ -50,7 +51,7 @@ namespace Mov.Core.Models
 
         #endregion method
 
-        #region protected method
+        #region inner method
 
         protected override bool EqualCore(Document other)
         {
@@ -62,6 +63,6 @@ namespace Mov.Core.Models
             return Value.GetHashCode();
         }
 
-        #endregion protected method
+        #endregion inner method
     }
 }

@@ -1,13 +1,6 @@
 ﻿using Moq;
-using Mov.Core.Accessors;
 using Mov.Core.Configurators.Models.Schemas;
 using Mov.Core.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mov.Core.Configurators.Test.Builders
 {
@@ -47,9 +40,9 @@ namespace Mov.Core.Configurators.Test.Builders
             _mockConfigRepository
                 .Setup(x => x.GetAsync())
                 .ReturnsAsync(configSchemas)
-                .Callback(() => 
+                .Callback(() =>
                 {
-                    foreach(var configSchema in configSchemas)
+                    foreach (var configSchema in configSchemas)
                     {
                         Console.WriteLine(configSchema.ToString());
                     }

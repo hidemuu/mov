@@ -29,7 +29,7 @@ namespace Mov.Core.Configurators.Stores.Queries
         {
             var configs = Task.WhenAll(_repository.Configs.GetAsync()).Result[0];
             var result = new List<UserSetting>();
-            foreach(var config in configs)
+            foreach (var config in configs)
             {
                 result.Add(new UserSetting(config));
             }

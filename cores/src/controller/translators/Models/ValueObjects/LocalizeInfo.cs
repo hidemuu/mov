@@ -1,4 +1,5 @@
-﻿using Mov.Core.Locations;
+﻿using Mov.Core.Documents.Models;
+using Mov.Core.Locations.Models;
 using Mov.Core.Models;
 
 namespace Mov.Core.Translators.Models.ValueObjects

@@ -1,7 +1,7 @@
 ﻿using Mov.Core.Models;
 using System;
 
-namespace Mov.Core.Locations
+namespace Mov.Core.Locations.Models
 {
     [Serializable]
     public sealed class Address : ValueObjectBase<Address>

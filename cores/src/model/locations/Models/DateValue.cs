@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Mov.Core.Models;
+using System;
 
-namespace Mov.Core.Models
+namespace Mov.Core.Locations.Models
 {
     public sealed class DateValue : ValueObjectBase<DateValue>
     {

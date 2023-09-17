@@ -13,11 +13,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="resources\test.json" />
+    <None Remove="resources\config.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="resources\test.json">
+    <Content Include="resources\config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -32,6 +32,10 @@
 
   <ItemGroup>
     <Folder Include="Builders\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\configurators\Configurators.csproj" />
   </ItemGroup>
 
 </Project>

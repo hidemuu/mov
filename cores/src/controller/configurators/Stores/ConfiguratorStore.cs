@@ -10,9 +10,7 @@ namespace Mov.Core.Configurators.Stores
     {
         #region property
 
-        public IStoreCommand<UserSetting, Guid> UserSettingCommand { get; }
-
-        public IStoreQuery<UserSetting, Guid> UserSettingQuery { get; }
+        public IStore<UserSetting, Guid> UserSetting { get; }
 
         #endregion property
 
@@ -20,8 +18,7 @@ namespace Mov.Core.Configurators.Stores
 
         public ConfiguratorStore(IConfiguratorRepository repository)
         {
-            this.UserSettingQuery = new UserSettingQuery(repository);
-            this.UserSettingCommand = new UserSettingCommand(repository);
+            this.UserSetting = new UserSettingStore(repository);
         }
 
         #endregion constructor

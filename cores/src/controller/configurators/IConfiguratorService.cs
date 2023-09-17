@@ -2,5 +2,6 @@
 {
     public interface IConfiguratorService
     {
+        IConfiguratorStoreQuery Query { get; }
     }
 }

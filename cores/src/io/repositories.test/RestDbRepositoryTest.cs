@@ -5,7 +5,7 @@ using Mov.Core.Repositories.Test.Models;
 namespace Mov.Core.Repositories.Test
 {
     [TestFixture]
-    public class RestDbObjectRepositoryTest
+    public class RestDbRepositoryTest
     {
         #region field
 

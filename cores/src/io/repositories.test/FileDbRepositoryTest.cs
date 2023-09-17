@@ -7,7 +7,7 @@ using Mov.Core.Repositories.Test.Models;
 namespace Mov.Core.Repositories.Test
 {
     [TestFixture]
-    public class FileDbObjectRepositoryTest
+    public class FileDbRepositoryTest
     {
         #region field
 
@@ -27,8 +27,11 @@ namespace Mov.Core.Repositories.Test
 
         #region test
 
+        /// <summary>
+        /// モックのスキーマを取得できること
+        /// </summary>
         [Test]
-        public void GetAsync_ReadSerializeSchema_ReturnAll()
+        public void GetAsync_ReadMockSerializeSchema_ReturnAll()
         {
             // Arrange
             IEnumerable<SerializeSchema> schemas = new[]
@@ -47,9 +50,9 @@ namespace Mov.Core.Repositories.Test
             var serializer = this.serializerBuilder
                 .WithDeserializeCalled<SerializeSchema, IEnumerable<SerializeSchema>>(schemas)
                 .Build();
+            var sut = FileDbRepository<SerializeSchema, int>.Factory.Create(new FileClient(PathValue.Empty, serializer));
 
             // Act
-            var sut = new FileDbRepository<SerializeSchema, int>(new FileClient(PathValue.Empty, serializer));
             var items = Task.WhenAll(sut.GetAsync()).Result[0].ToArray();
 
             // Assert
@@ -60,8 +63,32 @@ namespace Mov.Core.Repositories.Test
             Assert.That(items[1].Content, Is.EqualTo("test2"));
         }
 
+        /// <summary>
+        /// jsonファイルをデシリアライズして取得できること
+        /// </summary>
         [Test]
-        public void GetAsync_ReadSerializeSchema_Return()
+        public void GetAsync_ReadSerializeSchema_ReturnAll()
+        {
+            // Arrange
+            var resourcePath = PathValue.Factory.CreateResourcePath(@"test.json");
+            var sut = FileDbRepository<SerializeSchema, int>.Factory.Create(resourcePath, FileType.Json, EncodingValue.UTF8);
+
+            // Act
+            var items = Task.WhenAll(sut.GetAsync()).Result[0].ToArray();
+
+            // Assert
+            Assert.That(items.Length, Is.EqualTo(2));
+            Assert.That(items[0].Id, Is.EqualTo(1));
+            Assert.That(items[0].Content, Is.EqualTo("test"));
+            Assert.That(items[1].Id, Is.EqualTo(2));
+            Assert.That(items[1].Content, Is.EqualTo("test2"));
+        }
+
+        /// <summary>
+        /// 特定IDのモックのスキーマを取得できること
+        /// </summary>
+        [Test]
+        public void GetAsync_ReadMockSerializeSchema_Return()
         {
             // Arrange
             IEnumerable<SerializeSchema> schemas = new[]
@@ -82,7 +109,7 @@ namespace Mov.Core.Repositories.Test
                 .Build();
 
             // Act
-            var sut = new FileDbRepository<SerializeSchema, int>(new FileClient(PathValue.Empty, serializer));
+            var sut = FileDbRepository<SerializeSchema, int>.Factory.Create(new FileClient(PathValue.Empty, serializer));
             var item = Task.WhenAll(sut.GetAsync(2)).Result[0];
 
             // Assert

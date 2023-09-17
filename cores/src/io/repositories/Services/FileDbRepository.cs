@@ -1,4 +1,5 @@
-﻿using Mov.Core.Accessors;
+﻿using CsvHelper;
+using Mov.Core.Accessors;
 using Mov.Core.Accessors.Clients;
 using Mov.Core.Accessors.Models;
 using System;
@@ -31,16 +32,29 @@ namespace Mov.Core.Repositories.Services
         #region constructor
 
         /// <summary>
-        /// コンストラクター
+        /// base constructor
         /// </summary>
-        public FileDbRepository(IClient client)
+        private FileDbRepository(IClient client)
         {
             _client = client;
         }
 
-        public FileDbRepository(string endpoint, FileType fileType, EncodingValue encoding)
+        /// <summary>
+        /// factory
+        /// </summary>
+        public static class Factory
         {
-            _client = new FileClient(new PathValue(endpoint), encoding, AccessType.Create(fileType));
+            public static FileDbRepository<TEntity, TKey> Create(IClient client) => new FileDbRepository<TEntity, TKey>(client);
+
+            public static FileDbRepository<TEntity, TKey> Create(string endpoint, FileType fileType, EncodingValue encoding)
+            {
+                return new FileDbRepository<TEntity, TKey>(new FileClient(new PathValue(endpoint), encoding, AccessType.Create(fileType)));
+            }
+
+            public static FileDbRepository<TEntity, TKey> Create(PathValue endpoint, FileType fileType, EncodingValue encoding)
+            {
+                return new FileDbRepository<TEntity, TKey>(new FileClient(endpoint, encoding, AccessType.Create(fileType)));
+            }
         }
 
         #endregion constructor

@@ -26,7 +26,7 @@ namespace Mov.Core.Translators.Repositories
         public FileTranslatorRepository(string endpoint)
         {
             var client = new FileClient(new PathValue(Path.Combine(endpoint, FILE_NAME_TRANSLATE)), AccessType.Create(FileType.Json));
-            Translates = new FileDbRepository<TranslateSchema, int>(client);
+            Translates = FileDbRepository<TranslateSchema, int>.Factory.Create(client);
         }
 
         #endregion constructor

@@ -1,6 +1,4 @@
 ﻿using Mov.Core.Configurators.Models.Entities;
-using Mov.Core.Configurators.Stores.Commands;
-using Mov.Core.Configurators.Stores.Queries;
 using Mov.Core.Stores;
 using System;
 
@@ -8,6 +6,12 @@ namespace Mov.Core.Configurators.Stores
 {
     internal class ConfiguratorStore : IConfiguratorStore
     {
+        #region field
+
+        private readonly IConfiguratorRepository _repository;
+
+        #endregion field
+
         #region property
 
         public IStore<UserSetting, Guid> UserSetting { get; }
@@ -18,6 +22,7 @@ namespace Mov.Core.Configurators.Stores
 
         public ConfiguratorStore(IConfiguratorRepository repository)
         {
+            this._repository = repository;
             this.UserSetting = new UserSettingStore(repository);
         }
 

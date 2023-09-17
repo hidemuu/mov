@@ -1,5 +1,4 @@
 ﻿using Mov.Core.Configurators.Models.Entities;
-using Mov.Core.Configurators.Stores;
 using Mov.Core.Stores;
 using System;
 
@@ -9,9 +8,7 @@ namespace Mov.Core.Configurators.Services
     {
         #region field
 
-        private readonly IConfiguratorRepository _repository;
-
-        private readonly ConfiguratorStore _store;
+        private readonly IConfiguratorStore _store;
 
         #endregion field
 
@@ -22,10 +19,9 @@ namespace Mov.Core.Configurators.Services
 
         #region constructor
 
-        public ConfiguratorService(IConfiguratorRepository repository)
+        public ConfiguratorService(IConfiguratorStore store)
         {
-            this._repository = repository;
-            this._store = new ConfiguratorStore(repository);
+            this._store = store;
             this.UserSettingQuery = _store.UserSetting.Query;
         }
 

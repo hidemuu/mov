@@ -3,8 +3,6 @@ using Mov.Core.Configurators.Stores.Commands;
 using Mov.Core.Configurators.Stores.Queries;
 using Mov.Core.Stores;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Core.Configurators.Stores
 {

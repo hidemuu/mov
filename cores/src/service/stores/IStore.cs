@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Core.Stores
+﻿namespace Mov.Core.Stores
 {
     public interface IStore<TEntity, TKey>
     {

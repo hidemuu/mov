@@ -41,6 +41,20 @@ namespace Mov.Core.Repositories.Schemas
             return Id.ToString();
         }
 
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            var vo = obj as DbSchemaBase<TIdentifier>;
+            if (vo == null) return false;
+            return Id.Equals(vo.Id);
+        }
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
+        }
+
         #endregion method
 
         #region inner method

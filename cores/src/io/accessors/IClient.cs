@@ -40,7 +40,7 @@ namespace Mov.Core.Accessors
         /// <summary>
         /// Delete
         /// </summary>
-        Task DeleteAsync<TIdentifier>(string url, TIdentifier identifier);
+        Task DeleteAsync<TEntity>(string url, TEntity entity);
 
         #endregion method
     }

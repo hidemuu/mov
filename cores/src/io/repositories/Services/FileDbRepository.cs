@@ -90,17 +90,9 @@ namespace Mov.Core.Repositories.Services
         }
 
         /// <inheritdoc />
-        public async Task DeleteAsync(TIdentifier identifier)
-        {
-            await _client.DeleteAsync("", identifier);
-        }
-
-
-
         public async Task DeleteAsync(TEntity entity)
         {
-            var identifier = entity.Id;
-            await DeleteAsync(identifier);
+            await _client.DeleteAsync("", entity);
         }
 
         #endregion method

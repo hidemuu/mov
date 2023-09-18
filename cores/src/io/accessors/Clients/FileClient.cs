@@ -64,20 +64,42 @@ namespace Mov.Core.Accessors.Clients
 
         public async Task PostAsync<TEntity>(string url, TEntity entity)
         {
-            var allEntities = await GetAsync<TEntity>(url);
-            var postedEntity = allEntities.ToList();
-            postedEntity.Add(entity);
-            await Task.Run(() => _serializer.Serialize<IEnumerable<TEntity>, IEnumerable<TEntity>>(Endpoint.Combine(url), postedEntity));
+            var allEntities = (await GetAsync<TEntity>(url)).ToList();
+            var registeredEntity = allEntities.FirstOrDefault(x => x.Equals(entity));
+            if(registeredEntity != null) 
+            {
+                allEntities.Remove(registeredEntity);
+            }
+            allEntities.Add(entity);
+            await Task.Run(() => _serializer.Serialize<IEnumerable<TEntity>, IEnumerable<TEntity>>(Endpoint.Combine(url), allEntities));
         }
 
         public async Task PutAsync<TEntity>(string url, TEntity entity)
         {
-            await Task.Run(() => _serializer.Serialize<TEntity, TEntity>(Endpoint.Combine(url), entity));
+            var allEntities = (await GetAsync<TEntity>(url)).ToList();
+            var registeredEntity = allEntities.FirstOrDefault(x => x.Equals(entity));
+            if (registeredEntity == null)
+            {
+                return;
+            }
+            allEntities.Remove(registeredEntity);
+            allEntities.Add(entity);
+            await Task.Run(() => _serializer.Serialize<IEnumerable<TEntity>, IEnumerable<TEntity>>(Endpoint.Combine(url), allEntities));
         }
 
-        public Task DeleteAsync<TIdentifier>(string url, TIdentifier identifier)
+        public async Task DeleteAsync<TEntity>(string url, TEntity entity)
         {
-            throw new NotImplementedException();
+            var allEntities = (await GetAsync<TEntity>(url)).ToList();
+            var registeredEntity = allEntities.FirstOrDefault(x => x.Equals(entity));
+            if (registeredEntity != null)
+            {
+                allEntities.Remove(registeredEntity);
+            }
+            else
+            {
+                return;
+            }
+            await Task.Run(() => _serializer.Serialize<IEnumerable<TEntity>, IEnumerable<TEntity>>(Endpoint.Combine(url), allEntities));
         }
 
         #endregion method

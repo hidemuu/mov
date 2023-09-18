@@ -1,13 +1,11 @@
 ﻿using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas;
 using Newtonsoft.Json;
 
 namespace Mov.Core.Translators.Models.Schemas
 {
-    public sealed class TranslateSchema : IDbSchema<int>
+    public sealed class TranslateSchema : DbSchemaBase<int>
     {
-        [JsonProperty("id")]
-        public int Id { get; set; }
-
         [JsonProperty("jp")]
         public string JP { get; set; }
 

@@ -2,7 +2,7 @@
 
 namespace Mov.Core.Stores.Services.Commands.Deleters
 {
-    public class DbRepositoryDeleter<TEntity, TKey> : IDelete<TEntity, TKey> where TEntity : IDbSchema<TKey>
+    public class DbRepositoryDeleter<TEntity, TKey> : IDelete<TEntity> where TEntity : IDbSchema<TKey>
     {
         private readonly IDbRepository<TEntity, TKey> _repository;
 

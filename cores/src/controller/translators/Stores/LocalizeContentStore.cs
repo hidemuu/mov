@@ -11,7 +11,7 @@ namespace Mov.Core.Translators.Stores
 
         public IStoreQuery<LocalizeContent, int> Query { get; }
 
-        public IStoreCommand<LocalizeContent, int> Command { get; }
+        public IStoreCommand<LocalizeContent> Command { get; }
 
         #endregion property
 

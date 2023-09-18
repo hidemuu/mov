@@ -2,6 +2,6 @@
 {
     public interface IEventSubscriber
     {
-        void Subscribe<T>(T @event) where T : IEvent;
+        void Subscribe<TEvent>(TEvent @event) where TEvent : IEvent;
     }
 }

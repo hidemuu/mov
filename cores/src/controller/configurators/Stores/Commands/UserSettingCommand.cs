@@ -4,13 +4,13 @@ using System;
 
 namespace Mov.Core.Configurators.Stores.Commands
 {
-    internal class UserSettingCommand : IStoreCommand<UserSetting, Guid>
+    internal class UserSettingCommand : IStoreCommand<UserSetting>
     {
         #region property
 
         public ISave<UserSetting> Saver { get; }
 
-        public IDelete<UserSetting, Guid> Deleter { get; }
+        public IDelete<UserSetting> Deleter { get; }
 
         #endregion property
 

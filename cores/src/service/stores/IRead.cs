@@ -2,10 +2,10 @@
 
 namespace Mov.Core.Stores
 {
-    public interface IRead<TEntity, TKey>
+    public interface IRead<TEntity, TIdentifier>
     {
         IEnumerable<TEntity> ReadAll();
-        TEntity Read(TKey id);
+        TEntity Read(TIdentifier id);
 
     }
 }

@@ -3,7 +3,7 @@
     public interface IStore<TEntity, TKey>
     {
         IStoreQuery<TEntity, TKey> Query { get; }
-        IStoreCommand<TEntity, TKey> Command { get; }
+        IStoreCommand<TEntity> Command { get; }
 
     }
 }

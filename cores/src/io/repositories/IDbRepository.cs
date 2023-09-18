@@ -28,8 +28,6 @@ namespace Mov.Core.Repositories
 
         Task DeleteAsync(TEntity entity);
 
-        Task DeleteAsync(TIdentifier identifier);
-
         #endregion method
     }
 }

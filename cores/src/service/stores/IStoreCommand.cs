@@ -2,10 +2,10 @@
 
 namespace Mov.Core.Stores
 {
-    public interface IStoreCommand<TEntity, TKey> : IDisposable
+    public interface IStoreCommand<TEntity> : IDisposable
     {
         ISave<TEntity> Saver { get; }
 
-        IDelete<TEntity, TKey> Deleter { get; }
+        IDelete<TEntity> Deleter { get; }
     }
 }

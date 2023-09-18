@@ -4,11 +4,11 @@ using Mov.Core.Stores.Services.Commands.Savers;
 
 namespace Mov.Core.Stores.Services.Commands
 {
-    public class DbRepositoryCommand<TEntity, TKey> : IStoreCommand<TEntity, TKey> where TEntity : IDbSchema<TKey>
+    public class DbRepositoryCommand<TEntity, TKey> : IStoreCommand<TEntity> where TEntity : IDbSchema<TKey>
     {
         public virtual ISave<TEntity> Saver { get; }
 
-        public virtual IDelete<TEntity, TKey> Deleter { get; }
+        public virtual IDelete<TEntity> Deleter { get; }
 
         public DbRepositoryCommand(IDbRepository<TEntity, TKey> repository)
         {

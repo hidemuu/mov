@@ -4,13 +4,13 @@ using System;
 
 namespace Mov.Core.Translators.Stores.Commands
 {
-    internal class LocalizeContentCommand : IStoreCommand<LocalizeContent, int>
+    internal class LocalizeContentCommand : IStoreCommand<LocalizeContent>
     {
         #region property
 
         public ISave<LocalizeContent> Saver { get; }
 
-        public IDelete<LocalizeContent, int> Deleter { get; }
+        public IDelete<LocalizeContent> Deleter { get; }
 
         #endregion property
 

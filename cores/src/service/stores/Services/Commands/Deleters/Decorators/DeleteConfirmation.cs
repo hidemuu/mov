@@ -2,11 +2,11 @@
 
 namespace Mov.Core.Stores.Services.Commands.Deleters.Decorators
 {
-    public class DeleteConfirmation<TEntity, TKey> : IDelete<TEntity, TKey>
+    public class DeleteConfirmation<TEntity, TKey> : IDelete<TEntity>
     {
-        private readonly IDelete<TEntity, TKey> decorated;
+        private readonly IDelete<TEntity> decorated;
 
-        public DeleteConfirmation(IDelete<TEntity, TKey> decorated)
+        public DeleteConfirmation(IDelete<TEntity> decorated)
         {
             this.decorated = decorated;
         }

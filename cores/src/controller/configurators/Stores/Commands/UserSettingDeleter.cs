@@ -4,7 +4,7 @@ using System;
 
 namespace Mov.Core.Configurators.Stores.Commands
 {
-    internal class UserSettingDeleter : IDelete<UserSetting, Guid>
+    internal class UserSettingDeleter : IDelete<UserSetting>
     {
         #region field
 

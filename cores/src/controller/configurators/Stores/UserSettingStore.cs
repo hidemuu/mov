@@ -11,7 +11,7 @@ namespace Mov.Core.Configurators.Stores
 
         #region property
 
-        public IStoreCommand<UserSetting, Guid> Command { get; }
+        public IStoreCommand<UserSetting> Command { get; }
 
         public IStoreQuery<UserSetting, Guid> Query { get; }
 

@@ -4,7 +4,7 @@ using System;
 
 namespace Mov.Core.Translators.Stores.Commands
 {
-    internal class LocalizeContentDeleter : IDelete<LocalizeContent, int>
+    internal class LocalizeContentDeleter : IDelete<LocalizeContent>
     {
         #region field
 

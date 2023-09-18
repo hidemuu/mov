@@ -1,7 +1,6 @@
 ﻿using Mov.Core.Accessors;
 using Mov.Core.Accessors.Clients;
 using Mov.Core.Accessors.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -96,7 +95,7 @@ namespace Mov.Core.Repositories.Services
             await _client.DeleteAsync("", identifier);
         }
 
-        
+
 
         public async Task DeleteAsync(TEntity entity)
         {

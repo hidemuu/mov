@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Repositories;
 
-namespace Mov.Core.Stores.Services.Commands.Savers
+namespace Mov.Core.Stores.Controllers.DbRepositories.Commands
 {
     public class DbRepositorySaver<TEntity, TKey> : ISave<TEntity> where TEntity : IDbSchema<TKey>
     {

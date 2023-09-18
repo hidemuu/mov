@@ -1,7 +1,7 @@
 ﻿using Mov.Core.Models;
 using System;
 
-namespace Mov.Core.Documents.Models
+namespace Mov.Core.Documents
 {
     public sealed class Document : ValueObjectBase<Document>
     {

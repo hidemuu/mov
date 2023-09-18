@@ -1,5 +1,5 @@
 ﻿using Mov.Core.DesignPatterns;
-using Mov.Core.Documents.Models;
+using Mov.Core.Documents;
 using Mov.Core.Locations.Models;
 using Mov.Core.Models;
 using Mov.Core.Translators.Models.Entities;

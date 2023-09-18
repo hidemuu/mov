@@ -3,8 +3,8 @@ using System.Text;
 
 namespace Mov.Core.Repositories.Schemas
 {
-    public abstract class DbNodeSchemaBase<TEntity, TIdentifier> 
-        : DbSchemaBase<TIdentifier>, IDbNodeSchema<TEntity, TIdentifier> 
+    public abstract class DbNodeSchemaBase<TEntity, TIdentifier>
+        : DbSchemaBase<TIdentifier>, IDbNodeSchema<TEntity, TIdentifier>
         where TEntity : IDbSchema<TIdentifier>
     {
         #region property

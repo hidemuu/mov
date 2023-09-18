@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <Folder Include="Services\Queries\Readers\Events\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

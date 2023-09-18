@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Mov.Core.Stores.Services.Queries.Readers
+namespace Mov.Core.Stores.Controllers.DbRepositories.Queries
 {
     public class DbRepositoryReader<TEntity, TIdentifier> : IRead<TEntity, TIdentifier> where TEntity : IDbSchema<TIdentifier>
     {

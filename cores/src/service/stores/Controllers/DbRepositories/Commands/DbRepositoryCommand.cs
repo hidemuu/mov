@@ -1,8 +1,6 @@
 ﻿using Mov.Core.Repositories;
-using Mov.Core.Stores.Services.Commands.Deleters;
-using Mov.Core.Stores.Services.Commands.Savers;
 
-namespace Mov.Core.Stores.Services.Commands
+namespace Mov.Core.Stores.Controllers.DbRepositories.Commands
 {
     public class DbRepositoryCommand<TEntity, TKey> : IStoreCommand<TEntity> where TEntity : IDbSchema<TKey>
     {

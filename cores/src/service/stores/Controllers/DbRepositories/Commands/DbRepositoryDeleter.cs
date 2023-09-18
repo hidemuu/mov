@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Repositories;
 
-namespace Mov.Core.Stores.Services.Commands.Deleters
+namespace Mov.Core.Stores.Controllers.DbRepositories.Commands
 {
     public class DbRepositoryDeleter<TEntity, TIdentifier> : IDelete<TEntity> where TEntity : IDbSchema<TIdentifier>
     {

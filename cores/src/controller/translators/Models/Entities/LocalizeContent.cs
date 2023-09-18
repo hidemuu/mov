@@ -1,4 +1,4 @@
-﻿using Mov.Core.Documents.Models;
+﻿using Mov.Core.Documents;
 using Mov.Core.Locations.Models;
 using Mov.Core.Models;
 using Mov.Core.Translators.Models.Schemas;
@@ -29,9 +29,9 @@ namespace Mov.Core.Translators.Models.Entities
         public LocalizeContent(TranslateSchema schema)
         {
             this.Index = new Identifier<int>(schema.Id);
-            this.Infos = new[] 
-            { 
-                new LocalizeInfo(Language.EN, new Document(schema.EN)), 
+            this.Infos = new[]
+            {
+                new LocalizeInfo(Language.EN, new Document(schema.EN)),
                 new LocalizeInfo(Language.JP, new Document(schema.JP)),
             };
         }

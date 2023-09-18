@@ -1,7 +1,6 @@
 ﻿using Mov.Core.Repositories;
-using Mov.Core.Stores.Services.Queries.Readers;
 
-namespace Mov.Core.Stores.Services.Queries
+namespace Mov.Core.Stores.Controllers.DbRepositories.Queries
 {
     public class DbRepositoryQuery<TEntity, TIdentifier> : IStoreQuery<TEntity, TIdentifier> where TEntity : IDbSchema<TIdentifier>
     {
@@ -9,7 +8,7 @@ namespace Mov.Core.Stores.Services.Queries
 
         public DbRepositoryQuery(IDbRepository<TEntity, TIdentifier> repository)
         {
-            this.Reader = new DbRepositoryReader<TEntity, TIdentifier>(repository);
+            Reader = new DbRepositoryReader<TEntity, TIdentifier>(repository);
         }
     }
 }

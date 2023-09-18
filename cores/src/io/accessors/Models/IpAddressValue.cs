@@ -9,15 +9,15 @@ namespace Mov.Core.Accessors.Models
     /// </summary>
     public sealed class IpAddressValue : ValueObjectBase<IpAddressValue>
     {
-        #region プロパティ
+        #region property
 
         public string Value { get; }
 
         public IPAddress IpAddress { get; }
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
         public IpAddressValue(string ip)
         {
@@ -30,15 +30,15 @@ namespace Mov.Core.Accessors.Models
             IpAddress = ipAddress;
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region メソッド
+        #region method
 
         public bool IsEmpty() => IpAddress.Equals(IPAddress.None);
 
-        #endregion メソッド
+        #endregion method
 
-        #region 内部メソッド
+        #region inner method
 
         protected override bool EqualCore(IpAddressValue other)
         {
@@ -50,6 +50,6 @@ namespace Mov.Core.Accessors.Models
             return Value.GetHashCode();
         }
 
-        #endregion 内部メソッド
+        #endregion inner method
     }
 }

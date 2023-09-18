@@ -11,6 +11,8 @@ namespace Mov.Core.Accessors.Models
 
         private const string RESOURCE_NAME = "resources";
 
+        private const string SQLITE_HEADER = @"Data Source=";
+
         #endregion constant
 
         #region property
@@ -110,6 +112,11 @@ namespace Mov.Core.Accessors.Models
 
         public Uri GetUri() => new Uri(Value);
 
+        public string GetSqliteConnectionString() => Path.Combine(SQLITE_HEADER, Value);
+
+        #endregion method
+
+        #region inner method
 
         protected override bool EqualCore(PathValue other)
         {
@@ -121,6 +128,6 @@ namespace Mov.Core.Accessors.Models
             return Value.GetHashCode();
         }
 
-        #endregion method
+        #endregion inner method
     }
 }

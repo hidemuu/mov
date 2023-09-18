@@ -1,5 +1,7 @@
-﻿using Mov.Core.Locations.Models;
+﻿using Mov.Core.Documents.Models;
+using Mov.Core.Locations.Models;
 using Mov.Core.Models;
+using Mov.Core.Translators.Models.Schemas;
 using Mov.Core.Translators.Models.ValueObjects;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +24,16 @@ namespace Mov.Core.Translators.Models.Entities
         {
             this.Index = index;
             this.Infos = infos;
+        }
+
+        public LocalizeContent(TranslateSchema schema)
+        {
+            this.Index = new Identifier<int>(schema.Id);
+            this.Infos = new[] 
+            { 
+                new LocalizeInfo(Language.EN, new Document(schema.EN)), 
+                new LocalizeInfo(Language.JP, new Document(schema.JP)),
+            };
         }
 
         public static readonly LocalizeContent Empty = new LocalizeContent(Identifier<int>.Empty, new[] { LocalizeInfo.Empty });

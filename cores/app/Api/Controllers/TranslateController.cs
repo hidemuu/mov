@@ -47,8 +47,20 @@ namespace Mov.Core.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] TranslateSchema schema)
         {
-            await this._repository.Translates.PostAsync(schema);
-            return Ok();
+            var response = await this._repository.Translates.PostAsync(schema);
+            if (response.IsSuccess()) return Ok();
+            return BadRequest();
+        }
+
+        /// <summary>
+        /// Creates a new item or updates an existing one.
+        /// </summary>
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody] TranslateSchema schema)
+        {
+            var response = await this._repository.Translates.PutAsync(schema);
+            if (response.IsSuccess()) return Ok();
+            return BadRequest();
         }
 
         /// <summary>
@@ -59,8 +71,9 @@ namespace Mov.Core.Api.Controllers
         [HttpDelete]
         public async Task<IActionResult> Delete([FromBody] TranslateSchema schema)
         {
-            await this._repository.Translates.DeleteAsync(schema);
-            return Ok();
+            var response = await this._repository.Translates.DeleteAsync(schema);
+            if (response.IsSuccess()) return Ok();
+            return BadRequest();
         }
 
         #endregion method

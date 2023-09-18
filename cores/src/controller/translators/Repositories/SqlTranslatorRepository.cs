@@ -23,8 +23,7 @@ namespace Mov.Core.Translators.Repositories
 
         #region constructor
 
-        public SqlTranslatorRepository(DbContextOptionsBuilder<TranslatorDbContext>
-            dbOptionsBuilder)
+        public SqlTranslatorRepository(DbContextOptionsBuilder<TranslatorDbContext> dbOptionsBuilder)
         {
             _dbOptions = dbOptionsBuilder.Options;
             using (var db = new TranslatorDbContext(_dbOptions))

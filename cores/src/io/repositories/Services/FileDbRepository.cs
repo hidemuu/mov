@@ -12,9 +12,9 @@ namespace Mov.Core.Repositories.Services
     /// 任意のエンティティのファイルデータのリポジトリ
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
-    /// <typeparam name="TKey"></typeparam>
-    public class FileDbRepository<TEntity, TKey> : IDbRepository<TEntity, TKey>
-        where TEntity : IDbSchema<TKey>
+    /// <typeparam name="TIdentifier"></typeparam>
+    public class FileDbRepository<TEntity, TIdentifier> : IDbRepository<TEntity, TIdentifier>
+        where TEntity : IDbSchema<TIdentifier>
     {
         #region field
 
@@ -43,16 +43,16 @@ namespace Mov.Core.Repositories.Services
         /// </summary>
         public static class Factory
         {
-            public static FileDbRepository<TEntity, TKey> Create(IClient client) => new FileDbRepository<TEntity, TKey>(client);
+            public static FileDbRepository<TEntity, TIdentifier> Create(IClient client) => new FileDbRepository<TEntity, TIdentifier>(client);
 
-            public static FileDbRepository<TEntity, TKey> Create(string endpoint, FileType fileType, EncodingValue encoding)
+            public static FileDbRepository<TEntity, TIdentifier> Create(string endpoint, FileType fileType, EncodingValue encoding)
             {
-                return new FileDbRepository<TEntity, TKey>(new FileClient(new PathValue(endpoint), encoding, AccessType.Create(fileType)));
+                return new FileDbRepository<TEntity, TIdentifier>(new FileClient(new PathValue(endpoint), encoding, AccessType.Create(fileType)));
             }
 
-            public static FileDbRepository<TEntity, TKey> Create(PathValue endpoint, FileType fileType, EncodingValue encoding)
+            public static FileDbRepository<TEntity, TIdentifier> Create(PathValue endpoint, FileType fileType, EncodingValue encoding)
             {
-                return new FileDbRepository<TEntity, TKey>(new FileClient(endpoint, encoding, AccessType.Create(fileType)));
+                return new FileDbRepository<TEntity, TIdentifier>(new FileClient(endpoint, encoding, AccessType.Create(fileType)));
             }
         }
 
@@ -67,7 +67,7 @@ namespace Mov.Core.Repositories.Services
         }
 
         /// <inheritdoc />
-        public async Task<TEntity> GetAsync(TKey key)
+        public async Task<TEntity> GetAsync(TIdentifier key)
         {
             var items = await GetAsync();
             return items.FirstOrDefault(x => x.Id.Equals(key));
@@ -85,8 +85,20 @@ namespace Mov.Core.Repositories.Services
             await _client.PostAsync("", items);
         }
 
+        public Task PutAsync(TEntity item)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <inheritdoc />
-        public Task DeleteAsync(string date)
+        public Task DeleteAsync(TIdentifier key)
+        {
+            throw new NotImplementedException();
+        }
+
+        
+
+        public Task DeleteAsync(TEntity item)
         {
             throw new NotImplementedException();
         }

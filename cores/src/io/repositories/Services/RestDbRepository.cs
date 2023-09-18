@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Mov.Core.Repositories.Services
 {
-    public class RestDbRepository<TEntity, TKey> : IDbRepository<TEntity, TKey>
-        where TEntity : IDbSchema<TKey>
+    public class RestDbRepository<TEntity, TIdentifier> : IDbRepository<TEntity, TIdentifier>
+        where TEntity : IDbSchema<TIdentifier>
     {
         #region constant
 
@@ -51,7 +51,7 @@ namespace Mov.Core.Repositories.Services
         public async Task<IEnumerable<TEntity>> GetAsync() =>
             await _client.GetAsync<TEntity>(_key);
 
-        public async Task<TEntity> GetAsync(TKey param)
+        public async Task<TEntity> GetAsync(TIdentifier param)
         {
             var items = await _client.GetAsync<TEntity>($"/{param}" + _key);
             return items.FirstOrDefault(x => x.Id.Equals(param));
@@ -62,6 +62,16 @@ namespace Mov.Core.Repositories.Services
             await _client.PostAsync(_key, item);
 
         public Task PostAsync(IEnumerable<TEntity> items)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task PutAsync(TEntity item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteAsync(TEntity item)
         {
             throw new NotImplementedException();
         }

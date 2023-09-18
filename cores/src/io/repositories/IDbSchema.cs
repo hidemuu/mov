@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 
 namespace Mov.Core.Repositories
 {
-    public interface IDbSchema<TKey>
+    public interface IDbSchema<TIdentifier>
     {
         #region property
 
@@ -17,7 +17,7 @@ namespace Mov.Core.Repositories
         [LanguageKey("id")]
         [DisplayName("id")]
         [DisplayIndex(0)]
-        TKey Id { get; set; }
+        TIdentifier Id { get; set; }
 
         #endregion property
 

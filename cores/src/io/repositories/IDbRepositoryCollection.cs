@@ -2,9 +2,9 @@
 
 namespace Mov.Core.Repositories
 {
-    public interface IDbRepositoryCollection<TRepository, TEntity, TKey>
-        where TRepository : IDbRepository<TEntity, TKey>
-        where TEntity : IDbSchema<TKey>
+    public interface IDbRepositoryCollection<TRepository, TEntity, TIdentifier>
+        where TRepository : IDbRepository<TEntity, TIdentifier>
+        where TEntity : IDbSchema<TIdentifier>
     {
         #region method
 

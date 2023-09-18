@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 namespace Mov.Core.Accessors
 {
     /// <summary>
-    /// アクセスの共通サービス
+    /// external resource access client
     /// </summary>
     public interface IClient : IDisposable
     {
         #region property
 
         /// <summary>
-        /// パス
+        /// Endpoint for client
         /// </summary>
         PathValue Endpoint { get; }
 
@@ -35,7 +35,7 @@ namespace Mov.Core.Accessors
         /// <summary>
         /// Delete
         /// </summary>
-        Task DeleteAsync<TEntity>(string url, TEntity item);
+        Task DeleteAsync<TIdentifier>(string url, TIdentifier identifier);
 
         #endregion method
     }

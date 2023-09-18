@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Mov.Core.Repositories.Services
 {
-    public class SqlDbRepository<TEntity, TKey> : IDbRepository<TEntity, TKey>
-        where TEntity : DbSchemaBase<TKey>
+    public class SqlDbRepository<TEntity, TIdentifier> : IDbRepository<TEntity, TIdentifier>
+        where TEntity : DbSchemaBase<TIdentifier>
     {
         private readonly DbContext db;
         private readonly DbSet<TEntity> ts;
@@ -32,11 +32,11 @@ namespace Mov.Core.Repositories.Services
                 .ToListAsync();
         }
 
-        public async Task<TEntity> GetAsync(TKey key)
+        public async Task<TEntity> GetAsync(TIdentifier identifier)
         {
             return await ts
                 .AsNoTracking()
-                .FirstOrDefaultAsync(x => x.Id.Equals(key));
+                .FirstOrDefaultAsync(x => x.Id.Equals(identifier));
         }
 
         public async Task PostAsync(TEntity item)
@@ -83,5 +83,14 @@ namespace Mov.Core.Repositories.Services
 
         }
 
+        public Task PutAsync(TEntity item)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task DeleteAsync(TEntity item)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

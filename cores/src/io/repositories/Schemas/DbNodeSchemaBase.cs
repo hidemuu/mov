@@ -3,7 +3,9 @@ using System.Text;
 
 namespace Mov.Core.Repositories.Schemas
 {
-    public abstract class DbNodeSchemaBase<TEntity, TKey> : DbSchemaBase<TKey>, IDbNodeSchema<TEntity, TKey> where TEntity : IDbSchema<TKey>
+    public abstract class DbNodeSchemaBase<TEntity, TIdentifier> 
+        : DbSchemaBase<TIdentifier>, IDbNodeSchema<TEntity, TIdentifier> 
+        where TEntity : IDbSchema<TIdentifier>
     {
         #region property
 
@@ -34,7 +36,7 @@ namespace Mov.Core.Repositories.Schemas
                     stringBuilder.Append("  ");
                 }
                 stringBuilder.AppendLine(item.Id.ToString());
-                if (item is DbNodeSchemaBase<TEntity, TKey> node)
+                if (item is DbNodeSchemaBase<TEntity, TIdentifier> node)
                 {
                     GetStringTables(node.Children, stringBuilder, hierarchy + 1);
                 }

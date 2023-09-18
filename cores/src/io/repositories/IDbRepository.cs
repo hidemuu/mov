@@ -3,7 +3,12 @@ using System.Threading.Tasks;
 
 namespace Mov.Core.Repositories
 {
-    public interface IDbRepository<TEntity, TKey> where TEntity : IDbSchema<TKey>
+    /// <summary>
+    /// repository for database
+    /// </summary>
+    /// <typeparam name="TEntity">entity</typeparam>
+    /// <typeparam name="TIdentifier">identifier</typeparam>
+    public interface IDbRepository<TEntity, TIdentifier> where TEntity : IDbSchema<TIdentifier>
     {
         #region property
 
@@ -15,9 +20,13 @@ namespace Mov.Core.Repositories
 
         Task<IEnumerable<TEntity>> GetAsync();
 
-        Task<TEntity> GetAsync(TKey key);
+        Task<TEntity> GetAsync(TIdentifier identifier);
 
-        Task PostAsync(TEntity item);
+        Task PostAsync(TEntity entity);
+
+        Task PutAsync(TEntity entity);
+
+        Task DeleteAsync(TEntity entity);
 
         #endregion method
     }

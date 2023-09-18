@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 namespace Mov.Core.Repositories
 {
-    public interface IDbNodeSchema<TEntity, TKey> : IDbSchema<TKey> where TEntity : IDbSchema<TKey>
+    public interface IDbNodeSchema<TEntity, TIdentifier> : IDbSchema<TIdentifier> where TEntity : IDbSchema<TIdentifier>
     {
         #region property
 

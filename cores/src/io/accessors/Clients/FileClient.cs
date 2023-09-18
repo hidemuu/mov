@@ -11,9 +11,9 @@ namespace Mov.Core.Accessors.Clients
     {
         #region field
 
-        private bool disposedValue;
+        private bool _disposedValue;
 
-        private IFileSerializer serializer;
+        private IFileSerializer _serializer;
 
         #endregion field
 
@@ -29,7 +29,7 @@ namespace Mov.Core.Accessors.Clients
         public FileClient(PathValue endpoint, IFileSerializer serializer)
         {
             Endpoint = endpoint;
-            this.serializer = serializer;
+            this._serializer = serializer;
         }
 
         public FileClient(PathValue endpoint, EncodingValue encoding, AccessType accessType)
@@ -54,19 +54,19 @@ namespace Mov.Core.Accessors.Clients
 
         public async Task<IEnumerable<TEntity>> GetAsync<TEntity>(string url)
         {
-            if (serializer is XmlSerializer xmlSerializer)
+            if (_serializer is XmlSerializer xmlSerializer)
             {
-                return new[] { await Task.Run(() => serializer.Deserialize<TEntity, TEntity>(Endpoint.Combine(url))) };
+                return new[] { await Task.Run(() => _serializer.Deserialize<TEntity, TEntity>(Endpoint.Combine(url))) };
             }
-            return await Task.Run(() => serializer.Deserialize<TEntity, IEnumerable<TEntity>>(Endpoint.Combine(url)));
+            return await Task.Run(() => _serializer.Deserialize<TEntity, IEnumerable<TEntity>>(Endpoint.Combine(url)));
         }
 
         public async Task PostAsync<TEntity>(string url, TEntity item)
         {
-            await Task.Run(() => serializer.Serialize<TEntity, TEntity>(Endpoint.Combine(url), item));
+            await Task.Run(() => _serializer.Serialize<TEntity, TEntity>(Endpoint.Combine(url), item));
         }
 
-        public Task DeleteAsync<TEntity>(string url, TEntity item)
+        public Task DeleteAsync<TIdentifier>(string url, TIdentifier identifier)
         {
             throw new NotImplementedException();
         }
@@ -77,7 +77,7 @@ namespace Mov.Core.Accessors.Clients
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!disposedValue)
+            if (!_disposedValue)
             {
                 if (disposing)
                 {
@@ -86,7 +86,7 @@ namespace Mov.Core.Accessors.Clients
 
                 // TODO: アンマネージド リソース (アンマネージド オブジェクト) を解放し、ファイナライザーをオーバーライドします
                 // TODO: 大きなフィールドを null に設定します
-                disposedValue = true;
+                _disposedValue = true;
             }
         }
 

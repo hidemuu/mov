@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 
 namespace Mov.Core.Repositories.Schemas
 {
-    public abstract class DbSchemaBase<TKey> : IDbSchema<TKey>
+    public abstract class DbSchemaBase<TIdentifier> : IDbSchema<TIdentifier>
     {
         #region property
 
@@ -19,7 +19,7 @@ namespace Mov.Core.Repositories.Schemas
         [LanguageKey("id")]
         [DisplayName("id")]
         [DisplayIndex(0)]
-        public virtual TKey Id { get; set; }
+        public virtual TIdentifier Id { get; set; }
 
         #endregion property
 
@@ -27,7 +27,7 @@ namespace Mov.Core.Repositories.Schemas
 
         public DbSchemaBase() { }
 
-        public DbSchemaBase(IDbSchema<TKey> src)
+        public DbSchemaBase(IDbSchema<TIdentifier> src)
         {
             Id = src.Id;
         }

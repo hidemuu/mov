@@ -53,7 +53,12 @@ namespace Mov.Core.Accessors.Models
 
         public PathValue(string path)
         {
-            Value = string.IsNullOrEmpty(path) ? path : Path.IsPathRooted(path) ? path : Path.Combine(PathHelper.GetAssemblyRootPath(), path);
+            this.Value = 
+                string.IsNullOrEmpty(path) ?
+                    path : 
+                    Path.IsPathRooted(path) ?
+                        path : 
+                        Path.Combine(PathHelper.GetAssemblyRootPath(), path);
         }
 
         public static PathValue Empty = new PathValue(string.Empty);
@@ -105,9 +110,9 @@ namespace Mov.Core.Accessors.Models
 
         public bool IsDir() => IsRooted() && !IsFile();
 
-        public string Combine(string path)
+        public PathValue Combine(string path)
         {
-            return Path.IsPathRooted(path) ? path : Path.Combine(Value, path);
+            return Path.IsPathRooted(path) ? new PathValue(path) : new PathValue(Path.Combine(Value, path));
         }
 
         public Uri GetUri() => new Uri(Value);

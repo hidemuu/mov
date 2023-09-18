@@ -57,15 +57,15 @@ namespace Mov.Core.Accessors.Clients
         public async Task<IEnumerable<TEntity>> GetAsync<TEntity>(string url)
         {
             var path = Endpoint.Combine(url);
-            if (!File.Exists(path))
+            if (!File.Exists(path.Value))
             {
                 return new HashSet<TEntity>();
             }
             if (_serializer is XmlSerializer xmlSerializer)
             {
-                return new[] { await Task.Run(() => _serializer.Deserialize<TEntity, TEntity>(path)) };
+                return new[] { await Task.Run(() => _serializer.Deserialize<TEntity, TEntity>(path.Value)) };
             }
-            return await Task.Run(() => _serializer.Deserialize<IEnumerable<TEntity>, IEnumerable<TEntity>>(path));
+            return await Task.Run(() => _serializer.Deserialize<IEnumerable<TEntity>, IEnumerable<TEntity>>(path.Value));
         }
 
         public async Task<ResponseStatus> PostAsync<TEntity>(string url, TEntity entity)
@@ -77,7 +77,7 @@ namespace Mov.Core.Accessors.Clients
                 allEntities.Remove(registeredEntity);
             }
             allEntities.Add(entity);
-            await Task.Run(() => _serializer.Serialize<IEnumerable<TEntity>, IEnumerable<TEntity>>(Endpoint.Combine(url), allEntities));
+            await Task.Run(() => _serializer.Serialize<IEnumerable<TEntity>, IEnumerable<TEntity>>(Endpoint.Combine(url).Value, allEntities));
             return ResponseStatus.Success;
         }
 
@@ -91,7 +91,7 @@ namespace Mov.Core.Accessors.Clients
             }
             allEntities.Remove(registeredEntity);
             allEntities.Add(entity);
-            await Task.Run(() => _serializer.Serialize<IEnumerable<TEntity>, IEnumerable<TEntity>>(Endpoint.Combine(url), allEntities));
+            await Task.Run(() => _serializer.Serialize<IEnumerable<TEntity>, IEnumerable<TEntity>>(Endpoint.Combine(url).Value, allEntities));
             return ResponseStatus.Success;
         }
 
@@ -107,7 +107,7 @@ namespace Mov.Core.Accessors.Clients
             {
                 return ResponseStatus.ClientError;
             }
-            await Task.Run(() => _serializer.Serialize<IEnumerable<TEntity>, IEnumerable<TEntity>>(Endpoint.Combine(url), allEntities));
+            await Task.Run(() => _serializer.Serialize<IEnumerable<TEntity>, IEnumerable<TEntity>>(Endpoint.Combine(url).Value, allEntities));
             return ResponseStatus.Success;
         }
 

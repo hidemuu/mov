@@ -129,7 +129,7 @@ namespace Mov.Core.Accessors.Models
         /// </summary>
         public int GetLineNum(string fileName)
         {
-            var reader = new StreamReader(Path.Combine(fileName));
+            var reader = new StreamReader(Path.Combine(fileName).Value);
             var result = 0;
 
             while (reader.Peek() >= 0)

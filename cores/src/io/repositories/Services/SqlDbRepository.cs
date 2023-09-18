@@ -39,16 +39,16 @@ namespace Mov.Core.Repositories.Services
                 .FirstOrDefaultAsync(x => x.Id.Equals(identifier));
         }
 
-        public async Task PostAsync(TEntity item)
+        public async Task PostAsync(TEntity entity)
         {
-            var current = await ts.FirstOrDefaultAsync(_m => _m.Id.Equals(item.Id));
+            var current = await ts.FirstOrDefaultAsync(_m => _m.Id.Equals(entity.Id));
             if (null == current)
             {
-                ts.Add(item);
+                ts.Add(entity);
             }
             else
             {
-                var value = item;
+                var value = entity;
                 value.Id = current.Id;
                 db.Entry(current).CurrentValues.SetValues(value);
             }
@@ -56,21 +56,32 @@ namespace Mov.Core.Repositories.Services
             await db.SaveChangesAsync();
         }
 
-        public async Task PostAsync(IEnumerable<TEntity> items)
+        public async Task PostAsync(IEnumerable<TEntity> entities)
         {
             await Task.Run(async () =>
             {
-                foreach (var item in items)
+                foreach (var entity in entities)
                 {
-                    await PostAsync(item);
+                    await PostAsync(entity);
                 }
             });
 
         }
 
-        public async Task DeleteAsync(string name)
+        public Task PutAsync(TEntity entity)
         {
-            var query = ts.Where(x => x.Id.ToString() == name);
+            throw new System.NotImplementedException();
+        }
+
+        public async Task DeleteAsync(TEntity entity)
+        {
+            var identtifier = entity.Id;
+            await DeleteAsync(identtifier);
+        }
+
+        public async Task DeleteAsync(TIdentifier identifier)
+        {
+            var query = ts.Where(x => x.Id.Equals(identifier));
             foreach (var q in query)
             {
                 var item = await ts.FirstOrDefaultAsync(_m => _m.Id.Equals(q.Id));
@@ -80,17 +91,6 @@ namespace Mov.Core.Repositories.Services
                     await db.SaveChangesAsync();
                 }
             }
-
-        }
-
-        public Task PutAsync(TEntity item)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task DeleteAsync(TEntity item)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

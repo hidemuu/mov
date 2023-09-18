@@ -2,7 +2,7 @@
 
 namespace Mov.Core.DesignPatterns
 {
-    public interface IDatabase<TEntity, TKey>
+    public interface IDatabase<TEntity, TIdentifier>
     {
         #region property
 
@@ -12,9 +12,9 @@ namespace Mov.Core.DesignPatterns
 
         #region method
 
-        TEntity Get(TKey key);
+        TEntity Get(TIdentifier identifier);
 
-        void Delete(TKey key);
+        void Delete(TIdentifier identifier);
 
         void Put(TEntity value);
 

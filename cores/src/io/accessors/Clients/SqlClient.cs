@@ -28,5 +28,10 @@ namespace Mov.Core.Accessors.Clients
         {
             throw new NotImplementedException();
         }
+
+        public Task PutAsync<TEntity>(string url, TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

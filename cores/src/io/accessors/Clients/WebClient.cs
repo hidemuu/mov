@@ -44,6 +44,13 @@ namespace Mov.Core.Accessors.Clients
 
         #region method
 
+        public void Dispose()
+        {
+            // このコードを変更しないでください。クリーンアップ コードを 'Dispose(bool disposing)' メソッドに記述します
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
+        }
+
         /// <summary>
         /// Makes an HTTP GET request to the given controller and returns the deserialized response content.
         /// </summary>
@@ -67,7 +74,22 @@ namespace Mov.Core.Accessors.Clients
             {
                 var response = await client.PostAsync(url, new JsonStringContent(body, Encoding.Value));
                 //string json = await response.Content.ReadAsStringAsync();
-                //TResponse obj = JsonConvert.DeserializeObject<TResponse>(json);
+                //TEntity obj = JsonConvert.DeserializeObject<TEntity>(json);
+                //return obj;
+            }
+        }
+
+        /// <summary>
+        /// Makes an HTTP POST request to the given controller with the given object as the body.
+        /// Returns the deserialized response content.
+        /// </summary>
+        public async Task PutAsync<TEntity>(string url, TEntity body)
+        {
+            using (var client = BaseClient())
+            {
+                var response = await client.PutAsync(url, new JsonStringContent(body, Encoding.Value));
+                //string json = await response.Content.ReadAsStringAsync();
+                //TEntity obj = JsonConvert.DeserializeObject<TEntity>(json);
                 //return obj;
             }
         }
@@ -76,22 +98,17 @@ namespace Mov.Core.Accessors.Clients
         /// Makes an HTTP DELETE request to the given controller and includes all the given
         /// object's properties as URL parameters. Returns the deserialized response content.
         /// </summary>
-        public async Task DeleteAsync(string url, string key)
+        public async Task DeleteAsync<TIdentifier>(string url, TIdentifier identifier)
         {
             using (var client = BaseClient())
             {
-                var response = await client.DeleteAsync($"{url}/{key}");
+                var response = await client.DeleteAsync($"{url}/{identifier}");
             }
-        }
-
-        public Task DeleteAsync<TEntity>(string url, TEntity item)
-        {
-            throw new NotImplementedException();
         }
 
         #endregion method
 
-        #region private method
+        #region inner method
 
         /// <summary>
         /// Constructs the base HTTP client, including correct authorization and API version headers.
@@ -127,14 +144,7 @@ namespace Mov.Core.Accessors.Clients
             }
         }
 
-        public void Dispose()
-        {
-            // このコードを変更しないでください。クリーンアップ コードを 'Dispose(bool disposing)' メソッドに記述します
-            Dispose(disposing: true);
-            GC.SuppressFinalize(this);
-        }
-
-        #endregion private method
+        #endregion inner method
 
     }
 }

@@ -66,6 +66,11 @@ namespace Mov.Core.Accessors.Clients
             await Task.Run(() => _serializer.Serialize<TEntity, TEntity>(Endpoint.Combine(url), item));
         }
 
+        public async Task PutAsync<TEntity>(string url, TEntity entity)
+        {
+            await Task.Run(() => _serializer.Serialize<TEntity, TEntity>(Endpoint.Combine(url), entity));
+        }
+
         public Task DeleteAsync<TIdentifier>(string url, TIdentifier identifier)
         {
             throw new NotImplementedException();

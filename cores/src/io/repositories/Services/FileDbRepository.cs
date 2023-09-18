@@ -67,16 +67,16 @@ namespace Mov.Core.Repositories.Services
         }
 
         /// <inheritdoc />
-        public async Task<TEntity> GetAsync(TIdentifier key)
+        public async Task<TEntity> GetAsync(TIdentifier identifier)
         {
             var items = await GetAsync();
-            return items.FirstOrDefault(x => x.Id.Equals(key));
+            return items.FirstOrDefault(x => x.Id.Equals(identifier));
         }
 
         /// <inheritdoc />
-        public async Task PostAsync(TEntity item)
+        public async Task PostAsync(TEntity entity)
         {
-            await _client.PostAsync("", item);
+            await _client.PostAsync("", entity);
         }
 
         /// <inheritdoc />
@@ -85,22 +85,23 @@ namespace Mov.Core.Repositories.Services
             await _client.PostAsync("", items);
         }
 
-        public Task PutAsync(TEntity item)
+        public async Task PutAsync(TEntity entity)
         {
-            throw new NotImplementedException();
+            await _client.PutAsync("", entity);
         }
 
         /// <inheritdoc />
-        public Task DeleteAsync(TIdentifier key)
+        public async Task DeleteAsync(TIdentifier identifier)
         {
-            throw new NotImplementedException();
+            await _client.DeleteAsync("", identifier);
         }
 
         
 
-        public Task DeleteAsync(TEntity item)
+        public async Task DeleteAsync(TEntity entity)
         {
-            throw new NotImplementedException();
+            var identifier = entity.Id;
+            await DeleteAsync(identifier);
         }
 
         #endregion method

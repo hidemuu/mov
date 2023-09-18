@@ -30,7 +30,12 @@ namespace Mov.Core.Accessors
         /// <summary>
         /// Post
         /// </summary>
-        Task PostAsync<TEntity>(string url, TEntity item);
+        Task PostAsync<TEntity>(string url, TEntity entity);
+
+        /// <summary>
+        /// Put
+        /// </summary>
+        Task PutAsync<TEntity>(string url, TEntity entity);
 
         /// <summary>
         /// Delete

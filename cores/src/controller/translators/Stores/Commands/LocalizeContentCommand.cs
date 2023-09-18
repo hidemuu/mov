@@ -18,7 +18,8 @@ namespace Mov.Core.Translators.Stores.Commands
 
         public LocalizeContentCommand(ITranslatorRepository repository)
         {
-
+            Saver = new LocalizeContentSaver(repository);
+            Deleter = new LocalizeContentDeleter(repository);
         }
 
         #endregion constructor

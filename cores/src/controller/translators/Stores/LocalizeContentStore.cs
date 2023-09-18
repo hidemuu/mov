@@ -1,5 +1,7 @@
 ﻿using Mov.Core.Stores;
 using Mov.Core.Translators.Models.Entities;
+using Mov.Core.Translators.Stores.Commands;
+using Mov.Core.Translators.Stores.Queries;
 
 namespace Mov.Core.Translators.Stores
 {
@@ -17,6 +19,8 @@ namespace Mov.Core.Translators.Stores
 
         public LocalizeContentStore(ITranslatorRepository repository)
         {
+            Query = new LocalizeContentQuery(repository);
+            Command = new LocalizeContentCommand(repository);
         }
 
         #endregion constructor

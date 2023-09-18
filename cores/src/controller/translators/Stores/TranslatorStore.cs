@@ -5,12 +5,6 @@ namespace Mov.Core.Translators.Stores
 {
     internal class TranslatorStore : ITranslatorStore
     {
-        #region field
-
-        private readonly ITranslatorRepository _repository;
-
-        #endregion field
-
         #region property
 
         public IStore<LocalizeContent, int> LocalizeContent { get; }
@@ -21,7 +15,7 @@ namespace Mov.Core.Translators.Stores
 
         public TranslatorStore(ITranslatorRepository repository)
         {
-            _repository = repository;
+            LocalizeContent = new LocalizeContentStore(repository);
         }
 
         #endregion constructor

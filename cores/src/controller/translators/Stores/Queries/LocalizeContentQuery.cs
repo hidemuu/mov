@@ -15,7 +15,7 @@ namespace Mov.Core.Translators.Stores.Queries
 
         public LocalizeContentQuery(ITranslatorRepository repository)
         {
-
+            Reader = new LocalizeContentReader(repository);
         }
 
         #endregion constructor

@@ -117,7 +117,7 @@ namespace Mov.Core.Accessors.Models
 
         public Uri GetUri() => new Uri(Value);
 
-        public string GetSqliteConnectionString() => Path.Combine(SQLITE_HEADER, Value);
+        public string GetSqliteConnectionString() => SQLITE_HEADER + Value;
 
         #endregion method
 

@@ -15,12 +15,6 @@ namespace Mov.Core.Translators.Repositories
 
         #endregion field
 
-        #region property
-
-        public IDbRepository<TranslateSchema, int> Translates => new SqlDbRepository<TranslateSchema, int>(_db, _db.Translates);
-
-        #endregion proeprty
-
         #region constructor
 
         public SqlTranslatorRepository(DbContextOptionsBuilder<TranslatorDbContext> dbOptionsBuilder)
@@ -34,5 +28,11 @@ namespace Mov.Core.Translators.Repositories
         }
 
         #endregion constructor
+
+        #region property
+
+        public IDbRepository<TranslateSchema, int> Translates => new SqlDbRepository<TranslateSchema, int>(_db, _db.Translates);
+
+        #endregion proeprty
     }
 }

@@ -9,7 +9,7 @@ namespace Mov.Core.Accessors.Clients
     {
         public PathValue Endpoint => throw new NotImplementedException();
 
-        public Task DeleteAsync<TEntity>(string url, TEntity item)
+        public Task<ResponseStatus> DeleteAsync<TEntity>(string url, TEntity item)
         {
             throw new NotImplementedException();
         }
@@ -24,12 +24,12 @@ namespace Mov.Core.Accessors.Clients
             throw new NotImplementedException();
         }
 
-        public Task PostAsync<TEntity>(string url, TEntity item)
+        public Task<ResponseStatus> PostAsync<TEntity>(string url, TEntity item)
         {
             throw new NotImplementedException();
         }
 
-        public Task PutAsync<TEntity>(string url, TEntity entity)
+        public Task<ResponseStatus> PutAsync<TEntity>(string url, TEntity entity)
         {
             throw new NotImplementedException();
         }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Mov.Core.Accessors.Models;
 using Mov.Core.Repositories.Schemas;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,7 @@ namespace Mov.Core.Repositories.Services
                 .FirstOrDefaultAsync(x => x.Id.Equals(identifier));
         }
 
-        public async Task PostAsync(TEntity entity)
+        public async Task<ResponseStatus> PostAsync(TEntity entity)
         {
             var current = await ts.FirstOrDefaultAsync(_m => _m.Id.Equals(entity.Id));
             if (null == current)
@@ -54,9 +55,10 @@ namespace Mov.Core.Repositories.Services
             }
 
             await db.SaveChangesAsync();
+            return ResponseStatus.Success;
         }
 
-        public async Task PostAsync(IEnumerable<TEntity> entities)
+        public async Task<ResponseStatus> PostAsync(IEnumerable<TEntity> entities)
         {
             await Task.Run(async () =>
             {
@@ -65,18 +67,19 @@ namespace Mov.Core.Repositories.Services
                     await PostAsync(entity);
                 }
             });
-
+            return ResponseStatus.Success;
         }
 
-        public Task PutAsync(TEntity entity)
+        public Task<ResponseStatus> PutAsync(TEntity entity)
         {
             throw new System.NotImplementedException();
         }
 
-        public async Task DeleteAsync(TEntity entity)
+        public async Task<ResponseStatus> DeleteAsync(TEntity entity)
         {
             var identtifier = entity.Id;
             await DeleteAsync(identtifier);
+            return ResponseStatus.Success;
         }
 
         public async Task DeleteAsync(TIdentifier identifier)

@@ -68,11 +68,12 @@ namespace Mov.Core.Accessors.Clients
         /// Makes an HTTP POST request to the given controller with the given object as the body.
         /// Returns the deserialized response content.
         /// </summary>
-        public async Task PostAsync<TEntity>(string url, TEntity body)
+        public async Task<ResponseStatus> PostAsync<TEntity>(string url, TEntity body)
         {
             using (var client = BaseClient())
             {
                 var response = await client.PostAsync(url, new JsonStringContent(body, Encoding.Value));
+                return ResponseStatus.Success;
                 //string json = await response.Content.ReadAsStringAsync();
                 //TEntity obj = JsonConvert.DeserializeObject<TEntity>(json);
                 //return obj;
@@ -83,11 +84,12 @@ namespace Mov.Core.Accessors.Clients
         /// Makes an HTTP POST request to the given controller with the given object as the body.
         /// Returns the deserialized response content.
         /// </summary>
-        public async Task PutAsync<TEntity>(string url, TEntity body)
+        public async Task<ResponseStatus> PutAsync<TEntity>(string url, TEntity body)
         {
             using (var client = BaseClient())
             {
                 var response = await client.PutAsync(url, new JsonStringContent(body, Encoding.Value));
+                return ResponseStatus.Success;
                 //string json = await response.Content.ReadAsStringAsync();
                 //TEntity obj = JsonConvert.DeserializeObject<TEntity>(json);
                 //return obj;
@@ -98,12 +100,13 @@ namespace Mov.Core.Accessors.Clients
         /// Makes an HTTP DELETE request to the given controller and includes all the given
         /// object's properties as URL parameters. Returns the deserialized response content.
         /// </summary>
-        public async Task DeleteAsync<TIdentifier>(string url, TIdentifier identifier)
+        public async Task<ResponseStatus> DeleteAsync<TIdentifier>(string url, TIdentifier identifier)
         {
             using (var client = BaseClient())
             {
                 var response = await client.DeleteAsync($"{url}/{identifier}");
             }
+            return ResponseStatus.Success;
         }
 
         #endregion method

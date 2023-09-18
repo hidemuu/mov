@@ -73,26 +73,26 @@ namespace Mov.Core.Repositories.Services
         }
 
         /// <inheritdoc />
-        public async Task PostAsync(TEntity entity)
+        public async Task<ResponseStatus> PostAsync(TEntity entity)
         {
-            await _client.PostAsync("", entity);
+            return await _client.PostAsync("", entity);
         }
 
         /// <inheritdoc />
-        public async Task PostAsync(IEnumerable<TEntity> entities)
+        public async Task<ResponseStatus> PostAsync(IEnumerable<TEntity> entities)
         {
-            await _client.PostAsync("", entities);
+            return await _client.PostAsync("", entities);
         }
 
-        public async Task PutAsync(TEntity entity)
+        public async Task<ResponseStatus> PutAsync(TEntity entity)
         {
-            await _client.PutAsync("", entity);
+            return await _client.PutAsync("", entity);
         }
 
         /// <inheritdoc />
-        public async Task DeleteAsync(TEntity entity)
+        public async Task<ResponseStatus> DeleteAsync(TEntity entity)
         {
-            await _client.DeleteAsync("", entity);
+            return await _client.DeleteAsync("", entity);
         }
 
         #endregion method

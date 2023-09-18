@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Mov.Core.Accessors.Models;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Mov.Core.Repositories
@@ -22,11 +23,11 @@ namespace Mov.Core.Repositories
 
         Task<TEntity> GetAsync(TIdentifier identifier);
 
-        Task PostAsync(TEntity entity);
+        Task<ResponseStatus> PostAsync(TEntity entity);
 
-        Task PutAsync(TEntity entity);
+        Task<ResponseStatus> PutAsync(TEntity entity);
 
-        Task DeleteAsync(TEntity entity);
+        Task<ResponseStatus> DeleteAsync(TEntity entity);
 
         #endregion method
     }

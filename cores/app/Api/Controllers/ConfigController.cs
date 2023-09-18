@@ -47,8 +47,9 @@ namespace Mov.Core.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] ConfigSchema schema)
         {
-            await this._repository.Configs.PostAsync(schema);
-            return Ok();
+            var response = await this._repository.Configs.PostAsync(schema);
+            if (response.IsSuccess()) return Ok();
+            return BadRequest();
         }
 
         /// <summary>
@@ -59,8 +60,9 @@ namespace Mov.Core.Api.Controllers
         [HttpDelete]
         public async Task<IActionResult> Delete([FromBody] ConfigSchema schema)
         {
-            await this._repository.Configs.DeleteAsync(schema);
-            return Ok();
+            var response = await this._repository.Configs.DeleteAsync(schema);
+            if(response.IsSuccess()) return Ok();
+            return BadRequest();
         }
 
         #endregion method

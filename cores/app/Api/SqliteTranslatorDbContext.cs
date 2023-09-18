@@ -18,7 +18,9 @@ namespace Mov.Core.Api
         /// <param name="optionsBuilder"></param>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+
             optionsBuilder.UseSqlite(PathValue.Factory.CreateResourcePath(@"translator.sqlite").GetSqliteConnectionString());
+            //optionsBuilder.UseLazyLoadingProxies();
 
         }
     }

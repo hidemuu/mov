@@ -32,8 +32,9 @@ services.AddSwaggerGen(option =>
 var resourcePath = PathValue.Factory.CreateResourceRootPath("mov");
 services.AddScoped<IConfiguratorRepository, FileConfiguratorRepository>(_ => new FileConfiguratorRepository(resourcePath.Value, FileType.Json, EncodingValue.UTF8));
 //services.AddScoped<ITranslatorRepository, FileTranslatorRepository>(_ => new FileTranslatorRepository(resourcePath.Value));
+var translatorDbPath = PathValue.Factory.CreateResourcePath("mov", @"translator.sqlite").GetSqliteConnectionString();
 var translatorDbContextBuilder = new DbContextOptionsBuilder<TranslatorDbContext>()
-    .UseSqlite(PathValue.Factory.CreateResourcePath(@"translator.sqlite").GetSqliteConnectionString());
+    .UseSqlite(translatorDbPath);
 services.AddScoped<ITranslatorRepository, SqlTranslatorRepository>(_ => new SqlTranslatorRepository(translatorDbContextBuilder));
 //services.AddScoped<IDbRepository<TranslateSchema, int>, SqlDbRepository<TranslateSchema, int>>(_ => new SqlDbRepository<TranslateSchema, int>(translatorDb, translatorDb.Translates));
 

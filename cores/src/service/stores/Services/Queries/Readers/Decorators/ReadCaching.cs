@@ -2,13 +2,13 @@
 
 namespace Mov.Core.Stores.Services.Queries.Readers.Decorators
 {
-    public class ReadCaching<TEntity, TKey> : IRead<TEntity, TKey>
+    public class ReadCaching<TEntity, TIdentifier> : IRead<TEntity, TIdentifier>
     {
         #region field
 
-        private readonly IRead<TEntity, TKey> _decorated;
+        private readonly IRead<TEntity, TIdentifier> _decorated;
 
-        private Dictionary<TKey, TEntity> _cachedEntities = new Dictionary<TKey, TEntity>();
+        private Dictionary<TIdentifier, TEntity> _cachedEntities = new Dictionary<TIdentifier, TEntity>();
 
         private IEnumerable<TEntity> _allCachedEntities;
 
@@ -16,7 +16,7 @@ namespace Mov.Core.Stores.Services.Queries.Readers.Decorators
 
         #region constructor
 
-        public ReadCaching(IRead<TEntity, TKey> decorated)
+        public ReadCaching(IRead<TEntity, TIdentifier> decorated)
         {
             _decorated = decorated;
         }
@@ -34,7 +34,7 @@ namespace Mov.Core.Stores.Services.Queries.Readers.Decorators
             return _allCachedEntities;
         }
 
-        public TEntity Read(TKey id)
+        public TEntity Read(TIdentifier id)
         {
             var foundEntity = _cachedEntities[id];
             if (foundEntity == null)

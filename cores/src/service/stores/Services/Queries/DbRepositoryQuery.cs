@@ -3,13 +3,13 @@ using Mov.Core.Stores.Services.Queries.Readers;
 
 namespace Mov.Core.Stores.Services.Queries
 {
-    public class DbRepositoryQuery<TEntity, TKey> : IStoreQuery<TEntity, TKey> where TEntity : IDbSchema<TKey>
+    public class DbRepositoryQuery<TEntity, TIdentifier> : IStoreQuery<TEntity, TIdentifier> where TEntity : IDbSchema<TIdentifier>
     {
-        public virtual IRead<TEntity, TKey> Reader { get; }
+        public virtual IRead<TEntity, TIdentifier> Reader { get; }
 
-        public DbRepositoryQuery(IDbRepository<TEntity, TKey> repository)
+        public DbRepositoryQuery(IDbRepository<TEntity, TIdentifier> repository)
         {
-            this.Reader = new DbRepositoryReader<TEntity, TKey>(repository);
+            this.Reader = new DbRepositoryReader<TEntity, TIdentifier>(repository);
         }
     }
 }

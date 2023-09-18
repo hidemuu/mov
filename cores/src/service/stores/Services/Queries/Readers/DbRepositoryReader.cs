@@ -4,11 +4,11 @@ using System.Threading.Tasks;
 
 namespace Mov.Core.Stores.Services.Queries.Readers
 {
-    public class DbRepositoryReader<TEntity, TKey> : IRead<TEntity, TKey> where TEntity : IDbSchema<TKey>
+    public class DbRepositoryReader<TEntity, TIdentifier> : IRead<TEntity, TIdentifier> where TEntity : IDbSchema<TIdentifier>
     {
-        private readonly IDbRepository<TEntity, TKey> _repository;
+        private readonly IDbRepository<TEntity, TIdentifier> _repository;
 
-        public DbRepositoryReader(IDbRepository<TEntity, TKey> repository)
+        public DbRepositoryReader(IDbRepository<TEntity, TIdentifier> repository)
         {
             _repository = repository;
         }
@@ -20,7 +20,7 @@ namespace Mov.Core.Stores.Services.Queries.Readers
             return task.Result;
         }
 
-        public TEntity Read(TKey id)
+        public TEntity Read(TIdentifier id)
         {
             var task = _repository.GetAsync(id);
             Task.WhenAll(task);

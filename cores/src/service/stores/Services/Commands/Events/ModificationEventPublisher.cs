@@ -3,7 +3,7 @@ using Mov.Core.Stores.Services.Commands.Savers.Events;
 
 namespace Mov.Core.Stores.Services.Commands.Events
 {
-    public class ModificationEventPublisher<TEntity, TKey> : IDelete<TEntity>, ISave<TEntity>
+    public class ModificationEventPublisher<TEntity> : IDelete<TEntity>, ISave<TEntity>
     {
         private readonly IDelete<TEntity> deleter;
         private readonly ISave<TEntity> saver;

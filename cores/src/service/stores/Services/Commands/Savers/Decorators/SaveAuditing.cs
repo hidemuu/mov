@@ -4,28 +4,28 @@ using System.Threading;
 
 namespace Mov.Core.Stores.Services.Commands.Savers.Decorators
 {
-    public class SaveAuditing<T> : ISave<T>
+    public class SaveAuditing<TEntity> : ISave<TEntity>
     {
 
-        private readonly ISave<T> decorated;
+        private readonly ISave<TEntity> _decorated;
 
-        private readonly ISave<AuditInfo> auditSave;
+        private readonly ISave<AuditInfo> _auditSave;
 
-        public SaveAuditing(ISave<T> decorated, ISave<AuditInfo> auditSave)
+        public SaveAuditing(ISave<TEntity> decorated, ISave<AuditInfo> auditSave)
         {
-            this.decorated = decorated;
-            this.auditSave = auditSave;
+            this._decorated = decorated;
+            this._auditSave = auditSave;
         }
 
-        public void Save(T entity)
+        public void Save(TEntity entity)
         {
-            decorated.Save(entity);
+            _decorated.Save(entity);
             var auditInfo = new AuditInfo
             {
                 UserName = Thread.CurrentPrincipal.Identity.Name,
                 TimeStamp = DateTime.Now,
             };
-            auditSave.Save(auditInfo);
+            _auditSave.Save(auditInfo);
         }
 
     }

@@ -1,6 +1,6 @@
 ﻿namespace Mov.Core.Stores.Services.Commands.Deleters.Events
 {
-    public class DeleteEventPublisher<TEntity, TKey> : IDelete<TEntity>
+    public class DeleteEventPublisher<TEntity> : IDelete<TEntity>
     {
         private readonly IDelete<TEntity> decoratedDelete;
         private readonly IEventPublisher eventPublisher;

@@ -2,13 +2,13 @@
 
 namespace Mov.Core.Stores.Services.Commands.Deleters.Decorators
 {
-    public class DeleteConfirmation<TEntity, TKey> : IDelete<TEntity>
+    public class DeleteConfirmation<TEntity> : IDelete<TEntity>
     {
-        private readonly IDelete<TEntity> decorated;
+        private readonly IDelete<TEntity> _decorated;
 
         public DeleteConfirmation(IDelete<TEntity> decorated)
         {
-            this.decorated = decorated;
+            _decorated = decorated;
         }
 
         public void Delete(TEntity entity)
@@ -17,7 +17,7 @@ namespace Mov.Core.Stores.Services.Commands.Deleters.Decorators
             var keyInfo = Console.ReadKey();
             if (keyInfo.Key == ConsoleKey.Y)
             {
-                decorated.Delete(entity);
+                _decorated.Delete(entity);
             }
         }
 

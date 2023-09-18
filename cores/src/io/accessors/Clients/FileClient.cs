@@ -2,6 +2,7 @@
 using Mov.Core.Accessors.Serializer;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Mov.Core.Accessors.Clients
@@ -58,12 +59,15 @@ namespace Mov.Core.Accessors.Clients
             {
                 return new[] { await Task.Run(() => _serializer.Deserialize<TEntity, TEntity>(Endpoint.Combine(url))) };
             }
-            return await Task.Run(() => _serializer.Deserialize<TEntity, IEnumerable<TEntity>>(Endpoint.Combine(url)));
+            return await Task.Run(() => _serializer.Deserialize<IEnumerable<TEntity>, IEnumerable<TEntity>>(Endpoint.Combine(url)));
         }
 
-        public async Task PostAsync<TEntity>(string url, TEntity item)
+        public async Task PostAsync<TEntity>(string url, TEntity entity)
         {
-            await Task.Run(() => _serializer.Serialize<TEntity, TEntity>(Endpoint.Combine(url), item));
+            var allEntities = await GetAsync<TEntity>(url);
+            var postedEntity = allEntities.ToList();
+            postedEntity.Add(entity);
+            await Task.Run(() => _serializer.Serialize<IEnumerable<TEntity>, IEnumerable<TEntity>>(Endpoint.Combine(url), postedEntity));
         }
 
         public async Task PutAsync<TEntity>(string url, TEntity entity)

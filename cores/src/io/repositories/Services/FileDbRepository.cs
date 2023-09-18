@@ -79,9 +79,9 @@ namespace Mov.Core.Repositories.Services
         }
 
         /// <inheritdoc />
-        public async Task PostAsync(IEnumerable<TEntity> items)
+        public async Task PostAsync(IEnumerable<TEntity> entities)
         {
-            await _client.PostAsync("", items);
+            await _client.PostAsync("", entities);
         }
 
         public async Task PutAsync(TEntity entity)

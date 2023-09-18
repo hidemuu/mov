@@ -13,7 +13,7 @@ namespace Mov.Core.Api.Controllers
     {
         #region field
 
-        private readonly IConfiguratorRepository repository;
+        private readonly IConfiguratorRepository _repository;
 
         #endregion field
 
@@ -25,7 +25,7 @@ namespace Mov.Core.Api.Controllers
         /// <param name="repository"></param>
         public ConfigController(IConfiguratorRepository repository)
         {
-            this.repository = repository;
+            this._repository = repository;
         }
 
         #endregion constructor
@@ -38,25 +38,30 @@ namespace Mov.Core.Api.Controllers
         [HttpGet]
         public async Task<IEnumerable<ConfigSchema>> Get()
         {
-            return await this.repository.Configs.GetAsync();
+            return await this._repository.Configs.GetAsync();
         }
 
         /// <summary>
         /// Creates a new item or updates an existing one.
         /// </summary>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] ConfigSchema item)
+        public async Task<IActionResult> Post([FromBody] ConfigSchema schema)
         {
-            await this.repository.Configs.PostAsync(item);
+            await this._repository.Configs.PostAsync(schema);
             return Ok();
         }
 
-        //[HttpDelete]
-        //public async Task<IActionResult> Delete(ConfigSchema item)
-        //{
-        //    //await this.repository.Configs.DeleteAsync(item);
-        //    return Ok();
-        //}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="schema"></param>
+        /// <returns></returns>
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromBody] ConfigSchema schema)
+        {
+            await this._repository.Configs.DeleteAsync(schema);
+            return Ok();
+        }
 
         #endregion method
     }

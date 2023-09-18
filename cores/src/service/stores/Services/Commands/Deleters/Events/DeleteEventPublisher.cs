@@ -2,20 +2,32 @@
 {
     public class DeleteEventPublisher<TEntity> : IDelete<TEntity>
     {
-        private readonly IDelete<TEntity> decoratedDelete;
-        private readonly IEventPublisher eventPublisher;
+        #region field
+
+        private readonly IDelete<TEntity> _decoratedDelete;
+        private readonly IEventPublisher _eventPublisher;
+
+        #endregion field
+
+        #region constructor
 
         public DeleteEventPublisher(IDelete<TEntity> decoratedDelete, IEventPublisher eventPublisher)
         {
-            this.decoratedDelete = decoratedDelete; ;
-            this.eventPublisher = eventPublisher;
+            this._decoratedDelete = decoratedDelete; ;
+            this._eventPublisher = eventPublisher;
         }
+
+        #endregion constructor
+
+        #region method
 
         public void Delete(TEntity entity)
         {
-            decoratedDelete.Delete(entity);
+            _decoratedDelete.Delete(entity);
             var entityDeleted = new DeletedEvent<TEntity>(entity);
-            eventPublisher.Publish(entityDeleted);
+            _eventPublisher.Publish(entityDeleted);
         }
+
+        #endregion method
     }
 }

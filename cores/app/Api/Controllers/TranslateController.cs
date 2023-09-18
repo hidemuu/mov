@@ -13,7 +13,7 @@ namespace Mov.Core.Api.Controllers
     {
         #region field
 
-        private readonly ITranslatorRepository repository;
+        private readonly ITranslatorRepository _repository;
 
         #endregion field
 
@@ -25,7 +25,7 @@ namespace Mov.Core.Api.Controllers
         /// <param name="repository"></param>
         public TranslateController(ITranslatorRepository repository)
         {
-            this.repository = repository;
+            this._repository = repository;
         }
 
         #endregion constructor
@@ -38,25 +38,30 @@ namespace Mov.Core.Api.Controllers
         [HttpGet]
         public async Task<IEnumerable<TranslateSchema>> Get()
         {
-            return await this.repository.Translates.GetAsync();
+            return await this._repository.Translates.GetAsync();
         }
 
         /// <summary>
         /// Creates a new item or updates an existing one.
         /// </summary>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] TranslateSchema item)
+        public async Task<IActionResult> Post([FromBody] TranslateSchema schema)
         {
-            await this.repository.Translates.PostAsync(item);
+            await this._repository.Translates.PostAsync(schema);
             return Ok();
         }
 
-        //[HttpDelete]
-        //public async Task<IActionResult> Delete(ConfigSchema item)
-        //{
-        //    //await this.repository.Configs.DeleteAsync(item);
-        //    return Ok();
-        //}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="schema"></param>
+        /// <returns></returns>
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromBody] TranslateSchema schema)
+        {
+            await this._repository.Translates.DeleteAsync(schema);
+            return Ok();
+        }
 
         #endregion method
     }

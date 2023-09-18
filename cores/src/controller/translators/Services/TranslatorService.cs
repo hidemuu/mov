@@ -1,11 +1,6 @@
-﻿using Mov.Core.DesignPatterns;
-using Mov.Core.Locations.Models;
-using Mov.Core.Models;
-using Mov.Core.Stores;
-using Mov.Core.Translators.Models;
+﻿using Mov.Core.Stores;
 using Mov.Core.Translators.Models.Entities;
 using Mov.Core.Translators.Stores;
-using System;
 
 namespace Mov.Core.Translators.Services
 {

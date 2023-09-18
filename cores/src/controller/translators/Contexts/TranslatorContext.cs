@@ -1,6 +1,4 @@
-﻿using Mov.Core.Locations.Models;
-using Mov.Core.Models;
-using Mov.Core.Translators.Repositories;
+﻿using Mov.Core.Translators.Repositories;
 using Mov.Core.Translators.Services;
 using System;
 

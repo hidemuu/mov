@@ -61,7 +61,7 @@ namespace Mov.Core.Api.Controllers
         public async Task<IActionResult> Delete([FromBody] ConfigSchema schema)
         {
             var response = await this._repository.Configs.DeleteAsync(schema);
-            if(response.IsSuccess()) return Ok();
+            if (response.IsSuccess()) return Ok();
             return BadRequest();
         }
 

@@ -57,7 +57,7 @@ namespace Mov.Core.Accessors.Clients
         public async Task<IEnumerable<TEntity>> GetAsync<TEntity>(string url)
         {
             var path = Endpoint.Combine(url);
-            if (!File.Exists(path)) 
+            if (!File.Exists(path))
             {
                 return new HashSet<TEntity>();
             }
@@ -72,7 +72,7 @@ namespace Mov.Core.Accessors.Clients
         {
             var allEntities = (await GetAsync<TEntity>(url)).ToList();
             var registeredEntity = allEntities.FirstOrDefault(x => x.Equals(entity));
-            if(registeredEntity != null) 
+            if (registeredEntity != null)
             {
                 allEntities.Remove(registeredEntity);
             }

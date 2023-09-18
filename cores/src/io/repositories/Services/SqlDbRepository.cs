@@ -10,8 +10,12 @@ namespace Mov.Core.Repositories.Services
     public class SqlDbRepository<TEntity, TIdentifier> : IDbRepository<TEntity, TIdentifier>
         where TEntity : DbSchemaBase<TIdentifier>
     {
-        private readonly DbContext db;
-        private readonly DbSet<TEntity> ts;
+        #region field
+
+        private readonly DbContext _db;
+        private readonly DbSet<TEntity> _ts;
+
+        #endregion field
 
         #region property
 
@@ -19,42 +23,48 @@ namespace Mov.Core.Repositories.Services
 
         #endregion property
 
+        #region constructor
+
         public SqlDbRepository(DbContext db, DbSet<TEntity> ts)
         {
-            this.db = db;
-            this.ts = ts;
+            this._db = db;
+            this._ts = ts;
 
         }
 
+        #endregion constructor
+
+        #region method
+
         public async Task<IEnumerable<TEntity>> GetAsync()
         {
-            return await ts
+            return await _ts
                 .AsNoTracking()
                 .ToListAsync();
         }
 
         public async Task<TEntity> GetAsync(TIdentifier identifier)
         {
-            return await ts
+            return await _ts
                 .AsNoTracking()
                 .FirstOrDefaultAsync(x => x.Id.Equals(identifier));
         }
 
         public async Task<ResponseStatus> PostAsync(TEntity entity)
         {
-            var current = await ts.FirstOrDefaultAsync(_m => _m.Id.Equals(entity.Id));
+            var current = await _ts.FirstOrDefaultAsync(_m => _m.Id.Equals(entity.Id));
             if (null == current)
             {
-                ts.Add(entity);
+                _ts.Add(entity);
             }
             else
             {
                 var value = entity;
                 value.Id = current.Id;
-                db.Entry(current).CurrentValues.SetValues(value);
+                _db.Entry(current).CurrentValues.SetValues(value);
             }
 
-            await db.SaveChangesAsync();
+            await _db.SaveChangesAsync();
             return ResponseStatus.Success;
         }
 
@@ -84,16 +94,18 @@ namespace Mov.Core.Repositories.Services
 
         public async Task DeleteAsync(TIdentifier identifier)
         {
-            var query = ts.Where(x => x.Id.Equals(identifier));
+            var query = _ts.Where(x => x.Id.Equals(identifier));
             foreach (var q in query)
             {
-                var item = await ts.FirstOrDefaultAsync(_m => _m.Id.Equals(q.Id));
+                var item = await _ts.FirstOrDefaultAsync(_m => _m.Id.Equals(q.Id));
                 if (null != item)
                 {
-                    ts.Remove(item);
-                    await db.SaveChangesAsync();
+                    _ts.Remove(item);
+                    await _db.SaveChangesAsync();
                 }
             }
         }
+
+        #endregion method
     }
 }

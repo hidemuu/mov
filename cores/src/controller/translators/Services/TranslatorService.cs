@@ -1,8 +1,11 @@
 ﻿using Mov.Core.DesignPatterns;
 using Mov.Core.Locations.Models;
 using Mov.Core.Models;
+using Mov.Core.Stores;
 using Mov.Core.Translators.Models;
 using Mov.Core.Translators.Models.Entities;
+using Mov.Core.Translators.Stores;
+using System;
 
 namespace Mov.Core.Translators.Services
 {
@@ -10,30 +13,31 @@ namespace Mov.Core.Translators.Services
     {
         #region field
 
-        private IDatabase<LocalizeContent, Identifier<int>> database;
+        private readonly ITranslatorStore _store;
 
         #endregion field
+
+        #region property
+
+        public IStoreQuery<LocalizeContent, int> LocalizeContentQuery { get; }
+
+        #endregion property
 
         #region constructor
 
         public TranslatorService(ITranslatorRepository repository)
         {
-            this.database = new TranslatorDatabase(repository);
+            _store = new TranslatorStore(repository);
+            LocalizeContentQuery = _store.LocalizeContent.Query;
         }
 
         #endregion constructor
 
         #region method
 
-        public string Get(Identifier<int> index, Language location)
-        {
-            var content = this.database.Get(index);
-            return content.Get(location).Description.Value;
-        }
-
         public void Dispose()
         {
-            this.database = null;
+            this._store.LocalizeContent.Command.Dispose();
         }
 
         #endregion method

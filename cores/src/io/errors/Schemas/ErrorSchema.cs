@@ -1,4 +1,4 @@
-﻿using Mov.Core.Repositories.Entities;
+﻿using Mov.Core.Repositories.Schemas;
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
@@ -9,7 +9,7 @@ namespace Mov.Core.Errors.Schemas
     /// エラー
     /// </summary>
     [XmlRoot("error")]
-    public class ErrorSchema : DbTable
+    public class ErrorSchema : DbTableSchema
     {
         /// <summary>
         /// 名称

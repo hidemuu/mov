@@ -2,13 +2,13 @@
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Core.Repositories.Entities
+namespace Mov.Core.Repositories.Schemas
 {
     /// <summary>
     /// データベースオブジェクトのコレクション
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class DbTableCollection<T, Guid> : IDbCollectionSchema<T, Guid> where T : IDbSchema<Guid>
+    public abstract class DbTableCollectionSchema<T, Guid> : IDbCollectionSchema<T, Guid> where T : IDbSchema<Guid>
     {
         #region プロパティ
 

@@ -1,4 +1,4 @@
-﻿using Mov.Core.Repositories.Entities;
+﻿using Mov.Core.Repositories.Schemas;
 using Newtonsoft.Json;
 using System;
 using System.Xml.Serialization;
@@ -9,7 +9,7 @@ namespace Mov.Core.Errors.Schemas
     /// エラーのコレクション
     /// </summary>
     [XmlRoot("errors")]
-    public class ErrorSchemaCollection : DbTableCollection<ErrorSchema, Guid>
+    public class ErrorSchemaCollection : DbTableCollectionSchema<ErrorSchema, Guid>
     {
         /// <inheritdoc />
         [JsonProperty("errors")]

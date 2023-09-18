@@ -7,12 +7,12 @@ using System.Reflection;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Core.Repositories.Entities
+namespace Mov.Core.Repositories.Schemas
 {
     /// <summary>
     /// データベースの基本オブジェクト
     /// </summary>
-    public class DbTable : IDbSchema<Guid>
+    public class DbTableSchema : IDbSchema<Guid>
     {
         #region プロパティ
 
@@ -53,7 +53,7 @@ namespace Mov.Core.Repositories.Entities
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public DbTable()
+        public DbTableSchema()
         {
         }
 
@@ -61,7 +61,7 @@ namespace Mov.Core.Repositories.Entities
         /// コンストラクター
         /// </summary>
         /// <param name="src"></param>
-        public DbTable(DbTable src)
+        public DbTableSchema(DbTableSchema src)
         {
             Id = src.Id;
             Index = src.Index;

@@ -1,4 +1,4 @@
-﻿using Mov.Core.Repositories.Entities;
+﻿using Mov.Core.Repositories.Schemas;
 using Newtonsoft.Json;
 using System;
 using System.Xml.Serialization;
@@ -9,7 +9,7 @@ namespace Mov.Core.Configurators.Models.Schemas
     /// 設定のコレクション
     /// </summary>
     [XmlRoot("configs")]
-    public class ConfigSchemaCollection : DbTableCollection<ConfigSchema, Guid>
+    public class ConfigSchemaCollection : DbTableCollectionSchema<ConfigSchema, Guid>
     {
         /// <inheritdoc />
         [JsonProperty("configs")]

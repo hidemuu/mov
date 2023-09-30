@@ -36,18 +36,18 @@ namespace Mov.Core.Api.Controllers
         /// Gets all items.
         /// </summary>
         [HttpGet]
-        public async Task<IEnumerable<ConfigSchema>> Get()
+        public async Task<IEnumerable<UserSettingSchema>> Get()
         {
-            return await this._repository.Configs.GetAsync();
+            return await this._repository.UserSettings.GetAsync();
         }
 
         /// <summary>
         /// Creates a new item or updates an existing one.
         /// </summary>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] ConfigSchema schema)
+        public async Task<IActionResult> Post([FromBody] UserSettingSchema schema)
         {
-            var response = await this._repository.Configs.PostAsync(schema);
+            var response = await this._repository.UserSettings.PostAsync(schema);
             if (response.IsSuccess()) return Ok();
             return BadRequest();
         }
@@ -58,9 +58,9 @@ namespace Mov.Core.Api.Controllers
         /// <param name="schema"></param>
         /// <returns></returns>
         [HttpDelete]
-        public async Task<IActionResult> Delete([FromBody] ConfigSchema schema)
+        public async Task<IActionResult> Delete([FromBody] UserSettingSchema schema)
         {
-            var response = await this._repository.Configs.DeleteAsync(schema);
+            var response = await this._repository.UserSettings.DeleteAsync(schema);
             if (response.IsSuccess()) return Ok();
             return BadRequest();
         }

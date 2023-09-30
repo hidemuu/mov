@@ -15,7 +15,7 @@ namespace Mov.Core.Configurators.Models.Entities
 
         #region constructor
 
-        public UserSetting(ConfigSchema schema)
+        public UserSetting(UserSettingSchema schema)
         {
             this.Code = new Identifier<string>(schema.Code);
             this.Value = schema.Value;

@@ -9,11 +9,11 @@ namespace Mov.Core.Configurators.Models.Schemas
     /// 設定のコレクション
     /// </summary>
     [XmlRoot("configs")]
-    public class ConfigSchemaCollection : DbTableCollectionSchema<ConfigSchema, Guid>
+    public class UserSettingSchemaCollection : DbTableCollectionSchema<UserSettingSchema, Guid>
     {
         /// <inheritdoc />
         [JsonProperty("configs")]
-        [XmlElement(Type = typeof(ConfigSchema), ElementName = "config")]
-        public override ConfigSchema[] Items { get; set; }
+        [XmlElement(Type = typeof(UserSettingSchema), ElementName = "config")]
+        public override UserSettingSchema[] Items { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace Mov.Core.Configurators.Models.Schemas
     /// 設定
     /// </summary>
     [XmlRoot("config")]
-    public class ConfigSchema : DbSchemaBase<Guid>
+    public class UserSettingSchema : DbSchemaBase<Guid>
     {
         #region peoperty
 
@@ -107,7 +107,7 @@ namespace Mov.Core.Configurators.Models.Schemas
             return $"{base.ToString()} {Index} {Code} {Name} {Value}";
         }
 
-        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<ConfigSchema>().OrderBy(x => x.index);
+        public static IEnumerable<(PropertyInfo propertyInfo, int index, string name)> GetProperties() => GetProperties<UserSettingSchema>().OrderBy(x => x.index);
 
         #endregion method
     }

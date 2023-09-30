@@ -10,7 +10,7 @@ namespace Mov.Core.Configurators.Test.Builders
 
         private readonly Mock<IConfiguratorRepository> _mockConfiguratorRepository;
 
-        private readonly Mock<IDbRepository<ConfigSchema, Guid>> _mockConfigRepository;
+        private readonly Mock<IDbRepository<UserSettingSchema, Guid>> _mockConfigRepository;
 
         #endregion field
 
@@ -19,7 +19,7 @@ namespace Mov.Core.Configurators.Test.Builders
         public ConfiguratorRepositoryBuilder()
         {
             _mockConfiguratorRepository = new Mock<IConfiguratorRepository>();
-            _mockConfigRepository = new Mock<IDbRepository<ConfigSchema, Guid>>();
+            _mockConfigRepository = new Mock<IDbRepository<UserSettingSchema, Guid>>();
         }
 
         #endregion constructor
@@ -29,13 +29,13 @@ namespace Mov.Core.Configurators.Test.Builders
         public IConfiguratorRepository Build()
         {
             _mockConfiguratorRepository
-                .SetupGet<IDbRepository<ConfigSchema, Guid>>(x => x.Configs)
+                .SetupGet<IDbRepository<UserSettingSchema, Guid>>(x => x.UserSettings)
                 .Returns(_mockConfigRepository.Object)
                 .Callback(() => { Console.WriteLine("create config"); });
             return _mockConfiguratorRepository.Object;
         }
 
-        public ConfiguratorRepositoryBuilder WithGetAsyncCalled(IEnumerable<ConfigSchema> configSchemas)
+        public ConfiguratorRepositoryBuilder WithGetAsyncCalled(IEnumerable<UserSettingSchema> configSchemas)
         {
             _mockConfigRepository
                 .Setup(x => x.GetAsync())

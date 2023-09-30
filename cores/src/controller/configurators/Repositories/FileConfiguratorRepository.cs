@@ -11,7 +11,7 @@ namespace Mov.Core.Configurators.Repositories
     {
         #region property
 
-        public IDbRepository<ConfigSchema, Guid> Configs { get; }
+        public IDbRepository<UserSettingSchema, Guid> UserSettings { get; }
 
         #endregion property
 
@@ -19,7 +19,7 @@ namespace Mov.Core.Configurators.Repositories
 
         public FileConfiguratorRepository(string endpoint, FileType fileType, EncodingValue encoding)
         {
-            Configs = FileDbRepository<ConfigSchema, Guid>.Factory.Create(Path.Combine(endpoint, "config.json"), fileType, encoding);
+            UserSettings = FileDbRepository<UserSettingSchema, Guid>.Factory.Create(Path.Combine(endpoint, "config.json"), fileType, encoding);
         }
 
         #endregion constructor

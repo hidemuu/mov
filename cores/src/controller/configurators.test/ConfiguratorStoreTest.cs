@@ -28,15 +28,15 @@ namespace Mov.Core.Configurators.Test
         public void ReadAll_UserSettings_Return()
         {
             // Arrange
-            IEnumerable<ConfigSchema> schemas = new[]
+            IEnumerable<UserSettingSchema> schemas = new[]
                 {
-                    new ConfigSchema()
+                    new UserSettingSchema()
                     {
                         Id = Guid.NewGuid(),
                         Index = 1,
                         Code = "test",
                     },
-                    new ConfigSchema()
+                    new UserSettingSchema()
                     {
                         Id = Guid.NewGuid(),
                         Index = 2,

@@ -17,7 +17,7 @@ namespace Mov.Core.Configurators.Test
             var sut = new FileConfiguratorRepository(PathValue.Factory.CreateResourceRootPath().Value, FileType.Json, EncodingValue.UTF8);
 
             // Act
-            var configTask = sut.Configs.GetAsync();
+            var configTask = sut.UserSettings.GetAsync();
             Task.WhenAll(configTask);
             var configs = configTask.Result.ToArray();
 

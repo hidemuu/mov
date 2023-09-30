@@ -6,6 +6,6 @@ namespace Mov.Core.Configurators
 {
     public interface IConfiguratorRepository
     {
-        IDbRepository<ConfigSchema, Guid> Configs { get; }
+        IDbRepository<UserSettingSchema, Guid> UserSettings { get; }
     }
 }

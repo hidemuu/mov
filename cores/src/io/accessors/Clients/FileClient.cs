@@ -65,6 +65,10 @@ namespace Mov.Core.Accessors.Clients
             {
                 return new[] { await Task.Run(() => _serializer.Deserialize<TEntity, TEntity>(path.Value)) };
             }
+            if (_serializer is CsvSerializer csvSerializer)
+            {
+                return await Task.Run(() => _serializer.Deserialize<TEntity, IEnumerable<TEntity>>(path.Value));
+            }
             return await Task.Run(() => _serializer.Deserialize<IEnumerable<TEntity>, IEnumerable<TEntity>>(path.Value));
         }
 

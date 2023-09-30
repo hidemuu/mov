@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Mov.Core.Translators.Models.Schemas;
+using Mov.Core.Translators.Stores;
+using Mov.Core.Translators.Test.Builders;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +13,8 @@ namespace Mov.Core.Translators.Test
     {
         #region field
 
+        private TranslatorRepositoryBuilder _repositoryBuilder;
+
         #endregion field
 
         #region setup
@@ -17,6 +22,7 @@ namespace Mov.Core.Translators.Test
         [SetUp]
         public void Setup()
         {
+            _repositoryBuilder = new TranslatorRepositoryBuilder();
         }
 
         #endregion setup
@@ -24,9 +30,35 @@ namespace Mov.Core.Translators.Test
         #region test
 
         [Test]
-        public void Test1()
+        public void ReadAll_UserSettings_Return()
         {
-            Assert.Pass();
+            // Arrange
+            IEnumerable<TranslateSchema> schemas = new[]
+                {
+                    new TranslateSchema()
+                    {
+                        Id = 1,
+                        JP = "test",
+                        EN = "test",
+                    },
+                    new TranslateSchema()
+                    {
+                        Id = 1,
+                        JP = "test2",
+                        EN = "test2",
+                    },
+                };
+            var repository = _repositoryBuilder
+                .WithGetAsyncCalled(schemas)
+                .Build();
+
+            var sut = new TranslatorStore(repository);
+
+            // Act
+            var localizeContents = sut.LocalizeContent.Query.Reader.ReadAll().ToArray();
+
+            // Assert
+            Assert.That(localizeContents.Length, Is.EqualTo(2));
         }
 
         #endregion test

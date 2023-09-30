@@ -31,7 +31,7 @@ namespace Mov.Core.Translators.Repositories
 
         #region property
 
-        public IDbRepository<TranslateSchema, int> Translates => new SqlDbRepository<TranslateSchema, int>(_db, _db.Translates);
+        public IDbRepository<LocalizeSchema, int> Localizes => new SqlDbRepository<LocalizeSchema, int>(_db, _db.Localizes);
 
         #endregion proeprty
     }

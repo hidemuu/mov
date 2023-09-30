@@ -18,7 +18,7 @@ namespace Mov.Core.Translators.Contexts
 
         #region property
 
-        public DbSet<TranslateSchema> Translates { get; set; }
+        public DbSet<LocalizeSchema> Localizes { get; set; }
 
         #endregion property
 

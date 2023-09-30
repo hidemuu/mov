@@ -15,7 +15,7 @@ namespace Mov.Core.Translators.Test.Builders
 
         private readonly Mock<ITranslatorRepository> _mockRepository;
 
-        private readonly Mock<IDbRepository<TranslateSchema, int>> _mockTranslateRepository;
+        private readonly Mock<IDbRepository<LocalizeSchema, int>> _mockTranslateRepository;
 
         #endregion field
 
@@ -24,7 +24,7 @@ namespace Mov.Core.Translators.Test.Builders
         public TranslatorRepositoryBuilder()
         {
             _mockRepository = new Mock<ITranslatorRepository>();
-            _mockTranslateRepository = new Mock<IDbRepository<TranslateSchema, int>>();
+            _mockTranslateRepository = new Mock<IDbRepository<LocalizeSchema, int>>();
         }
 
         #endregion constructor
@@ -34,13 +34,13 @@ namespace Mov.Core.Translators.Test.Builders
         public ITranslatorRepository Build()
         {
             _mockRepository
-                .SetupGet<IDbRepository<TranslateSchema, int>>(x => x.Translates)
+                .SetupGet<IDbRepository<LocalizeSchema, int>>(x => x.Localizes)
                 .Returns(_mockTranslateRepository.Object)
                 .Callback(() => { Console.WriteLine("create translate"); });
             return _mockRepository.Object;
         }
 
-        public TranslatorRepositoryBuilder WithGetAsyncCalled(IEnumerable<TranslateSchema> schemas)
+        public TranslatorRepositoryBuilder WithGetAsyncCalled(IEnumerable<LocalizeSchema> schemas)
         {
             _mockTranslateRepository
                 .Setup(x => x.GetAsync())

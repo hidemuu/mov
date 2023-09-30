@@ -33,15 +33,15 @@ namespace Mov.Core.Translators.Test
         public void ReadAll_UserSettings_Return()
         {
             // Arrange
-            IEnumerable<TranslateSchema> schemas = new[]
+            IEnumerable<LocalizeSchema> schemas = new[]
                 {
-                    new TranslateSchema()
+                    new LocalizeSchema()
                     {
                         Id = 1,
                         JP = "test",
                         EN = "test",
                     },
-                    new TranslateSchema()
+                    new LocalizeSchema()
                     {
                         Id = 1,
                         JP = "test2",

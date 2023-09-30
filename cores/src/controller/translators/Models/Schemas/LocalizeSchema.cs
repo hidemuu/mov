@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Mov.Core.Translators.Models.Schemas
 {
-    public sealed class TranslateSchema : DbSchemaBase<int>
+    public sealed class LocalizeSchema : DbSchemaBase<int>
     {
         [JsonProperty("jp")]
         public string JP { get; set; }

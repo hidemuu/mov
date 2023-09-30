@@ -26,7 +26,7 @@ namespace Mov.Core.Translators.Models.Entities
             this.Infos = infos;
         }
 
-        public LocalizeContent(TranslateSchema schema)
+        public LocalizeContent(LocalizeSchema schema)
         {
             this.Index = new Identifier<int>(schema.Id);
             this.Infos = new[]

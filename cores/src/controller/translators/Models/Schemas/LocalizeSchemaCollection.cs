@@ -3,9 +3,9 @@ using Newtonsoft.Json;
 
 namespace Mov.Core.Translators.Models.Schemas
 {
-    public sealed class TranslateSchemaCollection : IDbCollectionSchema<TranslateSchema, int>
+    public sealed class LocalizeSchemaCollection : IDbCollectionSchema<LocalizeSchema, int>
     {
         [JsonProperty("translates")]
-        public TranslateSchema[] Items { get; set; }
+        public LocalizeSchema[] Items { get; set; }
     }
 }

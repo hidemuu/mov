@@ -4,7 +4,7 @@ using System;
 
 namespace Mov.Analizer.Models
 {
-    public interface IAnalizerRepository : IDbObjectRepository<StatisticSchema, Guid>
+    public interface IAnalizerRepository
     {
     }
 }

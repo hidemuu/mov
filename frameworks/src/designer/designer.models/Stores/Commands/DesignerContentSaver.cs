@@ -11,11 +11,11 @@ namespace Mov.Designer.Models.Stores.Commands
 {
     internal class DesignerContentSaver : ISave<DesignerContent>
     {
-        private readonly ISave<ContentSchema> _repositorySaver;
+        private readonly IDesignerRepository _repository;
 
         public DesignerContentSaver(IDesignerRepository repository)
         {
-            _repositorySaver = new DbRepositorySaver<ContentSchema, Guid>(repository.Contents);
+            _repository = repository;
         }
 
         public void Save(DesignerContent entity)

@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.DbObjects.Entities;
+﻿using Mov.Core.Repositories.Schemas;
 using Newtonsoft.Json;
 using System;
 
@@ -7,7 +7,7 @@ namespace Mov.Bom.Models.Schemas
     /// <summary>
     /// Represents a line item (product + quantity) on an order.
     /// </summary>
-    public class LineItem : DbObject
+    public class LineItem : DbSchemaBase<Guid>
     {
         /// <summary>
         /// Gets or sets the id of the order the line item is associated with.

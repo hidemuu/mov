@@ -8,11 +8,11 @@ using System.Text;
 
 namespace Mov.Designer.Models.Stores.Commands
 {
-    public class DesignerContentCommand : IStoreCommand<DesignerContent, Guid>
+    public class DesignerContentCommand : IStoreCommand<DesignerContent>
     {
         public ISave<DesignerContent> Saver { get; }
 
-        public IDelete<DesignerContent, Guid> Deleter { get; }
+        public IDelete<DesignerContent> Deleter { get; }
 
         public DesignerContentCommand(IDesignerRepository repository)
         {

@@ -9,13 +9,13 @@ using System.Text;
 
 namespace Mov.Designer.Models.Stores.Commands
 {
-    internal class DesignerContentDeleter : IDelete<DesignerContent, Guid>
+    internal class DesignerContentDeleter : IDelete<DesignerContent>
     {
-        private readonly IDelete<ContentSchema, Guid> _repositoryDeleter;
+        private readonly IDesignerRepository _repository;
 
         public DesignerContentDeleter(IDesignerRepository repository)
         {
-            _repositoryDeleter = new DbRepositoryDeleter<ContentSchema, Guid>(repository.Contents);
+            _repository = repository;
         }
 
         public void Delete(DesignerContent entity)

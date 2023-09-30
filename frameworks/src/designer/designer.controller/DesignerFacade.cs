@@ -34,8 +34,8 @@ namespace Mov.Designer.Service
         public DesignerFacade(IEnumerable<IDesignerRepository> repositories)
         {
             var repository = repositories.FirstOrDefault();
-            this.Query = new RepositoryDesignerQuery(repository);
-            this.Command = new RepositoryDesignerCommand(repository);
+            this.Query = new DesignerStoreQuery(repository);
+            this.Command = new DesignerStoreCommand(repository);
             this.context = new DesignerContext(repository);
             this.LayoutFacade = new LayoutFacade(this.context);
         }

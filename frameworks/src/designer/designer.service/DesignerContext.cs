@@ -1,4 +1,5 @@
-﻿using Mov.Core.Layouts;
+﻿using Mov.Core.Documents;
+using Mov.Core.Layouts;
 using Mov.Core.Layouts.Models;
 using Mov.Core.Layouts.Models.Contents;
 using Mov.Core.Layouts.Models.Nodes;
@@ -84,7 +85,7 @@ namespace Mov.Designer.Models
 
         private IEnumerable<LayoutShell> GetShells(IDesignerRepository repository)
         {
-            foreach (var shell in repository.Shells.Get())
+            foreach (var shell in Task.WhenAll(repository.Shells.GetAsync()).Result[0])
             {
                 yield return new LayoutShell(RegionStyle.Center, ColorStyle.Transrarent, ColorStyle.Transrarent, ThicknessValue.Default, Size2D.Default);
             }
@@ -92,7 +93,7 @@ namespace Mov.Designer.Models
 
         private IEnumerable<LayoutTheme> GetThemes(IDesignerRepository repository)
         {
-            foreach (var theme in repository.Themes.Get())
+            foreach (var theme in Task.WhenAll(repository.Themes.GetAsync()).Result[0])
             {
                 yield return new LayoutTheme(ThemeStyle.Light);
             }
@@ -100,16 +101,14 @@ namespace Mov.Designer.Models
 
         public void Read()
         {
-            this.repository.Nodes.Read();
-            this.repository.Contents.Read();
-            this.repository.Shells.Read();
+            Task.WhenAll(this.repository.Nodes.GetAsync());
+            Task.WhenAll(this.repository.Contents.GetAsync());
+            Task.WhenAll(this.repository.Shells.GetAsync());
         }
 
         public void Write()
         {
-            this.repository.Nodes.Write();
-            this.repository.Contents.Write();
-            this.repository.Shells.Write();
+            
         }
 
         public void Update()

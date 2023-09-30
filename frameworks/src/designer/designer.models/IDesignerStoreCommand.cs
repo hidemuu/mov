@@ -7,12 +7,12 @@ namespace Mov.Designer.Models
 {
     public interface IDesignerStoreCommand
     {
-        IStoreCommand<DesignerContent, Guid> Contents { get; }
+        IStoreCommand<DesignerContent> Contents { get; }
 
-        IStoreCommand<DesignerNode, Guid> Nodes { get; }
+        IStoreCommand<DesignerNode> Nodes { get; }
 
-        IStoreCommand<DesignerShell, Guid> Shells { get; }
+        IStoreCommand<DesignerShell> Shells { get; }
 
-        IStoreCommand<DesignerTheme, Guid> Themes { get; }
+        IStoreCommand<DesignerTheme> Themes { get; }
     }
 }

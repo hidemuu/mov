@@ -24,10 +24,10 @@ namespace Mov.Designer.Repository
         /// <param name="encoding"></param>
         public FileDesignerRepository(string endpoint, FileType fileType, EncodingValue encoding)
         {
-            Shells = new FileDbRepository<ShellSchema, Guid>(Path.Combine(endpoint, "shell"), fileType, encoding);
-            Nodes = new FileDbRepository<NodeSchema, Guid>(Path.Combine(endpoint, "node"), fileType, encoding);
-            Contents = new FileDbRepository<ContentSchema, Guid>(Path.Combine(endpoint, "content"), fileType, encoding);
-            Themes = new FileDbRepository<ThemeSchema, Guid>(Path.Combine(endpoint, "theme"), fileType, encoding);
+            Shells = FileDbRepository<ShellSchema, Guid>.Factory.Create(Path.Combine(endpoint, "shell"), fileType, encoding);
+            Nodes = FileDbRepository<NodeSchema, Guid>.Factory.Create(Path.Combine(endpoint, "node"), fileType, encoding);
+            Contents = FileDbRepository<ContentSchema, Guid>.Factory.Create(Path.Combine(endpoint, "content"), fileType, encoding);
+            Themes = FileDbRepository<ThemeSchema, Guid>.Factory.Create(Path.Combine(endpoint, "theme"), fileType, encoding);
         }
 
         #endregion コンストラクター

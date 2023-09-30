@@ -9,13 +9,13 @@ namespace Mov.Designer.Engine.Cruds
     {
         private readonly IDesignerRepository _repository;
 
-        public IStoreCommand<DesignerContent, Guid> Contents { get; }
+        public IStoreCommand<DesignerContent> Contents { get; }
 
-        public IStoreCommand<DesignerNode, Guid> Nodes { get; }
+        public IStoreCommand<DesignerNode> Nodes { get; }
 
-        public IStoreCommand<DesignerShell, Guid> Shells { get; }
+        public IStoreCommand<DesignerShell> Shells { get; }
 
-        public IStoreCommand<DesignerTheme, Guid> Themes { get; }
+        public IStoreCommand<DesignerTheme> Themes { get; }
 
         public DesignerStoreCommand(IDesignerRepository repository) 
         {

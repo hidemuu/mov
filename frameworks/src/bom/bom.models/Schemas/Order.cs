@@ -1,4 +1,4 @@
-﻿using Mov.Core.Models.DbObjects.Entities;
+﻿using Mov.Core.Repositories.Schemas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ namespace Mov.Bom.Models.Schemas
     /// <summary>
     /// Represents a customer order.
     /// </summary>
-    public class Order : DbObject
+    public class Order : DbSchemaBase<Guid>
     {
         /// <summary>
         /// Creates a new order.

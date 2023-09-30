@@ -1,11 +1,11 @@
-﻿using Mov.Core.Models.DbObjects.Entities;
+﻿using Mov.Core.Repositories.Schemas;
 
 namespace Mov.Bom.Models.Schemas
 {
     /// <summary>
     /// Represents a product.
     /// </summary>
-    public class Product : DbObject
+    public class Product : DbSchemaBase<Guid>
     {
         /// <summary>
         /// カテゴリー

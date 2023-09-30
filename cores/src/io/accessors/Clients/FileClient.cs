@@ -57,10 +57,10 @@ namespace Mov.Core.Accessors.Clients
         public async Task<IEnumerable<TEntity>> GetAsync<TEntity>(string url)
         {
             var path = Endpoint.Combine(url);
-            if (!File.Exists(path.Value))
-            {
-                return new HashSet<TEntity>();
-            }
+            //if (!File.Exists(path.Value))
+            //{
+            //    return new HashSet<TEntity>();
+            //}
             if (_serializer is XmlSerializer xmlSerializer)
             {
                 return new[] { await Task.Run(() => _serializer.Deserialize<TEntity, TEntity>(path.Value)) };

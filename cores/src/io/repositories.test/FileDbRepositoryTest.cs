@@ -48,7 +48,7 @@ namespace Mov.Core.Repositories.Test
                     },
                 };
             var serializer = this.serializerBuilder
-                .WithDeserializeCalled<SerializeSchema, IEnumerable<SerializeSchema>>(schemas)
+                .WithDeserializeCalled<IEnumerable<SerializeSchema>, IEnumerable<SerializeSchema>>(schemas)
                 .Build();
             var sut = FileDbRepository<SerializeSchema, int>.Factory.Create(new FileClient(PathValue.Empty, serializer));
 
@@ -105,7 +105,7 @@ namespace Mov.Core.Repositories.Test
                     },
                 };
             var serializer = this.serializerBuilder
-                .WithDeserializeCalled<SerializeSchema, IEnumerable<SerializeSchema>>(schemas)
+                .WithDeserializeCalled<IEnumerable<SerializeSchema>, IEnumerable<SerializeSchema>>(schemas)
                 .Build();
 
             // Act

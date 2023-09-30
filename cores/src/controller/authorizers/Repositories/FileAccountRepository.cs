@@ -13,7 +13,6 @@ namespace Mov.Core.Authorizers.Repositories
 
         #endregion constructor
 
-
         #region method
 
         public Account GetByName(string name)

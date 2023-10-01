@@ -7,13 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\amr\amr.client\AmrClient.Omron.csproj" />
-    <ProjectReference Include="..\src\calendar\calendar.client\CalendarClient.Google.csproj" />
-    <ProjectReference Include="..\src\cnc\cnc.client\CncClient.Fanuc.csproj" />
-    <ProjectReference Include="..\src\image_processing\imageprocessing.client\ImagingClient.OpenCV.csproj" />
-    <ProjectReference Include="..\src\plc\plc.client\PlcClient.Melsec.csproj" />
-    <ProjectReference Include="..\src\raspberry_pi\raspberrypi.client\RaspberryPiClient.csproj" />
-    <ProjectReference Include="..\src\resas\resas.client\AnalizerClient.Resas.csproj" />
+    <ProjectReference Include="..\src\analizer\analizerclient.resas\AnalizerClient.Resas.csproj" />
+    <ProjectReference Include="..\src\calendar\calendarclient.google\CalendarClient.Google.csproj" />
+    <ProjectReference Include="..\src\driver\cncclient.fanuc\CncClient.Fanuc.csproj" />
+    <ProjectReference Include="..\src\driver\plcclient.melsec\PlcClient.Melsec.csproj" />
+    <ProjectReference Include="..\src\driver\raspberrypiclient\RaspberryPiClient.csproj" />
+    <ProjectReference Include="..\src\imaging\imagingclient.opencv\ImagingClient.OpenCV.csproj" />
+    <ProjectReference Include="..\src\mobility\amrclient.omron\AmrClient.Omron.csproj" />
   </ItemGroup>
 
 </Project>

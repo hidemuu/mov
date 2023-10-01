@@ -9,19 +9,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{E99D1E62-E2E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4C143A94-8C11-43B0-89A3-97ACBAD8854A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrClient.Omron", "src\amr\amr.client\AmrClient.Omron.csproj", "{7FD80469-6EF2-40F9-9EC4-4D06DB5D7DAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrClient.Omron", "src\mobility\amrclient.omron\AmrClient.Omron.csproj", "{7FD80469-6EF2-40F9-9EC4-4D06DB5D7DAF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalendarClient.Google", "src\calendar\calendar.client\CalendarClient.Google.csproj", "{4FE74A21-9BF8-48D4-943B-9A8597894D70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalendarClient.Google", "src\calendar\calendarclient.google\CalendarClient.Google.csproj", "{4FE74A21-9BF8-48D4-943B-9A8597894D70}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CncClient.Fanuc", "src\cnc\cnc.client\CncClient.Fanuc.csproj", "{5D64AC66-56E1-4668-AC1F-E49C56BC82B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CncClient.Fanuc", "src\driver\cncclient.fanuc\CncClient.Fanuc.csproj", "{5D64AC66-56E1-4668-AC1F-E49C56BC82B7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImagingClient.OpenCV", "src\image_processing\imageprocessing.client\ImagingClient.OpenCV.csproj", "{F4D5AAFD-C0E1-4E01-B0E7-8C38632C794D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImagingClient.OpenCV", "src\imaging\imagingclient.opencv\ImagingClient.OpenCV.csproj", "{F4D5AAFD-C0E1-4E01-B0E7-8C38632C794D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlcClient.Melsec", "src\plc\plc.client\PlcClient.Melsec.csproj", "{5D9CF4B3-A7C6-4AE7-8BB0-4BFABC8424C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlcClient.Melsec", "src\driver\plcclient.melsec\PlcClient.Melsec.csproj", "{5D9CF4B3-A7C6-4AE7-8BB0-4BFABC8424C8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaspberryPiClient", "src\raspberry_pi\raspberrypi.client\RaspberryPiClient.csproj", "{C078152F-4998-40AD-800C-6DE883B713FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaspberryPiClient", "src\driver\raspberrypiclient\RaspberryPiClient.csproj", "{C078152F-4998-40AD-800C-6DE883B713FA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnalizerClient.Resas", "src\resas\resas.client\AnalizerClient.Resas.csproj", "{7865C330-67C5-4608-9A83-7BD396DE47EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnalizerClient.Resas", "src\analizer\analizerclient.resas\AnalizerClient.Resas.csproj", "{7865C330-67C5-4608-9A83-7BD396DE47EE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib", "lib\Lib.csproj", "{2202CBDA-5973-4D48-BAEB-6B33DC60E2A0}"
 EndProject

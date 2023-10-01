@@ -9,9 +9,9 @@
   <ItemGroup>
     <ProjectReference Include="..\src\analizer\analizerclient.resas\AnalizerClient.Resas.csproj" />
     <ProjectReference Include="..\src\calendar\calendarclient.google\CalendarClient.Google.csproj" />
-    <ProjectReference Include="..\src\driver\cncclient.fanuc\CncClient.Fanuc.csproj" />
-    <ProjectReference Include="..\src\driver\plcclient.melsec\PlcClient.Melsec.csproj" />
-    <ProjectReference Include="..\src\driver\raspberrypiclient\RaspberryPiClient.csproj" />
+    <ProjectReference Include="..\src\driver\cncclient.fanuc\DriverClient.Cnc.Fanuc.csproj" />
+    <ProjectReference Include="..\src\driver\plcclient.melsec\DriverClient.Plc.Melsec.csproj" />
+    <ProjectReference Include="..\src\driver\raspberrypiclient\DriverClient.RaspberryPi.csproj" />
     <ProjectReference Include="..\src\imaging\imagingclient.opencv\ImagingClient.OpenCV.csproj" />
     <ProjectReference Include="..\src\mobility\amrclient.omron\AmrClient.Omron.csproj" />
   </ItemGroup>

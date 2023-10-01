@@ -13,13 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmrClient.Omron", "src\mobi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalendarClient.Google", "src\calendar\calendarclient.google\CalendarClient.Google.csproj", "{4FE74A21-9BF8-48D4-943B-9A8597894D70}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CncClient.Fanuc", "src\driver\cncclient.fanuc\CncClient.Fanuc.csproj", "{5D64AC66-56E1-4668-AC1F-E49C56BC82B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DriverClient.Cnc.Fanuc", "src\driver\cncclient.fanuc\DriverClient.Cnc.Fanuc.csproj", "{5D64AC66-56E1-4668-AC1F-E49C56BC82B7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImagingClient.OpenCV", "src\imaging\imagingclient.opencv\ImagingClient.OpenCV.csproj", "{F4D5AAFD-C0E1-4E01-B0E7-8C38632C794D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlcClient.Melsec", "src\driver\plcclient.melsec\PlcClient.Melsec.csproj", "{5D9CF4B3-A7C6-4AE7-8BB0-4BFABC8424C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DriverClient.Plc.Melsec", "src\driver\plcclient.melsec\DriverClient.Plc.Melsec.csproj", "{5D9CF4B3-A7C6-4AE7-8BB0-4BFABC8424C8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaspberryPiClient", "src\driver\raspberrypiclient\RaspberryPiClient.csproj", "{C078152F-4998-40AD-800C-6DE883B713FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DriverClient.RaspberryPi", "src\driver\raspberrypiclient\DriverClient.RaspberryPi.csproj", "{C078152F-4998-40AD-800C-6DE883B713FA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnalizerClient.Resas", "src\analizer\analizerclient.resas\AnalizerClient.Resas.csproj", "{7865C330-67C5-4608-9A83-7BD396DE47EE}"
 EndProject

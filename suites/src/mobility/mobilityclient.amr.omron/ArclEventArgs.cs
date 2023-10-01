@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Suite.AmrClient.Omron
+namespace Mov.Suite.MobilityClient.Amr.Omron
 {
     public class ArclEventArgs : EventArgs
     {

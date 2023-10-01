@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Mov.Suite.AmrClient.Omron
+namespace Mov.Suite.MobilityClient.Amr.Omron
 {
     public class Arcl : IAmrClient
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Mov.Suite.AmrClient.Omron
+namespace Mov.Suite.MobilityClient.Amr.Omron
 {
     //----- キーコード --------------
     /// <summary>

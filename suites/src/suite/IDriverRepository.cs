@@ -1,18 +1,19 @@
-﻿using Mov.Core.Templates.Repositories;
+﻿using Mov.Core.Repositories;
 using Mov.Driver.Models.Entities.Schemas;
+using System;
 
 namespace Mov.Driver.Models
 {
-    public interface IDriverRepository : IDomainRepository
+    public interface IDriverRepository
     {
-        IDbObjectRepository<Macro, MacroCollection> Macros { get; }
+        IDbRepository<Macro, Guid> Macros { get; }
 
-        IDbObjectRepository<Command, CommandCollection> Commands { get; }
+        IDbRepository<Command, Guid> Commands { get; }
 
-        IDbObjectRepository<Query, QueryCollection> Queries { get; }
+        IDbRepository<Query, Guid> Queries { get; }
 
-        IDbObjectRepository<Variable, VariableCollection> Variables { get; }
+        IDbRepository<Variable, Guid> Variables { get; }
 
-        IDbObjectRepository<Connect, ConnectCollection> Connects { get; }
+        IDbRepository<Connect, Guid> Connects { get; }
     }
 }

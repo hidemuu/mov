@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\lib\Lib.csproj" />
+    <ProjectReference Include="..\..\src\suite\Suite.csproj" />
   </ItemGroup>
 
 </Project>

@@ -47,11 +47,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "game", "game", "{E9D48FC0-1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bom", "bom", "{25E731B2-5A3E-4076-A02A-F34A08604217}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameClient.FiniteStateMechine", "src\game\GameClient.FiniteStateMechine\GameClient.FiniteStateMechine.csproj", "{F1E0DFFA-01BF-421F-AEA8-A6DFF265357F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameClient.FiniteStateMechine", "src\game\gameclient.finitestatemechine\GameClient.FiniteStateMechine.csproj", "{F1E0DFFA-01BF-421F-AEA8-A6DFF265357F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameClient.Inference", "src\game\GameClient.Inference\GameClient.Inference.csproj", "{9A33ABCA-FCAE-40AB-ACCC-18D80336301E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameClient.Inference", "src\game\gameclient.inference\GameClient.Inference.csproj", "{9A33ABCA-FCAE-40AB-ACCC-18D80336301E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameClient.ZeroSum", "src\game\GameClient.ZeroSum\GameClient.ZeroSum.csproj", "{71738DC5-B8F7-44FE-8493-C0C9CE9CA888}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameClient.ZeroSum", "src\game\gameclient.zerosum\GameClient.ZeroSum.csproj", "{71738DC5-B8F7-44FE-8493-C0C9CE9CA888}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BomClient.Misumi", "src\bom\bomclient.misumi\BomClient.Misumi.csproj", "{BF28954C-2D3F-4DAD-B6B6-90DA3D75B20E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +125,10 @@ Global
 		{71738DC5-B8F7-44FE-8493-C0C9CE9CA888}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71738DC5-B8F7-44FE-8493-C0C9CE9CA888}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71738DC5-B8F7-44FE-8493-C0C9CE9CA888}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF28954C-2D3F-4DAD-B6B6-90DA3D75B20E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF28954C-2D3F-4DAD-B6B6-90DA3D75B20E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF28954C-2D3F-4DAD-B6B6-90DA3D75B20E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF28954C-2D3F-4DAD-B6B6-90DA3D75B20E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -150,6 +156,7 @@ Global
 		{F1E0DFFA-01BF-421F-AEA8-A6DFF265357F} = {E9D48FC0-112E-478A-A02E-406A687E1597}
 		{9A33ABCA-FCAE-40AB-ACCC-18D80336301E} = {E9D48FC0-112E-478A-A02E-406A687E1597}
 		{71738DC5-B8F7-44FE-8493-C0C9CE9CA888} = {E9D48FC0-112E-478A-A02E-406A687E1597}
+		{BF28954C-2D3F-4DAD-B6B6-90DA3D75B20E} = {25E731B2-5A3E-4076-A02A-F34A08604217}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DA11007-6005-4C72-A93A-35FB982B6921}

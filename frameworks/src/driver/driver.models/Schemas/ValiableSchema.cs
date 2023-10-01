@@ -1,26 +1,17 @@
-﻿using Mov.Core.Models.Entities.DbObjects;
+﻿using Mov.Core.Repositories.Schemas;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Driver.Models.Entities.Schemas
+namespace Mov.Driver.Models.Schemas
 {
-    /// <summary>
-    /// 値のコレクション
-    /// </summary>
-    [XmlRoot("variables")]
-    public class VariableCollection : DbObjectCollection<Variable>
-    {
-        /// <inheritdoc />
-        [JsonProperty("variables")]
-        [XmlElement(Type = typeof(Variable), ElementName = "variable")]
-        public override Variable[] Items { get; set; }
-    }
-
     /// <summary>
     /// 値
     /// </summary>
     [XmlRoot("variable")]
-    public class Variable : DbObject
+    public class VariableSchema : DbSchemaBase<Guid>
     {
         /// <summary>
         /// 名称

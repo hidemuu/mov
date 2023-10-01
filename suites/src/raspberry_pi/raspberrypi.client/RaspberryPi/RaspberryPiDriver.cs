@@ -1,4 +1,4 @@
-﻿using Mov.Core.Accessors.Services.Connectors.Implements.Processor;
+﻿using Mov.Core.Accessors.Connectors;
 using Mov.Suite.RaspberryPi.Models;
 
 namespace Mov.Suite.RaspberryPi.Client.RaspberryPi

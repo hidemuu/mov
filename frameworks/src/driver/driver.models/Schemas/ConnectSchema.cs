@@ -1,26 +1,17 @@
-﻿using Mov.Core.Models.Entities.DbObjects;
+﻿using Mov.Core.Repositories.Schemas;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Xml.Serialization;
 
-namespace Mov.Driver.Models.Entities.Schemas
+namespace Mov.Driver.Models.Schemas
 {
-    /// <summary>
-    /// 接続情報のコレクション
-    /// </summary>
-    [XmlRoot("connects")]
-    public class ConnectCollection : DbObjectCollection<Connect>
-    {
-        /// <inheritdoc />
-        [JsonProperty("connects")]
-        [XmlElement(Type = typeof(Connect), ElementName = "connect")]
-        public override Connect[] Items { get; set; }
-    }
-
     /// <summary>
     /// 接続情報
     /// </summary>
     [XmlRoot("connect")]
-    public class Connect : DbObject
+    public class ConnectSchema : DbSchemaBase<Guid>
     {
         /// <summary>
         /// IPアドレス

@@ -6,10 +6,6 @@
 
         IResasRepository Repository { get; }
 
-        IResasCommand Command { get; }
-
-        IResasQuery Query { get; }
-
         #endregion プロパティ
     }
 }

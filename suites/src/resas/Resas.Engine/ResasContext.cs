@@ -12,10 +12,6 @@ namespace Mov.Suite.Resas.Engine
 
         public IResasRepository Repository { get; }
 
-        public IResasCommand Command { get; }
-
-        public IResasQuery Query { get; }
-
         #endregion プロパティ
 
         #region コンストラクター

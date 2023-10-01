@@ -1,16 +1,18 @@
 ﻿using CsvHelper.Configuration.Attributes;
+using Mov.Core.Repositories.Schemas;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace Mov.Suite.Resas.Models.Schemas
 {
-    public class ResasResponse<TResult> where TResult : IResasResult
+    public class ResasResponse<TResult> : DbSchemaBase<string> where TResult : IResasResult
     {
         [Name("message")]
         [JsonProperty("message")]
         [DisplayName("メッセージ")]
-        public string Message { get; set; }
+        public override string Id { get; set; }
 
         [Name("result")]
         [JsonProperty("result")]

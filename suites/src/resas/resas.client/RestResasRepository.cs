@@ -1,5 +1,6 @@
-﻿using Mov.Core.Repositories.Repositories.Entities;
-using Mov.Core.Templates.Repositories;
+﻿using Mov.Core.Accessors.Models;
+using Mov.Core.Repositories;
+using Mov.Core.Repositories.Services;
 using Mov.Suite.Resas.Models;
 using Mov.Suite.Resas.Models.Schemas;
 using Mov.Suite.Resas.Models.Schemas.Results;
@@ -22,10 +23,10 @@ namespace Mov.Suite.Resas.Client
             this.auth = auth;
         }
 
-        public IEntityRepositoryAsync<ResasResponse<Prefecture>> Prefectures =>
-            new RestEntityRepository<ResasResponse<Prefecture>>(Path.Combine(endpoint, Prefecture.URI), auth);
+        public IDbRepository<ResasResponse<Prefecture>, string> Prefectures =>
+            new RestDbRepository<ResasResponse<Prefecture>, string>(Path.Combine(endpoint, Prefecture.URI), auth, EncodingValue.UTF8);
 
-        public IEntityRepositoryAsync<ResasResponse<City>> Cities =>
-            new RestEntityRepository<ResasResponse<City>>(Path.Combine(endpoint, City.URI), auth);
+        public IDbRepository<ResasResponse<City>, string> Cities =>
+            new RestDbRepository<ResasResponse<City>, string>(Path.Combine(endpoint, City.URI), auth, EncodingValue.UTF8);
     }
 }

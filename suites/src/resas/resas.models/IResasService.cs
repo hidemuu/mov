@@ -2,6 +2,6 @@
 {
     public interface IResasService
     {
-        IResasEngine Engine { get; }
+        
     }
 }

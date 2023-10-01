@@ -1,13 +1,15 @@
 ﻿using Mov.Core.Learnings.Models;
 using Mov.Game.Models;
 using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Mov.Game.Controller.Consoles
+namespace Mov.Suite.GameClient.Tracking.KnightsTour
 {
     /// <summary>
     /// 騎士の巡回問題
     /// </summary>
-    public class KnightsTourGame : ITrackingGame
+    public class KnightsTourGameClient : ITrackingGameClient
     {
         #region フィールド
 
@@ -32,7 +34,7 @@ namespace Mov.Game.Controller.Consoles
         /// コンストラクター
         /// </summary>
         /// <param name="n"></param>
-        public KnightsTourGame(int n)
+        public KnightsTourGameClient(int n)
         {
             this.n = n;
             bd = ConsCell.MakeIntArray2(n, n, 0);

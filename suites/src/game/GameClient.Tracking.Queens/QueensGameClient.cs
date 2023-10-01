@@ -2,15 +2,17 @@
 using Mov.Core.Learnings.Models;
 using Mov.Game.Models;
 using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Mov.Game.Controller.Consoles
+namespace Mov.Suite.GameClient.Tracking.KnightsTour
 {
     /// <summary>
     /// Nクイーン問題クラス
     /// </summary>
-    public class QueensGame : ITrackingGame, IConsoleGame
+    public class QueensGameClient : ITrackingGameClient
     {
-        #region フィールド
+        #region field
 
         /// <summary>
         /// クイーン数
@@ -22,16 +24,20 @@ namespace Mov.Game.Controller.Consoles
         /// </summary>
         private int level = 0;
 
-        #endregion フィールド
+        #endregion field
+
+        #region constructor
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public QueensGame()
+        public QueensGameClient()
         {
         }
 
-        #region メソッド
+        #endregion constructor
+
+        #region method
 
         /// <summary>
         /// 問題を解いて各配置リストを表示
@@ -54,9 +60,9 @@ namespace Mov.Game.Controller.Consoles
         {
         }
 
-        #endregion メソッド
+        #endregion method
 
-        #region 内部メソッド
+        #region inner method
 
         /// <summary>
         /// 縦と斜めに重複しないかチェック
@@ -84,6 +90,6 @@ namespace Mov.Game.Controller.Consoles
             });
         }
 
-        #endregion 内部メソッド
+        #endregion inner method
     }
 }

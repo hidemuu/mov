@@ -11,15 +11,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\analizer\analizer.service\Analizer.Service.csproj" />
-    <ProjectReference Include="..\..\src\bom\bom.service\Bom.Service.csproj" />
-    <ProjectReference Include="..\..\src\calendar\calendar.service\Calendar.Service.csproj" />
-    <ProjectReference Include="..\..\src\designer\designer.service\Designer.Service.csproj" />
-    <ProjectReference Include="..\..\src\drawer\drawer.service\Drawer.Service.csproj" />
-    <ProjectReference Include="..\..\src\driver\driver.service\Driver.Service.csproj" />
-    <ProjectReference Include="..\..\src\game\game.service\Game.Service.csproj" />
-    <ProjectReference Include="..\..\src\imaging\imaging.service\Imaging.Service.csproj" />
-    <ProjectReference Include="..\..\src\mobility\mobility.service\Mobility.Service.csproj" />
+    <ProjectReference Include="..\analizer\analizer.controller\Analizer.Controller.csproj" />
+    <ProjectReference Include="..\bom\bom.controller\Bom.Controller.csproj" />
+    <ProjectReference Include="..\calendar\calendar.controller\Calendar.Controller.csproj" />
+    <ProjectReference Include="..\designer\designer.controller\Designer.Controller.csproj" />
+    <ProjectReference Include="..\drawer\drawer.controller\Drawer.Controller.csproj" />
+    <ProjectReference Include="..\driver\driver.controller\Driver.Controller.csproj" />
+    <ProjectReference Include="..\game\game.controller\Game.Controller.csproj" />
+    <ProjectReference Include="..\imaging\imaging.controller\Imaging.Controller.csproj" />
+    <ProjectReference Include="..\mobility\mobility.controller\Mobility.Controller.csproj" />
   </ItemGroup>
 
   <ItemGroup>

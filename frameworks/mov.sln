@@ -87,29 +87,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imaging", "imaging", "{3C73
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mobility", "mobility", "{8026BCB4-31E3-42E0-B24E-07A72B450E39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imaging.Models", "src\imaging\Imaging.Models\Imaging.Models.csproj", "{D8473C03-1604-4893-97F3-15C6C021ED9F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imaging.Models", "src\imaging\imaging.models\Imaging.Models.csproj", "{D8473C03-1604-4893-97F3-15C6C021ED9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imaging.Repository", "src\imaging\Imaging.Repository\Imaging.Repository.csproj", "{355BDF75-94C2-455F-9B97-D351DAA2106C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imaging.Repository", "src\imaging\imaging.repository\Imaging.Repository.csproj", "{355BDF75-94C2-455F-9B97-D351DAA2106C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imaging.Service", "src\imaging\Imaging.Service\Imaging.Service.csproj", "{07CE98D7-FB0E-43B1-8BD7-8FD1DF5F23F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imaging.Service", "src\imaging\imaging.service\Imaging.Service.csproj", "{07CE98D7-FB0E-43B1-8BD7-8FD1DF5F23F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imaging.Controller", "src\imaging\Imaging.Controller\Imaging.Controller.csproj", "{259D08BD-D161-4DEE-8990-10516A170CDB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imaging.Controller", "src\imaging\imaging.controller\Imaging.Controller.csproj", "{259D08BD-D161-4DEE-8990-10516A170CDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobility.Models", "src\mobility\Mobility.Models\Mobility.Models.csproj", "{EDFF61BF-CF12-448F-A68B-77EF968947DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobility.Models", "src\mobility\mobility.models\Mobility.Models.csproj", "{EDFF61BF-CF12-448F-A68B-77EF968947DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobility.Repository", "src\mobility\Mobility.Repository\Mobility.Repository.csproj", "{497455FF-2468-4BC1-B392-9C88D3018453}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobility.Repository", "src\mobility\mobility.repository\Mobility.Repository.csproj", "{497455FF-2468-4BC1-B392-9C88D3018453}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobility.Service", "src\mobility\Mobility.Service\Mobility.Service.csproj", "{518859B0-18D3-4526-B28B-6479758BC810}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobility.Service", "src\mobility\mobility.service\Mobility.Service.csproj", "{518859B0-18D3-4526-B28B-6479758BC810}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobility.Controller", "src\mobility\Mobility.Controller\Mobility.Controller.csproj", "{2AF1562E-CE99-4A74-859C-BF0C670399D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobility.Controller", "src\mobility\mobility.controller\Mobility.Controller.csproj", "{2AF1562E-CE99-4A74-859C-BF0C670399D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Models", "src\calendar\Calendar.Models\Calendar.Models.csproj", "{1434C842-F12D-490D-B4CD-99DE99E19EA7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Models", "src\calendar\calendar.models\Calendar.Models.csproj", "{1434C842-F12D-490D-B4CD-99DE99E19EA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Repository", "src\calendar\Calendar.Repository\Calendar.Repository.csproj", "{C638F21A-6786-4651-9A00-4EE1F64ADC33}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Repository", "src\calendar\calendar.repository\Calendar.Repository.csproj", "{C638F21A-6786-4651-9A00-4EE1F64ADC33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Service", "src\calendar\Calendar.Service\Calendar.Service.csproj", "{E67F5F3A-7AEF-4B7F-B815-017EADFBB370}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Service", "src\calendar\calendar.service\Calendar.Service.csproj", "{E67F5F3A-7AEF-4B7F-B815-017EADFBB370}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Controller", "src\calendar\Calendar.Controller\Calendar.Controller.csproj", "{16C22087-45FF-4053-B333-2186DC2A7586}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.Controller", "src\calendar\calendar.controller\Calendar.Controller.csproj", "{16C22087-45FF-4053-B333-2186DC2A7586}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

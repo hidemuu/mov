@@ -1,12 +1,11 @@
 ﻿using Mov.Core.Accessors.Models;
 using Mov.Core.Repositories;
 using Mov.Core.Repositories.Services;
-using Mov.Suite.Resas.Models;
-using Mov.Suite.Resas.Models.Schemas;
-using Mov.Suite.Resas.Models.Schemas.Results;
+using Mov.Suite.AnalizerClient.Resas.Schemas;
+using Mov.Suite.AnalizerClient.Resas.Schemas.Results;
 using System.IO;
 
-namespace Mov.Suite.Resas.Client.Repository
+namespace Mov.Suite.AnalizerClient.Resas.Repository
 {
     public class RestResasRepository : IResasRepository
     {

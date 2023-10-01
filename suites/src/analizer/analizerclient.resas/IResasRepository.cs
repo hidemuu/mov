@@ -1,8 +1,8 @@
 ﻿using Mov.Core.Repositories;
-using Mov.Suite.Resas.Models.Schemas;
-using Mov.Suite.Resas.Models.Schemas.Results;
+using Mov.Suite.AnalizerClient.Resas.Schemas;
+using Mov.Suite.AnalizerClient.Resas.Schemas.Results;
 
-namespace Mov.Suite.Resas.Models
+namespace Mov.Suite.AnalizerClient.Resas
 {
     public interface IResasRepository
     {

@@ -1,4 +1,4 @@
-﻿namespace Mov.Suite.Resas.Models.Schemas.Results
+﻿namespace Mov.Suite.AnalizerClient.Resas.Schemas.Results
 {
     public class City : IResasResult
     {

@@ -1,4 +1,4 @@
-﻿namespace Mov.Suite.Resas.Models
+﻿namespace Mov.Suite.AnalizerClient.Resas
 {
     public interface IResasContext
     {

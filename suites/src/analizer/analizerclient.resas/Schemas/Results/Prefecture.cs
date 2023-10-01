@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using System.ComponentModel;
 
-namespace Mov.Suite.Resas.Models.Schemas.Results
+namespace Mov.Suite.AnalizerClient.Resas.Schemas.Results
 {
     public class Prefecture : IResasResult
     {

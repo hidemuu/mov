@@ -1,11 +1,10 @@
 ﻿using CsvHelper.Configuration.Attributes;
 using Mov.Core.Repositories.Schemas;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace Mov.Suite.Resas.Models.Schemas
+namespace Mov.Suite.AnalizerClient.Resas.Schemas
 {
     public class ResasResponse<TResult> : DbSchemaBase<string> where TResult : IResasResult
     {

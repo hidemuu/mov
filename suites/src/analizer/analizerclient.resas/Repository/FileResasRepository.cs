@@ -1,6 +1,4 @@
-﻿using Mov.Core;
-
-namespace Mov.Suite.Resas.Client.Repository
+﻿namespace Mov.Suite.AnalizerClient.Resas.Repository
 {
     public class FileResasRepository
     {

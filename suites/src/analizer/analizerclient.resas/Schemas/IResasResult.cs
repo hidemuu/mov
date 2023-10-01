@@ -1,4 +1,4 @@
-﻿namespace Mov.Suite.Resas.Models.Schemas
+﻿namespace Mov.Suite.AnalizerClient.Resas.Schemas
 {
     public interface IResasResult
     {

@@ -6,4 +6,9 @@
     <RootNamespace>Mov.Core.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\core\Core.csproj" />
+    <ProjectReference Include="..\..\model\maths\Maths.csproj" />
+  </ItemGroup>
+
 </Project>

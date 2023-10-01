@@ -6,4 +6,9 @@
     <RootNamespace>Mov.Core.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\model\styles\Styles.csproj" />
+    <ProjectReference Include="..\..\service\statistics\Statistics.csproj" />
+  </ItemGroup>
+
 </Project>

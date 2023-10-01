@@ -1,6 +1,9 @@
 ﻿using Mov.Core.Styles.Models;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Mov.Analizer.Models.Entities.Charts
+namespace Mov.Core.Charts.Models.Entities
 {
     public class ChartStyle
     {

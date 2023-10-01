@@ -22,8 +22,10 @@
     <ProjectReference Include="..\src\model\shields\Shields.csproj" />
     <ProjectReference Include="..\src\service\learnings\Learnings.csproj" />
     <ProjectReference Include="..\src\service\sequencers\Sequencers.csproj" />
+    <ProjectReference Include="..\src\service\statistics\Statistics.csproj" />
     <ProjectReference Include="..\src\service\stores\Stores.csproj" />
     <ProjectReference Include="..\src\service\transactions\Transactions.csproj" />
+    <ProjectReference Include="..\src\ui\charts\Charts.csproj" />
     <ProjectReference Include="..\src\ui\Commands\Commands.csproj" />
     <ProjectReference Include="..\src\ui\graphicers\Graphicers.csproj" />
     <ProjectReference Include="..\src\ui\layouts\Layouts.csproj" />

@@ -2,14 +2,16 @@
 using Mov.Core.Learnings.Models;
 using Mov.Game.Models;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Text;
 
-namespace Mov.Game.Controller.Consoles
+namespace Mov.Suite.GameEngine.Graphic
 {
     /// <summary>
     /// ハノイの塔のゲームサービス
     /// </summary>
-    public class TowerOfHanoiGame : GraphicControllerBase, IConsoleGame
+    public class TowerOfHanoiGame : GraphicControllerBase
     {
         #region フィールド
 

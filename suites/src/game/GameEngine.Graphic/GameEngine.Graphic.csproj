@@ -14,6 +14,9 @@
     <Reference Include="Mov.Core.Graphicers">
       <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.Graphicers.dll</HintPath>
     </Reference>
+    <Reference Include="Mov.Core.Learnings">
+      <HintPath>..\..\..\..\frameworks\src\game\game.controller\bin\Debug\netstandard2.0\Mov.Core.Learnings.dll</HintPath>
+    </Reference>
     <Reference Include="Mov.Game.Models">
       <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Game.Models.dll</HintPath>
     </Reference>

@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Models;
 
-namespace Mov.Core.Maths
+namespace Mov.Core.Valuables
 {
     public sealed class WeightValue : ValueObjectBase<WeightValue>
     {

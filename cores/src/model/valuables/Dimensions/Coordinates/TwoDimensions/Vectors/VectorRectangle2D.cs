@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Maths.Dimensions.Coordinates.TwoDimensions.Vectors
+﻿namespace Mov.Core.Valuables.Dimensions.Coordinates.TwoDimensions.Vectors
 {
     internal class VectorRectangle2D : Vector2D
     {

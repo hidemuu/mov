@@ -1,19 +1,20 @@
 ﻿using Mov.Core.Models;
 
-namespace Mov.Core.Maths
+namespace Mov.Core.Valuables.Dimensions
 {
-    public sealed class LengthValue : ValueObjectBase<LengthValue>
+    /// <summary>
+    /// 座標
+    /// </summary>
+    public sealed class CoordinateValue : ValueObjectBase<CoordinateValue>
     {
-        public static LengthValue Default = new LengthValue(0);
-
         public double Value { get; }
 
-        public LengthValue(double value)
+        public CoordinateValue(double value)
         {
             Value = value;
         }
 
-        protected override bool EqualCore(LengthValue other)
+        protected override bool EqualCore(CoordinateValue other)
         {
             return Value.Equals(other.Value); ;
         }

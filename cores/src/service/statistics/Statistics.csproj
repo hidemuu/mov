@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\core\Core.csproj" />
     <ProjectReference Include="..\..\model\maths\Maths.csproj" />
+    <ProjectReference Include="..\..\model\valuables\Valuables.csproj" />
   </ItemGroup>
 
 </Project>

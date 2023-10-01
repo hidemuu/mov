@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Models;
 
-namespace Mov.Core.Maths.Dimensions.Coordinates.TwoDimensions
+namespace Mov.Core.Valuables.Dimensions.Coordinates.TwoDimensions
 {
     public sealed class RotRectangle2D : ValueObjectBase<RotRectangle2D>
     {

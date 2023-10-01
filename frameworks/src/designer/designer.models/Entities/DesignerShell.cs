@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Layouts.Models.Shells;
-using Mov.Core.Maths.Sizes;
 using Mov.Core.Styles.Models;
+using Mov.Core.Valuables.Sizes;
 
 namespace Mov.Designer.Models.Entities
 {

@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Maths.Dimensions
+﻿namespace Mov.Core.Valuables.Dimensions
 {
     public class VectorOfInt<D> : Vector<VectorOfInt<D>, int, D>
         where D : IDimension, new()

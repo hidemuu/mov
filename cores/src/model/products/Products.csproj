@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\core\Core.csproj" />
     <ProjectReference Include="..\maths\Maths.csproj" />
+    <ProjectReference Include="..\valuables\Valuables.csproj" />
   </ItemGroup>
 
 </Project>

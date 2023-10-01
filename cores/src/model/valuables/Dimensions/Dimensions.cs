@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Maths.Dimensions
+﻿namespace Mov.Core.Valuables.Dimensions
 {
     public static class Dimensions
     {

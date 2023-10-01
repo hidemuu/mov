@@ -1,4 +1,4 @@
-﻿namespace Mov.Core.Maths.Dimensions
+﻿namespace Mov.Core.Valuables.Dimensions
 {
     public class VectorOfFloat<TSelf, D>
     : Vector<TSelf, float, D>

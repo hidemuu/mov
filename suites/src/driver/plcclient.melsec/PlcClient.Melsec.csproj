@@ -8,10 +8,7 @@
 
   <ItemGroup>
     <Reference Include="Mov.Driver.Models">
-      <HintPath>..\..\..\..\frameworks\lib\framework\bin\Debug\netstandard2.0\Mov.Driver.Models.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Driver.Service">
-      <HintPath>..\..\..\..\frameworks\lib\framework\bin\Debug\netstandard2.0\Mov.Driver.Service.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Driver.Models.dll</HintPath>
     </Reference>
   </ItemGroup>
 

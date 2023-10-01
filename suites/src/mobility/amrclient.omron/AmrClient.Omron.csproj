@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <Reference Include="Mov.Mobility.Models">
-      <HintPath>..\..\..\..\frameworks\lib\framework\bin\Debug\netstandard2.0\Mov.Mobility.Models.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Mobility.Models.dll</HintPath>
     </Reference>
   </ItemGroup>
 

@@ -11,16 +11,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\analizer\analizer.engine\Analizer.Service.csproj" />
-    <ProjectReference Include="..\..\src\bom\bom.engine\Bom.Service.csproj" />
-    <ProjectReference Include="..\..\src\designer\designer.engine\Designer.Service.csproj" />
-    <ProjectReference Include="..\..\src\drawer\drawer.engine\Drawer.Service.csproj" />
-    <ProjectReference Include="..\..\src\game\game.engine\Game.Service.csproj" />
+    <ProjectReference Include="..\..\src\analizer\analizer.service\Analizer.Service.csproj" />
+    <ProjectReference Include="..\..\src\bom\bom.service\Bom.Service.csproj" />
+    <ProjectReference Include="..\..\src\designer\designer.service\Designer.Service.csproj" />
+    <ProjectReference Include="..\..\src\drawer\drawer.service\Drawer.Service.csproj" />
+    <ProjectReference Include="..\..\src\game\game.service\Game.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Mov.Core">
       <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Commands">
+      <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Commands.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Core.Configurators">
       <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Configurators.dll</HintPath>

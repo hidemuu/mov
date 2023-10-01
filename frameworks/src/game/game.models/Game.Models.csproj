@@ -18,6 +18,15 @@
     <Reference Include="Mov.Core.Graphicers">
       <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Graphicers.dll</HintPath>
     </Reference>
+    <Reference Include="Mov.Core.Layouts">
+      <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Layouts.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Repositories">
+      <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Repositories.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Stores">
+      <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Stores.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

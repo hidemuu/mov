@@ -1,10 +1,11 @@
-﻿using Mov.Core.Templates.Crud;
+﻿using Mov.Core.Stores;
 using Mov.Game.Models.Schemas;
+using System;
 
 namespace Mov.Game.Models
 {
     public interface IGameQuery
     {
-        IPersistenceQuery<LandmarkSchema> Landmark { get; }
+        IStoreQuery<LandmarkSchema, Guid> Landmark { get; }
     }
 }

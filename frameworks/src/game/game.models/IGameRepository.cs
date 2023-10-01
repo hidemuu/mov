@@ -1,10 +1,11 @@
-﻿using Mov.Core.Templates.Repositories;
+﻿using Mov.Core.Repositories;
 using Mov.Game.Models.Schemas;
+using System;
 
 namespace Mov.Game.Models
 {
-    public interface IGameRepository : IDomainRepository
+    public interface IGameRepository
     {
-        IDbObjectRepository<LandmarkSchema, LandmarkSchemaCollection> Landmarks { get; }
+        IDbRepository<LandmarkSchema, Guid> Landmarks { get; }
     }
 }

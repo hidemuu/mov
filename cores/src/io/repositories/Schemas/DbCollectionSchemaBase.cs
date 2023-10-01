@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 
 namespace Mov.Core.Repositories.Schemas
 {
-    public abstract class DbCollectionSchemaBase<TEntity, TKey> : IDbCollectionSchema<TEntity, TKey> where TEntity : IDbSchema<TKey>
+    public abstract class DbCollectionSchemaBase<TEntity, TIdentifier> : IDbCollectionSchema<TEntity, TIdentifier> where TEntity : IDbSchema<TIdentifier>
     {
         #region property
 

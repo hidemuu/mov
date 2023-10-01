@@ -1,4 +1,6 @@
 ﻿using Mov.Core.Graphicers;
+using Mov.Core.Graphicers.Services.Controllers;
+using Mov.Drawer.Engine;
 using Mov.Drawer.Models;
 
 namespace Mov.Drawer.Service.Canvas

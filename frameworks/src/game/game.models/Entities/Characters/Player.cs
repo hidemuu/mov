@@ -1,5 +1,6 @@
 ﻿using Mov.Core;
-using Mov.Core.Models.Codes;
+using Mov.Core.Layouts.Models;
+using Mov.Core.Models;
 using System.Drawing;
 
 namespace Mov.Game.Models.Entities.Characters

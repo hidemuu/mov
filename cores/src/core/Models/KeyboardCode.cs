@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Models;
 
-namespace Mov.Core.Layouts.Models
+namespace Mov.Core.Models
 {
     public sealed class KeyboardCode : ValueObjectBase<KeyboardCode>
     {

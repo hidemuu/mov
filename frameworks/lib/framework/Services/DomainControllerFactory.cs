@@ -1,6 +1,6 @@
 ﻿using Mov.Analizer.Engine;
-using Mov.Core.Controllers.Services.Controllers;
-using Mov.Core.Templates.Controllers;
+using Mov.Core.Commands;
+using Mov.Core.Commands.Services;
 using Mov.Designer.Engine;
 using Mov.Game.Engine;
 using System;
@@ -20,22 +20,22 @@ namespace Mov.Framework.Services
             this.commandPath = commandPath;
         }
 
-        public IController Create<TService>(TService service)
+        public IUiController Create<TService>(TService service)
         {
             try
             {
                 //return new DomainController<TService>(service, this.commandPath);
                 if (service is IDesignerFacade designerService)
                 {
-                    return new DomainController<IDesignerFacade>(designerService, commandPath);
+                    return new UiCommandController<IDesignerFacade>(designerService, commandPath);
                 }
                 if (service is IGameFacade gameService)
                 {
-                    return new DomainController<IGameFacade>(gameService, commandPath);
+                    return new UiCommandController<IGameFacade>(gameService, commandPath);
                 }
                 if (service is IAnalizerFacade analizerService)
                 {
-                    return new DomainController<IAnalizerFacade>(analizerService, commandPath);
+                    return new UiCommandController<IAnalizerFacade>(analizerService, commandPath);
                 }
             }
             catch (Exception ex)

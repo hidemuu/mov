@@ -1,4 +1,5 @@
 ﻿using Mov.Core.Repositories.Schemas;
+using System;
 
 namespace Mov.Bom.Models.Schemas
 {

@@ -1,16 +1,17 @@
 ﻿using Mov.Core;
-using Mov.Core.Models.Texts;
-using Mov.Core.Repositories.Repositories.DbObjects;
-using Mov.Core.Repositories.Repositories.Domains;
-using Mov.Core.Templates.Repositories;
+using Mov.Core.Accessors.Models;
+using Mov.Core.Repositories;
+using Mov.Core.Repositories.Services;
 using Mov.Game.Models;
 using Mov.Game.Models.Schemas;
+using System;
+using System.IO;
 
 namespace Mov.Game.Repository
 {
-    public class FileGameRepository : FileDomainRepositoryBase, IGameRepository
+    public class FileGameRepository : IGameRepository
     {
-        public override string DomainPath => "game";
+        private const string DOMAIN_PATH = "game";
 
         #region コンストラクター
 
@@ -18,16 +19,15 @@ namespace Mov.Game.Repository
         /// コンストラクター
         /// </summary>
         public FileGameRepository(string endpoint, FileType extension, EncodingValue encoding)
-            : base(endpoint, extension, encoding)
         {
-            Landmarks = new FileDbObjectRepository<LandmarkSchema, LandmarkSchemaCollection>(GetPath("landmark"), encoding);
+            Landmarks = FileDbRepository<LandmarkSchema, Guid>.Factory.Create(Path.Combine(endpoint, DOMAIN_PATH, "lamdmark.json"), extension, encoding);
         }
 
         #endregion コンストラクター
 
         #region プロパティ
 
-        public IDbObjectRepository<LandmarkSchema, LandmarkSchemaCollection> Landmarks { get; }
+        public IDbRepository<LandmarkSchema, Guid> Landmarks { get; }
 
         #endregion プロパティ
     }

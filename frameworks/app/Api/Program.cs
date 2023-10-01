@@ -5,13 +5,13 @@ using Mov.Core.Configurators;
 using System.Reflection;
 using Mov.Framework.Creators;
 using Mov.Core;
-using Mov.Core.Models.Texts;
 using Mov.Designer.Models;
 using Mov.Bom.Models;
 using Mov.Bom.Repository;
 using Mov.Core.Translators;
 using Mov.Core.Translators.Repositories;
 using Mov.Designer.Repository;
+using Mov.Core.Accessors.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

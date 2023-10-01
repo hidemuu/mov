@@ -1,10 +1,10 @@
-﻿using Mov.Core.Templates.Crud;
+﻿using Mov.Core.Stores;
 using Mov.Game.Models.Schemas;
 
 namespace Mov.Game.Models
 {
     public interface IGameCommand
     {
-        IPersistenceCommand<LandmarkSchema> Landmark { get; }
+        IStoreCommand<LandmarkSchema> Landmark { get; }
     }
 }

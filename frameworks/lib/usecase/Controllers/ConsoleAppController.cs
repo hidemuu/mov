@@ -1,4 +1,4 @@
-﻿using Mov.Core.Templates.Controllers;
+﻿using Mov.Core.Commands;
 using Mov.Framework;
 using Mov.Framework.Models;
 using Mov.Framework.Services;
@@ -13,7 +13,7 @@ namespace Mov.UseCase.Controllers
         #region field
 
         private readonly IMovEngine engine;
-        private readonly IDictionary<DomainType, IController> domainControllers = new Dictionary<DomainType, IController>();
+        private readonly IDictionary<DomainType, IUiController> domainControllers = new Dictionary<DomainType, IUiController>();
         private DomainType currentDomain;
 
         #endregion field

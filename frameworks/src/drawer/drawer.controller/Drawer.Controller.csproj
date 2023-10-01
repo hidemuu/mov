@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\drawer.engine\Drawer.Service.csproj" />
+    <ProjectReference Include="..\drawer.service\Drawer.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>

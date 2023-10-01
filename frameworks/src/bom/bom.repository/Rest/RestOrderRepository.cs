@@ -1,8 +1,7 @@
 ﻿using Mov.Bom.Models;
 using Mov.Bom.Models.Schemas;
-using Mov.Core.Accessors.Services;
-using Mov.Core.Accessors.Services.Serializer.Implements;
-using Mov.Core.Models.Texts;
+using Mov.Core.Accessors.Models;
+using Mov.Core.Accessors.Serializer;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -18,7 +17,7 @@ namespace Mov.Bom.Repository.Rest
 
         public RestOrderRepository(string baseUrl)
         {
-            _http = new HttpSerializer(new FileAccessService(baseUrl, EncodingValue.UTF8));
+            _http = new HttpSerializer(new PathValue(baseUrl), EncodingValue.UTF8);
         }
 
         public async Task<IEnumerable<Order>> GetAsync() =>

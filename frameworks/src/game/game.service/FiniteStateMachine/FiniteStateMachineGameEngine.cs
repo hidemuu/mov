@@ -1,5 +1,5 @@
 ﻿using Mov.Core;
-using Mov.Core.Models.Codes;
+using Mov.Core.Models;
 using Mov.Game.Models;
 using Mov.Game.Models.Entities;
 using Mov.Game.Models.Entities.Characters;
@@ -7,6 +7,7 @@ using Mov.Game.Models.Schemas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Mov.Game.Engine.FiniteStateMachine
 {
@@ -290,12 +291,12 @@ namespace Mov.Game.Engine.FiniteStateMachine
 
         public IEnumerable<int> GetLevels()
         {
-            return parameter.Repository.Landmarks.Get().Select(x => x.Lv);
+            return Task.WhenAll(parameter.Repository.Landmarks.GetAsync()).Result[0].Select(x => x.Lv);
         }
 
         public LandmarkSchema GetLandmark()
         {
-            return parameter.Repository.Landmarks.Get().FirstOrDefault(x => x.Lv == Level);
+            return Task.WhenAll(parameter.Repository.Landmarks.GetAsync()).Result[0].FirstOrDefault(x => x.Lv == Level);
         }
 
         public override string ToString()

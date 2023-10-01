@@ -1,10 +1,11 @@
-﻿using Mov.Core.Templates.Repositories;
+﻿using Mov.Core.Repositories;
 using Mov.Drawer.Models.Entities;
+using System;
 
 namespace Mov.Drawer.Models
 {
-    public interface IDrawerRepository : IDomainRepository
+    public interface IDrawerRepository
     {
-        IDbObjectRepository<DrawItem, DrawItemCollection> DrawItems { get; }
+        IDbRepository<DrawItem, Guid> DrawItems { get; }
     }
 }

@@ -1,16 +1,17 @@
 ﻿using Mov.Core;
-using Mov.Core.Models.Texts;
-using Mov.Core.Repositories.Repositories.DbObjects;
-using Mov.Core.Repositories.Repositories.Domains;
-using Mov.Core.Templates.Repositories;
+using Mov.Core.Accessors.Models;
+using Mov.Core.Repositories;
+using Mov.Core.Repositories.Services;
 using Mov.Drawer.Models;
 using Mov.Drawer.Models.Entities;
+using System;
+using System.IO;
 
 namespace Mov.Drawer.Repository
 {
-    public class FileDrawerRepository : FileDomainRepositoryBase, IDrawerRepository
+    public class FileDrawerRepository : IDrawerRepository
     {
-        public override string DomainPath => "drawer";
+        private const string DOMAIN_PATH = "drawer";
 
         #region コンストラクター
 
@@ -18,16 +19,15 @@ namespace Mov.Drawer.Repository
         /// コンストラクター
         /// </summary>
         public FileDrawerRepository(string endpoint, FileType extension, EncodingValue encoding)
-            : base(endpoint, extension, encoding)
         {
-            DrawItems = new FileDbObjectRepository<DrawItem, DrawItemCollection>(GetPath("draw_item"), encoding);
+            DrawItems = FileDbRepository<DrawItem, Guid>.Factory.Create(Path.Combine(endpoint, DOMAIN_PATH + "json"), extension, encoding);
         }
 
         #endregion コンストラクター
 
         #region プロパティ
 
-        public IDbObjectRepository<DrawItem, DrawItemCollection> DrawItems { get; }
+        public IDbRepository<DrawItem, Guid> DrawItems { get; }
 
         #endregion プロパティ
     }

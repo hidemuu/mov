@@ -1,15 +1,16 @@
-﻿using Mov.Core.Models.DbObjects.Entities;
+﻿using Mov.Core.Repositories.Schemas;
 using Newtonsoft.Json;
+using System;
 
 namespace Mov.Drawer.Models.Entities
 {
-    public class DrawItemCollection : DbObjectCollection<DrawItem>
+    public class DrawItemCollection : DbCollectionSchemaBase<DrawItem, Guid>
     {
         [JsonProperty("draw_items")]
         public override DrawItem[] Items { get; set; }
     }
 
-    public class DrawItem : DbObject
+    public class DrawItem : DbSchemaBase<Guid>
     {
         [JsonProperty("category")]
         public string Category { get; set; }

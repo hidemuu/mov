@@ -2,7 +2,7 @@
 using System;
 using System.Diagnostics;
 
-namespace Mov.Drawer.Service.Canvas
+namespace Mov.Drawer.Controller.Canvas
 {
     public class CanvasServiceFactory
     {
@@ -25,7 +25,7 @@ namespace Mov.Drawer.Service.Canvas
         /// </summary>
         public CanvasServiceFactory(IDrawerRepository repository)
         {
-            this.baseName = this.GetType().Namespace;
+            baseName = GetType().Namespace;
             this.repository = repository;
         }
 
@@ -39,7 +39,7 @@ namespace Mov.Drawer.Service.Canvas
                 Debug.Assert(false, type.FullName);
                 return null;
             };
-            return (CanvasServiceBase)Activator.CreateInstance(type, this.repository);
+            return (CanvasServiceBase)Activator.CreateInstance(type, repository);
         }
 
         #endregion メソッド

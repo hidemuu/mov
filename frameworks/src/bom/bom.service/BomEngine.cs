@@ -1,4 +1,4 @@
-﻿namespace Mov.Bom.Engine
+﻿namespace Mov.Bom.Service
 {
     public class BomEngine
     {

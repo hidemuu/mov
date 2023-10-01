@@ -1,4 +1,4 @@
-﻿namespace Mov.Analizer.Engine
+﻿namespace Mov.Analizer.Service
 {
     public interface IAnalizerFacade
     {

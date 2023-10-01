@@ -1,7 +1,7 @@
 ﻿using Mov.Drawer.Models;
 using System;
 
-namespace Mov.Drawer.Service.Canvas
+namespace Mov.Drawer.Controller.Canvas
 {
     public class KochCurveService : CanvasServiceBase
     {

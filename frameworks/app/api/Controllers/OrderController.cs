@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Mov.Designer.Models.Schemas;
-using Mov.Designer.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using Mov.Bom.Models;
 using Mov.Bom.Models.Schemas;
 

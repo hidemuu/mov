@@ -1,6 +1,5 @@
 ﻿using Mov.Core.Stores;
 using Mov.Designer.Models.Entities;
-using Mov.Designer.Models.Schemas;
 using System;
 
 namespace Mov.Designer.Models

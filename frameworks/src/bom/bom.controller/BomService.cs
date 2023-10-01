@@ -1,6 +1,6 @@
 ﻿using Mov.Bom.Models;
 
-namespace Mov.Bom.Service
+namespace Mov.Bom.Controller
 {
     public class BomService : IBomService
     {

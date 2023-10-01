@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mov.Framework
+﻿namespace Mov.Framework
 {
     public interface IWebAppController
     {

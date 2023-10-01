@@ -1,7 +1,4 @@
 ﻿using Mov.Core.Layouts.Models.Contents;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Designer.Models.Entities
 {

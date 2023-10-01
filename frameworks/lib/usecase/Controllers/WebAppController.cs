@@ -1,9 +1,6 @@
 ﻿using Mov.Framework;
-using Mov.Framework.Creators;
+using Mov.Framework.Services;
 using Mov.UseCase.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.UseCase.Controllers
 {
@@ -22,7 +19,7 @@ namespace Mov.UseCase.Controllers
 
         #region constructor
 
-        public WebAppController() 
+        public WebAppController()
         {
             this.Repository = new FileMovRepository(PathCreator.GetResourcePath());
         }

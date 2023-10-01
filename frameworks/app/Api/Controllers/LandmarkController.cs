@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Mov.Game.Models;
 using Mov.Game.Models.Schemas;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Mov.Api.Controllers
 {
@@ -45,7 +41,7 @@ namespace Mov.Api.Controllers
             return await this.repository.Landmarks.GetAsync();
         }
 
-        
+
         /// <summary>
         /// Creates a new item or updates an existing one.
         /// </summary>

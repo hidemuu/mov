@@ -1,9 +1,8 @@
-﻿using Mov.Core.Graphicers;
-using Mov.Core.Graphicers.Services.Controllers;
+﻿using Mov.Core.Graphicers.Services.Controllers;
 using Mov.Game.Models;
 using Mov.Game.Models.Entities;
 
-namespace Mov.Game.Service.Graphic
+namespace Mov.Game.Controller.Graphic
 {
     public class FiniteStateMachineGameGraphicController : GraphicControllerBase
     {

@@ -2,7 +2,7 @@
 using Mov.Game.Models.Schemas;
 using System.Collections.Generic;
 
-namespace Mov.Game.Engine
+namespace Mov.Game.Service
 {
     public interface IGameFacade
     {

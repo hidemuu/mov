@@ -2,9 +2,6 @@
 using Mov.Core.Layouts.Models.Nodes;
 using Mov.Core.Models;
 using Mov.Core.Styles.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Designer.Models.Entities
 {

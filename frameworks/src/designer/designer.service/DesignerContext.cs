@@ -10,12 +10,12 @@ using Mov.Core.Maths.Sizes;
 using Mov.Core.Models;
 using Mov.Core.Styles.Models;
 using Mov.Core.Valuables;
+using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
-namespace Mov.Designer.Models
+namespace Mov.Designer.Service
 {
     public class DesignerContext : ILayoutContext
     {
@@ -34,11 +34,11 @@ namespace Mov.Designer.Models
         public DesignerContext(IDesignerRepository repository)
         {
             this.repository = repository;
-            this.DomainId = new Identifier<string>(repository.Endpoint);
-            this.Nodes = GetNodes(repository);
-            this.Contents = GetContents(repository);
-            this.Shells = GetShells(repository);
-            this.Themes = GetThemes(repository);
+            DomainId = new Identifier<string>(repository.Endpoint);
+            Nodes = GetNodes(repository);
+            Contents = GetContents(repository);
+            Shells = GetShells(repository);
+            Themes = GetThemes(repository);
         }
 
         private IEnumerable<LayoutNode> GetNodes(IDesignerRepository repository)
@@ -101,14 +101,14 @@ namespace Mov.Designer.Models
 
         public void Read()
         {
-            Task.WhenAll(this.repository.Nodes.GetAsync());
-            Task.WhenAll(this.repository.Contents.GetAsync());
-            Task.WhenAll(this.repository.Shells.GetAsync());
+            Task.WhenAll(repository.Nodes.GetAsync());
+            Task.WhenAll(repository.Contents.GetAsync());
+            Task.WhenAll(repository.Shells.GetAsync());
         }
 
         public void Write()
         {
-            
+
         }
 
         public void Update()

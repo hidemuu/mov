@@ -1,5 +1,4 @@
-﻿using Mov.Core;
-using Mov.Core.Models;
+﻿using Mov.Core.Models;
 using Mov.Game.Models;
 using Mov.Game.Models.Entities;
 using Mov.Game.Models.Entities.Characters;
@@ -9,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Mov.Game.Engine.FiniteStateMachine
+namespace Mov.Game.Service.FiniteStateMachine
 {
     /// <summary>
     /// 有限状態マシン（Finite State Machine）手法のゲームエンジン

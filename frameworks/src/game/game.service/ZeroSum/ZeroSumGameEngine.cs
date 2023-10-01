@@ -1,6 +1,6 @@
 ﻿using Mov.Game.Models;
 
-namespace Mov.Game.Engine.ZeroSum
+namespace Mov.Game.Service.ZeroSum
 {
     /// <summary>
     /// ゼロサムゲームエンジン

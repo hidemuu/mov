@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Mov.Bom.Models.Schemas;
+﻿using Microsoft.AspNetCore.Mvc;
 using Mov.Bom.Models;
+using Mov.Bom.Models.Schemas;
 
 namespace Mov.Api.Controllers
 {

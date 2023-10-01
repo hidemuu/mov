@@ -1,9 +1,9 @@
-﻿using Mov.Analizer.Engine;
-using Mov.Designer.Engine;
+﻿using Mov.Analizer.Service;
+using Mov.Designer.Service;
 using Mov.Framework;
-using Mov.Game.Engine;
+using Mov.Game.Service;
 
-namespace Mov.UseCase.Services
+namespace Mov.UseCase.Facades
 {
     public class MovFacade : IMovFacade
     {

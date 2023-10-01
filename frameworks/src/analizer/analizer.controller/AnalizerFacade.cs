@@ -1,6 +1,6 @@
-﻿using Mov.Analizer.Engine;
+﻿using Mov.Analizer.Service;
 
-namespace Mov.Analizer.Service
+namespace Mov.Analizer.Controller
 {
     public class AnalizerFacade : IAnalizerFacade
     {

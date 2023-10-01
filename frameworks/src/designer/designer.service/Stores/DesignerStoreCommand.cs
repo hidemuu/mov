@@ -1,9 +1,8 @@
 ﻿using Mov.Core.Stores;
 using Mov.Designer.Models;
 using Mov.Designer.Models.Entities;
-using System;
 
-namespace Mov.Designer.Engine.Cruds
+namespace Mov.Designer.Service.Stores
 {
     public class DesignerStoreCommand : IDesignerStoreCommand
     {
@@ -17,7 +16,7 @@ namespace Mov.Designer.Engine.Cruds
 
         public IStoreCommand<DesignerTheme> Themes { get; }
 
-        public DesignerStoreCommand(IDesignerRepository repository) 
+        public DesignerStoreCommand(IDesignerRepository repository)
         {
             _repository = repository;
         }

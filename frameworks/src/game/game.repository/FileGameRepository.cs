@@ -1,5 +1,4 @@
-﻿using Mov.Core;
-using Mov.Core.Accessors.Models;
+﻿using Mov.Core.Accessors.Models;
 using Mov.Core.Repositories;
 using Mov.Core.Repositories.Services;
 using Mov.Game.Models;

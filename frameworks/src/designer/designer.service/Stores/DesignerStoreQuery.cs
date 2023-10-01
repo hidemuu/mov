@@ -3,7 +3,7 @@ using Mov.Designer.Models;
 using Mov.Designer.Models.Entities;
 using System;
 
-namespace Mov.Designer.Engine.Cruds
+namespace Mov.Designer.Service.Stores
 {
     public class DesignerStoreQuery : IDesignerStoreQuery
     {

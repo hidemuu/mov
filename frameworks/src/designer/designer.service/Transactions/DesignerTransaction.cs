@@ -1,4 +1,4 @@
-﻿namespace Mov.Designer.Engine.Transactions
+﻿namespace Mov.Designer.Service.Transactions
 {
     internal class DesignerTransaction
     {

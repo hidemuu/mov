@@ -1,10 +1,6 @@
 ﻿using Mov.Core.Stores;
-using Mov.Core.Stores.Services.Commands.Savers;
 using Mov.Designer.Models.Entities;
-using Mov.Designer.Models.Schemas;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Designer.Models.Stores.Commands
 {
@@ -17,7 +13,7 @@ namespace Mov.Designer.Models.Stores.Commands
         public DesignerContentCommand(IDesignerRepository repository)
         {
             Saver = new DesignerContentSaver(repository);
-            Deleter= new DesignerContentDeleter(repository);
+            Deleter = new DesignerContentDeleter(repository);
         }
 
         public void Dispose()

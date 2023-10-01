@@ -1,8 +1,8 @@
-﻿using Mov.Analizer.Engine;
+﻿using Mov.Analizer.Service;
 using Mov.Core.Commands;
 using Mov.Core.Commands.Services;
-using Mov.Designer.Engine;
-using Mov.Game.Engine;
+using Mov.Designer.Service;
+using Mov.Game.Service;
 using System;
 using System.Diagnostics;
 

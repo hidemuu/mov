@@ -1,12 +1,12 @@
 ﻿using Mov.Core.Layouts;
 using Mov.Core.Layouts.Services.Facades;
-using Mov.Designer.Engine;
-using Mov.Designer.Engine.Cruds;
 using Mov.Designer.Models;
+using Mov.Designer.Service;
+using Mov.Designer.Service.Stores;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Mov.Designer.Service
+namespace Mov.Designer.Controller
 {
     public class DesignerFacade : IDesignerFacade
     {
@@ -34,10 +34,10 @@ namespace Mov.Designer.Service
         public DesignerFacade(IEnumerable<IDesignerRepository> repositories)
         {
             var repository = repositories.FirstOrDefault();
-            this.Query = new DesignerStoreQuery(repository);
-            this.Command = new DesignerStoreCommand(repository);
-            this.context = new DesignerContext(repository);
-            this.LayoutFacade = new LayoutFacade(this.context);
+            Query = new DesignerStoreQuery(repository);
+            Command = new DesignerStoreCommand(repository);
+            context = new DesignerContext(repository);
+            LayoutFacade = new LayoutFacade(context);
         }
 
         #endregion コンストラクター
@@ -46,12 +46,12 @@ namespace Mov.Designer.Service
 
         public void Read()
         {
-            this.context.Read();
+            context.Read();
         }
 
         public void Write()
         {
-            this.context.Write();
+            context.Write();
         }
 
         #endregion メソッド

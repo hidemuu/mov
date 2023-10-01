@@ -2,7 +2,7 @@
 using Mov.Game.Models;
 using System;
 
-namespace Mov.Game.Service.Consoles
+namespace Mov.Game.Controller.Consoles
 {
     /// <summary>
     /// 騎士の巡回問題

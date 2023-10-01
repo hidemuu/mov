@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace Mov.Drawer.Engine
+namespace Mov.Drawer.Service
 {
     public interface IGraphicDrawerService
     {

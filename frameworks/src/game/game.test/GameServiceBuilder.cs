@@ -1,7 +1,7 @@
 ﻿using Moq;
-using Mov.Game.Engine;
+using Mov.Game.Controller.Graphic;
 using Mov.Game.Models;
-using Mov.Game.Service.Graphic;
+using Mov.Game.Service;
 
 namespace Mov.Game.Test
 {

@@ -1,7 +1,5 @@
 ﻿using Mov.Core.Repositories.Schemas;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace Mov.Designer.Models.Schemas

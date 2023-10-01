@@ -3,7 +3,7 @@ using Mov.Core.Learnings.Models;
 using Mov.Game.Models;
 using System;
 
-namespace Mov.Game.Service.Consoles
+namespace Mov.Game.Controller.Consoles
 {
     /// <summary>
     /// Nクイーン問題クラス

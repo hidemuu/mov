@@ -1,10 +1,10 @@
-﻿using Mov.Game.Engine;
-using Mov.Game.Models;
+﻿using Mov.Game.Models;
 using Mov.Game.Models.Schemas;
+using Mov.Game.Service;
 using System;
 using System.Collections.Generic;
 
-namespace Mov.Game.Service.Consoles
+namespace Mov.Game.Controller.Consoles
 {
     public class ConsoleGameService : IGameFacade
     {

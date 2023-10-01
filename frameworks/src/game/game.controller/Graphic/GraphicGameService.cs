@@ -1,9 +1,9 @@
-﻿using Mov.Game.Engine;
-using Mov.Game.Models;
+﻿using Mov.Game.Models;
 using Mov.Game.Models.Schemas;
+using Mov.Game.Service;
 using System.Collections.Generic;
 
-namespace Mov.Game.Service.Graphic
+namespace Mov.Game.Controller.Graphic
 {
     public class GraphicGameService : IGameFacade
     {

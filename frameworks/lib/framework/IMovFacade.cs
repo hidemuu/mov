@@ -1,6 +1,6 @@
-﻿using Mov.Analizer.Engine;
-using Mov.Designer.Engine;
-using Mov.Game.Engine;
+﻿using Mov.Analizer.Service;
+using Mov.Designer.Service;
+using Mov.Game.Service;
 
 namespace Mov.Framework
 {

@@ -1,6 +1,6 @@
 ﻿using Mov.Game.Models;
 
-namespace Mov.Game.Engine.Inference
+namespace Mov.Game.Service.Inference
 {
     /// <summary>
     /// 推論ゲームエンジン

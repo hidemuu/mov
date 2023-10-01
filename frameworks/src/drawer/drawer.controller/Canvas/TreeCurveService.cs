@@ -2,7 +2,7 @@
 using System;
 using System.Drawing;
 
-namespace Mov.Drawer.Service.Canvas
+namespace Mov.Drawer.Controller.Canvas
 {
     public class TreeCurveService : CanvasServiceBase
     {

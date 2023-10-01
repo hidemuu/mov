@@ -3,7 +3,7 @@ using Mov.Drawer.Models;
 using System;
 using System.Diagnostics;
 
-namespace Mov.Drawer.Service
+namespace Mov.Drawer.Controller
 {
     public class GraphicDrawerControllerFactory
     {
@@ -26,7 +26,7 @@ namespace Mov.Drawer.Service
         /// </summary>
         public GraphicDrawerControllerFactory(IDrawerRepository repository)
         {
-            this.baseName = this.GetType().Namespace;
+            baseName = GetType().Namespace;
             this.repository = repository;
         }
 
@@ -40,7 +40,7 @@ namespace Mov.Drawer.Service
                 Debug.Assert(false, type.FullName);
                 return null;
             };
-            return (IGraphicController)Activator.CreateInstance(type, this.repository);
+            return (IGraphicController)Activator.CreateInstance(type, repository);
         }
 
         #endregion メソッド

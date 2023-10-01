@@ -1,5 +1,4 @@
-﻿using Mov.Core.Repositories;
-using Mov.Core.Repositories.Schemas;
+﻿using Mov.Core.Repositories.Schemas;
 using System;
 
 namespace Mov.Analizer.Models.Schemas

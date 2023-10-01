@@ -1,11 +1,10 @@
-﻿using Mov.Core.Graphicers;
-using Mov.Core.Graphicers.Services.Controllers;
+﻿using Mov.Core.Graphicers.Services.Controllers;
 using Mov.Core.Learnings.Models;
 using Mov.Game.Models;
 using System;
 using System.Drawing;
 
-namespace Mov.Game.Service.Consoles
+namespace Mov.Game.Controller.Consoles
 {
     /// <summary>
     /// ハノイの塔のゲームサービス

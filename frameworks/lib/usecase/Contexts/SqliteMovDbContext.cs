@@ -1,8 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Mov.Framework.Contexts;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.UseCase.Contexts
 {

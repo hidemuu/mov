@@ -1,9 +1,8 @@
-﻿using Mov.Core.Graphicers;
-using Mov.Core.Graphicers.Services.Controllers;
-using Mov.Drawer.Engine;
+﻿using Mov.Core.Graphicers.Services.Controllers;
 using Mov.Drawer.Models;
+using Mov.Drawer.Service;
 
-namespace Mov.Drawer.Service.Canvas
+namespace Mov.Drawer.Controller.Canvas
 {
     public abstract class CanvasServiceBase : GraphicControllerBase, IGraphicDrawerService
     {
@@ -25,8 +24,8 @@ namespace Mov.Drawer.Service.Canvas
 
         public CanvasServiceBase(IDrawerRepository repository) : base()
         {
-            this.Repository = repository;
-            this.DrawEngine = new GraphicEngine();
+            Repository = repository;
+            DrawEngine = new GraphicEngine();
         }
 
         #endregion コンストラクター

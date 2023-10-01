@@ -6,9 +6,4 @@
     <RootNamespace>Mov.Suite.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\Schemas\" />
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>

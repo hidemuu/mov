@@ -22,10 +22,10 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository
             this.auth = auth;
         }
 
-        public IDbRepository<ResasResponse<Prefecture>, string> Prefectures =>
-            new RestDbRepository<ResasResponse<Prefecture>, string>(Path.Combine(endpoint, Prefecture.URI), auth, EncodingValue.UTF8);
+        public IDbRepository<ResasResponseSchema<PrefectureResultSchema>, string> Prefectures =>
+            new RestDbRepository<ResasResponseSchema<PrefectureResultSchema>, string>(Path.Combine(endpoint, PrefectureResultSchema.URI), auth, EncodingValue.UTF8);
 
-        public IDbRepository<ResasResponse<City>, string> Cities =>
-            new RestDbRepository<ResasResponse<City>, string>(Path.Combine(endpoint, City.URI), auth, EncodingValue.UTF8);
+        public IDbRepository<ResasResponseSchema<CityResultSchema>, string> Cities =>
+            new RestDbRepository<ResasResponseSchema<CityResultSchema>, string>(Path.Combine(endpoint, CityResultSchema.URI), auth, EncodingValue.UTF8);
     }
 }

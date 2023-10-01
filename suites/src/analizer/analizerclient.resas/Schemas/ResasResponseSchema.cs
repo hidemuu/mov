@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace Mov.Suite.AnalizerClient.Resas.Schemas
 {
-    public class ResasResponse<TResult> : DbSchemaBase<string> where TResult : IResasResult
+    public class ResasResponseSchema<TResult> : DbSchemaBase<string> where TResult : IResasResultSchema
     {
         [Name("message")]
         [JsonProperty("message")]

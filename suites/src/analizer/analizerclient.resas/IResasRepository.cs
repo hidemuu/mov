@@ -6,8 +6,8 @@ namespace Mov.Suite.AnalizerClient.Resas
 {
     public interface IResasRepository
     {
-        IDbRepository<ResasResponse<Prefecture>, string> Prefectures { get; }
+        IDbRepository<ResasResponseSchema<PrefectureResultSchema>, string> Prefectures { get; }
 
-        IDbRepository<ResasResponse<City>, string> Cities { get; }
+        IDbRepository<ResasResponseSchema<CityResultSchema>, string> Cities { get; }
     }
 }

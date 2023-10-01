@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace Mov.Suite.AnalizerClient.Resas.Schemas.Results
 {
-    public class Prefecture : IResasResult
+    public class PrefectureResultSchema : IResasResultSchema
     {
         public const string URI = "prefectures";
 

@@ -5,7 +5,7 @@ namespace Mov.Game.Service.Inference
     /// <summary>
     /// 推論ゲームエンジン
     /// </summary>
-    public class InferenceGameEngine : IInferenceGameEngine
+    public class InferenceGameEngine : IInferenceGameClient
     {
     }
 }

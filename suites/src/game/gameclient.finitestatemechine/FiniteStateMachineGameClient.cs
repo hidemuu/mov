@@ -1,21 +1,19 @@
-﻿using Mov.Core.Models;
-using Mov.Game.Models;
-using Mov.Game.Models.Entities;
+﻿using Mov.Game.Models;
 using Mov.Game.Models.Entities.Characters;
+using Mov.Game.Models.Entities;
 using Mov.Game.Models.Schemas;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using Mov.Core.Models;
+using System.Linq;
 
-namespace Mov.Game.Service.FiniteStateMachine
+namespace Mov.Suite.GameClient.FiniteStateMechine
 {
-    /// <summary>
-    /// 有限状態マシン（Finite State Machine）手法のゲームエンジン
-    /// </summary>
-    public class FiniteStateMachineGameEngine : IFiniteStateMachineGameClient
+    public class FiniteStateMachineGameClient : IFiniteStateMachineGameClient
     {
-        #region フィールド
+        #region field
 
         public readonly IGameContext parameter;
 
@@ -29,9 +27,9 @@ namespace Mov.Game.Service.FiniteStateMachine
         /// </summary>
         private static bool isUseBreadcrumbs = true;
 
-        #endregion フィールド
+        #endregion field
 
-        #region プロパティ
+        #region property
 
         /// <summary>
         /// ゲームオーバー判定
@@ -93,14 +91,14 @@ namespace Mov.Game.Service.FiniteStateMachine
         /// </summary>
         public int[,] Map { get; private set; }
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FiniteStateMachineGameEngine(IGameContext parameter)
+        public FiniteStateMachineGameClient(IGameContext parameter)
         {
             this.parameter = parameter;
             Characters = new List<ICharacter>();
@@ -110,9 +108,9 @@ namespace Mov.Game.Service.FiniteStateMachine
             MapHeight = map.GetRow() * UnitHeight;
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region メソッド
+        #region method
 
         /// <summary>
         /// 初期化処理
@@ -303,6 +301,6 @@ namespace Mov.Game.Service.FiniteStateMachine
             return parameter.Query.Landmark.ToString();
         }
 
-        #endregion メソッド
+        #endregion method
     }
 }

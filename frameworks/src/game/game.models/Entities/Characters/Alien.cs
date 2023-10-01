@@ -32,7 +32,7 @@ namespace Mov.Game.Models.Entities.Characters
         /// コンストラクタ
         /// </summary>
         /// <param name="engine"></param>
-        public Alien(IFiniteStateMachineGameEngine engine) : base(engine)
+        public Alien(IFiniteStateMachineGameClient engine) : base(engine)
         {
         }
 

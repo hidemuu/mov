@@ -1,49 +1,52 @@
 ﻿using Mov.Core.Graphicers.Services.Controllers;
 using Mov.Game.Models;
 using Mov.Game.Models.Entities;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Mov.Game.Controller.Graphic
+namespace Mov.Suite.GameEngine.Graphic
 {
     public class FiniteStateMachineGameGraphicController : GraphicControllerBase
     {
-        #region フィールド
+        #region field
 
         /// <summary>
         /// ゲームエンジン
         /// </summary>
-        private IFiniteStateMachineGameClient engine;
+        private IFiniteStateMachineGameClient client;
 
-        #endregion フィールド
+        #endregion field
 
-        #region コンストラクター
+        #region constructor
 
-        public FiniteStateMachineGameGraphicController(IFiniteStateMachineGameClient engine) : base()
+        public FiniteStateMachineGameGraphicController(IFiniteStateMachineGameClient client) : base()
         {
-            this.engine = engine;
-            FrameWidth = engine.MapWidth;
-            FrameHeight = engine.MapHeight;
+            this.client = client;
+            FrameWidth = client.MapWidth;
+            FrameHeight = client.MapHeight;
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region 抽象メソッド
+        #region inner method
 
         protected override void Ready()
         {
-            foreach (var character in engine.Characters)
+            foreach (var character in client.Characters)
             {
                 switch (character.Type)
                 {
                     //プレイヤー
                     case CharacterType.PLAYER:
                         //移動処理
-                        if (character.Move()) engine.Score++;
+                        if (character.Move()) client.Score++;
                         //ダメージ判定
                         if (character.IsDamage()) character.AddLife(-1);
                         //ゲームオーバー判定
-                        if (character.Life <= 0) engine.IsGameOver = true;
+                        if (character.Life <= 0) client.IsGameOver = true;
                         //ステージクリア判定
-                        if (engine.Score >= engine.GetLandmark().ClearScore) engine.IsStageClear = true;
+                        if (client.Score >= client.GetLandmark().ClearScore) client.IsStageClear = true;
                         break;
                     //敵
                     case CharacterType.ALIEN:
@@ -56,7 +59,7 @@ namespace Mov.Game.Controller.Graphic
 
         protected override void DrawScreen()
         {
-            foreach (var character in engine.Characters)
+            foreach (var character in client.Characters)
             {
                 if (character.Type != CharacterType.ROAD) DrawCharacter(character);
             }
@@ -71,9 +74,9 @@ namespace Mov.Game.Controller.Graphic
             character.Draw(ScreenGraphics);
         }
 
-        #endregion 抽象メソッド
+        #endregion inner method
 
-        #region メソッド
+        #region method
 
         /// <summary>
         /// 初期化処理
@@ -81,21 +84,21 @@ namespace Mov.Game.Controller.Graphic
         public override void Initialize()
         {
             base.Initialize();
-            engine.Score = 0;
-            engine.Initialize();
-            engine.IsGameOver = false;
-            engine.IsStageClear = false;
+            client.Score = 0;
+            client.Initialize();
+            client.IsGameOver = false;
+            client.IsStageClear = false;
         }
 
         public void Next()
         {
-            engine.Level++;
-            engine.Score = 0;
-            engine.Initialize();
+            client.Level++;
+            client.Score = 0;
+            client.Initialize();
             IsActive = true;
-            engine.IsStageClear = false;
+            client.IsStageClear = false;
         }
 
-        #endregion メソッド
+        #endregion method
     }
 }

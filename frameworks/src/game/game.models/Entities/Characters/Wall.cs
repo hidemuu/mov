@@ -16,7 +16,7 @@ namespace Mov.Game.Models.Entities.Characters
 
         #region コンストラクター
 
-        public Wall(IFiniteStateMachineGameEngine engine) : base(engine)
+        public Wall(IFiniteStateMachineGameClient engine) : base(engine)
         {
         }
 

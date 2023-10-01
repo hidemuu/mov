@@ -15,7 +15,7 @@ namespace Mov.Game.Models.Entities.Characters
 
         #region コンストラクター
 
-        public Treasure(IFiniteStateMachineGameEngine engine) : base(engine)
+        public Treasure(IFiniteStateMachineGameClient engine) : base(engine)
         {
         }
 

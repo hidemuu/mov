@@ -11,7 +11,7 @@ namespace Mov.Game.Models.Entities.Characters
         #region フィールド
 
         private int len;
-        private IFiniteStateMachineGameEngine engine;
+        private IFiniteStateMachineGameClient engine;
         private int[,] map;
         private LinkedList<Position2D> positions = new LinkedList<Position2D>();
         private int[,] dirOffset = { { 1, 0 }, { 0, 1 }, { -1, 0 }, { 0, -1 } };
@@ -32,7 +32,7 @@ namespace Mov.Game.Models.Entities.Characters
         /// <param name="engine"></param>
         /// <param name="mapRow"></param>
         /// <param name="mapCol"></param>
-        public Breadcrumbs(int len, IFiniteStateMachineGameEngine engine, int mapRow, int mapCol)
+        public Breadcrumbs(int len, IFiniteStateMachineGameClient engine, int mapRow, int mapCol)
         {
             this.len = len;
             this.engine = engine;

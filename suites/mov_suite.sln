@@ -57,6 +57,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BomClient.Misumi", "src\bom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameEngine.Graphic", "src\game\gameengine.graphic\GameEngine.Graphic.csproj", "{3DE1E49D-0423-45BE-86B0-2B635B89CF57}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameClient.Tactics", "src\game\GameClient.Tactics\GameClient.Tactics.csproj", "{D03B12FF-C08C-4CA3-9E6F-14D2E90FAC50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{3DE1E49D-0423-45BE-86B0-2B635B89CF57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DE1E49D-0423-45BE-86B0-2B635B89CF57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DE1E49D-0423-45BE-86B0-2B635B89CF57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D03B12FF-C08C-4CA3-9E6F-14D2E90FAC50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D03B12FF-C08C-4CA3-9E6F-14D2E90FAC50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D03B12FF-C08C-4CA3-9E6F-14D2E90FAC50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D03B12FF-C08C-4CA3-9E6F-14D2E90FAC50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -164,6 +170,7 @@ Global
 		{71738DC5-B8F7-44FE-8493-C0C9CE9CA888} = {E9D48FC0-112E-478A-A02E-406A687E1597}
 		{BF28954C-2D3F-4DAD-B6B6-90DA3D75B20E} = {25E731B2-5A3E-4076-A02A-F34A08604217}
 		{3DE1E49D-0423-45BE-86B0-2B635B89CF57} = {E9D48FC0-112E-478A-A02E-406A687E1597}
+		{D03B12FF-C08C-4CA3-9E6F-14D2E90FAC50} = {E9D48FC0-112E-478A-A02E-406A687E1597}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DA11007-6005-4C72-A93A-35FB982B6921}

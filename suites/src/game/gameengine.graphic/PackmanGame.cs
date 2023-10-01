@@ -1,7 +1,10 @@
 ﻿using Mov.Core.Graphicers.Services.Controllers;
 using Mov.Game.Models;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Mov.Game.Controller.Graphic
+namespace Mov.Suite.GameEngine.Graphic
 {
     /// <summary>
     /// パックマンっぽいゲームサービス

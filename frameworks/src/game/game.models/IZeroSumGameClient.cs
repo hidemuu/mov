@@ -3,7 +3,7 @@
     /// <summary>
     /// ゼロサムゲームエンジン
     /// </summary>
-    public interface IZeroSumGameEngine
+    public interface IZeroSumGameClient
     {
     }
 }

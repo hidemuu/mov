@@ -12,7 +12,7 @@
         /// </summary>
         /// <param name="gameEngine"></param>
         /// <param name="breadcrumbs"></param>
-        public BreadAlien(IFiniteStateMachineGameEngine engine, Breadcrumbs breadcrumbs) : base(engine)
+        public BreadAlien(IFiniteStateMachineGameClient engine, Breadcrumbs breadcrumbs) : base(engine)
         {
             this.breadcrumbs = breadcrumbs;
         }

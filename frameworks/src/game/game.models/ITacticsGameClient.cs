@@ -1,6 +1,6 @@
 ﻿namespace Mov.Game.Models
 {
-    public interface ITacticsGameEngine
+    public interface ITacticsGameClient
     {
     }
 }

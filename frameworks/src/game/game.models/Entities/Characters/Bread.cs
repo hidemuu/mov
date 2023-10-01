@@ -17,7 +17,7 @@ namespace Mov.Game.Models.Entities.Characters
         /// コンストラクタ
         /// </summary>
         /// <param name="engine"></param>
-        public Bread(IFiniteStateMachineGameEngine engine) : base(engine)
+        public Bread(IFiniteStateMachineGameClient engine) : base(engine)
         {
             SetPosition(-100, -100);
         }

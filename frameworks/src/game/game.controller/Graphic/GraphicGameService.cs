@@ -9,14 +9,14 @@ namespace Mov.Game.Controller.Graphic
     {
         #region フィールド
 
-        private readonly IFiniteStateMachineGameEngine finiteStateMachineGameEngine;
+        private readonly IFiniteStateMachineGameClient finiteStateMachineGameEngine;
 
         #endregion フィールド
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public GraphicGameService(IFiniteStateMachineGameEngine finiteStateMachineGameEngine)
+        public GraphicGameService(IFiniteStateMachineGameClient finiteStateMachineGameEngine)
         {
             this.finiteStateMachineGameEngine = finiteStateMachineGameEngine;
         }

@@ -20,8 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\game.controller\Game.Controller.csproj" />
-    <ProjectReference Include="..\game.service\Game.Controller.csproj" />
     <ProjectReference Include="..\game.service\Game.Service.csproj" />
   </ItemGroup>
 

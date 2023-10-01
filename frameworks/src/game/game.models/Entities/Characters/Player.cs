@@ -39,7 +39,7 @@ namespace Mov.Game.Models.Entities.Characters
         /// コンストラクタ
         /// </summary>
         /// <param name="engine"></param>
-        public Player(IFiniteStateMachineGameEngine engine) : base(engine)
+        public Player(IFiniteStateMachineGameClient engine) : base(engine)
         {
         }
 

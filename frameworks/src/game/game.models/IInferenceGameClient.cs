@@ -3,7 +3,7 @@
     /// <summary>
     /// 推論ゲームエンジン
     /// </summary>
-    public interface IInferenceGameEngine
+    public interface IInferenceGameClient
     {
     }
 }

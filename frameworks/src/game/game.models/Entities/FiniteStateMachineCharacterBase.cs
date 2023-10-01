@@ -46,7 +46,7 @@ namespace Mov.Game.Models.Entities
         /// <summary>
         /// ゲームエンジン
         /// </summary>
-        protected IFiniteStateMachineGameEngine Engine { get; private set; }
+        protected IFiniteStateMachineGameClient Engine { get; private set; }
 
         /// <summary>
         /// 方向
@@ -74,7 +74,7 @@ namespace Mov.Game.Models.Entities
         /// コンストラクタ
         /// </summary>
         /// <param name="engine"></param>
-        public FiniteStateMachineCharacterBase(IFiniteStateMachineGameEngine engine)
+        public FiniteStateMachineCharacterBase(IFiniteStateMachineGameClient engine)
         {
             Engine = engine;
         }

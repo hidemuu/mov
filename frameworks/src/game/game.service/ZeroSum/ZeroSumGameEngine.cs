@@ -5,7 +5,7 @@ namespace Mov.Game.Service.ZeroSum
     /// <summary>
     /// ゼロサムゲームエンジン
     /// </summary>
-    public class ZeroSumGameEngine : IZeroSumGameEngine
+    public class ZeroSumGameEngine : IZeroSumGameClient
     {
     }
 }

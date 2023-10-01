@@ -4,7 +4,7 @@ namespace Mov.Game.Test
 {
     public class GameEngineBuilder
     {
-        private readonly IFiniteStateMachineGameEngine engine;
+        private readonly IFiniteStateMachineGameClient engine;
 
         public GameEngineBuilder()
         {

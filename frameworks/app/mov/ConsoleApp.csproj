@@ -13,10 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\lib\usecase\UseCase.csproj" />
     <ProjectReference Include="..\..\src\analizer\analizer.controller\Analizer.Controller.csproj" />
     <ProjectReference Include="..\..\src\designer\designer.controller\Designer.Controller.csproj" />
     <ProjectReference Include="..\..\src\game\game.controller\Game.Controller.csproj" />
+    <ProjectReference Include="..\..\src\usecase\UseCase.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -14,11 +14,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Mov.Analizer.Service">
+      <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Analizer.Service.dll</HintPath>
+    </Reference>
     <Reference Include="Mov.Core">
       <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Core.Commands">
       <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.Commands.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Designer.Service">
+      <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Designer.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Driver.Service">
+      <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Driver.Service.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Framework">
       <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Framework.dll</HintPath>

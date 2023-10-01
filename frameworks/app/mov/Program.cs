@@ -5,9 +5,6 @@ using Mov.Framework;
 using Mov.Framework.Engines;
 using Mov.Framework.Services;
 using Mov.Game.Controller.Consoles;
-using Mov.UseCase.Controllers;
-using Mov.UseCase.Facades;
-using Mov.UseCase.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,15 +73,8 @@ namespace Mov.ConsoleApp
                 {"end", EndProgram },
                 {"help", Help }
             };
-            //リポジトリ生成
-            var repository = new FileMovRepository(PathCreator.GetResourcePath());
-            //エンジン生成
-            var engine = new MovEngine(0, new MovFacade(
-                new AnalizerFacade(),
-                DesignerFacadeFactory.Create(new[] { repository.Designer }),
-                new ConsoleGameService()
-                ));
-            controller = new ConsoleAppController(engine);
+           
+
         }
 
         private static void Run()

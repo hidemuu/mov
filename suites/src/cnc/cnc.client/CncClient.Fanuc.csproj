@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Suite.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>Mov.Suite.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Driver.Models">
+      <HintPath>..\..\..\..\frameworks\lib\framework\bin\Debug\netstandard2.0\Mov.Driver.Models.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -6,4 +6,9 @@
     <RootNamespace>Mov.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\calendar.repository\Calendar.Repository.csproj" />
+    <ProjectReference Include="..\calendar.service\Calendar.Service.csproj" />
+  </ItemGroup>
+
 </Project>

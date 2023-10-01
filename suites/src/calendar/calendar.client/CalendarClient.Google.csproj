@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.Suite.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>Mov.Suite.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Apis.Calendar.v3" Version="1.55.0.2500" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Calendar.Models">
+      <HintPath>..\..\..\..\frameworks\lib\framework\bin\Debug\netstandard2.0\Mov.Calendar.Models.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

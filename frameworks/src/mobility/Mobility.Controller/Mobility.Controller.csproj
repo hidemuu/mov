@@ -6,4 +6,9 @@
     <RootNamespace>Mov.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\mobility.repository\Mobility.Repository.csproj" />
+    <ProjectReference Include="..\mobility.service\Mobility.Service.csproj" />
+  </ItemGroup>
+
 </Project>

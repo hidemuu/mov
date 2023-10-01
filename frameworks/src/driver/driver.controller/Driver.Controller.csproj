@@ -6,4 +6,9 @@
     <RootNamespace>Mov.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\driver.repository\Driver.Repository.csproj" />
+    <ProjectReference Include="..\driver.service\Driver.Service.csproj" />
+  </ItemGroup>
+
 </Project>

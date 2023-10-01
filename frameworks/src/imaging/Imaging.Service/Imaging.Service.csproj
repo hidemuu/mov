@@ -6,4 +6,8 @@
     <RootNamespace>Mov.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\imaging.models\Imaging.Models.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -7,13 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\amr\amr.client\Amr.Client.csproj" />
-    <ProjectReference Include="..\src\calendar\calendar.client\Calendar.Client.csproj" />
-    <ProjectReference Include="..\src\cnc\cnc.client\Cnc.Client.csproj" />
-    <ProjectReference Include="..\src\image_processing\imageprocessing.client\ImageProcessing.Client.csproj" />
-    <ProjectReference Include="..\src\plc\plc.client\Plc.Client.csproj" />
-    <ProjectReference Include="..\src\raspberry_pi\raspberrypi.client\RaspberryPi.Client.csproj" />
-    <ProjectReference Include="..\src\resas\resas.client\Resas.Client.csproj" />
+    <ProjectReference Include="..\src\amr\amr.client\AmrClient.Omron.csproj" />
+    <ProjectReference Include="..\src\calendar\calendar.client\CalendarClient.Google.csproj" />
+    <ProjectReference Include="..\src\cnc\cnc.client\CncClient.Fanuc.csproj" />
+    <ProjectReference Include="..\src\image_processing\imageprocessing.client\ImagingClient.OpenCV.csproj" />
+    <ProjectReference Include="..\src\plc\plc.client\PlcClient.Melsec.csproj" />
+    <ProjectReference Include="..\src\raspberry_pi\raspberrypi.client\RaspberryPiClient.csproj" />
+    <ProjectReference Include="..\src\resas\resas.client\AnalizerClient.Resas.csproj" />
   </ItemGroup>
 
 </Project>

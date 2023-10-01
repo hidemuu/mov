@@ -1,10 +1,6 @@
 ﻿using Moq;
 using Mov.Core.Authorizers.Models.Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mov.Core.Authorizers.Test.Builders
 {
@@ -37,7 +33,7 @@ namespace Mov.Core.Authorizers.Test.Builders
             _mockRepository
                 .Setup(x => x.GetByName(name))
                 .Returns(account)
-                .Callback(() => 
+                .Callback(() =>
                 {
                     Console.WriteLine(account.ToString());
                 });

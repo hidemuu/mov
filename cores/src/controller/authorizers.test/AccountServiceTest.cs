@@ -1,4 +1,3 @@
-using Moq;
 using Mov.Core.Authorizers.Models.Entities;
 using Mov.Core.Authorizers.Services;
 using Mov.Core.Authorizers.Test.Builders;

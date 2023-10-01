@@ -3,12 +3,8 @@ using Microsoft.OpenApi.Models;
 using Mov.Core.Accessors.Models;
 using Mov.Core.Configurators;
 using Mov.Core.Configurators.Repositories;
-using Mov.Core.Models;
-using Mov.Core.Repositories;
-using Mov.Core.Repositories.Services;
 using Mov.Core.Translators;
 using Mov.Core.Translators.Contexts;
-using Mov.Core.Translators.Models.Schemas;
 using Mov.Core.Translators.Repositories;
 using System.Reflection;
 

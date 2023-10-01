@@ -53,11 +53,11 @@ namespace Mov.Core.Accessors.Models
 
         public PathValue(string path)
         {
-            this.Value = 
+            this.Value =
                 string.IsNullOrEmpty(path) ?
-                    path : 
+                    path :
                     Path.IsPathRooted(path) ?
-                        path : 
+                        path :
                         Path.Combine(PathHelper.GetAssemblyRootPath(), path);
         }
 

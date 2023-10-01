@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Mov.Core.Accessors.Models;
 using Mov.Core.Translators.Contexts;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Core.Api
 {

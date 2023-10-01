@@ -1,8 +1,6 @@
 ﻿using Mov.Core.Maths.Dimensions.Coordinates;
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Core.Charts.Models.Entities
 {

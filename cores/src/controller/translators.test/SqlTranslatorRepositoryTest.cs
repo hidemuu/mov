@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Mov.Core.Translators.Test
+﻿namespace Mov.Core.Translators.Test
 {
     public class SqlTranslatorRepositoryTest
     {

@@ -1,4 +1,4 @@
-﻿namespace Mov.Suite.PlcClient.Melsec
+﻿namespace Mov.Suite.DriverClient.Plc.Melsec
 {
     public static class ActDefine
     {

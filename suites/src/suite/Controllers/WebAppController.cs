@@ -1,8 +1,4 @@
-﻿using Mov.Framework.Services;
-using Mov.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Mov.Framework;
 
 namespace Mov.Suite.Controllers
 {
@@ -23,7 +19,7 @@ namespace Mov.Suite.Controllers
 
         public WebAppController()
         {
-            
+
         }
 
         #endregion constructor

@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Accessors.Connectors;
 
-namespace Mov.Suite.RaspberryPiClient
+namespace Mov.Suite.DriverClient.RaspberryPi
 {
     public class RaspberryPiDriver
     {

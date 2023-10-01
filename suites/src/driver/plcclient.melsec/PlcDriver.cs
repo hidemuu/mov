@@ -1,7 +1,7 @@
 ﻿using Mov.Driver.Models;
 using System.Threading.Tasks;
 
-namespace Mov.Suite.PlcClient.Melsec
+namespace Mov.Suite.DriverClient.Plc.Melsec
 {
     public enum PLCHandler
     {

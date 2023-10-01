@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Mov.Suite.PlcClient.Melsec
+namespace Mov.Suite.DriverClient.Plc.Melsec
 {
     public class MelsecConnector
     {

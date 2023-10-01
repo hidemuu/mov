@@ -2,7 +2,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace Mov.Suite.CncClient.Fanuc
+namespace Mov.Suite.DriverClient.Cnc.Fanuc
 {
     public class FocasClient : ICncClient
     {

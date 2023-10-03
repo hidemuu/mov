@@ -9,7 +9,6 @@ using System;
 using System.Reflection;
 using System.Threading;
 using System.Windows;
-using Mov.Suite.WpfApp;
 using Mov.Suite.WpfApp.Pages.Views;
 
 namespace Mov.Suite.WpfApp

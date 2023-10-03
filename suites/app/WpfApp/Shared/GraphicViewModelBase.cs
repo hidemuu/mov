@@ -18,32 +18,59 @@ namespace WpfApp.Shared
 {
     public abstract class GraphicViewModelBase : RegionViewModelBase
     {
-        #region フィールド
+        #region field
 
         private Bitmap bitmap;
         private Graphics graphics;
 
-        #endregion フィールド
+        #endregion field
 
-        #region プロパティ
+        #region property
 
-        public ReactivePropertySlim<BitmapSource> ImageSource { get; set; } = new ReactivePropertySlim<BitmapSource>();
+        public ReactivePropertySlim<BitmapSource> ImageSource { get; } = new ReactivePropertySlim<BitmapSource>();
 
-        protected abstract GraphicControllerBase Controller { get; set; }
+        protected abstract GraphicControllerBase Controller { get; }
 
         public ReactiveTimer Timer { get; } = new ReactiveTimer(TimeSpan.FromMilliseconds(10), new SynchronizationContextScheduler(SynchronizationContext.Current));
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
         public GraphicViewModelBase(IRegionManager regionManager, IDialogService dialogService) : base(regionManager, dialogService)
         {
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region メソッド
+        #region event
+
+        protected override void OnLoaded()
+        {
+            bitmap = new Bitmap(Controller.FrameWidth, Controller.FrameHeight);
+            graphics = Graphics.FromImage(bitmap);
+            Start();
+        }
+
+        public override void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            base.OnNavigatedTo(navigationContext);
+        }
+
+        private void OnTimer()
+        {
+            Controller.Draw(graphics);
+            var hbitmap = bitmap.GetHbitmap();
+            //モデル生成
+            ImageSource.Value = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hbitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+            Update();
+            DeleteObject(hbitmap);
+            Next();
+        }
+
+        #endregion event
+
+        #region method
 
         protected override void Dispose(bool disposing)
         {
@@ -77,36 +104,9 @@ namespace WpfApp.Shared
             Timer.Stop();
         }
 
-        #endregion メソッド
+        #endregion method
 
-        #region イベントハンドラ
-
-        protected override void OnLoaded()
-        {
-            bitmap = new Bitmap(Controller.FrameWidth, Controller.FrameHeight);
-            graphics = Graphics.FromImage(bitmap);
-            Start();
-        }
-
-        public override void OnNavigatedTo(NavigationContext navigationContext)
-        {
-            base.OnNavigatedTo(navigationContext);
-        }
-
-        private void OnTimer()
-        {
-            Controller.Draw(graphics);
-            var hbitmap = bitmap.GetHbitmap();
-            //モデル生成
-            ImageSource.Value = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hbitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-            Update();
-            DeleteObject(hbitmap);
-            Next();
-        }
-
-        #endregion イベントハンドラ
-
-        #region 拡張メソッド
+        #region extern method
 
         /// <summary>
         /// gdi32.dllのDeleteObjectメソッドの使用を宣言する
@@ -116,6 +116,6 @@ namespace WpfApp.Shared
         [System.Runtime.InteropServices.DllImport("gdi32.dll")]
         public static extern bool DeleteObject(IntPtr hObject);
 
-        #endregion 拡張メソッド
+        #endregion extern method
     }
 }

@@ -8,7 +8,7 @@ namespace WpfApp.Shared
     /// </summary>
     public abstract class RegionViewModelBase : ViewModelBase, INavigationAware, IRegionMemberLifetime
     {
-        #region プロパティ
+        #region property
 
         /// <summary>
         /// ダイアログサービス
@@ -30,7 +30,9 @@ namespace WpfApp.Shared
         /// </summary>
         public virtual bool KeepAlive => true;
 
-        #endregion プロパティ
+        #endregion property
+
+        #region constructor
 
         /// <summary>
         /// コンストラクタ
@@ -43,7 +45,9 @@ namespace WpfApp.Shared
             DialogService = dialogService;
         }
 
-        #region ナビゲーションメソッド
+        #endregion constructor
+
+        #region event
 
         /// <summary>
         /// このメソッドの返す値により、画面のインスタンスを使いまわすかどうか制御できる。
@@ -73,6 +77,6 @@ namespace WpfApp.Shared
             Journal = navigationContext.NavigationService.Journal;
         }
 
-        #endregion ナビゲーションメソッド
+        #endregion event
     }
 }

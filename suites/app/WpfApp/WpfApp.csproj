@@ -8,8 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="2.4.10" />
     <PackageReference Include="MaterialDesignColors" Version="2.1.4" />
     <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Prism.Unity" Version="8.1.97" />
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
     <PackageReference Include="ReactiveProperty.WPF" Version="8.0.1" />
     <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
@@ -18,7 +21,6 @@
   <ItemGroup>
     <Folder Include="Dialogs\Views\" />
     <Folder Include="Dialogs\ViewModels\" />
-    <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>

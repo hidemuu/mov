@@ -11,7 +11,7 @@ namespace WpfApp.Shared
     /// </summary>
     public abstract class ViewModelBase : BindableBase, IDisposable
     {
-        #region フィールド
+        #region field
 
         /// <summary>
         /// ディスポーズ
@@ -20,16 +20,18 @@ namespace WpfApp.Shared
 
         private bool disposed;
 
-        #endregion フィールド
+        #endregion field
 
-        #region コマンド
+        #region command
 
         /// <summary>
         /// ロード完了時コマンド
         /// </summary>
         public ReactiveCommand LoadedCommand { get; } = new ReactiveCommand();
 
-        #endregion コマンド
+        #endregion command
+
+        #region constructor
 
         /// <summary>
         /// コンストラクタ
@@ -39,7 +41,19 @@ namespace WpfApp.Shared
             LoadedCommand.Subscribe(() => OnLoaded()).AddTo(Disposables);
         }
 
-        #region メソッド
+        #endregion constructor
+
+        #region event
+
+        /// <summary>
+        /// ロード完了時処理
+        /// </summary>
+        protected virtual void OnLoaded()
+        { }
+
+        #endregion event
+
+        #region method
 
         public void Dispose()
         {
@@ -59,12 +73,6 @@ namespace WpfApp.Shared
             this.disposed = true;
         }
 
-        /// <summary>
-        /// ロード完了時処理
-        /// </summary>
-        protected virtual void OnLoaded()
-        { }
-
-        #endregion メソッド
+        #endregion method
     }
 }

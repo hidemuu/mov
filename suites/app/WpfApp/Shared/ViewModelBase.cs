@@ -4,7 +4,7 @@ using Reactive.Bindings.Extensions;
 using System;
 using System.Reactive.Disposables;
 
-namespace WpfApp.Shared
+namespace Mov.Suite.WpfApp.Shared
 {
     /// <summary>
     /// ビューモデル基盤クラス
@@ -65,12 +65,12 @@ namespace WpfApp.Shared
 
         protected virtual void Dispose(bool disposing)
         {
-            if (this.disposed) return;
+            if (disposed) return;
             if (disposing)
             {
                 Disposables.Dispose();
             }
-            this.disposed = true;
+            disposed = true;
         }
 
         #endregion method

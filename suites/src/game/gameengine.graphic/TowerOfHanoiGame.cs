@@ -1,10 +1,7 @@
 ﻿using Mov.Core.Graphicers.Services.Controllers;
 using Mov.Core.Learnings.Models;
-using Mov.Game.Models;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 
 namespace Mov.Suite.GameEngine.Graphic
 {

@@ -1,4 +1,4 @@
-using BlazorApp;
+using Mov.Suite.BlazorApp;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 

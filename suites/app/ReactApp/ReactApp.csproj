@@ -11,6 +11,8 @@
     <SpaProxyServerUrl>https://localhost:44490</SpaProxyServerUrl>
     <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
     <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>Mov.Suite.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>Mov.Suite.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

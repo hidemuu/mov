@@ -1,20 +1,16 @@
-﻿using Prism.Regions;
+﻿using Mov.Core.Graphicers.Services.Controllers;
+using Prism.Regions;
 using Prism.Services.Dialogs;
 using Reactive.Bindings;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reactive.Concurrency;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
-using System.Windows;
-using System.Drawing;
-using Mov.Core.Graphicers.Services.Controllers;
 using Reactive.Bindings.Extensions;
+using System;
+using System.Drawing;
+using System.Reactive.Concurrency;
+using System.Threading;
+using System.Windows;
+using System.Windows.Media.Imaging;
 
-namespace WpfApp.Shared
+namespace Mov.Suite.WpfApp.Shared
 {
     public abstract class GraphicViewModelBase : RegionViewModelBase
     {

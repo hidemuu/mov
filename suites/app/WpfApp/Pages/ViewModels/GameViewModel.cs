@@ -1,15 +1,10 @@
 ﻿using Mov.Core.Graphicers.Services.Controllers;
+using Mov.Suite.WpfApp.Models;
+using Mov.Suite.WpfApp.Shared;
 using Prism.Regions;
 using Prism.Services.Dialogs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WpfApp.Models;
-using WpfApp.Shared;
 
-namespace WpfApp.Pages.ViewModels
+namespace Mov.Suite.WpfApp.Pages.ViewModels
 {
     public class GameViewModel : GraphicViewModelBase
     {

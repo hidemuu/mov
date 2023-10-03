@@ -2,10 +2,8 @@
 using Mov.Core.Learnings.Models;
 using Mov.Game.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Mov.Suite.GameClient.Tracking.KnightsTour
+namespace Mov.Suite.GameClient.Tracking.Queens
 {
     /// <summary>
     /// Nクイーン問題クラス

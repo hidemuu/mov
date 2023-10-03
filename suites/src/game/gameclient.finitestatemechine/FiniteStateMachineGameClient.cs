@@ -1,13 +1,12 @@
-﻿using Mov.Game.Models;
-using Mov.Game.Models.Entities.Characters;
+﻿using Mov.Core.Models;
+using Mov.Game.Models;
 using Mov.Game.Models.Entities;
+using Mov.Game.Models.Entities.Characters;
 using Mov.Game.Models.Schemas;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using Mov.Core.Models;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Mov.Suite.GameClient.FiniteStateMechine
 {

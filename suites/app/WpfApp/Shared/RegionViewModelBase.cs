@@ -1,7 +1,7 @@
 ﻿using Prism.Regions;
 using Prism.Services.Dialogs;
 
-namespace WpfApp.Shared
+namespace Mov.Suite.WpfApp.Shared
 {
     /// <summary>
     /// リージョンビューモデル基盤クラス
@@ -41,7 +41,7 @@ namespace WpfApp.Shared
         /// <param name="dialogService"></param>
         public RegionViewModelBase(IRegionManager regionManager, IDialogService dialogService) : base()
         {
-            this.RegionManager = regionManager;
+            RegionManager = regionManager;
             DialogService = dialogService;
         }
 

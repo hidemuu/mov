@@ -1,4 +1,4 @@
-namespace Api
+namespace Mov.Suite.Api
 {
     public class WeatherForecast
     {

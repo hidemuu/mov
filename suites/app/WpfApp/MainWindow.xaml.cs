@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace WpfApp
+namespace Mov.Suite.WpfApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

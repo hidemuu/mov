@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace WpfApp.Pages.Views
+namespace Mov.Suite.WpfApp.Pages.Views
 {
     /// <summary>
     /// GameView.xaml の相互作用ロジック

@@ -21,11 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Dialogs\Views\" />
-    <Folder Include="Dialogs\ViewModels\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="Mov.Core.Graphicers">
       <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.Graphicers.dll</HintPath>
     </Reference>

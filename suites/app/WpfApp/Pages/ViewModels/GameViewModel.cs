@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Graphicers.Services.Controllers;
-using Mov.Suite.WpfApp.Models;
 using Mov.Suite.WpfApp.Shared;
+using Mov.Suite.WpfApp.Shared.Models;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 

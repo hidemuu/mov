@@ -1,6 +1,6 @@
 ﻿using Reactive.Bindings;
 
-namespace Mov.Suite.WpfApp.Models
+namespace Mov.Suite.WpfApp.Shared.Models
 {
     public class GameStatusModel
     {

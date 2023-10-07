@@ -25,7 +25,7 @@ namespace Mov.Suite.WpfApp.Shared
 
         public ReactivePropertySlim<BitmapSource> ImageSource { get; } = new ReactivePropertySlim<BitmapSource>();
 
-        protected abstract GraphicControllerBase Controller { get; }
+        protected abstract IGraphicController Controller { get; }
 
         public ReactiveTimer Timer { get; } = new ReactiveTimer(TimeSpan.FromMilliseconds(10), new SynchronizationContextScheduler(SynchronizationContext.Current));
 

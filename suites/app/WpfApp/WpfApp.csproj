@@ -13,6 +13,7 @@
     <PackageReference Include="MahApps.Metro" Version="2.4.10" />
     <PackageReference Include="MaterialDesignColors" Version="2.1.4" />
     <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.3.0" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2045.28" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Prism.Unity" Version="8.1.97" />
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
@@ -21,8 +22,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Mov.Core">
+      <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Mov.Core.Graphicers">
       <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.Graphicers.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Game.Models">
+      <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Game.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Game.Service">
+      <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Game.Service.dll</HintPath>
     </Reference>
   </ItemGroup>
 

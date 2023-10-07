@@ -11,7 +11,7 @@ namespace Mov.Suite.WpfApp.Shared.Behaviors
     /// <summary>
     /// インプットバインディングのビヘイビア
     /// </summary>
-    public class InputBindingsBehavior
+    public static class InputBindingsBehavior
     {
         #region property
 

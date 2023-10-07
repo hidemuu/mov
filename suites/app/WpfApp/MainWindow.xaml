@@ -115,7 +115,7 @@
                 <TabControl
                     Grid.Column="0"
                     Padding="16"
-                    ItemsSource="{Binding Models}"
+                    ItemsSource="{Binding TabItems}"
                     SelectedIndex="{Binding TabPage.Value}"
                     Style="{StaticResource NavigationRailControlStyleKey}">
                     <TabControl.ItemTemplate>

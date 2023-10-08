@@ -1,6 +1,6 @@
 ﻿using Mov.Designer.Service;
 
-namespace Mov.Designer.Test.Applications.Builders
+namespace Mov.Designer.Test.Builders
 {
     public class DesignerServiceBuilder
     {
@@ -21,7 +21,7 @@ namespace Mov.Designer.Test.Applications.Builders
 
         #region メソッド
 
-        public IDesignerFacade Build() => this.service;
+        public IDesignerFacade Build() => service;
 
         #endregion メソッド
     }

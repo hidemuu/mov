@@ -1,35 +1,40 @@
 ﻿using Moq;
+using Mov.Core.Accessors.Models;
 using Mov.Core.Repositories;
 using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
+using Mov.Designer.Repository;
 using System;
 using System.Collections.Generic;
 
-namespace Mov.Designer.Test.Domains.Builders
+namespace Mov.Designer.Test.Builders
 {
-    public class DesignerEngineBuilder
+    public class DesignerRepositoryBuilder
     {
         #region フィールド
 
+        private readonly IDesignerRepository repository;
         private readonly Mock<IDesignerRepository> mockRepository;
+        private readonly Mock<IDbRepository<ContentSchema, Guid>> mockContent;
 
         #endregion フィールド
 
         #region コンストラクター
 
-        public DesignerEngineBuilder()
+        public DesignerRepositoryBuilder()
         {
-            //モックオブジェクト生成
             mockRepository = new Mock<IDesignerRepository>();
-            //インスタンス生成
-            //this.engine = new DesignerEngine(this.mockContext.Object, 0);
+            mockContent = new Mock<IDbRepository<ContentSchema, Guid>>();
+            repository = new FileDesignerRepository("", FileType.Empty, EncodingValue.Empty);
         }
 
         #endregion コンストラクター
 
         #region メソッド
 
-        public DesignerEngineBuilder WithContentCalled(List<ContentSchema> contents)
+        public IDesignerRepository Build() => repository;
+
+        public DesignerRepositoryBuilder WithContentCalled(List<ContentSchema> contents)
         {
             var mockRepositoryContent = new Mock<IDbRepository<ContentSchema, Guid>>();
             mockRepositoryContent.Setup(x => x.GetAsync()).ReturnsAsync(contents);
@@ -40,7 +45,7 @@ namespace Mov.Designer.Test.Domains.Builders
             return this;
         }
 
-        public DesignerEngineBuilder WithNodeCalled(List<NodeSchema> nodes)
+        public DesignerRepositoryBuilder WithNodeCalled(List<NodeSchema> nodes)
         {
             var mockNode = new Mock<IDbRepository<NodeSchema, Guid>>();
             mockNode.Setup(x => x.GetAsync()).ReturnsAsync(nodes);

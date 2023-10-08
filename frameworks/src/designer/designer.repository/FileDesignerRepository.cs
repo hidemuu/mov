@@ -13,9 +13,22 @@ namespace Mov.Designer.Repository
     /// </summary>
     public class FileDesignerRepository : IDesignerRepository
     {
+
+        #region property
+
         public string Endpoint => "designer";
 
-        #region コンストラクター
+        public IDbRepository<ShellSchema, Guid> Shells { get; }
+
+        public IDbRepository<NodeSchema, Guid> Nodes { get; }
+
+        public IDbRepository<ContentSchema, Guid> Contents { get; }
+
+        public IDbRepository<ThemeSchema, Guid> Themes { get; }
+
+        #endregion property
+
+        #region constructor
 
         /// <summary>
         /// コンストラクター
@@ -29,18 +42,7 @@ namespace Mov.Designer.Repository
             Themes = FileDbRepository<ThemeSchema, Guid>.Factory.Create(Path.Combine(endpoint, "theme"), fileType, encoding);
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region プロパティ
-
-        public IDbRepository<ShellSchema, Guid> Shells { get; }
-
-        public IDbRepository<NodeSchema, Guid> Nodes { get; }
-
-        public IDbRepository<ContentSchema, Guid> Contents { get; }
-
-        public IDbRepository<ThemeSchema, Guid> Themes { get; }
-
-        #endregion プロパティ
     }
 }

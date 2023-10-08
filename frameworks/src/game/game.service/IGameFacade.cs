@@ -1,7 +1,4 @@
-﻿using Mov.Game.Models.Schemas;
-using System.Collections.Generic;
-
-namespace Mov.Game.Service
+﻿namespace Mov.Game.Service
 {
     public interface IGameFacade
     {

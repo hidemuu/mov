@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\designer.controller\Designer.Controller.csproj" />
     <ProjectReference Include="..\designer.repository\Designer.Repository.csproj" />
-    <ProjectReference Include="..\designer.service\Designer.Controller.csproj" />
     <ProjectReference Include="..\designer.service\Designer.Service.csproj" />
   </ItemGroup>
 

@@ -2,7 +2,6 @@
 using Mov.Game.Service;
 using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 
 namespace Mov.Game.Controller
 {
@@ -16,9 +15,9 @@ namespace Mov.Game.Controller
 
         #region constructor
 
-        public SimpleGraphicGameFacade(IGraphicGame graphicGame) 
+        public SimpleGraphicGameFacade(IGraphicGame graphicGame)
         {
-            _game= graphicGame;
+            _game = graphicGame;
         }
 
         #endregion constructor

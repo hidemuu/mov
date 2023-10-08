@@ -1,6 +1,6 @@
-﻿using Mov.Designer.Test.Applications.Builders;
+﻿using Mov.Designer.Test.Builders;
 
-namespace Mov.Designer.Test.Applications
+namespace Mov.Designer.Test
 {
     public class DesignerServiceTest
     {

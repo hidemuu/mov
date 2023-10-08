@@ -2,7 +2,7 @@
 using Mov.Game.Models;
 using Mov.Game.Models.Entities;
 
-namespace Mov.Suite.GameEngine.Graphic
+namespace Mov.Suite.GameEngine.Graphic.Controller
 {
     public class FiniteStateMachineGameGraphicController : GraphicControllerBase
     {

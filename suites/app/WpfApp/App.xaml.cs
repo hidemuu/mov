@@ -10,6 +10,7 @@ using System.Reflection;
 using System.Threading;
 using System.Windows;
 using Mov.Suite.WpfApp.Pages.Views;
+using Mov.Game.Service;
 
 namespace Mov.Suite.WpfApp
 {
@@ -74,6 +75,7 @@ namespace Mov.Suite.WpfApp
             //リポジトリの登録
 
             //サービスの登録
+            //containerRegistry.RegisterInstance<IGameFacade>(new GameFacade(designerRepositories));
 
             //Viewの登録
             containerRegistry.RegisterForNavigation<GameView>();

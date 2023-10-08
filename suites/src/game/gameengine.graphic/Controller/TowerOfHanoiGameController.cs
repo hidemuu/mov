@@ -1,16 +1,17 @@
 ﻿using Mov.Core.Graphicers.Services.Controllers;
 using Mov.Core.Learnings.Models;
+using Mov.Game.Models.Entities;
 using System;
 using System.Drawing;
 
-namespace Mov.Suite.GameEngine.Graphic
+namespace Mov.Suite.GameEngine.Graphic.Controller
 {
     /// <summary>
     /// ハノイの塔のゲームサービス
     /// </summary>
-    public class TowerOfHanoiGame : GraphicControllerBase
+    public class TowerOfHanoiGameController : GraphicControllerBase
     {
-        #region フィールド
+        #region field
 
         /// <summary>
         /// 塔
@@ -27,20 +28,20 @@ namespace Mov.Suite.GameEngine.Graphic
         /// </summary>
         private Saucer[] saucers;
 
-        #endregion フィールド
+        #endregion field
 
-        #region プロパティ
+        #region property
 
         public override double RefleshTime { get; set; } = 300;
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public TowerOfHanoiGame(int n)
+        public TowerOfHanoiGameController(int n)
         {
             this.n = n;
             tower = new ConsCell[] { ConsCell.Range(1, n + 1), ConsCell.Nil, ConsCell.Nil };
@@ -51,9 +52,18 @@ namespace Mov.Suite.GameEngine.Graphic
             }
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region 継承メソッド
+        #region method
+
+        public void Print()
+        {
+            Hanoi(n, 0, 2, 1);
+        }
+
+        #endregion method
+
+        #region inner method
 
         protected override void Ready()
         {
@@ -70,19 +80,6 @@ namespace Mov.Suite.GameEngine.Graphic
                 saucer.Draw(ScreenGraphics);
             }
         }
-
-        #endregion 継承メソッド
-
-        #region メソッド
-
-        public void Print()
-        {
-            Hanoi(n, 0, 2, 1);
-        }
-
-        #endregion メソッド
-
-        #region 内部メソッド
 
         /// <summary>
         /// fromのm番目の円盤をtoへ移動、workは作業場所
@@ -136,70 +133,7 @@ namespace Mov.Suite.GameEngine.Graphic
             saucer.Move(to, tower[to].Length());                //円盤の座標変更
         }
 
-        #endregion 内部メソッド
+        #endregion inner method
 
-        #region 内部クラス
-
-        /// <summary>
-        /// 円盤を表すクラス
-        /// </summary>
-        private class Saucer
-        {
-            #region フィールド
-
-            private int idx;
-            private int n;
-            private int x;
-            private int y;
-            private int width;
-            private int height;
-            private double formWidth;
-            private double formHeight;
-            private Pen pen = new Pen(Color.FromArgb(255, 0, 0, 0));
-
-            #endregion フィールド
-
-            /// <summary>
-            /// コンストラクター
-            /// </summary>
-            /// <param name="idx"></param>
-            /// <param name="n"></param>
-            public Saucer(int idx, int n, double formWidth, double formHeight)
-            {
-                this.idx = idx;
-                this.n = n;
-                this.formWidth = formWidth;
-                this.formHeight = formHeight;
-                width = (int)(formWidth * (0.3 - (n - idx) * 0.2 / n));
-                height = (int)(formHeight / Math.Max(10, n) * 0.9);
-                Move(0, n - idx - 1);
-            }
-
-            #region メソッド
-
-            /// <summary>
-            /// 座標設定
-            /// </summary>
-            /// <param name="tower"></param>
-            /// <param name="level"></param>
-            public void Move(int tower, int level)
-            {
-                x = (int)(formWidth * 0.5 + (tower - 1) * formWidth * 0.3 - width * 0.5);
-                y = (int)(formHeight - (level + 1) * height - 1);
-            }
-
-            /// <summary>
-            /// 描画
-            /// </summary>
-            /// <param name="graphics"></param>
-            public void Draw(Graphics graphics)
-            {
-                graphics.DrawRectangle(pen, x, y, width, height);
-            }
-
-            #endregion メソッド
-        }
-
-        #endregion 内部クラス
     }
 }

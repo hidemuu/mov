@@ -43,10 +43,11 @@ namespace Mov.Core.Accessors.Serializer
             {
                 using (var streamReader = new StreamReader(url, Encoding.Value))
                 {
-                    if (streamReader != null)
+                    if (streamReader == null) 
                     {
-                        jsonString = streamReader.ReadToEnd();
+                        return default(TResponse);
                     }
+                    jsonString = streamReader.ReadToEnd();
                 }
                 //指定オブジェクトにデシリアライズ
                 return JsonConvert.DeserializeObject<TResponse>(jsonString);

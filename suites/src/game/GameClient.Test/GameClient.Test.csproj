@@ -24,4 +24,10 @@
     <ProjectReference Include="..\gameclient.finitestatemechine\GameClient.FiniteStateMechine.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Mov.Framework">
+      <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

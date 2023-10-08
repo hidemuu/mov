@@ -10,6 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="gong-wpf-dragdrop" Version="3.2.1" />
+    <PackageReference Include="LiveCharts.Wpf.NetCore3" Version="0.9.7" />
     <PackageReference Include="MahApps.Metro" Version="2.4.10" />
     <PackageReference Include="MaterialDesignColors" Version="2.1.4" />
     <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.3.0" />
@@ -51,6 +53,12 @@
     <Reference Include="Mov.Game.Service">
       <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Game.Service.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Shared\Components\Atoms\" />
+    <Folder Include="Shared\Components\Molecules\" />
+    <Folder Include="Shared\Components\Organisms\" />
   </ItemGroup>
 
 </Project>

@@ -35,6 +35,8 @@ namespace Mov.Suite.WpfApp
         {
             TabItems.Add(new TabItemModel(0, "Game", "blur", () =>
                 this.RegionManager.RequestNavigate("CENTER", nameof(GameView))));
+            TabItems.Add(new TabItemModel(1, "Web", "Home", () =>
+                this.RegionManager.RequestNavigate("CENTER", nameof(WebView))));
 
             TabChangeCommand.Subscribe(_ => OnChangeTab()).AddTo(Disposables);
 
@@ -71,9 +73,9 @@ namespace Mov.Suite.WpfApp
 
         private void ChangeContent(int index)
         {
-            var model = TabItems.FirstOrDefault(x => x.Index == index);
-            model?.TabCommand();
-            Title.Value = "Mov.Suite" + " - " + model.Title;
+            var tabItem = TabItems.FirstOrDefault(x => x.Index == index);
+            tabItem?.TabCommand();
+            Title.Value = "Mov.Suite" + " - " + tabItem?.Title ?? "Nothing";
         }
 
         #endregion inner method

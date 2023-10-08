@@ -12,7 +12,7 @@ using Mov.Core.Styles.Models;
 
 namespace Mov.Suite.DesignerClient.Wpf.Converters
 {
-    public class ContentOrientationConverter : IValueConverter
+    public class ContentToOrientationConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

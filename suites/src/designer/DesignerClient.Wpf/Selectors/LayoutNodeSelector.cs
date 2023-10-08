@@ -1,12 +1,56 @@
-﻿using System;
+﻿using Mov.Core.Layouts.Models.Nodes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows;
+using Mov.Designer.Models.Entities;
 
 namespace Mov.Suite.DesignerClient.Wpf.Selectors
 {
-    internal class LayoutNodeSelector
+    public class LayoutNodeSelector : DataTemplateSelector
     {
+        #region プロパティ
+
+        public DataTemplate ExpanderTemplate { get; set; }
+
+        public DataTemplate GroupTemplate { get; set; }
+
+        public DataTemplate ScrollbarTemplate { get; set; }
+
+        public DataTemplate TabTemplate { get; set; }
+
+        public DataTemplate ContentTemplate { get; set; }
+
+        public DataTemplate ViewTemplate { get; set; }
+
+        public DataTemplate TreeTemplate { get; set; }
+
+        public DataTemplate TableTemplate { get; set; }
+
+        #endregion プロパティ
+
+        #region メソッド
+
+        public override DataTemplate SelectTemplate(object item, DependencyObject container)
+        {
+            if (item is DesignerNode node)
+            {
+                if (node.NodeType.IsRegion) return GroupTemplate;
+                if (node.NodeType.IsContent) return ContentTemplate;
+                if (node.NodeType.IsExpander) return ExpanderTemplate;
+                if (node.NodeType.IsGroup) return GroupTemplate;
+                if (node.NodeType.IsScroll) return ScrollbarTemplate;
+                if (node.NodeType.IsTab) return TabTemplate;
+                if (node.NodeType.IsTable) return TableTemplate;
+                if (node.NodeType.IsTree) return TreeTemplate;
+                return null;
+            }
+            return base.SelectTemplate(item, container);
+        }
+
+        #endregion メソッド
     }
 }

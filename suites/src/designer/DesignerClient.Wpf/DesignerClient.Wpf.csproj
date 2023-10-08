@@ -8,4 +8,27 @@
     <RootNamespace>Mov.Suite.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Components\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Core.Styles">
+      <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.Styles.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Designer.Controller">
+      <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Designer.Controller.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Designer.Models">
+      <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Designer.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Designer.Service">
+      <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Designer.Service.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

@@ -11,6 +11,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="resources\content.xml" />
+    <None Remove="resources\node.xml" />
+    <None Remove="resources\shell.xml" />
+    <None Remove="resources\theme.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="resources\content.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\node.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\shell.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\theme.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
     <PackageReference Include="Moq" Version="4.18.2" />
     <PackageReference Include="NUnit" Version="3.13.1" />

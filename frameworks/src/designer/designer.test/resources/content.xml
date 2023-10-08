@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <content>
+    <id>7cf274d0-7032-4770-a337-f9cdb4d939ac</id>
+    <index>0</index>
+    <code>Center</code>
+    <name>センター</name>
+    <category />
+    <icon />
+    <control_type>Label</control_type>
+    <schema />
+    <default_value />
+    <macro />
+    <height>32</height>
+    <width>100</width>
+    <horizontal_alignment>Left</horizontal_alignment>
+    <vertical_alignment>Center</vertical_alignment>
+    <parameter />
+  </content>
+  <content>
+    <id>ade73abd-dba7-4a9f-af78-af06ce867109</id>
+    <index>0</index>
+    <code>Top</code>
+    <name>トップ</name>
+    <category />
+    <icon />
+    <control_type>Label</control_type>
+    <schema />
+    <default_value />
+    <macro />
+    <height>32</height>
+    <width>100</width>
+    <horizontal_alignment>Left</horizontal_alignment>
+    <vertical_alignment>Center</vertical_alignment>
+    <parameter />
+  </content>
+  <content>
+    <id>1a4565b8-ab1d-4f5d-8bcb-10b6c46a09f5</id>
+    <index>0</index>
+    <code>Bottom</code>
+    <name>ボトム</name>
+    <category />
+    <icon />
+    <control_type>Label</control_type>
+    <schema />
+    <default_value />
+    <macro />
+    <height>32</height>
+    <width>100</width>
+    <horizontal_alignment>Left</horizontal_alignment>
+    <vertical_alignment>Center</vertical_alignment>
+    <parameter />
+  </content>
+  <content>
+    <id>d632d63d-71da-4047-925c-b19955aa4b55</id>
+    <index>0</index>
+    <code>Left</code>
+    <name>レフト</name>
+    <category />
+    <icon />
+    <control_type>Label</control_type>
+    <schema />
+    <default_value />
+    <macro />
+    <height>32</height>
+    <width>100</width>
+    <horizontal_alignment>Left</horizontal_alignment>
+    <vertical_alignment>Center</vertical_alignment>
+    <parameter />
+  </content>
+  <content>
+    <id>109f258e-9a10-4a81-9d9d-a6f3e867271f</id>
+    <index>0</index>
+    <code>Right</code>
+    <name>ライト</name>
+    <category />
+    <icon />
+    <control_type>Label</control_type>
+    <schema />
+    <default_value />
+    <macro />
+    <height>32</height>
+    <width>100</width>
+    <horizontal_alignment>Left</horizontal_alignment>
+    <vertical_alignment>Center</vertical_alignment>
+    <parameter />
+  </content>
+  <content>
+    <id>ef9472f6-9cef-428a-86cf-85e35dcf2b90</id>
+    <index>1</index>
+    <code>Main</code>
+    <name>main</name>
+    <category />
+    <icon />
+    <control_type>Label</control_type>
+    <schema />
+    <default_value />
+    <macro />
+    <height>32</height>
+    <width>100</width>
+    <horizontal_alignment>Left</horizontal_alignment>
+    <vertical_alignment>Center</vertical_alignment>
+    <parameter />
+  </content>
+  <content>
+    <id>db10ae8a-aad5-4c78-86d8-a429d2d36e68</id>
+    <index>2</index>
+    <code>TextLabel</code>
+    <name>テキスト</name>
+    <category />
+    <icon />
+    <control_type>Label</control_type>
+    <schema />
+    <default_value />
+    <macro />
+    <height>32</height>
+    <width>100</width>
+    <horizontal_alignment>Left</horizontal_alignment>
+    <vertical_alignment>Center</vertical_alignment>
+    <parameter />
+  </content>
+  <content>
+    <id>b285c6a8-d47d-40e8-bc8b-e6e6df68d90c</id>
+    <index>10</index>
+    <code>Button1</code>
+    <name>項目2</name>
+    <category />
+    <icon />
+    <control_type>Button</control_type>
+    <schema />
+    <default_value />
+    <macro />
+    <height>32</height>
+    <width>100</width>
+    <horizontal_alignment>Left</horizontal_alignment>
+    <vertical_alignment>Center</vertical_alignment>
+    <parameter />
+  </content>
+  <content>
+    <id>30fc3442-8059-4728-8a30-2aa5f2c1d8aa</id>
+    <index>0</index>
+    <code>Button2</code>
+    <name>項目3</name>
+    <category />
+    <icon />
+    <control_type>RadioButton</control_type>
+    <schema />
+    <default_value />
+    <macro />
+    <height>32</height>
+    <width>100</width>
+    <horizontal_alignment>Left</horizontal_alignment>
+    <vertical_alignment>Center</vertical_alignment>
+    <parameter />
+  </content>
+  <content>
+    <id>548b68d1-bbcd-4f92-b0c0-a299619efbe5</id>
+    <index>0</index>
+    <code>Item1</code>
+    <name>項目4</name>
+    <category />
+    <icon />
+    <control_type>SpinBox</control_type>
+    <schema />
+    <default_value />
+    <macro />
+    <height>32</height>
+    <width>100</width>
+    <horizontal_alignment>Left</horizontal_alignment>
+    <vertical_alignment>Center</vertical_alignment>
+    <parameter />
+  </content>
+  <content>
+    <id>954c9d20-e3db-4a8c-a276-2fafa4b72041</id>
+    <index>0</index>
+    <code>Item2</code>
+    <name>項目5</name>
+    <category />
+    <icon />
+    <control_type>ComboBox</control_type>
+    <schema />
+    <default_value />
+    <macro />
+    <height>32</height>
+    <width>100</width>
+    <horizontal_alignment>Left</horizontal_alignment>
+    <vertical_alignment>Center</vertical_alignment>
+    <parameter />
+  </content>
+  <content>
+    <id>ae4a5dcf-c678-49ef-9151-c89df302a74b</id>
+    <index>0</index>
+    <code>Item3</code>
+    <name>項目5</name>
+    <category />
+    <icon />
+    <control_type>TextBox</control_type>
+    <schema />
+    <default_value />
+    <macro />
+    <height>32</height>
+    <width>100</width>
+    <horizontal_alignment>Left</horizontal_alignment>
+    <vertical_alignment>Center</vertical_alignment>
+    <parameter />
+  </content>
+  <content>
+    <id>0dc60abf-d65c-4e2d-bac2-4ef1bc4f1b2c</id>
+    <index>0</index>
+    <code>Item4</code>
+    <name>項目5</name>
+    <category />
+    <icon />
+    <control_type>CheckBox</control_type>
+    <schema />
+    <default_value />
+    <macro />
+    <height>32</height>
+    <width>100</width>
+    <horizontal_alignment>Left</horizontal_alignment>
+    <vertical_alignment>Center</vertical_alignment>
+    <parameter />
+  </content>
+  <content>
+    <id>f90fe4dc-bc56-41b6-b2e6-dffd1b5a87ae</id>
+    <index>0</index>
+    <code>Item5</code>
+    <name>項目5</name>
+    <category />
+    <icon />
+    <control_type>ListBox</control_type>
+    <schema />
+    <default_value />
+    <macro />
+    <height>32</height>
+    <width>100</width>
+    <horizontal_alignment>Left</horizontal_alignment>
+    <vertical_alignment>Center</vertical_alignment>
+    <parameter />
+  </content>
+  <content>
+    <id>d4975470-eaa7-40e6-baef-a8c53265d6d0</id>
+    <index>0</index>
+    <code>Date1</code>
+    <name>日付1</name>
+    <category />
+    <icon />
+    <control_type>DatePicker</control_type>
+    <schema />
+    <default_value />
+    <macro />
+    <height>32</height>
+    <width>100</width>
+    <horizontal_alignment>Left</horizontal_alignment>
+    <vertical_alignment>Center</vertical_alignment>
+    <parameter />
+  </content>
+</contents>

@@ -67,9 +67,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameClient.Tracking.Queens"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameEngine.Consoles", "src\game\GameEngine.Consoles\GameEngine.Consoles.csproj", "{FF8F5173-B9C6-4FFD-AEC7-85B95DE71C9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp", "app\BlazorApp\BlazorApp.csproj", "{5ACA3306-96C6-4514-A62C-900E43B2C907}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp", "app\BlazorApp\BlazorApp.csproj", "{5ACA3306-96C6-4514-A62C-900E43B2C907}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactApp", "app\ReactApp\ReactApp.csproj", "{E28E9D37-A248-40F7-9EFC-501053399BA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactApp", "app\ReactApp\ReactApp.csproj", "{E28E9D37-A248-40F7-9EFC-501053399BA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameClient.Test", "src\game\GameClient.Test\GameClient.Test.csproj", "{198DCEA7-8019-42BD-9A5E-E65790FF6D88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -169,6 +171,10 @@ Global
 		{E28E9D37-A248-40F7-9EFC-501053399BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E28E9D37-A248-40F7-9EFC-501053399BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E28E9D37-A248-40F7-9EFC-501053399BA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{198DCEA7-8019-42BD-9A5E-E65790FF6D88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{198DCEA7-8019-42BD-9A5E-E65790FF6D88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{198DCEA7-8019-42BD-9A5E-E65790FF6D88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{198DCEA7-8019-42BD-9A5E-E65790FF6D88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -205,6 +211,7 @@ Global
 		{FF8F5173-B9C6-4FFD-AEC7-85B95DE71C9C} = {E9D48FC0-112E-478A-A02E-406A687E1597}
 		{5ACA3306-96C6-4514-A62C-900E43B2C907} = {E99D1E62-E2EB-4DD0-BB83-76DCCCB328A0}
 		{E28E9D37-A248-40F7-9EFC-501053399BA1} = {E99D1E62-E2EB-4DD0-BB83-76DCCCB328A0}
+		{198DCEA7-8019-42BD-9A5E-E65790FF6D88} = {E9D48FC0-112E-478A-A02E-406A687E1597}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DA11007-6005-4C72-A93A-35FB982B6921}

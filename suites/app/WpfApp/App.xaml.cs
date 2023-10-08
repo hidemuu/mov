@@ -88,7 +88,9 @@ namespace Mov.Suite.WpfApp
             //containerRegistry.RegisterInstance<IGameFacade>(new GameFacade(designerRepositories));
 
             //Viewの登録
+            containerRegistry.RegisterForNavigation<DashboardView>();
             containerRegistry.RegisterForNavigation<GameView>();
+            containerRegistry.RegisterForNavigation<WebView>();
             //Dialogの登録
             containerRegistry.RegisterDialogWindow<DialogWindow>();
 
@@ -119,7 +121,9 @@ namespace Mov.Suite.WpfApp
             });
 
             ViewModelLocationProvider.Register<MainWindow, MainWindowViewModel>();
+            ViewModelLocationProvider.Register<DashboardView, DashboardViewModel>();
             ViewModelLocationProvider.Register<GameView, GameViewModel>();
+            ViewModelLocationProvider.Register<WebView, WebViewModel>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

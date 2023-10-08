@@ -33,9 +33,11 @@ namespace Mov.Suite.WpfApp
         public MainWindowViewModel(IRegionManager regionManager, IDialogService dialogService)
             : base(regionManager, dialogService)
         {
-            TabItems.Add(new TabItemModel(0, "Game", "blur", () =>
+            TabItems.Add(new TabItemModel(0, "Dashboard", "DNS", () =>
+                this.RegionManager.RequestNavigate("CENTER", nameof(DashboardView))));
+            TabItems.Add(new TabItemModel(1, "Game", "blur", () =>
                 this.RegionManager.RequestNavigate("CENTER", nameof(GameView))));
-            TabItems.Add(new TabItemModel(1, "Web", "Home", () =>
+            TabItems.Add(new TabItemModel(2, "Web", "Home", () =>
                 this.RegionManager.RequestNavigate("CENTER", nameof(WebView))));
 
             TabChangeCommand.Subscribe(_ => OnChangeTab()).AddTo(Disposables);
@@ -55,7 +57,7 @@ namespace Mov.Suite.WpfApp
 
         protected override void OnLoaded()
         {
-            //ChangeContent(0);
+            ChangeContent(0);
         }
 
         private void OnChangeTab()

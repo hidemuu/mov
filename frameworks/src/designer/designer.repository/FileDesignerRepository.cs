@@ -36,10 +36,10 @@ namespace Mov.Designer.Repository
         /// <param name="encoding"></param>
         public FileDesignerRepository(string endpoint, FileType fileType, EncodingValue encoding)
         {
-            Shells = FileDbRepository<ShellSchema, Guid>.Factory.Create(Path.Combine(endpoint, "shell"), fileType, encoding);
-            Nodes = FileDbRepository<NodeSchema, Guid>.Factory.Create(Path.Combine(endpoint, "node"), fileType, encoding);
-            Contents = FileDbRepository<ContentSchema, Guid>.Factory.Create(Path.Combine(endpoint, "content"), fileType, encoding);
-            Themes = FileDbRepository<ThemeSchema, Guid>.Factory.Create(Path.Combine(endpoint, "theme"), fileType, encoding);
+            Shells = FileDbRepository<ShellSchema, Guid>.Factory.Create(Path.Combine(endpoint, "shell.xml"), fileType, encoding);
+            Nodes = FileDbRepository<NodeSchema, Guid>.Factory.Create(Path.Combine(endpoint, "node.xml"), fileType, encoding);
+            Contents = FileDbRepository<ContentSchema, Guid>.Factory.Create(Path.Combine(endpoint, "content.xml"), fileType, encoding);
+            Themes = FileDbRepository<ThemeSchema, Guid>.Factory.Create(Path.Combine(endpoint, "theme.xml"), fileType, encoding);
         }
 
         #endregion constructor

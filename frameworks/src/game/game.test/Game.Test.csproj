@@ -30,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\game.repository\Game.Repository.csproj" />
     <ProjectReference Include="..\game.service\Game.Service.csproj" />
   </ItemGroup>
 
@@ -37,6 +38,16 @@
     <Reference Include="Mov.Core">
       <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Mov.Core.Accessors">
+      <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Accessors.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Repositories">
+      <HintPath>..\game.controller\bin\Debug\netstandard2.0\Mov.Core.Repositories.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Builders\" />
   </ItemGroup>
 
 </Project>

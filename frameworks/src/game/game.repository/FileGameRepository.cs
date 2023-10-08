@@ -10,24 +10,23 @@ namespace Mov.Game.Repository
 {
     public class FileGameRepository : IGameRepository
     {
-        private const string DOMAIN_PATH = "game";
 
-        #region コンストラクター
+        #region constructor
 
         /// <summary>
         /// コンストラクター
         /// </summary>
         public FileGameRepository(string endpoint, FileType extension, EncodingValue encoding)
         {
-            Landmarks = FileDbRepository<LandmarkSchema, Guid>.Factory.Create(Path.Combine(endpoint, DOMAIN_PATH, "lamdmark.json"), extension, encoding);
+            Landmarks = FileDbRepository<LandmarkSchema, Guid>.Factory.Create(Path.Combine(endpoint, "landmark.json"), extension, encoding);
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region プロパティ
+        #region property
 
         public IDbRepository<LandmarkSchema, Guid> Landmarks { get; }
 
-        #endregion プロパティ
+        #endregion property
     }
 }

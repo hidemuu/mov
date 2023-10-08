@@ -1,18 +1,17 @@
 ﻿using Mov.Core.Accessors.Models;
-using Mov.Designer.Repository;
-using Mov.Designer.Test.Builders;
+using Mov.Game.Repository;
 using NUnit.Framework;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Mov.Designer.Test
+namespace Mov.Game.Test
 {
-    public class FileDesignerRepositoryTest
+    public class FileGameRepositoryTest
     {
         #region constants
 
-        private const string TEST_NAME = nameof(FileDesignerRepositoryTest);
+        private const string TEST_NAME = nameof(FileGameRepositoryTest);
 
         #endregion constants
 
@@ -48,24 +47,20 @@ namespace Mov.Designer.Test
 
         #endregion setup
 
-        #region test
-
         [Test]
         public void GetAsync_DeserializeContent_Return()
         {
             //Arrange
             var resourcePath = PathValue.Factory.CreateResourceRootPath().Value;
-            var sut = new FileDesignerRepository(resourcePath, FileType.Xml, EncodingValue.UTF8);
+            var sut = new FileGameRepository(resourcePath, FileType.Json, EncodingValue.UTF8);
 
             //Act
-            var contents = Task.WhenAll(sut.Contents.GetAsync()).Result[0].ToArray();
+            var landmarks = Task.WhenAll(sut.Landmarks.GetAsync()).Result[0].ToArray();
 
             //Assert
-            Assert.That(contents.Length, Is.EqualTo(1));
+            Assert.That(landmarks.Length, Is.EqualTo(3));
             //var ex = Assert.Throws<InputException>(() => sut.GetLevels());
             //ex.Message.IsNormalized();
         }
-
-        #endregion test
     }
 }

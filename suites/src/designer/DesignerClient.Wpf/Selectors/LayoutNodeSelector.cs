@@ -1,12 +1,6 @@
-﻿using Mov.Core.Layouts.Models.Nodes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
+﻿using Mov.Designer.Models.Entities;
 using System.Windows;
-using Mov.Designer.Models.Entities;
+using System.Windows.Controls;
 
 namespace Mov.Suite.DesignerClient.Wpf.Selectors
 {

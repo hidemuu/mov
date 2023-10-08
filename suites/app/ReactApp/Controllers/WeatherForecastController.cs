@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace ReactApp.Controllers
+namespace Mov.Suite.ReactApp.Controllers
 {
     [ApiController]
     [Route("[controller]")]

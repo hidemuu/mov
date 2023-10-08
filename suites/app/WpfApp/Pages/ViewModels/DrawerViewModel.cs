@@ -3,11 +3,6 @@ using Mov.Suite.WpfApp.Shared;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 using Reactive.Bindings;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mov.Suite.WpfApp.Pages.ViewModels
 {
@@ -35,7 +30,7 @@ namespace Mov.Suite.WpfApp.Pages.ViewModels
 
         #region constructor
 
-        public DrawerViewModel(IRegionManager regionManager, IDialogService dialogService) 
+        public DrawerViewModel(IRegionManager regionManager, IDialogService dialogService)
             : base(regionManager, dialogService)
         {
         }

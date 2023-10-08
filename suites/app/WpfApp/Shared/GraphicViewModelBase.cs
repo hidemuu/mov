@@ -9,7 +9,6 @@ using System.Reactive.Concurrency;
 using System.Threading;
 using System.Windows;
 using System.Windows.Media.Imaging;
-using System.Windows.Threading;
 
 namespace Mov.Suite.WpfApp.Shared
 {

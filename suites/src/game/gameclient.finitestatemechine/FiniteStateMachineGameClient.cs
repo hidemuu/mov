@@ -301,7 +301,7 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
                 var landmarks = landmarkTask.Result;
                 return landmarks.FirstOrDefault(x => x.Lv == Level);
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 Debug.Assert(false, ex.Message);
             }

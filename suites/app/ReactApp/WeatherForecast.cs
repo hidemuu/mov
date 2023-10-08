@@ -1,4 +1,4 @@
-namespace ReactApp
+namespace Mov.Suite.ReactApp
 {
     public class WeatherForecast
     {

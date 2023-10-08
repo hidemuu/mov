@@ -1,4 +1,9 @@
-﻿using Mov.Suite.WpfApp.Pages.ViewModels;
+﻿using Mov.Core.Accessors.Models;
+using Mov.Framework.Services;
+using Mov.Game.Models;
+using Mov.Game.Repository;
+using Mov.Suite.WpfApp.Pages.ViewModels;
+using Mov.Suite.WpfApp.Pages.Views;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Mvvm;
@@ -6,16 +11,10 @@ using Prism.Regions;
 using Prism.Services.Dialogs;
 using Prism.Unity;
 using System;
+using System.IO;
 using System.Reflection;
 using System.Threading;
 using System.Windows;
-using Mov.Suite.WpfApp.Pages.Views;
-using Mov.Game.Service;
-using Mov.Framework.Services;
-using Mov.Game.Models;
-using Mov.Game.Repository;
-using Mov.Core.Accessors.Models;
-using System.IO;
 
 namespace Mov.Suite.WpfApp
 {

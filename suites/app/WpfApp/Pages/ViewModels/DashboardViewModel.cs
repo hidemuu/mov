@@ -1,11 +1,6 @@
 ﻿using Mov.Suite.WpfApp.Shared;
 using Prism.Regions;
 using Prism.Services.Dialogs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mov.Suite.WpfApp.Pages.ViewModels
 {
@@ -13,7 +8,7 @@ namespace Mov.Suite.WpfApp.Pages.ViewModels
     {
         #region constructor
 
-        public DashboardViewModel(IRegionManager regionManager, IDialogService dialogService) 
+        public DashboardViewModel(IRegionManager regionManager, IDialogService dialogService)
             : base(regionManager, dialogService)
         {
         }
@@ -24,7 +19,7 @@ namespace Mov.Suite.WpfApp.Pages.ViewModels
 
         protected override void OnLoaded()
         {
-            
+
         }
 
         #endregion event

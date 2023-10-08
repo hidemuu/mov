@@ -41,6 +41,9 @@
     <Reference Include="Mov.Core.Repositories">
       <HintPath>..\..\..\frameworks\src\game\game.controller\bin\Debug\netstandard2.0\Mov.Core.Repositories.dll</HintPath>
     </Reference>
+    <Reference Include="Mov.Core.Valuables">
+      <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.Valuables.dll</HintPath>
+    </Reference>
     <Reference Include="Mov.Framework">
       <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Framework.dll</HintPath>
     </Reference>

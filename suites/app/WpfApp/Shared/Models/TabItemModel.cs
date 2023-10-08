@@ -1,9 +1,5 @@
 ﻿using Reactive.Bindings;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mov.Suite.WpfApp.Shared.Models
 {
@@ -36,7 +32,7 @@ namespace Mov.Suite.WpfApp.Shared.Models
 
         #region constructor
 
-        public TabItemModel(int index, string title, string iconkey, Action tabcommand) 
+        public TabItemModel(int index, string title, string iconkey, Action tabcommand)
         {
             Index = index;
             TabCommand = tabcommand;

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Mov.Core.Styles.Models;
+using System;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Automation;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows;
-using Mov.Core.Styles.Models;
 
 namespace Mov.Suite.DesignerClient.Wpf.Converters
 {

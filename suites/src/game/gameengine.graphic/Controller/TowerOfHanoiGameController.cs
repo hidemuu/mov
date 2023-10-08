@@ -2,7 +2,6 @@
 using Mov.Core.Learnings.Models;
 using Mov.Game.Models.Entities;
 using System;
-using System.Drawing;
 
 namespace Mov.Suite.GameEngine.Graphic.Controller
 {

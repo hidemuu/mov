@@ -11,7 +11,7 @@ namespace Mov.Core.Configurators.Test
         }
 
         [Test]
-        public void GetAsync_DeserializeConfigJsonFilee_ReturnAll()
+        public void GetAsync_DeserializeConfigJsonFile_ReturnAll()
         {
             // Arrange
             var sut = new FileConfiguratorRepository(PathValue.Factory.CreateResourceRootPath().Value, FileType.Json, EncodingValue.UTF8);

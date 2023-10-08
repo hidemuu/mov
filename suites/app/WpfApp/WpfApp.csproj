@@ -36,6 +36,9 @@
     <Reference Include="Mov.Core.Graphicers">
       <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.Graphicers.dll</HintPath>
     </Reference>
+    <Reference Include="Mov.Core.Repositories">
+      <HintPath>..\..\..\frameworks\src\game\game.controller\bin\Debug\netstandard2.0\Mov.Core.Repositories.dll</HintPath>
+    </Reference>
     <Reference Include="Mov.Framework">
       <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Framework.dll</HintPath>
     </Reference>

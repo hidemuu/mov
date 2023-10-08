@@ -5,6 +5,7 @@ using Mov.Game.Models.Entities.Characters;
 using Mov.Game.Models.Schemas;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -53,12 +54,12 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
         /// <summary>
         /// マップ幅
         /// </summary>
-        public int MapWidth { get; }
+        public int MapWidth { get; } = 400;
 
         /// <summary>
         /// マップ高さ
         /// </summary>
-        public int MapHeight { get; }
+        public int MapHeight { get; } = 400;
 
         /// <summary>
         /// ユニット幅
@@ -102,9 +103,9 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
             this._repository = repository;
             Characters = new List<ICharacter>();
             Aliens = new List<ICharacter>();
-            var map = GetLandmark();
-            MapWidth = (map?.GetCol() ?? 10) * UnitWidth;
-            MapHeight = (map?.GetRow() ?? 10) * UnitHeight;
+            //var map = GetLandmark();
+            //MapWidth = (map?.GetCol() ?? 10) * UnitWidth;
+            //MapHeight = (map?.GetRow() ?? 10) * UnitHeight;
         }
 
         #endregion constructor
@@ -293,8 +294,18 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
 
         public LandmarkSchema GetLandmark()
         {
-            var landmarks = Task.WhenAll(_repository.Landmarks.GetAsync()).Result[0];
-            return landmarks.FirstOrDefault(x => x.Lv == Level);
+            var landmarkTask = _repository.Landmarks.GetAsync();
+            Task.WhenAll(landmarkTask);
+            try
+            {
+                var landmarks = landmarkTask.Result;
+                return landmarks.FirstOrDefault(x => x.Lv == Level);
+            }
+            catch(Exception ex) 
+            {
+                Debug.Assert(false, ex.Message);
+            }
+            return default(LandmarkSchema);
         }
 
         #endregion method

@@ -1,5 +1,7 @@
 ﻿using Mov.Core.Accessors.Models;
 using Newtonsoft.Json;
+using System;
+using System.Diagnostics;
 using System.IO;
 
 namespace Mov.Core.Accessors.Serializer
@@ -37,15 +39,24 @@ namespace Mov.Core.Accessors.Serializer
         {
             //Json文字列の取得
             string jsonString = string.Empty;
-            using (var streamReader = new StreamReader(url, Encoding.Value))
+            try
             {
-                if (streamReader != null)
+                using (var streamReader = new StreamReader(url, Encoding.Value))
                 {
-                    jsonString = streamReader.ReadToEnd();
+                    if (streamReader != null)
+                    {
+                        jsonString = streamReader.ReadToEnd();
+                    }
                 }
+                //指定オブジェクトにデシリアライズ
+                return JsonConvert.DeserializeObject<TResponse>(jsonString);
             }
-            //指定オブジェクトにデシリアライズ
-            return JsonConvert.DeserializeObject<TResponse>(jsonString);
+            catch(Exception ex)
+            {
+                Debug.Assert(false, $"url:{url} ex:{ex.Message}");
+                Console.WriteLine(ex.Message);
+            }
+            return default(TResponse);
         }
 
         /// <summary>

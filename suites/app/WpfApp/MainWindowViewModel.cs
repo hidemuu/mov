@@ -53,7 +53,7 @@ namespace Mov.Suite.WpfApp
 
         protected override void OnLoaded()
         {
-            ChangeContent(0);
+            //ChangeContent(0);
         }
 
         private void OnChangeTab()

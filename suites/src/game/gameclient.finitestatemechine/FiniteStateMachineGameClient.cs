@@ -287,12 +287,14 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
 
         public IEnumerable<int> GetLevels()
         {
-            return Task.WhenAll(_repository.Landmarks.GetAsync()).Result[0].Select(x => x.Lv);
+            var landmarks = Task.WhenAll(_repository.Landmarks.GetAsync()).Result[0];
+            return landmarks.Select(x => x.Lv);
         }
 
         public LandmarkSchema GetLandmark()
         {
-            return Task.WhenAll(_repository.Landmarks.GetAsync()).Result[0].FirstOrDefault(x => x.Lv == Level);
+            var landmarks = Task.WhenAll(_repository.Landmarks.GetAsync()).Result[0];
+            return landmarks.FirstOrDefault(x => x.Lv == Level);
         }
 
         #endregion method

@@ -11,6 +11,10 @@ using System.Threading;
 using System.Windows;
 using Mov.Suite.WpfApp.Pages.Views;
 using Mov.Game.Service;
+using Mov.Framework.Services;
+using Mov.Game.Models;
+using Mov.Game.Repository;
+using Mov.Core.Accessors.Models;
 
 namespace Mov.Suite.WpfApp
 {
@@ -73,6 +77,11 @@ namespace Mov.Suite.WpfApp
             var container = containerRegistry.GetContainer();
 
             //リポジトリの登録
+            var resourcePath = PathCreator.GetResourcePath();
+            containerRegistry.RegisterInstance<IGameRepository>(new FileGameRepository(resourcePath, FileType.Json, EncodingValue.UTF8));
+
+            //インターフェースとクラスを紐付けて登録
+            //container.RegisterType<IHomeService, HomeService>();
 
             //サービスの登録
             //containerRegistry.RegisterInstance<IGameFacade>(new GameFacade(designerRepositories));

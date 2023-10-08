@@ -1,5 +1,6 @@
 ﻿using Mov.Core.Graphicers.Services.Controllers;
 using Mov.Game.Models;
+using Mov.Game.Service;
 using Mov.Suite.GameEngine.Graphic.Controller;
 
 namespace Mov.Suite.GameEngine.Graphic
@@ -7,18 +8,18 @@ namespace Mov.Suite.GameEngine.Graphic
     /// <summary>
     /// パックマンっぽいゲームサービス
     /// </summary>
-    public class PackmanGame : IGraphicGame
+    public class PackmanGraphicGame : IGraphicGame
     {
-        #region フィールド
+        #region field
 
         /// <summary>
         /// ゲームエンジン
         /// </summary>
-        private readonly IFiniteStateMachineGameClient engine;
+        private readonly IFiniteStateMachineGameClient _client;
 
-        #endregion フィールド
+        #endregion field
 
-        #region プロパティ
+        #region property
 
         /// <summary>
         /// グラフィックコントローラー
@@ -50,27 +51,27 @@ namespace Mov.Suite.GameEngine.Graphic
         /// </summary>
         public int TotalScore { get; private set; } = 0;
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
         /// <summary>
         /// コンストラクター
         /// </summary>
         /// <param name="service"></param>
-        public PackmanGame(IFiniteStateMachineGameClient engine)
+        public PackmanGraphicGame(IFiniteStateMachineGameClient client)
         {
-            this.engine = engine;
-            GraphicController = new FiniteStateMachineGameGraphicController(engine);
-            IsGameOver = engine.IsGameOver;
-            IsStageClear = engine.IsStageClear;
-            Score = engine.Score;
-            Level = engine.Level;
+            this._client = client;
+            GraphicController = new FiniteStateMachineGameGraphicController(client);
+            IsGameOver = client.IsGameOver;
+            IsStageClear = client.IsStageClear;
+            Score = client.Score;
+            Level = client.Level;
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region メソッド
+        #region method
 
         /// <summary>
         /// 初期化処理
@@ -82,11 +83,11 @@ namespace Mov.Suite.GameEngine.Graphic
 
         public void Next()
         {
-            engine.Level++;
-            TotalScore += engine.Score;
-            engine.Score = 0;
-            engine.Initialize();
-            engine.IsStageClear = false;
+            _client.Level++;
+            TotalScore += _client.Score;
+            _client.Score = 0;
+            _client.Initialize();
+            _client.IsStageClear = false;
             GraphicController.IsActive = true;
         }
 
@@ -96,7 +97,7 @@ namespace Mov.Suite.GameEngine.Graphic
         /// <param name="keyCode"></param>
         public void SetKeyCode(int keyCode)
         {
-            engine.KeyCode = keyCode;
+            _client.KeyCode = keyCode;
         }
 
         public void Wait()
@@ -104,6 +105,6 @@ namespace Mov.Suite.GameEngine.Graphic
             GraphicController.Wait();
         }
 
-        #endregion メソッド
+        #endregion method
     }
 }

@@ -9,7 +9,7 @@ namespace Mov.Game.Models
     /// </summary>
     public interface IFiniteStateMachineGameClient
     {
-        #region プロパティ
+        #region property
 
         /// <summary>
         /// ゲームオーバー判定
@@ -71,9 +71,9 @@ namespace Mov.Game.Models
         /// </summary>
         int[,] Map { get; }
 
-        #endregion プロパティ
+        #endregion property
 
-        #region メソッド
+        #region method
 
         /// <summary>
         /// 初期化処理
@@ -113,6 +113,6 @@ namespace Mov.Game.Models
 
         LandmarkSchema GetLandmark();
 
-        #endregion メソッド
+        #endregion method
     }
 }

@@ -1,10 +1,10 @@
 ﻿using Mov.Core.Graphicers.Services.Controllers;
 
-namespace Mov.Game.Models
+namespace Mov.Game.Service
 {
     public interface IGraphicGame
     {
-        #region プロパティ
+        #region property
 
         IGraphicController GraphicController { get; }
 
@@ -28,9 +28,9 @@ namespace Mov.Game.Models
         /// </summary>
         int Level { get; set; }
 
-        #endregion プロパティ
+        #endregion property
 
-        #region メソッド
+        #region method
 
         /// <summary>
         /// 初期化処理
@@ -53,6 +53,6 @@ namespace Mov.Game.Models
         /// <param name="keyCode">キーコード</param>
         void SetKeyCode(int keyCode);
 
-        #endregion メソッド
+        #endregion method
     }
 }

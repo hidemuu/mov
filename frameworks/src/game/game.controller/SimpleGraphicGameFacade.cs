@@ -1,21 +1,33 @@
-﻿using Mov.Game.Models;
-using Mov.Game.Models.Schemas;
+﻿using Mov.Game.Models.Schemas;
 using Mov.Game.Service;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Runtime.InteropServices;
 
 namespace Mov.Game.Controller
 {
-    internal class GameFacade : IGameFacade
+    public class SimpleGraphicGameFacade : IGameFacade
     {
+        #region field
 
+        private readonly IGraphicGame _game;
+
+        #endregion field
+
+        #region constructor
+
+        public SimpleGraphicGameFacade(IGraphicGame graphicGame) 
+        {
+            _game= graphicGame;
+        }
+
+        #endregion constructor
 
         #region method
 
         public IGraphicGame CreateGraphicGame()
         {
-            throw new NotImplementedException();
+            return _game;
         }
 
         public LandmarkSchema GetLandmark()

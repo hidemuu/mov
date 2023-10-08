@@ -9,9 +9,9 @@ namespace Mov.Suite.GameEngine.Graphic.Controller
         #region field
 
         /// <summary>
-        /// ゲームエンジン
+        /// ゲームクライアント
         /// </summary>
-        private IFiniteStateMachineGameClient client;
+        private IFiniteStateMachineGameClient _client;
 
         #endregion field
 
@@ -19,7 +19,7 @@ namespace Mov.Suite.GameEngine.Graphic.Controller
 
         public FiniteStateMachineGameGraphicController(IFiniteStateMachineGameClient client) : base()
         {
-            this.client = client;
+            this._client = client;
             FrameWidth = client.MapWidth;
             FrameHeight = client.MapHeight;
         }
@@ -30,20 +30,20 @@ namespace Mov.Suite.GameEngine.Graphic.Controller
 
         protected override void Ready()
         {
-            foreach (var character in client.Characters)
+            foreach (var character in _client.Characters)
             {
                 switch (character.Type)
                 {
                     //プレイヤー
                     case CharacterType.PLAYER:
                         //移動処理
-                        if (character.Move()) client.Score++;
+                        if (character.Move()) _client.Score++;
                         //ダメージ判定
                         if (character.IsDamage()) character.AddLife(-1);
                         //ゲームオーバー判定
-                        if (character.Life <= 0) client.IsGameOver = true;
+                        if (character.Life <= 0) _client.IsGameOver = true;
                         //ステージクリア判定
-                        if (client.Score >= client.GetLandmark().ClearScore) client.IsStageClear = true;
+                        if (_client.Score >= _client.GetLandmark().ClearScore) _client.IsStageClear = true;
                         break;
                     //敵
                     case CharacterType.ALIEN:
@@ -56,7 +56,7 @@ namespace Mov.Suite.GameEngine.Graphic.Controller
 
         protected override void DrawScreen()
         {
-            foreach (var character in client.Characters)
+            foreach (var character in _client.Characters)
             {
                 if (character.Type != CharacterType.ROAD) DrawCharacter(character);
             }
@@ -81,19 +81,19 @@ namespace Mov.Suite.GameEngine.Graphic.Controller
         public override void Initialize()
         {
             base.Initialize();
-            client.Score = 0;
-            client.Initialize();
-            client.IsGameOver = false;
-            client.IsStageClear = false;
+            _client.Score = 0;
+            _client.Initialize();
+            _client.IsGameOver = false;
+            _client.IsStageClear = false;
         }
 
         public void Next()
         {
-            client.Level++;
-            client.Score = 0;
-            client.Initialize();
+            _client.Level++;
+            _client.Score = 0;
+            _client.Initialize();
             IsActive = true;
-            client.IsStageClear = false;
+            _client.IsStageClear = false;
         }
 
         #endregion method

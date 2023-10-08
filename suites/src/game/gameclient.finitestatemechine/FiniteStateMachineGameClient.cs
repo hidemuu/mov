@@ -14,17 +14,17 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
     {
         #region field
 
-        public readonly IGameContext parameter;
+        public readonly IGameRepository _repository;
 
         /// <summary>
         /// 追跡パンくず
         /// </summary>
-        private Breadcrumbs breadcrumbs;
+        private Breadcrumbs _breadcrumbs;
 
         /// <summary>
         /// パンくず追跡使用
         /// </summary>
-        private static bool isUseBreadcrumbs = true;
+        private static bool _isUseBreadcrumbs = true;
 
         #endregion field
 
@@ -97,9 +97,9 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public FiniteStateMachineGameClient(IGameContext parameter)
+        public FiniteStateMachineGameClient(IGameRepository repository)
         {
-            this.parameter = parameter;
+            this._repository = repository;
             Characters = new List<ICharacter>();
             Aliens = new List<ICharacter>();
             var map = GetLandmark();
@@ -118,12 +118,12 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
         {
             var landMark = GetLandmark();
             Map = Map2D.MakeMap(landMark);
-            breadcrumbs = new Breadcrumbs(15, this, landMark.GetRow(), landMark.GetCol());
+            _breadcrumbs = new Breadcrumbs(15, this, landMark.GetRow(), landMark.GetCol());
             Characters.Clear();
             Aliens.Clear();
             KeyCode = KeyboardCode.None.Value;
             AddCharacters(Characters, Map);
-            AddCharacters(Characters, breadcrumbs.breads);
+            AddCharacters(Characters, _breadcrumbs.breads);
             SortCharacters(new int[] { (int)CharacterType.WALL, (int)CharacterType.BREAD, (int)CharacterType.ALIEN, (int)CharacterType.PLAYER, (int)CharacterType.TREASURE });
         }
 
@@ -210,10 +210,10 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
             {
                 case (int)CharacterType.WALL: return new Wall(this);
                 case (int)CharacterType.PLAYER:
-                    if (isUseBreadcrumbs) return new BreadPlayer(this, breadcrumbs);
+                    if (_isUseBreadcrumbs) return new BreadPlayer(this, _breadcrumbs);
                     else return new Player(this);
                 case (int)CharacterType.ALIEN:
-                    if (isUseBreadcrumbs) return new BreadAlien(this, breadcrumbs);
+                    if (_isUseBreadcrumbs) return new BreadAlien(this, _breadcrumbs);
                     else return new Alien(this);
                 case (int)CharacterType.TREASURE:
                     return new Treasure(this);
@@ -287,17 +287,12 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
 
         public IEnumerable<int> GetLevels()
         {
-            return Task.WhenAll(parameter.Repository.Landmarks.GetAsync()).Result[0].Select(x => x.Lv);
+            return Task.WhenAll(_repository.Landmarks.GetAsync()).Result[0].Select(x => x.Lv);
         }
 
         public LandmarkSchema GetLandmark()
         {
-            return Task.WhenAll(parameter.Repository.Landmarks.GetAsync()).Result[0].FirstOrDefault(x => x.Lv == Level);
-        }
-
-        public override string ToString()
-        {
-            return parameter.Query.Landmark.ToString();
+            return Task.WhenAll(_repository.Landmarks.GetAsync()).Result[0].FirstOrDefault(x => x.Lv == Level);
         }
 
         #endregion method

@@ -22,6 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\game\gameclient.finitestatemechine\GameClient.FiniteStateMechine.csproj" />
+    <ProjectReference Include="..\..\src\game\gameengine.graphic\GameEngine.Graphic.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Mov.Core">
       <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
     </Reference>

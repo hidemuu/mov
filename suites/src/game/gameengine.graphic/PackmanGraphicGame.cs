@@ -13,7 +13,7 @@ namespace Mov.Suite.GameEngine.Graphic
         #region field
 
         /// <summary>
-        /// ゲームエンジン
+        /// ゲームクライアント
         /// </summary>
         private readonly IFiniteStateMachineGameClient _client;
 

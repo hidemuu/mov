@@ -1,9 +1,5 @@
-﻿using Mov.Analizer.Controller;
-using Mov.Core.Loggers.Attributes;
-using Mov.Designer.Controller;
+﻿using Mov.Core.Loggers.Attributes;
 using Mov.Framework;
-using Mov.Framework.Engines;
-using Mov.Framework.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,7 +68,7 @@ namespace Mov.ConsoleApp
                 {"end", EndProgram },
                 {"help", Help }
             };
-           
+
 
         }
 

@@ -10,10 +10,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\analizer\analizerclient.resas\AnalizerClient.Resas.csproj" />
     <ProjectReference Include="..\..\src\suite\Suite.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Mov.Core.Repositories">
+      <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.Repositories.dll</HintPath>
+    </Reference>
     <Reference Include="Mov.Framework">
       <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Framework.dll</HintPath>
     </Reference>

@@ -1,7 +1,4 @@
-﻿using Mov.Framework;
-using Mov.Framework.Engines;
-using Mov.Suite.Controllers;
-using Mov.Suite.Facades;
+﻿using Mov.Suite.AnalizerClient.Resas.Repository;
 
 internal class Program
 {
@@ -9,13 +6,13 @@ internal class Program
 
     private static bool _running = true;
 
-    private static IConsoleAppController _controller;
-
     private static IDictionary<string, CommandHandler> _handlers = new Dictionary<string, CommandHandler>()
-            {
-                {"end", EndProgram },
-                {"help", Help }
-            };
+    {
+        {"resascity", GetRestResasCities },
+        {"resaspref", GetRestResasPrefectures },
+        {"end", EndProgram },
+        {"help", Help }
+    };
 
     private delegate void CommandHandler(IEnumerable<string> parameters);
 
@@ -61,9 +58,6 @@ internal class Program
 
     private static void Initialize()
     {
-        //エンジン生成
-        var engine = new MovEngine(0, new EmptyMovFacade());
-        _controller = new ConsoleAppController(engine);
     }
 
     private static void Run()
@@ -73,23 +67,7 @@ internal class Program
             //コントローラー生成
             while (_running)
             {
-                Console.WriteLine("ドメインを入力してください");
-                Console.WriteLine("--------------");
-                Console.WriteLine(_controller.GetDomainHelp());
-                Console.WriteLine("--------------");
                 Console.Write("> ");
-                var input = Console.ReadLine() ?? string.Empty;
-                if (!_controller.SetDomain(input))
-                {
-                    Console.WriteLine("コントローラーの生成に失敗しました");
-                    if (_handlers.ContainsKey(input))
-                    {
-                        _handlers[input].Invoke(new string[] { });
-                        continue;
-                    }
-                    continue;
-                }
-                Console.WriteLine("コントローラーを生成しました");
                 Help(new string[] { });
                 break;
             }
@@ -108,14 +86,6 @@ internal class Program
                 {
                     _handlers[command].Invoke(parameters);
                     continue;
-                }
-                if (!_controller.ExistsDomainCommand(command))
-                {
-                    Console.WriteLine($"コマンドが登録されていません : {command}");
-                }
-                else
-                {
-                    _controller.ExecuteDomainCommand(command, parameters);
                 }
             }
         }
@@ -140,6 +110,36 @@ internal class Program
 
     #region command handler
 
+    private static void GetRestResasCities(IEnumerable<string> parameters)
+    {
+        var parameterArray = parameters.ToArray();
+        var resasRepository = new RestResasRepository(parameterArray[0], parameterArray[1]);
+        var cities = Task.WhenAll(resasRepository.Cities.GetAsync()).Result[0].ToArray();
+        foreach (var city in cities)
+        {
+            Console.WriteLine(city.Id);
+            foreach (var result in city.Results)
+            {
+                Console.WriteLine(result);
+            }
+        }
+    }
+
+    private static void GetRestResasPrefectures(IEnumerable<string> parameters)
+    {
+        var parameterArray = parameters.ToArray();
+        var resasRepository = new RestResasRepository(parameterArray[0], parameterArray[1]);
+        var prefectures = Task.WhenAll(resasRepository.Prefectures.GetAsync()).Result[0].ToArray();
+        foreach (var prefecture in prefectures)
+        {
+            Console.WriteLine(prefecture.Id);
+            foreach (var result in prefecture.Results)
+            {
+                Console.WriteLine(result);
+            }
+        }
+    }
+
     private static void EndProgram(IEnumerable<string> parameters)
     {
         _running = false;
@@ -152,7 +152,6 @@ internal class Program
         {
             Console.WriteLine(key);
         }
-        Console.WriteLine(_controller.GetDomainCommandHelp());
         Console.WriteLine("----- end ------");
     }
 

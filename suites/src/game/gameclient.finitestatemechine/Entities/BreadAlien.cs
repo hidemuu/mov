@@ -1,4 +1,6 @@
-﻿namespace Mov.Game.Models.Entities.Characters
+﻿using Mov.Game.Models;
+
+namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
 {
     public class BreadAlien : Alien
     {

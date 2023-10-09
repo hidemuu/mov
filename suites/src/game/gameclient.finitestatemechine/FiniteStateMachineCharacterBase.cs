@@ -1,6 +1,8 @@
-﻿using System.Drawing;
+﻿using Mov.Game.Models;
+using Mov.Game.Models.Entities;
+using System.Drawing;
 
-namespace Mov.Game.Models.Entities
+namespace Mov.Suite.GameClient.FiniteStateMechine
 {
     /// <summary>
     /// キャラクター基本クラス

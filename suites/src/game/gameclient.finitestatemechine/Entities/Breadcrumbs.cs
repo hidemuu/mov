@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Mov.Game.Models;
+using Mov.Game.Models.Entities;
+using System.Collections.Generic;
 using System.Linq;
 
-namespace Mov.Game.Models.Entities.Characters
+namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
 {
     /// <summary>
     /// パンくず拾いクラス

@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+
+    <AssemblyName>Mov.Suite.$(MSBuildProjectName)</AssemblyName>
+
+    <RootNamespace>Mov.Suite.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
+    <PackageReference Include="NUnit.Analyzers" Version="3.3.0" />
+    <PackageReference Include="coverlet.collector" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\gameclient.finitestatemechine\GameClient.FiniteStateMechine.csproj" />
+    <ProjectReference Include="..\gameengine.graphic\GameEngine.Graphic.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Core.Accessors">
+      <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Accessors.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Framework">
+      <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Game.Models">
+      <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Game.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Game.Repository">
+      <HintPath>..\..\..\..\frameworks\src\game\game.controller\bin\Debug\netstandard2.0\Mov.Game.Repository.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,24 +1,21 @@
 using Mov.Core.Accessors.Models;
 using Mov.Framework.Services;
-using Mov.Game.Models.Schemas;
 using Mov.Game.Repository;
 using Mov.Suite.GameClient.FiniteStateMechine;
-using Mov.Suite.GameClient.Test.Builders;
+using Mov.Suite.GameEngine.Graphic;
 using System.Diagnostics;
 
-namespace Mov.Suite.GameClient.Test
+namespace GameEngine.Test
 {
-    public class FiniteStateMachineTest
+    public class PackmanGraphicGameTest
     {
         #region constants
 
-        private const string TEST_NAME = nameof(FiniteStateMachineTest);
+        private const string TEST_NAME = nameof(PackmanGraphicGameTest);
 
         #endregion constants
 
         #region field
-
-        private GameRepositoryBuilder _repositoryBuilder;
 
         #endregion field
 
@@ -27,7 +24,6 @@ namespace Mov.Suite.GameClient.Test
         [OneTimeSetUp]
         public void ClassInitialize()
         {
-            _repositoryBuilder = new GameRepositoryBuilder();
             Trace.WriteLine($"{TEST_NAME} ClassInitialize");
         }
 
@@ -54,38 +50,19 @@ namespace Mov.Suite.GameClient.Test
         #region test
 
         [Test]
-        public void GetLandmark_MockRepository_Return()
-        {
-            //Arrange
-            var repository = _repositoryBuilder
-                .WithGetAsyncLandmark(new[] 
-                { 
-                    new LandmarkSchema() { Lv = 1, }, 
-                    new LandmarkSchema() { Lv = 2, },
-                })
-                .Build();
-            var sut = new FiniteStateMachineGameClient(repository);
-
-            //Act
-            var landmark = sut.GetLandmark();
-
-            //Assert
-            Assert.That(landmark.Lv, Is.EqualTo(1));
-        }
-
-        [Test]
-        public void GetLandmark_Repository_Return()
+        public void GetLevel()
         {
             //Arrange
             var path = Path.Combine(PathCreator.GetResourcePath(), "game");
             var repository = new FileGameRepository(path, FileType.Json, EncodingValue.UTF8);
-            var sut = new FiniteStateMachineGameClient(repository);
+            var client = new FiniteStateMachineGameClient(repository);
+            var sut = new PackmanGraphicGame(client);
 
             //Act
-            var landmark = sut.GetLandmark();
+            var level = sut.Level;
 
             //Assert
-            Assert.That(landmark.Lv, Is.EqualTo(1));
+            Assert.That(level, Is.EqualTo(1));
         }
 
         #endregion test

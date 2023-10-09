@@ -71,11 +71,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp", "app\BlazorApp\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactApp", "app\ReactApp\ReactApp.csproj", "{E28E9D37-A248-40F7-9EFC-501053399BA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameClient.Test", "src\game\GameClient.Test\GameClient.Test.csproj", "{198DCEA7-8019-42BD-9A5E-E65790FF6D88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameClient.Test", "src\game\GameClient.Test\GameClient.Test.csproj", "{198DCEA7-8019-42BD-9A5E-E65790FF6D88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignerClient.Wpf", "src\designer\DesignerClient.Wpf\DesignerClient.Wpf.csproj", "{D53C0CBF-CC9A-4470-98D2-2F71A9BC5385}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignerClient.Wpf", "src\designer\DesignerClient.Wpf\DesignerClient.Wpf.csproj", "{D53C0CBF-CC9A-4470-98D2-2F71A9BC5385}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawerClient.Bitmap", "src\drawer\DrawerClient.Bitmap\DrawerClient.Bitmap.csproj", "{E9272C0A-E7CB-4C13-A9EC-2D138A4878D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrawerClient.Bitmap", "src\drawer\DrawerClient.Bitmap\DrawerClient.Bitmap.csproj", "{E9272C0A-E7CB-4C13-A9EC-2D138A4878D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameEngine.Test", "src\game\GameEngine.Test\GameEngine.Test.csproj", "{C511B226-9349-4A03-BB44-483C541034CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -187,6 +189,10 @@ Global
 		{E9272C0A-E7CB-4C13-A9EC-2D138A4878D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9272C0A-E7CB-4C13-A9EC-2D138A4878D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9272C0A-E7CB-4C13-A9EC-2D138A4878D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C511B226-9349-4A03-BB44-483C541034CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C511B226-9349-4A03-BB44-483C541034CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C511B226-9349-4A03-BB44-483C541034CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C511B226-9349-4A03-BB44-483C541034CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -226,6 +232,7 @@ Global
 		{198DCEA7-8019-42BD-9A5E-E65790FF6D88} = {E9D48FC0-112E-478A-A02E-406A687E1597}
 		{D53C0CBF-CC9A-4470-98D2-2F71A9BC5385} = {1EDB23C9-6666-49A2-9E1A-3F6EC60D95DF}
 		{E9272C0A-E7CB-4C13-A9EC-2D138A4878D9} = {7C4BEF18-0A88-4023-80A9-A8C4C35DA465}
+		{C511B226-9349-4A03-BB44-483C541034CF} = {E9D48FC0-112E-478A-A02E-406A687E1597}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DA11007-6005-4C72-A93A-35FB982B6921}

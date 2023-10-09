@@ -15,7 +15,7 @@ namespace Mov.Core.Stores.Controllers.DbRepositories.Queries
 
         public IEnumerable<TEntity> ReadAll()
         {
-            var task = _repository.GetAsync();
+            var task = _repository.GetsAsync();
             Task.WhenAll(task);
             return task.Result;
         }

@@ -47,7 +47,7 @@ namespace Mov.Core.Repositories.Services
 
         #region method
 
-        public async Task<IEnumerable<TEntity>> GetAsync() =>
+        public async Task<IEnumerable<TEntity>> GetsAsync() =>
             await _client.GetsAsync<TEntity>(_key);
 
         public async Task<TEntity> GetAsync(TIdentifier identidfier)

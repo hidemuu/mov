@@ -48,7 +48,7 @@ namespace Mov.Core.Repositories.Test
 
             // Act
             var sut = new RestDbRepository<SerializeSchema, int>(client, "");
-            var items = Task.WhenAll(sut.GetAsync()).Result[0].ToArray();
+            var items = Task.WhenAll(sut.GetsAsync()).Result[0].ToArray();
 
             // Assert
             Assert.That(items.Length, Is.EqualTo(2));

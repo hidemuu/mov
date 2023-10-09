@@ -43,7 +43,7 @@ namespace Mov.Designer.Service
 
         private IEnumerable<LayoutNode> GetNodes(IDesignerRepository repository)
         {
-            var task = repository.Nodes.GetAsync();
+            var task = repository.Nodes.GetsAsync();
             Task.WhenAll(task);
             return GetNode(task.Result, repository);
         }
@@ -66,7 +66,7 @@ namespace Mov.Designer.Service
 
         private IEnumerable<LayoutContent> GetContents(IDesignerRepository repository)
         {
-            var task = repository.Contents.GetAsync();
+            var task = repository.Contents.GetsAsync();
             Task.WhenAll(task);
             foreach (var content in task.Result)
             {
@@ -85,7 +85,7 @@ namespace Mov.Designer.Service
 
         private IEnumerable<LayoutShell> GetShells(IDesignerRepository repository)
         {
-            foreach (var shell in Task.WhenAll(repository.Shells.GetAsync()).Result[0])
+            foreach (var shell in Task.WhenAll(repository.Shells.GetsAsync()).Result[0])
             {
                 yield return new LayoutShell(RegionStyle.Center, ColorStyle.Transrarent, ColorStyle.Transrarent, ThicknessValue.Default, Size2D.Default);
             }
@@ -93,7 +93,7 @@ namespace Mov.Designer.Service
 
         private IEnumerable<LayoutTheme> GetThemes(IDesignerRepository repository)
         {
-            foreach (var theme in Task.WhenAll(repository.Themes.GetAsync()).Result[0])
+            foreach (var theme in Task.WhenAll(repository.Themes.GetsAsync()).Result[0])
             {
                 yield return new LayoutTheme(ThemeStyle.Light);
             }
@@ -101,9 +101,9 @@ namespace Mov.Designer.Service
 
         public void Read()
         {
-            Task.WhenAll(repository.Nodes.GetAsync());
-            Task.WhenAll(repository.Contents.GetAsync());
-            Task.WhenAll(repository.Shells.GetAsync());
+            Task.WhenAll(repository.Nodes.GetsAsync());
+            Task.WhenAll(repository.Contents.GetsAsync());
+            Task.WhenAll(repository.Shells.GetsAsync());
         }
 
         public void Write()

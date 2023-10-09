@@ -30,7 +30,7 @@ namespace Mov.Suite.GameClient.Test.Builders
 
         public GameRepositoryBuilder WithGetAsyncLandmark(IEnumerable<LandmarkSchema> landmarks)
         {
-            _mockRepository.Setup(x => x.Landmarks.GetAsync()).ReturnsAsync(landmarks);
+            _mockRepository.Setup(x => x.Landmarks.GetsAsync()).ReturnsAsync(landmarks);
             return this;
         }
 

@@ -38,7 +38,7 @@ namespace Mov.Core.Api.Controllers
         [HttpGet]
         public async Task<IEnumerable<UserSettingSchema>> Get()
         {
-            return await this._repository.UserSettings.GetAsync();
+            return await this._repository.UserSettings.GetsAsync();
         }
 
         /// <summary>

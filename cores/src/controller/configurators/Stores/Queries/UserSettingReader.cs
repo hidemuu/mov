@@ -27,7 +27,7 @@ namespace Mov.Core.Configurators.Stores.Queries
 
         public IEnumerable<UserSetting> ReadAll()
         {
-            var configs = Task.WhenAll(_repository.UserSettings.GetAsync()).Result[0];
+            var configs = Task.WhenAll(_repository.UserSettings.GetsAsync()).Result[0];
             var result = new List<UserSetting>();
             foreach (var config in configs)
             {

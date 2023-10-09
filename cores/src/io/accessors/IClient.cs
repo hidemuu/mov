@@ -28,6 +28,12 @@ namespace Mov.Core.Accessors
         Task<IEnumerable<TEntity>> GetsAsync<TEntity>(string url);
 
         /// <summary>
+        /// Get
+        /// </summary>
+        /// <returns></returns>
+        Task<TEntity> GetAsync<TEntity>(string url);
+
+        /// <summary>
         /// Post
         /// </summary>
         Task<ResponseStatus> PostAsync<TEntity>(string url, TEntity entity);

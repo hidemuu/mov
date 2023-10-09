@@ -38,7 +38,7 @@ namespace Mov.Api.Controllers
         [HttpGet]
         public async Task<IEnumerable<LandmarkSchema>> Get()
         {
-            return await this.repository.Landmarks.GetAsync();
+            return await this.repository.Landmarks.GetsAsync();
         }
 
 

@@ -38,7 +38,7 @@ namespace Mov.Core.Configurators.Test.Builders
         public ConfiguratorRepositoryBuilder WithGetAsyncCalled(IEnumerable<UserSettingSchema> configSchemas)
         {
             _mockConfigRepository
-                .Setup(x => x.GetAsync())
+                .Setup(x => x.GetsAsync())
                 .ReturnsAsync(configSchemas)
                 .Callback(() =>
                 {

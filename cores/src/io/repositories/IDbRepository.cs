@@ -19,7 +19,7 @@ namespace Mov.Core.Repositories
 
         #region method
 
-        Task<IEnumerable<TEntity>> GetAsync();
+        Task<IEnumerable<TEntity>> GetsAsync();
 
         Task<TEntity> GetAsync(TIdentifier identifier);
 

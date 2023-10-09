@@ -36,7 +36,7 @@ namespace Mov.Core.Repositories.Services
 
         #region method
 
-        public async Task<IEnumerable<TEntity>> GetAsync()
+        public async Task<IEnumerable<TEntity>> GetsAsync()
         {
             return await _ts
                 .AsNoTracking()

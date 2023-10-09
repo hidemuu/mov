@@ -60,7 +60,7 @@ namespace Mov.Core.Repositories.Services
         #region method
 
         /// <inheritdoc />
-        public async Task<IEnumerable<TEntity>> GetAsync()
+        public async Task<IEnumerable<TEntity>> GetsAsync()
         {
             return await _client.GetsAsync<TEntity>("");
         }
@@ -68,7 +68,7 @@ namespace Mov.Core.Repositories.Services
         /// <inheritdoc />
         public async Task<TEntity> GetAsync(TIdentifier identifier)
         {
-            var items = await GetAsync();
+            var items = await GetsAsync();
             return items.FirstOrDefault(x => x.Id.Equals(identifier));
         }
 

@@ -19,6 +19,11 @@ namespace Mov.Core.Accessors.Clients
             throw new NotImplementedException();
         }
 
+        public Task<TEntity> GetAsync<TEntity>(string url)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<IEnumerable<TEntity>> GetsAsync<TEntity>(string url)
         {
             throw new NotImplementedException();

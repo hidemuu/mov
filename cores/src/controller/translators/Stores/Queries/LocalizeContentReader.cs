@@ -32,7 +32,7 @@ namespace Mov.Core.Translators.Stores.Queries
 
         public IEnumerable<LocalizeContent> ReadAll()
         {
-            var result = Task.WhenAll(_repository.Localizes.GetAsync()).Result[0];
+            var result = Task.WhenAll(_repository.Localizes.GetsAsync()).Result[0];
             foreach (var item in result)
             {
                 yield return new LocalizeContent(item);

@@ -54,7 +54,7 @@ namespace Mov.Game.Test
             var sut = new FileGameRepository(resourcePath, FileType.Json, EncodingValue.UTF8);
 
             //Act
-            var landmarks = Task.WhenAll(sut.Landmarks.GetAsync()).Result[0].ToArray();
+            var landmarks = Task.WhenAll(sut.Landmarks.GetsAsync()).Result[0].ToArray();
 
             //Assert
             Assert.That(landmarks.Length, Is.EqualTo(3));

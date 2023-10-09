@@ -38,7 +38,7 @@ namespace Mov.Core.Translators.Test.Builders
         public TranslatorRepositoryBuilder WithGetAsyncCalled(IEnumerable<LocalizeSchema> schemas)
         {
             _mockTranslateRepository
-                .Setup(x => x.GetAsync())
+                .Setup(x => x.GetsAsync())
                 .ReturnsAsync(schemas)
                 .Callback(() =>
                 {

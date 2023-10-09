@@ -38,7 +38,7 @@ namespace Mov.Api.Controllers
         [HttpGet]
         public async Task<IEnumerable<ShellSchema>> Get()
         {
-            return await this.repository.Shells.GetAsync();
+            return await this.repository.Shells.GetsAsync();
         }
 
         /// <summary>

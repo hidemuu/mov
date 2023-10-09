@@ -37,7 +37,7 @@ namespace Mov.Designer.Test.Builders
         public DesignerRepositoryBuilder WithContentCalled(List<ContentSchema> contents)
         {
             var mockRepositoryContent = new Mock<IDbRepository<ContentSchema, Guid>>();
-            mockRepositoryContent.Setup(x => x.GetAsync()).ReturnsAsync(contents);
+            mockRepositoryContent.Setup(x => x.GetsAsync()).ReturnsAsync(contents);
             mockRepositoryContent.Setup(x => x.PostAsync(new ContentSchema()));
             mockRepositoryContent.Setup(x => x.DeleteAsync(new ContentSchema()));
             mockRepository.Setup(x => x.Contents).Returns(mockRepositoryContent.Object);
@@ -48,7 +48,7 @@ namespace Mov.Designer.Test.Builders
         public DesignerRepositoryBuilder WithNodeCalled(List<NodeSchema> nodes)
         {
             var mockNode = new Mock<IDbRepository<NodeSchema, Guid>>();
-            mockNode.Setup(x => x.GetAsync()).ReturnsAsync(nodes);
+            mockNode.Setup(x => x.GetsAsync()).ReturnsAsync(nodes);
             mockNode.Setup(x => x.PostAsync(new NodeSchema()));
             mockNode.Setup(x => x.DeleteAsync(new NodeSchema()));
             mockRepository.Setup(x => x.Nodes).Returns(mockNode.Object);

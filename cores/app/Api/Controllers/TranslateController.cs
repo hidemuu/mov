@@ -38,7 +38,7 @@ namespace Mov.Core.Api.Controllers
         [HttpGet]
         public async Task<IEnumerable<LocalizeSchema>> Get()
         {
-            return await this._repository.Localizes.GetAsync();
+            return await this._repository.Localizes.GetsAsync();
         }
 
         /// <summary>

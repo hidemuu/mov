@@ -290,13 +290,13 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
 
         public IEnumerable<int> GetLevels()
         {
-            var landmarks = Task.WhenAll(_repository.Landmarks.GetAsync()).Result[0];
+            var landmarks = Task.WhenAll(_repository.Landmarks.GetsAsync()).Result[0];
             return landmarks.Select(x => x.Lv);
         }
 
         public LandmarkSchema GetLandmark()
         {
-            var landmarkTask = _repository.Landmarks.GetAsync();
+            var landmarkTask = _repository.Landmarks.GetsAsync();
             Task.WhenAll(landmarkTask);
             try
             {

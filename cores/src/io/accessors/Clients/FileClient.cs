@@ -77,6 +77,29 @@ namespace Mov.Core.Accessors.Clients
             return await Task.Run(() => _serializer.Deserialize<IEnumerable<TEntity>, IEnumerable<TEntity>>(path.Value)).ConfigureAwait(false);
         }
 
+        public async Task<TEntity> GetAsync<TEntity>(string url)
+        {
+            var path = Endpoint.Combine(url);
+            if (!File.Exists(path.Value))
+            {
+                return default(TEntity);
+            }
+            if (_serializer is XmlSerializer xmlSerializer)
+            {
+                return await Task.Run(() => _serializer.Deserialize<TEntity, TEntity>(path.Value)).ConfigureAwait(false);
+            }
+            if (_serializer is CsvSerializer csvSerializer)
+            {
+                var results = await Task.Run(() => _serializer.Deserialize<TEntity, IEnumerable<TEntity>>(path.Value)).ConfigureAwait(false);
+                return results.ToArray()[0];
+            }
+            if (_serializer is JsonSerializer jsonSerializer)
+            {
+                return await Task.Run(() => _serializer.Deserialize<TEntity, TEntity>(path.Value)).ConfigureAwait(false);
+            }
+            return await Task.Run(() => _serializer.Deserialize<TEntity, TEntity>(path.Value)).ConfigureAwait(false);
+        }
+
         public async Task<ResponseStatus> PostAsync<TEntity>(string url, TEntity entity)
         {
             var allEntities = (await GetsAsync<TEntity>(url)).ToList();

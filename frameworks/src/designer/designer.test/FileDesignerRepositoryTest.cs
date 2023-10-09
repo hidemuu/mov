@@ -57,7 +57,7 @@ namespace Mov.Designer.Test
             var sut = new FileDesignerRepository(resourcePath, FileType.Xml, EncodingValue.UTF8);
 
             //Act
-            var contents = Task.WhenAll(sut.Contents.GetAsync()).Result[0].ToArray();
+            var contents = Task.WhenAll(sut.Contents.GetsAsync()).Result[0].ToArray();
 
             //Assert
             Assert.That(contents.Length, Is.EqualTo(1));

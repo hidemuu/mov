@@ -38,7 +38,7 @@ namespace Mov.Api.Controllers
         [HttpGet]
         public async Task<IEnumerable<ThemeSchema>> Get()
         {
-            return await this.repository.Themes.GetAsync();
+            return await this.repository.Themes.GetsAsync();
         }
 
         /// <summary>

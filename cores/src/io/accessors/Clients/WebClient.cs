@@ -72,6 +72,21 @@ namespace Mov.Core.Accessors.Clients
             }
         }
 
+        public async Task<TEntity> GetAsync<TEntity>(string url)
+        {
+            using (var client = BaseClient())
+            {
+                var request = new HttpRequestMessage(HttpMethod.Get, url);
+                foreach (var header in _headers)
+                {
+                    request.Headers.Add(header.Key, header.Value);
+                }
+                HttpResponseMessage response = await client.SendAsync(request);
+                string json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<TEntity>(json);
+            }
+        }
+
         /// <summary>
         /// Makes an HTTP POST request to the given controller with the given object as the body.
         /// Returns the deserialized response content.

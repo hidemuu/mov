@@ -53,7 +53,7 @@ namespace Mov.Core.Repositories.Test
             var sut = FileDbRepository<SerializeSchema, int>.Factory.Create(new FileClient(PathValue.Empty, serializer));
 
             // Act
-            var items = Task.WhenAll(sut.GetAsync()).Result[0].ToArray();
+            var items = Task.WhenAll(sut.GetsAsync()).Result[0].ToArray();
 
             // Assert
             Assert.That(items.Length, Is.EqualTo(2));
@@ -74,7 +74,7 @@ namespace Mov.Core.Repositories.Test
             var sut = FileDbRepository<SerializeSchema, int>.Factory.Create(resourcePath, FileType.Json, EncodingValue.UTF8);
 
             // Act
-            var items = Task.WhenAll(sut.GetAsync()).Result[0].ToArray();
+            var items = Task.WhenAll(sut.GetsAsync()).Result[0].ToArray();
 
             // Assert
             Assert.That(items.Length, Is.EqualTo(2));

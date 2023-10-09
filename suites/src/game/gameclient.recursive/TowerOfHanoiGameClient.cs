@@ -2,15 +2,12 @@
 using Mov.Game.Models.Entities;
 using Mov.Game.Service;
 using Mov.Suite.GameClient.Recursive.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Mov.Suite.GameClient.Recursive
 {
     public class TowerOfHanoiGameClient : IRecursiveGameClient
     {
-        
+
         #region property
 
         /// <summary>
@@ -32,7 +29,7 @@ namespace Mov.Suite.GameClient.Recursive
 
         #region constructor
 
-        public TowerOfHanoiGameClient(int n, int frameWidth, int frameHeight) 
+        public TowerOfHanoiGameClient(int n, int frameWidth, int frameHeight)
         {
             this.N = n;
             Cons = new ConsCell[] { ConsCell.Range(1, n + 1), ConsCell.Nil, ConsCell.Nil };

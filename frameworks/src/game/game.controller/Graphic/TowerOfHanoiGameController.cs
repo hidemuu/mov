@@ -1,6 +1,5 @@
 ﻿using Mov.Core.Graphicers.Services.Controllers;
 using Mov.Core.Learnings.Models;
-using Mov.Game.Models.Entities;
 using Mov.Game.Service;
 using System;
 

@@ -1,5 +1,4 @@
 ﻿using Mov.Core.Models;
-using Mov.Game.Models.Entities;
 using Mov.Game.Models.ValueObjects;
 using Mov.Game.Service;
 using System.Drawing;

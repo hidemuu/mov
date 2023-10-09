@@ -1,5 +1,5 @@
-﻿using System.Drawing;
-using Mov.Game.Models.ValueObjects;
+﻿using Mov.Game.Models.ValueObjects;
+using System.Drawing;
 
 namespace Mov.Game.Models.Entities
 {

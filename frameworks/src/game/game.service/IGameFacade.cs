@@ -6,7 +6,7 @@
 
         void Run();
 
-        IGraphicGame CreateGraphicGame();
+        IGraphicGameService CreateGraphicGame();
 
         #endregion メソッド
     }

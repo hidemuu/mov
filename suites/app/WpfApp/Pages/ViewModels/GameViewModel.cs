@@ -19,7 +19,7 @@ namespace Mov.Suite.WpfApp.Pages.ViewModels
 
         private readonly IFiniteStateMachineGameClient _cient;
 
-        private IGraphicGame _game;
+        private IGraphicGameService _game;
 
         #endregion field
 

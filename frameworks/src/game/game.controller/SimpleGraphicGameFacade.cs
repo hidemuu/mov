@@ -9,13 +9,13 @@ namespace Mov.Game.Controller
     {
         #region field
 
-        private readonly IGraphicGame _game;
+        private readonly IGraphicGameService _game;
 
         #endregion field
 
         #region constructor
 
-        public SimpleGraphicGameFacade(IGraphicGame graphicGame)
+        public SimpleGraphicGameFacade(IGraphicGameService graphicGame)
         {
             _game = graphicGame;
         }
@@ -24,7 +24,7 @@ namespace Mov.Game.Controller
 
         #region method
 
-        public IGraphicGame CreateGraphicGame()
+        public IGraphicGameService CreateGraphicGame()
         {
             return _game;
         }

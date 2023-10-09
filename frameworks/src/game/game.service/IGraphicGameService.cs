@@ -2,7 +2,7 @@
 
 namespace Mov.Game.Service
 {
-    public interface IGraphicGame
+    public interface IGraphicGameService
     {
         #region property
 

@@ -1,6 +1,6 @@
 ﻿namespace Mov.Game.Service
 {
-    public interface IConsoleGame
+    public interface IConsoleGameService
     {
         void Print();
     }

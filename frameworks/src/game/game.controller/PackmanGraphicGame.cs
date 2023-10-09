@@ -7,7 +7,7 @@ namespace Mov.Game.Controller
     /// <summary>
     /// パックマンっぽいゲームサービス
     /// </summary>
-    public class PackmanGraphicGame : IGraphicGame
+    public class PackmanGraphicGame : IGraphicGameService
     {
         #region field
 

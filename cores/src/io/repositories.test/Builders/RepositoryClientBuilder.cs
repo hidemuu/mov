@@ -30,7 +30,7 @@ namespace Mov.Core.Repositories.Test.Builders
         public RepositoryClientBuilder WithGetAsyncCalled<TEntity>(IEnumerable<TEntity> response)
         {
             this.mockClient
-                .Setup(x => x.GetAsync<TEntity>(It.IsAny<string>()))
+                .Setup(x => x.GetsAsync<TEntity>(It.IsAny<string>()))
                 .ReturnsAsync(response)
                 .Callback(() =>
                 {

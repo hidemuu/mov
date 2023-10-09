@@ -55,7 +55,7 @@ namespace Mov.Core.Accessors.Clients
 
         #region method
 
-        public async Task<IEnumerable<TEntity>> GetAsync<TEntity>(string url)
+        public async Task<IEnumerable<TEntity>> GetsAsync<TEntity>(string url)
         {
             var path = Endpoint.Combine(url);
             if (!File.Exists(path.Value))
@@ -79,7 +79,7 @@ namespace Mov.Core.Accessors.Clients
 
         public async Task<ResponseStatus> PostAsync<TEntity>(string url, TEntity entity)
         {
-            var allEntities = (await GetAsync<TEntity>(url)).ToList();
+            var allEntities = (await GetsAsync<TEntity>(url)).ToList();
             var registeredEntity = allEntities.FirstOrDefault(x => x.Equals(entity));
             if (registeredEntity != null)
             {
@@ -92,7 +92,7 @@ namespace Mov.Core.Accessors.Clients
 
         public async Task<ResponseStatus> PutAsync<TEntity>(string url, TEntity entity)
         {
-            var allEntities = (await GetAsync<TEntity>(url)).ToList();
+            var allEntities = (await GetsAsync<TEntity>(url)).ToList();
             var registeredEntity = allEntities.FirstOrDefault(x => x.Equals(entity));
             if (registeredEntity == null)
             {
@@ -106,7 +106,7 @@ namespace Mov.Core.Accessors.Clients
 
         public async Task<ResponseStatus> DeleteAsync<TEntity>(string url, TEntity entity)
         {
-            var allEntities = (await GetAsync<TEntity>(url)).ToList();
+            var allEntities = (await GetsAsync<TEntity>(url)).ToList();
             var registeredEntity = allEntities.FirstOrDefault(x => x.Equals(entity));
             if (registeredEntity != null)
             {

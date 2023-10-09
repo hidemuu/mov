@@ -48,11 +48,11 @@ namespace Mov.Core.Repositories.Services
         #region method
 
         public async Task<IEnumerable<TEntity>> GetAsync() =>
-            await _client.GetAsync<TEntity>(_key);
+            await _client.GetsAsync<TEntity>(_key);
 
         public async Task<TEntity> GetAsync(TIdentifier identidfier)
         {
-            var entities = await _client.GetAsync<TEntity>($"/{identidfier}" + _key);
+            var entities = await _client.GetsAsync<TEntity>($"/{identidfier}" + _key);
             return entities.FirstOrDefault(x => x.Id.Equals(identidfier));
         }
 

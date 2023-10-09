@@ -57,7 +57,7 @@ namespace Mov.Core.Accessors.Clients
         /// <summary>
         /// Makes an HTTP GET request to the given controller and returns the deserialized response content.
         /// </summary>
-        public async Task<IEnumerable<TEntity>> GetAsync<TEntity>(string url)
+        public async Task<IEnumerable<TEntity>> GetsAsync<TEntity>(string url)
         {
             using (var client = BaseClient())
             {

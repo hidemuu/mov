@@ -18,7 +18,7 @@ namespace Mov.Core.Accessors.Test
             // Arrange
             var sut = new FileClient(PathValue.Factory.CreateResourceRootPath(), AccessType.Json);
             // Act
-            var results = Task.WhenAll(sut.GetAsync<SerializeSchema>("test.json")).Result[0].ToArray();
+            var results = Task.WhenAll(sut.GetsAsync<SerializeSchema>("test.json")).Result[0].ToArray();
 
             // Assert
             Assert.That(results != null);
@@ -35,7 +35,7 @@ namespace Mov.Core.Accessors.Test
             var sut = new FileClient(PathValue.Factory.CreateResourceRootPath(), AccessType.Xml);
 
             // Act
-            var results = Task.WhenAll(sut.GetAsync<SerializeSchemaCollection>("test.xml")).Result[0].ToArray();
+            var results = Task.WhenAll(sut.GetsAsync<SerializeSchemaCollection>("test.xml")).Result[0].ToArray();
 
             // Assert
             Assert.That(results != null);
@@ -52,7 +52,7 @@ namespace Mov.Core.Accessors.Test
             var sut = new FileClient(PathValue.Factory.CreateResourceRootPath(), AccessType.Csv);
 
             // Act
-            var results = Task.WhenAll(sut.GetAsync<SerializeSchema>("test.csv")).Result[0].ToArray();
+            var results = Task.WhenAll(sut.GetsAsync<SerializeSchema>("test.csv")).Result[0].ToArray();
 
             // Assert
             Assert.That(results != null);

@@ -62,7 +62,7 @@ namespace Mov.Core.Repositories.Services
         /// <inheritdoc />
         public async Task<IEnumerable<TEntity>> GetAsync()
         {
-            return await _client.GetAsync<TEntity>("");
+            return await _client.GetsAsync<TEntity>("");
         }
 
         /// <inheritdoc />

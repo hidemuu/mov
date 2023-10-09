@@ -25,7 +25,7 @@ namespace Mov.Core.Accessors
         /// Get
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<TEntity>> GetAsync<TEntity>(string url);
+        Task<IEnumerable<TEntity>> GetsAsync<TEntity>(string url);
 
         /// <summary>
         /// Post

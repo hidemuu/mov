@@ -38,8 +38,8 @@ namespace Mov.Core.Repositories.Services
             _key = string.IsNullOrEmpty(key) ? string.Empty : API_KEY + key;
         }
 
-        public RestDbRepository(string url, string key, EncodingValue encode)
-            : this(new WebClient(new PathValue(url), encode), key)
+        public RestDbRepository(string url, string key, EncodingValue encode, IReadOnlyDictionary<string, string> headers)
+            : this(new WebClient(new PathValue(url), encode, headers), key)
         {
         }
 

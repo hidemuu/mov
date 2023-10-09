@@ -9,6 +9,8 @@ namespace Mov.Core.Accessors.Models
     {
         #region constant
 
+        private const string HTTP_HEADER = "http";
+
         private const string RESOURCE_NAME = "resources";
 
         private const string SQLITE_HEADER = @"Data Source=";
@@ -58,7 +60,9 @@ namespace Mov.Core.Accessors.Models
                     path :
                     Path.IsPathRooted(path) ?
                         path :
-                        Path.Combine(PathHelper.GetAssemblyRootPath(), path);
+                        path.StartsWith(HTTP_HEADER) ? 
+                            path :
+                            Path.Combine(PathHelper.GetAssemblyRootPath(), path);
         }
 
         public static PathValue Empty = new PathValue(string.Empty);

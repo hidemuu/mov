@@ -12,7 +12,9 @@ namespace Mov.Core.Accessors.Clients
     {
         #region field
 
-        private bool disposedValue;
+        private bool _disposedValue;
+
+        private readonly IReadOnlyDictionary<string, string> _headers = new Dictionary<string, string>();
 
         #endregion field
 
@@ -28,10 +30,11 @@ namespace Mov.Core.Accessors.Clients
 
         #region constructor
 
-        public WebClient(PathValue endpoint, EncodingValue encoding)
+        public WebClient(PathValue endpoint, EncodingValue encoding, IReadOnlyDictionary<string, string> headers)
         {
             Endpoint = endpoint;
             Encoding = encoding;
+            _headers = headers;
         }
 
         ~WebClient()
@@ -58,7 +61,12 @@ namespace Mov.Core.Accessors.Clients
         {
             using (var client = BaseClient())
             {
-                var response = await client.GetAsync(url);
+                var request = new HttpRequestMessage(HttpMethod.Get, url);
+                foreach(var header in _headers)
+                {
+                    request.Headers.Add(header.Key, header.Value);
+                }
+                HttpResponseMessage response = await client.SendAsync(request);
                 string json = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<IEnumerable<TEntity>>(json);
             }
@@ -134,7 +142,7 @@ namespace Mov.Core.Accessors.Clients
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!disposedValue)
+            if (!_disposedValue)
             {
                 if (disposing)
                 {
@@ -143,7 +151,7 @@ namespace Mov.Core.Accessors.Clients
 
                 // TODO: アンマネージド リソース (アンマネージド オブジェクト) を解放し、ファイナライザーをオーバーライドします
                 // TODO: 大きなフィールドを null に設定します
-                disposedValue = true;
+                _disposedValue = true;
             }
         }
 

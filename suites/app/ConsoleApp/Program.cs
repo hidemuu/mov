@@ -113,7 +113,7 @@ internal class Program
     private static void GetRestResasCities(IEnumerable<string> parameters)
     {
         var parameterArray = parameters.ToArray();
-        var resasRepository = new RestResasRepository(parameterArray[0], parameterArray[1]);
+        var resasRepository = new RestResasRepository("", parameterArray[0]);
         var cities = Task.WhenAll(resasRepository.Cities.GetAsync()).Result[0].ToArray();
         foreach (var city in cities)
         {
@@ -128,7 +128,7 @@ internal class Program
     private static void GetRestResasPrefectures(IEnumerable<string> parameters)
     {
         var parameterArray = parameters.ToArray();
-        var resasRepository = new RestResasRepository(parameterArray[0], parameterArray[1]);
+        var resasRepository = new RestResasRepository("", parameterArray[0]);
         var prefectures = Task.WhenAll(resasRepository.Prefectures.GetAsync()).Result[0].ToArray();
         foreach (var prefecture in prefectures)
         {

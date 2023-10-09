@@ -7,11 +7,15 @@ internal class Program
 {
     #region field
 
-    private static bool running = true;
+    private static bool _running = true;
 
-    private static IConsoleAppController controller;
+    private static IConsoleAppController _controller;
 
-    private static IDictionary<string, CommandHandler> handlers;
+    private static IDictionary<string, CommandHandler> _handlers = new Dictionary<string, CommandHandler>()
+            {
+                {"end", EndProgram },
+                {"help", Help }
+            };
 
     private delegate void CommandHandler(IEnumerable<string> parameters);
 
@@ -21,7 +25,7 @@ internal class Program
 
     private static void Main(string[] args)
     {
-        var mutex = new Mutex(false, FrameworkConstants.APP_NAME + "_ConsoleApp");
+        var mutex = new Mutex(false, "Mov_Suite_ConsoleApp");
         //二重起動防止
         if (!mutex.WaitOne(0, false))
         {
@@ -32,7 +36,7 @@ internal class Program
             return;
         }
 
-        Console.WriteLine("Hello Mov!");
+        Console.WriteLine("Hello Mov Suite!");
 
         //初期化
         Initialize();
@@ -57,36 +61,30 @@ internal class Program
 
     private static void Initialize()
     {
-        //共通コマンド生成
-        handlers = new Dictionary<string, CommandHandler>()
-            {
-                {"end", EndProgram },
-                {"help", Help }
-            };
         //エンジン生成
         var engine = new MovEngine(0, new EmptyMovFacade());
-        controller = new ConsoleAppController(engine);
+        _controller = new ConsoleAppController(engine);
     }
 
     private static void Run()
     {
-        while (running)
+        while (_running)
         {
             //コントローラー生成
-            while (running)
+            while (_running)
             {
                 Console.WriteLine("ドメインを入力してください");
                 Console.WriteLine("--------------");
-                Console.WriteLine(controller.GetDomainHelp());
+                Console.WriteLine(_controller.GetDomainHelp());
                 Console.WriteLine("--------------");
                 Console.Write("> ");
                 var input = Console.ReadLine() ?? string.Empty;
-                if (!controller.SetDomain(input))
+                if (!_controller.SetDomain(input))
                 {
                     Console.WriteLine("コントローラーの生成に失敗しました");
-                    if (handlers.ContainsKey(input))
+                    if (_handlers.ContainsKey(input))
                     {
-                        handlers[input].Invoke(new string[] { });
+                        _handlers[input].Invoke(new string[] { });
                         continue;
                     }
                     continue;
@@ -97,7 +95,7 @@ internal class Program
             }
 
             //コマンド処理
-            while (running)
+            while (_running)
             {
                 Console.Write("> ");
                 var input = Console.ReadLine() ?? string.Empty;
@@ -106,18 +104,18 @@ internal class Program
                     Console.WriteLine("コマンドを入力してください");
                     continue;
                 }
-                if (handlers.ContainsKey(command))
+                if (_handlers.ContainsKey(command))
                 {
-                    handlers[command].Invoke(parameters);
+                    _handlers[command].Invoke(parameters);
                     continue;
                 }
-                if (!controller.ExistsDomainCommand(command))
+                if (!_controller.ExistsDomainCommand(command))
                 {
                     Console.WriteLine($"コマンドが登録されていません : {command}");
                 }
                 else
                 {
-                    controller.ExecuteDomainCommand(command, parameters);
+                    _controller.ExecuteDomainCommand(command, parameters);
                 }
             }
         }
@@ -144,17 +142,17 @@ internal class Program
 
     private static void EndProgram(IEnumerable<string> parameters)
     {
-        running = false;
+        _running = false;
     }
 
     private static void Help(IEnumerable<string> parameters)
     {
         Console.WriteLine("----- コマンドリスト ------");
-        foreach (var key in handlers.Keys)
+        foreach (var key in _handlers.Keys)
         {
             Console.WriteLine(key);
         }
-        Console.WriteLine(controller.GetDomainCommandHelp());
+        Console.WriteLine(_controller.GetDomainCommandHelp());
         Console.WriteLine("----- end ------");
     }
 

@@ -9,26 +9,30 @@ namespace Mov.Core.Commands.Services
     public class UiCommandFactory<TParameter, TResponse> : IUiCommandFactory<TParameter, TResponse>
     {
 
-        #region フィールド
+        #region field
 
-        private readonly Assembly assembly;
+        private readonly Assembly _assembly;
 
-        #endregion フィールド
+        #endregion field
+
+        #region constructor
 
         /// <summary>
         /// コンストラクター
         /// </summary>
         public UiCommandFactory()
         {
-            assembly = ReflectionHelper.GetTypeAssembly<TParameter>();
+            _assembly = ReflectionHelper.GetTypeAssembly<TParameter>();
         }
 
-        #region メソッド
+        #endregion constructor
+
+        #region method
 
         public UiCommandDictionary<TParameter, TResponse> Create(string endpoint)
         {
             var result = new UiCommandDictionary<TParameter, TResponse>();
-            var types = ReflectionHelper.GetTypesInNamespace(assembly, endpoint);
+            var types = ReflectionHelper.GetTypesInNamespace(_assembly, endpoint);
             if (types == null || types.Count() == 0)
             {
                 Debug.Assert(false, "登録できるコマンドが見つかりません" + Environment.NewLine + endpoint);
@@ -50,7 +54,7 @@ namespace Mov.Core.Commands.Services
             return result;
         }
 
-        #endregion メソッド
+        #endregion method
 
     }
 }

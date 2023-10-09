@@ -3,21 +3,29 @@
 namespace Mov.Core.Commands.Services
 {
     /// <summary>
-    /// ドメイン単位のコントローラー
+    /// UIのコマンドコントローラー
     /// </summary>
     public class UiCommandController<TService> : IUiController
     {
+        #region field
 
-        private readonly TService service;
+        private readonly TService _service;
 
-        private readonly UiCommandExecuter<TService, UiCommandResponse> executer;
+        private readonly UiCommandExecuter<TService, UiCommandResponse> _executer;
 
+        #endregion field
+
+        #region constructor
 
         public UiCommandController(TService service, string endpoint)
         {
-            this.service = service;
-            executer = new UiCommandExecuter<TService, UiCommandResponse>(service, endpoint);
+            this._service = service;
+            _executer = new UiCommandExecuter<TService, UiCommandResponse>(service, endpoint);
         }
+
+        #endregion constructor
+
+        #region method
 
         public bool Execute()
         {
@@ -26,23 +34,25 @@ namespace Mov.Core.Commands.Services
 
         public bool ExecuteCommand(string command, string[] args)
         {
-            executer.Invoke(command, args);
+            _executer.Invoke(command, args);
             return true;
         }
 
         public IEnumerable<string> GetCommands()
         {
-            return executer.GetCommands();
+            return _executer.GetCommands();
         }
 
         public bool ExistsCommand(string command)
         {
-            return executer.Exists(command);
+            return _executer.Exists(command);
         }
 
         public virtual string GetCommandHelp()
         {
-            return executer.GetHelp();
+            return _executer.GetHelp();
         }
+
+        #endregion method
     }
 }

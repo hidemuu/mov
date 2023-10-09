@@ -10,21 +10,21 @@ namespace Mov.Core.Commands.Services
     /// <typeparam name="TParameter"></typeparam>
     public class UiCommandExecuter<TParameter, TResponse>
     {
-        #region フィールド
+        #region field
 
         /// <summary>
         /// コマンドパラメータ
         /// </summary>
-        private readonly TParameter parameter;
+        private readonly TParameter _parameter;
 
         /// <summary>
         /// コマンドハンドラー
         /// </summary>
-        private UiCommandDictionary<TParameter, TResponse> handler { get; }
+        private UiCommandDictionary<TParameter, TResponse> _handler { get; }
 
-        #endregion フィールド
+        #endregion field
 
-        #region コンストラクター
+        #region constructor
 
         /// <summary>
         /// コンストラクター
@@ -32,14 +32,14 @@ namespace Mov.Core.Commands.Services
         /// <param name="parameter"></param>
         public UiCommandExecuter(TParameter parameter, string endpoint)
         {
-            this.parameter = parameter;
+            this._parameter = parameter;
             var factory = new UiCommandFactory<TParameter, TResponse>();
-            handler = factory.Create(endpoint);
+            _handler = factory.Create(endpoint);
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region メソッド
+        #region method
 
         /// <summary>
         /// 実行処理
@@ -48,7 +48,7 @@ namespace Mov.Core.Commands.Services
         /// <returns></returns>
         public void Invoke(string command, string[] args)
         {
-            handler[command].Invoke(args);
+            _handler[command].Invoke(args);
         }
 
         /// <summary>
@@ -57,13 +57,13 @@ namespace Mov.Core.Commands.Services
         /// <returns></returns>
         public IEnumerable<string> GetCommands()
         {
-            return handler.Keys;
+            return _handler.Keys;
         }
 
         public IEnumerable<Tuple<string, string>> GetCommandHelps()
         {
             var commandHelps = new List<Tuple<string, string>>();
-            foreach (var command in handler)
+            foreach (var command in _handler)
             {
                 commandHelps.Add(new Tuple<string, string>(command.Key, command.Value.Help()));
             }
@@ -88,9 +88,9 @@ namespace Mov.Core.Commands.Services
         /// <returns></returns>
         public bool Exists(string command)
         {
-            return handler.ContainsKey(command);
+            return _handler.ContainsKey(command);
         }
 
-        #endregion メソッド
+        #endregion method
     }
 }

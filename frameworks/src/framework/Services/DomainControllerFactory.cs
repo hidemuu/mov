@@ -13,12 +13,22 @@ namespace Mov.Framework.Services
     /// </summary>
     public class DomainControllerFactory
     {
-        private string commandPath;
+        #region field
+
+        private string _commandPath;
+
+        #endregion field
+
+        #region constructor
 
         public DomainControllerFactory(string commandPath)
         {
-            this.commandPath = commandPath;
+            this._commandPath = commandPath;
         }
+
+        #endregion constructor
+
+        #region method
 
         public IUiController Create<TService>(TService service)
         {
@@ -27,15 +37,15 @@ namespace Mov.Framework.Services
                 //return new DomainController<TService>(service, this.commandPath);
                 if (service is IDesignerFacade designerService)
                 {
-                    return new UiCommandController<IDesignerFacade>(designerService, commandPath);
+                    return new UiCommandController<IDesignerFacade>(designerService, _commandPath);
                 }
                 if (service is IGameFacade gameService)
                 {
-                    return new UiCommandController<IGameFacade>(gameService, commandPath);
+                    return new UiCommandController<IGameFacade>(gameService, _commandPath);
                 }
                 if (service is IAnalizerFacade analizerService)
                 {
-                    return new UiCommandController<IAnalizerFacade>(analizerService, commandPath);
+                    return new UiCommandController<IAnalizerFacade>(analizerService, _commandPath);
                 }
             }
             catch (Exception ex)
@@ -44,5 +54,7 @@ namespace Mov.Framework.Services
             }
             return null;
         }
+
+        #endregion method
     }
 }

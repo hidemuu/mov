@@ -65,6 +65,23 @@ namespace GameEngine.Test
             Assert.That(level, Is.EqualTo(1));
         }
 
+        [Test]
+        public void InitializeController()
+        {
+            //Arrange
+            var path = Path.Combine(PathCreator.GetResourcePath(), "game");
+            var repository = new FileGameRepository(path, FileType.Json, EncodingValue.UTF8);
+            var client = new FiniteStateMachineGameClient(repository);
+            var sut = new PackmanGraphicGame(client);
+
+            //Act
+            var controller = sut.GraphicController;
+            controller.Initialize();
+
+            //Assert
+            Assert.That(sut.Level, Is.EqualTo(1));
+        }
+
         #endregion test
     }
 }

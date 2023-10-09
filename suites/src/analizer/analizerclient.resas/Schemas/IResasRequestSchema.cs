@@ -6,10 +6,11 @@ namespace Mov.Suite.AnalizerClient.Resas.Schemas
 {
     public interface IResasRequestSchema
     {
-        #region method
+        #region property
 
-        string Create();
+        IReadOnlyDictionary<string, string> Parameters { get; }
 
-        #endregion method
+        #endregion property
+
     }
 }

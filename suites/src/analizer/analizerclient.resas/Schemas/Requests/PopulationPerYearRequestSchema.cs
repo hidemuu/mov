@@ -8,29 +8,26 @@ namespace Mov.Suite.AnalizerClient.Resas.Schemas.Requests
     {
         #region field
 
-        private readonly int _cityCode;
-
-        private readonly int _prefCode;
-
         #endregion field
+
+        #region property
+
+        public IReadOnlyDictionary<string, string> Parameters { get; }
+
+        #endregion property
 
         #region constructor
 
         public PopulationPerYearRequestSchema(int cityCode, int prefCode) 
         {
-            _cityCode = cityCode;
-            _prefCode = prefCode;
+            Parameters = new Dictionary<string, string>()
+            {
+                { "cityCode", cityCode.ToString() },
+                { "prefCode", prefCode.ToString() },
+            };
         }
 
         #endregion constructor
 
-        #region method
-
-        public string Create()
-        {
-            return $"cityCode={_cityCode}&prefCode={_prefCode}";
-        }
-
-        #endregion method
     }
 }

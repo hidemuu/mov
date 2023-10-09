@@ -1,4 +1,4 @@
-﻿namespace Mov.Driver.Models
+﻿namespace Mov.Driver.Service
 {
     public interface IRaspberryPiClient
     {

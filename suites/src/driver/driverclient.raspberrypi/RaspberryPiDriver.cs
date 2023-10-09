@@ -1,8 +1,9 @@
 ﻿using Mov.Core.Accessors.Connectors;
+using Mov.Driver.Service;
 
 namespace Mov.Suite.DriverClient.RaspberryPi
 {
-    public class RaspberryPiDriver
+    public class RaspberryPiDriver : IRaspberryPiClient
     {
         #region フィールド
 

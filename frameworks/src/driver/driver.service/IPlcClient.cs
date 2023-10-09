@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Mov.Driver.Models
+namespace Mov.Driver.Service
 {
     public interface IPlcClient
     {

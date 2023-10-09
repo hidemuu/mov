@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\game\gameclient.finitestatemechine\GameClient.FiniteStateMechine.csproj" />
-    <ProjectReference Include="..\..\src\game\gameengine.graphic\GameEngine.Graphic.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,6 +45,9 @@
     </Reference>
     <Reference Include="Mov.Framework">
       <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Game.Controller">
+      <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Game.Controller.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Game.Models">
       <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Game.Models.dll</HintPath>

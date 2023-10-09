@@ -52,6 +52,10 @@ namespace Mov.Core.Repositories.Services
 
         public async Task<TEntity> GetAsync(TIdentifier identidfier)
         {
+            if(identidfier == null)
+            {
+                return await _client.GetAsync<TEntity>(_key);
+            }
             var entities = await _client.GetsAsync<TEntity>($"/{identidfier}" + _key);
             return entities.FirstOrDefault(x => x.Id.Equals(identidfier));
         }

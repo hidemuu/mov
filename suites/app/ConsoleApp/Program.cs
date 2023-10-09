@@ -129,14 +129,11 @@ internal class Program
     {
         var parameterArray = parameters.ToArray();
         var resasRepository = new RestResasRepository("", parameterArray[0]);
-        var prefectures = Task.WhenAll(resasRepository.Prefectures.GetsAsync()).Result[0].ToArray();
-        foreach (var prefecture in prefectures)
+        var prefecture = Task.WhenAll(resasRepository.Prefectures.GetAsync(null)).Result[0];
+        Console.WriteLine(prefecture.Id);
+        foreach (var result in prefecture.Results)
         {
-            Console.WriteLine(prefecture.Id);
-            foreach (var result in prefecture.Results)
-            {
-                Console.WriteLine(result);
-            }
+            Console.WriteLine(result);
         }
     }
 

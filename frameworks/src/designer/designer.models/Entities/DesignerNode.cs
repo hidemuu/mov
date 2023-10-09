@@ -7,7 +7,7 @@ namespace Mov.Designer.Models.Entities
 {
     public class DesignerNode : LayoutNode
     {
-        public DesignerNode(Identifier<string> code, NodeStyle nodeStyle, EnableStyle expandStyle, LayoutContent content) 
+        public DesignerNode(Identifier<string> code, NodeStyle nodeStyle, EnableStyle expandStyle, LayoutContent content)
             : base(code, nodeStyle, expandStyle, content)
         {
         }

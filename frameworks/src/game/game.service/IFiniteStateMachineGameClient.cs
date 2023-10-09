@@ -2,7 +2,7 @@
 using Mov.Game.Models.Schemas;
 using System.Collections.Generic;
 
-namespace Mov.Game.Models
+namespace Mov.Game.Service
 {
     /// <summary>
     /// 有限状態マシン（Finite State Machine）手法のゲームエンジン

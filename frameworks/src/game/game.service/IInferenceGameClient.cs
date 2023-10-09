@@ -1,4 +1,4 @@
-﻿namespace Mov.Game.Models
+﻿namespace Mov.Game.Service
 {
     /// <summary>
     /// 推論ゲームエンジン

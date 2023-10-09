@@ -1,6 +1,6 @@
 ﻿using Mov.Core.Helpers;
 using Mov.Core.Learnings.Models;
-using Mov.Game.Models;
+using Mov.Game.Service;
 using System;
 
 namespace Mov.Suite.GameClient.Tracking.Queens

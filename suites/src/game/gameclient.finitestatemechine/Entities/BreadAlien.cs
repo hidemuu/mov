@@ -1,4 +1,5 @@
 ﻿using Mov.Game.Models;
+using Mov.Game.Service;
 
 namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
 {

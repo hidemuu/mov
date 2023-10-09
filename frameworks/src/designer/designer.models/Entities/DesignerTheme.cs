@@ -5,7 +5,7 @@ namespace Mov.Designer.Models.Entities
 {
     public class DesignerTheme : LayoutTheme
     {
-        public DesignerTheme(ThemeStyle theme) 
+        public DesignerTheme(ThemeStyle theme)
             : base(theme)
         {
         }

@@ -34,7 +34,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Remove="ClientApp\src\App.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\AppRoutes.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\index.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\pages\Counter.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\pages\Home.tsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\commons\" />
+    <Folder Include="ClientApp\src\components\atoms\" />
+    <Folder Include="ClientApp\src\components\molecules\" />
+    <Folder Include="ClientApp\src\components\organisms\" />
+    <Folder Include="ClientApp\src\stories\" />
+    <Folder Include="ClientApp\src\templates\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

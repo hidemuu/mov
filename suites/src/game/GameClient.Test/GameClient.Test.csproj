@@ -26,6 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Mov.Core.Accessors">
+      <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Accessors.dll</HintPath>
+    </Reference>
     <Reference Include="Mov.Core.Repositories">
       <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.Repositories.dll</HintPath>
     </Reference>
@@ -34,6 +37,9 @@
     </Reference>
     <Reference Include="Mov.Game.Models">
       <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Game.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Game.Repository">
+      <HintPath>..\..\..\..\frameworks\src\game\game.controller\bin\Debug\netstandard2.0\Mov.Game.Repository.dll</HintPath>
     </Reference>
   </ItemGroup>
 

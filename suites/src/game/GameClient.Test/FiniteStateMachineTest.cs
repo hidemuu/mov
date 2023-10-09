@@ -1,4 +1,7 @@
+using Mov.Core.Accessors.Models;
+using Mov.Framework.Services;
 using Mov.Game.Models.Schemas;
+using Mov.Game.Repository;
 using Mov.Suite.GameClient.FiniteStateMechine;
 using Mov.Suite.GameClient.Test.Builders;
 using System.Diagnostics;
@@ -59,6 +62,21 @@ namespace Mov.Suite.GameClient.Test
                     new LandmarkSchema() { Lv = 2, },
                 })
                 .Build();
+            var sut = new FiniteStateMachineGameClient(repository);
+
+            //Act
+            var landmark = sut.GetLandmark();
+
+            //Assert
+            Assert.That(landmark.Lv, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void GetLandmark_Repository_Return()
+        {
+            //Arrange
+            var path = Path.Combine(PathCreator.GetResourcePath(), "game");
+            var repository = new FileGameRepository(path, FileType.Json, EncodingValue.UTF8);
             var sut = new FiniteStateMachineGameClient(repository);
 
             //Act

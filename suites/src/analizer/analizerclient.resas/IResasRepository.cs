@@ -9,5 +9,9 @@ namespace Mov.Suite.AnalizerClient.Resas
         IDbRepository<ResasResponseSchema<PrefectureResultSchema>, string> Prefectures { get; }
 
         IDbRepository<ResasResponseSchema<CityResultSchema>, string> Cities { get; }
+
+        IDbRepository<ResasResponseSchema<PopulationPerYearResultSchema>, string> PopulationPerYears { get; }
+
+        IDbRepository<ResasResponseSchema<PopulationPyramidResultSchema>, string> PopulationPyramids { get; }
     }
 }

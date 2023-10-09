@@ -2,6 +2,7 @@
 using Mov.Core.Repositories;
 using Mov.Core.Repositories.Services;
 using Mov.Suite.AnalizerClient.Resas.Schemas;
+using Mov.Suite.AnalizerClient.Resas.Schemas.Requests;
 using Mov.Suite.AnalizerClient.Resas.Schemas.Results;
 using System.Collections.Generic;
 using System.IO;
@@ -24,11 +25,13 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository
 
         #region property
 
-        public string DomainPath => "api/v1/";
-
         public IDbRepository<ResasResponseSchema<PrefectureResultSchema>, string> Prefectures { get; }
 
         public IDbRepository<ResasResponseSchema<CityResultSchema>, string> Cities { get; }
+
+        public IDbRepository<ResasResponseSchema<PopulationPerYearResultSchema>, string> PopulationPerYears { get; }
+
+        public IDbRepository<ResasResponseSchema<PopulationPyramidResultSchema>, string> PopulationPyramids { get; }
 
         #endregion property
 
@@ -46,8 +49,10 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository
                 { HEADER_API_KEY, apiKey },
             };
 
-            Prefectures = new RestDbRepository<ResasResponseSchema<PrefectureResultSchema>, string>(Path.Combine(endpoint, PrefectureResultSchema.URI), string.Empty, EncodingValue.UTF8, headers);
-            Cities = new RestDbRepository<ResasResponseSchema<CityResultSchema>, string>(Path.Combine(endpoint, CityResultSchema.URI), string.Empty, EncodingValue.UTF8, headers);
+            Prefectures = new RestDbRepository<ResasResponseSchema<PrefectureResultSchema>, string>
+                (Path.Combine(endpoint, PrefectureResultSchema.URI), string.Empty, EncodingValue.UTF8, headers);
+            Cities = new RestDbRepository<ResasResponseSchema<CityResultSchema>, string>
+                (Path.Combine(endpoint, CityResultSchema.URI), string.Empty, EncodingValue.UTF8, headers);
         }
 
         #endregion constructor

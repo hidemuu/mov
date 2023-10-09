@@ -4,7 +4,7 @@ namespace Mov.Game.Models.Entities
 {
     public interface ICharacter
     {
-        #region プロパティ
+        #region property
 
         /// <summary>
         /// 種類
@@ -31,9 +31,9 @@ namespace Mov.Game.Models.Entities
         /// </summary>
         int Y { get; }
 
-        #endregion プロパティ
+        #endregion property
 
-        #region メソッド
+        #region method
 
         /// <summary>
         /// 位置更新
@@ -65,6 +65,6 @@ namespace Mov.Game.Models.Entities
         /// <param name="count"></param>
         void AddLife(int count);
 
-        #endregion メソッド
+        #endregion method
     }
 }

@@ -33,6 +33,12 @@ namespace Mov.Suite.GameClient.Test.Builders
 
         public IGameRepository Build() => _mockRepository.Object;
 
+        public GameRepositoryBuilder WithGetAsyncLandmark(IEnumerable<LandmarkSchema> landmarks)
+        {
+            _mockRepository.Setup(x => x.Landmarks.GetAsync()).ReturnsAsync(landmarks);
+            return this;
+        }
+
         #endregion method
     }
 }

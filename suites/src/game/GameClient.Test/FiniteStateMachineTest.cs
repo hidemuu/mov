@@ -1,3 +1,4 @@
+using Mov.Game.Models.Schemas;
 using Mov.Suite.GameClient.FiniteStateMechine;
 using Mov.Suite.GameClient.Test.Builders;
 using System.Diagnostics;
@@ -48,10 +49,16 @@ namespace Mov.Suite.GameClient.Test
         #endregion setup
 
         [Test]
-        public void GetLandmark()
+        public void GetLandmark_MockRepository_Return()
         {
             //Arrange
-            var repository = _repositoryBuilder.Build();
+            var repository = _repositoryBuilder
+                .WithGetAsyncLandmark(new[] 
+                { 
+                    new LandmarkSchema() { Lv = 1, }, 
+                    new LandmarkSchema() { Lv = 2, },
+                })
+                .Build();
             var sut = new FiniteStateMachineGameClient(repository);
 
             //Act

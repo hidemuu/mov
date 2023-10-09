@@ -20,12 +20,6 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository
 
         #region field
 
-        private readonly string _endpoint;
-
-        private readonly string _auth;
-
-        private readonly IReadOnlyDictionary<string, string> _headers;
-
         #endregion field
 
         #region property
@@ -40,17 +34,20 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository
 
         #region constructor
 
-        public RestResasRepository(string endpoint, string auth)
+        /// <summary>
+        /// コンストラクター
+        /// </summary>
+        /// <param name="apiKey">APIキー</param>
+        public RestResasRepository(string apiKey)
         {
-            this._endpoint = string.IsNullOrEmpty(endpoint) ? DEFAULT_END_POINT : endpoint;
-            this._auth = auth;
-            this._headers = new Dictionary<string, string>()
+            var endpoint = DEFAULT_END_POINT;
+            var headers = new Dictionary<string, string>()
             {
-                { HEADER_API_KEY, auth },
+                { HEADER_API_KEY, apiKey },
             };
 
-            Prefectures = new RestDbRepository<ResasResponseSchema<PrefectureResultSchema>, string>(Path.Combine(_endpoint, PrefectureResultSchema.URI), string.Empty, EncodingValue.UTF8, _headers);
-            Cities = new RestDbRepository<ResasResponseSchema<CityResultSchema>, string>(Path.Combine(_endpoint, CityResultSchema.URI), string.Empty, EncodingValue.UTF8, _headers);
+            Prefectures = new RestDbRepository<ResasResponseSchema<PrefectureResultSchema>, string>(Path.Combine(endpoint, PrefectureResultSchema.URI), string.Empty, EncodingValue.UTF8, headers);
+            Cities = new RestDbRepository<ResasResponseSchema<CityResultSchema>, string>(Path.Combine(endpoint, CityResultSchema.URI), string.Empty, EncodingValue.UTF8, headers);
         }
 
         #endregion constructor

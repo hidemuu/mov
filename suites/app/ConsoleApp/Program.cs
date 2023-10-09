@@ -113,22 +113,19 @@ internal class Program
     private static void GetRestResasCities(IEnumerable<string> parameters)
     {
         var parameterArray = parameters.ToArray();
-        var resasRepository = new RestResasRepository("", parameterArray[0]);
-        var cities = Task.WhenAll(resasRepository.Cities.GetsAsync()).Result[0].ToArray();
-        foreach (var city in cities)
+        var resasRepository = new RestResasRepository(parameterArray[0]);
+        var city = Task.WhenAll(resasRepository.Cities.GetAsync(null)).Result[0];
+        Console.WriteLine(city.Id);
+        foreach (var result in city.Results)
         {
-            Console.WriteLine(city.Id);
-            foreach (var result in city.Results)
-            {
-                Console.WriteLine(result);
-            }
+            Console.WriteLine(result);
         }
     }
 
     private static void GetRestResasPrefectures(IEnumerable<string> parameters)
     {
         var parameterArray = parameters.ToArray();
-        var resasRepository = new RestResasRepository("", parameterArray[0]);
+        var resasRepository = new RestResasRepository(parameterArray[0]);
         var prefecture = Task.WhenAll(resasRepository.Prefectures.GetAsync(null)).Result[0];
         Console.WriteLine(prefecture.Id);
         foreach (var result in prefecture.Results)

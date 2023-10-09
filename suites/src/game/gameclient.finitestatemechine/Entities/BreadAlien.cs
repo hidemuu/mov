@@ -4,10 +4,16 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
 {
     public class BreadAlien : Alien
     {
+        #region field
+
         /// <summary>
         ///
         /// </summary>
         private Breadcrumbs breadcrumbs;
+
+        #endregion field
+
+        #region constructor
 
         /// <summary>
         /// コンストラクタ
@@ -18,6 +24,10 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
         {
             this.breadcrumbs = breadcrumbs;
         }
+
+        #endregion constructor
+
+        #region method
 
         public override void NextMove()
         {
@@ -43,5 +53,7 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
                 nextDirection = Direction;
             }
         }
+
+        #endregion method
     }
 }

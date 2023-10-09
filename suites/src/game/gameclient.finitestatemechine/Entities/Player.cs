@@ -10,7 +10,7 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
     /// </summary>
     public class Player : FiniteStateMachineCharacterBase
     {
-        #region フィールド
+        #region field
 
         /// <summary>
         /// 前回移動量X
@@ -24,18 +24,18 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
 
         private bool isCollision = false;
 
-        #endregion フィールド
+        #endregion field
 
-        #region プロパティ
+        #region property
 
         public override CharacterType Type { get; protected set; } = CharacterType.PLAYER;
         public override int Speed { get; protected set; } = 1;
         public override int Life { get; protected set; } = 1;
         protected override Brush BodyBrush { get; set; } = new SolidBrush(Color.CornflowerBlue);
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
         /// <summary>
         /// コンストラクタ
@@ -45,9 +45,9 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
         {
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region メソッド
+        #region method
 
         public override void Draw(Graphics graphics)
         {
@@ -107,6 +107,6 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
         /// </summary>
         private bool IsMiddlePosition => X % Engine.UnitWidth != 0 || Y % Engine.UnitHeight != 0;
 
-        #endregion メソッド
+        #endregion method
     }
 }

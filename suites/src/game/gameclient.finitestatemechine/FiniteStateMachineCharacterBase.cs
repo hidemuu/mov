@@ -9,7 +9,8 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
     /// </summary>
     public abstract class FiniteStateMachineCharacterBase : ICharacter
     {
-        #region 抽象プロパティ
+        
+        #region property
 
         /// <summary>
         /// 種類
@@ -30,10 +31,6 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
         /// キャラクター色
         /// </summary>
         protected abstract Brush BodyBrush { get; set; }
-
-        #endregion 抽象プロパティ
-
-        #region プロパティ
 
         /// <summary>
         /// X座標
@@ -70,7 +67,9 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
         /// </summary>
         protected bool Reached { get; private set; } = false;
 
-        #endregion プロパティ
+        #endregion property
+
+        #region constructor
 
         /// <summary>
         /// コンストラクタ
@@ -81,7 +80,9 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
             Engine = engine;
         }
 
-        #region メソッド
+        #endregion constructor
+
+        #region method
 
         /// <summary>
         /// 位置更新
@@ -123,6 +124,6 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
             Life += count;
         }
 
-        #endregion メソッド
+        #endregion method
     }
 }

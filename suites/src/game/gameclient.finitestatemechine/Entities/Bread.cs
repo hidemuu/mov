@@ -6,14 +6,16 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
 {
     public class Bread : FiniteStateMachineCharacterBase
     {
-        #region プロパティ
+        #region property
 
         public override CharacterType Type { get; protected set; } = CharacterType.BREAD;
         public override int Speed { get; protected set; } = 1;
         public override int Life { get; protected set; } = 1;
         protected override Brush BodyBrush { get; set; } = new SolidBrush(Color.CornflowerBlue);
 
-        #endregion プロパティ
+        #endregion property
+
+        #region constructor
 
         /// <summary>
         /// コンストラクタ
@@ -23,6 +25,10 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
         {
             SetPosition(-100, -100);
         }
+
+        #endregion constructor
+
+        #region method
 
         public override void Draw(Graphics graphics)
         {
@@ -38,5 +44,7 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
         {
             return false;
         }
+
+        #endregion method
     }
 }

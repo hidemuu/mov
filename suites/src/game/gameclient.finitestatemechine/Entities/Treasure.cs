@@ -6,24 +6,24 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
 {
     public class Treasure : FiniteStateMachineCharacterBase
     {
-        #region プロパティ
+        #region property
 
         public override CharacterType Type { get; protected set; } = CharacterType.TREASURE;
         public override int Speed { get; protected set; } = 1;
         public override int Life { get; protected set; } = 1;
         protected override Brush BodyBrush { get; set; } = new SolidBrush(Color.Green);
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
         public Treasure(IFiniteStateMachineGameClient engine) : base(engine)
         {
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region メソッド
+        #region method
 
         public override void Draw(Graphics graphics)
         {
@@ -40,6 +40,6 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
             return false;
         }
 
-        #endregion メソッド
+        #endregion method
     }
 }

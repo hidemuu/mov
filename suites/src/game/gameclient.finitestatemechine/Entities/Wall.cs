@@ -6,7 +6,7 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
 {
     public class Wall : FiniteStateMachineCharacterBase
     {
-        #region プロパティ
+        #region property
 
         protected override Brush BodyBrush { get; set; } = new SolidBrush(Color.DarkGray);
 
@@ -14,17 +14,17 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
         public override int Speed { get; protected set; } = 0;
         public override int Life { get; protected set; } = 1;
 
-        #endregion プロパティ
+        #endregion property
 
-        #region コンストラクター
+        #region constructor
 
         public Wall(IFiniteStateMachineGameClient engine) : base(engine)
         {
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region メソッド
+        #region method
 
         public override void Draw(Graphics graphics)
         {
@@ -41,6 +41,6 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
             return false;
         }
 
-        #endregion メソッド
+        #endregion method
     }
 }

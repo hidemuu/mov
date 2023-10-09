@@ -7,7 +7,7 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
 {
     public class Alien : FiniteStateMachineCharacterBase
     {
-        #region フィールド
+        #region field
 
         /// <summary>
         /// 乱数
@@ -19,16 +19,18 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
 
         private int[] tryPlan = { 1, 3, 2 };
 
-        #endregion フィールド
+        #endregion field
 
-        #region プロパティ
+        #region property
 
         public override CharacterType Type { get; protected set; } = CharacterType.ALIEN;
         public override int Speed { get; protected set; } = 1;
         public override int Life { get; protected set; } = 1;
         protected override Brush BodyBrush { get; set; } = new SolidBrush(Color.IndianRed);
 
-        #endregion プロパティ
+        #endregion property
+
+        #region constructor
 
         /// <summary>
         /// コンストラクタ
@@ -38,7 +40,9 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
         {
         }
 
-        #region メソッド
+        #endregion constructor
+
+        #region method
 
         public override void Draw(Graphics graphics)
         {
@@ -93,6 +97,6 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
             return false;
         }
 
-        #endregion メソッド
+        #endregion method
     }
 }

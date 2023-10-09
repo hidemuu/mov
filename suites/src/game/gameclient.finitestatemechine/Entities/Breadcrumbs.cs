@@ -10,7 +10,7 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
     /// </summary>
     public class Breadcrumbs
     {
-        #region フィールド
+        #region field
 
         private int len;
         private IFiniteStateMachineGameClient engine;
@@ -19,13 +19,15 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
         private int[,] dirOffset = { { 1, 0 }, { 0, 1 }, { -1, 0 }, { 0, -1 } };
         private int[] tryPlan = { 0, 1, 3, 2 };
 
-        #endregion フィールド
+        #endregion field
 
-        #region プロパティ
+        #region property
 
         public Bread[] breads;
 
-        #endregion プロパティ
+        #endregion property
+
+        #region constructor
 
         /// <summary>
         /// コンストラクタ
@@ -43,7 +45,9 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
             map = new int[mapRow, mapCol];
         }
 
-        #region メソッド
+        #endregion constructor
+
+        #region method
 
         public void Drop(int row, int col)
         {
@@ -100,6 +104,6 @@ namespace Mov.Suite.GameClient.FiniteStateMechine.Entities
             }
         }
 
-        #endregion メソッド
+        #endregion method
     }
 }

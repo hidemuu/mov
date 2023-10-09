@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace Mov.Suite.AnalizerClient.Resas.Schemas.Results
 {
-    public class PrefectureResultSchema : IResasResultSchema
+    public sealed class PrefectureResultSchema : IResasResultSchema
     {
         #region constants
 

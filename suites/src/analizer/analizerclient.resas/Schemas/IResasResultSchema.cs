@@ -1,4 +1,6 @@
-﻿namespace Mov.Suite.AnalizerClient.Resas.Schemas
+﻿using Newtonsoft.Json;
+
+namespace Mov.Suite.AnalizerClient.Resas.Schemas
 {
     public interface IResasResultSchema
     {

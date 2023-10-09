@@ -1,5 +1,4 @@
 ﻿using Mov.Core.Graphicers.Services.Controllers;
-using Mov.Game.Models;
 using Mov.Game.Service;
 using Mov.Suite.GameEngine.Graphic.Controller;
 

@@ -37,7 +37,9 @@ namespace Mov.Suite.WpfApp
                 this.RegionManager.RequestNavigate("CENTER", nameof(DashboardView))));
             TabItems.Add(new TabItemModel(1, "Game", "blur", () =>
                 this.RegionManager.RequestNavigate("CENTER", nameof(GameView))));
-            TabItems.Add(new TabItemModel(2, "Web", "Home", () =>
+            TabItems.Add(new TabItemModel(2, "Chart", "ChartLine", () =>
+                this.RegionManager.RequestNavigate("CENTER", nameof(ChartView))));
+            TabItems.Add(new TabItemModel(3, "Web", "Home", () =>
                 this.RegionManager.RequestNavigate("CENTER", nameof(WebView))));
 
             TabChangeCommand.Subscribe(_ => OnChangeTab()).AddTo(Disposables);

@@ -89,6 +89,10 @@ namespace Mov.Suite.WpfApp
             //Viewの登録
             containerRegistry.RegisterForNavigation<DashboardView>();
             containerRegistry.RegisterForNavigation<GameView>();
+            containerRegistry.RegisterForNavigation<ChartView>();
+            containerRegistry.RegisterForNavigation<DrawerView>();
+            containerRegistry.RegisterForNavigation<TableView>();
+            containerRegistry.RegisterForNavigation<TreeView>();
             containerRegistry.RegisterForNavigation<WebView>();
             //Dialogの登録
             containerRegistry.RegisterDialogWindow<DialogWindow>();
@@ -122,6 +126,10 @@ namespace Mov.Suite.WpfApp
             ViewModelLocationProvider.Register<MainWindow, MainWindowViewModel>();
             ViewModelLocationProvider.Register<DashboardView, DashboardViewModel>();
             ViewModelLocationProvider.Register<GameView, GameViewModel>();
+            ViewModelLocationProvider.Register<ChartView, ChartViewModel>();
+            ViewModelLocationProvider.Register<DrawerView, DrawerViewModel>();
+            ViewModelLocationProvider.Register<TableView, TableViewModel>();
+            ViewModelLocationProvider.Register<TreeView, TreeViewModel>();
             ViewModelLocationProvider.Register<WebView, WebViewModel>();
         }
 

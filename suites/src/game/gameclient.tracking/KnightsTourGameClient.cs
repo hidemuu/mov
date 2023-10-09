@@ -9,7 +9,7 @@ namespace Mov.Suite.GameClient.Tracking
     /// </summary>
     public class KnightsTourGameClient : ITrackingGameClient
     {
-        #region フィールド
+        #region field
 
         /// <summary>
         /// チェス盤サイズ
@@ -26,7 +26,7 @@ namespace Mov.Suite.GameClient.Tracking
         /// </summary>
         private ConsCell[] pat;
 
-        #endregion フィールド
+        #endregion field
 
         /// <summary>
         /// コンストラクター
@@ -43,7 +43,7 @@ namespace Mov.Suite.GameClient.Tracking
             };
         }
 
-        #region メソッド
+        #region method
 
         /// <summary>
         /// r,cから開始してルートとチェス盤表示
@@ -63,9 +63,9 @@ namespace Mov.Suite.GameClient.Tracking
             }
         }
 
-        #endregion メソッド
+        #endregion method
 
-        #region 内部メソッド
+        #region inner method
 
         /// <summary>
         /// r, cへの移動を試す
@@ -91,6 +91,6 @@ namespace Mov.Suite.GameClient.Tracking
             return ConsCell.Nil;
         }
 
-        #endregion 内部メソッド
+        #endregion inner method
     }
 }

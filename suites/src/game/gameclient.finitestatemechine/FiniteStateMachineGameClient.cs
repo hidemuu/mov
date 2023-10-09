@@ -2,6 +2,7 @@
 using Mov.Game.Models;
 using Mov.Game.Models.Entities;
 using Mov.Game.Models.Schemas;
+using Mov.Game.Models.ValueObjects;
 using Mov.Game.Service;
 using Mov.Suite.GameClient.FiniteStateMechine.Entities;
 using System;

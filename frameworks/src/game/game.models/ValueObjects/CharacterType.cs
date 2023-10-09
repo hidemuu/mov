@@ -1,4 +1,4 @@
-﻿namespace Mov.Game.Models.Entities
+﻿namespace Mov.Game.Models.ValueObjects
 {
     public enum CharacterType
     {

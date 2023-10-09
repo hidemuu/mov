@@ -5,12 +5,14 @@
     /// </summary>
     public class Position2D
     {
-        #region プロパティ
+        #region property
 
         public int Row { get; private set; }
         public int Col { get; private set; }
 
-        #endregion プロパティ
+        #endregion property
+
+        #region constructor
 
         /// <summary>
         /// コンストラクタ
@@ -23,7 +25,9 @@
             Col = col;
         }
 
-        #region メソッド
+        #endregion constructor
+
+        #region method
 
         /// <summary>
         /// 等価判定
@@ -35,6 +39,6 @@
             return Row == p.Row && Col == p.Col;
         }
 
-        #endregion メソッド
+        #endregion method
     }
 }

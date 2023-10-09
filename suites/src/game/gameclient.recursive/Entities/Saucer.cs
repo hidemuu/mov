@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Mov.Game.Models.Entities;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Text;
 
-namespace Mov.Game.Models.Entities
+namespace Mov.Suite.GameClient.Recursive.Entities
 {
     /// <summary>
     /// 円盤を表すクラス

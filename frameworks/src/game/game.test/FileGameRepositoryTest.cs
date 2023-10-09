@@ -1,6 +1,5 @@
 ﻿using Mov.Core.Accessors.Models;
 using Mov.Game.Repository;
-using NUnit.Framework;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;

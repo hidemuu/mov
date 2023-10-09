@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Graphicers.Services.Controllers;
 using Mov.Core.Learnings.Models;
 using Mov.Game.Models.Entities;
+using Mov.Game.Service;
 using System;
 
 namespace Mov.Suite.GameEngine.Graphic.Controller
@@ -12,20 +13,7 @@ namespace Mov.Suite.GameEngine.Graphic.Controller
     {
         #region field
 
-        /// <summary>
-        /// 塔
-        /// </summary>
-        private readonly ConsCell[] tower;
-
-        /// <summary>
-        /// 円盤数
-        /// </summary>
-        private readonly int n;
-
-        /// <summary>
-        /// 円盤
-        /// </summary>
-        private Saucer[] saucers;
+        private readonly IRecursiveGameClient _client;
 
         #endregion field
 
@@ -40,15 +28,9 @@ namespace Mov.Suite.GameEngine.Graphic.Controller
         /// <summary>
         /// コンストラクター
         /// </summary>
-        public TowerOfHanoiGameController(int n)
+        public TowerOfHanoiGameController(IRecursiveGameClient client)
         {
-            this.n = n;
-            tower = new ConsCell[] { ConsCell.Range(1, n + 1), ConsCell.Nil, ConsCell.Nil };
-            saucers = new Saucer[n];
-            for (var i = 0; i < n; i++)
-            {
-                saucers[i] = new Saucer(i, n, FrameWidth, FrameHeight);
-            }
+            _client = client;
         }
 
         #endregion constructor
@@ -57,7 +39,7 @@ namespace Mov.Suite.GameEngine.Graphic.Controller
 
         public void Print()
         {
-            Hanoi(n, 0, 2, 1);
+            Hanoi(_client.N, 0, 2, 1);
         }
 
         #endregion method
@@ -66,7 +48,7 @@ namespace Mov.Suite.GameEngine.Graphic.Controller
 
         protected override void Ready()
         {
-            Hanoi(n, 0, 2, 1);
+            Hanoi(_client.N, 0, 2, 1);
         }
 
         /// <summary>
@@ -74,7 +56,7 @@ namespace Mov.Suite.GameEngine.Graphic.Controller
         /// </summary>
         protected override void DrawScreen()
         {
-            foreach (var saucer in saucers)
+            foreach (var saucer in _client.Drawers)
             {
                 saucer.Draw(ScreenGraphics);
             }
@@ -93,8 +75,8 @@ namespace Mov.Suite.GameEngine.Graphic.Controller
             {
                 DisplayCanvas(from, to);
                 //移動対象が1枚なら、toの先頭に fromの先頭を追加
-                tower[to] = new ConsCell(tower[from].Head, tower[to]);
-                tower[from] = tower[from].Tail; //fromの先頭を取り除く
+                _client.Cons[to] = new ConsCell(_client.Cons[from].Head, _client.Cons[to]);
+                _client.Cons[from] = _client.Cons[from].Tail; //fromの先頭を取り除く
                 DisplayConsole();
                 return;
             }
@@ -108,19 +90,19 @@ namespace Mov.Suite.GameEngine.Graphic.Controller
         /// </summary>
         private void DisplayConsole()
         {
-            var s = ConsCell.FromArray(tower).Map((ConsCell x) => ConsCell.Fill(0, n - x.Length()).Append(x));  //上層を0で埋める
+            var s = ConsCell.FromArray(_client.Cons).Map((ConsCell x) => ConsCell.Fill(0, _client.N - x.Length()).Append(x));  //上層を0で埋める
             //上の層からループする
             while (s.Head != ConsCell.Nil)
             {
                 s = s.Map((ConsCell x) =>
                 {
                     var v = (int)x.Head;
-                    Console.Write(ConsCell.Repeat("  ", n - v) + ConsCell.Repeat("■■", v) + ConsCell.Repeat("  ", n - v));
+                    Console.Write(ConsCell.Repeat("  ", _client.N - v) + ConsCell.Repeat("■■", v) + ConsCell.Repeat("  ", _client.N - v));
                     return x.Tail;  //残りの下層を返し新たなsにする
                 });
                 Console.WriteLine("");
             }
-            Console.WriteLine(ConsCell.Repeat("￣", n * 2 * 3));
+            Console.WriteLine(ConsCell.Repeat("￣", _client.N * 2 * 3));
         }
 
         /// <summary>
@@ -128,8 +110,8 @@ namespace Mov.Suite.GameEngine.Graphic.Controller
         /// </summary>
         private void DisplayCanvas(int from, int to)
         {
-            var saucer = saucers[(int)tower[from].Head - 1];    //移動対象の円盤
-            saucer.Move(to, tower[to].Length());                //円盤の座標変更
+            var saucer = _client.Drawers[(int)_client.Cons[from].Head - 1];    //移動対象の円盤
+            saucer.Move(to, _client.Cons[to].Length());                //円盤の座標変更
         }
 
         #endregion inner method

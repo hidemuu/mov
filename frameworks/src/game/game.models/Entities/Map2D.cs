@@ -7,13 +7,13 @@ namespace Mov.Game.Models.Entities
     /// </summary>
     public class Map2D
     {
-        #region フィールド
+        #region field
 
         private static string mark = LandmarkSchema.ROAD + LandmarkSchema.WALL + LandmarkSchema.PALYER + LandmarkSchema.ALIEN + LandmarkSchema.TREASURE;
 
-        #endregion フィールド
+        #endregion field
 
-        #region メソッド
+        #region method
 
         /// <summary>
         /// マップ構築
@@ -34,6 +34,6 @@ namespace Mov.Game.Models.Entities
             return map;
         }
 
-        #endregion メソッド
+        #endregion method
     }
 }

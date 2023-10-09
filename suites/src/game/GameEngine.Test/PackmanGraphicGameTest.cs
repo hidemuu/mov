@@ -5,7 +5,7 @@ using Mov.Suite.GameClient.FiniteStateMechine;
 using Mov.Suite.GameEngine.Graphic;
 using System.Diagnostics;
 
-namespace GameEngine.Test
+namespace Mov.Suite.GameEngine.Test
 {
     public class PackmanGraphicGameTest
     {

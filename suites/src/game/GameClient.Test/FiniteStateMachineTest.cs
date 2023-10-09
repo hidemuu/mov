@@ -58,9 +58,9 @@ namespace Mov.Suite.GameClient.Test
         {
             //Arrange
             var repository = _repositoryBuilder
-                .WithGetAsyncLandmark(new[] 
-                { 
-                    new LandmarkSchema() { Lv = 1, }, 
+                .WithGetAsyncLandmark(new[]
+                {
+                    new LandmarkSchema() { Lv = 1, },
                     new LandmarkSchema() { Lv = 2, },
                 })
                 .Build();

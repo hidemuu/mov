@@ -2,11 +2,6 @@
 using Mov.Core.Repositories;
 using Mov.Game.Models;
 using Mov.Game.Models.Schemas;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mov.Suite.GameClient.Test.Builders
 {

@@ -9,7 +9,7 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
     /// </summary>
     public abstract class FiniteStateMachineCharacterBase : ICharacter
     {
-        
+
         #region property
 
         /// <summary>

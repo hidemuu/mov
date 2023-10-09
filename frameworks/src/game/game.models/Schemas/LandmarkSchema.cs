@@ -4,15 +4,9 @@ using System;
 
 namespace Mov.Game.Models.Schemas
 {
-    public class LandmarkSchemaCollection : DbCollectionSchemaBase<LandmarkSchema, Guid>
-    {
-        [JsonProperty("landmarks")]
-        public override LandmarkSchema[] Items { get; set; }
-    }
-
     public sealed class LandmarkSchema : DbSchemaBase<Guid>
     {
-        #region 定数
+        #region constants
 
         /// <summary>
         /// 道
@@ -39,9 +33,12 @@ namespace Mov.Game.Models.Schemas
         /// </summary>
         public const string TREASURE = "☆";
 
-        #endregion 定数
+        #endregion constants
 
-        #region プロパティ
+        #region property
+
+        [JsonProperty("id")]
+        public override Guid Id { get; set; } = Guid.NewGuid();
 
         [JsonProperty("lv")]
         public int Lv { get; set; }
@@ -55,9 +52,9 @@ namespace Mov.Game.Models.Schemas
         [JsonProperty("mark_rows")]
         public string[] MarkRows { get; set; }
 
-        #endregion プロパティ
+        #endregion property
 
-        #region メソッド
+        #region method
 
         /// <summary>
         /// 行サイズ
@@ -69,6 +66,6 @@ namespace Mov.Game.Models.Schemas
         /// </summary>
         public int GetCol() => MarkRows[0].Length;
 
-        #endregion メソッド
+        #endregion method
     }
 }

@@ -1,3 +1,5 @@
+using Mov.Suite.GameClient.FiniteStateMechine;
+using Mov.Suite.GameClient.Test.Builders;
 using System.Diagnostics;
 
 namespace Mov.Suite.GameClient.Test
@@ -12,6 +14,8 @@ namespace Mov.Suite.GameClient.Test
 
         #region field
 
+        private GameRepositoryBuilder _repositoryBuilder;
+
         #endregion field
 
         #region setup
@@ -19,6 +23,7 @@ namespace Mov.Suite.GameClient.Test
         [OneTimeSetUp]
         public void ClassInitialize()
         {
+            _repositoryBuilder = new GameRepositoryBuilder();
             Trace.WriteLine($"{TEST_NAME} ClassInitialize");
         }
 
@@ -43,9 +48,17 @@ namespace Mov.Suite.GameClient.Test
         #endregion setup
 
         [Test]
-        public void Test1()
+        public void GetLandmark()
         {
-            Assert.Pass();
+            //Arrange
+            var repository = _repositoryBuilder.Build();
+            var sut = new FiniteStateMachineGameClient(repository);
+
+            //Act
+            var landmark = sut.GetLandmark();
+
+            //Assert
+            Assert.That(landmark.Lv, Is.EqualTo(1));
         }
     }
 }

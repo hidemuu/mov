@@ -11,15 +11,15 @@ namespace Mov.Designer.Test.Builders
 {
     public class DesignerRepositoryBuilder
     {
-        #region フィールド
+        #region field
 
         private readonly IDesignerRepository repository;
         private readonly Mock<IDesignerRepository> mockRepository;
         private readonly Mock<IDbRepository<ContentSchema, Guid>> mockContent;
 
-        #endregion フィールド
+        #endregion field
 
-        #region コンストラクター
+        #region constructor
 
         public DesignerRepositoryBuilder()
         {
@@ -28,9 +28,9 @@ namespace Mov.Designer.Test.Builders
             repository = new FileDesignerRepository("", FileType.Empty, EncodingValue.Empty);
         }
 
-        #endregion コンストラクター
+        #endregion constructor
 
-        #region メソッド
+        #region method
 
         public IDesignerRepository Build() => repository;
 
@@ -55,6 +55,6 @@ namespace Mov.Designer.Test.Builders
             return this;
         }
 
-        #endregion メソッド
+        #endregion method
     }
 }

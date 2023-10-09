@@ -20,7 +20,7 @@ namespace Mov.Core.Repositories.Services
 
         private readonly IClient _client;
 
-        private readonly string _key;
+        private readonly string _request;
 
         #endregion field
 
@@ -32,14 +32,14 @@ namespace Mov.Core.Repositories.Services
 
         #region constructor
 
-        public RestDbRepository(IClient client, string key)
+        public RestDbRepository(IClient client, string request)
         {
             _client = client;
-            _key = string.IsNullOrEmpty(key) ? string.Empty : API_KEY + key;
+            _request = request;
         }
 
-        public RestDbRepository(string url, string key, EncodingValue encode, IReadOnlyDictionary<string, string> headers)
-            : this(new WebClient(new PathValue(url), encode, headers), key)
+        public RestDbRepository(string url, string request, EncodingValue encode, IReadOnlyDictionary<string, string> headers)
+            : this(new WebClient(new PathValue(url), encode, headers), request)
         {
         }
 
@@ -48,37 +48,37 @@ namespace Mov.Core.Repositories.Services
         #region method
 
         public async Task<IEnumerable<TEntity>> GetsAsync() =>
-            await _client.GetsAsync<TEntity>(_key);
+            await _client.GetsAsync<TEntity>(_request);
 
         public async Task<TEntity> GetAsync(TIdentifier identidfier)
         {
             if(identidfier == null)
             {
-                return await _client.GetAsync<TEntity>(_key);
+                return await _client.GetAsync<TEntity>(_request);
             }
-            var entities = await _client.GetsAsync<TEntity>($"/{identidfier}" + _key);
+            var entities = await _client.GetsAsync<TEntity>($"/{identidfier}" + _request);
             return entities.FirstOrDefault(x => x.Id.Equals(identidfier));
         }
 
 
         public async Task<ResponseStatus> PostAsync(TEntity entity)
         {
-            return await _client.PostAsync(_key, entity);
+            return await _client.PostAsync(_request, entity);
         }
 
         public async Task<ResponseStatus> PutAsync(TEntity entity)
         {
-            return await _client.PutAsync(_key, entity);
+            return await _client.PutAsync(_request, entity);
         }
 
         public async Task<ResponseStatus> DeleteAsync(TEntity entity)
         {
-            return await _client.DeleteAsync(_key, entity.Id);
+            return await _client.DeleteAsync(_request, entity.Id);
         }
 
         public async Task<ResponseStatus> DeleteAsync(TIdentifier identifier)
         {
-            return await _client.DeleteAsync(_key, identifier);
+            return await _client.DeleteAsync(_request, identifier);
         }
 
         #endregion method

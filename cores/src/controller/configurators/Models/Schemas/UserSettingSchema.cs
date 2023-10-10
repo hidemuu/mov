@@ -22,6 +22,7 @@ namespace Mov.Core.Configurators.Models.Schemas
         /// <summary>
         /// Index
         /// </summary>
+        [JsonProperty("index")]
         [XmlElement("index")]
         [LanguageKey("index")]
         [DisplayName("index")]
@@ -31,6 +32,7 @@ namespace Mov.Core.Configurators.Models.Schemas
         /// <summary>
         /// Code
         /// </summary>
+        [JsonProperty("code")]
         [XmlElement("code")]
         [LanguageKey("code")]
         [DisplayName("code")]

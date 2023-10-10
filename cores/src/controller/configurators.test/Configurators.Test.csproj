@@ -13,11 +13,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="resources\config.json" />
+    <None Remove="resources\user_setting.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="resources\config.json">
+    <Content Include="resources\user_setting.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

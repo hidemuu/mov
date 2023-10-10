@@ -19,7 +19,7 @@ namespace Mov.Core.Configurators.Repositories
 
         public FileConfiguratorRepository(string endpoint, FileType fileType, EncodingValue encoding)
         {
-            UserSettings = FileDbRepository<UserSettingSchema, Guid>.Factory.Create(Path.Combine(endpoint, "config.json"), fileType, encoding);
+            UserSettings = FileDbRepository<UserSettingSchema, Guid>.Factory.Create(Path.Combine(endpoint, "user_setting.json"), fileType, encoding);
         }
 
         #endregion constructor

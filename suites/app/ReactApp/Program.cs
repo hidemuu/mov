@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.OpenApi.Models;
+using Mov.Suite.AnalizerClient.Resas;
+using Mov.Suite.AnalizerClient.Resas.Repository;
 using Mov.Suite.ReactApp;
 
 public class Program
@@ -12,7 +14,6 @@ public class Program
         var app = Build(WebApplication.CreateBuilder(args));
         Setup(app);
         app.Run();
-        //CreateHostBuilder(args).Build().Run();
     }
 
     #endregion main method
@@ -26,7 +27,7 @@ public class Program
         services.AddControllersWithViews();
         services.AddSwaggerGen(c =>
         {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "Mov", Version = "v1" });
+            c.SwaggerDoc("v1", new OpenApiInfo { Title = "Mov_Suite", Version = "v1" });
         });
         //In production, the React files will be served from this directory
         services.AddSpaStaticFiles(configuration =>
@@ -36,7 +37,7 @@ public class Program
 
         //var db = new ApiDbContext(new DbContextOptionsBuilder<ApiDbContext>()
         //    .UseSqlite(Urls.SqlLocalConnectionStringForSqlite).Options);
-        //services.AddScoped<IConfiguratorRepository, FileConfiguratorRepository>(_ => new FileConfiguratorRepository(PathCreator.GetResourcePath(), "", AccessConstants.PATH_EXTENSION_JSON));
+        services.AddScoped<IResasRepository, RestResasRepository>(_ => new RestResasRepository(""));
         services.AddMvc();
 
         return builder.Build();
@@ -81,13 +82,6 @@ public class Program
             }
         });
     }
-
-    private static IHostBuilder CreateHostBuilder(string[] args) =>
-        Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder =>
-            {
-                webBuilder.UseStartup<Startup>();
-            });
 
     #endregion private method
 }

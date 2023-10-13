@@ -11,6 +11,8 @@ namespace Mov.Core.Configurators.Repositories
     {
         #region property
 
+        public IDbRepository<ApiSettingSchema, string> ApiSettings { get; }
+
         public IDbRepository<UserSettingSchema, Guid> UserSettings { get; }
 
         #endregion property
@@ -19,6 +21,7 @@ namespace Mov.Core.Configurators.Repositories
 
         public FileConfiguratorRepository(string endpoint, FileType fileType, EncodingValue encoding)
         {
+            ApiSettings = FileDbRepository<ApiSettingSchema, string>.Factory.Create(Path.Combine(endpoint, "api_setting.json"), fileType, encoding);
             UserSettings = FileDbRepository<UserSettingSchema, Guid>.Factory.Create(Path.Combine(endpoint, "user_setting.json"), fileType, encoding);
         }
 

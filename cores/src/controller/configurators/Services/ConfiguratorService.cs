@@ -13,6 +13,8 @@ namespace Mov.Core.Configurators.Services
         #endregion field
 
         #region property
+
+        public IStoreQuery<ApiSetting, string> ApiSettingQuery { get; }
         public IStoreQuery<UserSetting, Guid> UserSettingQuery { get; }
 
         #endregion property
@@ -22,6 +24,7 @@ namespace Mov.Core.Configurators.Services
         public ConfiguratorService(IConfiguratorStore store)
         {
             this._store = store;
+            this.ApiSettingQuery = _store.ApiSetting.Query;
             this.UserSettingQuery = _store.UserSetting.Query;
         }
 

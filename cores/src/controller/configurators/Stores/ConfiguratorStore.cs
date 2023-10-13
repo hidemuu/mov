@@ -14,6 +14,8 @@ namespace Mov.Core.Configurators.Stores
 
         #region property
 
+        public IStore<ApiSetting, string> ApiSetting { get; }
+
         public IStore<UserSetting, Guid> UserSetting { get; }
 
         #endregion property
@@ -23,6 +25,7 @@ namespace Mov.Core.Configurators.Stores
         public ConfiguratorStore(IConfiguratorRepository repository)
         {
             this._repository = repository;
+            this.ApiSetting = new ApiSettingStore(repository);
             this.UserSetting = new UserSettingStore(repository);
         }
 

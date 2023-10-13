@@ -8,6 +8,8 @@ namespace Mov.Core.Configurators
     {
         #region property
 
+        IStoreQuery<ApiSetting, string> ApiSettingQuery { get; }
+
         IStoreQuery<UserSetting, Guid> UserSettingQuery { get; }
 
         #endregion property

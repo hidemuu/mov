@@ -10,11 +10,11 @@ namespace Mov.Core.Configurators.Contexts
 {
     public class ConfiguratorContext : IConfiguratorContext
     {
-        #region field
+        #region property
 
-        private readonly IConfiguratorService _service;
+        public IConfiguratorService Service { get; }
 
-        #endregion field
+        #endregion property
 
         #region constructor
 
@@ -22,11 +22,11 @@ namespace Mov.Core.Configurators.Contexts
         {
             if (string.IsNullOrEmpty(endpoint))
             {
-                this._service = new ConfiguratorService(new ConfiguratorStore(new FileConfiguratorRepository(PathValue.Factory.CreateResourceRootPath().Value, FileType.Json, EncodingValue.UTF8)));
+                this.Service = new ConfiguratorService(new ConfiguratorStore(new FileConfiguratorRepository(PathValue.Factory.CreateResourceRootPath().Value, FileType.Json, EncodingValue.UTF8)));
             }
             else
             {
-                this._service = new ConfiguratorService(new ConfiguratorStore(new FileConfiguratorRepository(endpoint, FileType.Json, EncodingValue.UTF8)));
+                this.Service = new ConfiguratorService(new ConfiguratorStore(new FileConfiguratorRepository(endpoint, FileType.Json, EncodingValue.UTF8)));
             }
         }
 
@@ -45,7 +45,7 @@ namespace Mov.Core.Configurators.Contexts
 
         public void Dispose()
         {
-            this._service.Dispose();
+            this.Service.Dispose();
         }
 
         #endregion method

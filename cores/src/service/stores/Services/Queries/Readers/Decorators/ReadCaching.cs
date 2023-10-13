@@ -36,8 +36,7 @@ namespace Mov.Core.Stores.Services.Queries.Readers.Decorators
 
         public TEntity Read(TIdentifier id)
         {
-            var foundEntity = _cachedEntities[id];
-            if (foundEntity == null)
+            if(!_cachedEntities.TryGetValue(id, out TEntity foundEntity))
             {
                 foundEntity = _decorated.Read(id);
                 if (foundEntity != null)

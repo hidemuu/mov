@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.OpenApi.Models;
+using Mov.Core.Configurators.Contexts;
+using Mov.Framework.Services;
 using Mov.Suite.AnalizerClient.Resas;
 using Mov.Suite.AnalizerClient.Resas.Repository;
 using Mov.Suite.ReactApp;
@@ -35,9 +37,11 @@ public class Program
             configuration.RootPath = "ClientApp/build";
         });
 
+        ConfiguratorContext.Initialize(PathCreator.GetResourcePath());
+        var apis = ConfiguratorContext.Current.Service.ApiSettingQuery.Reader.ReadAll().ToArray();
         //var db = new ApiDbContext(new DbContextOptionsBuilder<ApiDbContext>()
         //    .UseSqlite(Urls.SqlLocalConnectionStringForSqlite).Options);
-        services.AddScoped<IResasRepository, RestResasRepository>(_ => new RestResasRepository(""));
+        services.AddScoped<IResasRepository, RestResasRepository>(_ => new RestResasRepository(apis[0].Value));
         services.AddMvc();
 
         return builder.Build();

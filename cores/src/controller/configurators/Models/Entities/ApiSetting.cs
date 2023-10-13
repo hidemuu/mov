@@ -12,6 +12,8 @@ namespace Mov.Core.Configurators.Models.Entities
 
         public Identifier<string> Code { get; }
 
+        public string Key { get; }
+
         public string Value { get; }
 
         #endregion property
@@ -21,6 +23,7 @@ namespace Mov.Core.Configurators.Models.Entities
         public ApiSetting(ApiSettingSchema schema)
         {
             this.Code = new Identifier<string>(schema.Id);
+            this.Key = schema.Key;
             this.Value = schema.Value;
         }
 

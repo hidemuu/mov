@@ -11,6 +11,12 @@ namespace Mov.Core.Configurators.Models.Schemas
 {
     public class ApiSettingSchema : DbSchemaBase<string>
     {
+        [JsonProperty("key")]
+        [XmlElement("key")]
+        [LanguageKey("key")]
+        [DisplayName("key")]
+        [DisplayIndex(10)]
+        public string Key { get; set; } = string.Empty;
 
         /// <summary>
         /// 設定値
@@ -19,7 +25,7 @@ namespace Mov.Core.Configurators.Models.Schemas
         [XmlElement("value")]
         [LanguageKey("value")]
         [DisplayName("value")]
-        [DisplayIndex(10)]
+        [DisplayIndex(11)]
         public string Value { get; set; } = string.Empty;
     }
 }

@@ -30,5 +30,14 @@ namespace Mov.Core.Configurators.Services
 
         #endregion constructor
 
+        #region method
+
+        public void Dispose()
+        {
+
+        }
+
+        #endregion method
+
     }
 }

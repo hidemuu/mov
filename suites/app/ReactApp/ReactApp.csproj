@@ -61,6 +61,12 @@
     <ProjectReference Include="..\..\src\analizer\analizerclient.resas\AnalizerClient.Resas.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Mov.Core.Configurators">
+      <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.Configurators.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

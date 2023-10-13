@@ -4,7 +4,7 @@ using System;
 
 namespace Mov.Core.Configurators
 {
-    public interface IConfiguratorService
+    public interface IConfiguratorService : IDisposable
     {
         #region property
 

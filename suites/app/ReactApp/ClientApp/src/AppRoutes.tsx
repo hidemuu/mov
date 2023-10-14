@@ -1,6 +1,7 @@
 import Counter from "./pages/Counter";
 import { FetchData } from "./pages/FetchData";
 import { Home } from "./pages/Home";
+import Resas from "./pages/Resas";
 
 const AppRoutes = [
     {
@@ -14,7 +15,11 @@ const AppRoutes = [
     {
         path: '/fetch-data',
         element: <FetchData />
-    }
+    },
+    {
+        path: '/resas',
+        element: <Resas />
+    },
 ];
 
 export default AppRoutes;

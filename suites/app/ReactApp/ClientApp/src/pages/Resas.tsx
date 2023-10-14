@@ -1,4 +1,4 @@
-﻿import React, { Component } from 'react';
+﻿import React, { Component, useEffect, useState } from 'react';
 
 const Resas: React.FC = () => {
     return (

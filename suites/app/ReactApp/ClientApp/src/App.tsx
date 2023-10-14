@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { AppContext } from './AppContext';
 import AppRoutes from './AppRoutes';
-import { Layout } from './pages/Layout';
+import { Layout } from './Layout';
 import { webLightTheme } from '@fluentui/react-components';
 import './custom.css';
 

@@ -4,7 +4,7 @@ import { PageHeader } from '../components/organisms/PageHeader';
 export const HomePage: React.FunctionComponent = () => {
     return (
         <>
-            <PageHeader title={'Home'} description={'Welcome to Contoso!'}></PageHeader>
+            <PageHeader title={'Home'} description={'Welcome to Mov Suite!'}></PageHeader>
         </>
     );
 };

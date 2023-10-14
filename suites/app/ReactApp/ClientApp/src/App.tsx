@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import { AppContext } from './AppContext';
 import { Layout } from './Layout';
 import { webLightTheme } from '@fluentui/react-components';
-import './custom.css';
 
 export const App: React.FunctionComponent = theme => {
     const[state, setState] = React.useState({

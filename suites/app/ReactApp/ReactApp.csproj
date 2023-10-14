@@ -43,6 +43,7 @@
     <TypeScriptCompile Remove="ClientApp\src\App.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\AppRoutes.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\index.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\Layout.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\pages\Counter.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\pages\Home.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\stories\Button.stories.ts" />

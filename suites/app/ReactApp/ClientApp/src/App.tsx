@@ -6,19 +6,18 @@ import { Layout } from './Layout';
 import { webLightTheme } from '@fluentui/react-components';
 import './custom.css';
 
-export default class App extends Component {
-    static displayName = App.name;
+export const App: React.FunctionComponent = theme => {
+    const[state, setState] = React.useState({
+        searchTerm: '*',
+        sidebar: {
+            isMinimized: false
+    },
+        theme: { key: 'light', fluentTheme: webLightTheme }
+    });
 
-    render() {
-        return (
-            <Layout>
-                <Routes>
-                    {AppRoutes.map((route, index) => {
-                        const { element, ...rest } = route;
-                        return <Route key={index} {...rest} element={element} />;
-                    })}
-                </Routes>
-            </Layout>
-        );
-    }
+    return (
+        <AppContext.Provider value={{ state, setState }}>
+            <Layout />
+        </AppContext.Provider>
+    );
 }

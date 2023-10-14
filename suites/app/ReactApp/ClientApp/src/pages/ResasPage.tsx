@@ -1,6 +1,6 @@
 ﻿import React, { Component, useEffect, useState } from 'react';
 
-const Resas: React.FC = () => {
+const ResasPage: React.FC = () => {
     return (
         <div>
             <h1>ダッシュボード</h1>
@@ -9,4 +9,4 @@ const Resas: React.FC = () => {
     );
 };
 
-export default Resas;
+export default ResasPage;

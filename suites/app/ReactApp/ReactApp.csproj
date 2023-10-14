@@ -36,16 +36,40 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\AppContext.ts" />
-    <None Remove="ClientApp\src\pages\Resas.tsx" />
+    <None Remove="ClientApp\src\components\organisms\DirectReports.tsx" />
+    <None Remove="ClientApp\src\components\organisms\Header.tsx" />
+    <None Remove="ClientApp\src\components\organisms\Loading.tsx" />
+    <None Remove="ClientApp\src\components\organisms\Messages.tsx" />
+    <None Remove="ClientApp\src\components\organisms\PageHeader.tsx" />
+    <None Remove="ClientApp\src\components\organisms\SideNavigation.tsx" />
+    <None Remove="ClientApp\src\components\organisms\SimpleLogin.tsx" />
+    <None Remove="ClientApp\src\components\organisms\ThemeSwitcher.tsx" />
+    <None Remove="ClientApp\src\hooks\useIsSignedIn.ts" />
+    <None Remove="ClientApp\src\models\NavigationItem.ts" />
+    <None Remove="ClientApp\src\pages\DashboardPage.tsx" />
+    <None Remove="ClientApp\src\pages\FilesPage.tsx" />
+    <None Remove="ClientApp\src\pages\Files\ChannelFiles.tsx" />
+    <None Remove="ClientApp\src\pages\Files\SiteFiles.tsx" />
+    <None Remove="ClientApp\src\pages\OutlookPage.tsx" />
+    <None Remove="ClientApp\src\pages\ResasPage.tsx" />
+    <None Remove="ClientApp\src\pages\SearchPage.tsx" />
+    <None Remove="ClientApp\src\pages\Search\AllResults.tsx" />
+    <None Remove="ClientApp\src\pages\Search\ExternalItemsResults.tsx" />
+    <None Remove="ClientApp\src\pages\Search\FilesResults.tsx" />
+    <None Remove="ClientApp\src\pages\Search\index.ts" />
+    <None Remove="ClientApp\src\pages\Search\IResultsProps.ts" />
+    <None Remove="ClientApp\src\pages\Search\PeopleResults.tsx" />
+    <None Remove="ClientApp\src\pages\TaxonomyPage.tsx" />
+    <None Remove="ClientApp\src\pages\Taxonomy\TaxonomyExplorer.tsx" />
+    <None Remove="ClientApp\src\services\Navigation.tsx" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Remove="ClientApp\src\App.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\AppRoutes.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\index.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\Layout.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\pages\Counter.tsx" />
-    <TypeScriptCompile Remove="ClientApp\src\pages\Home.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\pages\HomePage.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\stories\Button.stories.ts" />
     <TypeScriptCompile Remove="ClientApp\src\stories\Button.tsx" />
     <TypeScriptCompile Remove="ClientApp\src\stories\Header.stories.ts" />
@@ -60,7 +84,6 @@
     <Folder Include="ClientApp\src\components\organisms\container\" />
     <Folder Include="ClientApp\src\components\organisms\presentational\" />
     <Folder Include="ClientApp\src\templates\" />
-    <Folder Include="ClientApp\src\hooks\" />
   </ItemGroup>
 
   <ItemGroup>

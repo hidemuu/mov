@@ -1,7 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { NavMenu } from './NavMenu';
-import { Home } from './pages/Home';
+import { Header } from './components/organisms/Header';
+import { SideNavigation } from './components/organisms/SideNavigation';
+import { HomePage } from './pages/HomePage';
+import { useIsSignedIn } from './hooks/useIsSignedIn';
+import { NavigationItem } from './models/NavigationItem';
+import { getNavigation } from './services/Navigation';
 import { FluentProvider, makeStyles, mergeClasses, shorthands } from '@fluentui/react-components';
 import { tokens } from '@fluentui/react-theme';
 import { applyTheme } from '@microsoft/mgt-react';
@@ -47,7 +51,13 @@ const useStyles = makeStyles({
 
 export const Layout: React.FunctionComponent = theme => {
     const styles = useStyles();
+    const [navigationItems, setNavigationItems] = React.useState<NavigationItem[]>([]);
+    const [isSignedIn] = useIsSignedIn();
     const appContext = useAppContext();
+
+    React.useEffect(() => {
+        setNavigationItems(getNavigation(isSignedIn));
+    }, [isSignedIn]);
 
     React.useEffect(() => {
         // Applies the theme to the MGT components
@@ -58,7 +68,7 @@ export const Layout: React.FunctionComponent = theme => {
         <FluentProvider theme={appContext.state.theme.fluentTheme}>
             <div className={styles.page}>
                 <BrowserRouter basename={process.env.REACT_APP_BASE_DIR ?? '/'}>
-                    <NavMenu></NavMenu>
+                    <Header></Header>
                     <div className={styles.main}>
                         <div
                             className={mergeClasses(
@@ -66,10 +76,17 @@ export const Layout: React.FunctionComponent = theme => {
                                 `${appContext.state.sidebar.isMinimized ? styles.minimized : ''}`
                             )}
                         >
+                            <SideNavigation items={navigationItems}></SideNavigation>
                         </div>
                         <div className={styles.content}>
                             <Routes>
-                                <Route path="*" element={<Home />} />
+                                {navigationItems.map(
+                                    item =>
+                                        ((item.requiresLogin && isSignedIn) || !item.requiresLogin) && (
+                                            <Route path={item.url} element={item.component} key={item.key} />
+                                        )
+                                )}
+                                <Route path="*" element={<HomePage />} />
                             </Routes>
                         </div>
                     </div>

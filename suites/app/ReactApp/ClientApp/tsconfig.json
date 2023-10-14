@@ -21,6 +21,6 @@
   },
   "include": [
     "src",
-    "src/commons/@types/*"
+    "src/models/@types/*"
   ]
 }

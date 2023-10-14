@@ -5,12 +5,14 @@ import {
     TextBulletListSquareRegular,
     CalendarMailRegular,
     DocumentRegular,
-    TagMultipleRegular
+    TagMultipleRegular,
+    ChartPersonRegular
 } from '@fluentui/react-icons';
 import { DashboardPage } from '../pages/DashboardPage';
 import { OutlookPage } from '../pages/OutlookPage';
 import { SearchPage } from '../pages/SearchPage';
 import { HomePage } from '../pages/HomePage';
+import { ResasPage } from '../pages/ResasPage';
 import { FilesPage } from '../pages/FilesPage';
 import { TaxonomyPage } from '../pages/TaxonomyPage';
 
@@ -24,6 +26,16 @@ export const getNavigation = (isSignedIn: boolean) => {
         key: 'home',
         requiresLogin: false,
         component: <HomePage />,
+        exact: true
+    });
+
+    navItems.push({
+        name: 'Resas',
+        url: 'resas',
+        icon: <ChartPersonRegular />,
+        key: 'resas',
+        requiresLogin: false,
+        component: <ResasPage />,
         exact: true
     });
 

@@ -81,8 +81,12 @@ export const Layout: React.FunctionComponent = theme => {
                         <div className={styles.content}>
                             <Routes>
                                 {navigationItems.map(
+                                    //item =>
+                                    //    ((item.requiresLogin && isSignedIn) || !item.requiresLogin) && (
+                                    //        <Route path={item.url} element={item.component} key={item.key} />
+                                    //    )
                                     item =>
-                                        ((item.requiresLogin && isSignedIn) || !item.requiresLogin) && (
+                                        (
                                             <Route path={item.url} element={item.component} key={item.key} />
                                         )
                                 )}

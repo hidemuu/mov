@@ -1,12 +1,8 @@
 ﻿import React, { Component, useEffect, useState } from 'react';
 
-const ResasPage: React.FC = () => {
+export const ResasPage: React.FunctionComponent = () => {
     return (
-        <div>
-            <h1>ダッシュボード</h1>
-            {/* ここにダッシュボードのコンテンツを追加 */}
-        </div>
+        <>
+        </>
     );
 };
-
-export default ResasPage;

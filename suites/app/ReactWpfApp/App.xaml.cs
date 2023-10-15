@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace ReactWpfApp
+namespace Mov.Suite.ReactWpfApp
 {
     /// <summary>
     /// Interaction logic for App.xaml

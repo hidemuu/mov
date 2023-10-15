@@ -1,16 +1,14 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Mov.Core.Configurators;
-using Mov.Core.Configurators.Models.Schemas;
-using Mov.Suite.AnalizerClient.Resas;
-using Mov.Suite.AnalizerClient.Resas.Schemas;
 using Mov.Suite.AnalizerClient.Resas.Schemas.Results;
+using Mov.Suite.AnalizerClient.Resas.Schemas;
+using Mov.Suite.AnalizerClient.Resas;
 
 namespace Mov.Suite.ReactApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ResasController : ControllerBase
+    public class PrefectureController : ControllerBase
     {
         #region field
 
@@ -24,7 +22,7 @@ namespace Mov.Suite.ReactApp.Controllers
         /// controller for configuration
         /// </summary>
         /// <param name="repository"></param>
-        public ResasController(IResasRepository repository)
+        public PrefectureController(IResasRepository repository)
         {
             this._repository = repository;
         }
@@ -37,9 +35,9 @@ namespace Mov.Suite.ReactApp.Controllers
         /// Gets all items.
         /// </summary>
         [HttpGet]
-        public async Task<IEnumerable<ResasResponseSchema<CityResultSchema>>> GetCities()
+        public async Task<IEnumerable<ResasResponseSchema<PrefectureResultSchema>>> Get()
         {
-            return await this._repository.Cities.GetsAsync();
+            return await this._repository.Prefectures.GetsAsync();
         }
 
         #endregion method

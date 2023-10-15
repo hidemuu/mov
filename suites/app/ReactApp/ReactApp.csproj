@@ -84,6 +84,7 @@
     <Folder Include="ClientApp\src\components\organisms\container\" />
     <Folder Include="ClientApp\src\components\organisms\presentational\" />
     <Folder Include="ClientApp\src\templates\" />
+    <Folder Include="ClientApp\src\assets\" />
   </ItemGroup>
 
   <ItemGroup>

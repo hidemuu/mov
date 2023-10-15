@@ -16,6 +16,7 @@
     <PackageReference Include="MahApps.Metro" Version="2.4.10" />
     <PackageReference Include="MaterialDesignColors" Version="2.1.4" />
     <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="7.0.96" />
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2045.28" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Prism.Unity" Version="8.1.97" />

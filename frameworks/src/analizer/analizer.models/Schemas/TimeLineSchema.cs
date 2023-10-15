@@ -6,11 +6,8 @@ using System.Text;
 
 namespace Mov.Analizer.Models.Schemas
 {
-	public class TimeLineSchema : DbSchemaBase<Guid>
+	public class TimeLineSchema : AnalizeContentSchemaBase
 	{
-		[JsonProperty("name")]
-		public string Name { get; set; } = string.Empty;
-
 		[JsonProperty("start_time")]
 		public string StartTime { get; set; } = string.Empty;
 

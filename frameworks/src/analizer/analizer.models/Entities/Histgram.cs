@@ -1,6 +1,6 @@
 ﻿namespace Mov.Analizer.Models.Entities
 {
-    public class Prefecture
+    public class Histgram
     {
     }
 }

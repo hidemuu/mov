@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Mov.Core">
       <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
     </Reference>
@@ -18,6 +22,9 @@
     </Reference>
     <Reference Include="Mov.Core.Styles">
       <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Styles.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Valuables">
+      <HintPath>..\..\..\lib\bin\Debug\netstandard2.0\Mov.Core.Valuables.dll</HintPath>
     </Reference>
   </ItemGroup>
 

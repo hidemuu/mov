@@ -1,4 +1,4 @@
-﻿import React, { Component, useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import axios from "axios";
@@ -11,8 +11,8 @@ export const ResasPage: React.FunctionComponent = () => {
     const [prefectures, setPreFectures] = useState<{
         message: null;
         result: {
-            prefCode: number;
-            prefName: string;
+            code: number;
+            name: string;
         }[];
     } | null>(null);
     const [prefPopulation, setPrefPopulation] = useState<

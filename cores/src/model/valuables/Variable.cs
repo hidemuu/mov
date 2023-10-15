@@ -13,9 +13,9 @@ namespace Mov.Core.Valuables
 
         #region constructor
 
-        public Variable(string parameter)
+        public Variable(string value)
         {
-            Value = parameter;
+            Value = value;
         }
 
         public static Variable Empty = new Variable("");

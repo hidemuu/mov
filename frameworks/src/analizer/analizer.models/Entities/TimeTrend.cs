@@ -2,10 +2,9 @@
 
 namespace Mov.Analizer.Models.Entities
 {
-    public class TimeTrend
+    public class TimeTrend : AnalizeContent
     {
-        public string Name { get; }
-		public DateValue TimeStamp { get; }
+        public DateValue TimeStamp { get; }
 		public NumericalValue Content { get; }
 
     }

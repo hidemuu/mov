@@ -1,6 +1,6 @@
 ﻿namespace Mov.Analizer.Models.Entities
 {
-    public class Histgram
+    public class Histgram : AnalizeContent
     {
     }
 }

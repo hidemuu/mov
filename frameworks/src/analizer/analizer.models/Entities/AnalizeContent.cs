@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Mov.Analizer.Models.Entities
 {
-	public class TableLine : AnalizeContent
+	public class AnalizeContent
 	{
-		public string Code { get; }
+		public string Name { get; }
 
-		public string Content { get; }
+		public string Category { get; }
 	}
 }

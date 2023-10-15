@@ -5,9 +5,8 @@ using System.Text;
 
 namespace Mov.Analizer.Models.Entities
 {
-	public class TimeLine
+	public class TimeLine : AnalizeContent
 	{
-		public string Name { get; }
 		public DateValue StartTime { get; }
 		public DateValue EndTime { get; }
 	}

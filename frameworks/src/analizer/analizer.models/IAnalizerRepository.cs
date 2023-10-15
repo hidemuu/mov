@@ -7,5 +7,9 @@ namespace Mov.Analizer.Models
     public interface IAnalizerRepository
     {
 		IDbRepository<TimeLineSchema, Guid> TimeLines { get; }
+
+		IDbRepository<TimeTrendSchema, Guid> TimeTrends { get; }
+
+		IDbRepository<TableLineSchema, Guid> TableLines { get; }
 	}
 }

@@ -23,6 +23,10 @@ namespace Mov.Analizer.Repository
 
 		public DbSet<TimeLineSchema> TimeLines { get; set; }
 
+		public DbSet<TimeTrendSchema> TimeTrends { get; set; }
+
+		public DbSet<TableLineSchema> TableLines { get; set; }
+
 		#endregion property
 
 		#region event

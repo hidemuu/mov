@@ -14,6 +14,10 @@ namespace Mov.Analizer.Repository
 
 		public IDbRepository<TimeLineSchema, Guid> TimeLines { get; }
 
+		public IDbRepository<TimeTrendSchema, Guid> TimeTrends { get; }
+
+		public IDbRepository<TableLineSchema, Guid> TableLines { get; }
+
 		#endregion property
 
 		#region constructor
@@ -21,6 +25,8 @@ namespace Mov.Analizer.Repository
 		public FileAnalizerRepository(string endpoint)
 		{
 			TimeLines = FileDbRepository<TimeLineSchema, Guid>.Factory.Create(Path.Combine(endpoint, "timeline_json"), FileType.Json, EncodingValue.UTF8);
+			TimeTrends = FileDbRepository<TimeTrendSchema, Guid>.Factory.Create(Path.Combine(endpoint, "timetrend_json"), FileType.Json, EncodingValue.UTF8);
+			TableLines = FileDbRepository<TableLineSchema, Guid>.Factory.Create(Path.Combine(endpoint, "tableline_json"), FileType.Json, EncodingValue.UTF8);
 		}
 
 		#endregion constructor

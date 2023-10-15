@@ -1,6 +1,8 @@
 ﻿using Mov.Analizer.Models;
+using Mov.Analizer.Models.Schemas;
 using Mov.Analizer.Service;
 using Mov.Suite.AnalizerClient.Resas.Repository;
+using System.Threading.Tasks;
 
 namespace Mov.Suite.AnalizerClient.Resas
 {
@@ -25,11 +27,13 @@ namespace Mov.Suite.AnalizerClient.Resas
 
         #region method
 
-        public void Update()
+        public async Task UpdateAsync()
         {
+            var cities = await _resasRepository.Cities.GetAsync(null);
+			var prefectures = await _resasRepository.Prefectures.GetAsync(null);
+            await _repository.TableLines.PostAsync(new TableLineSchema());
+		}
 
-        }
-
-        #endregion method
-    }
+		#endregion method
+	}
 }

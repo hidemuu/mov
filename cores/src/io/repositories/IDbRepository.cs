@@ -23,9 +23,11 @@ namespace Mov.Core.Repositories
 
         Task<TEntity> GetAsync(TIdentifier identifier);
 
-        Task<ResponseStatus> PostAsync(TEntity entity);
+		Task<ResponseStatus> PostsAsync(IEnumerable<TEntity> entities);
 
-        Task<ResponseStatus> PutAsync(TEntity entity);
+		Task<ResponseStatus> PostAsync(TEntity entity);
+
+		Task<ResponseStatus> PutAsync(TEntity entity);
 
         Task<ResponseStatus> DeleteAsync(TEntity entity);
 

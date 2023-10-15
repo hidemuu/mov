@@ -50,7 +50,17 @@ namespace Mov.Core.Repositories.Services
                 .FirstOrDefaultAsync(x => x.Id.Equals(identifier));
         }
 
-        public async Task<ResponseStatus> PostAsync(TEntity entity)
+		public async Task<ResponseStatus> PostsAsync(IEnumerable<TEntity> entities)
+        {
+            foreach(var entity in entities)
+            {
+                await PostAsync(entity);
+            }
+			return ResponseStatus.Success;
+		}
+
+
+		public async Task<ResponseStatus> PostAsync(TEntity entity)
         {
             var current = await _ts.FirstOrDefaultAsync(_m => _m.Id.Equals(entity.Id));
             if (null == current)

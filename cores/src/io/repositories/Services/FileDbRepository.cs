@@ -72,16 +72,16 @@ namespace Mov.Core.Repositories.Services
             return items.FirstOrDefault(x => x.Id.Equals(identifier));
         }
 
-        /// <inheritdoc />
-        public async Task<ResponseStatus> PostAsync(TEntity entity)
+		/// <inheritdoc />
+		public async Task<ResponseStatus> PostsAsync(IEnumerable<TEntity> entities)
+		{
+			return await _client.PostAsync("", entities);
+		}
+
+		/// <inheritdoc />
+		public async Task<ResponseStatus> PostAsync(TEntity entity)
         {
             return await _client.PostAsync("", entity);
-        }
-
-        /// <inheritdoc />
-        public async Task<ResponseStatus> PostAsync(IEnumerable<TEntity> entities)
-        {
-            return await _client.PostAsync("", entities);
         }
 
         public async Task<ResponseStatus> PutAsync(TEntity entity)

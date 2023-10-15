@@ -4,12 +4,14 @@ using System;
 
 namespace Mov.Analizer.Models.Schemas
 {
-    public class StatisticSchema : DbSchemaBase<Guid>
+    public class TimeTrendSchema : DbSchemaBase<Guid>
     {
-        [JsonProperty("timestamp")]
-        public string TimeStamp { get; set; } = string.Empty;
-
 		[JsonProperty("name")]
 		public string Name { get; set; } = string.Empty;
+
+		[JsonProperty("timestamp")]
+        public string TimeStamp { get; set; } = string.Empty;
+
+		
     }
 }

@@ -42,8 +42,7 @@ public class Program
         var resasApi = apis.FirstOrDefault(x => x.Code.Value.Equals("RESAS-API-KEY"));
         //var db = new ApiDbContext(new DbContextOptionsBuilder<ApiDbContext>()
         //    .UseSqlite(Urls.SqlLocalConnectionStringForSqlite).Options);
-        var resasRepository = new RestResasRepository(resasApi?.Value);
-        services.AddScoped<IResasRepository, RestResasRepository>(_ => resasRepository);
+        services.AddScoped<IResasRepository, RestResasRepository>(_ => new RestResasRepository(resasApi?.Value));
         services.AddMvc();
 
         return builder.Build();

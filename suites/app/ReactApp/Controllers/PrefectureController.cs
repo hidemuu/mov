@@ -37,7 +37,8 @@ namespace Mov.Suite.ReactApp.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await this._repository.Prefectures.GetAsync(null));
+            var response = await this._repository.Prefectures.GetAsync(null);
+            return Ok(response);
         }
 
         #endregion method

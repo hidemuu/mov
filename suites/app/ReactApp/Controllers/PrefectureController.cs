@@ -6,7 +6,7 @@ using Mov.Suite.AnalizerClient.Resas;
 
 namespace Mov.Suite.ReactApp.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class PrefectureController : ControllerBase
     {

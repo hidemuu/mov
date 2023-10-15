@@ -79,14 +79,14 @@ public class Program
 
         app.MapFallbackToFile("index.html");
 
-        app.UseSpa(spa =>
-        {
-            spa.Options.SourcePath = "ClientApp";
-            if (env.IsDevelopment())
-            {
-                spa.UseReactDevelopmentServer(npmScript: "start");
-            }
-        });
+        //app.UseSpa(spa =>
+        //{
+        //    spa.Options.SourcePath = "ClientApp";
+        //    if (env.IsDevelopment())
+        //    {
+        //        spa.UseReactDevelopmentServer(npmScript: "start");
+        //    }
+        //});
     }
 
     #endregion private method

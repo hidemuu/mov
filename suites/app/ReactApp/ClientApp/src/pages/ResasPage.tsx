@@ -35,14 +35,14 @@ export const ResasPage: React.FunctionComponent = () => {
     useEffect(() => {
         // 都道府県一覧を取得する
         axios
-            .get('api/prefecture/', {
+            .get('api/Prefecture/', {
                 //headers: { "X-API-KEY": process.env.REACT_APP_API_KEY },
             })
             .then((results) => {
                 setPreFectures(results.data);
             })
             .catch((error) => { });
-        var fetch = fetchData('api/prefecture/', this);
+        var fetch = fetchData('api/Prefecture/', this);
     }, []);
 
     for (let p of prefPopulation) {

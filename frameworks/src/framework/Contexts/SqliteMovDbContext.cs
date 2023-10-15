@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Mov.Framework.Contexts;
 
-namespace Mov.Suite.Contexts
+namespace Mov.Framework.Contexts
 {
     public class SqliteMovDbContext : MovDbContextBase
     {

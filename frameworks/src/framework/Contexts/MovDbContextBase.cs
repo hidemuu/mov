@@ -3,9 +3,12 @@ using Mov.Game.Models.Schemas;
 
 namespace Mov.Framework.Contexts
 {
-    public class MovDbContext : DbContext
+    public abstract class MovDbContextBase : DbContext
     {
+
         #region property
+
+        public string Endpoint { get; }
 
         public DbSet<LandmarkSchema> Landmarks { get; set; }
 
@@ -13,16 +16,21 @@ namespace Mov.Framework.Contexts
 
         #region constructor
 
-        public MovDbContext()
-        { }
+        public MovDbContextBase(string endpoint)
+        { 
+            this.Endpoint = endpoint;
+        }
 
-        public MovDbContext(DbContextOptions<MovDbContext> options) : base(options)
+        public MovDbContextBase(DbContextOptions<MovDbContextBase> options, string endpoint) : base(options)
         {
+            this.Endpoint = endpoint;
         }
 
         #endregion constructor
 
         #region event
+
+        protected abstract override void OnConfiguring(DbContextOptionsBuilder optionsBuilder);
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

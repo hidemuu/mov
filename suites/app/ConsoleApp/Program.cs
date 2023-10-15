@@ -1,4 +1,7 @@
-﻿using Mov.Suite.AnalizerClient.Resas.Repository;
+﻿using Mov.Core.Configurators.Contexts;
+using Mov.Core.Configurators.Models.Entities;
+using Mov.Framework.Services;
+using Mov.Suite.AnalizerClient.Resas.Repository;
 
 internal class Program
 {
@@ -13,6 +16,8 @@ internal class Program
         {"end", EndProgram },
         {"help", Help }
     };
+
+    private static ApiSetting _resasApiSetting = ApiSetting.Empty;
 
     private delegate void CommandHandler(IEnumerable<string> parameters);
 
@@ -58,6 +63,10 @@ internal class Program
 
     private static void Initialize()
     {
+        ConfiguratorContext.Initialize(PathCreator.GetResourcePath());
+        var apis = ConfiguratorContext.Current.Service.ApiSettingQuery.Reader.ReadAll().ToArray();
+        _resasApiSetting = apis.FirstOrDefault(x => x.Code.Value.Equals("RESAS-API-KEY")) ?? ApiSetting.Empty;
+
     }
 
     private static void Run()
@@ -113,7 +122,8 @@ internal class Program
     private static void GetRestResasCities(IEnumerable<string> parameters)
     {
         var parameterArray = parameters.ToArray();
-        var resasRepository = new RestResasRepository(parameterArray[0]);
+        var header = parameterArray.Any() ? parameterArray[0] : _resasApiSetting.Value;
+        var resasRepository = new RestResasRepository(header);
         var city = Task.WhenAll(resasRepository.Cities.GetAsync(null)).Result[0];
         Console.WriteLine(city.Id);
         foreach (var result in city.Results)
@@ -124,8 +134,10 @@ internal class Program
 
     private static void GetRestResasPrefectures(IEnumerable<string> parameters)
     {
+        
         var parameterArray = parameters.ToArray();
-        var resasRepository = new RestResasRepository(parameterArray[0]);
+        var header = parameterArray.Any() ? parameterArray[0] : _resasApiSetting.Value;
+        var resasRepository = new RestResasRepository(header);
         var prefecture = Task.WhenAll(resasRepository.Prefectures.GetAsync(null)).Result[0];
         Console.WriteLine(prefecture.Id);
         foreach (var result in prefecture.Results)

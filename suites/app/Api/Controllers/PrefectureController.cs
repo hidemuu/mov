@@ -4,7 +4,7 @@ using Mov.Suite.AnalizerClient.Resas.Schemas.Results;
 using Mov.Suite.AnalizerClient.Resas.Schemas;
 using Mov.Suite.AnalizerClient.Resas;
 
-namespace Mov.Suite.ReactApp.Controllers
+namespace Mov.Suite.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

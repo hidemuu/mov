@@ -21,8 +21,14 @@
     <Reference Include="Mov.Core.Accessors">
       <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.Accessors.dll</HintPath>
     </Reference>
+    <Reference Include="Mov.Core.Configurators">
+      <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.Configurators.dll</HintPath>
+    </Reference>
     <Reference Include="Mov.Core.Repositories">
       <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.Repositories.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Stores">
+      <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.Stores.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Framework">
       <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Framework.dll</HintPath>

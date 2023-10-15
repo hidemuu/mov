@@ -4,11 +4,11 @@ using Mov.Suite.AnalizerClient.Resas.Schemas.Results;
 using Mov.Suite.AnalizerClient.Resas.Schemas;
 using Mov.Suite.AnalizerClient.Resas;
 
-namespace Mov.Suite.ReactApp.Controllers
+namespace Mov.Suite.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PrefectureController : ControllerBase
+    public class PopulationPyramidController : ControllerBase
     {
         #region field
 
@@ -22,7 +22,7 @@ namespace Mov.Suite.ReactApp.Controllers
         /// controller for configuration
         /// </summary>
         /// <param name="repository"></param>
-        public PrefectureController(IResasRepository repository)
+        public PopulationPyramidController(IResasRepository repository)
         {
             this._repository = repository;
         }
@@ -35,9 +35,9 @@ namespace Mov.Suite.ReactApp.Controllers
         /// Gets all items.
         /// </summary>
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IEnumerable<ResasResponseSchema<PopulationPyramidResultSchema>>> Get()
         {
-            return Ok(await this._repository.Prefectures.GetAsync(null));
+            return await this._repository.PopulationPyramids.GetsAsync();
         }
 
         #endregion method

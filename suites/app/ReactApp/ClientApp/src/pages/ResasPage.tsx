@@ -2,6 +2,7 @@
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import axios from "axios";
+import fetchData from "../hooks/fatchData";
 
 const Styles: { [key: string]: React.CSSProperties } = {
     graph: {
@@ -34,13 +35,14 @@ export const ResasPage: React.FunctionComponent = () => {
     useEffect(() => {
         // 都道府県一覧を取得する
         axios
-            .get('api/prefectures/', {
+            .get('api/prefecture/', {
                 //headers: { "X-API-KEY": process.env.REACT_APP_API_KEY },
             })
             .then((results) => {
                 setPreFectures(results.data);
             })
             .catch((error) => { });
+        var fetch = fetchData('api/prefecture/', this);
     }, []);
 
     for (let p of prefPopulation) {

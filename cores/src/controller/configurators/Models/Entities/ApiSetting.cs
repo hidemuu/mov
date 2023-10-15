@@ -22,11 +22,22 @@ namespace Mov.Core.Configurators.Models.Entities
 
         public ApiSetting(ApiSettingSchema schema)
         {
-            this.Code = new Identifier<string>(schema.Id);
-            this.Key = schema.Key;
-            this.Value = schema.Value;
+            this.Code = new Identifier<string>(schema?.Id);
+            this.Key = schema?.Key;
+            this.Value = schema?.Value;
         }
 
+        public static ApiSetting Empty { get; } = new ApiSetting(null);
+
         #endregion constructor
+
+        #region method
+
+        public bool IsEmpty()
+        {
+            return this.Code.IsEmpty();
+        }
+
+        #endregion method
     }
 }

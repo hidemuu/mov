@@ -12,7 +12,7 @@
 
         public Identifier(T id)
         {
-            Value = id;
+            Value = id != null ? id : default;
         }
 
         public static readonly Identifier<T> Empty = new Identifier<T>(default);

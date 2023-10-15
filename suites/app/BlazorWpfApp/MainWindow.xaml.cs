@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,16 @@ namespace BlazorWpfApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
-    }
+		public MainWindow()
+		{
+			this.InitializeComponent();
+			var provider = App.Current.Resources["services"] as IServiceProvider;
+			this.DataContext = provider.GetRequiredService<CounterState>();
+		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			((CounterState)this.DataContext).Increment();
+		}
+	}
 }

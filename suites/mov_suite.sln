@@ -69,11 +69,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignerClient.Wpf", "src\d
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrawerClient.Bitmap", "src\drawer\drawerclient.bitmap\DrawerClient.Bitmap.csproj", "{E9272C0A-E7CB-4C13-A9EC-2D138A4878D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp", "app\BlazorApp\BlazorApp.csproj", "{8F39703E-D480-46C3-92A4-5DE204FED21E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp", "app\BlazorApp\BlazorApp.csproj", "{8F39703E-D480-46C3-92A4-5DE204FED21E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactWpfApp", "app\ReactWpfApp\ReactWpfApp.csproj", "{431FC092-EEA5-4FBC-B244-8BCE0489075C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactWpfApp", "app\ReactWpfApp\ReactWpfApp.csproj", "{431FC092-EEA5-4FBC-B244-8BCE0489075C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWpfApp", "app\BlazorWpfApp\BlazorWpfApp.csproj", "{CA25FF45-3B7A-4B4D-B33A-909F8C66B4C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWpfApp", "app\BlazorWpfApp\BlazorWpfApp.csproj", "{CA25FF45-3B7A-4B4D-B33A-909F8C66B4C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

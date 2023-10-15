@@ -4,9 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BlazorWpfApp"
+        xmlns:blazor="clr-namespace:Microsoft.AspNetCore.Components.WebView.Wpf;assembly=Microsoft.AspNetCore.Components.WebView.Wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <!--<blazor:BlazorWebView
+            Grid.Row="1"
+            HostPage="wwwroot/index.html"
+            Services="{StaticResource services}">
+            <blazor:BlazorWebView.RootComponents>
+                <blazor:RootComponent ComponentType="{x:Type local:Counter}" Selector="#app" />
+            </blazor:BlazorWebView.RootComponents>
+        </blazor:BlazorWebView>-->
     </Grid>
 </Window>

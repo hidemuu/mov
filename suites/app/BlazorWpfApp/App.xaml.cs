@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,12 @@ namespace BlazorWpfApp
     /// </summary>
     public partial class App : Application
     {
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            var serviceCollection = new ServiceCollection();
+            serviceCollection.AddWpfBlazorWebView();
+			serviceCollection.AddSingleton<CounterState>();
+			Resources.Add("services", serviceCollection.BuildServiceProvider());
+        }
     }
 }

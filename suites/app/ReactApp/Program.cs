@@ -73,6 +73,8 @@ public class Program
 
         app.UseRouting();
 
+        //app.MapControllers();
+
         app.MapControllerRoute(
             name: "default",
             pattern: "{controller}/{action=Index}/{id?}");

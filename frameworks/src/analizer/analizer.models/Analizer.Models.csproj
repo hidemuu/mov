@@ -28,4 +28,9 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Stores\Commands\" />
+    <Folder Include="Stores\Queries\" />
+  </ItemGroup>
+
 </Project>

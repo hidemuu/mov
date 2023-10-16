@@ -1,6 +1,10 @@
-﻿using Mov.Core.Configurators.Contexts;
+﻿using Mov.Analizer.Models;
+using Mov.Analizer.Repository;
+using Mov.Analizer.Service;
+using Mov.Core.Configurators.Contexts;
 using Mov.Core.Configurators.Models.Entities;
 using Mov.Framework.Services;
+using Mov.Suite.AnalizerClient.Resas;
 using Mov.Suite.AnalizerClient.Resas.Repository;
 
 internal class Program
@@ -17,7 +21,11 @@ internal class Program
         {"help", Help }
     };
 
-    private static ApiSetting _resasApiSetting = ApiSetting.Empty;
+    private static IResasRepository? _resasRepository;
+
+    private static IAnalizerRepository? _analizerRepository;
+
+    private static IRegionAnalizerClient? _regionAnalizerClient;
 
     private delegate void CommandHandler(IEnumerable<string> parameters);
 
@@ -63,11 +71,15 @@ internal class Program
 
     private static void Initialize()
     {
-        ConfiguratorContext.Initialize(PathCreator.GetResourcePath());
-        var apis = ConfiguratorContext.Current.Service.ApiSettingQuery.Reader.ReadAll().ToArray();
-        _resasApiSetting = apis.FirstOrDefault(x => x.Code.Value.Equals("RESAS-API-KEY")) ?? ApiSetting.Empty;
+		var resourcePath = PathCreator.GetResourcePath();
+		_analizerRepository = new FileAnalizerRepository(resourcePath);
 
-    }
+		ConfiguratorContext.Initialize(PathCreator.GetResourcePath());
+        var apis = ConfiguratorContext.Current.Service.ApiSettingQuery.Reader.ReadAll().ToArray();
+        var apiSetting = apis.FirstOrDefault(x => x.Code.Value.Equals("RESAS-API-KEY")) ?? ApiSetting.Empty;
+		_resasRepository = new RestResasRepository(apiSetting.Value);
+        _regionAnalizerClient = new ResasAnalizerClient(_analizerRepository, _resasRepository);
+	}
 
     private static void Run()
     {
@@ -122,9 +134,7 @@ internal class Program
     private static void GetRestResasCities(IEnumerable<string> parameters)
     {
         var parameterArray = parameters.ToArray();
-        var header = parameterArray.Any() ? parameterArray[0] : _resasApiSetting.Value;
-        var resasRepository = new RestResasRepository(header);
-        var city = Task.WhenAll(resasRepository.Cities.GetAsync(null)).Result[0];
+        var city = Task.WhenAll(_resasRepository.Cities.GetAsync(null)).Result[0];
         Console.WriteLine(city.Id);
         foreach (var result in city.Results)
         {
@@ -136,9 +146,7 @@ internal class Program
     {
         
         var parameterArray = parameters.ToArray();
-        var header = parameterArray.Any() ? parameterArray[0] : _resasApiSetting.Value;
-        var resasRepository = new RestResasRepository(header);
-        var prefecture = Task.WhenAll(resasRepository.Prefectures.GetAsync(null)).Result[0];
+        var prefecture = Task.WhenAll(_resasRepository.Prefectures.GetAsync(null)).Result[0];
         Console.WriteLine(prefecture.Id);
         foreach (var result in prefecture.Results)
         {

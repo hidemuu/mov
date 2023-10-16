@@ -6,6 +6,9 @@ using Mov.Suite.AnalizerClient.Resas;
 
 namespace Mov.Suite.Api.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class PrefectureController : ControllerBase

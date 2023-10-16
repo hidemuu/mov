@@ -4,6 +4,9 @@ using Mov.Framework.Services;
 using Mov.Suite.AnalizerClient.Resas.Repository;
 using Mov.Suite.AnalizerClient.Resas;
 using System.Reflection;
+using Mov.Analizer.Models;
+using Mov.Analizer.Repository;
+using Mov.Analizer.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,11 +25,15 @@ services.AddSwaggerGen(option =>
     option.SwaggerDoc("mov", new OpenApiInfo { Title = "Mov", Version = "v1" });
 });
 
+//フレームワークサービス登録
 var resourcePath = PathCreator.GetResourcePath();
+services.AddScoped<IAnalizerRepository, FileAnalizerRepository>(_ => new FileAnalizerRepository(resourcePath));
+//クライアントサービス登録
 ConfiguratorContext.Initialize(PathCreator.GetResourcePath());
 var apis = ConfiguratorContext.Current.Service.ApiSettingQuery.Reader.ReadAll().ToArray();
 var resasApi = apis.FirstOrDefault(x => x.Code.Value.Equals("RESAS-API-KEY"));
 services.AddScoped<IResasRepository, RestResasRepository>(_ => new RestResasRepository(resasApi?.Value));
+services.AddScoped<IRegionAnalizerClient, ResasAnalizerClient>();
 services.AddMvc();
 
 var app = builder.Build();

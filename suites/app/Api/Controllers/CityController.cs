@@ -6,6 +6,9 @@ using Mov.Suite.AnalizerClient.Resas.Schemas.Results;
 
 namespace Mov.Suite.Api.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class CityController : ControllerBase
@@ -35,9 +38,9 @@ namespace Mov.Suite.Api.Controllers
         /// Gets all items.
         /// </summary>
         [HttpGet]
-        public async Task<IEnumerable<ResasResponseSchema<CityResultSchema>>> Get()
+        public async Task<IActionResult> Get()
         {
-            return await this._repository.Cities.GetsAsync();
+            return Ok(await this._repository.Cities.GetAsync(null));
         }
 
         #endregion method

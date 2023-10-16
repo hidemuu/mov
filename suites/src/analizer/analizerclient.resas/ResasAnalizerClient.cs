@@ -11,17 +11,17 @@ namespace Mov.Suite.AnalizerClient.Resas
     {
         #region field
 
-        private readonly IAnalizerRepository _repository;
+        private readonly IAnalizerRepository _analizerRepository;
         private readonly IResasRepository _resasRepository;
 
         #endregion field
 
         #region constructor
 
-        public ResasAnalizerClient(IAnalizerRepository repository, string apiKey) 
+        public ResasAnalizerClient(IAnalizerRepository analizerRepository, IResasRepository resasRepository) 
         {
-            _repository = repository;
-            _resasRepository = new RestResasRepository(apiKey);
+            _analizerRepository = analizerRepository;
+            _resasRepository = resasRepository;
         }
 
         #endregion constructor
@@ -56,7 +56,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 
             foreach (var schema in schemas)
             {
-				await _repository.TableLines.PostAsync(schema);
+				await _analizerRepository.TableLines.PostAsync(schema);
 			}
 		}
 

@@ -6,6 +6,9 @@ using Mov.Suite.AnalizerClient.Resas;
 
 namespace Mov.Suite.Api.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class PopulationPerYearController : ControllerBase
@@ -35,9 +38,9 @@ namespace Mov.Suite.Api.Controllers
         /// Gets all items.
         /// </summary>
         [HttpGet]
-        public async Task<IEnumerable<ResasResponseSchema<PopulationPerYearResultSchema>>> Get()
+        public async Task<IActionResult> Get()
         {
-            return await this._repository.PopulationPerYears.GetsAsync();
+            return Ok(await this._repository.PopulationPerYears.GetAsync(null));
         }
 
         #endregion method

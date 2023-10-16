@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Mov.Core.Stores.Services.Commands.Deleters
 {
@@ -28,7 +29,7 @@ namespace Mov.Core.Stores.Services.Commands.Deleters
 
 		public void Delete(TEntity entity)
 		{
-			throw new NotImplementedException();
+			Task.WhenAll(_repository.DeleteAsync(entity));
 		}
 
 		#endregion method

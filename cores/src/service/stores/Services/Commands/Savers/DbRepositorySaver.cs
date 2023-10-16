@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Mov.Core.Stores.Services.Commands.Savers
 {
@@ -28,7 +29,7 @@ namespace Mov.Core.Stores.Services.Commands.Savers
 
 		public void Save(TEntity entity)
 		{
-			throw new NotImplementedException();
+			Task.WhenAll(_repository.PostAsync(entity));
 		}
 
 		#endregion method

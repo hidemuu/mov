@@ -31,6 +31,7 @@
   <ItemGroup>
     <Folder Include="Stores\Commands\" />
     <Folder Include="Stores\Queries\" />
+    <Folder Include="Stores\" />
   </ItemGroup>
 
 </Project>

@@ -20,18 +20,15 @@
     <Reference Include="Mov.Core.Repositories">
       <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Repositories.dll</HintPath>
     </Reference>
+    <Reference Include="Mov.Core.Stores">
+      <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Stores.dll</HintPath>
+    </Reference>
     <Reference Include="Mov.Core.Styles">
       <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Styles.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Core.Valuables">
       <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Valuables.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Stores\Commands\" />
-    <Folder Include="Stores\Queries\" />
-    <Folder Include="Stores\" />
   </ItemGroup>
 
 </Project>

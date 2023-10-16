@@ -27,7 +27,7 @@ namespace Mov.Analizer.Service.Stores
 		public AnalizerStoreCommand(IAnalizerRepository repository)
 		{
 			_repository = repository;
-			this.TimeLines = new TimeLineCommand();
+			this.TimeLines = new TimeLineCommand(repository);
 		}
 
 		#endregion constructor

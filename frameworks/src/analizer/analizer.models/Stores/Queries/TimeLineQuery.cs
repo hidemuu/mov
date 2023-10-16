@@ -1,5 +1,7 @@
 ﻿using Mov.Analizer.Models.Schemas;
+using Mov.Core.Repositories;
 using Mov.Core.Stores;
+using Mov.Core.Stores.Services.Queries.Readers;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,6 +10,19 @@ namespace Mov.Analizer.Models.Stores.Queries
 {
 	public class TimeLineQuery : IStoreQuery<TimeLineSchema, Guid>
 	{
-		public IRead<TimeLineSchema, Guid> Reader => throw new NotImplementedException();
+		#region property
+
+		public IRead<TimeLineSchema, Guid> Reader { get; }
+
+		#endregion property
+
+		#region constructor
+
+		public TimeLineQuery(IAnalizerRepository repository)
+		{
+			this.Reader = new DbRepositoryReader<IDbRepository<TimeLineSchema, Guid>, TimeLineSchema, Guid>(repository.TimeLines);
+		}
+
+		#endregion constructor
 	}
 }

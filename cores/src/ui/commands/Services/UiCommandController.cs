@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Mov.Core.Commands.Services
 {
@@ -14,7 +15,7 @@ namespace Mov.Core.Commands.Services
         /// <summary>
         /// コマンドハンドラー
         /// </summary>
-        private UiCommandDictionary<TRequest, TResponse> _handler { get; }
+        private UiCommandCollection<TRequest, TResponse> _handler { get; }
 
 		#endregion field
 
@@ -39,15 +40,16 @@ namespace Mov.Core.Commands.Services
         /// <returns></returns>
         public TResponse Invoke(string command, TRequest request)
         {
-            return _handler[command].Invoke(request);
+            return _handler.Get(command).Invoke(request);
         }
 
 		public IReadOnlyDictionary<string, Func<TRequest, TResponse>> CreateCommandHandlers()
 		{
 			var dictionary = new Dictionary<string, Func<TRequest, TResponse>>();
-			foreach (var kvp in _handler)
+			foreach (var command in _handler.GetAll())
 			{
-				dictionary.Add(kvp.Key, kvp.Value.Invoke);
+				dictionary.Add(command.Name, command.Invoke);
+				dictionary.Add(command.ShortName, command.Invoke);
 			}
 			return dictionary;
 		}
@@ -58,15 +60,15 @@ namespace Mov.Core.Commands.Services
 		/// <returns></returns>
 		public IEnumerable<string> GetCommands()
         {
-            return _handler.Keys;
+            return _handler.GetAll().Select(x => x.Name);
         }
 
         public IEnumerable<Tuple<string, string>> GetCommandHelps()
         {
             var commandHelps = new List<Tuple<string, string>>();
-            foreach (var command in _handler)
+            foreach (var command in _handler.GetAll())
             {
-                commandHelps.Add(new Tuple<string, string>(command.Key, command.Value.Help()));
+                commandHelps.Add(new Tuple<string, string>(command.Name, command.Help()));
             }
             return commandHelps;
         }
@@ -89,7 +91,7 @@ namespace Mov.Core.Commands.Services
         /// <returns></returns>
         public bool Exists(string command)
         {
-            return _handler.ContainsKey(command);
+            return _handler.Exists(command);
         }
 
         #endregion method

@@ -29,9 +29,9 @@ namespace Mov.Core.Commands.Services
 
         #region method
 
-        public UiCommandDictionary<TRequest, TResponse> Create(string endpoint, params object[] args)
+        public UiCommandCollection<TRequest, TResponse> Create(string endpoint, params object[] args)
         {
-            var result = new UiCommandDictionary<TRequest, TResponse>();
+            var result = new UiCommandCollection<TRequest, TResponse>();
             var types = ReflectionHelper.GetTypesInNamespace(_assembly, endpoint);
             if (types == null || types.Count() == 0)
             {
@@ -45,7 +45,7 @@ namespace Mov.Core.Commands.Services
                     var instance = args.Any() ?
                         (IUiCommand<TRequest, TResponse>)Activator.CreateInstance(type, args) :
                         (IUiCommand<TRequest, TResponse>)Activator.CreateInstance(type);
-					result.Add(instance.Name, instance);
+					result.Add(instance);
                 }
             }
             catch (Exception ex)

@@ -14,7 +14,7 @@ internal class Program
 
     private static bool _running = true;
 
-    private static ResasConsoleController _resasController;
+    private static ResasCommandController _resasController;
 
     private static IAnalizerRepository? _analizerRepository;
 
@@ -72,7 +72,7 @@ internal class Program
         var apiSetting = apis.FirstOrDefault(x => x.Code.Value.Equals("RESAS-API-KEY")) ?? ApiSetting.Empty;
 		var resasRepository = new RestResasRepository(apiSetting.Value);
         //_regionAnalizerClient = new ResasAnalizerClient(_analizerRepository, resasRepository);
-        _resasController = new ResasConsoleController(resasRepository);
+        _resasController = new ResasCommandController(resasRepository);
 		_handlers = new Dictionary<string, Func<string[], string>>()
 	    {
 		    {"end", EndProgram },

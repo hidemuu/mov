@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mov.Suite.AnalizerClient.Resas.Controllers
 {
-	public class ResasConsoleController : UiCommandController<string[], string>
+	public class ResasCommandController : UiCommandController<string[], string>
 	{
 		#region field
 
@@ -17,8 +17,8 @@ namespace Mov.Suite.AnalizerClient.Resas.Controllers
 
 		#region constructor
 
-		public ResasConsoleController(IResasRepository repository) 
-			: base(new UiCommandFactory<ResasConsoleController, string[], string>(), "Controllers.Commands", repository)
+		public ResasCommandController(IResasRepository repository) 
+			: base(new UiCommandFactory<ResasCommandController, string[], string>(), "Controllers.Commands", repository)
 		{
 			_repository = repository;
 		}

@@ -8,7 +8,7 @@ namespace Mov.Core.Commands.Attributes
     {
         public override void OnEntry(MethodExecutionArgs arg)
         {
-            new UiCommandContext((IUiCommand)arg.Instance);
+            new UiCommandContext<string[], string>((IUiCommand<string[], string>)arg.Instance);
             Console.WriteLine("Entered method: " + arg.Method.Name);
         }
     }

@@ -2,8 +2,8 @@
 
 namespace Mov.Core.Commands
 {
-    public interface IUiCommandFactory<TParameter, TResponse>
+    public interface IUiCommandFactory<TRequest, TResponse>
     {
-        UiCommandDictionary<TParameter, TResponse> Create(string endpoint);
+        UiCommandDictionary<TRequest, TResponse> Create(string endpoint, params object[] args);
     }
 }

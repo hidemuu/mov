@@ -33,11 +33,22 @@ namespace Mov.Core.Models
 
         public static NewLineCode CRLF = new NewLineCode(CODE_CRLF);
 
-        #endregion constructor
+        public static NewLineCode Default = new NewLineCode(Environment.NewLine);
 
-        #region method
+		#endregion constructor
 
-        protected override bool EqualCore(NewLineCode other)
+		#region method
+
+		public override string ToString()
+		{
+			return this.Value;
+		}
+
+		#endregion method
+
+		#region inner method
+
+		protected override bool EqualCore(NewLineCode other)
         {
             return Value.Equals(other.Value, StringComparison.Ordinal);
         }
@@ -47,6 +58,6 @@ namespace Mov.Core.Models
             return Value.GetHashCode();
         }
 
-        #endregion method
+        #endregion inner method
     }
 }

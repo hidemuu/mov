@@ -5,6 +5,7 @@ using Mov.Core.Configurators.Contexts;
 using Mov.Core.Configurators.Models.Entities;
 using Mov.Framework.Services;
 using Mov.Suite.AnalizerClient.Resas;
+using Mov.Suite.AnalizerClient.Resas.Controllers;
 using Mov.Suite.AnalizerClient.Resas.Repository;
 
 internal class Program
@@ -13,21 +14,15 @@ internal class Program
 
     private static bool _running = true;
 
-    private static IDictionary<string, CommandHandler> _handlers = new Dictionary<string, CommandHandler>()
-    {
-        {"resascity", GetRestResasCities },
-        {"resaspref", GetRestResasPrefectures },
-        {"end", EndProgram },
-        {"help", Help }
-    };
-
-    private static IResasRepository? _resasRepository;
+    private static ResasConsoleController _resasController;
 
     private static IAnalizerRepository? _analizerRepository;
 
     private static IRegionAnalizerClient? _regionAnalizerClient;
 
-    private delegate void CommandHandler(IEnumerable<string> parameters);
+	private static IDictionary<string, Func<string[], string>> _handlers;
+
+	private delegate string CommandHandler(string[] parameters);
 
     #endregion field
 
@@ -72,13 +67,23 @@ internal class Program
     private static void Initialize()
     {
 		var resourcePath = PathCreator.GetResourcePath();
-		_analizerRepository = new FileAnalizerRepository(resourcePath);
+		//_analizerRepository = new FileAnalizerRepository(resourcePath);
 
 		ConfiguratorContext.Initialize(PathCreator.GetResourcePath());
         var apis = ConfiguratorContext.Current.Service.ApiSettingQuery.Reader.ReadAll().ToArray();
         var apiSetting = apis.FirstOrDefault(x => x.Code.Value.Equals("RESAS-API-KEY")) ?? ApiSetting.Empty;
-		_resasRepository = new RestResasRepository(apiSetting.Value);
-        _regionAnalizerClient = new ResasAnalizerClient(_analizerRepository, _resasRepository);
+		var resasRepository = new RestResasRepository(apiSetting.Value);
+        //_regionAnalizerClient = new ResasAnalizerClient(_analizerRepository, resasRepository);
+        _resasController = new ResasConsoleController(resasRepository);
+		_handlers = new Dictionary<string, Func<string[], string>>()
+	    {
+		    {"end", EndProgram },
+		    {"help", Help }
+	    };
+        foreach(var command in _resasController.CreateCommandHandlers())
+        {
+            _handlers.Add(command.Key, command.Value);
+        }
 	}
 
     private static void Run()
@@ -131,35 +136,13 @@ internal class Program
 
     #region command handler
 
-    private static void GetRestResasCities(IEnumerable<string> parameters)
-    {
-        var parameterArray = parameters.ToArray();
-        var city = Task.WhenAll(_resasRepository.Cities.GetAsync(null)).Result[0];
-        Console.WriteLine(city.Id);
-        foreach (var result in city.Results)
-        {
-            Console.WriteLine(result);
-        }
-    }
-
-    private static void GetRestResasPrefectures(IEnumerable<string> parameters)
-    {
-        
-        var parameterArray = parameters.ToArray();
-        var prefecture = Task.WhenAll(_resasRepository.Prefectures.GetAsync(null)).Result[0];
-        Console.WriteLine(prefecture.Id);
-        foreach (var result in prefecture.Results)
-        {
-            Console.WriteLine(result);
-        }
-    }
-
-    private static void EndProgram(IEnumerable<string> parameters)
+    private static string EndProgram(IEnumerable<string> parameters)
     {
         _running = false;
+        return string.Empty;
     }
 
-    private static void Help(IEnumerable<string> parameters)
+    private static string Help(IEnumerable<string> parameters)
     {
         Console.WriteLine("----- コマンドリスト ------");
         foreach (var key in _handlers.Keys)
@@ -167,6 +150,7 @@ internal class Program
             Console.WriteLine(key);
         }
         Console.WriteLine("----- end ------");
+        return string.Empty;
     }
 
     #endregion command handler

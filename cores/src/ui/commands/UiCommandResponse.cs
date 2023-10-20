@@ -35,7 +35,7 @@ namespace Mov.Core.Commands
 
         #endregion constructor
 
-        #region method
+        #region inner method
 
         protected override bool EqualCore(UiCommandResponse other)
         {
@@ -47,6 +47,6 @@ namespace Mov.Core.Commands
             return Value.GetHashCode();
         }
 
-        #endregion method
+        #endregion inner method
     }
 }

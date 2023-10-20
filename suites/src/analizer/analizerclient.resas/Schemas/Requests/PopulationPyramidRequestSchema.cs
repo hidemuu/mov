@@ -10,11 +10,13 @@ namespace Mov.Suite.AnalizerClient.Resas.Schemas.Requests
     {
         #region constructor
 
-        public PopulationPyramidRequestSchema(int cityCode, int prefCode) 
+        public PopulationPyramidRequestSchema(int cityCode, int prefCode, int yearRight, int yearLeft) 
             : base(new Dictionary<string, string>()
 			{
 				{ "cityCode", cityCode.ToString() },
+				{ "yearRight", yearRight.ToString() },
 				{ "prefCode", prefCode.ToString() },
+				{ "yearLeft", yearLeft.ToString() },
 			})
         {
         }

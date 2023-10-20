@@ -5,13 +5,13 @@ namespace Mov.Core.Commands.Services
     /// <summary>
     /// 登録コマンドのディクショナリ
     /// </summary>
-    /// <typeparam name="TParameter"></typeparam>
+    /// <typeparam name="TRequest"></typeparam>
     /// <typeparam name="TResponse"></typeparam>
     /// <remarks>
     /// Key : コマンド名
     /// Value : コマンドのインスタンス
     /// </remarks>
-    public class UiCommandDictionary<TParameter, TResponse> : Dictionary<string, IUiCommand>
+    public class UiCommandDictionary<TRequest, TResponse> : Dictionary<string, IUiCommand<TRequest, TResponse>>
     {
     }
 }

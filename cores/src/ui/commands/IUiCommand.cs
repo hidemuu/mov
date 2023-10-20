@@ -3,8 +3,7 @@
     /// <summary>
     /// コマンドのインターフェース
     /// </summary>
-    /// <typeparam name="TService"></typeparam>
-    public interface IUiCommand
+    public interface IUiCommand<TRequest, TResponse>
     {
         #region プロパティ
 
@@ -12,7 +11,7 @@
         /// コマンド名
         /// </summary>
         string Name { get; }
-
+        
         /// <summary>
         /// ショートカット名
         /// </summary>
@@ -25,10 +24,9 @@
         /// <summary>
         /// 実行
         /// </summary>
-        /// <param name="service">処理実装サービス</param>
         /// <param name="args">パラメータ</param>
         /// <returns></returns>
-        void Invoke(string[] args);
+        TResponse Invoke(TRequest request);
 
         /// <summary>
         /// 説明

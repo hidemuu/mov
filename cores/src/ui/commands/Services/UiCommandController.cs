@@ -1,56 +1,95 @@
-﻿using System.Collections.Generic;
+﻿using Mov.Core.Models;
+using System;
+using System.Collections.Generic;
 
 namespace Mov.Core.Commands.Services
 {
     /// <summary>
-    /// UIのコマンドコントローラー
+    /// コマンド実行クラス
     /// </summary>
-    public class UiCommandController<TService> : IUiController
+    public class UiCommandController<TRequest, TResponse> : IUiCommandController<TRequest, TResponse>
     {
         #region field
 
-        private readonly TService _service;
+        /// <summary>
+        /// コマンドハンドラー
+        /// </summary>
+        private UiCommandDictionary<TRequest, TResponse> _handler { get; }
 
-        private readonly UiCommandExecuter<TService, UiCommandResponse> _executer;
+		#endregion field
 
-        #endregion field
+		#region constructor
 
-        #region constructor
-
-        public UiCommandController(TService service, string endpoint)
+		/// <summary>
+		/// コンストラクター
+		/// </summary>
+		public UiCommandController(IUiCommandFactory<TRequest, TResponse> factory, string endpoint, params object[] args)
         {
-            this._service = service;
-            _executer = new UiCommandExecuter<TService, UiCommandResponse>(service, endpoint);
+            _handler = factory.Create(endpoint, args);
         }
 
         #endregion constructor
 
         #region method
 
-        public bool Execute()
+        /// <summary>
+        /// 実行処理
+        /// </summary>
+        /// <param name="command"></param>
+        /// <returns></returns>
+        public TResponse Invoke(string command, TRequest request)
         {
-            return true;
+            return _handler[command].Invoke(request);
         }
 
-        public bool ExecuteCommand(string command, string[] args)
+		public IReadOnlyDictionary<string, Func<TRequest, TResponse>> CreateCommandHandlers()
+		{
+			var dictionary = new Dictionary<string, Func<TRequest, TResponse>>();
+			foreach (var kvp in _handler)
+			{
+				dictionary.Add(kvp.Key, kvp.Value.Invoke);
+			}
+			return dictionary;
+		}
+
+		/// <summary>
+		/// コマンド一覧を取得
+		/// </summary>
+		/// <returns></returns>
+		public IEnumerable<string> GetCommands()
         {
-            _executer.Invoke(command, args);
-            return true;
+            return _handler.Keys;
         }
 
-        public IEnumerable<string> GetCommands()
+        public IEnumerable<Tuple<string, string>> GetCommandHelps()
         {
-            return _executer.GetCommands();
+            var commandHelps = new List<Tuple<string, string>>();
+            foreach (var command in _handler)
+            {
+                commandHelps.Add(new Tuple<string, string>(command.Key, command.Value.Help()));
+            }
+            return commandHelps;
         }
 
-        public bool ExistsCommand(string command)
+        public string GetHelp()
         {
-            return _executer.Exists(command);
+            var help = string.Empty;
+            foreach (var commandHelp in GetCommandHelps())
+            {
+                help += commandHelp.Item1 + " : " + commandHelp.Item2 + NewLineCode.CRLF.Value;
+            }
+            help = help.TrimEnd(NewLineCode.CRLF.Value.ToCharArray());
+            return help;
         }
 
-        public virtual string GetCommandHelp()
+        /// <summary>
+        /// コマンドの存在チェック
+        /// </summary>
+        /// <param name="command"></param>
+        /// <returns></returns>
+        public bool Exists(string command)
         {
-            return _executer.GetHelp();
+            return _handler.ContainsKey(command);
         }
 
         #endregion method

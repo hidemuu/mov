@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace Mov.Core.Commands.Services
 {
-    public class UiCommandFactory<TParameter, TResponse> : IUiCommandFactory<TParameter, TResponse>
+    public class UiCommandFactory<TCommand, TRequest, TResponse> : IUiCommandFactory<TRequest, TResponse>
     {
 
         #region field
@@ -22,16 +22,16 @@ namespace Mov.Core.Commands.Services
         /// </summary>
         public UiCommandFactory()
         {
-            _assembly = ReflectionHelper.GetTypeAssembly<TParameter>();
+            _assembly = ReflectionHelper.GetTypeAssembly<TCommand>();
         }
 
         #endregion constructor
 
         #region method
 
-        public UiCommandDictionary<TParameter, TResponse> Create(string endpoint)
+        public UiCommandDictionary<TRequest, TResponse> Create(string endpoint, params object[] args)
         {
-            var result = new UiCommandDictionary<TParameter, TResponse>();
+            var result = new UiCommandDictionary<TRequest, TResponse>();
             var types = ReflectionHelper.GetTypesInNamespace(_assembly, endpoint);
             if (types == null || types.Count() == 0)
             {
@@ -42,8 +42,10 @@ namespace Mov.Core.Commands.Services
             {
                 foreach (var type in types)
                 {
-                    var instance = (IUiCommand)Activator.CreateInstance(type);
-                    result.Add(instance.Name, instance);
+                    var instance = args.Any() ?
+                        (IUiCommand<TRequest, TResponse>)Activator.CreateInstance(type, args) :
+                        (IUiCommand<TRequest, TResponse>)Activator.CreateInstance(type);
+					result.Add(instance.Name, instance);
                 }
             }
             catch (Exception ex)

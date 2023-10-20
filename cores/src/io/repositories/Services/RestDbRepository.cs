@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Accessors;
 using Mov.Core.Accessors.Clients;
 using Mov.Core.Accessors.Models;
+using Mov.Core.Repositories.Schemas.Requests;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -62,7 +63,11 @@ namespace Mov.Core.Repositories.Services
 
 		public async Task<TEntity> GetRequestAsync(IDbRequestSchema request)
 		{
-			return await _client.GetAsync<TEntity>($"{PARAMETER_KEY}{request.Uri}");
+            if(request is DbRequestSchemaNull)
+            {
+                return await _client.GetAsync<TEntity>(_additionalUri);
+			}
+			return await _client.GetAsync<TEntity>($"{_additionalUri}{PARAMETER_KEY}{request.Uri}");
 		}
 
 		public async Task<ResponseStatus> PostsAsync(IEnumerable<TEntity> entities)

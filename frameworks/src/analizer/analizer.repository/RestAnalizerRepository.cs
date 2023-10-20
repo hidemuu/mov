@@ -14,24 +14,22 @@ namespace Mov.Analizer.Repository
 		#region field
 
 		private readonly string _url;
-		private readonly string _key;
 
 		#endregion field
 
 		#region property
 
-		public IDbRepository<TimeLineSchema, Guid> TimeLines => new RestDbRepository<TimeLineSchema, Guid>(_url, _key, EncodingValue.UTF8, new Dictionary<string, string>());
-		public IDbRepository<TimeTrendSchema, Guid> TimeTrends => new RestDbRepository<TimeTrendSchema, Guid>(_url, _key, EncodingValue.UTF8, new Dictionary<string, string>());
-		public IDbRepository<TableLineSchema, Guid> TableLines => new RestDbRepository<TableLineSchema, Guid>(_url, _key, EncodingValue.UTF8, new Dictionary<string, string>());
+		public IDbRepository<TimeLineSchema, Guid> TimeLines => new RestDbRepository<TimeLineSchema, Guid>(_url, EncodingValue.UTF8, new Dictionary<string, string>());
+		public IDbRepository<TimeTrendSchema, Guid> TimeTrends => new RestDbRepository<TimeTrendSchema, Guid>(_url, EncodingValue.UTF8, new Dictionary<string, string>());
+		public IDbRepository<TableLineSchema, Guid> TableLines => new RestDbRepository<TableLineSchema, Guid>(_url, EncodingValue.UTF8, new Dictionary<string, string>());
 
 		#endregion property
 
 		#region constructor
 
-		public RestAnalizerRepository(string url, string auth)
+		public RestAnalizerRepository(string url)
 		{
 			_url = url;
-			_key = auth;
 		}
 
 		#endregion constructor

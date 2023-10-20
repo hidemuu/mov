@@ -50,13 +50,13 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository
             };
 
             Prefectures = new RestDbRepository<ResasResponseSchema<PrefectureResultSchema>, string>
-                (Path.Combine(endpoint, PrefectureResultSchema.URI), string.Empty, EncodingValue.UTF8, headers);
+                (Path.Combine(endpoint, PrefectureResultSchema.URI), EncodingValue.UTF8, headers);
             Cities = new RestDbRepository<ResasResponseSchema<CityResultSchema>, string>
-                (Path.Combine(endpoint, CityResultSchema.URI), string.Empty, EncodingValue.UTF8, headers);
+                (Path.Combine(endpoint, CityResultSchema.URI), EncodingValue.UTF8, headers);
             PopulationPerYears = new RestDbRepository<ResasResponseSchema<PopulationPerYearResultSchema>, string>
-                (Path.Combine(endpoint, PopulationPerYearResultSchema.URI), string.Empty, EncodingValue.UTF8, headers);
+                (Path.Combine(endpoint, PopulationPerYearResultSchema.URI), EncodingValue.UTF8, headers);
 			PopulationPyramids = new RestDbRepository<ResasResponseSchema<PopulationPyramidResultSchema>, string>
-				(Path.Combine(endpoint, PopulationPyramidResultSchema.URI), string.Empty, EncodingValue.UTF8, headers);
+				(Path.Combine(endpoint, PopulationPyramidResultSchema.URI), EncodingValue.UTF8, headers);
 		}
 
         #endregion constructor

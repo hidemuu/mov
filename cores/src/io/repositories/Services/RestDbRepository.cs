@@ -12,7 +12,7 @@ namespace Mov.Core.Repositories.Services
     {
         #region constant
 
-        private const string API_KEY = "?apikey=";
+        private const string PARAMETER_KEY = "?";
 
         #endregion constant
 
@@ -20,7 +20,7 @@ namespace Mov.Core.Repositories.Services
 
         private readonly IClient _client;
 
-        private readonly string _request;
+        private readonly string _additionalUri;
 
         #endregion field
 
@@ -32,14 +32,14 @@ namespace Mov.Core.Repositories.Services
 
         #region constructor
 
-        public RestDbRepository(IClient client, string request)
+        public RestDbRepository(IClient client, string additionalUri)
         {
             _client = client;
-            _request = request;
+			_additionalUri = additionalUri;
         }
 
-        public RestDbRepository(string url, string request, EncodingValue encode, IReadOnlyDictionary<string, string> headers)
-            : this(new WebClient(new PathValue(url), encode, headers), request)
+        public RestDbRepository(string url, EncodingValue encode, IReadOnlyDictionary<string, string> headers)
+            : this(new WebClient(new PathValue(url), encode, headers), string.Empty)
         {
         }
 
@@ -48,43 +48,48 @@ namespace Mov.Core.Repositories.Services
         #region method
 
         public async Task<IEnumerable<TEntity>> GetsAsync() =>
-            await _client.GetsAsync<TEntity>(_request);
+            await _client.GetsAsync<TEntity>(_additionalUri);
 
         public async Task<TEntity> GetAsync(TIdentifier identidfier)
         {
             if(identidfier == null)
             {
-                return await _client.GetAsync<TEntity>(_request);
+                return await _client.GetAsync<TEntity>(_additionalUri);
             }
-            var entities = await _client.GetsAsync<TEntity>($"/{identidfier}" + _request);
+            var entities = await _client.GetsAsync<TEntity>($"{_additionalUri}/{identidfier}");
             return entities.FirstOrDefault(x => x.Id.Equals(identidfier));
         }
 
+		public async Task<TEntity> GetRequestAsync(IDbRequestSchema request)
+		{
+			return await _client.GetAsync<TEntity>($"{PARAMETER_KEY}{request.Uri}");
+		}
+
 		public async Task<ResponseStatus> PostsAsync(IEnumerable<TEntity> entities)
 		{
-			return await _client.PostAsync(_request, entities);
+			return await _client.PostAsync(_additionalUri, entities);
 		}
 
 		public async Task<ResponseStatus> PostAsync(TEntity entity)
         {
-            return await _client.PostAsync(_request, entity);
+            return await _client.PostAsync(_additionalUri, entity);
         }
 
         public async Task<ResponseStatus> PutAsync(TEntity entity)
         {
-            return await _client.PutAsync(_request, entity);
+            return await _client.PutAsync(_additionalUri, entity);
         }
 
         public async Task<ResponseStatus> DeleteAsync(TEntity entity)
         {
-            return await _client.DeleteAsync(_request, entity.Id);
+            return await _client.DeleteAsync(_additionalUri, entity.Id);
         }
 
         public async Task<ResponseStatus> DeleteAsync(TIdentifier identifier)
         {
-            return await _client.DeleteAsync(_request, identifier);
+            return await _client.DeleteAsync(_additionalUri, identifier);
         }
 
-        #endregion method
-    }
+		#endregion method
+	}
 }

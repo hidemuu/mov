@@ -50,6 +50,11 @@ namespace Mov.Core.Repositories.Services
                 .FirstOrDefaultAsync(x => x.Id.Equals(identifier));
         }
 
+		public Task<TEntity> GetRequestAsync(IDbRequestSchema request)
+		{
+			throw new System.NotImplementedException();
+		}
+
 		public async Task<ResponseStatus> PostsAsync(IEnumerable<TEntity> entities)
         {
             foreach(var entity in entities)
@@ -116,6 +121,6 @@ namespace Mov.Core.Repositories.Services
             }
         }
 
-        #endregion method
-    }
+		#endregion method
+	}
 }

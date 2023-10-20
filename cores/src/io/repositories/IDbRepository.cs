@@ -23,6 +23,8 @@ namespace Mov.Core.Repositories
 
         Task<TEntity> GetAsync(TIdentifier identifier);
 
+        Task<TEntity> GetRequestAsync(IDbRequestSchema request);
+
 		Task<ResponseStatus> PostsAsync(IEnumerable<TEntity> entities);
 
 		Task<ResponseStatus> PostAsync(TEntity entity);

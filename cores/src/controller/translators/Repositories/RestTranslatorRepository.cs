@@ -11,22 +11,20 @@ namespace Mov.Core.Translators.Repositories
         #region field
 
         private readonly string _url;
-        private readonly string _key;
 
         #endregion field
 
         #region property
 
-        public IDbRepository<LocalizeSchema, int> Localizes => new RestDbRepository<LocalizeSchema, int>(_url, _key, EncodingValue.UTF8, new Dictionary<string, string>());
+        public IDbRepository<LocalizeSchema, int> Localizes => new RestDbRepository<LocalizeSchema, int>(_url, EncodingValue.UTF8, new Dictionary<string, string>());
 
         #endregion property
 
         #region constructor
 
-        public RestTranslatorRepository(string url, string auth)
+        public RestTranslatorRepository(string url)
         {
             _url = url;
-            _key = auth;
         }
 
         #endregion constructor

@@ -21,5 +21,10 @@ namespace Mov.Core.Repositories
 
         #endregion property
 
-    }
+        #region method
+
+        bool IsEmpty();
+
+		#endregion method
+	}
 }

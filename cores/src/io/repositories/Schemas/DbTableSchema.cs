@@ -68,11 +68,16 @@ namespace Mov.Core.Repositories.Schemas
             Code = src.Code;
         }
 
-        #endregion コンストラクター
+		#endregion コンストラクター
 
-        #region メソッド
+		#region メソッド
 
-        public virtual string[] GetContentStrings() => new string[] { Code };
+		public bool IsEmpty()
+		{
+			return Id.Equals(default);
+		}
+
+		public virtual string[] GetContentStrings() => new string[] { Code };
 
         public virtual string[] GetHeaderStrings() => new string[] { "Code" };
 
@@ -131,6 +136,6 @@ namespace Mov.Core.Repositories.Schemas
             }
         }
 
-        #endregion 継承メソッド
-    }
+		#endregion 継承メソッド
+	}
 }

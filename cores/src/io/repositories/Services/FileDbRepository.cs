@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Accessors;
 using Mov.Core.Accessors.Clients;
 using Mov.Core.Accessors.Models;
+using Mov.Core.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -72,6 +73,12 @@ namespace Mov.Core.Repositories.Services
             return items.FirstOrDefault(x => x.Id.Equals(identifier));
         }
 
+		public async Task<TEntity> GetRequestAsync(IDbRequestSchema request)
+		{
+			var items = await GetsAsync();
+			return items.FirstOrDefault(x => x.Id.Equals(request.Uri));
+		}
+
 		/// <inheritdoc />
 		public async Task<ResponseStatus> PostsAsync(IEnumerable<TEntity> entities)
 		{
@@ -95,6 +102,6 @@ namespace Mov.Core.Repositories.Services
             return await _client.DeleteAsync("", entity);
         }
 
-        #endregion method
-    }
+		#endregion method
+	}
 }

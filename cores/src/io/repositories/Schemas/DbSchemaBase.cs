@@ -32,11 +32,16 @@ namespace Mov.Core.Repositories.Schemas
             Id = src.Id;
         }
 
-        #endregion constructor
+		#endregion constructor
 
-        #region method
+		#region method
 
-        public override string ToString()
+		public bool IsEmpty()
+		{
+			return Id.Equals(default);
+		}
+
+		public override string ToString()
         {
             return Id.ToString();
         }
@@ -74,6 +79,6 @@ namespace Mov.Core.Repositories.Schemas
             }
         }
 
-        #endregion inner method
-    }
+		#endregion inner method
+	}
 }

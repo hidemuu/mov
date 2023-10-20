@@ -20,9 +20,9 @@ namespace Mov.Analizer.Repository
 
 		#region property
 
-		public IDbRepository<TimeLineSchema, Guid, DbRequestSchemaString> TimeLines => new RestDbRepository<TimeLineSchema, Guid, DbRequestSchemaString>(_url, EncodingValue.UTF8, new Dictionary<string, string>());
-		public IDbRepository<TimeTrendSchema, Guid, DbRequestSchemaString> TimeTrends => new RestDbRepository<TimeTrendSchema, Guid, DbRequestSchemaString>(_url, EncodingValue.UTF8, new Dictionary<string, string>());
-		public IDbRepository<TableLineSchema, Guid, DbRequestSchemaString> TableLines => new RestDbRepository<TableLineSchema, Guid, DbRequestSchemaString>(_url, EncodingValue.UTF8, new Dictionary<string, string>());
+		public IDbRepository<TimeLineSchema, Guid, DbRequestSchemaString> TimeLines => new RestDbRepository<TimeLineSchema, Guid, DbRequestSchemaString>(_url, EncodingValue.UTF8, RequestHeaderSchema.Empty);
+		public IDbRepository<TimeTrendSchema, Guid, DbRequestSchemaString> TimeTrends => new RestDbRepository<TimeTrendSchema, Guid, DbRequestSchemaString>(_url, EncodingValue.UTF8, RequestHeaderSchema.Empty);
+		public IDbRepository<TableLineSchema, Guid, DbRequestSchemaString> TableLines => new RestDbRepository<TableLineSchema, Guid, DbRequestSchemaString>(_url, EncodingValue.UTF8, RequestHeaderSchema.Empty);
 
 		#endregion property
 

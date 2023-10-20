@@ -14,7 +14,7 @@ namespace Mov.Core.Accessors.Clients
 
         private bool _disposedValue;
 
-        private readonly IReadOnlyDictionary<string, string> _headers = new Dictionary<string, string>();
+        private readonly RequestHeaderSchema _header = RequestHeaderSchema.Empty;
 
         #endregion field
 
@@ -30,11 +30,11 @@ namespace Mov.Core.Accessors.Clients
 
         #region constructor
 
-        public WebClient(PathValue endpoint, EncodingValue encoding, IReadOnlyDictionary<string, string> headers)
+        public WebClient(PathValue endpoint, EncodingValue encoding, RequestHeaderSchema header)
         {
             Endpoint = endpoint;
             Encoding = encoding;
-            _headers = headers;
+            _header = header;
         }
 
         ~WebClient()
@@ -62,7 +62,7 @@ namespace Mov.Core.Accessors.Clients
             using (var client = BaseClient())
             {
                 var request = new HttpRequestMessage(HttpMethod.Get, url);
-                foreach(var header in _headers)
+                foreach(var header in _header.Parameters)
                 {
                     request.Headers.Add(header.Key, header.Value);
                 }
@@ -77,7 +77,7 @@ namespace Mov.Core.Accessors.Clients
             using (var client = BaseClient())
             {
                 var request = new HttpRequestMessage(HttpMethod.Get, url);
-                foreach (var header in _headers)
+                foreach (var header in _header.Parameters)
                 {
                     request.Headers.Add(header.Key, header.Value);
                 }

@@ -9,16 +9,18 @@ namespace Mov.Core.Accessors.Models
 	{
 		#region property
 
-		public IReadOnlyDictionary<string, string> Headers { get; }
+		public IReadOnlyDictionary<string, string> Parameters { get; }
 
 		#endregion property
 
 		#region constructor
 
-		public RequestHeaderSchema(IReadOnlyDictionary<string, string> headers) 
+		public RequestHeaderSchema(IReadOnlyDictionary<string, string> parameters) 
 		{
-			Headers = headers;
+			Parameters = parameters;
 		}
+
+		public static RequestHeaderSchema Empty { get; } = new RequestHeaderSchema(new Dictionary<string, string>());
 
 		#endregion constructor
 
@@ -26,12 +28,12 @@ namespace Mov.Core.Accessors.Models
 
 		protected override bool EqualCore(RequestHeaderSchema other)
 		{
-			throw new NotImplementedException();
+			return Parameters.Equals(other.Parameters);
 		}
 
 		protected override int GetHashCodeCore()
 		{
-			throw new NotImplementedException();
+			return Parameters.GetHashCode();
 		}
 
 		#endregion method

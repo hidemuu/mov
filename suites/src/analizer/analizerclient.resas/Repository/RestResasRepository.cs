@@ -45,19 +45,19 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository
         public RestResasRepository(string apiKey)
         {
             var endpoint = DEFAULT_END_POINT;
-            var headers = new Dictionary<string, string>()
+            var header = new RequestHeaderSchema(new Dictionary<string, string>()
             {
                 { HEADER_API_KEY, apiKey },
-            };
+            });
 
             Prefectures = new RestDbRepository<ResasResponseSchema<PrefectureResultSchema>, string, DbRequestSchemaString>
-                (Path.Combine(endpoint, PrefectureResultSchema.URI), EncodingValue.UTF8, headers);
+                (Path.Combine(endpoint, PrefectureResultSchema.URI), EncodingValue.UTF8, header);
             Cities = new RestDbRepository<ResasResponseSchema<CityResultSchema>, string, DbRequestSchemaString>
-                (Path.Combine(endpoint, CityResultSchema.URI), EncodingValue.UTF8, headers);
+                (Path.Combine(endpoint, CityResultSchema.URI), EncodingValue.UTF8, header);
             PopulationPerYears = new RestDbRepository<ResasResponseSchema<PopulationPerYearResultSchema>, string, PopulationPerYearRequestSchema>
-                (Path.Combine(endpoint, PopulationPerYearResultSchema.URI), EncodingValue.UTF8, headers);
+                (Path.Combine(endpoint, PopulationPerYearResultSchema.URI), EncodingValue.UTF8, header);
 			PopulationPyramids = new RestDbRepository<ResasResponseSchema<PopulationPyramidResultSchema>, string, PopulationPyramidRequestSchema>
-				(Path.Combine(endpoint, PopulationPyramidResultSchema.URI), EncodingValue.UTF8, headers);
+				(Path.Combine(endpoint, PopulationPyramidResultSchema.URI), EncodingValue.UTF8, header);
 		}
 
         #endregion constructor

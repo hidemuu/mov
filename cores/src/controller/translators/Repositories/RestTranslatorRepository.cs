@@ -17,7 +17,7 @@ namespace Mov.Core.Translators.Repositories
 
         #region property
 
-        public IDbRepository<LocalizeSchema, int, DbRequestSchemaString> Localizes => new RestDbRepository<LocalizeSchema, int, DbRequestSchemaString>(_url, EncodingValue.UTF8, new Dictionary<string, string>());
+        public IDbRepository<LocalizeSchema, int, DbRequestSchemaString> Localizes => new RestDbRepository<LocalizeSchema, int, DbRequestSchemaString>(_url, EncodingValue.UTF8, RequestHeaderSchema.Empty);
 
         #endregion property
 

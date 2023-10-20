@@ -40,8 +40,8 @@ namespace Mov.Core.Repositories.Services
 			_additionalUri = additionalUri;
         }
 
-        public RestDbRepository(string url, EncodingValue encode, IReadOnlyDictionary<string, string> headers)
-            : this(new WebClient(new PathValue(url), encode, headers), string.Empty)
+        public RestDbRepository(string url, EncodingValue encode, RequestHeaderSchema header)
+            : this(new WebClient(new PathValue(url), encode, header), string.Empty)
         {
         }
 

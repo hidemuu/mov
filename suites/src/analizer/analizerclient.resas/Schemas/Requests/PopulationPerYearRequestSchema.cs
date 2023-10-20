@@ -1,33 +1,28 @@
-﻿using System;
+﻿using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace Mov.Suite.AnalizerClient.Resas.Schemas.Requests
 {
-    public sealed class PopulationPerYearRequestSchema : IResasRequestSchema
+    public sealed class PopulationPerYearRequestSchema : DbRequestSchemaBase
     {
-        #region field
+        
+		#region constructor
 
-        #endregion field
-
-        #region property
-
-        public IReadOnlyDictionary<string, string> Parameters { get; }
-
-        #endregion property
-
-        #region constructor
-
-        public PopulationPerYearRequestSchema(int cityCode, int prefCode) 
+		public PopulationPerYearRequestSchema(int cityCode, int prefCode) 
+            : base(new Dictionary<string, string>()
+			{
+				{ "cityCode", cityCode.ToString() },
+				{ "prefCode", prefCode.ToString() },
+			})
         {
-            Parameters = new Dictionary<string, string>()
-            {
-                { "cityCode", cityCode.ToString() },
-                { "prefCode", prefCode.ToString() },
-            };
+            
         }
 
-        #endregion constructor
+		#endregion constructor
 
-    }
+	}
 }

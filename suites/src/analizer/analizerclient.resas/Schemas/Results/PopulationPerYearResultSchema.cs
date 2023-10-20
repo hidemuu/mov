@@ -11,7 +11,7 @@ namespace Mov.Suite.AnalizerClient.Resas.Schemas.Results
     {
         #region constants
 
-        public const string URI = @"population/composition/perYear?";
+        public const string URI = @"population/composition/perYear";
 
         #endregion constants
 

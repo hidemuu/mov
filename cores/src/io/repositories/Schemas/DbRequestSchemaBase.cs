@@ -16,11 +16,12 @@ namespace Mov.Core.Repositories.Schemas
 
 		public DbRequestSchemaBase(IReadOnlyDictionary<string, string> parameters)
 		{
+			var uri = string.Empty;
 			foreach(var parameter in parameters)
 			{
-				Uri += $"{parameter.Key}={parameter.Value}&";
+				uri += $"{parameter.Key}={parameter.Value}&";
 			}
-			Uri = Uri.TrimEnd('&');
+			Uri = uri.TrimEnd('&');
 		}
 
 		#endregion constructor

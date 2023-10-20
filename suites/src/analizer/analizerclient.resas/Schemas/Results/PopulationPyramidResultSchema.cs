@@ -12,7 +12,7 @@ namespace Mov.Suite.AnalizerClient.Resas.Schemas.Results
     {
         #region constants
 
-        public const string URI = @"population/composition/pyramid?";
+        public const string URI = @"population/composition/pyramid";
 
         #endregion constants
 

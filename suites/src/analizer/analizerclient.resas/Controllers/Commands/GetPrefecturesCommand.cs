@@ -46,7 +46,7 @@ namespace Mov.Suite.AnalizerClient.Resas.Controllers.Commands
 
 		public string Help()
 		{
-			return "都市データ一覧を取得する";
+			return "都道府県データ一覧を取得する";
 		}
 
 		#endregion method

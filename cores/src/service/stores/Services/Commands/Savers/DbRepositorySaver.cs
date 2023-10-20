@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Mov.Core.Stores.Services.Commands.Savers
 {
-	public class DbRepositorySaver<TDbRepository, TEntity, TIdentifier> : ISave<TEntity>
-		where TDbRepository : IDbRepository<TEntity, TIdentifier>
+	public class DbRepositorySaver<TDbRepository, TEntity, TIdentifier, TRequest> : ISave<TEntity>
+		where TDbRepository : IDbRepository<TEntity, TIdentifier, TRequest>
 		where TEntity : IDbSchema<TIdentifier>
+		where TRequest : IDbRequestSchema
 	{
 		#region field
 

@@ -1,5 +1,6 @@
 ﻿using Mov.Core.Accessors.Models;
 using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas.Requests;
 using Mov.Core.Repositories.Services;
 using Mov.Core.Translators.Models.Schemas;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace Mov.Core.Translators.Repositories
 
         #region property
 
-        public IDbRepository<LocalizeSchema, int> Localizes => new RestDbRepository<LocalizeSchema, int>(_url, EncodingValue.UTF8, new Dictionary<string, string>());
+        public IDbRepository<LocalizeSchema, int, DbRequestSchemaString> Localizes => new RestDbRepository<LocalizeSchema, int, DbRequestSchemaString>(_url, EncodingValue.UTF8, new Dictionary<string, string>());
 
         #endregion property
 

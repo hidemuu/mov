@@ -9,8 +9,10 @@ namespace Mov.Core.Repositories
     /// </summary>
     /// <typeparam name="TEntity">entity</typeparam>
     /// <typeparam name="TIdentifier">identifier</typeparam>
-    public interface IDbRepository<TEntity, TIdentifier> where TEntity : IDbSchema<TIdentifier>
-    {
+    public interface IDbRepository<TEntity, TIdentifier, TRequest> 
+        where TEntity : IDbSchema<TIdentifier>
+		where TRequest : IDbRequestSchema
+	{
         #region property
 
         string Endpoint { get; }
@@ -23,7 +25,7 @@ namespace Mov.Core.Repositories
 
         Task<TEntity> GetAsync(TIdentifier identifier);
 
-        Task<TEntity> GetRequestAsync(IDbRequestSchema request);
+        Task<TEntity> GetRequestAsync(TRequest request);
 
 		Task<ResponseStatus> PostsAsync(IEnumerable<TEntity> entities);
 

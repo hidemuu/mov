@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Accessors.Clients;
 using Mov.Core.Accessors.Models;
 using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas.Requests;
 using Mov.Core.Repositories.Services;
 using Mov.Core.Translators.Models.Schemas;
 using System.IO;
@@ -17,7 +18,7 @@ namespace Mov.Core.Translators.Repositories
 
         #region property
 
-        public IDbRepository<LocalizeSchema, int> Localizes { get; }
+        public IDbRepository<LocalizeSchema, int, DbRequestSchemaString> Localizes { get; }
 
         #endregion property
 

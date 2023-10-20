@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Mov.Core.Stores.Services.Queries.Readers
 {
-	public class DbRepositoryReader<TDbRepository, TEntity, TIdentifier> : IRead<TEntity, TIdentifier>
-		where TDbRepository : IDbRepository<TEntity, TIdentifier>
+	public class DbRepositoryReader<TDbRepository, TEntity, TIdentifier, TRequest> : IRead<TEntity, TIdentifier>
+		where TDbRepository : IDbRepository<TEntity, TIdentifier, TRequest>
 		where TEntity : IDbSchema<TIdentifier>
+		where TRequest : IDbRequestSchema
 	{
 		#region field
 

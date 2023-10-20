@@ -2,6 +2,7 @@
 using Mov.Core.Accessors.Clients;
 using Mov.Core.Accessors.Models;
 using Mov.Core.Models;
+using Mov.Core.Repositories.Schemas.Requests;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace Mov.Core.Repositories.Services
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
     /// <typeparam name="TIdentifier"></typeparam>
-    public class FileDbRepository<TEntity, TIdentifier> : IDbRepository<TEntity, TIdentifier>
+    public class FileDbRepository<TEntity, TIdentifier> : IDbRepository<TEntity, TIdentifier, DbRequestSchemaString>
         where TEntity : IDbSchema<TIdentifier>
     {
         #region field
@@ -73,7 +74,7 @@ namespace Mov.Core.Repositories.Services
             return items.FirstOrDefault(x => x.Id.Equals(identifier));
         }
 
-		public async Task<TEntity> GetRequestAsync(IDbRequestSchema request)
+		public async Task<TEntity> GetRequestAsync(DbRequestSchemaString request)
 		{
 			var items = await GetsAsync();
 			return items.FirstOrDefault(x => x.Id.Equals(request.Uri));

@@ -1,5 +1,6 @@
 ﻿using Moq;
 using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas.Requests;
 using Mov.Game.Models;
 using Mov.Game.Models.Schemas;
 using System;
@@ -11,7 +12,7 @@ namespace Mov.Game.Test.Builders
         #region field
 
         private readonly Mock<IGameRepository> _mockRepository;
-        private readonly Mock<IDbRepository<LandmarkSchema, Guid>> _mockLandmark;
+        private readonly Mock<IDbRepository<LandmarkSchema, Guid, DbRequestSchemaString>> _mockLandmark;
 
         #endregion field
 
@@ -20,7 +21,7 @@ namespace Mov.Game.Test.Builders
         public GameRepositoryBuilder()
         {
             _mockRepository = new Mock<IGameRepository>();
-            _mockLandmark = new Mock<IDbRepository<LandmarkSchema, Guid>>();
+            _mockLandmark = new Mock<IDbRepository<LandmarkSchema, Guid, DbRequestSchemaString>>();
         }
 
         #endregion constructor

@@ -1,5 +1,6 @@
 ﻿using Mov.Core.Accessors.Models;
 using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas.Requests;
 using Mov.Core.Repositories.Services;
 using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
@@ -18,13 +19,13 @@ namespace Mov.Designer.Repository
 
         public string Endpoint => "designer";
 
-        public IDbRepository<ShellSchema, Guid> Shells { get; }
+        public IDbRepository<ShellSchema, Guid, DbRequestSchemaString> Shells { get; }
 
-        public IDbRepository<NodeSchema, Guid> Nodes { get; }
+        public IDbRepository<NodeSchema, Guid, DbRequestSchemaString> Nodes { get; }
 
-        public IDbRepository<ContentSchema, Guid> Contents { get; }
+        public IDbRepository<ContentSchema, Guid, DbRequestSchemaString> Contents { get; }
 
-        public IDbRepository<ThemeSchema, Guid> Themes { get; }
+        public IDbRepository<ThemeSchema, Guid, DbRequestSchemaString> Themes { get; }
 
         #endregion property
 

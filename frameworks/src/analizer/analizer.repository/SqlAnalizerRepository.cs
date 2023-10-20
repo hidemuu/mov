@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Mov.Analizer.Models.Schemas;
+using Mov.Core.Repositories.Schemas.Requests;
 
 namespace Mov.Analizer.Repository
 {
@@ -34,11 +35,11 @@ namespace Mov.Analizer.Repository
 
 		#region property
 
-		public IDbRepository<TimeLineSchema, Guid> TimeLines => new SqlDbRepository<TimeLineSchema, Guid>(_db, _db.TimeLines);
+		public IDbRepository<TimeLineSchema, Guid, DbRequestSchemaString> TimeLines => new SqlDbRepository<TimeLineSchema, Guid>(_db, _db.TimeLines);
 
-		public IDbRepository<TimeTrendSchema, Guid> TimeTrends => new SqlDbRepository<TimeTrendSchema, Guid>(_db, _db.TimeTrends);
+		public IDbRepository<TimeTrendSchema, Guid, DbRequestSchemaString> TimeTrends => new SqlDbRepository<TimeTrendSchema, Guid>(_db, _db.TimeTrends);
 
-		public IDbRepository<TableLineSchema, Guid> TableLines => new SqlDbRepository<TableLineSchema, Guid>(_db, _db.TableLines);
+		public IDbRepository<TableLineSchema, Guid, DbRequestSchemaString> TableLines => new SqlDbRepository<TableLineSchema, Guid>(_db, _db.TableLines);
 
 		#endregion proeprty
 

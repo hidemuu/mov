@@ -1,13 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Mov.Core.Accessors.Models;
 using Mov.Core.Repositories.Schemas;
+using Mov.Core.Repositories.Schemas.Requests;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Mov.Core.Repositories.Services
 {
-    public class SqlDbRepository<TEntity, TIdentifier> : IDbRepository<TEntity, TIdentifier>
+    public class SqlDbRepository<TEntity, TIdentifier> : IDbRepository<TEntity, TIdentifier, DbRequestSchemaString>
         where TEntity : DbSchemaBase<TIdentifier>
     {
         #region field
@@ -50,7 +51,7 @@ namespace Mov.Core.Repositories.Services
                 .FirstOrDefaultAsync(x => x.Id.Equals(identifier));
         }
 
-		public Task<TEntity> GetRequestAsync(IDbRequestSchema request)
+		public Task<TEntity> GetRequestAsync(DbRequestSchemaString request)
 		{
 			throw new System.NotImplementedException();
 		}

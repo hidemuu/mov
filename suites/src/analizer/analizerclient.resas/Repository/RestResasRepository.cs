@@ -1,5 +1,6 @@
 ﻿using Mov.Core.Accessors.Models;
 using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas.Requests;
 using Mov.Core.Repositories.Services;
 using Mov.Suite.AnalizerClient.Resas.Schemas;
 using Mov.Suite.AnalizerClient.Resas.Schemas.Requests;
@@ -25,13 +26,13 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository
 
         #region property
 
-        public IDbRepository<ResasResponseSchema<PrefectureResultSchema>, string> Prefectures { get; }
+        public IDbRepository<ResasResponseSchema<PrefectureResultSchema>, string, DbRequestSchemaString> Prefectures { get; }
 
-        public IDbRepository<ResasResponseSchema<CityResultSchema>, string> Cities { get; }
+        public IDbRepository<ResasResponseSchema<CityResultSchema>, string, DbRequestSchemaString> Cities { get; }
 
-        public IDbRepository<ResasResponseSchema<PopulationPerYearResultSchema>, string> PopulationPerYears { get; }
+        public IDbRepository<ResasResponseSchema<PopulationPerYearResultSchema>, string, PopulationPerYearRequestSchema> PopulationPerYears { get; }
 
-        public IDbRepository<ResasResponseSchema<PopulationPyramidResultSchema>, string> PopulationPyramids { get; }
+        public IDbRepository<ResasResponseSchema<PopulationPyramidResultSchema>, string, PopulationPyramidRequestSchema> PopulationPyramids { get; }
 
         #endregion property
 
@@ -49,13 +50,13 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository
                 { HEADER_API_KEY, apiKey },
             };
 
-            Prefectures = new RestDbRepository<ResasResponseSchema<PrefectureResultSchema>, string>
+            Prefectures = new RestDbRepository<ResasResponseSchema<PrefectureResultSchema>, string, DbRequestSchemaString>
                 (Path.Combine(endpoint, PrefectureResultSchema.URI), EncodingValue.UTF8, headers);
-            Cities = new RestDbRepository<ResasResponseSchema<CityResultSchema>, string>
+            Cities = new RestDbRepository<ResasResponseSchema<CityResultSchema>, string, DbRequestSchemaString>
                 (Path.Combine(endpoint, CityResultSchema.URI), EncodingValue.UTF8, headers);
-            PopulationPerYears = new RestDbRepository<ResasResponseSchema<PopulationPerYearResultSchema>, string>
+            PopulationPerYears = new RestDbRepository<ResasResponseSchema<PopulationPerYearResultSchema>, string, PopulationPerYearRequestSchema>
                 (Path.Combine(endpoint, PopulationPerYearResultSchema.URI), EncodingValue.UTF8, headers);
-			PopulationPyramids = new RestDbRepository<ResasResponseSchema<PopulationPyramidResultSchema>, string>
+			PopulationPyramids = new RestDbRepository<ResasResponseSchema<PopulationPyramidResultSchema>, string, PopulationPyramidRequestSchema>
 				(Path.Combine(endpoint, PopulationPyramidResultSchema.URI), EncodingValue.UTF8, headers);
 		}
 

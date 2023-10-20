@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Mov.Core.Stores.Services.Commands.Deleters
 {
-	public class DbRepositoryDeleter<TDbRepository, TEntity, TIdentifier> : IDelete<TEntity>
-		where TDbRepository : IDbRepository<TEntity, TIdentifier>
+	public class DbRepositoryDeleter<TDbRepository, TEntity, TIdentifier, TRequest> : IDelete<TEntity>
+		where TDbRepository : IDbRepository<TEntity, TIdentifier, TRequest>
 		where TEntity : IDbSchema<TIdentifier>
+		where TRequest : IDbRequestSchema
 	{
 		#region field
 

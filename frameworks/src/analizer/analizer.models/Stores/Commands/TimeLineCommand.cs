@@ -1,5 +1,6 @@
 ﻿using Mov.Analizer.Models.Schemas;
 using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas.Requests;
 using Mov.Core.Stores;
 using Mov.Core.Stores.Services.Commands.Deleters;
 using Mov.Core.Stores.Services.Commands.Savers;
@@ -23,8 +24,8 @@ namespace Mov.Analizer.Models.Stores.Commands
 
 		public TimeLineCommand(IAnalizerRepository repository)
 		{
-			this.Saver = new DbRepositorySaver<IDbRepository<TimeLineSchema, Guid>, TimeLineSchema, Guid>(repository.TimeLines);
-			this.Deleter = new DbRepositoryDeleter<IDbRepository<TimeLineSchema, Guid>, TimeLineSchema, Guid>(repository.TimeLines);
+			this.Saver = new DbRepositorySaver<IDbRepository<TimeLineSchema, Guid, DbRequestSchemaString>, TimeLineSchema, Guid, DbRequestSchemaString>(repository.TimeLines);
+			this.Deleter = new DbRepositoryDeleter<IDbRepository<TimeLineSchema, Guid, DbRequestSchemaString>, TimeLineSchema, Guid, DbRequestSchemaString>(repository.TimeLines);
 		}
 
 		#endregion constructor

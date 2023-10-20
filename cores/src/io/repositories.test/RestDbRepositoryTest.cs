@@ -1,4 +1,5 @@
-﻿using Mov.Core.Repositories.Services;
+﻿using Mov.Core.Repositories.Schemas.Requests;
+using Mov.Core.Repositories.Services;
 using Mov.Core.Repositories.Test.Builders;
 using Mov.Core.Repositories.Test.Models;
 
@@ -47,7 +48,7 @@ namespace Mov.Core.Repositories.Test
                 .Build();
 
             // Act
-            var sut = new RestDbRepository<SerializeSchema, int>(client, "");
+            var sut = new RestDbRepository<SerializeSchema, int, DbRequestSchemaString>(client, "");
             var items = Task.WhenAll(sut.GetsAsync()).Result[0].ToArray();
 
             // Assert

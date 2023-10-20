@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Accessors.Models;
 using Mov.Core.Configurators.Models.Schemas;
 using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas.Requests;
 using Mov.Core.Repositories.Services;
 using System;
 using System.IO;
@@ -11,9 +12,9 @@ namespace Mov.Core.Configurators.Repositories
     {
         #region property
 
-        public IDbRepository<ApiSettingSchema, string> ApiSettings { get; }
+        public IDbRepository<ApiSettingSchema, string, DbRequestSchemaString> ApiSettings { get; }
 
-        public IDbRepository<UserSettingSchema, Guid> UserSettings { get; }
+        public IDbRepository<UserSettingSchema, Guid, DbRequestSchemaString> UserSettings { get; }
 
         #endregion property
 

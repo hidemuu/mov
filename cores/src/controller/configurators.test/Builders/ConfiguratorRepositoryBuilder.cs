@@ -1,6 +1,7 @@
 ﻿using Moq;
 using Mov.Core.Configurators.Models.Schemas;
 using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas.Requests;
 
 namespace Mov.Core.Configurators.Test.Builders
 {
@@ -10,7 +11,7 @@ namespace Mov.Core.Configurators.Test.Builders
 
         private readonly Mock<IConfiguratorRepository> _mockConfiguratorRepository;
 
-        private readonly Mock<IDbRepository<UserSettingSchema, Guid>> _mockConfigRepository;
+        private readonly Mock<IDbRepository<UserSettingSchema, Guid, DbRequestSchemaString>> _mockConfigRepository;
 
         #endregion field
 
@@ -19,7 +20,7 @@ namespace Mov.Core.Configurators.Test.Builders
         public ConfiguratorRepositoryBuilder()
         {
             _mockConfiguratorRepository = new Mock<IConfiguratorRepository>();
-            _mockConfigRepository = new Mock<IDbRepository<UserSettingSchema, Guid>>();
+            _mockConfigRepository = new Mock<IDbRepository<UserSettingSchema, Guid, DbRequestSchemaString>>();
         }
 
         #endregion constructor
@@ -29,7 +30,7 @@ namespace Mov.Core.Configurators.Test.Builders
         public IConfiguratorRepository Build()
         {
             _mockConfiguratorRepository
-                .SetupGet<IDbRepository<UserSettingSchema, Guid>>(x => x.UserSettings)
+                .SetupGet<IDbRepository<UserSettingSchema, Guid, DbRequestSchemaString>>(x => x.UserSettings)
                 .Returns(_mockConfigRepository.Object)
                 .Callback(() => { Console.WriteLine("create config"); });
             return _mockConfiguratorRepository.Object;

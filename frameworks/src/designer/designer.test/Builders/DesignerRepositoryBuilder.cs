@@ -1,6 +1,7 @@
 ﻿using Moq;
 using Mov.Core.Accessors.Models;
 using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas.Requests;
 using Mov.Designer.Models;
 using Mov.Designer.Models.Schemas;
 using Mov.Designer.Repository;
@@ -15,7 +16,7 @@ namespace Mov.Designer.Test.Builders
 
         private readonly IDesignerRepository repository;
         private readonly Mock<IDesignerRepository> mockRepository;
-        private readonly Mock<IDbRepository<ContentSchema, Guid>> mockContent;
+        private readonly Mock<IDbRepository<ContentSchema, Guid, DbRequestSchemaString>> mockContent;
 
         #endregion field
 
@@ -24,7 +25,7 @@ namespace Mov.Designer.Test.Builders
         public DesignerRepositoryBuilder()
         {
             mockRepository = new Mock<IDesignerRepository>();
-            mockContent = new Mock<IDbRepository<ContentSchema, Guid>>();
+            mockContent = new Mock<IDbRepository<ContentSchema, Guid, DbRequestSchemaString>>();
             repository = new FileDesignerRepository("", FileType.Empty, EncodingValue.Empty);
         }
 
@@ -36,7 +37,7 @@ namespace Mov.Designer.Test.Builders
 
         public DesignerRepositoryBuilder WithContentCalled(List<ContentSchema> contents)
         {
-            var mockRepositoryContent = new Mock<IDbRepository<ContentSchema, Guid>>();
+            var mockRepositoryContent = new Mock<IDbRepository<ContentSchema, Guid, DbRequestSchemaString>>();
             mockRepositoryContent.Setup(x => x.GetsAsync()).ReturnsAsync(contents);
             mockRepositoryContent.Setup(x => x.PostAsync(new ContentSchema()));
             mockRepositoryContent.Setup(x => x.DeleteAsync(new ContentSchema()));
@@ -47,7 +48,7 @@ namespace Mov.Designer.Test.Builders
 
         public DesignerRepositoryBuilder WithNodeCalled(List<NodeSchema> nodes)
         {
-            var mockNode = new Mock<IDbRepository<NodeSchema, Guid>>();
+            var mockNode = new Mock<IDbRepository<NodeSchema, Guid, DbRequestSchemaString>>();
             mockNode.Setup(x => x.GetsAsync()).ReturnsAsync(nodes);
             mockNode.Setup(x => x.PostAsync(new NodeSchema()));
             mockNode.Setup(x => x.DeleteAsync(new NodeSchema()));

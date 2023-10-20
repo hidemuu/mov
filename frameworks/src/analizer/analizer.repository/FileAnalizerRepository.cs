@@ -2,6 +2,7 @@
 using Mov.Analizer.Models.Schemas;
 using Mov.Core.Accessors.Models;
 using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas.Requests;
 using Mov.Core.Repositories.Services;
 using System;
 using System.IO;
@@ -12,11 +13,11 @@ namespace Mov.Analizer.Repository
     {
 		#region property
 
-		public IDbRepository<TimeLineSchema, Guid> TimeLines { get; }
+		public IDbRepository<TimeLineSchema, Guid, DbRequestSchemaString> TimeLines { get; }
 
-		public IDbRepository<TimeTrendSchema, Guid> TimeTrends { get; }
+		public IDbRepository<TimeTrendSchema, Guid, DbRequestSchemaString> TimeTrends { get; }
 
-		public IDbRepository<TableLineSchema, Guid> TableLines { get; }
+		public IDbRepository<TableLineSchema, Guid, DbRequestSchemaString> TableLines { get; }
 
 		#endregion property
 

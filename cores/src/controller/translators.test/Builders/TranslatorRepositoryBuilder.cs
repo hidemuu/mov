@@ -1,5 +1,6 @@
 ﻿using Moq;
 using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas.Requests;
 using Mov.Core.Translators.Models.Schemas;
 
 namespace Mov.Core.Translators.Test.Builders
@@ -10,7 +11,7 @@ namespace Mov.Core.Translators.Test.Builders
 
         private readonly Mock<ITranslatorRepository> _mockRepository;
 
-        private readonly Mock<IDbRepository<LocalizeSchema, int>> _mockTranslateRepository;
+        private readonly Mock<IDbRepository<LocalizeSchema, int, DbRequestSchemaString>> _mockTranslateRepository;
 
         #endregion field
 
@@ -19,7 +20,7 @@ namespace Mov.Core.Translators.Test.Builders
         public TranslatorRepositoryBuilder()
         {
             _mockRepository = new Mock<ITranslatorRepository>();
-            _mockTranslateRepository = new Mock<IDbRepository<LocalizeSchema, int>>();
+            _mockTranslateRepository = new Mock<IDbRepository<LocalizeSchema, int, DbRequestSchemaString>>();
         }
 
         #endregion constructor
@@ -29,7 +30,7 @@ namespace Mov.Core.Translators.Test.Builders
         public ITranslatorRepository Build()
         {
             _mockRepository
-                .SetupGet<IDbRepository<LocalizeSchema, int>>(x => x.Localizes)
+                .SetupGet<IDbRepository<LocalizeSchema, int, DbRequestSchemaString>>(x => x.Localizes)
                 .Returns(_mockTranslateRepository.Object)
                 .Callback(() => { Console.WriteLine("create translate"); });
             return _mockRepository.Object;

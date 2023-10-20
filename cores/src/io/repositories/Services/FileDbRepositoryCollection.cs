@@ -1,4 +1,5 @@
 ﻿using Mov.Core.Accessors;
+using Mov.Core.Repositories.Schemas.Requests;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,7 +8,7 @@ namespace Mov.Core.Repositories.Services
 {
     public class FileDbRepositoryCollection<TRepository, TEntity, TKey, TInstance>
         : IDbRepositoryCollection<TRepository, TEntity, TKey>
-        where TRepository : IDbRepository<TEntity, TKey>
+        where TRepository : IDbRepository<TEntity, TKey, DbRequestSchemaString>
         where TEntity : IDbSchema<TKey>
         where TInstance : FileDbRepository<TEntity, TKey>
     {

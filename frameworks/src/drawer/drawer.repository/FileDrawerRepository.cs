@@ -1,5 +1,6 @@
 ﻿using Mov.Core.Accessors.Models;
 using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas.Requests;
 using Mov.Core.Repositories.Services;
 using Mov.Drawer.Models;
 using Mov.Drawer.Models.Entities;
@@ -26,7 +27,7 @@ namespace Mov.Drawer.Repository
 
         #region プロパティ
 
-        public IDbRepository<DrawItem, Guid> DrawItems { get; }
+        public IDbRepository<DrawItem, Guid, DbRequestSchemaString> DrawItems { get; }
 
         #endregion プロパティ
     }

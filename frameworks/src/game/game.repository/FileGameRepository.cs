@@ -1,5 +1,6 @@
 ﻿using Mov.Core.Accessors.Models;
 using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas.Requests;
 using Mov.Core.Repositories.Services;
 using Mov.Game.Models;
 using Mov.Game.Models.Schemas;
@@ -25,7 +26,7 @@ namespace Mov.Game.Repository
 
         #region property
 
-        public IDbRepository<LandmarkSchema, Guid> Landmarks { get; }
+        public IDbRepository<LandmarkSchema, Guid, DbRequestSchemaString> Landmarks { get; }
 
         #endregion property
     }

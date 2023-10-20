@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Mov.Core.Repositories;
+using Mov.Core.Repositories.Schemas.Requests;
 using Mov.Core.Repositories.Services;
 using Mov.Core.Translators.Contexts;
 using Mov.Core.Translators.Models.Schemas;
@@ -31,7 +32,7 @@ namespace Mov.Core.Translators.Repositories
 
         #region property
 
-        public IDbRepository<LocalizeSchema, int> Localizes => new SqlDbRepository<LocalizeSchema, int>(_db, _db.Localizes);
+        public IDbRepository<LocalizeSchema, int, DbRequestSchemaString> Localizes => new SqlDbRepository<LocalizeSchema, int>(_db, _db.Localizes);
 
         #endregion proeprty
     }

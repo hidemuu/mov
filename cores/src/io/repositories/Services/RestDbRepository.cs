@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace Mov.Core.Repositories.Services
 {
-    public class RestDbRepository<TEntity, TIdentifier> : IDbRepository<TEntity, TIdentifier>
+    public class RestDbRepository<TEntity, TIdentifier, TRequest> : IDbRepository<TEntity, TIdentifier, TRequest>
         where TEntity : IDbSchema<TIdentifier>
+        where TRequest : IDbRequestSchema
     {
         #region constant
 
@@ -61,7 +62,7 @@ namespace Mov.Core.Repositories.Services
             return entities.FirstOrDefault(x => x.Id.Equals(identidfier));
         }
 
-		public async Task<TEntity> GetRequestAsync(IDbRequestSchema request)
+		public async Task<TEntity> GetRequestAsync(TRequest request)
 		{
             if(request is DbRequestSchemaNull)
             {

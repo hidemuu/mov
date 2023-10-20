@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace Mov.Suite.AnalizerClient.Resas.Schemas
+namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas
 {
     public class ResasResponseSchema<TResult> : DbSchemaBase<string> where TResult : IResasResultSchema
     {

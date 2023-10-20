@@ -1,11 +1,11 @@
-﻿using Mov.Suite.AnalizerClient.Resas.Schemas.Results.Compositions.PopulationPerYears;
+﻿using Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results.Compositions.PopulationPerYears;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace Mov.Suite.AnalizerClient.Resas.Schemas.Results
+namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results
 {
     public sealed class PopulationPerYearResultSchema : IResasResultSchema
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace Mov.Suite.AnalizerClient.Resas.Schemas.Results.Compositions.PopulationPerYears
+namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results.Compositions.PopulationPerYears
 {
     public sealed class PopulationPerYearTypeResultSchema
     {

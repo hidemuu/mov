@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Mov.Suite.AnalizerClient.Resas.Schemas.Results;
-using Mov.Suite.AnalizerClient.Resas.Schemas;
 using Mov.Suite.AnalizerClient.Resas;
+using Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results;
+using Mov.Suite.AnalizerClient.Resas.Repository.Schemas;
 
 namespace Mov.Suite.ReactApp.Controllers
 {

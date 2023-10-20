@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Mov.Suite.AnalizerClient.Resas;
-using Mov.Suite.AnalizerClient.Resas.Schemas;
-using Mov.Suite.AnalizerClient.Resas.Schemas.Results;
 
 namespace Mov.Suite.Api.Controllers
 {

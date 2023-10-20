@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Mov.Suite.AnalizerClient.Resas.Schemas
+namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas
 {
     public interface IResasResultSchema
     {

@@ -2,9 +2,9 @@
 using Mov.Core.Repositories;
 using Mov.Core.Repositories.Schemas.Requests;
 using Mov.Core.Repositories.Services;
-using Mov.Suite.AnalizerClient.Resas.Schemas;
-using Mov.Suite.AnalizerClient.Resas.Schemas.Requests;
-using Mov.Suite.AnalizerClient.Resas.Schemas.Results;
+using Mov.Suite.AnalizerClient.Resas.Repository.Schemas;
+using Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Requests;
+using Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results;
 using System.Collections.Generic;
 using System.IO;
 

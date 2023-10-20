@@ -1,8 +1,8 @@
 ﻿using Mov.Core.Repositories;
 using Mov.Core.Repositories.Schemas.Requests;
-using Mov.Suite.AnalizerClient.Resas.Schemas;
-using Mov.Suite.AnalizerClient.Resas.Schemas.Requests;
-using Mov.Suite.AnalizerClient.Resas.Schemas.Results;
+using Mov.Suite.AnalizerClient.Resas.Repository.Schemas;
+using Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Requests;
+using Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results;
 
 namespace Mov.Suite.AnalizerClient.Resas
 {

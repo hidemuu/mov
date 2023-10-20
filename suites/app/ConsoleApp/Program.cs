@@ -22,8 +22,6 @@ internal class Program
 
 	private static IDictionary<string, Func<string[], string>> _handlers;
 
-	private delegate string CommandHandler(string[] parameters);
-
     #endregion field
 
     #region main method

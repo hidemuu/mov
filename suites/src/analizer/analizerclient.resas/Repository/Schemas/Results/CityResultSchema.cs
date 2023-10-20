@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using System.ComponentModel;
 
-namespace Mov.Suite.AnalizerClient.Resas.Schemas.Results
+namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results
 {
     public sealed class CityResultSchema : IResasResultSchema
     {

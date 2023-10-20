@@ -1,12 +1,12 @@
 ﻿using CsvHelper.Configuration.Attributes;
-using Mov.Suite.AnalizerClient.Resas.Schemas.Results.Compositions.PopulationPyramids;
+using Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results.Compositions.PopulationPyramids;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace Mov.Suite.AnalizerClient.Resas.Schemas.Results
+namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results
 {
     public sealed class PopulationPyramidResultSchema : IResasResultSchema
     {

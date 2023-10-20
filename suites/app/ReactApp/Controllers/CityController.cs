@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Mov.Core.Configurators;
 using Mov.Core.Configurators.Models.Schemas;
 using Mov.Suite.AnalizerClient.Resas;
-using Mov.Suite.AnalizerClient.Resas.Schemas;
-using Mov.Suite.AnalizerClient.Resas.Schemas.Results;
+using Mov.Suite.AnalizerClient.Resas.Repository.Schemas;
+using Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results;
 
 namespace Mov.Suite.ReactApp.Controllers
 {

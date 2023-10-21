@@ -3,6 +3,7 @@ using Mov.Analizer.Models.Schemas;
 using Mov.Analizer.Service;
 using Mov.Suite.AnalizerClient.Resas.Repository;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Mov.Suite.AnalizerClient.Resas
@@ -54,6 +55,8 @@ namespace Mov.Suite.AnalizerClient.Resas
 				});
 			}
 
+            var tableLines = await _analizerRepository.TableLines.GetsAsync();
+            if (tableLines.Any()) return;
             foreach (var schema in schemas)
             {
 				await _analizerRepository.TableLines.PostAsync(schema);

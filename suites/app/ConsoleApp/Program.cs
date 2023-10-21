@@ -16,8 +16,6 @@ internal class Program
 
     private static ResasCommandController _resasController;
 
-    private static IAnalizerRepository? _analizerRepository;
-
     private static IRegionAnalizerClient? _regionAnalizerClient;
 
 	private static IDictionary<string, Func<string[], string>> _handlers;
@@ -65,17 +63,18 @@ internal class Program
     private static void Initialize()
     {
 		var resourcePath = PathCreator.GetResourcePath();
-		//_analizerRepository = new FileAnalizerRepository(resourcePath);
+		var analizerRepository = new FileAnalizerRepository(resourcePath);
 
 		ConfiguratorContext.Initialize(PathCreator.GetResourcePath());
         var apis = ConfiguratorContext.Current.Service.ApiSettingQuery.Reader.ReadAll().ToArray();
         var apiSetting = apis.FirstOrDefault(x => x.Code.Value.Equals("RESAS-API-KEY")) ?? ApiSetting.Empty;
 		var resasRepository = new RestResasRepository(apiSetting.Value);
-        //_regionAnalizerClient = new ResasAnalizerClient(_analizerRepository, resasRepository);
+        _regionAnalizerClient = new ResasAnalizerClient(analizerRepository, resasRepository);
         _resasController = new ResasCommandController(resasRepository);
 		_handlers = new Dictionary<string, Func<string[], string>>()
 	    {
-		    {"end", EndProgram },
+			{"execute", Execute },
+			{"end", EndProgram },
 		    {"help", Help }
 	    };
         foreach(var command in _resasController.CreateCommandHandlers())
@@ -133,6 +132,12 @@ internal class Program
     #endregion private method
 
     #region command handler
+
+    private static string Execute(IEnumerable<string> parameters)
+    {
+        Task.WhenAll(_regionAnalizerClient.UpdateAsync());
+        return string.Empty;
+    }
 
     private static string EndProgram(IEnumerable<string> parameters)
     {

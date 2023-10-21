@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Core.Valuables
 {
-	public sealed class DateValue : ValueObjectBase<DateValue>
+	public sealed class TimeValue : ValueObjectBase<TimeValue>
 	{
 		#region constant
 
@@ -21,16 +21,16 @@ namespace Mov.Core.Valuables
 
 		#region constructor
 
-		public DateValue(DateTime dateTime)
+		public TimeValue(DateTime dateTime)
 		{
 			this.Value = dateTime;
 		}
 
-		public static DateValue Empty { get; } = new DateValue(DateTime.MinValue);
+		public static TimeValue Empty { get; } = new TimeValue(DateTime.MinValue);
 
 		public static class Factory
 		{
-			public static DateValue Create(string y, string m, string d)
+			public static TimeValue Create(string y, string m, string d)
 			{
 				string setYear = y;
 				string setMonth = m;
@@ -43,7 +43,7 @@ namespace Mov.Core.Valuables
 				{
 					setDay = "0" + setDay;
 				}
-				return new DateValue(DateTime.ParseExact(setYear + "/" + setMonth + "/" + setDay, DATE_FORMAT, null));
+				return new TimeValue(DateTime.ParseExact(setYear + "/" + setMonth + "/" + setDay, DATE_FORMAT, null));
 			}
 		}
 
@@ -72,7 +72,7 @@ namespace Mov.Core.Valuables
 			return new DateTime(Value.Year, Value.Month, days);
 		}
 
-		protected override bool EqualCore(DateValue other)
+		protected override bool EqualCore(TimeValue other)
 		{
 			return this.Value.Equals(other.Value);
 		}

@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using Mov.Core.Valuables;
+using System.Threading.Tasks;
 
 namespace Mov.Analizer.Service
 {
@@ -9,8 +10,8 @@ namespace Mov.Analizer.Service
     {
         Task UpdateTableAsync();
 
-        Task UpdateTimeLineAsync();
+        Task GetTimeLineAsync(int prefCode, int cityCode, TimeValue start, TimeValue end);
 
-        Task UpdateTimeTrendAsync();
+        Task GetTimeTrendAsync(int prefCode, int cityCode, TimeValue start, TimeValue end);
     }
 }

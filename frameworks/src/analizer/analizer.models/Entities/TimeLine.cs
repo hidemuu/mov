@@ -7,7 +7,7 @@ namespace Mov.Analizer.Models.Entities
 {
 	public class TimeLine : AnalizeContent
 	{
-		public DateValue StartTime { get; }
-		public DateValue EndTime { get; }
+		public TimeValue StartTime { get; }
+		public TimeValue EndTime { get; }
 	}
 }

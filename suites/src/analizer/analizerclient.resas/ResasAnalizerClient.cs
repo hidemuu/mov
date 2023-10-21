@@ -1,6 +1,7 @@
 ﻿using Mov.Analizer.Models;
 using Mov.Analizer.Models.Schemas;
 using Mov.Analizer.Service;
+using Mov.Core.Valuables;
 using Mov.Suite.AnalizerClient.Resas.Repository;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,7 +61,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 			await _analizerRepository.TableLines.PostsAsync(schemas);
 		}
 
-		public async Task UpdateTimeTrendAsync()
+		public async Task GetTimeTrendAsync(int prefCode, int cityCode, TimeValue start, TimeValue end)
 		{
 			var schemas = new HashSet<TimeTrendSchema>();
 			var populationPerYears = await _resasRepository.PopulationPerYears.GetAsync(null);
@@ -71,12 +72,17 @@ namespace Mov.Suite.AnalizerClient.Resas
 					schemas.Add(new TimeTrendSchema()
 					{
 						Category = "population",
+						Label = populationPerYear.IsAll() ?
+							"all" : populationPerYear.IsYoung() ? 
+							"young" : populationPerYear.IsSenior() ? 
+							"senior" : populationPerYear.IsOld() ? 
+							"old" : string.Empty
 					});
 				}
 			}
 		}
 
-		public Task UpdateTimeLineAsync()
+		public Task GetTimeLineAsync(int prefCode, int cityCode, TimeValue start, TimeValue end)
 		{
 			throw new System.NotImplementedException();
 		}

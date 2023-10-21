@@ -17,6 +17,9 @@
     <Reference Include="Mov.Core.Stores">
       <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Stores.dll</HintPath>
     </Reference>
+    <Reference Include="Mov.Core.Valuables">
+      <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Valuables.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

@@ -4,7 +4,7 @@ namespace Mov.Analizer.Models.Entities
 {
     public class TimeTrend : AnalizeContent
     {
-        public DateValue TimeStamp { get; }
+        public TimeValue TimeStamp { get; }
 		public NumericalValue Content { get; }
 
     }

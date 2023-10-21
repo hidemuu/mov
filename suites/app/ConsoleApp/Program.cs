@@ -147,6 +147,11 @@ internal class Program
         {
             Console.WriteLine(key);
         }
+		Console.WriteLine("----- コマンド説明 ------");
+		foreach (var help in _resasController.GetCommandHelps())
+        {
+            Console.WriteLine($"{help.Item1} : {help.Item2}");
+        }
         Console.WriteLine("----- end ------");
         return string.Empty;
     }

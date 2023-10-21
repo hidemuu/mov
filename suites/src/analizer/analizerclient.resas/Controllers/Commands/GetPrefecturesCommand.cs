@@ -35,13 +35,8 @@ namespace Mov.Suite.AnalizerClient.Resas.Controllers.Commands
 		public string Invoke(string[] args)
 		{
 			var prefecture = Task.WhenAll(_repository.Prefectures.GetAsync(null)).Result[0];
-			var response = $"{prefecture.Id}{Environment.NewLine}";
-			foreach (var result in prefecture.Results)
-			{
-				response += $"{result}{Environment.NewLine}";
-			}
-			Console.WriteLine(response);
-			return response;
+			Console.WriteLine(prefecture);
+			return prefecture.ToString();
 		}
 
 		public string Help()

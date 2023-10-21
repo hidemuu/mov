@@ -4,7 +4,9 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Text;
+using System.Xml.Linq;
 
 namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results
 {
@@ -27,6 +29,15 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results
         public PopulationPyramidYearResultSchema YearRight { get; set; }
 
 
-        #endregion property
-    }
+		#endregion property
+
+		#region method
+
+		public override string ToString()
+        {
+			return $"{YearLeft} {YearRight}";
+		}
+
+		#endregion method
+	}
 }

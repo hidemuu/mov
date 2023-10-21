@@ -30,9 +30,9 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository
 
         public IDbRepository<ResasResponseSchema<CityResultSchema>, string, DbRequestSchemaString> Cities { get; }
 
-        public IDbRepository<ResasResponseSchema<PopulationPerYearResultSchema>, string, PopulationPerYearRequestSchema> PopulationPerYears { get; }
+        public IDbRepository<ResasCompositionResponseSchema<PopulationPerYearResultSchema>, string, PopulationPerYearRequestSchema> PopulationPerYears { get; }
 
-        public IDbRepository<ResasResponseSchema<PopulationPyramidResultSchema>, string, PopulationPyramidRequestSchema> PopulationPyramids { get; }
+        public IDbRepository<ResasCompositionResponseSchema<PopulationPyramidResultSchema>, string, PopulationPyramidRequestSchema> PopulationPyramids { get; }
 
         #endregion property
 
@@ -54,9 +54,9 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository
                 (Path.Combine(endpoint, PrefectureResultSchema.URI), EncodingValue.UTF8, header);
             Cities = new RestDbRepository<ResasResponseSchema<CityResultSchema>, string, DbRequestSchemaString>
                 (Path.Combine(endpoint, CityResultSchema.URI), EncodingValue.UTF8, header);
-            PopulationPerYears = new RestDbRepository<ResasResponseSchema<PopulationPerYearResultSchema>, string, PopulationPerYearRequestSchema>
+            PopulationPerYears = new RestDbRepository<ResasCompositionResponseSchema<PopulationPerYearResultSchema>, string, PopulationPerYearRequestSchema>
                 (Path.Combine(endpoint, PopulationPerYearResultSchema.URI), EncodingValue.UTF8, header);
-			PopulationPyramids = new RestDbRepository<ResasResponseSchema<PopulationPyramidResultSchema>, string, PopulationPyramidRequestSchema>
+			PopulationPyramids = new RestDbRepository<ResasCompositionResponseSchema<PopulationPyramidResultSchema>, string, PopulationPyramidRequestSchema>
 				(Path.Combine(endpoint, PopulationPyramidResultSchema.URI), EncodingValue.UTF8, header);
 		}
 

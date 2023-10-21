@@ -13,14 +13,32 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results
 
         public const string URI = @"population/composition/perYear";
 
-        #endregion constants
+		#endregion constants
 
-        #region property
+		#region property
+
+		[JsonProperty("boundaryYear")]
+		[DisplayName("実績値と推計値の区切り年")]
+		public string BoundaryYear { get; set; }
 
         [JsonProperty("data")]
         [DisplayName("データ")]
         public List<PopulationPerYearTypeResultSchema> Datas { get; set; } = new List<PopulationPerYearTypeResultSchema>();
 
-        #endregion property
-    }
+		#endregion property
+
+		#region method
+
+		public override string ToString()
+		{
+			var response = BoundaryYear;
+			foreach (var data in Datas)
+			{
+				response += $"{data}{Environment.NewLine}";
+			}
+			return response;
+		}
+
+		#endregion method
+	}
 }

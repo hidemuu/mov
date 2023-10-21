@@ -35,7 +35,7 @@ namespace Mov.Suite.ReactApp.Controllers
         /// Gets all items.
         /// </summary>
         [HttpGet]
-        public async Task<IEnumerable<ResasResponseSchema<PopulationPyramidResultSchema>>> Get()
+        public async Task<IEnumerable<ResasCompositionResponseSchema<PopulationPyramidResultSchema>>> Get()
         {
             return await this._repository.PopulationPyramids.GetsAsync();
         }

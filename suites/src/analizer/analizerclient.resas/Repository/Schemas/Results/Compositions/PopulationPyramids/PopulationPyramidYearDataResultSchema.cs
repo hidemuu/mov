@@ -8,7 +8,9 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results.Compositions
 {
     public sealed class PopulationPyramidYearDataResultSchema
     {
-        [JsonProperty("class")]
+		#region property
+
+		[JsonProperty("class")]
         [DisplayName("歳")]
         public string Class { get; set; }
 
@@ -27,5 +29,16 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results.Compositions
         [JsonProperty("womanPercent")]
         [DisplayName("女性比率")]
         public double WomanPercent { get; set; }
-    }
+
+		#endregion property
+
+		#region method
+
+		public override string ToString()
+		{
+            return $"{Class} {Man} {ManPercent} {Woman} {WomanPercent}";
+		}
+
+		#endregion method
+	}
 }

@@ -39,13 +39,8 @@ namespace Mov.Suite.AnalizerClient.Resas.Controllers.Commands
 			if (!int.TryParse(args[0], out int cityCode)) return string.Empty;
 			if (!int.TryParse(args[1], out int prefCode)) return string.Empty;
 			var schema = Task.WhenAll(_repository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(cityCode, prefCode))).Result[0];
-			var response = $"{schema.Id}{Environment.NewLine}";
-			foreach (var result in schema.Results)
-			{
-				response += $"{result}{Environment.NewLine}";
-			}
-			Console.WriteLine(response);
-			return response;
+			Console.WriteLine(schema);
+			return schema.ToString();
 		}
 
 		public string Help()

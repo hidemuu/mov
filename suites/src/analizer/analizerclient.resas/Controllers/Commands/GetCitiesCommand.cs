@@ -36,13 +36,8 @@ namespace Mov.Suite.AnalizerClient.Resas.Controllers.Commands
 		public string Invoke(string[] args)
 		{
 			var city = Task.WhenAll(_repository.Cities.GetAsync(null)).Result[0];
-			var response = $"{city.Id}{Environment.NewLine}";
-			foreach (var result in city.Results)
-			{
-				response += $"{result}{Environment.NewLine}";
-			}
-			Console.WriteLine(response);
-			return response;
+			Console.WriteLine(city);
+			return city.ToString();
 		}
 
 		public string Help()

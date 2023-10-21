@@ -35,7 +35,7 @@ namespace Mov.Suite.ReactApp.Controllers
         /// Gets all items.
         /// </summary>
         [HttpGet]
-        public async Task<IEnumerable<ResasResponseSchema<PopulationPerYearResultSchema>>> Get()
+        public async Task<IEnumerable<ResasCompositionResponseSchema<PopulationPerYearResultSchema>>> Get()
         {
             return await this._repository.PopulationPerYears.GetsAsync();
         }

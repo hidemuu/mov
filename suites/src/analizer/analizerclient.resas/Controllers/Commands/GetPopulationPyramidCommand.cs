@@ -41,18 +41,13 @@ namespace Mov.Suite.AnalizerClient.Resas.Controllers.Commands
 			if (!int.TryParse(args[2], out int yearRight)) return string.Empty;
 			if (!int.TryParse(args[3], out int yearLeft)) return string.Empty;
 			var schema = Task.WhenAll(_repository.PopulationPyramids.GetRequestAsync(new PopulationPyramidRequestSchema(cityCode, prefCode, yearRight, yearLeft))).Result[0];
-			var response = $"{schema.Id}{Environment.NewLine}";
-			foreach (var result in schema.Results)
-			{
-				response += $"{result}{Environment.NewLine}";
-			}
-			Console.WriteLine(response);
-			return response;
+			Console.WriteLine(schema);
+			return schema.ToString();
 		}
 
 		public string Help()
 		{
-			return "指定年間の人口ピラミッドを取得する [cityCode] [prefCode]　[yearright] [yearleft]";
+			return "指定年間の人口ピラミッドを取得する [cityCode] [prefCode] [yearright] [yearleft]";
 		}
 
 		#endregion method

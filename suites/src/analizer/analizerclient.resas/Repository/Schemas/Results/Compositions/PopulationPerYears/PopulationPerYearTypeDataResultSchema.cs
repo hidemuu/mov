@@ -8,12 +8,25 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results.Compositions
 {
     public sealed class PopulationPerYearTypeDataResultSchema
     {
-        [JsonProperty("year")]
+		#region property
+
+		[JsonProperty("year")]
         [DisplayName("年")]
         public int Year { get; set; }
 
         [JsonProperty("value")]
         [DisplayName("値")]
         public int Value { get; set; }
-    }
+
+		#endregion property
+
+		#region method
+
+		public override string ToString()
+		{
+			return $"{Year} {Value}";
+		}
+
+		#endregion method
+	}
 }

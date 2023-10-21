@@ -8,7 +8,9 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results.Compositions
 {
     public sealed class PopulationPyramidYearResultSchema
     {
-        [JsonProperty("year")]
+		#region property
+
+		[JsonProperty("year")]
         [DisplayName("年")]
         public int Year { get; set; }
 
@@ -36,8 +38,24 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results.Compositions
         [DisplayName("0歳～14歳の年少人口(パーセント)")]
         public double NewAgePercent { get; set; }
 
-        [JsonProperty("data")]
+		[JsonProperty("data")]
         [DisplayName("データ")]
         public List<PopulationPyramidYearDataResultSchema> Datas { get; set; } = new List<PopulationPyramidYearDataResultSchema>();
-    }
+
+		#endregion property
+
+		#region method
+
+		public override string ToString()
+		{
+			var response = $"{Year} {OldAgeCount} {OldAgePercent} {MiddleAgeCount} {MiddleAgePercent} {NewAgeCount} {NewAgePercent}";
+			foreach (var data in Datas)
+			{
+				response += $"{data}{Environment.NewLine}";
+			}
+			return response;
+		}
+
+		#endregion method
+	}
 }

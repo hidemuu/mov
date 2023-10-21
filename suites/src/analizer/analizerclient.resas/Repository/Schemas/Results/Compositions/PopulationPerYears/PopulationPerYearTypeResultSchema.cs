@@ -10,6 +10,10 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results.Compositions
     {
 		#region property
 
+		[JsonProperty("label")]
+		[DisplayName("ラベル")]
+		public string Label { get; set; }
+
 		[JsonProperty("data")]
         [DisplayName("データ")]
         public List<PopulationPerYearTypeDataResultSchema> Datas { get; set; } = new List<PopulationPerYearTypeDataResultSchema>();
@@ -20,7 +24,7 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results.Compositions
 
 		public override string ToString()
 		{
-			var response = string.Empty;
+			var response = $"{Label}{Environment.NewLine}";
 			foreach (var data in Datas)
 			{
 				response += $"{data}{Environment.NewLine}";

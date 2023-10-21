@@ -31,7 +31,7 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results
 
 		public override string ToString()
 		{
-			var response = BoundaryYear;
+			var response = $"{BoundaryYear}{Environment.NewLine}";
 			foreach (var data in Datas)
 			{
 				response += $"{data}{Environment.NewLine}";

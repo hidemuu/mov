@@ -48,7 +48,7 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results.Compositions
 
 		public override string ToString()
 		{
-			var response = $"{Year} {OldAgeCount} {OldAgePercent} {MiddleAgeCount} {MiddleAgePercent} {NewAgeCount} {NewAgePercent}";
+			var response = $"{Year} {OldAgeCount} {OldAgePercent} {MiddleAgeCount} {MiddleAgePercent} {NewAgeCount} {NewAgePercent}{Environment.NewLine}";
 			foreach (var data in Datas)
 			{
 				response += $"{data}{Environment.NewLine}";

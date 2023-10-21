@@ -15,8 +15,12 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results.Compositions
         public int Year { get; set; }
 
         [JsonProperty("value")]
-        [DisplayName("値")]
+        [DisplayName("人口")]
         public int Value { get; set; }
+
+		[JsonProperty("rate")]
+		[DisplayName("割合")]
+		public double Rate { get; set; }
 
 		#endregion property
 

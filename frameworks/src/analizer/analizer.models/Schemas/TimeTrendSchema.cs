@@ -9,6 +9,7 @@ namespace Mov.Analizer.Models.Schemas
 		[JsonProperty("timestamp")]
         public string TimeStamp { get; set; } = string.Empty;
 
-		
+		[JsonProperty("value")]
+		public decimal Value { get; set; }
     }
 }

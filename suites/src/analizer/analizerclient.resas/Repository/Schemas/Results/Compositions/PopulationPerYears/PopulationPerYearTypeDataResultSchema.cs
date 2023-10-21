@@ -28,7 +28,7 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results.Compositions
 
 		public override string ToString()
 		{
-			return $"{Year} {Value}";
+			return $"{nameof(Year)}:{Year} {nameof(Value)}:{Value} {nameof(Rate)}:{Rate}";
 		}
 
 		#endregion method

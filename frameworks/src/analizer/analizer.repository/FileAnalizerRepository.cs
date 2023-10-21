@@ -13,11 +13,11 @@ namespace Mov.Analizer.Repository
     {
 		#region property
 
-		public IDbRepository<TimeLineSchema, Guid, DbRequestSchemaString> TimeLines { get; }
+		public IDbRepository<TimeLineSchema, int, DbRequestSchemaString> TimeLines { get; }
 
-		public IDbRepository<TimeTrendSchema, Guid, DbRequestSchemaString> TimeTrends { get; }
+		public IDbRepository<TimeTrendSchema, int, DbRequestSchemaString> TimeTrends { get; }
 
-		public IDbRepository<TableLineSchema, Guid, DbRequestSchemaString> TableLines { get; }
+		public IDbRepository<TableLineSchema, int, DbRequestSchemaString> TableLines { get; }
 
 		#endregion property
 
@@ -25,9 +25,9 @@ namespace Mov.Analizer.Repository
 
 		public FileAnalizerRepository(string endpoint)
 		{
-			TimeLines = FileDbRepository<TimeLineSchema, Guid>.Factory.Create(Path.Combine(endpoint, "timeline.json"), FileType.Json, EncodingValue.UTF8);
-			TimeTrends = FileDbRepository<TimeTrendSchema, Guid>.Factory.Create(Path.Combine(endpoint, "timetrend.json"), FileType.Json, EncodingValue.UTF8);
-			TableLines = FileDbRepository<TableLineSchema, Guid>.Factory.Create(Path.Combine(endpoint, "tableline.json"), FileType.Json, EncodingValue.UTF8);
+			TimeLines = FileDbRepository<TimeLineSchema, int>.Factory.Create(Path.Combine(endpoint, "timeline.json"), FileType.Json, EncodingValue.UTF8);
+			TimeTrends = FileDbRepository<TimeTrendSchema, int>.Factory.Create(Path.Combine(endpoint, "timetrend.json"), FileType.Json, EncodingValue.UTF8);
+			TableLines = FileDbRepository<TableLineSchema, int>.Factory.Create(Path.Combine(endpoint, "tableline.json"), FileType.Json, EncodingValue.UTF8);
 		}
 
 		#endregion constructor

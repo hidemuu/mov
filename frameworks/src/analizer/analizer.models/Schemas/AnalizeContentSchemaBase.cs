@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 
 namespace Mov.Analizer.Models.Schemas
 {
-	public abstract class AnalizeContentSchemaBase : DbSchemaBase<Guid>
+	public abstract class AnalizeContentSchemaBase : DbSchemaBase<int>
 	{
 		/// <summary>
 		/// ID
@@ -19,10 +19,7 @@ namespace Mov.Analizer.Models.Schemas
 		[LanguageKey("id")]
 		[DisplayName("id")]
 		[DisplayIndex(0)]
-		public override Guid Id { get; set; } = Guid.NewGuid();
-
-		[JsonProperty("name")]
-		public string Name { get; set; } = string.Empty;
+		public override int Id { get; set; }
 
 		[JsonProperty("category")]
 		public string Category { get; set; } = string.Empty;

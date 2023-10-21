@@ -7,10 +7,10 @@ namespace Mov.Analizer.Models
 {
     public interface IAnalizerRepository
     {
-		IDbRepository<TimeLineSchema, Guid, DbRequestSchemaString> TimeLines { get; }
+		IDbRepository<TimeLineSchema, int, DbRequestSchemaString> TimeLines { get; }
 
-		IDbRepository<TimeTrendSchema, Guid, DbRequestSchemaString> TimeTrends { get; }
+		IDbRepository<TimeTrendSchema, int, DbRequestSchemaString> TimeTrends { get; }
 
-		IDbRepository<TableLineSchema, Guid, DbRequestSchemaString> TableLines { get; }
+		IDbRepository<TableLineSchema, int, DbRequestSchemaString> TableLines { get; }
 	}
 }

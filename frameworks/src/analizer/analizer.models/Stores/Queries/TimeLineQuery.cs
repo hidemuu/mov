@@ -9,11 +9,11 @@ using System.Text;
 
 namespace Mov.Analizer.Models.Stores.Queries
 {
-	public class TimeLineQuery : IStoreQuery<TimeLineSchema, Guid>
+	public class TimeLineQuery : IStoreQuery<TimeLineSchema, int>
 	{
 		#region property
 
-		public IRead<TimeLineSchema, Guid> Reader { get; }
+		public IRead<TimeLineSchema, int> Reader { get; }
 
 		#endregion property
 
@@ -21,7 +21,7 @@ namespace Mov.Analizer.Models.Stores.Queries
 
 		public TimeLineQuery(IAnalizerRepository repository)
 		{
-			this.Reader = new DbRepositoryReader<IDbRepository<TimeLineSchema, Guid, DbRequestSchemaString>, TimeLineSchema, Guid, DbRequestSchemaString>(repository.TimeLines);
+			this.Reader = new DbRepositoryReader<IDbRepository<TimeLineSchema, int, DbRequestSchemaString>, TimeLineSchema, int, DbRequestSchemaString>(repository.TimeLines);
 		}
 
 		#endregion constructor

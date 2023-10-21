@@ -38,7 +38,7 @@ namespace Mov.Suite.AnalizerClient.Resas
                 schemas.Add(new TableLineSchema()
                 {
                     Category = "city",
-                    Code = city.Code.ToString(),
+                    Id = city.Code,
                     Name = city.Name,
                     Content = city.Name,
                 });
@@ -49,7 +49,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 				schemas.Add(new TableLineSchema()
 				{
 					Category = "prefecture",
-					Code = prefecture.Code.ToString(),
+					Id = prefecture.Code,
 					Name = prefecture.Name,
 					Content = prefecture.Name,
 				});
@@ -57,10 +57,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 
             var tableLines = await _analizerRepository.TableLines.GetsAsync();
             if (tableLines.Any()) return;
-            foreach (var schema in schemas)
-            {
-				await _analizerRepository.TableLines.PostAsync(schema);
-			}
+			await _analizerRepository.TableLines.PostsAsync(schemas);
 		}
 
 		#endregion method

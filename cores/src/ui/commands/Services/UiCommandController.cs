@@ -68,7 +68,7 @@ namespace Mov.Core.Commands.Services
             var commandHelps = new List<Tuple<string, string>>();
             foreach (var command in _handler.GetAll())
             {
-                commandHelps.Add(new Tuple<string, string>(command.Name, command.Help()));
+                commandHelps.Add(new Tuple<string, string>($"{command.Name} : {command.ShortName}", command.Help()));
             }
             return commandHelps;
         }

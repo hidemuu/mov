@@ -61,7 +61,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 			await _analizerRepository.TableLines.PostsAsync(schemas);
 		}
 
-		public async Task GetTimeTrendAsync(int prefCode, int cityCode, TimeValue start, TimeValue end)
+		public async Task GetTimeTrendAsync(int prefCode, int cityCode, string category, string label, TimeValue start, TimeValue end)
 		{
 			var schemas = new HashSet<TimeTrendSchema>();
 			var populationPerYears = await _resasRepository.PopulationPerYears.GetAsync(null);
@@ -82,7 +82,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 			}
 		}
 
-		public Task GetTimeLineAsync(int prefCode, int cityCode, TimeValue start, TimeValue end)
+		public Task GetTimeLineAsync(int prefCode, int cityCode, string category, string label, TimeValue start, TimeValue end)
 		{
 			throw new System.NotImplementedException();
 		}

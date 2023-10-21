@@ -10,8 +10,8 @@ namespace Mov.Analizer.Service
     {
         Task UpdateTableAsync();
 
-        Task GetTimeLineAsync(int prefCode, int cityCode, TimeValue start, TimeValue end);
+        Task GetTimeLineAsync(int prefCode, int cityCode, string category, string label, TimeValue start, TimeValue end);
 
-        Task GetTimeTrendAsync(int prefCode, int cityCode, TimeValue start, TimeValue end);
+        Task GetTimeTrendAsync(int prefCode, int cityCode, string category, string label, TimeValue start, TimeValue end);
     }
 }

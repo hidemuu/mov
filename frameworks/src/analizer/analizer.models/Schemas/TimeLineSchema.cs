@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Analizer.Models.Schemas
 {
-	public class TimeLineSchema : AnalizeContentSchemaBase
+	public class TimeLineSchema : AnalizeContentSchemaBase<string>
 	{
 		[JsonProperty("start_time")]
 		public string StartTime { get; set; } = string.Empty;

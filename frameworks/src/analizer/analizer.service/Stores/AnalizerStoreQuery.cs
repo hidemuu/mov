@@ -18,7 +18,7 @@ namespace Mov.Analizer.Service.Stores
 
 		#region property
 
-		public IStoreQuery<TimeLineSchema, int> TimeLines { get; }
+		public IStoreQuery<TimeLineSchema, string> TimeLines { get; }
 
 		#endregion property
 

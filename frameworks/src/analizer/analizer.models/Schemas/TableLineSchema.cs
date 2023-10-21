@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Analizer.Models.Schemas
 {
-	public class TableLineSchema : AnalizeContentSchemaBase
+	public class TableLineSchema : AnalizeContentSchemaBase<int>
 	{
 
 		[JsonProperty("name")]

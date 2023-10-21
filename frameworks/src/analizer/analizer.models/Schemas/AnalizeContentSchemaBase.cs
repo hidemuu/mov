@@ -10,17 +10,8 @@ using System.Xml.Serialization;
 
 namespace Mov.Analizer.Models.Schemas
 {
-	public abstract class AnalizeContentSchemaBase : DbSchemaBase<int>
+	public abstract class AnalizeContentSchemaBase<TIdentifier> : DbSchemaBase<TIdentifier>
 	{
-		/// <summary>
-		/// ID
-		/// </summary>
-		[JsonProperty("id")]
-		[LanguageKey("id")]
-		[DisplayName("id")]
-		[DisplayIndex(0)]
-		public override int Id { get; set; }
-
 		/// <summary>
 		/// カテゴリ
 		/// </summary>

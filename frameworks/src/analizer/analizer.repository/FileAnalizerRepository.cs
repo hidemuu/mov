@@ -13,9 +13,9 @@ namespace Mov.Analizer.Repository
     {
 		#region property
 
-		public IDbRepository<TimeLineSchema, int, DbRequestSchemaString> TimeLines { get; }
+		public IDbRepository<TimeLineSchema, string, DbRequestSchemaString> TimeLines { get; }
 
-		public IDbRepository<TimeTrendSchema, int, DbRequestSchemaString> TimeTrends { get; }
+		public IDbRepository<TimeTrendSchema, string, DbRequestSchemaString> TimeTrends { get; }
 
 		public IDbRepository<TableLineSchema, int, DbRequestSchemaString> TableLines { get; }
 
@@ -25,8 +25,8 @@ namespace Mov.Analizer.Repository
 
 		public FileAnalizerRepository(string endpoint)
 		{
-			TimeLines = FileDbRepository<TimeLineSchema, int>.Factory.Create(Path.Combine(endpoint, "timeline.json"), FileType.Json, EncodingValue.UTF8);
-			TimeTrends = FileDbRepository<TimeTrendSchema, int>.Factory.Create(Path.Combine(endpoint, "timetrend.json"), FileType.Json, EncodingValue.UTF8);
+			TimeLines = FileDbRepository<TimeLineSchema, string>.Factory.Create(Path.Combine(endpoint, "timeline.json"), FileType.Json, EncodingValue.UTF8);
+			TimeTrends = FileDbRepository<TimeTrendSchema, string>.Factory.Create(Path.Combine(endpoint, "timetrend.json"), FileType.Json, EncodingValue.UTF8);
 			TableLines = FileDbRepository<TableLineSchema, int>.Factory.Create(Path.Combine(endpoint, "tableline.json"), FileType.Json, EncodingValue.UTF8);
 		}
 

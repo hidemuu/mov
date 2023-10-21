@@ -4,7 +4,7 @@ using System;
 
 namespace Mov.Analizer.Models.Schemas
 {
-    public class TimeTrendSchema : AnalizeContentSchemaBase
+    public class TimeTrendSchema : AnalizeContentSchemaBase<string>
 	{
 		[JsonProperty("timestamp")]
         public string TimeStamp { get; set; } = string.Empty;

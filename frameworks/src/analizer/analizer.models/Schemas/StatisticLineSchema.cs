@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Analizer.Models.Schemas
 {
-	public class StatisticLineSchema : AnalizeContentSchemaBase
+	public class StatisticLineSchema : AnalizeContentSchemaBase<string>
 	{
 	}
 }

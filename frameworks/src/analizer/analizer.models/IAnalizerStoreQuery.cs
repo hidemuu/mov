@@ -8,6 +8,6 @@ namespace Mov.Analizer.Models
 {
 	public interface IAnalizerStoreQuery
 	{
-		IStoreQuery<TimeLineSchema, int> TimeLines { get; }
+		IStoreQuery<TimeLineSchema, string> TimeLines { get; }
 	}
 }

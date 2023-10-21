@@ -35,9 +35,12 @@ namespace Mov.Suite.AnalizerClient.Resas.Controllers.Commands
 
 		public string Invoke(string[] args)
 		{
-			var city = Task.WhenAll(_repository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(int.Parse(args[0]), int.Parse(args[1])))).Result[0];
-			var response = $"{city.Id}{Environment.NewLine}";
-			foreach (var result in city.Results)
+			if (args.Length != 2) return string.Empty;
+			if (!int.TryParse(args[0], out int cityCode)) return string.Empty;
+			if (!int.TryParse(args[1], out int prefCode)) return string.Empty;
+			var schema = Task.WhenAll(_repository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(cityCode, prefCode))).Result[0];
+			var response = $"{schema.Id}{Environment.NewLine}";
+			foreach (var result in schema.Results)
 			{
 				response += $"{result}{Environment.NewLine}";
 			}

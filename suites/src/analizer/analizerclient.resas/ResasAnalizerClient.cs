@@ -29,7 +29,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 
         #region method
 
-        public async Task UpdateAsync()
+        public async Task UpdateTableAsync()
         {
 			var schemas = new HashSet<TableLineSchema>();
 			var cities = await _resasRepository.Cities.GetAsync(null);
@@ -58,6 +58,27 @@ namespace Mov.Suite.AnalizerClient.Resas
             var tableLines = await _analizerRepository.TableLines.GetsAsync();
             if (tableLines.Any()) return;
 			await _analizerRepository.TableLines.PostsAsync(schemas);
+		}
+
+		public async Task UpdateTimeTrendAsync()
+		{
+			var schemas = new HashSet<TimeTrendSchema>();
+			var populationPerYears = await _resasRepository.PopulationPerYears.GetAsync(null);
+			foreach (var populationPerYear in populationPerYears.Result.Datas)
+			{
+				foreach (var data in populationPerYear.Datas)
+				{
+					schemas.Add(new TimeTrendSchema()
+					{
+						Category = "population",
+					});
+				}
+			}
+		}
+
+		public Task UpdateTimeLineAsync()
+		{
+			throw new System.NotImplementedException();
 		}
 
 		#endregion method

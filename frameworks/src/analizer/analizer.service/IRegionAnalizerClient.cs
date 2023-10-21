@@ -7,6 +7,10 @@ namespace Mov.Analizer.Service
     /// </summary>
     public interface IRegionAnalizerClient
     {
-        Task UpdateAsync();
+        Task UpdateTableAsync();
+
+        Task UpdateTimeLineAsync();
+
+        Task UpdateTimeTrendAsync();
     }
 }

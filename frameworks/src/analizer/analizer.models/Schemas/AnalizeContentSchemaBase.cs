@@ -21,7 +21,16 @@ namespace Mov.Analizer.Models.Schemas
 		[DisplayIndex(0)]
 		public override int Id { get; set; }
 
+		/// <summary>
+		/// カテゴリ
+		/// </summary>
 		[JsonProperty("category")]
 		public string Category { get; set; } = string.Empty;
+
+		/// <summary>
+		/// ラベル
+		/// </summary>
+		[JsonProperty("label")]
+		public string Label { get; set; } = string.Empty;
 	}
 }

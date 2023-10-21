@@ -10,6 +10,8 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results.Compositions
     {
 		#region property
 
+		/// <summary>ラベル</summary>
+		/// <remarks>総人口 / 年少人口 / 生産年齢人口 / 老年人口</remarks>
 		[JsonProperty("label")]
 		[DisplayName("ラベル")]
 		public string Label { get; set; }
@@ -21,6 +23,15 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results.Compositions
 		#endregion property
 
 		#region method
+
+		public bool IsAll() => Label.Equals("総人口", StringComparison.Ordinal);
+
+		public bool IsYoung() => Label.Equals("年少人口", StringComparison.Ordinal);
+
+		public bool IsSenior() => Label.Equals("生産年齢人口", StringComparison.Ordinal);
+
+		public bool IsOld() => Label.Equals("老年人口", StringComparison.Ordinal);
+
 
 		public override string ToString()
 		{

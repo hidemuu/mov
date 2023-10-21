@@ -49,7 +49,7 @@ namespace Mov.Core.Commands.Services
 			foreach (var command in _handler.GetAll())
 			{
 				dictionary.Add(command.Name, command.Invoke);
-				dictionary.Add(command.ShortName, command.Invoke);
+				//dictionary.Add(command.ShortName, command.Invoke);
 			}
 			return dictionary;
 		}

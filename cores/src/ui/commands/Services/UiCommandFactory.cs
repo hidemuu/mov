@@ -1,5 +1,6 @@
 ﻿using Mov.Core.Helpers;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
@@ -42,6 +43,13 @@ namespace Mov.Core.Commands.Services
             {
                 foreach (var type in types)
                 {
+                    var typeInterfaces = type.GetInterfaces();
+					if (!typeInterfaces.Any(t => 
+                        t.IsConstructedGenericType && 
+                        t.GetGenericTypeDefinition() == typeof(IUiCommand<,>)))
+                    {
+                        continue;
+                    }
                     var instance = args.Any() ?
                         (IUiCommand<TRequest, TResponse>)Activator.CreateInstance(type, args) :
                         (IUiCommand<TRequest, TResponse>)Activator.CreateInstance(type);

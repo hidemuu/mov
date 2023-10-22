@@ -2,6 +2,7 @@
 using Mov.Analizer.Models.Entities;
 using Mov.Analizer.Models.Schemas;
 using Mov.Analizer.Service;
+using Mov.Analizer.Service.Regions;
 using Mov.Core.Valuables;
 using Mov.Suite.AnalizerClient.Resas.Repository;
 using Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Requests;
@@ -55,12 +56,12 @@ namespace Mov.Suite.AnalizerClient.Resas
 			return lines;
 		}
 
-		public async Task<IEnumerable<TimeTrend>> GetTimeTrendAsync(int prefCode, int cityCode, string category, string label, TimeValue start, TimeValue end)
+		public async Task<IEnumerable<TimeTrend>> GetTimeTrendAsync(RegionRequest request, TimeValue start, TimeValue end)
 		{
 			var result = new HashSet<TimeTrend>();
-			if (category.Equals("population", StringComparison.Ordinal))
+			if (request.Category.Equals("population", StringComparison.Ordinal))
 			{
-				var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(prefCode, cityCode));
+				var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(request.PrefCode, request.CityCode));
 				foreach (var populationPerYear in populationPerYears.Result.Datas)
 				{
 					foreach (var data in populationPerYear.Datas)
@@ -72,7 +73,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 								"old" : string.Empty;
 
 						var timeTrend = new TimeTrend(
-							category,
+							request.Category,
 							dataLabel,
 							TimeValue.Factory.CreateByDate(data.Year, 1, 1),
 							new NumericalValue(data.Value)
@@ -86,7 +87,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 			return result;
 		}
 
-		public Task<IEnumerable<TimeLine>> GetTimeLineAsync(int prefCode, int cityCode, string category, string label, TimeValue start, TimeValue end)
+		public Task<IEnumerable<TimeLine>> GetTimeLineAsync(RegionRequest request, TimeValue start, TimeValue end)
 		{
 			throw new System.NotImplementedException();
 		}

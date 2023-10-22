@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Analizer.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -27,6 +28,33 @@ namespace Mov.Analizer.Service.Regions
 			Category = category;
 			Label = label;
 		}
+
+		public static class Factory 
+		{
+			public static RegionRequest Create(string pref, string city, string category, string label, IAnalizerStoreQuery query)
+			{
+				int prefCode = -1;
+				int cityCode = -1;
+				var tableLines = query.TableLines.Reader.ReadAll();
+				foreach(var tableLine in tableLines)
+				{
+					if(tableLine.Category.Equals("prefecture") && tableLine.Content.Equals(pref))
+					{
+						prefCode = tableLine.Id;
+					}
+					if(tableLine.Category.Equals("city") && tableLine.Content.Equals(city))
+					{
+						cityCode = tableLine.Id;
+					}
+					if(prefCode >= 0 && cityCode >= 0)
+					{
+						break;
+					}
+				}
+				return new RegionRequest(prefCode, cityCode, category, label);
+			}
+		}
+
 
 		#endregion constructor
 

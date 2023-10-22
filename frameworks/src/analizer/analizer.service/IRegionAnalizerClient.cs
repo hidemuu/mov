@@ -1,4 +1,6 @@
-﻿using Mov.Core.Valuables;
+﻿using Mov.Analizer.Models.Entities;
+using Mov.Core.Valuables;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Mov.Analizer.Service
@@ -8,10 +10,10 @@ namespace Mov.Analizer.Service
     /// </summary>
     public interface IRegionAnalizerClient
     {
-        Task UpdateTableAsync();
+        Task<IEnumerable<TableLine>> GetTableLineAsync();
 
-        Task GetTimeLineAsync(int prefCode, int cityCode, string category, string label, TimeValue start, TimeValue end);
+        Task<IEnumerable<TimeLine>> GetTimeLineAsync(int prefCode, int cityCode, string category, string label, TimeValue start, TimeValue end);
 
-        Task GetTimeTrendAsync(int prefCode, int cityCode, string category, string label, TimeValue start, TimeValue end);
+        Task<IEnumerable<TimeTrend>> GetTimeTrendAsync(int prefCode, int cityCode, string category, string label, TimeValue start, TimeValue end);
     }
 }

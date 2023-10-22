@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mov.Analizer.Models.Schemas;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -18,9 +19,39 @@ namespace Mov.Analizer.Models.Entities
 
 		#region constructor
 
+		public TableLine(int id, string category, string label, string name, string content)
+		{
+			Id = id;
+			Category = category;
+			Label = label;
+			Name = name;
+			Content = content;
+		}
+
+		public TableLine(TableLineSchema schema)
+		{
+			Id = schema.Id;
+			Category = schema.Category;
+			Label = schema.Label;
+			Name= schema.Name;
+			Content = schema.Content;
+		}
+
 		#endregion constructor
 
 		#region method
+
+		public TableLineSchema CreateSchema()
+		{
+			return new TableLineSchema()
+			{
+				Id = Id,
+				Category = Category,
+				Label = Label,
+				Name = Name,
+				Content = Content
+			};
+		}
 
 		#endregion method
 

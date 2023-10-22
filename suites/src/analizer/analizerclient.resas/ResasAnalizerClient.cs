@@ -31,40 +31,31 @@ namespace Mov.Suite.AnalizerClient.Resas
 
         #region method
 
-        public async Task UpdateTableAsync()
+        public async Task<IEnumerable<TableLine>> GetTableLineAsync()
         {
-			var schemas = new HashSet<TableLineSchema>();
+			var lines = new HashSet<TableLine>();
 			var cities = await _resasRepository.Cities.GetAsync(null);
             foreach (var city in cities.Results)
             {
-                schemas.Add(new TableLineSchema()
-                {
-                    Category = "city",
-                    Id = city.Code,
-                    Name = city.Name,
-                    Content = city.Name,
-                });
+				lines.Add(new TableLine(city.Code, "city", string.Empty, city.Name, city.Name));
             }
 			var prefectures = await _resasRepository.Prefectures.GetAsync(null);
 			foreach (var prefecture in prefectures.Results)
 			{
-				schemas.Add(new TableLineSchema()
-				{
-					Category = "prefecture",
-					Id = prefecture.Code,
-					Name = prefecture.Name,
-					Content = prefecture.Name,
-				});
+				lines.Add(new TableLine(prefecture.Code, "prefecture", string.Empty, prefecture.Name, prefecture.Name));
 			}
 
             var tableLines = await _analizerRepository.TableLines.GetsAsync();
-            if (tableLines.Any()) return;
-			await _analizerRepository.TableLines.PostsAsync(schemas);
+            if (!tableLines.Any())
+			{
+				await _analizerRepository.TableLines.PostsAsync(lines.Select(x => x.CreateSchema()));
+			}
+			return lines;
 		}
 
-		public async Task GetTimeTrendAsync(int prefCode, int cityCode, string category, string label, TimeValue start, TimeValue end)
+		public async Task<IEnumerable<TimeTrend>> GetTimeTrendAsync(int prefCode, int cityCode, string category, string label, TimeValue start, TimeValue end)
 		{
-			var schemas = new HashSet<TimeTrendSchema>();
+			var trends = new HashSet<TimeTrend>();
 			var populationPerYears = await _resasRepository.PopulationPerYears.GetAsync(null);
 			foreach (var populationPerYear in populationPerYears.Result.Datas)
 			{
@@ -81,12 +72,13 @@ namespace Mov.Suite.AnalizerClient.Resas
 						new NumericalValue(data.Value)
 						);
 					
-					schemas.Add(timeTrend.CreateSchema());
+					trends.Add(timeTrend);
 				}
 			}
+			return trends;
 		}
 
-		public Task GetTimeLineAsync(int prefCode, int cityCode, string category, string label, TimeValue start, TimeValue end)
+		public Task<IEnumerable<TimeLine>> GetTimeLineAsync(int prefCode, int cityCode, string category, string label, TimeValue start, TimeValue end)
 		{
 			throw new System.NotImplementedException();
 		}

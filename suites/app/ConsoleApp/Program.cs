@@ -135,7 +135,7 @@ internal class Program
 
     private static string Execute(IEnumerable<string> parameters)
     {
-        Task.WhenAll(_regionAnalizerClient.UpdateTableAsync());
+        Task.WhenAll(_regionAnalizerClient.GetTableLineAsync());
         return string.Empty;
     }
 

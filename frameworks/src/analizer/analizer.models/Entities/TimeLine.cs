@@ -7,9 +7,21 @@ namespace Mov.Analizer.Models.Entities
 {
 	public class TimeLine : IAnalizeContent
 	{
+		#region property
+
 		public string Category { get; }
 		public string Label { get; }
 		public TimeValue StartTime { get; }
 		public TimeValue EndTime { get; }
+
+		#endregion property
+
+		#region constructor
+
+		#endregion constructor
+
+		#region method
+
+		#endregion method
 	}
 }

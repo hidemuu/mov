@@ -12,9 +12,9 @@ namespace Mov.Analizer.Service.Regions
 
 		public int CityCode { get; }
 
-		public string Category { get; }
+		public string Category { get; } = string.Empty;
 
-		public string Label { get; }
+		public string Label { get; } = string.Empty;
 
 		#endregion property
 
@@ -29,5 +29,13 @@ namespace Mov.Analizer.Service.Regions
 		}
 
 		#endregion constructor
+
+		#region method
+
+		public bool IsEmptyCategory() => Category == string.Empty;
+
+		public bool IsEmptyLabel() => Label == string.Empty;
+
+		#endregion method
 	}
 }

@@ -72,14 +72,16 @@ namespace Mov.Suite.AnalizerClient.Resas
 								"senior" : populationPerYear.IsOld() ?
 								"old" : string.Empty;
 
-						var timeTrend = new TimeTrend(
+						if(request.IsEmptyLabel() || request.Label.Equals(dataLabel))
+						{
+							var timeTrend = new TimeTrend(
 							request.Category,
 							dataLabel,
 							TimeValue.Factory.CreateByDate(data.Year, 1, 1),
 							new NumericalValue(data.Value)
 							);
-
-						result.Add(timeTrend);
+							result.Add(timeTrend);
+						}
 					}
 				}
 			}

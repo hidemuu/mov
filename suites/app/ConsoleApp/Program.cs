@@ -1,8 +1,10 @@
 ﻿using Mov.Analizer.Models;
 using Mov.Analizer.Repository;
 using Mov.Analizer.Service;
+using Mov.Analizer.Service.Regions;
 using Mov.Core.Configurators.Contexts;
 using Mov.Core.Configurators.Models.Entities;
+using Mov.Core.Valuables;
 using Mov.Framework.Services;
 using Mov.Suite.AnalizerClient.Resas;
 using Mov.Suite.AnalizerClient.Resas.Controllers;
@@ -135,7 +137,8 @@ internal class Program
 
     private static string Execute(IEnumerable<string> parameters)
     {
-        Task.WhenAll(_regionAnalizerClient.GetTableLineAsync());
+        var tableLines = Task.WhenAll(_regionAnalizerClient.GetTableLineAsync()).Result[0];
+        var timeTrends = Task.WhenAll(_regionAnalizerClient.GetTimeTrendAsync(new RegionRequest(11362, 11, "population", string.Empty).CreateSchema(), TimeValue.Empty, TimeValue.Empty)).Result[0];
         return string.Empty;
     }
 

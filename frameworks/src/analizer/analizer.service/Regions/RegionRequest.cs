@@ -69,6 +69,17 @@ namespace Mov.Analizer.Service.Regions
 
 		public bool IsEmptyLabel() => Label == string.Empty;
 
+		public RegionRequestSchema CreateSchema() 
+		{
+			return new RegionRequestSchema() 
+			{
+				PrefCode = PrefCode,
+				CityCode = CityCode,
+				Category = Category,
+				Label = Label,
+			};
+		}
+
 		#endregion method
 	}
 }

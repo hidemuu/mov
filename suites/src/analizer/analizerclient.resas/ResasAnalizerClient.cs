@@ -56,9 +56,10 @@ namespace Mov.Suite.AnalizerClient.Resas
 			return lines;
 		}
 
-		public async Task<IEnumerable<TimeTrend>> GetTimeTrendAsync(RegionRequest request, TimeValue start, TimeValue end)
+		public async Task<IEnumerable<TimeTrend>> GetTimeTrendAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
 		{
 			var result = new HashSet<TimeTrend>();
+			var request = RegionRequest.Factory.Create(requestSchema);
 			if (request.Category.Equals("population", StringComparison.Ordinal))
 			{
 				var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(request.PrefCode, request.CityCode));
@@ -89,7 +90,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 			return result;
 		}
 
-		public Task<IEnumerable<TimeLine>> GetTimeLineAsync(RegionRequest request, TimeValue start, TimeValue end)
+		public Task<IEnumerable<TimeLine>> GetTimeLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
 		{
 			throw new System.NotImplementedException();
 		}

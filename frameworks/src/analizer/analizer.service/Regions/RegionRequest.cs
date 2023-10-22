@@ -31,6 +31,11 @@ namespace Mov.Analizer.Service.Regions
 
 		public static class Factory 
 		{
+			public static RegionRequest Create(RegionRequestSchema schema)
+			{
+				return new RegionRequest(schema.PrefCode, schema.CityCode, schema.Category, schema.Label);
+			}
+
 			public static RegionRequest Create(string pref, string city, string category, string label, IAnalizerStoreQuery query)
 			{
 				int prefCode = -1;

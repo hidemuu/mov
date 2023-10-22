@@ -13,8 +13,8 @@ namespace Mov.Analizer.Service
     {
         Task<IEnumerable<TableLine>> GetTableLineAsync();
 
-        Task<IEnumerable<TimeLine>> GetTimeLineAsync(RegionRequest request, TimeValue start, TimeValue end);
+        Task<IEnumerable<TimeLine>> GetTimeLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end);
 
-        Task<IEnumerable<TimeTrend>> GetTimeTrendAsync(RegionRequest request, TimeValue start, TimeValue end);
+        Task<IEnumerable<TimeTrend>> GetTimeTrendAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end);
     }
 }

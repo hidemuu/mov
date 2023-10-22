@@ -4,6 +4,8 @@ using Mov.Analizer.Models.Schemas;
 using Mov.Analizer.Service;
 using Mov.Core.Valuables;
 using Mov.Suite.AnalizerClient.Resas.Repository;
+using Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Requests;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -55,27 +57,33 @@ namespace Mov.Suite.AnalizerClient.Resas
 
 		public async Task<IEnumerable<TimeTrend>> GetTimeTrendAsync(int prefCode, int cityCode, string category, string label, TimeValue start, TimeValue end)
 		{
-			var trends = new HashSet<TimeTrend>();
-			var populationPerYears = await _resasRepository.PopulationPerYears.GetAsync(null);
-			foreach (var populationPerYear in populationPerYears.Result.Datas)
+			var result = new HashSet<TimeTrend>();
+			if (category.Equals("population", StringComparison.Ordinal))
 			{
-				foreach (var data in populationPerYear.Datas)
+				var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(prefCode, cityCode));
+				foreach (var populationPerYear in populationPerYears.Result.Datas)
 				{
-					var timeTrend = new TimeTrend(
-						"population",
-						populationPerYear.IsAll() ?
-							"all" : populationPerYear.IsYoung() ?
-							"young" : populationPerYear.IsSenior() ?
-							"senior" : populationPerYear.IsOld() ?
-							"old" : string.Empty,
-						TimeValue.Factory.CreateByDate(data.Year, 1, 1),
-						new NumericalValue(data.Value)
-						);
-					
-					trends.Add(timeTrend);
+					foreach (var data in populationPerYear.Datas)
+					{
+						var dataLabel = populationPerYear.IsAll() ?
+								"all" : populationPerYear.IsYoung() ?
+								"young" : populationPerYear.IsSenior() ?
+								"senior" : populationPerYear.IsOld() ?
+								"old" : string.Empty;
+
+						var timeTrend = new TimeTrend(
+							category,
+							dataLabel,
+							TimeValue.Factory.CreateByDate(data.Year, 1, 1),
+							new NumericalValue(data.Value)
+							);
+
+						result.Add(timeTrend);
+					}
 				}
 			}
-			return trends;
+			
+			return result;
 		}
 
 		public Task<IEnumerable<TimeLine>> GetTimeLineAsync(int prefCode, int cityCode, string category, string label, TimeValue start, TimeValue end)

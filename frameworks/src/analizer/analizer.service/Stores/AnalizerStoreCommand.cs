@@ -1,6 +1,7 @@
 ﻿using Mov.Analizer.Models;
 using Mov.Analizer.Models.Schemas;
 using Mov.Analizer.Models.Stores.Commands;
+using Mov.Analizer.Models.Stores.Queries;
 using Mov.Core.Stores;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,10 @@ namespace Mov.Analizer.Service.Stores
 
 		#region property
 
+		public IStoreCommand<TableLineSchema> TableLines { get; }
+
+		public IStoreCommand<TimeTrendSchema> TimeTrends { get; }
+
 		public IStoreCommand<TimeLineSchema> TimeLines { get; }
 
 		#endregion property
@@ -27,6 +32,8 @@ namespace Mov.Analizer.Service.Stores
 		public AnalizerStoreCommand(IAnalizerRepository repository)
 		{
 			_repository = repository;
+			this.TableLines = new TableLineCommand(repository);
+			this.TimeTrends = new TimeTrendCommand(repository);
 			this.TimeLines = new TimeLineCommand(repository);
 		}
 

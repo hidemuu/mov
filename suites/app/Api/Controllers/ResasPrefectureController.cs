@@ -9,7 +9,7 @@ namespace Mov.Suite.Api.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class CityController : ControllerBase
+    public class ResasPrefectureController : ControllerBase
     {
         #region field
 
@@ -23,7 +23,7 @@ namespace Mov.Suite.Api.Controllers
         /// controller for configuration
         /// </summary>
         /// <param name="repository"></param>
-        public CityController(IResasRepository repository)
+        public ResasPrefectureController(IResasRepository repository)
         {
             this._repository = repository;
         }
@@ -38,7 +38,7 @@ namespace Mov.Suite.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await this._repository.Cities.GetAsync(null));
+            return Ok(await this._repository.Prefectures.GetAsync(null));
         }
 
         #endregion method

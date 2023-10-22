@@ -1,4 +1,5 @@
 ﻿using Mov.Analizer.Models.Entities;
+using Mov.Analizer.Models.Schemas;
 using Mov.Analizer.Service.Regions;
 using Mov.Core.Valuables;
 using System.Collections.Generic;
@@ -11,10 +12,10 @@ namespace Mov.Analizer.Service
     /// </summary>
     public interface IRegionAnalizerClient
     {
-        Task<IEnumerable<TableLine>> GetTableLineAsync();
+        Task<IEnumerable<TableLineSchema>> GetTableLineAsync();
 
-        Task<IEnumerable<TimeLine>> GetTimeLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end);
+        Task<IEnumerable<TimeLineSchema>> GetTimeLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end);
 
-        Task<IEnumerable<TimeTrend>> GetTimeTrendAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end);
+        Task<IEnumerable<TimeTrendSchema>> GetTimeTrendAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end);
     }
 }

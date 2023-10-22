@@ -34,7 +34,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 
         #region method
 
-        public async Task<IEnumerable<TableLine>> GetTableLineAsync()
+        public async Task<IEnumerable<TableLineSchema>> GetTableLineAsync()
         {
 			var lines = new HashSet<TableLine>();
 			var cities = await _resasRepository.Cities.GetAsync(null);
@@ -53,10 +53,10 @@ namespace Mov.Suite.AnalizerClient.Resas
 			{
 				await _analizerRepository.TableLines.PostsAsync(lines.Select(x => x.CreateSchema()));
 			}
-			return lines;
+			return lines.Select(x => x.CreateSchema());
 		}
 
-		public async Task<IEnumerable<TimeTrend>> GetTimeTrendAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
+		public async Task<IEnumerable<TimeTrendSchema>> GetTimeTrendAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
 		{
 			var result = new HashSet<TimeTrend>();
 			var request = RegionRequest.Factory.Create(requestSchema);
@@ -87,10 +87,10 @@ namespace Mov.Suite.AnalizerClient.Resas
 				}
 			}
 			
-			return result;
+			return result.Select(x => x.CreateSchema());
 		}
 
-		public Task<IEnumerable<TimeLine>> GetTimeLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
+		public Task<IEnumerable<TimeLineSchema>> GetTimeLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
 		{
 			throw new System.NotImplementedException();
 		}

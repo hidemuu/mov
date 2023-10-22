@@ -37,10 +37,20 @@ namespace Mov.Suite.Api.Controllers
 		/// <summary>
 		/// Gets all items.
 		/// </summary>
-		[HttpGet("{schema}/{start}/{end}")]
-		public async Task<IActionResult> Get(RegionRequestSchema schema, string srart, string end)
+		[HttpGet("{prefCode}/{cityCode}/{category}/{label}/{start}/{end}")]
+		public async Task<IActionResult> Get(int prefCode, int cityCode, string category, string label, string srart, string end)
 		{
-			return Ok(await this._client.GetTimeTrendAsync(schema, TimeValue.Factory.Create(srart), TimeValue.Factory.Create(end)));
+			return Ok(await this._client.GetTimeTrendAsync(
+				new RegionRequestSchema() 
+				{
+					PrefCode = prefCode, 
+					CityCode = cityCode, 
+					Category = category, 
+					Label = label 
+				}, 
+				TimeValue.Factory.Create(srart), 
+				TimeValue.Factory.Create(end)
+			));
 		}
 
 		#endregion method

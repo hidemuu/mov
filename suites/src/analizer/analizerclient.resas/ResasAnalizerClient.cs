@@ -49,7 +49,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 			}
 
             var tableLines = await _analizerRepository.TableLines.GetsAsync();
-            if (!tableLines.Any())
+            if (!tableLines?.Any() ?? true)
 			{
 				await _analizerRepository.TableLines.PostsAsync(lines.Select(x => x.CreateSchema()));
 			}

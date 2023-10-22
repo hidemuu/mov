@@ -1,4 +1,5 @@
 ﻿using Mov.Analizer.Models;
+using Mov.Analizer.Models.Entities;
 using Mov.Analizer.Models.Schemas;
 using Mov.Analizer.Service;
 using Mov.Core.Valuables;
@@ -69,15 +70,18 @@ namespace Mov.Suite.AnalizerClient.Resas
 			{
 				foreach (var data in populationPerYear.Datas)
 				{
-					schemas.Add(new TimeTrendSchema()
-					{
-						Category = "population",
-						Label = populationPerYear.IsAll() ?
-							"all" : populationPerYear.IsYoung() ? 
-							"young" : populationPerYear.IsSenior() ? 
-							"senior" : populationPerYear.IsOld() ? 
-							"old" : string.Empty
-					});
+					var timeTrend = new TimeTrend(
+						"population",
+						populationPerYear.IsAll() ?
+							"all" : populationPerYear.IsYoung() ?
+							"young" : populationPerYear.IsSenior() ?
+							"senior" : populationPerYear.IsOld() ?
+							"old" : string.Empty,
+						TimeValue.Factory.CreateByDate(data.Year, 1, 1),
+						new NumericalValue(data.Value)
+						);
+					
+					schemas.Add(timeTrend.CreateSchema());
 				}
 			}
 		}

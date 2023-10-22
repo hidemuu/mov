@@ -5,8 +5,10 @@ using System.Text;
 
 namespace Mov.Analizer.Models.Entities
 {
-	public class StatisticLine : AnalizeContent
+	public class StatisticLine : IAnalizeContent
 	{
+		public string Category { get; }
+		public string Label { get; }
 		public IEnumerable<NumericalValue> Values { get; }
 		
 		public NumericalValue Max { get; }

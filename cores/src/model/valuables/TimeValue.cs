@@ -11,6 +11,10 @@ namespace Mov.Core.Valuables
 
 		private const string DATE_FORMAT = "yyyy/MM/dd";
 
+		private const string DATE_FORMAT_JA = "ggyy年M月d日";
+
+		private const string DATETIME_FORMAT = "yyyy/MM/dd HH:mm:ss";
+
 		#endregion constant
 
 		#region property
@@ -30,7 +34,12 @@ namespace Mov.Core.Valuables
 
 		public static class Factory
 		{
-			public static TimeValue Create(string y, string m, string d)
+			public static TimeValue Create(string dateTime)
+			{
+				return new TimeValue(DateTime.Parse(dateTime));
+			}
+
+			public static TimeValue CreateByDate(string y, string m, string d)
 			{
 				string setYear = y;
 				string setMonth = m;
@@ -43,7 +52,20 @@ namespace Mov.Core.Valuables
 				{
 					setDay = "0" + setDay;
 				}
-				return new TimeValue(DateTime.ParseExact(setYear + "/" + setMonth + "/" + setDay, DATE_FORMAT, null));
+				return new TimeValue(DateTime.ParseExact($@"{setYear}/{setMonth}/{setDay}", DATE_FORMAT, null));
+			}
+
+			public static TimeValue CreateByDate(int year, int month, int day)
+			{
+				return new TimeValue(new DateTime(year, month, day));
+			}
+
+			public static TimeValue CreateByDate(int date)
+			{
+				int year = date / 10000;
+				int month = (date / 100) % 100;
+				int day = (date % 100);
+				return new TimeValue(new DateTime(year, month, day));
 			}
 		}
 
@@ -53,8 +75,35 @@ namespace Mov.Core.Valuables
 
 		public bool IsEmpty() => this.Value.Equals(Empty);
 
+		public string ToStringDate()
+		{
+			return this.Value.ToString(DATE_FORMAT);
+		}
+
+		public string ToStringJapaneseDate()
+		{
+			System.Globalization.CultureInfo Info = new System.Globalization.CultureInfo("ja-JP");
+			Info.DateTimeFormat.Calendar = new System.Globalization.JapaneseCalendar();
+			return this.Value.ToString(DATE_FORMAT_JA);
+		}
+
+		public string ToStringDateTime()
+		{
+			return this.Value.ToString(DATETIME_FORMAT);
+		}
+
+		public int ToIntDate()
+		{
+			return int.Parse(this.Value.ToString(DATE_FORMAT));
+		}
+
+		public int ToIntDateTime()
+		{
+			return int.Parse(this.Value.ToString(DATETIME_FORMAT));
+		}
+
 		/// <summary>
-		/// 月の最初の日を求める（DateTime版）
+		/// 月の最初の日を求める
 		/// </summary>
 		/// <returns>月の初日</returns>
 		public DateTime GetFirstDayOfMonth()
@@ -63,7 +112,7 @@ namespace Mov.Core.Valuables
 		}
 
 		/// <summary>
-		/// 月の最後の日を求める（DateTime版）
+		/// 月の最後の日を求める
 		/// </summary>
 		/// <returns>月の最終日</returns>
 		public DateTime GetLastDayOfMonth()

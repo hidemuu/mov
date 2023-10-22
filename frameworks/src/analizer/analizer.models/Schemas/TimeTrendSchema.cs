@@ -1,6 +1,10 @@
-﻿using Mov.Core.Repositories.Schemas;
+﻿using Mov.Core.Attributes;
+using Mov.Core.Models;
+using Mov.Core.Repositories.Schemas;
 using Newtonsoft.Json;
 using System;
+using System.ComponentModel;
+using System.Xml.Serialization;
 
 namespace Mov.Analizer.Models.Schemas
 {

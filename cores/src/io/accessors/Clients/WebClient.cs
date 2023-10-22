@@ -1,4 +1,5 @@
 ﻿using Mov.Core.Accessors.Models;
+using Mov.Core.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -119,11 +120,21 @@ namespace Mov.Core.Accessors.Clients
             }
         }
 
-        /// <summary>
-        /// Makes an HTTP DELETE request to the given controller and includes all the given
-        /// object's properties as URL parameters. Returns the deserialized response content.
-        /// </summary>
-        public async Task<ResponseStatus> DeleteAsync<TIdentifier>(string url, TIdentifier identifier)
+		public async Task<ResponseStatus> DeletesAsync(string url)
+		{
+			using (var client = BaseClient())
+            {
+				await client.DeleteAsync(url);
+			}
+			return ResponseStatus.Success;
+		}
+
+
+		/// <summary>
+		/// Makes an HTTP DELETE request to the given controller and includes all the given
+		/// object's properties as URL parameters. Returns the deserialized response content.
+		/// </summary>
+		public async Task<ResponseStatus> DeleteAsync<TIdentifier>(string url, TIdentifier identifier)
         {
             using (var client = BaseClient())
             {
@@ -170,7 +181,7 @@ namespace Mov.Core.Accessors.Clients
             }
         }
 
-        #endregion inner method
+		#endregion inner method
 
-    }
+	}
 }

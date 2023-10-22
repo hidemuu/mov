@@ -14,7 +14,12 @@ namespace Mov.Core.Accessors.Clients
             throw new NotImplementedException();
         }
 
-        public void Dispose()
+		public Task<ResponseStatus> DeletesAsync(string url)
+		{
+			throw new NotImplementedException();
+		}
+
+		public void Dispose()
         {
             throw new NotImplementedException();
         }

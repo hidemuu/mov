@@ -101,14 +101,24 @@ namespace Mov.Core.Repositories.Services
             throw new System.NotImplementedException();
         }
 
-        public async Task<ResponseStatus> DeleteAsync(TEntity entity)
+		public async Task<ResponseStatus> DeletesAsync()
+		{
+			foreach (var t in _ts)
+			{
+				_ts.Remove(t);
+				await _db.SaveChangesAsync();
+			}
+			return ResponseStatus.Success;
+		}
+
+		public async Task<ResponseStatus> DeleteAsync(TEntity entity)
         {
             var identtifier = entity.Id;
             await DeleteAsync(identtifier);
             return ResponseStatus.Success;
         }
 
-        public async Task DeleteAsync(TIdentifier identifier)
+		public async Task DeleteAsync(TIdentifier identifier)
         {
             var query = _ts.Where(x => x.Id.Equals(identifier));
             foreach (var q in query)

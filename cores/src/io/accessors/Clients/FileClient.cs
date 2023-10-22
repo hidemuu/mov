@@ -127,7 +127,15 @@ namespace Mov.Core.Accessors.Clients
             return ResponseStatus.Success;
         }
 
-        public async Task<ResponseStatus> DeleteAsync<TEntity>(string url, TEntity entity)
+		public async Task<ResponseStatus> DeletesAsync(string url)
+		{
+			var path = Endpoint.Combine(url);
+			if (!File.Exists(path.Value)) { return ResponseStatus.ClientError; }
+            await Task.Run(() => File.Delete(path.Value));
+            return ResponseStatus.Success;
+		}
+
+		public async Task<ResponseStatus> DeleteAsync<TEntity>(string url, TEntity entity)
         {
             var allEntities = (await GetsAsync<TEntity>(url)).ToList();
             var registeredEntity = allEntities.FirstOrDefault(x => x.Equals(entity));
@@ -169,6 +177,6 @@ namespace Mov.Core.Accessors.Clients
             GC.SuppressFinalize(this);
         }
 
-        #endregion private method
-    }
+		#endregion private method
+	}
 }

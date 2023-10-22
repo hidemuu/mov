@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Accessors;
 using Mov.Core.Accessors.Clients;
 using Mov.Core.Accessors.Models;
+using Mov.Core.Models;
 using Mov.Core.Repositories.Schemas.Requests;
 using System.Collections.Generic;
 using System.Linq;
@@ -91,7 +92,12 @@ namespace Mov.Core.Repositories.Services
             return await _client.DeleteAsync(_additionalUri, entity.Id);
         }
 
-        public async Task<ResponseStatus> DeleteAsync(TIdentifier identifier)
+		public async Task<ResponseStatus> DeletesAsync()
+        {
+			return await _client.DeletesAsync(_additionalUri);
+		}
+
+		public async Task<ResponseStatus> DeleteAsync(TIdentifier identifier)
         {
             return await _client.DeleteAsync(_additionalUri, identifier);
         }

@@ -97,8 +97,13 @@ namespace Mov.Core.Repositories.Services
             return await _client.PutAsync("", entity);
         }
 
-        /// <inheritdoc />
-        public async Task<ResponseStatus> DeleteAsync(TEntity entity)
+		public async Task<ResponseStatus> DeletesAsync()
+		{
+            return await _client.DeletesAsync("");
+		}
+
+		/// <inheritdoc />
+		public async Task<ResponseStatus> DeleteAsync(TEntity entity)
         {
             return await _client.DeleteAsync("", entity);
         }

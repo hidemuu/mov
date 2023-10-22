@@ -33,6 +33,8 @@ namespace Mov.Core.Repositories
 
 		Task<ResponseStatus> PutAsync(TEntity entity);
 
+        Task<ResponseStatus> DeletesAsync();
+
         Task<ResponseStatus> DeleteAsync(TEntity entity);
 
         #endregion method

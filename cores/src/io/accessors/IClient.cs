@@ -43,10 +43,15 @@ namespace Mov.Core.Accessors
         /// </summary>
         Task<ResponseStatus> PutAsync<TEntity>(string url, TEntity entity);
 
-        /// <summary>
-        /// Delete
-        /// </summary>
-        Task<ResponseStatus> DeleteAsync<TEntity>(string url, TEntity entity);
+		/// <summary>
+		/// Delete
+		/// </summary>
+		Task<ResponseStatus> DeletesAsync(string url);
+
+		/// <summary>
+		/// Delete
+		/// </summary>
+		Task<ResponseStatus> DeleteAsync<TEntity>(string url, TEntity entity);
 
         #endregion method
     }

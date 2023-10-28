@@ -10,13 +10,13 @@ using System.Text;
 
 namespace Mov.Analizer.Models.Stores.Commands
 {
-	public class TimeTrendCommand : IStoreCommand<TimeTrendSchema>
+	public class TimeTrendCommand : IStoreCommand<TrendLineSchema>
 	{
 		#region property
 
-		public ISave<TimeTrendSchema> Saver { get; }
+		public ISave<TrendLineSchema> Saver { get; }
 
-		public IDelete<TimeTrendSchema> Deleter { get; }
+		public IDelete<TrendLineSchema> Deleter { get; }
 
 		#endregion property
 
@@ -24,8 +24,8 @@ namespace Mov.Analizer.Models.Stores.Commands
 
 		public TimeTrendCommand(IAnalizerRepository repository)
 		{
-			this.Saver = new DbRepositorySaver<IDbRepository<TimeTrendSchema, string, DbRequestSchemaString>, TimeTrendSchema, string, DbRequestSchemaString>(repository.TimeTrends);
-			this.Deleter = new DbRepositoryDeleter<IDbRepository<TimeTrendSchema, string, DbRequestSchemaString>, TimeTrendSchema, string, DbRequestSchemaString>(repository.TimeTrends);
+			this.Saver = new DbRepositorySaver<IDbRepository<TrendLineSchema, string, DbRequestSchemaString>, TrendLineSchema, string, DbRequestSchemaString>(repository.TimeTrends);
+			this.Deleter = new DbRepositoryDeleter<IDbRepository<TrendLineSchema, string, DbRequestSchemaString>, TrendLineSchema, string, DbRequestSchemaString>(repository.TimeTrends);
 		}
 
 		#endregion constructor

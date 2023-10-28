@@ -11,7 +11,7 @@ namespace Mov.Suite.Api.Controllers
 	/// </summary>
 	[Route("api/[controller]")]
 	[ApiController]
-	public class ResasTimeTrendController : ControllerBase
+	public class ResasTrendLineController : ControllerBase
 	{
 		#region field
 
@@ -25,7 +25,7 @@ namespace Mov.Suite.Api.Controllers
 		/// 
 		/// </summary>
 		/// <param name="client"></param>
-		public ResasTimeTrendController(IRegionAnalizerClient client)
+		public ResasTrendLineController(IRegionAnalizerClient client)
 		{
 			_client = client;
 		}
@@ -40,7 +40,7 @@ namespace Mov.Suite.Api.Controllers
 		[HttpGet("{prefCode}/{cityCode}/{category}/{label}/{start}/{end}")]
 		public async Task<IActionResult> Get(int prefCode, int cityCode, string category, string label, string srart, string end)
 		{
-			return Ok(await this._client.GetTimeTrendAsync(
+			return Ok(await this._client.GetTrendLineAsync(
 				new RegionRequestSchema() 
 				{
 					PrefCode = prefCode, 

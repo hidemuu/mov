@@ -21,7 +21,7 @@ namespace Mov.Analizer.Service.Stores
 
 		public IStoreCommand<TableLineSchema> TableLines { get; }
 
-		public IStoreCommand<TimeTrendSchema> TimeTrends { get; }
+		public IStoreCommand<TrendLineSchema> TimeTrends { get; }
 
 		public IStoreCommand<TimeLineSchema> TimeLines { get; }
 

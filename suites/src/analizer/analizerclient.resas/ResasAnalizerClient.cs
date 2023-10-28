@@ -56,9 +56,9 @@ namespace Mov.Suite.AnalizerClient.Resas
 			return lines.Select(x => x.CreateSchema());
 		}
 
-		public async Task<IEnumerable<TimeTrendSchema>> GetTimeTrendAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
+		public async Task<IEnumerable<TrendLineSchema>> GetTrendLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
 		{
-			var result = new HashSet<TimeTrend>();
+			var result = new HashSet<TrendLine>();
 			var request = RegionRequest.Factory.Create(requestSchema);
 			if (request.Category.Equals("population", StringComparison.Ordinal))
 			{
@@ -75,10 +75,10 @@ namespace Mov.Suite.AnalizerClient.Resas
 
 						if(request.IsEmptyLabel() || request.Label.Equals(dataLabel))
 						{
-							var timeTrend = new TimeTrend(
+							var timeTrend = new TrendLine(
 							request.Category,
 							dataLabel,
-							TimeValue.Factory.CreateByDate(data.Year, 1, 1),
+							new NumericalValue(TimeValue.Factory.CreateByDate(data.Year, 1, 1).ToIntDateTime()),
 							new NumericalValue(data.Value)
 							);
 							result.Add(timeTrend);

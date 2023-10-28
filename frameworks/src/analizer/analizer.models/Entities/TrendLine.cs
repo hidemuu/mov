@@ -4,32 +4,32 @@ using System;
 
 namespace Mov.Analizer.Models.Entities
 {
-    public class TimeTrend : IAnalizeContent
+    public class TrendLine : IAnalizeContent
     {
 		#region property
 
 		public string Category { get; }
 		public string Label { get; }
-		public TimeValue TimeStamp { get; }
+		public NumericalValue Number { get; }
 		public NumericalValue Value { get; }
 
 		#endregion property
 
 		#region constructor
 
-		public TimeTrend(string category, string label, TimeValue timeStamp, NumericalValue value) 
+		public TrendLine(string category, string label, NumericalValue number, NumericalValue value) 
 		{ 
 			Category = category;
 			Label = label;
-			TimeStamp = timeStamp;
+			Number = number;
 			Value = value;
 		}
 
-		public TimeTrend(TimeTrendSchema schema)
+		public TrendLine(TrendLineSchema schema)
 		{
 			Category = schema.Category;
 			Label = schema.Label;
-			TimeStamp = TimeValue.Factory.Create(schema.TimeStamp);
+			Number = new NumericalValue(schema.Number);
 			Value = new NumericalValue(schema.Value);
 		}
 
@@ -37,14 +37,14 @@ namespace Mov.Analizer.Models.Entities
 
 		#region method
 
-		public TimeTrendSchema CreateSchema()
+		public TrendLineSchema CreateSchema()
 		{
-			return new TimeTrendSchema()
+			return new TrendLineSchema()
 			{
-				Id = $"{Category}_{Label}_{TimeStamp.ToStringDateTime()}",
+				Id = $"{Category}_{Label}_{Number}",
 				Category = Category,
 				Label = Label,
-				TimeStamp = TimeStamp.ToStringDateTime(),
+				Number = Number.Value,
 				Value = Value.Value,
 			};
 		}

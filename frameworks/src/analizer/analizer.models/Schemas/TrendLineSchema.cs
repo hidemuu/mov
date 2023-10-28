@@ -8,10 +8,10 @@ using System.Xml.Serialization;
 
 namespace Mov.Analizer.Models.Schemas
 {
-    public class TimeTrendSchema : AnalizeContentSchemaBase<string>
+    public class TrendLineSchema : AnalizeContentSchemaBase<string>
 	{
-		[JsonProperty("timestamp")]
-        public string TimeStamp { get; set; } = string.Empty;
+		[JsonProperty("number")]
+        public decimal Number { get; set; }
 
 		[JsonProperty("value")]
 		public decimal Value { get; set; }

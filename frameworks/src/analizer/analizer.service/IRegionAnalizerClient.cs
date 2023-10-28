@@ -16,6 +16,6 @@ namespace Mov.Analizer.Service
 
         Task<IEnumerable<TimeLineSchema>> GetTimeLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end);
 
-        Task<IEnumerable<TimeTrendSchema>> GetTimeTrendAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end);
+        Task<IEnumerable<TrendLineSchema>> GetTrendLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end);
     }
 }

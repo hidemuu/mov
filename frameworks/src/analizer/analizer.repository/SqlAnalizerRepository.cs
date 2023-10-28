@@ -37,7 +37,7 @@ namespace Mov.Analizer.Repository
 
 		public IDbRepository<TimeLineSchema, string, DbRequestSchemaString> TimeLines => new SqlDbRepository<TimeLineSchema, string>(_db, _db.TimeLines);
 
-		public IDbRepository<TimeTrendSchema, string, DbRequestSchemaString> TimeTrends => new SqlDbRepository<TimeTrendSchema, string>(_db, _db.TimeTrends);
+		public IDbRepository<TrendLineSchema, string, DbRequestSchemaString> TimeTrends => new SqlDbRepository<TrendLineSchema, string>(_db, _db.TimeTrends);
 
 		public IDbRepository<TableLineSchema, int, DbRequestSchemaString> TableLines => new SqlDbRepository<TableLineSchema, int>(_db, _db.TableLines);
 

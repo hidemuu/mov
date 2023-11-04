@@ -71,11 +71,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 				{
 					foreach (var data in populationPerYear.Datas)
 					{
-						var dataLabel = populationPerYear.IsAll() ?
-								"all" : populationPerYear.IsYoung() ?
-								"young" : populationPerYear.IsSenior() ?
-								"senior" : populationPerYear.IsOld() ?
-								"old" : string.Empty;
+						var dataLabel = populationPerYear.Name;
 
 						if(request.IsEmptyLabel() || request.Label.Equals(dataLabel))
 						{

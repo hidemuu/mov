@@ -10,6 +10,9 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results.Compositions
     {
 		#region property
 
+		[JsonIgnore]
+		public string Name => IsAll() ? "all" : IsYoung() ? "young" : IsSenior() ? "senior" : IsOld() ? "old" : string.Empty;
+
 		/// <summary>ラベル</summary>
 		/// <remarks>総人口 / 年少人口 / 生産年齢人口 / 老年人口</remarks>
 		[JsonProperty("label")]

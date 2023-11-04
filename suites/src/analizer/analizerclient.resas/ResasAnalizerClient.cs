@@ -17,10 +17,6 @@ namespace Mov.Suite.AnalizerClient.Resas
     {
 		#region constant
 
-		private const string TABLE_KEY_CITY = "city";
-
-		private const string TABLE_KEY_PREFECTURE = "prefecture";
-
 		#endregion constant
 
 		#region field
@@ -48,12 +44,12 @@ namespace Mov.Suite.AnalizerClient.Resas
 			var cities = await _resasRepository.Cities.GetAsync(null);
             foreach (var city in cities.Results)
             {
-				lines.Add(new TableLine(city.Code, TABLE_KEY_CITY, string.Empty, city.Name, city.Name));
+				lines.Add(new TableLine(city.Code, _resasRepository.Cities.Name, string.Empty, city.Name, city.Name));
             }
 			var prefectures = await _resasRepository.Prefectures.GetAsync(null);
 			foreach (var prefecture in prefectures.Results)
 			{
-				lines.Add(new TableLine(prefecture.Code, TABLE_KEY_PREFECTURE, string.Empty, prefecture.Name, prefecture.Name));
+				lines.Add(new TableLine(prefecture.Code, _resasRepository.Prefectures.Name, string.Empty, prefecture.Name, prefecture.Name));
 			}
 
             var tableLines = await _analizerRepository.TableLines.GetsAsync();
@@ -68,7 +64,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 		{
 			var result = new HashSet<TrendLine>();
 			var request = RegionRequest.Factory.Create(requestSchema);
-			if (request.Category.Equals("population", StringComparison.Ordinal))
+			if (request.Category.Equals(_resasRepository.PopulationPerYears.Name, StringComparison.Ordinal))
 			{
 				var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(request.PrefCode, request.CityCode));
 				foreach (var populationPerYear in populationPerYears.Result.Datas)

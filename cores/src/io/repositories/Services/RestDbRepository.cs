@@ -37,14 +37,15 @@ namespace Mov.Core.Repositories.Services
 
         #region constructor
 
-        public RestDbRepository(IClient client, string additionalUri)
+        public RestDbRepository(IClient client, string name, string additionalUri)
         {
             _client = client;
 			_additionalUri = additionalUri;
+            this.Name = name;
         }
 
-        public RestDbRepository(string url, EncodingValue encode, RequestHeaderSchema header)
-            : this(new WebClient(new PathValue(url), encode, header), string.Empty)
+        public RestDbRepository(string url, EncodingValue encode, RequestHeaderSchema header, string name)
+            : this(new WebClient(new PathValue(url), encode, header), name, string.Empty)
         {
         }
 

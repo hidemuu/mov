@@ -28,10 +28,11 @@ namespace Mov.Core.Repositories.Services
 
         #region constructor
 
-        public SqlDbRepository(DbContext db, DbSet<TEntity> ts)
+        public SqlDbRepository(DbContext db, DbSet<TEntity> ts, string name)
         {
             this._db = db;
             this._ts = ts;
+            this.Name = name;
 
         }
 

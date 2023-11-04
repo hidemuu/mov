@@ -35,11 +35,11 @@ namespace Mov.Analizer.Repository
 
 		#region property
 
-		public IDbRepository<TimeLineSchema, string, DbRequestSchemaString> TimeLines => new SqlDbRepository<TimeLineSchema, string>(_db, _db.TimeLines);
+		public IDbRepository<TimeLineSchema, string, DbRequestSchemaString> TimeLines => new SqlDbRepository<TimeLineSchema, string>(_db, _db.TimeLines, "timelines");
 
-		public IDbRepository<TrendLineSchema, string, DbRequestSchemaString> TimeTrends => new SqlDbRepository<TrendLineSchema, string>(_db, _db.TimeTrends);
+		public IDbRepository<TrendLineSchema, string, DbRequestSchemaString> TimeTrends => new SqlDbRepository<TrendLineSchema, string>(_db, _db.TimeTrends, "timetrends");
 
-		public IDbRepository<TableLineSchema, int, DbRequestSchemaString> TableLines => new SqlDbRepository<TableLineSchema, int>(_db, _db.TableLines);
+		public IDbRepository<TableLineSchema, int, DbRequestSchemaString> TableLines => new SqlDbRepository<TableLineSchema, int>(_db, _db.TableLines, "tablelines");
 
 		#endregion proeprty
 

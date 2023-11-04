@@ -36,9 +36,10 @@ namespace Mov.Core.Repositories.Services
         /// <summary>
         /// base constructor
         /// </summary>
-        private FileDbRepository(IClient client)
+        private FileDbRepository(IClient client, string name)
         {
             _client = client;
+            this.Name = name;
         }
 
         /// <summary>
@@ -46,16 +47,16 @@ namespace Mov.Core.Repositories.Services
         /// </summary>
         public static class Factory
         {
-            public static FileDbRepository<TEntity, TIdentifier> Create(IClient client) => new FileDbRepository<TEntity, TIdentifier>(client);
+            public static FileDbRepository<TEntity, TIdentifier> Create(IClient client) => new FileDbRepository<TEntity, TIdentifier>(client, string.Empty);
 
             public static FileDbRepository<TEntity, TIdentifier> Create(string endpoint, FileType fileType, EncodingValue encoding)
             {
-                return new FileDbRepository<TEntity, TIdentifier>(new FileClient(new PathValue(endpoint), encoding, AccessType.Create(fileType)));
+                return new FileDbRepository<TEntity, TIdentifier>(new FileClient(new PathValue(endpoint), encoding, AccessType.Create(fileType)), string.Empty);
             }
 
             public static FileDbRepository<TEntity, TIdentifier> Create(PathValue endpoint, FileType fileType, EncodingValue encoding)
             {
-                return new FileDbRepository<TEntity, TIdentifier>(new FileClient(endpoint, encoding, AccessType.Create(fileType)));
+                return new FileDbRepository<TEntity, TIdentifier>(new FileClient(endpoint, encoding, AccessType.Create(fileType)), string.Empty);
             }
         }
 

@@ -51,13 +51,13 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository
             });
 
             Prefectures = new RestDbRepository<ResasResponseSchema<PrefectureResultSchema>, string, DbRequestSchemaString>
-                (Path.Combine(endpoint, PrefectureResultSchema.URI), EncodingValue.UTF8, header);
+                (Path.Combine(endpoint, PrefectureResultSchema.URI), EncodingValue.UTF8, header, "prefectures");
             Cities = new RestDbRepository<ResasResponseSchema<CityResultSchema>, string, DbRequestSchemaString>
-                (Path.Combine(endpoint, CityResultSchema.URI), EncodingValue.UTF8, header);
+                (Path.Combine(endpoint, CityResultSchema.URI), EncodingValue.UTF8, header, "cities");
             PopulationPerYears = new RestDbRepository<ResasCompositionResponseSchema<PopulationPerYearResultSchema>, string, PopulationPerYearRequestSchema>
-                (Path.Combine(endpoint, PopulationPerYearResultSchema.URI), EncodingValue.UTF8, header);
+                (Path.Combine(endpoint, PopulationPerYearResultSchema.URI), EncodingValue.UTF8, header, "population_per_years");
 			PopulationPyramids = new RestDbRepository<ResasCompositionResponseSchema<PopulationPyramidResultSchema>, string, PopulationPyramidRequestSchema>
-				(Path.Combine(endpoint, PopulationPyramidResultSchema.URI), EncodingValue.UTF8, header);
+				(Path.Combine(endpoint, PopulationPyramidResultSchema.URI), EncodingValue.UTF8, header, "population_pyramids");
 		}
 
         #endregion constructor

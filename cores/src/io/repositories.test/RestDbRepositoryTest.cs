@@ -48,7 +48,7 @@ namespace Mov.Core.Repositories.Test
                 .Build();
 
             // Act
-            var sut = new RestDbRepository<SerializeSchema, int, DbRequestSchemaString>(client, "");
+            var sut = new RestDbRepository<SerializeSchema, int, DbRequestSchemaString>(client, "", "");
             var items = Task.WhenAll(sut.GetsAsync()).Result[0].ToArray();
 
             // Assert

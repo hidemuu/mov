@@ -39,6 +39,8 @@ namespace Mov.Analizer.Service.Stores
 			this.TableLines = new TableLineCommand(repository);
 			this.TrendLines = new TrendLineCommand(repository);
 			this.TimeLines = new TimeLineCommand(repository);
+			this.StatisticLines = new StatisticLineCommand(repository);
+			this.HistgramLines = new HistgramLineCommand(repository);
 		}
 
 		#endregion constructor

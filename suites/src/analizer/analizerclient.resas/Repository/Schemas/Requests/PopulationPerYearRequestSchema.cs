@@ -1,4 +1,5 @@
-﻿using Mov.Core.Repositories;
+﻿using Mov.Analizer.Service.Regions.Entities;
+using Mov.Core.Repositories;
 using Mov.Core.Repositories.Schemas;
 using Mov.Core.Repositories.Schemas.Requests;
 using System;
@@ -20,7 +21,11 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Requests
                 { "prefCode", prefCode.ToString() },
             })
         {
+        }
 
+        public PopulationPerYearRequestSchema(RegionRequest request) 
+            : this(request.CityCode, request.PrefCode)
+        {
         }
 
         #endregion constructor

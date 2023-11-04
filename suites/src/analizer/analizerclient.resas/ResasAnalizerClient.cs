@@ -69,7 +69,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 			var request = RegionRequest.Factory.Create(requestSchema);
 			if (request.Category.Equals(new RegionCategory(_resasRepository.PopulationPerYears.Name)))
 			{
-				var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(request.PrefCode, request.CityCode));
+				var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(request));
 				foreach (var populationPerYear in populationPerYears.Result.Datas)
 				{
 					foreach (var data in populationPerYear.Datas)
@@ -93,19 +93,22 @@ namespace Mov.Suite.AnalizerClient.Resas
 			return result.Select(x => x.CreateSchema());
 		}
 
-		public Task<IEnumerable<TimeLineSchema>> GetTimeLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
+		public async Task<IEnumerable<TimeLineSchema>> GetTimeLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
 		{
-			throw new System.NotImplementedException();
+			var result = new HashSet<TimeLine>();
+			return await Task.Run(() => result.Select(x => x.CreateSchema()));
 		}
 
-		public Task<IEnumerable<StatisticLineSchema>> GetStatisticLineAsync()
+		public async Task<IEnumerable<StatisticLineSchema>> GetStatisticLineAsync()
 		{
-			throw new NotImplementedException();
+			var result = new HashSet<StatisticLine>();
+			return await Task.Run(() => result.Select(x => x.CreateSchema()));
 		}
 
-		public Task<IEnumerable<HistgramLineSchema>> GetHistgramLineAsync()
+		public async Task<IEnumerable<HistgramLineSchema>> GetHistgramLineAsync()
 		{
-			throw new NotImplementedException();
+			var result = new HashSet<HistgramLine>();
+			return await Task.Run(() => result.Select(x => x.CreateSchema()));
 		}
 
 		#endregion method

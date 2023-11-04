@@ -11,7 +11,11 @@ namespace Mov.Analizer.Models
 
 		IDbRepository<TimeLineSchema, string, DbRequestSchemaString> TimeLines { get; }
 
-		IDbRepository<TrendLineSchema, string, DbRequestSchemaString> TimeTrends { get; }
+		IDbRepository<TrendLineSchema, string, DbRequestSchemaString> TrendLines { get; }
+
+		IDbRepository<StatisticLineSchema, string, DbRequestSchemaString> StatisticLines { get; }
+
+		IDbRepository<HistgramLineSchema, string, DbRequestSchemaString> HistgramLines { get; }
 
 	}
 }

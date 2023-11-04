@@ -9,7 +9,11 @@ namespace Mov.Analizer.Models
 	public interface IAnalizerStoreQuery
 	{
 		IStoreQuery<TableLineSchema, int> TableLines { get; }
-		IStoreQuery<TrendLineSchema, string> TimeTrends { get; }
+		IStoreQuery<TrendLineSchema, string> TrendLines { get; }
 		IStoreQuery<TimeLineSchema, string> TimeLines { get; }
+
+		IStoreQuery<StatisticLineSchema, string> StatisticLines { get; }
+
+		IStoreQuery<HistgramLineSchema, string> HistgramLines { get; }
 	}
 }

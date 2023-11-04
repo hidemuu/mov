@@ -23,9 +23,13 @@ namespace Mov.Analizer.Repository
 
 		public DbSet<TimeLineSchema> TimeLines { get; set; }
 
-		public DbSet<TrendLineSchema> TimeTrends { get; set; }
+		public DbSet<TrendLineSchema> TrendLines { get; set; }
 
 		public DbSet<TableLineSchema> TableLines { get; set; }
+
+		public DbSet<StatisticLineSchema> StatisticLines { get; set; }
+
+		public DbSet<HistgramLineSchema> HistgramLines { get; set; }
 
 		#endregion property
 

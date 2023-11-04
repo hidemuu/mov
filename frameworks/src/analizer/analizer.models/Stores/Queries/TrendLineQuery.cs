@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Mov.Analizer.Models.Stores.Queries
 {
-	public class TimeTrendQuery : IStoreQuery<TrendLineSchema, string>
+	public class TrendLineQuery : IStoreQuery<TrendLineSchema, string>
 	{
 		#region property
 
@@ -19,9 +19,9 @@ namespace Mov.Analizer.Models.Stores.Queries
 
 		#region constructor
 
-		public TimeTrendQuery(IAnalizerRepository repository)
+		public TrendLineQuery(IAnalizerRepository repository)
 		{
-			this.Reader = new DbRepositoryReader<IDbRepository<TrendLineSchema, string, DbRequestSchemaString>, TrendLineSchema, string, DbRequestSchemaString>(repository.TimeTrends);
+			this.Reader = new DbRepositoryReader<IDbRepository<TrendLineSchema, string, DbRequestSchemaString>, TrendLineSchema, string, DbRequestSchemaString>(repository.TrendLines);
 		}
 
 		#endregion constructor

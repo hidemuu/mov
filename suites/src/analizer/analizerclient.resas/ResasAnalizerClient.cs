@@ -112,5 +112,9 @@ namespace Mov.Suite.AnalizerClient.Resas
 		}
 
 		#endregion method
+
+		#region logic
+
+		#endregion logic
 	}
 }

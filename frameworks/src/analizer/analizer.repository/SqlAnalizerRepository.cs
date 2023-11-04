@@ -35,11 +35,20 @@ namespace Mov.Analizer.Repository
 
 		#region property
 
-		public IDbRepository<TimeLineSchema, string, DbRequestSchemaString> TimeLines => new SqlDbRepository<TimeLineSchema, string>(_db, _db.TimeLines, "timelines");
+		public IDbRepository<TimeLineSchema, string, DbRequestSchemaString> TimeLines => 
+			new SqlDbRepository<TimeLineSchema, string>(_db, _db.TimeLines, "timelines");
 
-		public IDbRepository<TrendLineSchema, string, DbRequestSchemaString> TimeTrends => new SqlDbRepository<TrendLineSchema, string>(_db, _db.TimeTrends, "timetrends");
+		public IDbRepository<TrendLineSchema, string, DbRequestSchemaString> TrendLines => 
+			new SqlDbRepository<TrendLineSchema, string>(_db, _db.TrendLines, "timetrends");
 
-		public IDbRepository<TableLineSchema, int, DbRequestSchemaString> TableLines => new SqlDbRepository<TableLineSchema, int>(_db, _db.TableLines, "tablelines");
+		public IDbRepository<TableLineSchema, int, DbRequestSchemaString> TableLines => 
+			new SqlDbRepository<TableLineSchema, int>(_db, _db.TableLines, "tablelines");
+
+		public IDbRepository<StatisticLineSchema, string, DbRequestSchemaString> StatisticLines =>
+			new SqlDbRepository<StatisticLineSchema, string>(_db, _db.StatisticLines, "statisticlines");
+
+		public IDbRepository<HistgramLineSchema, string, DbRequestSchemaString> HistgramLines =>
+			new SqlDbRepository<HistgramLineSchema, string>(_db, _db.HistgramLines, "histgramlines");
 
 		#endregion proeprty
 

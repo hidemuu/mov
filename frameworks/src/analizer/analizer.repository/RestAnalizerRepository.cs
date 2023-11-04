@@ -20,9 +20,21 @@ namespace Mov.Analizer.Repository
 
 		#region property
 
-		public IDbRepository<TimeLineSchema, string, DbRequestSchemaString> TimeLines => new RestDbRepository<TimeLineSchema, string, DbRequestSchemaString>(_url, EncodingValue.UTF8, RequestHeaderSchema.Empty, "timelines");
-		public IDbRepository<TrendLineSchema, string, DbRequestSchemaString> TimeTrends => new RestDbRepository<TrendLineSchema, string, DbRequestSchemaString>(_url, EncodingValue.UTF8, RequestHeaderSchema.Empty, "timetrends");
-		public IDbRepository<TableLineSchema, int, DbRequestSchemaString> TableLines => new RestDbRepository<TableLineSchema, int, DbRequestSchemaString>(_url, EncodingValue.UTF8, RequestHeaderSchema.Empty, "tablelines");
+		public IDbRepository<TimeLineSchema, string, DbRequestSchemaString> TimeLines => 
+			new RestDbRepository<TimeLineSchema, string, DbRequestSchemaString>(
+				_url, EncodingValue.UTF8, RequestHeaderSchema.Empty, "timelines");
+		public IDbRepository<TrendLineSchema, string, DbRequestSchemaString> TrendLines => 
+			new RestDbRepository<TrendLineSchema, string, DbRequestSchemaString>(
+				_url, EncodingValue.UTF8, RequestHeaderSchema.Empty, "timetrends");
+		public IDbRepository<TableLineSchema, int, DbRequestSchemaString> TableLines => 
+			new RestDbRepository<TableLineSchema, int, DbRequestSchemaString>(
+				_url, EncodingValue.UTF8, RequestHeaderSchema.Empty, "tablelines");
+		public IDbRepository<StatisticLineSchema, string, DbRequestSchemaString> StatisticLines => 
+			new RestDbRepository<StatisticLineSchema, string, DbRequestSchemaString>(
+				_url, EncodingValue.UTF8, RequestHeaderSchema.Empty, "statisticlines");
+		public IDbRepository<HistgramLineSchema, string, DbRequestSchemaString> HistgramLines =>
+			new RestDbRepository<HistgramLineSchema, string, DbRequestSchemaString>(
+				_url, EncodingValue.UTF8, RequestHeaderSchema.Empty, "histgramlines");
 
 		#endregion property
 

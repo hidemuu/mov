@@ -20,9 +20,13 @@ namespace Mov.Analizer.Service.Stores
 
 		public IStoreQuery<TableLineSchema, int> TableLines { get; }
 
-		public IStoreQuery<TrendLineSchema, string> TimeTrends { get; }
+		public IStoreQuery<TrendLineSchema, string> TrendLines { get; }
 
 		public IStoreQuery<TimeLineSchema, string> TimeLines { get; }
+
+		public IStoreQuery<StatisticLineSchema, string> StatisticLines { get; }
+
+		public IStoreQuery<HistgramLineSchema, string> HistgramLines { get; }
 
 		#endregion property
 
@@ -32,7 +36,7 @@ namespace Mov.Analizer.Service.Stores
 		{
 			_repository= repository;
 			this.TableLines = new TableLineQuery(repository);
-			this.TimeTrends= new TimeTrendQuery(repository);
+			this.TrendLines = new TrendLineQuery(repository);
 			this.TimeLines = new TimeLineQuery(repository);
 		}
 

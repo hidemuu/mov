@@ -10,7 +10,7 @@ using System.Text;
 
 namespace Mov.Analizer.Models.Stores.Commands
 {
-	public class TimeTrendCommand : IStoreCommand<TrendLineSchema>
+	public class TrendLineCommand : IStoreCommand<TrendLineSchema>
 	{
 		#region property
 
@@ -22,10 +22,10 @@ namespace Mov.Analizer.Models.Stores.Commands
 
 		#region constructor
 
-		public TimeTrendCommand(IAnalizerRepository repository)
+		public TrendLineCommand(IAnalizerRepository repository)
 		{
-			this.Saver = new DbRepositorySaver<IDbRepository<TrendLineSchema, string, DbRequestSchemaString>, TrendLineSchema, string, DbRequestSchemaString>(repository.TimeTrends);
-			this.Deleter = new DbRepositoryDeleter<IDbRepository<TrendLineSchema, string, DbRequestSchemaString>, TrendLineSchema, string, DbRequestSchemaString>(repository.TimeTrends);
+			this.Saver = new DbRepositorySaver<IDbRepository<TrendLineSchema, string, DbRequestSchemaString>, TrendLineSchema, string, DbRequestSchemaString>(repository.TrendLines);
+			this.Deleter = new DbRepositoryDeleter<IDbRepository<TrendLineSchema, string, DbRequestSchemaString>, TrendLineSchema, string, DbRequestSchemaString>(repository.TrendLines);
 		}
 
 		#endregion constructor

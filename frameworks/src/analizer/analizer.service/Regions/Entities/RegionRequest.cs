@@ -21,7 +21,7 @@ namespace Mov.Analizer.Service.Regions.Entities
 
         public RegionCategory Category { get; }
 
-        public string Label { get; } = string.Empty;
+        public RegionLabel Label { get; }
 
         #endregion property
 
@@ -32,7 +32,7 @@ namespace Mov.Analizer.Service.Regions.Entities
             PrefCode = prefCode;
             CityCode = cityCode;
             Category = new RegionCategory(category);
-            Label = label;
+            Label = new RegionLabel(label);
         }
 
         public static class Factory
@@ -73,7 +73,7 @@ namespace Mov.Analizer.Service.Regions.Entities
 
         public bool IsEmptyCategory() => Category.IsEmpty();
 
-        public bool IsEmptyLabel() => Label == string.Empty;
+        public bool IsEmptyLabel() => Label.IsEmpty();
 
         public RegionRequestSchema CreateSchema()
         {
@@ -82,7 +82,7 @@ namespace Mov.Analizer.Service.Regions.Entities
                 PrefCode = PrefCode,
                 CityCode = CityCode,
                 Category = Category.Value,
-                Label = Label,
+                Label = Label.Value,
             };
         }
 

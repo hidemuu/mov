@@ -15,6 +15,8 @@ namespace Mov.Core.Repositories
 	{
         #region property
 
+        string Name { get; }
+
         string Endpoint { get; }
 
         #endregion property

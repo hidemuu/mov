@@ -15,9 +15,17 @@ namespace Mov.Suite.AnalizerClient.Resas
 {
     public class ResasAnalizerClient : IRegionAnalizerClient
     {
-        #region field
+		#region constant
 
-        private readonly IAnalizerRepository _analizerRepository;
+		private const string TABLE_KEY_CITY = "city";
+
+		private const string TABLE_KEY_PREFECTURE = "prefecture";
+
+		#endregion constant
+
+		#region field
+
+		private readonly IAnalizerRepository _analizerRepository;
         private readonly IResasRepository _resasRepository;
 
         #endregion field
@@ -40,12 +48,12 @@ namespace Mov.Suite.AnalizerClient.Resas
 			var cities = await _resasRepository.Cities.GetAsync(null);
             foreach (var city in cities.Results)
             {
-				lines.Add(new TableLine(city.Code, "city", string.Empty, city.Name, city.Name));
+				lines.Add(new TableLine(city.Code, TABLE_KEY_CITY, string.Empty, city.Name, city.Name));
             }
 			var prefectures = await _resasRepository.Prefectures.GetAsync(null);
 			foreach (var prefecture in prefectures.Results)
 			{
-				lines.Add(new TableLine(prefecture.Code, "prefecture", string.Empty, prefecture.Name, prefecture.Name));
+				lines.Add(new TableLine(prefecture.Code, TABLE_KEY_PREFECTURE, string.Empty, prefecture.Name, prefecture.Name));
 			}
 
             var tableLines = await _analizerRepository.TableLines.GetsAsync();

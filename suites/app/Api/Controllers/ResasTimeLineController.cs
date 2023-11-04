@@ -2,6 +2,7 @@
 using Mov.Analizer.Service.Regions;
 using Mov.Analizer.Service;
 using Mov.Core.Valuables;
+using Mov.Analizer.Service.Regions.Schemas;
 
 namespace Mov.Suite.Api.Controllers
 {

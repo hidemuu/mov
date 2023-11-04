@@ -1,6 +1,6 @@
 ﻿using Mov.Analizer.Models.Entities;
 using Mov.Analizer.Models.Schemas;
-using Mov.Analizer.Service.Regions;
+using Mov.Analizer.Service.Regions.Schemas;
 using Mov.Core.Valuables;
 using System.Collections.Generic;
 using System.Threading.Tasks;

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Mov.Analizer.Service;
 using Mov.Analizer.Service.Regions;
+using Mov.Analizer.Service.Regions.Schemas;
 using Mov.Core.Valuables;
 
 namespace Mov.Suite.Api.Controllers

@@ -2,6 +2,7 @@
 using Mov.Analizer.Repository;
 using Mov.Analizer.Service;
 using Mov.Analizer.Service.Regions;
+using Mov.Analizer.Service.Regions.Entities;
 using Mov.Core.Configurators.Contexts;
 using Mov.Core.Configurators.Models.Entities;
 using Mov.Core.Valuables;

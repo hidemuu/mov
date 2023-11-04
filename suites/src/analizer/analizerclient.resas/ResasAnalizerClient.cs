@@ -64,7 +64,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 		{
 			var result = new HashSet<TrendLine>();
 			var request = RegionRequest.Factory.Create(requestSchema);
-			if (request.Category.Equals(_resasRepository.PopulationPerYears.Name, StringComparison.Ordinal))
+			if (request.Category.Equals(new RegionCategory(_resasRepository.PopulationPerYears.Name)))
 			{
 				var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(request.PrefCode, request.CityCode));
 				foreach (var populationPerYear in populationPerYears.Result.Datas)
@@ -76,7 +76,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 						if(request.IsEmptyLabel() || request.Label.Equals(dataLabel))
 						{
 							var timeTrend = new TrendLine(
-							request.Category,
+							request.Category.Value,
 							dataLabel,
 							new NumericalValue(TimeValue.Factory.CreateByDate(data.Year, 1, 1).ToIntDateTime()),
 							new NumericalValue(data.Value)

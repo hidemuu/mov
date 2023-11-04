@@ -7,13 +7,17 @@ namespace Mov.Analizer.Service.Regions
 {
 	public class RegionRequest
 	{
+		#region constant
+
+		#endregion constant
+
 		#region property
 
 		public int PrefCode { get; }
 
 		public int CityCode { get; }
 
-		public string Category { get; } = string.Empty;
+		public RegionCategory Category { get; }
 
 		public string Label { get; } = string.Empty;
 
@@ -25,7 +29,7 @@ namespace Mov.Analizer.Service.Regions
 		{
 			PrefCode = prefCode;
 			CityCode = cityCode;
-			Category = category;
+			Category = new RegionCategory(category);
 			Label = label;
 		}
 
@@ -43,11 +47,11 @@ namespace Mov.Analizer.Service.Regions
 				var tableLines = query.TableLines.Reader.ReadAll();
 				foreach(var tableLine in tableLines)
 				{
-					if(tableLine.Category.Equals("prefecture") && tableLine.Content.Equals(pref))
+					if(tableLine.Category.Equals(RegionCategory.Prefecture.Value) && tableLine.Content.Equals(pref))
 					{
 						prefCode = tableLine.Id;
 					}
-					if(tableLine.Category.Equals("city") && tableLine.Content.Equals(city))
+					if(tableLine.Category.Equals(RegionCategory.City.Value) && tableLine.Content.Equals(city))
 					{
 						cityCode = tableLine.Id;
 					}
@@ -65,7 +69,7 @@ namespace Mov.Analizer.Service.Regions
 
 		#region method
 
-		public bool IsEmptyCategory() => Category == string.Empty;
+		public bool IsEmptyCategory() => Category.IsEmpty();
 
 		public bool IsEmptyLabel() => Label == string.Empty;
 
@@ -75,7 +79,7 @@ namespace Mov.Analizer.Service.Regions
 			{
 				PrefCode = PrefCode,
 				CityCode = CityCode,
-				Category = Category,
+				Category = Category.Value,
 				Label = Label,
 			};
 		}

@@ -95,6 +95,16 @@ namespace Mov.Suite.AnalizerClient.Resas
 			throw new System.NotImplementedException();
 		}
 
+		public Task<IEnumerable<StatisticLineSchema>> GetStatisticLineAsync()
+		{
+			throw new NotImplementedException();
+		}
+
+		public Task<IEnumerable<HistgramLineSchema>> GetHistgramLineAsync()
+		{
+			throw new NotImplementedException();
+		}
+
 		#endregion method
 	}
 }

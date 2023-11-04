@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Mov.Analizer.Service;
-using Mov.Suite.AnalizerClient.Resas;
 
 namespace Mov.Suite.Api.Controllers
 {
@@ -10,7 +8,7 @@ namespace Mov.Suite.Api.Controllers
 	/// </summary>
 	[Route("api/[controller]")]
 	[ApiController]
-	public class ResasTableController : ControllerBase
+	public class ResasStatisticLineController : Controller
 	{
 		#region field
 
@@ -24,7 +22,7 @@ namespace Mov.Suite.Api.Controllers
 		/// 
 		/// </summary>
 		/// <param name="client"></param>
-		public ResasTableController(IRegionAnalizerClient client)
+		public ResasStatisticLineController(IRegionAnalizerClient client)
 		{
 			_client = client;
 		}

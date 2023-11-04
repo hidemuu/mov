@@ -6,6 +6,7 @@ using Mov.Core.Stores.Services.Queries.Readers;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Mov.Core.Stores.Services.Queries.Readers.Decorators;
 
 namespace Mov.Analizer.Models.Stores.Queries
 {
@@ -21,7 +22,9 @@ namespace Mov.Analizer.Models.Stores.Queries
 
 		public HistgramLineQuery(IAnalizerRepository repository)
 		{
-			this.Reader = new DbRepositoryReader<IDbRepository<HistgramLineSchema, string, DbRequestSchemaString>, HistgramLineSchema, string, DbRequestSchemaString>(repository.HistgramLines);
+			this.Reader = new ReadCaching<HistgramLineSchema, string>(
+				new DbRepositoryReader<IDbRepository<HistgramLineSchema, string, DbRequestSchemaString>, HistgramLineSchema, string, DbRequestSchemaString>(
+					repository.HistgramLines));
 		}
 
 		#endregion constructor

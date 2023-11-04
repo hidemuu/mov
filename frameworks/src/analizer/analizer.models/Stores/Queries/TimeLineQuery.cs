@@ -3,6 +3,7 @@ using Mov.Core.Repositories;
 using Mov.Core.Repositories.Schemas.Requests;
 using Mov.Core.Stores;
 using Mov.Core.Stores.Services.Queries.Readers;
+using Mov.Core.Stores.Services.Queries.Readers.Decorators;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,7 +22,9 @@ namespace Mov.Analizer.Models.Stores.Queries
 
 		public TimeLineQuery(IAnalizerRepository repository)
 		{
-			this.Reader = new DbRepositoryReader<IDbRepository<TimeLineSchema, string, DbRequestSchemaString>, TimeLineSchema, string, DbRequestSchemaString>(repository.TimeLines);
+			this.Reader = new ReadCaching<TimeLineSchema, string>(
+				new DbRepositoryReader<IDbRepository<TimeLineSchema, string, DbRequestSchemaString>, TimeLineSchema, string, DbRequestSchemaString>(
+					repository.TimeLines));
 		}
 
 		#endregion constructor

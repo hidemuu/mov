@@ -6,6 +6,7 @@ using Mov.Core.Stores.Services.Queries.Readers;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Mov.Core.Stores.Services.Queries.Readers.Decorators;
 
 namespace Mov.Analizer.Models.Stores.Queries
 {
@@ -21,7 +22,9 @@ namespace Mov.Analizer.Models.Stores.Queries
 
 		public StatisticLineQuery(IAnalizerRepository repository)
 		{
-			this.Reader = new DbRepositoryReader<IDbRepository<StatisticLineSchema, string, DbRequestSchemaString>, StatisticLineSchema, string, DbRequestSchemaString>(repository.StatisticLines);
+			this.Reader = new ReadCaching<StatisticLineSchema, string>(
+				new DbRepositoryReader<IDbRepository<StatisticLineSchema, string, DbRequestSchemaString>, StatisticLineSchema, string, DbRequestSchemaString>(
+					repository.StatisticLines));
 		}
 
 		#endregion constructor

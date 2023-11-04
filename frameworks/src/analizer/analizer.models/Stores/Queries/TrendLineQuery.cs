@@ -6,6 +6,7 @@ using Mov.Core.Stores;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Mov.Core.Stores.Services.Queries.Readers.Decorators;
 
 namespace Mov.Analizer.Models.Stores.Queries
 {
@@ -21,7 +22,9 @@ namespace Mov.Analizer.Models.Stores.Queries
 
 		public TrendLineQuery(IAnalizerRepository repository)
 		{
-			this.Reader = new DbRepositoryReader<IDbRepository<TrendLineSchema, string, DbRequestSchemaString>, TrendLineSchema, string, DbRequestSchemaString>(repository.TrendLines);
+			this.Reader = new ReadCaching<TrendLineSchema, string>(
+				new DbRepositoryReader<IDbRepository<TrendLineSchema, string, DbRequestSchemaString>, TrendLineSchema, string, DbRequestSchemaString>(
+					repository.TrendLines));
 		}
 
 		#endregion constructor

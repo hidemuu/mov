@@ -6,6 +6,7 @@ using Mov.Core.Stores.Services.Queries.Readers;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Mov.Core.Stores.Services.Queries.Readers.Decorators;
 
 namespace Mov.Analizer.Models.Stores.Queries
 {
@@ -21,7 +22,9 @@ namespace Mov.Analizer.Models.Stores.Queries
 
 		public TableLineQuery(IAnalizerRepository repository)
 		{
-			this.Reader = new DbRepositoryReader<IDbRepository<TableLineSchema, int, DbRequestSchemaString>, TableLineSchema, int, DbRequestSchemaString>(repository.TableLines);
+			this.Reader = new ReadCaching<TableLineSchema, int>(
+				new DbRepositoryReader<IDbRepository<TableLineSchema, int, DbRequestSchemaString>, TableLineSchema, int, DbRequestSchemaString>(
+					repository.TableLines));
 		}
 
 		#endregion constructor

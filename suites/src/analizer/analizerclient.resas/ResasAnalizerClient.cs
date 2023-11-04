@@ -76,7 +76,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 					{
 						var dataLabel = populationPerYear.Name;
 
-						if(request.IsEmptyLabel() || request.Label.Equals(dataLabel))
+						if(request.Label.IsEmpty() || request.Label.Equals(dataLabel))
 						{
 							var timeTrend = new TrendLine(
 							request.Category.Value,

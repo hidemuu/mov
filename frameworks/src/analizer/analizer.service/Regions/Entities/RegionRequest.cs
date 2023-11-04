@@ -71,10 +71,6 @@ namespace Mov.Analizer.Service.Regions.Entities
 
         #region method
 
-        public bool IsEmptyCategory() => Category.IsEmpty();
-
-        public bool IsEmptyLabel() => Label.IsEmpty();
-
         public RegionRequestSchema CreateSchema()
         {
             return new RegionRequestSchema()

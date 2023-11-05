@@ -102,15 +102,25 @@ namespace Mov.Core.Accessors.Clients
 
         public async Task<ResponseStatus> PostAsync<TEntity>(string url, TEntity entity)
         {
-            var allEntities = (await GetsAsync<TEntity>(url)).ToList();
-            var registeredEntity = allEntities.FirstOrDefault(x => x.Equals(entity));
-            if (registeredEntity != null)
+            
+            if (typeof(IEnumerable<>).IsAssignableFrom(entity.GetType().GetGenericTypeDefinition()))
             {
-                allEntities.Remove(registeredEntity);
-            }
-            allEntities.Add(entity);
-            await Task.Run(() => _serializer.Serialize<IEnumerable<TEntity>, IEnumerable<TEntity>>(Endpoint.Combine(url).Value, allEntities));
-            return ResponseStatus.Success;
+                //配列型の場合
+                var postEntity = await GetAsync<TEntity>(url);
+				await Task.Run(() => _serializer.Serialize<TEntity, TEntity>(Endpoint.Combine(url).Value, postEntity));
+			}
+            else
+            {
+				var allEntities = (await GetsAsync<TEntity>(url)).ToList();
+				var registeredEntity = allEntities.FirstOrDefault(x => x.Equals(entity));
+				if (registeredEntity != null)
+				{
+					allEntities.Remove(registeredEntity);
+				}
+				allEntities.Add(entity);
+				await Task.Run(() => _serializer.Serialize<IEnumerable<TEntity>, IEnumerable<TEntity>>(Endpoint.Combine(url).Value, allEntities));
+			}
+			return ResponseStatus.Success;
         }
 
         public async Task<ResponseStatus> PutAsync<TEntity>(string url, TEntity entity)

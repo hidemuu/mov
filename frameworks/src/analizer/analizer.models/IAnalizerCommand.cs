@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Mov.Analizer.Models
 {
-	public interface IAnalizerStoreCommand
+	public interface IAnalizerCommand
 	{
 		IStoreCommand<TableLineSchema> TableLines { get; }
 		IStoreCommand<TrendLineSchema> TrendLines { get; }

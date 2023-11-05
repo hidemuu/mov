@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Mov.Analizer.Service.Stores
 {
-	public class AnalizerStoreQuery : IAnalizerStoreQuery
+	public class AnalizerQuery : IAnalizerQuery
 	{
 		#region field
 
@@ -32,7 +32,7 @@ namespace Mov.Analizer.Service.Stores
 
 		#region constructor
 
-		public AnalizerStoreQuery(IAnalizerRepository repository)
+		public AnalizerQuery(IAnalizerRepository repository)
 		{
 			_repository= repository;
 			this.TableLines = new TableLineQuery(repository);

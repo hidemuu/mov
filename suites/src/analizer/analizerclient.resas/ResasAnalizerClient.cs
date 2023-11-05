@@ -26,8 +26,8 @@ namespace Mov.Suite.AnalizerClient.Resas
 		#region field
 
         private readonly IResasRepository _resasRepository;
-		private readonly IAnalizerStoreQuery _analizerStoreQuery;
-		private readonly IAnalizerStoreCommand _analizerStoreCommand;
+		private readonly IAnalizerQuery _analizerQuery;
+		private readonly IAnalizerCommand _analizerCommand;
 
         #endregion field
 
@@ -35,8 +35,8 @@ namespace Mov.Suite.AnalizerClient.Resas
 
         public ResasAnalizerClient(IAnalizerRepository analizerRepository, IResasRepository resasRepository) 
         {
-			_analizerStoreQuery = new AnalizerStoreQuery(analizerRepository);
-			_analizerStoreCommand = new AnalizerStoreCommand(analizerRepository);
+			_analizerQuery = new AnalizerQuery(analizerRepository);
+			_analizerCommand = new AnalizerCommand(analizerRepository);
 			_resasRepository = resasRepository;
 		}
 
@@ -58,10 +58,10 @@ namespace Mov.Suite.AnalizerClient.Resas
 				lines.Add(new TableLine(prefecture.Code, _resasRepository.Prefectures.Name, string.Empty, prefecture.Name, prefecture.Name));
 			}
 
-            var tableLines = _analizerStoreQuery.TableLines.Reader.ReadAll();
+            var tableLines = _analizerQuery.TableLines.Reader.ReadAll();
             if (!tableLines?.Any() ?? true)
 			{
-				_analizerStoreCommand.TableLines.Saver.Save(lines.Select(x => x.CreateSchema()));
+				_analizerCommand.TableLines.Saver.Save(lines.Select(x => x.CreateSchema()));
 			}
 			return lines.Select(x => x.CreateSchema());
 		}

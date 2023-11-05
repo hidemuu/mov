@@ -42,7 +42,7 @@ namespace Mov.Analizer.Service.Regions.Entities
                 return new RegionRequest(schema.PrefCode, schema.CityCode, schema.Category, schema.Label);
             }
 
-            public static RegionRequest Create(string pref, string city, string category, string label, IAnalizerStoreQuery query)
+            public static RegionRequest Create(string pref, string city, string category, string label, IAnalizerQuery query)
             {
                 int prefCode = -1;
                 int cityCode = -1;

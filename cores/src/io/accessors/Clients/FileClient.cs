@@ -102,12 +102,13 @@ namespace Mov.Core.Accessors.Clients
 
         public async Task<ResponseStatus> PostAsync<TEntity>(string url, TEntity entity)
         {
-            
-            if (typeof(IEnumerable<>).IsAssignableFrom(entity.GetType().GetGenericTypeDefinition()))
+            var entityTypeInterfaces = entity.GetType().GetInterfaces();
+			if (entityTypeInterfaces.Any(t =>
+						t.IsConstructedGenericType &&
+						t.GetGenericTypeDefinition() == typeof(IEnumerable<>)))
             {
                 //配列型の場合
-                var postEntity = await GetAsync<TEntity>(url);
-				await Task.Run(() => _serializer.Serialize<TEntity, TEntity>(Endpoint.Combine(url).Value, postEntity));
+                await Task.Run(() => _serializer.Serialize<TEntity, TEntity>(Endpoint.Combine(url).Value, entity));
 			}
             else
             {

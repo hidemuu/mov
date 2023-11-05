@@ -28,7 +28,43 @@ namespace Mov.Core.Accessors.Test
             Assert.That(results[1].Content.Equals("test2"));
         }
 
-        [Test]
+		[Test]
+		public void PostAsync_JsonFile_Return()
+		{
+			// Arrange
+			var sut = new FileClient(PathValue.Factory.CreateResourceRootPath(), AccessType.Json);
+            var entity = new SerializeSchema() { Id = 1, Content = "test1" };
+
+			// Act
+			Task.WhenAll(sut.DeletesAsync("test_post.json"));
+			Task.WhenAll(sut.PostAsync("test_post.json", entity));
+			var results = Task.WhenAll(sut.GetsAsync<SerializeSchema>("test_post.json")).Result[0].ToArray();
+
+			// Assert
+			Assert.That(results != null);
+		}
+
+		[Test]
+		public void PostAsync_JsonIEnumerableFile_Return()
+        {
+            // Arrange
+            var sut = new FileClient(PathValue.Factory.CreateResourceRootPath(), AccessType.Json);
+			var entities = new List<SerializeSchema>()
+			{
+				new SerializeSchema(){ Id = 1, Content = "test1" },
+				new SerializeSchema(){ Id = 2, Content = "test2" },
+			};
+
+			// Act
+			Task.WhenAll(sut.DeletesAsync("test_post.json"));
+			Task.WhenAll(sut.PostAsync("test_post.json", entities));
+			var results = Task.WhenAll(sut.GetsAsync<SerializeSchema>("test_post.json")).Result[0].ToArray();
+
+            // Assert
+            Assert.That(results != null);
+		}
+
+		[Test]
         public void GetAsync_XmlFile_ReturnSchema()
         {
             // Arrange

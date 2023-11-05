@@ -24,6 +24,28 @@ type FileCell = {
     icon: JSX.Element;
 };
 
+type LastUpdatedCell = {
+    label: string;
+    timestamp: number;
+};
+
+type LastUpdateCell = {
+    label: string;
+    icon: JSX.Element;
+};
+
+type AuthorCell = {
+    label: string;
+    status: PresenceBadgeStatus;
+};
+
+type Item = {
+    file: FileCell;
+    author: AuthorCell;
+    lastUpdated: LastUpdatedCell;
+    lastUpdate: LastUpdateCell;
+};
+
 const items = [
     {
         file: { label: 'Meeting notes', icon: <DocumentRegular /> },

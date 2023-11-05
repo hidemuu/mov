@@ -41,7 +41,7 @@ namespace Mov.Analizer.Models.Entities
 		{
 			return new TrendLineSchema()
 			{
-				Id = $"{Category}_{Label}_{Number}",
+				Id = $"{Category}_{Label}_{Number.Value}",
 				Category = Category,
 				Label = Label,
 				Number = Number.Value,

@@ -94,12 +94,12 @@ namespace Mov.Core.Valuables
 
 		public int ToIntDate()
 		{
-			return int.Parse(this.Value.ToString(DATE_FORMAT));
+			return int.TryParse(this.Value.ToString(DATE_FORMAT), out int result) ? result : 0;
 		}
 
 		public int ToIntDateTime()
 		{
-			return int.Parse(this.Value.ToString(DATETIME_FORMAT));
+			return int.TryParse(this.Value.ToString(DATETIME_FORMAT), out int result) ? result : 0;
 		}
 
 		/// <summary>

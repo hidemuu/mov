@@ -54,6 +54,25 @@ namespace Mov.Suite.Api.Controllers
 			));
 		}
 
+		/// <summary>
+		/// Gets PopulationPerYears
+		/// </summary>
+		[HttpGet("{prefCode}/{cityCode}")]
+		public async Task<IActionResult> GetPopulationPerYears(int prefCode, int cityCode)
+		{
+			return Ok(await this._client.GetTrendLineAsync(
+				new RegionRequestSchema()
+				{
+					PrefCode = prefCode,
+					CityCode = cityCode,
+					Category = "population_per_years",
+					Label = "all"
+				},
+				TimeValue.Empty,
+				TimeValue.Empty
+			));
+		}
+
 		#endregion method
 	}
 }

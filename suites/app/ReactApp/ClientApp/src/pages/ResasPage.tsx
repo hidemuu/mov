@@ -22,7 +22,7 @@ export const ResasPage: React.FunctionComponent = () => {
     useEffect(() => {
         // 都道府県一覧を取得する
         axios
-            .get('prefecture', {
+            .get('api/TrendLine/population_per_years/11/11362', {
                 //headers: { "X-API-KEY": process.env.REACT_APP_API_KEY },
             })
             .then((results) => {

@@ -61,6 +61,7 @@ namespace Mov.Suite.AnalizerClient.Resas
             var tableLines = _analizerQuery.TableLines.Reader.ReadAll();
             if (!tableLines?.Any() ?? true)
 			{
+				_analizerCommand.TableLines.Deleter.Clear();
 				_analizerCommand.TableLines.Saver.Save(lines.Select(x => x.CreateSchema()));
 			}
 			return lines.Select(x => x.CreateSchema());

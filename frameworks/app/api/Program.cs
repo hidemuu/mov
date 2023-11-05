@@ -1,6 +1,9 @@
 using Microsoft.OpenApi.Models;
+using Mov.Analizer.Models;
+using Mov.Analizer.Repository;
 using Mov.Core.Accessors.Models;
 using Mov.Core.Configurators;
+using Mov.Core.Configurators.Contexts;
 using Mov.Core.Configurators.Repositories;
 using Mov.Core.Translators;
 using Mov.Core.Translators.Repositories;
@@ -27,8 +30,9 @@ services.AddSwaggerGen(option =>
 });
 
 var resourcePath = PathCreator.GetResourcePath();
-services.AddScoped<IConfiguratorRepository, FileConfiguratorRepository>(_ => new FileConfiguratorRepository(resourcePath, FileType.Json, EncodingValue.UTF8));
+ConfiguratorContext.Initialize(resourcePath);
 services.AddScoped<ITranslatorRepository, FileTranslatorRepository>(_ => new FileTranslatorRepository(resourcePath));
+services.AddScoped<IAnalizerRepository, FileAnalizerRepository>(_ => new FileAnalizerRepository(resourcePath));
 services.AddScoped<IDesignerRepository, FileDesignerRepository>(_ => new FileDesignerRepository(resourcePath, FileType.Xml, EncodingValue.UTF8));
 services.AddMvc();
 

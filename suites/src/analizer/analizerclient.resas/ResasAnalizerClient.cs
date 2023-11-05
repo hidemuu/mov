@@ -85,7 +85,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 							var timeTrend = new TrendLine(
 							request.Category.Value,
 							dataLabel,
-							new NumericalValue(TimeValue.Factory.CreateByDate(data.Year, 1, 1).ToIntDateTime()),
+							new NumericalValue(data.Year),
 							new NumericalValue(data.Value)
 							);
 							result.Add(timeTrend);

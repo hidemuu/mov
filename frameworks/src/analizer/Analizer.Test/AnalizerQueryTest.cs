@@ -61,6 +61,7 @@ namespace Mov.Analizer.Test
 			var query = new AnalizerQuery(repository);
 			var result = query.TableLines.Reader.ReadAll();
 			Assert.That(result.Any(), Is.EqualTo(true));
+			Assert.That(result.Count, Is.EqualTo(2));
 		}
 
 		#endregion test

@@ -1,12 +1,15 @@
+using Mov.Analizer.Repository;
+using Mov.Core.Accessors.Models;
+using Mov.Framework.Services;
 using System.Diagnostics;
 
 namespace Mov.Analizer.Test
 {
-	public class Tests
+	public class AnalizerRepositoryTest
 	{
 		#region constants
 
-		private const string TEST_NAME = nameof(AnalizerQueryTest);
+		private const string TEST_NAME = nameof(AnalizerRepositoryTest);
 
 		#endregion constants
 
@@ -45,9 +48,12 @@ namespace Mov.Analizer.Test
 		#region test
 
 		[Test]
-		public void Test1()
+		public void GetsTableLineAsync_ResourceFile_Returns()
 		{
-			Assert.Pass();
+			var resourcePath = PathValue.Factory.CreateResourcePath("").Value;
+			var repository = new FileAnalizerRepository(resourcePath);
+			var result = Task.WhenAll(repository.TableLines.GetsAsync()).Result[0];
+			Assert.That(result.Any(), Is.EqualTo(true));
 		}
 
 		#endregion test

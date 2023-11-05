@@ -13,11 +13,37 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="resources\tableline.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="resources\tableline.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
     <PackageReference Include="NUnit" Version="3.13.3" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
     <PackageReference Include="NUnit.Analyzers" Version="3.3.0" />
     <PackageReference Include="coverlet.collector" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\framework\Framework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mov.Core.Accessors">
+      <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Accessors.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Repositories">
+      <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Repositories.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Core.Stores">
+      <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Stores.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

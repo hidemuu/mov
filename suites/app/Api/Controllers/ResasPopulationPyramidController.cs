@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Mov.Suite.AnalizerClient.Resas;
+using Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Requests;
 
 namespace Mov.Suite.Api.Controllers
 {
@@ -38,7 +39,7 @@ namespace Mov.Suite.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await this._repository.PopulationPyramids.GetsAsync());
+            return Ok(await this._repository.PopulationPyramids.GetRequestAsync(new PopulationPyramidRequestSchema(11362, 11, 1980, 2030)));
         }
 
         #endregion method

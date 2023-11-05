@@ -9,7 +9,7 @@ namespace Mov.Api.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class ShellController : ControllerBase
+    public class DesignerThemeController : ControllerBase
     {
         #region field
 
@@ -23,7 +23,7 @@ namespace Mov.Api.Controllers
         /// controller for design contents
         /// </summary>
         /// <param name="repository"></param>
-        public ShellController(IDesignerRepository repository)
+        public DesignerThemeController(IDesignerRepository repository)
         {
             this.repository = repository;
         }
@@ -36,18 +36,18 @@ namespace Mov.Api.Controllers
         /// Gets all items.
         /// </summary>
         [HttpGet]
-        public async Task<IEnumerable<ShellSchema>> Get()
+        public async Task<IEnumerable<ThemeSchema>> Get()
         {
-            return await this.repository.Shells.GetsAsync();
+            return await this.repository.Themes.GetsAsync();
         }
 
         /// <summary>
         /// Creates a new item or updates an existing one.
         /// </summary>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] ShellSchema item)
+        public async Task<IActionResult> Post([FromBody] ThemeSchema item)
         {
-            await this.repository.Shells.PostAsync(item);
+            await this.repository.Themes.PostAsync(item);
             return Ok();
         }
 

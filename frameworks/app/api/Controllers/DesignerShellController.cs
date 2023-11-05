@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Mov.Game.Models;
-using Mov.Game.Models.Schemas;
+using Mov.Designer.Models;
+using Mov.Designer.Models.Schemas;
 
 namespace Mov.Api.Controllers
 {
@@ -9,21 +9,21 @@ namespace Mov.Api.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class LandmarkController : ControllerBase
+    public class DesignerShellController : ControllerBase
     {
         #region field
 
-        private readonly IGameRepository repository;
+        private readonly IDesignerRepository repository;
 
         #endregion field
 
         #region constructor
 
         /// <summary>
-        /// 
+        /// controller for design contents
         /// </summary>
         /// <param name="repository"></param>
-        public LandmarkController(IGameRepository repository)
+        public DesignerShellController(IDesignerRepository repository)
         {
             this.repository = repository;
         }
@@ -36,28 +36,20 @@ namespace Mov.Api.Controllers
         /// Gets all items.
         /// </summary>
         [HttpGet]
-        public async Task<IEnumerable<LandmarkSchema>> Get()
+        public async Task<IEnumerable<ShellSchema>> Get()
         {
-            return await this.repository.Landmarks.GetsAsync();
+            return await this.repository.Shells.GetsAsync();
         }
-
 
         /// <summary>
         /// Creates a new item or updates an existing one.
         /// </summary>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] LandmarkSchema item)
+        public async Task<IActionResult> Post([FromBody] ShellSchema item)
         {
-            await this.repository.Landmarks.PostAsync(item);
+            await this.repository.Shells.PostAsync(item);
             return Ok();
         }
-
-        //[HttpDelete("{date}")]
-        //public async Task<IActionResult> Delete(LandmarkSchema item)
-        //{
-        //    await this.repository.Landmarks.DeleteAsync(item.Date);
-        //    return Ok();
-        //}
 
         #endregion method
     }

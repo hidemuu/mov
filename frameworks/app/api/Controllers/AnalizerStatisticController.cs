@@ -7,7 +7,7 @@ namespace Mov.Api.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class StatisticController : ControllerBase
+    public class AnalizerStatisticController : ControllerBase
     {
     }
 }

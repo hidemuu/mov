@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Mov.Designer.Models;
-using Mov.Designer.Models.Schemas;
+using Mov.Bom.Models;
+using Mov.Bom.Models.Schemas;
 
 namespace Mov.Api.Controllers
 {
@@ -9,11 +9,11 @@ namespace Mov.Api.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class NodeController : ControllerBase
+    public class BomOrderController : ControllerBase
     {
         #region field
 
-        private readonly IDesignerRepository repository;
+        private readonly IBomRepository repository;
 
         #endregion field
 
@@ -23,7 +23,7 @@ namespace Mov.Api.Controllers
         /// controller for design contents
         /// </summary>
         /// <param name="repository"></param>
-        public NodeController(IDesignerRepository repository)
+        public BomOrderController(IBomRepository repository)
         {
             this.repository = repository;
         }
@@ -36,18 +36,18 @@ namespace Mov.Api.Controllers
         /// Gets all items.
         /// </summary>
         [HttpGet]
-        public async Task<IEnumerable<NodeSchema>> Get()
+        public async Task<IEnumerable<Order>> Get()
         {
-            return await this.repository.Nodes.GetsAsync();
+            return await this.repository.Orders.GetAsync();
         }
 
         /// <summary>
         /// Creates a new item or updates an existing one.
         /// </summary>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] NodeSchema item)
+        public async Task<IActionResult> Post([FromBody] Order item)
         {
-            await this.repository.Nodes.PostAsync(item);
+            await this.repository.Orders.UpsertAsync(item);
             return Ok();
         }
 

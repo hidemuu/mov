@@ -9,7 +9,7 @@ namespace Mov.Api.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class ContentController : ControllerBase
+    public class DesignerContentController : ControllerBase
     {
         #region field
 
@@ -23,7 +23,7 @@ namespace Mov.Api.Controllers
         /// controller for design contents
         /// </summary>
         /// <param name="repository"></param>
-        public ContentController(IDesignerRepository repository)
+        public DesignerContentController(IDesignerRepository repository)
         {
             this.repository = repository;
         }

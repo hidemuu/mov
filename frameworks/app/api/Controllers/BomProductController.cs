@@ -9,7 +9,7 @@ namespace Mov.Api.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : ControllerBase
+    public class BomProductController : ControllerBase
     {
         #region field
 
@@ -23,7 +23,7 @@ namespace Mov.Api.Controllers
         /// controller for design contents
         /// </summary>
         /// <param name="repository"></param>
-        public ProductController(IBomRepository repository)
+        public BomProductController(IBomRepository repository)
         {
             this.repository = repository;
         }

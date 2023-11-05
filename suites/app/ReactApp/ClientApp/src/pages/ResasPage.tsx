@@ -5,19 +5,14 @@ import axios from "axios";
 import fetchData from "../hooks/fatchData";
 
 export const ResasPage: React.FunctionComponent = () => {
-    let series: Highcharts.SeriesOptionsType[] = [];
-    let categories = [];
-
-    const [prefectures, setPreFectures] = useState<{
-        message: null;
-        result: {
-            code: number;
-            name: string;
-        }[];
-    } | null>(null);
-    const [prefPopulation, setPrefPopulation] = useState<
-        { prefName: string; data: { year: number; value: number }[] }[]
-    >([]);
+    
+    const [trendLines, setTrendLines] = useState<{
+        id: string;
+        category: string;
+        label: string;
+        number: number;
+        value: number
+    }[]>([]);
 
     useEffect(() => {
         // 都道府県一覧を取得する
@@ -26,26 +21,25 @@ export const ResasPage: React.FunctionComponent = () => {
                 //headers: { "X-API-KEY": process.env.REACT_APP_API_KEY },
             })
             .then((results) => {
-                setPreFectures(results.data);
+                setTrendLines(results.data);
             })
             .catch((error) => { });
-
     }, []);
 
-    for (let p of prefPopulation) {
-        let data = [];
-
-        for (let pd of p.data) {
-            data.push(pd.value);
-            categories.push(String(pd.year));
-        }
-
-        series.push({
-            type: "line",
-            name: p.prefName,
-            data: data,
-        });
+    let series: Highcharts.SeriesOptionsType[] = [];
+    let categories = [];
+    let data = [];
+    for (let trendLine of trendLines)
+    {    
+        categories.push(String(trendLine.number));   
+        data.push(trendLine.value);
     }
+
+    series.push({
+        type: "line",
+        name: "population",
+        data: data,
+    });
 
     const options: Highcharts.Options = {
         title: {

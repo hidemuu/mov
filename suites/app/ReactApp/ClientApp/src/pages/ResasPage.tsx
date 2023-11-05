@@ -2,7 +2,6 @@
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import axios from "axios";
-import fetchData from "../hooks/fatchData";
 
 export const ResasPage: React.FunctionComponent = () => {
     

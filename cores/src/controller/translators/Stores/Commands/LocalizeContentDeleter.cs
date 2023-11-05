@@ -19,15 +19,20 @@ namespace Mov.Core.Translators.Stores.Commands
             _repository = repository;
         }
 
-        #endregion constructor
+		#endregion constructor
 
-        #region method
+		#region method
 
-        public void Delete(LocalizeContent entity)
+		public void Delete(LocalizeContent entity)
         {
             throw new NotImplementedException();
         }
 
-        #endregion method
-    }
+		public void Clear()
+		{
+			throw new NotImplementedException();
+		}
+
+		#endregion method
+	}
 }

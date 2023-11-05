@@ -17,17 +17,22 @@
             this._eventPublisher = eventPublisher;
         }
 
-        #endregion constructor
+		#endregion constructor
 
-        #region method
+		#region method
 
-        public void Delete(TEntity entity)
+		public void Delete(TEntity entity)
         {
             _decoratedDelete.Delete(entity);
             var entityDeleted = new DeletedEvent<TEntity>(entity);
             _eventPublisher.Publish(entityDeleted);
         }
 
-        #endregion method
-    }
+		public void Clear()
+		{
+			_decoratedDelete.Clear();
+		}
+
+		#endregion method
+	}
 }

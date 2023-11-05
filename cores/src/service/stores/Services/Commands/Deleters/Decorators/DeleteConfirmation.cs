@@ -11,7 +11,17 @@ namespace Mov.Core.Stores.Services.Commands.Deleters.Decorators
             _decorated = decorated;
         }
 
-        public void Delete(TEntity entity)
+		public void Clear()
+		{
+			Console.WriteLine("削除しますか？ [Y/N]");
+			var keyInfo = Console.ReadKey();
+			if (keyInfo.Key == ConsoleKey.Y)
+			{
+				_decorated.Clear();
+			}
+		}
+
+		public void Delete(TEntity entity)
         {
             Console.WriteLine("削除しますか？ [Y/N]");
             var keyInfo = Console.ReadKey();

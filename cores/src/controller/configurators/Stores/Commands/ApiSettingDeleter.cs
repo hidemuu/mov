@@ -21,15 +21,20 @@ namespace Mov.Core.Configurators.Stores.Commands
             _repository = repository;
         }
 
-        #endregion constructor
+		#endregion constructor
 
-        #region method
+		#region method
 
-        public void Delete(ApiSetting entity)
+		public void Delete(ApiSetting entity)
         {
             throw new NotImplementedException();
         }
 
-        #endregion method
-    }
+		public void Clear()
+		{
+			throw new NotImplementedException();
+		}
+
+		#endregion method
+	}
 }

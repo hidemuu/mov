@@ -33,6 +33,11 @@ namespace Mov.Core.Stores.Services.Commands.Deleters
 			Task.WhenAll(_repository.DeleteAsync(entity));
 		}
 
+		public void Clear()
+		{
+			Task.WhenAll(_repository.DeletesAsync());
+		}
+
 		#endregion method
 	}
 }

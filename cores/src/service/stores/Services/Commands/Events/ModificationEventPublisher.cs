@@ -24,11 +24,11 @@ namespace Mov.Core.Stores.Services.Commands.Events
             this._eventPublisher = eventPublisher;
         }
 
-        #endregion constructor
+		#endregion constructor
 
-        #region method
+		#region method
 
-        public void Delete(TEntity entity)
+		public void Delete(TEntity entity)
         {
             _deleter.Delete(entity);
             var entityDeleted = new DeletedEvent<TEntity>(entity);
@@ -49,6 +49,11 @@ namespace Mov.Core.Stores.Services.Commands.Events
 			_saver.Save(entities);
 			var entitySaved = new SavedEvent<TEntity>(entities.FirstOrDefault());
 			_eventPublisher.Publish(entitySaved);
+		}
+
+		public void Clear()
+		{
+			_deleter.Clear();
 		}
 
 		#endregion method

@@ -1,5 +1,7 @@
 ﻿using Mov.Core.Stores.Services.Commands.Deleters.Events;
 using Mov.Core.Stores.Services.Commands.Savers.Events;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Mov.Core.Stores.Services.Commands.Events
 {
@@ -33,6 +35,8 @@ namespace Mov.Core.Stores.Services.Commands.Events
             _eventPublisher.Publish(entityDeleted);
         }
 
+
+
         public void Save(TEntity entity)
         {
             _saver.Save(entity);
@@ -40,6 +44,13 @@ namespace Mov.Core.Stores.Services.Commands.Events
             _eventPublisher.Publish(entitySaved);
         }
 
-        #endregion method
-    }
+		public void Save(IEnumerable<TEntity> entities)
+		{
+			_saver.Save(entities);
+			var entitySaved = new SavedEvent<TEntity>(entities.FirstOrDefault());
+			_eventPublisher.Publish(entitySaved);
+		}
+
+		#endregion method
+	}
 }

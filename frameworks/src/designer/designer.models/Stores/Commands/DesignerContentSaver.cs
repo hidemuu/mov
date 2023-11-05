@@ -1,5 +1,6 @@
 ﻿using Mov.Core.Stores;
 using Mov.Designer.Models.Entities;
+using System.Collections.Generic;
 
 namespace Mov.Designer.Models.Stores.Commands
 {
@@ -16,5 +17,10 @@ namespace Mov.Designer.Models.Stores.Commands
         {
             //_repositorySaver.Save(entity);
         }
-    }
+
+		public void Save(IEnumerable<DesignerContent> entities)
+		{
+			throw new System.NotImplementedException();
+		}
+	}
 }

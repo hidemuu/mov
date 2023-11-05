@@ -33,6 +33,11 @@ namespace Mov.Core.Stores.Services.Commands.Savers
 			Task.WhenAll(_repository.PostAsync(entity));
 		}
 
+		public void Save(IEnumerable<TEntity> entities)
+		{
+			Task.WhenAll(_repository.PostsAsync(entities));
+		}
+
 		#endregion method
 	}
 }

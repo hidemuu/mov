@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Configurators.Models.Entities;
 using Mov.Core.Stores;
 using System;
+using System.Collections.Generic;
 
 namespace Mov.Core.Configurators.Stores.Commands
 {
@@ -28,6 +29,11 @@ namespace Mov.Core.Configurators.Stores.Commands
             throw new NotImplementedException();
         }
 
-        #endregion method
-    }
+		public void Save(IEnumerable<UserSetting> entities)
+		{
+			throw new NotImplementedException();
+		}
+
+		#endregion method
+	}
 }

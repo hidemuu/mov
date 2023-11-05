@@ -6,6 +6,7 @@ using Mov.Analizer.Service.Regions;
 using Mov.Analizer.Service.Regions.Entities;
 using Mov.Analizer.Service.Regions.Schemas;
 using Mov.Analizer.Service.Regions.ValueObjects;
+using Mov.Analizer.Service.Stores;
 using Mov.Core.Valuables;
 using Mov.Suite.AnalizerClient.Resas.Repository;
 using Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Requests;
@@ -24,8 +25,9 @@ namespace Mov.Suite.AnalizerClient.Resas
 
 		#region field
 
-		private readonly IAnalizerRepository _analizerRepository;
         private readonly IResasRepository _resasRepository;
+		private readonly IAnalizerStoreQuery _analizerStoreQuery;
+		private readonly IAnalizerStoreCommand _analizerStoreCommand;
 
         #endregion field
 
@@ -33,9 +35,10 @@ namespace Mov.Suite.AnalizerClient.Resas
 
         public ResasAnalizerClient(IAnalizerRepository analizerRepository, IResasRepository resasRepository) 
         {
-            _analizerRepository = analizerRepository;
-            _resasRepository = resasRepository;
-        }
+			_analizerStoreQuery = new AnalizerStoreQuery(analizerRepository);
+			_analizerStoreCommand = new AnalizerStoreCommand(analizerRepository);
+			_resasRepository = resasRepository;
+		}
 
         #endregion constructor
 
@@ -55,10 +58,10 @@ namespace Mov.Suite.AnalizerClient.Resas
 				lines.Add(new TableLine(prefecture.Code, _resasRepository.Prefectures.Name, string.Empty, prefecture.Name, prefecture.Name));
 			}
 
-            var tableLines = await _analizerRepository.TableLines.GetsAsync();
+            var tableLines = _analizerStoreQuery.TableLines.Reader.ReadAll();
             if (!tableLines?.Any() ?? true)
 			{
-				await _analizerRepository.TableLines.PostsAsync(lines.Select(x => x.CreateSchema()));
+				_analizerStoreCommand.TableLines.Saver.Save(lines.Select(x => x.CreateSchema()));
 			}
 			return lines.Select(x => x.CreateSchema());
 		}

@@ -1,5 +1,6 @@
 ﻿using Mov.Core.Stores.Models;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace Mov.Core.Stores.Services.Commands.Savers.Decorators
@@ -28,6 +29,16 @@ namespace Mov.Core.Stores.Services.Commands.Savers.Decorators
             _auditSave.Save(auditInfo);
         }
 
-    }
+		public void Save(IEnumerable<TEntity> entities)
+		{
+			_decorated.Save(entities);
+			var auditInfo = new AuditInfo
+			{
+				UserName = Thread.CurrentPrincipal.Identity.Name,
+				TimeStamp = DateTime.Now,
+			};
+			_auditSave.Save(auditInfo);
+		}
+	}
 
 }

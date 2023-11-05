@@ -1,6 +1,7 @@
 ﻿using Mov.Core.Stores;
 using Mov.Core.Translators.Models.Entities;
 using System;
+using System.Collections.Generic;
 
 namespace Mov.Core.Translators.Stores.Commands
 {
@@ -28,6 +29,11 @@ namespace Mov.Core.Translators.Stores.Commands
             throw new NotImplementedException();
         }
 
-        #endregion method
-    }
+		public void Save(IEnumerable<LocalizeContent> entities)
+		{
+			throw new NotImplementedException();
+		}
+
+		#endregion method
+	}
 }

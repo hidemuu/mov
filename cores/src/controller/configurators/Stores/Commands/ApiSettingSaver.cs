@@ -30,6 +30,11 @@ namespace Mov.Core.Configurators.Stores.Commands
             throw new NotImplementedException();
         }
 
-        #endregion method
-    }
+		public void Save(IEnumerable<ApiSetting> entities)
+		{
+			throw new NotImplementedException();
+		}
+
+		#endregion method
+	}
 }

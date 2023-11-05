@@ -42,6 +42,26 @@ namespace Mov.Suite.Api.Controllers
 			return Ok(await this._client.GetTableLineAsync());
 		}
 
+		/// <summary>
+		/// Gets all items.
+		/// </summary>
+		[HttpGet("prefecture")]
+		public async Task<IActionResult> GetPrefectures()
+		{
+			var result = await this._client.GetTableLineAsync();
+			return Ok(result.Where(x => x.Category.Equals("prefecture")));
+		}
+
+		/// <summary>
+		/// Gets all items.
+		/// </summary>
+		[HttpGet("city")]
+		public async Task<IActionResult> GetCities()
+		{
+			var result = await this._client.GetTableLineAsync();
+			return Ok(result.Where(x => x.Category.Equals("city")));
+		}
+
 		#endregion method
 	}
 }

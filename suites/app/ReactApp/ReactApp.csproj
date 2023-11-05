@@ -59,6 +59,7 @@
     <None Remove="ClientApp\src\pages\Search\index.ts" />
     <None Remove="ClientApp\src\pages\Search\IResultsProps.ts" />
     <None Remove="ClientApp\src\pages\Search\PeopleResults.tsx" />
+    <None Remove="ClientApp\src\pages\TablePage.tsx" />
     <None Remove="ClientApp\src\pages\TaxonomyPage.tsx" />
     <None Remove="ClientApp\src\pages\Taxonomy\TaxonomyExplorer.tsx" />
     <None Remove="ClientApp\src\services\Navigation.tsx" />

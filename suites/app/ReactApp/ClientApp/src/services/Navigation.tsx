@@ -12,6 +12,7 @@ import { DashboardPage } from '../pages/DashboardPage';
 import { OutlookPage } from '../pages/OutlookPage';
 import { SearchPage } from '../pages/SearchPage';
 import { HomePage } from '../pages/HomePage';
+import { TablePage } from '../pages/TablePage';
 import { ResasPage } from '../pages/ResasPage';
 import { FilesPage } from '../pages/FilesPage';
 import { TaxonomyPage } from '../pages/TaxonomyPage';
@@ -26,6 +27,16 @@ export const getNavigation = (isSignedIn: boolean) => {
         key: 'home',
         requiresLogin: false,
         component: <HomePage />,
+        exact: true
+    });
+
+    navItems.push({
+        name: 'Table',
+        url: 'table',
+        icon: <TagMultipleRegular />,
+        key: 'table',
+        requiresLogin: false,
+        component: <TablePage />,
         exact: true
     });
 

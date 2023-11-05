@@ -109,6 +109,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calendar.Controller", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib", "lib\Lib.csproj", "{61DF748F-A35C-48FC-9984-07B540712FB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analizer.Test", "src\analizer\Analizer.Test\Analizer.Test.csproj", "{C233528B-49B9-441E-B8A9-B5BC4D94B936}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -283,6 +285,10 @@ Global
 		{61DF748F-A35C-48FC-9984-07B540712FB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61DF748F-A35C-48FC-9984-07B540712FB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61DF748F-A35C-48FC-9984-07B540712FB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C233528B-49B9-441E-B8A9-B5BC4D94B936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C233528B-49B9-441E-B8A9-B5BC4D94B936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C233528B-49B9-441E-B8A9-B5BC4D94B936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C233528B-49B9-441E-B8A9-B5BC4D94B936}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -338,6 +344,7 @@ Global
 		{C638F21A-6786-4651-9A00-4EE1F64ADC33} = {C55E2A30-8381-4638-B164-9F4893EBFA93}
 		{E67F5F3A-7AEF-4B7F-B815-017EADFBB370} = {C55E2A30-8381-4638-B164-9F4893EBFA93}
 		{16C22087-45FF-4053-B333-2186DC2A7586} = {C55E2A30-8381-4638-B164-9F4893EBFA93}
+		{C233528B-49B9-441E-B8A9-B5BC4D94B936} = {B59EDB0E-C176-48BD-9F36-9A107A3E56CA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD9C3231-BF2C-413C-B738-70985D9981AE}

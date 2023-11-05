@@ -1,24 +1,21 @@
-﻿using Mov.Suite.AnalizerClient.Test.Builders;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mov.Suite.AnalizerClient.Test
+namespace Mov.Analizer.Test
 {
-	public class ResasAnalizerClientTest
+	public class AnalizerQueryTest
 	{
 		#region constants
 
-		private const string TEST_NAME = nameof(ResasAnalizerClientTest);
+		private const string TEST_NAME = nameof(AnalizerQueryTest);
 
 		#endregion constants
 
 		#region field
-
-		private ResasRepositoryBuilder _repositoryBuilder;
 
 		#endregion field
 
@@ -27,7 +24,6 @@ namespace Mov.Suite.AnalizerClient.Test
 		[OneTimeSetUp]
 		public void ClassInitialize()
 		{
-			_repositoryBuilder = new ResasRepositoryBuilder();
 			Trace.WriteLine($"{TEST_NAME} ClassInitialize");
 		}
 
@@ -50,15 +46,5 @@ namespace Mov.Suite.AnalizerClient.Test
 		}
 
 		#endregion setup
-
-		#region test
-
-		[Test]
-		public void GetTableLineAsync_MockRepository_Return()
-		{
-
-		}
-
-		#endregion test
 	}
 }

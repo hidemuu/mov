@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.OpenApi.Models;
+using Mov.Analizer.Models;
+using Mov.Analizer.Repository;
+using Mov.Analizer.Service;
 using Mov.Core.Configurators.Contexts;
 using Mov.Framework.Services;
 using Mov.Suite.AnalizerClient.Resas;
@@ -29,7 +32,7 @@ public class Program
         services.AddControllersWithViews();
         services.AddSwaggerGen(c =>
         {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "Mov_Suite", Version = "v1" });
+            c.SwaggerDoc("v1", new OpenApiInfo { Title = "Mov_Suite_React", Version = "v1" });
         });
         //In production, the React files will be served from this directory
         services.AddSpaStaticFiles(configuration =>
@@ -37,13 +40,16 @@ public class Program
             configuration.RootPath = "ClientApp/build";
         });
 
-        ConfiguratorContext.Initialize(PathCreator.GetResourcePath());
+		var resourcePath = PathCreator.GetResourcePath();
+		services.AddScoped<IAnalizerRepository, FileAnalizerRepository>(_ => new FileAnalizerRepository(resourcePath));
+		ConfiguratorContext.Initialize(resourcePath);
         var apis = ConfiguratorContext.Current.Service.ApiSettingQuery.Reader.ReadAll().ToArray();
         var resasApi = apis.FirstOrDefault(x => x.Code.Value.Equals("RESAS-API-KEY"));
         //var db = new ApiDbContext(new DbContextOptionsBuilder<ApiDbContext>()
         //    .UseSqlite(Urls.SqlLocalConnectionStringForSqlite).Options);
         services.AddScoped<IResasRepository, RestResasRepository>(_ => new RestResasRepository(resasApi?.Value));
-        services.AddMvc();
+		services.AddScoped<IRegionAnalizerClient, ResasAnalizerClient>();
+		services.AddMvc();
 
         return builder.Build();
     }
@@ -63,7 +69,7 @@ public class Program
         {
             app.UseDeveloperExceptionPage();
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Mov Suite v1"));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Mov Suite React v1"));
         }
 
         app.UseHttpsRedirection();

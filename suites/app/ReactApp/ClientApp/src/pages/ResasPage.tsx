@@ -118,8 +118,9 @@ export const ResasPage: React.FunctionComponent = () => {
     }, []);
 
     useEffect(() => {
+
         axios
-            .get('api/TrendLine/population_per_years/11/11362', {
+            .get('api/TrendLine/population_per_years' + '/' + prefectureValue + '/' + cityValue, {
                 //headers: { "X-API-KEY": process.env.REACT_APP_API_KEY },
             })
             .then((results) => {

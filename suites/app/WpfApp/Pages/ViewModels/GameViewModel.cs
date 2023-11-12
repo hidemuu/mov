@@ -25,7 +25,7 @@ namespace Mov.Suite.WpfApp.Pages.ViewModels
 
         #region property
 
-        public GameStatusModel Status { get; }
+        public GameStatusModel Status { get; } = new GameStatusModel();
 
         protected override IGraphicController Controller { get; }
 

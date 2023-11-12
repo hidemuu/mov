@@ -105,9 +105,9 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
             this._repository = repository;
             Characters = new List<ICharacter>();
             Aliens = new List<ICharacter>();
-            //var map = GetLandmark();
-            //MapWidth = (map?.GetCol() ?? 10) * UnitWidth;
-            //MapHeight = (map?.GetRow() ?? 10) * UnitHeight;
+            var map = GetLandmark();
+            MapWidth = (map?.GetCol() ?? 10) * UnitWidth;
+            MapHeight = (map?.GetRow() ?? 10) * UnitHeight;
         }
 
         #endregion constructor

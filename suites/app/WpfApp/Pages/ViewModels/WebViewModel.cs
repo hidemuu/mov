@@ -2,6 +2,8 @@
 using Microsoft.Web.WebView2.Core;
 using System.ComponentModel;
 using System;
+using Mov.Framework.Services;
+using System.IO;
 
 namespace Mov.Suite.WpfApp.Pages.ViewModels
 {
@@ -28,8 +30,9 @@ namespace Mov.Suite.WpfApp.Pages.ViewModels
 
         public WebViewModel() 
         {
-            var dir = AppDomain.CurrentDomain.BaseDirectory;
-			WebViewSource = "file://" + dir + "build/index.html";
+			var path = Path.Combine(PathCreator.GetSolutionPath(), "scripts", "html", "index.html") ?? AppDomain.CurrentDomain.BaseDirectory;
+            var fullPath = @"file:///" + path;
+			WebViewSource = fullPath;
         }
 
         #endregion constructor

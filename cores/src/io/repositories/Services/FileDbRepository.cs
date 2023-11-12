@@ -67,13 +67,13 @@ namespace Mov.Core.Repositories.Services
         /// <inheritdoc />
         public async Task<IEnumerable<TEntity>> GetsAsync()
         {
-            return await _client.GetsAsync<TEntity>("");
+            return await _client.GetsAsync<TEntity>("").ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         public async Task<TEntity> GetAsync(TIdentifier identifier)
         {
-            var items = await GetsAsync();
+            var items = await GetsAsync().ConfigureAwait(false);
             return items.FirstOrDefault(x => x.Id.Equals(identifier));
         }
 

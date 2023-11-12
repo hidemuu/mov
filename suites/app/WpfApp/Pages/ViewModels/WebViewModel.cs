@@ -28,7 +28,8 @@ namespace Mov.Suite.WpfApp.Pages.ViewModels
 
         public WebViewModel() 
         {
-            WebViewSource = "file://" + AppDomain.CurrentDomain.BaseDirectory + "build/index.html";
+            var dir = AppDomain.CurrentDomain.BaseDirectory;
+			WebViewSource = "file://" + dir + "build/index.html";
         }
 
         #endregion constructor

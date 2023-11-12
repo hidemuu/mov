@@ -296,11 +296,10 @@ namespace Mov.Suite.GameClient.FiniteStateMechine
 
         public LandmarkSchema GetLandmark()
         {
-            var landmarkTask = _repository.Landmarks.GetsAsync();
-            Task.WhenAll(landmarkTask);
+            var task = _repository.Landmarks.GetsAsync();
+			var landmarks = Task.WhenAll(task).Result[0].ToArray();
             try
             {
-                var landmarks = landmarkTask.Result;
                 return landmarks.FirstOrDefault(x => x.Lv == Level);
             }
             catch (Exception ex)

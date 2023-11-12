@@ -85,12 +85,13 @@ namespace Mov.Suite.WpfApp.Shared
 
         protected void Start()
         {
-            // 定期更新スレッド
-            Timer.Subscribe(_ => OnTimer());
+			Controller.Initialize();
+
+			// 定期更新スレッド
+			Timer.Subscribe(_ => OnTimer());
             Timer.AddTo(Disposables);
             Timer.Start();
 
-            Controller.Initialize();
             Controller.Run();
         }
 

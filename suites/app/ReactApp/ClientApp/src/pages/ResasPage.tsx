@@ -16,6 +16,9 @@ import {
     shorthands,
     Tab,
     TabList,
+    useId, 
+    Input, 
+    Label,
 } from '@fluentui/react-components';
 import type {
     SelectTabData,
@@ -44,6 +47,8 @@ const useStyles = makeStyles({
 export const ResasPage: React.FunctionComponent = () => {
 
     const styles = useStyles();
+
+    const inputId = useId("input");
 
     const [prefectureTableLines, setPrefectureTableLines] = useState<{
         id: number;
@@ -203,6 +208,16 @@ export const ResasPage: React.FunctionComponent = () => {
 
     return (
         <div className={styles.root}>
+            <div>
+                <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>
+                    都道府県コード
+                </Label>
+                <Input id={inputId} placeholder='11' />
+                <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>
+                    都市コード
+                </Label>
+                <Input id={inputId} placeholder='11362' />
+            </div>
             <h2>トレンドグラフ</h2>
             <HighchartsReact highcharts={Highcharts} options={options} />
             <TabList selectedValue={selectedValue} onTabSelect={onTabSelect}>

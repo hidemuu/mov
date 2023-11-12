@@ -24,6 +24,7 @@ import type {
     SelectTabData,
     SelectTabEvent,
     TabValue,
+    InputProps,
   } from "@fluentui/react-components";
 
 const useStyles = makeStyles({
@@ -42,6 +43,11 @@ const useStyles = makeStyles({
             ...shorthands.padding(0, "30px", 0, 0),
         },
     },
+    grid: {
+        ...shorthands.gap("16px"),
+        display: "flex",
+        flexDirection: "column",
+    },
 });
 
 export const ResasPage: React.FunctionComponent = () => {
@@ -49,6 +55,22 @@ export const ResasPage: React.FunctionComponent = () => {
     const styles = useStyles();
 
     const inputId = useId("input");
+    const [prefectureValue, setPrefectureValue] = React.useState("11");
+    const onChangePrefecture: InputProps["onChange"] = (ev, data) => {
+        // The controlled input pattern can be used for other purposes besides validation,
+        // but validation is a useful example
+        if (data.value.length <= 20) {
+          setPrefectureValue(data.value);
+        }
+      };
+    const [cityValue, setCityValue] = React.useState("11362");
+    const onChangeCity: InputProps["onChange"] = (ev, data) => {
+        // The controlled input pattern can be used for other purposes besides validation,
+        // but validation is a useful example
+        if (data.value.length <= 20) {
+          setCityValue(data.value);
+        }
+      };
 
     const [prefectureTableLines, setPrefectureTableLines] = useState<{
         id: number;
@@ -209,14 +231,10 @@ export const ResasPage: React.FunctionComponent = () => {
     return (
         <div className={styles.root}>
             <div>
-                <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>
-                    都道府県コード
-                </Label>
-                <Input id={inputId} placeholder='11' />
-                <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>
-                    都市コード
-                </Label>
-                <Input id={inputId} placeholder='11362' />
+                <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>都道府県コード</Label>
+                <Input id={inputId} value={prefectureValue} onChange={onChangePrefecture} />
+                <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>都市コード</Label>
+                <Input id={inputId} value={cityValue} onChange={onChangeCity} />
             </div>
             <h2>トレンドグラフ</h2>
             <HighchartsReact highcharts={Highcharts} options={options} />

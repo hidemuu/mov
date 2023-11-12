@@ -2,16 +2,36 @@
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import axios from "axios";
+import {
+    TableBody,
+    TableCell,
+    TableRow,
+    Table,
+    TableHeader,
+    TableHeaderCell,
+    TableCellLayout,
+    PresenceBadgeStatus,
+    Avatar,
+} from '@fluentui/react-components';
 
 export const ResasPage: React.FunctionComponent = () => {
 
-    const [tableLines, setTableLines] = useState<{
+    const [prefectureTableLines, setPrefectureTableLines] = useState<{
         id: number;
         category: string;
         label: string;
         name: string;
         content: string;
     }[]>([]);
+
+    const [cityTableLines, setCityTableLines] = useState<{
+        id: number;
+        category: string;
+        label: string;
+        name: string;
+        content: string;
+    }[]>([]);
+
 
     const [trendLines, setTrendLines] = useState<{
         id: string;
@@ -26,7 +46,17 @@ export const ResasPage: React.FunctionComponent = () => {
             .get('api/TableLine/prefecture', {
             })
             .then((results) => {
-                setTableLines(results.data);
+                setPrefectureTableLines(results.data);
+            })
+            .catch((error) => { });
+    }, []);
+
+    useEffect(() => {
+        axios
+            .get('api/TableLine/city', {
+            })
+            .then((results) => {
+                setCityTableLines(results.data);
             })
             .catch((error) => { });
     }, []);
@@ -79,9 +109,62 @@ export const ResasPage: React.FunctionComponent = () => {
                 : series,
     };
 
+    const tableColumns = [
+        { columnKey: 'id', label: 'id' },
+        { columnKey: 'name', label: 'name' },
+        { columnKey: 'category', label: 'category' },
+    ];
+
+    const tableStyles = {
+        maxheight: '400px', // 適切な高さに変更してください
+        overflow: 'auto', // テーブルの高さを超えた場合にスクロールバーを表示
+    };    
+
     return (
         <div>
             <HighchartsReact highcharts={Highcharts} options={options} />
+            <div>都道府県コード一覧</div>
+            <div style={tableStyles}>
+                <Table arial-label="Default table">
+                    <TableHeader>
+                        <TableRow>
+                            {tableColumns.map(column => (
+                                <TableHeaderCell key={column.columnKey}>{column.label}</TableHeaderCell>
+                            ))}
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                        {prefectureTableLines.map(line => (
+                            <TableRow key={line.id}>
+                                <TableCell>{line.id}</TableCell>
+                                <TableCell>{line.name}</TableCell>
+                                <TableCell>{line.category}</TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </div>
+            <div>都市コード一覧</div>
+            <div style={tableStyles}>
+                <Table arial-label="Default table">
+                    <TableHeader>
+                        <TableRow>
+                            {tableColumns.map(column => (
+                                <TableHeaderCell key={column.columnKey}>{column.label}</TableHeaderCell>
+                            ))}
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                        {cityTableLines.map(line => (
+                            <TableRow key={line.id}>
+                                <TableCell>{line.id}</TableCell>
+                                <TableCell>{line.name}</TableCell>
+                                <TableCell>{line.category}</TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </div>
         </div>
     );
 };

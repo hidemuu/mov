@@ -36,6 +36,9 @@
     <Reference Include="Mov.Core.Accessors">
       <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Accessors.dll</HintPath>
     </Reference>
+    <Reference Include="Mov.Core.Configurators">
+      <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.Configurators.dll</HintPath>
+    </Reference>
     <Reference Include="Mov.Core.Graphicers">
       <HintPath>..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Core.Graphicers.dll</HintPath>
     </Reference>

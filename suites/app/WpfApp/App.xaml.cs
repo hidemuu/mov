@@ -1,4 +1,5 @@
 ﻿using Mov.Core.Accessors.Models;
+using Mov.Core.Configurators.Contexts;
 using Mov.Framework.Services;
 using Mov.Game.Models;
 using Mov.Game.Repository;
@@ -78,7 +79,8 @@ namespace Mov.Suite.WpfApp
 
             //リポジトリの登録
             var resourcePath = PathCreator.GetResourcePath();
-            containerRegistry.RegisterInstance<IGameRepository>(new FileGameRepository(Path.Combine(resourcePath, "game"), FileType.Json, EncodingValue.UTF8));
+			ConfiguratorContext.Initialize(resourcePath);
+			containerRegistry.RegisterInstance<IGameRepository>(new FileGameRepository(Path.Combine(resourcePath, "game"), FileType.Json, EncodingValue.UTF8));
 
             //インターフェースとクラスを紐付けて登録
             //container.RegisterType<IHomeService, HomeService>();

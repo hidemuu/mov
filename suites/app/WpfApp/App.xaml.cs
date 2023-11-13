@@ -1,4 +1,5 @@
 ﻿using Mov.Core.Accessors.Models;
+using Mov.Core.Accessors.Processor;
 using Mov.Core.Configurators.Contexts;
 using Mov.Framework.Services;
 using Mov.Game.Models;
@@ -12,7 +13,9 @@ using Prism.Regions;
 using Prism.Services.Dialogs;
 using Prism.Unity;
 using System;
+using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Windows;
@@ -70,7 +73,15 @@ namespace Mov.Suite.WpfApp
         protected override void InitializeShell(Window shell)
         {
             base.InitializeShell(shell);
-        }
+			var userSettings = ConfiguratorContext.Current.Service.UserSettingQuery.Reader.ReadAll().ToArray();
+			var userSetting = userSettings.FirstOrDefault(x => x.Code.Value.Equals("react_exe"));
+            var exePath = Path.Combine(PathCreator.GetSolutionPath(), userSetting.Value);
+			using Process proc = new Process();
+			//起動したい外部アプリの情報を設定
+			proc.StartInfo.FileName = exePath;    //起動したい実行ファイルのパス
+			proc.StartInfo.Arguments = "";          //起動したい実行ファイルに渡すパラメータ
+			proc.Start();
+		}
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {

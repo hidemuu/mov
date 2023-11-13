@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System;
 using Mov.Framework.Services;
 using System.IO;
+using Mov.Core.Configurators.Contexts;
+using System.Linq;
 
 namespace Mov.Suite.WpfApp.Pages.ViewModels
 {
@@ -12,9 +14,9 @@ namespace Mov.Suite.WpfApp.Pages.ViewModels
 
         #region property
 
-        private string webViewSource = @"https://www.example.com";
+        private Uri webViewSource = new Uri("https://www.example.com");
 
-        public string WebViewSource
+		public Uri WebViewSource
         {
             get { return webViewSource; }
             set
@@ -30,9 +32,16 @@ namespace Mov.Suite.WpfApp.Pages.ViewModels
 
         public WebViewModel() 
         {
+			var userSettings = ConfiguratorContext.Current.Service.UserSettingQuery.Reader.ReadAll().ToArray();
+            var userSetting = userSettings.FirstOrDefault(x => x.Code.Value.Equals("react_path"));
+            if(userSetting != null)
+            {
+                WebViewSource = new Uri("http://localhost:5000");
+				return;
+            }
 			var path = Path.Combine(PathCreator.GetSolutionPath(), "scripts", "html", "index.html") ?? AppDomain.CurrentDomain.BaseDirectory;
             var fullPath = @"file:///" + path;
-			WebViewSource = fullPath;
+			WebViewSource = new Uri(fullPath);
         }
 
         #endregion constructor

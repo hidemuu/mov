@@ -71,8 +71,14 @@ namespace Mov.Suite.AnalizerClient.Resas
 
 		public async Task<IEnumerable<TrendLineSchema>> GetTrendLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
 		{
-			var result = new HashSet<TrendLine>();
 			var request = RegionRequest.Factory.Create(requestSchema);
+			var result = await GetPopulationPerYearsTrendLineAsync(request);
+			return result.Select(x => x.CreateSchema());
+		}
+
+		private async Task<IEnumerable<TrendLine>> GetPopulationPerYearsTrendLineAsync(RegionRequest request)
+		{
+			var result = new HashSet<TrendLine>();
 			if (request.Category.Equals(new RegionCategory(_resasRepository.PopulationPerYears.Name)))
 			{
 				var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(request));
@@ -82,7 +88,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 					{
 						var dataLabel = populationPerYear.Name;
 
-						if(request.Label.IsEmpty() || request.Label.Equals(new RegionLabel(dataLabel)))
+						if (request.Label.IsEmpty() || request.Label.Equals(new RegionLabel(dataLabel)))
 						{
 							var timeTrend = new TrendLine(
 							request.Category.Value,
@@ -95,8 +101,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 					}
 				}
 			}
-			
-			return result.Select(x => x.CreateSchema());
+			return result;
 		}
 
 		public async Task<IEnumerable<TimeLineSchema>> GetTimeLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)

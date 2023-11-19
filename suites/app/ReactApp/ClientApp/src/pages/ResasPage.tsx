@@ -98,6 +98,11 @@ export const ResasPage: React.FunctionComponent = () => {
     }[]>([]);
 
     useEffect(() => {
+        //レンダリング毎に実行
+    });
+
+    useEffect(() =>{
+        //初回レンダリング時に実行
         axios
             .get('api/TableLine/prefecture', {
             })
@@ -105,9 +110,6 @@ export const ResasPage: React.FunctionComponent = () => {
                 setPrefectureTableLines(results.data);
             })
             .catch((error) => { });
-    }, []);
-
-    useEffect(() => {
         axios
             .get('api/TableLine/city', {
             })
@@ -115,10 +117,10 @@ export const ResasPage: React.FunctionComponent = () => {
                 setCityTableLines(results.data);
             })
             .catch((error) => { });
-    }, []);
+    })
 
     useEffect(() => {
-
+        //都道府県コード・都市コード変更字に実行
         axios
             .get('api/TrendLine/population_per_years' + '/' + prefectureValue + '/' + cityValue, {
                 //headers: { "X-API-KEY": process.env.REACT_APP_API_KEY },
@@ -127,7 +129,7 @@ export const ResasPage: React.FunctionComponent = () => {
                 setTrendLines(results.data);
             })
             .catch((error) => { });
-    }, []);
+    }, [prefectureValue, cityValue]);
 
     let series: Highcharts.SeriesOptionsType[] = [];
     let categories = [];

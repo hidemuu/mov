@@ -80,7 +80,7 @@ namespace Mov.Suite.WpfApp
 			//起動したい外部アプリの情報を設定
 			proc.StartInfo.FileName = exePath;    //起動したい実行ファイルのパス
 			proc.StartInfo.Arguments = "";          //起動したい実行ファイルに渡すパラメータ
-			proc.Start();
+			//proc.Start();
 		}
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

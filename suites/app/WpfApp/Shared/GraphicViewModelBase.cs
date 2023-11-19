@@ -45,7 +45,6 @@ namespace Mov.Suite.WpfApp.Shared
         {
             bitmap = new Bitmap(Controller.FrameWidth, Controller.FrameHeight);
             graphics = Graphics.FromImage(bitmap);
-            Start();
         }
 
         public override void OnNavigatedTo(NavigationContext navigationContext)
@@ -70,6 +69,7 @@ namespace Mov.Suite.WpfApp.Shared
 
         protected override void Dispose(bool disposing)
         {
+            Timer.Dispose();
             Controller.End();
             base.Dispose(disposing);
         }

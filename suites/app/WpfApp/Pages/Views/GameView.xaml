@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:behaviors="clr-namespace:Mov.Suite.WpfApp.Shared.Behaviors;assembly=Mov.Suite.WpfApp"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -33,43 +34,61 @@
         </b:EventTrigger>
     </b:Interaction.Triggers>
     <DockPanel x:Name="RootPanel" Margin="10">
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" VerticalAlignment="Center">
             <TextBlock
                 Margin="0,0,10,0"
                 Foreground="Black"
-                Text="Level" />
+                Text="Level"
+                VerticalAlignment="Center"/>
             <TextBlock
                 x:Name="TextBlockLevel"
                 Margin="10,0,10,0"
                 Foreground="Black"
+                VerticalAlignment="Center"
                 Text="{Binding Status.Level.Value}" />
             <TextBlock
                 Margin="0,0,10,0"
                 Foreground="Black"
+                VerticalAlignment="Center"
                 Text="Score" />
             <TextBlock
                 x:Name="TextBlockScore"
                 Margin="10,0,10,0"
                 Foreground="Black"
+                VerticalAlignment="Center"
                 Text="{Binding Status.CurrentScore.Value}" />
             <TextBlock
                 Margin="0,0,10,0"
                 Foreground="Black"
+                VerticalAlignment="Center"
                 Text="/" />
             <TextBlock
                 x:Name="TextBlockClearScore"
                 Margin="10,0,10,0"
                 Foreground="Black"
+                VerticalAlignment="Center"
                 Text="{Binding Status.ClearScore.Value}" />
             <TextBlock
                 Margin="0,0,10,0"
                 Foreground="Black"
+                VerticalAlignment="Center"
                 Text="Life" />
             <TextBlock
                 x:Name="TextBlockLife"
                 Margin="10,0,10,0"
                 Foreground="Black"
+                VerticalAlignment="Center"
                 Text="{Binding Status.Life.Value}" />
+            <Button
+                x:Name="StartButton"
+                Margin="10,0,0,0"
+                Content="Start">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <prism:InvokeCommandAction Command="{Binding StartCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
         </StackPanel>
         <Image
             x:Name="image"

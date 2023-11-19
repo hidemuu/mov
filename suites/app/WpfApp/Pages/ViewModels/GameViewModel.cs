@@ -41,12 +41,13 @@ namespace Mov.Suite.WpfApp.Pages.ViewModels
         public ReactiveCommand KeyGestureDownCommand { get; } = new ReactiveCommand();
         public ReactiveCommand KeyGestureLeftCommand { get; } = new ReactiveCommand();
         public ReactiveCommand KeyGestureRightCommand { get; } = new ReactiveCommand();
+		public ReactiveCommand StartCommand { get; } = new ReactiveCommand();
 
-        #endregion command
+		#endregion command
 
-        #region constructor
+		#region constructor
 
-        public GameViewModel(IRegionManager regionManager, IDialogService dialogService, IGameRepository repository) : base(regionManager, dialogService)
+		public GameViewModel(IRegionManager regionManager, IDialogService dialogService, IGameRepository repository) : base(regionManager, dialogService)
         {
             this._cient = new FiniteStateMachineGameClient(repository);
             this._game = new PackmanGraphicGame(_cient);
@@ -60,6 +61,7 @@ namespace Mov.Suite.WpfApp.Pages.ViewModels
             KeyGestureDownCommand.Subscribe(() => OnKeyGestureDown()).AddTo(Disposables);
             KeyGestureLeftCommand.Subscribe(() => OnKeyGestureLeft()).AddTo(Disposables);
             KeyGestureRightCommand.Subscribe(() => OnKeyGestureRight()).AddTo(Disposables);
+            StartCommand.Subscribe(() => OnStartClicked()).AddTo(Disposables);
         }
 
         #endregion constructor
@@ -102,6 +104,11 @@ namespace Mov.Suite.WpfApp.Pages.ViewModels
         private void OnKeyGestureRight()
         {
             this._game.SetKeyCode(KeyboardCode.Right.Value);
+        }
+
+        private void OnStartClicked()
+        {
+            Start();
         }
 
         #endregion event

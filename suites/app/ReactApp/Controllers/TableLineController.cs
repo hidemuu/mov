@@ -42,11 +42,41 @@ namespace Mov.Suite.ReactApp.Controllers
 		/// <summary>
 		/// Gets all items.
 		/// </summary>
+		[HttpGet("prefecture/{prefCode}")]
+		public async Task<IActionResult> GetPrefecture(int prefCode)
+		{
+			var result = await this._client.GetTableLineAsync();
+			return Ok(result.Where(x => x.Category.Equals("prefecture")).FirstOrDefault(x => x.Id.Equals(prefCode)));
+		}
+
+		/// <summary>
+		/// Gets all items.
+		/// </summary>
 		[HttpGet("city")]
 		public async Task<IActionResult> GetCities()
 		{
 			var result = await this._client.GetTableLineAsync();
 			return Ok(result.Where(x => x.Category.Equals("city")));
+		}
+
+		/// <summary>
+		/// Gets all items.
+		/// </summary>
+		[HttpGet("city/{prefCode}")]
+		public async Task<IActionResult> GetCities(int prefCode)
+		{
+			var result = await this._client.GetTableLineAsync();
+			return Ok(result.Where(x => x.Category.Equals("city")).Where(x => x.Label.Equals(prefCode)));
+		}
+
+		/// <summary>
+		/// Gets all items.
+		/// </summary>
+		[HttpGet("city/{cityCode}")]
+		public async Task<IActionResult> GetCity(int cityCode)
+		{
+			var result = await this._client.GetTableLineAsync();
+			return Ok(result.Where(x => x.Category.Equals("city")).FirstOrDefault(x => x.Id.Equals(cityCode)));
 		}
 
 		#endregion method

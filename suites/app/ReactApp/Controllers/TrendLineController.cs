@@ -34,6 +34,25 @@ namespace Mov.Suite.ReactApp.Controllers
 		/// <summary>
 		/// Gets PopulationPerYears
 		/// </summary>
+		[HttpGet("population_per_years/{prefCode}")]
+		public async Task<IActionResult> GetPopulationPerYears(int prefCode)
+		{
+			return Ok(await this._client.GetTrendLineAsync(
+				new RegionRequestSchema()
+				{
+					PrefCode = prefCode,
+					CityCode = -1,
+					Category = "population_per_years",
+					Label = "all"
+				},
+				TimeValue.Empty,
+				TimeValue.Empty
+			));
+		}
+
+		/// <summary>
+		/// Gets PopulationPerYears
+		/// </summary>
 		[HttpGet("population_per_years/{prefCode}/{cityCode}")]
 		public async Task<IActionResult> GetPopulationPerYears(int prefCode, int cityCode)
 		{

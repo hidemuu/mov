@@ -10,11 +10,16 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results
 
         public const string URI = "cities";
 
-        #endregion constants
+		#endregion constants
 
-        #region property
+		#region property
 
-        [Name("cityCode")]
+		[Name("prefCode")]
+		[JsonProperty("prefCode")]
+		[DisplayName("都道府県コード")]
+		public int PrefCode { get; set; }
+
+		[Name("cityCode")]
         [JsonProperty("cityCode")]
         [DisplayName("市区町村コード")]
         public int Code { get; set; }

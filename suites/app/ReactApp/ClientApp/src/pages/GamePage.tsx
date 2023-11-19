@@ -67,7 +67,6 @@ const Button = styled.button`
 export const GamePage: React.FunctionComponent = () => {
     return (
         <Container>
-    
         </Container>
     );
 };

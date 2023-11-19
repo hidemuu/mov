@@ -18,15 +18,15 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository
 
         private readonly static string HEADER_API_KEY = @"X-API-KEY";
 
-        #endregion constants
+		#endregion constants
 
-        #region field
+		#region field
 
-        #endregion field
+		#endregion field
 
-        #region property
+		#region property
 
-        public IDbRepository<ResasResponseSchema<PrefectureResultSchema>, string, DbRequestSchemaString> Prefectures { get; }
+		public IDbRepository<ResasResponseSchema<PrefectureResultSchema>, string, DbRequestSchemaString> Prefectures { get; }
 
         public IDbRepository<ResasResponseSchema<CityResultSchema>, string, DbRequestSchemaString> Cities { get; }
 
@@ -51,13 +51,13 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository
             });
 
             Prefectures = new RestDbRepository<ResasResponseSchema<PrefectureResultSchema>, string, DbRequestSchemaString>
-                (Path.Combine(endpoint, PrefectureResultSchema.URI), EncodingValue.UTF8, header, "prefecture");
+                (Path.Combine(endpoint, PrefectureResultSchema.URI), EncodingValue.UTF8, header, ResasConstants.KEY_PREFECTURE);
             Cities = new RestDbRepository<ResasResponseSchema<CityResultSchema>, string, DbRequestSchemaString>
-                (Path.Combine(endpoint, CityResultSchema.URI), EncodingValue.UTF8, header, "city");
+                (Path.Combine(endpoint, CityResultSchema.URI), EncodingValue.UTF8, header, ResasConstants.KEY_CITY);
             PopulationPerYears = new RestDbRepository<ResasCompositionResponseSchema<PopulationPerYearResultSchema>, string, PopulationPerYearRequestSchema>
-                (Path.Combine(endpoint, PopulationPerYearResultSchema.URI), EncodingValue.UTF8, header, "population_per_years");
+                (Path.Combine(endpoint, PopulationPerYearResultSchema.URI), EncodingValue.UTF8, header, ResasConstants.KEY_POPULATION_PER_YEARS);
 			PopulationPyramids = new RestDbRepository<ResasCompositionResponseSchema<PopulationPyramidResultSchema>, string, PopulationPyramidRequestSchema>
-				(Path.Combine(endpoint, PopulationPyramidResultSchema.URI), EncodingValue.UTF8, header, "population_pyramids");
+				(Path.Combine(endpoint, PopulationPyramidResultSchema.URI), EncodingValue.UTF8, header, ResasConstants.KEY_POPULATION_PYLAMIDS);
 		}
 
         #endregion constructor

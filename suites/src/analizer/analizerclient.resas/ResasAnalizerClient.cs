@@ -47,16 +47,18 @@ namespace Mov.Suite.AnalizerClient.Resas
         public async Task<IEnumerable<TableLineSchema>> GetTableLineAsync()
         {
 			var lines = new HashSet<TableLine>();
-			var cities = await _resasRepository.Cities.GetAsync(null);
-            foreach (var city in cities.Results)
-            {
-				lines.Add(new TableLine(city.Code, _resasRepository.Cities.Name, string.Empty, city.Name, city.Name));
-            }
+
 			var prefectures = await _resasRepository.Prefectures.GetAsync(null);
 			foreach (var prefecture in prefectures.Results)
 			{
-				lines.Add(new TableLine(prefecture.Code, _resasRepository.Prefectures.Name, string.Empty, prefecture.Name, prefecture.Name));
+				lines.Add(new TableLine(prefecture.Code, _resasRepository.Prefectures.Name, "JP", prefecture.Name, prefecture.Name));
 			}
+
+			var cities = await _resasRepository.Cities.GetAsync(null);
+            foreach (var city in cities.Results)
+            {
+				lines.Add(new TableLine(city.Code, _resasRepository.Cities.Name, city.PrefCode.ToString(), city.Name, city.Name));
+            }
 
             var tableLines = _analizerQuery.TableLines.Reader.ReadAll();
             if (!tableLines?.Any() ?? true)

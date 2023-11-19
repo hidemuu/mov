@@ -1,6 +1,7 @@
 ﻿import React, { useState, useEffect } from 'react';
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import styled from 'styled-components';
 import axios from "axios";
 import {
     TableBody,
@@ -25,7 +26,15 @@ import type {
     SelectTabEvent,
     TabValue,
     InputProps,
+    ButtonProps,
   } from "@fluentui/react-components";
+
+const Button = styled.button`
+  border: 1px solid #666;
+  background: none;
+  margin-top: 12px;
+  border-radius: 4px;
+`;
 
 const useStyles = makeStyles({
     root: {
@@ -72,6 +81,10 @@ export const ResasPage: React.FunctionComponent = () => {
         }
       };
 
+    const onClickApply = () => {
+
+    }
+
     const [prefectureTableLines, setPrefectureTableLines] = useState<{
         id: number;
         category: string;
@@ -99,10 +112,12 @@ export const ResasPage: React.FunctionComponent = () => {
 
     useEffect(() => {
         //レンダリング毎に実行
+        console.log("再レンダリングされるたび実行");
     });
 
     useEffect(() =>{
         //初回レンダリング時に実行
+        console.log("初回レンダリング時に実行");
         axios
             .get('api/TableLine/prefecture', {
             })
@@ -117,10 +132,11 @@ export const ResasPage: React.FunctionComponent = () => {
                 setCityTableLines(results.data);
             })
             .catch((error) => { });
-    })
+    },[])
 
     useEffect(() => {
         //都道府県コード・都市コード変更字に実行
+        console.log("都道府県コード・都市コード変更字に実行");
         axios
             .get('api/TrendLine/population_per_years' + '/' + prefectureValue + '/' + cityValue, {
                 //headers: { "X-API-KEY": process.env.REACT_APP_API_KEY },
@@ -238,6 +254,7 @@ export const ResasPage: React.FunctionComponent = () => {
                 <Input id={inputId} value={prefectureValue} onChange={onChangePrefecture} />
                 <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>都市コード</Label>
                 <Input id={inputId} value={cityValue} onChange={onChangeCity} />
+                <Button onClick={onClickApply}></Button>
             </div>
             <h2>トレンドグラフ</h2>
             <HighchartsReact highcharts={Highcharts} options={chartOptions} />

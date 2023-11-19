@@ -23,11 +23,6 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Requests
         {
         }
 
-        public PopulationPerYearRequestSchema(RegionRequest request) 
-            : this(request.CityCode, request.PrefCode)
-        {
-        }
-
         #endregion constructor
 
     }

@@ -45,7 +45,7 @@ namespace Mov.Suite.Api.Controllers
 				new RegionRequestSchema() 
 				{
 					PrefCode = prefCode, 
-					CityCode = cityCode, 
+					CityCodes = new List<int>() { cityCode }, 
 					Category = category, 
 					Label = label 
 				}, 
@@ -64,7 +64,7 @@ namespace Mov.Suite.Api.Controllers
 				new RegionRequestSchema()
 				{
 					PrefCode = prefCode,
-					CityCode = cityCode,
+					CityCodes = new List<int>() { cityCode },
 					Category = "population_per_years",
 					Label = "all"
 				},

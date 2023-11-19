@@ -81,7 +81,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 			var result = new HashSet<TrendLine>();
 			if (request.Category.Equals(new RegionCategory(_resasRepository.PopulationPerYears.Name)))
 			{
-				var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(request));
+				var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(request.CityCodes.ToArray()[0], request.PrefCode));
 				foreach (var populationPerYear in populationPerYears.Result.Datas)
 				{
 					foreach (var data in populationPerYear.Datas)

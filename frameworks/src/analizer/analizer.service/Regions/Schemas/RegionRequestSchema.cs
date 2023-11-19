@@ -13,7 +13,7 @@ namespace Mov.Analizer.Service.Regions.Schemas
         public int PrefCode { get; set; }
 
         [JsonProperty("city_code")]
-        public int CityCode { get; set; }
+        public List<int> CityCodes { get; set; } = new List<int>();
 
         [JsonProperty("category")]
         public string Category { get; set; } = string.Empty;

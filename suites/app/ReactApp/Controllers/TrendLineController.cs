@@ -41,7 +41,7 @@ namespace Mov.Suite.ReactApp.Controllers
 				new RegionRequestSchema()
 				{
 					PrefCode = prefCode,
-					CityCode = -1,
+					CityCodes = new List<int>(),
 					Category = "population_per_years",
 					Label = "all"
 				},
@@ -60,7 +60,7 @@ namespace Mov.Suite.ReactApp.Controllers
 				new RegionRequestSchema()
 				{
 					PrefCode = prefCode,
-					CityCode = cityCode,
+					CityCodes = new List<int>() { cityCode },
 					Category = "population_per_years",
 					Label = "all"
 				},

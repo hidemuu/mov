@@ -3,6 +3,7 @@ using Mov.Analizer.Service.Regions.Schemas;
 using Mov.Analizer.Service.Regions.ValueObjects;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Mov.Analizer.Service.Regions.Entities
@@ -17,7 +18,7 @@ namespace Mov.Analizer.Service.Regions.Entities
 
         public int PrefCode { get; }
 
-        public int CityCode { get; }
+        public IEnumerable<int> CityCodes { get; }
 
         public RegionCategory Category { get; }
 
@@ -27,10 +28,10 @@ namespace Mov.Analizer.Service.Regions.Entities
 
         #region constructor
 
-        public RegionRequest(int prefCode, int cityCode, string category, string label)
+        public RegionRequest(int prefCode, IEnumerable<int> cityCodes, string category, string label)
         {
             PrefCode = prefCode;
-            CityCode = cityCode;
+            CityCodes = cityCodes;
             Category = new RegionCategory(category);
             Label = new RegionLabel(label);
         }
@@ -39,13 +40,13 @@ namespace Mov.Analizer.Service.Regions.Entities
         {
             public static RegionRequest Create(RegionRequestSchema schema)
             {
-                return new RegionRequest(schema.PrefCode, schema.CityCode, schema.Category, schema.Label);
+                return new RegionRequest(schema.PrefCode, schema.CityCodes, schema.Category, schema.Label);
             }
 
-            public static RegionRequest Create(string pref, string city, string category, string label, IAnalizerQuery query)
+            public static RegionRequest Create(string pref, IEnumerable<string> cities, string category, string label, IAnalizerQuery query)
             {
                 int prefCode = -1;
-                int cityCode = -1;
+                List<int> cityCodes = new List<int>();
                 var tableLines = query.TableLines.Reader.ReadAll();
                 foreach (var tableLine in tableLines)
                 {
@@ -53,16 +54,16 @@ namespace Mov.Analizer.Service.Regions.Entities
                     {
                         prefCode = tableLine.Id;
                     }
-                    if (tableLine.Category.Equals(RegionCategory.City.Value) && tableLine.Content.Equals(city))
+                    if (tableLine.Category.Equals(RegionCategory.City.Value) && tableLine.Content.Equals(cities.ToArray()[0]))
                     {
-                        cityCode = tableLine.Id;
+                        cityCodes.Add(tableLine.Id);
                     }
-                    if (prefCode >= 0 && cityCode >= 0)
+                    if (prefCode >= 0 && cityCodes.Any())
                     {
                         break;
                     }
                 }
-                return new RegionRequest(prefCode, cityCode, category, label);
+                return new RegionRequest(prefCode, cityCodes, category, label);
             }
         }
 
@@ -76,7 +77,7 @@ namespace Mov.Analizer.Service.Regions.Entities
             return new RegionRequestSchema()
             {
                 PrefCode = PrefCode,
-                CityCode = CityCode,
+                CityCodes = CityCodes.ToList(),
                 Category = Category.Value,
                 Label = Label.Value,
             };

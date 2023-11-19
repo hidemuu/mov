@@ -14,6 +14,7 @@ import { SearchPage } from '../pages/SearchPage';
 import { HomePage } from '../pages/HomePage';
 import { TablePage } from '../pages/TablePage';
 import { ResasPage } from '../pages/ResasPage';
+import { GamePage } from '../pages/GamePage';
 import { FilesPage } from '../pages/FilesPage';
 import { TaxonomyPage } from '../pages/TaxonomyPage';
 
@@ -47,6 +48,16 @@ export const getNavigation = (isSignedIn: boolean) => {
         key: 'resas',
         requiresLogin: false,
         component: <ResasPage />,
+        exact: true
+    });
+
+    navItems.push({
+        name: 'Game',
+        url: 'game',
+        icon: <TagMultipleRegular />,
+        key: 'game',
+        requiresLogin: false,
+        component: <GamePage />,
         exact: true
     });
 

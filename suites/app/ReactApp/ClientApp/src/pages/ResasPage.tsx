@@ -145,7 +145,7 @@ export const ResasPage: React.FunctionComponent = () => {
         data: data,
     });
 
-    const options: Highcharts.Options = {
+    const chartOptions: Highcharts.Options = {
         title: {
             text: "総人口推移",
         },
@@ -224,11 +224,11 @@ export const ResasPage: React.FunctionComponent = () => {
         </div>
     ));
 
-    const [selectedValue, setSelectedValue] =
+    const [selectedTabValue, setSelectedTabValue] =
     React.useState<TabValue>("conditions");
 
     const onTabSelect = (event: SelectTabEvent, data: SelectTabData) => {
-        setSelectedValue(data.value);
+        setSelectedTabValue(data.value);
     };
 
     return (
@@ -240,14 +240,14 @@ export const ResasPage: React.FunctionComponent = () => {
                 <Input id={inputId} value={cityValue} onChange={onChangeCity} />
             </div>
             <h2>トレンドグラフ</h2>
-            <HighchartsReact highcharts={Highcharts} options={options} />
-            <TabList selectedValue={selectedValue} onTabSelect={onTabSelect}>
+            <HighchartsReact highcharts={Highcharts} options={chartOptions} />
+            <TabList selectedValue={selectedTabValue} onTabSelect={onTabSelect}>
                 <Tab value="tab1">都道府県コード一覧</Tab>
                 <Tab value="tab2">都市コード一覧</Tab>
             </TabList>
             <div className={styles.panels}>
-                {selectedValue === "tab1" && <Prefectures />}
-                {selectedValue === "tab2" && <Cities />}
+                {selectedTabValue === "tab1" && <Prefectures />}
+                {selectedTabValue === "tab2" && <Cities />}
             </div>
         </div>
     );

@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Certificate;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Microsoft.AspNetCore.Server.Kestrel.Https;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.OpenApi.Models;
 using Mov.Analizer.Models;
@@ -31,6 +33,12 @@ public class Program
 		builder.Services.AddAuthentication(
 		    CertificateAuthenticationDefaults.AuthenticationScheme)
 	        .AddCertificate();
+
+		//builder.Services.Configure<KestrelServerOptions>(options =>
+		//{
+		//	options.ConfigureHttpsDefaults(options =>
+		//		options.ClientCertificateMode = ClientCertificateMode.RequireCertificate);
+		//});
 
 		// Add services to the container.
 		var services = builder.Services;

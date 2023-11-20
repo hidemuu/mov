@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Certificate;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.OpenApi.Models;
 using Mov.Analizer.Models;
@@ -27,8 +28,12 @@ public class Program
 
     private static WebApplication Build(WebApplicationBuilder builder)
     {
-        // Add services to the container.
-        var services = builder.Services;
+		builder.Services.AddAuthentication(
+		    CertificateAuthenticationDefaults.AuthenticationScheme)
+	        .AddCertificate();
+
+		// Add services to the container.
+		var services = builder.Services;
         services.AddControllersWithViews();
         services.AddSwaggerGen(c =>
         {
@@ -56,7 +61,9 @@ public class Program
 
     private static void Setup(WebApplication app)
     {
-        var env = app.Environment;
+		app.UseAuthentication();
+
+		var env = app.Environment;
 
         // Configure the HTTP request pipeline.
         if (!env.IsDevelopment())

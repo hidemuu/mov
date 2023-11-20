@@ -150,17 +150,16 @@ internal class Program
 		var userSettings = ConfiguratorContext.Current.Service.UserSettingQuery.Reader.ReadAll().ToArray();
 		var userSetting = userSettings.FirstOrDefault(x => x.Code.Value.Equals("react_exe"));
 		var exePath = Path.Combine(PathCreator.GetSolutionPath(), userSetting.Value);
-		using Process proc = new Process();
-		//起動したい外部アプリの情報を設定
-		proc.StartInfo.FileName = exePath;    //起動したい実行ファイルのパス
-		proc.StartInfo.Arguments = "";          //起動したい実行ファイルに渡すパラメータ
-		proc.Start();
-
+        //起動したい外部アプリの情報を設定
+        var startExeInfo = new System.Diagnostics.ProcessStartInfo(exePath);
+        startExeInfo.UseShellExecute = true;
+		System.Diagnostics.Process.Start(startExeInfo);
+		
         Thread.Sleep(1000);
 
-		var startInfo = new System.Diagnostics.ProcessStartInfo("http://localhost:5000");
-		startInfo.UseShellExecute = true;
-		System.Diagnostics.Process.Start(startInfo);
+		//var startInfo = new System.Diagnostics.ProcessStartInfo("http://localhost:5000");
+		//startInfo.UseShellExecute = true;
+		//System.Diagnostics.Process.Start(startInfo);
         return string.Empty;
 	}
 

@@ -75,12 +75,14 @@ namespace Mov.Suite.WpfApp
             base.InitializeShell(shell);
 			var userSettings = ConfiguratorContext.Current.Service.UserSettingQuery.Reader.ReadAll().ToArray();
 			var userSetting = userSettings.FirstOrDefault(x => x.Code.Value.Equals("react_exe"));
-            var exePath = Path.Combine(PathCreator.GetSolutionPath(), userSetting.Value);
-			using Process proc = new Process();
+			var exePath = new PathValue(Path.Combine(PathCreator.GetSolutionPath(), userSetting.Value));
 			//起動したい外部アプリの情報を設定
-			proc.StartInfo.FileName = exePath;    //起動したい実行ファイルのパス
-			proc.StartInfo.Arguments = "";          //起動したい実行ファイルに渡すパラメータ
-			//proc.Start();
+			var startExeInfo = new System.Diagnostics.ProcessStartInfo(exePath.FileName + exePath.Extension);
+			startExeInfo.UseShellExecute = true;
+            startExeInfo.CreateNoWindow = true;
+            startExeInfo.WindowStyle = ProcessWindowStyle.Hidden;
+			startExeInfo.WorkingDirectory = exePath.DirPath;
+			System.Diagnostics.Process.Start(startExeInfo);
 		}
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

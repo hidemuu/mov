@@ -3,6 +3,7 @@ using Mov.Analizer.Repository;
 using Mov.Analizer.Service;
 using Mov.Analizer.Service.Regions;
 using Mov.Analizer.Service.Regions.Entities;
+using Mov.Core.Accessors.Models;
 using Mov.Core.Configurators.Contexts;
 using Mov.Core.Configurators.Models.Entities;
 using Mov.Core.Valuables;
@@ -149,17 +150,18 @@ internal class Program
     {
 		var userSettings = ConfiguratorContext.Current.Service.UserSettingQuery.Reader.ReadAll().ToArray();
 		var userSetting = userSettings.FirstOrDefault(x => x.Code.Value.Equals("react_exe"));
-		var exePath = Path.Combine(PathCreator.GetSolutionPath(), userSetting.Value);
+		var exePath = new PathValue(Path.Combine(PathCreator.GetSolutionPath(), userSetting.Value));
         //起動したい外部アプリの情報を設定
-        var startExeInfo = new System.Diagnostics.ProcessStartInfo(exePath);
+        var startExeInfo = new System.Diagnostics.ProcessStartInfo(exePath.FileName + exePath.Extension);
         startExeInfo.UseShellExecute = true;
+        startExeInfo.WorkingDirectory = exePath.DirPath;
 		System.Diagnostics.Process.Start(startExeInfo);
 		
         Thread.Sleep(1000);
 
-		//var startInfo = new System.Diagnostics.ProcessStartInfo("http://localhost:5000");
-		//startInfo.UseShellExecute = true;
-		//System.Diagnostics.Process.Start(startInfo);
+        var startInfo = new System.Diagnostics.ProcessStartInfo("http://localhost:5000");
+        startInfo.UseShellExecute = true;
+        System.Diagnostics.Process.Start(startInfo);
         return string.Empty;
 	}
 

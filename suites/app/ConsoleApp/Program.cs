@@ -10,6 +10,7 @@ using Mov.Framework.Services;
 using Mov.Suite.AnalizerClient.Resas;
 using Mov.Suite.AnalizerClient.Resas.Controllers;
 using Mov.Suite.AnalizerClient.Resas.Repository;
+using System.Diagnostics;
 
 internal class Program
 {
@@ -77,6 +78,7 @@ internal class Program
 		_handlers = new Dictionary<string, Func<string[], string>>()
 	    {
 			{"execute", Execute },
+            {"server", RunServer },
 			{"end", EndProgram },
 		    {"help", Help }
 	    };
@@ -142,6 +144,25 @@ internal class Program
         var timeTrends = Task.WhenAll(_regionAnalizerClient.GetTrendLineAsync(new RegionRequest(11362, new List<int>() { 11 }, "population", "all").CreateSchema(), TimeValue.Empty, TimeValue.Empty)).Result[0];
         return string.Empty;
     }
+
+    private static string RunServer(IEnumerable<string> parameters)
+    {
+		var userSettings = ConfiguratorContext.Current.Service.UserSettingQuery.Reader.ReadAll().ToArray();
+		var userSetting = userSettings.FirstOrDefault(x => x.Code.Value.Equals("react_exe"));
+		var exePath = Path.Combine(PathCreator.GetSolutionPath(), userSetting.Value);
+		using Process proc = new Process();
+		//起動したい外部アプリの情報を設定
+		proc.StartInfo.FileName = exePath;    //起動したい実行ファイルのパス
+		proc.StartInfo.Arguments = "";          //起動したい実行ファイルに渡すパラメータ
+		proc.Start();
+
+        Thread.Sleep(1000);
+
+		var startInfo = new System.Diagnostics.ProcessStartInfo("http://localhost:5000");
+		startInfo.UseShellExecute = true;
+		System.Diagnostics.Process.Start(startInfo);
+        return string.Empty;
+	}
 
     private static string EndProgram(IEnumerable<string> parameters)
     {

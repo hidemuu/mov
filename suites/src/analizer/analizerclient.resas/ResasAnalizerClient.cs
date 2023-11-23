@@ -76,34 +76,6 @@ namespace Mov.Suite.AnalizerClient.Resas
 			return result.Select(x => x.CreateSchema());
 		}
 
-		private async Task<IEnumerable<TrendLine>> GetPopulationPerYearsTrendLineAsync(RegionRequest request)
-		{
-			var result = new HashSet<TrendLine>();
-			if (request.Category.Equals(new RegionCategory(_resasRepository.PopulationPerYears.Name)))
-			{
-				var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(request.CityCodes.ToArray()[0], request.PrefCode));
-				foreach (var populationPerYear in populationPerYears.Result.Datas)
-				{
-					foreach (var data in populationPerYear.Datas)
-					{
-						var dataLabel = populationPerYear.Name;
-
-						if (request.Label.IsEmpty() || request.Label.Equals(new RegionLabel(dataLabel)))
-						{
-							var timeTrend = new TrendLine(
-							request.Category.Value,
-							dataLabel,
-							new NumericalValue(data.Year),
-							new NumericalValue(data.Value)
-							);
-							result.Add(timeTrend);
-						}
-					}
-				}
-			}
-			return result;
-		}
-
 		public async Task<IEnumerable<TimeLineSchema>> GetTimeLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
 		{
 			var result = new HashSet<TimeLine>();
@@ -125,6 +97,34 @@ namespace Mov.Suite.AnalizerClient.Resas
 		#endregion method
 
 		#region logic
+
+		private async Task<IEnumerable<TrendLine>> GetPopulationPerYearsTrendLineAsync(RegionRequest request)
+		{
+			var result = new HashSet<TrendLine>();
+			if (request.Category.Equals(new RegionCategory(_resasRepository.PopulationPerYears.Name)))
+			{
+				var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(request.CityCodes.ToArray()[0], request.PrefCodes.ToArray()[0]));
+				foreach (var populationPerYear in populationPerYears.Result.Datas)
+				{
+					foreach (var data in populationPerYear.Datas)
+					{
+						var dataLabel = populationPerYear.Name;
+
+						if (request.Label.IsEmpty() || request.Label.Equals(new RegionLabel(dataLabel)))
+						{
+							var timeTrend = new TrendLine(
+							request.Category.Value,
+							dataLabel,
+							new NumericalValue(data.Year),
+							new NumericalValue(data.Value)
+							);
+							result.Add(timeTrend);
+						}
+					}
+				}
+			}
+			return result;
+		}
 
 		#endregion logic
 	}

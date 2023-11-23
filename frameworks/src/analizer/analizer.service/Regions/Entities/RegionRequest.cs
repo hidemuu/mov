@@ -16,7 +16,7 @@ namespace Mov.Analizer.Service.Regions.Entities
 
         #region property
 
-        public int PrefCode { get; }
+        public IEnumerable<int> PrefCodes { get; }
 
         public IEnumerable<int> CityCodes { get; }
 
@@ -28,9 +28,9 @@ namespace Mov.Analizer.Service.Regions.Entities
 
         #region constructor
 
-        public RegionRequest(int prefCode, IEnumerable<int> cityCodes, string category, string label)
+        public RegionRequest(IEnumerable<int> prefCodes, IEnumerable<int> cityCodes, string category, string label)
         {
-            PrefCode = prefCode;
+            PrefCodes = prefCodes;
             CityCodes = cityCodes;
             Category = new RegionCategory(category);
             Label = new RegionLabel(label);
@@ -40,30 +40,26 @@ namespace Mov.Analizer.Service.Regions.Entities
         {
             public static RegionRequest Create(RegionRequestSchema schema)
             {
-                return new RegionRequest(schema.PrefCode, schema.CityCodes, schema.Category, schema.Label);
+                return new RegionRequest(schema.PrefCodes, schema.CityCodes, schema.Category, schema.Label);
             }
 
-            public static RegionRequest Create(string pref, IEnumerable<string> cities, string category, string label, IAnalizerQuery query)
+            public static RegionRequest Create(IEnumerable<string> pref, IEnumerable<string> cities, string category, string label, IAnalizerQuery query)
             {
-                int prefCode = -1;
+                var prefCodes = new List<int>();
                 List<int> cityCodes = new List<int>();
                 var tableLines = query.TableLines.Reader.ReadAll();
                 foreach (var tableLine in tableLines)
                 {
                     if (tableLine.Category.Equals(RegionCategory.Prefecture.Value) && tableLine.Content.Equals(pref))
                     {
-                        prefCode = tableLine.Id;
+                        prefCodes.Add(tableLine.Id);
                     }
                     if (tableLine.Category.Equals(RegionCategory.City.Value) && tableLine.Content.Equals(cities.ToArray()[0]))
                     {
                         cityCodes.Add(tableLine.Id);
                     }
-                    if (prefCode >= 0 && cityCodes.Any())
-                    {
-                        break;
-                    }
                 }
-                return new RegionRequest(prefCode, cityCodes, category, label);
+                return new RegionRequest(prefCodes, cityCodes, category, label);
             }
         }
 
@@ -76,7 +72,7 @@ namespace Mov.Analizer.Service.Regions.Entities
         {
             return new RegionRequestSchema()
             {
-                PrefCode = PrefCode,
+                PrefCodes = PrefCodes.ToList(),
                 CityCodes = CityCodes.ToList(),
                 Category = Category.Value,
                 Label = Label.Value,

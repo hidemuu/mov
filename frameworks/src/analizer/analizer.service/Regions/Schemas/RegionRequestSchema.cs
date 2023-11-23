@@ -10,7 +10,7 @@ namespace Mov.Analizer.Service.Regions.Schemas
         #region property
 
         [JsonProperty("pref_code")]
-        public int PrefCode { get; set; }
+        public List<int> PrefCodes { get; set; } = new List<int>();
 
         [JsonProperty("city_code")]
         public List<int> CityCodes { get; set; } = new List<int>();

@@ -40,7 +40,7 @@ namespace Mov.Suite.ReactApp.Controllers
 			return Ok(await this._client.GetTrendLineAsync(
 				new RegionRequestSchema()
 				{
-					PrefCode = prefCode,
+					PrefCodes = new List<int>() { prefCode },
 					CityCodes = new List<int>(),
 					Category = "population_per_years",
 					Label = "all"
@@ -59,7 +59,7 @@ namespace Mov.Suite.ReactApp.Controllers
 			return Ok(await this._client.GetTrendLineAsync(
 				new RegionRequestSchema()
 				{
-					PrefCode = prefCode,
+					PrefCodes = new List<int>() { prefCode },
 					CityCodes = new List<int>() { cityCode },
 					Category = "population_per_years",
 					Label = "all"

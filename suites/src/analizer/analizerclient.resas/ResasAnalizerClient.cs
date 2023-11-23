@@ -10,6 +10,7 @@ using Mov.Analizer.Service.Stores;
 using Mov.Core.Valuables;
 using Mov.Suite.AnalizerClient.Resas.Repository;
 using Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Requests;
+using Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,8 +73,12 @@ namespace Mov.Suite.AnalizerClient.Resas
 		public async Task<IEnumerable<TrendLineSchema>> GetTrendLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
 		{
 			var request = RegionRequest.Factory.Create(requestSchema);
-			var result = await GetPopulationPerYearsTrendLineAsync(request);
-			return result.Select(x => x.CreateSchema());
+			if (request.Category.Equals(new RegionCategory(_resasRepository.PopulationPerYears.Name)))
+			{
+				var result = await GetPopulationPerYearsTrendLineAsync(request);
+				return result.Select(x => x.CreateSchema());
+			}
+			return null;
 		}
 
 		public async Task<IEnumerable<TimeLineSchema>> GetTimeLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
@@ -101,25 +106,32 @@ namespace Mov.Suite.AnalizerClient.Resas
 		private async Task<IEnumerable<TrendLine>> GetPopulationPerYearsTrendLineAsync(RegionRequest request)
 		{
 			var result = new HashSet<TrendLine>();
-			if (request.Category.Equals(new RegionCategory(_resasRepository.PopulationPerYears.Name)))
+			var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(request.CityCodes.ToArray()[0], request.PrefCodes.ToArray()[0]));
+			foreach(var trendLine in GetPopulationPerYearTrendLine(request, populationPerYears.Result))
 			{
-				var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(request.CityCodes.ToArray()[0], request.PrefCodes.ToArray()[0]));
-				foreach (var populationPerYear in populationPerYears.Result.Datas)
-				{
-					foreach (var data in populationPerYear.Datas)
-					{
-						var dataLabel = populationPerYear.Name;
+				result.Add(trendLine);
+			}
+			return result;
+		}
 
-						if (request.Label.IsEmpty() || request.Label.Equals(new RegionLabel(dataLabel)))
-						{
-							var timeTrend = new TrendLine(
-							request.Category.Value,
-							dataLabel,
-							new NumericalValue(data.Year),
-							new NumericalValue(data.Value)
-							);
-							result.Add(timeTrend);
-						}
+		private IEnumerable<TrendLine> GetPopulationPerYearTrendLine(RegionRequest request, PopulationPerYearResultSchema schema)
+		{
+			var result = new HashSet<TrendLine>();
+			foreach (var populationPerYear in schema.Datas)
+			{
+				foreach (var data in populationPerYear.Datas)
+				{
+					var dataLabel = populationPerYear.Name;
+
+					if (request.Label.IsEmpty() || request.Label.Equals(new RegionLabel(dataLabel)))
+					{
+						var timeTrend = new TrendLine(
+						request.Category.Value,
+						dataLabel,
+						new NumericalValue(data.Year),
+						new NumericalValue(data.Value)
+						);
+						result.Add(timeTrend);
 					}
 				}
 			}

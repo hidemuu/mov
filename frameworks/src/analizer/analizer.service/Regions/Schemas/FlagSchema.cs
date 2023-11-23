@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mov.Analizer.Service.Regions.Schemas
 {
-	public class LabelSchema
+	public class FlagSchema
 	{
 		[JsonProperty("category")]
 		public string Category { get; set; } = string.Empty;

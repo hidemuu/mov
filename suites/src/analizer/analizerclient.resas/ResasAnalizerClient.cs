@@ -110,7 +110,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 			{
 				foreach(var city in region.Value)
 				{
-					var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(region.Key, city));
+					var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(city, region.Key));
 					foreach (var trendLine in GetPopulationPerYearTrendLine(request, populationPerYears.Result))
 					{
 						result.Add(trendLine);

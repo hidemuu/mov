@@ -43,24 +43,24 @@ namespace Mov.Analizer.Service.Regions.Entities
                 return new RegionRequest(schema.PrefCodes, schema.CityCodes, schema.Category, schema.Label);
             }
 
-            public static RegionRequest Create(IEnumerable<string> pref, IEnumerable<string> cities, string category, string label, IAnalizerQuery query)
-            {
-                var prefCodes = new List<int>();
-                List<int> cityCodes = new List<int>();
-                var tableLines = query.TableLines.Reader.ReadAll();
-                foreach (var tableLine in tableLines)
-                {
-                    if (tableLine.Category.Equals(RegionCategory.Prefecture.Value) && tableLine.Content.Equals(pref))
-                    {
-                        prefCodes.Add(tableLine.Id);
-                    }
-                    if (tableLine.Category.Equals(RegionCategory.City.Value) && tableLine.Content.Equals(cities.ToArray()[0]))
-                    {
-                        cityCodes.Add(tableLine.Id);
-                    }
-                }
-                return new RegionRequest(prefCodes, cityCodes, category, label);
-            }
+            //public static RegionRequest Create(IEnumerable<string> pref, IEnumerable<string> cities, string category, string label, IAnalizerQuery query)
+            //{
+            //    var prefCodes = new List<int>();
+            //    List<int> cityCodes = new List<int>();
+            //    var tableLines = query.TableLines.Reader.ReadAll();
+            //    foreach (var tableLine in tableLines)
+            //    {
+            //        if (tableLine.Category.Equals(RegionCategory.Prefecture.Value) && tableLine.Content.Equals(pref))
+            //        {
+            //            prefCodes.Add(tableLine.Id);
+            //        }
+            //        if (tableLine.Category.Equals(RegionCategory.City.Value) && tableLine.Content.Equals(cities.ToArray()[0]))
+            //        {
+            //            cityCodes.Add(tableLine.Id);
+            //        }
+            //    }
+            //    return new RegionRequest(prefCodes, cityCodes, category, label);
+            //}
         }
 
 

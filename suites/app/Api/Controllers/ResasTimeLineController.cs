@@ -43,10 +43,19 @@ namespace Mov.Suite.Api.Controllers
 			return Ok(await this._client.GetTimeLineAsync(
 				new RegionRequestSchema()
 				{
-					PrefCodes = new List<int>() { prefCode },
-					CityCodes = new List<int>() { cityCode },
-					Category = category,
-					Label = label
+					Prefectures = new List<PrefectureSchema>()
+					{
+						new PrefectureSchema()
+						{
+							PrefCode= prefCode,
+							CityCodes = new List<int>{ cityCode },
+						}
+					},
+					Flag = new FlagSchema() 
+					{
+						Category = category,
+						Label = label
+					},
 				},
 				TimeValue.Factory.Create(srart),
 				TimeValue.Factory.Create(end)

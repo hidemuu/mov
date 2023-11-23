@@ -106,10 +106,16 @@ namespace Mov.Suite.AnalizerClient.Resas
 		private async Task<IEnumerable<TrendLine>> GetPopulationPerYearsTrendLineAsync(RegionRequest request)
 		{
 			var result = new HashSet<TrendLine>();
-			var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(request.CityCodes.ToArray()[0], request.PrefCodes.ToArray()[0]));
-			foreach(var trendLine in GetPopulationPerYearTrendLine(request, populationPerYears.Result))
+			foreach(var region in request.RegionCodes)
 			{
-				result.Add(trendLine);
+				foreach(var city in region.Value)
+				{
+					var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(region.Key, city));
+					foreach (var trendLine in GetPopulationPerYearTrendLine(request, populationPerYears.Result))
+					{
+						result.Add(trendLine);
+					}
+				}
 			}
 			return result;
 		}

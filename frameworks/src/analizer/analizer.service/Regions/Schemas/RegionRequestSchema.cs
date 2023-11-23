@@ -9,17 +9,11 @@ namespace Mov.Analizer.Service.Regions.Schemas
     {
         #region property
 
-        [JsonProperty("pref_code")]
-        public List<int> PrefCodes { get; set; } = new List<int>();
+        [JsonProperty("prefectures")]
+		public List<PrefectureSchema> Prefectures { get; set; } = new List<PrefectureSchema>();
 
-        [JsonProperty("city_code")]
-        public List<int> CityCodes { get; set; } = new List<int>();
-
-        [JsonProperty("category")]
-        public string Category { get; set; } = string.Empty;
-
-        [JsonProperty("label")]
-        public string Label { get; set; } = string.Empty;
+		[JsonProperty("flag")]
+		public FlagSchema Flag { get; set; }
 
         #endregion property
     }

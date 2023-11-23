@@ -16,9 +16,7 @@ namespace Mov.Analizer.Service.Regions.Entities
 
         #region property
 
-        public IEnumerable<int> PrefCodes { get; }
-
-        public IEnumerable<int> CityCodes { get; }
+        public IDictionary<int, List<int>> RegionCodes { get; } = new Dictionary<int, List<int>>();
 
         public RegionCategory Category { get; }
 
@@ -28,10 +26,9 @@ namespace Mov.Analizer.Service.Regions.Entities
 
         #region constructor
 
-        public RegionRequest(IEnumerable<int> prefCodes, IEnumerable<int> cityCodes, string category, string label)
+        public RegionRequest(IDictionary<int, List<int>> regionCodes, string category, string label)
         {
-            PrefCodes = prefCodes;
-            CityCodes = cityCodes;
+            RegionCodes= regionCodes;
             Category = new RegionCategory(category);
             Label = new RegionLabel(label);
         }
@@ -40,27 +37,18 @@ namespace Mov.Analizer.Service.Regions.Entities
         {
             public static RegionRequest Create(RegionRequestSchema schema)
             {
-                return new RegionRequest(schema.PrefCodes, schema.CityCodes, schema.Category, schema.Label);
+                var regions = new Dictionary<int, List<int>>();
+                foreach(var prefecture in schema.Prefectures)
+                {
+                    var cityCodes = new List<int>();
+                    foreach(var city in prefecture.CityCodes)
+                    {
+                        cityCodes.Add(city);
+                    }
+                    regions.Add(prefecture.PrefCode, cityCodes);
+                }
+                return new RegionRequest(regions, schema.Flag.Category, schema.Flag.Label);
             }
-
-            //public static RegionRequest Create(IEnumerable<string> pref, IEnumerable<string> cities, string category, string label, IAnalizerQuery query)
-            //{
-            //    var prefCodes = new List<int>();
-            //    List<int> cityCodes = new List<int>();
-            //    var tableLines = query.TableLines.Reader.ReadAll();
-            //    foreach (var tableLine in tableLines)
-            //    {
-            //        if (tableLine.Category.Equals(RegionCategory.Prefecture.Value) && tableLine.Content.Equals(pref))
-            //        {
-            //            prefCodes.Add(tableLine.Id);
-            //        }
-            //        if (tableLine.Category.Equals(RegionCategory.City.Value) && tableLine.Content.Equals(cities.ToArray()[0]))
-            //        {
-            //            cityCodes.Add(tableLine.Id);
-            //        }
-            //    }
-            //    return new RegionRequest(prefCodes, cityCodes, category, label);
-            //}
         }
 
 
@@ -70,12 +58,30 @@ namespace Mov.Analizer.Service.Regions.Entities
 
         public RegionRequestSchema CreateSchema()
         {
+            var prefectures = new List<PrefectureSchema>();
+            foreach(var regionCode in RegionCodes) 
+            {
+                var prefCode = regionCode.Key;
+                var cityCodes = new List<int>();
+                foreach(var cityCode in regionCode.Value)
+                {
+                    cityCodes.Add(cityCode);
+                }
+                prefectures.Add(new PrefectureSchema() 
+                {
+                    PrefCode= prefCode,
+                    CityCodes= cityCodes,
+                });
+            }
+
             return new RegionRequestSchema()
             {
-                PrefCodes = PrefCodes.ToList(),
-                CityCodes = CityCodes.ToList(),
-                Category = Category.Value,
-                Label = Label.Value,
+                Prefectures = prefectures,
+                Flag = new FlagSchema()
+                {
+					Category = Category.Value,
+					Label = Label.Value,
+				}
             };
         }
 

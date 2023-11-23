@@ -40,10 +40,19 @@ namespace Mov.Suite.ReactApp.Controllers
 			return Ok(await this._client.GetTrendLineAsync(
 				new RegionRequestSchema()
 				{
-					PrefCodes = new List<int>() { prefCode },
-					CityCodes = new List<int>(),
-					Category = "population_per_years",
-					Label = "all"
+					Prefectures = new List<PrefectureSchema>()
+					{
+						new PrefectureSchema()
+						{
+							PrefCode= prefCode,
+							CityCodes = new List<int>(),
+						}
+					},
+					Flag = new FlagSchema()
+					{
+						Category = "population_per_years",
+						Label = "all"
+					},
 				},
 				TimeValue.Empty,
 				TimeValue.Empty
@@ -59,10 +68,19 @@ namespace Mov.Suite.ReactApp.Controllers
 			return Ok(await this._client.GetTrendLineAsync(
 				new RegionRequestSchema()
 				{
-					PrefCodes = new List<int>() { prefCode },
-					CityCodes = new List<int>() { cityCode },
-					Category = "population_per_years",
-					Label = "all"
+					Prefectures = new List<PrefectureSchema>()
+					{
+						new PrefectureSchema()
+						{
+							PrefCode= prefCode,
+							CityCodes = new List<int>{ cityCode },
+						}
+					},
+					Flag = new FlagSchema()
+					{
+						Category = "population_per_years",
+						Label = "all"
+					},
 				},
 				TimeValue.Empty,
 				TimeValue.Empty

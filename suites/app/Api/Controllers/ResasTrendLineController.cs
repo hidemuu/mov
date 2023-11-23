@@ -4,6 +4,7 @@ using Mov.Analizer.Service;
 using Mov.Analizer.Service.Regions;
 using Mov.Analizer.Service.Regions.Schemas;
 using Mov.Core.Valuables;
+using System.Reflection.Emit;
 
 namespace Mov.Suite.Api.Controllers
 {
@@ -42,13 +43,22 @@ namespace Mov.Suite.Api.Controllers
 		public async Task<IActionResult> Get(int prefCode, int cityCode, string category, string label, string srart, string end)
 		{
 			return Ok(await this._client.GetTrendLineAsync(
-				new RegionRequestSchema() 
+				new RegionRequestSchema()
 				{
-					PrefCodes = new List<int>() { prefCode }, 
-					CityCodes = new List<int>() { cityCode }, 
-					Category = category, 
-					Label = label 
-				}, 
+					Prefectures = new List<PrefectureSchema>()
+					{
+						new PrefectureSchema()
+						{
+							PrefCode= prefCode,
+							CityCodes = new List<int>{ cityCode },
+						}
+					},
+					Flag = new FlagSchema()
+					{
+						Category = category,
+						Label = label
+					},
+				},
 				TimeValue.Factory.Create(srart), 
 				TimeValue.Factory.Create(end)
 			));
@@ -63,10 +73,19 @@ namespace Mov.Suite.Api.Controllers
 			return Ok(await this._client.GetTrendLineAsync(
 				new RegionRequestSchema()
 				{
-					PrefCodes = new List<int>() { prefCode },
-					CityCodes = new List<int>() { cityCode },
-					Category = "population_per_years",
-					Label = "all"
+					Prefectures = new List<PrefectureSchema>()
+					{
+						new PrefectureSchema()
+						{
+							PrefCode= prefCode,
+							CityCodes = new List<int>{ cityCode },
+						}
+					},
+					Flag = new FlagSchema()
+					{
+						Category = "population_per_years",
+						Label = "all"
+					},
 				},
 				TimeValue.Empty,
 				TimeValue.Empty

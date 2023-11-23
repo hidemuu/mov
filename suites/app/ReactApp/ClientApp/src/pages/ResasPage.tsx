@@ -187,6 +187,7 @@ export const ResasPage: React.FunctionComponent = () => {
         { columnKey: 'id', label: 'id' },
         { columnKey: 'name', label: 'name' },
         { columnKey: 'category', label: 'category' },
+        { columnKey: 'label', label: 'label' },
     ];
 
     const tableStyles = {
@@ -210,6 +211,7 @@ export const ResasPage: React.FunctionComponent = () => {
                             <TableCell>{line.id}</TableCell>
                             <TableCell>{line.name}</TableCell>
                             <TableCell>{line.category}</TableCell>
+                            <TableCell>{line.label}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
@@ -233,6 +235,7 @@ export const ResasPage: React.FunctionComponent = () => {
                             <TableCell>{line.id}</TableCell>
                             <TableCell>{line.name}</TableCell>
                             <TableCell>{line.category}</TableCell>
+                            <TableCell>{line.label}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

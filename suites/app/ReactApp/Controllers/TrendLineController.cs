@@ -37,6 +37,8 @@ namespace Mov.Suite.ReactApp.Controllers
 		[HttpGet("population_per_years/{prefCode}")]
 		public async Task<IActionResult> GetPopulationPerYears(int prefCode)
 		{
+			var tableLines = await this._client.GetTableLineAsync();
+			var cities = tableLines.Where(x => x.Id.Equals(prefCode));
 			return Ok(await this._client.GetTrendLineAsync(
 				new RegionRequestSchema()
 				{
@@ -45,7 +47,7 @@ namespace Mov.Suite.ReactApp.Controllers
 						new PrefectureSchema()
 						{
 							PrefCode= prefCode,
-							CityCodes = new List<int>(),
+							CityCodes = cities.Select(x => x.Id).ToList(),
 						}
 					},
 					Flag = new FlagSchema()

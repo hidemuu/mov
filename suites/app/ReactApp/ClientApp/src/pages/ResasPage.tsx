@@ -135,9 +135,20 @@ export const ResasPage: React.FunctionComponent = () => {
     },[])
 
     useEffect(() => {
-        //都道府県コード・都市コード変更字に実行
+        //都道府県コード・都市コード変更時に実行
         console.log("都道府県コード・都市コード変更字に実行");
-        axios
+        if(cityValue === ""){
+            axios
+            .get('api/TrendLine/population_per_years' + '/' + prefectureValue, {
+                //headers: { "X-API-KEY": process.env.REACT_APP_API_KEY },
+            })
+            .then((results) => {
+                setTrendLines(results.data);
+            })
+            .catch((error) => { });
+        }
+        else{
+            axios
             .get('api/TrendLine/population_per_years' + '/' + prefectureValue + '/' + cityValue, {
                 //headers: { "X-API-KEY": process.env.REACT_APP_API_KEY },
             })
@@ -145,43 +156,50 @@ export const ResasPage: React.FunctionComponent = () => {
                 setTrendLines(results.data);
             })
             .catch((error) => { });
+        }
+        
     }, [prefectureValue, cityValue]);
 
-    let series: Highcharts.SeriesOptionsType[] = [];
-    let categories = [];
-    let data = [];
-    for (let trendLine of trendLines) {
-        categories.push(String(trendLine.number));
-        data.push(trendLine.value);
-    }
+    const [chartOptions, setChartOptions] = useState<Highcharts.Options>();
+    
 
-    series.push({
-        type: "line",
-        name: "population",
-        data: data,
-    });
+    useEffect(() => {
+        let series: Highcharts.SeriesOptionsType[] = [];
+        let categories = [];
+        let data = [];
+        for (let trendLine of trendLines) {
+            categories.push(String(trendLine.number));
+            data.push(trendLine.value);
+        }
+        series.push({
+            type: "line",
+            name: "population",
+            data: data,
+        });
 
-    const chartOptions: Highcharts.Options = {
-        title: {
-            text: "総人口推移",
-        },
-        xAxis: {
+        setChartOptions({
             title: {
-                text: "年度",
+                text: "総人口推移",
             },
-            categories: categories,
-        },
-        yAxis: {
-            title: {
-                text: "人口数",
+            xAxis: {
+                title: {
+                    text: "年度",
+                },
+                categories: categories,
             },
-        },
-        // 都道府県を一つも選んでいない場合との分岐条件
-        series:
-            series.length === 0
-                ? [{ type: "line", name: "都道府県名", data: [] }]
-                : series,
-    };
+            yAxis: {
+                title: {
+                    text: "人口数",
+                },
+            },
+            // 都道府県を一つも選んでいない場合との分岐条件
+            series:
+                series.length === 0
+                    ? [{ type: "line", name: "都道府県名", data: [] }]
+                    : series,
+        });
+
+    }, [trendLines]);
 
     const tableColumns = [
         { columnKey: 'id', label: 'id' },

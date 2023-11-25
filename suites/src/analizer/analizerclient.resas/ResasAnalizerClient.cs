@@ -14,6 +14,7 @@ using Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
 namespace Mov.Suite.AnalizerClient.Resas
@@ -106,12 +107,13 @@ namespace Mov.Suite.AnalizerClient.Resas
 		private async Task<IEnumerable<TrendLine>> GetPopulationPerYearsTrendLineAsync(RegionRequest request)
 		{
 			var result = new HashSet<TrendLine>();
-			foreach(var region in request.RegionCodes)
+			foreach(var regionCode in request.RegionCodes)
 			{
-				foreach(var city in region.Value)
+				var pref = regionCode.Key;
+				foreach(var city in regionCode.Value)
 				{
-					var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(city, region.Key));
-					foreach (var trendLine in GetPopulationPerYearTrendLine(request, populationPerYears.Result))
+					var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(city, pref));
+					foreach (var trendLine in GetPopulationPerYearTrendLine(request, pref, city,  populationPerYears.Result))
 					{
 						result.Add(trendLine);
 					}
@@ -120,7 +122,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 			return result;
 		}
 
-		private IEnumerable<TrendLine> GetPopulationPerYearTrendLine(RegionRequest request, PopulationPerYearResultSchema schema)
+		private IEnumerable<TrendLine> GetPopulationPerYearTrendLine(RegionRequest request, int pref, int city, PopulationPerYearResultSchema schema)
 		{
 			var result = new HashSet<TrendLine>();
 			if (schema == null) return result;
@@ -133,8 +135,8 @@ namespace Mov.Suite.AnalizerClient.Resas
 					if (request.Label.IsEmpty() || request.Label.Equals(new RegionLabel(dataLabel)))
 					{
 						var timeTrend = new TrendLine(
-						request.Category.Value,
-						dataLabel,
+						pref.ToString(),
+						city.ToString(),
 						new NumericalValue(data.Year),
 						new NumericalValue(data.Value)
 						);

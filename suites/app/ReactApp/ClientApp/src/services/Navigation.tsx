@@ -13,8 +13,8 @@ import { OutlookPage } from '../pages/OutlookPage';
 import { SearchPage } from '../pages/SearchPage';
 import { HomePage } from '../pages/HomePage';
 import { TablePage } from '../pages/TablePage';
-import { ResasPage } from '../pages/ResasPage';
-import { GamePage } from '../pages/GamePage';
+import { ResasPage } from '../pages/Resas/ResasPage';
+import { GamePage } from '../pages/Game/GamePage';
 import { FilesPage } from '../pages/FilesPage';
 import { TaxonomyPage } from '../pages/TaxonomyPage';
 

@@ -123,6 +123,7 @@ namespace Mov.Suite.AnalizerClient.Resas
 		private IEnumerable<TrendLine> GetPopulationPerYearTrendLine(RegionRequest request, PopulationPerYearResultSchema schema)
 		{
 			var result = new HashSet<TrendLine>();
+			if (schema == null) return result;
 			foreach (var populationPerYear in schema.Datas)
 			{
 				foreach (var data in populationPerYear.Datas)

@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
+import Highcharts from "highcharts";
 import { TrendLine } from "../models/TrendLine";
 
 
-export default function useHighChartTrendLines(trendLines : TrendLine[]) {
-    const [chartOptions, setChartOptions] = useState<Highcharts.Options>();
+export default function useHighChartTrendLines(trendLines : TrendLine[]) : Highcharts.Options {
+    const [chartOptions, setChartOptions] = useState<Highcharts.Options>(
+        {
+            series : [],
+        });
 
     useEffect(() => {
         let series: Highcharts.SeriesOptionsType[] = [];
@@ -42,4 +46,6 @@ export default function useHighChartTrendLines(trendLines : TrendLine[]) {
         });
 
     }, [trendLines]);
+
+    return chartOptions;
 }

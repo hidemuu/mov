@@ -37,6 +37,7 @@ import { TableColumn } from './models/TableColumn';
 import { useStyles } from './hooks/useStyles';
 import useRegionTableLines from './hooks/useRegionTableLines';
 import { useInputId } from '../../hooks/useInputId';
+import useHighChartTrendLines from './hooks/useHighChartTrendLines';
 
 const Button = styled.button`
   border: 1px solid #666;
@@ -48,9 +49,10 @@ const Button = styled.button`
 export const ResasPage: React.FunctionComponent = () => {
 
     const styles = useStyles();
-
     const inputId = useInputId();
     const [regionValue, setRegionValue] = useRegionState("11", "11362");
+    const populationPerYearTrendLines = usePopulationPerYearTrendLines(regionValue);
+    const regionTable = useRegionTableLines();
 
     const onChangePrefecture: InputProps["onChange"] = (ev, data) => {
         if (data.value.length <= 20) {
@@ -61,6 +63,7 @@ export const ResasPage: React.FunctionComponent = () => {
             setRegionValue(updateRegionValue);
         }
       };
+
     const onChangeCity: InputProps["onChange"] = (ev, data) => {
         if (data.value.length <= 20) {
             const updateRegionValue : RegionValue = {
@@ -71,59 +74,16 @@ export const ResasPage: React.FunctionComponent = () => {
         }
       };
 
-    const populationPerYearTrendLines = usePopulationPerYearTrendLines(regionValue);
-
     const onClickApply = () => {
 
     }
-
-    const regionTable = useRegionTableLines();
 
     useEffect(() => {
         //レンダリング毎に実行
         console.log("再レンダリングされるたび実行");
     });
-
-    const [chartOptions, setChartOptions] = useState<Highcharts.Options>();
-    
-
-    useEffect(() => {
-        let series: Highcharts.SeriesOptionsType[] = [];
-        let categories = [];
-        let data = [];
-        for (let trendLine of populationPerYearTrendLines) {
-            categories.push(String(trendLine.number));
-            data.push(trendLine.value);
-        }
-        series.push({
-            type: "line",
-            name: "population",
-            data: data,
-        });
-
-        setChartOptions({
-            title: {
-                text: "総人口推移",
-            },
-            xAxis: {
-                title: {
-                    text: "年度",
-                },
-                categories: categories,
-            },
-            yAxis: {
-                title: {
-                    text: "人口数",
-                },
-            },
-            // 都道府県を一つも選んでいない場合との分岐条件
-            series:
-                series.length === 0
-                    ? [{ type: "line", name: "都道府県名", data: [] }]
-                    : series,
-        });
-
-    }, [populationPerYearTrendLines]);
+  
+    const chartOptions = useHighChartTrendLines(populationPerYearTrendLines);
 
     const tableColumns : TableColumn[] = [
         { columnKey: 'id', label: 'id' },

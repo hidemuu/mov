@@ -88,54 +88,6 @@ export const ResasPage: React.FunctionComponent = () => {
   
     const tableColumns : TableColumn[] = useTableColumns();
 
-    const Prefectures = React.memo(() => (
-        <div>
-            <Table arial-label="Default table">
-                <TableHeader>
-                    <TableRow>
-                        {tableColumns.map(column => (
-                            <TableHeaderCell key={column.columnKey}>{column.label}</TableHeaderCell>
-                        ))}
-                    </TableRow>
-                </TableHeader>
-                <TableBody>
-                    {regionTable.pref.map(line => (
-                        <TableRow key={line.id}>
-                            <TableCell>{line.id}</TableCell>
-                            <TableCell>{line.name}</TableCell>
-                            <TableCell>{line.category}</TableCell>
-                            <TableCell>{line.label}</TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </div>
-    ));
-
-    const Cities = React.memo(() => (
-        <div>
-            <Table arial-label="Default table">
-                <TableHeader>
-                    <TableRow>
-                        {tableColumns.map(column => (
-                            <TableHeaderCell key={column.columnKey}>{column.label}</TableHeaderCell>
-                        ))}
-                    </TableRow>
-                </TableHeader>
-                <TableBody>
-                    {regionTable.city.map(line => (
-                        <TableRow key={line.id}>
-                            <TableCell>{line.id}</TableCell>
-                            <TableCell>{line.name}</TableCell>
-                            <TableCell>{line.category}</TableCell>
-                            <TableCell>{line.label}</TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </div>
-    ));
-
     const [selectedTabValue, setSelectedTabValue] =
     React.useState<TabValue>("conditions");
 
@@ -160,7 +112,7 @@ export const ResasPage: React.FunctionComponent = () => {
             </TabList>
             <div className={styles.panels}>
                 {selectedTabValue === "tab1" && <RegionTable regionTableLines={regionTable.pref} tableColumns={tableColumns} />}
-                {selectedTabValue === "tab2" && <Cities />}
+                {selectedTabValue === "tab2" && <RegionTable regionTableLines={regionTable.city} tableColumns={tableColumns} />}
             </div>
         </div>
     );

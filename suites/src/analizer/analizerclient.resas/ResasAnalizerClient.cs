@@ -71,13 +71,13 @@ namespace Mov.Suite.AnalizerClient.Resas
 			return lines.Select(x => x.CreateSchema());
 		}
 
-		public async Task<IEnumerable<TrendLineSchema>> GetTrendLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
+		public async Task<IEnumerable<RegionResponseSchema<TrendLineSchema>>> GetTrendLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
 		{
 			var request = RegionRequest.Factory.Create(requestSchema);
 			if (request.Category.Equals(new RegionCategory(_resasRepository.PopulationPerYears.Name)))
 			{
 				var result = await GetPopulationPerYearsTrendLineAsync(request);
-				return result.Select(x => x.CreateSchema());
+				return result;
 			}
 			return null;
 		}
@@ -104,19 +104,29 @@ namespace Mov.Suite.AnalizerClient.Resas
 
 		#region logic
 
-		private async Task<IEnumerable<TrendLine>> GetPopulationPerYearsTrendLineAsync(RegionRequest request)
+		private async Task<IEnumerable<RegionResponseSchema<TrendLineSchema>>> GetPopulationPerYearsTrendLineAsync(RegionRequest request)
 		{
-			var result = new HashSet<TrendLine>();
+			var result = new HashSet<RegionResponseSchema<TrendLineSchema>>();
 			foreach(var regionCode in request.RegionCodes)
 			{
 				var pref = regionCode.Key;
 				foreach(var city in regionCode.Value)
 				{
 					var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(city, pref));
+					var trendLineSchemas = new HashSet<TrendLineSchema>();
 					foreach (var trendLine in GetPopulationPerYearTrendLine(request, pref, city,  populationPerYears.Result))
 					{
-						result.Add(trendLine);
+						trendLineSchemas.Add(trendLine.CreateSchema());
 					}
+					result.Add(new RegionResponseSchema<TrendLineSchema>()
+					{
+						Region = new RegionValueSchema
+						{
+							Prefecture = pref,
+							City = city,
+						},
+						Data = trendLineSchemas.ToList(),
+					});
 				}
 			}
 			return result;

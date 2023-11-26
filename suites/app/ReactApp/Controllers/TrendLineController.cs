@@ -40,7 +40,7 @@ namespace Mov.Suite.ReactApp.Controllers
 			var tableLines = await this._client.GetTableLineAsync();
 			var cities = tableLines.Where(x => x.Category.Equals("city"));
 			var prefCities = cities.Where(x => x.Label.Equals(prefCode.ToString())).ToList();
-			return Ok(await this._client.GetTrendLineAsync(
+			var response = await this._client.GetTrendLineAsync(
 				new RegionRequestSchema()
 				{
 					Prefectures = new List<PrefectureSchema>()
@@ -59,7 +59,8 @@ namespace Mov.Suite.ReactApp.Controllers
 				},
 				TimeValue.Empty,
 				TimeValue.Empty
-			));
+			);
+			return Ok(response);
 		}
 
 		/// <summary>
@@ -68,7 +69,7 @@ namespace Mov.Suite.ReactApp.Controllers
 		[HttpGet("population_per_years/{prefCode}/{cityCode}")]
 		public async Task<IActionResult> GetPopulationPerYears(int prefCode, int cityCode)
 		{
-			return Ok(await this._client.GetTrendLineAsync(
+			var response = await this._client.GetTrendLineAsync(
 				new RegionRequestSchema()
 				{
 					Prefectures = new List<PrefectureSchema>()
@@ -87,7 +88,9 @@ namespace Mov.Suite.ReactApp.Controllers
 				},
 				TimeValue.Empty,
 				TimeValue.Empty
-			));
+			);
+			var trendLines = response.ToArray()[0].Data;
+			return Ok(trendLines);
 		}
 
 		#endregion method

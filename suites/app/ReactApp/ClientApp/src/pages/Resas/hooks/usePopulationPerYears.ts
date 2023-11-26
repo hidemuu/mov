@@ -6,7 +6,7 @@ const API_KEY : string = 'api/TrendLine/population_per_years';
 
 export default function usePopulationPerYears(prefectureCode: string, cityCode: string) {
     console.log(prefectureCode + ' ' + cityCode);
-    const [trendLines, setTrendLines] = useState<TrendLine[]>();
+    const [trendLines, setTrendLines] = useState<TrendLine[]>([]);
     let endpoint : string;
 
     if(cityCode === ''){

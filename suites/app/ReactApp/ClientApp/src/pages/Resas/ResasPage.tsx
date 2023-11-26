@@ -3,6 +3,7 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import styled from 'styled-components';
 import axios from "axios";
+import { TrendLine } from "./models/TrendLine";
 import {
     TableBody,
     TableCell,
@@ -102,13 +103,7 @@ export const ResasPage: React.FunctionComponent = () => {
     }[]>([]);
 
 
-    const [trendLines, setTrendLines] = useState<{
-        id: string;
-        category: string;
-        label: string;
-        number: number;
-        value: number;
-    }[]>([]);
+    const [trendLines, setTrendLines] = useState<TrendLine[]>([]);
 
     useEffect(() => {
         //レンダリング毎に実行

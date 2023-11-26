@@ -15,16 +15,21 @@ export default function useHighChartTrendLines(regionTrendLines : RegionTrendLin
         let series: Highcharts.SeriesOptionsType[] = [];
         let categories = [];
         let data = [];
-        const trendLines: TrendLine[] = regionTrendLines.length === 0 ? [] : regionTrendLines[0].trendLines;
-        for (let trendLine of trendLines) {
-            categories.push(String(trendLine.number));
-            data.push(trendLine.value);
+        let count = 0;
+        for(let regionTrendLine of regionTrendLines){
+            for(let trendLine of regionTrendLine.trendLines){
+                if(count === 0){
+                    categories.push(String(trendLine.number));
+                }
+                data.push(trendLine.value);
+            }
+            series.push({
+                type: "line",
+                name: "population" + String(regionTrendLine.region.city),
+                data: data,
+            });
+            count++;
         }
-        series.push({
-            type: "line",
-            name: "population",
-            data: data,
-        });
 
         setChartOptions({
             title: {

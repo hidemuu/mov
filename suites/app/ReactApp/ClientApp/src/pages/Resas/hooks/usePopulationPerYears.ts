@@ -1,10 +1,13 @@
+import { useState, useEffect } from 'react';
 import axios from "axios";
 import { TrendLine } from "../models/TrendLine";
+import { PopulationPerYear } from '../models/PopulationPerYear';
 
 const API_KEY : string = 'api/TrendLine/population_per_years';
 
-export default function usePopulationPerYears(prefectureCode: string, cityCode: string) {
+export default function usePopulationPerYears(prefectureCode: string, cityCode: string) : PopulationPerYear[] {
     console.log(prefectureCode + ' ' + cityCode);
+    const [populationPerYears, setPopulationPerYears] = useState<PopulationPerYear[]>([]);
     let endpoint : string;
 
     if(cityCode === ''){
@@ -14,8 +17,14 @@ export default function usePopulationPerYears(prefectureCode: string, cityCode: 
         endpoint = API_KEY + '/' + prefectureCode + '/' + cityCode;
     }
  
-    const result = getResult(endpoint);
-    return result;
+    axios
+        .get(endpoint)
+        .then((results) => {
+            setPopulationPerYears(results.data);
+        })
+        .catch((error) => { });
+
+    return populationPerYears;
 }
 
 const getTrendLines = async (endpoint : string) => { return await axios.get(endpoint); };

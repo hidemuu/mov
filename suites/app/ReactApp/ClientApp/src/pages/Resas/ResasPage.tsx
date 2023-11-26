@@ -41,6 +41,7 @@ import useHighChartTrendLines from './hooks/useHighChartTrendLines';
 import useTableColumns from './hooks/useTableColumns';
 import { RegionTable } from './RegionTable';
 import { RegionTab } from './RegionTab';
+import { TrendLineChart } from './TrendLineChart';
 
 const Button = styled.button`
   border: 1px solid #666;
@@ -56,7 +57,6 @@ export const ResasPage: React.FunctionComponent = () => {
     const [regionValue, setRegionValue] = useRegionState("11", "11362");
     const regionTable = useRegionTableLines();
     const populationPerYearTrendLines = usePopulationPerYearTrendLines(regionValue);
-    const chartOptions = useHighChartTrendLines(populationPerYearTrendLines);
 
     const onChangePrefecture: InputProps["onChange"] = (ev, data) => {
         if (data.value.length <= 20) {
@@ -99,7 +99,7 @@ export const ResasPage: React.FunctionComponent = () => {
                 <Button onClick={onClickApply}></Button>
             </div>
             <h2>トレンドグラフ</h2>
-            <HighchartsReact highcharts={Highcharts} options={chartOptions} />
+            <TrendLineChart trendLines={populationPerYearTrendLines} />
             <RegionTab regionTableLines={regionTable} tableColumns={tableColumns} />
         </div>
     );

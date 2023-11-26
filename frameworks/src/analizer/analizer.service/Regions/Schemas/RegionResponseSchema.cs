@@ -8,16 +8,16 @@ namespace Mov.Analizer.Service.Regions.Schemas
 	public class RegionResponseSchema<T>
 	{
 		/// <summary>
-		/// カテゴリ
+		/// prefecture
 		/// </summary>
-		[JsonProperty("category")]
-		public string Category { get; set; } = string.Empty;
+		[JsonProperty("prefecture")]
+		public string Prefecture { get; set; } = string.Empty;
 
 		/// <summary>
-		/// ラベル
+		/// city
 		/// </summary>
-		[JsonProperty("label")]
-		public string Label { get; set; } = string.Empty;
+		[JsonProperty("city")]
+		public string City { get; set; } = string.Empty;
 
 		/// <summary>
 		/// データ

@@ -32,7 +32,7 @@ export default function usePopulationPerYearTrendLines(region: RegionValue) : Tr
             .catch((error) => { });
         }
             
-    },[prefectureCode, cityCode]);
+    },[region]);
 
     return populationPerYears;
 }

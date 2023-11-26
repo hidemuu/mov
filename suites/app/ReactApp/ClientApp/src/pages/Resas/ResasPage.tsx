@@ -105,9 +105,6 @@ export const ResasPage: React.FunctionComponent = () => {
         content: string;
     }[]>([]);
 
-
-    const [trendLines, setTrendLines] = useState<TrendLine[]>([]);
-
     useEffect(() => {
         //レンダリング毎に実行
         console.log("再レンダリングされるたび実行");
@@ -131,36 +128,6 @@ export const ResasPage: React.FunctionComponent = () => {
             })
             .catch((error) => { });
     },[])
-
-    useEffect(() => {
-        //都道府県コード・都市コード変更時に実行
-        console.log("都道府県コード・都市コード変更時に実行");
-        //getTrendLines();
-        
-    }, [prefectureValue, cityValue]);
-
-    const getTrendLines = () =>{
-        if(cityValue === ""){
-            axios
-            .get('api/TrendLine/population_per_years' + '/' + prefectureValue, {
-                //headers: { "X-API-KEY": process.env.REACT_APP_API_KEY },
-            })
-            .then((results) => {
-                setTrendLines(results.data);
-            })
-            .catch((error) => { });
-        }
-        else{
-            axios
-            .get('api/TrendLine/population_per_years' + '/' + prefectureValue + '/' + cityValue, {
-                //headers: { "X-API-KEY": process.env.REACT_APP_API_KEY },
-            })
-            .then((results) => {
-                setTrendLines(results.data);
-            })
-            .catch((error) => { });
-        }
-    }
 
     const [chartOptions, setChartOptions] = useState<Highcharts.Options>();
     
@@ -201,7 +168,7 @@ export const ResasPage: React.FunctionComponent = () => {
                     : series,
         });
 
-    }, [trendLines, populationPerYearTrendLines]);
+    }, [populationPerYearTrendLines]);
 
     const tableColumns = [
         { columnKey: 'id', label: 'id' },

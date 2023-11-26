@@ -36,6 +36,7 @@ import { RegionValue } from './models/RegionValue';
 import { TableColumn } from './models/TableColumn';
 import { useStyles } from './hooks/useStyles';
 import useRegionTableLines from './hooks/useRegionTableLines';
+import { useInputId } from '../../hooks/useInputId';
 
 const Button = styled.button`
   border: 1px solid #666;
@@ -48,7 +49,7 @@ export const ResasPage: React.FunctionComponent = () => {
 
     const styles = useStyles();
 
-    const inputId = useId("input");
+    const inputId = useInputId();
     const [regionValue, setRegionValue] = useRegionState("11", "11362");
 
     const onChangePrefecture: InputProps["onChange"] = (ev, data) => {

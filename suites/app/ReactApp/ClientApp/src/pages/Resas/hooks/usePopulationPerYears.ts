@@ -6,23 +6,31 @@ import { PopulationPerYear } from '../models/PopulationPerYear';
 const API_KEY : string = 'api/TrendLine/population_per_years';
 
 export default function usePopulationPerYears(prefectureCode: string, cityCode: string) : PopulationPerYear[] {
-    console.log(prefectureCode + ' ' + cityCode);
+    console.log(API_KEY + ' ' + prefectureCode + ' ' + cityCode);
     const [populationPerYears, setPopulationPerYears] = useState<PopulationPerYear[]>([]);
-    let endpoint : string;
-
-    if(cityCode === ''){
-        endpoint = API_KEY + '/' + prefectureCode;
-    }
-    else{
-        endpoint = API_KEY + '/' + prefectureCode + '/' + cityCode;
-    }
- 
-    axios
-        .get(endpoint)
-        .then((results) => {
-            setPopulationPerYears(results.data);
-        })
-        .catch((error) => { });
+    
+    useEffect(() =>{
+        let endpoint : string;
+        if(cityCode === ''){
+            endpoint = API_KEY + '/' + prefectureCode;
+        }
+        else if(cityCode === '' && prefectureCode === ''){
+            endpoint = '';
+        }
+        else{
+            endpoint = API_KEY + '/' + prefectureCode + '/' + cityCode;
+        }
+        
+        if(endpoint !== ''){
+            axios
+            .get(endpoint)
+            .then((results) => {
+                setPopulationPerYears(results.data);
+            })
+            .catch((error) => { });
+        }
+            
+    },[prefectureCode, cityCode]);
 
     return populationPerYears;
 }

@@ -86,8 +86,6 @@ export const ResasPage: React.FunctionComponent = () => {
         //レンダリング毎に実行
         console.log("再レンダリングされるたび実行");
     });
-  
-    const tableColumns : TableColumn[] = useTableColumns();
 
     return (
         <div className={styles.root}>
@@ -100,7 +98,7 @@ export const ResasPage: React.FunctionComponent = () => {
             </div>
             <h2>トレンドグラフ</h2>
             <TrendLineChart trendLines={populationPerYearTrendLines} />
-            <RegionTab regionTableLines={regionTable} tableColumns={tableColumns} />
+            <RegionTab regionTableLines={regionTable} />
         </div>
     );
 };

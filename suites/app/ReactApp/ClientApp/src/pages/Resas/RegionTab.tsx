@@ -4,14 +4,15 @@ import { SelectTabData, SelectTabEvent, Tab, TabList, TabValue } from "@fluentui
 import { RegionTable } from "./RegionTable";
 import { RegionTableLines } from "./models/RegionTableLines";
 import { useStyles } from "./hooks/useStyles";
+import useTableColumns from "./hooks/useTableColumns";
 
 export declare type RegionTabProps = {
     regionTableLines : RegionTableLines, 
-    tableColumns : TableColumn[],
 }
 
-export const RegionTab: FC<RegionTabProps> = ({ regionTableLines, tableColumns}) => {
+export const RegionTab: FC<RegionTabProps> = ({ regionTableLines}) => {
     const styles = useStyles();
+    const tableColumns : TableColumn[] = useTableColumns();
     const [selectedTabValue, setSelectedTabValue] =
     useState<TabValue>("conditions");
 

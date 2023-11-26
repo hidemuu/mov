@@ -40,6 +40,7 @@ import { useInputId } from '../../hooks/useInputId';
 import useHighChartTrendLines from './hooks/useHighChartTrendLines';
 import useTableColumns from './hooks/useTableColumns';
 import { RegionTable } from './RegionTable';
+import { RegionTab } from './RegionTab';
 
 const Button = styled.button`
   border: 1px solid #666;
@@ -88,13 +89,6 @@ export const ResasPage: React.FunctionComponent = () => {
   
     const tableColumns : TableColumn[] = useTableColumns();
 
-    const [selectedTabValue, setSelectedTabValue] =
-    React.useState<TabValue>("conditions");
-
-    const onTabSelect = (event: SelectTabEvent, data: SelectTabData) => {
-        setSelectedTabValue(data.value);
-    };
-
     return (
         <div className={styles.root}>
             <div>
@@ -106,14 +100,7 @@ export const ResasPage: React.FunctionComponent = () => {
             </div>
             <h2>トレンドグラフ</h2>
             <HighchartsReact highcharts={Highcharts} options={chartOptions} />
-            <TabList selectedValue={selectedTabValue} onTabSelect={onTabSelect}>
-                <Tab value="tab1">都道府県コード一覧</Tab>
-                <Tab value="tab2">都市コード一覧</Tab>
-            </TabList>
-            <div className={styles.panels}>
-                {selectedTabValue === "tab1" && <RegionTable regionTableLines={regionTable.pref} tableColumns={tableColumns} />}
-                {selectedTabValue === "tab2" && <RegionTable regionTableLines={regionTable.city} tableColumns={tableColumns} />}
-            </div>
+            <RegionTab regionTableLines={regionTable} tableColumns={tableColumns} />
         </div>
     );
 };

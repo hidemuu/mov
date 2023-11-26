@@ -51,8 +51,9 @@ export const ResasPage: React.FunctionComponent = () => {
     const styles = useStyles();
     const inputId = useInputId();
     const [regionValue, setRegionValue] = useRegionState("11", "11362");
-    const populationPerYearTrendLines = usePopulationPerYearTrendLines(regionValue);
     const regionTable = useRegionTableLines();
+    const populationPerYearTrendLines = usePopulationPerYearTrendLines(regionValue);
+    const chartOptions = useHighChartTrendLines(populationPerYearTrendLines);
 
     const onChangePrefecture: InputProps["onChange"] = (ev, data) => {
         if (data.value.length <= 20) {
@@ -83,8 +84,6 @@ export const ResasPage: React.FunctionComponent = () => {
         console.log("再レンダリングされるたび実行");
     });
   
-    const chartOptions = useHighChartTrendLines(populationPerYearTrendLines);
-
     const tableColumns : TableColumn[] = [
         { columnKey: 'id', label: 'id' },
         { columnKey: 'name', label: 'name' },

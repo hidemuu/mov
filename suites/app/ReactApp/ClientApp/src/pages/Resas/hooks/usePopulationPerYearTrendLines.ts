@@ -4,9 +4,8 @@ import { TrendLine } from "../models/TrendLine";
 import { PopulationPerYear } from '../models/PopulationPerYear';
 import { RegionValue } from '../models/RegionValue';
 
-const API_KEY : string = 'api/TrendLine/population_per_years';
-
 export default function usePopulationPerYearTrendLines(region: RegionValue) : TrendLine[] {
+    const API_KEY : string = 'api/TrendLine/population_per_years';
     const prefectureCode = region.pref;
     const cityCode = region.city;
     console.log(API_KEY + ' ' + prefectureCode + ' ' + cityCode);

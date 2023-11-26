@@ -34,6 +34,7 @@ import usePopulationPerYearTrendLines from './hooks/usePopulationPerYearTrendLin
 import useRegionState from './hooks/useRegionState';
 import { RegionValue } from './models/RegionValue';
 import { TableColumn } from './models/TableColumn';
+import { useStyles } from './hooks/useStyles';
 
 const Button = styled.button`
   border: 1px solid #666;
@@ -41,29 +42,6 @@ const Button = styled.button`
   margin-top: 12px;
   border-radius: 4px;
 `;
-
-const useStyles = makeStyles({
-    root: {
-        alignItems: "flex-start",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-start",
-        ...shorthands.padding("50px", "20px"),
-        rowGap: "20px",
-    },
-    panels: {
-        ...shorthands.padding(0, "10px"),
-        "& th": {
-            textAlign: "left",
-            ...shorthands.padding(0, "30px", 0, 0),
-        },
-    },
-    grid: {
-        ...shorthands.gap("16px"),
-        display: "flex",
-        flexDirection: "column",
-    },
-});
 
 export const ResasPage: React.FunctionComponent = () => {
 

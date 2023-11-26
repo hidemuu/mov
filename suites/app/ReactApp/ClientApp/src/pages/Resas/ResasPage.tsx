@@ -97,7 +97,7 @@ export const ResasPage: React.FunctionComponent = () => {
                 <Button onClick={onClickApply}></Button>
             </div>
             <h2>トレンドグラフ</h2>
-            <TrendLineChart trendLines={populationPerYearTrendLines} />
+            <TrendLineChart trendLines={populationPerYearTrendLines} regionTableLines={regionTable} />
             <RegionTab regionTableLines={regionTable} />
         </div>
     );

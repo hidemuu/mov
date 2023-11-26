@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
     TableBody,
     TableCell,
@@ -23,31 +23,39 @@ import type {
     TabValue,
     InputProps,
     ButtonProps,
+    ForwardRefComponent,
   } from "@fluentui/react-components";
 import { RegionTableLines } from './models/RegionTableLines';
 import { TableColumn } from './models/TableColumn';
+import { TableLine } from './models/TableLine';
 
-const RegionTable = React.memo((regionTableLines : RegionTableLines, tableColumns : TableColumn[]) => (
+export declare type RegionTableProps = {
+    regionTableLines : TableLine[], 
+    tableColumns : TableColumn[]
+}
+
+export const RegionTable: FC<RegionTableProps> = React.memo(({ regionTableLines, tableColumns} : RegionTableProps) => {
     
-    <div>
-        <Table arial-label="Default table">
-            <TableHeader>
-                <TableRow>
-                    {tableColumns.map(column => (
-                        <TableHeaderCell key={column.columnKey}>{column.label}</TableHeaderCell>
-                    ))}
-                </TableRow>
-            </TableHeader>
-            <TableBody>
-                {regionTableLines.pref.map(line => (
-                    <TableRow key={line.id}>
-                        <TableCell>{line.id}</TableCell>
-                        <TableCell>{line.name}</TableCell>
-                        <TableCell>{line.category}</TableCell>
-                        <TableCell>{line.label}</TableCell>
+    return(
+        <div>
+            <Table arial-label="Default table">
+                <TableHeader>
+                    <TableRow>
+                        {tableColumns.map(column => (
+                            <TableHeaderCell key={column.columnKey}>{column.label}</TableHeaderCell>
+                        ))}
                     </TableRow>
-                ))}
-            </TableBody>
-        </Table>
-    </div>
-));
+                </TableHeader>
+                <TableBody>
+                    {regionTableLines.map(line => (
+                        <TableRow key={line.id}>
+                            <TableCell>{line.id}</TableCell>
+                            <TableCell>{line.name}</TableCell>
+                            <TableCell>{line.category}</TableCell>
+                            <TableCell>{line.label}</TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </div>);
+});

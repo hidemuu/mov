@@ -39,6 +39,7 @@ import useRegionTableLines from './hooks/useRegionTableLines';
 import { useInputId } from '../../hooks/useInputId';
 import useHighChartTrendLines from './hooks/useHighChartTrendLines';
 import useTableColumns from './hooks/useTableColumns';
+import { RegionTable } from './RegionTable';
 
 const Button = styled.button`
   border: 1px solid #666;
@@ -158,7 +159,7 @@ export const ResasPage: React.FunctionComponent = () => {
                 <Tab value="tab2">都市コード一覧</Tab>
             </TabList>
             <div className={styles.panels}>
-                {selectedTabValue === "tab1" && <Prefectures />}
+                {selectedTabValue === "tab1" && <RegionTable regionTableLines={regionTable.pref} tableColumns={tableColumns} />}
                 {selectedTabValue === "tab2" && <Cities />}
             </div>
         </div>

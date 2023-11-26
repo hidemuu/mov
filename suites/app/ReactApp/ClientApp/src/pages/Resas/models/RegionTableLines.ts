@@ -1,6 +1,6 @@
 import { TableLine } from "./TableLine";
 
-export interface RegionTable {
+export interface RegionTableLines {
     pref: TableLine[];
     city: TableLine[];
 }

@@ -38,6 +38,7 @@ import { useStyles } from './hooks/useStyles';
 import useRegionTableLines from './hooks/useRegionTableLines';
 import { useInputId } from '../../hooks/useInputId';
 import useHighChartTrendLines from './hooks/useHighChartTrendLines';
+import useTableColumns from './hooks/useTableColumns';
 
 const Button = styled.button`
   border: 1px solid #666;
@@ -84,12 +85,7 @@ export const ResasPage: React.FunctionComponent = () => {
         console.log("再レンダリングされるたび実行");
     });
   
-    const tableColumns : TableColumn[] = [
-        { columnKey: 'id', label: 'id' },
-        { columnKey: 'name', label: 'name' },
-        { columnKey: 'category', label: 'category' },
-        { columnKey: 'label', label: 'label' },
-    ];
+    const tableColumns : TableColumn[] = useTableColumns();
 
     const Prefectures = React.memo(() => (
         <div>

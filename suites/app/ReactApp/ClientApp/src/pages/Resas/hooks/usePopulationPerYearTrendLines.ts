@@ -5,9 +5,9 @@ import { PopulationPerYear } from '../models/PopulationPerYear';
 
 const API_KEY : string = 'api/TrendLine/population_per_years';
 
-export default function usePopulationPerYears(prefectureCode: string, cityCode: string) : PopulationPerYear[] {
+export default function usePopulationPerYearTrendLines(prefectureCode: string, cityCode: string) : TrendLine[] {
     console.log(API_KEY + ' ' + prefectureCode + ' ' + cityCode);
-    const [populationPerYears, setPopulationPerYears] = useState<PopulationPerYear[]>([]);
+    const [populationPerYears, setPopulationPerYears] = useState<TrendLine[]>([]);
     
     useEffect(() =>{
         let endpoint : string;

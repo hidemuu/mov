@@ -29,6 +29,7 @@ import type {
     InputProps,
     ButtonProps,
   } from "@fluentui/react-components";
+import usePopulationPerYearTrendLines from './hooks/usePopulationPerYearTrendLines';
 
 const Button = styled.button`
   border: 1px solid #666;
@@ -82,6 +83,8 @@ export const ResasPage: React.FunctionComponent = () => {
         }
       };
 
+    const populationPerYearTrendLines = usePopulationPerYearTrendLines(prefectureValue, cityValue);
+
     const onClickApply = () => {
 
     }
@@ -132,7 +135,7 @@ export const ResasPage: React.FunctionComponent = () => {
     useEffect(() => {
         //都道府県コード・都市コード変更時に実行
         console.log("都道府県コード・都市コード変更時に実行");
-        getTrendLines();
+        //getTrendLines();
         
     }, [prefectureValue, cityValue]);
 
@@ -166,7 +169,7 @@ export const ResasPage: React.FunctionComponent = () => {
         let series: Highcharts.SeriesOptionsType[] = [];
         let categories = [];
         let data = [];
-        for (let trendLine of trendLines) {
+        for (let trendLine of populationPerYearTrendLines) {
             categories.push(String(trendLine.number));
             data.push(trendLine.value);
         }
@@ -198,7 +201,7 @@ export const ResasPage: React.FunctionComponent = () => {
                     : series,
         });
 
-    }, [trendLines]);
+    }, [trendLines, populationPerYearTrendLines]);
 
     const tableColumns = [
         { columnKey: 'id', label: 'id' },

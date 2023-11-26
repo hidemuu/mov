@@ -89,8 +89,7 @@ namespace Mov.Suite.ReactApp.Controllers
 				TimeValue.Empty,
 				TimeValue.Empty
 			);
-			var trendLines = response.ToArray()[0].Data;
-			return Ok(trendLines);
+			return Ok(response);
 		}
 
 		#endregion method

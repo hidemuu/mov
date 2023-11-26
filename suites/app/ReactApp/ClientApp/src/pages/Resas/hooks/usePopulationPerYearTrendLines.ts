@@ -3,13 +3,14 @@ import axios from "axios";
 import { TrendLine } from "../models/TrendLine";
 import { PopulationPerYear } from '../models/PopulationPerYear';
 import { RegionValue } from '../models/RegionValue';
+import { RegionTrendLines } from '../models/RegionTrendLines';
 
-export default function usePopulationPerYearTrendLines(region: RegionValue) : TrendLine[] {
+export default function usePopulationPerYearTrendLines(region: RegionValue) : RegionTrendLines[] {
     const API_KEY : string = 'api/TrendLine/population_per_years';
     const prefectureCode = String(region.pref);
     const cityCode = String(region.city);
     console.log(API_KEY + ' ' + prefectureCode + ' ' + cityCode);
-    const [populationPerYears, setPopulationPerYears] = useState<TrendLine[]>([]);
+    const [populationPerYears, setPopulationPerYears] = useState<RegionTrendLines[]>([]);
     
     useEffect(() =>{
         let endpoint : string;
@@ -27,7 +28,18 @@ export default function usePopulationPerYearTrendLines(region: RegionValue) : Tr
             axios
             .get(endpoint)
             .then((results) => {
-                setPopulationPerYears(results.data);
+                const regionTrendLines : RegionTrendLines[] = [];
+                for(let data of results.data){
+                    const regionTrendLine : RegionTrendLines = {
+                        region : {
+                            city : data.city,
+                            pref : data.pref,
+                        },
+                        trendLines : data.data,
+                    }
+                    regionTrendLines.push(regionTrendLine);
+                }
+                setPopulationPerYears(regionTrendLines);
             })
             .catch((error) => { });
         }

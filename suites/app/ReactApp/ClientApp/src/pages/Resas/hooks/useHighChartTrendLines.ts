@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import Highcharts from "highcharts";
 import { TrendLine } from "../models/TrendLine";
 import { RegionTableLines } from "../models/RegionTableLines";
+import { RegionTrendLines } from "../models/RegionTrendLines";
 
 
-export default function useHighChartTrendLines(trendLines : TrendLine[], regionTableLines : RegionTableLines) : Highcharts.Options {
+export default function useHighChartTrendLines(regionTrendLines : RegionTrendLines[], regionTableLines : RegionTableLines) : Highcharts.Options {
     const [chartOptions, setChartOptions] = useState<Highcharts.Options>(
         {
             series : [],
@@ -14,6 +15,7 @@ export default function useHighChartTrendLines(trendLines : TrendLine[], regionT
         let series: Highcharts.SeriesOptionsType[] = [];
         let categories = [];
         let data = [];
+        const trendLines: TrendLine[] = regionTrendLines.length === 0 ? [] : regionTrendLines[0].trendLines;
         for (let trendLine of trendLines) {
             categories.push(String(trendLine.number));
             data.push(trendLine.value);
@@ -46,7 +48,7 @@ export default function useHighChartTrendLines(trendLines : TrendLine[], regionT
                     : series,
         });
 
-    }, [trendLines]);
+    }, [regionTrendLines]);
 
     return chartOptions;
 }

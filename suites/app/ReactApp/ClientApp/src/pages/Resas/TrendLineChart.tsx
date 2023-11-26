@@ -4,9 +4,10 @@ import { FC } from "react";
 import { TrendLine } from "./models/TrendLine";
 import useHighChartTrendLines from "./hooks/useHighChartTrendLines";
 import { RegionTableLines } from "./models/RegionTableLines";
+import { RegionTrendLines } from "./models/RegionTrendLines";
 
 export declare type TrendLineChartProps = {
-    trendLines : TrendLine[], 
+    trendLines : RegionTrendLines[], 
     regionTableLines : RegionTableLines,
 }
 

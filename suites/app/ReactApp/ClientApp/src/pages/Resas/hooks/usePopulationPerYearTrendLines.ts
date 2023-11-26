@@ -7,21 +7,21 @@ import { RegionTrendLines } from '../models/RegionTrendLines';
 
 export default function usePopulationPerYearTrendLines(region: RegionValue) : RegionTrendLines[] {
     const API_KEY : string = 'api/TrendLine/population_per_years';
-    const prefectureCode = String(region.pref);
-    const cityCode = String(region.city);
+    const prefectureCode = region.pref;
+    const cityCode = region.city;
     console.log(API_KEY + ' ' + prefectureCode + ' ' + cityCode);
     const [populationPerYears, setPopulationPerYears] = useState<RegionTrendLines[]>([]);
     
     useEffect(() =>{
         let endpoint : string;
-        if(cityCode === ''){
-            endpoint = API_KEY + '/' + prefectureCode;
-        }
-        else if(cityCode === '' && prefectureCode === ''){
+        if(cityCode === 0 && prefectureCode === 0){
             endpoint = '';
         }
+        else if(cityCode === 0){
+            endpoint = API_KEY + '/' + String(prefectureCode);
+        }
         else{
-            endpoint = API_KEY + '/' + prefectureCode + '/' + cityCode;
+            endpoint = API_KEY + '/' + String(prefectureCode) + '/' + String(cityCode);
         }
         
         if(endpoint !== ''){

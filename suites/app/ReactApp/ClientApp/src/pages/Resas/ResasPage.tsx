@@ -4,6 +4,7 @@ import HighchartsReact from "highcharts-react-official";
 import styled from 'styled-components';
 import axios from "axios";
 import { TrendLine } from "./models/TrendLine";
+import { TableLine } from "./models/TableLine";
 import {
     TableBody,
     TableCell,
@@ -32,6 +33,7 @@ import type {
 import usePopulationPerYearTrendLines from './hooks/usePopulationPerYearTrendLines';
 import useRegionState from './hooks/useRegionState';
 import { RegionValue } from './models/RegionValue';
+import { TableColumn } from './models/TableColumn';
 
 const Button = styled.button`
   border: 1px solid #666;
@@ -69,7 +71,7 @@ export const ResasPage: React.FunctionComponent = () => {
 
     const inputId = useId("input");
     const [regionValue, setRegionValue] = useRegionState("11", "11362");
-    
+
     const onChangePrefecture: InputProps["onChange"] = (ev, data) => {
         if (data.value.length <= 20) {
             const updateRegionValue : RegionValue = {
@@ -95,21 +97,9 @@ export const ResasPage: React.FunctionComponent = () => {
 
     }
 
-    const [prefectureTableLines, setPrefectureTableLines] = useState<{
-        id: number;
-        category: string;
-        label: string;
-        name: string;
-        content: string;
-    }[]>([]);
+    const [prefectureTableLines, setPrefectureTableLines] = useState<TableLine[]>([]);
 
-    const [cityTableLines, setCityTableLines] = useState<{
-        id: number;
-        category: string;
-        label: string;
-        name: string;
-        content: string;
-    }[]>([]);
+    const [cityTableLines, setCityTableLines] = useState<TableLine[]>([]);
 
     useEffect(() => {
         //レンダリング毎に実行
@@ -176,7 +166,7 @@ export const ResasPage: React.FunctionComponent = () => {
 
     }, [populationPerYearTrendLines]);
 
-    const tableColumns = [
+    const tableColumns : TableColumn[] = [
         { columnKey: 'id', label: 'id' },
         { columnKey: 'name', label: 'name' },
         { columnKey: 'category', label: 'category' },

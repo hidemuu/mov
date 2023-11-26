@@ -54,14 +54,14 @@ export const ResasPage: React.FunctionComponent = () => {
 
     const styles = useStyles();
     const inputId = useInputId();
-    const [regionValue, setRegionValue] = useRegionState("11", "11362");
+    const [regionValue, setRegionValue] = useRegionState(11, 11362);
     const regionTable = useRegionTableLines();
     const populationPerYearTrendLines = usePopulationPerYearTrendLines(regionValue);
 
     const onChangePrefecture: InputProps["onChange"] = (ev, data) => {
         if (data.value.length <= 20) {
             const updateRegionValue : RegionValue = {
-                pref : data.value,
+                pref : Number(data.value),
                 city : regionValue.city,
             }
             setRegionValue(updateRegionValue);
@@ -72,7 +72,7 @@ export const ResasPage: React.FunctionComponent = () => {
         if (data.value.length <= 20) {
             const updateRegionValue : RegionValue = {
                 pref : regionValue.pref,
-                city : data.value,
+                city : Number(data.value),
             }
             setRegionValue(updateRegionValue);
         }
@@ -91,9 +91,9 @@ export const ResasPage: React.FunctionComponent = () => {
         <div className={styles.root}>
             <div>
                 <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>都道府県コード</Label>
-                <Input id={inputId} value={regionValue.pref} onChange={onChangePrefecture} />
+                <Input id={inputId} value={String(regionValue.pref)} onChange={onChangePrefecture} />
                 <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>都市コード</Label>
-                <Input id={inputId} value={regionValue.city} onChange={onChangeCity} />
+                <Input id={inputId} value={String(regionValue.city)} onChange={onChangeCity} />
                 <Button onClick={onClickApply}></Button>
             </div>
             <h2>トレンドグラフ</h2>

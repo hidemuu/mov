@@ -6,8 +6,8 @@ import { RegionValue } from '../models/RegionValue';
 
 export default function usePopulationPerYearTrendLines(region: RegionValue) : TrendLine[] {
     const API_KEY : string = 'api/TrendLine/population_per_years';
-    const prefectureCode = region.pref;
-    const cityCode = region.city;
+    const prefectureCode = String(region.pref);
+    const cityCode = String(region.city);
     console.log(API_KEY + ' ' + prefectureCode + ' ' + cityCode);
     const [populationPerYears, setPopulationPerYears] = useState<TrendLine[]>([]);
     

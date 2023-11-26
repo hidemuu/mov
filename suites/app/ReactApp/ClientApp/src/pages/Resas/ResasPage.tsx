@@ -131,7 +131,12 @@ export const ResasPage: React.FunctionComponent = () => {
 
     useEffect(() => {
         //都道府県コード・都市コード変更時に実行
-        console.log("都道府県コード・都市コード変更字に実行");
+        console.log("都道府県コード・都市コード変更時に実行");
+        getTrendLines();
+        
+    }, [prefectureValue, cityValue]);
+
+    const getTrendLines = () =>{
         if(cityValue === ""){
             axios
             .get('api/TrendLine/population_per_years' + '/' + prefectureValue, {
@@ -152,8 +157,7 @@ export const ResasPage: React.FunctionComponent = () => {
             })
             .catch((error) => { });
         }
-        
-    }, [prefectureValue, cityValue]);
+    }
 
     const [chartOptions, setChartOptions] = useState<Highcharts.Options>();
     

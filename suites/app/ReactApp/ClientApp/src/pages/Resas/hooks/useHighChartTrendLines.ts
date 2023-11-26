@@ -22,13 +22,13 @@ export default function useHighChartTrendLines(regionTrendLines : RegionTrendLin
                     categories.push(String(trendLine.number));
                 }
                 data.push(trendLine.value);
+                count++;
             }
             series.push({
                 type: "line",
-                name: "population" + String(regionTrendLine.region.city),
+                name: "population-" + String(regionTrendLine.region.city),
                 data: data,
             });
-            count++;
         }
 
         setChartOptions({

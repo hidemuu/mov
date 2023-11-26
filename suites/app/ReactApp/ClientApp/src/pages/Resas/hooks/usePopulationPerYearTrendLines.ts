@@ -2,10 +2,13 @@ import { useState, useEffect } from 'react';
 import axios from "axios";
 import { TrendLine } from "../models/TrendLine";
 import { PopulationPerYear } from '../models/PopulationPerYear';
+import { RegionValue } from '../models/RegionValue';
 
 const API_KEY : string = 'api/TrendLine/population_per_years';
 
-export default function usePopulationPerYearTrendLines(prefectureCode: string, cityCode: string) : TrendLine[] {
+export default function usePopulationPerYearTrendLines(region: RegionValue) : TrendLine[] {
+    const prefectureCode = region.pref;
+    const cityCode = region.city;
     console.log(API_KEY + ' ' + prefectureCode + ' ' + cityCode);
     const [populationPerYears, setPopulationPerYears] = useState<TrendLine[]>([]);
     

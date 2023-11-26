@@ -35,6 +35,7 @@ import useRegionState from './hooks/useRegionState';
 import { RegionValue } from './models/RegionValue';
 import { TableColumn } from './models/TableColumn';
 import { useStyles } from './hooks/useStyles';
+import useRegionTableLines from './hooks/useRegionTableLines';
 
 const Button = styled.button`
   border: 1px solid #666;
@@ -75,33 +76,12 @@ export const ResasPage: React.FunctionComponent = () => {
 
     }
 
-    const [prefectureTableLines, setPrefectureTableLines] = useState<TableLine[]>([]);
-
-    const [cityTableLines, setCityTableLines] = useState<TableLine[]>([]);
+    const regionTable = useRegionTableLines();
 
     useEffect(() => {
         //レンダリング毎に実行
         console.log("再レンダリングされるたび実行");
     });
-
-    useEffect(() =>{
-        //初回レンダリング時に実行
-        console.log("初回レンダリング時に実行");
-        axios
-            .get('api/TableLine/prefecture', {
-            })
-            .then((results) => {
-                setPrefectureTableLines(results.data);
-            })
-            .catch((error) => { });
-        axios
-            .get('api/TableLine/city', {
-            })
-            .then((results) => {
-                setCityTableLines(results.data);
-            })
-            .catch((error) => { });
-    },[])
 
     const [chartOptions, setChartOptions] = useState<Highcharts.Options>();
     
@@ -151,11 +131,6 @@ export const ResasPage: React.FunctionComponent = () => {
         { columnKey: 'label', label: 'label' },
     ];
 
-    const tableStyles = {
-        maxheight: '400px', // 適切な高さに変更してください
-        overflow: 'auto', // テーブルの高さを超えた場合にスクロールバーを表示
-    };
-
     const Prefectures = React.memo(() => (
         <div>
             <Table arial-label="Default table">
@@ -167,7 +142,7 @@ export const ResasPage: React.FunctionComponent = () => {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {prefectureTableLines.map(line => (
+                    {regionTable.pref.map(line => (
                         <TableRow key={line.id}>
                             <TableCell>{line.id}</TableCell>
                             <TableCell>{line.name}</TableCell>
@@ -191,7 +166,7 @@ export const ResasPage: React.FunctionComponent = () => {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {cityTableLines.map(line => (
+                    {regionTable.city.map(line => (
                         <TableRow key={line.id}>
                             <TableCell>{line.id}</TableCell>
                             <TableCell>{line.name}</TableCell>

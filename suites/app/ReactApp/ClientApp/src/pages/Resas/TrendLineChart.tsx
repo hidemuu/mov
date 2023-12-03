@@ -6,6 +6,12 @@ import useHighChartTrendLines from "./hooks/useHighChartTrendLines";
 import { RegionTableLines } from "./models/RegionTableLines";
 import { RegionTrendLines } from "./models/RegionTrendLines";
 
+const Styles: { [key: string]: React.CSSProperties } = {
+    graph: {
+      padding: "12px",
+    },
+  };
+
 export declare type TrendLineChartProps = {
     trendLines : RegionTrendLines[], 
     regionTableLines : RegionTableLines,
@@ -14,6 +20,8 @@ export declare type TrendLineChartProps = {
 export const TrendLineChart: FC<TrendLineChartProps> = ({ trendLines, regionTableLines}) => {
     const chartOptions = useHighChartTrendLines(trendLines, regionTableLines);
     return(
-        <HighchartsReact highcharts={Highcharts} options={chartOptions} />
+        <div style={Styles.graph}>
+            <HighchartsReact highcharts={Highcharts} options={chartOptions} />
+        </div>
     )
 }

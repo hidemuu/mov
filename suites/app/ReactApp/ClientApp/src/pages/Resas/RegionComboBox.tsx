@@ -47,7 +47,7 @@ export const RegionComboBox: FC<RegionComboBoxProps> = ({ regionValue, tableLine
             onInput={onInput}
             onOptionSelect={onOptionSelect}>
             {selectedOptions.map((option) => (
-                <Option key={option} disabled={option === regionSelections.selected}>
+                <Option key={option} disabled={option === value}>
                     {option}
                 </Option>
             ))}

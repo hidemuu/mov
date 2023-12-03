@@ -18,26 +18,10 @@ import {
     PresenceBadgeStatus,
     Avatar,
 } from '@fluentui/react-components';
-
-type FileCell = {
-    label: string;
-    icon: JSX.Element;
-};
-
-type LastUpdatedCell = {
-    label: string;
-    timestamp: number;
-};
-
-type LastUpdateCell = {
-    label: string;
-    icon: JSX.Element;
-};
-
-type AuthorCell = {
-    label: string;
-    status: PresenceBadgeStatus;
-};
+import { FileCell } from './Table/models/FileCell';
+import { AuthorCell } from './Table/models/AuthorCell';
+import { LastUpdatedCell } from './Table/models/LastUpdatedCell';
+import { LastUpdateCell } from './Table/models/LastUpdateCell';
 
 type Item = {
     file: FileCell;

@@ -66,6 +66,15 @@ export const ResasPage: React.FunctionComponent = () => {
         }
       };
 
+    const onOptionSelectPrefectureCombobox: ComboboxProps["onOptionSelect"] = (ev, data) => {
+        //setSelectedComboboxOptions(data.selectedOptions);
+        setComboboxValue(data.optionText ?? "");
+    };
+
+    const onInputPrefecture: ComboboxProps["onInput"] = (ev) =>{
+        let value = ev.target;
+    }
+
     const onChangeCity: InputProps["onChange"] = (ev, data) => {
         if (data.value.length <= 20) {
             const updateRegionValue : RegionValue = {
@@ -85,19 +94,28 @@ export const ResasPage: React.FunctionComponent = () => {
         console.log("再レンダリングされるたび実行");
     });
 
-    const combobox_options = ["Cat", "Dog", "Ferret", "Fish", "Hamster", "Snake"];
+    const [comboboxValue, setComboboxValue] = useState("Cat");
+
+    const [selectedComboboxOptions, setSelectedComboboxOptions] = useState<string[]>([
+        "Cat", "Dog", "Ferret", "Fish", "Hamster", "Snake"
+      ]);
 
     return (
         <div className={styles.root}>
             <div>
                 <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>都道府県コード</Label>
                 <Input id={inputId} value={String(regionValue.pref)} onChange={onChangePrefecture} />
-                <Combobox aria-labelledby={comboId} placeholder="都道府県選択">
-                {combobox_options.map((option) => (
-                    <Option key={option} disabled={option === "Ferret"}>
-                        {option}
-                    </Option>
-                ))}
+                <Combobox 
+                    aria-labelledby={comboId} 
+                    placeholder="都道府県選択" 
+                    value={comboboxValue}
+                    onInput={onInputPrefecture}
+                    onOptionSelect={onOptionSelectPrefectureCombobox}>
+                    {selectedComboboxOptions.map((option) => (
+                        <Option key={option} disabled={option === "Ferret"}>
+                            {option}
+                        </Option>
+                    ))}
                 </Combobox>
                 <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>都市コード</Label>
                 <Input id={inputId} value={String(regionValue.city)} onChange={onChangeCity} />

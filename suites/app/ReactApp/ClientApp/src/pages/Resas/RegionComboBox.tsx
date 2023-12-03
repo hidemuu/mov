@@ -28,9 +28,7 @@ export const RegionComboBox: FC<RegionComboBoxProps> = ({ regionValue, tableLine
     },[regionSelections]);
 
     const [value, setValue] = useState(regionValue);
-    const [selectedOptions, setSelectedOptions] = useState<string[]>([
-        "Cat", "Dog", "Ferret", "Fish", "Hamster", "Snake"
-      ]);
+    const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
     const onOptionSelect: ComboboxProps["onOptionSelect"] = (ev, data) => {
         //setSelectedOptions(data.selectedOptions);
@@ -49,7 +47,7 @@ export const RegionComboBox: FC<RegionComboBoxProps> = ({ regionValue, tableLine
             onInput={onInput}
             onOptionSelect={onOptionSelect}>
             {selectedOptions.map((option) => (
-                <Option key={option} disabled={option === "Ferret"}>
+                <Option key={option} disabled={option === regionSelections.selected}>
                     {option}
                 </Option>
             ))}

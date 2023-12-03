@@ -8,18 +8,19 @@ import type {
     ComboboxProps,
   } from "@fluentui/react-components";
 import { RegionTableLines } from './models/RegionTableLines';
+import useRegionSelections from './hooks/useRegionSelections';
+import { TableLine } from './models/TableLine';
 
 
 export declare type RegionComboBoxProps = {
-    regionTableLines : RegionTableLines, 
+    tableLines : TableLine[], 
 }
 
-export const RegionComboBox: FC<RegionComboBoxProps> = ({ regionTableLines }) => {
+export const RegionComboBox: FC<RegionComboBoxProps> = ({ tableLines }) => {
 
     const comboId = useId("combo-default");
-
     const [value, setValue] = useState("Cat");
-
+    const regionSelections = useRegionSelections(tableLines);
     const [selectedOptions, setSelectedOptions] = useState<string[]>([
         "Cat", "Dog", "Ferret", "Fish", "Hamster", "Snake"
       ]);

@@ -24,4 +24,12 @@ export const useStyles = makeStyles({
         display: "flex",
         flexDirection: "column",
     },
+    combobox: {
+        // Stack the label above the field with a gap
+        display: "grid",
+        gridTemplateRows: "repeat(1fr)",
+        justifyItems: "start",
+        ...shorthands.gap("2px"),
+        maxWidth: "400px",
+      },
 });

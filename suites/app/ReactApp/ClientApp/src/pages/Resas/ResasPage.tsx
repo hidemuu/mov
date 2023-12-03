@@ -22,6 +22,9 @@ import {
     useId, 
     Input, 
     Label,
+    Combobox,
+    Button,
+    Option,
 } from '@fluentui/react-components';
 import type {
     SelectTabData,
@@ -29,6 +32,7 @@ import type {
     TabValue,
     InputProps,
     ButtonProps,
+    ComboboxProps,
   } from "@fluentui/react-components";
 import usePopulationPerYearTrendLines from './hooks/usePopulationPerYearTrendLines';
 import useRegionState from './hooks/useRegionState';
@@ -43,17 +47,11 @@ import { RegionTable } from './RegionTable';
 import { RegionTab } from './RegionTab';
 import { TrendLineChart } from './TrendLineChart';
 
-const Button = styled.button`
-  border: 1px solid #666;
-  background: none;
-  margin-top: 12px;
-  border-radius: 4px;
-`;
-
 export const ResasPage: React.FunctionComponent = () => {
 
     const styles = useStyles();
     const inputId = useInputId();
+    const comboId = useId("combo-default");
     const [regionValue, setRegionValue] = useRegionState(11, 11362);
     const regionTable = useRegionTableLines();
     const populationPerYearTrendLines = usePopulationPerYearTrendLines(regionValue);
@@ -87,11 +85,20 @@ export const ResasPage: React.FunctionComponent = () => {
         console.log("再レンダリングされるたび実行");
     });
 
+    const combobox_options = ["Cat", "Dog", "Ferret", "Fish", "Hamster", "Snake"];
+
     return (
         <div className={styles.root}>
             <div>
                 <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>都道府県コード</Label>
                 <Input id={inputId} value={String(regionValue.pref)} onChange={onChangePrefecture} />
+                <Combobox aria-labelledby={comboId} placeholder="都道府県選択">
+                {combobox_options.map((option) => (
+                    <Option key={option} disabled={option === "Ferret"}>
+                        {option}
+                    </Option>
+                ))}
+                </Combobox>
                 <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>都市コード</Label>
                 <Input id={inputId} value={String(regionValue.city)} onChange={onChangeCity} />
                 <Button onClick={onClickApply}></Button>

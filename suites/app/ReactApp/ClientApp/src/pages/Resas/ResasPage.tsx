@@ -46,12 +46,12 @@ import useTableColumns from './hooks/useTableColumns';
 import { RegionTable } from './RegionTable';
 import { RegionTab } from './RegionTab';
 import { TrendLineChart } from './TrendLineChart';
+import { RegionComboBox } from './RegionComboBox';
 
 export const ResasPage: React.FunctionComponent = () => {
 
     const styles = useStyles();
     const inputId = useInputId();
-    const comboId = useId("combo-default");
     const [regionValue, setRegionValue] = useRegionState(11, 11362);
     const regionTable = useRegionTableLines();
     const populationPerYearTrendLines = usePopulationPerYearTrendLines(regionValue);
@@ -65,21 +65,6 @@ export const ResasPage: React.FunctionComponent = () => {
             setRegionValue(updateRegionValue);
         }
       };
-
-    const onOptionSelectPrefectureCombobox: ComboboxProps["onOptionSelect"] = (ev, data) => {
-        //setSelectedComboboxOptions(data.selectedOptions);
-        setComboboxValue(data.optionText ?? "");
-    };
-
-    const onInputPrefecture: ComboboxProps["onInput"] = (ev) =>{
-        let value = ev.target;
-    }
-
-    const [comboboxValue, setComboboxValue] = useState("Cat");
-
-    const [selectedComboboxOptions, setSelectedComboboxOptions] = useState<string[]>([
-        "Cat", "Dog", "Ferret", "Fish", "Hamster", "Snake"
-      ]);
 
     const onChangeCity: InputProps["onChange"] = (ev, data) => {
         if (data.value.length <= 20) {
@@ -105,18 +90,7 @@ export const ResasPage: React.FunctionComponent = () => {
             <div>
                 <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>都道府県コード</Label>
                 <Input id={inputId} value={String(regionValue.pref)} onChange={onChangePrefecture} />
-                <Combobox 
-                    aria-labelledby={comboId} 
-                    placeholder="都道府県選択" 
-                    value={comboboxValue}
-                    onInput={onInputPrefecture}
-                    onOptionSelect={onOptionSelectPrefectureCombobox}>
-                    {selectedComboboxOptions.map((option) => (
-                        <Option key={option} disabled={option === "Ferret"}>
-                            {option}
-                        </Option>
-                    ))}
-                </Combobox>
+                <RegionComboBox regionValue={String(regionValue.pref)} tableLines={regionTable.pref} />
                 <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>都市コード</Label>
                 <Input id={inputId} value={String(regionValue.city)} onChange={onChangeCity} />
                 <Button onClick={onClickApply}></Button>

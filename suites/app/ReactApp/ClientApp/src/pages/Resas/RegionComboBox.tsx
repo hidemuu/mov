@@ -10,17 +10,24 @@ import type {
 import { RegionTableLines } from './models/RegionTableLines';
 import useRegionSelections from './hooks/useRegionSelections';
 import { TableLine } from './models/TableLine';
+import { RegionValue } from './models/RegionValue';
 
 
 export declare type RegionComboBoxProps = {
+    regionValue : string,
     tableLines : TableLine[], 
 }
 
-export const RegionComboBox: FC<RegionComboBoxProps> = ({ tableLines }) => {
+export const RegionComboBox: FC<RegionComboBoxProps> = ({ regionValue, tableLines }) => {
 
     const comboId = useId("combo-default");
-    const [value, setValue] = useState("Cat");
-    const regionSelections = useRegionSelections(tableLines);
+    const regionSelections = useRegionSelections(regionValue, tableLines);
+
+    useEffect(()=>{
+        setSelectedOptions(regionSelections.selections);
+    },[regionSelections]);
+
+    const [value, setValue] = useState(regionValue);
     const [selectedOptions, setSelectedOptions] = useState<string[]>([
         "Cat", "Dog", "Ferret", "Fish", "Hamster", "Snake"
       ]);

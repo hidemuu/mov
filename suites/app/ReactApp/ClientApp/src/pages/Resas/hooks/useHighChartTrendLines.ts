@@ -14,21 +14,21 @@ export default function useHighChartTrendLines(regionTrendLines : RegionTrendLin
     useEffect(() => {
         let series: Highcharts.SeriesOptionsType[] = [];
         let categories = [];
-        let data = [];
         let count = 0;
         for(let regionTrendLine of regionTrendLines){
+            let data = [];
             for(let trendLine of regionTrendLine.trendLines){
                 if(count === 0){
                     categories.push(String(trendLine.number));
                 }
                 data.push(trendLine.value);
-                count++;
             }
             series.push({
                 type: "line",
                 name: "population-" + String(regionTrendLine.region.city),
                 data: data,
             });
+            count++;
         }
 
         setChartOptions({

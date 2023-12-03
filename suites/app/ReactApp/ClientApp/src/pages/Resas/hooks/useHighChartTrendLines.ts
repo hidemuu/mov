@@ -23,9 +23,13 @@ export default function useHighChartTrendLines(regionTrendLines : RegionTrendLin
                 }
                 data.push(trendLine.value);
             }
+            const prefTable = regionTableLines.pref.filter(x => x.id === regionTrendLine.region.pref);
+            const cityTable = regionTableLines.city.filter(x => x.id === regionTrendLine.region.city);
+            const prefName = prefTable.length === 0 ? String(regionTrendLine.region.pref) : prefTable[0].content;
+            const cityName = cityTable.length === 0 ? String(regionTrendLine.region.city) : cityTable[0].content;
             series.push({
                 type: "line",
-                name: "population-" + String(regionTrendLine.region.city),
+                name: prefName + '-' + cityName,
                 data: data,
             });
             count++;

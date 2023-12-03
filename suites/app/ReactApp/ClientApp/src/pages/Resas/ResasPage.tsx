@@ -75,6 +75,12 @@ export const ResasPage: React.FunctionComponent = () => {
         let value = ev.target;
     }
 
+    const [comboboxValue, setComboboxValue] = useState("Cat");
+
+    const [selectedComboboxOptions, setSelectedComboboxOptions] = useState<string[]>([
+        "Cat", "Dog", "Ferret", "Fish", "Hamster", "Snake"
+      ]);
+
     const onChangeCity: InputProps["onChange"] = (ev, data) => {
         if (data.value.length <= 20) {
             const updateRegionValue : RegionValue = {
@@ -93,12 +99,6 @@ export const ResasPage: React.FunctionComponent = () => {
         //レンダリング毎に実行
         console.log("再レンダリングされるたび実行");
     });
-
-    const [comboboxValue, setComboboxValue] = useState("Cat");
-
-    const [selectedComboboxOptions, setSelectedComboboxOptions] = useState<string[]>([
-        "Cat", "Dog", "Ferret", "Fish", "Hamster", "Snake"
-      ]);
 
     return (
         <div className={styles.root}>

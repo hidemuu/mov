@@ -27,7 +27,7 @@ export const RegionComboBox: FC<RegionComboBoxProps> = ({ regionValue, tableLine
         setSelectedOptions(regionSelections.prefSelections);
     },[regionSelections]);
 
-    const [value, setValue] = useState(regionValue.prefCode);
+    const [value, setValue] = useState(regionValue.prefName);
     const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
     const onOptionSelect: ComboboxProps["onOptionSelect"] = (ev, data) => {

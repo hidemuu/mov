@@ -23,10 +23,10 @@ export default function useHighChartTrendLines(regionTrendLines : RegionTrendLin
                 }
                 data.push(trendLine.value);
             }
-            const prefTable = regionTableLines.pref.filter(x => x.id === regionTrendLine.region.pref);
-            const cityTable = regionTableLines.city.filter(x => x.id === regionTrendLine.region.city);
-            const prefName = prefTable.length === 0 ? String(regionTrendLine.region.pref) : prefTable[0].content;
-            const cityName = cityTable.length === 0 ? String(regionTrendLine.region.city) : cityTable[0].content;
+            const prefTable = regionTableLines.pref.filter(x => x.id === regionTrendLine.region.prefNumber);
+            const cityTable = regionTableLines.city.filter(x => x.id === regionTrendLine.region.cityNumber);
+            const prefName = prefTable.length === 0 ? String(regionTrendLine.region.prefNumber) : prefTable[0].content;
+            const cityName = cityTable.length === 0 ? String(regionTrendLine.region.cityNumber) : cityTable[0].content;
             series.push({
                 type: "line",
                 name: prefName + '-' + cityName,

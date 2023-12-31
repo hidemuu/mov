@@ -1,6 +1,6 @@
 export interface RegionValue {
-    pref: number;
+    prefNumber: number;
     prefCode: string;
-    city: number;
+    cityNumber: number;
     cityCode: string;
 }

@@ -59,10 +59,10 @@ export const ResasPage: React.FunctionComponent = () => {
     const onChangePrefecture: InputProps["onChange"] = (ev, data) => {
         if (data.value.length <= 20) {
             const updateRegionValue : RegionValue = {
-                pref : Number(data.value),
+                prefNumber : Number(data.value),
                 prefCode : '',
-                city : regionValue.city,
-                cityCode : '',
+                cityNumber : regionValue.cityNumber,
+                cityCode : regionValue.cityCode,
             }
             setRegionValue(updateRegionValue);
         }
@@ -71,9 +71,9 @@ export const ResasPage: React.FunctionComponent = () => {
     const onChangeCity: InputProps["onChange"] = (ev, data) => {
         if (data.value.length <= 20) {
             const updateRegionValue : RegionValue = {
-                pref : regionValue.pref,
-                prefCode : '',
-                city : Number(data.value),
+                prefNumber : regionValue.prefNumber,
+                prefCode : regionValue.prefCode,
+                cityNumber : Number(data.value),
                 cityCode : '',
             }
             setRegionValue(updateRegionValue);
@@ -93,10 +93,10 @@ export const ResasPage: React.FunctionComponent = () => {
         <div className={styles.root}>
             <div>
                 <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>都道府県コード</Label>
-                <Input id={inputId} value={String(regionValue.pref)} onChange={onChangePrefecture} />
+                <Input id={inputId} value={String(regionValue.prefNumber)} onChange={onChangePrefecture} />
                 <RegionComboBox regionValue={regionValue} tableLines={regionTable} />
                 <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>都市コード</Label>
-                <Input id={inputId} value={String(regionValue.city)} onChange={onChangeCity} />
+                <Input id={inputId} value={String(regionValue.cityNumber)} onChange={onChangeCity} />
                 <Button onClick={onClickApply}></Button>
             </div>
             <h2>トレンドグラフ</h2>

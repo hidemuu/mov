@@ -6,7 +6,7 @@ import { RegionValue } from "../models/RegionValue";
 
 
 export default function useRegionSelections(regionValue: RegionValue, regionTableLines: RegionTableLines) : RegionSelections {
-    const [regionSelections, setRegionSelections] = useState<RegionSelections>({ selected : { pref:0, prefCode:'', city:0, cityCode:'' }, prefSelections: [] , citySelections: [] });
+    const [regionSelections, setRegionSelections] = useState<RegionSelections>({ selected : { prefNumber:0, prefCode:'', cityNumber:0, cityCode:'' }, prefSelections: [] , citySelections: [] });
 
     useEffect(() => {
         const prefs = regionTableLines.pref.map(x => x.content);

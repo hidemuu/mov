@@ -3,9 +3,9 @@ import { RegionValue } from '../models/RegionValue';
 
 export default function useRegionState(initPrefectureCode: number, initCityCode: number) : [RegionValue, Dispatch<SetStateAction<RegionValue>>]{
     const [regionValue, setRegionValue] = useState<RegionValue>({
-         pref : initPrefectureCode,
+         prefNumber : initPrefectureCode,
          prefCode : '',  
-         city : initCityCode,
+         cityNumber : initCityCode,
          cityCode : '',
         });
     return [regionValue, setRegionValue];

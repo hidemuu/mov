@@ -60,7 +60,9 @@ export const ResasPage: React.FunctionComponent = () => {
         if (data.value.length <= 20) {
             const updateRegionValue : RegionValue = {
                 pref : Number(data.value),
+                prefCode : '',
                 city : regionValue.city,
+                cityCode : '',
             }
             setRegionValue(updateRegionValue);
         }
@@ -70,7 +72,9 @@ export const ResasPage: React.FunctionComponent = () => {
         if (data.value.length <= 20) {
             const updateRegionValue : RegionValue = {
                 pref : regionValue.pref,
+                prefCode : '',
                 city : Number(data.value),
+                cityCode : '',
             }
             setRegionValue(updateRegionValue);
         }
@@ -90,7 +94,7 @@ export const ResasPage: React.FunctionComponent = () => {
             <div>
                 <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>都道府県コード</Label>
                 <Input id={inputId} value={String(regionValue.pref)} onChange={onChangePrefecture} />
-                <RegionComboBox regionValue={String(regionValue.pref)} tableLines={regionTable.pref} />
+                <RegionComboBox regionValue={regionValue} tableLines={regionTable} />
                 <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>都市コード</Label>
                 <Input id={inputId} value={String(regionValue.city)} onChange={onChangeCity} />
                 <Button onClick={onClickApply}></Button>

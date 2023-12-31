@@ -14,8 +14,8 @@ import { RegionValue } from './models/RegionValue';
 
 
 export declare type RegionComboBoxProps = {
-    regionValue : string,
-    tableLines : TableLine[], 
+    regionValue : RegionValue,
+    tableLines : RegionTableLines, 
 }
 
 export const RegionComboBox: FC<RegionComboBoxProps> = ({ regionValue, tableLines }) => {
@@ -24,10 +24,10 @@ export const RegionComboBox: FC<RegionComboBoxProps> = ({ regionValue, tableLine
     const regionSelections = useRegionSelections(regionValue, tableLines);
 
     useEffect(()=>{
-        setSelectedOptions(regionSelections.selections);
+        setSelectedOptions(regionSelections.prefSelections);
     },[regionSelections]);
 
-    const [value, setValue] = useState(regionValue);
+    const [value, setValue] = useState(regionValue.prefCode);
     const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
     const onOptionSelect: ComboboxProps["onOptionSelect"] = (ev, data) => {

@@ -1,4 +1,7 @@
+import { RegionValue } from "./RegionValue";
+
 export interface RegionSelections {
-    selected: string;
-    selections: string[];
+    selected: RegionValue;
+    prefSelections: string[];
+    citySelections: string[];
 }

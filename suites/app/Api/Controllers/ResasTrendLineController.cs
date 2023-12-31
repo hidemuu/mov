@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Mov.Analizer.Service;
 using Mov.Analizer.Service.Regions;
 using Mov.Analizer.Service.Regions.Schemas;
+using Mov.Analizer.Service.Regions.Schemas.Contents;
 using Mov.Core.Valuables;
 using System.Reflection.Emit;
 
@@ -42,6 +43,9 @@ namespace Mov.Suite.Api.Controllers
 		[HttpGet("{prefCode}/{cityCode}/{category}/{label}/{start}/{end}")]
 		public async Task<IActionResult> Get(int prefCode, int cityCode, string category, string label, string srart, string end)
 		{
+			var prefecture = (await _client.GetPrefectureTableLineAsync()).FirstOrDefault(x => x.Id.Equals(prefCode));
+			var city = (await _client.GetCityTableLineAsync()).FirstOrDefault(x => x.Id.Equals(cityCode));
+
 			return Ok(await this._client.GetTrendLineAsync(
 				new RegionRequestSchema()
 				{
@@ -49,8 +53,16 @@ namespace Mov.Suite.Api.Controllers
 					{
 						new PrefectureSchema()
 						{
-							PrefCode= prefCode,
-							CityCodes = new List<int>{ cityCode },
+							Code = prefCode,
+							Name = prefecture?.Name ?? string.Empty,
+							Cities = new List <CitySchema> 
+							{ 
+								new CitySchema() 
+								{
+									Code = cityCode,
+									Name = city?.Name ?? string.Empty,
+								} 
+							},
 						}
 					},
 					Flag = new FlagSchema()
@@ -59,7 +71,7 @@ namespace Mov.Suite.Api.Controllers
 						Label = label
 					},
 				},
-				TimeValue.Factory.Create(srart), 
+				TimeValue.Factory.Create(srart),
 				TimeValue.Factory.Create(end)
 			));
 		}
@@ -70,6 +82,9 @@ namespace Mov.Suite.Api.Controllers
 		[HttpGet("population_per_years/{prefCode}/{cityCode}")]
 		public async Task<IActionResult> GetPopulationPerYears(int prefCode, int cityCode)
 		{
+			var prefecture = (await _client.GetPrefectureTableLineAsync()).FirstOrDefault(x => x.Id.Equals(prefCode));
+			var city = (await _client.GetCityTableLineAsync()).FirstOrDefault(x => x.Id.Equals(cityCode));
+
 			return Ok(await this._client.GetTrendLineAsync(
 				new RegionRequestSchema()
 				{
@@ -77,8 +92,16 @@ namespace Mov.Suite.Api.Controllers
 					{
 						new PrefectureSchema()
 						{
-							PrefCode= prefCode,
-							CityCodes = new List<int>{ cityCode },
+							Code = prefCode,
+							Name = prefecture?.Name ?? string.Empty,
+							Cities = new List <CitySchema>
+							{
+								new CitySchema()
+								{
+									Code = cityCode,
+									Name = city?.Name ?? string.Empty,
+								}
+							},
 						}
 					},
 					Flag = new FlagSchema()

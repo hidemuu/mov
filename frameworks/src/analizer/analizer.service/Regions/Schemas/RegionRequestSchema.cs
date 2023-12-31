@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Mov.Analizer.Service.Regions.Schemas.Contents;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;

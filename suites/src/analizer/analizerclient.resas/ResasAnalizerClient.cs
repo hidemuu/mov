@@ -8,6 +8,7 @@ using Mov.Analizer.Service.Regions.Schemas;
 using Mov.Analizer.Service.Regions.ValueObjects;
 using Mov.Analizer.Service.Stores;
 using Mov.Core.Valuables;
+using Mov.Core.Valuables.Dimensions.Coordinates.TwoDimensions;
 using Mov.Suite.AnalizerClient.Resas.Repository;
 using Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Requests;
 using Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Results;
@@ -48,27 +49,45 @@ namespace Mov.Suite.AnalizerClient.Resas
 
         public async Task<IEnumerable<TableLineSchema>> GetTableLineAsync()
         {
-			var lines = new HashSet<TableLine>();
+			var lines = new List<TableLineSchema>();
+			lines.AddRange(await GetPrefectureTableLineAsync());
+			lines.AddRange(await GetCityTableLineAsync());
+			
+            var tableLines = _analizerQuery.TableLines.Reader.ReadAll();
+            if (!tableLines?.Any() ?? true)
+			{
+				_analizerCommand.TableLines.Deleter.Clear();
+				_analizerCommand.TableLines.Saver.Save(lines);
+			}
+			return lines;
+		}
 
+		public async Task<IEnumerable<TableLineSchema>> GetPrefectureTableLineAsync()
+		{
+			var lines = new HashSet<TableLine>();
 			var prefectures = await _resasRepository.Prefectures.GetAsync(null);
 			foreach (var prefecture in prefectures.Results)
 			{
 				lines.Add(new TableLine(prefecture.Code, _resasRepository.Prefectures.Name, "JP", prefecture.Name, prefecture.Name));
 			}
+			return lines.Select(x => x.CreateSchema());
+		}
 
+		public async Task<IEnumerable<TableLineSchema>> GetCityTableLineAsync()
+		{
+			var lines = new HashSet<TableLine>();
 			var cities = await _resasRepository.Cities.GetAsync(null);
-            foreach (var city in cities.Results)
-            {
-				lines.Add(new TableLine(city.Code, _resasRepository.Cities.Name, city.PrefCode.ToString(), city.Name, city.Name));
-            }
-
-            var tableLines = _analizerQuery.TableLines.Reader.ReadAll();
-            if (!tableLines?.Any() ?? true)
+			foreach (var city in cities.Results)
 			{
-				_analizerCommand.TableLines.Deleter.Clear();
-				_analizerCommand.TableLines.Saver.Save(lines.Select(x => x.CreateSchema()));
+				lines.Add(new TableLine(city.Code, _resasRepository.Cities.Name, city.PrefCode.ToString(), city.Name, city.Name));
 			}
 			return lines.Select(x => x.CreateSchema());
+		}
+
+		public async Task<IEnumerable<TableLineSchema>> GetCityTableLineAsync(int prefCode)
+		{
+			var cities = await GetCityTableLineAsync();
+			return cities.Where(x => x.Label.Equals(prefCode.ToString()));
 		}
 
 		public async Task<IEnumerable<RegionResponseSchema<TrendLineSchema>>> GetTrendLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
@@ -107,14 +126,14 @@ namespace Mov.Suite.AnalizerClient.Resas
 		private async Task<IEnumerable<RegionResponseSchema<TrendLineSchema>>> GetPopulationPerYearsTrendLineAsync(RegionRequest request)
 		{
 			var result = new HashSet<RegionResponseSchema<TrendLineSchema>>();
-			foreach(var regionCode in request.RegionCodes)
+			foreach(var region in request.Regions)
 			{
-				var pref = regionCode.Key;
-				foreach(var city in regionCode.Value)
+				var prefCode = region.Code;
+				foreach(var city in region.Cities)
 				{
-					var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(city, pref));
+					var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(city.Code, prefCode));
 					var trendLineSchemas = new HashSet<TrendLineSchema>();
-					foreach (var trendLine in GetPopulationPerYearTrendLine(request, pref, city,  populationPerYears.Result))
+					foreach (var trendLine in GetPopulationPerYearTrendLine(request, prefCode, city.Code,  populationPerYears.Result))
 					{
 						trendLineSchemas.Add(trendLine.CreateSchema());
 					}
@@ -122,8 +141,8 @@ namespace Mov.Suite.AnalizerClient.Resas
 					{
 						Region = new RegionValueSchema
 						{
-							Prefecture = pref,
-							City = city,
+							Prefecture = prefCode,
+							City = city.Code,
 						},
 						Data = trendLineSchemas.ToList(),
 					});

@@ -3,6 +3,7 @@ using Mov.Analizer.Service.Regions;
 using Mov.Analizer.Service;
 using Mov.Core.Valuables;
 using Mov.Analizer.Service.Regions.Schemas;
+using Mov.Analizer.Service.Regions.Schemas.Contents;
 
 namespace Mov.Suite.Api.Controllers
 {
@@ -40,6 +41,9 @@ namespace Mov.Suite.Api.Controllers
 		[HttpGet("{prefCode}/{cityCode}/{category}/{label}/{start}/{end}")]
 		public async Task<IActionResult> Get(int prefCode, int cityCode, string category, string label, string srart, string end)
 		{
+			var prefecture = (await _client.GetPrefectureTableLineAsync()).FirstOrDefault(x => x.Id.Equals(prefCode));
+			var city = (await _client.GetCityTableLineAsync()).FirstOrDefault(x => x.Id.Equals(cityCode));
+
 			return Ok(await this._client.GetTimeLineAsync(
 				new RegionRequestSchema()
 				{
@@ -47,11 +51,18 @@ namespace Mov.Suite.Api.Controllers
 					{
 						new PrefectureSchema()
 						{
-							PrefCode= prefCode,
-							CityCodes = new List<int>{ cityCode },
+							Code = prefCode,
+							Name = prefecture?.Name ?? string.Empty,
+							Cities = new List<CitySchema>{ 
+								new CitySchema() 
+								{ 
+									Code = cityCode, 
+									Name = city?.Name ?? string.Empty 
+								} 
+							},
 						}
 					},
-					Flag = new FlagSchema() 
+					Flag = new FlagSchema()
 					{
 						Category = category,
 						Label = label

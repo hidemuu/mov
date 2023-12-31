@@ -14,7 +14,13 @@ namespace Mov.Analizer.Service
     {
         Task<IEnumerable<TableLineSchema>> GetTableLineAsync();
 
-        Task<IEnumerable<TimeLineSchema>> GetTimeLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end);
+        Task<IEnumerable<TableLineSchema>> GetPrefectureTableLineAsync();
+
+		Task<IEnumerable<TableLineSchema>> GetCityTableLineAsync();
+
+		Task<IEnumerable<TableLineSchema>> GetCityTableLineAsync(int prefCode);
+
+		Task<IEnumerable<TimeLineSchema>> GetTimeLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end);
 
         Task<IEnumerable<RegionResponseSchema<TrendLineSchema>>> GetTrendLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end);
 

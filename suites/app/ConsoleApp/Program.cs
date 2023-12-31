@@ -142,7 +142,7 @@ internal class Program
     private static string Execute(IEnumerable<string> parameters)
     {
         var tableLines = Task.WhenAll(_regionAnalizerClient.GetTableLineAsync()).Result[0];
-        var timeTrends = Task.WhenAll(_regionAnalizerClient.GetTrendLineAsync(new RegionRequest(new Dictionary<int, List<int>>() { { 11362, new List<int>() {11 } } }, "population", "all").CreateSchema(), TimeValue.Empty, TimeValue.Empty)).Result[0];
+        //var timeTrends = Task.WhenAll(_regionAnalizerClient.GetTrendLineAsync(new RegionRequest(new Dictionary<int, List<int>>() { { 11362, new List<int>() {11 } } }, "population", "all").CreateSchema(), TimeValue.Empty, TimeValue.Empty)).Result[0];
         return string.Empty;
     }
 

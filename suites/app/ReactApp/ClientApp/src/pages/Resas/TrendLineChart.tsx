@@ -13,12 +13,11 @@ const Styles: { [key: string]: React.CSSProperties } = {
   };
 
 export declare type TrendLineChartProps = {
-    trendLines : RegionTrendLines[], 
-    regionTableLines : RegionTableLines,
+    trendLines : RegionTrendLines[],
 }
 
-export const TrendLineChart: FC<TrendLineChartProps> = ({ trendLines, regionTableLines}) => {
-    const chartOptions = useHighChartTrendLines(trendLines, regionTableLines);
+export const TrendLineChart: FC<TrendLineChartProps> = ({ trendLines}) => {
+    const chartOptions = useHighChartTrendLines(trendLines);
     return(
         <div style={Styles.graph}>
             <HighchartsReact highcharts={Highcharts} options={chartOptions} />

@@ -35,7 +35,7 @@ import type {
     ComboboxProps,
   } from "@fluentui/react-components";
 import usePopulationPerYearTrendLines from '../../hooks/usePopulationPerYearTrendLines';
-import useRegionState from './hooks/useRegionState';
+import useSelectedRegionState from './hooks/useSelectedRegionState';
 import { RegionValue } from '../../models/RegionValue';
 import { TableColumn } from './models/TableColumn';
 import { useStyles } from './hooks/useStyles';
@@ -52,31 +52,31 @@ export const ResasPage: React.FunctionComponent = () => {
 
     const styles = useStyles();
     const inputId = useInputId();
-    const [regionValue, setRegionValue] = useRegionState(11, 11362);
     const regionTable = useRegionTableLines();
-    const populationPerYearTrendLines = usePopulationPerYearTrendLines(regionValue);
+    const [selectedRegionValue, setSelectedRegionValue] = useSelectedRegionState(11, 11362);
+    const populationPerYearTrendLines = usePopulationPerYearTrendLines(selectedRegionValue);
 
     const onChangePrefecture: InputProps["onChange"] = (ev, data) => {
         if (data.value.length <= 20) {
             const updateRegionValue : RegionValue = {
                 prefCode : Number(data.value),
                 prefName : '',
-                cityCode : regionValue.cityCode,
-                cityName : regionValue.cityName,
+                cityCode : selectedRegionValue.cityCode,
+                cityName : selectedRegionValue.cityName,
             }
-            setRegionValue(updateRegionValue);
+            setSelectedRegionValue(updateRegionValue);
         }
       };
 
     const onChangeCity: InputProps["onChange"] = (ev, data) => {
         if (data.value.length <= 20) {
             const updateRegionValue : RegionValue = {
-                prefCode : regionValue.prefCode,
-                prefName : regionValue.prefName,
+                prefCode : selectedRegionValue.prefCode,
+                prefName : selectedRegionValue.prefName,
                 cityCode : Number(data.value),
                 cityName : '',
             }
-            setRegionValue(updateRegionValue);
+            setSelectedRegionValue(updateRegionValue);
         }
       };
 
@@ -93,14 +93,14 @@ export const ResasPage: React.FunctionComponent = () => {
         <div className={styles.root}>
             <div>
                 <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>都道府県コード</Label>
-                <Input id={inputId} value={String(regionValue.prefCode)} onChange={onChangePrefecture} />
-                <RegionComboBox regionValue={regionValue} tableLines={regionTable} />
+                <Input id={inputId} value={String(selectedRegionValue.prefCode)} onChange={onChangePrefecture} />
+                <RegionComboBox regionValue={selectedRegionValue} tableLines={regionTable} />
                 <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>都市コード</Label>
-                <Input id={inputId} value={String(regionValue.cityCode)} onChange={onChangeCity} />
+                <Input id={inputId} value={String(selectedRegionValue.cityCode)} onChange={onChangeCity} />
                 <Button onClick={onClickApply}></Button>
             </div>
             <h2>トレンドグラフ</h2>
-            <TrendLineChart trendLines={populationPerYearTrendLines} regionTableLines={regionTable} />
+            <TrendLineChart trendLines={populationPerYearTrendLines} />
             <RegionTab regionTableLines={regionTable} />
         </div>
     );

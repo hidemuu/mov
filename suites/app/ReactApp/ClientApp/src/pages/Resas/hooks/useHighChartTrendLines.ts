@@ -5,7 +5,7 @@ import { RegionTableLines } from "../../../models/RegionTableLines";
 import { RegionTrendLines } from "../../../models/RegionTrendLines";
 
 
-export default function useHighChartTrendLines(regionTrendLines : RegionTrendLines[], regionTableLines : RegionTableLines) : Highcharts.Options {
+export default function useHighChartTrendLines(regionTrendLines : RegionTrendLines[]) : Highcharts.Options {
     const [chartOptions, setChartOptions] = useState<Highcharts.Options>(
         {
             series : [],
@@ -23,10 +23,8 @@ export default function useHighChartTrendLines(regionTrendLines : RegionTrendLin
                 }
                 data.push(trendLine.value);
             }
-            const prefTable = regionTableLines.pref.filter(x => x.id === regionTrendLine.region.prefCode);
-            const cityTable = regionTableLines.city.filter(x => x.id === regionTrendLine.region.cityCode);
-            const prefName = prefTable.length === 0 ? String(regionTrendLine.region.prefCode) : prefTable[0].content;
-            const cityName = cityTable.length === 0 ? String(regionTrendLine.region.cityCode) : cityTable[0].content;
+            const prefName = regionTrendLine.region.prefName;
+            const cityName = regionTrendLine.region.cityName;
             series.push({
                 type: "line",
                 name: prefName + '-' + cityName,

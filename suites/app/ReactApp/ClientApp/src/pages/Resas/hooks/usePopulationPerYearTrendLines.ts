@@ -32,10 +32,10 @@ export default function usePopulationPerYearTrendLines(region: RegionValue) : Re
                 for(let data of results.data){
                     const regionTrendLine : RegionTrendLines = {
                         region : {
-                            cityCode : data.region.city,
-                            cityName : '',
-                            prefCode : data.region.prefecture,
-                            prefName : '',
+                            cityCode : data.region.cityCode,
+                            cityName : data.region.cityName,
+                            prefCode : data.region.prefCode,
+                            prefName : data.region.prefName,
                         },
                         trendLines : data.data,
                     }

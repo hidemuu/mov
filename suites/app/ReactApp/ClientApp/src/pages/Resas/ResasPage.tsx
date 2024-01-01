@@ -53,13 +53,14 @@ export const ResasPage: React.FunctionComponent = () => {
     const styles = useStyles();
     const inputId = useInputId();
     const regionTable = useRegionTableLines();
-    const [selectedRegionValue, setSelectedRegionValue] = useSelectedRegionState(11, 11362);
+    const [selectedRegionValue, setSelectedRegionValue] = useSelectedRegionState(regionTable, 11, 11362);
     const populationPerYearTrendLines = usePopulationPerYearTrendLines(selectedRegionValue);
 
     const onChangePrefecture: InputProps["onChange"] = (ev, data) => {
         if (data.value.length <= 20) {
+            const prefCode = Number(data.value);
             const updateRegionValue : RegionValue = {
-                prefCode : Number(data.value),
+                prefCode : prefCode,
                 prefName : '',
                 cityCode : selectedRegionValue.cityCode,
                 cityName : selectedRegionValue.cityName,
@@ -70,10 +71,11 @@ export const ResasPage: React.FunctionComponent = () => {
 
     const onChangeCity: InputProps["onChange"] = (ev, data) => {
         if (data.value.length <= 20) {
+            const cityCode = Number(data.value);
             const updateRegionValue : RegionValue = {
                 prefCode : selectedRegionValue.prefCode,
                 prefName : selectedRegionValue.prefName,
-                cityCode : Number(data.value),
+                cityCode : cityCode,
                 cityName : '',
             }
             setSelectedRegionValue(updateRegionValue);

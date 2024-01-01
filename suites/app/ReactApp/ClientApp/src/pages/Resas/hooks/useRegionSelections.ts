@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { RegionSelections } from "../models/RegionSelections";
-import { RegionTableLines } from "../models/RegionTableLines";
-import { TableLine } from "../models/TableLine";
-import { RegionValue } from "../models/RegionValue";
+import { RegionTableLines } from "../../../models/RegionTableLines";
+import { TableLine } from "../../../models/TableLine";
+import { RegionValue } from "../../../models/RegionValue";
 
 
 export default function useRegionSelections(regionValue: RegionValue, regionTableLines: RegionTableLines) : RegionSelections {

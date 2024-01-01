@@ -1,4 +1,4 @@
-import { RegionValue } from "./RegionValue";
+import { RegionValue } from "../../../models/RegionValue";
 
 export interface RegionSelections {
     selected: RegionValue;

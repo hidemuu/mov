@@ -1,15 +1,16 @@
 import React, { Dispatch, SetStateAction, useState } from 'react';
 import { RegionValue } from '../../../models/RegionValue';
 import { RegionTableLines } from '../../../models/RegionTableLines';
+import { RegionCode } from '../models/RegionCode';
 
-export default function useSelectedRegionState(regionTable : RegionTableLines, initPrefectureCode: number, initCityCode: number) 
+export default function useSelectedRegionState(regionTable : RegionTableLines, regionCode: RegionCode) 
     : [RegionValue, Dispatch<SetStateAction<RegionValue>>]
 {
     const [selectedRegionValue, setSelectedRegionValue] = useState<RegionValue>({
-         prefCode : initPrefectureCode,
-         prefName : regionTable.pref.filter(x => x.id === initPrefectureCode)[0]?.content ?? '',  
-         cityCode : initCityCode,
-         cityName : regionTable.city.filter(x => x.id === initCityCode)[0]?.content ?? '',
+         prefCode : regionCode.pref,
+         prefName : regionTable.pref.filter(x => x.id === regionCode.pref)[0]?.content ?? '',  
+         cityCode : regionCode.city,
+         cityName : regionTable.city.filter(x => x.id === regionCode.city)[0]?.content ?? '',
         });
     return [selectedRegionValue, setSelectedRegionValue];
 }

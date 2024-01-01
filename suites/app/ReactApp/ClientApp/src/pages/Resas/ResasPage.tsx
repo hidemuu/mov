@@ -47,13 +47,15 @@ import { RegionTable } from './RegionTable';
 import { RegionTab } from './RegionTab';
 import { TrendLineChart } from './TrendLineChart';
 import { RegionComboBox } from './RegionComboBox';
+import { RegionCode } from './models/RegionCode';
 
 export const ResasPage: React.FunctionComponent = () => {
 
     const styles = useStyles();
     const inputId = useInputId();
     const regionTable = useRegionTableLines();
-    const [selectedRegionValue, setSelectedRegionValue] = useSelectedRegionState(regionTable, 11, 11362);
+    const initRegionCode : RegionCode = { pref : 11, city : 11362 }
+    const [selectedRegionValue, setSelectedRegionValue] = useSelectedRegionState(regionTable, initRegionCode);
     const populationPerYearTrendLines = usePopulationPerYearTrendLines(selectedRegionValue);
 
     const onChangePrefecture: InputProps["onChange"] = (ev, data) => {

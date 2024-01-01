@@ -107,6 +107,45 @@ namespace Mov.Suite.ReactApp.Controllers
 			return Ok(response);
 		}
 
+		/// <summary>
+		/// Gets all items.
+		/// </summary>
+		[HttpGet("population_per_years/{prefCode}/{cityCode}/{category}/{label}/{start}/{end}")]
+		public async Task<IActionResult> Get(int prefCode, int cityCode, string category, string label, string srart, string end)
+		{
+			var prefecture = (await _client.GetPrefectureTableLineAsync()).FirstOrDefault(x => x.Id.Equals(prefCode));
+			var city = (await _client.GetCityTableLineAsync()).FirstOrDefault(x => x.Id.Equals(cityCode));
+
+			return Ok(await this._client.GetTrendLineAsync(
+				new RegionRequestSchema()
+				{
+					Prefectures = new List<PrefectureSchema>()
+					{
+						new PrefectureSchema()
+						{
+							Code = prefCode,
+							Name = prefecture?.Name ?? string.Empty,
+							Cities = new List <CitySchema>
+							{
+								new CitySchema()
+								{
+									Code = cityCode,
+									Name = city?.Name ?? string.Empty,
+								}
+							},
+						}
+					},
+					Flag = new FlagSchema()
+					{
+						Category = category,
+						Label = label
+					},
+				},
+				TimeValue.Factory.Create(srart),
+				TimeValue.Factory.Create(end)
+			));
+		}
+
 		#endregion method
 	}
 }

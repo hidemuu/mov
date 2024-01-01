@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Mov.Analizer.Service;
 
-namespace Mov.Suite.Api.Controllers
+namespace Mov.Suite.ReactApp.Controllers
 {
 	/// <summary>
 	/// 
 	/// </summary>
 	[Route("api/[controller]")]
 	[ApiController]
-	public class ResasStatisticLineController : Controller
+	public class StatisticsController : Controller
 	{
 		#region field
 
@@ -22,7 +22,7 @@ namespace Mov.Suite.Api.Controllers
 		/// 
 		/// </summary>
 		/// <param name="client"></param>
-		public ResasStatisticLineController(IRegionAnalizerClient client)
+		public StatisticsController(IRegionAnalizerClient client)
 		{
 			_client = client;
 		}

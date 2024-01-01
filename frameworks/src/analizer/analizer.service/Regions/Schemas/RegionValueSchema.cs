@@ -10,13 +10,19 @@ namespace Mov.Analizer.Service.Regions.Schemas
 		/// <summary>
 		/// prefecture
 		/// </summary>
-		[JsonProperty("pref")]
-		public int Prefecture { get; set; }
+		[JsonProperty("pref_code")]
+		public int PrefCode { get; set; }
+
+		[JsonProperty("pref_name")]
+		public string PrefName { get; set; }
 
 		/// <summary>
 		/// city
 		/// </summary>
-		[JsonProperty("city")]
-		public int City { get; set; }
+		[JsonProperty("city_code")]
+		public int CityCode { get; set; }
+
+		[JsonProperty("city_name")]
+		public string CityName { get; set; }
 	}
 }

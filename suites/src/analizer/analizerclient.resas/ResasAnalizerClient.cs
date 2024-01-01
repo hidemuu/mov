@@ -141,8 +141,10 @@ namespace Mov.Suite.AnalizerClient.Resas
 					{
 						Region = new RegionValueSchema
 						{
-							Prefecture = prefCode,
-							City = city.Code,
+							PrefCode = prefCode,
+							PrefName = region.Name,
+							CityCode = city.Code,
+							CityName = city.Name,
 						},
 						Data = trendLineSchemas.ToList(),
 					});

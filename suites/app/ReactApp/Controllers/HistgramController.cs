@@ -1,14 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Mov.Analizer.Service;
 
-namespace Mov.Suite.Api.Controllers
+namespace Mov.Suite.ReactApp.Controllers
 {
 	/// <summary>
 	/// 
 	/// </summary>
 	[Route("api/[controller]")]
 	[ApiController]
-	public class ResasHistgramLineController : Controller
+	public class HistgramLineController : Controller
 	{
 		#region field
 
@@ -22,7 +23,7 @@ namespace Mov.Suite.Api.Controllers
 		/// 
 		/// </summary>
 		/// <param name="client"></param>
-		public ResasHistgramLineController(IRegionAnalizerClient client)
+		public HistgramLineController(IRegionAnalizerClient client)
 		{
 			_client = client;
 		}

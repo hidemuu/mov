@@ -1,18 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Mov.Analizer.Service.Regions;
+using Mov.Analizer.Service.Regions.Schemas.Contents;
+using Mov.Analizer.Service.Regions.Schemas;
 using Mov.Analizer.Service;
 using Mov.Core.Valuables;
-using Mov.Analizer.Service.Regions.Schemas;
-using Mov.Analizer.Service.Regions.Schemas.Contents;
 
-namespace Mov.Suite.Api.Controllers
+namespace Mov.Suite.ReactApp.Controllers
 {
 	/// <summary>
 	/// 
 	/// </summary>
 	[Route("api/[controller]")]
 	[ApiController]
-	public class ResasTimeLineController : Controller
+	public class TimeLineController : Controller
 	{
 		#region field
 
@@ -26,7 +25,7 @@ namespace Mov.Suite.Api.Controllers
 		/// 
 		/// </summary>
 		/// <param name="client"></param>
-		public ResasTimeLineController(IRegionAnalizerClient client)
+		public TimeLineController(IRegionAnalizerClient client)
 		{
 			_client = client;
 		}
@@ -53,12 +52,12 @@ namespace Mov.Suite.Api.Controllers
 						{
 							Code = prefCode,
 							Name = prefecture?.Name ?? string.Empty,
-							Cities = new List<CitySchema>{ 
-								new CitySchema() 
-								{ 
-									Code = cityCode, 
-									Name = city?.Name ?? string.Empty 
-								} 
+							Cities = new List<CitySchema>{
+								new CitySchema()
+								{
+									Code = cityCode,
+									Name = city?.Name ?? string.Empty
+								}
 							},
 						}
 					},

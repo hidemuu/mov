@@ -1,4 +1,4 @@
-class Queue<T> {
+export class Queue<T> {
 
     private array: T[] = []
 

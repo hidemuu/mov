@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction, useState } from 'react';
-import { RegionValue } from '../../../models/RegionValue';
-import { RegionTableLines } from '../../../models/RegionTableLines';
+import { RegionValue } from '../../../features/models/RegionValue';
+import { RegionTableLines } from '../../../features/models/RegionTableLines';
 import { RegionCode } from '../models/RegionCode';
 
 export default function useSelectedRegionState(regionTable : RegionTableLines, regionCode: RegionCode) 

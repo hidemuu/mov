@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from "axios";
-import { TrendLine } from "../models/TrendLine";
-import { PopulationPerYear } from '../models/PopulationPerYear';
-import { RegionValue } from '../models/RegionValue';
-import { RegionTrendLines } from '../models/RegionTrendLines';
+import { TrendLine } from "../features/models/TrendLine";
+import { PopulationPerYear } from '../features/models/PopulationPerYear';
+import { RegionValue } from '../features/models/RegionValue';
+import { RegionTrendLines } from '../features/models/RegionTrendLines';
 
 export default function usePopulationPerYearTrendLines(region: RegionValue) : RegionTrendLines[] {
     const API_KEY : string = 'api/TrendLine/population_per_years';

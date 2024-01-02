@@ -8,15 +8,15 @@ import {
     TagMultipleRegular,
     ChartPersonRegular
 } from '@fluentui/react-icons';
-import { DashboardPage } from '../pages/DashboardPage';
-import { OutlookPage } from '../pages/OutlookPage';
-import { SearchPage } from '../pages/SearchPage';
-import { HomePage } from '../pages/HomePage';
-import { TablePage } from '../pages/TablePage';
-import { ResasPage } from '../pages/Resas/ResasPage';
-import { GamePage } from '../pages/Game/GamePage';
-import { FilesPage } from '../pages/FilesPage';
-import { TaxonomyPage } from '../pages/TaxonomyPage';
+import { DashboardPage } from '../../pages/DashboardPage';
+import { OutlookPage } from '../../pages/OutlookPage';
+import { SearchPage } from '../../pages/SearchPage';
+import { HomePage } from '../../pages/HomePage';
+import { TablePage } from '../../pages/TablePage';
+import { ResasPage } from '../../pages/Resas/ResasPage';
+import { GamePage } from '../../pages/Game/GamePage';
+import { FilesPage } from '../../pages/FilesPage';
+import { TaxonomyPage } from '../../pages/TaxonomyPage';
 
 export const getNavigation = (isSignedIn: boolean) => {
     let navItems: NavigationItem[] = [];

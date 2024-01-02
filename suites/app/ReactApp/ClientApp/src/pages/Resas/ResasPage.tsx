@@ -3,8 +3,8 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import styled from 'styled-components';
 import axios from "axios";
-import { TrendLine } from "../../models/TrendLine";
-import { TableLine } from "../../models/TableLine";
+import { TrendLine } from "../../features/models/TrendLine";
+import { TableLine } from "../../features/models/TableLine";
 import {
     TableBody,
     TableCell,
@@ -36,7 +36,7 @@ import type {
   } from "@fluentui/react-components";
 import usePopulationPerYearTrendLines from '../../hooks/usePopulationPerYearTrendLines';
 import useSelectedRegionState from './hooks/useSelectedRegionState';
-import { RegionValue } from '../../models/RegionValue';
+import { RegionValue } from '../../features/models/RegionValue';
 import { TableColumn } from './models/TableColumn';
 import { useStyles } from './hooks/useStyles';
 import useRegionTableLines from '../../hooks/useRegionTableLines';

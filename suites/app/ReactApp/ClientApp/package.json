@@ -89,7 +89,8 @@
     "lint": "eslint ./src/",
     "wstart": "webpack-dev-server",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
   },
   "eslintConfig": {
     "extends": [

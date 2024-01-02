@@ -3,8 +3,8 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import styled from 'styled-components';
 import axios from "axios";
-import { TrendLine } from "../../features/models/TrendLine";
-import { TableLine } from "../../features/models/TableLine";
+import { TrendLine } from "../../features/resas/models/TrendLine";
+import { TableLine } from "../../features/resas/models/TableLine";
 import {
     TableBody,
     TableCell,
@@ -34,12 +34,12 @@ import type {
     ButtonProps,
     ComboboxProps,
   } from "@fluentui/react-components";
-import usePopulationPerYearTrendLines from '../../hooks/usePopulationPerYearTrendLines';
+import usePopulationPerYearTrendLines from '../../features/resas/hooks/usePopulationPerYearTrendLines';
 import useSelectedRegionState from './hooks/useSelectedRegionState';
-import { RegionValue } from '../../features/models/RegionValue';
+import { RegionValue } from '../../features/resas/models/RegionValue';
 import { TableColumn } from './models/TableColumn';
 import { useStyles } from './hooks/useStyles';
-import useRegionTableLines from '../../hooks/useRegionTableLines';
+import useRegionTableLines from '../../features/resas/hooks/useRegionTableLines';
 import { useInputId } from '../../hooks/useInputId';
 import useHighChartTrendLines from './hooks/useHighChartTrendLines';
 import useTableColumns from './hooks/useTableColumns';

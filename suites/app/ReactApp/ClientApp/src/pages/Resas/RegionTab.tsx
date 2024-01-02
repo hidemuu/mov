@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import { TableColumn } from "./models/TableColumn";
 import { SelectTabData, SelectTabEvent, Tab, TabList, TabValue } from "@fluentui/react-components";
 import { RegionTable } from "./RegionTable";
-import { RegionTableLines } from "../../features/models/RegionTableLines";
+import { RegionTableLines } from "../../features/resas/models/RegionTableLines";
 import { useStyles } from "./hooks/useStyles";
 import useTableColumns from "./hooks/useTableColumns";
 

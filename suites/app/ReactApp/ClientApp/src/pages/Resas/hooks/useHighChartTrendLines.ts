@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Highcharts from "highcharts";
-import { TrendLine } from "../../../features/models/TrendLine";
-import { RegionTableLines } from "../../../features/models/RegionTableLines";
-import { RegionTrendLines } from "../../../features/models/RegionTrendLines";
+import { TrendLine } from "../../../features/resas/models/TrendLine";
+import { RegionTableLines } from "../../../features/resas/models/RegionTableLines";
+import { RegionTrendLines } from "../../../features/resas/models/RegionTrendLines";
 
 
 export default function useHighChartTrendLines(regionTrendLines : RegionTrendLines[]) : Highcharts.Options {

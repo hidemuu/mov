@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { NavigationRegular } from '@fluentui/react-icons';
 import { useAppContext } from '../../AppContext';
-import { NavigationItem } from '../../features/models/NavigationItem';
+import { NavigationItem } from '../../features/navigations/models/NavigationItem';
 
 export interface ISideNavigationProps {
     items: any[];

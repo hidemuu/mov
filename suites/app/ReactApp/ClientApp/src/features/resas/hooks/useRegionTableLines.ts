@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from "axios";
-import { RegionValue } from '../features/models/RegionValue';
-import { TableLine } from '../features/models/TableLine';
-import { RegionTableLines } from '../features/models/RegionTableLines';
+import { RegionValue } from '../models/RegionValue';
+import { TableLine } from '../models/TableLine';
+import { RegionTableLines } from '../models/RegionTableLines';
 
 export default function useRegionTableLines() : RegionTableLines {
     const API_KEY_PREFECTURE : string = 'api/TableLine/prefecture';

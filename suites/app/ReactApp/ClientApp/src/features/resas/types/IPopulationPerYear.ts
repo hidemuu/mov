@@ -1,4 +1,4 @@
-export interface PopulationPerYear {
+export interface IPopulationPerYear {
     id: string;
     category: string;
     label: string;

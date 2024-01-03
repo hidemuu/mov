@@ -7,15 +7,14 @@ import {
 import type {
     ComboboxProps,
   } from "@fluentui/react-components";
-import { RegionTableLines } from '../../features/resas/models/RegionTableLines';
+import { IRegionTableLines } from '../../features/resas/types/IRegionTableLines';
 import useRegionSelections from './hooks/useRegionSelections';
-import { TableLine } from '../../features/resas/models/TableLine';
-import { RegionValue } from '../../features/resas/models/RegionValue';
+import { IRegionValue } from '../../features/resas/types/IRegionValue';
 
 
 export declare type RegionComboBoxProps = {
-    regionValue : RegionValue,
-    tableLines : RegionTableLines, 
+    regionValue : IRegionValue,
+    tableLines : IRegionTableLines, 
 }
 
 export const RegionComboBox: FC<RegionComboBoxProps> = ({ regionValue, tableLines }) => {

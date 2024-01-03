@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { RegionSelections } from "../models/RegionSelections";
-import { RegionTableLines } from "../../../features/resas/models/RegionTableLines";
-import { TableLine } from "../../../features/resas/models/TableLine";
-import { RegionValue } from "../../../features/resas/models/RegionValue";
+import { IRegionTableLines } from "../../../features/resas/types/IRegionTableLines";
+import { IRegionValue } from "../../../features/resas/types/IRegionValue";
 
 
-export default function useRegionSelections(regionValue: RegionValue, regionTableLines: RegionTableLines) : RegionSelections {
+export default function useRegionSelections(regionValue: IRegionValue, regionTableLines: IRegionTableLines) : RegionSelections {
     const [regionSelections, setRegionSelections] = useState<RegionSelections>({ selected : { prefCode:0, prefName:'', cityCode:0, cityName:'' }, prefSelections: [] , citySelections: [] });
 
     useEffect(() => {

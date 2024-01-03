@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import axios from "axios";
-import { RegionValue } from '../models/RegionValue';
-import { TableLine } from '../models/TableLine';
-import { RegionTableLines } from '../models/RegionTableLines';
+import { IRegionValue } from '../types/IRegionValue';
+import { ITableLine } from '../types/ITableLine';
+import { IRegionTableLines } from '../types/IRegionTableLines';
 
-export default function useRegionTableLines() : RegionTableLines {
+export default function useRegionTableLines() : IRegionTableLines {
     const API_KEY_PREFECTURE : string = 'api/TableLine/prefecture';
     const API_KEY_CITY : string = 'api/TableLine/city';
-    const [prefectureTableLines, setPrefectureTableLines] = useState<TableLine[]>([]);
-    const [cityTableLines, setCityTableLines] = useState<TableLine[]>([]);
+    const [prefectureTableLines, setPrefectureTableLines] = useState<ITableLine[]>([]);
+    const [cityTableLines, setCityTableLines] = useState<ITableLine[]>([]);
     
     useEffect(() =>{
         axios
@@ -27,7 +27,7 @@ export default function useRegionTableLines() : RegionTableLines {
             .catch((error) => { });    
     },[]);
 
-    const regionTable : RegionTableLines = {
+    const regionTable : IRegionTableLines = {
         pref : prefectureTableLines,
         city : cityTableLines,
     }

@@ -1,4 +1,4 @@
-export interface TableLine {
+export interface ITableLine {
     id: number;
     category: string;
     label: string;

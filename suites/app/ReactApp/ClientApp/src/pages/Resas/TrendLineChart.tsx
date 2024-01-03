@@ -1,10 +1,10 @@
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { FC } from "react";
-import { TrendLine } from "../../features/resas/models/TrendLine";
+import { ITrendLine } from "../../features/resas/types/ITrendLine";
 import useHighChartTrendLines from "./hooks/useHighChartTrendLines";
-import { RegionTableLines } from "../../features/resas/models/RegionTableLines";
-import { RegionTrendLines } from "../../features/resas/models/RegionTrendLines";
+import { IRegionTableLines } from "../../features/resas/types/IRegionTableLines";
+import { IRegionTrendLines } from "../../features/resas/types/IRegionTrendLines";
 
 const Styles: { [key: string]: React.CSSProperties } = {
     graph: {
@@ -13,7 +13,7 @@ const Styles: { [key: string]: React.CSSProperties } = {
   };
 
 export declare type TrendLineChartProps = {
-    trendLines : RegionTrendLines[],
+    trendLines : IRegionTrendLines[],
 }
 
 export const TrendLineChart: FC<TrendLineChartProps> = ({ trendLines}) => {

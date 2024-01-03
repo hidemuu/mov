@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import Highcharts from "highcharts";
-import { TrendLine } from "../../../features/resas/models/TrendLine";
-import { RegionTableLines } from "../../../features/resas/models/RegionTableLines";
-import { RegionTrendLines } from "../../../features/resas/models/RegionTrendLines";
+import { IRegionTrendLines } from "../../../features/resas/types/IRegionTrendLines";
 
 
-export default function useHighChartTrendLines(regionTrendLines : RegionTrendLines[]) : Highcharts.Options {
+export default function useHighChartTrendLines(regionTrendLines : IRegionTrendLines[]) : Highcharts.Options {
     const [chartOptions, setChartOptions] = useState<Highcharts.Options>(
         {
             series : [],

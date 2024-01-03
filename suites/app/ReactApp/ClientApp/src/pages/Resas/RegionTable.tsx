@@ -25,12 +25,12 @@ import type {
     ButtonProps,
     ForwardRefComponent,
   } from "@fluentui/react-components";
-import { RegionTableLines } from '../../features/resas/models/RegionTableLines';
+import { IRegionTableLines } from '../../features/resas/types/IRegionTableLines';
 import { TableColumn } from './models/TableColumn';
-import { TableLine } from '../../features/resas/models/TableLine';
+import { ITableLine } from '../../features/resas/types/ITableLine';
 
 export declare type RegionTableProps = {
-    regionTableLines : TableLine[], 
+    regionTableLines : ITableLine[], 
     tableColumns : TableColumn[]
 }
 

@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 import axios from "axios";
-import { TrendLine } from "../models/TrendLine";
-import { PopulationPerYear } from '../models/PopulationPerYear';
-import { RegionValue } from '../models/RegionValue';
-import { RegionTrendLines } from '../models/RegionTrendLines';
+import { ITrendLine } from "../types/ITrendLine";
+import { IPopulationPerYear } from '../types/IPopulationPerYear';
+import { IRegionValue } from '../types/IRegionValue';
+import { IRegionTrendLines } from '../types/IRegionTrendLines';
 
-export default function usePopulationPerYearTrendLines(region: RegionValue) : RegionTrendLines[] {
+export default function usePopulationPerYearTrendLines(region: IRegionValue) : IRegionTrendLines[] {
     const API_KEY : string = 'api/TrendLine/population_per_years';
     const prefectureCode = region.prefCode;
     const cityCode = region.cityCode;
     console.log(API_KEY + ' ' + prefectureCode + ' ' + cityCode);
-    const [populationPerYears, setPopulationPerYears] = useState<RegionTrendLines[]>([]);
+    const [populationPerYears, setPopulationPerYears] = useState<IRegionTrendLines[]>([]);
     
     useEffect(() =>{
         let endpoint : string;
@@ -28,9 +28,9 @@ export default function usePopulationPerYearTrendLines(region: RegionValue) : Re
             axios
             .get(endpoint)
             .then((results) => {
-                const regionTrendLines : RegionTrendLines[] = [];
+                const regionTrendLines : IRegionTrendLines[] = [];
                 for(let data of results.data){
-                    const regionTrendLine : RegionTrendLines = {
+                    const regionTrendLine : IRegionTrendLines = {
                         region : {
                             cityCode : data.region.cityCode,
                             cityName : data.region.cityName,
@@ -55,9 +55,9 @@ const getTrendLines = async (endpoint : string) => { return await axios.get(endp
 
 const getResult = async (endpoint : string) => {
     const result = await getTrendLines(endpoint);
-    const trendLines : TrendLine[] = [];
+    const trendLines : ITrendLine[] = [];
     for (let data of result.data) {
-        const line : TrendLine = {
+        const line : ITrendLine = {
             id : data.id,
             category : data.category,
             label: data.label,

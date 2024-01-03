@@ -1,4 +1,4 @@
-export interface TrendLine {
+export interface ITrendLine {
     id: string;
     category: string;
     label: string;

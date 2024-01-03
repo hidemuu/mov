@@ -1,12 +1,12 @@
 import React, { Dispatch, SetStateAction, useState } from 'react';
-import { RegionValue } from '../../../features/resas/models/RegionValue';
-import { RegionTableLines } from '../../../features/resas/models/RegionTableLines';
+import { IRegionValue } from '../../../features/resas/types/IRegionValue';
+import { IRegionTableLines } from '../../../features/resas/types/IRegionTableLines';
 import { RegionCode } from '../models/RegionCode';
 
-export default function useSelectedRegionState(regionTable : RegionTableLines, regionCode: RegionCode) 
-    : [RegionValue, Dispatch<SetStateAction<RegionValue>>]
+export default function useSelectedRegionState(regionTable : IRegionTableLines, regionCode: RegionCode) 
+    : [IRegionValue, Dispatch<SetStateAction<IRegionValue>>]
 {
-    const [selectedRegionValue, setSelectedRegionValue] = useState<RegionValue>({
+    const [selectedRegionValue, setSelectedRegionValue] = useState<IRegionValue>({
          prefCode : regionCode.pref,
          prefName : regionTable.pref.filter(x => x.id === regionCode.pref)[0]?.content ?? '',  
          cityCode : regionCode.city,

@@ -2,12 +2,12 @@ import { FC, useState } from "react";
 import { TableColumn } from "./models/TableColumn";
 import { SelectTabData, SelectTabEvent, Tab, TabList, TabValue } from "@fluentui/react-components";
 import { RegionTable } from "./RegionTable";
-import { RegionTableLines } from "../../features/resas/models/RegionTableLines";
+import { IRegionTableLines } from "../../features/resas/types/IRegionTableLines";
 import { useStyles } from "./hooks/useStyles";
 import useTableColumns from "./hooks/useTableColumns";
 
 export declare type RegionTabProps = {
-    regionTableLines : RegionTableLines, 
+    regionTableLines : IRegionTableLines, 
 }
 
 export const RegionTab: FC<RegionTabProps> = ({ regionTableLines}) => {

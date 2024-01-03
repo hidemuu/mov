@@ -3,8 +3,8 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import styled from 'styled-components';
 import axios from "axios";
-import { TrendLine } from "../../features/resas/models/TrendLine";
-import { TableLine } from "../../features/resas/models/TableLine";
+import { ITrendLine } from "../../features/resas/types/ITrendLine";
+import { ITableLine } from "../../features/resas/types/ITableLine";
 import {
     TableBody,
     TableCell,
@@ -36,7 +36,7 @@ import type {
   } from "@fluentui/react-components";
 import usePopulationPerYearTrendLines from '../../features/resas/hooks/usePopulationPerYearTrendLines';
 import useSelectedRegionState from './hooks/useSelectedRegionState';
-import { RegionValue } from '../../features/resas/models/RegionValue';
+import { IRegionValue } from '../../features/resas/types/IRegionValue';
 import { TableColumn } from './models/TableColumn';
 import { useStyles } from './hooks/useStyles';
 import useRegionTableLines from '../../features/resas/hooks/useRegionTableLines';
@@ -61,7 +61,7 @@ export const ResasPage: React.FunctionComponent = () => {
     const onChangePrefecture: InputProps["onChange"] = (ev, data) => {
         if (data.value.length <= 20) {
             const prefCode = Number(data.value);
-            const updateRegionValue : RegionValue = {
+            const updateRegionValue : IRegionValue = {
                 prefCode : prefCode,
                 prefName : '',
                 cityCode : selectedRegionValue.cityCode,
@@ -74,7 +74,7 @@ export const ResasPage: React.FunctionComponent = () => {
     const onChangeCity: InputProps["onChange"] = (ev, data) => {
         if (data.value.length <= 20) {
             const cityCode = Number(data.value);
-            const updateRegionValue : RegionValue = {
+            const updateRegionValue : IRegionValue = {
                 prefCode : selectedRegionValue.prefCode,
                 prefName : selectedRegionValue.prefName,
                 cityCode : cityCode,

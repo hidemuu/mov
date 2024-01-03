@@ -1,7 +1,7 @@
-import { RegionValue } from "../../../features/resas/models/RegionValue";
+import { IRegionValue } from "../../../features/resas/types/IRegionValue";
 
 export interface RegionSelections {
-    selected: RegionValue;
+    selected: IRegionValue;
     prefSelections: string[];
     citySelections: string[];
 }

@@ -25,13 +25,12 @@ import type {
     ButtonProps,
     ForwardRefComponent,
   } from "@fluentui/react-components";
-import { IRegionTableLines } from '../../features/resas/types/IRegionTableLines';
-import { TableColumn } from './models/TableColumn';
+import { ITableColumn } from './types/ITableColumn';
 import { ITableLine } from '../../features/resas/types/ITableLine';
 
 export declare type RegionTableProps = {
     regionTableLines : ITableLine[], 
-    tableColumns : TableColumn[]
+    tableColumns : ITableColumn[]
 }
 
 export const RegionTable: FC<RegionTableProps> = React.memo(({ regionTableLines, tableColumns} : RegionTableProps) => {

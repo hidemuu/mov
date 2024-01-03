@@ -1,9 +1,9 @@
 import React, { Dispatch, SetStateAction, useState } from 'react';
 import { IRegionValue } from '../../../features/resas/types/IRegionValue';
 import { IRegionTableLines } from '../../../features/resas/types/IRegionTableLines';
-import { RegionCode } from '../models/RegionCode';
+import { IRegionCode } from '../types/IRegionCode';
 
-export default function useSelectedRegionState(regionTable : IRegionTableLines, regionCode: RegionCode) 
+export default function useSelectedRegionState(regionTable : IRegionTableLines, regionCode: IRegionCode) 
     : [IRegionValue, Dispatch<SetStateAction<IRegionValue>>]
 {
     const [selectedRegionValue, setSelectedRegionValue] = useState<IRegionValue>({

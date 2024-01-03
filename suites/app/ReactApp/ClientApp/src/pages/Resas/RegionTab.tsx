@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { TableColumn } from "./models/TableColumn";
+import { ITableColumn } from "./types/ITableColumn";
 import { SelectTabData, SelectTabEvent, Tab, TabList, TabValue } from "@fluentui/react-components";
 import { RegionTable } from "./RegionTable";
 import { IRegionTableLines } from "../../features/resas/types/IRegionTableLines";
@@ -12,7 +12,7 @@ export declare type RegionTabProps = {
 
 export const RegionTab: FC<RegionTabProps> = ({ regionTableLines}) => {
     const styles = useStyles();
-    const tableColumns : TableColumn[] = useTableColumns();
+    const tableColumns : ITableColumn[] = useTableColumns();
     const [selectedTabValue, setSelectedTabValue] =
     useState<TabValue>("conditions");
 

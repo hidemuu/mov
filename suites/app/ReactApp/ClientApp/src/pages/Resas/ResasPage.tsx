@@ -3,8 +3,6 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import styled from 'styled-components';
 import axios from "axios";
-import { ITrendLine } from "../../features/resas/types/ITrendLine";
-import { ITableLine } from "../../features/resas/types/ITableLine";
 import {
     TableBody,
     TableCell,
@@ -37,7 +35,7 @@ import type {
 import usePopulationPerYearTrendLines from '../../features/resas/hooks/usePopulationPerYearTrendLines';
 import useSelectedRegionState from './hooks/useSelectedRegionState';
 import { IRegionValue } from '../../features/resas/types/IRegionValue';
-import { TableColumn } from './models/TableColumn';
+import { ITableColumn } from './types/ITableColumn';
 import { useStyles } from './hooks/useStyles';
 import useRegionTableLines from '../../features/resas/hooks/useRegionTableLines';
 import { useInputId } from '../../hooks/useInputId';
@@ -47,14 +45,14 @@ import { RegionTable } from './RegionTable';
 import { RegionTab } from './RegionTab';
 import { TrendLineChart } from './TrendLineChart';
 import { RegionComboBox } from './RegionComboBox';
-import { RegionCode } from './models/RegionCode';
+import { IRegionCode } from './types/IRegionCode';
 
 export const ResasPage: React.FunctionComponent = () => {
 
     const styles = useStyles();
     const inputId = useInputId();
     const regionTable = useRegionTableLines();
-    const initRegionCode : RegionCode = { pref : 11, city : 11362 }
+    const initRegionCode : IRegionCode = { pref : 11, city : 11362 }
     const [selectedRegionValue, setSelectedRegionValue] = useSelectedRegionState(regionTable, initRegionCode);
     const populationPerYearTrendLines = usePopulationPerYearTrendLines(selectedRegionValue);
 

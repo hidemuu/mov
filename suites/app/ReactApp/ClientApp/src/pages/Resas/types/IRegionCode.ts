@@ -1,4 +1,4 @@
-export interface RegionCode {
+export interface IRegionCode {
     pref : number;
     city : number;
 }

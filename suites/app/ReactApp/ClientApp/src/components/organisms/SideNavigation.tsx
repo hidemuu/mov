@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { NavigationRegular } from '@fluentui/react-icons';
 import { useAppContext } from '../../AppContext';
-import { NavigationItem } from '../../features/navigations/models/NavigationItem';
+import { INavigationItem } from '../../features/navigations/types/INavigationItem';
 
 export interface ISideNavigationProps {
     items: any[];
@@ -49,7 +49,7 @@ export const SideNavigation: React.FunctionComponent<ISideNavigationProps> = pro
         <>
             <TabList size="medium" appearance="subtle" vertical onTabSelect={performNavigation} selectedValue={selectedTab}>
                 <Tab icon={<NavigationRegular />} value={'navigation'} className={styles.tab}></Tab>
-                {items.map((item: NavigationItem, index) => (
+                {items.map((item: INavigationItem, index) => (
                     <Tab
                         icon={item.icon}
                         value={item.url}

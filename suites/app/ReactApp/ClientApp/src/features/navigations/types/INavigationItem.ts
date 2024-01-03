@@ -1,4 +1,4 @@
-﻿export interface NavigationItem {
+﻿export interface INavigationItem {
     name: string;
     url: string;
     pattern?: string;

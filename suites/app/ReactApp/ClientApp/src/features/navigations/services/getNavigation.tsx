@@ -1,4 +1,4 @@
-﻿import { NavigationItem } from '../models/NavigationItem';
+﻿import { INavigationItem } from '../types/INavigationItem';
 import {
     HomeRegular,
     SearchRegular,
@@ -19,7 +19,7 @@ import { FilesPage } from '../../../pages/FilesPage';
 import { TaxonomyPage } from '../../../pages/TaxonomyPage';
 
 export const getNavigation = (isSignedIn: boolean) => {
-    let navItems: NavigationItem[] = [];
+    let navItems: INavigationItem[] = [];
 
     navItems.push({
         name: 'Home',

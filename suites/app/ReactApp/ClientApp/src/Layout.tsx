@@ -4,8 +4,8 @@ import { Header } from './components/organisms/Header';
 import { SideNavigation } from './components/organisms/SideNavigation';
 import { HomePage } from './pages/HomePage';
 import { useIsSignedIn } from './hooks/useIsSignedIn';
-import { NavigationItem } from './features/navigations/models/NavigationItem';
-import { getNavigation } from './features/navigations/services/Navigation';
+import { INavigationItem } from './features/navigations/types/INavigationItem';
+import { getNavigation } from './features/navigations/services/getNavigation';
 import { FluentProvider, makeStyles, mergeClasses, shorthands } from '@fluentui/react-components';
 import { tokens } from '@fluentui/react-theme';
 import { applyTheme } from '@microsoft/mgt-react';
@@ -51,7 +51,7 @@ const useStyles = makeStyles({
 
 export const Layout: React.FunctionComponent = theme => {
     const styles = useStyles();
-    const [navigationItems, setNavigationItems] = React.useState<NavigationItem[]>([]);
+    const [navigationItems, setNavigationItems] = React.useState<INavigationItem[]>([]);
     const [isSignedIn] = useIsSignedIn();
     const appContext = useAppContext();
 

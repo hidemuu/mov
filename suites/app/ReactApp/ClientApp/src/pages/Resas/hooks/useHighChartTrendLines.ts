@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Highcharts from "highcharts";
-import { IRegionTrendLines } from "../../../features/resas/types/IRegionTrendLines";
+import { IRegionTrendLines } from "../../../stores/resas/types/IRegionTrendLines";
 
 
 export default function useHighChartTrendLines(regionTrendLines : IRegionTrendLines[]) : Highcharts.Options {

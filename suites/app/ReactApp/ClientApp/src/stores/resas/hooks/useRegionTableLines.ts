@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import axios from "axios";
-import { IRegionValue } from '../types/IRegionValue';
 import { ITableLine } from '../types/ITableLine';
 import { IRegionTableLines } from '../types/IRegionTableLines';
 

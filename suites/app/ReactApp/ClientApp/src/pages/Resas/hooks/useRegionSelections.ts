@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { IRegionSelections } from "../types/IRegionSelections";
-import { IRegionTableLines } from "../../../features/resas/types/IRegionTableLines";
-import { IRegionValue } from "../../../features/resas/types/IRegionValue";
+import { IRegionTableLines } from "../../../stores/resas/types/IRegionTableLines";
+import { IRegionValue } from "../../../stores/resas/types/IRegionValue";
 
 
 export default function useRegionSelections(regionValue: IRegionValue, regionTableLines: IRegionTableLines) : IRegionSelections {

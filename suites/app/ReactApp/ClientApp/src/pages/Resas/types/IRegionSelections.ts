@@ -1,4 +1,4 @@
-import { IRegionValue } from "../../../features/resas/types/IRegionValue";
+import { IRegionValue } from "../../../stores/resas/types/IRegionValue";
 
 export interface IRegionSelections {
     selected: IRegionValue;

@@ -32,12 +32,12 @@ import type {
     ButtonProps,
     ComboboxProps,
   } from "@fluentui/react-components";
-import usePopulationPerYearTrendLines from '../../features/resas/hooks/usePopulationPerYearTrendLines';
+import usePopulationPerYearTrendLines from '../../stores/resas/hooks/usePopulationPerYearTrendLines';
 import useSelectedRegionState from './hooks/useSelectedRegionState';
-import { IRegionValue } from '../../features/resas/types/IRegionValue';
+import { IRegionValue } from '../../stores/resas/types/IRegionValue';
 import { ITableColumn } from './types/ITableColumn';
 import { useStyles } from './hooks/useStyles';
-import useRegionTableLines from '../../features/resas/hooks/useRegionTableLines';
+import useRegionTableLines from '../../stores/resas/hooks/useRegionTableLines';
 import { useInputId } from '../../hooks/useInputId';
 import useHighChartTrendLines from './hooks/useHighChartTrendLines';
 import useTableColumns from './hooks/useTableColumns';

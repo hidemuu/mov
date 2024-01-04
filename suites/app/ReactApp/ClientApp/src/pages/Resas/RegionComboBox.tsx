@@ -7,9 +7,9 @@ import {
 import type {
     ComboboxProps,
   } from "@fluentui/react-components";
-import { IRegionTableLines } from '../../features/resas/types/IRegionTableLines';
+import { IRegionTableLines } from '../../stores/resas/types/IRegionTableLines';
 import useRegionSelections from './hooks/useRegionSelections';
-import { IRegionValue } from '../../features/resas/types/IRegionValue';
+import { IRegionValue } from '../../stores/resas/types/IRegionValue';
 
 
 export declare type RegionComboBoxProps = {

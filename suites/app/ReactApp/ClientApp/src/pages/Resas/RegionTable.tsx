@@ -26,7 +26,7 @@ import type {
     ForwardRefComponent,
   } from "@fluentui/react-components";
 import { ITableColumn } from './types/ITableColumn';
-import { ITableLine } from '../../features/resas/types/ITableLine';
+import { ITableLine } from '../../stores/resas/types/ITableLine';
 
 export declare type RegionTableProps = {
     regionTableLines : ITableLine[], 

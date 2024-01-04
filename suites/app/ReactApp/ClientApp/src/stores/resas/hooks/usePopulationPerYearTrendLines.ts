@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from "axios";
 import { ITrendLine } from "../types/ITrendLine";
-import { IPopulationPerYear } from '../types/IPopulationPerYear';
 import { IRegionValue } from '../types/IRegionValue';
 import { IRegionTrendLines } from '../types/IRegionTrendLines';
 

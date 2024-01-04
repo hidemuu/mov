@@ -1,10 +1,10 @@
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { FC } from "react";
-import { ITrendLine } from "../../stores/resas/types/ITrendLine";
+import { ITrendLine } from "../../stores/resas/types/trends/ITrendLine";
 import useHighChartTrendLines from "./hooks/useHighChartTrendLines";
-import { IRegionTableLines } from "../../stores/resas/types/IRegionTableLines";
-import { IRegionTrendLines } from "../../stores/resas/types/IRegionTrendLines";
+import { IRegionTableLines } from "../../stores/resas/types/tables/IRegionTableLines";
+import { IRegionTrendLines } from "../../stores/resas/types/trends/IRegionTrendLines";
 
 const Styles: { [key: string]: React.CSSProperties } = {
     graph: {

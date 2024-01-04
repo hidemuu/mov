@@ -1,7 +1,7 @@
-import { IRegionValue } from "./IRegionValue";
+import { IRegionKey } from "../IRegionKey";
 import { ITrendLine } from "./ITrendLine";
 
 export interface IRegionTrendLines {
-    region: IRegionValue;
+    region: IRegionKey;
     trendLines: ITrendLine[];
 }

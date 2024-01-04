@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from "axios";
-import { ITrendLine } from "../types/ITrendLine";
-import { IRegionValue } from '../types/IRegionValue';
-import { IRegionTrendLines } from '../types/IRegionTrendLines';
+import { ITrendLine } from "../types/trends/ITrendLine";
+import { IRegionKey } from '../types/IRegionKey';
+import { IRegionTrendLines } from '../types/trends/IRegionTrendLines';
 
-export default function usePopulationPerYearTrendLines(region: IRegionValue) : IRegionTrendLines[] {
+export default function usePopulationPerYearTrendLines(region: IRegionKey) : IRegionTrendLines[] {
     const API_KEY : string = 'api/TrendLine/population_per_years';
     const prefectureCode = region.prefCode;
     const cityCode = region.cityCode;

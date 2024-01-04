@@ -1,7 +1,7 @@
-import { IRegionValue } from "../../../stores/resas/types/IRegionValue";
+import { IRegionKey } from "../../../stores/resas/types/IRegionKey";
 
 export interface IRegionSelections {
-    selected: IRegionValue;
+    selected: IRegionKey;
     prefSelections: string[];
     citySelections: string[];
 }

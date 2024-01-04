@@ -3,12 +3,12 @@ import { IRegionTableLines } from '../types/tables/IRegionTableLines'
 
 export class RegionTableLineContext {
     
-    private static instance :RegionTableLineContext
+    private static current :RegionTableLineContext
 
     public static getInstance() :RegionTableLineContext{
-        if (!this.instance)
-            this.instance = new RegionTableLineContext(RegionTableLineContext.getInstance);
-        return this.instance;
+        if (!this.current)
+            this.current = new RegionTableLineContext(RegionTableLineContext.getInstance);
+        return this.current;
     }
 
     private context = React.createContext<IRegionTableLines | null>(null)
@@ -16,7 +16,7 @@ export class RegionTableLineContext {
     constructor(caller:Function){
         if (caller == RegionTableLineContext.getInstance)
             console.log("インスタンスを作成。一度しか呼ばれない。");
-        else if (RegionTableLineContext.instance)
+        else if (RegionTableLineContext.current)
             throw new Error("既にインスタンスが存在するためエラー。");
         else
             throw new Error("コンストラクタの引数が不正な為エラー。");

@@ -3,12 +3,12 @@ import { IRegionTrendLines } from '../types/trends/IRegionTrendLines'
 
 export class RegionTrendLineContext {
     
-    private static instance :RegionTrendLineContext
+    private static current :RegionTrendLineContext
 
     public static getInstance() :RegionTrendLineContext{
-        if (!this.instance)
-            this.instance = new RegionTrendLineContext(RegionTrendLineContext.getInstance);
-        return this.instance;
+        if (!this.current)
+            this.current = new RegionTrendLineContext(RegionTrendLineContext.getInstance);
+        return this.current;
     }
 
     private context = React.createContext<IRegionTrendLines[] | null>(null)
@@ -16,7 +16,7 @@ export class RegionTrendLineContext {
     constructor(caller:Function){
         if (caller == RegionTrendLineContext.getInstance)
             console.log("インスタンスを作成。一度しか呼ばれない。");
-        else if (RegionTrendLineContext.instance)
+        else if (RegionTrendLineContext.current)
             throw new Error("既にインスタンスが存在するためエラー。");
         else
             throw new Error("コンストラクタの引数が不正な為エラー。");

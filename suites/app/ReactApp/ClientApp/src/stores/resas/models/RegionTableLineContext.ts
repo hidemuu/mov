@@ -57,6 +57,6 @@ export class RegionTableLineContext {
             city : cityTableLines,
         }
 
-        this.context = React.createContext<IRegionTableLines | null>(response)
+        this.context.Provider.bind(response)
     }
 }

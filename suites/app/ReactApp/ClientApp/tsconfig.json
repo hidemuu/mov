@@ -21,6 +21,6 @@
   },
   "include": [
     "src",
-    "src/utils/types/*"
-  ]
+    "src/utils/types/*",
+    "jest.config.js"]
 }

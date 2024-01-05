@@ -1,5 +1,5 @@
 ﻿import * as React from "react";
-import './button.css';
+import './index.css';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'danger'
 

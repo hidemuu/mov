@@ -1,5 +1,5 @@
 {
-    "extents": [
+    "extends": [
         "exlint:recommended",
         "plugin:prettier/recommended",
         "plugin:react/recommended",

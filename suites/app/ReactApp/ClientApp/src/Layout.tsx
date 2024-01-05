@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Header } from './components/organisms/Header';
 import { SideNavigation } from './components/organisms/SideNavigation';
 import { HomePage } from './pages/HomePage';
-import { useIsSignedIn } from './domains/assigns/hooks/useIsSignedIn';
+import { useIsSignedIn } from './domains/auth/hooks/useIsSignedIn';
 import { INavigationItem } from './domains/navigations/types/INavigationItem';
 import { getNavigation } from './domains/navigations/services/getNavigation';
 import { FluentProvider, makeStyles, mergeClasses, shorthands } from '@fluentui/react-components';

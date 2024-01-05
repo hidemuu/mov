@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react'
-import Button from '../index'
+import { Button } from '../index'
 
 const usePouup = () => {
     const cb = useCallback((text: string) => {
@@ -9,12 +9,11 @@ const usePouup = () => {
 }
 
 type CountButtonProps = {
-    label: string
     maximum: number
 }
 
 export const CountButton = (props: CountButtonProps) => {
-    const { label, maximum } = props
+    const { maximum } = props
     const displayPopup = usePouup()
     const [count, setCount] = useState(0)
     const onClick = useCallback(() => {
@@ -29,6 +28,6 @@ export const CountButton = (props: CountButtonProps) => {
     const text = disabled ? 'Can\'t click any more' : `You've clicked ${count} times`
 
     return (
-        <Button disabled={disabled} onClick={onClick} label={label} text={text} />
+        <Button onClick={onClick} label={text} />
     )
 }

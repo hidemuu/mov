@@ -1,22 +1,50 @@
 ﻿import * as React from "react";
+import './button.css';
 
-type ButtonProps = {
-    label: string
-    text: string
-    disabled: boolean
-    onClick: React.MouseEventHandler<HTMLButtonElement>
+export type ButtonVariant = 'primary' | 'secondary' | 'danger'
+
+export type ButtonProps = {
+    /**
+   * Is this the principal call to action on the page?
+   */
+  primary?: boolean;
+  /**
+   * What background color to use
+   */
+  backgroundColor?: string;
+  /**
+   * How large should the button be?
+   */
+  size?: 'small' | 'medium' | 'large';
+  /**
+   * Button contents
+   */
+  label: string;
+  /**
+   * Optional click handler
+   */
+  onClick?: () => void;
 }
 
-const Button = (props: ButtonProps) =>
-{
-    const { label, text, disabled, onClick } = props
-
+/**
+ * Primary UI component for user interaction
+ */
+export const Button = ({
+    primary = false,
+    size = 'medium',
+    backgroundColor,
+    label,
+    ...props
+  }: ButtonProps) => {
+    const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
     return (
-        <div className="button-container">
-            <span>{label}</span>
-            <button disabled={disabled} onClick={onClick}>{text}</button>
-        </div>
-    )
-}
-
-export default Button
+      <button
+        type="button"
+        className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+        style={{ backgroundColor }}
+        {...props}
+      >
+        {label}
+      </button>
+    );
+  };

@@ -3,7 +3,7 @@ import { Login, SearchBox } from '@microsoft/mgt-react';
 import { PACKAGE_VERSION } from '@microsoft/mgt-element';
 import { InfoButton } from '@fluentui/react-components/unstable';
 import { SimpleLogin } from './SimpleLogin';
-import { useIsSignedIn } from '../../hooks/useIsSignedIn';
+import { useIsSignedIn } from '../../features/assigns/hooks/useIsSignedIn';
 import { useNavigate } from 'react-router-dom';
 import { ThemeSwitcher } from './ThemeSwitcher';
 import { useAppContext } from '../../AppContext';

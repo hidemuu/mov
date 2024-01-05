@@ -38,7 +38,7 @@ import { IRegionKey } from '../../stores/resas/types/IRegionKey';
 import { ITableColumn } from './types/ITableColumn';
 import { useStyles } from './hooks/useStyles';
 import useRegionTableLines from '../../stores/resas/hooks/useRegionTableLines';
-import { useInputId } from '../../features/inputs/hooks/useInputId';
+import { useInputId } from '../../domains/inputs/hooks/useInputId';
 import useHighChartTrendLines from './hooks/useHighChartTrendLines';
 import useTableColumns from './hooks/useTableColumns';
 import { RegionTable } from './RegionTable';

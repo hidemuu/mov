@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { LocaleType } from "../../../features/locales/types/LocaleType";
-import { Locale } from "../../../features/locales/models/Locale";
+import { LocaleType } from "../../../domains/locales/types/LocaleType";
+import { Locale } from "../../../domains/locales/models/Locale";
 
 const UPDATE_CYCLE = 1000
 

@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import { Button } from '../index'
 
 const usePouup = () => {
@@ -22,7 +22,7 @@ export const CountButton = (props: CountButtonProps) => {
     if (newCount >= maximum) {
       displayPopup(`You've clicked ${newCount} times`)
     }
-  }, [count, maximum])
+  }, [count, displayPopup, maximum])
 
   const disabled = count >= maximum
   const text = disabled

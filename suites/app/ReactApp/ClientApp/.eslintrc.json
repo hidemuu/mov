@@ -8,6 +8,7 @@
         "react-app/jest",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
+        "airbnb",
         "plugin:import/recommended",
         "plugin:import/typescript",
         "plugin:@typescript-eslint/recommended",
@@ -16,6 +17,13 @@
         "prettier"
     ],
     "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+      },
     "plugins": [
         "react",
         "@typescript-eslint",

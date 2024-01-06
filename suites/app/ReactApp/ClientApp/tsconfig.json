@@ -23,8 +23,7 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/utils/types/*",
-    "jest.config.js"],
+    "src/utils/types/*"],
   "exclude": [
     "node_modules"
   ]

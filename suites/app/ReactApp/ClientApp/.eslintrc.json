@@ -1,6 +1,5 @@
 {
     "extends": [
-        "exlint:recommended",
         "plugin:prettier/recommended",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
@@ -21,8 +20,6 @@
                 "printWidth": 80,
                 "tabWidth": 2
             }
-        ],
-        "semi": ["error", "always"],
-        "quotes": ["error", "double"]
+        ]
     }
 }

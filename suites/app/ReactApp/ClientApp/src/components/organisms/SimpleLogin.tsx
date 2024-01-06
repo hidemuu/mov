@@ -1,6 +1,5 @@
 ﻿import * as React from 'react'
-import { Person } from '@microsoft/mgt-react'
-import { MgtTemplateProps } from '@microsoft/mgt-react'
+import { Person, MgtTemplateProps } from '@microsoft/mgt-react'
 import { makeStyles } from '@fluentui/react-components'
 
 const useStyles = makeStyles({

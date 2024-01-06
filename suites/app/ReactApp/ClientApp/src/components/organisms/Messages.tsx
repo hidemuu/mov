@@ -1,4 +1,5 @@
-﻿import {
+﻿import React from 'react'
+import {
   MgtTemplateProps,
   Person,
   PersonCardInteraction,

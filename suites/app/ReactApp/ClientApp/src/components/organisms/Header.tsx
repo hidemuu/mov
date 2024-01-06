@@ -4,7 +4,7 @@ import { PACKAGE_VERSION } from '@microsoft/mgt-element'
 import { InfoButton } from '@fluentui/react-components/unstable'
 import { SimpleLogin } from './SimpleLogin'
 import { useIsSignedIn } from '../../domains/auth/hooks/useIsSignedIn'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { ThemeSwitcher } from './ThemeSwitcher'
 import { useAppContext } from '../../AppContext'
 import {
@@ -15,7 +15,6 @@ import {
   tokens
 } from '@fluentui/react-components'
 import { GridDotsRegular } from '@fluentui/react-icons'
-import { useLocation } from 'react-router-dom'
 
 const useStyles = makeStyles({
   root: {

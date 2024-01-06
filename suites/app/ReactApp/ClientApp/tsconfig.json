@@ -17,10 +17,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "src"
   },
   "include": [
-    "src",
+    "src/**/*.ts",
+    "src/**/*.tsx",
     "src/utils/types/*",
-    "jest.config.js"]
+    "jest.config.js"],
+  "exclude": [
+    "node_modules"
+  ]
 }

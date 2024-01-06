@@ -1,6 +1,5 @@
 ﻿import { Theme } from '@fluentui/react-components'
-import React from 'react'
-import { Dispatch, SetStateAction } from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 
 type AppContextState = {
   searchTerm: string

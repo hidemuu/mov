@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import React from 'react'
 import { AppContext } from './AppContext'
 import { Layout } from './Layout'
 import { webLightTheme } from '@fluentui/react-components'

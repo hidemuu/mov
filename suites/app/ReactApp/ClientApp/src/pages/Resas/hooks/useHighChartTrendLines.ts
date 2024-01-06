@@ -1,59 +1,58 @@
-import { useEffect, useState } from "react";
-import Highcharts from "highcharts";
-import { IRegionTrendLines } from "../../../stores/resas/types/trends/IRegionTrendLines";
+import { useEffect, useState } from 'react'
+import Highcharts from 'highcharts'
+import { IRegionTrendLines } from '../../../stores/resas/types/trends/IRegionTrendLines'
 
+export default function useHighChartTrendLines(
+  regionTrendLines: IRegionTrendLines[]
+): Highcharts.Options {
+  const [chartOptions, setChartOptions] = useState<Highcharts.Options>({
+    series: []
+  })
 
-export default function useHighChartTrendLines(regionTrendLines : IRegionTrendLines[]) : Highcharts.Options {
-    const [chartOptions, setChartOptions] = useState<Highcharts.Options>(
-        {
-            series : [],
-        });
-
-    useEffect(() => {
-        let series: Highcharts.SeriesOptionsType[] = [];
-        let categories = [];
-        let count = 0;
-        for(let regionTrendLine of regionTrendLines){
-            let data = [];
-            for(let trendLine of regionTrendLine.trendLines){
-                if(count === 0){
-                    categories.push(String(trendLine.number));
-                }
-                data.push(trendLine.value);
-            }
-            const prefName = regionTrendLine.region.prefName;
-            const cityName = regionTrendLine.region.cityName;
-            series.push({
-                type: "line",
-                name: prefName + '-' + cityName,
-                data: data,
-            });
-            count++;
+  useEffect(() => {
+    let series: Highcharts.SeriesOptionsType[] = []
+    let categories = []
+    let count = 0
+    for (let regionTrendLine of regionTrendLines) {
+      let data = []
+      for (let trendLine of regionTrendLine.trendLines) {
+        if (count === 0) {
+          categories.push(String(trendLine.number))
         }
+        data.push(trendLine.value)
+      }
+      const prefName = regionTrendLine.region.prefName
+      const cityName = regionTrendLine.region.cityName
+      series.push({
+        type: 'line',
+        name: prefName + '-' + cityName,
+        data: data
+      })
+      count++
+    }
 
-        setChartOptions({
-            title: {
-                text: "総人口推移",
-            },
-            xAxis: {
-                title: {
-                    text: "年度",
-                },
-                categories: categories,
-            },
-            yAxis: {
-                title: {
-                    text: "人口数",
-                },
-            },
-            // 都道府県を一つも選んでいない場合との分岐条件
-            series:
-                series.length === 0
-                    ? [{ type: "line", name: "都道府県名", data: [] }]
-                    : series,
-        });
+    setChartOptions({
+      title: {
+        text: '総人口推移'
+      },
+      xAxis: {
+        title: {
+          text: '年度'
+        },
+        categories: categories
+      },
+      yAxis: {
+        title: {
+          text: '人口数'
+        }
+      },
+      // 都道府県を一つも選んでいない場合との分岐条件
+      series:
+        series.length === 0
+          ? [{ type: 'line', name: '都道府県名', data: [] }]
+          : series
+    })
+  }, [regionTrendLines])
 
-    }, [regionTrendLines]);
-
-    return chartOptions;
+  return chartOptions
 }

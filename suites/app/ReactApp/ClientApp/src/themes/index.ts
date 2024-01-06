@@ -9,5 +9,5 @@ export const theme = {
   fontSizes,
   letterSpacings,
   lineHeights,
-  colors,
+  colors
 } as const

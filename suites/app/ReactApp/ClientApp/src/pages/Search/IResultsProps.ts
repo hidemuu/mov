@@ -1,3 +1,3 @@
 ﻿export interface IResultsProps {
-    searchTerm: string;
+  searchTerm: string
 }

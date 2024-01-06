@@ -106,7 +106,7 @@
     "wstart": "webpack-dev-server",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
+    "prettier-format": "prettier --config .prettierrc --write src/**/*"
   },
   "eslintConfig": {
     "extends": [

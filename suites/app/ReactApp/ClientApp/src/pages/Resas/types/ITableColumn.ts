@@ -1,4 +1,4 @@
 export interface ITableColumn {
-    columnKey: string;
-    label: string;
+  columnKey: string
+  label: string
 }

@@ -1,139 +1,138 @@
 ﻿/* Provide sufficient contrast against white background */
 a {
-    color: #0366d6;
+  color: #0366d6;
 }
 
 code {
-    color: #E01A76;
+  color: #e01a76;
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
 }
 
 .table-sticky {
-    display: block;
-    overflow: auto;
-    overflow-y: scroll;
-    height: calc(100vh/2);
-    /* width: auto; */
-    /* width: calc(100vw/2); */
-    /* height: 75vh; */
-    /* border:1px solid;
+  display: block;
+  overflow: auto;
+  overflow-y: scroll;
+  height: calc(100vh / 2);
+  /* width: auto; */
+  /* width: calc(100vw/2); */
+  /* height: 75vh; */
+  /* border:1px solid;
   border-collapse: collapse; */
 }
 
-
 .table-sticky thead th {
-    /* 縦スクロール時に固定する */
-    position: sticky;
-    top: 0;
-    /* tbody内のセルより手前に表示する */
-    z-index: 1;
-    background: whitesmoke;
-    border-top: #FFFFFF;
-    text-align: center;
+  /* 縦スクロール時に固定する */
+  position: sticky;
+  top: 0;
+  /* tbody内のセルより手前に表示する */
+  z-index: 1;
+  background: whitesmoke;
+  border-top: #ffffff;
+  text-align: center;
 }
 
 root {
-    display: flex;
+  display: flex;
 }
 
 board {
-    background-color: #F2F2F2;
+  background-color: #f2f2f2;
 }
 
 home {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: hidden;
 }
 
 toolbar {
-    padding-right: 24px;
+  padding-right: 24px;
 }
 
 toolbarIcon {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 8px;
 }
 
 menuButton {
-    margin-right: 36px;
+  margin-right: 36px;
 }
 
 menuButtonHidden {
-    display: none;
+  display: none;
 }
 
 title {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 drawerPaper {
-    position: relative;
-    white-space: nowrap;
+  position: relative;
+  white-space: nowrap;
 }
 
 drawerPaperClose {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 content {
-    flex-grow: 1;
-    height: 100vh;
-    overflow: auto;
+  flex-grow: 1;
+  height: 100vh;
+  overflow: auto;
 }
 
 link {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 gridList {
-    width: 500px;
-    height: 700px;
+  width: 500px;
+  height: 700px;
 }
 
 grid {
-    margin: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 button {
-    margin-top: auto;
-    width: 250px;
-    height: 200px;
-    font-size: 30px
+  margin-top: auto;
+  width: 250px;
+  height: 200px;
+  font-size: 30px;
 }
 
 backdrop {
-    color: #fff
+  color: #fff;
 }
 
 a.navbar-brand {
-    white-space: normal;
-    text-align: center;
-    word-break: break-all;
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
 }
 
 html {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 @media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
+  html {
+    font-size: 16px;
+  }
 }
 
 .box-shadow {
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
 }

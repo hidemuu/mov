@@ -1,5 +1,5 @@
 ﻿import * as React from 'react'
-import { IResultsProps } from './IResultsProps'
+import { IResultsProps } from '../types/IResultsProps'
 import { MgtTemplateProps, SearchResults } from '@microsoft/mgt-react'
 
 export const AllResults: React.FunctionComponent<IResultsProps> = (

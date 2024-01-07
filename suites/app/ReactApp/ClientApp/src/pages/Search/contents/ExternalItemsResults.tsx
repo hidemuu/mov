@@ -1,6 +1,6 @@
 ﻿import { SearchResults } from '@microsoft/mgt-react'
 import * as React from 'react'
-import { IResultsProps } from './IResultsProps'
+import { IResultsProps } from '../types/IResultsProps'
 
 export const ExternalItemsResults: React.FunctionComponent<IResultsProps> = (
   props: IResultsProps

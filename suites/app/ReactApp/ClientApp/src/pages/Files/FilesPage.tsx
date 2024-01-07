@@ -1,5 +1,5 @@
 ﻿import * as React from 'react'
-import { PageHeader } from '../components/organisms/PageHeader'
+import { PageHeader } from '../../components/organisms/PageHeader'
 import { FileList } from '@microsoft/mgt-react'
 import {
   SelectTabData,
@@ -10,8 +10,8 @@ import {
   shorthands,
   makeStyles
 } from '@fluentui/react-components'
-import { ChannelFiles } from './Files/ChannelFiles'
-import { SiteFiles } from './Files/SiteFiles'
+import { ChannelFiles } from './contents/ChannelFiles'
+import { SiteFiles } from './contents/SiteFiles'
 
 const useStyles = makeStyles({
   panels: {

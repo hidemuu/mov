@@ -1,6 +1,6 @@
 ﻿import { SearchResults } from '@microsoft/mgt-react'
 import * as React from 'react'
-import { IResultsProps } from './IResultsProps'
+import { IResultsProps } from '../types/IResultsProps'
 import {
   MgtTemplateProps,
   Person,
@@ -242,7 +242,7 @@ const FileNoDataTemplate = (props: MgtTemplateProps) => {
         <SlideSearchRegular className={styles.noDataIcon} />
       </div>
       <div className={styles.noDataMessage}>
-        We couldn't find any results for{' '}
+        We couldnt find any results for{' '}
         <span className={styles.noDataSearchTerm}>{searchTerms.join(' ')}</span>
       </div>
     </div>

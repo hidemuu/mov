@@ -1,6 +1,6 @@
 ﻿import * as React from 'react'
-import { PageHeader } from '../components/organisms/PageHeader'
-import { AllResults, PeopleResults } from './Search'
+import { PageHeader } from '../../components/organisms/PageHeader'
+import { AllResults, PeopleResults } from '.'
 import {
   SelectTabData,
   SelectTabEvent,
@@ -10,9 +10,9 @@ import {
   makeStyles,
   shorthands
 } from '@fluentui/react-components'
-import { useAppContext } from '../AppContext'
-import { ExternalItemsResults } from './Search/ExternalItemsResults'
-import { FilesResults } from './Search/FilesResults'
+import { useAppContext } from '../../AppContext'
+import { ExternalItemsResults } from './contents/ExternalItemsResults'
+import { FilesResults } from './contents/FilesResults'
 
 const useStyles = makeStyles({
   panels: {

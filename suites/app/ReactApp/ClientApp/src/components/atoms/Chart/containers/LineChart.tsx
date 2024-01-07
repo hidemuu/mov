@@ -26,7 +26,7 @@ export const LineChart = (props: LineChartProps) => {
     },
     series:
       option.series.length === 0
-        ? [{ type: 'line', name: '都道府県名', data: [] }]
+        ? [{ type: 'line', name: '', data: [] }]
         : [
             {
               type: 'line',

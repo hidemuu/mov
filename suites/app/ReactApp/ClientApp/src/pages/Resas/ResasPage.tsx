@@ -1,12 +1,29 @@
-﻿import React, { useEffect } from 'react'
+﻿import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import type { InputProps } from '@fluentui/react-components'
 import usePopulationPerYearTrendLines from 'stores/resas/hooks/usePopulationPerYearTrends'
-import useSelectedRegionState from './hooks/useSelectedRegionState'
 import { IRegionValue } from 'stores/resas/types/IRegionValue'
 import useRegionTableLines from 'stores/resas/hooks/useRegionTable'
 import { useInputId } from 'domains/inputs/hooks/useInputId'
 import { IRegionKey } from 'stores/resas/types/IRegionKey'
 import { ResasTemplate } from '.'
+import { IRegionTable } from 'stores/resas/types/tables/IRegionTable'
+
+function useSelectedRegionState(
+  regionTable: IRegionTable,
+  regionCode: IRegionKey
+): [IRegionValue, Dispatch<SetStateAction<IRegionValue>>] {
+  const [selectedRegionValue, setSelectedRegionValue] = useState<IRegionValue>({
+    prefCode: regionCode.prefCode,
+    prefName:
+      regionTable.pref.filter((x) => x.id === regionCode.prefCode)[0]
+        ?.content ?? '',
+    cityCode: regionCode.cityCode,
+    cityName:
+      regionTable.city.filter((x) => x.id === regionCode.cityCode)[0]
+        ?.content ?? ''
+  })
+  return [selectedRegionValue, setSelectedRegionValue]
+}
 
 export const ResasPage: React.FunctionComponent = () => {
   const inputId = useInputId()

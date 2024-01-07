@@ -30,7 +30,7 @@ export const RegionComboBox: FC<RegionComboBoxProps> = ({
   }
 
   const onInput: ComboboxProps['onInput'] = (ev) => {
-    let value = ev.target
+    const value = ev.target
   }
 
   return (

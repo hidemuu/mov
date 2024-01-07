@@ -5,25 +5,7 @@ import {
   TableRow,
   Table,
   TableHeader,
-  TableHeaderCell,
-  TableCellLayout,
-  PresenceBadgeStatus,
-  Avatar,
-  makeStyles,
-  shorthands,
-  Tab,
-  TabList,
-  useId,
-  Input,
-  Label
-} from '@fluentui/react-components'
-import type {
-  SelectTabData,
-  SelectTabEvent,
-  TabValue,
-  InputProps,
-  ButtonProps,
-  ForwardRefComponent
+  TableHeaderCell
 } from '@fluentui/react-components'
 import { ITableColumn } from './types/ITableColumn'
 import { ITableLine } from '../../stores/resas/types/tables/ITableLine'
@@ -33,6 +15,7 @@ export declare type RegionTableProps = {
   tableColumns: ITableColumn[]
 }
 
+// eslint-disable-next-line react/display-name
 export const RegionTable: FC<RegionTableProps> = React.memo(
   ({ regionTableLines, tableColumns }: RegionTableProps) => {
     return (

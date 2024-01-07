@@ -1,6 +1,6 @@
 import { ITableItem } from './ITableItem'
 
-export interface IRegionTableLines {
+export interface IRegionTable {
   pref: ITableItem[]
   city: ITableItem[]
 }

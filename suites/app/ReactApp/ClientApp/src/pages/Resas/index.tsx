@@ -6,12 +6,12 @@ import { useStyles } from './hooks/useStyles'
 import { RegionTab } from './contents/RegionTab'
 import { TrendLineChart } from './contents/RegionTrendLineChart'
 import { RegionComboBox } from './contents/RegionComboBox'
-import { IRegionTableLines } from 'stores/resas/types/tables/IRegionTableLines'
+import { IRegionTable } from 'stores/resas/types/tables/IRegionTable'
 import { IRegionTrend } from 'stores/resas/types/trends/IRegionTrend'
 
 export type ResasTemplateProps = {
   inputId: string
-  regionTable: IRegionTableLines
+  regionTable: IRegionTable
   regionTrendLines: IRegionTrend[]
   selectedRegionKey: IRegionKey
   onChangePrefecture: InputProps['onChange']

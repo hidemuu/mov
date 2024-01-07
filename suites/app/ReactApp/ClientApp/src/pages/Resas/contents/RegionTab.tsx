@@ -8,12 +8,12 @@ import {
   TabValue
 } from '@fluentui/react-components'
 import { RegionTable } from './RegionTable'
-import { IRegionTableLines } from '../../../stores/resas/types/tables/IRegionTableLines'
+import { IRegionTable } from '../../../stores/resas/types/tables/IRegionTable'
 import { useStyles } from '../hooks/useStyles'
 import useTableColumns from '../hooks/useTableColumns'
 
 export declare type RegionTabProps = {
-  regionTableLines: IRegionTableLines
+  regionTableLines: IRegionTable
 }
 
 export const RegionTab: FC<RegionTabProps> = ({ regionTableLines }) => {

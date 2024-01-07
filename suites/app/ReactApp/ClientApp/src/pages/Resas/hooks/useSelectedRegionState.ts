@@ -1,10 +1,10 @@
 import { Dispatch, SetStateAction, useState } from 'react'
 import { IRegionKey } from '../../../stores/resas/types/IRegionKey'
-import { IRegionTableLines } from '../../../stores/resas/types/tables/IRegionTableLines'
+import { IRegionTable } from '../../../stores/resas/types/tables/IRegionTable'
 import { IRegionCode } from '../types/IRegionCode'
 
 export default function useSelectedRegionState(
-  regionTable: IRegionTableLines,
+  regionTable: IRegionTable,
   regionCode: IRegionCode
 ): [IRegionKey, Dispatch<SetStateAction<IRegionKey>>] {
   const [selectedRegionValue, setSelectedRegionValue] = useState<IRegionKey>({

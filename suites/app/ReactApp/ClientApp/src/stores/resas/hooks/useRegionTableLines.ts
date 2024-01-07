@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { ITableItem } from '../types/tables/ITableItem'
-import { IRegionTableLines } from '../types/tables/IRegionTableLines'
+import { IRegionTable } from '../types/tables/IRegionTable'
 
-export default function useRegionTableLines(): IRegionTableLines {
+export default function useRegionTableLines(): IRegionTable {
   const API_KEY_PREFECTURE = 'api/TableLine/prefecture'
   const API_KEY_CITY = 'api/TableLine/city'
   const [prefectureTableLines, setPrefectureTableLines] = useState<
@@ -28,7 +28,7 @@ export default function useRegionTableLines(): IRegionTableLines {
       .catch((error) => {})
   }, [])
 
-  const regionTable: IRegionTableLines = {
+  const regionTable: IRegionTable = {
     pref: prefectureTableLines,
     city: cityTableLines
   }

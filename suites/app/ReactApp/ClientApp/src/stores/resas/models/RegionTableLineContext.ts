@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { IRegionTableLines } from '../types/tables/IRegionTableLines'
+import { IRegionTable } from '../types/tables/IRegionTable'
 import { ITableItem } from '../types/tables/ITableItem'
 
 const API_KEY_PREFECTURE = 'api/TableLine/prefecture'
@@ -9,7 +9,7 @@ const API_KEY_CITY = 'api/TableLine/city'
 const [prefectureTableLines, setPrefectureTableLines] = useState<ITableItem[]>(
   []
 )
-const [cityTableLines, setCityTableLines] = useState<ITableItem[]>([]);
+const [cityTableLines, setCityTableLines] = useState<ITableItem[]>([])
 
 export class RegionTableLineContext {
   private static current: RegionTableLineContext
@@ -23,14 +23,14 @@ export class RegionTableLineContext {
     this.update()
   }
 
-  private context: React.Context<IRegionTableLines | null> =
-    React.createContext<IRegionTableLines | null>(null)
+  private context: React.Context<IRegionTable | null> =
+    React.createContext<IRegionTable | null>(null)
 
-  public getContext(): React.Context<IRegionTableLines | null> {
+  public getContext(): React.Context<IRegionTable | null> {
     return this.context
   }
 
-  public getValue(): IRegionTableLines | null {
+  public getValue(): IRegionTable | null {
     return React.useContext(this.context)
   }
 
@@ -41,16 +41,18 @@ export class RegionTableLineContext {
         .then((results) => {
           setPrefectureTableLines(results.data)
         })
-        .catch((error) => {});
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
+        .catch((error) => {})
       axios
         .get(API_KEY_CITY, {})
         .then((results) => {
           setCityTableLines(results.data)
         })
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
         .catch((error) => {})
     }, [])
 
-    const response: IRegionTableLines = {
+    const response: IRegionTable = {
       pref: prefectureTableLines,
       city: cityTableLines
     }

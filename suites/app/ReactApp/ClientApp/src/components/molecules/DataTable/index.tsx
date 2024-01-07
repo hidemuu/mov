@@ -7,12 +7,12 @@ import {
   TableHeader,
   TableHeaderCell
 } from '@fluentui/react-components'
-import { ITableColumn } from './types/ITableColumn'
+import { ITableColumnContent } from './types/ITableColumnContent'
 import { ITableRowContent } from './types/ITableRowContent'
 
 export declare type DataTableProps = {
   rowContents: ITableRowContent[]
-  columnContents: ITableColumn[]
+  columnContents: ITableColumnContent[]
 }
 
 // eslint-disable-next-line react/display-name

@@ -7,12 +7,12 @@ import {
   TableHeader,
   TableHeaderCell
 } from '@fluentui/react-components'
-import { ITableColumn } from '../../../components/molecules/DataTable/types/ITableColumn'
-import { ITableItem } from '../../../stores/resas/types/tables/ITableItem'
+import { ITableColumnContent } from 'components/molecules/DataTable/types/ITableColumnContent'
+import { ITableItem } from 'stores/resas/types/tables/ITableItem'
 
 export declare type RegionTableProps = {
   regionTableLines: ITableItem[]
-  tableColumns: ITableColumn[]
+  tableColumns: ITableColumnContent[]
 }
 
 // eslint-disable-next-line react/display-name

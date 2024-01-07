@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import { ITableColumn } from '../../../components/molecules/DataTable/types/ITableColumn'
+import { ITableColumnContent } from 'components/molecules/DataTable/types/ITableColumnContent'
 import {
   SelectTabData,
   SelectTabEvent,
@@ -10,7 +10,7 @@ import {
   shorthands
 } from '@fluentui/react-components'
 import { RegionTable } from './RegionTable'
-import { IRegionTable } from '../../../stores/resas/types/tables/IRegionTable'
+import { IRegionTable } from 'stores/resas/types/tables/IRegionTable'
 import useTableColumns from '../hooks/useTableColumns'
 
 const useStyles = makeStyles({
@@ -29,7 +29,7 @@ export declare type RegionTabProps = {
 
 export const RegionTab: FC<RegionTabProps> = ({ regionTableLines }) => {
   const styles = useStyles()
-  const tableColumns: ITableColumn[] = useTableColumns()
+  const tableColumns: ITableColumnContent[] = useTableColumns()
   const [selectedTabValue, setSelectedTabValue] =
     useState<TabValue>('conditions')
 

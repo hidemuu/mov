@@ -1,4 +1,4 @@
 export interface IRegionKey {
-  pref: number
-  city: number
+  prefCode: number
+  cityCode: number
 }

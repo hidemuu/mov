@@ -11,7 +11,7 @@ import { ResasTemplate } from '.'
 export const ResasPage: React.FunctionComponent = () => {
   const inputId = useInputId()
   const regionTable = useRegionTableLines()
-  const initRegionCode: IRegionKey = { pref: 11, city: 11362 }
+  const initRegionCode: IRegionKey = { prefCode: 11, cityCode: 11362 }
   const [selectedRegionValue, setSelectedRegionValue] = useSelectedRegionState(
     regionTable,
     initRegionCode

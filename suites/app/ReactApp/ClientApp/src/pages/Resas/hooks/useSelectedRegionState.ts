@@ -8,13 +8,14 @@ export default function useSelectedRegionState(
   regionCode: IRegionKey
 ): [IRegionValue, Dispatch<SetStateAction<IRegionValue>>] {
   const [selectedRegionValue, setSelectedRegionValue] = useState<IRegionValue>({
-    prefCode: regionCode.pref,
+    prefCode: regionCode.prefCode,
     prefName:
-      regionTable.pref.filter((x) => x.id === regionCode.pref)[0]?.content ??
-      '',
-    cityCode: regionCode.city,
+      regionTable.pref.filter((x) => x.id === regionCode.prefCode)[0]
+        ?.content ?? '',
+    cityCode: regionCode.cityCode,
     cityName:
-      regionTable.city.filter((x) => x.id === regionCode.city)[0]?.content ?? ''
+      regionTable.city.filter((x) => x.id === regionCode.cityCode)[0]
+        ?.content ?? ''
   })
   return [selectedRegionValue, setSelectedRegionValue]
 }

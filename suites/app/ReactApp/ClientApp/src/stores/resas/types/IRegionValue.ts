@@ -1,6 +1,6 @@
-export interface IRegionValue {
-  prefCode: number
+import { IRegionKey } from './IRegionKey'
+
+export interface IRegionValue extends IRegionKey {
   prefName: string
-  cityCode: number
   cityName: string
 }

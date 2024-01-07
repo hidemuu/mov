@@ -8,11 +8,11 @@ const Styles: { [key: string]: React.CSSProperties } = {
   }
 }
 
-export declare type LineChartProps = {
+declare type ChartProps = {
   chartOptions: Highcharts.Options
 }
 
-export const TrendLineChart: FC<LineChartProps> = ({ chartOptions }) => {
+export const Chart: FC<ChartProps> = ({ chartOptions }) => {
   return (
     <div style={Styles.graph}>
       <HighchartsReact highcharts={Highcharts} options={chartOptions} />

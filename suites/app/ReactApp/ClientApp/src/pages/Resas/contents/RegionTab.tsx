@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import { ITableColumn } from '../types/ITableColumn'
+import { ITableColumn } from '../../../components/molecules/DataTable/types/ITableColumn'
 import {
   SelectTabData,
   SelectTabEvent,

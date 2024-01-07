@@ -1,4 +1,4 @@
-import { ITableColumn } from '../types/ITableColumn'
+import { ITableColumn } from '../../../components/molecules/DataTable/types/ITableColumn'
 
 export default function useTableColumns(): ITableColumn[] {
   const tableColumns: ITableColumn[] = [

@@ -11,7 +11,6 @@ import {
 } from '@fluentui/react-components'
 import { RegionTable } from './RegionTable'
 import { IRegionTable } from 'stores/resas/types/tables/IRegionTable'
-import useTableColumns from '../hooks/useTableColumns'
 
 const useStyles = makeStyles({
   panels: {
@@ -22,6 +21,16 @@ const useStyles = makeStyles({
     }
   }
 })
+
+function useTableColumns(): ITableColumnContent[] {
+  const tableColumns: ITableColumnContent[] = [
+    { columnKey: 'id', label: 'id' },
+    { columnKey: 'name', label: 'name' },
+    { columnKey: 'category', label: 'category' },
+    { columnKey: 'label', label: 'label' }
+  ]
+  return tableColumns
+}
 
 export declare type RegionTabProps = {
   regionTableLines: IRegionTable

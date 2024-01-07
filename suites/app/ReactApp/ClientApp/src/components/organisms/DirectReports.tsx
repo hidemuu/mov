@@ -10,11 +10,10 @@
   Toolbar,
   ToolbarButton,
   ToolbarGroup,
+  SkeletonItem,
   createTableColumn,
   makeStyles
 } from '@fluentui/react-components'
-
-import { SkeletonItem } from '@fluentui/react-components'
 import { FeedRegular } from '@fluentui/react-icons'
 import {
   Get,
@@ -25,6 +24,7 @@ import {
 } from '@microsoft/mgt-react'
 import React from 'react'
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IIndicentsProps {}
 const useStyles = makeStyles({
   toolbar: {
@@ -164,9 +164,9 @@ const DataGridTemplate = (props: MgtTemplateProps) => {
             )}
           </DataGridRow>
         </DataGridHeader>
-        <DataGridBody<any>>
+        <DataGridBody<unknown>>
           {({ item, rowId }) => (
-            <DataGridRow<any> key={rowId}>
+            <DataGridRow<unknown> key={rowId}>
               {({ renderCell }) => (
                 <DataGridCell>{renderCell(item)}</DataGridCell>
               )}
@@ -179,5 +179,5 @@ const DataGridTemplate = (props: MgtTemplateProps) => {
 }
 
 const NoDataTemplate = (props: MgtTemplateProps) => {
-  return <>You don't have direct reports</>
+  return <>You don{"'"}t have direct reports</>
 }

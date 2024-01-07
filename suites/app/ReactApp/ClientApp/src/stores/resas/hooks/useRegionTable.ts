@@ -3,7 +3,7 @@ import axios from 'axios'
 import { ITableItem } from '../types/tables/ITableItem'
 import { IRegionTable } from '../types/tables/IRegionTable'
 
-export default function useRegionTableLines(): IRegionTable {
+export default function useRegionTable(): IRegionTable {
   const API_KEY_PREFECTURE = 'api/TableLine/prefecture'
   const API_KEY_CITY = 'api/TableLine/city'
   const [prefectureTableLines, setPrefectureTableLines] = useState<

@@ -2,7 +2,7 @@
 import type { InputProps } from '@fluentui/react-components'
 import usePopulationPerYearTrendLines from '../../stores/resas/hooks/usePopulationPerYearTrends'
 import useSelectedRegionState from './hooks/useSelectedRegionState'
-import { IRegionKey } from '../../stores/resas/types/IRegionKey'
+import { IRegionValue } from '../../stores/resas/types/IRegionValue'
 import useRegionTableLines from '../../stores/resas/hooks/useRegionTable'
 import { useInputId } from '../../domains/inputs/hooks/useInputId'
 import { IRegionKeyCode } from '../../stores/resas/types/IRegionKeyCode'
@@ -22,7 +22,7 @@ export const ResasPage: React.FunctionComponent = () => {
   const onChangePrefecture: InputProps['onChange'] = (ev, data) => {
     if (data.value.length <= 20) {
       const prefCode = Number(data.value)
-      const updateRegionValue: IRegionKey = {
+      const updateRegionValue: IRegionValue = {
         prefCode: prefCode,
         prefName: '',
         cityCode: selectedRegionValue.cityCode,
@@ -35,7 +35,7 @@ export const ResasPage: React.FunctionComponent = () => {
   const onChangeCity: InputProps['onChange'] = (ev, data) => {
     if (data.value.length <= 20) {
       const cityCode = Number(data.value)
-      const updateRegionValue: IRegionKey = {
+      const updateRegionValue: IRegionValue = {
         prefCode: selectedRegionValue.prefCode,
         prefName: selectedRegionValue.prefName,
         cityCode: cityCode,

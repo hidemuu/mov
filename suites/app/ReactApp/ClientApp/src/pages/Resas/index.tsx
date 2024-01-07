@@ -6,7 +6,7 @@ import {
   shorthands
 } from '@fluentui/react-components'
 import type { InputProps } from '@fluentui/react-components'
-import { IRegionKey } from '../../stores/resas/types/IRegionKey'
+import { IRegionValue } from '../../stores/resas/types/IRegionValue'
 import { RegionTab } from './contents/RegionTab'
 import { TrendLineChart } from './contents/RegionTrendLineChart'
 import { RegionComboBox } from './contents/RegionComboBox'
@@ -41,7 +41,7 @@ export type ResasTemplateProps = {
   inputId: string
   regionTable: IRegionTable
   regionTrendLines: IRegionTrend[]
-  selectedRegionKey: IRegionKey
+  selectedRegionKey: IRegionValue
   onChangePrefecture: InputProps['onChange']
   onChangeCity: InputProps['onChange']
 }

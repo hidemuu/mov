@@ -1,4 +1,4 @@
-export interface IRegionKey {
+export interface IRegionValue {
   prefCode: number
   prefName: string
   cityCode: number

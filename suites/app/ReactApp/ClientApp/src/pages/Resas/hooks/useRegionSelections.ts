@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { IRegionSelections } from '../types/IRegionSelections'
 import { IRegionTable } from '../../../stores/resas/types/tables/IRegionTable'
-import { IRegionKey } from '../../../stores/resas/types/IRegionKey'
+import { IRegionValue } from '../../../stores/resas/types/IRegionValue'
 
 export default function useRegionSelections(
-  regionValue: IRegionKey,
+  regionValue: IRegionValue,
   regionTableLines: IRegionTable
 ): IRegionSelections {
   const [regionSelections, setRegionSelections] = useState<IRegionSelections>({

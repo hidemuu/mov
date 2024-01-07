@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { IRegionKey } from '../types/IRegionKey'
+import { IRegionValue } from '../types/IRegionValue'
 import { IRegionTrend } from '../types/trends/IRegionTrend'
 
 export default function usePopulationPerYearTrends(
-  region: IRegionKey
+  region: IRegionValue
 ): IRegionTrend[] {
   const API_KEY = 'api/TrendLine/population_per_years'
   const prefectureCode = region.prefCode

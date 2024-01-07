@@ -3,10 +3,10 @@ import { useId, Combobox, Option } from '@fluentui/react-components'
 import type { ComboboxProps } from '@fluentui/react-components'
 import { IRegionTable } from '../../../stores/resas/types/tables/IRegionTable'
 import useRegionSelections from '../hooks/useRegionSelections'
-import { IRegionKey } from '../../../stores/resas/types/IRegionKey'
+import { IRegionValue } from '../../../stores/resas/types/IRegionValue'
 
 export declare type RegionComboBoxProps = {
-  regionValue: IRegionKey
+  regionValue: IRegionValue
   tableLines: IRegionTable
 }
 

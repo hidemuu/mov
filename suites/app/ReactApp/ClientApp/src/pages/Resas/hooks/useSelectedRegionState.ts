@@ -1,13 +1,13 @@
 import { Dispatch, SetStateAction, useState } from 'react'
-import { IRegionKey } from '../../../stores/resas/types/IRegionKey'
+import { IRegionValue } from '../../../stores/resas/types/IRegionValue'
 import { IRegionTable } from '../../../stores/resas/types/tables/IRegionTable'
 import { IRegionKeyCode } from '../../../stores/resas/types/IRegionKeyCode'
 
 export default function useSelectedRegionState(
   regionTable: IRegionTable,
   regionCode: IRegionKeyCode
-): [IRegionKey, Dispatch<SetStateAction<IRegionKey>>] {
-  const [selectedRegionValue, setSelectedRegionValue] = useState<IRegionKey>({
+): [IRegionValue, Dispatch<SetStateAction<IRegionValue>>] {
+  const [selectedRegionValue, setSelectedRegionValue] = useState<IRegionValue>({
     prefCode: regionCode.pref,
     prefName:
       regionTable.pref.filter((x) => x.id === regionCode.pref)[0]?.content ??

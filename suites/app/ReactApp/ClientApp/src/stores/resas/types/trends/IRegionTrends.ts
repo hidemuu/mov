@@ -1,7 +1,7 @@
 import { IRegionKey } from '../IRegionKey'
-import { ITrend } from './ITrend'
+import { ITrendItem } from './ITrendItem'
 
 export interface IRegionTrendLines {
   region: IRegionKey
-  trendLines: ITrend[]
+  trendLines: ITrendItem[]
 }

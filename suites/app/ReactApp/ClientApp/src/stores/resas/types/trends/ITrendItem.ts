@@ -1,4 +1,4 @@
-export interface ITrend {
+export interface ITrendItem {
   id: string
   category: string
   label: string

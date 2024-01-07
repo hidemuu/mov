@@ -8,10 +8,10 @@ import {
   TableHeaderCell
 } from '@fluentui/react-components'
 import { ITableColumn } from '../types/ITableColumn'
-import { ITableLine } from '../../../stores/resas/types/tables/ITableLine'
+import { ITableItem } from '../../../stores/resas/types/tables/ITableItem'
 
 export declare type RegionTableProps = {
-  regionTableLines: ITableLine[]
+  regionTableLines: ITableItem[]
   tableColumns: ITableColumn[]
 }
 

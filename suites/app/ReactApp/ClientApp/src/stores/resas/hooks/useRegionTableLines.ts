@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { ITableLine } from '../types/tables/ITableLine'
+import { ITableItem } from '../types/tables/ITableItem'
 import { IRegionTableLines } from '../types/tables/IRegionTableLines'
 
 export default function useRegionTableLines(): IRegionTableLines {
   const API_KEY_PREFECTURE = 'api/TableLine/prefecture'
   const API_KEY_CITY = 'api/TableLine/city'
   const [prefectureTableLines, setPrefectureTableLines] = useState<
-    ITableLine[]
+    ITableItem[]
   >([])
-  const [cityTableLines, setCityTableLines] = useState<ITableLine[]>([])
+  const [cityTableLines, setCityTableLines] = useState<ITableItem[]>([])
 
   useEffect(() => {
     axios

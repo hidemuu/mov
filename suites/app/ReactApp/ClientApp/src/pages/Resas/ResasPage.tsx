@@ -7,9 +7,9 @@ import { IRegionKey } from '../../stores/resas/types/IRegionKey'
 import { useStyles } from './hooks/useStyles'
 import useRegionTableLines from '../../stores/resas/hooks/useRegionTableLines'
 import { useInputId } from '../../domains/inputs/hooks/useInputId'
-import { RegionTab } from './RegionTab'
-import { TrendLineChart } from './TrendLineChart'
-import { RegionComboBox } from './RegionComboBox'
+import { RegionTab } from './contents/RegionTab'
+import { TrendLineChart } from './contents/TrendLineChart'
+import { RegionComboBox } from './contents/RegionComboBox'
 import { IRegionCode } from './types/IRegionCode'
 
 export const ResasPage: React.FunctionComponent = () => {

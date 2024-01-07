@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import { ITableColumn } from './types/ITableColumn'
+import { ITableColumn } from '../types/ITableColumn'
 import {
   SelectTabData,
   SelectTabEvent,
@@ -8,9 +8,9 @@ import {
   TabValue
 } from '@fluentui/react-components'
 import { RegionTable } from './RegionTable'
-import { IRegionTableLines } from '../../stores/resas/types/tables/IRegionTableLines'
-import { useStyles } from './hooks/useStyles'
-import useTableColumns from './hooks/useTableColumns'
+import { IRegionTableLines } from '../../../stores/resas/types/tables/IRegionTableLines'
+import { useStyles } from '../hooks/useStyles'
+import useTableColumns from '../hooks/useTableColumns'
 
 export declare type RegionTabProps = {
   regionTableLines: IRegionTableLines

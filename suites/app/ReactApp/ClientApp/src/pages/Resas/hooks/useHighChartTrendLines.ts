@@ -10,12 +10,12 @@ export default function useHighChartTrendLines(
   })
 
   useEffect(() => {
-    let series: Highcharts.SeriesOptionsType[] = []
-    let categories = []
+    const series: Highcharts.SeriesOptionsType[] = []
+    const categories = []
     let count = 0
-    for (let regionTrendLine of regionTrendLines) {
-      let data = []
-      for (let trendLine of regionTrendLine.trendLines) {
+    for (const regionTrendLine of regionTrendLines) {
+      const data = []
+      for (const trendLine of regionTrendLine.trendLines) {
         if (count === 0) {
           categories.push(String(trendLine.number))
         }

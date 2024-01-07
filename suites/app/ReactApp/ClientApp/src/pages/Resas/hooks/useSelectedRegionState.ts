@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 import { IRegionKey } from '../../../stores/resas/types/IRegionKey'
 import { IRegionTableLines } from '../../../stores/resas/types/tables/IRegionTableLines'
 import { IRegionCode } from '../types/IRegionCode'

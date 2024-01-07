@@ -7,7 +7,7 @@ import { useInputId } from 'domains/inputs/hooks/useInputId'
 import { IRegionKey } from 'stores/resas/types/IRegionKey'
 import { ResasTemplate } from '.'
 import { IRegionTable } from 'stores/resas/types/tables/IRegionTable'
-import { IRegionSelections } from './types/IRegionSelections'
+import { IRegionSelections } from '../../domains/statistics/types/IRegionSelections'
 
 function useSelectedRegionState(
   regionTable: IRegionTable,

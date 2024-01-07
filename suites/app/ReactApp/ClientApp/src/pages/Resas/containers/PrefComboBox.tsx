@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import type { ComboboxProps } from '@fluentui/react-components'
 import { ComboBox } from 'components/atoms/ComboBox'
-import { IRegionSelections } from '../types/IRegionSelections'
+import { IRegionSelections } from '../../../domains/statistics/types/IRegionSelections'
 
 declare type PrefComboBoxProps = {
   regionSelections: IRegionSelections

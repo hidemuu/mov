@@ -12,7 +12,7 @@ import { TrendLineChart } from './containers/RegionTrendLineChart'
 import { PrefComboBox } from './containers/PrefComboBox'
 import { IRegionTable } from 'stores/resas/types/tables/IRegionTable'
 import { IRegionTrend } from 'stores/resas/types/trends/IRegionTrend'
-import { IRegionSelections } from './types/IRegionSelections'
+import { IRegionSelections } from '../../domains/statistics/types/IRegionSelections'
 
 const useStyles = makeStyles({
   root: {

@@ -10,8 +10,8 @@ import {
   shorthands,
   makeStyles
 } from '@fluentui/react-components'
-import { ChannelFiles } from './contents/ChannelFiles'
-import { SiteFiles } from './contents/SiteFiles'
+import { ChannelFiles } from './containers/ChannelFiles'
+import { SiteFiles } from './containers/SiteFiles'
 
 const useStyles = makeStyles({
   panels: {

@@ -11,8 +11,8 @@ import {
   shorthands
 } from '@fluentui/react-components'
 import { useAppContext } from '../../AppContext'
-import { ExternalItemsResults } from './contents/ExternalItemsResults'
-import { FilesResults } from './contents/FilesResults'
+import { ExternalItemsResults } from './containers/ExternalItemsResults'
+import { FilesResults } from './containers/FilesResults'
 
 const useStyles = makeStyles({
   panels: {

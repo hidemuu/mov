@@ -1,6 +1,6 @@
 ﻿import * as React from 'react'
 import { PageHeader } from '../../components/organisms/PageHeader'
-import { TaxonomyExplorer } from './contents/TaxonomyExplorer'
+import { TaxonomyExplorer } from './containers/TaxonomyExplorer'
 
 export const TaxonomyPage: React.FunctionComponent = () => {
   return (

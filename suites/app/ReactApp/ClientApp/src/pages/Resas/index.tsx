@@ -7,9 +7,9 @@ import {
 } from '@fluentui/react-components'
 import type { InputProps } from '@fluentui/react-components'
 import { IRegionValue } from '../../stores/resas/types/IRegionValue'
-import { RegionTab } from './contents/RegionTab'
-import { TrendLineChart } from './contents/RegionTrendLineChart'
-import { RegionComboBox } from './contents/RegionComboBox'
+import { RegionTab } from './containers/RegionTab'
+import { TrendLineChart } from './containers/RegionTrendLineChart'
+import { RegionComboBox } from './containers/RegionComboBox'
 import { IRegionTable } from 'stores/resas/types/tables/IRegionTable'
 import { IRegionTrend } from 'stores/resas/types/trends/IRegionTrend'
 

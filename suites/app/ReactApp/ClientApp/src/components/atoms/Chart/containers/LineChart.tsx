@@ -27,13 +27,11 @@ export const LineChart = (props: LineChartProps) => {
     series:
       option.series.length === 0
         ? [{ type: 'line', name: '', data: [] }]
-        : [
-            {
-              type: 'line',
-              name: option.series[0].name,
-              data: option.series[0].data
-            }
-          ]
+        : option.series.map((x) => ({
+            type: 'line',
+            name: x.name,
+            data: x.data
+          }))
   }
 
   return <Chart chartOptions={chartOptions} />

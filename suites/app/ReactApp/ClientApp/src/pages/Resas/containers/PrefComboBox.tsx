@@ -5,12 +5,12 @@ import useRegionSelections from '../hooks/useRegionSelections'
 import { IRegionValue } from 'stores/resas/types/IRegionValue'
 import { ComboBox } from 'components/atoms/ComboBox'
 
-export declare type RegionComboBoxProps = {
+declare type PrefComboBoxProps = {
   regionValue: IRegionValue
   tableLines: IRegionTable
 }
 
-export const RegionComboBox: FC<RegionComboBoxProps> = ({
+export const PrefComboBox: FC<PrefComboBoxProps> = ({
   regionValue,
   tableLines
 }) => {

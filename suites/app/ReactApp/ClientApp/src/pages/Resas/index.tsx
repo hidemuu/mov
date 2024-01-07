@@ -9,7 +9,7 @@ import type { InputProps } from '@fluentui/react-components'
 import { IRegionValue } from '../../stores/resas/types/IRegionValue'
 import { RegionTab } from './containers/RegionTab'
 import { TrendLineChart } from './containers/RegionTrendLineChart'
-import { RegionComboBox } from './containers/PrefComboBox'
+import { PrefComboBox } from './containers/PrefComboBox'
 import { IRegionTable } from 'stores/resas/types/tables/IRegionTable'
 import { IRegionTrend } from 'stores/resas/types/trends/IRegionTrend'
 
@@ -67,7 +67,7 @@ export const ResasTemplate = ({
           value={String(selectedRegionKey.prefCode)}
           onChange={onChangePrefecture}
         />
-        <RegionComboBox
+        <PrefComboBox
           regionValue={selectedRegionKey}
           tableLines={regionTable}
         />

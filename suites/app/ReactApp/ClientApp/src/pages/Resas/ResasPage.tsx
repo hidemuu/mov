@@ -1,6 +1,6 @@
 ﻿import React, { useEffect } from 'react'
 import type { InputProps } from '@fluentui/react-components'
-import usePopulationPerYearTrendLines from '../../stores/resas/hooks/usePopulationPerYearTrendLines'
+import usePopulationPerYearTrendLines from '../../stores/resas/hooks/usePopulationPerYearTrends'
 import useSelectedRegionState from './hooks/useSelectedRegionState'
 import { IRegionKey } from '../../stores/resas/types/IRegionKey'
 import useRegionTableLines from '../../stores/resas/hooks/useRegionTableLines'

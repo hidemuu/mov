@@ -3,7 +3,7 @@ import axios from 'axios'
 import { IRegionKey } from '../types/IRegionKey'
 import { IRegionTrend } from '../types/trends/IRegionTrend'
 
-export default function usePopulationPerYearTrendLines(
+export default function usePopulationPerYearTrends(
   region: IRegionKey
 ): IRegionTrend[] {
   const API_KEY = 'api/TrendLine/population_per_years'

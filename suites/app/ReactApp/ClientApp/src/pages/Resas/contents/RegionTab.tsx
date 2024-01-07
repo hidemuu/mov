@@ -5,12 +5,23 @@ import {
   SelectTabEvent,
   Tab,
   TabList,
-  TabValue
+  TabValue,
+  makeStyles,
+  shorthands
 } from '@fluentui/react-components'
 import { RegionTable } from './RegionTable'
 import { IRegionTable } from '../../../stores/resas/types/tables/IRegionTable'
-import { useStyles } from '../hooks/useStyles'
 import useTableColumns from '../hooks/useTableColumns'
+
+const useStyles = makeStyles({
+  panels: {
+    ...shorthands.padding(0, '10px'),
+    '& th': {
+      textAlign: 'left',
+      ...shorthands.padding(0, '30px', 0, 0)
+    }
+  }
+})
 
 export declare type RegionTabProps = {
   regionTableLines: IRegionTable

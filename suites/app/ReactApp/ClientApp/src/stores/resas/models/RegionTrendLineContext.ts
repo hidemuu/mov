@@ -1,26 +1,24 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { IRegionTrendLines } from '../types/trends/IRegionTrends'
 
 export class RegionTrendLineContext {
-    
-    private static current :RegionTrendLineContext
+  private static current: RegionTrendLineContext
 
-    public static get instance() :RegionTrendLineContext{
-        if (!this.current)
-            this.current = new RegionTrendLineContext();
-        return this.current;
-    }
+  public static get instance(): RegionTrendLineContext {
+    if (!this.current) this.current = new RegionTrendLineContext()
+    return this.current
+  }
 
-    private constructor(){
-    }
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  private constructor() {}
 
-    private context = React.createContext<IRegionTrendLines[] | null>(null)
+  private context = React.createContext<IRegionTrendLines[] | null>(null)
 
-    getContext() :React.Context<IRegionTrendLines[] | null> {
-        return this.context;
-    }
+  getContext(): React.Context<IRegionTrendLines[] | null> {
+    return this.context
+  }
 
-    useContext() :IRegionTrendLines[] | null{
-        return React.useContext(this.context);
-    }
+  useContext(): IRegionTrendLines[] | null {
+    return React.useContext(this.context)
+  }
 }

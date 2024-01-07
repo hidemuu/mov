@@ -1,6 +1,6 @@
 export interface IRegionKey {
-    prefCode: number;
-    prefName: string;
-    cityCode: number;
-    cityName: string;
+  prefCode: number
+  prefName: string
+  cityCode: number
+  cityName: string
 }

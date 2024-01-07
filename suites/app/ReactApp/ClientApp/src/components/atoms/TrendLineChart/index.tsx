@@ -1,8 +1,6 @@
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 import React, { FC } from 'react'
-import useHighChartTrendLines from '../../../domains/statistics/hooks/useHighChartTrendLines'
-import { IRegionTrendLines } from '../../../stores/resas/types/trends/IRegionTrendLines'
 
 const Styles: { [key: string]: React.CSSProperties } = {
   graph: {
@@ -11,11 +9,10 @@ const Styles: { [key: string]: React.CSSProperties } = {
 }
 
 export declare type TrendLineChartProps = {
-  trendLines: IRegionTrendLines[]
+  chartOptions: Highcharts.Options
 }
 
-export const TrendLineChart: FC<TrendLineChartProps> = ({ trendLines }) => {
-  const chartOptions = useHighChartTrendLines(trendLines)
+export const TrendLineChart: FC<TrendLineChartProps> = ({ chartOptions }) => {
   return (
     <div style={Styles.graph}>
       <HighchartsReact highcharts={Highcharts} options={chartOptions} />

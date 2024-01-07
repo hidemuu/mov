@@ -71,6 +71,7 @@ export const ResasTemplate = ({
           regionValue={selectedRegionKey}
           tableLines={regionTable}
         />
+        <br />
         <Label htmlFor={inputId} style={{ paddingInlineEnd: '12px' }}>
           都市コード
         </Label>

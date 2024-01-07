@@ -1,9 +1,9 @@
 import React, { useState, useEffect, FC } from 'react'
-import { useId, Combobox, Option } from '@fluentui/react-components'
 import type { ComboboxProps } from '@fluentui/react-components'
-import { IRegionTable } from '../../../stores/resas/types/tables/IRegionTable'
+import { IRegionTable } from 'stores/resas/types/tables/IRegionTable'
 import useRegionSelections from '../hooks/useRegionSelections'
-import { IRegionValue } from '../../../stores/resas/types/IRegionValue'
+import { IRegionValue } from 'stores/resas/types/IRegionValue'
+import { ComboBox } from 'components/atoms/ComboBox'
 
 export declare type RegionComboBoxProps = {
   regionValue: IRegionValue
@@ -14,7 +14,6 @@ export const RegionComboBox: FC<RegionComboBoxProps> = ({
   regionValue,
   tableLines
 }) => {
-  const comboId = useId('combo-default')
   const regionSelections = useRegionSelections(regionValue, tableLines)
 
   useEffect(() => {
@@ -34,18 +33,12 @@ export const RegionComboBox: FC<RegionComboBoxProps> = ({
   }
 
   return (
-    <Combobox
-      aria-labelledby={comboId}
-      placeholder="都道府県選択"
-      value={value}
+    <ComboBox
+      initValue={value}
+      values={selectedOptions}
+      placeHolder="都道府県選択"
       onInput={onInput}
       onOptionSelect={onOptionSelect}
-    >
-      {selectedOptions.map((option) => (
-        <Option key={option} disabled={option === value}>
-          {option}
-        </Option>
-      ))}
-    </Combobox>
+    />
   )
 }

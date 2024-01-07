@@ -1,17 +1,13 @@
 import React, { useState } from 'react'
 import { Chart } from '../index'
-import { ILineSeries } from '../types/ILineSeries'
-import { ILineAxis } from '../types/ILineAxis'
+import { ILineChartOption } from '../types/ILineChartOption'
 
 type LineChartProps = {
-  title: string
-  series: ILineSeries
-  xAxis: ILineAxis
-  yAxis: ILineAxis
+  option: ILineChartOption
 }
 
 export const LineChart = (props: LineChartProps) => {
-  const { title, series, xAxis, yAxis } = props
+  const { option } = props
 
   const [chartOptions, setChartOptions] = useState<Highcharts.Options>({
     series: []
@@ -19,20 +15,22 @@ export const LineChart = (props: LineChartProps) => {
 
   setChartOptions({
     title: {
-      text: title
+      text: option.title
     },
     xAxis: {
       title: {
-        text: xAxis.title
+        text: option.xAxis.title
       },
-      categories: xAxis.categories
+      categories: option.xAxis.categories
     },
     yAxis: {
       title: {
-        text: yAxis.title
+        text: option.yAxis.title
       }
     },
-    series: [{ type: 'line', name: series.name, data: series.data }]
+    series: [
+      { type: 'line', name: option.series.name, data: option.series.data }
+    ]
   })
 
   return <Chart chartOptions={chartOptions} />

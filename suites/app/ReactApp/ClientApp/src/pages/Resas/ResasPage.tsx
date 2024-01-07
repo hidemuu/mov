@@ -1,47 +1,12 @@
-﻿import React, { useState, useEffect } from 'react'
-import Highcharts from 'highcharts'
-import HighchartsReact from 'highcharts-react-official'
-import styled from 'styled-components'
-import axios from 'axios'
-import {
-  TableBody,
-  TableCell,
-  TableRow,
-  Table,
-  TableHeader,
-  TableHeaderCell,
-  TableCellLayout,
-  PresenceBadgeStatus,
-  Avatar,
-  makeStyles,
-  shorthands,
-  Tab,
-  TabList,
-  useId,
-  Input,
-  Label,
-  Combobox,
-  Button,
-  Option
-} from '@fluentui/react-components'
-import type {
-  SelectTabData,
-  SelectTabEvent,
-  TabValue,
-  InputProps,
-  ButtonProps,
-  ComboboxProps
-} from '@fluentui/react-components'
+﻿import React, { useEffect } from 'react'
+import { Input, Label, Button } from '@fluentui/react-components'
+import type { InputProps } from '@fluentui/react-components'
 import usePopulationPerYearTrendLines from '../../stores/resas/hooks/usePopulationPerYearTrendLines'
 import useSelectedRegionState from './hooks/useSelectedRegionState'
 import { IRegionKey } from '../../stores/resas/types/IRegionKey'
-import { ITableColumn } from './types/ITableColumn'
 import { useStyles } from './hooks/useStyles'
 import useRegionTableLines from '../../stores/resas/hooks/useRegionTableLines'
 import { useInputId } from '../../domains/inputs/hooks/useInputId'
-import useHighChartTrendLines from './hooks/useHighChartTrendLines'
-import useTableColumns from './hooks/useTableColumns'
-import { RegionTable } from './RegionTable'
 import { RegionTab } from './RegionTab'
 import { TrendLineChart } from './TrendLineChart'
 import { RegionComboBox } from './RegionComboBox'
@@ -85,6 +50,7 @@ export const ResasPage: React.FunctionComponent = () => {
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   const onClickApply = () => {}
 
   useEffect(() => {

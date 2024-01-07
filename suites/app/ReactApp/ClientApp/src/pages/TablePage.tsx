@@ -1,4 +1,5 @@
-﻿import {
+﻿import React from 'react'
+import {
   FolderRegular,
   EditRegular,
   OpenRegular,
@@ -18,10 +19,10 @@ import {
   PresenceBadgeStatus,
   Avatar
 } from '@fluentui/react-components'
-import { FileCell } from './Table/models/FileCell'
-import { AuthorCell } from './Table/models/AuthorCell'
-import { LastUpdatedCell } from './Table/models/LastUpdatedCell'
-import { LastUpdateCell } from './Table/models/LastUpdateCell'
+import { FileCell } from './Table/types/FileCell'
+import { AuthorCell } from './Table/types/AuthorCell'
+import { LastUpdatedCell } from './Table/types/LastUpdatedCell'
+import { LastUpdateCell } from './Table/types/LastUpdateCell'
 
 type Item = {
   file: FileCell

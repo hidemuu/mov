@@ -1,14 +1,7 @@
 import React, { FC } from 'react'
-import {
-  TableBody,
-  TableCell,
-  TableRow,
-  Table,
-  TableHeader,
-  TableHeaderCell
-} from '@fluentui/react-components'
 import { ITableColumnContent } from 'components/molecules/DataTable/types/ITableColumnContent'
 import { ITableItem } from 'stores/resas/types/tables/ITableItem'
+import { DataTable } from 'components/molecules/DataTable'
 
 export declare type RegionTableProps = {
   regionTableLines: ITableItem[]
@@ -20,27 +13,16 @@ export const RegionTable: FC<RegionTableProps> = React.memo(
   ({ regionTableLines, tableColumns }: RegionTableProps) => {
     return (
       <div>
-        <Table arial-label="Default table">
-          <TableHeader>
-            <TableRow>
-              {tableColumns.map((column) => (
-                <TableHeaderCell key={column.columnKey}>
-                  {column.label}
-                </TableHeaderCell>
-              ))}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {regionTableLines.map((line) => (
-              <TableRow key={line.id}>
-                <TableCell>{line.id}</TableCell>
-                <TableCell>{line.name}</TableCell>
-                <TableCell>{line.category}</TableCell>
-                <TableCell>{line.label}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+        <DataTable
+          rowContents={regionTableLines.map((x) => ({
+            id: x.id,
+            category: x.category,
+            label: x.label,
+            name: x.name,
+            content: x.content
+          }))}
+          columnContents={tableColumns}
+        />
       </div>
     )
   }

@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { IRegionKey } from '../types/IRegionKey'
-import { IRegionTrendLines } from '../types/trends/IRegionTrends'
+import { IRegionTrend } from '../types/trends/IRegionTrend'
 
 export default function usePopulationPerYearTrendLines(
   region: IRegionKey
-): IRegionTrendLines[] {
+): IRegionTrend[] {
   const API_KEY = 'api/TrendLine/population_per_years'
   const prefectureCode = region.prefCode
   const cityCode = region.cityCode
   console.log(API_KEY + ' ' + prefectureCode + ' ' + cityCode)
-  const [populationPerYears, setPopulationPerYears] = useState<
-    IRegionTrendLines[]
-  >([])
+  const [populationPerYears, setPopulationPerYears] = useState<IRegionTrend[]>(
+    []
+  )
 
   useEffect(() => {
     let endpoint: string
@@ -28,9 +28,9 @@ export default function usePopulationPerYearTrendLines(
       axios
         .get(endpoint)
         .then((results) => {
-          const regionTrendLines: IRegionTrendLines[] = []
+          const regionTrendLines: IRegionTrend[] = []
           for (const data of results.data) {
-            const regionTrendLine: IRegionTrendLines = {
+            const regionTrendLine: IRegionTrend = {
               region: {
                 cityCode: data.region.cityCode,
                 cityName: data.region.cityName,

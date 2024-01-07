@@ -1,5 +1,5 @@
 import React from 'react'
-import { IRegionTrendLines } from '../types/trends/IRegionTrends'
+import { IRegionTrend } from '../types/trends/IRegionTrend'
 
 export class RegionTrendLineContext {
   private static current: RegionTrendLineContext
@@ -12,13 +12,13 @@ export class RegionTrendLineContext {
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   private constructor() {}
 
-  private context = React.createContext<IRegionTrendLines[] | null>(null)
+  private context = React.createContext<IRegionTrend[] | null>(null)
 
-  getContext(): React.Context<IRegionTrendLines[] | null> {
+  getContext(): React.Context<IRegionTrend[] | null> {
     return this.context
   }
 
-  useContext(): IRegionTrendLines[] | null {
+  useContext(): IRegionTrend[] | null {
     return React.useContext(this.context)
   }
 }

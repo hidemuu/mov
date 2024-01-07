@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import Highcharts from 'highcharts'
-import { IRegionTrendLines } from 'stores/resas/types/trends/IRegionTrends'
+import { IRegionTrend } from 'stores/resas/types/trends/IRegionTrend'
 
 export default function useHighChartTrendLines(
-  regionTrendLines: IRegionTrendLines[]
+  regionTrendLines: IRegionTrend[]
 ): Highcharts.Options {
   const [chartOptions, setChartOptions] = useState<Highcharts.Options>({
     series: []

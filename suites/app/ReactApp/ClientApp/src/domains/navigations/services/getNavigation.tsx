@@ -9,8 +9,8 @@ import {
   TagMultipleRegular,
   ChartPersonRegular
 } from '@fluentui/react-icons'
-import { DashboardPage } from '../../../pages/DashboardPage'
-import { OutlookPage } from '../../../pages/OutlookPage'
+import { DashboardPage } from '../../../pages/Dashboard/DashboardPage'
+import { OutlookPage } from '../../../pages/Outlook/OutlookPage'
 import { SearchPage } from '../../../pages/Search/SearchPage'
 import { HomePage } from '../../../pages/HomePage'
 import { TablePage } from '../../../pages/Table/TablePage'

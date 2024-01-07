@@ -1,7 +1,7 @@
 ﻿import * as React from 'react'
-import { PageHeader } from '../components/organisms/PageHeader'
+import { PageHeader } from '../../components/organisms/PageHeader'
 import { Providers, Todo } from '@microsoft/mgt-react'
-import { DirectReports } from '../components/organisms/DirectReports'
+import { DirectReports } from '../../components/organisms/DirectReports'
 import {
   SelectTabData,
   SelectTabEvent,

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import {
   Input,
   Label,
@@ -55,11 +55,6 @@ export const ResasTemplate = ({
   onChangeCity
 }: ResasTemplateProps) => {
   const styles = useStyles()
-
-  useEffect(() => {
-    //レンダリング毎に実行
-    console.log('再レンダリングされるたび実行')
-  })
 
   return (
     <div className={styles.root}>

@@ -5,13 +5,14 @@ import {
   makeStyles,
   shorthands
 } from '@fluentui/react-components'
-import type { InputProps } from '@fluentui/react-components'
+import type { ComboboxProps, InputProps } from '@fluentui/react-components'
 import { IRegionValue } from '../../stores/resas/types/IRegionValue'
 import { RegionTab } from './containers/RegionTab'
 import { TrendLineChart } from './containers/RegionTrendLineChart'
 import { PrefComboBox } from './containers/PrefComboBox'
 import { IRegionTable } from 'stores/resas/types/tables/IRegionTable'
 import { IRegionTrend } from 'stores/resas/types/trends/IRegionTrend'
+import { IRegionSelections } from './types/IRegionSelections'
 
 const useStyles = makeStyles({
   root: {
@@ -42,7 +43,9 @@ export type ResasTemplateProps = {
   regionTable: IRegionTable
   regionTrendLines: IRegionTrend[]
   selectedRegionKey: IRegionValue
+  regionSelections: IRegionSelections
   onChangePrefecture: InputProps['onChange']
+  onChangeSelectedPrefecture: ComboboxProps['onOptionSelect']
   onChangeCity: InputProps['onChange']
 }
 
@@ -51,7 +54,9 @@ export const ResasTemplate = ({
   regionTable,
   regionTrendLines,
   selectedRegionKey,
+  regionSelections,
   onChangePrefecture,
+  onChangeSelectedPrefecture,
   onChangeCity
 }: ResasTemplateProps) => {
   const styles = useStyles()
@@ -68,8 +73,8 @@ export const ResasTemplate = ({
           onChange={onChangePrefecture}
         />
         <PrefComboBox
-          regionValue={selectedRegionKey}
-          tableLines={regionTable}
+          regionSelections={regionSelections}
+          onOptionSelect={onChangeSelectedPrefecture}
         />
         <br />
         <Label htmlFor={inputId} style={{ paddingInlineEnd: '12px' }}>

@@ -1,41 +1,24 @@
-import React, { useState, useEffect, FC } from 'react'
+import React, { FC } from 'react'
 import type { ComboboxProps } from '@fluentui/react-components'
-import { IRegionTable } from 'stores/resas/types/tables/IRegionTable'
-import useRegionSelections from '../hooks/useRegionSelections'
-import { IRegionValue } from 'stores/resas/types/IRegionValue'
 import { ComboBox } from 'components/atoms/ComboBox'
+import { IRegionSelections } from '../types/IRegionSelections'
 
 declare type PrefComboBoxProps = {
-  regionValue: IRegionValue
-  tableLines: IRegionTable
+  regionSelections: IRegionSelections
+  onOptionSelect: ComboboxProps['onOptionSelect']
 }
 
 export const PrefComboBox: FC<PrefComboBoxProps> = ({
-  regionValue,
-  tableLines
+  regionSelections,
+  onOptionSelect
 }) => {
-  const regionSelections = useRegionSelections(regionValue, tableLines)
-
-  useEffect(() => {
-    setSelectedOptions(regionSelections.prefSelections)
-  }, [regionSelections])
-
-  const [value, setValue] = useState(regionValue.prefName)
-  const [selectedOptions, setSelectedOptions] = useState<string[]>([])
-
-  const onOptionSelect: ComboboxProps['onOptionSelect'] = (ev, data) => {
-    //setSelectedOptions(data.selectedOptions);
-    setValue(data.optionText ?? '')
-  }
-
-  const onInput: ComboboxProps['onInput'] = (ev) => {
-    const value = ev.target
-  }
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  const onInput: ComboboxProps['onInput'] = (ev) => {}
 
   return (
     <ComboBox
-      selectedValue={value}
-      values={selectedOptions}
+      selectedValue={regionSelections.selected.prefName}
+      values={regionSelections.prefSelections}
       placeHolder="都道府県選択"
       onInput={onInput}
       onOptionSelect={onOptionSelect}

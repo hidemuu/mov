@@ -5,13 +5,13 @@ import useSelectedRegionState from './hooks/useSelectedRegionState'
 import { IRegionKey } from '../../stores/resas/types/IRegionKey'
 import useRegionTableLines from '../../stores/resas/hooks/useRegionTable'
 import { useInputId } from '../../domains/inputs/hooks/useInputId'
-import { IRegionCode } from './types/IRegionCode'
+import { IRegionKeyCode } from './types/IRegionKeyCode'
 import { ResasTemplate } from '.'
 
 export const ResasPage: React.FunctionComponent = () => {
   const inputId = useInputId()
   const regionTable = useRegionTableLines()
-  const initRegionCode: IRegionCode = { pref: 11, city: 11362 }
+  const initRegionCode: IRegionKeyCode = { pref: 11, city: 11362 }
   const [selectedRegionValue, setSelectedRegionValue] = useSelectedRegionState(
     regionTable,
     initRegionCode

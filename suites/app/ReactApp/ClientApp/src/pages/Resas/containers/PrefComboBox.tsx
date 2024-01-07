@@ -34,7 +34,7 @@ export const PrefComboBox: FC<PrefComboBoxProps> = ({
 
   return (
     <ComboBox
-      initValue={value}
+      selectedValue={value}
       values={selectedOptions}
       placeHolder="都道府県選択"
       onInput={onInput}

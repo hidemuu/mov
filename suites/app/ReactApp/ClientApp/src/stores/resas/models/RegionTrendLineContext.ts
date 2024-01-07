@@ -17,8 +17,4 @@ export class RegionTrendLineContext {
   getContext(): React.Context<IRegionTrend[] | null> {
     return this.context
   }
-
-  useContext(): IRegionTrend[] | null {
-    return React.useContext(this.context)
-  }
 }

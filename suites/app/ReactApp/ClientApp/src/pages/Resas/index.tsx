@@ -7,7 +7,7 @@ import { RegionTab } from './contents/RegionTab'
 import { TrendLineChart } from './contents/RegionTrendLineChart'
 import { RegionComboBox } from './contents/RegionComboBox'
 import { IRegionTableLines } from 'stores/resas/types/tables/IRegionTableLines'
-import { IRegionTrendLines } from 'stores/resas/types/trends/IRegionTrendLines'
+import { IRegionTrendLines } from 'stores/resas/types/trends/IRegionTrends'
 
 export type ResasTemplateProps = {
   inputId: string

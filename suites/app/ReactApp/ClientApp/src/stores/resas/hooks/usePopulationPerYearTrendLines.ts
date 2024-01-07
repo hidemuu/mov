@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { IRegionKey } from '../types/IRegionKey'
-import { IRegionTrendLines } from '../types/trends/IRegionTrendLines'
+import { IRegionTrendLines } from '../types/trends/IRegionTrends'
 
 export default function usePopulationPerYearTrendLines(
   region: IRegionKey

@@ -1,5 +1,5 @@
 import React , { useContext } from 'react'
-import { IRegionTrendLines } from '../types/trends/IRegionTrendLines'
+import { IRegionTrendLines } from '../types/trends/IRegionTrends'
 
 export class RegionTrendLineContext {
     

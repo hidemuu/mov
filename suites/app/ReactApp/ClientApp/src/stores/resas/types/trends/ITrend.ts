@@ -1,4 +1,4 @@
-export interface ITrendLine {
+export interface ITrend {
   id: string
   category: string
   label: string

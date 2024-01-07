@@ -2,7 +2,7 @@ import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 import React, { FC } from 'react'
 import useHighChartTrendLines from 'domains/statistics/hooks/useHighChartTrendLines'
-import { IRegionTrendLines } from 'stores/resas/types/trends/IRegionTrendLines'
+import { IRegionTrendLines } from 'stores/resas/types/trends/IRegionTrends'
 
 const Styles: { [key: string]: React.CSSProperties } = {
   graph: {

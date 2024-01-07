@@ -19,10 +19,10 @@ import {
   PresenceBadgeStatus,
   Avatar
 } from '@fluentui/react-components'
-import { FileCell } from './Table/types/FileCell'
-import { AuthorCell } from './Table/types/AuthorCell'
-import { LastUpdatedCell } from './Table/types/LastUpdatedCell'
-import { LastUpdateCell } from './Table/types/LastUpdateCell'
+import { FileCell } from './types/FileCell'
+import { AuthorCell } from './types/AuthorCell'
+import { LastUpdatedCell } from './types/LastUpdatedCell'
+import { LastUpdateCell } from './types/LastUpdateCell'
 
 type Item = {
   file: FileCell

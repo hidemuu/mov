@@ -5,7 +5,7 @@ import useSelectedRegionState from './hooks/useSelectedRegionState'
 import { IRegionKey } from '../../stores/resas/types/IRegionKey'
 import useRegionTableLines from '../../stores/resas/hooks/useRegionTable'
 import { useInputId } from '../../domains/inputs/hooks/useInputId'
-import { IRegionKeyCode } from './types/IRegionKeyCode'
+import { IRegionKeyCode } from '../../stores/resas/types/IRegionKeyCode'
 import { ResasTemplate } from '.'
 
 export const ResasPage: React.FunctionComponent = () => {

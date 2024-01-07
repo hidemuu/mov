@@ -17,7 +17,7 @@ import { TablePage } from '../../../pages/Table/TablePage'
 import { ResasPage } from '../../../pages/Resas/ResasPage'
 import { GamePage } from '../../../pages/Game/GamePage'
 import { FilesPage } from '../../../pages/Files/FilesPage'
-import { TaxonomyPage } from '../../../pages/TaxonomyPage'
+import { TaxonomyPage } from '../../../pages/Taxonomy/TaxonomyPage'
 
 export const getNavigation = (isSignedIn: boolean): INavigationItem[] => {
   const navItems: INavigationItem[] = []

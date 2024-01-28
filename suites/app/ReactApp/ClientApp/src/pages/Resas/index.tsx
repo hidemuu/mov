@@ -13,6 +13,7 @@ import { PrefComboBox } from './templates/PrefComboBox'
 import { IRegionTable } from 'stores/resas/types/tables/IRegionTable'
 import { IRegionTrend } from 'stores/resas/types/trends/IRegionTrend'
 import { IRegionSelections } from '../../domains/statistics/types/IRegionSelections'
+import { CityComboBox } from './templates/CityComboBox'
 
 const useStyles = makeStyles({
   root: {
@@ -47,6 +48,7 @@ export type ResasTemplateProps = {
   onChangePrefecture: InputProps['onChange']
   onChangeSelectedPrefecture: ComboboxProps['onOptionSelect']
   onChangeCity: InputProps['onChange']
+  onChangeSelectedCity: ComboboxProps['onOptionSelect']
 }
 
 export const ResasTemplate = ({
@@ -57,7 +59,8 @@ export const ResasTemplate = ({
   regionSelections,
   onChangePrefecture,
   onChangeSelectedPrefecture,
-  onChangeCity
+  onChangeCity,
+  onChangeSelectedCity
 }: ResasTemplateProps) => {
   const styles = useStyles()
 
@@ -84,6 +87,10 @@ export const ResasTemplate = ({
           id={inputId}
           value={String(selectedRegionKey.cityCode)}
           onChange={onChangeCity}
+        />
+        <CityComboBox
+          regionSelections={regionSelections}
+          onOptionSelect={onChangeSelectedCity}
         />
       </div>
       <h2>トレンドグラフ</h2>

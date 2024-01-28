@@ -91,6 +91,17 @@ export const ResasPage: React.FunctionComponent = () => {
     }
   }
 
+  const onChangeSelectedCity: ComboboxProps['onOptionSelect'] = (ev, data) => {
+    const prefName = data.optionValue
+    const updateRegionValue: IRegionValue = {
+      prefCode: selectedRegionValue.prefCode,
+      prefName: prefName ?? '',
+      cityCode: selectedRegionValue.cityCode,
+      cityName: selectedRegionValue.cityName
+    }
+    setSelectedRegionValue(updateRegionValue)
+  }
+
   useEffect(() => {
     //レンダリング毎に実行
     console.log('再レンダリングされるたび実行')
@@ -106,6 +117,7 @@ export const ResasPage: React.FunctionComponent = () => {
       onChangePrefecture={onChangePrefecture}
       onChangeSelectedPrefecture={onChangeSelectedPrefecture}
       onChangeCity={onChangeCity}
+      onChangeSelectedCity={onChangeSelectedCity}
     ></ResasTemplate>
   )
 }

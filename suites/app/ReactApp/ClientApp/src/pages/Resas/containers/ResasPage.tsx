@@ -92,12 +92,12 @@ export const ResasPage: React.FunctionComponent = () => {
   }
 
   const onChangeSelectedCity: ComboboxProps['onOptionSelect'] = (ev, data) => {
-    const prefName = data.optionValue
+    const cityName = data.optionValue
     const updateRegionValue: IRegionValue = {
       prefCode: selectedRegionValue.prefCode,
-      prefName: prefName ?? '',
+      prefName: selectedRegionValue.prefName,
       cityCode: selectedRegionValue.cityCode,
-      cityName: selectedRegionValue.cityName
+      cityName: cityName ?? ''
     }
     setSelectedRegionValue(updateRegionValue)
   }

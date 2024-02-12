@@ -1,4 +1,4 @@
-﻿import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
+﻿import React, { useEffect, useState } from 'react'
 import type { ComboboxProps, InputProps } from '@fluentui/react-components'
 import usePopulationPerYearTrendLines from 'stores/resas/hooks/usePopulationPerYearTrends'
 import { IRegionValue } from 'stores/resas/types/IRegionValue'
@@ -9,10 +9,10 @@ import { ResasTemplate } from '..'
 import { IRegionTable } from 'stores/resas/types/tables/IRegionTable'
 import { IRegionSelections } from '../../../domains/statistics/types/IRegionSelections'
 
-function useSelectedRegionState(
+function useSelectedRegionValue(
   regionTable: IRegionTable,
   regionKey: IRegionKey
-): [IRegionValue, Dispatch<SetStateAction<IRegionValue>>] {
+): IRegionValue {
   const [selectedRegionValue, setSelectedRegionValue] = useState<IRegionValue>(
     getRegionValue(regionTable, regionKey)
   )
@@ -22,7 +22,7 @@ function useSelectedRegionState(
     setSelectedRegionValue(update)
   }, [regionKey])
 
-  return [selectedRegionValue, setSelectedRegionValue]
+  return selectedRegionValue
 }
 
 function getRegionValue(
@@ -69,7 +69,7 @@ export const ResasPage: React.FunctionComponent = () => {
     prefCode: 11,
     cityCode: 11362
   })
-  const [selectedRegionValue, setSelectedRegionValue] = useSelectedRegionState(
+  const selectedRegionValue = useSelectedRegionValue(
     regionTable,
     selectedRegionKey
   )
@@ -77,19 +77,6 @@ export const ResasPage: React.FunctionComponent = () => {
     usePopulationPerYearTrendLines(selectedRegionValue)
 
   const regionSelections = getRegionSelections(selectedRegionValue, regionTable)
-
-  const onChangePrefecture: InputProps['onChange'] = (ev, data) => {
-    if (data.value.length <= 20) {
-      const prefCode = Number(data.value)
-      const updateRegionValue: IRegionValue = {
-        prefCode: prefCode,
-        prefName: '',
-        cityCode: selectedRegionValue.cityCode,
-        cityName: selectedRegionValue.cityName
-      }
-      //setSelectedRegionValue(updateRegionValue)
-    }
-  }
 
   const onChangeSelectedPrefecture: ComboboxProps['onOptionSelect'] = (
     ev,
@@ -101,19 +88,6 @@ export const ResasPage: React.FunctionComponent = () => {
       cityCode: selectedRegionValue.cityCode
     }
     setSelectedRegionKey(updateRegionKey)
-  }
-
-  const onChangeCity: InputProps['onChange'] = (ev, data) => {
-    if (data.value.length <= 20) {
-      const cityCode = Number(data.value)
-      const updateRegionValue: IRegionValue = {
-        prefCode: selectedRegionValue.prefCode,
-        prefName: selectedRegionValue.prefName,
-        cityCode: cityCode,
-        cityName: ''
-      }
-      //setSelectedRegionValue(updateRegionValue)
-    }
   }
 
   const onChangeSelectedCity: ComboboxProps['onOptionSelect'] = (ev, data) => {
@@ -137,9 +111,7 @@ export const ResasPage: React.FunctionComponent = () => {
       regionTrendLines={populationPerYearTrendLines}
       selectedRegionKey={selectedRegionValue}
       regionSelections={regionSelections}
-      onChangePrefecture={onChangePrefecture}
       onChangeSelectedPrefecture={onChangeSelectedPrefecture}
-      onChangeCity={onChangeCity}
       onChangeSelectedCity={onChangeSelectedCity}
     ></ResasTemplate>
   )

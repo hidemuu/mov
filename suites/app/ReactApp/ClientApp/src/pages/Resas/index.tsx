@@ -5,7 +5,7 @@ import {
   makeStyles,
   shorthands
 } from '@fluentui/react-components'
-import type { ComboboxProps, InputProps } from '@fluentui/react-components'
+import type { ComboboxProps } from '@fluentui/react-components'
 import { IRegionValue } from '../../stores/resas/types/IRegionValue'
 import { RegionTab } from './templates/RegionTab'
 import { TrendLineChart } from './templates/RegionTrendLineChart'
@@ -45,9 +45,7 @@ export type ResasTemplateProps = {
   regionTrendLines: IRegionTrend[]
   selectedRegionKey: IRegionValue
   regionSelections: IRegionSelections
-  onChangePrefecture: InputProps['onChange']
   onChangeSelectedPrefecture: ComboboxProps['onOptionSelect']
-  onChangeCity: InputProps['onChange']
   onChangeSelectedCity: ComboboxProps['onOptionSelect']
 }
 
@@ -57,9 +55,7 @@ export const ResasTemplate = ({
   regionTrendLines,
   selectedRegionKey,
   regionSelections,
-  onChangePrefecture,
   onChangeSelectedPrefecture,
-  onChangeCity,
   onChangeSelectedCity
 }: ResasTemplateProps) => {
   const styles = useStyles()
@@ -70,11 +66,7 @@ export const ResasTemplate = ({
         <Label htmlFor={inputId} style={{ paddingInlineEnd: '12px' }}>
           都道府県コード
         </Label>
-        <Input
-          id={inputId}
-          value={String(selectedRegionKey.prefCode)}
-          onChange={onChangePrefecture}
-        />
+        <Input id={inputId} value={String(selectedRegionKey.prefCode)} />
         <PrefComboBox
           regionSelections={regionSelections}
           onOptionSelect={onChangeSelectedPrefecture}
@@ -83,11 +75,7 @@ export const ResasTemplate = ({
         <Label htmlFor={inputId} style={{ paddingInlineEnd: '12px' }}>
           都市コード
         </Label>
-        <Input
-          id={inputId}
-          value={String(selectedRegionKey.cityCode)}
-          onChange={onChangeCity}
-        />
+        <Input id={inputId} value={String(selectedRegionKey.cityCode)} />
         <CityComboBox
           regionSelections={regionSelections}
           onOptionSelect={onChangeSelectedCity}

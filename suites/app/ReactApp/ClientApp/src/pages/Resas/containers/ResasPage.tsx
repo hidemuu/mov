@@ -11,45 +11,72 @@ import { IRegionSelections } from '../../../domains/statistics/types/IRegionSele
 
 function useSelectedRegionState(
   regionTable: IRegionTable,
-  regionCode: IRegionKey
+  regionKey: IRegionKey
 ): [IRegionValue, Dispatch<SetStateAction<IRegionValue>>] {
-  const [selectedRegionValue, setSelectedRegionValue] = useState<IRegionValue>({
-    prefCode: regionCode.prefCode,
-    prefName:
-      regionTable.pref.filter((x) => x.id === regionCode.prefCode)[0]
-        ?.content ?? '',
-    cityCode: regionCode.cityCode,
-    cityName:
-      regionTable.city.filter((x) => x.id === regionCode.cityCode)[0]
-        ?.content ?? ''
-  })
+  const [selectedRegionValue, setSelectedRegionValue] = useState<IRegionValue>(
+    getRegionValue(regionTable, regionKey)
+  )
+
+  useEffect(() => {
+    const update = getRegionValue(regionTable, regionKey)
+    setSelectedRegionValue(update)
+  }, [regionKey])
+
   return [selectedRegionValue, setSelectedRegionValue]
 }
 
-function useRegionSelections(
+function getRegionValue(
+  regionTable: IRegionTable,
+  regionKey: IRegionKey
+): IRegionValue {
+  const updateRegionValue: IRegionValue = {
+    prefCode: regionKey.prefCode,
+    prefName:
+      regionTable.pref.filter((x) => x.id === regionKey.prefCode)[0]?.content ??
+      '',
+    cityCode: regionKey.cityCode,
+    cityName:
+      regionTable.city.filter((x) => x.id === regionKey.cityCode)[0]?.content ??
+      ''
+  }
+  return updateRegionValue
+}
+
+function getRegionSelections(
   regionValue: IRegionValue,
-  regionTableLines: IRegionTable
+  regionTable: IRegionTable
 ): IRegionSelections {
   const regionSelections: IRegionSelections = {
     selected: regionValue,
-    prefSelections: regionTableLines.pref.map((x) => x.content),
-    citySelections: regionTableLines.city.map((x) => x.content)
+    prefSelections: regionTable.pref.map((x) => x.content),
+    citySelections: regionTable.city.map((x) => x.content)
   }
   return regionSelections
+}
+
+function getPrefectureCode(name: string, regionTable: IRegionTable): number {
+  return regionTable.pref.filter((x) => x.content === name)[0].id ?? 0
+}
+
+function getCityCode(name: string, regionTable: IRegionTable): number {
+  return regionTable.city.filter((x) => x.content === name)[0].id ?? 0
 }
 
 export const ResasPage: React.FunctionComponent = () => {
   const inputId = useInputId()
   const regionTable = useRegionTableLines()
-  const initRegionCode: IRegionKey = { prefCode: 11, cityCode: 11362 }
+  const [selectedRegionKey, setSelectedRegionKey] = useState<IRegionKey>({
+    prefCode: 11,
+    cityCode: 11362
+  })
   const [selectedRegionValue, setSelectedRegionValue] = useSelectedRegionState(
     regionTable,
-    initRegionCode
+    selectedRegionKey
   )
   const populationPerYearTrendLines =
     usePopulationPerYearTrendLines(selectedRegionValue)
 
-  const regionSelections = useRegionSelections(selectedRegionValue, regionTable)
+  const regionSelections = getRegionSelections(selectedRegionValue, regionTable)
 
   const onChangePrefecture: InputProps['onChange'] = (ev, data) => {
     if (data.value.length <= 20) {
@@ -60,7 +87,7 @@ export const ResasPage: React.FunctionComponent = () => {
         cityCode: selectedRegionValue.cityCode,
         cityName: selectedRegionValue.cityName
       }
-      setSelectedRegionValue(updateRegionValue)
+      //setSelectedRegionValue(updateRegionValue)
     }
   }
 
@@ -69,13 +96,11 @@ export const ResasPage: React.FunctionComponent = () => {
     data
   ) => {
     const prefName = data.optionValue
-    const updateRegionValue: IRegionValue = {
-      prefCode: selectedRegionValue.prefCode,
-      prefName: prefName ?? '',
-      cityCode: selectedRegionValue.cityCode,
-      cityName: selectedRegionValue.cityName
+    const updateRegionKey: IRegionKey = {
+      prefCode: getPrefectureCode(prefName ?? '', regionTable),
+      cityCode: selectedRegionValue.cityCode
     }
-    setSelectedRegionValue(updateRegionValue)
+    setSelectedRegionKey(updateRegionKey)
   }
 
   const onChangeCity: InputProps['onChange'] = (ev, data) => {
@@ -87,19 +112,17 @@ export const ResasPage: React.FunctionComponent = () => {
         cityCode: cityCode,
         cityName: ''
       }
-      setSelectedRegionValue(updateRegionValue)
+      //setSelectedRegionValue(updateRegionValue)
     }
   }
 
   const onChangeSelectedCity: ComboboxProps['onOptionSelect'] = (ev, data) => {
     const cityName = data.optionValue
-    const updateRegionValue: IRegionValue = {
+    const updateRegionKey: IRegionKey = {
       prefCode: selectedRegionValue.prefCode,
-      prefName: selectedRegionValue.prefName,
-      cityCode: selectedRegionValue.cityCode,
-      cityName: cityName ?? ''
+      cityCode: getCityCode(cityName ?? '', regionTable)
     }
-    setSelectedRegionValue(updateRegionValue)
+    setSelectedRegionKey(updateRegionKey)
   }
 
   useEffect(() => {

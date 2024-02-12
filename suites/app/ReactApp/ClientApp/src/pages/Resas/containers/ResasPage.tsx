@@ -1,5 +1,5 @@
 ﻿import React, { useEffect, useState } from 'react'
-import type { ComboboxProps, InputProps } from '@fluentui/react-components'
+import type { ComboboxProps } from '@fluentui/react-components'
 import usePopulationPerYearTrendLines from 'stores/resas/hooks/usePopulationPerYearTrends'
 import { IRegionValue } from 'stores/resas/types/IRegionValue'
 import useRegionTableLines from 'stores/resas/hooks/useRegionTable'
@@ -7,7 +7,12 @@ import { useInputId } from 'domains/inputs/hooks/useInputId'
 import { IRegionKey } from 'stores/resas/types/IRegionKey'
 import { ResasTemplate } from '..'
 import { IRegionTable } from 'stores/resas/types/tables/IRegionTable'
-import { IRegionSelections } from '../../../domains/statistics/types/IRegionSelections'
+import {
+  getCityCode,
+  getPrefectureCode,
+  getRegionValue
+} from 'stores/resas/services/regionTableService'
+import { getRegionSelections } from 'domains/statistics/services/RegionSelectionService'
 
 function useSelectedRegionValue(
   regionTable: IRegionTable,
@@ -23,43 +28,6 @@ function useSelectedRegionValue(
   }, [regionKey])
 
   return selectedRegionValue
-}
-
-function getRegionValue(
-  regionTable: IRegionTable,
-  regionKey: IRegionKey
-): IRegionValue {
-  const updateRegionValue: IRegionValue = {
-    prefCode: regionKey.prefCode,
-    prefName:
-      regionTable.pref.filter((x) => x.id === regionKey.prefCode)[0]?.content ??
-      '',
-    cityCode: regionKey.cityCode,
-    cityName:
-      regionTable.city.filter((x) => x.id === regionKey.cityCode)[0]?.content ??
-      ''
-  }
-  return updateRegionValue
-}
-
-function getRegionSelections(
-  regionValue: IRegionValue,
-  regionTable: IRegionTable
-): IRegionSelections {
-  const regionSelections: IRegionSelections = {
-    selected: regionValue,
-    prefSelections: regionTable.pref.map((x) => x.content),
-    citySelections: regionTable.city.map((x) => x.content)
-  }
-  return regionSelections
-}
-
-function getPrefectureCode(name: string, regionTable: IRegionTable): number {
-  return regionTable.pref.filter((x) => x.content === name)[0].id ?? 0
-}
-
-function getCityCode(name: string, regionTable: IRegionTable): number {
-  return regionTable.city.filter((x) => x.content === name)[0].id ?? 0
 }
 
 export const ResasPage: React.FunctionComponent = () => {

@@ -17,15 +17,17 @@ export default function useRegionTable(): IRegionTable {
       .then((results) => {
         setPrefectureTableLines(results.data)
       })
-      // eslint-disable-next-line @typescript-eslint/no-empty-function
-      .catch((error) => {})
+      .catch((error) => {
+        console.log(error)
+      })
     axios
       .get(API_KEY_CITY, {})
       .then((results) => {
         setCityTableLines(results.data)
       })
-      // eslint-disable-next-line @typescript-eslint/no-empty-function
-      .catch((error) => {})
+      .catch((error) => {
+        console.log(error)
+      })
   }, [])
 
   const regionTable: IRegionTable = {

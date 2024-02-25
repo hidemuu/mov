@@ -25,7 +25,7 @@ function useSelectedRegionValue(
   useEffect(() => {
     const update = getRegionValue(regionTable, regionKey)
     setSelectedRegionValue(update)
-  }, [regionKey])
+  }, [regionKey, regionTable])
 
   return selectedRegionValue
 }

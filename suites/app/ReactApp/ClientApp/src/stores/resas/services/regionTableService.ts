@@ -37,7 +37,7 @@ export function getRegionValue(
       : regionTable.city.filter((x) => Number(x.label) === targetPref.id)[0] ??
         targetCity
   const updateRegionValue: IRegionValue = {
-    prefCode: targetCity.id,
+    prefCode: targetPref.id,
     prefName: targetPref?.content ?? '',
     cityCode: updateCity.id,
     cityName: updateCity?.content ?? ''

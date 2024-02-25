@@ -42,8 +42,9 @@ export default function usePopulationPerYearTrends(
           }
           setPopulationPerYears(regionTrendLines)
         })
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
-        .catch((error) => {})
+        .catch((error) => {
+          console.log(error)
+        })
     }
   }, [region])
   return populationPerYears

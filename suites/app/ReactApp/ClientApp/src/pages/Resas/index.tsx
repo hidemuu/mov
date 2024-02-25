@@ -66,7 +66,6 @@ export const ResasTemplate = ({
         <Label htmlFor={inputId} style={{ paddingInlineEnd: '12px' }}>
           都道府県コード
         </Label>
-        <Input id={inputId} value={String(selectedRegionKey.prefCode)} />
         <PrefComboBox
           regionSelections={regionSelections}
           onOptionSelect={onChangeSelectedPrefecture}
@@ -75,7 +74,6 @@ export const ResasTemplate = ({
         <Label htmlFor={inputId} style={{ paddingInlineEnd: '12px' }}>
           都市コード
         </Label>
-        <Input id={inputId} value={String(selectedRegionKey.cityCode)} />
         <CityComboBox
           regionSelections={regionSelections}
           onOptionSelect={onChangeSelectedCity}

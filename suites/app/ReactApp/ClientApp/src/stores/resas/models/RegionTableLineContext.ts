@@ -1,7 +1,6 @@
 import React from 'react'
 import axios from 'axios'
 import { IRegionTable } from '../types/tables/IRegionTable'
-import { ITableItem } from '../types/tables/ITableItem'
 
 const API_KEY_PREFECTURE = 'api/TableLine/prefecture'
 const API_KEY_CITY = 'api/TableLine/city'

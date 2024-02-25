@@ -1,7 +1,6 @@
 ﻿import React, { useEffect, useState } from 'react'
 import type { ComboboxProps } from '@fluentui/react-components'
 import usePopulationPerYearTrendLines from 'stores/resas/hooks/usePopulationPerYearTrends'
-import useRegionTableLines from 'stores/resas/hooks/useRegionTable'
 import { useInputId } from 'domains/inputs/hooks/useInputId'
 import { IRegionKey } from 'stores/resas/types/IRegionKey'
 import { ResasTemplate } from '..'

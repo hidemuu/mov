@@ -7,21 +7,20 @@ export default function usePopulationPerYearTrends(
   region: IRegionValue
 ): IRegionTrend[] {
   const API_KEY = 'api/TrendLine/population_per_years'
-  const prefectureCode = region.prefCode
-  const cityCode = region.cityCode
-  console.log(API_KEY + ' ' + prefectureCode + ' ' + cityCode)
+  console.log(API_KEY + ' ' + region.prefCode + ' ' + region.cityCode)
   const [populationPerYears, setPopulationPerYears] = useState<IRegionTrend[]>(
     []
   )
 
   useEffect(() => {
     let endpoint: string
-    if (cityCode === 0 && prefectureCode === 0) {
+    if (region.cityCode === 0 && region.prefCode === 0) {
       endpoint = ''
-    } else if (cityCode === 0) {
-      endpoint = API_KEY + '/' + String(prefectureCode)
+    } else if (region.cityCode === 0) {
+      endpoint = API_KEY + '/' + String(region.prefCode)
     } else {
-      endpoint = API_KEY + '/' + String(prefectureCode) + '/' + String(cityCode)
+      endpoint =
+        API_KEY + '/' + String(region.prefCode) + '/' + String(region.cityCode)
     }
 
     if (endpoint !== '') {
@@ -46,6 +45,6 @@ export default function usePopulationPerYearTrends(
         // eslint-disable-next-line @typescript-eslint/no-empty-function
         .catch((error) => {})
     }
-  }, [cityCode, prefectureCode, region])
+  }, [region])
   return populationPerYears
 }

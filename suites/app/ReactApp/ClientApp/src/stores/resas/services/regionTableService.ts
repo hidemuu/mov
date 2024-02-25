@@ -1,6 +1,7 @@
 import { IRegionKey } from '../types/IRegionKey'
 import { IRegionValue } from '../types/IRegionValue'
 import { IRegionTable } from '../types/tables/IRegionTable'
+import { ITableItem } from '../types/tables/ITableItem'
 
 export function getPrefectureCode(
   name: string,
@@ -11,6 +12,13 @@ export function getPrefectureCode(
 
 export function getCityCode(name: string, regionTable: IRegionTable): number {
   return regionTable.city.filter((x) => x.content === name)[0].id ?? 0
+}
+
+export function getPrefCities(
+  prefCode: number,
+  regionTable: IRegionTable
+): ITableItem[] {
+  return regionTable.city.filter((x) => Number(x.label) === prefCode)
 }
 
 export function getRegionValue(
@@ -34,8 +42,7 @@ export function getRegionValue(
   const updateCity =
     Number(targetCity.label) === targetPref.id
       ? targetCity
-      : regionTable.city.filter((x) => Number(x.label) === targetPref.id)[0] ??
-        targetCity
+      : getPrefCities(targetPref.id, regionTable)[0] ?? targetCity
   const updateRegionValue: IRegionValue = {
     prefCode: targetPref.id,
     prefName: targetPref?.content ?? '',

@@ -18,12 +18,12 @@ export class RegionTableLineContext {
     this.update()
   }
 
-  private context: React.Context<IRegionTable | null> =
-    React.createContext<IRegionTable | null>(null)
-  private prefectureTableItems: ITableItem[] = []
-  private cityTableItems: ITableItem[] = []
+  private context: React.Context<IRegionTable> =
+    React.createContext<IRegionTable>({ pref: [], city: [] })
 
-  public getContext(): React.Context<IRegionTable | null> {
+  public regionTable: IRegionTable = { pref: [], city: [] }
+
+  public getContext(): React.Context<IRegionTable> {
     return this.context
   }
 
@@ -31,23 +31,20 @@ export class RegionTableLineContext {
     axios
       .get(API_KEY_PREFECTURE, {})
       .then((results) => {
-        this.prefectureTableItems = results.data
+        this.regionTable.pref = results.data
       })
-      // eslint-disable-next-line @typescript-eslint/no-empty-function
-      .catch((error) => {})
+      .catch((error) => {
+        console.log(error)
+      })
     axios
       .get(API_KEY_CITY, {})
       .then((results) => {
-        this.cityTableItems = results.data
+        this.regionTable.city = results.data
       })
-      // eslint-disable-next-line @typescript-eslint/no-empty-function
-      .catch((error) => {})
+      .catch((error) => {
+        console.log(error)
+      })
 
-    const response: IRegionTable = {
-      pref: this.prefectureTableItems,
-      city: this.cityTableItems
-    }
-
-    this.context.Provider.bind(response)
+    //this.context.Provider.bind(this.regionTable)
   }
 }

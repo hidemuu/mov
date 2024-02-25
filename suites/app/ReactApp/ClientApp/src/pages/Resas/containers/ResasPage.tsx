@@ -14,16 +14,17 @@ import { IRegionValue } from 'stores/resas/types/IRegionValue'
 import { IRegionTrend } from 'stores/resas/types/trends/IRegionTrend'
 import { IRegionSelections } from 'domains/statistics/types/IRegionSelections'
 import useSelectedRegionValue from 'domains/statistics/hooks/useSelectedRegionValue'
+import { RegionTableLineContext } from 'stores/resas/models/RegionTableLineContext'
 
 export const ResasPage: React.FunctionComponent = () => {
   const inputId: string = useInputId()
-  const regionTable = useRegionTableLines()
+  const regionTableContext = RegionTableLineContext.instance
   const [selectedRegionKey, setSelectedRegionKey] = useState<IRegionKey>({
     prefCode: 11,
     cityCode: 11362
   })
   const selectedRegionValue: IRegionValue = useSelectedRegionValue(
-    regionTable,
+    regionTableContext.regionTable,
     selectedRegionKey
   )
   const populationPerYearTrendLines: IRegionTrend[] =
@@ -31,8 +32,12 @@ export const ResasPage: React.FunctionComponent = () => {
 
   const regionSelections: IRegionSelections = getRegionSelections(
     selectedRegionValue,
-    regionTable
+    regionTableContext.regionTable
   )
+
+  useEffect(() => {
+    console.log('初回実行')
+  }, [])
 
   useEffect(() => {
     //レンダリング毎に実行
@@ -45,7 +50,10 @@ export const ResasPage: React.FunctionComponent = () => {
   ) => {
     const prefName = data.optionValue
     const updateRegionKey: IRegionKey = {
-      prefCode: getPrefectureCode(prefName ?? '', regionTable),
+      prefCode: getPrefectureCode(
+        prefName ?? '',
+        regionTableContext.regionTable
+      ),
       cityCode: selectedRegionValue.cityCode
     }
     setSelectedRegionKey(updateRegionKey)
@@ -55,7 +63,7 @@ export const ResasPage: React.FunctionComponent = () => {
     const cityName = data.optionValue
     const updateRegionKey: IRegionKey = {
       prefCode: selectedRegionValue.prefCode,
-      cityCode: getCityCode(cityName ?? '', regionTable)
+      cityCode: getCityCode(cityName ?? '', regionTableContext.regionTable)
     }
     setSelectedRegionKey(updateRegionKey)
   }
@@ -63,7 +71,7 @@ export const ResasPage: React.FunctionComponent = () => {
   return (
     <ResasTemplate
       inputId={inputId}
-      regionTable={regionTable}
+      regionTable={regionTableContext.regionTable}
       regionTrendLines={populationPerYearTrendLines}
       selectedRegionKey={selectedRegionValue}
       regionSelections={regionSelections}

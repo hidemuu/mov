@@ -17,15 +17,30 @@ export function getRegionValue(
   regionTable: IRegionTable,
   regionKey: IRegionKey
 ): IRegionValue {
+  const targetPref = regionTable.pref.filter(
+    (x) => x.id === regionKey.prefCode
+  )[0]
+  const targetCity = regionTable.city.filter(
+    (x) => x.id === regionKey.cityCode
+  )[0]
+  if (targetPref === undefined || targetCity === undefined) {
+    return {
+      prefCode: regionKey.prefCode,
+      prefName: '',
+      cityCode: regionKey.cityCode,
+      cityName: ''
+    }
+  }
+  const updateCity =
+    Number(targetCity.label) === targetPref.id
+      ? targetCity
+      : regionTable.city.filter((x) => Number(x.label) === targetPref.id)[0] ??
+        targetCity
   const updateRegionValue: IRegionValue = {
-    prefCode: regionKey.prefCode,
-    prefName:
-      regionTable.pref.filter((x) => x.id === regionKey.prefCode)[0]?.content ??
-      '',
-    cityCode: regionKey.cityCode,
-    cityName:
-      regionTable.city.filter((x) => x.id === regionKey.cityCode)[0]?.content ??
-      ''
+    prefCode: targetCity.id,
+    prefName: targetPref?.content ?? '',
+    cityCode: updateCity.id,
+    cityName: updateCity?.content ?? ''
   }
   return updateRegionValue
 }

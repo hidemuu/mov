@@ -131,11 +131,18 @@ namespace Mov.Suite.AnalizerClient.Resas
 				var prefCode = region.Code;
 				foreach(var city in region.Cities)
 				{
-					var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(city.Code, prefCode));
 					var trendLineSchemas = new HashSet<TrendLineSchema>();
-					foreach (var trendLine in GetPopulationPerYearTrendLine(request, prefCode, city.Code,  populationPerYears.Result))
+					try
 					{
-						trendLineSchemas.Add(trendLine.CreateSchema());
+						var populationPerYears = await _resasRepository.PopulationPerYears.GetRequestAsync(new PopulationPerYearRequestSchema(city.Code, prefCode));
+						foreach (var trendLine in GetPopulationPerYearTrendLine(request, prefCode, city.Code, populationPerYears.Result))
+						{
+							trendLineSchemas.Add(trendLine.CreateSchema());
+						}
+					}
+					catch(Exception ex)
+					{
+						Console.WriteLine(ex.ToString());
 					}
 					result.Add(new RegionResponseSchema<TrendLineSchema>()
 					{

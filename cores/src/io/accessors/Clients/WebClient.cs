@@ -67,9 +67,18 @@ namespace Mov.Core.Accessors.Clients
                 {
                     request.Headers.Add(header.Key, header.Value);
                 }
-                HttpResponseMessage response = await client.SendAsync(request);
-                string json = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<IEnumerable<TEntity>>(json);
+                try
+                {
+					HttpResponseMessage response = await client.SendAsync(request);
+					string json = await response.Content.ReadAsStringAsync();
+					return JsonConvert.DeserializeObject<IEnumerable<TEntity>>(json);
+				} 
+                catch(Exception ex)
+                {
+					Console.WriteLine(ex.ToString());
+					return default(IEnumerable<TEntity>);
+				}
+                
             }
         }
 
@@ -82,9 +91,18 @@ namespace Mov.Core.Accessors.Clients
                 {
                     request.Headers.Add(header.Key, header.Value);
                 }
-                HttpResponseMessage response = await client.SendAsync(request);
-                string json = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<TEntity>(json);
+                try
+                {
+					HttpResponseMessage response = await client.SendAsync(request);
+					string json = await response.Content.ReadAsStringAsync();
+					return JsonConvert.DeserializeObject<TEntity>(json);
+				} 
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    return default(TEntity);
+                }
+                
             }
         }
 

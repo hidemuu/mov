@@ -93,12 +93,21 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "jest": "jest",
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src/",
+    "wstart": "webpack-dev-server",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "prettier-format": "prettier --config .prettierrc --write src/**/*",
+    "prettier-format-ts": "prettier --config .prettierrc --write src/**/*.ts",
+    "prettier-format-tsx": "prettier --config .prettierrc --write src/**/*.tsx"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:storybook/recommended"
     ]
   },
   "browserslist": {

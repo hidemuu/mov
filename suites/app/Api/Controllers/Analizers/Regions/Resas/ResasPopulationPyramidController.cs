@@ -1,15 +1,16 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Mov.Suite.AnalizerClient.Resas;
+using Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Requests;
 
-namespace Mov.Suite.Api.Controllers
+namespace Mov.Suite.Api.Controllers.Analizers.Regions.Resas
 {
     /// <summary>
     /// 
     /// </summary>
-    [Route("api/[controller]")]
+    [Route("api/analizers/regions/resas/[controller]")]
     [ApiController]
-    public class ResasPrefectureController : ControllerBase
+    public class ResasPopulationPyramidController : ControllerBase
     {
         #region field
 
@@ -23,9 +24,9 @@ namespace Mov.Suite.Api.Controllers
         /// controller for configuration
         /// </summary>
         /// <param name="repository"></param>
-        public ResasPrefectureController(IResasRepository repository)
+        public ResasPopulationPyramidController(IResasRepository repository)
         {
-            this._repository = repository;
+            _repository = repository;
         }
 
         #endregion constructor
@@ -38,7 +39,7 @@ namespace Mov.Suite.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await this._repository.Prefectures.GetAsync(null));
+            return Ok(await _repository.PopulationPyramids.GetRequestAsync(new PopulationPyramidRequestSchema(11362, 11, 1980, 2030)));
         }
 
         #endregion method

@@ -29,10 +29,11 @@ services.AddSwaggerGen(option =>
 var resourcePath = PathCreator.GetResourcePath();
 services.AddScoped<IAnalizerRepository, FileAnalizerRepository>(_ => new FileAnalizerRepository(resourcePath));
 //クライアントサービス登録
-ConfiguratorContext.Initialize(PathCreator.GetResourcePath());
+ConfiguratorContext.Initialize(resourcePath);
 var apis = ConfiguratorContext.Current.Service.ApiSettingQuery.Reader.ReadAll().ToArray();
 var resasApi = apis.FirstOrDefault(x => x.Code.Value.Equals("RESAS-API-KEY"));
 services.AddScoped<IResasRepository, RestResasRepository>(_ => new RestResasRepository(resasApi?.Value));
+services.AddScoped<IRegionAnalizerClient, ResasAnalizerClient>();
 services.AddMvc();
 
 var app = builder.Build();

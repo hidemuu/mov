@@ -90,7 +90,7 @@
     "webpack": "^5.88.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "rimraf ./build && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "jest": "jest",

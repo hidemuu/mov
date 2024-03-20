@@ -114,12 +114,20 @@ namespace Mov.Core.Accessors.Clients
         {
             using (var client = BaseClient())
             {
-                var response = await client.PostAsync(url, new JsonStringContent(body, Encoding.Value));
-                return ResponseStatus.Success;
-                //string json = await response.Content.ReadAsStringAsync();
-                //TEntity obj = JsonConvert.DeserializeObject<TEntity>(json);
-                //return obj;
-            }
+                try
+                {
+					var response = await client.PostAsync(url, new JsonStringContent(body, Encoding.Value));
+					return ResponseStatus.Success;
+					//string json = await response.Content.ReadAsStringAsync();
+					//TEntity obj = JsonConvert.DeserializeObject<TEntity>(json);
+					//return obj;
+				} 
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    return ResponseStatus.ServerError;
+                }
+			}
         }
 
         /// <summary>
@@ -130,11 +138,19 @@ namespace Mov.Core.Accessors.Clients
         {
             using (var client = BaseClient())
             {
-                var response = await client.PutAsync(url, new JsonStringContent(body, Encoding.Value));
-                return ResponseStatus.Success;
-                //string json = await response.Content.ReadAsStringAsync();
-                //TEntity obj = JsonConvert.DeserializeObject<TEntity>(json);
-                //return obj;
+                try
+                {
+					var response = await client.PutAsync(url, new JsonStringContent(body, Encoding.Value));
+					return ResponseStatus.Success;
+					//string json = await response.Content.ReadAsStringAsync();
+					//TEntity obj = JsonConvert.DeserializeObject<TEntity>(json);
+					//return obj;
+				}
+				catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+					return ResponseStatus.ServerError;
+				}
             }
         }
 
@@ -142,9 +158,17 @@ namespace Mov.Core.Accessors.Clients
 		{
 			using (var client = BaseClient())
             {
-				await client.DeleteAsync(url);
+                try
+                {
+					await client.DeleteAsync(url);
+					return ResponseStatus.Success;
+				} 
+                catch(Exception ex) 
+                {
+                    Console.WriteLine(ex.ToString());
+					return ResponseStatus.ServerError;
+				}
 			}
-			return ResponseStatus.Success;
 		}
 
 
@@ -156,9 +180,17 @@ namespace Mov.Core.Accessors.Clients
         {
             using (var client = BaseClient())
             {
-                var response = await client.DeleteAsync($"{url}/{identifier}");
+                try
+                {
+					var response = await client.DeleteAsync($"{url}/{identifier}");
+					return ResponseStatus.Success;
+				}
+                catch (Exception ex) 
+                {
+                    Console.WriteLine(ex.ToString());
+					return ResponseStatus.ServerError;
+				}
             }
-            return ResponseStatus.Success;
         }
 
         #endregion method

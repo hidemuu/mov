@@ -7,6 +7,7 @@
     {
       "type": "msedge",
       "request": "launch",
+      "preLaunchTask": "yarn: start", // 起動時に実行するタスク(= tasks.jsonの `label`)
       "name": "Launch Edge against localhost",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}", // VSCodeのルートディレクトリ

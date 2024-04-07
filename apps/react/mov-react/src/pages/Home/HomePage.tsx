@@ -47,7 +47,7 @@ export const HomePage: React.FunctionComponent = () => {
       if (
         consoleValue.includes("http://") ||
         consoleValue.includes("https://") ||
-        consoleValue.includes("api/")
+        consoleValue.includes("/api")
       ) {
         //httpのURIの場合
         fetchData(consoleValue, setConsoleResponse);

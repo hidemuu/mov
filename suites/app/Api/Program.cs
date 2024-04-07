@@ -7,17 +7,29 @@ using System.Reflection;
 using Mov.Analizer.Models;
 using Mov.Analizer.Repository;
 using Mov.Analizer.Service;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var services = builder.Services;
+builder.Services.AddCors(options =>
+{
+	options.AddPolicy(
+		"AllowAll",
+		builder =>
+		{
+			builder.AllowAnyOrigin()   // すべてのオリジンからのアクセスを許可
+				   .AllowAnyMethod()
+				   .AllowAnyHeader();
+		});
+});
 services.AddCors(options =>
 {
 	options.AddPolicy("AllowSpecificOrigin",
-		builder =>
+		policy =>
 		{
-			builder.WithOrigins("http://localhost")
+			policy.WithOrigins("http://localhost:3000", "http://localhost:5257")
 				.AllowAnyMethod()
 				.AllowAnyHeader();
 		});
@@ -60,9 +72,18 @@ app.UseSwaggerUI(option =>
     option.SwaggerEndpoint("/swagger/mov_suite/swagger.json", "Mov Suite APIs sandbox.");
 });
 
-app.UseHttpsRedirection();
+app.UseCors("AllowAll");
+//app.UseCors("AllowSpecificOrigin"); // CORS middleware
 
-app.UseCors("AllowSpecificOrigin"); // CORS middleware
+app.UseStaticFiles();
+//app.UseStaticFiles(new StaticFileOptions
+//{
+//	FileProvider = new PhysicalFileProvider(
+//		Path.Combine(Directory.GetCurrentDirectory(), "UploadFiles")),
+//	RequestPath = "/UploadFiles"
+//});
+
+app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

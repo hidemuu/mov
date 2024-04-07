@@ -8,6 +8,7 @@ import {
   useId,
 } from "@fluentui/react-components";
 import type { InputProps } from "@fluentui/react-components";
+import fetchData from "utils/services/fatchData";
 
 const useStyles = makeStyles({
   root: {
@@ -28,22 +29,38 @@ const useStyles = makeStyles({
 export const HomePage: React.FunctionComponent = () => {
   const styles = useStyles();
   const inputId = useId("input");
-  const [value, setValue] = React.useState("initial value");
+  const [consoleValue, setConsoleValue] = React.useState("initial value");
+  const [consoleResponse, setConsoleResponse] = React.useState("");
 
-  const onChange: InputProps["onChange"] = (ev, data) => {
+  const onConsoleChange: InputProps["onChange"] = (ev, data) => {
     // The controlled input pattern can be used for other purposes besides validation,
     // but validation is a useful example
     if (data.value.length <= 20) {
-      setValue(data.value);
+      setConsoleValue(data.value);
     }
   };
 
-  const onKeyDown = (event: { key: string }) => {
+  const onConsoleKeyDown = (event: { key: string }) => {
     if (event.key === "Enter") {
       // Enterキーが押されたときの処理をここに記述
-      console.log("Enter key pressed");
-      const v = value;
+      console.log("Enter key pressed " + { consoleValue });
+      if (
+        consoleValue.includes("http://") ||
+        consoleValue.includes("https://")
+      ) {
+        //httpのURIの場合
+        fetchData(consoleValue, setConsoleResponse);
+      }
     }
+  };
+
+  const onConsolePaste = (event: {
+    clipboardData: { getData: (arg0: string) => any };
+  }) => {
+    const pastedText = event.clipboardData.getData("text");
+    // ペーストされたテキストを取得し、必要な処理を行う
+    console.log("Pasted text:", pastedText);
+    setConsoleValue(pastedText);
   };
 
   return (
@@ -56,11 +73,13 @@ export const HomePage: React.FunctionComponent = () => {
       <Input
         placeholder="inline"
         aria-label="inline"
-        value={value}
-        onChange={onChange}
-        onKeyDown={onKeyDown}
+        value={consoleValue}
+        onChange={onConsoleChange}
+        onKeyDown={onConsoleKeyDown}
+        onPaste={onConsolePaste}
         id={inputId}
       />
+      <Label>Response:{consoleResponse}</Label>
     </div>
   );
 };

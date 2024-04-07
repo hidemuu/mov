@@ -46,7 +46,8 @@ export const HomePage: React.FunctionComponent = () => {
       console.log("Enter key pressed " + { consoleValue });
       if (
         consoleValue.includes("http://") ||
-        consoleValue.includes("https://")
+        consoleValue.includes("https://") ||
+        consoleValue.includes("api/")
       ) {
         //httpのURIの場合
         fetchData(consoleValue, setConsoleResponse);

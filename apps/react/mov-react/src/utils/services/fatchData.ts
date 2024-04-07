@@ -3,7 +3,7 @@
   setStateAction: React.Dispatch<React.SetStateAction<any>>
 ) {
   console.log(basepath);
-  fetch(basepath)
+  fetch(basepath, { method: "GET" })
     .then((response) => {
       if (response.status === 200) {
         return response.json();
@@ -21,6 +21,6 @@
     .catch((error) => {
       console.error("--- fetch error " + basepath + "---");
       console.error(error);
-      setStateAction(error.message);
+      setStateAction("message:" + error.message + "\nstack:" + error.stack);
     });
 }

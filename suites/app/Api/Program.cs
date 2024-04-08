@@ -13,13 +13,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var services = builder.Services;
-builder.Services.AddCors(options =>
+services.AddCors(options =>
 {
 	options.AddPolicy(
 		"AllowAll",
-		builder =>
+		policy =>
 		{
-			builder.AllowAnyOrigin()   // すべてのオリジンからのアクセスを許可
+			policy.AllowAnyOrigin()   // すべてのオリジンからのアクセスを許可
 				   .AllowAnyMethod()
 				   .AllowAnyHeader();
 		});

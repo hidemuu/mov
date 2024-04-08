@@ -74,7 +74,7 @@ if (app.Environment.IsDevelopment())
 else
 {
 	//–{”ÔŠÂ‹«‚Ìê‡‚ÍASwagger UI‚ğ–³Œø‰»
-	app.UseExceptionHandler("/Home/Error");
+	app.UseExceptionHandler("/Error");
 	app.UseHsts();
 }
 

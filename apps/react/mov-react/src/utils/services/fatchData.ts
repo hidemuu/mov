@@ -8,6 +8,12 @@ export default function fetchData(
   axios
     .get(basepath, {
       withCredentials: true, // CORS設定
+      headers: {
+        Accept: "application/json, */*",
+        "Content-Type": "application/json",
+        "Content-Encoding": "gzip, deflate, br",
+        Connection: "keep-alive",
+      },
     })
     .then((response) => {
       if (response.status === 200) {

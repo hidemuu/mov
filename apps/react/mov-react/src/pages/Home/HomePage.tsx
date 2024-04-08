@@ -29,7 +29,9 @@ const useStyles = makeStyles({
 export const HomePage: React.FunctionComponent = () => {
   const styles = useStyles();
   const inputId = useId("input");
-  const [consoleValue, setConsoleValue] = React.useState("initial value");
+  const [consoleValue, setConsoleValue] = React.useState(
+    "/api/analizers/regions/resas/ResasPrefecture"
+  );
   const [consoleResponse, setConsoleResponse] = React.useState("");
 
   const onConsoleChange: InputProps["onChange"] = (ev, data) => {

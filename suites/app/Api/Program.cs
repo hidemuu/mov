@@ -63,11 +63,19 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+	//ŠJ”­ŠÂ‹«
+	app.UseDeveloperExceptionPage();
 	app.UseSwagger();
 	app.UseSwaggerUI(option =>
 	{
 		option.SwaggerEndpoint("/swagger/mov_suite/swagger.json", "Mov Suite APIs sandbox.");
 	});
+}
+else
+{
+	//–{”ÔŠÂ‹«‚Ìê‡‚ÍASwagger UI‚ğ–³Œø‰»
+	app.UseExceptionHandler("/Home/Error");
+	app.UseHsts();
 }
 
 app.UseCors("AllowAll");

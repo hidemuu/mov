@@ -17,17 +17,17 @@ export default function fetchData(
     })
     .then((response) => {
       if (response.status === 200) {
-        return response.data;
+        const results = response.data.results;
+        for (const result of results) {
+          console.log(result);
+        }
+        setStateAction({
+          data: results,
+        });
+        return results;
       } else {
         throw new Error();
       }
-    })
-    .then((data) => {
-      console.log(data);
-      setStateAction({
-        data: data,
-      });
-      return data;
     })
     .catch((error) => {
       console.error("--- fetch error " + basepath + "---");

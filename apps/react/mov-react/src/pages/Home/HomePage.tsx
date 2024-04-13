@@ -32,7 +32,7 @@ export const HomePage: React.FunctionComponent = () => {
   const [consoleValue, setConsoleValue] = React.useState(
     "/api/analizers/regions/resas/ResasPrefecture"
   );
-  const [consoleResponse, setConsoleResponse] = React.useState("");
+  const [consoleResponse, setConsoleResponse] = React.useState();
 
   const onConsoleChange: InputProps["onChange"] = (ev, data) => {
     // The controlled input pattern can be used for other purposes besides validation,

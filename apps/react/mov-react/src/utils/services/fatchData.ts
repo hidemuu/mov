@@ -1,20 +1,16 @@
 ﻿import axios, { AxiosResponse } from "axios";
 
+axios.defaults.baseURL = "http://localhost:5257";
+axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
+axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
+
 export default function fetchData(
   basepath: string,
   setStateAction: React.Dispatch<React.SetStateAction<any>>
 ) {
   console.log(basepath);
   axios
-    .get(basepath, {
-      withCredentials: true, // CORS設定
-      headers: {
-        Accept: "application/json, */*",
-        "Content-Type": "application/json",
-        "Content-Encoding": "gzip, deflate, br",
-        Connection: "keep-alive",
-      },
-    })
+    .get(basepath)
     .then((response) => {
       if (response.status === 200) {
         const results = response.data.results;

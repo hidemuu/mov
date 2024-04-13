@@ -35,4 +35,12 @@ export class RegionItemContext {
     fetchData<IRegionItem>(API_KEY, this.state[1]);
     //this.context.Provider.bind(this.regionTable)
   }
+
+  public asString(): string {
+    let result: string = "";
+    for (const item of this.store) {
+      result += item;
+    }
+    return result;
+  }
 }

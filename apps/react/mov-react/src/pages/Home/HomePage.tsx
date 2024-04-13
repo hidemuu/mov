@@ -8,7 +8,7 @@ import {
   useId,
 } from "@fluentui/react-components";
 import type { InputProps } from "@fluentui/react-components";
-import fetchData from "utils/services/fatchData";
+import fetchData from "stores/resas/services/fatchData";
 import { IRegionItem } from "stores/resas/types/IRegionItem";
 
 const useStyles = makeStyles({

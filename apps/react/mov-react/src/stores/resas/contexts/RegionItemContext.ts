@@ -1,6 +1,6 @@
 import React from "react";
 import { IRegionItem } from "../types/IRegionItem";
-import fetchData from "utils/services/fatchData";
+import fetchData from "stores/resas/services/fatchData";
 
 const API_KEY = "/api/analizers/regions/resas/ResasPrefecture";
 

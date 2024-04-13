@@ -3,6 +3,7 @@ import React, {
   SetStateAction,
   createContext,
   useContext,
+  useState,
 } from "react";
 import { IRegionItem } from "../types/IRegionItem";
 import fetchData from "stores/resas/services/fatchData";
@@ -16,11 +17,11 @@ type RegionItemContextValue = {
   setState: Dispatch<SetStateAction<RegionItemContextState>>;
 };
 
-export const RegionItemContext: React.Context<
+export const RegionItemContext = createContext<
   RegionItemContextValue | undefined
-> = createContext<RegionItemContextValue | undefined>(undefined);
+>(undefined);
 
-export function useThisContext() {
+export function useRegionItemContext() {
   const value = useContext(RegionItemContext);
   if (value === undefined)
     throw new Error(
@@ -28,6 +29,13 @@ export function useThisContext() {
     );
   return value; // now has type AppContextValue
   // or even provide domain methods for better encapsulation
+}
+
+export function useRegionItemState(): [
+  RegionItemContextState,
+  Dispatch<SetStateAction<RegionItemContextState>>,
+] {
+  return useState<RegionItemContextState>([]);
 }
 
 export function update(value: RegionItemContextValue) {

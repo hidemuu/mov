@@ -16,22 +16,23 @@ export class RegionItemContext {
     this.update();
   }
 
-  private context: React.Context<IRegionItem[]> = React.createContext<
-    IRegionItem[]
-  >([]);
-
-  public state: [
+  private state: [
     s: IRegionItem[],
     a: React.Dispatch<React.SetStateAction<IRegionItem[]>>,
   ] = React.useState<IRegionItem[]>([]);
+
+  public store: IRegionItem[] = this.state[0];
+
+  private context: React.Context<IRegionItem[]> = React.createContext<
+    IRegionItem[]
+  >(this.store);
 
   public getContext(): React.Context<IRegionItem[]> {
     return this.context;
   }
 
-  private update() {
+  public update() {
     fetchData<IRegionItem>(API_KEY, this.state[1]);
-
     //this.context.Provider.bind(this.regionTable)
   }
 }

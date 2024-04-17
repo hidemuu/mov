@@ -4,10 +4,6 @@ import usePopulationPerYearTrendLines from "stores/resas/hooks/usePopulationPerY
 import { useInputId } from "domains/inputs/hooks/useInputId";
 import { IRegionKey } from "stores/resas/types/IRegionKey";
 import { ResasTemplate } from "..";
-import {
-  getCityCode,
-  getPrefectureCode,
-} from "stores/resas/services/regionTableService";
 import { getRegionSelections } from "domains/statistics/services/RegionSelectionService";
 import { IRegionValue } from "stores/resas/types/IRegionValue";
 import { IRegionTrend } from "stores/resas/types/trends/IRegionTrend";

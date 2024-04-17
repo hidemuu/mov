@@ -1,20 +1,73 @@
-import React from 'react'
-import { IRegionTrend } from '../types/trends/IRegionTrend'
+import {
+  Dispatch,
+  SetStateAction,
+  createContext,
+  useContext,
+  useState,
+} from "react";
+import { IRegionTrend } from "../types/trends/IRegionTrend";
+import fetchData from "stores/resas/services/fatchData";
+import { IRegionValue } from "../types/IRegionValue";
 
-export class RegionTrendLineContext {
-  private static current: RegionTrendLineContext
+const API_KEY = "/api/analizers/regions/TrendLine";
+const API_KEY_POPULATION_PER_YEARS = `${API_KEY}/population_per_years`;
 
-  public static get instance(): RegionTrendLineContext {
-    if (!this.current) this.current = new RegionTrendLineContext()
-    return this.current
+type RegionTrendContextState = IRegionTrend[];
+
+type RegionTrendContextValue = {
+  state: RegionTrendContextState;
+  setState: Dispatch<SetStateAction<RegionTrendContextState>>;
+};
+
+export const RegionTrendContext = createContext<
+  RegionTrendContextValue | undefined
+>(undefined);
+
+export function useRegionTrendContext() {
+  const value = useContext(RegionTrendContext);
+  if (value === undefined)
+    throw new Error(
+      "Expected an AppProvider somewhere in the react tree to set context value"
+    );
+  return value; // now has type AppContextValue
+  // or even provide domain methods for better encapsulation
+}
+
+export function useRegionTrendState(): [
+  RegionTrendContextState,
+  Dispatch<SetStateAction<RegionTrendContextState>>,
+] {
+  return useState<RegionTrendContextState>([]);
+}
+
+export function updateRegionTrendPopulationPerYearsState(
+  region: IRegionValue,
+  setState: Dispatch<SetStateAction<RegionTrendContextState>>
+) {
+  let endpoint: string;
+  if (region.cityCode === 0 && region.prefCode === 0) {
+    endpoint = "";
+  } else if (region.cityCode === 0) {
+    endpoint = API_KEY_POPULATION_PER_YEARS + "/" + String(region.prefCode);
+  } else {
+    endpoint =
+      API_KEY_POPULATION_PER_YEARS +
+      "/" +
+      String(region.prefCode) +
+      "/" +
+      String(region.cityCode);
   }
-
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  private constructor() {}
-
-  private context = React.createContext<IRegionTrend[] | null>(null)
-
-  getContext(): React.Context<IRegionTrend[] | null> {
-    return this.context
+  if (endpoint !== "") {
+    fetchData<IRegionTrend>(endpoint, setState);
   }
+}
+
+export function asStringRegionTrendState(
+  state: RegionTrendContextState
+): string {
+  let result: string = "";
+  for (const item of state) {
+    result += `prefcode:${item.region.prefCode}prefname:${item.region.prefName}citycode:${item.region.cityCode}cityname:${item.region.cityName}\n`;
+  }
+  return result;
 }

@@ -6,6 +6,10 @@ import {
   RegionItemContext,
   useRegionItemState,
 } from "stores/resas/contexts/RegionItemContext";
+import {
+  RegionTrendContext,
+  useRegionTrendState,
+} from "stores/resas/contexts/RegionTrendLineContext";
 
 export const App: React.FunctionComponent = (theme) => {
   const [state, setState] = useState({
@@ -17,13 +21,18 @@ export const App: React.FunctionComponent = (theme) => {
   });
 
   const [regionItemState, setRegionItemState] = useRegionItemState();
+  const [regionTrendState, setRegionTrendState] = useRegionTrendState();
 
   return (
     <AppContext.Provider value={{ state, setState }}>
       <RegionItemContext.Provider
         value={{ state: regionItemState, setState: setRegionItemState }}
       >
-        <Layout />
+        <RegionTrendContext.Provider
+          value={{ state: regionTrendState, setState: setRegionTrendState }}
+        >
+          <Layout />
+        </RegionTrendContext.Provider>
       </RegionItemContext.Provider>
     </AppContext.Provider>
   );

@@ -6,6 +6,7 @@ import {
   useState,
 } from "react";
 import { ITableItem } from "../types/tables/ITableItem";
+import { RegionTableLine } from "../models/RegionTableLine";
 
 type RegionTableContextState = ITableItem[];
 
@@ -38,5 +39,12 @@ export function useRegionTableState(): [
 ] {
   const [prefState, setPrefState] = useState<RegionTableContextState>([]);
   const [cityState, setCityState] = useState<RegionTableContextState>([]);
+  const model = new RegionTableLine({
+    prefState: prefState,
+    setPrefState: setPrefState,
+    cityState: cityState,
+    setCityState: setCityState,
+  });
+  model.update();
   return [prefState, setPrefState, cityState, setCityState];
 }

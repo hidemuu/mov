@@ -5,7 +5,7 @@ import { IRegionValue } from "../types/IRegionValue";
 import { IRegionTable } from "../types/tables/IRegionTable";
 import { ITableItem } from "../types/tables/ITableItem";
 
-const API_KEY = `api/TableLine`;
+const API_KEY = `/api/analizers/regions/TableLine`;
 const API_KEY_PREFECTURE = `${API_KEY}/prefecture`;
 const API_KEY_CITY = `${API_KEY}/city`;
 
@@ -16,7 +16,7 @@ export class RegionTableLine {
     this.contextValue = contextValue;
   }
 
-  public updateRegionTableState() {
+  public update() {
     fetchData<ITableItem>(API_KEY_PREFECTURE, this.contextValue.setPrefState);
     fetchData<ITableItem>(API_KEY_CITY, this.contextValue.setCityState);
   }

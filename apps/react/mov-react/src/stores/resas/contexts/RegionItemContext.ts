@@ -38,14 +38,16 @@ export function useRegionItemState(): [
   return useState<RegionItemContextState>([]);
 }
 
-export function update(value: RegionItemContextValue) {
-  fetchData<IRegionItem>(API_KEY, value.setState);
+export function updateRegionItemState(
+  setState: Dispatch<SetStateAction<RegionItemContextState>>
+) {
+  fetchData<IRegionItem>(API_KEY, setState);
 }
 
-export function asString(state: RegionItemContextState): string {
+export function asStringRegionItemState(state: RegionItemContextState): string {
   let result: string = "";
   for (const item of state) {
-    result += item;
+    result += `code:${item.code}name:${item.name}\n`;
   }
   return result;
 }

@@ -10,6 +10,11 @@ import {
 import type { InputProps } from "@fluentui/react-components";
 import fetchData from "stores/resas/services/fatchData";
 import { IRegionItem } from "stores/resas/types/IRegionItem";
+import {
+  useRegionItemContext,
+  updateRegionItemState,
+  asStringRegionItemState,
+} from "stores/resas/contexts/RegionItemContext";
 
 const useStyles = makeStyles({
   root: {
@@ -33,9 +38,8 @@ export const HomePage: React.FunctionComponent = () => {
   const [consoleValue, setConsoleValue] = React.useState(
     "/api/analizers/regions/resas/ResasPrefecture"
   );
-  const [consoleResponse, setConsoleResponse] = React.useState<IRegionItem[]>(
-    []
-  );
+
+  const regionItemContext = useRegionItemContext();
 
   const onConsoleChange: InputProps["onChange"] = (ev, data) => {
     // The controlled input pattern can be used for other purposes besides validation,
@@ -55,7 +59,7 @@ export const HomePage: React.FunctionComponent = () => {
         consoleValue.includes("/api")
       ) {
         //httpのURIの場合
-        fetchData<IRegionItem>(consoleValue, setConsoleResponse);
+        updateRegionItemState(regionItemContext.setState);
       }
     }
   };
@@ -85,7 +89,7 @@ export const HomePage: React.FunctionComponent = () => {
         onPaste={onConsolePaste}
         id={inputId}
       />
-      <Label>Response:</Label>
+      <Label>Response:{asStringRegionItemState(regionItemContext.state)}</Label>
     </div>
   );
 };

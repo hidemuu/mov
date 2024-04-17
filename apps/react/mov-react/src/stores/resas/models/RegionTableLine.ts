@@ -2,6 +2,7 @@ import { RegionTableContextValue } from "../contexts/RegionTableLineContext";
 import fetchData from "../services/fatchData";
 import { IRegionKey } from "../types/IRegionKey";
 import { IRegionValue } from "../types/IRegionValue";
+import { IRegionTable } from "../types/tables/IRegionTable";
 import { ITableItem } from "../types/tables/ITableItem";
 
 const API_KEY = `api/TableLine`;
@@ -18,6 +19,13 @@ export class RegionTableLine {
   public updateRegionTableState() {
     fetchData<ITableItem>(API_KEY_PREFECTURE, this.contextValue.setPrefState);
     fetchData<ITableItem>(API_KEY_CITY, this.contextValue.setCityState);
+  }
+
+  public getTable(): IRegionTable {
+    return {
+      pref: this.contextValue.prefState,
+      city: this.contextValue.cityState,
+    };
   }
 
   public getPrefectureCode(name: string): number {

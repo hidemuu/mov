@@ -8,7 +8,6 @@ import React, {
 import axios from "axios";
 import { IRegionTable } from "../types/tables/IRegionTable";
 import { ITableItem } from "../types/tables/ITableItem";
-import fetchData from "stores/resas/services/fatchData";
 
 const API_KEY = `api/TableLine`;
 const API_KEY_PREFECTURE = `${API_KEY}/prefecture`;
@@ -16,7 +15,7 @@ const API_KEY_CITY = `${API_KEY}/city`;
 
 type RegionTableContextState = ITableItem[];
 
-type RegionTableContextValue = {
+export type RegionTableContextValue = {
   prefState: RegionTableContextState;
   setPrefState: Dispatch<SetStateAction<RegionTableContextState>>;
   cityState: RegionTableContextState;
@@ -46,14 +45,6 @@ export function useRegionTableState(): [
   const [prefState, setPrefState] = useState<RegionTableContextState>([]);
   const [cityState, setCityState] = useState<RegionTableContextState>([]);
   return [prefState, setPrefState, cityState, setCityState];
-}
-
-export function updateRegionTableState(
-  setPrefState: Dispatch<SetStateAction<RegionTableContextState>>,
-  setCityState: Dispatch<SetStateAction<RegionTableContextState>>
-) {
-  fetchData<ITableItem>(API_KEY_PREFECTURE, setPrefState);
-  fetchData<ITableItem>(API_KEY_CITY, setCityState);
 }
 
 export class RegionTableLineContext {

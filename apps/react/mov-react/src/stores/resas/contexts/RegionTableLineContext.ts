@@ -32,15 +32,15 @@ export function useRegionTableContext() {
   // or even provide domain methods for better encapsulation
 }
 
-export function useRegionTableState(): [
-  RegionTableContextState,
-  Dispatch<SetStateAction<RegionTableContextState>>,
-  RegionTableContextState,
-  Dispatch<SetStateAction<RegionTableContextState>>,
-] {
+export function useRegionTableState(): RegionTableContextValue {
   const [prefState, setPrefState] = useState<RegionTableContextState>([]);
   const [cityState, setCityState] = useState<RegionTableContextState>([]);
-  return [prefState, setPrefState, cityState, setCityState];
+  return {
+    prefState: prefState,
+    setPrefState: setPrefState,
+    cityState: cityState,
+    setCityState: setCityState,
+  };
 }
 
 export function updateRegionTable(value: RegionTableContextValue) {

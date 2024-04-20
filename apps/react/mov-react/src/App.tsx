@@ -26,12 +26,6 @@ export const App: React.FunctionComponent = (theme) => {
 
   const [regionItemState, setRegionItemState] = useRegionItemState();
   const [regionTrendState, setRegionTrendState] = useRegionTrendState();
-  const [
-    regionTablePrefState,
-    setRegionTablePrefState,
-    regionTableCityState,
-    setRegionTableCityState,
-  ] = useRegionTableState();
 
   return (
     <AppContext.Provider value={{ state, setState }}>
@@ -41,14 +35,7 @@ export const App: React.FunctionComponent = (theme) => {
         <RegionTrendContext.Provider
           value={{ state: regionTrendState, setState: setRegionTrendState }}
         >
-          <RegionTableContext.Provider
-            value={{
-              prefState: regionTablePrefState,
-              setPrefState: setRegionTablePrefState,
-              cityState: regionTableCityState,
-              setCityState: setRegionTableCityState,
-            }}
-          >
+          <RegionTableContext.Provider value={useRegionTableState()}>
             <Layout />
           </RegionTableContext.Provider>
         </RegionTrendContext.Provider>

@@ -4,7 +4,7 @@ import { Layout } from "./Layout";
 import { webLightTheme } from "@fluentui/react-components";
 import {
   RegionItemContext,
-  useRegionItemState,
+  useRegionItemContextValue,
 } from "stores/resas/contexts/RegionItemContext";
 import {
   RegionTrendContext,
@@ -26,7 +26,7 @@ export const App: React.FunctionComponent = (theme) => {
 
   return (
     <AppContext.Provider value={{ state, setState }}>
-      <RegionItemContext.Provider value={useRegionItemState()}>
+      <RegionItemContext.Provider value={useRegionItemContextValue()}>
         <RegionTrendContext.Provider value={useRegionTrendState()}>
           <RegionTableContext.Provider value={useRegionTableContextValue()}>
             <Layout />

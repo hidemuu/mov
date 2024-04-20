@@ -6,9 +6,7 @@ import {
   useState,
 } from "react";
 import { IRegionItem } from "../types/IRegionItem";
-import fetchData from "stores/resas/services/fatchData";
-
-const API_KEY = "/api/analizers/regions/resas/ResasPrefecture";
+import { RegionItemStore } from "../models/RegionItemStore";
 
 type RegionItemContextState = IRegionItem[];
 
@@ -17,34 +15,24 @@ export type RegionItemContextValue = {
   setState: Dispatch<SetStateAction<RegionItemContextState>>;
 };
 
-export const RegionItemContext = createContext<
-  RegionItemContextValue | undefined
->(undefined);
+export const RegionItemContext = createContext<RegionItemStore | undefined>(
+  undefined
+);
 
 export function useRegionItemContext() {
-  const value = useContext(RegionItemContext);
-  if (value === undefined)
+  const store = useContext(RegionItemContext);
+  if (store === undefined)
     throw new Error(
       "Expected an AppProvider somewhere in the react tree to set context value"
     );
-  return value; // now has type AppContextValue
+  if (store.isEmpty()) {
+    store.update();
+  }
+  return store; // now has type AppContextValue
   // or even provide domain methods for better encapsulation
 }
 
-export function useRegionItemState(): RegionItemContextValue {
+export function useRegionItemContextValue(): RegionItemStore {
   const [state, setState] = useState<RegionItemContextState>([]);
-  return { state: state, setState: setState };
-}
-
-export function updateRegionItemState(value: RegionItemContextValue) {
-  if (value.state.length > 0) return;
-  fetchData<IRegionItem>(API_KEY, value.setState);
-}
-
-export function asStringRegionItemState(state: RegionItemContextState): string {
-  let result: string = "";
-  for (const item of state) {
-    result += `code:${item.code}name:${item.name}\n`;
-  }
-  return result;
+  return new RegionItemStore({ state: state, setState: setState });
 }

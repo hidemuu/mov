@@ -1,57 +1,57 @@
-import { useEffect, useState } from 'react'
-import { IRegionTrend } from 'stores/resas/types/trends/IRegionTrend'
-import { ILineChartOption } from 'components/atoms/Chart/types/ILineChartOption'
-import { ILineSeries } from 'components/atoms/Chart/types/ILineSeries'
+import { useEffect, useState } from "react";
+import { IRegionTrend } from "stores/resas/types/trends/IRegionTrend";
+import { ILineChartOption } from "components/atoms/Chart/types/ILineChartOption";
+import { ILineSeries } from "components/atoms/Chart/types/ILineSeries";
 
 export default function useRegionTrendLineChart(
   regionTrends: IRegionTrend[]
 ): ILineChartOption {
   const [chartOptions, setChartOptions] = useState<ILineChartOption>({
-    title: '',
+    title: "",
     series: [],
     xAxis: {
-      title: '',
-      categories: []
+      title: "",
+      categories: [],
     },
     yAxis: {
-      title: '',
-      categories: []
-    }
-  })
+      title: "",
+      categories: [],
+    },
+  });
 
   useEffect(() => {
-    const series: ILineSeries[] = []
-    const categories = []
-    let count = 0
+    const series: ILineSeries[] = [];
+    const categories = [];
+    let count = 0;
     for (const regionTrend of regionTrends) {
-      const data = []
-      for (const trendLine of regionTrend.trendLines) {
+      const data = [];
+      for (const trendLine of regionTrend.data) {
         if (count === 0) {
-          categories.push(String(trendLine.number))
+          categories.push(String(trendLine.number));
         }
-        data.push(trendLine.value)
+        data.push(trendLine.value);
       }
-      const prefName = regionTrend.region.prefName
-      const cityName = regionTrend.region.cityName
+      const prefName = regionTrend.region.prefName;
+      const cityName = regionTrend.region.cityName;
       series.push({
-        name: prefName + '-' + cityName,
-        data: data
-      })
-      count++
+        name: prefName + "-" + cityName,
+        data: data,
+      });
+      count++;
     }
     setChartOptions({
-      title: '',
+      title: "",
       series: series,
       xAxis: {
-        title: '',
-        categories: categories
+        title: "",
+        categories: categories,
       },
       yAxis: {
-        title: '',
-        categories: []
-      }
-    })
-  }, [regionTrends])
+        title: "",
+        categories: [],
+      },
+    });
+  }, [regionTrends]);
 
-  return chartOptions
+  return chartOptions;
 }

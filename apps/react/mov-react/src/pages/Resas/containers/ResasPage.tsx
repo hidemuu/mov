@@ -1,18 +1,18 @@
 ﻿import React, { useEffect, useState } from "react";
 import type { ComboboxProps } from "@fluentui/react-components";
-import usePopulationPerYearTrendLines from "stores/resas/hooks/usePopulationPerYearTrends";
 import { useInputId } from "domains/inputs/hooks/useInputId";
 import { IRegionKey } from "stores/resas/types/IRegionKey";
 import { ResasTemplate } from "..";
 import { getRegionSelections } from "domains/statistics/services/RegionSelectionService";
 import { IRegionValue } from "stores/resas/types/IRegionValue";
-import { IRegionTrend } from "stores/resas/types/trends/IRegionTrend";
 import { IRegionSelections } from "domains/statistics/types/IRegionSelections";
 import useSelectedRegionValue from "domains/statistics/hooks/useSelectedRegionValue";
 import { useRegionTableContext } from "stores/resas/contexts/RegionTableContext";
+import { useRegionTrendContext } from "stores/resas/contexts/RegionTrendContext";
 
 export const ResasPage: React.FunctionComponent = () => {
   const inputId: string = useInputId();
+  const regionTrendStore = useRegionTrendContext();
   const regionTableStore = useRegionTableContext();
   const [selectedRegionKey, setSelectedRegionKey] = useState<IRegionKey>({
     prefCode: 11,
@@ -22,8 +22,6 @@ export const ResasPage: React.FunctionComponent = () => {
     regionTableStore.getTable(),
     selectedRegionKey
   );
-  const populationPerYearTrendLines: IRegionTrend[] =
-    usePopulationPerYearTrendLines(selectedRegionValue);
 
   const regionSelections: IRegionSelections = getRegionSelections(
     selectedRegionValue,
@@ -49,6 +47,7 @@ export const ResasPage: React.FunctionComponent = () => {
       cityCode: selectedRegionValue.cityCode,
     };
     setSelectedRegionKey(updateRegionKey);
+    regionTrendStore.updatePopulationPerYears(selectedRegionValue);
   };
 
   const onChangeSelectedCity: ComboboxProps["onOptionSelect"] = (ev, data) => {
@@ -58,13 +57,14 @@ export const ResasPage: React.FunctionComponent = () => {
       cityCode: regionTableStore.getCityCode(cityName ?? ""),
     };
     setSelectedRegionKey(updateRegionKey);
+    regionTrendStore.updatePopulationPerYears(selectedRegionValue);
   };
 
   return (
     <ResasTemplate
       inputId={inputId}
       regionTable={regionTableStore.getTable()}
-      regionTrendLines={populationPerYearTrendLines}
+      regionTrendLines={regionTrendStore.getTrend()}
       selectedRegionKey={selectedRegionValue}
       regionSelections={regionSelections}
       onChangeSelectedPrefecture={onChangeSelectedPrefecture}

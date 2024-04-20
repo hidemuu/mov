@@ -1,5 +1,4 @@
 ﻿import axios, { AxiosResponse } from "axios";
-import { IsDebugMode } from "utils/developConstants";
 import { writeLogs } from "utils/services/logger";
 
 axios.defaults.baseURL = "http://localhost:5257";
@@ -18,7 +17,7 @@ export default function fetchData<T>(
       if (status === 200) {
         const data = response.data;
         const results: T[] = data.results;
-        writeLogs(results);
+        //writeLogs(results);
         setStateAction(results);
       } else {
         throw new Error();

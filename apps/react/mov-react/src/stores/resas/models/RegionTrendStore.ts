@@ -32,6 +32,10 @@ export class RegionTrendStore {
     }
   }
 
+  public getTrend(): IRegionTrend[] {
+    return this.contextValue.state;
+  }
+
   public isEmpty(): boolean {
     return this.contextValue.state.length === 0;
   }

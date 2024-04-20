@@ -9,7 +9,7 @@ const API_KEY = `/api/analizers/regions/TableLine`;
 const API_KEY_PREFECTURE = `${API_KEY}/prefecture`;
 const API_KEY_CITY = `${API_KEY}/city`;
 
-export class RegionTableLine {
+export class RegionTableStore {
   private contextValue: RegionTableContextValue;
 
   constructor(contextValue: RegionTableContextValue) {

@@ -14,7 +14,7 @@ const API_KEY_POPULATION_PER_YEARS = `${API_KEY}/population_per_years`;
 
 type RegionTrendContextState = IRegionTrend[];
 
-type RegionTrendContextValue = {
+export type RegionTrendContextValue = {
   state: RegionTrendContextState;
   setState: Dispatch<SetStateAction<RegionTrendContextState>>;
 };
@@ -33,11 +33,9 @@ export function useRegionTrendContext() {
   // or even provide domain methods for better encapsulation
 }
 
-export function useRegionTrendState(): [
-  RegionTrendContextState,
-  Dispatch<SetStateAction<RegionTrendContextState>>,
-] {
-  return useState<RegionTrendContextState>([]);
+export function useRegionTrendState(): RegionTrendContextValue {
+  const [state, setState] = useState<RegionTrendContextState>([]);
+  return { state: state, setState: setState };
 }
 
 export function updateRegionTrendPopulationPerYearsState(

@@ -12,7 +12,7 @@ import {
 } from "stores/resas/contexts/RegionTrendLineContext";
 import {
   RegionTableContext,
-  useRegionTableState,
+  useRegionTableContextValue,
 } from "stores/resas/contexts/RegionTableLineContext";
 
 export const App: React.FunctionComponent = (theme) => {
@@ -24,18 +24,11 @@ export const App: React.FunctionComponent = (theme) => {
     theme: { key: "light", fluentTheme: webLightTheme },
   });
 
-  const [regionItemState, setRegionItemState] = useRegionItemState();
-  const [regionTrendState, setRegionTrendState] = useRegionTrendState();
-
   return (
     <AppContext.Provider value={{ state, setState }}>
-      <RegionItemContext.Provider
-        value={{ state: regionItemState, setState: setRegionItemState }}
-      >
-        <RegionTrendContext.Provider
-          value={{ state: regionTrendState, setState: setRegionTrendState }}
-        >
-          <RegionTableContext.Provider value={useRegionTableState()}>
+      <RegionItemContext.Provider value={useRegionItemState()}>
+        <RegionTrendContext.Provider value={useRegionTrendState()}>
+          <RegionTableContext.Provider value={useRegionTableContextValue()}>
             <Layout />
           </RegionTableContext.Provider>
         </RegionTrendContext.Provider>

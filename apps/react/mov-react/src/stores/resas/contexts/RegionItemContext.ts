@@ -12,7 +12,7 @@ const API_KEY = "/api/analizers/regions/resas/ResasPrefecture";
 
 type RegionItemContextState = IRegionItem[];
 
-type RegionItemContextValue = {
+export type RegionItemContextValue = {
   state: RegionItemContextState;
   setState: Dispatch<SetStateAction<RegionItemContextState>>;
 };
@@ -31,11 +31,9 @@ export function useRegionItemContext() {
   // or even provide domain methods for better encapsulation
 }
 
-export function useRegionItemState(): [
-  RegionItemContextState,
-  Dispatch<SetStateAction<RegionItemContextState>>,
-] {
-  return useState<RegionItemContextState>([]);
+export function useRegionItemState(): RegionItemContextValue {
+  const [state, setState] = useState<RegionItemContextState>([]);
+  return { state: state, setState: setState };
 }
 
 export function updateRegionItemState(value: RegionItemContextValue) {

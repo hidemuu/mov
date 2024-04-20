@@ -6,9 +6,9 @@ import {
   useState,
 } from "react";
 import { ITableItem } from "../types/tables/ITableItem";
-import { RegionTableLine } from "../models/RegionTableLine";
+import { RegionTableStore } from "../models/RegionTableStore";
 
-type RegionTableContextState = ITableItem[];
+export type RegionTableContextState = ITableItem[];
 
 export type RegionTableContextValue = {
   prefState: RegionTableContextState;
@@ -17,34 +17,30 @@ export type RegionTableContextValue = {
   setCityState: Dispatch<SetStateAction<RegionTableContextState>>;
 };
 
-export const RegionTableContext = createContext<
-  RegionTableContextValue | undefined
->(undefined);
+export const RegionTableContext = createContext<RegionTableStore | undefined>(
+  undefined
+);
 
 export function useRegionTableContext() {
-  const value = useContext(RegionTableContext);
-  if (value === undefined)
+  const store = useContext(RegionTableContext);
+  if (store === undefined)
     throw new Error(
       "Expected an AppProvider somewhere in the react tree to set context value"
     );
-  updateRegionTable(value);
-  return value; // now has type AppContextValue
+  if (store.isEmpty()) {
+    store.update();
+  }
+  return store; // now has type AppContextValue
   // or even provide domain methods for better encapsulation
 }
 
-export function useRegionTableState(): RegionTableContextValue {
+export function useRegionTableContextValue(): RegionTableStore {
   const [prefState, setPrefState] = useState<RegionTableContextState>([]);
   const [cityState, setCityState] = useState<RegionTableContextState>([]);
-  return {
+  return new RegionTableStore({
     prefState: prefState,
     setPrefState: setPrefState,
     cityState: cityState,
     setCityState: setCityState,
-  };
-}
-
-export function updateRegionTable(value: RegionTableContextValue) {
-  const model = new RegionTableLine(value);
-  if (!model.isEmpty()) return;
-  model.update();
+  });
 }

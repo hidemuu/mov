@@ -1,4 +1,4 @@
-import { RegionTableContextValue } from "../contexts/RegionTableLineContext";
+import { RegionTableContextValue } from "../contexts/RegionTableContext";
 import fetchData from "../services/fatchData";
 import { IRegionKey } from "../types/IRegionKey";
 import { IRegionValue } from "../types/IRegionValue";

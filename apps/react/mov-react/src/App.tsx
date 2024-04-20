@@ -9,11 +9,11 @@ import {
 import {
   RegionTrendContext,
   useRegionTrendState,
-} from "stores/resas/contexts/RegionTrendLineContext";
+} from "stores/resas/contexts/RegionTrendContext";
 import {
   RegionTableContext,
   useRegionTableContextValue,
-} from "stores/resas/contexts/RegionTableLineContext";
+} from "stores/resas/contexts/RegionTableContext";
 
 export const App: React.FunctionComponent = (theme) => {
   const [state, setState] = useState({

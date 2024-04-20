@@ -9,7 +9,7 @@ import { IRegionValue } from "stores/resas/types/IRegionValue";
 import { IRegionTrend } from "stores/resas/types/trends/IRegionTrend";
 import { IRegionSelections } from "domains/statistics/types/IRegionSelections";
 import useSelectedRegionValue from "domains/statistics/hooks/useSelectedRegionValue";
-import { useRegionTableContext } from "stores/resas/contexts/RegionTableLineContext";
+import { useRegionTableContext } from "stores/resas/contexts/RegionTableContext";
 
 export const ResasPage: React.FunctionComponent = () => {
   const inputId: string = useInputId();

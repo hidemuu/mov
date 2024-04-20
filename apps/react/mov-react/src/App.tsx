@@ -8,7 +8,7 @@ import {
 } from "stores/resas/contexts/RegionItemContext";
 import {
   RegionTrendContext,
-  useRegionTrendState,
+  useRegionTrendContextValue,
 } from "stores/resas/contexts/RegionTrendContext";
 import {
   RegionTableContext,
@@ -27,7 +27,7 @@ export const App: React.FunctionComponent = (theme) => {
   return (
     <AppContext.Provider value={{ state, setState }}>
       <RegionItemContext.Provider value={useRegionItemContextValue()}>
-        <RegionTrendContext.Provider value={useRegionTrendState()}>
+        <RegionTrendContext.Provider value={useRegionTrendContextValue()}>
           <RegionTableContext.Provider value={useRegionTableContextValue()}>
             <Layout />
           </RegionTableContext.Provider>

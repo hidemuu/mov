@@ -8,17 +8,17 @@ using System.Text;
 
 namespace Mov.Core.Repositories.Schemas.Responses
 {
-	public class DbResponseSchemaBase<TIdentifier, TResult> : DbSchemaBase<TIdentifier> where TResult : IDbResponseSchema
+	public class DbResponseSchema<TIdentifier, TResult> : DbSchemaBase<TIdentifier>
 	{
 		#region property
 
-		[Name("message")]
-		[JsonProperty("message")]
-		[DisplayName("メッセージ")]
+		[Name("identifier")]
+		[JsonProperty("identifier")]
+		[DisplayName("ID")]
 		public override TIdentifier Id { get; set; }
 
-		[Name("result")]
-		[JsonProperty("result")]
+		[Name("results")]
+		[JsonProperty("results")]
 		[DisplayName("結果")]
 		public List<TResult> Results { get; set; } = new List<TResult>();
 

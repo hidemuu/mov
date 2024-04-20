@@ -38,8 +38,8 @@ namespace Mov.Suite.ReactApp.Controllers
 		[HttpGet("population_per_years/{prefCode}")]
 		public async Task<IActionResult> GetPopulationPerYears(int prefCode)
 		{
-			var prefecture = (await _client.GetPrefectureTableLineAsync()).FirstOrDefault(x => x.Id.Equals(prefCode));
-			var cities = await _client.GetCityTableLineAsync(prefCode);
+			var prefecture = (await _client.GetPrefectureTableLineAsync()).Results.FirstOrDefault(x => x.Id.Equals(prefCode));
+			var cities = (await _client.GetCityTableLineAsync(prefCode)).Results;
 			var response = await this._client.GetTrendLineAsync(
 				new RegionRequestSchema()
 				{
@@ -74,8 +74,8 @@ namespace Mov.Suite.ReactApp.Controllers
 		[HttpGet("population_per_years/{prefCode}/{cityCode}")]
 		public async Task<IActionResult> GetPopulationPerYears(int prefCode, int cityCode)
 		{
-			var prefecture = (await _client.GetPrefectureTableLineAsync()).FirstOrDefault(x => x.Id.Equals(prefCode));
-			var city = (await _client.GetCityTableLineAsync(prefCode)).FirstOrDefault(x => x.Id.Equals(cityCode));
+			var prefecture = (await _client.GetPrefectureTableLineAsync()).Results.FirstOrDefault(x => x.Id.Equals(prefCode));
+			var city = (await _client.GetCityTableLineAsync(prefCode)).Results.FirstOrDefault(x => x.Id.Equals(cityCode));
 			var response = await this._client.GetTrendLineAsync(
 				new RegionRequestSchema()
 				{
@@ -113,8 +113,8 @@ namespace Mov.Suite.ReactApp.Controllers
 		[HttpGet("population_per_years/{prefCode}/{cityCode}/{category}/{label}/{start}/{end}")]
 		public async Task<IActionResult> Get(int prefCode, int cityCode, string category, string label, string srart, string end)
 		{
-			var prefecture = (await _client.GetPrefectureTableLineAsync()).FirstOrDefault(x => x.Id.Equals(prefCode));
-			var city = (await _client.GetCityTableLineAsync()).FirstOrDefault(x => x.Id.Equals(cityCode));
+			var prefecture = (await _client.GetPrefectureTableLineAsync()).Results.FirstOrDefault(x => x.Id.Equals(prefCode));
+			var city = (await _client.GetCityTableLineAsync()).Results.FirstOrDefault(x => x.Id.Equals(cityCode));
 
 			return Ok(await this._client.GetTrendLineAsync(
 				new RegionRequestSchema()

@@ -7,6 +7,7 @@ using Mov.Analizer.Service.Regions.Entities;
 using Mov.Analizer.Service.Regions.Schemas;
 using Mov.Analizer.Service.Regions.ValueObjects;
 using Mov.Analizer.Service.Stores;
+using Mov.Core.Repositories.Schemas.Responses;
 using Mov.Core.Valuables;
 using Mov.Core.Valuables.Dimensions.Coordinates.TwoDimensions;
 using Mov.Suite.AnalizerClient.Resas.Repository;
@@ -47,11 +48,11 @@ namespace Mov.Suite.AnalizerClient.Resas
 
         #region method
 
-        public async Task<IEnumerable<TableLineSchema>> GetTableLineAsync()
+        public async Task<DbResponseSchema<string, TableLineSchema>> GetTableLineAsync()
         {
 			var lines = new List<TableLineSchema>();
-			lines.AddRange(await GetPrefectureTableLineAsync());
-			lines.AddRange(await GetCityTableLineAsync());
+			lines.AddRange((await GetPrefectureTableLineAsync()).Results);
+			lines.AddRange((await GetCityTableLineAsync()).Results);
 			
             var tableLines = _analizerQuery.TableLines.Reader.ReadAll();
             if (!tableLines?.Any() ?? true)
@@ -59,10 +60,13 @@ namespace Mov.Suite.AnalizerClient.Resas
 				_analizerCommand.TableLines.Deleter.Clear();
 				_analizerCommand.TableLines.Saver.Save(lines);
 			}
-			return lines;
+			return new DbResponseSchema<string, TableLineSchema> 
+			{
+				Results = lines
+			};
 		}
 
-		public async Task<IEnumerable<TableLineSchema>> GetPrefectureTableLineAsync()
+		public async Task<DbResponseSchema<string, TableLineSchema>> GetPrefectureTableLineAsync()
 		{
 			var lines = new HashSet<TableLine>();
 			var prefectures = await _resasRepository.Prefectures.GetAsync(null);
@@ -70,10 +74,10 @@ namespace Mov.Suite.AnalizerClient.Resas
 			{
 				lines.Add(new TableLine(prefecture.Code, _resasRepository.Prefectures.Name, "JP", prefecture.Name, prefecture.Name));
 			}
-			return lines.Select(x => x.CreateSchema());
+			return new DbResponseSchema<string, TableLineSchema> { Results = lines.Select(x => x.CreateSchema()).ToList() };
 		}
 
-		public async Task<IEnumerable<TableLineSchema>> GetCityTableLineAsync()
+		public async Task<DbResponseSchema<string, TableLineSchema>> GetCityTableLineAsync()
 		{
 			var lines = new HashSet<TableLine>();
 			var cities = await _resasRepository.Cities.GetAsync(null);
@@ -81,16 +85,16 @@ namespace Mov.Suite.AnalizerClient.Resas
 			{
 				lines.Add(new TableLine(city.Code, _resasRepository.Cities.Name, city.PrefCode.ToString(), city.Name, city.Name));
 			}
-			return lines.Select(x => x.CreateSchema());
+			return new DbResponseSchema<string, TableLineSchema> { Results = lines.Select(x => x.CreateSchema()).ToList() };
 		}
 
-		public async Task<IEnumerable<TableLineSchema>> GetCityTableLineAsync(int prefCode)
+		public async Task<DbResponseSchema<string, TableLineSchema>> GetCityTableLineAsync(int prefCode)
 		{
 			var cities = await GetCityTableLineAsync();
-			return cities.Where(x => x.Label.Equals(prefCode.ToString()));
+			return new DbResponseSchema<string, TableLineSchema> { Results = cities.Results.Where(x => x.Label.Equals(prefCode.ToString())).ToList() };
 		}
 
-		public async Task<IEnumerable<RegionResponseSchema<TrendLineSchema>>> GetTrendLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
+		public async Task<DbResponseSchema<string, RegionResponseSchema<TrendLineSchema>>> GetTrendLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
 		{
 			var request = RegionRequest.Factory.Create(requestSchema);
 			if (request.Category.Equals(new RegionCategory(_resasRepository.PopulationPerYears.Name)))
@@ -101,29 +105,29 @@ namespace Mov.Suite.AnalizerClient.Resas
 			return null;
 		}
 
-		public async Task<IEnumerable<TimeLineSchema>> GetTimeLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
+		public async Task<DbResponseSchema<string, TimeLineSchema>> GetTimeLineAsync(RegionRequestSchema requestSchema, TimeValue start, TimeValue end)
 		{
 			var result = new HashSet<TimeLine>();
-			return await Task.Run(() => result.Select(x => x.CreateSchema()));
+			return new DbResponseSchema<string, TimeLineSchema> { Results = (await Task.Run(() => result.Select(x => x.CreateSchema()))).ToList() };
 		}
 
-		public async Task<IEnumerable<StatisticLineSchema>> GetStatisticLineAsync()
+		public async Task<DbResponseSchema<string, StatisticLineSchema>> GetStatisticLineAsync()
 		{
 			var result = new HashSet<StatisticLine>();
-			return await Task.Run(() => result.Select(x => x.CreateSchema()));
+			return new DbResponseSchema<string, StatisticLineSchema> { Results = (await Task.Run(() => result.Select(x => x.CreateSchema()))).ToList() };
 		}
 
-		public async Task<IEnumerable<HistgramLineSchema>> GetHistgramLineAsync()
+		public async Task<DbResponseSchema<string, HistgramLineSchema>> GetHistgramLineAsync()
 		{
 			var result = new HashSet<HistgramLine>();
-			return await Task.Run(() => result.Select(x => x.CreateSchema()));
+			return new DbResponseSchema<string, HistgramLineSchema> { Results = (await Task.Run(() => result.Select(x => x.CreateSchema()))).ToList() };
 		}
 
 		#endregion method
 
 		#region logic
 
-		private async Task<IEnumerable<RegionResponseSchema<TrendLineSchema>>> GetPopulationPerYearsTrendLineAsync(RegionRequest request)
+		private async Task<DbResponseSchema<string, RegionResponseSchema<TrendLineSchema>>> GetPopulationPerYearsTrendLineAsync(RegionRequest request)
 		{
 			var result = new HashSet<RegionResponseSchema<TrendLineSchema>>();
 			foreach(var region in request.Regions)
@@ -157,7 +161,11 @@ namespace Mov.Suite.AnalizerClient.Resas
 					});
 				}
 			}
-			return result;
+			return new DbResponseSchema<string, RegionResponseSchema<TrendLineSchema>>
+			{
+				Id = "",
+				Results = result.ToList(),
+			};
 		}
 
 		private IEnumerable<TrendLine> GetPopulationPerYearTrendLine(RegionRequest request, int pref, int city, PopulationPerYearResultSchema schema)

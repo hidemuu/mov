@@ -40,8 +40,8 @@ namespace Mov.Suite.ReactApp.Controllers
 		[HttpGet("{prefCode}/{cityCode}/{category}/{label}/{start}/{end}")]
 		public async Task<IActionResult> Get(int prefCode, int cityCode, string category, string label, string srart, string end)
 		{
-			var prefecture = (await _client.GetPrefectureTableLineAsync()).FirstOrDefault(x => x.Id.Equals(prefCode));
-			var city = (await _client.GetCityTableLineAsync()).FirstOrDefault(x => x.Id.Equals(cityCode));
+			var prefecture = (await _client.GetPrefectureTableLineAsync()).Results.FirstOrDefault(x => x.Id.Equals(prefCode));
+			var city = (await _client.GetCityTableLineAsync()).Results.FirstOrDefault(x => x.Id.Equals(cityCode));
 
 			return Ok(await this._client.GetTimeLineAsync(
 				new RegionRequestSchema()

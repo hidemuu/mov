@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Mov.Analizer.Models.Schemas;
 using Mov.Analizer.Service;
+using Mov.Core.Repositories.Schemas.Responses;
 
 namespace Mov.Suite.ReactApp.Controllers
 {
@@ -36,7 +38,7 @@ namespace Mov.Suite.ReactApp.Controllers
 		public async Task<IActionResult> GetPrefectures()
 		{
 			var result = await this._client.GetTableLineAsync();
-			return Ok(result.Where(x => x.Category.Equals("prefecture")));
+			return Ok(new DbResponseSchema<string, TableLineSchema> { Results = result.Results.Where(x => x.Category.Equals("prefecture")).ToList() });
 		}
 
 		/// <summary>
@@ -46,7 +48,8 @@ namespace Mov.Suite.ReactApp.Controllers
 		public async Task<IActionResult> GetPrefecture(int prefCode)
 		{
 			var result = await this._client.GetTableLineAsync();
-			return Ok(result.Where(x => x.Category.Equals("prefecture")).FirstOrDefault(x => x.Id.Equals(prefCode)));
+			var content = result.Results.Where(x => x.Category.Equals("prefecture")).FirstOrDefault(x => x.Id.Equals(prefCode)) ?? new TableLineSchema();
+			return Ok(new DbResponseSchema<string, TableLineSchema> { Results = new List<TableLineSchema> { content } });
 		}
 
 		/// <summary>
@@ -56,7 +59,8 @@ namespace Mov.Suite.ReactApp.Controllers
 		public async Task<IActionResult> GetCities()
 		{
 			var result = await this._client.GetTableLineAsync();
-			return Ok(result.Where(x => x.Category.Equals("city")));
+			var content = result.Results.Where(x => x.Category.Equals("city"));
+			return Ok(new DbResponseSchema<string, TableLineSchema> { Results = content.ToList() });
 		}
 
 		/// <summary>
@@ -66,7 +70,8 @@ namespace Mov.Suite.ReactApp.Controllers
 		public async Task<IActionResult> GetCities(int prefCode)
 		{
 			var result = await this._client.GetTableLineAsync();
-			return Ok(result.Where(x => x.Category.Equals("city")).Where(x => x.Label.Equals(prefCode)));
+			var content = result.Results.Where(x => x.Category.Equals("city")).Where(x => x.Label.Equals(prefCode));
+			return Ok(new DbResponseSchema<string, TableLineSchema> { Results = content.ToList()});
 		}
 
 		/// <summary>
@@ -76,7 +81,8 @@ namespace Mov.Suite.ReactApp.Controllers
 		public async Task<IActionResult> GetCity(int cityCode)
 		{
 			var result = await this._client.GetTableLineAsync();
-			return Ok(result.Where(x => x.Category.Equals("city")).FirstOrDefault(x => x.Id.Equals(cityCode)));
+			var content = result.Results.Where(x => x.Category.Equals("city")).FirstOrDefault(x => x.Id.Equals(cityCode)) ?? new TableLineSchema();
+			return Ok(new DbResponseSchema<string, TableLineSchema> { Results = new List<TableLineSchema> { content } });
 		}
 
 		#endregion method

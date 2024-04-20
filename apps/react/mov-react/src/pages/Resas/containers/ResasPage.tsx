@@ -3,10 +3,10 @@ import type { ComboboxProps } from "@fluentui/react-components";
 import { useInputId } from "domains/inputs/hooks/useInputId";
 import { IRegionKey } from "stores/resas/types/IRegionKey";
 import { ResasTemplate } from "..";
-import { getRegionSelections } from "domains/statistics/services/RegionSelectionService";
+import { getRegionSelections } from "domains/selections/services/RegionSelectionService";
 import { IRegionValue } from "stores/resas/types/IRegionValue";
-import { IRegionSelections } from "domains/statistics/types/IRegionSelections";
-import useSelectedRegionValue from "domains/statistics/hooks/useSelectedRegionValue";
+import { IRegionSelections } from "domains/selections/types/IRegionSelections";
+import useSelectedRegionValue from "domains/selections/hooks/useSelectedRegionValue";
 import { useRegionTableContext } from "stores/resas/contexts/RegionTableContext";
 import { useRegionTrendContext } from "stores/resas/contexts/RegionTrendContext";
 

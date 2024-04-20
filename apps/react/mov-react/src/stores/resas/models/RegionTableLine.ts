@@ -73,4 +73,11 @@ export class RegionTableLine {
     };
     return updateRegionValue;
   }
+
+  public isEmpty(): boolean {
+    return (
+      this.contextValue.prefState.length === 0 ||
+      this.contextValue.cityState.length === 0
+    );
+  }
 }

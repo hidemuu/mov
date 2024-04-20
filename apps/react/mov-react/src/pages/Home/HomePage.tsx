@@ -59,7 +59,7 @@ export const HomePage: React.FunctionComponent = () => {
         consoleValue.includes("/api")
       ) {
         //httpのURIの場合
-        updateRegionItemState(regionItemContext.setState);
+        updateRegionItemState(regionItemContext);
       }
     }
   };

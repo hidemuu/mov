@@ -38,10 +38,9 @@ export function useRegionItemState(): [
   return useState<RegionItemContextState>([]);
 }
 
-export function updateRegionItemState(
-  setState: Dispatch<SetStateAction<RegionItemContextState>>
-) {
-  fetchData<IRegionItem>(API_KEY, setState);
+export function updateRegionItemState(value: RegionItemContextValue) {
+  if (value.state.length > 0) return;
+  fetchData<IRegionItem>(API_KEY, value.setState);
 }
 
 export function asStringRegionItemState(state: RegionItemContextState): string {

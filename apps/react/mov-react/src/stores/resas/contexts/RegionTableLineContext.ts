@@ -27,6 +27,7 @@ export function useRegionTableContext() {
     throw new Error(
       "Expected an AppProvider somewhere in the react tree to set context value"
     );
+  updateRegionTable(value);
   return value; // now has type AppContextValue
   // or even provide domain methods for better encapsulation
 }
@@ -39,12 +40,11 @@ export function useRegionTableState(): [
 ] {
   const [prefState, setPrefState] = useState<RegionTableContextState>([]);
   const [cityState, setCityState] = useState<RegionTableContextState>([]);
-  const model = new RegionTableLine({
-    prefState: prefState,
-    setPrefState: setPrefState,
-    cityState: cityState,
-    setCityState: setCityState,
-  });
-  model.update();
   return [prefState, setPrefState, cityState, setCityState];
+}
+
+export function updateRegionTable(value: RegionTableContextValue) {
+  const model = new RegionTableLine(value);
+  if (!model.isEmpty()) return;
+  model.update();
 }

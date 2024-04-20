@@ -3,12 +3,9 @@ import type { ComboboxProps } from "@fluentui/react-components";
 import { useInputId } from "domains/inputs/hooks/useInputId";
 import { IRegionKey } from "stores/resas/types/IRegionKey";
 import { ResasTemplate } from "..";
-import { getRegionSelections } from "domains/selections/services/RegionSelectionService";
-import { IRegionValue } from "stores/resas/types/IRegionValue";
-import { IRegionSelections } from "domains/selections/types/IRegionSelections";
-import useSelectedRegionValue from "domains/selections/hooks/useSelectedRegionValue";
 import { useRegionTableContext } from "stores/resas/contexts/RegionTableContext";
 import { useRegionTrendContext } from "stores/resas/contexts/RegionTrendContext";
+import { RegionSelection } from "domains/selections/models/RegionSelection";
 
 export const ResasPage: React.FunctionComponent = () => {
   const inputId: string = useInputId();
@@ -18,15 +15,8 @@ export const ResasPage: React.FunctionComponent = () => {
     prefCode: 11,
     cityCode: 11362,
   });
-  const selectedRegionValue: IRegionValue = useSelectedRegionValue(
-    regionTableStore.getTable(),
-    selectedRegionKey
-  );
 
-  const regionSelections: IRegionSelections = getRegionSelections(
-    selectedRegionValue,
-    regionTableStore.getTable()
-  );
+  const selection = new RegionSelection(regionTableStore);
 
   useEffect(() => {
     console.log("初回実行");
@@ -44,20 +34,24 @@ export const ResasPage: React.FunctionComponent = () => {
     const prefName = data.optionValue;
     const updateRegionKey: IRegionKey = {
       prefCode: regionTableStore.getPrefectureCode(prefName ?? ""),
-      cityCode: selectedRegionValue.cityCode,
+      cityCode: selection.getSelectedValue(selectedRegionKey).cityCode,
     };
     setSelectedRegionKey(updateRegionKey);
-    regionTrendStore.updatePopulationPerYears(selectedRegionValue);
+    regionTrendStore.updatePopulationPerYears(
+      selection.getSelectedValue(selectedRegionKey)
+    );
   };
 
   const onChangeSelectedCity: ComboboxProps["onOptionSelect"] = (ev, data) => {
     const cityName = data.optionValue;
     const updateRegionKey: IRegionKey = {
-      prefCode: selectedRegionValue.prefCode,
+      prefCode: selection.getSelectedValue(selectedRegionKey).prefCode,
       cityCode: regionTableStore.getCityCode(cityName ?? ""),
     };
     setSelectedRegionKey(updateRegionKey);
-    regionTrendStore.updatePopulationPerYears(selectedRegionValue);
+    regionTrendStore.updatePopulationPerYears(
+      selection.getSelectedValue(selectedRegionKey)
+    );
   };
 
   return (
@@ -65,8 +59,8 @@ export const ResasPage: React.FunctionComponent = () => {
       inputId={inputId}
       regionTable={regionTableStore.getTable()}
       regionTrendLines={regionTrendStore.getTrend()}
-      selectedRegionKey={selectedRegionValue}
-      regionSelections={regionSelections}
+      selectedRegionKey={selection.getSelectedValue(selectedRegionKey)}
+      regionSelections={selection.getSelections(selectedRegionKey)}
       onChangeSelectedPrefecture={onChangeSelectedPrefecture}
       onChangeSelectedCity={onChangeSelectedCity}
     ></ResasTemplate>

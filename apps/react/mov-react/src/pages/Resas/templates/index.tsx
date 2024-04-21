@@ -1,12 +1,6 @@
 import React from "react";
-import {
-  Input,
-  Label,
-  makeStyles,
-  shorthands,
-} from "@fluentui/react-components";
+import { Label, makeStyles, shorthands } from "@fluentui/react-components";
 import type { ComboboxProps } from "@fluentui/react-components";
-import { IRegionValue } from "../../../stores/resas/types/IRegionValue";
 import { RegionTab } from "./components/RegionTab";
 import { RegionTrendLineChart } from "./components/RegionTrendLineChart";
 import { PrefComboBox } from "./components/PrefComboBox";
@@ -43,7 +37,6 @@ export type ResasTemplateProps = {
   inputId: string;
   regionTable: IRegionTable;
   regionTrendLines: IRegionTrend[];
-  selectedRegionKey: IRegionValue;
   regionSelections: IRegionSelections;
   onChangeSelectedPrefecture: ComboboxProps["onOptionSelect"];
   onChangeSelectedCity: ComboboxProps["onOptionSelect"];
@@ -53,7 +46,6 @@ export const ResasTemplate = ({
   inputId,
   regionTable,
   regionTrendLines,
-  selectedRegionKey,
   regionSelections,
   onChangeSelectedPrefecture,
   onChangeSelectedCity,

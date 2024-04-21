@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useMemo, useState } from "react";
 import type { ComboboxProps } from "@fluentui/react-components";
 import { useInputId } from "domains/inputs/hooks/useInputId";
 import { IRegionKey } from "stores/resas/types/IRegionKey";
@@ -21,7 +21,16 @@ export const ResasPage: React.FunctionComponent = () => {
     regionTableStore
   );
 
-  usePopulationPerYear(selection.getSelectedValue(), regionTrendStore);
+  const selectedValue = selection.getSelectedValue();
+
+  usePopulationPerYear(selectedValue, regionTrendStore);
+
+  const updateData = useMemo(() => {
+    const table = regionTableStore.getTable();
+    const trend = regionTrendStore.getTrend();
+    const selections = selection.getSelections();
+    return { table, trend, selections };
+  }, [selectedValue]);
 
   useEffect(() => {
     console.log("初回実行");
@@ -56,10 +65,9 @@ export const ResasPage: React.FunctionComponent = () => {
   return (
     <ResasTemplate
       inputId={inputId}
-      regionTable={regionTableStore.getTable()}
-      regionTrendLines={regionTrendStore.getTrend()}
-      selectedRegionKey={selection.getSelectedValue()}
-      regionSelections={selection.getSelections()}
+      regionTable={updateData.table}
+      regionTrendLines={updateData.trend}
+      regionSelections={updateData.selections}
       onChangeSelectedPrefecture={onChangeSelectedPrefecture}
       onChangeSelectedCity={onChangeSelectedCity}
     ></ResasTemplate>

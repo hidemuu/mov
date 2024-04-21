@@ -25,8 +25,8 @@ export class RegionSelection {
     this.state.setState(regionKey);
   }
 
-  public getSelected() {
-    return this.state;
+  public getSelected(): IRegionKey {
+    return this.state.state;
   }
 
   public getSelections(): IRegionSelections {

@@ -8,5 +8,5 @@ export default function usePopulationPerYear(
 ) {
   useEffect(() => {
     store.updatePopulationPerYears(regionValue);
-  }, [regionValue, store]);
+  }, [regionValue]);
 }

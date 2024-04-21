@@ -2,7 +2,7 @@
 import type { ComboboxProps } from "@fluentui/react-components";
 import { useInputId } from "domains/inputs/hooks/useInputId";
 import { IRegionKey } from "stores/resas/types/IRegionKey";
-import { ResasTemplate } from "..";
+import { ResasTemplate } from "../templates";
 import { useRegionTableContext } from "stores/resas/contexts/RegionTableContext";
 import { useRegionTrendContext } from "stores/resas/contexts/RegionTrendContext";
 import { RegionSelection } from "domains/selections/models/RegionSelection";

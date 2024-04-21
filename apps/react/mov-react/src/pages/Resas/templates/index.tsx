@@ -6,14 +6,14 @@ import {
   shorthands,
 } from "@fluentui/react-components";
 import type { ComboboxProps } from "@fluentui/react-components";
-import { IRegionValue } from "../../stores/resas/types/IRegionValue";
-import { RegionTab } from "./templates/RegionTab";
-import { TrendLineChart } from "./templates/RegionTrendLineChart";
-import { PrefComboBox } from "./templates/PrefComboBox";
+import { IRegionValue } from "../../../stores/resas/types/IRegionValue";
+import { RegionTab } from "./components/RegionTab";
+import { RegionTrendLineChart } from "./components/RegionTrendLineChart";
+import { PrefComboBox } from "./components/PrefComboBox";
 import { IRegionTable } from "stores/resas/types/tables/IRegionTable";
 import { IRegionTrend } from "stores/resas/types/trends/IRegionTrend";
-import { IRegionSelections } from "../../domains/selections/types/IRegionSelections";
-import { CityComboBox } from "./templates/CityComboBox";
+import { IRegionSelections } from "../../../domains/selections/types/IRegionSelections";
+import { CityComboBox } from "./components/CityComboBox";
 
 const useStyles = makeStyles({
   root: {
@@ -80,7 +80,7 @@ export const ResasTemplate = ({
         />
       </div>
       <h2>トレンドグラフ</h2>
-      <TrendLineChart trendLines={regionTrendLines} />
+      <RegionTrendLineChart trendLines={regionTrendLines} />
       <RegionTab regionTableLines={regionTable} />
     </div>
   );

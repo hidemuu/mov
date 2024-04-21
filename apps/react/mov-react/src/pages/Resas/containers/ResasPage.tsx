@@ -11,12 +11,14 @@ export const ResasPage: React.FunctionComponent = () => {
   const inputId: string = useInputId();
   const regionTrendStore = useRegionTrendContext();
   const regionTableStore = useRegionTableContext();
-  const [selectedRegionKey, setSelectedRegionKey] = useState<IRegionKey>({
-    prefCode: 11,
-    cityCode: 11362,
-  });
 
-  const selection = new RegionSelection(regionTableStore);
+  const selection = new RegionSelection(
+    useState<IRegionKey>({
+      prefCode: 11,
+      cityCode: 11362,
+    }),
+    regionTableStore
+  );
 
   useEffect(() => {
     console.log("初回実行");
@@ -34,24 +36,20 @@ export const ResasPage: React.FunctionComponent = () => {
     const prefName = data.optionValue;
     const updateRegionKey: IRegionKey = {
       prefCode: regionTableStore.getPrefectureCode(prefName ?? ""),
-      cityCode: selection.getSelectedValue(selectedRegionKey).cityCode,
+      cityCode: selection.getSelectedValue().cityCode,
     };
-    setSelectedRegionKey(updateRegionKey);
-    regionTrendStore.updatePopulationPerYears(
-      selection.getSelectedValue(selectedRegionKey)
-    );
+    selection.setSelected(updateRegionKey);
+    regionTrendStore.updatePopulationPerYears(selection.getSelectedValue());
   };
 
   const onChangeSelectedCity: ComboboxProps["onOptionSelect"] = (ev, data) => {
     const cityName = data.optionValue;
     const updateRegionKey: IRegionKey = {
-      prefCode: selection.getSelectedValue(selectedRegionKey).prefCode,
+      prefCode: selection.getSelectedValue().prefCode,
       cityCode: regionTableStore.getCityCode(cityName ?? ""),
     };
-    setSelectedRegionKey(updateRegionKey);
-    regionTrendStore.updatePopulationPerYears(
-      selection.getSelectedValue(selectedRegionKey)
-    );
+    selection.setSelected(updateRegionKey);
+    regionTrendStore.updatePopulationPerYears(selection.getSelectedValue());
   };
 
   return (
@@ -59,8 +57,8 @@ export const ResasPage: React.FunctionComponent = () => {
       inputId={inputId}
       regionTable={regionTableStore.getTable()}
       regionTrendLines={regionTrendStore.getTrend()}
-      selectedRegionKey={selection.getSelectedValue(selectedRegionKey)}
-      regionSelections={selection.getSelections(selectedRegionKey)}
+      selectedRegionKey={selection.getSelectedValue()}
+      regionSelections={selection.getSelections()}
       onChangeSelectedPrefecture={onChangeSelectedPrefecture}
       onChangeSelectedCity={onChangeSelectedCity}
     ></ResasTemplate>

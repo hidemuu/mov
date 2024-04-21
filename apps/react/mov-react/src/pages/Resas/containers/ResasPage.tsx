@@ -6,6 +6,7 @@ import { ResasTemplate } from "..";
 import { useRegionTableContext } from "stores/resas/contexts/RegionTableContext";
 import { useRegionTrendContext } from "stores/resas/contexts/RegionTrendContext";
 import { RegionSelection } from "domains/selections/models/RegionSelection";
+import usePopulationPerYear from "stores/resas/hooks/usePopulationPerYears";
 
 export const ResasPage: React.FunctionComponent = () => {
   const inputId: string = useInputId();
@@ -19,6 +20,8 @@ export const ResasPage: React.FunctionComponent = () => {
     }),
     regionTableStore
   );
+
+  usePopulationPerYear(selection.getSelectedValue(), regionTrendStore);
 
   useEffect(() => {
     console.log("初回実行");
@@ -39,7 +42,6 @@ export const ResasPage: React.FunctionComponent = () => {
       cityCode: selection.getSelectedValue().cityCode,
     };
     selection.setSelected(updateRegionKey);
-    regionTrendStore.updatePopulationPerYears(selection.getSelectedValue());
   };
 
   const onChangeSelectedCity: ComboboxProps["onOptionSelect"] = (ev, data) => {
@@ -49,7 +51,6 @@ export const ResasPage: React.FunctionComponent = () => {
       cityCode: regionTableStore.getCityCode(cityName ?? ""),
     };
     selection.setSelected(updateRegionKey);
-    regionTrendStore.updatePopulationPerYears(selection.getSelectedValue());
   };
 
   return (

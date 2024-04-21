@@ -1,9 +1,9 @@
 import { ILineChartOption } from "components/atoms/Chart/types/ILineChartOption";
 import { ILineSeries } from "components/atoms/Chart/types/ILineSeries";
-import { RegionTrendStore } from "stores/resas/models/RegionTrendStore";
+import { IRegionTrend } from "stores/resas/types/trends/IRegionTrend";
 
-export class RegionTrendLineChart {
-  private trendStore: RegionTrendStore;
+export class RegionTrendLine {
+  private trends: IRegionTrend[];
 
   private chartOptions: ILineChartOption = {
     title: "",
@@ -18,15 +18,15 @@ export class RegionTrendLineChart {
     },
   };
 
-  constructor(trendStore: RegionTrendStore) {
-    this.trendStore = trendStore;
+  constructor(trends: IRegionTrend[]) {
+    this.trends = trends;
   }
 
   public getChart() {
     const series: ILineSeries[] = [];
     const categories = [];
     let count = 0;
-    for (const regionTrend of this.trendStore.getTrend()) {
+    for (const regionTrend of this.trends) {
       const data = [];
       for (const trendLine of regionTrend.data) {
         if (count === 0) {

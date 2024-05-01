@@ -11,40 +11,42 @@ export function fetchData<T>(
   apiAdapter
     .get(path)
     .then((response: AxiosResponse) => {
-      const status = response.status;
-      if (status === 200) {
-        const data = response.data;
-        const results: T[] = data.results;
-        writeLogs(results);
-        setStateAction(results);
-      } else {
-        throw new Error();
-      }
+      setResponse<T>(response, setStateAction);
     })
     .catch((error) => {
-      console.error("--- fetch error " + path + "---");
-      console.error(error);
-      console.log("message:" + error.message + "\nstack:" + error.stack);
+      writeAssertLog(path, error);
     });
 }
 
-export function get<T>(path: string): T[] {
+export async function getAsync<T>(
+  path: string,
+  setStateAction: Dispatch<SetStateAction<T[]>>
+) {
   console.log(path);
-  const asyncFunc = async () => {
-    try {
-      const response = await apiAdapter.get(path);
-      const status = response.status;
-      if (status === 200) {
-        const data = response.data;
-        const results: T[] = data.results;
-        writeLogs(results);
-        return results;
-      } else {
-        throw new Error();
-      }
-    } catch (error) {
-      console.error("--- fetch error " + path + "---", error);
-    }
-  };
-  return [];
+  try {
+    const response = await apiAdapter.get(path);
+    setResponse<T>(response, setStateAction);
+  } catch (error) {
+    writeAssertLog(path, error);
+  }
+}
+
+function setResponse<T>(
+  response: AxiosResponse,
+  setStateAction: Dispatch<SetStateAction<T[]>>
+) {
+  const status = response.status;
+  if (status === 200) {
+    const data = response.data;
+    const results: T[] = data.results;
+    writeLogs(results);
+    setStateAction(results);
+  } else {
+    throw new Error();
+  }
+}
+
+function writeAssertLog(path: string, error: any) {
+  console.error("--- fetch error " + path + "---", error);
+  console.log("message:" + error.message + "\nstack:" + error.stack);
 }

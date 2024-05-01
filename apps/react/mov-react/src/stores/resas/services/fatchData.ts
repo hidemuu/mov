@@ -1,7 +1,8 @@
 ﻿import axios, { AxiosResponse } from "axios";
+import { BASE_URL } from "stores/storeConstants";
 import { writeLogs } from "utils/services/logger";
 
-axios.defaults.baseURL = "http://localhost:5257";
+axios.defaults.baseURL = BASE_URL;
 axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 
@@ -17,7 +18,7 @@ export default function fetchData<T>(
       if (status === 200) {
         const data = response.data;
         const results: T[] = data.results;
-        //writeLogs(results);
+        writeLogs(results);
         setStateAction(results);
       } else {
         throw new Error();
@@ -28,4 +29,18 @@ export default function fetchData<T>(
       console.error(error);
       console.log("message:" + error.message + "\nstack:" + error.stack);
     });
+}
+
+async function getDataAsync<T>(basepath: string) {
+  console.log(basepath);
+  const response = await axios.get(basepath);
+  const status = response.status;
+  if (status === 200) {
+    const data = response.data;
+    const results: T[] = data.results;
+    writeLogs(results);
+    return results;
+  } else {
+    throw new Error();
+  }
 }

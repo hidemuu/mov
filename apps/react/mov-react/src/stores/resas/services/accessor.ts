@@ -31,7 +31,7 @@ export function fetchData<T>(
     });
 }
 
-export function getData<T>(basepath: string): T[] {
+export function get<T>(basepath: string): T[] {
   console.log(basepath);
   const asyncFunc = async () => {
     try {

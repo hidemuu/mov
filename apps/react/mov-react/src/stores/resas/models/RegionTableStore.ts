@@ -1,5 +1,5 @@
 import { RegionTableContextValue } from "../contexts/RegionTableContext";
-import { fetchData } from "../services/fetcher";
+import { fetchData } from "../services/accessor";
 import { IRegionKey } from "../types/IRegionKey";
 import { IRegionValue } from "../types/IRegionValue";
 import { IRegionTable } from "../types/tables/IRegionTable";

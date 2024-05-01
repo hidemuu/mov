@@ -11,14 +11,14 @@ export class ApiClient<T> {
   }
 
   public get(path: string, setStateAction: Dispatch<SetStateAction<T[]>>) {
-    get<T>(path, setStateAction);
+    get<T>(`${this.endpoint}${path}`, setStateAction);
   }
 
   public async getAsync<T>(
     path: string,
     setStateAction: Dispatch<SetStateAction<T[]>>
   ) {
-    getAsync<T>(path, setStateAction);
+    getAsync<T>(`${this.endpoint}${path}`, setStateAction);
   }
 }
 

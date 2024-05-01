@@ -3,8 +3,8 @@ import { ApiClient } from "./ApiClient";
 import { IRegionKeyValue } from "../types/keys/IRegionKeyValue";
 import { IRegionTrendResponse } from "../types/trends/IRegionTrendResponse";
 
-const API_KEY = "/api/analizers/regions/TrendLine";
-const API_KEY_POPULATION_PER_YEARS = `${API_KEY}/population_per_years`;
+const API_KEY_ENDPOINT = "/api/analizers/regions/TrendLine/";
+const API_KEY_POPULATION_PER_YEARS = `${API_KEY_ENDPOINT}population_per_years`;
 
 export class RegionTrendStore {
   private contextValue: RegionTrendContextValue;

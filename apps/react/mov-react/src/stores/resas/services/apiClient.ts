@@ -1,18 +1,14 @@
 ﻿import { Dispatch, SetStateAction } from "react";
-import axios, { AxiosResponse } from "axios";
-import { BASE_URL } from "stores/storeConstants";
+import { AxiosResponse } from "axios";
 import { writeLogs } from "utils/services/logger";
-
-axios.defaults.baseURL = BASE_URL;
-axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
-axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
+import { apiAdapter } from "./apiAdapter";
 
 export function fetchData<T>(
   path: string,
   setStateAction: Dispatch<SetStateAction<T[]>>
 ) {
   console.log(path);
-  axios
+  apiAdapter
     .get(path)
     .then((response: AxiosResponse) => {
       const status = response.status;
@@ -36,7 +32,7 @@ export function get<T>(path: string): T[] {
   console.log(path);
   const asyncFunc = async () => {
     try {
-      const response = await axios.get(path);
+      const response = await apiAdapter.get(path);
       const status = response.status;
       if (status === 200) {
         const data = response.data;

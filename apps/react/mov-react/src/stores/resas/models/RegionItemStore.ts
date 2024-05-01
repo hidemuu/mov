@@ -1,5 +1,5 @@
 import { RegionItemContextValue } from "../contexts/RegionItemContext";
-import { fetchData } from "../services/accessor";
+import { fetchData } from "../services/apiClient";
 import { IRegionItem } from "../types/IRegionItem";
 
 const API_KEY = "/api/analizers/regions/resas/ResasPrefecture";

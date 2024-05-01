@@ -1,5 +1,5 @@
 import { RegionTrendContextValue } from "../contexts/RegionTrendContext";
-import { fetchData } from "../services/accessor";
+import { fetchData } from "../services/apiClient";
 import { IRegionValue } from "../types/IRegionValue";
 import { IRegionTrend } from "../types/trends/IRegionTrend";
 

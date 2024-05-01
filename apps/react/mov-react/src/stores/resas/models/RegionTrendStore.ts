@@ -16,22 +16,34 @@ export class RegionTrendStore {
   }
 
   public updatePopulationPerYears(keyValue: IRegionKeyValue) {
-    let endpoint: string;
+    const path: string = this.createPopulationPerYearsPath(keyValue);
+    if (path !== "") {
+      this.apiClient.get(path, this.contextValue.setState);
+    }
+  }
+
+  public async updatePopulationPerYearsAsync(keyValue: IRegionKeyValue) {
+    const path: string = this.createPopulationPerYearsPath(keyValue);
+    if (path !== "") {
+      await this.apiClient.getAsync(path, this.contextValue.setState);
+    }
+  }
+
+  private createPopulationPerYearsPath(keyValue: IRegionKeyValue): string {
+    let path: string;
     if (keyValue.cityCode === 0 && keyValue.prefCode === 0) {
-      endpoint = "";
+      path = "";
     } else if (keyValue.cityCode === 0) {
-      endpoint = API_KEY_POPULATION_PER_YEARS + "/" + String(keyValue.prefCode);
+      path = API_KEY_POPULATION_PER_YEARS + "/" + String(keyValue.prefCode);
     } else {
-      endpoint =
+      path =
         API_KEY_POPULATION_PER_YEARS +
         "/" +
         String(keyValue.prefCode) +
         "/" +
         String(keyValue.cityCode);
     }
-    if (endpoint !== "") {
-      this.apiClient.get(endpoint, this.contextValue.setState);
-    }
+    return path;
   }
 
   public getTrend(): IRegionTrendResponse[] {

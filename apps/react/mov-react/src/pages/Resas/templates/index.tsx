@@ -5,7 +5,7 @@ import { RegionTab } from "./components/RegionTab";
 import { RegionTrendLineChart } from "./components/RegionTrendLineChart";
 import { PrefComboBox } from "./components/PrefComboBox";
 import { IRegionTable } from "stores/resas/types/tables/IRegionTable";
-import { IRegionTrend } from "stores/resas/types/trends/IRegionTrend";
+import { IRegionTrendResponse } from "stores/resas/types/trends/IRegionTrendResponse";
 import { IRegionSelections } from "../../../domains/selections/types/IRegionSelections";
 import { CityComboBox } from "./components/CityComboBox";
 
@@ -36,7 +36,7 @@ const useStyles = makeStyles({
 export type ResasTemplateProps = {
   inputId: string;
   regionTable: IRegionTable;
-  regionTrendLines: IRegionTrend[];
+  regionTrendLines: IRegionTrendResponse[];
   regionSelections: IRegionSelections;
   onChangeSelectedPrefecture: ComboboxProps["onOptionSelect"];
   onChangeSelectedCity: ComboboxProps["onOptionSelect"];

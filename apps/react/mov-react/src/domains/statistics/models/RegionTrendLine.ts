@@ -1,9 +1,9 @@
 import { ILineChartOption } from "components/atoms/Chart/types/ILineChartOption";
 import { ILineSeries } from "components/atoms/Chart/types/ILineSeries";
-import { IRegionTrend } from "stores/resas/types/trends/IRegionTrend";
+import { IRegionTrendResponse } from "stores/resas/types/trends/IRegionTrendResponse";
 
 export class RegionTrendLine {
-  private trends: IRegionTrend[];
+  private trends: IRegionTrendResponse[];
 
   private chartOptions: ILineChartOption = {
     title: "",
@@ -18,7 +18,7 @@ export class RegionTrendLine {
     },
   };
 
-  constructor(trends: IRegionTrend[]) {
+  constructor(trends: IRegionTrendResponse[]) {
     this.trends = trends;
   }
 

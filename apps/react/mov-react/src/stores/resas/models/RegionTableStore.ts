@@ -3,7 +3,7 @@ import { ApiClient } from "./ApiClient";
 import { IRegionKey } from "../types/IRegionKey";
 import { IRegionValue } from "../types/IRegionValue";
 import { IRegionTable } from "../types/tables/IRegionTable";
-import { ITableItem } from "../types/tables/ITableItem";
+import { ITableItemResponse } from "../types/tables/ITableItemResponse";
 
 const API_KEY = `/api/analizers/regions/TableLine`;
 const API_KEY_PREFECTURE = `${API_KEY}/prefecture`;
@@ -11,7 +11,7 @@ const API_KEY_CITY = `${API_KEY}/city`;
 
 export class RegionTableStore {
   private contextValue: RegionTableContextValue;
-  private apiClient: ApiClient<ITableItem>;
+  private apiClient: ApiClient<ITableItemResponse>;
 
   constructor(contextValue: RegionTableContextValue) {
     this.contextValue = contextValue;
@@ -42,7 +42,7 @@ export class RegionTableStore {
     );
   }
 
-  public getPrefCities(prefCode: number): ITableItem[] {
+  public getPrefCities(prefCode: number): ITableItemResponse[] {
     return this.contextValue.cityState.filter(
       (x) => Number(x.label) === prefCode
     );

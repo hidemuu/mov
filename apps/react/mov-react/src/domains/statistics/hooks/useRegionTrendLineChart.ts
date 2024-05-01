@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { IRegionTrend } from "stores/resas/types/trends/IRegionTrend";
+import { IRegionTrendResponse } from "stores/resas/types/trends/IRegionTrendResponse";
 import { ILineChartOption } from "components/atoms/Chart/types/ILineChartOption";
 import { RegionTrendLine } from "../models/RegionTrendLine";
 
 export default function useRegionTrendLineChart(
-  regionTrends: IRegionTrend[]
+  regionTrends: IRegionTrendResponse[]
 ): ILineChartOption {
   const [chartOptions, setChartOptions] = useState<ILineChartOption>({
     title: "",

@@ -1,6 +1,6 @@
-import { ITableItem } from './ITableItem'
+import { ITableItemResponse } from "./ITableItemResponse";
 
 export interface IRegionTable {
-  pref: ITableItem[]
-  city: ITableItem[]
+  pref: ITableItemResponse[];
+  city: ITableItemResponse[];
 }

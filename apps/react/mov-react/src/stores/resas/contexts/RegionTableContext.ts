@@ -5,10 +5,10 @@ import {
   useContext,
   useState,
 } from "react";
-import { ITableItem } from "../types/tables/ITableItem";
+import { ITableItemResponse } from "../types/tables/ITableItemResponse";
 import { RegionTableStore } from "../models/RegionTableStore";
 
-export type RegionTableContextState = ITableItem[];
+export type RegionTableContextState = ITableItemResponse[];
 
 export type RegionTableContextValue = {
   prefState: RegionTableContextState;

@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import useRegionTrendLineChart from "domains/statistics/hooks/useRegionTrendLineChart";
-import { IRegionTrend } from "stores/resas/types/trends/IRegionTrend";
+import { IRegionTrendResponse } from "stores/resas/types/trends/IRegionTrendResponse";
 import { LineChart } from "components/atoms/Chart/containers/LineChart";
 
 export declare type RegionTrendLineChartProps = {
-  trendLines: IRegionTrend[];
+  trendLines: IRegionTrendResponse[];
 };
 
 export const RegionTrendLineChart: FC<RegionTrendLineChartProps> = ({

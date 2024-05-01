@@ -5,10 +5,10 @@ import {
   useContext,
   useState,
 } from "react";
-import { IRegionTrend } from "../types/trends/IRegionTrend";
+import { IRegionTrendResponse } from "../types/trends/IRegionTrendResponse";
 import { RegionTrendStore } from "../models/RegionTrendStore";
 
-type RegionTrendContextState = IRegionTrend[];
+type RegionTrendContextState = IRegionTrendResponse[];
 
 export type RegionTrendContextValue = {
   state: RegionTrendContextState;

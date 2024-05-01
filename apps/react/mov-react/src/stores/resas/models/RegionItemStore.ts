@@ -1,12 +1,12 @@
 import { RegionItemContextValue } from "../contexts/RegionItemContext";
 import { ApiClient } from "./ApiClient";
-import { IRegionItem } from "../types/IRegionItem";
+import { IRegionItemResponse } from "../types/IRegionItemResponse";
 
 const API_KEY = "/api/analizers/regions/resas/ResasPrefecture";
 
 export class RegionItemStore {
   private contextValue: RegionItemContextValue;
-  private apiClient: ApiClient<IRegionItem>;
+  private apiClient: ApiClient<IRegionItemResponse>;
 
   constructor(contextValue: RegionItemContextValue) {
     this.contextValue = contextValue;

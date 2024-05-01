@@ -1,5 +1,5 @@
 import { RegionItemContextValue } from "../contexts/RegionItemContext";
-import { get, apiClient } from "../services/apiClient";
+import { apiClient } from "../services/apiClient";
 import { IRegionItem } from "../types/IRegionItem";
 
 const API_KEY = "/api/analizers/regions/resas/ResasPrefecture";
@@ -15,7 +15,7 @@ export class RegionItemStore {
 
   public update() {
     if (this.contextValue.state.length > 0) return;
-    get<IRegionItem>(API_KEY, this.contextValue.setState);
+    this.apiClient.get(API_KEY, this.contextValue.setState);
   }
 
   public isEmpty(): boolean {

@@ -1,5 +1,5 @@
 import { RegionTrendContextValue } from "../contexts/RegionTrendContext";
-import { get } from "../services/apiClient";
+import { apiClient } from "../services/apiClient";
 import { IRegionValue } from "../types/IRegionValue";
 import { IRegionTrend } from "../types/trends/IRegionTrend";
 
@@ -8,9 +8,11 @@ const API_KEY_POPULATION_PER_YEARS = `${API_KEY}/population_per_years`;
 
 export class RegionTrendStore {
   private contextValue: RegionTrendContextValue;
+  private apiClient: apiClient<IRegionTrend>;
 
   constructor(contextValue: RegionTrendContextValue) {
     this.contextValue = contextValue;
+    this.apiClient = new apiClient("");
   }
 
   public updatePopulationPerYears(region: IRegionValue) {
@@ -28,7 +30,7 @@ export class RegionTrendStore {
         String(region.cityCode);
     }
     if (endpoint !== "") {
-      get<IRegionTrend>(endpoint, this.contextValue.setState);
+      this.apiClient.get(endpoint, this.contextValue.setState);
     }
   }
 

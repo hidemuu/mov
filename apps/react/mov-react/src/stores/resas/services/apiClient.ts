@@ -22,10 +22,7 @@ export class apiClient<T> {
   }
 }
 
-export function get<T>(
-  path: string,
-  setStateAction: Dispatch<SetStateAction<T[]>>
-) {
+function get<T>(path: string, setStateAction: Dispatch<SetStateAction<T[]>>) {
   console.log(path);
   apiAdapter
     .get(path)

@@ -1,5 +1,5 @@
 import { RegionTableContextValue } from "../contexts/RegionTableContext";
-import { get } from "../services/apiClient";
+import { apiClient } from "../services/apiClient";
 import { IRegionKey } from "../types/IRegionKey";
 import { IRegionValue } from "../types/IRegionValue";
 import { IRegionTable } from "../types/tables/IRegionTable";
@@ -11,14 +11,16 @@ const API_KEY_CITY = `${API_KEY}/city`;
 
 export class RegionTableStore {
   private contextValue: RegionTableContextValue;
+  private apiClient: apiClient<ITableItem>;
 
   constructor(contextValue: RegionTableContextValue) {
     this.contextValue = contextValue;
+    this.apiClient = new apiClient("");
   }
 
   public update() {
-    get<ITableItem>(API_KEY_PREFECTURE, this.contextValue.setPrefState);
-    get<ITableItem>(API_KEY_CITY, this.contextValue.setCityState);
+    this.apiClient.get(API_KEY_PREFECTURE, this.contextValue.setPrefState);
+    this.apiClient.get(API_KEY_CITY, this.contextValue.setCityState);
   }
 
   public getTable(): IRegionTable {

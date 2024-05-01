@@ -1,4 +1,5 @@
-﻿import axios, { AxiosResponse } from "axios";
+﻿import { Dispatch, SetStateAction } from "react";
+import axios, { AxiosResponse } from "axios";
 import { BASE_URL } from "stores/storeConstants";
 import { writeLogs } from "utils/services/logger";
 
@@ -7,12 +8,12 @@ axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 
 export function fetchData<T>(
-  basepath: string,
-  setStateAction: React.Dispatch<React.SetStateAction<T[]>>
+  path: string,
+  setStateAction: Dispatch<SetStateAction<T[]>>
 ) {
-  console.log(basepath);
+  console.log(path);
   axios
-    .get(basepath)
+    .get(path)
     .then((response: AxiosResponse) => {
       const status = response.status;
       if (status === 200) {
@@ -25,7 +26,7 @@ export function fetchData<T>(
       }
     })
     .catch((error) => {
-      console.error("--- fetch error " + basepath + "---");
+      console.error("--- fetch error " + path + "---");
       console.error(error);
       console.log("message:" + error.message + "\nstack:" + error.stack);
     });

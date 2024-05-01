@@ -12,12 +12,13 @@ export const ResasPage: React.FunctionComponent = () => {
   const inputId: string = useInputId();
   const regionTrendStore = useRegionTrendContext();
   const regionTableStore = useRegionTableContext();
+  const defaultRegionKey: IRegionKey = {
+    prefCode: 11,
+    cityCode: 11362,
+  };
 
   const selection = new RegionSelection(
-    useState<IRegionKey>({
-      prefCode: 11,
-      cityCode: 11362,
-    }),
+    useState<IRegionKey>(defaultRegionKey),
     regionTableStore
   );
 

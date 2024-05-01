@@ -31,16 +31,23 @@ export default function fetchData<T>(
     });
 }
 
-async function getDataAsync<T>(basepath: string) {
+export function getData<T>(basepath: string): T[] {
   console.log(basepath);
-  const response = await axios.get(basepath);
-  const status = response.status;
-  if (status === 200) {
-    const data = response.data;
-    const results: T[] = data.results;
-    writeLogs(results);
-    return results;
-  } else {
-    throw new Error();
-  }
+  const asyncFunc = async () => {
+    try {
+      const response = await axios.get(basepath);
+      const status = response.status;
+      if (status === 200) {
+        const data = response.data;
+        const results: T[] = data.results;
+        writeLogs(results);
+        return results;
+      } else {
+        throw new Error();
+      }
+    } catch (error) {
+      console.error("--- fetch error " + basepath + "---", error);
+    }
+  };
+  return [];
 }

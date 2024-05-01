@@ -2,7 +2,7 @@ import { RegionItemContextValue } from "../contexts/RegionItemContext";
 import { ApiClient } from "./ApiClient";
 import { IRegionItemResponse } from "../types/keys/IRegionItemResponse";
 
-const API_KEY = "/api/analizers/regions/resas/ResasPrefecture";
+const API_ENDPOINT = "/api/analizers/regions/resas/ResasPrefecture";
 
 export class RegionItemStore {
   private contextValue: RegionItemContextValue;
@@ -10,12 +10,12 @@ export class RegionItemStore {
 
   constructor(contextValue: RegionItemContextValue) {
     this.contextValue = contextValue;
-    this.apiClient = new ApiClient("");
+    this.apiClient = new ApiClient(API_ENDPOINT);
   }
 
   public update() {
     if (this.contextValue.state.length > 0) return;
-    this.apiClient.get(API_KEY, this.contextValue.setState);
+    this.apiClient.get("", this.contextValue.setState);
   }
 
   public isEmpty(): boolean {

@@ -5,9 +5,9 @@ import { IRegionKeyValue } from "../types/keys/IRegionKeyValue";
 import { IRegionTable } from "../types/tables/IRegionTable";
 import { ITableItemResponse } from "../types/tables/ITableItemResponse";
 
-const API_KEY = `/api/analizers/regions/TableLine`;
-const API_KEY_PREFECTURE = `${API_KEY}/prefecture`;
-const API_KEY_CITY = `${API_KEY}/city`;
+const API_ENDPOINT = `/api/analizers/regions/TableLine/`;
+const API_KEY_PREFECTURE = `prefecture`;
+const API_KEY_CITY = `city`;
 
 export class RegionTableStore {
   private contextValue: RegionTableContextValue;
@@ -15,7 +15,7 @@ export class RegionTableStore {
 
   constructor(contextValue: RegionTableContextValue) {
     this.contextValue = contextValue;
-    this.apiClient = new ApiClient("");
+    this.apiClient = new ApiClient(API_ENDPOINT);
   }
 
   public update() {

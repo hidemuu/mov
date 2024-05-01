@@ -3,7 +3,7 @@ import { ApiClient } from "./ApiClient";
 import { IRegionKeyValue } from "../types/keys/IRegionKeyValue";
 import { IRegionTrendResponse } from "../types/trends/IRegionTrendResponse";
 
-const API_KEY_ENDPOINT = "/api/analizers/regions/TrendLine/";
+const API_ENDPOINT = "/api/analizers/regions/TrendLine/";
 const API_KEY_POPULATION_PER_YEARS = `population_per_years`;
 
 export class RegionTrendStore {
@@ -12,7 +12,7 @@ export class RegionTrendStore {
 
   constructor(contextValue: RegionTrendContextValue) {
     this.contextValue = contextValue;
-    this.apiClient = new ApiClient(API_KEY_ENDPOINT);
+    this.apiClient = new ApiClient(API_ENDPOINT);
   }
 
   public updatePopulationPerYears(keyValue: IRegionKeyValue) {

@@ -1,4 +1,4 @@
-import { IRegionKeyValue } from "stores/resas/types/IRegionKeyValue";
+import { IRegionKeyValue } from "stores/resas/types/keys/IRegionKeyValue";
 
 export interface IRegionSelections {
   selected: IRegionKeyValue;

@@ -1,7 +1,7 @@
 import { RegionTableContextValue } from "../contexts/RegionTableContext";
 import { ApiClient } from "./ApiClient";
-import { IRegionKey } from "../types/IRegionKey";
-import { IRegionKeyValue } from "../types/IRegionKeyValue";
+import { IRegionKey } from "../types/keys/IRegionKey";
+import { IRegionKeyValue } from "../types/keys/IRegionKeyValue";
 import { IRegionTable } from "../types/tables/IRegionTable";
 import { ITableItemResponse } from "../types/tables/ITableItemResponse";
 

@@ -1,4 +1,4 @@
-import { IRegionKeyValue } from "../IRegionKeyValue";
+import { IRegionKeyValue } from "../keys/IRegionKeyValue";
 import { ITrendItem } from "./ITrendItem";
 
 export interface IRegionTrendResponse {

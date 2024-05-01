@@ -1,7 +1,7 @@
 ﻿import React, { useEffect, useMemo, useState } from "react";
 import type { ComboboxProps } from "@fluentui/react-components";
 import { useInputId } from "domains/inputs/hooks/useInputId";
-import { IRegionKey } from "stores/resas/types/IRegionKey";
+import { IRegionKey } from "stores/resas/types/keys/IRegionKey";
 import { ResasTemplate } from "../templates";
 import { useRegionTableContext } from "stores/resas/contexts/RegionTableContext";
 import { useRegionTrendContext } from "stores/resas/contexts/RegionTrendContext";

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { RegionTrendStore } from "../models/RegionTrendStore";
-import { IRegionKeyValue } from "../types/IRegionKeyValue";
+import { IRegionKeyValue } from "../types/keys/IRegionKeyValue";
 
 export default function usePopulationPerYear(
   regionValue: IRegionKeyValue,

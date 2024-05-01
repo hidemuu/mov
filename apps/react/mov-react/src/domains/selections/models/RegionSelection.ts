@@ -1,7 +1,7 @@
 import { RegionTableStore } from "stores/resas/models/RegionTableStore";
 import { IRegionSelections } from "../types/IRegionSelections";
-import { IRegionKeyValue } from "stores/resas/types/IRegionKeyValue";
-import { IRegionKey } from "stores/resas/types/IRegionKey";
+import { IRegionKeyValue } from "stores/resas/types/keys/IRegionKeyValue";
+import { IRegionKey } from "stores/resas/types/keys/IRegionKey";
 import { Dispatch, SetStateAction } from "react";
 
 type RegionSelectionState = {

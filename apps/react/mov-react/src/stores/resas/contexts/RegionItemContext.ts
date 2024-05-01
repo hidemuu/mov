@@ -5,7 +5,7 @@ import {
   useContext,
   useState,
 } from "react";
-import { IRegionItemResponse } from "../types/IRegionItemResponse";
+import { IRegionItemResponse } from "../types/keys/IRegionItemResponse";
 import { RegionItemStore } from "../models/RegionItemStore";
 
 type RegionItemContextState = IRegionItemResponse[];

@@ -1,6 +1,6 @@
 import { RegionTrendContextValue } from "../contexts/RegionTrendContext";
 import { ApiClient } from "./ApiClient";
-import { IRegionKeyValue } from "../types/IRegionKeyValue";
+import { IRegionKeyValue } from "../types/keys/IRegionKeyValue";
 import { IRegionTrendResponse } from "../types/trends/IRegionTrendResponse";
 
 const API_KEY = "/api/analizers/regions/TrendLine";

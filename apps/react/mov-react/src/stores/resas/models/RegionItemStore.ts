@@ -1,6 +1,6 @@
 import { RegionItemContextValue } from "../contexts/RegionItemContext";
 import { ApiClient } from "./ApiClient";
-import { IRegionItemResponse } from "../types/IRegionItemResponse";
+import { IRegionItemResponse } from "../types/keys/IRegionItemResponse";
 
 const API_KEY = "/api/analizers/regions/resas/ResasPrefecture";
 

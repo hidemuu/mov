@@ -15,19 +15,19 @@ export class RegionTrendStore {
     this.apiClient = new ApiClient("");
   }
 
-  public updatePopulationPerYears(region: IRegionKeyValue) {
+  public updatePopulationPerYears(keyValue: IRegionKeyValue) {
     let endpoint: string;
-    if (region.cityCode === 0 && region.prefCode === 0) {
+    if (keyValue.cityCode === 0 && keyValue.prefCode === 0) {
       endpoint = "";
-    } else if (region.cityCode === 0) {
-      endpoint = API_KEY_POPULATION_PER_YEARS + "/" + String(region.prefCode);
+    } else if (keyValue.cityCode === 0) {
+      endpoint = API_KEY_POPULATION_PER_YEARS + "/" + String(keyValue.prefCode);
     } else {
       endpoint =
         API_KEY_POPULATION_PER_YEARS +
         "/" +
-        String(region.prefCode) +
+        String(keyValue.prefCode) +
         "/" +
-        String(region.cityCode);
+        String(keyValue.cityCode);
     }
     if (endpoint !== "") {
       this.apiClient.get(endpoint, this.contextValue.setState);

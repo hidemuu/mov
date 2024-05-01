@@ -1,7 +1,7 @@
 import { RegionTrendContextValue } from "../contexts/RegionTrendContext";
 import { ApiClient } from "./ApiClient";
-import { IRegionKeyValue } from "../types/keys/IRegionKeyValue";
 import { IRegionTrendResponse } from "../types/trends/IRegionTrendResponse";
+import { IRegionKey } from "../types/keys/IRegionKey";
 
 const API_ENDPOINT = "/api/analizers/regions/TrendLine/";
 const API_KEY_POPULATION_PER_YEARS = `population_per_years`;
@@ -15,33 +15,33 @@ export class RegionTrendStore {
     this.apiClient = new ApiClient(API_ENDPOINT);
   }
 
-  public updatePopulationPerYears(keyValue: IRegionKeyValue) {
-    const path: string = this.createPopulationPerYearsPath(keyValue);
+  public updatePopulationPerYears(key: IRegionKey) {
+    const path: string = this.createPopulationPerYearsPath(key);
     if (path !== "") {
       this.apiClient.get(path, this.contextValue.setState);
     }
   }
 
-  public async updatePopulationPerYearsAsync(keyValue: IRegionKeyValue) {
-    const path: string = this.createPopulationPerYearsPath(keyValue);
+  public async updatePopulationPerYearsAsync(key: IRegionKey) {
+    const path: string = this.createPopulationPerYearsPath(key);
     if (path !== "") {
       await this.apiClient.getAsync(path, this.contextValue.setState);
     }
   }
 
-  private createPopulationPerYearsPath(keyValue: IRegionKeyValue): string {
+  private createPopulationPerYearsPath(key: IRegionKey): string {
     let path: string;
-    if (keyValue.cityCode === 0 && keyValue.prefCode === 0) {
+    if (key.cityCode === 0 && key.prefCode === 0) {
       path = "";
-    } else if (keyValue.cityCode === 0) {
-      path = API_KEY_POPULATION_PER_YEARS + "/" + String(keyValue.prefCode);
+    } else if (key.cityCode === 0) {
+      path = API_KEY_POPULATION_PER_YEARS + "/" + String(key.prefCode);
     } else {
       path =
         API_KEY_POPULATION_PER_YEARS +
         "/" +
-        String(keyValue.prefCode) +
+        String(key.prefCode) +
         "/" +
-        String(keyValue.cityCode);
+        String(key.cityCode);
     }
     return path;
   }

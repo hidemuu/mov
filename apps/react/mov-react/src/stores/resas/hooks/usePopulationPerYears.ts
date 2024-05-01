@@ -1,15 +1,15 @@
 import { useEffect } from "react";
 import { RegionTrendStore } from "../models/RegionTrendStore";
-import { IRegionKeyValue } from "../types/keys/IRegionKeyValue";
+import { IRegionKey } from "../types/keys/IRegionKey";
 
 export default function usePopulationPerYear(
-  regionValue: IRegionKeyValue,
+  regionKey: IRegionKey,
   store: RegionTrendStore
 ) {
   useEffect(() => {
     const update = async () => {
-      await store.updatePopulationPerYearsAsync(regionValue);
+      await store.updatePopulationPerYearsAsync(regionKey);
     };
     update();
-  }, [regionValue]);
+  }, [regionKey]);
 }

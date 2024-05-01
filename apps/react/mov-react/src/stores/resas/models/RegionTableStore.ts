@@ -1,7 +1,7 @@
 import { RegionTableContextValue } from "../contexts/RegionTableContext";
 import { ApiClient } from "./ApiClient";
 import { IRegionKey } from "../types/IRegionKey";
-import { IRegionValue } from "../types/IRegionValue";
+import { IRegionKeyValue } from "../types/IRegionKeyValue";
 import { IRegionTable } from "../types/tables/IRegionTable";
 import { ITableItemResponse } from "../types/tables/ITableItemResponse";
 
@@ -48,7 +48,7 @@ export class RegionTableStore {
     );
   }
 
-  public getRegionValue(regionKey: IRegionKey): IRegionValue {
+  public getRegionValue(regionKey: IRegionKey): IRegionKeyValue {
     const targetPref = this.contextValue.prefState.filter(
       (x) => x.id === regionKey.prefCode
     )[0];
@@ -67,7 +67,7 @@ export class RegionTableStore {
       Number(targetCity.label) === targetPref.id
         ? targetCity
         : this.getPrefCities(targetPref.id)[0] ?? targetCity;
-    const updateRegionValue: IRegionValue = {
+    const updateRegionValue: IRegionKeyValue = {
       prefCode: targetPref.id,
       prefName: targetPref?.content ?? "",
       cityCode: updateCity.id,

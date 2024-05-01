@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { RegionTrendStore } from "../models/RegionTrendStore";
-import { IRegionValue } from "../types/IRegionValue";
+import { IRegionKeyValue } from "../types/IRegionKeyValue";
 
 export default function usePopulationPerYear(
-  regionValue: IRegionValue,
+  regionValue: IRegionKeyValue,
   store: RegionTrendStore
 ) {
   useEffect(() => {

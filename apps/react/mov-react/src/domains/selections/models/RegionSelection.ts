@@ -1,6 +1,6 @@
 import { RegionTableStore } from "stores/resas/models/RegionTableStore";
 import { IRegionSelections } from "../types/IRegionSelections";
-import { IRegionValue } from "stores/resas/types/IRegionValue";
+import { IRegionKeyValue } from "stores/resas/types/IRegionKeyValue";
 import { IRegionKey } from "stores/resas/types/IRegionKey";
 import { Dispatch, SetStateAction } from "react";
 
@@ -40,7 +40,7 @@ export class RegionSelection {
     return regionSelections;
   }
 
-  public getSelectedValue(): IRegionValue {
+  public getSelectedValue(): IRegionKeyValue {
     return this.tableStore.getRegionValue(this.state.state);
   }
 }

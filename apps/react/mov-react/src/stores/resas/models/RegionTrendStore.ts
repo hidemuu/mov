@@ -1,6 +1,6 @@
 import { RegionTrendContextValue } from "../contexts/RegionTrendContext";
 import { ApiClient } from "./ApiClient";
-import { IRegionValue } from "../types/IRegionValue";
+import { IRegionKeyValue } from "../types/IRegionKeyValue";
 import { IRegionTrendResponse } from "../types/trends/IRegionTrendResponse";
 
 const API_KEY = "/api/analizers/regions/TrendLine";
@@ -15,7 +15,7 @@ export class RegionTrendStore {
     this.apiClient = new ApiClient("");
   }
 
-  public updatePopulationPerYears(region: IRegionValue) {
+  public updatePopulationPerYears(region: IRegionKeyValue) {
     let endpoint: string;
     if (region.cityCode === 0 && region.prefCode === 0) {
       endpoint = "";

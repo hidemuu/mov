@@ -7,6 +7,9 @@ export default function usePopulationPerYear(
   store: RegionTrendStore
 ) {
   useEffect(() => {
-    store.updatePopulationPerYears(regionValue);
+    const update = async () => {
+      await store.updatePopulationPerYearsAsync(regionValue);
+    };
+    update();
   }, [regionValue]);
 }

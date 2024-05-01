@@ -3,6 +3,25 @@ import { AxiosResponse } from "axios";
 import { writeLogs } from "utils/services/logger";
 import { apiAdapter } from "./apiAdapter";
 
+export class apiClient<T> {
+  private endpoint: string;
+
+  constructor(endpoint: string) {
+    this.endpoint = endpoint;
+  }
+
+  public get(path: string, setStateAction: Dispatch<SetStateAction<T[]>>) {
+    get<T>(path, setStateAction);
+  }
+
+  public async getAsync<T>(
+    path: string,
+    setStateAction: Dispatch<SetStateAction<T[]>>
+  ) {
+    getAsync<T>(path, setStateAction);
+  }
+}
+
 export function get<T>(
   path: string,
   setStateAction: Dispatch<SetStateAction<T[]>>
@@ -18,7 +37,7 @@ export function get<T>(
     });
 }
 
-export async function getAsync<T>(
+async function getAsync<T>(
   path: string,
   setStateAction: Dispatch<SetStateAction<T[]>>
 ) {

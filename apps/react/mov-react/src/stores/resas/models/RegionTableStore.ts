@@ -1,5 +1,5 @@
 import { RegionTableContextValue } from "../contexts/RegionTableContext";
-import { fetchData } from "../services/apiClient";
+import { get } from "../services/apiClient";
 import { IRegionKey } from "../types/IRegionKey";
 import { IRegionValue } from "../types/IRegionValue";
 import { IRegionTable } from "../types/tables/IRegionTable";
@@ -17,8 +17,8 @@ export class RegionTableStore {
   }
 
   public update() {
-    fetchData<ITableItem>(API_KEY_PREFECTURE, this.contextValue.setPrefState);
-    fetchData<ITableItem>(API_KEY_CITY, this.contextValue.setCityState);
+    get<ITableItem>(API_KEY_PREFECTURE, this.contextValue.setPrefState);
+    get<ITableItem>(API_KEY_CITY, this.contextValue.setCityState);
   }
 
   public getTable(): IRegionTable {

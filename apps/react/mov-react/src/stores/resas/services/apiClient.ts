@@ -3,7 +3,7 @@ import { AxiosResponse } from "axios";
 import { writeLogs } from "utils/services/logger";
 import { apiAdapter } from "./apiAdapter";
 
-export function fetchData<T>(
+export function get<T>(
   path: string,
   setStateAction: Dispatch<SetStateAction<T[]>>
 ) {

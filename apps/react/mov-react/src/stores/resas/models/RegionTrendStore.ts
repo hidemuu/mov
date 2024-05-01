@@ -1,5 +1,5 @@
 import { RegionTrendContextValue } from "../contexts/RegionTrendContext";
-import { fetchData } from "../services/apiClient";
+import { get } from "../services/apiClient";
 import { IRegionValue } from "../types/IRegionValue";
 import { IRegionTrend } from "../types/trends/IRegionTrend";
 
@@ -28,7 +28,7 @@ export class RegionTrendStore {
         String(region.cityCode);
     }
     if (endpoint !== "") {
-      fetchData<IRegionTrend>(endpoint, this.contextValue.setState);
+      get<IRegionTrend>(endpoint, this.contextValue.setState);
     }
   }
 

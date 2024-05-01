@@ -1,5 +1,5 @@
 import { RegionItemContextValue } from "../contexts/RegionItemContext";
-import { fetchData } from "../services/apiClient";
+import { get } from "../services/apiClient";
 import { IRegionItem } from "../types/IRegionItem";
 
 const API_KEY = "/api/analizers/regions/resas/ResasPrefecture";
@@ -13,7 +13,7 @@ export class RegionItemStore {
 
   public update() {
     if (this.contextValue.state.length > 0) return;
-    fetchData<IRegionItem>(API_KEY, this.contextValue.setState);
+    get<IRegionItem>(API_KEY, this.contextValue.setState);
   }
 
   public isEmpty(): boolean {

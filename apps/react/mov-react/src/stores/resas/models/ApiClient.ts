@@ -1,9 +1,9 @@
 ﻿import { Dispatch, SetStateAction } from "react";
 import { AxiosResponse } from "axios";
 import { writeLogs } from "utils/services/logger";
-import { apiAdapter } from "./apiAdapter";
+import { apiAdapter } from "../services/apiAdapter";
 
-export class apiClient<T> {
+export class ApiClient<T> {
   private endpoint: string;
 
   constructor(endpoint: string) {

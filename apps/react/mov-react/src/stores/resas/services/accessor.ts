@@ -31,11 +31,11 @@ export function fetchData<T>(
     });
 }
 
-export function get<T>(basepath: string): T[] {
-  console.log(basepath);
+export function get<T>(path: string): T[] {
+  console.log(path);
   const asyncFunc = async () => {
     try {
-      const response = await axios.get(basepath);
+      const response = await axios.get(path);
       const status = response.status;
       if (status === 200) {
         const data = response.data;
@@ -46,7 +46,7 @@ export function get<T>(basepath: string): T[] {
         throw new Error();
       }
     } catch (error) {
-      console.error("--- fetch error " + basepath + "---", error);
+      console.error("--- fetch error " + path + "---", error);
     }
   };
   return [];

@@ -42,7 +42,7 @@ export type ResasTemplateProps = {
   onChangeSelectedCity: ComboboxProps["onOptionSelect"];
 };
 
-export const ResasTemplate = ({
+export const Resas = ({
   inputId,
   regionTable,
   regionTrendLines,

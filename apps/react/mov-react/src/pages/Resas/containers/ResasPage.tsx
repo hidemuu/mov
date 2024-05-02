@@ -2,7 +2,7 @@
 import type { ComboboxProps } from "@fluentui/react-components";
 import { useInputId } from "domains/inputs/hooks/useInputId";
 import { IRegionKey } from "stores/resas/types/keys/IRegionKey";
-import { ResasTemplate } from "..";
+import { Resas } from "..";
 import { useRegionTableContext } from "stores/resas/contexts/RegionTableContext";
 import { useRegionTrendContext } from "stores/resas/contexts/RegionTrendContext";
 import { RegionSelection } from "domains/selections/models/RegionSelection";
@@ -58,13 +58,13 @@ export const ResasPage: React.FunctionComponent = () => {
   };
 
   return (
-    <ResasTemplate
+    <Resas
       inputId={inputId}
       regionTable={regionTableStore.getTable()}
       regionTrendLines={regionTrendStore.getTrend()}
       regionSelections={selection.getSelections()}
       onChangeSelectedPrefecture={onChangeSelectedPrefecture}
       onChangeSelectedCity={onChangeSelectedCity}
-    ></ResasTemplate>
+    ></Resas>
   );
 };

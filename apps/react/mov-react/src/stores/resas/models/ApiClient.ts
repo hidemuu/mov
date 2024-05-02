@@ -1,7 +1,7 @@
 ﻿import { Dispatch, SetStateAction } from "react";
 import { AxiosResponse } from "axios";
 import { writeLogs } from "utils/services/logger";
-import { apiAdapter } from "../services/apiAdapter";
+import { httpAdapter } from "../services/httpAdapter";
 
 export class ApiClient<T> {
   private endpoint: string;
@@ -24,7 +24,7 @@ export class ApiClient<T> {
 
 function get<T>(path: string, setStateAction: Dispatch<SetStateAction<T[]>>) {
   console.log(path);
-  apiAdapter
+  httpAdapter
     .get(path)
     .then((response: AxiosResponse) => {
       setResponse<T>(response, setStateAction);
@@ -40,7 +40,7 @@ async function getAsync<T>(
 ) {
   console.log(path);
   try {
-    const response = await apiAdapter.get(path);
+    const response = await httpAdapter.get(path);
     setResponse<T>(response, setStateAction);
   } catch (error) {
     writeAssertLog(path, error);

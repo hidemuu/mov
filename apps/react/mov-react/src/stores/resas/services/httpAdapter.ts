@@ -1,7 +1,7 @@
 import axios from "axios";
 import { BASE_URL } from "stores/storeConstants";
 
-export const apiAdapter = axios.create({
+export const httpAdapter = axios.create({
   baseURL: BASE_URL,
   responseType: "json",
   headers: {

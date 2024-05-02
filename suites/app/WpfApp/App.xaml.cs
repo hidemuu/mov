@@ -74,8 +74,9 @@ namespace Mov.Suite.WpfApp
         {
             base.InitializeShell(shell);
 			var userSettings = ConfiguratorContext.Current.Service.UserSettingQuery.Reader.ReadAll().ToArray();
-			var userSetting = userSettings.FirstOrDefault(x => x.Code.Value.Equals("react_exe"));
-			var exePath = new PathValue(Path.Combine(PathCreator.GetSolutionPath(), userSetting.Value));
+			var reactExePath = userSettings.FirstOrDefault(x => x.Code.Value.Equals("react_exe"));
+			var serverExePath = userSettings.FirstOrDefault(x => x.Code.Value.Equals("server_exe"));
+			var exePath = new PathValue(Path.Combine(PathCreator.GetSolutionPath(), serverExePath.Value));
 			//起動したい外部アプリの情報を設定
 			var startExeInfo = new System.Diagnostics.ProcessStartInfo(exePath.FileName + exePath.Extension);
 			startExeInfo.UseShellExecute = true;

@@ -33,10 +33,10 @@ function useTableColumns(): ITableColumnContent[] {
 }
 
 export declare type RegionTabProps = {
-  regionTableLines: IRegionTable;
+  regionTable: IRegionTable;
 };
 
-export const RegionTab: FC<RegionTabProps> = ({ regionTableLines }) => {
+export const RegionTab: FC<RegionTabProps> = ({ regionTable }) => {
   const styles = useStyles();
   const tableColumns: ITableColumnContent[] = useTableColumns();
   const [selectedTabValue, setSelectedTabValue] =
@@ -55,13 +55,13 @@ export const RegionTab: FC<RegionTabProps> = ({ regionTableLines }) => {
       <div className={styles.panels}>
         {selectedTabValue === "tab1" && (
           <RegionTable
-            regionTableLines={regionTableLines.pref}
+            regionTableLines={regionTable.pref}
             tableColumns={tableColumns}
           />
         )}
         {selectedTabValue === "tab2" && (
           <RegionTable
-            regionTableLines={regionTableLines.city}
+            regionTableLines={regionTable.city}
             tableColumns={tableColumns}
           />
         )}

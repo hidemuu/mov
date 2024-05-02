@@ -60,7 +60,7 @@ export const ResasPage: React.FunctionComponent = () => {
   return (
     <Resas
       inputId={inputId}
-      regionTable={regionTableStore.getTable()}
+      regionTable={regionTableStore.getPrefCitiesTable(regionKey)}
       regionTrendLines={regionTrendStore.getTrend()}
       regionSelections={selection.getSelections()}
       onChangeSelectedPrefecture={onChangeSelectedPrefecture}

@@ -30,6 +30,16 @@ export class RegionTableStore {
     };
   }
 
+  public getPrefCitiesTable(regionKey: IRegionKey): IRegionTable {
+    const targetPref = this.contextValue.prefState.filter(
+      (x) => x.id === regionKey.prefCode
+    )[0];
+    return {
+      pref: this.contextValue.prefState,
+      city: this.getPrefCities(targetPref.id),
+    };
+  }
+
   public getPrefectureCode(name: string): number {
     return (
       this.contextValue.prefState.filter((x) => x.content === name)[0].id ?? 0

@@ -34,6 +34,9 @@ export class RegionTableStore {
     const targetPref = this.contextValue.prefState.filter(
       (x) => x.id === regionKey.prefCode
     )[0];
+    if (targetPref === undefined) {
+      return { pref: [], city: [] };
+    }
     return {
       pref: this.contextValue.prefState,
       city: this.getPrefCities(targetPref.id),

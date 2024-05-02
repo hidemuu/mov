@@ -4,7 +4,7 @@ import { ILineChartOption } from "components/atoms/Chart/types/ILineChartOption"
 import { RegionTrendLine } from "../models/RegionTrendLine";
 
 export default function useRegionTrendLineChart(
-  regionTrends: IRegionTrendResponse[]
+  regionTrend: IRegionTrendResponse[]
 ): ILineChartOption {
   const [chartOptions, setChartOptions] = useState<ILineChartOption>({
     title: "",
@@ -20,9 +20,9 @@ export default function useRegionTrendLineChart(
   });
 
   useEffect(() => {
-    const model = new RegionTrendLine(regionTrends);
+    const model = new RegionTrendLine(regionTrend);
     setChartOptions(model.getChart());
-  }, [regionTrends]);
+  }, [regionTrend]);
 
   return chartOptions;
 }

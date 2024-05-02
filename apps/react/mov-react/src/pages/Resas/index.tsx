@@ -72,7 +72,7 @@ export const Resas = ({
         />
       </div>
       <h2>トレンドグラフ</h2>
-      <RegionTrendLineChart trendLines={regionTrendLines} />
+      <RegionTrendLineChart regionTrend={regionTrendLines} />
       <RegionTab regionTable={regionTable} />
     </div>
   );

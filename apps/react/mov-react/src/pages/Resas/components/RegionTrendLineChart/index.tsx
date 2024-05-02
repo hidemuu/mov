@@ -4,13 +4,13 @@ import { IRegionTrendResponse } from "stores/resas/types/trends/IRegionTrendResp
 import { LineChart } from "components/atoms/Chart/containers/LineChart";
 
 export declare type RegionTrendLineChartProps = {
-  trendLines: IRegionTrendResponse[];
+  regionTrend: IRegionTrendResponse[];
 };
 
 export const RegionTrendLineChart: FC<RegionTrendLineChartProps> = ({
-  trendLines,
+  regionTrend,
 }) => {
-  const option = useRegionTrendLineChart(trendLines);
+  const option = useRegionTrendLineChart(regionTrend);
 
   return (
     <div>

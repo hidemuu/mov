@@ -1,13 +1,13 @@
 import React from "react";
 import { Label, makeStyles, shorthands } from "@fluentui/react-components";
 import type { ComboboxProps } from "@fluentui/react-components";
-import { RegionTab } from "./components/RegionTab";
-import { RegionTrendLineChart } from "./components/RegionTrendLineChart";
-import { PrefComboBox } from "./components/PrefComboBox";
+import { RegionTab } from "./templates/components/RegionTab";
+import { RegionTrendLineChart } from "./templates/components/RegionTrendLineChart";
+import { PrefComboBox } from "./templates/components/PrefComboBox";
 import { IRegionTable } from "stores/resas/types/tables/IRegionTable";
 import { IRegionTrendResponse } from "stores/resas/types/trends/IRegionTrendResponse";
-import { IRegionSelections } from "../../../domains/selections/types/IRegionSelections";
-import { CityComboBox } from "./components/CityComboBox";
+import { IRegionSelections } from "../../domains/selections/types/IRegionSelections";
+import { CityComboBox } from "./templates/components/CityComboBox";
 
 const useStyles = makeStyles({
   root: {

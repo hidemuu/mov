@@ -8,6 +8,8 @@ using Mov.Analizer.Models;
 using Mov.Analizer.Repository;
 using Mov.Analizer.Service;
 using Microsoft.Extensions.FileProviders;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,11 +32,12 @@ services.AddCors(options =>
 		policy =>
 		{
 			policy.WithOrigins("http://localhost:3000", "http://localhost:5257")
-				.AllowAnyMethod()
+			.AllowAnyMethod()
 				.AllowAnyHeader();
 		});
 });
 services.AddControllers();
+//services.Configure<KestrelServerOptions>(Configuration.GetSection("Kestrel"));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen(option =>

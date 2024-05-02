@@ -15,14 +15,7 @@ export const ResasPage: React.FunctionComponent = () => {
     prefCode: 11,
     cityCode: 11362,
   });
-
-  const updateData = useMemo(() => {
-    const table = regionTableStore.getTable();
-    const trend = regionTrendStore.getTrend();
-    const selection = new RegionSelection(regionKey, regionTableStore);
-    const selections = selection.getSelections();
-    return { table, trend, selections };
-  }, [regionKey, regionTableStore, regionTrendStore]);
+  const selection = new RegionSelection(regionKey, regionTableStore);
 
   useEffect(() => {
     //初回のみ実行
@@ -40,14 +33,13 @@ export const ResasPage: React.FunctionComponent = () => {
       await regionTrendStore.updatePopulationPerYearsAsync(regionKey);
     };
     update();
-  }, [regionKey, regionTrendStore]);
+  }, [regionKey]);
 
   const onChangeSelectedPrefecture: ComboboxProps["onOptionSelect"] = (
     ev,
     data
   ) => {
     const prefName = data.optionValue;
-    const selection = new RegionSelection(regionKey, regionTableStore);
     const updateRegionKey: IRegionKey = {
       prefCode: regionTableStore.getPrefectureCode(prefName ?? ""),
       cityCode: selection.getSelectedValue().cityCode,
@@ -57,7 +49,6 @@ export const ResasPage: React.FunctionComponent = () => {
 
   const onChangeSelectedCity: ComboboxProps["onOptionSelect"] = (ev, data) => {
     const cityName = data.optionValue;
-    const selection = new RegionSelection(regionKey, regionTableStore);
     const updateRegionKey: IRegionKey = {
       prefCode: selection.getSelectedValue().prefCode,
       cityCode: regionTableStore.getCityCode(cityName ?? ""),
@@ -68,9 +59,9 @@ export const ResasPage: React.FunctionComponent = () => {
   return (
     <ResasTemplate
       inputId={inputId}
-      regionTable={updateData.table}
-      regionTrendLines={updateData.trend}
-      regionSelections={updateData.selections}
+      regionTable={regionTableStore.getTable()}
+      regionTrendLines={regionTrendStore.getTrend()}
+      regionSelections={selection.getSelections()}
       onChangeSelectedPrefecture={onChangeSelectedPrefecture}
       onChangeSelectedCity={onChangeSelectedCity}
     ></ResasTemplate>

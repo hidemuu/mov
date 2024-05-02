@@ -17,7 +17,7 @@ namespace Mov.Suite.AnalizerClient.Resas.Repository.Schemas.Requests
         public PopulationPerYearRequestSchema(int cityCode, int prefCode)
             : base(new Dictionary<string, string>()
             {
-                { "cityCode", cityCode.ToString() },
+                { "cityCode", cityCode.ToString("D5") },
                 { "prefCode", prefCode.ToString() },
             })
         {

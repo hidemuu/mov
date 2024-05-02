@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useMemo, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import type { ComboboxProps } from "@fluentui/react-components";
 import { useInputId } from "domains/inputs/hooks/useInputId";
 import { IRegionKey } from "stores/resas/types/keys/IRegionKey";
@@ -20,6 +20,7 @@ export const ResasPage: React.FunctionComponent = () => {
   useEffect(() => {
     //初回のみ実行
     console.log("初回実行");
+    setRegionKey({ prefCode: 11, cityCode: 11362 });
   }, []);
 
   useEffect(() => {
@@ -33,7 +34,7 @@ export const ResasPage: React.FunctionComponent = () => {
       await regionTrendStore.updatePopulationPerYearsAsync(regionKey);
     };
     update();
-  }, [regionKey, regionTrendStore]);
+  }, [regionKey]);
 
   const onChangeSelectedPrefecture: ComboboxProps["onOptionSelect"] = (
     ev,

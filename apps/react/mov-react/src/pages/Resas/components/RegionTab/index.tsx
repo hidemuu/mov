@@ -1,5 +1,5 @@
-import React, { FC, useState } from 'react'
-import { ITableColumnContent } from 'components/molecules/DataTable/types/ITableColumnContent'
+import React, { FC, useState } from "react";
+import { ITableColumnContent } from "components/molecules/DataTable/types/ITableColumnContent";
 import {
   SelectTabData,
   SelectTabEvent,
@@ -7,44 +7,44 @@ import {
   TabList,
   TabValue,
   makeStyles,
-  shorthands
-} from '@fluentui/react-components'
-import { RegionTable } from './RegionTable'
-import { IRegionTable } from 'stores/resas/types/tables/IRegionTable'
+  shorthands,
+} from "@fluentui/react-components";
+import { RegionTable } from "../RegionTable";
+import { IRegionTable } from "stores/resas/types/tables/IRegionTable";
 
 const useStyles = makeStyles({
   panels: {
-    ...shorthands.padding(0, '10px'),
-    '& th': {
-      textAlign: 'left',
-      ...shorthands.padding(0, '30px', 0, 0)
-    }
-  }
-})
+    ...shorthands.padding(0, "10px"),
+    "& th": {
+      textAlign: "left",
+      ...shorthands.padding(0, "30px", 0, 0),
+    },
+  },
+});
 
 function useTableColumns(): ITableColumnContent[] {
   const tableColumns: ITableColumnContent[] = [
-    { columnKey: 'id', label: 'id' },
-    { columnKey: 'name', label: 'name' },
-    { columnKey: 'category', label: 'category' },
-    { columnKey: 'label', label: 'label' }
-  ]
-  return tableColumns
+    { columnKey: "id", label: "id" },
+    { columnKey: "name", label: "name" },
+    { columnKey: "category", label: "category" },
+    { columnKey: "label", label: "label" },
+  ];
+  return tableColumns;
 }
 
 export declare type RegionTabProps = {
-  regionTableLines: IRegionTable
-}
+  regionTableLines: IRegionTable;
+};
 
 export const RegionTab: FC<RegionTabProps> = ({ regionTableLines }) => {
-  const styles = useStyles()
-  const tableColumns: ITableColumnContent[] = useTableColumns()
+  const styles = useStyles();
+  const tableColumns: ITableColumnContent[] = useTableColumns();
   const [selectedTabValue, setSelectedTabValue] =
-    useState<TabValue>('conditions')
+    useState<TabValue>("conditions");
 
   const onTabSelect = (event: SelectTabEvent, data: SelectTabData) => {
-    setSelectedTabValue(data.value)
-  }
+    setSelectedTabValue(data.value);
+  };
 
   return (
     <div>
@@ -53,13 +53,13 @@ export const RegionTab: FC<RegionTabProps> = ({ regionTableLines }) => {
         <Tab value="tab2">都市コード一覧</Tab>
       </TabList>
       <div className={styles.panels}>
-        {selectedTabValue === 'tab1' && (
+        {selectedTabValue === "tab1" && (
           <RegionTable
             regionTableLines={regionTableLines.pref}
             tableColumns={tableColumns}
           />
         )}
-        {selectedTabValue === 'tab2' && (
+        {selectedTabValue === "tab2" && (
           <RegionTable
             regionTableLines={regionTableLines.city}
             tableColumns={tableColumns}
@@ -67,5 +67,5 @@ export const RegionTab: FC<RegionTabProps> = ({ regionTableLines }) => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};

@@ -1,14 +1,14 @@
 import React, { FC } from "react";
 import type { ComboboxProps } from "@fluentui/react-components";
 import { ComboBox } from "components/atoms/ComboBox";
-import { IRegionSelections } from "../../../domains/selections/types/IRegionSelections";
+import { IRegionSelections } from "../../../../domains/selections/types/IRegionSelections";
 
-declare type CityComboBoxProps = {
+declare type PrefComboBoxProps = {
   regionSelections: IRegionSelections;
   onOptionSelect: ComboboxProps["onOptionSelect"];
 };
 
-export const CityComboBox: FC<CityComboBoxProps> = ({
+export const PrefComboBox: FC<PrefComboBoxProps> = ({
   regionSelections,
   onOptionSelect,
 }) => {
@@ -17,9 +17,9 @@ export const CityComboBox: FC<CityComboBoxProps> = ({
 
   return (
     <ComboBox
-      selectedValue={regionSelections.selected.cityName}
-      values={regionSelections.citySelections}
-      placeHolder="市町村選択"
+      selectedValue={regionSelections.selected.prefName}
+      values={regionSelections.prefSelections}
+      placeHolder="都道府県選択"
       onInput={onInput}
       onOptionSelect={onOptionSelect}
     />

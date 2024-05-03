@@ -101,7 +101,8 @@
     "build-storybook": "storybook build",
     "prettier-format": "prettier --config .prettierrc --write src/**/*",
     "prettier-format-ts": "prettier --config .prettierrc --write src/**/*.ts",
-    "prettier-format-tsx": "prettier --config .prettierrc --write src/**/*.tsx"
+    "prettier-format-tsx": "prettier --config .prettierrc --write src/**/*.tsx",
+    "fix": "prettier --write . && eslint --fix ."
   },
   "eslintConfig": {
     "extends": [

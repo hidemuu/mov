@@ -19,13 +19,13 @@ export const ResasPage: React.FunctionComponent = () => {
 
   useEffect(() => {
     //初回のみ実行
-    console.log("初回実行");
+    console.log("ResasPage - 初回実行");
     setRegionKey({ prefCode: 11, cityCode: 11362 });
   }, []);
 
   useEffect(() => {
     //レンダリング毎に実行
-    console.log("再レンダリングされるたび実行");
+    console.log("ResasPage - 再レンダリングされるたび実行");
   });
 
   useEffect(() => {

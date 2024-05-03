@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import type { ComboboxProps } from "@fluentui/react-components";
 import { IRegionSelections } from "../../../../domains/selections/types/IRegionSelections";
-import { SingleSelectComboBox } from "components/atoms/ComboBox/containers/SingleSelectComboBox";
+import { MultiSelectComboBox } from "components/atoms/ComboBox/containers/MultiSelectComboBox";
 
 declare type CityComboBoxProps = {
   regionSelections: IRegionSelections;
@@ -13,7 +13,7 @@ export const CityComboBox: FC<CityComboBoxProps> = ({ regionSelections, onOption
   const onInput: ComboboxProps["onInput"] = (ev) => {};
 
   return (
-    <SingleSelectComboBox
+    <MultiSelectComboBox
       selectedValue={regionSelections.selected.cityName}
       values={regionSelections.citySelections}
       placeHolder="市町村選択"

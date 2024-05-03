@@ -9,6 +9,7 @@ export declare type ComboBoxProps = {
   placeHolder: string;
   onOptionSelect: ComboboxProps["onOptionSelect"];
   onInput: ComboboxProps["onInput"];
+  onChange: ComboboxProps["onChange"];
 };
 
 export const ComboBox: FC<ComboBoxProps> = ({
@@ -18,6 +19,7 @@ export const ComboBox: FC<ComboBoxProps> = ({
   placeHolder,
   onOptionSelect,
   onInput,
+  onChange,
 }) => {
   const comboId = useId("combo-default");
 
@@ -29,10 +31,11 @@ export const ComboBox: FC<ComboBoxProps> = ({
       value={selectedValue}
       onInput={onInput}
       onOptionSelect={onOptionSelect}
+      onChange={onChange}
     >
-      {values.map((v) => (
-        <Option key={v} disabled={v === selectedValue}>
-          {v}
+      {values.map((value) => (
+        <Option key={value} disabled={value === selectedValue}>
+          {value}
         </Option>
       ))}
     </Combobox>

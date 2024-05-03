@@ -21,6 +21,7 @@ export const MultiSelectComboBox = (props: MultiSelectComboBoxProps) => {
       placeHolder={placeHolder}
       onOptionSelect={onOptionSelect}
       onInput={onInput}
+      onChange={undefined}
     />
   );
 };

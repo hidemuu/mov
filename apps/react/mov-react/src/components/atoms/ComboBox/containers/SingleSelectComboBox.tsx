@@ -21,6 +21,7 @@ export const SingleSelectComboBox = (props: SingleSelectComboBoxProps) => {
       placeHolder={placeHolder}
       onOptionSelect={onOptionSelect}
       onInput={onInput}
+      onChange={undefined}
     />
   );
 };

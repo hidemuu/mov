@@ -11,16 +11,17 @@ export const ResasPage: React.FunctionComponent = () => {
   const inputId: string = useInputId();
   const regionTrendStore = useRegionTrendContext();
   const regionTableStore = useRegionTableContext();
-  const [regionKey, setRegionKey] = useState<IRegionKey>({
+  const [lastSelectRegionKey, setlastSelectRegionKey] = useState<IRegionKey>({
     prefCode: 11,
     cityCode: 11362,
   });
-  const selection = new RegionSelection(regionKey, regionTableStore);
+  const [selectedRegionKeys, setSelectedRegionKeys] = useState<IRegionKey[]>([]);
+  const selection = new RegionSelection(lastSelectRegionKey, regionTableStore);
 
   useEffect(() => {
     //初回のみ実行
     console.log("ResasPage - 初回実行");
-    setRegionKey({ prefCode: 11, cityCode: 11362 });
+    setlastSelectRegionKey({ prefCode: 11, cityCode: 11362 });
   }, []);
 
   useEffect(() => {
@@ -31,33 +32,51 @@ export const ResasPage: React.FunctionComponent = () => {
   useEffect(() => {
     //store更新時に実行
     const update = async () => {
-      await regionTrendStore.updatePopulationPerYearsAsync(regionKey);
+      await regionTrendStore.updatePopulationPerYearsAsync(lastSelectRegionKey);
     };
     update();
-  }, [regionKey]);
+  }, [lastSelectRegionKey]);
 
   const onChangeSelectedPrefecture: ComboboxProps["onOptionSelect"] = (ev, data) => {
-    const prefName = data.optionValue;
-    const updateRegionKey: IRegionKey = {
-      prefCode: regionTableStore.getPrefectureCode(prefName ?? ""),
+    const selectPrefName = data.optionValue;
+    const updateSelectRegionKey: IRegionKey = {
+      prefCode: regionTableStore.getPrefectureCode(selectPrefName ?? ""),
       cityCode: selection.getSelectedValue().cityCode,
     };
-    setRegionKey(updateRegionKey);
+    setlastSelectRegionKey(updateSelectRegionKey);
+    const selectedPrefNames = data.selectedOptions;
+    const updateSelectedRegionKeys: IRegionKey[] = [];
+    for (const prefName of selectedPrefNames) {
+      updateSelectedRegionKeys.push({
+        prefCode: regionTableStore.getPrefectureCode(prefName ?? ""),
+        cityCode: -1,
+      });
+    }
+    setSelectedRegionKeys(updateSelectedRegionKeys);
   };
 
   const onChangeSelectedCity: ComboboxProps["onOptionSelect"] = (ev, data) => {
-    const cityName = data.optionValue;
-    const updateRegionKey: IRegionKey = {
+    const selectCityName = data.optionValue;
+    const updateSelectRegionKey: IRegionKey = {
       prefCode: selection.getSelectedValue().prefCode,
-      cityCode: regionTableStore.getCityCode(cityName ?? ""),
+      cityCode: regionTableStore.getCityCode(selectCityName ?? ""),
     };
-    setRegionKey(updateRegionKey);
+    setlastSelectRegionKey(updateSelectRegionKey);
+    const selectedCityNames = data.selectedOptions;
+    const updateSelectedRegionKeys: IRegionKey[] = [];
+    for (const cityName of selectedCityNames) {
+      updateSelectedRegionKeys.push({
+        prefCode: -1,
+        cityCode: regionTableStore.getCityCode(cityName ?? ""),
+      });
+    }
+    setSelectedRegionKeys(updateSelectedRegionKeys);
   };
 
   return (
     <Resas
       inputId={inputId}
-      regionTable={regionTableStore.getPrefCitiesTable(regionKey)}
+      regionTable={regionTableStore.getPrefCitiesTable(lastSelectRegionKey)}
       regionTrendLines={regionTrendStore.getTrend()}
       regionSelections={selection.getSelections()}
       onChangeSelectedPrefecture={onChangeSelectedPrefecture}

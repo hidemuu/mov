@@ -1,22 +1,28 @@
 import React, { FC } from "react";
 import type { ComboboxProps } from "@fluentui/react-components";
-import { IRegionSelections } from "../../../../domains/selections/types/IRegionSelections";
 import { MultiSelectComboBox } from "components/atoms/ComboBox/containers/MultiSelectComboBox";
 
-declare type CityComboBoxProps = {
-  regionSelections: IRegionSelections;
+declare type RegionComboBoxProps = {
+  selectedValue: string;
+  values: string[];
   onOptionSelect: ComboboxProps["onOptionSelect"];
+  placeHolder: string;
 };
 
-export const CityComboBox: FC<CityComboBoxProps> = ({ regionSelections, onOptionSelect }) => {
+export const RegionComboBox: FC<RegionComboBoxProps> = ({
+  selectedValue,
+  values,
+  onOptionSelect,
+  placeHolder,
+}) => {
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   const onInput: ComboboxProps["onInput"] = (ev) => {};
 
   return (
     <MultiSelectComboBox
-      selectedValue={regionSelections.selected.cityName}
-      values={regionSelections.citySelections}
-      placeHolder="市町村選択"
+      selectedValue={selectedValue}
+      values={values}
+      placeHolder={placeHolder}
       onInput={onInput}
       onOptionSelect={onOptionSelect}
     />

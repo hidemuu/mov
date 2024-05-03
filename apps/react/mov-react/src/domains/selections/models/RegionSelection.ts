@@ -4,11 +4,17 @@ import { IRegionKeyValue } from "stores/resas/types/keys/IRegionKeyValue";
 import { IRegionKey } from "stores/resas/types/keys/IRegionKey";
 
 export class RegionSelection {
-  private regionKey: IRegionKey;
+  private latestSelectRegionKey: IRegionKey;
+  private selectedRegionKeys: IRegionKey[];
   private tableStore: RegionTableStore;
 
-  constructor(regionKey: IRegionKey, tableStore: RegionTableStore) {
-    this.regionKey = regionKey;
+  constructor(
+    latestSelectRegionKey: IRegionKey,
+    selectedRegionKeys: IRegionKey[],
+    tableStore: RegionTableStore,
+  ) {
+    this.latestSelectRegionKey = latestSelectRegionKey;
+    this.selectedRegionKeys = selectedRegionKeys;
     this.tableStore = tableStore;
   }
 
@@ -24,6 +30,6 @@ export class RegionSelection {
   }
 
   public getSelectedValue(): IRegionKeyValue {
-    return this.tableStore.getRegionValue(this.regionKey);
+    return this.tableStore.getRegionValue(this.latestSelectRegionKey);
   }
 }

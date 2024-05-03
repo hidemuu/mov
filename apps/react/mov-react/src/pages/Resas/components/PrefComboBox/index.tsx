@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import type { ComboboxProps } from "@fluentui/react-components";
-import { ComboBox } from "components/atoms/ComboBox";
 import { IRegionSelections } from "../../../../domains/selections/types/IRegionSelections";
+import { SingleSelectComboBox } from "components/atoms/ComboBox/containers/SingleSelectComboBox";
 
 declare type PrefComboBoxProps = {
   regionSelections: IRegionSelections;
@@ -13,7 +13,7 @@ export const PrefComboBox: FC<PrefComboBoxProps> = ({ regionSelections, onOption
   const onInput: ComboboxProps["onInput"] = (ev) => {};
 
   return (
-    <ComboBox
+    <SingleSelectComboBox
       selectedValue={regionSelections.selected.prefName}
       values={regionSelections.prefSelections}
       placeHolder="都道府県選択"

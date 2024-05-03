@@ -3,6 +3,7 @@ import { useId, Combobox, Option } from "@fluentui/react-components";
 import type { ComboboxProps } from "@fluentui/react-components";
 
 export declare type ComboBoxProps = {
+  multiselect: boolean;
   selectedValue: string;
   values: string[];
   placeHolder: string;
@@ -11,6 +12,7 @@ export declare type ComboBoxProps = {
 };
 
 export const ComboBox: FC<ComboBoxProps> = ({
+  multiselect,
   selectedValue,
   values,
   placeHolder,
@@ -21,6 +23,7 @@ export const ComboBox: FC<ComboBoxProps> = ({
 
   return (
     <Combobox
+      multiselect={multiselect}
       aria-labelledby={comboId}
       placeholder={placeHolder}
       value={selectedValue}

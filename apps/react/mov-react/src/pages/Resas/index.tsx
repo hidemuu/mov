@@ -66,10 +66,7 @@ export const Resas = ({
         <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>
           都市コード
         </Label>
-        <CityComboBox
-          regionSelections={regionSelections}
-          onOptionSelect={onChangeSelectedCity}
-        />
+        <CityComboBox regionSelections={regionSelections} onOptionSelect={onChangeSelectedCity} />
       </div>
       <h2>トレンドグラフ</h2>
       <RegionTrendLineChart regionTrend={regionTrendLines} />

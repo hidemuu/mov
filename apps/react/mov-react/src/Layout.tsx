@@ -6,12 +6,7 @@ import { HomePage } from "./pages/Home/HomePage";
 import { useIsSignedIn } from "./domains/auth/hooks/useIsSignedIn";
 import { INavigationItem } from "./domains/navigations/types/INavigationItem";
 import { getNavigation } from "./domains/navigations/services/getNavigation";
-import {
-  FluentProvider,
-  makeStyles,
-  mergeClasses,
-  shorthands,
-} from "@fluentui/react-components";
+import { FluentProvider, makeStyles, mergeClasses, shorthands } from "@fluentui/react-components";
 import { tokens } from "@fluentui/react-theme";
 import { applyTheme } from "@microsoft/mgt-react";
 import { useAppContext } from "./AppContext";
@@ -56,9 +51,7 @@ const useStyles = makeStyles({
 
 export const Layout: React.FunctionComponent = (theme) => {
   const styles = useStyles();
-  const [navigationItems, setNavigationItems] = React.useState<
-    INavigationItem[]
-  >([]);
+  const [navigationItems, setNavigationItems] = React.useState<INavigationItem[]>([]);
   const isSignedIn = true;
   const appContext = useAppContext();
 
@@ -80,9 +73,7 @@ export const Layout: React.FunctionComponent = (theme) => {
             <div
               className={mergeClasses(
                 styles.sidebar,
-                `${
-                  appContext.state.sidebar.isMinimized ? styles.minimized : ""
-                }`
+                `${appContext.state.sidebar.isMinimized ? styles.minimized : ""}`,
               )}
             >
               <SideNavigation items={navigationItems}></SideNavigation>
@@ -91,14 +82,9 @@ export const Layout: React.FunctionComponent = (theme) => {
               <Routes>
                 {navigationItems.map(
                   (item) =>
-                    ((item.requiresLogin && isSignedIn) ||
-                      !item.requiresLogin) && (
-                      <Route
-                        path={item.url}
-                        element={item.component}
-                        key={item.key}
-                      />
-                    )
+                    ((item.requiresLogin && isSignedIn) || !item.requiresLogin) && (
+                      <Route path={item.url} element={item.component} key={item.key} />
+                    ),
                 )}
                 <Route path="*" element={<HomePage />} />
               </Routes>

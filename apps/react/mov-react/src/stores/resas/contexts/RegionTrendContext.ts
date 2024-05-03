@@ -1,10 +1,4 @@
-import {
-  Dispatch,
-  SetStateAction,
-  createContext,
-  useContext,
-  useState,
-} from "react";
+import { Dispatch, SetStateAction, createContext, useContext, useState } from "react";
 import { IRegionTrendResponse } from "../types/trends/IRegionTrendResponse";
 import { RegionTrendStore } from "../models/RegionTrendStore";
 
@@ -15,16 +9,12 @@ export type RegionTrendContextValue = {
   setState: Dispatch<SetStateAction<RegionTrendContextState>>;
 };
 
-export const RegionTrendContext = createContext<RegionTrendStore | undefined>(
-  undefined
-);
+export const RegionTrendContext = createContext<RegionTrendStore | undefined>(undefined);
 
 export function useRegionTrendContext() {
   const store = useContext(RegionTrendContext);
   if (store === undefined)
-    throw new Error(
-      "Expected an AppProvider somewhere in the react tree to set context value"
-    );
+    throw new Error("Expected an AppProvider somewhere in the react tree to set context value");
   return store; // now has type AppContextValue
   // or even provide domain methods for better encapsulation
 }

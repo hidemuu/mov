@@ -36,10 +36,7 @@ export const ResasPage: React.FunctionComponent = () => {
     update();
   }, [regionKey]);
 
-  const onChangeSelectedPrefecture: ComboboxProps["onOptionSelect"] = (
-    ev,
-    data
-  ) => {
+  const onChangeSelectedPrefecture: ComboboxProps["onOptionSelect"] = (ev, data) => {
     const prefName = data.optionValue;
     const updateRegionKey: IRegionKey = {
       prefCode: regionTableStore.getPrefectureCode(prefName ?? ""),

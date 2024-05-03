@@ -1,13 +1,13 @@
-﻿import { SearchResults } from '@microsoft/mgt-react'
-import * as React from 'react'
-import { IResultsProps } from '../types/IResultsProps'
+﻿import { SearchResults } from "@microsoft/mgt-react";
+import * as React from "react";
+import { IResultsProps } from "../types/IResultsProps";
 import {
   MgtTemplateProps,
   Person,
   File,
   PersonCardInteraction,
-  ViewType
-} from '@microsoft/mgt-react'
+  ViewType,
+} from "@microsoft/mgt-react";
 import {
   DataGrid,
   DataGridBody,
@@ -21,73 +21,66 @@ import {
   createTableColumn,
   makeStyles,
   shorthands,
-  tokens
-} from '@fluentui/react-components'
-import { SlideSearchRegular } from '@fluentui/react-icons'
+  tokens,
+} from "@fluentui/react-components";
+import { SlideSearchRegular } from "@fluentui/react-icons";
 
 const useStyles = makeStyles({
   container: {
-    ...shorthands.gap('16px'),
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap'
+    ...shorthands.gap("16px"),
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
   },
   card: {
-    width: '300px',
-    height: 'fit-content',
-    maxWidth: '100%'
+    width: "300px",
+    height: "fit-content",
+    maxWidth: "100%",
   },
   caption: {
-    color: tokens.colorNeutralForeground3
+    color: tokens.colorNeutralForeground3,
   },
   noDataSearchTerm: {
-    fontWeight: tokens.fontWeightSemibold
+    fontWeight: tokens.fontWeightSemibold,
   },
   emptyContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
-    height: 'calc(100vh - 300px)'
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    height: "calc(100vh - 300px)",
   },
   fileContainer: {
-    display: 'flex'
+    display: "flex",
   },
   fileTitle: {
-    paddingLeft: '10px',
-    alignSelf: 'center'
+    paddingLeft: "10px",
+    alignSelf: "center",
   },
   noDataMessage: {
-    paddingLeft: '10px'
+    paddingLeft: "10px",
   },
   noDataIcon: {
-    fontSize: '128px'
+    fontSize: "128px",
   },
   row: {
-    cursor: 'pointer'
-  }
-})
+    cursor: "pointer",
+  },
+});
 
-const pageSize = 30
+const pageSize = 30;
 
-export const FilesResults: React.FunctionComponent<IResultsProps> = (
-  props: IResultsProps
-) => {
+export const FilesResults: React.FunctionComponent<IResultsProps> = (props: IResultsProps) => {
   return (
     <>
       {props.searchTerm && (
         <SearchResults
-          entityTypes={['driveItem']}
+          entityTypes={["driveItem"]}
           queryString={props.searchTerm}
           fetchThumbnail={true}
           queryTemplate="({searchTerms}) ContentTypeId:0x0101*"
           version="beta"
-          fields={[
-            'createdBy',
-            'lastModifiedDateTime',
-            'Title',
-            'DefaultEncodingURL'
-          ]}
+          fields={["createdBy", "lastModifiedDateTime", "Title", "DefaultEncodingURL"]}
           size={pageSize}
           cacheEnabled={true}
         >
@@ -97,59 +90,52 @@ export const FilesResults: React.FunctionComponent<IResultsProps> = (
         </SearchResults>
       )}
     </>
-  )
-}
+  );
+};
 
-const getColumns = (
-  shimmered: boolean,
-  styles: any
-): TableColumnDefinition<any>[] => {
+const getColumns = (shimmered: boolean, styles: any): TableColumnDefinition<any>[] => {
   const columns: TableColumnDefinition<any>[] = [
     createTableColumn<any>({
-      columnId: 'name',
+      columnId: "name",
       renderHeaderCell: () => {
-        return 'Name'
+        return "Name";
       },
       renderCell: (item) => {
         return (
           <TableCellLayout>
             {shimmered ? (
-              <SkeletonItem shape="rectangle" style={{ width: '120px' }} />
+              <SkeletonItem shape="rectangle" style={{ width: "120px" }} />
             ) : (
               <div className={styles.fileContainer}>
                 <File fileDetails={item.resource} view={ViewType.image} />
-                <span className={styles.fileTitle}>
-                  {item.resource.listItem.fields.title}
-                </span>
+                <span className={styles.fileTitle}>{item.resource.listItem.fields.title}</span>
               </div>
             )}
           </TableCellLayout>
-        )
-      }
+        );
+      },
     }),
     createTableColumn<any>({
-      columnId: 'modified',
+      columnId: "modified",
       renderHeaderCell: () => {
-        return 'Modified'
+        return "Modified";
       },
       renderCell: (item) => {
         return (
           <TableCellLayout>
             {shimmered ? (
-              <SkeletonItem shape="rectangle" style={{ width: '120px' }} />
+              <SkeletonItem shape="rectangle" style={{ width: "120px" }} />
             ) : (
-              getRelativeDisplayDate(
-                new Date(item.resource.lastModifiedDateTime)
-              )
+              getRelativeDisplayDate(new Date(item.resource.lastModifiedDateTime))
             )}
           </TableCellLayout>
-        )
-      }
+        );
+      },
     }),
     createTableColumn<any>({
-      columnId: 'owner',
+      columnId: "owner",
       renderHeaderCell: () => {
-        return 'Owner'
+        return "Owner";
       },
       renderCell: (item) => {
         return (
@@ -157,15 +143,15 @@ const getColumns = (
             {shimmered ? (
               <div
                 style={{
-                  display: 'grid',
-                  alignItems: 'center',
-                  position: 'relative',
-                  gridTemplateColumns: 'min-content 80%',
-                  gap: '10px'
+                  display: "grid",
+                  alignItems: "center",
+                  position: "relative",
+                  gridTemplateColumns: "min-content 80%",
+                  gap: "10px",
                 }}
               >
                 <SkeletonItem shape="circle" size={32} />
-                <SkeletonItem style={{ width: '120px' }} />
+                <SkeletonItem style={{ width: "120px" }} />
               </div>
             ) : (
               <Person
@@ -175,35 +161,29 @@ const getColumns = (
               />
             )}
           </TableCellLayout>
-        )
-      }
-    })
-  ]
+        );
+      },
+    }),
+  ];
 
-  return columns
-}
+  return columns;
+};
 
 const FileTemplate = (props: MgtTemplateProps) => {
-  const styles = useStyles()
-  const [driveItems] = React.useState<any>(
-    props.dataContext.value?.[0]?.hitsContainers[0]?.hits
-  )
+  const styles = useStyles();
+  const [driveItems] = React.useState<any>(props.dataContext.value?.[0]?.hitsContainers[0]?.hits);
 
   const onRowClick = (item: any) => {
-    const url = new URL(item.resource.listItem.fields.defaultEncodingURL)
-    url.searchParams.append('Web', '1')
-    window.open(url.toString(), '_blank')
-  }
+    const url = new URL(item.resource.listItem.fields.defaultEncodingURL);
+    url.searchParams.append("Web", "1");
+    window.open(url.toString(), "_blank");
+  };
 
   return (
     <div>
       <DataGrid
-        columns={getColumns(props.template === 'loading', styles)}
-        items={
-          props.template === 'loading'
-            ? [...Array<number>(pageSize)]
-            : driveItems
-        }
+        columns={getColumns(props.template === "loading", styles)}
+        items={props.template === "loading" ? [...Array<number>(pageSize)] : driveItems}
       >
         <DataGridHeader>
           <DataGridRow>
@@ -214,27 +194,19 @@ const FileTemplate = (props: MgtTemplateProps) => {
         </DataGridHeader>
         <DataGridBody<any>>
           {({ item, rowId }) => (
-            <DataGridRow<any>
-              key={rowId}
-              className={styles.row}
-              onClick={() => onRowClick(item)}
-            >
-              {({ renderCell }) => (
-                <DataGridCell>{renderCell(item)}</DataGridCell>
-              )}
+            <DataGridRow<any> key={rowId} className={styles.row} onClick={() => onRowClick(item)}>
+              {({ renderCell }) => <DataGridCell>{renderCell(item)}</DataGridCell>}
             </DataGridRow>
           )}
         </DataGridBody>
       </DataGrid>
     </div>
-  )
-}
+  );
+};
 
 const FileNoDataTemplate = (props: MgtTemplateProps) => {
-  const styles = useStyles()
-  const [searchTerms] = React.useState<string[]>(
-    props.dataContext.value[0]?.searchTerms
-  )
+  const styles = useStyles();
+  const [searchTerms] = React.useState<string[]>(props.dataContext.value[0]?.searchTerms);
 
   return (
     <div className={styles.emptyContainer}>
@@ -242,51 +214,51 @@ const FileNoDataTemplate = (props: MgtTemplateProps) => {
         <SlideSearchRegular className={styles.noDataIcon} />
       </div>
       <div className={styles.noDataMessage}>
-        We couldnt find any results for{' '}
-        <span className={styles.noDataSearchTerm}>{searchTerms.join(' ')}</span>
+        We couldnt find any results for{" "}
+        <span className={styles.noDataSearchTerm}>{searchTerms.join(" ")}</span>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const getRelativeDisplayDate = (date: Date): string => {
-  const now = new Date()
+  const now = new Date();
 
   // Today -> 5:23 PM
-  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   if (date >= today) {
-    return date.toLocaleString('default', {
-      hour: 'numeric',
-      minute: 'numeric'
-    })
+    return date.toLocaleString("default", {
+      hour: "numeric",
+      minute: "numeric",
+    });
   }
 
   // This week -> Sun 3:04 PM
-  const sunday = new Date(today)
-  sunday.setDate(now.getDate() - now.getDay())
+  const sunday = new Date(today);
+  sunday.setDate(now.getDate() - now.getDay());
   if (date >= sunday) {
-    return date.toLocaleString('default', {
-      hour: 'numeric',
-      minute: 'numeric',
-      weekday: 'short'
-    })
+    return date.toLocaleString("default", {
+      hour: "numeric",
+      minute: "numeric",
+      weekday: "short",
+    });
   }
 
   // Last two week -> Sun 8/2
-  const lastTwoWeeks = new Date(sunday)
-  lastTwoWeeks.setDate(sunday.getDate() - 7)
+  const lastTwoWeeks = new Date(sunday);
+  lastTwoWeeks.setDate(sunday.getDate() - 7);
   if (date >= lastTwoWeeks) {
-    return date.toLocaleString('default', {
-      day: 'numeric',
-      month: 'numeric',
-      weekday: 'short'
-    })
+    return date.toLocaleString("default", {
+      day: "numeric",
+      month: "numeric",
+      weekday: "short",
+    });
   }
 
   // More than two weeks ago -> 8/1/2020
-  return date.toLocaleString('default', {
-    day: 'numeric',
-    month: 'numeric',
-    year: 'numeric'
-  })
-}
+  return date.toLocaleString("default", {
+    day: "numeric",
+    month: "numeric",
+    year: "numeric",
+  });
+};

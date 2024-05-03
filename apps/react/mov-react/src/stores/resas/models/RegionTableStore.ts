@@ -31,9 +31,7 @@ export class RegionTableStore {
   }
 
   public getPrefCitiesTable(regionKey: IRegionKey): IRegionTable {
-    const targetPref = this.contextValue.prefState.filter(
-      (x) => x.id === regionKey.prefCode
-    )[0];
+    const targetPref = this.contextValue.prefState.filter((x) => x.id === regionKey.prefCode)[0];
     if (targetPref === undefined) {
       return { pref: [], city: [] };
     }
@@ -44,30 +42,20 @@ export class RegionTableStore {
   }
 
   public getPrefectureCode(name: string): number {
-    return (
-      this.contextValue.prefState.filter((x) => x.content === name)[0].id ?? 0
-    );
+    return this.contextValue.prefState.filter((x) => x.content === name)[0].id ?? 0;
   }
 
   public getCityCode(name: string): number {
-    return (
-      this.contextValue.cityState.filter((x) => x.content === name)[0].id ?? 0
-    );
+    return this.contextValue.cityState.filter((x) => x.content === name)[0].id ?? 0;
   }
 
   public getPrefCities(prefCode: number): ITableItemResponse[] {
-    return this.contextValue.cityState.filter(
-      (x) => Number(x.label) === prefCode
-    );
+    return this.contextValue.cityState.filter((x) => Number(x.label) === prefCode);
   }
 
   public getRegionValue(regionKey: IRegionKey): IRegionKeyValue {
-    const targetPref = this.contextValue.prefState.filter(
-      (x) => x.id === regionKey.prefCode
-    )[0];
-    const targetCity = this.contextValue.cityState.filter(
-      (x) => x.id === regionKey.cityCode
-    )[0];
+    const targetPref = this.contextValue.prefState.filter((x) => x.id === regionKey.prefCode)[0];
+    const targetCity = this.contextValue.cityState.filter((x) => x.id === regionKey.cityCode)[0];
     if (targetPref === undefined || targetCity === undefined) {
       return {
         prefCode: regionKey.prefCode,
@@ -90,9 +78,6 @@ export class RegionTableStore {
   }
 
   public isEmpty(): boolean {
-    return (
-      this.contextValue.prefState.length === 0 ||
-      this.contextValue.cityState.length === 0
-    );
+    return this.contextValue.prefState.length === 0 || this.contextValue.cityState.length === 0;
   }
 }

@@ -36,12 +36,7 @@ export class RegionTrendStore {
     } else if (key.cityCode === 0) {
       path = API_KEY_POPULATION_PER_YEARS + "/" + String(key.prefCode);
     } else {
-      path =
-        API_KEY_POPULATION_PER_YEARS +
-        "/" +
-        String(key.prefCode) +
-        "/" +
-        String(key.cityCode);
+      path = API_KEY_POPULATION_PER_YEARS + "/" + String(key.prefCode) + "/" + String(key.cityCode);
     }
     return path;
   }

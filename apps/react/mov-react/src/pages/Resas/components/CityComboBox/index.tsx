@@ -8,10 +8,7 @@ declare type CityComboBoxProps = {
   onOptionSelect: ComboboxProps["onOptionSelect"];
 };
 
-export const CityComboBox: FC<CityComboBoxProps> = ({
-  regionSelections,
-  onOptionSelect,
-}) => {
+export const CityComboBox: FC<CityComboBoxProps> = ({ regionSelections, onOptionSelect }) => {
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   const onInput: ComboboxProps["onInput"] = (ev) => {};
 

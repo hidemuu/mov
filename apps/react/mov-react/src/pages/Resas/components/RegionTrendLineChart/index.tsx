@@ -7,9 +7,7 @@ export declare type RegionTrendLineChartProps = {
   regionTrend: IRegionTrendResponse[];
 };
 
-export const RegionTrendLineChart: FC<RegionTrendLineChartProps> = ({
-  regionTrend,
-}) => {
+export const RegionTrendLineChart: FC<RegionTrendLineChartProps> = ({ regionTrend }) => {
   const option = useRegionTrendLineChart(regionTrend);
 
   return (

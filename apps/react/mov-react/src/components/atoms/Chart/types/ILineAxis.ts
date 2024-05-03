@@ -1,4 +1,4 @@
 export interface ILineAxis {
-  title: string
-  categories: string[]
+  title: string;
+  categories: string[];
 }

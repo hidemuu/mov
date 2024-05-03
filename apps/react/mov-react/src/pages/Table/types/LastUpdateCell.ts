@@ -1,4 +1,4 @@
 export type LastUpdateCell = {
-  label: string
-  icon: JSX.Element
-}
+  label: string;
+  icon: JSX.Element;
+};

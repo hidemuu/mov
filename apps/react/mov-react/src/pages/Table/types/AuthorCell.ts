@@ -1,6 +1,6 @@
-import { PresenceBadgeStatus } from '@fluentui/react-components'
+import { PresenceBadgeStatus } from "@fluentui/react-components";
 
 export type AuthorCell = {
-  label: string
-  status: PresenceBadgeStatus
-}
+  label: string;
+  status: PresenceBadgeStatus;
+};

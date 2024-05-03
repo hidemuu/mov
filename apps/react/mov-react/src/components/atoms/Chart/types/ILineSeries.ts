@@ -1,4 +1,4 @@
 export interface ILineSeries {
-  name: string
-  data: number[]
+  name: string;
+  data: number[];
 }

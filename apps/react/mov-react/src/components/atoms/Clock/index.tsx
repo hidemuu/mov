@@ -1,35 +1,35 @@
-import React, { useState, useEffect } from 'react'
-import { LocaleType } from '../../../domains/locales/types/LocaleType'
-import { Locale } from '../../../domains/locales/models/Locale'
+import React, { useState, useEffect } from "react";
+import { LocaleType } from "../../../domains/locales/types/LocaleType";
+import { Locale } from "../../../domains/locales/models/Locale";
 
-const UPDATE_CYCLE = 1000
+const UPDATE_CYCLE = 1000;
 
-const KEY_LOCALE = 'KEY_LOCALE'
+const KEY_LOCALE = "KEY_LOCALE";
 
 export const Clock = () => {
-  const [timestamp, setTimestamp] = useState(new Date())
-  const [locale, setLocale] = useState(new Locale(LocaleType.US))
+  const [timestamp, setTimestamp] = useState(new Date());
+  const [locale, setLocale] = useState(new Locale(LocaleType.US));
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimestamp(new Date())
-    }, UPDATE_CYCLE)
+      setTimestamp(new Date());
+    }, UPDATE_CYCLE);
 
     return () => {
-      clearInterval(timer)
-    }
-  }, [])
+      clearInterval(timer);
+    };
+  }, []);
 
   useEffect(() => {
-    const savedLocale = localStorage.getItem(KEY_LOCALE)
+    const savedLocale = localStorage.getItem(KEY_LOCALE);
     if (savedLocale !== null) {
-      setLocale(new Locale(savedLocale))
+      setLocale(new Locale(savedLocale));
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
-    localStorage.setItem(KEY_LOCALE, locale.toLocaleString())
-  }, [locale])
+    localStorage.setItem(KEY_LOCALE, locale.toLocaleString());
+  }, [locale]);
 
   return (
     <div>
@@ -45,5 +45,5 @@ export const Clock = () => {
         </select>
       </p>
     </div>
-  )
-}
+  );
+};

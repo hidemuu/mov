@@ -39,8 +39,7 @@ export declare type RegionTabProps = {
 export const RegionTab: FC<RegionTabProps> = ({ regionTable }) => {
   const styles = useStyles();
   const tableColumns: ITableColumnContent[] = useTableColumns();
-  const [selectedTabValue, setSelectedTabValue] =
-    useState<TabValue>("conditions");
+  const [selectedTabValue, setSelectedTabValue] = useState<TabValue>("conditions");
 
   const onTabSelect = (event: SelectTabEvent, data: SelectTabData) => {
     setSelectedTabValue(data.value);
@@ -54,16 +53,10 @@ export const RegionTab: FC<RegionTabProps> = ({ regionTable }) => {
       </TabList>
       <div className={styles.panels}>
         {selectedTabValue === "tab1" && (
-          <RegionTable
-            regionTableLines={regionTable.pref}
-            tableColumns={tableColumns}
-          />
+          <RegionTable regionTableLines={regionTable.pref} tableColumns={tableColumns} />
         )}
         {selectedTabValue === "tab2" && (
-          <RegionTable
-            regionTableLines={regionTable.city}
-            tableColumns={tableColumns}
-          />
+          <RegionTable regionTableLines={regionTable.city} tableColumns={tableColumns} />
         )}
       </div>
     </div>

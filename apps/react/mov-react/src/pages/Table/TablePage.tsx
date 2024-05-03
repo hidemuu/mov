@@ -1,4 +1,4 @@
-﻿import React from 'react'
+﻿import React from "react";
 import {
   FolderRegular,
   EditRegular,
@@ -6,8 +6,8 @@ import {
   DocumentRegular,
   PeopleRegular,
   DocumentPdfRegular,
-  VideoRegular
-} from '@fluentui/react-icons'
+  VideoRegular,
+} from "@fluentui/react-icons";
 import {
   TableBody,
   TableCell,
@@ -17,65 +17,65 @@ import {
   TableHeaderCell,
   TableCellLayout,
   PresenceBadgeStatus,
-  Avatar
-} from '@fluentui/react-components'
-import { FileCell } from './types/FileCell'
-import { AuthorCell } from './types/AuthorCell'
-import { LastUpdatedCell } from './types/LastUpdatedCell'
-import { LastUpdateCell } from './types/LastUpdateCell'
+  Avatar,
+} from "@fluentui/react-components";
+import { FileCell } from "./types/FileCell";
+import { AuthorCell } from "./types/AuthorCell";
+import { LastUpdatedCell } from "./types/LastUpdatedCell";
+import { LastUpdateCell } from "./types/LastUpdateCell";
 
 type Item = {
-  file: FileCell
-  author: AuthorCell
-  lastUpdated: LastUpdatedCell
-  lastUpdate: LastUpdateCell
-}
+  file: FileCell;
+  author: AuthorCell;
+  lastUpdated: LastUpdatedCell;
+  lastUpdate: LastUpdateCell;
+};
 
 const items = [
   {
-    file: { label: 'Meeting notes', icon: <DocumentRegular /> },
-    author: { label: 'Max Mustermann', status: 'available' },
-    lastUpdated: { label: '7h ago', timestamp: 1 },
+    file: { label: "Meeting notes", icon: <DocumentRegular /> },
+    author: { label: "Max Mustermann", status: "available" },
+    lastUpdated: { label: "7h ago", timestamp: 1 },
     lastUpdate: {
-      label: 'You edited this',
-      icon: <EditRegular />
-    }
+      label: "You edited this",
+      icon: <EditRegular />,
+    },
   },
   {
-    file: { label: 'Thursday presentation', icon: <FolderRegular /> },
-    author: { label: 'Erika Mustermann', status: 'busy' },
-    lastUpdated: { label: 'Yesterday at 1:45 PM', timestamp: 2 },
+    file: { label: "Thursday presentation", icon: <FolderRegular /> },
+    author: { label: "Erika Mustermann", status: "busy" },
+    lastUpdated: { label: "Yesterday at 1:45 PM", timestamp: 2 },
     lastUpdate: {
-      label: 'You recently opened this',
-      icon: <OpenRegular />
-    }
+      label: "You recently opened this",
+      icon: <OpenRegular />,
+    },
   },
   {
-    file: { label: 'Training recording', icon: <VideoRegular /> },
-    author: { label: 'John Doe', status: 'away' },
-    lastUpdated: { label: 'Yesterday at 1:45 PM', timestamp: 2 },
+    file: { label: "Training recording", icon: <VideoRegular /> },
+    author: { label: "John Doe", status: "away" },
+    lastUpdated: { label: "Yesterday at 1:45 PM", timestamp: 2 },
     lastUpdate: {
-      label: 'You recently opened this',
-      icon: <OpenRegular />
-    }
+      label: "You recently opened this",
+      icon: <OpenRegular />,
+    },
   },
   {
-    file: { label: 'Purchase order', icon: <DocumentPdfRegular /> },
-    author: { label: 'Jane Doe', status: 'offline' },
-    lastUpdated: { label: 'Tue at 9:30 AM', timestamp: 3 },
+    file: { label: "Purchase order", icon: <DocumentPdfRegular /> },
+    author: { label: "Jane Doe", status: "offline" },
+    lastUpdated: { label: "Tue at 9:30 AM", timestamp: 3 },
     lastUpdate: {
-      label: 'You shared this in a Teams chat',
-      icon: <PeopleRegular />
-    }
-  }
-]
+      label: "You shared this in a Teams chat",
+      icon: <PeopleRegular />,
+    },
+  },
+];
 
 const columns = [
-  { columnKey: 'file', label: 'File' },
-  { columnKey: 'author', label: 'Author' },
-  { columnKey: 'lastUpdated', label: 'Last updated' },
-  { columnKey: 'lastUpdate', label: 'Last update' }
-]
+  { columnKey: "file", label: "File" },
+  { columnKey: "author", label: "Author" },
+  { columnKey: "lastUpdated", label: "Last updated" },
+  { columnKey: "lastUpdate", label: "Last update" },
+];
 
 export const TablePage: React.FunctionComponent = () => {
   return (
@@ -84,9 +84,7 @@ export const TablePage: React.FunctionComponent = () => {
         <TableHeader>
           <TableRow>
             {columns.map((column) => (
-              <TableHeaderCell key={column.columnKey}>
-                {column.label}
-              </TableHeaderCell>
+              <TableHeaderCell key={column.columnKey}>{column.label}</TableHeaderCell>
             ))}
           </TableRow>
         </TableHeader>
@@ -94,9 +92,7 @@ export const TablePage: React.FunctionComponent = () => {
           {items.map((item) => (
             <TableRow key={item.file.label}>
               <TableCell>
-                <TableCellLayout media={item.file.icon}>
-                  {item.file.label}
-                </TableCellLayout>
+                <TableCellLayout media={item.file.icon}>{item.file.label}</TableCellLayout>
               </TableCell>
               <TableCell>
                 <TableCellLayout
@@ -105,7 +101,7 @@ export const TablePage: React.FunctionComponent = () => {
                       aria-label={item.author.label}
                       name={item.author.label}
                       badge={{
-                        status: item.author.status as PresenceBadgeStatus
+                        status: item.author.status as PresenceBadgeStatus,
                       }}
                     />
                   }
@@ -124,5 +120,5 @@ export const TablePage: React.FunctionComponent = () => {
         </TableBody>
       </Table>
     </div>
-  )
-}
+  );
+};

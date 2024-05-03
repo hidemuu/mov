@@ -25,5 +25,5 @@ export const RegionTable: FC<RegionTableProps> = React.memo(
         />
       </div>
     );
-  }
+  },
 );

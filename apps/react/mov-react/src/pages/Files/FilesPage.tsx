@@ -1,6 +1,6 @@
-﻿import * as React from 'react'
-import { PageHeader } from '../../components/organisms/PageHeader'
-import { FileList } from '@microsoft/mgt-react'
+﻿import * as React from "react";
+import { PageHeader } from "../../components/organisms/PageHeader";
+import { FileList } from "@microsoft/mgt-react";
 import {
   SelectTabData,
   SelectTabEvent,
@@ -8,31 +8,31 @@ import {
   TabList,
   TabValue,
   shorthands,
-  makeStyles
-} from '@fluentui/react-components'
-import { ChannelFiles } from './containers/ChannelFiles'
-import { SiteFiles } from './containers/SiteFiles'
+  makeStyles,
+} from "@fluentui/react-components";
+import { ChannelFiles } from "./containers/ChannelFiles";
+import { SiteFiles } from "./containers/SiteFiles";
 
 const useStyles = makeStyles({
   panels: {
-    ...shorthands.padding('10px')
-  }
-})
+    ...shorthands.padding("10px"),
+  },
+});
 
 export const FilesPage: React.FunctionComponent = () => {
-  const styles = useStyles()
-  const [selectedTab, setSelectedTab] = React.useState<TabValue>('my')
+  const styles = useStyles();
+  const [selectedTab, setSelectedTab] = React.useState<TabValue>("my");
 
   const onTabSelect = (event: SelectTabEvent, data: SelectTabData) => {
-    setSelectedTab(data.value)
-  }
+    setSelectedTab(data.value);
+  };
 
   return (
     <>
       <PageHeader
-        title={'Files'}
+        title={"Files"}
         description={
-          'View your files from accross your OneDrive, channels you are a member of and your SharePoint sites'
+          "View your files from accross your OneDrive, channels you are a member of and your SharePoint sites"
         }
       ></PageHeader>
 
@@ -44,18 +44,14 @@ export const FilesPage: React.FunctionComponent = () => {
           <Tab value="channel">Channel Files</Tab>
         </TabList>
         <div className={styles.panels}>
-          {selectedTab === 'my' && <FileList pageSize={100}></FileList>}
-          {selectedTab === 'recent' && (
-            <FileList
-              insightType="used"
-              enableFileUpload={false}
-              pageSize={100}
-            ></FileList>
+          {selectedTab === "my" && <FileList pageSize={100}></FileList>}
+          {selectedTab === "recent" && (
+            <FileList insightType="used" enableFileUpload={false} pageSize={100}></FileList>
           )}
-          {selectedTab === 'site' && <SiteFiles />}
-          {selectedTab === 'channel' && <ChannelFiles />}
+          {selectedTab === "site" && <SiteFiles />}
+          {selectedTab === "channel" && <ChannelFiles />}
         </div>
       </div>
     </>
-  )
-}
+  );
+};

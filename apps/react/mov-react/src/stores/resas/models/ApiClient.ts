@@ -14,10 +14,7 @@ export class ApiClient<T> {
     get<T>(`${this.endpoint}${path}`, setStateAction);
   }
 
-  public async getAsync<T>(
-    path: string,
-    setStateAction: Dispatch<SetStateAction<T[]>>
-  ) {
+  public async getAsync<T>(path: string, setStateAction: Dispatch<SetStateAction<T[]>>) {
     getAsync<T>(`${this.endpoint}${path}`, setStateAction);
   }
 }
@@ -34,10 +31,7 @@ function get<T>(path: string, setStateAction: Dispatch<SetStateAction<T[]>>) {
     });
 }
 
-async function getAsync<T>(
-  path: string,
-  setStateAction: Dispatch<SetStateAction<T[]>>
-) {
+async function getAsync<T>(path: string, setStateAction: Dispatch<SetStateAction<T[]>>) {
   console.log(path);
   try {
     const response = await httpAdapter.get(path);
@@ -47,10 +41,7 @@ async function getAsync<T>(
   }
 }
 
-function setResponse<T>(
-  response: AxiosResponse,
-  setStateAction: Dispatch<SetStateAction<T[]>>
-) {
+function setResponse<T>(response: AxiosResponse, setStateAction: Dispatch<SetStateAction<T[]>>) {
   const status = response.status;
   if (status === 200) {
     const data = response.data;

@@ -1,2 +1,2 @@
-﻿export * from './containers/AllResults'
-export * from './containers/PeopleResults'
+﻿export * from "./containers/AllResults";
+export * from "./containers/PeopleResults";

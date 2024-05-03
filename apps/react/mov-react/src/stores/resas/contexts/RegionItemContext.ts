@@ -1,10 +1,4 @@
-import {
-  Dispatch,
-  SetStateAction,
-  createContext,
-  useContext,
-  useState,
-} from "react";
+import { Dispatch, SetStateAction, createContext, useContext, useState } from "react";
 import { IRegionItemResponse } from "../types/keys/IRegionItemResponse";
 import { RegionItemStore } from "../models/RegionItemStore";
 
@@ -15,16 +9,12 @@ export type RegionItemContextValue = {
   setState: Dispatch<SetStateAction<RegionItemContextState>>;
 };
 
-export const RegionItemContext = createContext<RegionItemStore | undefined>(
-  undefined
-);
+export const RegionItemContext = createContext<RegionItemStore | undefined>(undefined);
 
 export function useRegionItemContext() {
   const store = useContext(RegionItemContext);
   if (store === undefined)
-    throw new Error(
-      "Expected an AppProvider somewhere in the react tree to set context value"
-    );
+    throw new Error("Expected an AppProvider somewhere in the react tree to set context value");
   if (store.isEmpty()) {
     store.update();
   }

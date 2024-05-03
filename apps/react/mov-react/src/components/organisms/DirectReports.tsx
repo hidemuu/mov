@@ -12,38 +12,38 @@
   ToolbarGroup,
   SkeletonItem,
   createTableColumn,
-  makeStyles
-} from '@fluentui/react-components'
-import { FeedRegular } from '@fluentui/react-icons'
+  makeStyles,
+} from "@fluentui/react-components";
+import { FeedRegular } from "@fluentui/react-icons";
 import {
   Get,
   MgtTemplateProps,
   Person,
   PersonCardInteraction,
-  ViewType
-} from '@microsoft/mgt-react'
-import React from 'react'
+  ViewType,
+} from "@microsoft/mgt-react";
+import React from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IIndicentsProps {}
 const useStyles = makeStyles({
   toolbar: {
-    justifyContent: 'space-between'
-  }
-})
+    justifyContent: "space-between",
+  },
+});
 
 const getColumns = (shimmered: boolean): TableColumnDefinition<any>[] => {
   const columns: TableColumnDefinition<any>[] = [
     createTableColumn<any>({
-      columnId: 'name',
+      columnId: "name",
       renderHeaderCell: () => {
-        return 'Name'
+        return "Name";
       },
       renderCell: (item) => {
         return (
           <TableCellLayout>
             {shimmered ? (
-              <SkeletonItem shape="rectangle" style={{ width: '120px' }} />
+              <SkeletonItem shape="rectangle" style={{ width: "120px" }} />
             ) : (
               <Person
                 userId={item.id}
@@ -52,64 +52,64 @@ const getColumns = (shimmered: boolean): TableColumnDefinition<any>[] => {
               />
             )}
           </TableCellLayout>
-        )
-      }
+        );
+      },
     }),
     createTableColumn<any>({
-      columnId: 'jobTitle',
+      columnId: "jobTitle",
       renderHeaderCell: () => {
-        return 'Job Title'
+        return "Job Title";
       },
       renderCell: (item) => {
         return (
           <TableCellLayout>
             {shimmered ? (
-              <SkeletonItem shape="rectangle" style={{ width: '120px' }} />
+              <SkeletonItem shape="rectangle" style={{ width: "120px" }} />
             ) : (
               item.jobTitle
             )}
           </TableCellLayout>
-        )
-      }
+        );
+      },
     }),
     createTableColumn<any>({
-      columnId: 'mobilePhone',
+      columnId: "mobilePhone",
       renderHeaderCell: () => {
-        return 'Mobile Phone'
+        return "Mobile Phone";
       },
       renderCell: (item) => {
         return (
           <TableCellLayout>
             {shimmered ? (
-              <SkeletonItem shape="rectangle" style={{ width: '120px' }} />
+              <SkeletonItem shape="rectangle" style={{ width: "120px" }} />
             ) : (
               item.mobilePhone
             )}
           </TableCellLayout>
-        )
-      }
+        );
+      },
     }),
     createTableColumn<any>({
-      columnId: 'officeLocation',
+      columnId: "officeLocation",
       renderHeaderCell: () => {
-        return 'Office Location'
+        return "Office Location";
       },
       renderCell: (item) => {
         return (
           <TableCellLayout>
             {shimmered ? (
-              <SkeletonItem shape="rectangle" style={{ width: '120px' }} />
+              <SkeletonItem shape="rectangle" style={{ width: "120px" }} />
             ) : (
               item.officeLocation
             )}
           </TableCellLayout>
-        )
-      }
-    })
-  ]
+        );
+      },
+    }),
+  ];
 
-  return columns
-}
+  return columns;
+};
 
 export function DirectReports(props: IIndicentsProps) {
   return (
@@ -118,22 +118,20 @@ export function DirectReports(props: IIndicentsProps) {
       <DataGridTemplate template="loading"></DataGridTemplate>
       <NoDataTemplate template="no-data"></NoDataTemplate>
     </Get>
-  )
+  );
 }
 
 const DataGridTemplate = (props: MgtTemplateProps) => {
-  const styles = useStyles()
-  const [teams] = React.useState<any[]>(props.dataContext.value)
-  const [isLoading] = React.useState<boolean>(
-    props.dataContext && !props.dataContext.value
-  )
-  const [selectedTeam, setSelectedTeam] = React.useState<any>(null)
+  const styles = useStyles();
+  const [teams] = React.useState<any[]>(props.dataContext.value);
+  const [isLoading] = React.useState<boolean>(props.dataContext && !props.dataContext.value);
+  const [selectedTeam, setSelectedTeam] = React.useState<any>(null);
 
   const onSelectionChange = (e: any, data: any) => {
-    const [selectedItem] = data.selectedItems
-    const team = teams.find((i) => i.id === selectedItem)
-    setSelectedTeam(team)
-  }
+    const [selectedItem] = data.selectedItems;
+    const team = teams.find((i) => i.id === selectedItem);
+    setSelectedTeam(team);
+  };
 
   return (
     <div>
@@ -167,17 +165,15 @@ const DataGridTemplate = (props: MgtTemplateProps) => {
         <DataGridBody<unknown>>
           {({ item, rowId }) => (
             <DataGridRow<unknown> key={rowId}>
-              {({ renderCell }) => (
-                <DataGridCell>{renderCell(item)}</DataGridCell>
-              )}
+              {({ renderCell }) => <DataGridCell>{renderCell(item)}</DataGridCell>}
             </DataGridRow>
           )}
         </DataGridBody>
       </DataGrid>
     </div>
-  )
-}
+  );
+};
 
 const NoDataTemplate = (props: MgtTemplateProps) => {
-  return <>You don{"'"}t have direct reports</>
-}
+  return <>You don{"'"}t have direct reports</>;
+};

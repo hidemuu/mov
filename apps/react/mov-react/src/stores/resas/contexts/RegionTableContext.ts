@@ -1,10 +1,4 @@
-import {
-  Dispatch,
-  SetStateAction,
-  createContext,
-  useContext,
-  useState,
-} from "react";
+import { Dispatch, SetStateAction, createContext, useContext, useState } from "react";
 import { ITableItemResponse } from "../types/tables/ITableItemResponse";
 import { RegionTableStore } from "../models/RegionTableStore";
 
@@ -17,16 +11,12 @@ export type RegionTableContextValue = {
   setCityState: Dispatch<SetStateAction<RegionTableContextState>>;
 };
 
-export const RegionTableContext = createContext<RegionTableStore | undefined>(
-  undefined
-);
+export const RegionTableContext = createContext<RegionTableStore | undefined>(undefined);
 
 export function useRegionTableContext() {
   const store = useContext(RegionTableContext);
   if (store === undefined)
-    throw new Error(
-      "Expected an AppProvider somewhere in the react tree to set context value"
-    );
+    throw new Error("Expected an AppProvider somewhere in the react tree to set context value");
   if (store.isEmpty()) {
     store.update();
   }

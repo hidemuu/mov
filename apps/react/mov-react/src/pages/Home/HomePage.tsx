@@ -1,12 +1,6 @@
 import * as React from "react";
 import { PageHeader } from "../../components/organisms/PageHeader";
-import {
-  Input,
-  Label,
-  makeStyles,
-  shorthands,
-  useId,
-} from "@fluentui/react-components";
+import { Input, Label, makeStyles, shorthands, useId } from "@fluentui/react-components";
 import type { InputProps } from "@fluentui/react-components";
 import { useRegionItemContext } from "stores/resas/contexts/RegionItemContext";
 
@@ -30,7 +24,7 @@ export const HomePage: React.FunctionComponent = () => {
   const styles = useStyles();
   const inputId = useId("input");
   const [consoleValue, setConsoleValue] = React.useState(
-    "/api/analizers/regions/resas/ResasPrefecture"
+    "/api/analizers/regions/resas/ResasPrefecture",
   );
 
   const regionItemStore = useRegionItemContext();
@@ -58,9 +52,7 @@ export const HomePage: React.FunctionComponent = () => {
     }
   };
 
-  const onConsolePaste = (event: {
-    clipboardData: { getData: (arg0: string) => any };
-  }) => {
+  const onConsolePaste = (event: { clipboardData: { getData: (arg0: string) => any } }) => {
     const pastedText = event.clipboardData.getData("text");
     // ペーストされたテキストを取得し、必要な処理を行う
     console.log("Pasted text:", pastedText);
@@ -69,10 +61,7 @@ export const HomePage: React.FunctionComponent = () => {
 
   return (
     <div className={styles.root}>
-      <PageHeader
-        title={"Home"}
-        description={"Welcome to Mov Suite!"}
-      ></PageHeader>
+      <PageHeader title={"Home"} description={"Welcome to Mov Suite!"}></PageHeader>
       <Label>Console</Label>
       <Input
         placeholder="inline"

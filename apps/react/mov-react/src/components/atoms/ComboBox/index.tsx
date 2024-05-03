@@ -1,23 +1,23 @@
-import React, { FC } from 'react'
-import { useId, Combobox, Option } from '@fluentui/react-components'
-import type { ComboboxProps } from '@fluentui/react-components'
+import React, { FC } from "react";
+import { useId, Combobox, Option } from "@fluentui/react-components";
+import type { ComboboxProps } from "@fluentui/react-components";
 
 export declare type ComboBoxProps = {
-  selectedValue: string
-  values: string[]
-  placeHolder: string
-  onOptionSelect: ComboboxProps['onOptionSelect']
-  onInput: ComboboxProps['onInput']
-}
+  selectedValue: string;
+  values: string[];
+  placeHolder: string;
+  onOptionSelect: ComboboxProps["onOptionSelect"];
+  onInput: ComboboxProps["onInput"];
+};
 
 export const ComboBox: FC<ComboBoxProps> = ({
   selectedValue,
   values,
   placeHolder,
   onOptionSelect,
-  onInput
+  onInput,
 }) => {
-  const comboId = useId('combo-default')
+  const comboId = useId("combo-default");
 
   return (
     <Combobox
@@ -33,5 +33,5 @@ export const ComboBox: FC<ComboBoxProps> = ({
         </Option>
       ))}
     </Combobox>
-  )
-}
+  );
+};

@@ -8,10 +8,7 @@ declare type PrefComboBoxProps = {
   onOptionSelect: ComboboxProps["onOptionSelect"];
 };
 
-export const PrefComboBox: FC<PrefComboBoxProps> = ({
-  regionSelections,
-  onOptionSelect,
-}) => {
+export const PrefComboBox: FC<PrefComboBoxProps> = ({ regionSelections, onOptionSelect }) => {
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   const onInput: ComboboxProps["onInput"] = (ev) => {};
 

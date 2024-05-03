@@ -11,11 +11,13 @@ export const ResasPage: React.FunctionComponent = () => {
   const inputId: string = useInputId();
   const regionTrendStore = useRegionTrendContext();
   const regionTableStore = useRegionTableContext();
-  const [latestSelectRegionKey, setlatestSelectRegionKey] = useState<IRegionKey>({
-    prefCode: 11,
-    cityCode: 11362,
-  });
-  const [selectedRegionKeys, setSelectedRegionKeys] = useState<IRegionKey[]>([]);
+  const defaultSelectRegionKey: IRegionKey = { prefCode: 11, cityCode: 11362 };
+
+  const [latestSelectRegionKey, setlatestSelectRegionKey] =
+    useState<IRegionKey>(defaultSelectRegionKey);
+  const [selectedRegionKeys, setSelectedRegionKeys] = useState<IRegionKey[]>([
+    defaultSelectRegionKey,
+  ]);
   const selection = new RegionSelection(
     latestSelectRegionKey,
     selectedRegionKeys,

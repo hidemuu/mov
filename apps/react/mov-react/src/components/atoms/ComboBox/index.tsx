@@ -34,7 +34,7 @@ export const ComboBox: FC<ComboBoxProps> = ({
       onChange={onChange}
     >
       {values.map((value) => (
-        <Option key={value} disabled={value === selectedValue}>
+        <Option key={value} disabled={value === selectedValue && !multiselect}>
           {value}
         </Option>
       ))}

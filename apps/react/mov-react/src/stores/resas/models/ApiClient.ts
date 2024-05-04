@@ -15,7 +15,15 @@ export class ApiClient<T> {
   }
 
   public async getAsync<T>(path: string, setStateAction: Dispatch<SetStateAction<T[]>>) {
-    getAsync<T>(`${this.endpoint}${path}`, setStateAction);
+    await getAsync<T>(`${this.endpoint}${path}`, setStateAction);
+  }
+
+  public async getsAsync<T>(paths: string[], setStateAction: Dispatch<SetStateAction<T[]>>) {
+    const fullPaths: string[] = [];
+    for (const path of paths) {
+      fullPaths.push(`${this.endpoint}${path}`);
+    }
+    await getsAsync<T>(fullPaths, setStateAction);
   }
 }
 
@@ -24,7 +32,7 @@ function get<T>(path: string, setStateAction: Dispatch<SetStateAction<T[]>>) {
   httpAdapter
     .get(path)
     .then((response: AxiosResponse) => {
-      setResponse<T>(response, setStateAction);
+      setStateAction(setResponse<T>(response));
     })
     .catch((error) => {
       writeAssertLog(path, error);
@@ -35,21 +43,36 @@ async function getAsync<T>(path: string, setStateAction: Dispatch<SetStateAction
   console.log(path);
   try {
     const response = await httpAdapter.get(path);
-    setResponse<T>(response, setStateAction);
+    setStateAction(setResponse<T>(response));
   } catch (error) {
     writeAssertLog(path, error);
   }
 }
 
-function setResponse<T>(response: AxiosResponse, setStateAction: Dispatch<SetStateAction<T[]>>) {
+async function getsAsync<T>(paths: string[], setStateAction: Dispatch<SetStateAction<T[]>>) {
+  const result: T[] = [];
+  for (const path of paths) {
+    console.log(path);
+    try {
+      const response = await httpAdapter.get(path);
+      result.concat(setResponse<T>(response));
+    } catch (error) {
+      writeAssertLog(path, error);
+    }
+  }
+  setStateAction(result);
+}
+
+function setResponse<T>(response: AxiosResponse): T[] {
   const status = response.status;
   if (status === 200) {
     const data = response.data;
     const results: T[] = data.results;
     writeLogs(results);
-    setStateAction(results);
+    return results;
   } else {
     throw new Error();
+    return [];
   }
 }
 

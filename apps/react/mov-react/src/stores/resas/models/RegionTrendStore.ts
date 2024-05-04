@@ -29,6 +29,14 @@ export class RegionTrendStore {
     }
   }
 
+  public async updateMultiPopulationPerYearsAsync(keys: IRegionKey[]) {
+    const paths: string[] = [];
+    for (const key of keys) {
+      paths.push(this.createPopulationPerYearsPath(key));
+    }
+    await this.apiClient.getsAsync(paths, this.contextValue.setState);
+  }
+
   private createPopulationPerYearsPath(key: IRegionKey): string {
     let path: string;
     if (key.cityCode === 0 && key.prefCode === 0) {
@@ -50,7 +58,7 @@ export class RegionTrendStore {
   }
 
   public asString(): string {
-    let result: string = "";
+    let result = "";
     for (const item of this.contextValue.state) {
       result += `prefcode:${item.region.prefCode}prefname:${item.region.prefName}citycode:${item.region.cityCode}cityname:${item.region.cityName}\n`;
     }

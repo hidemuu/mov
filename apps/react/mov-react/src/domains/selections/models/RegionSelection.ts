@@ -19,17 +19,25 @@ export class RegionSelection {
   }
 
   public getSelections(): IRegionSelections {
-    const regionValue = this.getSelectedValue();
-    const prefCities = this.tableStore.getPrefCities(regionValue.prefCode);
+    const selectKeyValue = this.getLatestSelectKeyValue();
+    const prefCities = this.tableStore.getPrefCities(selectKeyValue.prefCode);
     const regionSelections: IRegionSelections = {
-      selected: regionValue,
+      selected: selectKeyValue,
       prefSelections: this.tableStore.getTable().pref.map((x) => x.content),
       citySelections: prefCities.map((x) => x.content),
     };
     return regionSelections;
   }
 
-  public getSelectedValue(): IRegionKeyValue {
+  public getLatestSelectKeyValue(): IRegionKeyValue {
     return this.tableStore.getRegionValue(this.latestSelectRegionKey);
+  }
+
+  public getSelectedKeyValues(): IRegionKeyValue[] {
+    const keyValues: IRegionKeyValue[] = [];
+    for (const key of this.selectedRegionKeys) {
+      keyValues.push(this.tableStore.getRegionValue(key));
+    }
+    return keyValues;
   }
 }

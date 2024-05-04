@@ -11,8 +11,8 @@ export const ResasPage: React.FunctionComponent = () => {
   const inputId: string = useInputId();
   const regionTrendStore = useRegionTrendContext();
   const regionTableStore = useRegionTableContext();
-  const defaultSelectRegionKey: IRegionKey = { prefCode: 11, cityCode: 11362 };
 
+  const defaultSelectRegionKey: IRegionKey = { prefCode: 11, cityCode: 11362 };
   const [latestSelectRegionKey, setlatestSelectRegionKey] =
     useState<IRegionKey>(defaultSelectRegionKey);
   const [selectedRegionKeys, setSelectedRegionKeys] = useState<IRegionKey[]>([
@@ -41,13 +41,14 @@ export const ResasPage: React.FunctionComponent = () => {
       await regionTrendStore.updatePopulationPerYearsAsync(latestSelectRegionKey);
     };
     update();
+    console.log("ResasPage - Store更新されるたび実行");
   }, [latestSelectRegionKey]);
 
   const onChangeSelectedPrefecture: ComboboxProps["onOptionSelect"] = (ev, data) => {
     const selectPrefName = data.optionValue;
     const updateSelectRegionKey: IRegionKey = {
       prefCode: regionTableStore.getPrefectureCode(selectPrefName ?? ""),
-      cityCode: selection.getSelectedValue().cityCode,
+      cityCode: selection.getLatestSelectKeyValue().cityCode,
     };
     setlatestSelectRegionKey(updateSelectRegionKey);
     const selectedPrefNames = data.selectedOptions;
@@ -64,7 +65,7 @@ export const ResasPage: React.FunctionComponent = () => {
   const onChangeSelectedCity: ComboboxProps["onOptionSelect"] = (ev, data) => {
     const selectCityName = data.optionValue;
     const updateSelectRegionKey: IRegionKey = {
-      prefCode: selection.getSelectedValue().prefCode,
+      prefCode: selection.getLatestSelectKeyValue().prefCode,
       cityCode: regionTableStore.getCityCode(selectCityName ?? ""),
     };
     setlatestSelectRegionKey(updateSelectRegionKey);

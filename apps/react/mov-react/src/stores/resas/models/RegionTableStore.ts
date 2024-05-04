@@ -53,7 +53,18 @@ export class RegionTableStore {
     return this.contextValue.cityState.filter((x) => Number(x.label) === prefCode);
   }
 
-  public getRegionValue(regionKey: IRegionKey): IRegionKeyValue {
+  public getDefaultPrefKeyValue(prefCode: number): IRegionKeyValue {
+    const targetPref = this.contextValue.prefState.filter((x) => x.id === prefCode)[0];
+    const prefCity = this.getPrefCities(prefCode)[0];
+    return {
+      prefCode: targetPref.id,
+      prefName: targetPref?.content ?? "",
+      cityCode: prefCity.id,
+      cityName: prefCity?.content ?? "",
+    };
+  }
+
+  public getRegionKeyValue(regionKey: IRegionKey): IRegionKeyValue {
     const targetPref = this.contextValue.prefState.filter((x) => x.id === regionKey.prefCode)[0];
     const targetCity = this.contextValue.cityState.filter((x) => x.id === regionKey.cityCode)[0];
     if (targetPref === undefined || targetCity === undefined) {

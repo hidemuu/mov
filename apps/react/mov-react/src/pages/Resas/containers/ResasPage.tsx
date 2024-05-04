@@ -51,13 +51,15 @@ export const ResasPage: React.FunctionComponent = () => {
       cityCode: selection.getLatestSelectKeyValue().cityCode,
     };
     setlatestSelectRegionKey(updateSelectRegionKey);
+
     const selectedPrefNames = data.selectedOptions;
     const updateSelectedRegionKeys: IRegionKey[] = [];
     for (const prefName of selectedPrefNames) {
-      updateSelectedRegionKeys.push({
-        prefCode: regionTableStore.getPrefectureCode(prefName ?? ""),
-        cityCode: -1,
-      });
+      const updatePrefCode = regionTableStore.getPrefectureCode(prefName ?? "");
+      if (selectedRegionKeys.filter((x) => x.prefCode === updatePrefCode)) {
+        continue;
+      }
+      updateSelectedRegionKeys.push(regionTableStore.getDefaultPrefKeyValue(updatePrefCode));
     }
     setSelectedRegionKeys(updateSelectedRegionKeys);
   };
@@ -69,13 +71,21 @@ export const ResasPage: React.FunctionComponent = () => {
       cityCode: regionTableStore.getCityCode(selectCityName ?? ""),
     };
     setlatestSelectRegionKey(updateSelectRegionKey);
+
     const selectedCityNames = data.selectedOptions;
     const updateSelectedRegionKeys: IRegionKey[] = [];
-    for (const cityName of selectedCityNames) {
-      updateSelectedRegionKeys.push({
-        prefCode: -1,
-        cityCode: regionTableStore.getCityCode(cityName ?? ""),
-      });
+    const latestPrefCode = latestSelectRegionKey.prefCode;
+    for (const selectedRegionKey of selectedRegionKeys) {
+      if (selectedRegionKey.prefCode === latestPrefCode) {
+        for (const cityName of selectedCityNames) {
+          updateSelectedRegionKeys.push({
+            prefCode: latestPrefCode,
+            cityCode: regionTableStore.getCityCode(cityName ?? ""),
+          });
+        }
+        continue;
+      }
+      updateSelectedRegionKeys.push(selectedRegionKey);
     }
     setSelectedRegionKeys(updateSelectedRegionKeys);
   };

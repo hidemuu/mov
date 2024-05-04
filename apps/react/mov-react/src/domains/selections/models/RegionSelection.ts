@@ -30,13 +30,13 @@ export class RegionSelection {
   }
 
   public getLatestSelectKeyValue(): IRegionKeyValue {
-    return this.tableStore.getRegionValue(this.latestSelectRegionKey);
+    return this.tableStore.getRegionKeyValue(this.latestSelectRegionKey);
   }
 
   public getSelectedKeyValues(): IRegionKeyValue[] {
     const keyValues: IRegionKeyValue[] = [];
     for (const key of this.selectedRegionKeys) {
-      keyValues.push(this.tableStore.getRegionValue(key));
+      keyValues.push(this.tableStore.getRegionKeyValue(key));
     }
     return keyValues;
   }

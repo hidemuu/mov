@@ -79,17 +79,24 @@ export const ResasPage: React.FunctionComponent = () => {
     const selectedCityNames = data.selectedOptions;
     const updateSelectedRegionKeys: IRegionKey[] = [];
     const latestPrefCode = latestSelectRegionKey.prefCode;
-    for (const selectedRegionKey of selectedRegionKeys) {
-      if (selectedRegionKey.prefCode === latestPrefCode) {
-        for (const cityName of selectedCityNames) {
-          updateSelectedRegionKeys.push({
-            prefCode: latestPrefCode,
-            cityCode: regionTableStore.getCityCode(cityName ?? ""),
-          });
-        }
+    for (const cityName of selectedCityNames) {
+      const updateCityCode = regionTableStore.getCityCode(cityName ?? "");
+      if (
+        updateSelectedRegionKeys.filter(
+          (x) => x.prefCode === latestPrefCode && x.cityCode === updateCityCode,
+        ).length > 0
+      ) {
         continue;
       }
-      updateSelectedRegionKeys.push(selectedRegionKey);
+      updateSelectedRegionKeys.push({
+        prefCode: latestPrefCode,
+        cityCode: updateCityCode,
+      });
+    }
+    for (const selectedRegionKey of selectedRegionKeys) {
+      if (selectedRegionKey.prefCode !== latestPrefCode) {
+        updateSelectedRegionKeys.push(selectedRegionKey);
+      }
     }
     setSelectedRegionKeys(updateSelectedRegionKeys);
   };

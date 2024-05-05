@@ -38,7 +38,11 @@ export const ResasPage: React.FunctionComponent = () => {
   useEffect(() => {
     //store更新時に実行
     const update = async () => {
-      await regionTrendStore.updatePopulationPerYearsAsync(latestSelectRegionKey);
+      if (selectedRegionKeys.length > 0) {
+        await regionTrendStore.updateMultiPopulationPerYearsAsync(selectedRegionKeys);
+      } else {
+        await regionTrendStore.updatePopulationPerYearsAsync(latestSelectRegionKey);
+      }
     };
     update();
     console.log("ResasPage - Store更新されるたび実行");

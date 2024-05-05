@@ -55,7 +55,8 @@ async function getsAsync<T>(paths: string[], setStateAction: Dispatch<SetStateAc
     console.log(path);
     try {
       const response = await httpAdapter.get(path);
-      result.concat(setResponse<T>(response));
+      const data = setResponse<T>(response);
+      result.push(...data);
     } catch (error) {
       writeAssertLog(path, error);
     }

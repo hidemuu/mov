@@ -6,6 +6,7 @@
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@fluentui/react": "^8.112.2",
+    "@fluentui/react-charting": "^5.21.4",
     "@fluentui/react-components": "^9.35.0",
     "@fluentui/react-icons": "^2.0.220",
     "@fluentui/react-table": "^9.10.9",

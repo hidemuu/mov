@@ -1,5 +1,6 @@
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import { IChartProps, ILineChartProps, LineChart, DataVizPalette } from "@fluentui/react-charting";
 import React, { FC } from "react";
 
 const Styles: { [key: string]: React.CSSProperties } = {
@@ -9,13 +10,15 @@ const Styles: { [key: string]: React.CSSProperties } = {
 };
 
 declare type ChartProps = {
-  chartOptions: Highcharts.Options;
+  highChartOptions: Highcharts.Options;
 };
 
-export const Chart: FC<ChartProps> = ({ chartOptions }) => {
+export const Chart: FC<ChartProps> = ({ highChartOptions }) => {
   return (
     <div style={Styles.graph}>
-      <HighchartsReact highcharts={Highcharts} options={chartOptions} />
+      {highChartOptions !== undefined && (
+        <HighchartsReact highcharts={Highcharts} options={highChartOptions} />
+      )}
     </div>
   );
 };

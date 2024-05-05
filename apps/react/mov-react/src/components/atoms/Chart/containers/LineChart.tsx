@@ -34,5 +34,5 @@ export const LineChart = (props: LineChartProps) => {
           })),
   };
 
-  return <Chart chartOptions={chartOptions} />;
+  return <Chart highChartOptions={chartOptions} />;
 };

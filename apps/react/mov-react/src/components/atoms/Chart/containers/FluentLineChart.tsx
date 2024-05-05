@@ -29,5 +29,9 @@ export const FluentLineChart = (props: LineChartProps) => {
           })),
   };
 
-  return <Chart highChartOptions={undefined} fluentUiChartProps={chartProps} />;
+  const lineChartProps: ILineChartProps = {
+    data: chartProps,
+  };
+
+  return <Chart highChartOptions={undefined} fluentUiChartProps={lineChartProps} />;
 };

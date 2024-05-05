@@ -1,6 +1,6 @@
-import Highcharts, { chart } from "highcharts";
+import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
-import { IChartProps, ILineChartProps, LineChart, DataVizPalette } from "@fluentui/react-charting";
+import { ILineChartProps, LineChart } from "@fluentui/react-charting";
 import React, { FC } from "react";
 
 const Styles: { [key: string]: React.CSSProperties } = {
@@ -11,7 +11,7 @@ const Styles: { [key: string]: React.CSSProperties } = {
 
 declare type ChartProps = {
   highChartOptions?: Highcharts.Options;
-  fluentUiChartProps?: IChartProps;
+  fluentUiChartProps?: ILineChartProps;
 };
 
 export const Chart: FC<ChartProps> = ({ highChartOptions, fluentUiChartProps }) => {
@@ -23,7 +23,7 @@ export const Chart: FC<ChartProps> = ({ highChartOptions, fluentUiChartProps }) 
       {fluentUiChartProps !== undefined && (
         <LineChart
           culture={window.navigator.language}
-          data={fluentUiChartProps}
+          data={fluentUiChartProps.data}
           legendsOverflowText={"Overflow Items"}
           yMinValue={200}
           yMaxValue={301}

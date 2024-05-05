@@ -1,4 +1,5 @@
 import { ILineChartOption } from "components/atoms/Chart/types/ILineChartOption";
+import { ILineData } from "components/atoms/Chart/types/ILineData";
 import { ILineSeries } from "components/atoms/Chart/types/ILineSeries";
 import { IRegionTrendResponse } from "stores/resas/types/trends/IRegionTrendResponse";
 
@@ -27,12 +28,12 @@ export class RegionTrendLine {
     const categories = [];
     let count = 0;
     for (const regionTrend of this.trend) {
-      const data = [];
+      const data: ILineData[] = [];
       for (const trendLine of regionTrend.data) {
         if (count === 0) {
           categories.push(String(trendLine.number));
         }
-        data.push(trendLine.value);
+        data.push({ x: trendLine.number, y: trendLine.value });
       }
       const prefName = regionTrend.region.prefName;
       const cityName = regionTrend.region.cityName;

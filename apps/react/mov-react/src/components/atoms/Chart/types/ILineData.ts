@@ -1,4 +1,4 @@
 export interface ILineData {
-  x: string;
+  x: number;
   y: number;
 }

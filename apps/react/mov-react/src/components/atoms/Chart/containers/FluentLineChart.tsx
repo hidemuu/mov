@@ -24,7 +24,7 @@ export const FluentLineChart = (props: LineChartProps) => {
           ]
         : option.series.map((s) => ({
             legend: s.name,
-            data: s.data.map((d) => ({ x: 0, y: d })),
+            data: s.data.map((d) => ({ x: d.x, y: d.y })),
             onDataPointClick: () => alert("click on data"),
           })),
   };

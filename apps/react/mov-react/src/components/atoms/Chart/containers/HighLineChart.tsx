@@ -27,10 +27,10 @@ export const HighLineChart = (props: LineChartProps) => {
     series:
       option.series.length === 0
         ? [{ type: "line", name: "", data: [] }]
-        : option.series.map((x) => ({
+        : option.series.map((s) => ({
             type: "line",
-            name: x.name,
-            data: x.data,
+            name: s.name,
+            data: s.data.map((d) => d.y),
           })),
   };
 

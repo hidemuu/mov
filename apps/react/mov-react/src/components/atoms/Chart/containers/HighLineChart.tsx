@@ -6,7 +6,7 @@ type LineChartProps = {
   option: ILineChartOption;
 };
 
-export const LineChart = (props: LineChartProps) => {
+export const HighLineChart = (props: LineChartProps) => {
   const { option } = props;
 
   const chartOptions: Highcharts.Options = {
@@ -34,5 +34,5 @@ export const LineChart = (props: LineChartProps) => {
           })),
   };
 
-  return <Chart highChartOptions={chartOptions} />;
+  return <Chart highChartOptions={chartOptions} fluentUiChartProps={undefined} />;
 };

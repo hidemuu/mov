@@ -1,4 +1,4 @@
-import Highcharts from "highcharts";
+import Highcharts, { chart } from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { IChartProps, ILineChartProps, LineChart, DataVizPalette } from "@fluentui/react-charting";
 import React, { FC } from "react";
@@ -10,14 +10,31 @@ const Styles: { [key: string]: React.CSSProperties } = {
 };
 
 declare type ChartProps = {
-  highChartOptions: Highcharts.Options;
+  highChartOptions?: Highcharts.Options;
+  fluentUiChartProps?: IChartProps;
 };
 
-export const Chart: FC<ChartProps> = ({ highChartOptions }) => {
+export const Chart: FC<ChartProps> = ({ highChartOptions, fluentUiChartProps }) => {
   return (
     <div style={Styles.graph}>
       {highChartOptions !== undefined && (
         <HighchartsReact highcharts={Highcharts} options={highChartOptions} />
+      )}
+      {fluentUiChartProps !== undefined && (
+        <LineChart
+          culture={window.navigator.language}
+          data={fluentUiChartProps}
+          legendsOverflowText={"Overflow Items"}
+          yMinValue={200}
+          yMaxValue={301}
+          height={500}
+          width={500}
+          xAxisTickCount={10}
+          allowMultipleShapesForPoints={true}
+          enablePerfOptimization={true}
+          yAxisTitle={"Different categories of mail flow"}
+          xAxisTitle={"Values of each category"}
+        />
       )}
     </div>
   );

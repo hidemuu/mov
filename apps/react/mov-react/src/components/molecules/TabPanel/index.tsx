@@ -26,7 +26,7 @@ declare type TabPanelProps = {
 
 export const TabPanel: FC<TabPanelProps> = ({ tabNames, components }) => {
   const styles = useStyles();
-  const [selectedTabValue, setSelectedTabValue] = useState<number>(-1);
+  const [selectedTabValue, setSelectedTabValue] = useState<number>(0);
 
   const onTabSelect = (event: SelectTabEvent, data: SelectTabData) => {
     setSelectedTabValue(Number(data.value));

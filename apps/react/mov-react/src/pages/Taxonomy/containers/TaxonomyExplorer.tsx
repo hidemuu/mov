@@ -114,7 +114,7 @@ const SetTemplate = (props: MgtTemplateProps) => {
                   description={<Caption1 className={styles.caption}>{selectedTerm.id}</Caption1>}
                 />
 
-                {selectedTerm.descriptions?.length! > 0 && (
+                {selectedTerm.descriptions !== undefined && (
                   <p className={styles.text}>{selectedTerm.descriptions?.[0].description}</p>
                 )}
               </Card>

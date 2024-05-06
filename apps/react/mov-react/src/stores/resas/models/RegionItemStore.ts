@@ -23,7 +23,7 @@ export class RegionItemStore {
   }
 
   public asString(): string {
-    let result: string = "";
+    let result = "";
     for (const item of this.contextValue.state) {
       result += `code:${item.code}name:${item.name}\n`;
     }

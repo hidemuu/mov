@@ -9,8 +9,8 @@ import { CityComboBox } from "./components/RegionComboBox/containers/CityComboBo
 import { PrefComboBox } from "./components/RegionComboBox/containers/PrefComboBox";
 import { TabPanel } from "components/molecules/TabPanel";
 import FluentPyramidChart from "components/atoms/Chart/containers/FluentPyramidChart";
-import { ITableColumnContent } from "components/molecules/DataTable/types/ITableColumnContent";
 import { RegionTable } from "./components/RegionTable";
+import Map from "components/atoms/Map";
 
 const useStyles = makeStyles({
   root: {
@@ -73,10 +73,11 @@ export const Resas = ({
       </div>
       <h2>トレンドグラフ</h2>
       <TabPanel
-        tabNames={["LineChart", "Pyramid"]}
+        tabNames={["LineChart", "Pyramid", "HeatMap"]}
         components={[
           <RegionTrendLineChart key={0} regionTrend={regionTrendLines} chartType="fluent" />,
           <FluentPyramidChart key={1}></FluentPyramidChart>,
+          <Map key={2} />,
         ]}
       ></TabPanel>
       <h2>都道府県一覧</h2>

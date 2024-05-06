@@ -15,6 +15,7 @@ const useStyles = makeStyles({
       textAlign: "left",
       ...shorthands.padding(0, "30px", 0, 0),
     },
+    width: "700px",
   },
 });
 

@@ -8,6 +8,7 @@ import { IRegionTrendResponse } from "stores/resas/types/trends/IRegionTrendResp
 import { IRegionSelections } from "../../domains/selections/types/IRegionSelections";
 import { CityComboBox } from "./components/RegionComboBox/containers/CityComboBox";
 import { PrefComboBox } from "./components/RegionComboBox/containers/PrefComboBox";
+import { TabPanel } from "components/molecules/TabPanel";
 
 const useStyles = makeStyles({
   root: {
@@ -69,7 +70,11 @@ export const Resas = ({
         <CityComboBox regionSelections={regionSelections} onOptionSelect={onChangeSelectedCity} />
       </div>
       <h2>トレンドグラフ</h2>
-      <RegionTrendLineChart regionTrend={regionTrendLines} />
+      <TabPanel
+        tabNames={["LineChart", "Histgram"]}
+        components={[<RegionTrendLineChart key={0} regionTrend={regionTrendLines} />, <></>]}
+      ></TabPanel>
+      <h2>都道府県一覧</h2>
       <RegionTab regionTable={regionTable} />
     </div>
   );

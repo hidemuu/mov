@@ -72,7 +72,10 @@ export const Resas = ({
       <h2>トレンドグラフ</h2>
       <TabPanel
         tabNames={["LineChart", "Histgram"]}
-        components={[<RegionTrendLineChart key={0} regionTrend={regionTrendLines} />, <></>]}
+        components={[
+          <RegionTrendLineChart key={0} regionTrend={regionTrendLines} chartType="fluent" />,
+          <></>,
+        ]}
       ></TabPanel>
       <h2>都道府県一覧</h2>
       <RegionTab regionTable={regionTable} />

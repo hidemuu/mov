@@ -6,15 +6,16 @@ import { FluentLineChart } from "components/atoms/Chart/containers/FluentLineCha
 
 export declare type RegionTrendLineChartProps = {
   regionTrend: IRegionTrendResponse[];
+  chartType: string;
 };
 
-export const RegionTrendLineChart: FC<RegionTrendLineChartProps> = ({ regionTrend }) => {
+export const RegionTrendLineChart: FC<RegionTrendLineChartProps> = ({ regionTrend, chartType }) => {
   const option = useRegionTrendLineChart(regionTrend);
 
   return (
     <div>
-      <HighLineChart option={option} />
-      <FluentLineChart option={option} />
+      {chartType === "high" && <HighLineChart option={option} />}
+      {chartType !== "high" && <FluentLineChart option={option} />}
     </div>
   );
 };

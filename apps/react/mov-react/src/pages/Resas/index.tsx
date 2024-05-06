@@ -10,6 +10,8 @@ import { CityComboBox } from "./components/RegionComboBox/containers/CityComboBo
 import { PrefComboBox } from "./components/RegionComboBox/containers/PrefComboBox";
 import { TabPanel } from "components/molecules/TabPanel";
 import FluentPyramidChart from "components/atoms/Chart/containers/FluentPyramidChart";
+import { ITableColumnContent } from "components/molecules/DataTable/types/ITableColumnContent";
+import { RegionTable } from "./components/RegionTable";
 
 const useStyles = makeStyles({
   root: {
@@ -53,6 +55,17 @@ export const Resas = ({
   onChangeSelectedCity,
 }: ResasTemplateProps) => {
   const styles = useStyles();
+  function useTableColumns(): ITableColumnContent[] {
+    const tableColumns: ITableColumnContent[] = [
+      { columnKey: "id", label: "id" },
+      { columnKey: "name", label: "name" },
+      { columnKey: "category", label: "category" },
+      { columnKey: "label", label: "label" },
+    ];
+    return tableColumns;
+  }
+
+  const tableColumns: ITableColumnContent[] = useTableColumns();
 
   return (
     <div className={styles.root}>
@@ -79,7 +92,13 @@ export const Resas = ({
         ]}
       ></TabPanel>
       <h2>都道府県一覧</h2>
-      <RegionTab regionTable={regionTable} />
+      <TabPanel
+        tabNames={["都道府県コード一覧", "都市コード一覧"]}
+        components={[
+          <RegionTable key={0} regionTableLines={regionTable.pref} tableColumns={tableColumns} />,
+          <RegionTable key={1} regionTableLines={regionTable.city} tableColumns={tableColumns} />,
+        ]}
+      ></TabPanel>
     </div>
   );
 };

@@ -5,12 +5,23 @@ import { DataTable } from "components/molecules/DataTable";
 
 export declare type RegionTableProps = {
   regionTableLines: ITableItemResponse[];
-  tableColumns: ITableColumnContent[];
 };
 
 // eslint-disable-next-line react/display-name
 export const RegionTable: FC<RegionTableProps> = React.memo(
-  ({ regionTableLines, tableColumns }: RegionTableProps) => {
+  ({ regionTableLines }: RegionTableProps) => {
+    function useTableColumns(): ITableColumnContent[] {
+      const tableColumns: ITableColumnContent[] = [
+        { columnKey: "id", label: "id" },
+        { columnKey: "name", label: "name" },
+        { columnKey: "category", label: "category" },
+        { columnKey: "label", label: "label" },
+      ];
+      return tableColumns;
+    }
+
+    const tableColumns: ITableColumnContent[] = useTableColumns();
+
     return (
       <div>
         <DataTable

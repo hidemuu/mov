@@ -1,7 +1,6 @@
 import React from "react";
 import { Label, makeStyles, shorthands } from "@fluentui/react-components";
 import type { ComboboxProps } from "@fluentui/react-components";
-import { RegionTab } from "./components/RegionTab";
 import { RegionTrendLineChart } from "./components/RegionTrendLineChart";
 import { IRegionTable } from "stores/resas/types/tables/IRegionTable";
 import { IRegionTrendResponse } from "stores/resas/types/trends/IRegionTrendResponse";
@@ -55,17 +54,6 @@ export const Resas = ({
   onChangeSelectedCity,
 }: ResasTemplateProps) => {
   const styles = useStyles();
-  function useTableColumns(): ITableColumnContent[] {
-    const tableColumns: ITableColumnContent[] = [
-      { columnKey: "id", label: "id" },
-      { columnKey: "name", label: "name" },
-      { columnKey: "category", label: "category" },
-      { columnKey: "label", label: "label" },
-    ];
-    return tableColumns;
-  }
-
-  const tableColumns: ITableColumnContent[] = useTableColumns();
 
   return (
     <div className={styles.root}>
@@ -95,8 +83,8 @@ export const Resas = ({
       <TabPanel
         tabNames={["都道府県コード一覧", "都市コード一覧"]}
         components={[
-          <RegionTable key={0} regionTableLines={regionTable.pref} tableColumns={tableColumns} />,
-          <RegionTable key={1} regionTableLines={regionTable.city} tableColumns={tableColumns} />,
+          <RegionTable key={0} regionTableLines={regionTable.pref} />,
+          <RegionTable key={1} regionTableLines={regionTable.city} />,
         ]}
       ></TabPanel>
     </div>

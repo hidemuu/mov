@@ -18,6 +18,7 @@
     "@mui/material": "^5.15.3",
     "axios": "^1.5.1",
     "bootstrap": "^5.2.0",
+    "d3": "^7.9.0",
     "fluentui-react-grid": "^1.0.0",
     "highcharts": "^8.2.0",
     "highcharts-react-official": "^3.0.0",

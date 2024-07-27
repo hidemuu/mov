@@ -11,6 +11,7 @@ import { TabPanel } from "components/molecules/TabPanel";
 import FluentPyramidChart from "components/atoms/Chart/containers/FluentPyramidChart";
 import { RegionTable } from "./components/RegionTable";
 import Map from "components/atoms/Map";
+import { FluentRegionTrendLineChart } from "./components/RegionTrendLineChart/containers/FluentRegionTrendLineChart";
 
 const useStyles = makeStyles({
   root: {
@@ -65,7 +66,6 @@ export const Resas = ({
           regionSelections={regionSelections}
           onOptionSelect={onChangeSelectedPrefecture}
         />
-        <br />
         <Label htmlFor={inputId} style={{ paddingInlineEnd: "12px" }}>
           都市コード
         </Label>
@@ -75,7 +75,7 @@ export const Resas = ({
       <TabPanel
         tabNames={["LineChart", "Pyramid", "HeatMap"]}
         components={[
-          <RegionTrendLineChart key={0} regionTrend={regionTrendLines} chartType="fluent" />,
+          <FluentRegionTrendLineChart key={0} regionTrend={regionTrendLines} />,
           <FluentPyramidChart key={1}></FluentPyramidChart>,
           <Map key={2} />,
         ]}

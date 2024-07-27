@@ -1,21 +1,18 @@
-import React, { FC } from "react";
-import useRegionTrendLineChart from "domains/statistics/hooks/useRegionTrendLineChart";
-import { IRegionTrendResponse } from "stores/resas/types/trends/IRegionTrendResponse";
+import React from "react";
 import { HighLineChart } from "components/atoms/Chart/containers/HighLineChart";
 import { FluentLineChart } from "components/atoms/Chart/containers/FluentLineChart";
+import { ILineChartOption } from "components/atoms/Chart/types/ILineChartOption";
 
 export declare type RegionTrendLineChartProps = {
-  regionTrend: IRegionTrendResponse[];
+  chartOption: ILineChartOption;
   chartType: string;
 };
 
-export const RegionTrendLineChart: FC<RegionTrendLineChartProps> = ({ regionTrend, chartType }) => {
-  const option = useRegionTrendLineChart(regionTrend);
-
+export const RegionTrendLineChart = (props: RegionTrendLineChartProps) => {
   return (
     <div>
-      {chartType === "high" && <HighLineChart option={option} />}
-      {chartType !== "high" && <FluentLineChart option={option} />}
+      {props.chartType === "high" && <HighLineChart option={props.chartOption} />}
+      {props.chartType !== "high" && <FluentLineChart option={props.chartOption} />}
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import React from "react";
 import { Label, makeStyles, shorthands } from "@fluentui/react-components";
 import type { ComboboxProps } from "@fluentui/react-components";
-import { RegionTrendLineChart } from "./components/RegionTrendLineChart";
 import { IRegionTable } from "stores/resas/types/tables/IRegionTable";
 import { IRegionTrendResponse } from "stores/resas/types/trends/IRegionTrendResponse";
 import { IRegionSelections } from "../../domains/selections/types/IRegionSelections";
@@ -80,6 +79,7 @@ export const Resas = ({
           <Map key={2} />,
         ]}
       ></TabPanel>
+      <h2>統計</h2>
       <h2>都道府県一覧</h2>
       <TabPanel
         tabNames={["都道府県コード一覧", "都市コード一覧"]}

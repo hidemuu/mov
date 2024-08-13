@@ -15,8 +15,9 @@ import {
 } from "@fluentui/react-components";
 import { TermStore } from "@microsoft/microsoft-graph-types";
 import { TagMultipleRegular, TagRegular } from "@fluentui/react-icons";
+import { PageHeader } from "components/organisms/PageHeader";
 
-export const TaxonomyExplorer: React.FunctionComponent = () => {
+export const TaxonomyTemplate: React.FunctionComponent = () => {
   return (
     <>
       <Get resource="termStore/groups" version="beta">
@@ -76,18 +77,26 @@ const GroupTemplate = (props: MgtTemplateProps) => {
   const [groups] = React.useState<any[]>(props.dataContext.value);
 
   return (
-    <Accordion collapsible>
-      {groups.map((group) => (
-        <AccordionItem value={group.id} key={group.id}>
-          <AccordionHeader icon={<TagMultipleRegular />}>{group.displayName}</AccordionHeader>
-          <AccordionPanel className={styles.groupPanel}>
-            <Get resource={`termStore/groups/${group.id}/sets`} version="beta">
-              <SetTemplate template="default" />
-            </Get>
-          </AccordionPanel>
-        </AccordionItem>
-      ))}
-    </Accordion>
+    <>
+      <PageHeader
+        title={"Taxonomy Explorer"}
+        description={
+          "Use this taxonomy explorer to see all term groups, term sets and terms available"
+        }
+      ></PageHeader>
+      <Accordion collapsible>
+        {groups.map((group) => (
+          <AccordionItem value={group.id} key={group.id}>
+            <AccordionHeader icon={<TagMultipleRegular />}>{group.displayName}</AccordionHeader>
+            <AccordionPanel className={styles.groupPanel}>
+              <Get resource={`termStore/groups/${group.id}/sets`} version="beta">
+                <SetTemplate template="default" />
+              </Get>
+            </AccordionPanel>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </>
   );
 };
 

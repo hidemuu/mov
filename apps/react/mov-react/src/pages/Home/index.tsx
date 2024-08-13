@@ -6,6 +6,7 @@ import { useRegionItemContext } from "stores/resas/contexts/RegionItemContext";
 import { FileTable } from "./components/Table/FileTable";
 import { Outlook } from "./components/Outlook/Outlook";
 import { SearchResult } from "./components/Search/SearchResult";
+import { TaxonomyPage } from "./components/Taxonomy/containers/TaxonomyPage";
 
 const useStyles = makeStyles({
   root: {
@@ -59,6 +60,7 @@ export const Home = ({
       <FileTable />
       <Outlook />
       <SearchResult />
+      <TaxonomyPage />
     </div>
   );
 };

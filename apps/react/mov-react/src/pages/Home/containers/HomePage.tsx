@@ -2,7 +2,7 @@ import * as React from "react";
 import { useId } from "@fluentui/react-components";
 import type { InputProps } from "@fluentui/react-components";
 import { useRegionItemContext } from "stores/resas/contexts/RegionItemContext";
-import { Home } from "..";
+import { HomeTemplate } from "..";
 
 export const HomePage: React.FunctionComponent = () => {
   const inputId = useId("input");
@@ -43,12 +43,12 @@ export const HomePage: React.FunctionComponent = () => {
   };
 
   return (
-    <Home
+    <HomeTemplate
       inputId={inputId}
       consoleValue={consoleValue}
       onConsoleChange={onConsoleChange}
       onConsoleKeyDown={onConsoleKeyDown}
       onConsolePaste={onConsolePaste}
-    ></Home>
+    ></HomeTemplate>
   );
 };

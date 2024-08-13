@@ -8,9 +8,9 @@ import {
   TagMultipleRegular,
   ChartPersonRegular,
 } from "@fluentui/react-icons";
-import { HomePage } from "../../../pages/Home/containers/HomePage";
-import { ResasPage } from "../../../pages/Resas/containers/ResasPage";
-import { GamePage } from "../../../pages/Game/GamePage";
+import { HomePage } from "pages/Home/containers/HomePage";
+import { ResasPage } from "pages/Resas/containers/ResasPage";
+import { GamePage } from "pages/Game/GamePage";
 
 export const getNavigation = (isSignedIn: boolean): INavigationItem[] => {
   const navItems: INavigationItem[] = [];

@@ -3,7 +3,7 @@ import { Label, makeStyles, shorthands } from "@fluentui/react-components";
 import type { ComboboxProps } from "@fluentui/react-components";
 import { IRegionTable } from "stores/resas/types/tables/IRegionTable";
 import { IRegionTrendResponse } from "stores/resas/types/trends/IRegionTrendResponse";
-import { IRegionSelections } from "../../domains/selections/types/IRegionSelections";
+import { IRegionSelections } from "domains/selections/types/IRegionSelections";
 import { CityComboBox } from "./components/RegionComboBox/containers/CityComboBox";
 import { PrefComboBox } from "./components/RegionComboBox/containers/PrefComboBox";
 import { TabPanel } from "components/molecules/TabPanel";
@@ -45,7 +45,7 @@ export type ResasTemplateProps = {
   onChangeSelectedCity: ComboboxProps["onOptionSelect"];
 };
 
-export const Resas = ({
+export const ResasTemplate = ({
   inputId,
   regionTable,
   regionTrendLines,

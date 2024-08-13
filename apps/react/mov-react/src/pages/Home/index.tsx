@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PageHeader } from "../../components/organisms/PageHeader";
+import { PageHeader } from "components/organisms/PageHeader";
 import { Input, Label, makeStyles, shorthands } from "@fluentui/react-components";
 import type { InputProps } from "@fluentui/react-components";
 import { useRegionItemContext } from "stores/resas/contexts/RegionItemContext";
@@ -32,7 +32,7 @@ export type HomeProps = {
   onConsolePaste: InputProps["onPaste"];
 };
 
-export const Home = ({
+export const HomeTemplate = ({
   inputId,
   consoleValue,
   onConsoleChange,

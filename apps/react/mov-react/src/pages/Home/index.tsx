@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     flexDirection: "column",
     ...shorthands.gap("20px"),
     // Prevent the example from taking the full width of the page (optional)
-    maxWidth: "400px",
+    // maxWidth: "400px",
     // Stack the label above the field (with 2px gap per the design system)
     "> div": {
       display: "flex",

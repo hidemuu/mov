@@ -3,6 +3,9 @@ import { PageHeader } from "../../components/organisms/PageHeader";
 import { Input, Label, makeStyles, shorthands } from "@fluentui/react-components";
 import type { InputProps } from "@fluentui/react-components";
 import { useRegionItemContext } from "stores/resas/contexts/RegionItemContext";
+import { FileTable } from "./components/Table/FileTable";
+import { Outlook } from "./components/Outlook/Outlook";
+import { SearchResult } from "./components/Search/SearchResult";
 
 const useStyles = makeStyles({
   root: {
@@ -53,6 +56,9 @@ export const Home = ({
         id={inputId}
       />
       <Label>Response:{regionItemStore.asString()}</Label>
+      <FileTable />
+      <Outlook />
+      <SearchResult />
     </div>
   );
 };

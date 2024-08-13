@@ -8,14 +8,9 @@ import {
   TagMultipleRegular,
   ChartPersonRegular,
 } from "@fluentui/react-icons";
-import { OutlookPage } from "../../../pages/Outlook/OutlookPage";
-import { SearchPage } from "../../../pages/Search/SearchPage";
 import { HomePage } from "../../../pages/Home/containers/HomePage";
-import { TablePage } from "../../../pages/Table/TablePage";
 import { ResasPage } from "../../../pages/Resas/containers/ResasPage";
 import { GamePage } from "../../../pages/Game/GamePage";
-import { FilesPage } from "../../../pages/Files/FilesPage";
-import { TaxonomyPage } from "../../../pages/Taxonomy/TaxonomyPage";
 
 export const getNavigation = (isSignedIn: boolean): INavigationItem[] => {
   const navItems: INavigationItem[] = [];
@@ -27,16 +22,6 @@ export const getNavigation = (isSignedIn: boolean): INavigationItem[] => {
     key: "home",
     requiresLogin: false,
     component: <HomePage />,
-    exact: true,
-  });
-
-  navItems.push({
-    name: "Table",
-    url: "table",
-    icon: <TagMultipleRegular />,
-    key: "table",
-    requiresLogin: false,
-    component: <TablePage />,
     exact: true,
   });
 
@@ -61,46 +46,6 @@ export const getNavigation = (isSignedIn: boolean): INavigationItem[] => {
   });
 
   if (isSignedIn) {
-    navItems.push({
-      name: "Mail and Calendar",
-      url: "outlook",
-      icon: <CalendarMailRegular />,
-      key: "outlook",
-      requiresLogin: true,
-      component: <OutlookPage />,
-      exact: true,
-    });
-
-    navItems.push({
-      name: "Files",
-      url: "files",
-      icon: <DocumentRegular />,
-      key: "files",
-      requiresLogin: true,
-      component: <FilesPage />,
-      exact: true,
-    });
-
-    navItems.push({
-      name: "Taxonomy",
-      url: "taxonomy",
-      icon: <TagMultipleRegular />,
-      key: "files",
-      requiresLogin: true,
-      component: <TaxonomyPage />,
-      exact: true,
-    });
-
-    navItems.push({
-      name: "Search",
-      url: "search",
-      pattern: "/search/:query",
-      icon: <SearchRegular />,
-      key: "search",
-      requiresLogin: true,
-      component: <SearchPage />,
-      exact: false,
-    });
   }
   return navItems;
 };

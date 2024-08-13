@@ -1,5 +1,5 @@
 ﻿import * as React from "react";
-import { PageHeader } from "../../components/organisms/PageHeader";
+import { PageHeader } from "../../../../components/organisms/PageHeader";
 import { AllResults, PeopleResults } from ".";
 import {
   SelectTabData,
@@ -10,7 +10,7 @@ import {
   makeStyles,
   shorthands,
 } from "@fluentui/react-components";
-import { useAppContext } from "../../AppContext";
+import { useAppContext } from "../../../../AppContext";
 import { ExternalItemsResults } from "./containers/ExternalItemsResults";
 import { FilesResults } from "./containers/FilesResults";
 
@@ -24,7 +24,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const SearchPage: React.FunctionComponent = () => {
+export const SearchResult: React.FunctionComponent = () => {
   const styles = useStyles();
   const appContext = useAppContext();
   const [query] = React.useState(new URLSearchParams(window.location.search).get("q"));

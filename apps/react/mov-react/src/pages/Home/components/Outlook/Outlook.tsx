@@ -1,8 +1,8 @@
 ﻿import * as React from "react";
-import { PageHeader } from "../../components/organisms/PageHeader";
+import { PageHeader } from "../../../../components/organisms/PageHeader";
 import { Agenda, Get } from "@microsoft/mgt-react";
-import { Messages } from "../../components/organisms/Messages";
-import { Loading } from "../../components/organisms/Loading";
+import { Messages } from "../../../../components/organisms/Messages";
+import { Loading } from "../../../../components/organisms/Loading";
 import {
   SelectTabData,
   SelectTabEvent,
@@ -36,7 +36,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const OutlookPage: React.FunctionComponent = () => {
+export const Outlook: React.FunctionComponent = () => {
   const styles = useStyles();
   const [selectedTab, setSelectedTab] = React.useState<TabValue>("focused");
 

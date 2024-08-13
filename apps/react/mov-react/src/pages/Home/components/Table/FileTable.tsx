@@ -77,7 +77,7 @@ const columns = [
   { columnKey: "lastUpdate", label: "Last update" },
 ];
 
-export const TablePage: React.FunctionComponent = () => {
+export const FileTable: React.FunctionComponent = () => {
   return (
     <div>
       <Table arial-label="Default table">

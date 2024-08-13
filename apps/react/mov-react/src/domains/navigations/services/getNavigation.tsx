@@ -3,16 +3,14 @@ import { INavigationItem } from "../types/INavigationItem";
 import {
   HomeRegular,
   SearchRegular,
-  TextBulletListSquareRegular,
   CalendarMailRegular,
   DocumentRegular,
   TagMultipleRegular,
   ChartPersonRegular,
 } from "@fluentui/react-icons";
-import { DashboardPage } from "../../../pages/Dashboard/DashboardPage";
 import { OutlookPage } from "../../../pages/Outlook/OutlookPage";
 import { SearchPage } from "../../../pages/Search/SearchPage";
-import { HomePage } from "../../../pages/Home/HomePage";
+import { HomePage } from "../../../pages/Home/containers/HomePage";
 import { TablePage } from "../../../pages/Table/TablePage";
 import { ResasPage } from "../../../pages/Resas/containers/ResasPage";
 import { GamePage } from "../../../pages/Game/GamePage";
@@ -63,16 +61,6 @@ export const getNavigation = (isSignedIn: boolean): INavigationItem[] => {
   });
 
   if (isSignedIn) {
-    navItems.push({
-      name: "Dashboard",
-      url: "dashboard",
-      icon: <TextBulletListSquareRegular />,
-      key: "dashboard",
-      requiresLogin: true,
-      component: <DashboardPage />,
-      exact: true,
-    });
-
     navItems.push({
       name: "Mail and Calendar",
       url: "outlook",

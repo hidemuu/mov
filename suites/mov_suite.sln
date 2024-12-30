@@ -57,7 +57,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignerClient.Wpf", "src\d
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnalizerClient.Test", "src\analizer\AnalizerClient.Test\AnalizerClient.Test.csproj", "{C6A41CCE-E6C4-4B2E-8A0F-000B510CBD60}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrackerApp", "TrackerApp\TrackerApp.csproj", "{BBC2572C-1233-4673-8023-66C89068DC65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoneyTrackerApp", "MoneyTrackerApp\MoneyTrackerApp.csproj", "{BBC2572C-1233-4673-8023-66C89068DC65}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphicViewerApp", "GraphicViewerApp\GraphicViewerApp.csproj", "{A4D92E78-1EBE-4635-B37A-165DB7D3D195}"
 EndProject

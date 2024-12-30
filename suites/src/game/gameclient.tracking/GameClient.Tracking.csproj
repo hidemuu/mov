@@ -8,13 +8,16 @@
 
   <ItemGroup>
     <Reference Include="Mov.Core">
-      <HintPath>..\..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\src\frameworks\framework\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Core.Learnings">
-      <HintPath>..\..\..\..\frameworks\src\game\game.controller\bin\Debug\netstandard2.0\Mov.Core.Learnings.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\src\frameworks\framework\bin\Debug\netstandard2.0\Mov.Core.Learnings.dll</HintPath>
+    </Reference>
+    <Reference Include="Mov.Game.Repository">
+      <HintPath>..\..\..\..\frameworks\src\frameworks\framework\bin\Debug\netstandard2.0\Mov.Game.Repository.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Game.Service">
-      <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Game.Service.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\src\frameworks\framework\bin\Debug\netstandard2.0\Mov.Game.Service.dll</HintPath>
     </Reference>
   </ItemGroup>
 

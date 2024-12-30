@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <Reference Include="Mov.Core.Learnings">
-      <HintPath>..\..\..\..\frameworks\src\game\game.controller\bin\Debug\netstandard2.0\Mov.Core.Learnings.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\src\frameworks\framework\bin\Debug\netstandard2.0\Mov.Core.Learnings.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Game.Models">
       <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Game.Models.dll</HintPath>

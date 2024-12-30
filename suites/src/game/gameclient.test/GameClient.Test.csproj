@@ -39,16 +39,16 @@
       <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Framework.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Game.Controller">
-      <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Game.Controller.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\src\frameworks\framework\bin\Debug\netstandard2.0\Mov.Game.Controller.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Game.Models">
-      <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Game.Models.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\src\frameworks\framework\bin\Debug\netstandard2.0\Mov.Game.Models.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Game.Repository">
-      <HintPath>..\..\..\..\frameworks\src\game\game.controller\bin\Debug\netstandard2.0\Mov.Game.Repository.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\src\frameworks\framework\bin\Debug\netstandard2.0\Mov.Game.Repository.dll</HintPath>
     </Reference>
     <Reference Include="Mov.Game.Service">
-      <HintPath>..\..\..\..\frameworks\lib\bin\Debug\netstandard2.0\Mov.Game.Service.dll</HintPath>
+      <HintPath>..\..\..\..\frameworks\src\frameworks\framework\bin\Debug\netstandard2.0\Mov.Game.Service.dll</HintPath>
     </Reference>
   </ItemGroup>
 

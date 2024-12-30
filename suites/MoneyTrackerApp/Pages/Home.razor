@@ -50,6 +50,12 @@
 </div>
 
 <!-- タイムチャート -->
+<div id="chart-container">
+    @foreach (var month in Months)
+    {
+        <canvas id="chart-@month" style="display:none;"></canvas>
+    }
+</div>
 <canvas id="balanceChart" width="800" height="400"></canvas>
 
 @code {
@@ -59,16 +65,16 @@
     };
     private List<int> Months => Records.Select(r => r.Date.Month).Distinct().OrderBy(m => m).ToList();
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            var labels = Records.Select(r => r.Date).ToArray();
-            var data = Records.Select(r => r.Balance).ToArray();
+    // protected override async Task OnAfterRenderAsync(bool firstRender)
+    // {
+    //     if (firstRender)
+    //     {
+    //         var labels = Records.Select(r => r.Date).ToArray();
+    //         var data = Records.Select(r => r.Balance).ToArray();
 
-            await JSRuntime.InvokeVoidAsync("createChart", "balanceChart", labels, data);
-        }
-    }
+    //         await JSRuntime.InvokeVoidAsync("createChart", "balanceChart", labels, data);
+    //     }
+    // }
 
     private async Task OnFileSelected(InputFileChangeEventArgs e)
     {
@@ -114,7 +120,7 @@
         {
             var labels = Records.Select(r => r.Date).ToArray();
             var data = Records.Select(r => r.Balance).ToArray();
-            await JSRuntime.InvokeVoidAsync("createChart", "balanceChart", labels, data);
+            await JSRuntime.InvokeVoidAsync("createChart", $"balanceChart", labels, data);
         }
         catch (Exception ex)
         {
@@ -127,7 +133,7 @@
         // 他のグラフを非表示にする
         foreach (var m in Months)
         {
-            var chartId = $"chart-{m}";
+            var chartId = $"balanceChart-{m}";
             JSRuntime.InvokeVoidAsync("toggleChartVisibility", chartId, m == month);
         }
 
@@ -135,7 +141,7 @@
         var labels = Records.Where(r => r.Date.Month == month).Select(r => r.Date.ToString("yyyy/MM/dd")).ToArray();
         var data = Records.Where(r => r.Date.Month == month).Select(r => r.Balance).ToArray();
 
-        JSRuntime.InvokeVoidAsync("createChart", $"chart-{month}", labels, data);
+        JSRuntime.InvokeVoidAsync("createChart", $"balanceChart-{month}", labels, data);
     }
 
     private string GetMonthName(int month)

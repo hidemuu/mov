@@ -1,12 +1,12 @@
-﻿let chartInstance = null;
+﻿let chartInstances = {};
 
 window.createChart = (canvasId, labels, data) => {
     const ctx = document.getElementById(canvasId).getContext('2d');
     // 既存のチャートが存在する場合、破棄する
-    if (chartInstance) {
-        chartInstance.destroy();
+    if (chartInstances[canvasId]) {
+        chartInstances[canvasId].destroy();
     }
-    chartInstance = new Chart(ctx, {
+    chartInstances[canvasId] = new Chart(ctx, {
         type: 'line',
         data: {
             labels: labels,

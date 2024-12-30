@@ -94,14 +94,7 @@
             throw ex;
         }
 
-        try
-        {
-            StateHasChanged();
-        }
-        catch (Exception ex)
-        {
-            throw ex;
-        }
+        StateHasChanged();
 
         // グラフを更新
         try

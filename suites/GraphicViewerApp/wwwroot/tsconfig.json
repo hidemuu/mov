@@ -3,8 +3,8 @@
     "target": "es6",
     "module": "es6",
     "strict": true,
-    "outDir": "./wwwroot/js",
+    "outDir": "./dist/js",
     "sourceMap": true
   },
-  "include": [ "./src/**/*.ts" ]
+  "include": [ "./src/**/*.ts", "src/babylonSetup.js" ]
 }

@@ -2,9 +2,15 @@
   "compilerOptions": {
     "target": "es6",
     "module": "es6",
+    "moduleResolution": "node", // モジュール解決の方法を指定
     "strict": true,
     "outDir": "./dist/js",
-    "sourceMap": true
+    "sourceMap": true,
+    "baseUrl": "./",
+    "paths": {
+      "@babylonjs/*": [ "node_modules/@babylonjs/*" ] // パスのエイリアスを設定
+    }
   },
-  "include": [ "./src/**/*.ts"]
+  "include": [ "./src/**/*.ts" ],
+  "exclude": [ "node_modules" ]
 }

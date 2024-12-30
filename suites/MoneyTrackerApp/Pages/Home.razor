@@ -1,5 +1,9 @@
 ﻿@page "/"
 @inject IJSRuntime JSRuntime
+@using System.Globalization
+@using CsvHelper
+@using CsvHelper.Configuration
+@using System.Text
 
 <h3>お金の流れの可視化</h3>
 
@@ -39,7 +43,7 @@
 @code {
     private List<FinanceRecord> Records = new List<FinanceRecord>
     {
-        new FinanceRecord { Date = "2024/12/27", Description = "デビット　８４８８５９", Withdrawal = 801, Deposit = 0, Balance = 183256, Note = "-" }
+        new FinanceRecord { Date = "2024/12/27", Description = "sample", Withdrawal = 1, Deposit = 0, Balance = 2, Note = "-" }
     };
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -57,41 +61,58 @@
     {
         // ファイルを取得
         var file = e.File;
-        if (file != null)
+        if (file == null)
         {
-            using var stream = file.OpenReadStream();
-            using var reader = new StreamReader(stream);
-            var csvContent = await reader.ReadToEndAsync();
-            ParseCsv(csvContent); // CSVをパースしてRecordsに反映
-            StateHasChanged();
+            return;
+        }
+        try
+        {
+            Records.Clear();
+            // 必要なエンコーディングプロバイダーを登録
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
-            // グラフを更新
+            using (var stream = file.OpenReadStream())
+            using (var reader = new StreamReader(stream, Encoding.GetEncoding("shift_jis")))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                // CsvHelperを使用してCSVを読み込み
+                csv.Context.RegisterClassMap<FinanceRecordMap>(); // カスタムマッピングを登録
+                try
+                {
+                    await foreach (var record in csv.GetRecordsAsync<FinanceRecord>())
+                    {
+                        Records.Add(record);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        } catch (Exception ex)
+        {
+            throw ex;
+        }
+
+        try
+        {
+            StateHasChanged();
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+
+        // グラフを更新
+        try
+        {
             var labels = Records.Select(r => r.Date).ToArray();
             var data = Records.Select(r => r.Balance).ToArray();
             await JSRuntime.InvokeVoidAsync("createChart", "balanceChart", labels, data);
         }
-    }
-
-    private void ParseCsv(string csvContent)
-    {
-        Records.Clear();
-        var lines = csvContent.Split("\n", StringSplitOptions.RemoveEmptyEntries);
-
-        // 1行目はヘッダーなのでスキップ
-        for (int i = 1; i < lines.Length; i++)
+        catch (Exception ex)
         {
-            var columns = lines[i].Split(",");
-            if (columns.Length < 6) continue;
-
-            Records.Add(new FinanceRecord
-                {
-                    Date = columns[0],
-                    Description = columns[1],
-                    Withdrawal = string.IsNullOrWhiteSpace(columns[2]) ? 0 : int.Parse(columns[2]),
-                    Deposit = string.IsNullOrWhiteSpace(columns[3]) ? 0 : int.Parse(columns[3]),
-                    Balance = string.IsNullOrWhiteSpace(columns[4]) ? 0 : int.Parse(columns[4]),
-                    Note = columns[5]
-                });
+            throw ex;
         }
     }
 
@@ -103,5 +124,40 @@
         public int Deposit { get; set; }
         public int Balance { get; set; }
         public string Note { get; set; }
+    }
+
+    public class FinanceRecordMap : ClassMap<FinanceRecord>
+    {
+        public FinanceRecordMap()
+        {
+            Map(m => m.Date).Name("日付");
+            Map(m => m.Description).Name("内容");
+            Map(m => m.Withdrawal)
+                .Name("出金金額(円)")
+                .Convert(row =>
+                {
+                    var field = row.Row.GetField<string>("出金金額(円)");
+                    return string.IsNullOrWhiteSpace(field)
+                                ? 0
+                                : int.Parse(field.Replace(",", ""));
+                });
+            Map(m => m.Deposit)
+                .Name("入金金額(円)")
+                .Convert(row => {
+                    var field = row.Row.GetField<string>("入金金額(円)");
+                    return string.IsNullOrWhiteSpace(field)
+                                 ? 0
+                         : int.Parse(field.Replace(",", ""));
+                });
+            Map(m => m.Balance)
+                .Name("残高(円)")
+                .Convert(row => {
+                    var field = row.Row.GetField<string>("残高(円)");
+                    return string.IsNullOrWhiteSpace(field)
+                                 ? 0
+                                 : int.Parse(field.Replace(",", ""));
+                });
+            Map(m => m.Note).Name("メモ");
+        }
     }
 }

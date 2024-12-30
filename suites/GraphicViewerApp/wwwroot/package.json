@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@babylonjs/core": "^7.42.0",
+    "@babylonjs/loaders": "^7.42.0"
+  },
+  "devDependencies": {
+    "@types/babylonjs": "^2.4.5",
+    "eslint": "^9.17.0"
+  }
+}

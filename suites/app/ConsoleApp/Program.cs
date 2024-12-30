@@ -1,17 +1,12 @@
-﻿using Mov.Analizer.Models;
-using Mov.Analizer.Repository;
+﻿using Mov.Analizer.Repository;
 using Mov.Analizer.Service;
-using Mov.Analizer.Service.Regions;
-using Mov.Analizer.Service.Regions.Entities;
 using Mov.Core.Accessors.Models;
 using Mov.Core.Configurators.Contexts;
 using Mov.Core.Configurators.Models.Entities;
-using Mov.Core.Valuables;
 using Mov.Framework.Services;
 using Mov.Suite.AnalizerClient.Resas;
 using Mov.Suite.AnalizerClient.Resas.Controllers;
 using Mov.Suite.AnalizerClient.Resas.Repository;
-using System.Diagnostics;
 
 internal class Program
 {
@@ -23,7 +18,7 @@ internal class Program
 
     private static IRegionAnalizerClient? _regionAnalizerClient;
 
-	private static IDictionary<string, Func<string[], string>> _handlers;
+    private static IDictionary<string, Func<string[], string>> _handlers;
 
     #endregion field
 
@@ -67,27 +62,27 @@ internal class Program
 
     private static void Initialize()
     {
-		var resourcePath = PathCreator.GetResourcePath();
-		var analizerRepository = new FileAnalizerRepository(resourcePath);
+        var resourcePath = PathCreator.GetResourcePath();
+        var analizerRepository = new FileAnalizerRepository(resourcePath);
 
-		ConfiguratorContext.Initialize(PathCreator.GetResourcePath());
+        ConfiguratorContext.Initialize(PathCreator.GetResourcePath());
         var apis = ConfiguratorContext.Current.Service.ApiSettingQuery.Reader.ReadAll().ToArray();
         var apiSetting = apis.FirstOrDefault(x => x.Code.Value.Equals("RESAS-API-KEY")) ?? ApiSetting.Empty;
-		var resasRepository = new RestResasRepository(apiSetting.Value);
+        var resasRepository = new RestResasRepository(apiSetting.Value);
         _regionAnalizerClient = new ResasAnalizerClient(analizerRepository, resasRepository);
         _resasController = new ResasCommandController(resasRepository);
-		_handlers = new Dictionary<string, Func<string[], string>>()
-	    {
-			{"execute", Execute },
+        _handlers = new Dictionary<string, Func<string[], string>>()
+        {
+            {"execute", Execute },
             {"server", RunServer },
-			{"end", EndProgram },
-		    {"help", Help }
-	    };
-        foreach(var command in _resasController.CreateCommandHandlers())
+            {"end", EndProgram },
+            {"help", Help }
+        };
+        foreach (var command in _resasController.CreateCommandHandlers())
         {
             _handlers.Add(command.Key, command.Value);
         }
-	}
+    }
 
     private static void Run()
     {
@@ -148,22 +143,22 @@ internal class Program
 
     private static string RunServer(IEnumerable<string> parameters)
     {
-		var userSettings = ConfiguratorContext.Current.Service.UserSettingQuery.Reader.ReadAll().ToArray();
-		var userSetting = userSettings.FirstOrDefault(x => x.Code.Value.Equals("react_exe"));
-		var exePath = new PathValue(Path.Combine(PathCreator.GetSolutionPath(), userSetting.Value));
+        var userSettings = ConfiguratorContext.Current.Service.UserSettingQuery.Reader.ReadAll().ToArray();
+        var userSetting = userSettings.FirstOrDefault(x => x.Code.Value.Equals("react_exe"));
+        var exePath = new PathValue(Path.Combine(PathCreator.GetSolutionPath(), userSetting.Value));
         //起動したい外部アプリの情報を設定
         var startExeInfo = new System.Diagnostics.ProcessStartInfo(exePath.FileName + exePath.Extension);
         startExeInfo.UseShellExecute = true;
         startExeInfo.WorkingDirectory = exePath.DirPath;
-		System.Diagnostics.Process.Start(startExeInfo);
-		
+        System.Diagnostics.Process.Start(startExeInfo);
+
         Thread.Sleep(1000);
 
         var startInfo = new System.Diagnostics.ProcessStartInfo("http://localhost:5000");
         startInfo.UseShellExecute = true;
         System.Diagnostics.Process.Start(startInfo);
         return string.Empty;
-	}
+    }
 
     private static string EndProgram(IEnumerable<string> parameters)
     {
@@ -178,8 +173,8 @@ internal class Program
         {
             Console.WriteLine(key);
         }
-		Console.WriteLine("----- コマンド説明 ------");
-		foreach (var help in _resasController.GetCommandHelps())
+        Console.WriteLine("----- コマンド説明 ------");
+        foreach (var help in _resasController.GetCommandHelps())
         {
             Console.WriteLine($"{help.Item1} : {help.Item2}");
         }

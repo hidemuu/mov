@@ -17,6 +17,10 @@
 
     // サンプルオブジェクト（球体）を追加
     const sphere = BABYLON.MeshBuilder.CreateSphere("sphere", { diameter: 2 }, scene);
+    // const box = BABYLON.MeshBuilder.CreateBox("box", { size: 2 }, scene);
+
+    // 背景色を変更
+    scene.clearColor = new BABYLON.Color4(0.2, 0.4, 0.6, 1.0);
 
     // レンダリングループを開始
     engine.runRenderLoop(() => {

@@ -16,15 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\analizer\analizer.models\Analizer.Models.csproj" />
-    <ProjectReference Include="..\..\src\analizer\analizer.repository\Analizer.Repository.csproj" />
-    <ProjectReference Include="..\..\src\bom\bom.models\Bom.Models.csproj" />
-    <ProjectReference Include="..\..\src\bom\bom.repository\Bom.Repository.csproj" />
-    <ProjectReference Include="..\..\src\designer\designer.models\Designer.Models.csproj" />
-    <ProjectReference Include="..\..\src\designer\designer.repository\Designer.Repository.csproj" />
-    <ProjectReference Include="..\..\src\framework\Framework.csproj" />
-    <ProjectReference Include="..\..\src\game\game.models\Game.Models.csproj" />
-    <ProjectReference Include="..\..\src\game\game.repository\Game.Repository.csproj" />
+    <ProjectReference Include="..\..\src\cores\controller\translators\Translators.csproj" />
+    <ProjectReference Include="..\..\src\frameworks\designer\designer.repository\Designer.Repository.csproj" />
+    <ProjectReference Include="..\..\src\frameworks\framework\Framework.csproj" />
   </ItemGroup>
 
   <ItemGroup>

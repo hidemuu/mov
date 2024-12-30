@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Mov.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>Mov.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\cores\service\learnings\Learnings.csproj" />
+    <ProjectReference Include="..\..\..\cores\ui\graphicers\Graphicers.csproj" />
+    <ProjectReference Include="..\game.models\Game.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Stores\" />
+  </ItemGroup>
+
+</Project>

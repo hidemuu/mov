@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Mov.Analizer.Models;
 using Mov.Analizer.Repository;
@@ -6,6 +7,7 @@ using Mov.Core.Configurators;
 using Mov.Core.Configurators.Contexts;
 using Mov.Core.Configurators.Repositories;
 using Mov.Core.Translators;
+using Mov.Core.Translators.Contexts;
 using Mov.Core.Translators.Repositories;
 using Mov.Designer.Models;
 using Mov.Designer.Repository;
@@ -28,6 +30,14 @@ services.AddSwaggerGen(option =>
     option.IncludeXmlComments(xmlPath);
     option.SwaggerDoc("mov", new OpenApiInfo { Title = "Mov", Version = "v1" });
 });
+
+var coreResourcePath = PathValue.Factory.CreateResourceRootPath("mov");
+services.AddScoped<IConfiguratorRepository, FileConfiguratorRepository>(_ => new FileConfiguratorRepository(coreResourcePath.Value, FileType.Json, EncodingValue.UTF8));
+//services.AddScoped<ITranslatorRepository, FileTranslatorRepository>(_ => new FileTranslatorRepository(resourcePath.Value));
+var translatorDbPath = PathValue.Factory.CreateResourcePath("mov", @"translator.sqlite").GetSqliteConnectionString();
+var translatorDbContextBuilder = new DbContextOptionsBuilder<TranslatorDbContext>()
+    .UseSqlite(translatorDbPath);
+services.AddScoped<ITranslatorRepository, SqlTranslatorRepository>(_ => new SqlTranslatorRepository(translatorDbContextBuilder));
 
 var resourcePath = PathCreator.GetResourcePath();
 ConfiguratorContext.Initialize(resourcePath);

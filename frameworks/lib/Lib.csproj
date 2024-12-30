@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\framework\Framework.csproj" />
+    <ProjectReference Include="..\src\frameworks\framework\Framework.csproj" />
   </ItemGroup>
 
   <ItemGroup>

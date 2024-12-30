@@ -1,5 +1,4 @@
-﻿using Mov.Analizer.Service;
-using Mov.Core.Accessors.Models;
+﻿using Mov.Core.Accessors.Models;
 using Mov.Core.Configurators.Contexts;
 using Mov.Core.Loggers.Attributes;
 using Mov.Framework;

@@ -3,6 +3,9 @@
 
 <h3>お金の流れの可視化</h3>
 
+<!-- ファイル選択 -->
+<InputFile OnChange="OnFileSelected" />
+
 <!-- 入出金情報テーブル -->
 <table class="table">
     <thead>
@@ -47,6 +50,48 @@
             var data = Records.Select(r => r.Balance).ToArray();
 
             await JSRuntime.InvokeVoidAsync("createChart", "balanceChart", labels, data);
+        }
+    }
+
+    private async Task OnFileSelected(InputFileChangeEventArgs e)
+    {
+        // ファイルを取得
+        var file = e.File;
+        if (file != null)
+        {
+            using var stream = file.OpenReadStream();
+            using var reader = new StreamReader(stream);
+            var csvContent = await reader.ReadToEndAsync();
+            ParseCsv(csvContent); // CSVをパースしてRecordsに反映
+            StateHasChanged();
+
+            // グラフを更新
+            var labels = Records.Select(r => r.Date).ToArray();
+            var data = Records.Select(r => r.Balance).ToArray();
+            await JSRuntime.InvokeVoidAsync("createChart", "balanceChart", labels, data);
+        }
+    }
+
+    private void ParseCsv(string csvContent)
+    {
+        Records.Clear();
+        var lines = csvContent.Split("\n", StringSplitOptions.RemoveEmptyEntries);
+
+        // 1行目はヘッダーなのでスキップ
+        for (int i = 1; i < lines.Length; i++)
+        {
+            var columns = lines[i].Split(",");
+            if (columns.Length < 6) continue;
+
+            Records.Add(new FinanceRecord
+                {
+                    Date = columns[0],
+                    Description = columns[1],
+                    Withdrawal = string.IsNullOrWhiteSpace(columns[2]) ? 0 : int.Parse(columns[2]),
+                    Deposit = string.IsNullOrWhiteSpace(columns[3]) ? 0 : int.Parse(columns[3]),
+                    Balance = string.IsNullOrWhiteSpace(columns[4]) ? 0 : int.Parse(columns[4]),
+                    Note = columns[5]
+                });
         }
     }
 

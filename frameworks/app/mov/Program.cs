@@ -1,9 +1,15 @@
-﻿using Mov.Core.Loggers.Attributes;
+﻿using Mov.Analizer.Service;
+using Mov.Core.Accessors.Models;
+using Mov.Core.Configurators.Contexts;
+using Mov.Core.Loggers.Attributes;
 using Mov.Framework;
+using Mov.Framework.Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Mov.ConsoleApp
 {
@@ -65,6 +71,8 @@ namespace Mov.ConsoleApp
             //共通コマンド生成
             handlers = new Dictionary<string, CommandHandler>()
             {
+                {"execute", Execute },
+                {"server", RunServer },
                 {"end", EndProgram },
                 {"help", Help }
             };
@@ -145,6 +153,30 @@ namespace Mov.ConsoleApp
         #endregion private method
 
         #region command handler
+
+        private static void Execute(IEnumerable<string> parameters)
+        {
+            //var tableLines = Task.WhenAll(_regionAnalizerClient.GetTableLineAsync()).Result[0];
+            //var timeTrends = Task.WhenAll(_regionAnalizerClient.GetTrendLineAsync(new RegionRequest(new Dictionary<int, List<int>>() { { 11362, new List<int>() {11 } } }, "population", "all").CreateSchema(), TimeValue.Empty, TimeValue.Empty)).Result[0];
+        }
+
+        private static void RunServer(IEnumerable<string> parameters)
+        {
+            var userSettings = ConfiguratorContext.Current.Service.UserSettingQuery.Reader.ReadAll().ToArray();
+            var userSetting = userSettings.FirstOrDefault(x => x.Code.Value.Equals("react_exe"));
+            var exePath = new PathValue(Path.Combine(PathCreator.GetSolutionPath(), userSetting.Value));
+            //起動したい外部アプリの情報を設定
+            var startExeInfo = new System.Diagnostics.ProcessStartInfo(exePath.FileName + exePath.Extension);
+            startExeInfo.UseShellExecute = true;
+            startExeInfo.WorkingDirectory = exePath.DirPath;
+            System.Diagnostics.Process.Start(startExeInfo);
+
+            Thread.Sleep(1000);
+
+            var startInfo = new System.Diagnostics.ProcessStartInfo("http://localhost:5000");
+            startInfo.UseShellExecute = true;
+            System.Diagnostics.Process.Start(startInfo);
+        }
 
         private static void EndProgram(IEnumerable<string> parameters)
         {

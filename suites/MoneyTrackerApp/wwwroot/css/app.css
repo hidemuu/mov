@@ -101,3 +101,47 @@ a, .btn-link {
 code {
     color: #c02d76;
 }
+
+.table-container {
+    max-height: 200px; /* 最大高さを指定 */
+    overflow-y: auto; /* 高さを超えた場合に縦方向にスクロール可能にする */
+    border: 1px solid #ccc; /* 必要に応じて枠線を設定 */
+}
+
+table {
+    width: 100%; /* テーブルを親要素の幅に合わせる */
+    border-collapse: collapse; /* セルの境界線をまとめる */
+}
+
+th, td {
+    border: 1px solid #ddd; /* セルの境界線 */
+    padding: 8px; /* セル内の余白 */
+    text-align: left; /* 左寄せ */
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+    .tabs button {
+        padding: 10px 20px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+
+        .tabs button:hover {
+            background-color: #ddd;
+        }
+
+#chart-container {
+    position: relative;
+}
+
+canvas {
+    width: 100% !important;
+    height: 400px !important;
+}
+

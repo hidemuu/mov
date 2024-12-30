@@ -31,3 +31,10 @@ window.createChart = (canvasId, labels, data) => {
         }
     });
 };
+
+window.toggleChartVisibility = (chartId, show) => {
+    const canvas = document.getElementById(chartId);
+    if (canvas) {
+        canvas.style.display = show ? 'block' : 'none';
+    }
+};

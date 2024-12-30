@@ -11,31 +11,43 @@
 <InputFile OnChange="OnFileSelected" />
 
 <!-- 入出金情報テーブル -->
-<table class="table">
-    <thead>
-        <tr>
-            <th>日付</th>
-            <th>内容</th>
-            <th>出金金額(円)</th>
-            <th>入金金額(円)</th>
-            <th>残高(円)</th>
-            <th>メモ</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var record in Records)
-        {
+<div class="table-container">
+    <table class="table">
+        <thead>
             <tr>
-                <td>@record.Date</td>
-                <td>@record.Description</td>
-                <td>@record.Withdrawal</td>
-                <td>@record.Deposit</td>
-                <td>@record.Balance</td>
-                <td>@record.Note</td>
+                <th>日付</th>
+                <th>内容</th>
+                <th>出金金額(円)</th>
+                <th>入金金額(円)</th>
+                <th>残高(円)</th>
+                <th>メモ</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var record in Records)
+            {
+                <tr>
+                    <td>@record.Date</td>
+                    <td>@record.Description</td>
+                    <td>@record.Withdrawal</td>
+                    <td>@record.Deposit</td>
+                    <td>@record.Balance</td>
+                    <td>@record.Note</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- タブ -->
+<div class="tabs">
+    @foreach (var month in Months)
+    {
+        <button @onclick="() => ShowMonthChart(month)">
+            @GetMonthName(month)
+        </button>
+    }
+</div>
 
 <!-- タイムチャート -->
 <canvas id="balanceChart" width="800" height="400"></canvas>
@@ -43,8 +55,9 @@
 @code {
     private List<FinanceRecord> Records = new List<FinanceRecord>
     {
-        new FinanceRecord { Date = "2024/12/27", Description = "sample", Withdrawal = 1, Deposit = 0, Balance = 2, Note = "-" }
+        new FinanceRecord { Date = DateTime.Parse("2024/12/27"), Description = "sample", Withdrawal = 1, Deposit = 0, Balance = 2, Note = "-" }
     };
+    private List<int> Months => Records.Select(r => r.Date.Month).Distinct().OrderBy(m => m).ToList();
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -109,9 +122,30 @@
         }
     }
 
+    private void ShowMonthChart(int month)
+    {
+        // 他のグラフを非表示にする
+        foreach (var m in Months)
+        {
+            var chartId = $"chart-{m}";
+            JSRuntime.InvokeVoidAsync("toggleChartVisibility", chartId, m == month);
+        }
+
+        // グラフを描画
+        var labels = Records.Where(r => r.Date.Month == month).Select(r => r.Date.ToString("yyyy/MM/dd")).ToArray();
+        var data = Records.Where(r => r.Date.Month == month).Select(r => r.Balance).ToArray();
+
+        JSRuntime.InvokeVoidAsync("createChart", $"chart-{month}", labels, data);
+    }
+
+    private string GetMonthName(int month)
+    {
+        return new DateTime(2024, month, 1).ToString("MMMM");
+    }
+
     public class FinanceRecord
     {
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
         public string Description { get; set; }
         public int Withdrawal { get; set; }
         public int Deposit { get; set; }
@@ -123,7 +157,15 @@
     {
         public FinanceRecordMap()
         {
-            Map(m => m.Date).Name("日付");
+            Map(m => m.Date)
+                .Name("日付")
+                .Convert(row =>
+                {
+                    var field = row.Row.GetField<string>("日付");
+                    return string.IsNullOrWhiteSpace(field) 
+                        ? DateTime.MinValue 
+                        : DateTime.Parse(field);
+                });
             Map(m => m.Description).Name("内容");
             Map(m => m.Withdrawal)
                 .Name("出金金額(円)")

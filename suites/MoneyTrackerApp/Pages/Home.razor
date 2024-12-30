@@ -1,7 +1,62 @@
 ﻿@page "/"
+@inject IJSRuntime JSRuntime
 
-<PageTitle>Home</PageTitle>
+<h3>お金の流れの可視化</h3>
 
-<h1>Hello, world!</h1>
+<!-- 入出金情報テーブル -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>日付</th>
+            <th>内容</th>
+            <th>出金金額(円)</th>
+            <th>入金金額(円)</th>
+            <th>残高(円)</th>
+            <th>メモ</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var record in Records)
+        {
+            <tr>
+                <td>@record.Date</td>
+                <td>@record.Description</td>
+                <td>@record.Withdrawal</td>
+                <td>@record.Deposit</td>
+                <td>@record.Balance</td>
+                <td>@record.Note</td>
+            </tr>
+        }
+    </tbody>
+</table>
 
-Welcome to your new app.
+<!-- タイムチャート -->
+<canvas id="balanceChart" width="800" height="400"></canvas>
+
+@code {
+    private List<FinanceRecord> Records = new List<FinanceRecord>
+    {
+        new FinanceRecord { Date = "2024/12/27", Description = "デビット　８４８８５９", Withdrawal = 801, Deposit = 0, Balance = 183256, Note = "-" }
+    };
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var labels = Records.Select(r => r.Date).ToArray();
+            var data = Records.Select(r => r.Balance).ToArray();
+
+            await JSRuntime.InvokeVoidAsync("createChart", "balanceChart", labels, data);
+        }
+    }
+
+    public class FinanceRecord
+    {
+        public string Date { get; set; }
+        public string Description { get; set; }
+        public int Withdrawal { get; set; }
+        public int Deposit { get; set; }
+        public int Balance { get; set; }
+        public string Note { get; set; }
+    }
+}

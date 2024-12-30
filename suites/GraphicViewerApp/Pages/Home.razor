@@ -12,6 +12,7 @@
     {
         if (firstRender)
         {
+            // JavaScript関数 initializeBabylon を非同期に実行
             await JSRuntime.InvokeVoidAsync("initializeBabylon");
         }
     }

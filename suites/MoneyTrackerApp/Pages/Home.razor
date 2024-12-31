@@ -63,6 +63,10 @@
 @code {
     #region 定数
 
+    private const string CHART_TYPE_LINE = "line";
+
+    private const string CHART_TYPE_BAR = "bar";
+
     private const string CHART_ID_BALANCE = "balanceChart";
 
     private const string CHART_ID_WITHDRAW = "withdrawalChart";
@@ -189,19 +193,22 @@
         // グラフを描画
         JSRuntime.InvokeVoidAsync(
             $"{SCRIPT_CREATE_CHART}", 
-            $"{CHART_ID_BALANCE}{CHART_ID_DELIMITER}{year}{CHART_ID_DELIMITER}{month}", 
+            $"{CHART_ID_BALANCE}{CHART_ID_DELIMITER}{year}{CHART_ID_DELIMITER}{month}",
+            $"{CHART_TYPE_LINE}",
             labels, 
             balanceData, 
             $"残高{year}/{month}");
         JSRuntime.InvokeVoidAsync(
             $"{SCRIPT_CREATE_CHART}",
             $"{CHART_ID_WITHDRAW}{CHART_ID_DELIMITER}{year}{CHART_ID_DELIMITER}{month}",
+            $"{CHART_TYPE_BAR}",
             labels,
             withdrawData,
             $"出金{year}/{month}");
         JSRuntime.InvokeVoidAsync(
             $"{SCRIPT_CREATE_CHART}",
             $"{CHART_ID_DEPOSIT}{CHART_ID_DELIMITER}{year}{CHART_ID_DELIMITER}{month}",
+            $"{CHART_TYPE_BAR}",
             labels,
             depositData,
             $"入金{year}/{month}");

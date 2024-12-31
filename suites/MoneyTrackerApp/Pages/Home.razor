@@ -41,19 +41,19 @@
 
 <!-- タブ -->
 <div class="tabs">
-    @foreach (var month in Months)
+    @foreach (var (year, month) in YearMonthPairs)
     {
-        <button @onclick="() => ShowMonthChart(month)">
-            @GetMonthName(month)
+        <button @onclick="() => ShowYearMonthChart(year, month)">
+            @GetYearMonthName(year, month)
         </button>
     }
 </div>
 
 <!-- タイムチャート -->
 <div id="chart-container">
-    @foreach (var month in Months)
+    @foreach (var (year, month) in YearMonthPairs)
     {
-        <canvas id="balanceChart-@month" style="display:none;"></canvas>
+        <canvas id="balanceChart-@year-@month" style="display:none;"></canvas>
     }
 </div>
 <canvas id="balanceChart" width="800" height="400"></canvas>
@@ -63,7 +63,13 @@
     {
         new FinanceRecord { Date = DateTime.Parse("2024/12/27"), Description = "sample", Withdrawal = 1, Deposit = 0, Balance = 2, Note = "-" }
     };
-    private List<int> Months => Records.Select(r => r.Date.Month).Distinct().OrderBy(m => m).ToList();
+
+    private List<(int Year, int Month)> YearMonthPairs =>
+    Records.Select(r => (r.Date.Year, r.Date.Month))
+           .Distinct()
+           .OrderBy(y => y.Year)
+           .ThenBy(m => m.Month)
+           .ToList();
 
     // protected override async Task OnAfterRenderAsync(bool firstRender)
     // {
@@ -128,25 +134,30 @@
         }
     }
 
-    private void ShowMonthChart(int month)
+    private void ShowYearMonthChart(int year, int month)
     {
         // 他のグラフを非表示にする
-        foreach (var m in Months)
+        foreach (var (y, m) in YearMonthPairs)
         {
-            var chartId = $"balanceChart-{m}";
-            JSRuntime.InvokeVoidAsync("toggleChartVisibility", chartId, m == month);
+            var chartId = $"chart-{y}-{m}";
+            JSRuntime.InvokeVoidAsync("toggleChartVisibility", chartId, y == year && m == month);
         }
 
-        // グラフを描画
-        var labels = Records.Where(r => r.Date.Month == month).Select(r => r.Date.ToString("yyyy/MM/dd")).ToArray();
-        var data = Records.Where(r => r.Date.Month == month).Select(r => r.Balance).ToArray();
+        // グラフデータを抽出
+        var labels = Records.Where(r => r.Date.Year == year && r.Date.Month == month)
+                            .Select(r => r.Date.ToString("yyyy/MM/dd"))
+                            .ToArray();
+        var data = Records.Where(r => r.Date.Year == year && r.Date.Month == month)
+                          .Select(r => r.Balance)
+                          .ToArray();
 
-        JSRuntime.InvokeVoidAsync("createChart", $"balanceChart-{month}", labels, data);
+        // グラフを描画
+        JSRuntime.InvokeVoidAsync("createChart", $"balanceChart-{year}-{month}", labels, data);
     }
 
-    private string GetMonthName(int month)
+    private string GetYearMonthName(int year, int month)
     {
-        return new DateTime(2024, month, 1).ToString("MMMM");
+        return new DateTime(year, month, 1).ToString("yyyy MMMM");
     }
 
     public class FinanceRecord

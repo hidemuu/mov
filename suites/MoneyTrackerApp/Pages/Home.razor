@@ -54,6 +54,8 @@
     @foreach (var (year, month) in YearMonthPairs)
     {
         <canvas id="@CHART_ID_BALANCE-@year-@month" style="display:none;"></canvas>
+        <canvas id="@CHART_ID_WITHDRAW-@year-@month" style="display:none;"></canvas>
+        <canvas id="@CHART_ID_DEPOSIT-@year-@month" style="display:none;"></canvas>
     }
 </div>
 @* <canvas id="@CHART_ID_BALANCE" width="800" height="400"></canvas> *@
@@ -62,6 +64,10 @@
     #region 定数
 
     private const string CHART_ID_BALANCE = "balanceChart";
+
+    private const string CHART_ID_WITHDRAW = "withdrawalChart";
+
+    private const string CHART_ID_DEPOSIT = "depositChart";
 
     private const string CHART_ID_DELIMITER = "-";
 
@@ -158,16 +164,26 @@
         // 他のグラフを非表示にする
         foreach (var (y, m) in YearMonthPairs)
         {
-            var chartId = $"{CHART_ID_BALANCE}{CHART_ID_DELIMITER}{y}{CHART_ID_DELIMITER}{m}";
-            JSRuntime.InvokeVoidAsync($"{SCRIPT_VISIBILITY_CHART}", chartId, y == year && m == month);
+            var balanceChartId = $"{CHART_ID_BALANCE}{CHART_ID_DELIMITER}{y}{CHART_ID_DELIMITER}{m}";
+            var withdrawChartId = $"{CHART_ID_WITHDRAW}{CHART_ID_DELIMITER}{y}{CHART_ID_DELIMITER}{m}";
+            var depositChartId = $"{CHART_ID_DEPOSIT}{CHART_ID_DELIMITER}{y}{CHART_ID_DELIMITER}{m}";
+            JSRuntime.InvokeVoidAsync($"{SCRIPT_VISIBILITY_CHART}", balanceChartId, y == year && m == month);
+            JSRuntime.InvokeVoidAsync($"{SCRIPT_VISIBILITY_CHART}", withdrawChartId, y == year && m == month);
+            JSRuntime.InvokeVoidAsync($"{SCRIPT_VISIBILITY_CHART}", depositChartId, y == year && m == month);
         }
 
         // グラフデータを抽出
         var labels = Records.Where(r => r.Date.Year == year && r.Date.Month == month)
                             .Select(r => r.Date.ToString("yyyy/MM/dd"))
                             .ToArray();
-        var data = Records.Where(r => r.Date.Year == year && r.Date.Month == month)
+        var balanceData = Records.Where(r => r.Date.Year == year && r.Date.Month == month)
                           .Select(r => r.Balance)
+                          .ToArray();
+        var withdrawData = Records.Where(r => r.Date.Year == year && r.Date.Month == month)
+                          .Select(r => r.Withdrawal)
+                          .ToArray();
+        var depositData = Records.Where(r => r.Date.Year == year && r.Date.Month == month)
+                          .Select(r => r.Deposit)
                           .ToArray();
 
         // グラフを描画
@@ -175,8 +191,20 @@
             $"{SCRIPT_CREATE_CHART}", 
             $"{CHART_ID_BALANCE}{CHART_ID_DELIMITER}{year}{CHART_ID_DELIMITER}{month}", 
             labels, 
-            data, 
+            balanceData, 
             $"残高{year}/{month}");
+        JSRuntime.InvokeVoidAsync(
+            $"{SCRIPT_CREATE_CHART}",
+            $"{CHART_ID_WITHDRAW}{CHART_ID_DELIMITER}{year}{CHART_ID_DELIMITER}{month}",
+            labels,
+            withdrawData,
+            $"出金{year}/{month}");
+        JSRuntime.InvokeVoidAsync(
+            $"{SCRIPT_CREATE_CHART}",
+            $"{CHART_ID_DEPOSIT}{CHART_ID_DELIMITER}{year}{CHART_ID_DELIMITER}{month}",
+            labels,
+            depositData,
+            $"入金{year}/{month}");
     }
 
     private string GetYearMonthName(int year, int month)

@@ -1,6 +1,6 @@
 ﻿let chartInstances = {};
 
-window.createChart = (canvasId, labels, data) => {
+window.createChart = (canvasId, labels, data, name) => {
     const ctx = document.getElementById(canvasId).getContext('2d');
     // 既存のチャートが存在する場合、破棄する
     if (chartInstances[canvasId]) {
@@ -11,7 +11,7 @@ window.createChart = (canvasId, labels, data) => {
         data: {
             labels: labels,
             datasets: [{
-                label: '残高の推移',
+                label: name,
                 data: data,
                 borderColor: 'rgba(75, 192, 192, 1)',
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',

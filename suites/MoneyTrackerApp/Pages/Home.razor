@@ -171,7 +171,12 @@
                           .ToArray();
 
         // グラフを描画
-        JSRuntime.InvokeVoidAsync($"{SCRIPT_CREATE_CHART}", $"{CHART_ID_BALANCE}{CHART_ID_DELIMITER}{year}{CHART_ID_DELIMITER}{month}", labels, data);
+        JSRuntime.InvokeVoidAsync(
+            $"{SCRIPT_CREATE_CHART}", 
+            $"{CHART_ID_BALANCE}{CHART_ID_DELIMITER}{year}{CHART_ID_DELIMITER}{month}", 
+            labels, 
+            data, 
+            $"残高{year}/{month}");
     }
 
     private string GetYearMonthName(int year, int month)

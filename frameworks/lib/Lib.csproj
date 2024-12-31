@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\cores\ui\commands\Commands.csproj" />
     <ProjectReference Include="..\src\framework\Framework.csproj" />
   </ItemGroup>
 

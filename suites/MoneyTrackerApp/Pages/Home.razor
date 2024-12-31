@@ -73,10 +73,7 @@
 
     #region プロパティ
 
-    private List<FinanceRecord> Records = new List<FinanceRecord>
-    {
-        new FinanceRecord { Date = DateTime.Parse("2024/12/27"), Description = "sample", Withdrawal = 1, Deposit = 0, Balance = 2, Note = "-" }
-    };
+    private List<FinanceRecord> Records = new List<FinanceRecord>();
 
     private List<(int Year, int Month)> YearMonthPairs =>
     Records.Select(r => (r.Date.Year, r.Date.Month))

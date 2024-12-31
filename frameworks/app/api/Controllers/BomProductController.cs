@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Mov.Bom.Models;
 using Mov.Bom.Models.Schemas;
+using Mov.Framework;
 
 namespace Mov.Api.Controllers
 {

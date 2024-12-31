@@ -7,13 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\frameworks\framework\Framework.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Mov.Core.Commands">
-      <HintPath>..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Commands.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\src\framework\Framework.csproj" />
   </ItemGroup>
 
 </Project>

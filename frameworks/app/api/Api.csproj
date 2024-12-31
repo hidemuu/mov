@@ -16,27 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\cores\controller\translators\Translators.csproj" />
-    <ProjectReference Include="..\..\src\frameworks\designer\designer.repository\Designer.Repository.csproj" />
-    <ProjectReference Include="..\..\src\frameworks\framework\Framework.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Mov.Core">
-      <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Core.Accessors">
-      <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Accessors.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Core.Configurators">
-      <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Configurators.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Core.Repositories">
-      <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Repositories.dll</HintPath>
-    </Reference>
-    <Reference Include="Mov.Core.Translators">
-      <HintPath>..\..\..\cores\lib\bin\Debug\netstandard2.0\Mov.Core.Translators.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\src\designer\designer.repository\Designer.Repository.csproj" />
+    <ProjectReference Include="..\..\src\framework\Framework.csproj" />
   </ItemGroup>
 
 </Project>

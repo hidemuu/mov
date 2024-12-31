@@ -53,12 +53,22 @@
 <div id="chart-container">
     @foreach (var (year, month) in YearMonthPairs)
     {
-        <canvas id="balanceChart-@year-@month" style="display:none;"></canvas>
+        <canvas id="@CHART_ID_BALANCE-@year-@month" style="display:none;"></canvas>
     }
 </div>
-@* <canvas id="balanceChart" width="800" height="400"></canvas> *@
+@* <canvas id="@CHART_ID_BALANCE" width="800" height="400"></canvas> *@
 
 @code {
+    #region 定数
+
+    private const string CHART_ID_BALANCE = "balanceChart";
+
+    private const string CHART_ID_DELIMITER = "-";
+
+    #endregion 定数
+
+    #region プロパティ
+
     private List<FinanceRecord> Records = new List<FinanceRecord>
     {
         new FinanceRecord { Date = DateTime.Parse("2024/12/27"), Description = "sample", Withdrawal = 1, Deposit = 0, Balance = 2, Note = "-" }
@@ -70,6 +80,10 @@
            .OrderBy(y => y.Year)
            .ThenBy(m => m.Month)
            .ToList();
+
+    #endregion プロパティ
+
+    #region イベント
 
     // protected override async Task OnAfterRenderAsync(bool firstRender)
     // {
@@ -134,12 +148,16 @@
         // }
     }
 
+    #endregion イベント
+
+    #region メソッド
+
     private void ShowYearMonthChart(int year, int month)
     {
         // 他のグラフを非表示にする
         foreach (var (y, m) in YearMonthPairs)
         {
-            var chartId = $"balanceChart-{y}-{m}";
+            var chartId = $"{CHART_ID_BALANCE}{CHART_ID_DELIMITER}{y}{CHART_ID_DELIMITER}{m}";
             JSRuntime.InvokeVoidAsync("toggleChartVisibility", chartId, y == year && m == month);
         }
 
@@ -152,13 +170,17 @@
                           .ToArray();
 
         // グラフを描画
-        JSRuntime.InvokeVoidAsync("createChart", $"balanceChart-{year}-{month}", labels, data);
+        JSRuntime.InvokeVoidAsync("createChart", $"{CHART_ID_BALANCE}{CHART_ID_DELIMITER}{year}{CHART_ID_DELIMITER}{month}", labels, data);
     }
 
     private string GetYearMonthName(int year, int month)
     {
         return new DateTime(year, month, 1).ToString("yyyy MMMM");
     }
+
+    #endregion メソッド
+
+    #region モデル
 
     public class FinanceRecord
     {
@@ -169,6 +191,7 @@
         public int Balance { get; set; }
         public string Note { get; set; } = string.Empty;
     }
+
 
     public class FinanceRecordMap : ClassMap<FinanceRecord>
     {
@@ -212,4 +235,6 @@
             Map(m => m.Note).Name("メモ");
         }
     }
+
+    #endregion モデル
 }

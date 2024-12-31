@@ -65,6 +65,10 @@
 
     private const string CHART_ID_DELIMITER = "-";
 
+    private const string SCRIPT_CREATE_CHART = "createChart";
+
+    private const string SCRIPT_VISIBILITY_CHART = "toggleChartVisibility";
+
     #endregion 定数
 
     #region プロパティ
@@ -158,7 +162,7 @@
         foreach (var (y, m) in YearMonthPairs)
         {
             var chartId = $"{CHART_ID_BALANCE}{CHART_ID_DELIMITER}{y}{CHART_ID_DELIMITER}{m}";
-            JSRuntime.InvokeVoidAsync("toggleChartVisibility", chartId, y == year && m == month);
+            JSRuntime.InvokeVoidAsync($"{SCRIPT_VISIBILITY_CHART}", chartId, y == year && m == month);
         }
 
         // グラフデータを抽出
@@ -170,7 +174,7 @@
                           .ToArray();
 
         // グラフを描画
-        JSRuntime.InvokeVoidAsync("createChart", $"{CHART_ID_BALANCE}{CHART_ID_DELIMITER}{year}{CHART_ID_DELIMITER}{month}", labels, data);
+        JSRuntime.InvokeVoidAsync($"{SCRIPT_CREATE_CHART}", $"{CHART_ID_BALANCE}{CHART_ID_DELIMITER}{year}{CHART_ID_DELIMITER}{month}", labels, data);
     }
 
     private string GetYearMonthName(int year, int month)

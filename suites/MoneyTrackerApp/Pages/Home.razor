@@ -56,7 +56,7 @@
         <canvas id="balanceChart-@year-@month" style="display:none;"></canvas>
     }
 </div>
-<canvas id="balanceChart" width="800" height="400"></canvas>
+@* <canvas id="balanceChart" width="800" height="400"></canvas> *@
 
 @code {
     private List<FinanceRecord> Records = new List<FinanceRecord>
@@ -122,16 +122,16 @@
         StateHasChanged();
 
         // グラフを更新
-        try
-        {
-            var labels = Records.Select(r => r.Date.ToString("yyyy/MM/dd")).ToArray();
-            var data = Records.Select(r => r.Balance).ToArray();
-            await JSRuntime.InvokeVoidAsync("createChart", $"balanceChart", labels, data);
-        }
-        catch (Exception ex)
-        {
-            throw ex;
-        }
+        // try
+        // {
+        //     var labels = Records.Select(r => r.Date.ToString("yyyy/MM/dd")).ToArray();
+        //     var data = Records.Select(r => r.Balance).ToArray();
+        //     await JSRuntime.InvokeVoidAsync("createChart", $"balanceChart", labels, data);
+        // }
+        // catch (Exception ex)
+        // {
+        //     throw ex;
+        // }
     }
 
     private void ShowYearMonthChart(int year, int month)
@@ -139,7 +139,7 @@
         // 他のグラフを非表示にする
         foreach (var (y, m) in YearMonthPairs)
         {
-            var chartId = $"chart-{y}-{m}";
+            var chartId = $"balanceChart-{y}-{m}";
             JSRuntime.InvokeVoidAsync("toggleChartVisibility", chartId, y == year && m == month);
         }
 

@@ -4,6 +4,7 @@ using Mov.Core.Repositories.Schemas.Requests;
 using Mov.Game.Models;
 using Mov.Game.Models.Schemas;
 using System;
+using System.Collections.Generic;
 
 namespace Mov.Game.Test.Builders
 {
@@ -29,6 +30,12 @@ namespace Mov.Game.Test.Builders
         #region method
 
         public IGameRepository Build() => _mockRepository.Object;
+
+        public GameRepositoryBuilder WithGetAsyncLandmark(IEnumerable<LandmarkSchema> landmarks)
+        {
+            _mockRepository.Setup(x => x.Landmarks.GetsAsync()).ReturnsAsync(landmarks);
+            return this;
+        }
 
         #endregion method
 

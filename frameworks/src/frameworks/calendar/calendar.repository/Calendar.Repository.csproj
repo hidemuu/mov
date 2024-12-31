@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Google.Apis.Calendar.v3" Version="1.68.0.3592" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\calendar.models\Calendar.Models.csproj" />
   </ItemGroup>
 

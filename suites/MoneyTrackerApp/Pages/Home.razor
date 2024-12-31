@@ -53,7 +53,7 @@
 <div id="chart-container">
     @foreach (var month in Months)
     {
-        <canvas id="chart-@month" style="display:none;"></canvas>
+        <canvas id="balanceChart-@month" style="display:none;"></canvas>
     }
 </div>
 <canvas id="balanceChart" width="800" height="400"></canvas>
@@ -118,7 +118,7 @@
         // グラフを更新
         try
         {
-            var labels = Records.Select(r => r.Date).ToArray();
+            var labels = Records.Select(r => r.Date.ToString("yyyy/MM/dd")).ToArray();
             var data = Records.Select(r => r.Balance).ToArray();
             await JSRuntime.InvokeVoidAsync("createChart", $"balanceChart", labels, data);
         }

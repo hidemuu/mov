@@ -103,7 +103,7 @@ code {
 }
 
 .table-container {
-    max-height: 200px; /* 最大高さを指定 */
+    max-height: 400px; /* 最大高さを指定 */
     overflow-y: auto; /* 高さを超えた場合に縦方向にスクロール可能にする */
     border: 1px solid #ccc; /* 必要に応じて枠線を設定 */
 }

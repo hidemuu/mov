@@ -1,30 +1,49 @@
 [
   {
     "Day": 1,
-    "Title": "Arrival and Marina Bay Sands",
+    "Title": "到着とマリーナベイサンズ",
     "Activities": [
-      "Arrive at Singapore Changi Airport",
-      "Check in at Marina Bay Sands",
+      "チャンギ空港到着",
+      "マリーナベイサンズにチェックイン",
+      "ナイトクルーズ",
       "Visit SkyPark Observation Deck",
       "Walk through Gardens by the Bay"
     ]
   },
   {
     "Day": 2,
-    "Title": "City Exploration",
+    "Title": "街散策",
     "Activities": [
       "Breakfast at Raffles Hotel",
-      "Merlion Park sightseeing",
-      "Explore Singapore Botanic Gardens"
+      "マーライオン公園",
+      "シンガポール・フライヤー",
+      "ガーデンズ・バイ・ザ・ベイ"
     ]
   },
   {
     "Day": 3,
-    "Title": "Sentosa Island Adventure",
+    "Title": "街散策その２",
     "Activities": [
-      "Universal Studios Singapore",
+      "シンガポール動物園",
+      "ナイトサファリ"
+    ]
+  },
+  {
+    "Day": 4,
+    "Title": "セントローサ島観光",
+    "Activities": [
+      "ユニバーサルスタジオ",
       "Lunch at Sentosa",
       "Visit S.E.A. Aquarium"
+    ]
+  },
+  {
+    "Day": 5,
+    "Title": "帰路",
+    "Activities": [
+      "ホテルチェックアウト",
+      "お土産買う",
+      "空港へ"
     ]
   }
 ]

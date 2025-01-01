@@ -77,6 +77,8 @@
 
     private const string SCRIPT_CREATE_CHART = "createChart";
 
+    private const string SCRIPT_CREATE_CHARTS = "createCharts";
+
     private const string SCRIPT_VISIBILITY_CHART = "toggleChartVisibility";
 
     private const string DESCRIPTION_TYPE_KOTORA = "ことら送金";
@@ -212,12 +214,12 @@
             withdrawData,
             $"出金{year}/{month}");
         JSRuntime.InvokeVoidAsync(
-            $"{SCRIPT_CREATE_CHART}",
+            $"{SCRIPT_CREATE_CHARTS}",
             $"{CHART_ID_DEPOSIT}{CHART_ID_DELIMITER}{year}{CHART_ID_DELIMITER}{month}",
             $"{CHART_TYPE_BAR}",
             labels,
-            depositData,
-            $"入金{year}/{month}");
+            new object[] { depositData, depositData },
+            new string[] { $"入金{year}/{month}", $"入金{year}/{month}" });
     }
 
     private string GetYearMonthName(int year, int month)

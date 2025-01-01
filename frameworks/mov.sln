@@ -203,6 +203,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Layouts.Test", "cores\ui\la
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "cores\core\Core.csproj", "{E7542F50-2CB4-4E4C-BF7E-038C64E4DFB9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "suites", "suites", "{BCE18562-6EB3-44D9-963B-C06B30D8CCE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

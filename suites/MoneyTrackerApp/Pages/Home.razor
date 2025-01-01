@@ -185,18 +185,20 @@
         }
 
         // グラフデータを抽出
-        var labels = Records.Where(r => r.Date.Year == year && r.Date.Month == month)
-                            .Select(r => r.Date.ToString("yyyy/MM/dd"))
-                            .ToArray();
-        var balanceData = Records.Where(r => r.Date.Year == year && r.Date.Month == month)
-                          .Select(r => r.Balance)
-                          .ToArray();
-        var withdrawData = Records.Where(r => r.Date.Year == year && r.Date.Month == month)
-                          .Select(r => r.Withdrawal)
-                          .ToArray();
-        var depositData = Records.Where(r => r.Date.Year == year && r.Date.Month == month)
-                          .Select(r => r.Deposit)
-                          .ToArray();
+        var records = Records.Where(r => r.Date.Year == year && r.Date.Month == month).ToArray();
+        var labels = records.Select(r => r.Date.ToString("yyyy/MM/dd")).ToArray();
+        var balanceData = records.Select(r => r.Balance).ToArray();
+        var withdrawData = records.Select(r => r.Withdrawal).ToArray();
+        var depositData = records.Select(r => r.Deposit).ToArray();
+        var depositManData = records
+                             .Select(r => { 
+                                 return r.Description.Contains(DESCRIPTION_TYPE_MAN) ? r.Deposit : 0;
+                             }).ToArray();
+        var depositWomanData = records
+                             .Select(r =>
+                             {
+                                 return r.Description.Contains(DESCRIPTION_TYPE_WOMAN) ? r.Deposit : 0;
+                             }).ToArray();
 
         // グラフを描画
         JSRuntime.InvokeVoidAsync(
@@ -218,8 +220,8 @@
             $"{CHART_ID_DEPOSIT}{CHART_ID_DELIMITER}{year}{CHART_ID_DELIMITER}{month}",
             $"{CHART_TYPE_BAR}",
             labels,
-            new object[] { depositData, depositData },
-            new string[] { $"入金{year}/{month}", $"入金{year}/{month}" });
+            new object[] { depositManData, depositWomanData },
+            new string[] { $"入金夫{year}/{month}", $"入金妻{year}/{month}" });
     }
 
     private string GetYearMonthName(int year, int month)

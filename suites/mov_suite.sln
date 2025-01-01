@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoneyTrackerApp", "MoneyTra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphicViewerApp", "GraphicViewerApp\GraphicViewerApp.csproj", "{A4D92E78-1EBE-4635-B37A-165DB7D3D195}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPlannerApp", "TravelPlannerApp\TravelPlannerApp.csproj", "{07CCC400-1250-4B50-AFA3-3F93CF7F1BC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{A4D92E78-1EBE-4635-B37A-165DB7D3D195}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4D92E78-1EBE-4635-B37A-165DB7D3D195}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4D92E78-1EBE-4635-B37A-165DB7D3D195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07CCC400-1250-4B50-AFA3-3F93CF7F1BC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07CCC400-1250-4B50-AFA3-3F93CF7F1BC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07CCC400-1250-4B50-AFA3-3F93CF7F1BC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07CCC400-1250-4B50-AFA3-3F93CF7F1BC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +99,7 @@ Global
 		{C6A41CCE-E6C4-4B2E-8A0F-000B510CBD60} = {C3FFDE82-2130-4EB6-9B14-3174F9C4615D}
 		{BBC2572C-1233-4673-8023-66C89068DC65} = {E99D1E62-E2EB-4DD0-BB83-76DCCCB328A0}
 		{A4D92E78-1EBE-4635-B37A-165DB7D3D195} = {E99D1E62-E2EB-4DD0-BB83-76DCCCB328A0}
+		{07CCC400-1250-4B50-AFA3-3F93CF7F1BC3} = {E99D1E62-E2EB-4DD0-BB83-76DCCCB328A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DA11007-6005-4C72-A93A-35FB982B6921}

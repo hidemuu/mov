@@ -1,0 +1,17 @@
+﻿@page "/"
+@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+
+<h1>Welcome to TripPlanner</h1>
+
+<p>Plan your trip with ease. Start with a sample itinerary:</p>
+
+<button @onclick="NavigateToItinerary">View Itinerary</button>
+
+@code {
+    private void NavigateToItinerary()
+    {
+        NavigationManager.NavigateTo("/itinerary");
+
+    }
+}

@@ -1,0 +1,13 @@
+﻿<div class="day-plan">
+    <h3>Day @Plan.Day: @Plan.Title</h3>
+    <ul>
+        @foreach (var activity in Plan.Activities)
+        {
+            <li>@activity</li>
+        }
+    </ul>
+</div>
+
+@code {
+    [Parameter] public Itinerary.DayPlan Plan { get; set; } = null!;
+}

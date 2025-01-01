@@ -1,0 +1,30 @@
+[
+  {
+    "Day": 1,
+    "Title": "Arrival and Marina Bay Sands",
+    "Activities": [
+      "Arrive at Singapore Changi Airport",
+      "Check in at Marina Bay Sands",
+      "Visit SkyPark Observation Deck",
+      "Walk through Gardens by the Bay"
+    ]
+  },
+  {
+    "Day": 2,
+    "Title": "City Exploration",
+    "Activities": [
+      "Breakfast at Raffles Hotel",
+      "Merlion Park sightseeing",
+      "Explore Singapore Botanic Gardens"
+    ]
+  },
+  {
+    "Day": 3,
+    "Title": "Sentosa Island Adventure",
+    "Activities": [
+      "Universal Studios Singapore",
+      "Lunch at Sentosa",
+      "Visit S.E.A. Aquarium"
+    ]
+  }
+]

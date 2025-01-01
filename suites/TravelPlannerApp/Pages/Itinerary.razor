@@ -1,0 +1,47 @@
+﻿@page "/itinerary"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h2>Itinerary</h2>
+<p>Your 5-night, 6-day Singapore trip:</p>
+
+<div>
+    @if (DayPlans == null)
+    {
+        <p>Loading...</p>
+    }
+    else
+    {
+        @foreach (var plan in DayPlans)
+        {
+            <DayPlanComponent Plan="plan" />
+        }
+    }
+</div>
+
+<button @onclick="NavigateHome">Back to Home</button>
+
+@code {
+    private List<DayPlan>? DayPlans;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var response = await Http.GetFromJsonAsync<List<DayPlan>>("dayplan.json");
+        if (response != null)
+        {
+            DayPlans = response;
+        }
+    }
+
+    private void NavigateHome()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+
+    public class DayPlan
+    {
+        public int Day { get; set; }
+        public string Title { get; set; }
+        public List<string> Activities { get; set; } = new();
+    }
+}

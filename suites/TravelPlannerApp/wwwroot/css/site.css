@@ -18,6 +18,27 @@ h1, h2, h3 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+    .day-plan input {
+        margin: 5px 0;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    .day-plan button {
+        margin: 5px;
+        padding: 5px 10px;
+        background: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .day-plan button:hover {
+            background: #45a049;
+        }
+
 button {
     padding: 10px 20px;
     background: #4CAF50;

@@ -18,8 +18,8 @@
     {
         <button @onclick="SaveToLocalStorage">Save to Local Storage</button>
         <button @onclick="LoadFromLocalStorage">Load from Local Storage</button>
-        <button @onclick="SaveToApi">Save to Api</button>
-        <button @onclick="LoadFromApi">Load from Api</button>
+@*         <button @onclick="SaveToApi">Save to Api</button>
+        <button @onclick="LoadFromApi">Load from Api</button> *@
         @foreach (var plan in DayPlans)
         {
             <DayPlanComponent Plan="plan" OnPlanUpdated="UpdatePlan" />
@@ -43,14 +43,8 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var response = await Http.GetFromJsonAsync<List<DayPlan>>("dayplan.json");
-        if (response != null)
-        {
-            DayPlans = response;
-        }
+        await LoadFromLocalStorage();
     }
-
-
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -83,21 +77,54 @@
         try
         {
             await LocalStorage.SetItemAsync("itinerary", DayPlans);
+            if(DayPlans != null)
+            {
+                var response = await Http.PostAsJsonAsync<List<DayPlan>>("dayplan.json", DayPlans);
+                if (!response.IsSuccessStatusCode)
+                {
+                    var settings = new JsonSerializerSettings
+                        {
+                            Formatting = Formatting.Indented, // 整形されたJSONにする
+                            NullValueHandling = NullValueHandling.Ignore // null値をスキップ
+                        };
+                    // オブジェクトをJSON形式に変換
+                    string json = JsonConvert.SerializeObject(DayPlans, settings);
+
+                    // JSONをファイルに保存
+                    var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dayplan.json");
+                    await File.WriteAllTextAsync(filePath, json);
+                    Console.WriteLine(json);
+                }
+            }
             Console.WriteLine("Data saved to local storage");
         }
         catch (Exception ex)
         {
-            // var json = JsonSerializer.Serialize(DayPlans);
-            // Console.WriteLine(json);
             Console.WriteLine($"Error saving to local storage: {ex.Message}");
         }
     }
 
     private async Task LoadFromLocalStorage()
     {
-        DayPlans = await LocalStorage.GetItemAsync<List<DayPlan>>("itinerary") ?? new List<DayPlan>();
-
-        Console.WriteLine("Data loaded from local storage");
+        try
+        {
+            var response = await LocalStorage.GetItemAsync<List<DayPlan>>("itinerary");
+            if(response != null)
+            {
+                DayPlans = response;
+                Console.WriteLine("Data loaded from local storage");
+                return;
+            }
+            response = await Http.GetFromJsonAsync<List<DayPlan>>("dayplan.json");
+            if(response != null)
+            {
+                DayPlans = response;
+                Console.WriteLine("Data loaded from json file");
+            }
+        }catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading to local storage: {ex.Message}");
+        }
     }
 
     private async Task SaveToApi()

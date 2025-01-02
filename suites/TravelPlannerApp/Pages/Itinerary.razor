@@ -1,9 +1,10 @@
 ﻿@page "/itinerary"
 @using Blazored.LocalStorage
+@using Newtonsoft.Json
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
-@inject SQLiteService SQLiteService
 @inject ILocalStorageService LocalStorage
+@inject IJSRuntime JSRuntime
 
 <h2>Itinerary</h2>
 <p>Your 5-night, 6-day Singapore trip:</p>
@@ -17,6 +18,8 @@
     {
         <button @onclick="SaveToLocalStorage">Save to Local Storage</button>
         <button @onclick="LoadFromLocalStorage">Load from Local Storage</button>
+        <button @onclick="SaveToApi">Save to Api</button>
+        <button @onclick="LoadFromApi">Load from Api</button>
         @foreach (var plan in DayPlans)
         {
             <DayPlanComponent Plan="plan" OnPlanUpdated="UpdatePlan" />
@@ -27,6 +30,8 @@
 <button @onclick="NavigateHome">Back to Home</button>
 
 @code {
+
+
 
     #region プロパティ
 
@@ -45,6 +50,24 @@
         }
     }
 
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // JavaScript関数にC#メソッドを登録
+            await JSRuntime.InvokeVoidAsync("setUpdateLocalStorage", DotNetObjectReference.Create(this));
+        }
+    }
+
+    [JSInvokable]
+    public async Task UpdateLocalStorage()
+    {
+        // ローカルストレージにデータを保存
+        await SaveToLocalStorage();
+    }
+
     #endregion イベント
 
     #region メソッド
@@ -57,9 +80,17 @@
 
     private async Task SaveToLocalStorage()
     {
-        await LocalStorage.SetItemAsync("itinerary", DayPlans);
-
-        Console.WriteLine("Data saved to local storage");
+        try
+        {
+            await LocalStorage.SetItemAsync("itinerary", DayPlans);
+            Console.WriteLine("Data saved to local storage");
+        }
+        catch (Exception ex)
+        {
+            // var json = JsonSerializer.Serialize(DayPlans);
+            // Console.WriteLine(json);
+            Console.WriteLine($"Error saving to local storage: {ex.Message}");
+        }
     }
 
     private async Task LoadFromLocalStorage()
@@ -87,51 +118,51 @@
         Console.WriteLine("Data loaded from API");
     }
 
-    private async Task InitializeSqliteDb()
-    {
-        await SQLiteService.InitializeDatabaseAsync();
+    // private async Task InitializeSqliteDb()
+    // {
+    //     await SQLiteService.InitializeDatabaseAsync();
 
-        await SQLiteService.ExecuteSqlAsync(@"
-            CREATE TABLE IF NOT EXISTS DayPlan (
-                Day INTEGER PRIMARY KEY,
-                Title TEXT
-            );
-        ");
+    //     await SQLiteService.ExecuteSqlAsync(@"
+    //         CREATE TABLE IF NOT EXISTS DayPlan (
+    //             Day INTEGER PRIMARY KEY,
+    //             Title TEXT
+    //         );
+    //     ");
 
-        Console.WriteLine("Database initialized and table created");
-    }
+    //     Console.WriteLine("Database initialized and table created");
+    // }
 
-    private async Task SaveSqliteData()
-    {
-        foreach (var plan in DayPlans)
+    // private async Task SaveSqliteData()
+    // {
+    //     foreach (var plan in DayPlans)
 
-        {
+    //     {
 
-            var sql = $"INSERT OR REPLACE INTO DayPlan (Day, Title) VALUES ({plan.Day}, '{plan.Title}')";
+    //         var sql = $"INSERT OR REPLACE INTO DayPlan (Day, Title) VALUES ({plan.Day}, '{plan.Title}')";
 
-            await SQLiteService.ExecuteSqlAsync(sql);
+    //         await SQLiteService.ExecuteSqlAsync(sql);
 
-        }
+    //     }
 
-        Console.WriteLine("Data saved to SQLite");
-    }
+    //     Console.WriteLine("Data saved to SQLite");
+    // }
 
-    private async Task LoadSqliteData()
-    {
-        var results = await SQLiteService.QuerySqlAsync("SELECT Day, Title FROM DayPlan");
+    // private async Task LoadSqliteData()
+    // {
+    //     var results = await SQLiteService.QuerySqlAsync("SELECT Day, Title FROM DayPlan");
 
-        DayPlans = results.Select(row => new DayPlan
+    //     DayPlans = results.Select(row => new DayPlan
 
-            {
+    //         {
 
-                Day = Convert.ToInt32(row["Day"]),
+    //             Day = Convert.ToInt32(row["Day"]),
 
-                Title = row["Title"].ToString()!
+    //             Title = row["Title"].ToString()!
 
-            }).ToList();
+    //         }).ToList();
 
-        Console.WriteLine("Data loaded from SQLite");
-    }
+    //     Console.WriteLine("Data loaded from SQLite");
+    // }
 
     private void NavigateHome()
     {

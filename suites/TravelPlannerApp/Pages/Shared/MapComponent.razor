@@ -3,14 +3,25 @@
 <div id="map" style="height: 500px;"></div>
 
 @code {
+    
     private DotNetObjectReference<MapComponent>? _dotNetRef;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (firstRender)
-        {
-            _dotNetRef = DotNetObjectReference.Create(this);
-            await JSRuntime.InvokeVoidAsync("initializeMap");
-        }
+    if (firstRender)
+    {
+        _dotNetRef = DotNetObjectReference.Create(this);
+        await JSRuntime.InvokeVoidAsync("initializeMap");
+    }
+    }
+
+
+
+    [JSInvokable]
+
+    public static Task OnMapClick(double latitude, double longitude)
+    {
+    Console.WriteLine($"Clicked at: Latitude = {latitude}, Longitude = {longitude}");
+    return Task.CompletedTask;
     }
 }

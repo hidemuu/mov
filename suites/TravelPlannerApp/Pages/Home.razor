@@ -1,6 +1,7 @@
 ﻿@page "/"
 @inherits LayoutComponentBase
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 
 <h1>Welcome to TripPlanner</h1>
 
@@ -16,6 +17,13 @@
     private void NavigateToItinerary()
     {
         NavigationManager.NavigateTo("/itinerary");
-
     }
+
+
+
+    private async Task UpdateMap(double latitude, double longitude, int zoom)
+    {
+        await JSRuntime.InvokeVoidAsync("updateMap", latitude, longitude, zoom);
+    }
+
 }

@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoneyTrackerApp", "MoneyTra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphicViewerApp", "GraphicViewerApp\GraphicViewerApp.csproj", "{A4D92E78-1EBE-4635-B37A-165DB7D3D195}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelPlannerApp", "TravelPlannerApp\TravelPlannerApp.csproj", "{07CCC400-1250-4B50-AFA3-3F93CF7F1BC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelPlannerApp", "TravelPlannerApp\TravelPlannerApp.csproj", "{07CCC400-1250-4B50-AFA3-3F93CF7F1BC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

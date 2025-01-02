@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <None Include="wwwroot\favicon.ico" />
+    <None Include="wwwroot\sqlite3.wasm" />
   </ItemGroup>
 
   <ItemGroup>

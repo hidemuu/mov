@@ -21,7 +21,6 @@
         <button @onclick="SaveChanges">Save</button>
         <button @onclick="CancelEditing">Cancel</button>
     }
-
     else
     {
         <h3>Day @Plan.Day: @Plan.Title</h3>
@@ -58,8 +57,6 @@
         IsEditing = false;
         // 必要に応じて元の状態にリセットする処理を追加
     }
-
-
 
     private void AddActivity()
     {

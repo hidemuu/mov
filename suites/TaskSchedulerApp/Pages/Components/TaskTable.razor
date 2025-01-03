@@ -27,7 +27,7 @@
         @foreach (string week in WeeklyHeaders)
         {
             <MudTd>
-                <MudTextField T="int?" @bind-Value="context.WeeklyEffort[week]" Variant="Variant.Text" />
+                <MudTextField T="int" @bind-Value="context.WeeklyEffort[week]" Variant="Variant.Text" />
             </MudTd>
         }
     </RowTemplate>
@@ -57,7 +57,7 @@
                 Period = 7,
                 ExpectedPeriod = 7,
                 Status = "完了",
-                WeeklyEffort = new Dictionary<string, int?>
+                WeeklyEffort = new Dictionary<string, int>
                 {
                     { "1/6", 2 }, { "1/13", 3 }, { "1/20", 2 }
                 }
@@ -70,10 +70,22 @@
                 Period = 0,
                 ExpectedPeriod = 7,
                 Status = "レビュー待ち",
-                WeeklyEffort = new Dictionary<string, int?>()
+                WeeklyEffort = new Dictionary<string, int>()
             },
             // 他のデータも追加
         };
+
+        foreach(var task in Tasks)
+        {
+            var weeklyEffort = task.WeeklyEffort;
+            foreach (string week in WeeklyHeaders)
+            {
+                if(!weeklyEffort.TryGetValue(week, out int value))
+                {
+                    weeklyEffort.Add(week, 0);
+                }
+            }
+        }
     }
 
     // private async Task SaveTasksAsync()
@@ -93,12 +105,12 @@
 
     public class Task
     {
-        public string TaskName { get; set; } // 工程
-        public string Team { get; set; } // 担当チーム
-        public string Assignee { get; set; } // 担当者
+        public string TaskName { get; set; } = string.Empty; // 工程
+        public string Team { get; set; } = string.Empty; // 担当チーム
+        public string Assignee { get; set; } = string.Empty; // 担当者
         public int Period { get; set; } // 期間
         public int ExpectedPeriod { get; set; } // 目安期間
-        public string Status { get; set; } // 進捗
-        public Dictionary<string, int?> WeeklyEffort { get; set; } = new Dictionary<string, int?>(); // 各週の工数
+        public string Status { get; set; } = string.Empty; // 進捗
+        public Dictionary<string, int> WeeklyEffort { get; set; } = new Dictionary<string, int>(); // 各週の工数
     }
 }

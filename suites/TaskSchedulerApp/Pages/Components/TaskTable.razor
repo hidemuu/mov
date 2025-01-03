@@ -19,16 +19,12 @@
         <MudTd>@context.TaskName</MudTd>
         <MudTd>@context.Team</MudTd>
         <MudTd>@context.Assignee</MudTd>
-        <MudTd>
-            <MudTextField @bind-Value="context.Period" Variant="Variant.Text" />
-        </MudTd>
+        <MudTd>@context.Period</MudTd>
         <MudTd>@context.ExpectedPeriod</MudTd>
         <MudTd>@context.Status</MudTd>
         @foreach (string week in WeeklyHeaders)
         {
-            <MudTd>
-                <MudTextField T="int" @bind-Value="context.WeeklyEffort[week]" Variant="Variant.Text" />
-            </MudTd>
+            <MudTd>@context.WeeklyEffort[week]</MudTd>
         }
     </RowTemplate>
 </MudTable>

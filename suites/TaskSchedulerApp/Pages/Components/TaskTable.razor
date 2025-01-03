@@ -1,35 +1,104 @@
 ﻿@using MudBlazor
+@inject IJSRuntime JSRuntime
+@using System.Text.Json
 
-<MudTable Items="@Tasks">
+<MudTable Items="@Tasks" Hover="true" Bordered="true">
     <HeaderContent>
-        <MudTh>メンバー</MudTh>
-        @foreach (var task in TaskNames)
+        <MudTh>工程</MudTh>
+        <MudTh>担当チーム</MudTh>
+        <MudTh>担当者</MudTh>
+        <MudTh>期間</MudTh>
+        <MudTh>目安期間</MudTh>
+        <MudTh>進捗</MudTh>
+        @foreach (string week in WeeklyHeaders)
         {
-            <MudTh>@task</MudTh>
+            <MudTh>@week</MudTh>
         }
     </HeaderContent>
     <RowTemplate>
-        <MudTd>@context.MemberName</MudTd>
-        @foreach (var task in TaskNames)
+        <MudTd>@context.TaskName</MudTd>
+        <MudTd>@context.Team</MudTd>
+        <MudTd>@context.Assignee</MudTd>
+        <MudTd>
+            <MudTextField @bind-Value="context.Period" Variant="Variant.Text" />
+        </MudTd>
+        <MudTd>@context.ExpectedPeriod</MudTd>
+        <MudTd>@context.Status</MudTd>
+        @foreach (string week in WeeklyHeaders)
         {
             <MudTd>
-                <MudTextField @bind-Value="@context.TaskHours[task]" Label="工数" />
+                <MudTextField T="int?" @bind-Value="context.WeeklyEffort[week]" Variant="Variant.Text" />
             </MudTd>
         }
     </RowTemplate>
 </MudTable>
 
+
+
 @code {
-    private List<string> TaskNames = new() { "タスク1", "タスク2", "タスク3" };
-    private List<MemberTask> Tasks = new()
+
+    private List<string> WeeklyHeaders = new List<string>
     {
-        new MemberTask { MemberName = "Aさん", TaskHours = new Dictionary<string, int>() },
-        new MemberTask { MemberName = "Bさん", TaskHours = new Dictionary<string, int>() },
+        "1/6", "1/13", "1/20", "1/27", "2/3", "2/10", "2/17", "2/24", "3/3", "3/10", "3/17", "3/24", "3/31"
     };
 
-    private class MemberTask
+    private List<Task> Tasks = new List<Task>(); // 初期データをここにロード
+
+    protected override void OnInitialized()
     {
-        public string MemberName { get; set; }
-        public Dictionary<string, int> TaskHours { get; set; }
+        // 必要に応じて初期データをロードする
+        Tasks = new List<Task>
+        {
+            new Task
+            {
+                TaskName = "企画書（Lean Canvas）",
+                Team = "1",
+                Assignee = "A",
+                Period = 7,
+                ExpectedPeriod = 7,
+                Status = "完了",
+                WeeklyEffort = new Dictionary<string, int?>
+                {
+                    { "1/6", 2 }, { "1/13", 3 }, { "1/20", 2 }
+                }
+            },
+            new Task
+            {
+                TaskName = "機能一覧表",
+                Team = "2",
+                Assignee = "F",
+                Period = 0,
+                ExpectedPeriod = 7,
+                Status = "レビュー待ち",
+                WeeklyEffort = new Dictionary<string, int?>()
+            },
+            // 他のデータも追加
+        };
+    }
+
+    // private async Task SaveTasksAsync()
+    // {
+    //     var json = JsonSerializer.Serialize(Tasks);
+    //     await JSRuntime.InvokeVoidAsync("localStorage.setItem", "tasks", json);
+    // }
+
+    // private async Task LoadTasksAsync()
+    // {
+    //     var json = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "tasks");
+    //     if (!string.IsNullOrEmpty(json))
+    //     {
+    //         Tasks = JsonSerializer.Deserialize<List<Task>>(json);
+    //     }
+    // }
+
+    public class Task
+    {
+        public string TaskName { get; set; } // 工程
+        public string Team { get; set; } // 担当チーム
+        public string Assignee { get; set; } // 担当者
+        public int Period { get; set; } // 期間
+        public int ExpectedPeriod { get; set; } // 目安期間
+        public string Status { get; set; } // 進捗
+        public Dictionary<string, int?> WeeklyEffort { get; set; } = new Dictionary<string, int?>(); // 各週の工数
     }
 }

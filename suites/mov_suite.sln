@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphicViewerApp", "Graphic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelPlannerApp", "TravelPlannerApp\TravelPlannerApp.csproj", "{07CCC400-1250-4B50-AFA3-3F93CF7F1BC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskSchedulerApp", "TaskSchedulerApp\TaskSchedulerApp.csproj", "{5E1CAAB3-FEFC-47CD-8800-CA059E6280ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{07CCC400-1250-4B50-AFA3-3F93CF7F1BC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07CCC400-1250-4B50-AFA3-3F93CF7F1BC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07CCC400-1250-4B50-AFA3-3F93CF7F1BC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E1CAAB3-FEFC-47CD-8800-CA059E6280ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E1CAAB3-FEFC-47CD-8800-CA059E6280ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E1CAAB3-FEFC-47CD-8800-CA059E6280ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E1CAAB3-FEFC-47CD-8800-CA059E6280ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,6 +106,7 @@ Global
 		{BBC2572C-1233-4673-8023-66C89068DC65} = {E99D1E62-E2EB-4DD0-BB83-76DCCCB328A0}
 		{A4D92E78-1EBE-4635-B37A-165DB7D3D195} = {E99D1E62-E2EB-4DD0-BB83-76DCCCB328A0}
 		{07CCC400-1250-4B50-AFA3-3F93CF7F1BC3} = {E99D1E62-E2EB-4DD0-BB83-76DCCCB328A0}
+		{5E1CAAB3-FEFC-47CD-8800-CA059E6280ED} = {E99D1E62-E2EB-4DD0-BB83-76DCCCB328A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DA11007-6005-4C72-A93A-35FB982B6921}

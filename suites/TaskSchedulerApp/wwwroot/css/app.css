@@ -101,3 +101,24 @@ a, .btn-link {
 code {
     color: #c02d76;
 }
+
+.custom-table-header {
+    background-color: var(--mud-palette-secondary);
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.custom-table-row {
+    transition: background-color 0.3s ease;
+}
+
+    .custom-table-row:hover {
+        background-color: var(--mud-palette-light);
+    }
+
+.custom-table {
+    border: 1px solid var(--mud-palette-dark);
+    border-radius: 8px;
+    overflow: hidden;
+}

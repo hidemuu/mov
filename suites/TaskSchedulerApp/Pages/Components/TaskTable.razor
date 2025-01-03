@@ -2,14 +2,14 @@
 @inject IJSRuntime JSRuntime
 @using System.Text.Json
 
-<MudTable Items="@Tasks" Hover="true" Bordered="true">
+<MudTable Items="@Tasks" Class="custom-table" Dense="true" Hover="true" Striped="true">
     <HeaderContent>
-        <MudTh>工程</MudTh>
-        <MudTh>担当チーム</MudTh>
-        <MudTh>担当者</MudTh>
-        <MudTh>期間</MudTh>
-        <MudTh>目安期間</MudTh>
-        <MudTh>進捗</MudTh>
+        <MudTh Class="custom-table-header">工程</MudTh>
+        <MudTh Class="custom-table-header">担当チーム</MudTh>
+        <MudTh Class="custom-table-header">担当者</MudTh>
+        <MudTh Class="custom-table-header">期間</MudTh>
+        <MudTh Class="custom-table-header">目安期間</MudTh>
+        <MudTh Class="custom-table-header">進捗</MudTh>
         @foreach (string week in WeeklyHeaders)
         {
             <MudTh>@week</MudTh>

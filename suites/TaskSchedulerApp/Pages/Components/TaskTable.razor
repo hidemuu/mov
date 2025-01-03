@@ -1,0 +1,35 @@
+﻿@using MudBlazor
+
+<MudTable Items="@Tasks">
+    <HeaderContent>
+        <MudTh>メンバー</MudTh>
+        @foreach (var task in TaskNames)
+        {
+            <MudTh>@task</MudTh>
+        }
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd>@context.MemberName</MudTd>
+        @foreach (var task in TaskNames)
+        {
+            <MudTd>
+                <MudTextField @bind-Value="@context.TaskHours[task]" Label="工数" />
+            </MudTd>
+        }
+    </RowTemplate>
+</MudTable>
+
+@code {
+    private List<string> TaskNames = new() { "タスク1", "タスク2", "タスク3" };
+    private List<MemberTask> Tasks = new()
+    {
+        new MemberTask { MemberName = "Aさん", TaskHours = new Dictionary<string, int>() },
+        new MemberTask { MemberName = "Bさん", TaskHours = new Dictionary<string, int>() },
+    };
+
+    private class MemberTask
+    {
+        public string MemberName { get; set; }
+        public Dictionary<string, int> TaskHours { get; set; }
+    }
+}

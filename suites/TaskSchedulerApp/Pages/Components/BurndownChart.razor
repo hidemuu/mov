@@ -1,0 +1,34 @@
+﻿@using MudBlazor
+
+<MudChart ChartType="ChartType.Line" Style="height: 400px;">
+    <ChartOptions>
+        new MudBlazor.Charts.ChartOptions
+        {
+            XAxisLabels = @Weeks.ToArray(),
+            YAxisTicks = 10
+        }
+    </ChartOptions>
+    <ChartSeries>
+        <MudChartSeries Name="理想進捗" Data="@IdealBurndown" Color="Color.Info" />
+        <MudChartSeries Name="実績進捗" Data="@ActualBurndown" Color="Color.Success" />
+    </ChartSeries>
+</MudChart>
+
+@code {
+    private List<int> IdealBurndown { get; set; } = new List<int> { 90, 75, 60, 45, 30, 15, 0 }; // 理想進捗
+    private List<int> ActualBurndown { get; set; } = new List<int> { 90, 80, 70, 55, 40, 25, 10 }; // 実績進捗
+    private List<string> Weeks { get; set; } = new List<string> { "1/6", "1/13", "1/20", "1/27", "2/3", "2/10", "2/17" }; // 日付
+
+    private void UpdateActualBurndown()
+    {
+        // 例: 実績値を変更
+        ActualBurndown = new List<int> { 90, 85, 65, 50, 35, 20, 5 };
+    }
+
+    private void LoadChartData()
+    {
+        // 全タスクの総工数を週ごとに集計してバーンダウンデータを作成
+        // IdealBurndown = CalculateIdealBurndown();
+        // ActualBurndown = CalculateActualBurndown();
+    }
+}

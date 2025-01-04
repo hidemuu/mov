@@ -19,8 +19,6 @@
         <button @onclick="SaveToLocalStorage">Save to Local Storage</button>
         <button @onclick="LoadFromLocalStorage">Load from Local Storage</button>
         <button @onclick="LoadFromServer">Load from Server</button>
-@*         <button @onclick="SaveToApi">Save to Api</button>
-        <button @onclick="LoadFromApi">Load from Api</button> *@
         @foreach (var plan in DayPlans)
         {
             <DayPlanComponent Plan="plan" OnPlanUpdated="UpdatePlan" />

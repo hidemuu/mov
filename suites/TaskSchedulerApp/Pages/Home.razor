@@ -6,15 +6,20 @@
 
 <h1>タスクテーブル</h1>
 
-<TaskTable></TaskTable>
+<TaskTable WeeklyHeaders="WeeklyHeaders"></TaskTable>
 
 <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="UpdateActualBurndown">進捗更新</MudButton>
 
-<BurndownChart></BurndownChart>
+<BurndownChart WeeklyHeaders="WeeklyHeaders"></BurndownChart>
 
 @code {
     private void UpdateActualBurndown()
     {
         // 例: 実績値を変更
     }
+
+    private List<string> WeeklyHeaders = new List<string>
+    {
+        "1/6", "1/13", "1/20", "1/27", "2/3", "2/10", "2/17", "2/24", "3/3", "3/10", "3/17", "3/24", "3/31"
+    };
 }

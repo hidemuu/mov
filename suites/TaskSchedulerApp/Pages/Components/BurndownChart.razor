@@ -3,9 +3,10 @@
 <canvas id="burnDownChart" width="800" height="400"></canvas>
 
 @code {
+    [Parameter] public List<string> WeeklyHeaders { get; set; } = null!;
+
     private List<int> IdealBurndown = new() { 90, 75, 60, 45, 30, 15, 0 }; // 理想進捗
     private List<int> ActualBurndown = new() { 90, 80, 70, 55, 40, 25, 10 }; // 実績進捗
-    private List<string> Weeks = new() { "1/6", "1/13", "1/20", "1/27", "2/3", "2/10", "2/17" }; // 週
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -13,7 +14,7 @@
         {
             var chartData = new
             {
-                labels = Weeks,
+                labels = WeeklyHeaders,
                 idealBurndown = IdealBurndown,
                 actualBurndown = ActualBurndown
             };

@@ -1,8 +1,9 @@
 ﻿@using MudBlazor
 @inject IJSRuntime JSRuntime
 @using System.Text.Json
+@using TaskSchedulerApp.Controllers.Models
 
-<MudTable Items="@Tasks" Class="custom-table" Dense="true" Hover="true" Striped="true">
+<MudTable Items="@TaskItems" Class="custom-table" Dense="true" Hover="true" Striped="true">
     <HeaderContent>
         <MudTh Class="custom-table-header">工程</MudTh>
         <MudTh Class="custom-table-header">担当チーム</MudTh>
@@ -35,75 +36,6 @@
 
     [Parameter] public List<string> WeeklyHeaders { get; set; } = null!;
 
-    private List<Task> Tasks = new List<Task>(); // 初期データをここにロード
+    [Parameter] public List<TaskItem> TaskItems { get; set; } = new List<TaskItem>();
 
-    protected override void OnInitialized()
-    {
-        // 必要に応じて初期データをロードする
-        Tasks = new List<Task>
-        {
-            new Task
-            {
-                TaskName = "企画書（Lean Canvas）",
-                Team = "1",
-                Assignee = "A",
-                Period = 7,
-                ExpectedPeriod = 7,
-                Status = "完了",
-                WeeklyEffort = new Dictionary<string, int>
-                {
-                    { "1/6", 2 }, { "1/13", 3 }, { "1/20", 2 }
-                }
-            },
-            new Task
-            {
-                TaskName = "機能一覧表",
-                Team = "2",
-                Assignee = "F",
-                Period = 0,
-                ExpectedPeriod = 7,
-                Status = "レビュー待ち",
-                WeeklyEffort = new Dictionary<string, int>()
-            },
-            // 他のデータも追加
-        };
-
-        foreach(var task in Tasks)
-        {
-            var weeklyEffort = task.WeeklyEffort;
-            foreach (string week in WeeklyHeaders)
-            {
-                if(!weeklyEffort.TryGetValue(week, out int value))
-                {
-                    weeklyEffort.Add(week, 0);
-                }
-            }
-        }
-    }
-
-    // private async Task SaveTasksAsync()
-    // {
-    //     var json = JsonSerializer.Serialize(Tasks);
-    //     await JSRuntime.InvokeVoidAsync("localStorage.setItem", "tasks", json);
-    // }
-
-    // private async Task LoadTasksAsync()
-    // {
-    //     var json = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "tasks");
-    //     if (!string.IsNullOrEmpty(json))
-    //     {
-    //         Tasks = JsonSerializer.Deserialize<List<Task>>(json);
-    //     }
-    // }
-
-    public class Task
-    {
-        public string TaskName { get; set; } = string.Empty; // 工程
-        public string Team { get; set; } = string.Empty; // 担当チーム
-        public string Assignee { get; set; } = string.Empty; // 担当者
-        public int Period { get; set; } = 0; // 期間
-        public int ExpectedPeriod { get; set; } = 0; // 目安期間
-        public string Status { get; set; } = string.Empty; // 進捗
-        public Dictionary<string, int> WeeklyEffort { get; set; } = new Dictionary<string, int>(); // 各週の工数
-    }
 }

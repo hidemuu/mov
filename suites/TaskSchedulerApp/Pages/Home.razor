@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using TaskSchedulerApp.Controllers.Models
 @using TaskSchedulerApp.Pages.Components
 @using MudBlazor
 
@@ -6,7 +7,7 @@
 
 <h1>タスクテーブル</h1>
 
-<TaskTable WeeklyHeaders="WeeklyHeaders"></TaskTable>
+<TaskTable WeeklyHeaders="WeeklyHeaders" TaskItems="TaskItems"></TaskTable>
 
 <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="UpdateActualBurndown">進捗更新</MudButton>
 
@@ -22,4 +23,65 @@
     {
         "1/6", "1/13", "1/20", "1/27", "2/3", "2/10", "2/17", "2/24", "3/3", "3/10", "3/17", "3/24", "3/31"
     };
+
+    private List<TaskItem> TaskItems = new List<TaskItem>();
+
+    protected override void OnInitialized()
+    {
+        // 必要に応じて初期データをロードする
+        TaskItems = new List<TaskItem>
+        {
+            new TaskItem
+            {
+                TaskName = "企画書（Lean Canvas）",
+                Team = "1",
+                Assignee = "A",
+                Period = 7,
+                ExpectedPeriod = 7,
+                Status = "完了",
+                WeeklyEffort = new Dictionary<string, int>
+                {
+                    { "1/6", 2 }, { "1/13", 3 }, { "1/20", 2 }
+                }
+            },
+            new TaskItem
+            {
+                TaskName = "機能一覧表",
+                Team = "2",
+                Assignee = "F",
+                Period = 0,
+                ExpectedPeriod = 7,
+                Status = "レビュー待ち",
+                WeeklyEffort = new Dictionary<string, int>()
+            },
+            // 他のデータも追加
+        };
+
+        foreach (var taskitem in TaskItems)
+        {
+            var weeklyEffort = taskitem.WeeklyEffort;
+            foreach (string week in WeeklyHeaders)
+            {
+                if (!weeklyEffort.TryGetValue(week, out int value))
+                {
+                    weeklyEffort.Add(week, 0);
+                }
+            }
+        }
+    }
+
+    // private async Task SaveTasksAsync()
+    // {
+    //     var json = JsonSerializer.Serialize(Tasks);
+    //     await JSRuntime.InvokeVoidAsync("localStorage.setItem", "tasks", json);
+    // }
+
+    // private async Task LoadTasksAsync()
+    // {
+    //     var json = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "tasks");
+    //     if (!string.IsNullOrEmpty(json))
+    //     {
+    //         Tasks = JsonSerializer.Deserialize<List<Task>>(json);
+    //     }
+    // }
 }

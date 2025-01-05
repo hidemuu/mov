@@ -5,7 +5,16 @@
 <MudDialogProvider />
 <MudSnackbarProvider />
 
-<div class="page">
+<MudLayout>
+    <MudAppBar Elevation="4">
+        <MudText Typo="Typo.h6">My Application</MudText>
+    </MudAppBar>
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+@* <div class="page">
     <div class="sidebar">
         <NavMenu />
     </div>
@@ -17,4 +26,4 @@
             @Body
         </article>
     </main>
-</div>
+</div> *@

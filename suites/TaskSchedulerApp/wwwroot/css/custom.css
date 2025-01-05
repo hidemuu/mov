@@ -1,4 +1,4 @@
-﻿.custom-table {
+﻿/*.custom-table {
     border: 1px solid var(--mud-palette-dark) !important;
     border-radius: 8px !important;
     overflow: hidden !important;
@@ -18,3 +18,4 @@
     .custom-table-row:hover {
         background-color: var(--mud-palette-light);
     }
+*/

@@ -10,6 +10,8 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 var services = builder.Services;
 
 services.AddBlazoredLocalStorage();
+//var customBaseAddress = new Uri("file:///");
+//services.AddScoped(sp => new HttpClient { BaseAddress = customBaseAddress });
 services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 //services.AddScoped<SQLiteService>();
 

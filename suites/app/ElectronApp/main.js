@@ -14,9 +14,8 @@ app.whenReady().then(() => {
   });
 
   // Blazor WebAssembly の `wwwroot/index.html` をロード
-  const startUrl = url.pathToFileURL(
-    path.resolve(__dirname, "wwwroot", "index.html")
-  ).href;
+  //const startUrl = url.pathToFileURL(path.resolve(__dirname, "wwwroot", "index.html")).href;
+  const startUrl = `file://${path.join(__dirname, "wwwroot/index.html")}`;
   console.log(`Loading URL: ${startUrl}`); // デバッグ用に表示
   mainWindow.loadURL(startUrl).catch((error) => {
     console.error("Failed to load URL:", error);

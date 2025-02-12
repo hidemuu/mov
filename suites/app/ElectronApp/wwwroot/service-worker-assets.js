@@ -137,7 +137,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-GP9dNLJr4uw0zxUokpFFiEBDqBq\/Ltui51Y1YGr2fN0=",
+      "hash": "sha256-+jJJR6M7vwoBx\/j+LzsQB81PtMSl2mDlBwSK5vg0rv8=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -145,7 +145,7 @@
       "url": "_framework\/Blazored.LocalStorage.wasm"
     },
     {
-      "hash": "sha256-PWbdMSO\/wxHNoLvWIYCjIvJ+hS8XaVZqDQ9Gj5pCitg=",
+      "hash": "sha256-xO48yB0+5SaRQX0Id+Sar\/mOqJfQSGUKiRO\/biF5jTA=",
       "url": "_framework\/BlazorWasm.wasm"
     },
     {
@@ -181,7 +181,7 @@
       "url": "_framework\/Microsoft.AspNetCore.Components.Web.wasm"
     },
     {
-      "hash": "sha256-jzG6fExqKBfkIdjs9uZueq3gofpblKedpdtT2gjaUwQ=",
+      "hash": "sha256-OiW2cF9RnaPACHZSG7k8MZvXZAor9dN9cr9hpZA2i8g=",
       "url": "_framework\/Microsoft.AspNetCore.Components.WebAssembly.wasm"
     },
     {
@@ -585,5 +585,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "kDTb+9Ni"
+  "version": "foGxbVm4"
 };

@@ -1,9 +1,19 @@
 # 前段取
 
-index.html を変更（./をつける）
+## index.html
+
+### パス変更(./をつける)
 
 <script src="./_framework/blazor.webassembly.js"></script>
 <base href="./" />
+
+### ログ追加
+
+<script>
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("Current URL: ", window.location.href);
+      });
+</script>
 
 # 実行方法
 

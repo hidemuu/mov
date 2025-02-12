@@ -1,5 +1,19 @@
-﻿<h3>GraphicViewer</h3>
+﻿@page "/graphic_viewer"
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Home</PageTitle>
+
+<h1>Babylon.jsで3D画像を表示</h1>
+
+<canvas id="renderCanvas" style="width: 100%; height: 500px;"></canvas>
 
 @code {
-
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // JavaScript関数 initializeBabylon を非同期に実行
+            await JSRuntime.InvokeVoidAsync("initializeBabylon");
+        }
+    }
 }

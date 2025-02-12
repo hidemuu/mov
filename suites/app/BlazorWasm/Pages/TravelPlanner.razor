@@ -1,5 +1,30 @@
-﻿<h3>TravelPlanner</h3>
+﻿@page "/travel_planner"
+@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+@using BlazorWasm.Pages.Components
+
+<h1>Welcome to TripPlanner</h1>
+
+<p>Plan your trip with ease. Start with a sample itinerary:</p>
+
+<h3>Map Display</h3>
+
+<MapComponent />
+
+<button @onclick="NavigateToItinerary">View Itinerary</button>
 
 @code {
+    private void NavigateToItinerary()
+    {
+        NavigationManager.NavigateTo("/itinerary");
+    }
+
+
+
+    private async Task UpdateMap(double latitude, double longitude, int zoom)
+    {
+        await JSRuntime.InvokeVoidAsync("updateMap", latitude, longitude, zoom);
+    }
 
 }

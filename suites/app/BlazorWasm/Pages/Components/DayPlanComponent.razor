@@ -1,0 +1,75 @@
+﻿<div class="day-plan">
+    @if (IsEditing)
+    {
+        <h3>Edit Day @Plan.Day</h3>
+        <input type="text" @bind="Plan.Title" placeholder="Title" />
+
+        <h4>Activities</h4>
+        <ul>
+            @for (int i = 0; i < Plan.Activities.Count; i++)
+            {
+                <li>
+                    <input type="text" @bind="Plan.Activities[i]" />
+                    <button @onclick="() => RemoveActivity(i)">Remove</button>
+                </li>
+            }
+        </ul>
+        <input type="text" @bind="NewActivity" placeholder="Add new activity" />
+        <button @onclick="AddActivity">Add Activity</button>
+
+        <br />
+        <button @onclick="SaveChanges">Save</button>
+        <button @onclick="CancelEditing">Cancel</button>
+    }
+    else
+    {
+        <h3>Day @Plan.Day: @Plan.Title</h3>
+        <ul>
+            @foreach (var activity in Plan.Activities)
+
+            {
+                <li>@activity</li>
+            }
+        </ul>
+        <button @onclick="StartEditing">Edit</button>
+    }
+</div>
+
+@code {
+    [Parameter] public Itinerary.DayPlan Plan { get; set; } = null!;
+
+    [Parameter] public EventCallback OnPlanUpdated { get; set; }
+
+    private bool IsEditing { get; set; } = false;
+
+    private string NewActivity { get; set; } = string.Empty;
+
+    private void StartEditing() => IsEditing = true;
+
+    private void SaveChanges()
+    {
+        IsEditing = false;
+        OnPlanUpdated.InvokeAsync();
+    }
+
+    private void CancelEditing()
+    {
+        IsEditing = false;
+        // 必要に応じて元の状態にリセットする処理を追加
+    }
+
+    private void AddActivity()
+    {
+        if (!string.IsNullOrWhiteSpace(NewActivity))
+        {
+            Plan.Activities.Add(NewActivity);
+            NewActivity = string.Empty;
+        }
+
+    }
+
+    private void RemoveActivity(int index)
+    {
+        Plan.Activities.RemoveAt(index);
+    }
+}

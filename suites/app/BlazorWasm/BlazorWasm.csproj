@@ -9,18 +9,22 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\favicon.ico" />
+    <Content Remove="wwwroot\sqlite3.wasm" />
     <Content Remove="wwwroot\src\ts\initializeBabylon.ts" />
     <Content Remove="wwwroot\src\ts\sample.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="wwwroot\favicon.ico" />
+    <None Include="wwwroot\sqlite3.wasm" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
     <PackageReference Include="CsvHelper" Version="33.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.10" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.0" />
     <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.7.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

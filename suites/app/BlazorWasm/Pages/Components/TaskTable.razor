@@ -1,0 +1,41 @@
+﻿@using MudBlazor
+@inject IJSRuntime JSRuntime
+@using System.Text.Json
+@using BlazorWasm.Controllers.TaskScheduler.Models
+
+<MudTable Items="@TaskItems" Class="custom-table" Dense="true" Hover="true" Striped="true">
+    <HeaderContent>
+        <MudTh Class="custom-table-header">工程</MudTh>
+        <MudTh Class="custom-table-header">担当チーム</MudTh>
+        <MudTh Class="custom-table-header">担当者</MudTh>
+        <MudTh Class="custom-table-header">期間</MudTh>
+        <MudTh Class="custom-table-header">目安期間</MudTh>
+        <MudTh Class="custom-table-header">進捗</MudTh>
+        @foreach (string week in WeeklyHeaders)
+        {
+            <MudTh>@week</MudTh>
+        }
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd>@context.TaskName</MudTd>
+        <MudTd>@context.Team</MudTd>
+        <MudTd>@context.Assignee</MudTd>
+        <MudTd>@context.Period</MudTd>
+        <MudTd>@context.ExpectedPeriod</MudTd>
+        <MudTd>@context.Status</MudTd>
+        @foreach (string week in WeeklyHeaders)
+        {
+            <MudTd>@context.WeeklyEffort[week]</MudTd>
+        }
+    </RowTemplate>
+</MudTable>
+
+
+
+@code {
+
+    [Parameter] public List<string> WeeklyHeaders { get; set; } = null!;
+
+    [Parameter] public List<TaskItem> TaskItems { get; set; } = new List<TaskItem>();
+
+}

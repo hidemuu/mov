@@ -1,0 +1,25 @@
+﻿@inject IJSRuntime JS
+
+<canvas id="burnDownChart" width="800" height="400"></canvas>
+
+@code {
+    [Parameter] public List<string> WeeklyHeaders { get; set; } = null!;
+
+    private List<int> IdealBurndown = new() { 90, 75, 60, 45, 30, 15, 0 }; // 理想進捗
+    private List<int> ActualBurndown = new() { 90, 80, 70, 55, 40, 25, 10 }; // 実績進捗
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var chartData = new
+            {
+                labels = WeeklyHeaders,
+                idealBurndown = IdealBurndown,
+                actualBurndown = ActualBurndown
+            };
+
+            await JS.InvokeVoidAsync("renderChart", "burnDownChart", chartData);
+        }
+    }
+}

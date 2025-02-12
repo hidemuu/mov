@@ -34,10 +34,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\TaskScheduler\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <TypeScriptCompile Include="wwwroot\src\ts\initializeBabylon.ts" />
     <TypeScriptCompile Include="wwwroot\src\ts\sample.ts">
       <SubType>Code</SubType>

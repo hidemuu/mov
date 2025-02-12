@@ -2,6 +2,7 @@
 @using Blazored.LocalStorage
 @using Newtonsoft.Json
 @using BlazorWasm.Pages.Components
+@using BlazorWasm.Controllers.TravelPlanner.Models
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 @inject ILocalStorageService LocalStorage
@@ -214,17 +215,4 @@
     }
 
     #endregion メソッド
-
-    #region モデル
-
-    public class DayPlan
-    {
-        public int Day { get; set; }
-
-        public string Title { get; set; } = string.Empty;
-
-        public List<string> Activities { get; set; } = new();
-    }
-
-    #endregion モデル
 }

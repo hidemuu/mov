@@ -1,4 +1,6 @@
-﻿<div class="day-plan">
+﻿@using BlazorWasm.Controllers.TravelPlanner.Models
+
+<div class="day-plan">
     @if (IsEditing)
     {
         <h3>Edit Day @Plan.Day</h3>
@@ -36,7 +38,7 @@
 </div>
 
 @code {
-    [Parameter] public Itinerary.DayPlan Plan { get; set; } = null!;
+    [Parameter] public DayPlan Plan { get; set; } = null!;
 
     [Parameter] public EventCallback OnPlanUpdated { get; set; }
 

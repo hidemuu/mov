@@ -1,6 +1,6 @@
 {
-  "name": "TrackerApp",
-  "short_name": "TrackerApp",
+  "name": "BlazorWasm",
+  "short_name": "BlazorWasm",
   "id": "./",
   "start_url": "./",
   "display": "standalone",

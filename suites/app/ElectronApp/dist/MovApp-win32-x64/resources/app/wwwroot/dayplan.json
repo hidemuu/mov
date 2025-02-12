@@ -1,0 +1,49 @@
+[
+  {
+    "Day": 1,
+    "Title": "到着とマリーナベイサンズ",
+    "Activities": [
+      "チャンギ空港到着",
+      "マリーナベイサンズにチェックイン",
+      "ナイトクルーズ",
+      "Visit SkyPark Observation Deck",
+      "Walk through Gardens by the Bay"
+    ]
+  },
+  {
+    "Day": 2,
+    "Title": "街散策",
+    "Activities": [
+      "Breakfast at Raffles Hotel",
+      "マーライオン公園",
+      "シンガポール・フライヤー",
+      "ガーデンズ・バイ・ザ・ベイ"
+    ]
+  },
+  {
+    "Day": 3,
+    "Title": "街散策その２",
+    "Activities": [
+      "シンガポール動物園",
+      "ナイトサファリ"
+    ]
+  },
+  {
+    "Day": 4,
+    "Title": "セントローサ島観光",
+    "Activities": [
+      "ユニバーサルスタジオ",
+      "Lunch at Sentosa",
+      "Visit S.E.A. Aquarium"
+    ]
+  },
+  {
+    "Day": 5,
+    "Title": "帰路",
+    "Activities": [
+      "ホテルチェックアウト",
+      "お土産買う",
+      "空港へ"
+    ]
+  }
+]

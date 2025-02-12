@@ -1,0 +1,21 @@
+﻿/*.custom-table {
+    border: 1px solid var(--mud-palette-dark) !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+.custom-table-header {
+    background-color: var(--mud-palette-secondary) !important;
+    color: black !important;
+    font-weight: bold !important;
+    text-align: center !important;
+}
+
+.custom-table-row {
+    transition: background-color 0.3s ease;
+}
+
+    .custom-table-row:hover {
+        background-color: var(--mud-palette-light);
+    }
+*/

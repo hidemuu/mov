@@ -35,7 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelPlannerApp", "TravelP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskSchedulerApp", "TaskSchedulerApp\TaskSchedulerApp.csproj", "{5E1CAAB3-FEFC-47CD-8800-CA059E6280ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWasm", "app\BlazorWasm\BlazorWasm.csproj", "{708AE798-25F9-45DC-99A1-C70980361D1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWasm", "app\BlazorWasm\BlazorWasm.csproj", "{708AE798-25F9-45DC-99A1-C70980361D1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

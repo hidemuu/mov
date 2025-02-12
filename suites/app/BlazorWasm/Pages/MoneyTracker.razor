@@ -1,0 +1,295 @@
+﻿@page "/money_tracker"
+@inject IJSRuntime JSRuntime
+@using System.Globalization
+@using CsvHelper
+@using CsvHelper.Configuration
+@using System.Text
+
+<h3>お金の流れの可視化</h3>
+
+<!-- ファイル選択 -->
+<InputFile OnChange="OnFileSelected" />
+
+<!-- 入出金情報テーブル -->
+<div class="table-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>日付</th>
+                <th>内容</th>
+                <th>出金金額(円)</th>
+                <th>入金金額(円)</th>
+                <th>残高(円)</th>
+                <th>メモ</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var record in Records)
+            {
+                <tr>
+                    <td>@record.Date.ToString("yyyy/MM/dd")</td>
+                    <td>@record.Description</td>
+                    <td>@record.Withdrawal</td>
+                    <td>@record.Deposit</td>
+                    <td>@record.Balance</td>
+                    <td>@record.Note</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- タブ -->
+<div class="tabs">
+    @foreach (var (year, month) in YearMonthPairs)
+    {
+        <button @onclick="() => ShowYearMonthChart(year, month)">
+            @GetYearMonthName(year, month)
+        </button>
+    }
+</div>
+
+<!-- タイムチャート -->
+<div id="chart-container">
+    @foreach (var (year, month) in YearMonthPairs)
+    {
+        <canvas id="@CHART_ID_BALANCE-@year-@month" style="display:none;"></canvas>
+        <canvas id="@CHART_ID_WITHDRAW-@year-@month" style="display:none;"></canvas>
+        <canvas id="@CHART_ID_DEPOSIT-@year-@month" style="display:none;"></canvas>
+    }
+</div>
+@* <canvas id="@CHART_ID_BALANCE" width="800" height="400"></canvas> *@
+
+@code {
+    #region 定数
+
+    private const string CHART_TYPE_LINE = "line";
+
+    private const string CHART_TYPE_BAR = "bar";
+
+    private const string CHART_ID_BALANCE = "balanceChart";
+
+    private const string CHART_ID_WITHDRAW = "withdrawalChart";
+
+    private const string CHART_ID_DEPOSIT = "depositChart";
+
+    private const string CHART_ID_DELIMITER = "-";
+
+    private const string SCRIPT_CREATE_CHART = "createChart";
+
+    private const string SCRIPT_CREATE_CHARTS = "createCharts";
+
+    private const string SCRIPT_VISIBILITY_CHART = "toggleChartVisibility";
+
+    private const string DESCRIPTION_TYPE_KOTORA = "ことら送金";
+
+    private const string DESCRIPTION_TYPE_MAN = "ヒデミツ";
+
+    private const string DESCRIPTION_TYPE_WOMAN = "ヒトミ";
+
+    #endregion 定数
+
+    #region プロパティ
+
+    private List<FinanceRecord> Records = new List<FinanceRecord>();
+
+    private List<(int Year, int Month)> YearMonthPairs =>
+    Records.Select(r => (r.Date.Year, r.Date.Month))
+           .Distinct()
+           .OrderBy(y => y.Year)
+           .ThenBy(m => m.Month)
+           .ToList();
+
+    #endregion プロパティ
+
+    #region イベント
+
+    // protected override async Task OnAfterRenderAsync(bool firstRender)
+    // {
+    //     if (firstRender)
+    //     {
+    //         var labels = Records.Select(r => r.Date).ToArray();
+    //         var data = Records.Select(r => r.Balance).ToArray();
+
+    //         await JSRuntime.InvokeVoidAsync("createChart", "balanceChart", labels, data);
+    //     }
+    // }
+
+    private async Task OnFileSelected(InputFileChangeEventArgs e)
+    {
+        // ファイルを取得
+        var file = e.File;
+        if (file == null)
+        {
+            return;
+        }
+        try
+        {
+            Records.Clear();
+            // 必要なエンコーディングプロバイダーを登録
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+
+            using (var stream = file.OpenReadStream())
+            using (var reader = new StreamReader(stream, Encoding.GetEncoding("shift_jis")))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                // CsvHelperを使用してCSVを読み込み
+                csv.Context.RegisterClassMap<FinanceRecordMap>(); // カスタムマッピングを登録
+                try
+                {
+                    await foreach (var record in csv.GetRecordsAsync<FinanceRecord>())
+                    {
+                        Records.Add(record);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+
+        StateHasChanged();
+
+        // グラフを更新
+        // try
+        // {
+        //     var labels = Records.Select(r => r.Date.ToString("yyyy/MM/dd")).ToArray();
+        //     var data = Records.Select(r => r.Balance).ToArray();
+        //     await JSRuntime.InvokeVoidAsync("createChart", $"balanceChart", labels, data);
+        // }
+        // catch (Exception ex)
+        // {
+        //     throw ex;
+        // }
+    }
+
+    #endregion イベント
+
+    #region メソッド
+
+    private void ShowYearMonthChart(int year, int month)
+    {
+        // 他のグラフを非表示にする
+        foreach (var (y, m) in YearMonthPairs)
+        {
+            var balanceChartId = $"{CHART_ID_BALANCE}{CHART_ID_DELIMITER}{y}{CHART_ID_DELIMITER}{m}";
+            var withdrawChartId = $"{CHART_ID_WITHDRAW}{CHART_ID_DELIMITER}{y}{CHART_ID_DELIMITER}{m}";
+            var depositChartId = $"{CHART_ID_DEPOSIT}{CHART_ID_DELIMITER}{y}{CHART_ID_DELIMITER}{m}";
+            JSRuntime.InvokeVoidAsync($"{SCRIPT_VISIBILITY_CHART}", balanceChartId, y == year && m == month);
+            JSRuntime.InvokeVoidAsync($"{SCRIPT_VISIBILITY_CHART}", withdrawChartId, y == year && m == month);
+            JSRuntime.InvokeVoidAsync($"{SCRIPT_VISIBILITY_CHART}", depositChartId, y == year && m == month);
+        }
+
+        // グラフデータを抽出
+        var records = Records.Where(r => r.Date.Year == year && r.Date.Month == month).ToArray();
+        var labels = records.Select(r => r.Date.ToString("yyyy/MM/dd")).ToArray();
+        var balanceData = records.Select(r => r.Balance).ToArray();
+        var withdrawData = records.Select(r => r.Withdrawal).ToArray();
+        var depositData = records.Select(r => r.Deposit).ToArray();
+        var depositManData = records
+                             .Select(r =>
+                             {
+                                 return r.Description.Contains(DESCRIPTION_TYPE_MAN) ? r.Deposit : 0;
+                             }).ToArray();
+        var depositWomanData = records
+                             .Select(r =>
+                             {
+                                 return r.Description.Contains(DESCRIPTION_TYPE_WOMAN) ? r.Deposit : 0;
+                             }).ToArray();
+
+        // グラフを描画
+        JSRuntime.InvokeVoidAsync(
+            $"{SCRIPT_CREATE_CHART}",
+            $"{CHART_ID_BALANCE}{CHART_ID_DELIMITER}{year}{CHART_ID_DELIMITER}{month}",
+            $"{CHART_TYPE_LINE}",
+            labels,
+            balanceData,
+            $"残高{year}/{month}");
+        JSRuntime.InvokeVoidAsync(
+            $"{SCRIPT_CREATE_CHART}",
+            $"{CHART_ID_WITHDRAW}{CHART_ID_DELIMITER}{year}{CHART_ID_DELIMITER}{month}",
+            $"{CHART_TYPE_BAR}",
+            labels,
+            withdrawData,
+            $"出金{year}/{month}");
+        JSRuntime.InvokeVoidAsync(
+            $"{SCRIPT_CREATE_CHARTS}",
+            $"{CHART_ID_DEPOSIT}{CHART_ID_DELIMITER}{year}{CHART_ID_DELIMITER}{month}",
+            $"{CHART_TYPE_BAR}",
+            labels,
+            new object[] { depositManData, depositWomanData },
+            new string[] { $"入金夫{year}/{month}", $"入金妻{year}/{month}" });
+    }
+
+    private string GetYearMonthName(int year, int month)
+    {
+        return new DateTime(year, month, 1).ToString("yyyy MMMM");
+    }
+
+    #endregion メソッド
+
+    #region モデル
+
+    public class FinanceRecord
+    {
+        public DateTime Date { get; set; }
+        public string Description { get; set; } = string.Empty;
+        public int Withdrawal { get; set; }
+        public int Deposit { get; set; }
+        public int Balance { get; set; }
+        public string Note { get; set; } = string.Empty;
+    }
+
+
+    public class FinanceRecordMap : ClassMap<FinanceRecord>
+    {
+        public FinanceRecordMap()
+        {
+            Map(m => m.Date)
+                .Name("日付")
+                .Convert(row =>
+                {
+                    var field = row.Row.GetField<string>("日付");
+                    return string.IsNullOrWhiteSpace(field)
+                        ? DateTime.MinValue
+                        : DateTime.Parse(field);
+                });
+            Map(m => m.Description).Name("内容");
+            Map(m => m.Withdrawal)
+                .Name("出金金額(円)")
+                .Convert(row =>
+                {
+                    var field = row.Row.GetField<string>("出金金額(円)");
+                    return string.IsNullOrWhiteSpace(field)
+                                ? 0
+                                : int.Parse(field.Replace(",", ""));
+                });
+            Map(m => m.Deposit)
+                .Name("入金金額(円)")
+                .Convert(row =>
+                {
+                    var field = row.Row.GetField<string>("入金金額(円)");
+                    return string.IsNullOrWhiteSpace(field)
+                                 ? 0
+                         : int.Parse(field.Replace(",", ""));
+                });
+            Map(m => m.Balance)
+                .Name("残高(円)")
+                .Convert(row =>
+                {
+                    var field = row.Row.GetField<string>("残高(円)");
+                    return string.IsNullOrWhiteSpace(field)
+                                 ? 0
+                                 : int.Parse(field.Replace(",", ""));
+                });
+            Map(m => m.Note).Name("メモ");
+        }
+    }
+
+    #endregion モデル
+}

@@ -118,6 +118,9 @@ The codebase is layered. Keep domain logic in the appropriate layer instead of p
 
 - Update `README.md`, `suites/README.md`, or `mkdocs/docs` when behavior, setup, or public architecture changes.
 - The root `README.md` currently contains mojibake in places; avoid copying corrupted text into new documentation. Prefer verified facts from project files.
+- `mkdocs/docs/framework/frameworks_architecture.md` documents `frameworks` as the shared DLL foundation.
+- `mkdocs/docs/framework/frameworks_project_inventory.md` lists framework projects for MCP-assisted app design.
+- A local MCP server for this context lives in `mcp/mov-frameworks-mcp` and is mirrored to sibling folder `../mov-mcp`.
 
 ## Generated And External Files
 

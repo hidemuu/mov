@@ -1,0 +1,18 @@
+{
+  "name": "mov-frameworks-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local MCP server exposing mov/frameworks architecture context.",
+  "type": "module",
+  "bin": {
+    "mov-frameworks-mcp": "./server.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "inspect": "node server.js --stdio"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
+

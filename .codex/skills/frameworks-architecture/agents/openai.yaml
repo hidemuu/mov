@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frameworks Architecture"
+  short_description: "Reorganize mov frameworks safely"
+  default_prompt: "Use $frameworks-architecture to plan and implement a safe reorganization of mov/frameworks as shared DLL foundations for suite applications."

@@ -6,8 +6,8 @@ Guidance for coding agents working in this repository.
 
 This repository contains the Mov .NET workspace. It is split into two main solution areas:
 
-- `frameworks/`: shared framework, domain modules, core libraries, API, and console app.
-- `suites/`: application suites and concrete client implementations, including Blazor, React, WPF, Electron-related apps, and standalone apps such as MoneyTrackerApp.
+- `frameworks/`: shared DLL foundations for many current and future applications. Treat this as the reusable platform layer.
+- `suites/`: operational examples and application suites that consume the DLLs from `frameworks`.
 
 There are two Visual Studio solution files:
 
@@ -26,6 +26,14 @@ Most library projects target `netstandard2.0`. App and test projects mostly targ
 - `suites/*App/`: standalone app projects.
 - `scripts/`: reference scripts and experiments; do not treat these as the primary application unless the task explicitly points there.
 - `mkdocs/`: Material for MkDocs documentation.
+
+## Architecture Intent
+
+`frameworks` is the common foundation. Changes here should favor stable DLL boundaries, reusable domain abstractions, and low coupling to any single app. Avoid moving app-specific UI, deployment, local configuration, or operational examples into `frameworks` unless the behavior is truly shared across multiple apps.
+
+`suites` demonstrates how applications use the shared foundation. It may contain app hosts, concrete integrations, UI choices, sample workflows, and client implementations that depend on `frameworks`. When a behavior starts in `suites`, promote it to `frameworks` only after the reusable contract is clear.
+
+When reorganizing `frameworks`, use the repo skill at `.codex/skills/frameworks-architecture`.
 
 ## Build And Test
 
@@ -127,6 +135,7 @@ Avoid changing:
 ## Agent Workflow
 
 - Inspect the closest project files before editing; this repo has several similar app and domain structures.
+- For `frameworks` structure work, use `$frameworks-architecture` and preserve the distinction between common DLL foundations and `suites` usage examples.
 - Keep changes scoped to the requested feature or fix.
 - Preserve existing user changes and unrelated worktree changes.
 - Prefer `rg` for search when available. If it is unavailable or blocked, use PowerShell `Get-ChildItem` and `Select-String`.

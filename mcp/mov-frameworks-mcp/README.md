@@ -40,6 +40,8 @@ Invoke-RestMethod "http://127.0.0.1:8787/qa?q=frameworks-and-suites"
 Set `MOV_MCP_QA_PORT` before running `start-qa.ps1` to use another port.
 If `node` is not on PATH, set `NODE_EXE` to the Node.js executable path before running the script.
 
+The QA bridge uses deterministic Markdown search and does not call an AI agent or LLM. See `mkdocs/docs/framework/mcp_qa_logic.md` for the detailed logic.
+
 ## MCP Client Example
 
 Use the server from this repository:

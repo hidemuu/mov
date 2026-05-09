@@ -28,6 +28,13 @@ const resources = [
     description: "Repository-level guidance that defines frameworks as shared DLL foundations and suites as usage examples.",
     mimeType: "text/markdown",
     file: path.join(repoRoot, "AGENTS.md")
+  },
+  {
+    uri: "mov://frameworks/mcp-qa-logic",
+    name: "Mov Frameworks MCP QA Logic",
+    description: "Explains the local QA bridge logic and confirms that it uses deterministic document search rather than an AI agent.",
+    mimeType: "text/markdown",
+    file: path.join(repoRoot, "mkdocs", "docs", "framework", "mcp_qa_logic.md")
   }
 ];
 

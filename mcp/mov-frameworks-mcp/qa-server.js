@@ -27,6 +27,11 @@ const docs = [
     title: "Mov Agent Guidance",
     uri: "mov://frameworks/agents",
     file: path.join(repoRoot, "AGENTS.md")
+  },
+  {
+    title: "Mov Frameworks MCP QA Logic",
+    uri: "mov://frameworks/mcp-qa-logic",
+    file: path.join(repoRoot, "mkdocs", "docs", "framework", "mcp_qa_logic.md")
   }
 ];
 

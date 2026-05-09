@@ -9,10 +9,10 @@
   },
   "scripts": {
     "start": "node server.js",
+    "qa": "node qa-server.js",
     "inspect": "node server.js --stdio"
   },
   "engines": {
     "node": ">=18"
   }
 }
-

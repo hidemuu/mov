@@ -12,29 +12,48 @@ Local MCP server that exposes `mov/frameworks` architecture context for other ap
 
 - `get_mov_frameworks_design_context`
 
-## Run
+## Run MCP Server
 
 ```powershell
-$env:MOV_REPO_ROOT="C:\Users\nando\workspace\repos\github\mov"
-node C:\Users\nando\workspace\repos\github\mov\mcp\mov-frameworks-mcp\server.js
+cd <mov-repo>
+$env:MOV_REPO_ROOT=(Get-Location).Path
+node .\mcp\mov-frameworks-mcp\server.js
 ```
 
-When this folder is copied to sibling repo `mov-mcp`, the server also auto-detects `../mov` as the Mov repository root.
+When this folder is copied elsewhere, set `MOV_REPO_ROOT` to the Mov repository root.
 
-## MCP client example
+## Local QA Bridge
 
-Use the copied sibling server from `C:\Users\nando\workspace\repos\github\mov-mcp`:
+For browser or curl-based QA against the same MCP resource documents:
+
+```powershell
+cd <mov-repo>
+.\mcp\mov-frameworks-mcp\start-qa.ps1
+```
+
+Open `http://127.0.0.1:8787/` or call:
+
+```powershell
+Invoke-RestMethod "http://127.0.0.1:8787/qa?q=frameworks-and-suites"
+```
+
+Set `MOV_MCP_QA_PORT` before running `start-qa.ps1` to use another port.
+If `node` is not on PATH, set `NODE_EXE` to the Node.js executable path before running the script.
+
+## MCP Client Example
+
+Use the server from this repository:
 
 ```json
 {
   "mcpServers": {
     "mov-frameworks": {
-      "command": "C:\\Users\\nando\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "command": "node",
       "args": [
-        "C:\\Users\\nando\\workspace\\repos\\github\\mov-mcp\\server.js"
+        "<mov-repo>\\mcp\\mov-frameworks-mcp\\server.js"
       ],
       "env": {
-        "MOV_REPO_ROOT": "C:\\Users\\nando\\workspace\\repos\\github\\mov"
+        "MOV_REPO_ROOT": "<mov-repo>"
       }
     }
   }
